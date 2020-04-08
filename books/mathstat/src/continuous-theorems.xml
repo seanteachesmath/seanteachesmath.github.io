@@ -1,0 +1,1069 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--********************************************************************
+Copyright 2020 Sean M. Laverty
+
+This file is part of MathBook XML.
+
+MathBook XML is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 or version 3 of the
+License (at your option).
+
+MathBook XML is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with MathBook XML. If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************-->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+
+<chapter xml:id="chap-continuous"
+xmlns:xi="http://www.w3.org/2001/XInclude">
+ <title>Continuous Random Variables</title>
+ <author><xref ref="slaverty"/></author>
+
+ <introduction>
+<!--> <p>We will learn and practice direct methods for computing derivatives
+of functions defined by products or quotients of terms.</p>
+
+ <p>The theory of groups occupies a central position in mathematics.
+Modern group theory arose from an attempt to find the roots of a
+polynomial in terms of its coefficients. Groups now play a central role
+in such areas as coding theory, counting, and the study of symmetries;
+many areas of biology, chemistry, and physics have benefited from group
+theory.</p>-->
+
+<!--> <p><xref ref="slaverty" /> helped improve this chapter.</p>-->
+
+ </introduction>
+
+ <section xml:id="section-probability-densities">
+ <title>Probability densities</title>
+
+ <introduction>
+<p> Some words.</p>
+ </introduction>
+
+<!-- *********************************** -->
+<!-- *********************************** -->
+<!-- *********************************** -->
+
+ <subsection xml:id="sub-single-variable-cont">
+ <title>Univariate distributions</title>
+ 
+<introduction>
+<p> See sections 3.1, 3.2. Recommended problems: (pg80)1,3,4ab,5,6,7a</p>
+</introduction>
+
+<definition xml:id="def-continuous-probability-density-3-2">
+<title>probability density</title>
+<statement>
+<p>
+If <m>X</m> is a continuous random variable, the function given by
+<m>f(x) = P(X = x)</m> for each <m>x</m> within the range of <m>X</m> is
+called the <term>probability density</term>.
+</p>
+</statement>
+</definition>
+
+
+<theorem xml:id="thm-continuous-conditions-3-1">
+<title>conditions for probability density</title>
+<statement>
+<p>A function can serve as the probability density for a continuous
+random variable <m>X</m> if and only if its values, <m>f(x)</m>, satisfy
+the conditions 
+<ol>
+<li><p> <m>f(x) \ge 0</m> for each value within its domain;</p></li>
+<li><p> <m>\int_{\infty}^\infty f(x)\,dx = 1</m>.</p></li>
+</ol>
+</p>
+</statement>
+</theorem>
+
+
+<definition xml:id="def-continuous-distribution-function-3-3">
+<statement>
+<p>
+If <m>X</m> is a continuous random variable, the function given by
+<me>F(x) = P(X \le x) = \int_{\infty}^x f(t) \,dt \text{for} -\infty \lt x
+\lt \infty</me> where <m>f(t)</m> is the value of the probability density
+of <m>X</m> at <m>t</m>, is called the <term>distribution
+function</term>, or the <term>cumulative distribution (function)</term>,
+of <m>X</m>. 
+</p>
+</statement>
+</definition>
+
+
+
+<theorem xml:id="thm-continuous-th-3-2">
+<title>distribution function (continuous)</title>
+<statement>
+<p>
+The values <m>F(x)</m> of the distribution function of a continuous random
+variable <m>X</m> satisfy the conditions
+<ol>
+<li> <m>F(-\infty) = 0</m> and <m>F(\infty) = 1</m> (more carefully
+stated as <m>\lim_{x\to-\infty}F(x) = 0</m> and <m>\lim_{x\to\infty}
+F(x) = 1</m>);</li>
+<li> if <m>a \le b</m>, then <m>F(a) \le F(b)</m> for any real numbers
+<m>a</m> and <m>b</m></li>
+</ol>
+</p>
+</statement>
+</theorem>
+</subsection>
+
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+
+ <subsection xml:id="sub-cont-multi-variable">
+ <title>Multivariate distributions</title>
+  <introduction>
+<p> Some words.</p>
+ </introduction>
+
+<definition xml:id="def-joint-probability-density-3-6-cont">
+<title>joint probability density</title>
+<statement>
+<p>
+ If <m>X</m> and <m>Y</m> are continuous random variables, the function
+given by <m>f(x,y) = P(X=x, Y=y)</m> for each pair of values
+<m>(x,y)</m> within the range of <m>X</m> and <m>Y</m> is called the
+<term>joint probability density</term> of <m>X</m> and <m>Y</m>.
+</p>
+</statement>
+</definition>
+
+<theorem xml:id="thm-continuous-th-3-7-cont">
+<title>conditions for a joint probability density</title>
+<statement>
+<p> A bivariate function can serve as a joint probability density for a
+pair of continuous random variables <m>X</m> and <m>Y</m> if and only if
+its values, <m>f(x, y)</m>, satisfy the conditions
+<ol>
+<li> <m>f(x, y) \ge 0</m> for each pair of values <m>(x, y)</m> within
+its domain;</li>
+<li> <m> \int\int f(x, y) \,dy\,dx= 1</m> where <em>the double summation
+extends over all possible pairs</em> <m>(x, y)</m>.</li>
+</ol>
+</p>
+</statement>
+</theorem>
+
+
+<definition xml:id="def-joint-density-function-3-7-cont">
+<title>joint distribution function (continuous)</title>
+<statement>
+<p>
+If <m>X</m> and <m>Y</m> are continuous random variables, the function
+given by <me>F(x, y) = P(X \le x, Y \le y) = \int\int f(s, t)
+\,ds\,dt\text{ for } \infty \lt x, y \lt \infty</me> where <m>f(s,
+t)</m> is the value of the joint probability density of <m>X</m> and
+<m>Y</m> at <m>(s, t)</m>, is called the <term>joint density
+function</term> or <term>joint cumulative density</term> of <m>X</m> and
+<m>Y</m>.
+</p>
+</statement>
+</definition>
+
+<definition xml:id="def-marginal-density-3-10-cont">
+<title>marginal density</title>
+<statement>
+<p>
+If <m>X</m> and <m>Y</m> are continuous random variables and <m>f(x,
+y)</m> is the value of their joint probability density at <m>(x, y)</m>,
+the function given by <me>g(x) = \int f(x, y)\, dy</me> for each
+<m>x</m> within the range of <m>X</m> is called the <term>marginal
+density</term> of <m>X</m>. Correspondingly, the function given by
+<me>h(y) = \int f(x, y)\,dx</me> for each <m>y</m> within the range of
+<m>Y</m> is called the <term>marginal density</term> of <m>Y</m>. 
+</p>
+</statement>
+</definition>
+
+<definition xml:id="def-conditional-density-3-10-cont">
+<title>conditional density</title>
+<statement>
+<p>
+conditional density
+<me>f(x|y) = \dfrac{f(x, y)}{h(y)}, h(y)\ne 0</me>
+<me>w(y|x) = \dfrac{f(x, y)}{g(x)}, g(x)\ne 0</me>
+</p>
+</statement>
+</definition>
+</subsection>
+
+</section>
+
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+
+
+ <section xml:id="section-continuous-expectation">
+ <title>Expectation of continuous random variables</title>
+
+<introduction>
+
+<p> This is the start of Chapter 4 in Freund's Mathematical Statistics.
+In the first pass we will study the major topics of this chapter with a
+focus on those applying to discrete random variables. </p>
+</introduction>
+
+<!-- *********************************** -->
+<!-- *********************************** -->
+<!-- *********************************** -->
+
+<subsection xml:id="sub-expectation">
+<title>Expected value</title>
+<p>See section 4.1 - 4.2. Recommended problems: (pg 136) 7, 9, 10, 11, (pg 161) 60
+</p>
+
+
+<definition xml:id="def-expected-value-4-1-cont">
+<title>expected value (continuous)</title>
+<statement>
+<p>
+If <m>X</m> is a continuous random variable and <m>f(x)</m> is the value
+of its probability density at <m>x</m>, the <term>expected value</term>
+of <m>X</m> is given by
+<me> E[X] = \int x\cdot f(x)\,dx</me>
+</p>
+</statement>
+</definition>
+
+<theorem
+xml:id="thm-expected-value-function-random-variable-4-1-cont">
+<title>expected value of a function of a random variable (continuous)</title>
+<statement>
+<p>
+If <m>X</m> is a continuous random variable and <m>f(x)</m> is the value
+of its probability density at <m>x</m>, the expected value of
+<m>g(X)</m> is given by
+<me>E[g(X)] = \int g(x)\cdot f(x)\,dx</me>
+</p>
+</statement>
+</theorem>
+
+<p>
+Now would be a good time to review <xref ref="thm-4-2"/>, <xref
+ref="cor-4-1"/>, <xref ref="cor-4-2"/>, and <xref ref="thm-4-5"/>, all of which apply here as well.
+</p>
+
+<!-->
+<theorem xml:id="thm-continuous-th4-2">
+<p> If <m>a</m> and <m>b</m> are constants, then
+<m>E[aX +b] = aE[X]+b</m>.
+</p>
+</theorem>
+
+<corollary xml:id="continuous-cor4-1">
+<p> If a is a constant, then
+<m>E[aX] = aE[X]</m>.
+</p>
+</corollary>
+
+<corollary xml:id="continuous-cor4-2">
+<p>If b is a constant, then
+<m>E[b] = b</m>.
+</p>
+</corollary>-->
+
+<theorem xml:id="thm-expected-value-joint-random-variables-4-4-cont">
+<title>expected value of joint random variables (continuous)</title>
+<statement>
+<p>
+If <m>X</m> and <m>Y</m> are continuous random variables and <m>f(x,
+y)</m> is the value of their joint probability density at <m>(x, y)</m>,
+the expected value of <m>g(X, Y)</m> is given by
+<me>E[g(X, Y)] = \int\int g(x, y)\cdot f(x,y)\,dx\,dy</me>
+</p>
+</statement>
+</theorem>
+
+<!-->
+<theorem xml:id="thm-continuous-4-5">
+<p> If <m>c_1, c_2, \dots, c_n</m> are constants, then
+<me>E\left[\sum_{i=1}^n c_i g_i(X_1, X_2, \dots, X_k)\right] =
+\sum_{i=1}^n c_i E\left[g_i(X_1, X_2, \dots, X_k)\right]</me>
+</p>
+</theorem>
+-->
+</subsection>
+<!-- See section 4.1 - 4.2. Recommended problems: (pg 136) disc: 9, (pg 161) 60, cont: 7, 10, 11 -->
+<exercises>
+ <exercise>
+ <title>Problem 4.9</title>
+ <statement>
+ <p>Suppose that <m>X</m> takes on values <m>0, 1, 2, 3</m> with
+probabilities <m>\dfrac{1}{125}, \dfrac{12}{125}, \dfrac{48}{125},
+\dfrac{64}{125}</m>
+  <ol>
+<li><p> Find <m>E[X]</m> and <m>E[X^2]</m></p></li>
+<li><p> Determine the value of <m>E[(3X + 2)^2]</m></p></li>
+</ol>
+ </p>
+ </statement>
+ </exercise>
+ 
+ 
+ 
+</exercises>
+<!-- See section 4.1 - 4.2. Recommended problems: (pg 136) disc: 9, (pg 161) 60, cont: 7, 10, 11 -->
+<exercises>
+ <exercise>
+ <title>Problem 4.7</title>
+ <statement>
+ <p><!--Suppose that <m>X</m> takes on values <m>0, 1, 2, 3</m> with
+probabilities <m>\dfrac{1}{125}, \dfrac{12}{125}, \dfrac{48}{125},
+\dfrac{64}{125}</m>
+  <ol>
+<li><p> Find <m>E[X]</m> and <m>E[X^2]</m></p></li>
+<li><p> Determine the value of <m>E[(3X + 2)^2]</m></p></li>
+</ol>-->
+ </p>
+ </statement>
+ </exercise>
+ 
+  <exercise>
+ <title>Problem 4.10</title>
+ <statement>
+ <p><!--Suppose that <m>X</m> takes on values <m>0, 1, 2, 3</m> with
+probabilities <m>\dfrac{1}{125}, \dfrac{12}{125}, \dfrac{48}{125},
+\dfrac{64}{125}</m>
+  <ol>
+<li><p> Find <m>E[X]</m> and <m>E[X^2]</m></p></li>
+<li><p> Determine the value of <m>E[(3X + 2)^2]</m></p></li>
+</ol>-->
+ </p>
+ </statement>
+ </exercise>
+ 
+  <exercise>
+ <title>Problem 4.11</title>
+ <statement>
+ <p><!--Suppose that <m>X</m> takes on values <m>0, 1, 2, 3</m> with
+probabilities <m>\dfrac{1}{125}, \dfrac{12}{125}, \dfrac{48}{125},
+\dfrac{64}{125}</m>
+  <ol>
+<li><p> Find <m>E[X]</m> and <m>E[X^2]</m></p></li>
+<li><p> Determine the value of <m>E[(3X + 2)^2]</m></p></li>
+</ol>-->
+ </p>
+ </statement>
+ </exercise>
+ 
+</exercises>
+
+
+<!-- *********************************** -->
+<!-- *********************************** -->
+<!-- *********************************** -->
+
+<subsection xml:id="sub-moments-cont">
+<title>Expected value</title>
+<p>See section 4.3. Recommended problems: 4.3 (pg 146) 20, 22, 23, 31, 33, 34, 40, (pg 162) 69, 73, 75
+</p>
+
+<definition xml:id="def-moments-about-origin-4-2-cont">
+<title>moments about the origin (continuous)</title>
+<statement>
+<p>
+The <m>r^\text{th}</m> <term>moment about the origin</term> of a random
+variable <m>X</m>, denoted by <m>\mu_r'</m>, is the expected value of
+<m>(X)^r</m>; symbolically
+<me>\mu_r'=E[(X)^r] = \int_{-\infty}^\infty x^r\cdot f(x)\,dx</me> for <m>r = 0,1,2,
+\dots</m> when <m>X</m> is continuous.
+</p>
+</statement>
+</definition>
+
+<!--><definition xml:id="def-continuous-mean-4-3">
+<m>\mu_1'</m> is called the <term>mean</term> of the density of
+<m>X</m>, or simply the <term>mean</term> of <m>X</m>; and it is denoted
+by <m>\mu</m>.
+</definition>-->
+
+
+<definition xml:id="def-moments-about-mean-4-4-cont">
+<title>moments about the mean (continuous)</title>
+<statement>
+<p>
+The <m>\displaystyle r^\text{th}</m> <term>moment about the
+mean</term> of a random variable <m>\displaystyle X</m>, denoted by
+<m>\displaystyle \mu_r</m>, is the expected value of <m>\displaystyle
+(X-\mu)^r</m>; symbolically
+<me>\mu_r=E[(X-\mu)^r] = \int_{-\infty}^\infty (x-\mu)^r\cdot f(x)\,dx</me> for
+<m>\displaystyle r =
+0,1,2, \dots</m> when <m>\displaystyle X</m> is discrete.
+</p>
+</statement></definition>
+</subsection>
+
+<!-- Recommended problems: 4.3 (pg 146) disc: 23; cont: 20, 22, 31, -->
+<exercises>
+ <exercise>
+ <title>Problem 4.20</title>
+ <statement>
+ <p><!--Find <m>\mu</m>, <m>\mu_2'</m>, and <m>\sigma^2</m> for the random
+variable <m>X</m> that has probability distribution <m>f(x) = 0.5 \text{
+for } x= \pm 2</m>.-->
+ </p>
+ </statement>
+ </exercise>
+ 
+  <exercise>
+ <title>Problem 4.22</title>
+ <statement>
+ <p><!--Find <m>\mu</m>, <m>\mu_2'</m>, and <m>\sigma^2</m> for the random
+variable <m>X</m> that has probability distribution <m>f(x) = 0.5 \text{
+for } x= \pm 2</m>.-->
+ </p>
+ </statement>
+ </exercise>
+ 
+  <exercise>
+ <title>Problem 4.31</title>
+ <statement>
+ <p><!--Find <m>\mu</m>, <m>\mu_2'</m>, and <m>\sigma^2</m> for the random
+variable <m>X</m> that has probability distribution <m>f(x) = 0.5 \text{
+for } x= \pm 2</m>.-->
+ </p>
+ </statement>
+ </exercise>
+</exercises>
+<!-- *********************************** -->
+<!-- *********************************** -->
+<!-- *********************************** -->
+
+
+<subsection xml:id="sub-chebyshev">
+<title>Chebyshev's Theorem</title>
+<introduction>
+<p>See section 4.4.</p>
+</introduction>
+
+<theorem xml:id="thm-chebyshev">
+<title>Chebyshev's Theorem</title>
+<statement>
+<p>If <m>\mu</m> and <m>\sigma</m> are the mean and the standard
+deviation of a random variable <m>X</m>, then for any positive constant
+<m>k</m> the probability is <em>at least</em> <m>1-\dfrac{1}{k^2}</m>
+that <m>X</m> will take on a value within <m>k</m> standard deviations of
+the mean; symbolically <me>P(|x-\mu| \lt k\sigma) \ge 1 - \dfrac{1}{k^2}, \sigma \ne 0</me>
+</p>
+</statement></theorem>
+
+<p> <xref ref="thm-chebyshev"/> gives a lower bound on the probability
+that the value of the random variable is within a certain distance
+(specifically <m>\pm k\sigma</m>) of the mean.</p>
+
+</subsection>
+
+<exercises>
+ <exercise>
+ <title>Problem 4.20</title>
+ <statement>
+ <p><!--Find <m>\mu</m>, <m>\mu_2'</m>, and <m>\sigma^2</m> for the random
+variable <m>X</m> that has probability distribution <m>f(x) = 0.5 \text{
+for } x= \pm 2</m>.-->
+ </p>
+ </statement>
+ </exercise>
+ 
+
+</exercises>
+
+<!-- *********************************** -->
+<!-- *********************************** -->
+<!-- *********************************** -->
+
+
+<subsection xml:id="sub-mgf-cont">
+<title>Moment-generating functions</title>
+<p>See section 4.5.</p>
+
+<definition xml:id="def-mgf-4-6-cont">
+<title>moment-generating function (continuous)</title>
+
+<statement>
+<p> The <term>moment-generating function</term> of a random variable
+<m>\displaystyle X</m>, where it exists, is given by <me>\displaystyle
+M_X(t) = E[e^{tX}] = \int_{-\infty}^\infty e^{tx}\cdot f(x)\,dx</me>
+when <m>\displaystyle X</m> is discrete.
+</p>
+</statement></definition>
+
+<p>
+Notce that a moment-generating function <m>\displaystyle M_X(t)</m>
+itself is a function of the variable <m>\displaystyle t</m> not
+<m>\displaystyle x</m>. As it turns out, we are most interested in
+values
+of the function at or near <m>\displaystyle t=0</m>.
+</p>
+
+<p>
+Now would be a good time to review <xref ref="thm-4-9"/> and <xref
+ref="thm-4-10"/> which apply here as well.
+</p>
+<!--><example xml:id="ex-maclaurin">
+<title>moment-generating function via Taylor series</title>
+<statement>
+<p>
+</p>
+
+</statement></example>-->
+
+<!-->
+<example xml:id="ex-three-cards-mgf">
+<title>moment-generating function for three cards</title>
+
+<statement>
+<p>
+Recall the probability distribution <m>f(x) = P(X = x) =
+\dfrac{{3\choose x}}{8} \text{ for } x = 0, 1, 2, 3</m> (this was used
+earlier to determine the probabilities of <m>x</m> heads on three flips
+of a coin).
+<me>
+\begin{aligned}[t]
+M_X(t) \amp = \sum_x e^{tx} f(x)\\
+\amp = 1 \cdot \frac{1}{8} + e^{t} \cdot \frac{3}{8}+ e^{2t} \cdot
+\frac{3}{8} + e^{3t} \cdot \frac{1}{8}\\
+\amp = \frac{1}{8} \left(1 + 3e^{t} + 3e^{2t} + e^{3t}\right)\\
+M_X(t) \amp = \frac{1}{8} (1+e^t)^3\\
+\end{aligned}
+</me>
+</p>
+</statement></example>
+
+<theorem xml:id="thm-4-9">
+<title>moments via differentiation</title>
+<statement>
+<p>
+The <m>r^\text{th}</m> moment about the origin, <m> \mu_r'</m>, can be
+written
+<me>\displaystyle \mu_r' = \dfrac{d^rM_X(t)}{dt^r}\Big|_{t=0}</me>
+</p>
+</statement></theorem>
+
+<example xml:id="ex-xx-mgf2">
+<title>xx</title>
+<statement>
+<p>
+Referencing Example <xref ref="ex-three-cards-mgf"/>, the mean of the
+random variable, given by <m>\mu_1'</m>, whose MGF is <m>M_X(t) =
+\frac{1}{8} (1+e^t)^3</m> is found as follows
+<me>
+\begin{aligned}[t]
+\mu_1' \amp = \left(\dfrac{d}{dt}\left(\frac{1}{8}
+(1+e^t)^3\right)\right)\Big|_{t=0}\\
+	 \amp = \left(\frac{3}{8} (1+e^t)^2e^t\right)\Big|_{t=0}\\
+\amp = \left(\frac{3}{8} (2)^2\right)\\
+\mu_1' \amp = \frac{3}{2}
+\end{aligned}
+</me>
+</p>
+</statement></example>
+
+<p> So, <em>given</em> a moment-generating function, a relatively
+simple application of calculus allows us to replace a more tedious
+calculation of the moment from its definition.
+</p>
+
+<theorem xml:id="thm-4-10">
+<title>moment-generating function of functions of a random variable</title>
+
+<statement>
+<p>
+If <m>\displaystyle a</m> and <m>\displaystyle b</m> are constants, then
+
+<ol>
+<li><m>\displaystyle M_{X+a}(t) = E[e^{(X+a)t}] = e^{at} \cdot
+M_X(t)</m>;</li>
+<li><m>\displaystyle M_{bX}(t) = E[e^{bXt}] = M_X(bt)</m>;</li>
+<li><m>\displaystyle M_{\frac{X+a}{b}}(t) =
+E\left[e^{\left(\frac{X+a}{b}\right)t}\right] = e^{(a/b)t} \cdot
+M_X\left(\frac{t}{b}\right)</m>;</li>
+</ol>
+</p>
+</statement></theorem>
+-->
+
+<p>The rules in <xref ref="thm-4-10"/> allow us to calculate
+moment-generating functions of simple functions of a random
+variable.</p>
+</subsection>
+
+<exercises>
+ 
+ 
+ <exercise>
+ <title>Problem 4.33</title>
+ <statement>
+ <p>Find the moment-generating function of the discrete random variable
+<m>X</m> that has the probability distribution <me>f(x) =
+2\left(\dfrac{1}{3}\right)^x \text{ for } x = 1, 2, 3, \dots</me> and
+use it to determine the values of <m>\mu_1'</m> and <m>\mu_2'</m>.
+ </p>
+ </statement>
+ </exercise>
+ 
+<exercise>
+<title>Problem 4.40</title>
+<statement>
+ <p>Given the moment-generating function <m> X_X(t) = e^{3t+8t^2}</m>,
+find the moment generating function of the random variable <m> Z =
+\dfrac{1}{4}\left(X-3\right)</m> and use it to determine the mean and
+variance of <m>Z</m>.
+ </p>
+ </statement>
+ </exercise>
+</exercises>
+
+
+<!-- *********************************** -->
+<!-- *********************************** -->
+<!-- *********************************** -->
+
+<subsection xml:id="sub-product-moments-cont">
+<title>Product moments</title>
+<p>See section 4.6.</p>
+
+
+
+<definition xml:id="def-product-moments-origin-4-7-cont">
+<title>product moments about the origin</title>
+<statement>
+<p> The <term><m>\displaystyle r^\text{th}</m> and <m>\displaystyle
+s^\text{th}</m> product moment about the origin</term> of the random
+variables
+<m>\displaystyle X</m> and <m>\displaystyle Y</m>, denoted by
+<m>\displaystyle \mu_{r,s}</m>, is the expected value of
+<m>\displaystyle X^rY^s</m>; symbolically 
+<me>\mu_{r,s}'=E[X^rY^s] = \int\int x^r y^s\cdot f(x, y)\,dy\,dx</me>
+<m>\displaystyle r = 0,1,2, \dots</m> and <m>\displaystyle s = 0,1,2,
+\dots</m>
+when <m>\displaystyle X</m> and Y are discrete.</p>
+</statement>
+</definition>
+
+<p>
+Special cases of product moments are <m>\displaystyle \mu_{1,0}' =
+E[X^1Y^0] = E[X] = \mu_X</m> and <m>\displaystyle \mu_{0,1}' = E[X^0Y^1]
+= E[Y] = \mu_Y</m>.
+</p>
+
+<!--><p>
+As complicated as the definitions of the product moments may be, they
+lead to a way to define and calculate the very important concept of
+covariance.
+<ul>
+<li> If we have a high probability of large <m>\displaystyle X</m>
+paired with large <m>\displaystyle Y</m> and small <m>\displaystyle
+X</m> paired with small <m>\displaystyle Y</m>, <m>\displaystyle
+\operatorname{cov}(X,Y) \gt 0</m></li>
+<li> If we have a high probability of large <m>\displaystyle X</m>
+paired with small <m>\displaystyle Y</m> and small <m>\displaystyle
+X</m> paired with large <m>\displaystyle Y</m>, <m>\displaystyle
+\operatorname{cov}(X,Y) \lt 0</m></li>
+</ul>
+</p>-->
+
+<definition xml:id="def-product-moments-mean-4-8-cont">
+<title>product moments about the mean</title>
+<statement>
+<p> The <term><m>\displaystyle r^\text{th}</m> and <m>\displaystyle
+s^\text{th}</m> product moment about the mean</term> of the random
+variables
+<m>\displaystyle X</m> and <m>\displaystyle Y</m>, denoted by
+<m>\displaystyle \mu_{r,s}'</m>, is the expected value of
+<m>\displaystyle (X-\mu_X)^r(Y-\mu_Y)^s</m>; symbolically 
+<me>\mu_{r,s}=E[(X-\mu_X)^r(Y-\mu_Y)^s] = \int\int (x-\mu_X)^r
+(y-\mu_Y)^s\cdot f(x, y)\,dy\,dx</me> <m>\displaystyle r = 0,1,2, \dots</m> and
+<m>\displaystyle s = 0,1,2, \dots</m>
+when <m>\displaystyle X</m> and Y are discrete.
+</p>
+</statement>
+</definition>
+
+
+<p>
+Now would be a good time to review <xref ref="def-covariance-4-9"/>, <xref
+ref="thm-4-11"/>, <xref ref="thm-4-12"/>, <xref ref="rmrk-4-12"/>, and
+<xref ref="thm-4-13"/> all of which apply here as well.
+</p>
+
+
+<!--><definition xml:id="def-covariance-4-9-cont">
+<title>covariance</title>
+
+<statement>
+<p>
+<m>\displaystyle \mu_{1,1}</m> is called the <term>covariance</term> of
+<m>\displaystyle X</m> and <m>\displaystyle Y</m>, and it is denoted by
+<m>\displaystyle \sigma_{XY}</m> or <m>\displaystyle
+\operatorname{cov}(X, Y)</m>, or <m>\displaystyle C(X, Y)</m>.
+</p>
+</statement></definition>
+
+<theorem xml:id="thm-4-11">
+<title>covariance from moments about the origin</title>
+<statement>
+<p>
+<m>\displaystyle \sigma_{XY} = \mu_{1,1}' - \mu_X \mu_Y</m>
+</p>
+</statement></theorem>
+
+<theorem xml:id="thm-4-12">
+<title>independence and covariance</title>
+<statement>
+<p> If <m>\displaystyle X</m> and <m>\displaystyle Y</m> are
+independent, then <me>\displaystyle E[XY] = E[X]\cdot E[Y]</me> and
+<m>\displaystyle \sigma_{XY} = 0</m>.
+</p>
+</statement></theorem>
+
+<remark xml:id="rmrk-4-12">
+In terms of moments,
+<me>\displaystyle\mu_{1,1}' = \mu_{1,0}'\cdot \mu_{0,1}'</me>
+</remark>
+
+<theorem xml:id="thm-4-13">
+<title>product moments of independent random variables</title>
+
+<statement>
+<p> If <m>\displaystyle X_1, X_2, \dots, X_n</m> are independent, then
+<m>\displaystyle E[X_1X_2\cdots X_n] = E[X_1]\cdot
+E[X_2]\cdot\cdots\cdot E[X_n]</m>.
+</p>
+</statement></theorem>-->
+
+<p>Independence means covariance is zero, but covariances of zero does
+not mean independence.
+</p>
+
+</subsection>
+
+<exercises>
+ <exercise>
+ <title>Problem 4.41</title>
+ <statement>
+ <p>If <m>X</m> and <m>Y</m> have the joint probability distribution
+<m>f(x, y) = \dfrac{1}{4}</m> for <m>(-3, -5)</m>,  <m>(-1, -1)</m>, 
+<m>(1, 1)</m>,  <m>(3, 5)</m>, find <m>\operatorname{cov}(X, Y)</m>.
+ </p>
+ </statement>
+ </exercise>
+ 
+ <exercise>
+ <title>Problem 4.45</title>
+ <statement>
+ <p>If <m>X</m> and <m>Y</m> have the joint probability distribution
+ <m>f(-1, 0) = 0</m>,  <m>f(-1, 1) = \dfrac{1}{4}</m>, 
+<m>f(0, 0) = \dfrac{1}{6}</m>, <m>f(1, 0) = \dfrac{1}{12}</m>, <m>f(1,
+1) = \dfrac{1}{2}</m> show that
+<ol>
+<li><p> <m>\operatorname{cov}(X, Y) = 0</m>;</p></li>
+<li><p> the two random variables are not independent.</p></li>
+</ol>
+ </p>
+ </statement>
+ </exercise>
+ 
+ </exercises>
+
+<!-- *********************************** -->
+<!-- *********************************** -->
+<!-- *********************************** -->
+
+<subsection xml:id="sub-moments-linear-combinations">
+<title>Moments of linear combinations of random variables</title>
+<introduction>
+<p>See section 4.7. Recommended problems: 4.7-8 (pg 158) 57 </p>
+</introduction>
+
+<p>
+Now would be a good time to review <xref ref="thm-4-14"/>, <xref
+ref="cor-4-3"/>, <xref ref="ex-var-covar"/>, and
+<xref ref="cor-4-3b"/> all of which apply here as well.
+</p>
+
+<!--><theorem xml:id="thm-4-14-cont">
+<title>variance</title>
+<statement>
+<p> If <m>\displaystyle X_1, X_2, \dots, X_n</m> are random variables
+and <m>\displaystyle Y = \sum_{i=1}^n a_iX_i</m> where <m>\displaystyle
+a_1, a_2, \dots, a_n</m> are constants, then <me> E[Y] = \sum_{i=1}^n
+a_iE[X_i]</me>
+and <me>\operatorname{var}[Y] = \sum_{i=1}^n a_i^2
+\operatorname{var}[X_i] + 2 \mathop{\sum \sum}_{i \lt j} a_i
+a_j\operatorname{cov}[X_i,X_j]</me>.
+</p>
+</statement></theorem>
+
+<corollary xml:id="cor-4-3">
+<title>variance of independent random variables</title>
+<statement>
+<p>
+If <m>\displaystyle X_1, X_2, \dots, X_n</m> are independent random
+variables and <m>\displaystyle Y = \sum_{i=1}^n a_iX_i</m> where
+<m>\displaystyle a_1, a_2, \dots, a_n</m> are constants, then
+<me>\operatorname{var}[Y] = \sum_{i=1}^n
+a_i^2\operatorname{var}[X_i]</me>
+</p>
+</statement></corollary>
+
+<example xml:id="ex-var-covar">
+<title>covariances of linear combinations</title>
+<statement>
+<p>
+Consider three random variables <m>X</m>, <m>Y</m>, and <m>Z</m> with
+<m>\mu_X = 2</m>, with <m>\mu_Y = -3</m>, with <m>\mu_Z = 4</m>; 
+with <m>\sigma_X^2 = 1</m>, <m>\sigma_Y^2 = 5</m>, <m>\sigma_Z^2 =
+2</m>; 
+and <m>\operatorname{cov}(X, Y) = -2</m>, <m>\operatorname{cov}(X, Z) =
+-1</m>, and <m>\operatorname{cov}(Y, Z) = 1</m>.
+</p>
+
+<p>Find <m>\mu_W</m> and <m>\operatorname{var}(W) = \sigma_W^2</m> for
+<m>W = 3X-Y+2Z</m>.</p>
+
+<solution>
+<p> First, <m>\mu_W = (3)\mu_X + (-1)\mu_Y + (2)\mu_Z = 17</m>.
+</p>
+
+<p>We could apply the theorem directly, but we can do this more directly
+with linear algebra. The idea is that we can picture the linear
+combination <m>W = 3X-Y+2Z</m> as <me>W =
+\left[\begin{array}{ccc}3 \amp -1 \amp
+2\end{array}\right]\cdot\left[\begin{array}{c}X \\Y\\
+Z\end{array}\right] = (3)X + (-1)Y + (2)Z
+</me></p>
+
+<p>
+Let <m>a</m> be the row vector <m>a = \left[\begin{array}{ccc}3 \amp -1
+\amp 2\end{array}\right]</m>, 
+its transpose be the column vector <m>a^T</m>, and the matrix
+<m>\Sigma</m> be defined as follows,
+<me>\Sigma = \left[\begin{array}{ccc}
+1 \amp -2 \amp -1\\
+-2 \amp 5 \amp 1\\
+-1 \amp 1 \amp 2
+\end{array}\right]
+</me>
+</p>
+
+<p>
+This approach can be justified by expanding the sums in <xref
+ref="thm-4-14"/> with a sum of 2 random variables. 
+</p>
+
+<p>We can calculate the variance of <m>W</m> by <m>\operatorname{var}(W)
+= a\Sigma a^T</m>. 
+Specifically, <me>a \Sigma a^T = \left[\begin{array}{ccc}3 \amp -1 \amp
+2\end{array}\right]\cdot\left[\begin{array}{ccc}
+1 \amp -2 \amp -1\\
+-2 \amp 5 \amp 1\\
+-1 \amp 1 \amp 2
+\end{array}\right]\cdot\left[\begin{array}{c}3 \\-1\\
+2\end{array}\right]
+</me>
+</p>
+
+<p>Notice <m>Sigma</m> is symmetric and that the covariances lie in
+order along the main diagonal and the variances off-diagonal.</p>
+
+<p>Multiplying the square matrix and column vector first, we have 
+<me>a \Sigma a^T = \left[\begin{array}{ccc}3 \amp -1 \amp
+2\end{array}\right]\cdot\left[\begin{array}{c}3 \\-9\\
+0\end{array}\right]
+</me></p>
+
+<p>And finally, <m>a \Sigma a^T = 18</m>.</p>
+
+</solution>
+</statement></example>
+
+<theorem xml:id="thm-4-15">
+<title>covariance of two linear combinations</title>
+
+<statement>
+<p>
+If <m>\displaystyle X_1, X_2, \dots, X_n</m> are random variables and
+<m>\displaystyle Y_1 = \sum_{i=1}^n a_i X_i \text{ and } Y_2 =
+\sum_{i=1}^n b_iX_i</m> where <m>\displaystyle a_1, a_2, \dots, a_n,
+b_1, b_2, \dots, b_n</m> are constants, then <me>\operatorname{cov}[Y_1,
+Y_2] = \sum_{i=1}^n a_i b_i\operatorname{var}[X_i] + \mathop{\sum
+\sum}_{i \lt j} (a_ib_j + a_jb_i)\operatorname{cov}[X_i,X_j]</me>.
+</p>
+</statement></theorem>
+
+<corollary xml:id="cor-4-3b">
+<statement>
+<p>
+If <m>\displaystyle X_1, X_2, \dots, X_n</m> are independent random
+variables and
+<m>\displaystyle Y_1 = \sum_{i=1}^n a_iX_i \text{ and } Y_2 =
+\sum_{i=1}^n b_iX_i</m>, then <me>\operatorname{cov}[Y_1, Y_2] =
+\sum_{i=1}^n a_i b_i\operatorname{var}[X_i]</me>
+</p>
+</statement></corollary>
+
+The same logic used in <xref ref="ex-var-covar"/> allows us to compute
+the covariance between two linear combinations of random variables
+directly also. Instead of calculating <m>a\Sigma a^T</m> we will
+calculate <m>a \Sigma b^T</m> where <m>b</m> is the vector of
+coefficients of the second linear combination.
+-->
+</subsection>
+<exercises>
+
+ 
+  <exercise>
+ <title>Problem 4.57</title>
+ <statement>
+ <p>If <m>X_1</m>, <m>X_2</m>, <m>X_3</m> are independent and have the
+means <m>4, 9, 3</m> and the variances <m>3, 7, 5</m>, find the mean and
+variance of  show that
+<ol>
+<li><p> <m>Y = 2X_1 - 3X_2 + 4X_3</m>;</p></li>
+<li><p> <m>Z = X_1 + 2X_2 -X_3</m>.</p></li>
+</ol>
+ </p>
+ </statement>
+ </exercise>
+ 
+ 
+</exercises>
+
+<!-- *********************************** -->
+<!-- *********************************** -->
+<!-- *********************************** -->
+
+<subsection xml:id="sub-conditional-expectation">
+<title>Conditional expectation</title>
+<p>See section 4.8.</p>
+
+
+<definition xml:id="def-conditional-expectation-4-10">
+<title>conditional expectation</title>
+<statement>
+<p>If <m>\displaystyle X</m> is a discrete random variable and
+<m>\displaystyle f(x|y)</m> is the value of the conditional probability
+distribution of <m>\displaystyle X</m> given <m>\displaystyle Y = y</m>
+at <m>\displaystyle x</m>, the <term>conditional expectation</term> of
+<m>\displaystyle u(X)</m> given <m>\displaystyle Y = y</m> is 
+<me>E[u(X)|y] = \int u(x)\cdot f(x|y)\,dx</me> and the <term>conditional
+expectation</term> of <m>\displaystyle v(Y)</m> given <m>\displaystyle X
+= x</m> is 
+<me>E[v(Y)|x] = \int v(y)\cdot w(y|x)\,dy</me>
+</p>
+</statement></definition>
+
+<definition xml:id="def-conditional-mean">
+<title>conditional mean</title>
+<statement>
+<p> If <m>\displaystyle X</m> is a discrete random variable and
+<m>\displaystyle f(x|y)</m> is the value of the conditional probability
+distribution of <m>\displaystyle X</m> given <m>\displaystyle Y = y</m>
+at <m>\displaystyle x</m>, the <term>conditional mean</term> of
+<m>\displaystyle u(X) = X</m> given <m>\displaystyle Y = y</m> is 
+<me>\mu_{X|y} = E[X|y] = \int x\cdot f(x|y)\,dx</me> and the
+<term>conditional mean</term> of <m>\displaystyle v(Y) = Y</m> given
+<m>\displaystyle X = x</m> is 
+<me>\displaystyle \mu_{Y|x} = E[Y|x] = \int y\cdot w(y|x)\,dy</me>
+</p>
+</statement></definition>
+
+<definition xml:id="def-conditional-variance">
+<title>conditional variance</title>
+<statement>
+<p>If <m>\displaystyle X</m> is a discrete random variable and
+<m>\displaystyle f(x|y)</m> is the value of the conditional probability
+distribution of <m>\displaystyle X</m> given <m>\displaystyle Y = y</m>
+at <m>\displaystyle x</m>, the <term>conditional variance</term> of
+<m>\displaystyle X</m> given <m>\displaystyle Y = y</m> is 
+<me>\sigma^2_{X|y} = E[(X-\mu_{X|y})^2|y] = E[X^2]-\mu^2_{X|y}</me> and
+the <term>conditional expectation</term> of <m>\displaystyle Y</m> given
+<m>\displaystyle X = x</m> is 
+<me>\displaystyle\sigma^2_{Y|x} = E[(Y-\mu_{Y|x})^2|y] =
+E[Y^2]-\mu^2_{Y|x}</me>
+</p>
+</statement>
+</definition>
+
+
+</subsection>
+
+<!-->
+<exercises>
+ <exercise>
+ <title>4.xx</title>
+ <statement>
+ <p>xx
+ </p>
+ </statement>
+ </exercise>
+ 
+</exercises>
+-->
+</section>
+
+
+<!-- *********************************** -->
+<!-- *********************************** -->
+<!-- *********************************** -->
+
+ <section xml:id="section-special-densities">
+ <title>Special probability densities</title>
+ <introduction>
+ 
+ <p>Some words</p>
+
+</introduction>
+
+<subsection xml:id="sub-continuous-unif">
+ <title>Continuous uniform</title>
+ <p>Some words</p> 
+ 
+ </subsection>
+
+<subsection xml:id="sub-exponential">
+ <title> Exponential family</title>
+ <p>Some words</p> 
+ 
+ </subsection>
+ 
+ <subsection xml:id="sub-beta">
+ <title>Beta distribution</title>
+ <p>Some words</p> 
+ 
+ </subsection>
+ 
+ <subsection xml:id="sub-normal">
+ <title>Normal distribution</title>
+ <p>Some words</p> 
+ 
+ </subsection>
+ <subsection xml:id="sub-normal-approx">
+ <title>Normal approximation to the binomial distribution</title>
+ <p>Some words</p> 
+ 
+ </subsection>
+ 
+  </section>
+
+</chapter>
