@@ -1555,7 +1555,13 @@ other words, maximize <m>b(x; n, \theta)</m> with respect to
 number of successes in a certain amount of trials. Sometimes, instead,
 we are
 interested in the trial on which a particular success occurs.  This is
-described by the negative binomial distribution.</p> </introduction>
+described by the negative binomial distribution.</p>
+
+<p>This situation requires obtaining <m>k-1</m> successes across the
+first <m>x-1</m> trials, with the <m>k^{\text{th}}</m> and final success
+to occur on the <m>x^{\text{th}}</m> trial.</p>
+</introduction>
+
 
 <definition xml:id="def-neg-bin">
 <title>negative binomial distribution</title>
@@ -1603,11 +1609,10 @@ her <m>5^{\text{th}}</m> attempt?
 
 <solution>
 <p>
-We need to calculate <me>b(2; 5, 0.86) = {5\choose2}0.86^2(1-0.86)^{5-2}
-= 10(0.86)^2(0.14)^3</me>.  This calculation corresponds to the ten
-possible orderings of 2 makes in 5 shot attempts, the probabilities
-associated with 2 'makes', and the probabilities associated with 3
-'misses'.
+We need to calculate <me>b^*(5; 3, 0.86) = {5-1\choose3-1}0.86^3(1-0.86)^{5-3}
+= 6(0.86)^3(0.14)^2</me>.  This means <m>2</m> shots were made in the
+first <m>4</m> attempts, followed by the <m>3^{\text{rd}}</m> make on
+the <m>5^{\text{th}}</m> attempt.
 </p>
 </solution>
 </statement>
