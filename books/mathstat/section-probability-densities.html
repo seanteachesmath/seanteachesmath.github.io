@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-08T22:22:33-05:00    *-->
+<!--*    on 2020-04-09T16:34:45-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -95,8 +95,8 @@ MathJax.Hub.Config({
 </li>
 <li class="link">
 <a href="chap-discrete.html" data-scroll="chap-discrete"><span class="codenumber">3</span> <span class="title">Discrete Random Variables</span></a><ul>
-<li><a href="section-probability-distributions.html" data-scroll="section-probability-distributions">Probability distributions</a></li>
 <li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
+<li><a href="section-probability-distributions.html" data-scroll="section-probability-distributions">Probability distributions</a></li>
 <li><a href="section-special-distributions.html" data-scroll="section-special-distributions">Special probability distributions</a></li>
 </ul>
 </li>
@@ -105,6 +105,7 @@ MathJax.Hub.Config({
 <li><a href="section-probability-densities.html" data-scroll="section-probability-densities" class="active">Probability densities</a></li>
 <li><a href="section-continuous-expectation.html" data-scroll="section-continuous-expectation">Expectation of continuous random variables</a></li>
 <li><a href="section-special-densities.html" data-scroll="section-special-densities">Special probability densities</a></li>
+<li><a href="sec-multi-cont.html" data-scroll="sec-multi-cont">Multivariate continuous densities</a></li>
 </ul>
 </li>
 <li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
@@ -150,60 +151,7 @@ F(x) = P(X \le x) = \int_{\infty}^x f(t) \,dt \text{for} -\infty \lt x
 <li id="li-41">\(F(-\infty) = 0\) and \(F(\infty) = 1\) (more carefully stated as \(\lim_{x\to-\infty}F(x) = 0\) and \(\lim_{x\to\infty}
 F(x) = 1\));</li>
 <li id="li-42">if \(a \le b\text{,}\) then \(F(a) \le F(b)\) for any real numbers \(a\) and \(b\)</li>
-</ol></article></section><section class="subsection" id="sub-cont-multi-variable"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">4.1.2</span> <span class="title">Multivariate distributions</span>
-</h3>
-<a href="section-probability-densities.html#sub-cont-multi-variable" class="permalink">¶</a><section class="introduction" id="introduction-20"><p id="p-222">Some words.</p></section><article class="definition definition-like" id="def-joint-probability-density-3-6-cont"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">joint probability density.</span>
-</h6>
-<p id="p-223">If \(X\) and \(Y\) are continuous random variables, the function given by \(f(x,y) = P(X=x, Y=y)\) for each pair of values \((x,y)\) within the range of \(X\) and \(Y\) is called the <dfn class="terminology">joint probability density</dfn> of \(X\) and \(Y\text{.}\)</p></article><article class="theorem theorem-like" id="thm-continuous-th-3-7-cont"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">conditions for a joint probability density.</span>
-</h6>
-<p id="p-224">A bivariate function can serve as a joint probability density for a pair of continuous random variables \(X\) and \(Y\) if and only if its values, \(f(x, y)\text{,}\) satisfy the conditions</p>
-<ol class="decimal">
-<li id="li-43">\(f(x, y) \ge 0\) for each pair of values \((x, y)\) within its domain;</li>
-<li id="li-44">\(\int\int f(x, y) \,dy\,dx= 1\) where <em class="emphasis">the double summation extends over all possible pairs</em> \((x, y)\text{.}\)</li>
-</ol></article><article class="definition definition-like" id="def-joint-density-function-3-7-cont"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">joint distribution function (continuous).</span>
-</h6>
-<p id="p-225">If \(X\) and \(Y\) are continuous random variables, the function given by</p>
-<div class="displaymath">
-\begin{equation*}
-F(x, y) = P(X \le x, Y \le y) = \int\int f(s, t)
-\,ds\,dt\text{ for } \infty \lt x, y \lt \infty
-\end{equation*}
-</div>
-<p data-braille="continuation">where \(f(s,
-t)\) is the value of the joint probability density of \(X\) and \(Y\) at \((s, t)\text{,}\) is called the <dfn class="terminology">joint density function</dfn> or <dfn class="terminology">joint cumulative density</dfn> of \(X\) and \(Y\text{.}\)</p></article><article class="definition definition-like" id="def-marginal-density-3-10-cont"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">marginal density.</span>
-</h6>
-<p id="p-226">If \(X\) and \(Y\) are continuous random variables and \(f(x,
-y)\) is the value of their joint probability density at \((x, y)\text{,}\) the function given by</p>
-<div class="displaymath">
-\begin{equation*}
-g(x) = \int f(x, y)\, dy
-\end{equation*}
-</div>
-<p data-braille="continuation">for each \(x\) within the range of \(X\) is called the <dfn class="terminology">marginal density</dfn> of \(X\text{.}\) Correspondingly, the function given by</p>
-<div class="displaymath">
-\begin{equation*}
-h(y) = \int f(x, y)\,dx
-\end{equation*}
-</div>
-<p data-braille="continuation">for each \(y\) within the range of \(Y\) is called the <dfn class="terminology">marginal density</dfn> of \(Y\text{.}\)</p></article><article class="definition definition-like" id="def-conditional-density-3-10-cont"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">conditional density.</span>
-</h6>
-<p id="p-227">conditional density</p>
-<div class="displaymath">
-\begin{equation*}
-f(x|y) = \dfrac{f(x, y)}{h(y)}, h(y)\ne 0
-\end{equation*}
-</div>
-<div class="displaymath">
-\begin{equation*}
-w(y|x) = \dfrac{f(x, y)}{g(x)}, g(x)\ne 0
-\end{equation*}
-</div></article></section></section></div></main>
+</ol></article></section></section></div></main>
 </div>
 </body>
 </html>
