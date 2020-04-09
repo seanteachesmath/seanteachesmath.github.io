@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-09T16:34:46-05:00    *-->
+<!--*    on 2020-04-09T17:25:59-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,40 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Recall that the Maclaurin series (Taylor series around zero) for \(\displaystyle e^{tx}\) is</p>
-<div class="displaymath">
-\begin{equation*}
-e^{tx} = 1 + tx +
-\frac{1}{2!}\left(tx\right)^2 + \frac{1}{3!}\left(tx\right)^3 + \cdots +
-\frac{1}{r!}\left(tx\right)^r + \cdots
-\end{equation*}
-</div>
-<p data-braille="continuation">This means (in the discrete case), that</p>
+<p>Recall the probability distribution \(f(x) = P(X = x) =
+\dfrac{{3\choose x}}{8} \text{ for } x = 0, 1, 2, 3\) (this was used earlier to determine the probabilities of \(x\) heads on three flips of a coin).</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}[t]
 M_X(t) \amp = \sum_x e^{tx} f(x)\\
-\amp = \sum_x \left(1 + tx + \frac{1}{2!}(tx)^2 +
-\frac{1}{3!}\left(tx\right)^3 + \cdots + \frac{1}{r!}\left(tx\right)^r +
-\cdots\right) f(x)\\
-\amp = \sum_x (f(x) + txf(x) + \frac{t^2}{2!}x^2f(x) +
-\frac{t^3}{3!}x^3f(x) + \cdots + \frac{t^r}{r!}x^rf(x) + \cdots)\\
-\amp = \sum_xf(x) + t\sum_x xf(x) + \frac{t^2}{2!}\sum_x x^2f(x) +
-\frac{t^3}{3!}\sum_x x^3f(x) + \cdots + \frac{t^r}{r!}\sum_x x^rf(x) +
-\cdots
+\amp = 1 \cdot \frac{1}{8} + e^{t} \cdot \frac{3}{8}+ e^{2t} \cdot
+\frac{3}{8} + e^{3t} \cdot \frac{1}{8}\\
+\amp = \frac{1}{8} \left(1 + 3e^{t} + 3e^{2t} + e^{3t}\right)\\
+M_X(t) \amp = \frac{1}{8} (1+e^t)^3\\
 \end{aligned}
 \end{equation*}
 </div>
-<p data-braille="continuation">Looking closely, at</p>
-<div class="displaymath">
-\begin{equation*}
-M_X(t) = \sum_xf(x) + \left(\sum_x xf(x)\right)t
-+ \left(\sum_x x^2f(x)\right)\frac{t^2}{2!} + \left(\sum_x
-x^3f(x)\right)\frac{t^3}{3!} + \cdots + \left(\sum_x
-x^rf(x)\right)\frac{t^r}{r!} + \cdots
-\end{equation*}
-</div>
-<p data-braille="continuation">coefficients of the terms \(\displaystyle \dfrac{t^r}{r!}\) are the moments about the origin \(\displaystyle \mu_r' = \sum_x x^r f(x)\)</p>
 <span class="incontext"><a href="section-discrete-expectation.html#p-40">in-context</a></span>
 </body>
 </html>
