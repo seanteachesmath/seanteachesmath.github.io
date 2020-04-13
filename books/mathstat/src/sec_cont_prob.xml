@@ -14,20 +14,65 @@
  <title>Univariate distributions</title>
  
 <introduction>
-<p> See sections 3.1, 3.2. Recommended problems: (pg80)1,3,4ab,5,6,7a</p>
+<p> See sections 3.4. Recommended problems: (pg80)1,3,4ab,5,6,7a</p>
+
+<p>Probability distributions for discrete random variables assign
+probability to discrete values, but for continuous random variables,
+probabilities are only assigned to intervals.</p>
+
 </introduction>
 
 <definition xml:id="def-continuous-probability-density-3-2">
-<title>probability density</title>
+<title>Probability density function</title>
 <statement>
 <p>
-If <m>X</m> is a continuous random variable, the function given by
+A function with values <m>f(x)</m>, defined over the set of all real
+numbers is called <em>a</em> <term>
+probability density function</term> of the continuous random variable
+<m>X</m> if and only if <me>P(a \lt x \lt b) = \int_a^b f(x)\,dx</me>
+for any real <m>a</m> and <m>b</m> such that <m>a \lt b</m>.<!--If
+<m>X</m> is a continuous random variable, the function given by
 <m>f(x) = P(X = x)</m> for each <m>x</m> within the range of <m>X</m> is
-called the <term>probability density</term>.
+called the <term>probability density</term>.-->
 </p>
 </statement>
 </definition>
 
+<remark xml:id="rmk-pdf">
+<statement>
+<p>
+A probability density function is often referred to as simply a density
+function or a p.d.f.
+</p>
+</statement>
+</remark>
+
+<p>Do not assume that <m>f(c)></m> gives <m>P(X) = c</m>. A density is
+not a probability, it is a probability density. Since probabilities of
+continuous random variables are associated with intervals, <me>\int_c^c
+f(x)\,dx = 0</me>.</p>
+
+<remark xml:id="rmk-pdf-nonuniqueness">
+<statement>
+<p>
+The value of a p.d.f. can be changed for some values of a random
+variable without changing the associated probabilities.  Notice that
+<xref ref="def-continuous-probability-density-3-2"/> specifies
+<em>a</em>, not <em>the</em> p.d.f.
+</p>
+</statement>
+</remark>
+
+<theorem xml:id="thm-continuous-point">
+<title>probability density at a point</title>
+<statement>
+<p>If <m>X</m> is a continuous random variable and <m>a</m> and <m>b</m>
+are real numbers such that <m>a \lt b</m> then,
+<me>P(a \lt X \lt b) = P(a \le X \lt b) = P(a \lt X \le b) = P(a \le X
+\le b)</me>
+</p>
+</statement>
+</theorem>
 
 <theorem xml:id="thm-continuous-conditions-3-1">
 <title>conditions for probability density</title>
@@ -44,12 +89,104 @@ the conditions
 </theorem>
 
 
+
+<example xml:id="ex-exponential">
+<title>specifying an exponential probability density</title>
+<statement>
+<p> Find <m>k</m> such that <me>f(x) = \begin{cases}ke^{-3x},\amp \quad
+x \gt
+0\\ 0, \amp \quad \text{otherwise}\end{cases}</me> can serve as the
+p.d.f. for
+<m>X</m>.
+</p>
+<p>Note in the definition of <m>f(x)</m> that <m>f(x) = 0</m> for <m>x
+\le 0</m>.</p>
+<solution>
+<p>
+The strategy is to integrate to find the total area then choose <m>k</m>
+appropriately.
+<me>
+\begin{aligned}[t]
+\int_{-\infty}^\infty f(x)\,dx \amp = \int_{-\infty}^0 f(x)\,dx +
+\int_{0}^\infty f(x)\,dx \\
+\amp = \int_{-\infty}^0 0\,dx + \int_{0}^\infty ke^{-3x}\,dx \\
+\amp = 0 + \int_{0}^\infty ke^{-3x}\,dx \\
+\amp = \lim_{t\to\infty} \Big(\dfrac{k}{-3}e^{-3x}\Big|_0^t\Big) \\
+\amp = \lim_{t\to\infty} \Big(\dfrac{k}{-3}e^{-3t} - \dfrac{k}{-3}e^{0}
+\Big) \\
+\int_{-\infty}^\infty f(x)\,dx\amp = \dfrac{k}{3}
+\end{aligned}
+</me>
+For <m>f(x)</m> to satisfy <xref ref="thm-continuous-conditions-3-1"/>,
+we much choose <m>k=3</m> so that the value of the integral is <m>1</m>.
+</p>
+</solution>
+</statement>
+</example>
+
+<example xml:id="ex-exponential2">
+<title>using exponential probability density</title>
+<statement>
+<p> Using the value of <m>k</m> found in <xref ref="ex-exponential"/>
+which ensures that <me>f(x) = \begin{cases}ke^{-3x},\amp \quad x \gt 0\\
+0,
+\amp \quad \text{otherwise}\end{cases}</me> can serve as the p.d.f. for
+<m>X</m>, find <m>P(X \lt \sfrac{1}{2})</m>.
+</p>
+<p>Recall we found that <m>k=3</m>.</p>
+<solution>
+<p>
+The strategy is to integrate to find the corresponding definite integral
+according to <xref ref="def-continuous-probability-density-3-2"/>.
+<me>
+\begin{aligned}[t]
+\int_{-\infty}^{\sfrac{1}{2}} f(x)\,dx \amp = \int_{-\infty}^0 0\,dx +
+\int_{0}^{\sfrac{1}{2}} 3e^{-3x}\,dx \\
+\amp = 0 + \Big(-e^{-3x}\Big|_0^{\sfrac{1}{2}}\Big) \\
+\amp = \Big(-e^{-3(\sfrac{1}{2})}\Big) - \Big(-e^{-3(0)}\Big) \\
+\amp = 1- e^{-1.5} \approx 0.7769
+\end{aligned}
+</me>
+Recall, this is the area under the curve traced by the graph of
+<m>f(x)</m> between <m>x=0</m> and <m>x=\sfrac{1}{2}</m>.
+</p>
+</solution>
+</statement>
+</example>
+
+<example xml:id="ex-hat">
+<title>a hat-shaped probability density</title>
+<statement>
+<p> Consider <me>f(x) = \begin{cases}x,
+\amp \quad 0 \lt x \lt 1\\
+2-x, \amp \quad 1 \le x \lt 2\\
+0, \amp \quad \text{otherwise}\\
+\end{cases}</me> as the p.d.f. for
+<m>X</m>, and use it to find <m>P(0 \lt X \lt 0.5)</m>, <m>P(X=1)</m>, and <m>P(0.5 \lt X \lt
+1.5)</m>.
+</p>
+<hint>
+<p>
+The strategy is to integrate to find the corresponding definite integral
+according to <xref ref="def-continuous-probability-density-3-2"/>.
+<me>f(x) = \begin{cases}x,
+\amp \quad 0 \lt x \lt 1\\
+2-x, \amp \quad 1 \le x \lt 2\\
+0, \amp \quad \text{otherwise}\\
+\end{cases}</me>
+</p>
+</hint>
+</statement>
+</example>
+
 <definition xml:id="def-continuous-distribution-function-3-3">
 <statement>
 <p>
 If <m>X</m> is a continuous random variable, the function given by
-<me>F(x) = P(X \le x) = \int_{\infty}^x f(t) \,dt \text{ for } -\infty \lt x
-\lt \infty</me> where <m>f(t)</m> is the value of the probability density
+<me>\displaystyle F(x) = P(X \le x) = \int_{\infty}^x f(t) \,dt \text{
+for } -\infty \lt x
+\lt \infty</me> where <m>f(t)</m> is the value of the probability
+density
 of <m>X</m> at <m>t</m>, is called the <term>distribution
 function</term>, or the <term>cumulative distribution (function)</term>,
 of <m>X</m>. 
@@ -58,16 +195,106 @@ of <m>X</m>.
 </definition>
 
 
+<exercise xml:id="exer-exponential-cdf">
+<title>finding an exponential cumulative distribution function</title>
+<statement>
+<p> Using the value of <m>k</m> found in <xref ref="ex-exponential"/>
+which ensures that <me>f(x) = \begin{cases}ke^{-3x},\amp \quad x \gt 0\\
+0,
+\amp \quad \text{otherwise}\end{cases}</me> can serve as the p.d.f. for
+<m>X</m>, find <m>F(x) = P(X \lt x)</m>.
+</p>
+<p>Recall we found that <m>k=3</m>.</p>
+<hint><p>Set up and find the integral in <xref
+ref="def-continuous-distribution-function-3-3"/>.</p>
+</hint>
+</statement>
+</exercise>
+
+
+<example xml:id="ex-hat-cdf">
+<title>cumulative distribution for a hat-shaped probability
+density</title>
+<statement>
+<p> Find <m>F(x)</m> for <me>f(x) = \begin{cases}x,
+\amp \quad 0 \lt x \lt 1\\
+2-x, \amp \quad 1 \le x \lt 2\\
+0, \amp \quad \text{otherwise}\\
+\end{cases}</me>
+</p>
+<hint><p>Set up and find the integral in <xref
+ref="def-continuous-distribution-function-3-3"/>.
+<me>f(x) = \begin{cases}
+x, \amp \quad 0 \lt x \lt 1\\
+2-x, \amp \quad 1 \le x \lt 2\\
+0, \amp \quad \text{otherwise}\\
+\end{cases}</me>
+</p> 
+</hint>
+
+<solution>
+<p>
+For <m> x \lt 0</m>, <m>F(x) = 0</m> (no area has yet been accumulated).
+ Now things get interesting.  For <m> 0 \le x \lt 1</m>, we integrate
+<m>f(t)</m> to a variable limit of integration <m>x</m>.
+<me>
+\begin{aligned}[t]
+\int_0^x t\,dt \amp = \Big(\dfrac{t^2}{2}\Big)\Big|_0^x\\
+			 \amp = \Big(\dfrac{x^2}{2} - \dfrac{0^2}{2}\Big)\\
+\int_0^x t\,dt \amp = \dfrac{x^2}{2}
+\end{aligned}
+</me>
+For <m> 1 \le x \lt 2</m>, we integrate <m>f(t)</m> to a variable limit
+of integration <m>x</m>.
+<me>
+\begin{aligned}[t]
+\int_1^x 2-t\,dt \amp = \Big(2t-\dfrac{t^2}{2}\Big)\Big|_0^x\\
+			 \amp = \Big(\Big(2x - \dfrac{x^2}{2}\Big) - \Big(2(1) -
+\dfrac{1^2}{2}\Big)\Big)\\
+\int_1^x t\,dt \amp = 2x - \dfrac{x^2}{2} - \dfrac{3}{2}
+\end{aligned}
+</me>
+It is important here to remember that in writing <m>F(x)</m> for points
+in <m>1 \le x \lt 2</m>, the complete area from <m>0 \le x \lt 1</m> has
+already been accumulated in full.
+Beyond <m>x = 2</m>, all area under <m>f(x)</m> has been accumulated. In
+other words for a point in <m>1 \le x \lt 2</m>, <me>
+\begin{aligned}[t] 
+\int_0^x f(t)\,dt \amp = \int_0^1 t\,dt + \int_1^x 2-t\,dt\\
+\amp = \dfrac{1}{2} + 2x - \dfrac{x^2}{2} - \dfrac{3}{2}\\
+\amp = 1 + 2x - \dfrac{x^2}{2}
+\end{aligned}
+</me> With this in mind 
+we have
+
+<me>F(x) = \begin{cases}
+0,\amp \quad x \lt 0\\
+\dfrac{x^2}{2}, \amp \quad 0 \le x \lt 1\\
+1 + 2x - \dfrac{x^2}{2}, \amp \quad 1 \le x
+\lt 2\\
+1, \amp \quad 2 \le x
+\end{cases}</me>
+</p> 
+</solution>
+</statement>
+</example>
+
+<p>The considerations made in calculating the formula for <m>F(x)</m> in
+the interval <m>1 \le x</m> have tremendous implications for how we
+approach jointly-distributed random variables in <xref
+ref="sec-multi-cont"/>, let this serve as a <alert>warning</alert>.</p>
 
 <theorem xml:id="thm-continuous-th-3-2">
 <title>distribution function (continuous)</title>
 <statement>
 <p>
-The values <m>F(x)</m> of the distribution function of a continuous random
+The values <m>F(x)</m> of the distribution function of a continuous
+random
 variable <m>X</m> satisfy the conditions
 <ol>
 <li> <m>F(-\infty) = 0</m> and <m>F(\infty) = 1</m> (more carefully
-stated as <m>\lim_{x\to-\infty}F(x) = 0</m> and <m>\lim_{x\to\infty}
+stated as <m>\displaystyle\lim_{x\to-\infty}F(x) = 0</m> and
+<m>\displaystyle\lim_{x\to\infty}
 F(x) = 1</m>);</li>
 <li> if <m>a \le b</m>, then <m>F(a) \le F(b)</m> for any real numbers
 <m>a</m> and <m>b</m></li>
@@ -75,11 +302,67 @@ F(x) = 1</m>);</li>
 </p>
 </statement>
 </theorem>
+
+<p>
+Given a cumulative distribution function of a continuous random
+variable, the construction of a probability density function, is much
+easier than the construction of a probability mass function, from its
+cumulative distribution function. For continuous random variables we
+will
+assume that the function <m>f(x)</m> is continuous and also
+differentiable every but perhaps at a finite set of values.</p>
+
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+
+<theorem xml:id="thm-pdf-cdf">
+<title>density from distribution function</title>
+<statement>
+<p>
+If <m>f(x)</m> and <m>F(x)</m> are the values of the p.d.f. and c.d.f of
+<m>X</m> at <m>x</m>, then 
+<me>P(a \lt X \lt b) = F(b) - F(a)</me> for any real constants <m>a \lt
+b</m> and <me>f(x) = \dfrac{dF}{dx}</me> where the derivative exists.
+</p>
+</statement>
+</theorem>
+
+<example xml:id="ex-F-to-f">
+<title>a ramp-shaped cumulative distribution</title>
+<statement>
+<p>
+Consider <me>F(x) = \begin{cases}0, \amp \quad x \lt -1\\\dfrac{x+1}{2},
+\amp \quad -1 \le x \lt 1\\ 1, \amp \quad 1 \le x\end{cases}</me>.
+
+Notice that <m>F(x)</m> is not differentiable at <m>x = \pm 1</m> where
+the graph displays corners. </p>
+
+<solution>
+<p>
+For <m>x \lt -1</m>, <me>f(x) = \dfrac{d}{dx}\Big(0\Big) = 0</me>.
+For <m>-1 \le x \lt 1</m>, <me>f(x) =
+\dfrac{d}{dx}\Big(\dfrac{x+1}{2}\Big) = \sfrac{1}{2}</me>.
+For <m>1 \le x</m>, <me>f(x) = \dfrac{d}{dx}\Big(1\Big) = 0</me>.
+</p>
+
+<p>Based on the work above, <me>f(x) = \begin{cases}0, \amp \quad x \lt
+-1\\\sfrac{1}{2}, \amp \quad -1 \le x \lt 1\\ 0, \amp \quad 1 \le
+x\end{cases}</me>.</p>
+
+<p>Since the value of the function at a single point, such as an
+endpoint,does not affect the value of probabilities, we will adopt the
+convention of specifying the non-zero part of the density on an open
+interval.  This means we take <m>f(-1)=f(1)=0</m>. Thus we have,
+<me>f(x) = \begin{cases}\sfrac{1}{2}, \amp \quad -1 \lt x \lt 1\\ 0,
+\amp \quad
+\text{otherwise}\end{cases}</me>.</p>
+
+</solution>
+</statement>
+</example>
+
+
 </subsection>
-
-<!-- ....... .............. .............. ....... -->
-<!-- ....... .............. .............. ....... -->
-<!-- ....... .............. .............. ....... -->
-
 
 </section>

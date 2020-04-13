@@ -5,8 +5,8 @@
 <introduction>
 
 <p> This is the start of Chapter 4 in Freund's Mathematical Statistics.
-In the first pass we will study the major topics of this chapter with a
-focus on those applying to discrete random variables. </p>
+Now we will study the major topics of this chapter with a
+focus on those applying to continuous random variables. </p>
 </introduction>
 
 <!-- *********************************** -->
@@ -15,7 +15,8 @@ focus on those applying to discrete random variables. </p>
 
 <subsection xml:id="sub-expectation">
 <title>Expected value</title>
-<p>See section 4.1 - 4.2. Recommended problems: (pg 136) 7, 9, 10, 11, (pg 161) 60
+<p>See section 4.1 - 4.2. Recommended problems: (pg 136) 7, 9, 10, 11,
+(pg 161) 60
 </p>
 
 
@@ -31,9 +32,42 @@ of <m>X</m> is given by
 </statement>
 </definition>
 
+<example xml:id="ex-cont-exp">
+<title>expected value (continuous)</title>
+<statement>
+<p>
+Consider the probability density given below <me>f(x) = \begin{cases}x,
+\amp \quad 0 \lt x \lt 1\\
+2-x, \amp \quad 1 \le x \lt 2\\
+0, \amp \quad \text{otherwise}\\
+\end{cases}</me>
+Find <m>E[X]</m>.
+</p>
+
+<solution>
+<me>
+\begin{aligned}[t]
+E[X] \amp = \int_{-\infty}^\infty x\cdot f(x)\,dx\\
+ \amp = \int_{-\infty}^0 0\,dx + \int_{0}^1 \underbrace{x\cdot
+x}_{x^2}\,dx + \int_{1}^2 \underbrace{x\cdot(2-x)}_{2x-x^2}\,dx +
+\int_2^{\infty} 0\,dx\\
+ \amp = 0 + \int_{0}^1 x^2\,dx + \int_{1}^2 2x-x^2\,dx + 0\\
+ \amp = \Big(\dfrac{x^3}{3}\Big)\Big|0^1 +
+\Big(x^2-\dfrac{x^3}{3}\Big)\Big|1^2\\
+ \amp = \Big(\dfrac{1}{3} - 0\Big) + \Big(\Big(4-\dfrac{8}{3}\Big) -
+\Big(1-\dfrac{1}{3}\Big)\Big)\\ 
+E[X] \amp = 1
+\end{aligned}
+</me>
+</solution>
+
+</statement>
+</example>
+
 <theorem
 xml:id="thm-expected-value-function-random-variable-4-1-cont">
-<title>expected value of a function of a random variable (continuous)</title>
+<title>expected value of a function of a random variable
+(continuous)</title>
 <statement>
 <p>
 If <m>X</m> is a continuous random variable and <m>f(x)</m> is the value
@@ -46,9 +80,32 @@ of its probability density at <m>x</m>, the expected value of
 
 <p>
 Now would be a good time to review <xref ref="thm-4-2"/>, <xref
-ref="cor-4-1"/>, <xref ref="cor-4-2"/>, and <xref ref="thm-4-5"/>, all of which apply here as well.
+ref="cor-4-1"/>, <xref ref="cor-4-2"/>, and <xref ref="thm-4-5"/>, all
+of which apply here as well.
+
+Recall, certain choices of <m>g(x)</m> in <xref
+ref="thm-expected-value-function-random-variable-4-1-cont"/> give us the
+mean, variance, and other special moments.
 </p>
 
+<p> While we are at it, consider <xref ref="thm-4-2"/> which suggested
+that <m>E[aX+b] = aE[X]+b</m>. Defining expectation by integration gives
+a more convenient means of proving this statement.
+<proof xml:id="proof-thm-4-2">
+<me>
+\begin{aligned}[t]
+E[aX+b] \amp = \int_{-\infty}^\infty (ax+b)\cdot f(x)\,dx\\
+\amp = \int_{-\infty}^\infty ax\cdot f(x)\,dx + \int_{-\infty}^\infty
+b\cdot f(x)\,dx\\
+\amp = a\int_{-\infty}^\infty x\cdot f(x)\,dx + b\int_{-\infty}^\infty
+\cdot f(x)\,dx\\
+\amp = aE[x] + b
+\end{aligned}
+</me>
+</proof>
+Notice that the second of these integrals is <m>1</m> since <m>f(x)</m>
+is a probability density function.
+</p>
 <!-->
 <theorem xml:id="thm-continuous-th4-2">
 <p> If <m>a</m> and <m>b</m> are constants, then
@@ -68,47 +125,9 @@ ref="cor-4-1"/>, <xref ref="cor-4-2"/>, and <xref ref="thm-4-5"/>, all of which 
 </p>
 </corollary>-->
 
-<theorem xml:id="thm-expected-value-joint-random-variables-4-4-cont">
-<title>expected value of joint random variables (continuous)</title>
-<statement>
-<p>
-If <m>X</m> and <m>Y</m> are continuous random variables and <m>f(x,
-y)</m> is the value of their joint probability density at <m>(x, y)</m>,
-the expected value of <m>g(X, Y)</m> is given by
-<me>E[g(X, Y)] = \int\int g(x, y)\cdot f(x,y)\,dx\,dy</me>
-</p>
-</statement>
-</theorem>
-
-<!-->
-<theorem xml:id="thm-continuous-4-5">
-<p> If <m>c_1, c_2, \dots, c_n</m> are constants, then
-<me>E\left[\sum_{i=1}^n c_i g_i(X_1, X_2, \dots, X_k)\right] =
-\sum_{i=1}^n c_i E\left[g_i(X_1, X_2, \dots, X_k)\right]</me>
-</p>
-</theorem>
--->
 </subsection>
-<!-- See section 4.1 - 4.2. Recommended problems: (pg 136) disc: 9, (pg 161) 60, cont: 7, 10, 11 -->
-<exercises>
- <exercise>
- <title>Problem 4.9</title>
- <statement>
- <p>Suppose that <m>X</m> takes on values <m>0, 1, 2, 3</m> with
-probabilities <m>\dfrac{1}{125}, \dfrac{12}{125}, \dfrac{48}{125},
-\dfrac{64}{125}</m>
-  <ol>
-<li><p> Find <m>E[X]</m> and <m>E[X^2]</m></p></li>
-<li><p> Determine the value of <m>E[(3X + 2)^2]</m></p></li>
-</ol>
- </p>
- </statement>
- </exercise>
- 
- 
- 
-</exercises>
-<!-- See section 4.1 - 4.2. Recommended problems: (pg 136) disc: 9, (pg 161) 60, cont: 7, 10, 11 -->
+<!-- See section 4.1 - 4.2. Recommended problems: (pg 136) disc: 9, (pg
+161) 60, cont: 7, 10, 11 -->
 <exercises>
  <exercise>
  <title>Problem 4.7</title>
@@ -161,7 +180,8 @@ probabilities <m>\dfrac{1}{125}, \dfrac{12}{125}, \dfrac{48}{125},
 
 <subsection xml:id="sub-moments-cont">
 <title>Expected value</title>
-<p>See section 4.3. Recommended problems: 4.3 (pg 146) 20, 22, 23, 31, 33, 34, 40, (pg 162) 69, 73, 75
+<p>See section 4.3. Recommended problems: 4.3 (pg 146) 20, 22, 23, 31,
+33, 34, 40, (pg 162) 69, 73, 75
 </p>
 
 <definition xml:id="def-moments-about-origin-4-2-cont">
@@ -171,7 +191,8 @@ probabilities <m>\dfrac{1}{125}, \dfrac{12}{125}, \dfrac{48}{125},
 The <m>r^\text{th}</m> <term>moment about the origin</term> of a random
 variable <m>X</m>, denoted by <m>\mu_r'</m>, is the expected value of
 <m>(X)^r</m>; symbolically
-<me>\mu_r'=E[(X)^r] = \int_{-\infty}^\infty x^r\cdot f(x)\,dx</me> for <m>r = 0,1,2,
+<me>\mu_r'=E[(X)^r] = \int_{-\infty}^\infty x^r\cdot f(x)\,dx</me> for
+<m>r = 0,1,2,
 \dots</m> when <m>X</m> is continuous.
 </p>
 </statement>
@@ -189,14 +210,37 @@ by <m>\mu</m>.
 <statement>
 <p>
 The <m>\displaystyle r^\text{th}</m> <term>moment about the
-mean</term> of a random variable <m>\displaystyle X</m>, denoted by
+mean</term> of a random variable <m>X</m>, denoted by
 <m>\displaystyle \mu_r</m>, is the expected value of <m>\displaystyle
 (X-\mu)^r</m>; symbolically
-<me>\mu_r=E[(X-\mu)^r] = \int_{-\infty}^\infty (x-\mu)^r\cdot f(x)\,dx</me> for
+<me>\mu_r=E[(X-\mu)^r] = \int_{-\infty}^\infty (x-\mu)^r\cdot
+f(x)\,dx</me> for
 <m>\displaystyle r =
-0,1,2, \dots</m> when <m>\displaystyle X</m> is discrete.
+0,1,2, \dots</m> when <m>X</m> is discrete.
 </p>
-</statement></definition>
+</statement>
+</definition>
+
+<example xml:id="ex-poly">
+<title> <m>8^{\text{th}}</m>-order polynomial density</title>
+<statement>
+<p>
+Consider <me>f(x) = \begin{cases}630x^4(1-x)^4, \amp \quad 0 \lt x \lt
+1\\ 0, \amp \quad
+\text{otherwise}\end{cases}</me>
+Find <m>\mu</m> and <m>\sigma^2</m>.
+</p>
+<hint>
+<p>
+It is recommended that you expand the term <m>(1-x)^4</m>.  Doing
+that, and carefully integrating, you should find <m>\mu =
+\sfrac{1}{2}</m>. Additionally, by finding <m>\mu_2' = E[X^2] =
+\sfrac{3}{11}</m>, you will be able to use <me>\sigma^2 = \mu_2' -
+(\mu)^2</me> to find the variance is <m>\sigma^2 = \sfrac{1}{44}</m>.
+</p>
+</hint>
+</statement>
+</example>
 </subsection>
 
 <!-- Recommended problems: 4.3 (pg 146) disc: 23; cont: 20, 22, 31, -->
@@ -204,7 +248,8 @@ mean</term> of a random variable <m>\displaystyle X</m>, denoted by
  <exercise>
  <title>Problem 4.20</title>
  <statement>
- <p><!--Find <m>\mu</m>, <m>\mu_2'</m>, and <m>\sigma^2</m> for the random
+ <p><!--Find <m>\mu</m>, <m>\mu_2'</m>, and <m>\sigma^2</m> for the
+random
 variable <m>X</m> that has probability distribution <m>f(x) = 0.5 \text{
 for } x= \pm 2</m>.-->
  </p>
@@ -214,7 +259,8 @@ for } x= \pm 2</m>.-->
   <exercise>
  <title>Problem 4.22</title>
  <statement>
- <p><!--Find <m>\mu</m>, <m>\mu_2'</m>, and <m>\sigma^2</m> for the random
+ <p><!--Find <m>\mu</m>, <m>\mu_2'</m>, and <m>\sigma^2</m> for the
+random
 variable <m>X</m> that has probability distribution <m>f(x) = 0.5 \text{
 for } x= \pm 2</m>.-->
  </p>
@@ -224,7 +270,8 @@ for } x= \pm 2</m>.-->
   <exercise>
  <title>Problem 4.31</title>
  <statement>
- <p><!--Find <m>\mu</m>, <m>\mu_2'</m>, and <m>\sigma^2</m> for the random
+ <p><!--Find <m>\mu</m>, <m>\mu_2'</m>, and <m>\sigma^2</m> for the
+random
 variable <m>X</m> that has probability distribution <m>f(x) = 0.5 \text{
 for } x= \pm 2</m>.-->
  </p>
@@ -248,8 +295,10 @@ for } x= \pm 2</m>.-->
 <p>If <m>\mu</m> and <m>\sigma</m> are the mean and the standard
 deviation of a random variable <m>X</m>, then for any positive constant
 <m>k</m> the probability is <em>at least</em> <m>1-\dfrac{1}{k^2}</m>
-that <m>X</m> will take on a value within <m>k</m> standard deviations of
-the mean; symbolically <me>P(|x-\mu| \lt k\sigma) \ge 1 - \dfrac{1}{k^2}, \sigma \ne 0</me>
+that <m>X</m> will take on a value within <m>k</m> standard deviations
+of
+the mean; symbolically <me>P(|x-\mu| \lt k\sigma) \ge 1 -
+\dfrac{1}{k^2}, \sigma \ne 0</me>
 </p>
 </statement></theorem>
 
@@ -263,7 +312,8 @@ that the value of the random variable is within a certain distance
  <exercise>
  <title>Problem 4.20</title>
  <statement>
- <p><!--Find <m>\mu</m>, <m>\mu_2'</m>, and <m>\sigma^2</m> for the random
+ <p><!--Find <m>\mu</m>, <m>\mu_2'</m>, and <m>\sigma^2</m> for the
+random
 variable <m>X</m> that has probability distribution <m>f(x) = 0.5 \text{
 for } x= \pm 2</m>.-->
  </p>
@@ -287,55 +337,74 @@ for } x= \pm 2</m>.-->
 
 <statement>
 <p> The <term>moment-generating function</term> of a random variable
-<m>\displaystyle X</m>, where it exists, is given by <me>\displaystyle
+<m>X</m>, where it exists, is given by <me>\displaystyle
 M_X(t) = E[e^{tX}] = \int_{-\infty}^\infty e^{tx}\cdot f(x)\,dx</me>
-when <m>\displaystyle X</m> is discrete.
+when <m>X</m> is discrete.
 </p>
 </statement></definition>
 
 <p>
 Notce that a moment-generating function <m>\displaystyle M_X(t)</m>
 itself is a function of the variable <m>\displaystyle t</m> not
-<m>\displaystyle x</m>. As it turns out, we are most interested in
+<m>X</m>. As it turns out, we are most interested in
 values
-of the function at or near <m>\displaystyle t=0</m>.
+of the function at or near <m>t=0</m>.
 </p>
 
 <p>
 Now would be a good time to review <xref ref="thm-4-9"/> and <xref
-ref="thm-4-10"/> which apply here as well.
-</p>
-<!--><example xml:id="ex-maclaurin">
-<title>moment-generating function via Taylor series</title>
-<statement>
-<p>
+ref="thm-4-10"/> which apply here in the continuous case as well.
 </p>
 
-</statement></example>-->
-
-<!-->
-<example xml:id="ex-three-cards-mgf">
-<title>moment-generating function for three cards</title>
-
+<example xml:id="ex-exp-MGF">
+<title>moment-generating function by definition</title>
 <statement>
 <p>
-Recall the probability distribution <m>f(x) = P(X = x) =
-\dfrac{{3\choose x}}{8} \text{ for } x = 0, 1, 2, 3</m> (this was used
-earlier to determine the probabilities of <m>x</m> heads on three flips
-of a coin).
+Find the moment-generating function of <me>f(x) = \begin{cases}e^{-x}, \amp \quad 0 \lt x
+\\ 0, \amp \quad
+\text{otherwise}\end{cases}</me>
+</p>
+<solution>
 <me>
 \begin{aligned}[t]
-M_X(t) \amp = \sum_x e^{tx} f(x)\\
-\amp = 1 \cdot \frac{1}{8} + e^{t} \cdot \frac{3}{8}+ e^{2t} \cdot
-\frac{3}{8} + e^{3t} \cdot \frac{1}{8}\\
-\amp = \frac{1}{8} \left(1 + 3e^{t} + 3e^{2t} + e^{3t}\right)\\
-M_X(t) \amp = \frac{1}{8} (1+e^t)^3\\
+M_X(t) \amp = E[e^{tX}]\\
+		\amp = \int_{0}^\infty e^{tx}\cdot e^{-x}\,dx\\
+		\amp = \int_{0}^\infty e^{-(1-t)x}\,dx\\
+		\amp =
+\lim_{A\to\infty}\Big(\Big(-\dfrac{1}{1-t}e^{-(1-t)x}\Big)\Big|_0^A\Big)
+\\
+		\amp =
+\lim_{A\to\infty}\Big(\Big(\underbrace{-\dfrac{1}{1-t}e^{-(1-t)A}}_{\text{needs }t \lt 1}\Big) - \Big(-\dfrac{1}{1-t}e^{-(1-t)0}\Big)\Big)\\
+M_X(t) \amp = 0 + \dfrac{1}{1-t}
 \end{aligned}
 </me>
-</p>
-</statement></example>
+For the first integral to converge we require <m>t \lt 1</m>.
+</solution>
+</statement>
+</example>
 
-<theorem xml:id="thm-4-9">
+<p>
+With the result from <xref ref="ex-exp-MGF"/>, assuming <m>|t| \lt 1</m>
+we can expand around <m>t=0</m> to find <me>M_X(t) = \dfrac{1}{1-t} = 1
++ t + t^2 + \dots + t^r +
+\dots</me> Remembering that <m>\mu_r'</m> is the coefficient of
+<m>\dfrac{t^r}{r!}</m>, we can rewrite the previous expansion as
+<me>M_X(t) = \dfrac{1}{1-t} = 1 + 1\Big(\dfrac{t^1}{1!}\Big) +
+2!\Big(\dfrac{t^2}{2!}\Big) + \dots + r!\Big(\dfrac{t^r}{r!}\Big) +
+\dots</me> which shows that <m>\mu_r' = r!</m>.
+</p>
+
+<p>
+Above the primary difficulty once the moment-generating function has
+been calculated is probably in the expansion of the Maclaurin series.
+One alternative to this requires calculating the integrals that define
+the necessary expectations <me>\mu_r' = E[X^r] = \int_{-\infty}^\infty
+x^r e^{-x}\,dx</me> by integration by parts or tabular integration. 
+Instead, given the moment-generating function, we could apply <xref
+ref="thm-4-9"/>.</p>
+
+
+<!--><theorem xml:id="thm-4-9">
 <title>moments via differentiation</title>
 <statement>
 <p>
@@ -343,34 +412,48 @@ The <m>r^\text{th}</m> moment about the origin, <m> \mu_r'</m>, can be
 written
 <me>\displaystyle \mu_r' = \dfrac{d^rM_X(t)}{dt^r}\Big|_{t=0}</me>
 </p>
-</statement></theorem>
+</statement></theorem>-->
 
-<example xml:id="ex-xx-mgf2">
-<title>xx</title>
+
+<example xml:id="ex-exp-mgf-by-diff">
+<title>moments of an exponential by differentiation</title>
 <statement>
 <p>
-Referencing Example <xref ref="ex-three-cards-mgf"/>, the mean of the
-random variable, given by <m>\mu_1'</m>, whose MGF is <m>M_X(t) =
-\frac{1}{8} (1+e^t)^3</m> is found as follows
-<me>
-\begin{aligned}[t]
-\mu_1' \amp = \left(\dfrac{d}{dt}\left(\frac{1}{8}
-(1+e^t)^3\right)\right)\Big|_{t=0}\\
-	 \amp = \left(\frac{3}{8} (1+e^t)^2e^t\right)\Big|_{t=0}\\
-\amp = \left(\frac{3}{8} (2)^2\right)\\
-\mu_1' \amp = \frac{3}{2}
-\end{aligned}
-</me>
+Recall the moment-generating function from <xref ref="ex-exp-MGF"/> was
+<m>M_X(t) = \dfrac{1}{1-t}</m> for <m>t \lt 1</m>. Find <m>\mu_1'</m>
+and <m>\mu_2'</m>.
 </p>
-</statement></example>
+<solution>
+By theorem <me>
+\begin{aligned}[t]
+ \mu_1' \amp = \dfrac{d}{dt}\Big(M_X(t)\Big)\Big|_{t=0}\\
+ \amp = \dfrac{d}{dt}\Big(\dfrac{1}{1-t}\Big)\Big|_{t=0}\\
+ \amp = \Big(-(1-t)^{-2}(-1)\Big)\Big|_{t=0}\\
+ \mu_1'  \amp = \Big(-(1-0)^{-2}(-1)\Big) = 1\\
+  \end{aligned}
+</me>
+To calculate <m>\mu_2'</m> we take the second derivative of
+<m>M_X(t)</m>.  Starting from <m>\dfrac{dM_X(t)}{dt} = (1-t)^{-2}</m>, we find <me>
+\begin{aligned}[t]
+ \mu_2' \amp = \dfrac{d}{dt}\Big(\dfrac{dM_X(t)}{dt}\Big)\Big|_{t=0}\\
+ \amp = \dfrac{d}{dt}\Big((1-t)^{-2}\Big)\Big|_{t=0}\\
+ \amp = \Big(-2(1-t)^{-3}(-1)\Big)\Big|_{t=0}\\
+ \mu_2'  \amp = \Big(-2(1-0)^{-3}(-1)\Big) = 2\\
+  \end{aligned}
+</me>
+</solution>
+</statement>
+</example>
 
-<p> So, <em>given</em> a moment-generating function, a relatively
+
+<!--><p> So, <em>given</em> a moment-generating function, a relatively
 simple application of calculus allows us to replace a more tedious
 calculation of the moment from its definition.
 </p>
 
 <theorem xml:id="thm-4-10">
-<title>moment-generating function of functions of a random variable</title>
+<title>moment-generating function of functions of a random
+variable</title>
 
 <statement>
 <p>
@@ -386,35 +469,36 @@ M_X\left(\frac{t}{b}\right)</m>;</li>
 </ol>
 </p>
 </statement></theorem>
--->
 
 <p>The rules in <xref ref="thm-4-10"/> allow us to calculate
 moment-generating functions of simple functions of a random
-variable.</p>
+variable.</p>-->
 </subsection>
 
 <exercises>
  
- 
+
  <exercise>
  <title>Problem 4.33</title>
  <statement>
- <p>Find the moment-generating function of the discrete random variable
+<!--> <p>Find the moment-generating function of the discrete random
+variable
 <m>X</m> that has the probability distribution <me>f(x) =
 2\left(\dfrac{1}{3}\right)^x \text{ for } x = 1, 2, 3, \dots</me> and
 use it to determine the values of <m>\mu_1'</m> and <m>\mu_2'</m>.
- </p>
+ </p>-->
  </statement>
  </exercise>
  
 <exercise>
 <title>Problem 4.40</title>
 <statement>
- <p>Given the moment-generating function <m> X_X(t) = e^{3t+8t^2}</m>,
+<!--> <p>Given the moment-generating function <m> X_X(t) =
+e^{3t+8t^2}</m>,
 find the moment generating function of the random variable <m> Z =
 \dfrac{1}{4}\left(X-3\right)</m> and use it to determine the mean and
 variance of <m>Z</m>.
- </p>
+ </p>-->
  </statement>
  </exercise>
 </exercises>

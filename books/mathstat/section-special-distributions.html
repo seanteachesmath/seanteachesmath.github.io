@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-09T21:52:44-05:00    *-->
+<!--*    on 2020-04-12T22:58:43-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,6 +41,20 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
 </script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -68,11 +82,11 @@ MathJax.Hub.Config({
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-probability-distributions.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-discrete.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap-continuous.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-discrete-expectation.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-discrete.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap-continuous.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-probability-distributions.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-discrete.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap-continuous.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-discrete-expectation.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-discrete.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap-continuous.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -95,8 +109,8 @@ MathJax.Hub.Config({
 </li>
 <li class="link">
 <a href="chap-discrete.html" data-scroll="chap-discrete"><span class="codenumber">3</span> <span class="title">Discrete Random Variables</span></a><ul>
-<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
 <li><a href="section-probability-distributions.html" data-scroll="section-probability-distributions">Probability distributions</a></li>
+<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
 <li><a href="section-special-distributions.html" data-scroll="section-special-distributions" class="active">Special probability distributions</a></li>
 </ul>
 </li>
@@ -427,7 +441,7 @@ r}a^{n-r} b^r = (a+b)^n
 e^t\text{.}\)</p>
 </div></div></article></div>
 <p id="p-166">You might recognize this as \(n\) factors of the moment-generating function of a Bernoulli random variable.</p>
-<p id="p-167">You could use the moment-generating function and <a class="xref" data-knowl="./knowl/thm-4-9.html" title="Theorem 3.1.14: moments via differentiation">Theorem 3.1.14</a> to calculate moments about the origin used to find the mean and variance as a mechanism to prove <a class="xref" data-knowl="./knowl/thm-bin-mean-var.html" title="Theorem 3.3.12: Mean and variance of binomial distribution">Theorem 3.3.12</a>.</p></section><section class="exercises" id="exercises-9"><h3 class="heading hide-type">
+<p id="p-167">You could use the moment-generating function and <a class="xref" data-knowl="./knowl/thm-4-9.html" title="Theorem 3.2.14: moments via differentiation">Theorem 3.2.14</a> to calculate moments about the origin used to find the mean and variance as a mechanism to prove <a class="xref" data-knowl="./knowl/thm-bin-mean-var.html" title="Theorem 3.3.12: Mean and variance of binomial distribution">Theorem 3.3.12</a>.</p></section><section class="exercises" id="exercises-9"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">3.3.4</span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-23"><h6 class="heading">
@@ -546,7 +560,7 @@ e^t}{1-e^t(1-\theta)}\text{.}
 </div></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading">
 <span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 5.21.</span>
 </h6>
-<p id="p-189">Use <a class="xref" data-knowl="./knowl/thm-4-9.html" title="Theorem 3.1.14: moments via differentiation">Theorem 3.1.14</a> and</p>
+<p id="p-189">Use <a class="xref" data-knowl="./knowl/thm-4-9.html" title="Theorem 3.2.14: moments via differentiation">Theorem 3.2.14</a> and</p>
 <div class="displaymath">
 \begin{equation*}
 M_X(t) = \dfrac{\theta

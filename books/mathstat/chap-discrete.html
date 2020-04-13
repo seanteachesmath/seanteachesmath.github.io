@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-09T21:52:43-05:00    *-->
+<!--*    on 2020-04-12T22:58:42-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -41,6 +41,20 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
 </script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -68,11 +82,11 @@ MathJax.Hub.Config({
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-probability.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="mathstat.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-discrete-expectation.html" title="Next">Next</a></span>
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-probability.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="mathstat.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-probability-distributions.html" title="Next">Next</a></span>
 </div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-probability.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="mathstat.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-discrete-expectation.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-probability.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="mathstat.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-probability-distributions.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -95,8 +109,8 @@ MathJax.Hub.Config({
 </li>
 <li class="link active">
 <a href="chap-discrete.html" data-scroll="chap-discrete"><span class="codenumber">3</span> <span class="title">Discrete Random Variables</span></a><ul>
-<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
 <li><a href="section-probability-distributions.html" data-scroll="section-probability-distributions">Probability distributions</a></li>
+<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
 <li><a href="section-special-distributions.html" data-scroll="section-special-distributions">Special probability distributions</a></li>
 </ul>
 </li>
@@ -122,8 +136,8 @@ MathJax.Hub.Config({
 </h2>
 <a href="chap-discrete.html" class="permalink">¶</a><section class="introduction" id="introduction-5"><p id="p-17">...</p>
 <p id="p-18">...</p></section><nav class="summary-links"><ul>
-<li><a href="section-discrete-expectation.html"><span class="codenumber">3.1</span> <span class="title">Mathematical expectation of discrete random variables</span></a></li>
-<li><a href="section-probability-distributions.html"><span class="codenumber">3.2</span> <span class="title">Probability distributions</span></a></li>
+<li><a href="section-probability-distributions.html"><span class="codenumber">3.1</span> <span class="title">Probability distributions</span></a></li>
+<li><a href="section-discrete-expectation.html"><span class="codenumber">3.2</span> <span class="title">Mathematical expectation of discrete random variables</span></a></li>
 <li><a href="section-special-distributions.html"><span class="codenumber">3.3</span> <span class="title">Special probability distributions</span></a></li>
 </ul></nav></section></div></main>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-10T11:57:30-05:00    *-->
+<!--*    on 2020-04-11T23:05:02-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -40,6 +40,20 @@ MathJax.Hub.Config({
         scale: 88,
         mtextFontInherit: true,
     },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
 });
 </script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -88,7 +102,31 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="chap-discrete.html" data-scroll="chap-discrete"><span class="codenumber">1</span> <span class="title">Discrete Random Variables</span></a><ul><li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li></ul>
+<a href="chap-building-numeracy.html" data-scroll="chap-building-numeracy"><span class="codenumber">1</span> <span class="title">Numeracy</span></a><ul>
+<li><a href="sec-counting-and-multiplication.html" data-scroll="sec-counting-and-multiplication">Counting and multiplication</a></li>
+<li><a href="sec-Negatives.html" data-scroll="sec-Negatives">Negatives</a></li>
+<li><a href="sec-Fractions-and-decimals.html" data-scroll="sec-Fractions-and-decimals">Fractions and decimals</a></li>
+<li><a href="sec-Number-systems-and-powers.html" data-scroll="sec-Number-systems-and-powers">Number systems and powers</a></li>
+<li><a href="sec-Our-numbers-so-far.html" data-scroll="sec-Our-numbers-so-far">Our numbers so far</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-the-joy-of-x.html" data-scroll="chap-the-joy-of-x"><span class="codenumber">2</span> <span class="title">The Joy of \(X\)</span></a><ul>
+<li><a href="sec-From-arithmetic-to-algebra.html" data-scroll="sec-From-arithmetic-to-algebra">From arithmetic to algebra</a></li>
+<li><a href="sec-From-formulas-to-functions.html" data-scroll="sec-From-formulas-to-functions">From formulas to functions</a></li>
+<li><a href="sec-Imagine.html" data-scroll="sec-Imagine">Imagine</a></li>
+<li><a href="sec-Finding-your-roots.html" data-scroll="sec-Finding-your-roots">Finding your roots</a></li>
+<li><a href="sec-word-problems.html" data-scroll="sec-word-problems">Word problems</a></li>
+<li><a href="sec-Modeling-with-functions.html" data-scroll="sec-Modeling-with-functions">Modeling with functions</a></li>
+<li><a href="sec-catalog-of-mathematical-functions.html" data-scroll="sec-catalog-of-mathematical-functions">Catalog of mathematical functions</a></li>
+<li><a href="sec-Applications-of-functions.html" data-scroll="sec-Applications-of-functions">Applications of functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">3</span> <span class="title">Geometry</span></a><ul>
+<li><a href="sub-Square-dancing.html" data-scroll="sub-Square-dancing">Square dancing</a></li>
+<li><a href="sub-Sine-Qua-Non.html" data-scroll="sub-Sine-Qua-Non">Sine Qua Non</a></li>
+</ul>
 </li>
 <li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
 <li class="link"><a href="appendix-def.html" data-scroll="appendix-def"><span class="codenumber">A</span> <span class="title">Definitions</span></a></li>
@@ -101,7 +139,9 @@ MathJax.Hub.Config({
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section class="book" id="gened"><nav class="summary-links"><ul>
 <li><a href="frontmatter.html"><span class="title">Front Matter</span></a></li>
-<li><a href="chap-discrete.html"><span class="codenumber">1</span> <span class="title">Discrete Random Variables</span></a></li>
+<li><a href="chap-building-numeracy.html"><span class="codenumber">1</span> <span class="title">Numeracy</span></a></li>
+<li><a href="chap-the-joy-of-x.html"><span class="codenumber">2</span> <span class="title">The Joy of \(X\)</span></a></li>
+<li><a href="chap-geometry.html"><span class="codenumber">3</span> <span class="title">Geometry</span></a></li>
 <li><a href="backmatter.html"><span class="title">Back Matter</span></a></li>
 </ul></nav></section></div></main>
 </div>

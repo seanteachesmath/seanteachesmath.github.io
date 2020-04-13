@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-11T23:05:03-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Modeling with functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="images/cover.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="gened.html"><span class="title">Math for General Education:</span> <span class="subtitle">Based on <em class="emphasis">The Joy of \(X\)</em></span></a></h1>
+<p class="byline">Sean M. Laverty</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-word-problems.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-the-joy-of-x.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-catalog-of-mathematical-functions.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-word-problems.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-the-joy-of-x.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-catalog-of-mathematical-functions.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="front-colophon.html" data-scroll="front-colophon">Colophon</a></li>
+<li><a href="author-bio-SML.html" data-scroll="author-bio-SML">Author Biography</a></li>
+<li><a href="dedication.html" data-scroll="dedication">Dedication</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface">Preface</a></li>
+<li><a href="contributors.html" data-scroll="contributors">Contributors to the 0\(^\mathrm{th}\) Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-building-numeracy.html" data-scroll="chap-building-numeracy"><span class="codenumber">1</span> <span class="title">Numeracy</span></a><ul>
+<li><a href="sec-counting-and-multiplication.html" data-scroll="sec-counting-and-multiplication">Counting and multiplication</a></li>
+<li><a href="sec-Negatives.html" data-scroll="sec-Negatives">Negatives</a></li>
+<li><a href="sec-Fractions-and-decimals.html" data-scroll="sec-Fractions-and-decimals">Fractions and decimals</a></li>
+<li><a href="sec-Number-systems-and-powers.html" data-scroll="sec-Number-systems-and-powers">Number systems and powers</a></li>
+<li><a href="sec-Our-numbers-so-far.html" data-scroll="sec-Our-numbers-so-far">Our numbers so far</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-the-joy-of-x.html" data-scroll="chap-the-joy-of-x"><span class="codenumber">2</span> <span class="title">The Joy of \(X\)</span></a><ul>
+<li><a href="sec-From-arithmetic-to-algebra.html" data-scroll="sec-From-arithmetic-to-algebra">From arithmetic to algebra</a></li>
+<li><a href="sec-From-formulas-to-functions.html" data-scroll="sec-From-formulas-to-functions">From formulas to functions</a></li>
+<li><a href="sec-Imagine.html" data-scroll="sec-Imagine">Imagine</a></li>
+<li><a href="sec-Finding-your-roots.html" data-scroll="sec-Finding-your-roots">Finding your roots</a></li>
+<li><a href="sec-word-problems.html" data-scroll="sec-word-problems">Word problems</a></li>
+<li><a href="sec-Modeling-with-functions.html" data-scroll="sec-Modeling-with-functions" class="active">Modeling with functions</a></li>
+<li><a href="sec-catalog-of-mathematical-functions.html" data-scroll="sec-catalog-of-mathematical-functions">Catalog of mathematical functions</a></li>
+<li><a href="sec-Applications-of-functions.html" data-scroll="sec-Applications-of-functions">Applications of functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">3</span> <span class="title">Geometry</span></a><ul>
+<li><a href="sub-Square-dancing.html" data-scroll="sub-Square-dancing">Square dancing</a></li>
+<li><a href="sub-Sine-Qua-Non.html" data-scroll="sub-Sine-Qua-Non">Sine Qua Non</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-def.html" data-scroll="appendix-def"><span class="codenumber">A</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thm.html" data-scroll="appendix-thm"><span class="codenumber">B</span> <span class="title">Theorems</span></a></li>
+<li class="link"><a href="appendix-ex.html" data-scroll="appendix-ex"><span class="codenumber">C</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-gfdl.html" data-scroll="appendix-gfdl"><span class="codenumber">D</span> <span class="title">GNU Free Documentation License</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="back-colophon.html" data-scroll="back-colophon"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-Modeling-with-functions"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">Modeling with functions</span>
+</h2>
+<a href="sec-Modeling-with-functions.html" class="permalink">¶</a><section class="introduction" id="introduction-22"><p id="p-124">...</p></section><p id="p-125">If we are ultimately interested in modeling using mathematical functions, we need to build up a catalog of mathematical functions. Before we diversify too much, we will spend a but of time looking at quadratic functions. Quadratic functions</p>
+<div class="displaymath">
+\begin{equation*}
+f(x) = ax^2 + bx + c
+\end{equation*}
+</div>
+<p data-braille="continuation">coupled with the quadratic formula</p>
+<div class="displaymath">
+\begin{equation*}
+x =
+\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{equation*}
+</div>
+<p data-braille="continuation">which gives the \(x\) values that solve \(f(x) = 0\text{.}\) What is surprising, perhaps, is just how often and in how many places the quadratic formula shows up as the lynchpin of so many mathematical problems. Partly this is because so many problems are ultimately studied in two dimensions. For example, we are used to visualizing so many problems in the \(xy\)-plane.</p>
+<p id="p-126">As an example, consider a new problem in which we try to solve the following \textit{system} of equations,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+\begin{cases}
+2x+3y \amp = 7\\
+5x+4y \amp = 9
+\end{cases}
+\end{aligned}
+\end{equation*}
+</div>
+<p id="p-127">Specifically we are looking for the numbers \(x\) and \(y\) that \textit{simultaneously} satisfy these equations. We could solve for one variable from one equation and substitute into the other equation to solve. Alternatively, we could solve each equation for \(y\text{,}\) graph, and look for the intersection. Proceeding in this direction,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+2x+3y\amp=7\\
+3y \amp = 7 - 2x\\
+y \amp = -\dfrac{2}{3}x+\dfrac{7}{3}
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Similarly from the second equation,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+5x+4y\amp=9\\
+4y \amp = 9 - 5x\\
+y \amp = -\dfrac{5}{4}x+\dfrac{9}{4}
+\end{aligned}
+\end{equation*}
+</div>
+<p id="p-128">We could start by graphing one of these, perhaps the second, whose graph is a straight line with slope of \(m=-\sfrac{5}{4}\) and \(y\)-intercept of \(b=\sfrac{9}{4}\text{.}\) The graph of the line starts at a value of \(\sfrac{9}{4}\) on the \(y\)-axis, from there we go down \(5\) units for every \(5\) units we move to the right (we could also picture going down \(\sfrac{5}{4}\) units for every \(1\) we move to the right). We could superimpose a graph of the other and identify the intersection, which corresponds to the solution to the system of equations.</p>
+<section class="subsection" id="sub-Another-approach"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">Another approach</span>
+</h3>
+<a href="sec-Modeling-with-functions.html#sub-Another-approach" class="permalink">¶</a><section class="introduction" id="introduction-23"><p id="p-129">...</p></section><p id="p-130">Using some very different methods, we could rewrite the system</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+\begin{cases}
+2x+3y \amp = 7\\
+5x+4y \amp = 9
+\end{cases}
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">in \textit{matrix-vector} form as follows,</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\begin{array}{cc}2 \amp 3 \\ 5 \amp
+4\end{array}\right)\left(\begin{array}{c}x\\y\end{array}\right) =
+\left(\begin{array}{c}7\\9\end{array}\right) 
+\end{equation*}
+</div>
+<p data-braille="continuation">To confirm that these are equal we perform \textit{matrix-vector"&gt; multiplication. To recover the first equation in the system we multiply the entries in the first row by \(x\) and \(y\) and add between each step of multiplication. The result is equal to the top entry on the right-hand side, the \(7\text{.}\)</p>
+<p id="p-131">With this square arrangement of numbers, the matrix, we enter the field of \textit{linear algebra}\footnote{Very closely associated with linear algebra, especially in two dimensions, is the study of \textit{differential equations}. Linear algebra plays an essential role in differential equations, and by association, so does the quadratic formula.} which is broadly concerned with techniques for solving linear systems of equations. Often we are less concerned with the solutions to linear systems and we are more concerned with properties of the matrix itself. One such property of the matrix actually requires us to calculate solutions to an associated quadratic equation using the quadratic formula. To say it again, there is a direct connection between 2D matrices (2 rows, 2 columns) and the quadratic formula.</p></section><p id="p-132"></p>
+<p id="p-133"></p></section></div></main>
+</div>
+</body>
+</html>

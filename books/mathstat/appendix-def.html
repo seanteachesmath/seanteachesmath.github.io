@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-09T21:52:45-05:00    *-->
+<!--*    on 2020-04-12T22:58:44-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -40,6 +40,20 @@ MathJax.Hub.Config({
         scale: 88,
         mtextFontInherit: true,
     },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
 });
 </script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -95,8 +109,8 @@ MathJax.Hub.Config({
 </li>
 <li class="link">
 <a href="chap-discrete.html" data-scroll="chap-discrete"><span class="codenumber">3</span> <span class="title">Discrete Random Variables</span></a><ul>
-<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
 <li><a href="section-probability-distributions.html" data-scroll="section-probability-distributions">Probability distributions</a></li>
+<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
 <li><a href="section-special-distributions.html" data-scroll="section-special-distributions">Special probability distributions</a></li>
 </ul>
 </li>
@@ -130,46 +144,46 @@ MathJax.Hub.Config({
 </h5>
 <div>
 <a class="xref" data-knowl="./knowl/probability.html" title="Definition 2.1.1">Definition 2.1.1</a> </div>
-<h5 class="heading" title="Section 3.1: Mathematical expectation of discrete random variables">
-<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Mathematical expectation of discrete random variables</span>
+<h5 class="heading" title="Section 3.1: Probability distributions">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Probability distributions</span>
 </h5>
 <div>
-<a class="xref" data-knowl="./knowl/def-expected-value-4-1.html" title="Definition 3.1.1: expected value">Definition 3.1.1</a> expected value</div>
+<a class="xref" data-knowl="./knowl/def-probability-distribution-3-2.html" title="Definition 3.1.1: probability distribution">Definition 3.1.1</a> probability distribution</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-moments-about-origin-4-2.html" title="Definition 3.1.8: moments about the origin">Definition 3.1.8</a> moments about the origin</div>
+<a class="xref" data-knowl="./knowl/def-distribution-function-3-3.html" title="Definition 3.1.3: distribution function">Definition 3.1.3</a> distribution function</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-mean-4-3.html" title="Definition 3.1.9: mean of a discrete random variable">Definition 3.1.9</a> mean of a discrete random variable</div>
+<a class="xref" data-knowl="./knowl/def-joint-probability-distribution-3-6.html" title="Definition 3.1.5: joint probability distribution">Definition 3.1.5</a> joint probability distribution</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-moments-about-mean-4-4.html" title="Definition 3.1.10: moments about the mean">Definition 3.1.10</a> moments about the mean</div>
+<a class="xref" data-knowl="./knowl/def-joint-distribution-function-3-7.html" title="Definition 3.1.7: joint distribution function">Definition 3.1.7</a> joint distribution function</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-mgf-4-6.html" title="Definition 3.1.11: moment-generating function">Definition 3.1.11</a> moment-generating function</div>
+<a class="xref" data-knowl="./knowl/def-marginal-distribution-3-10.html" title="Definition 3.1.8: marginal distribution">Definition 3.1.8</a> marginal distribution</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-product-moments-origin-4-7.html" title="Definition 3.1.17: product moments about the origin">Definition 3.1.17</a> product moments about the origin</div>
-<div>
-<a class="xref" data-knowl="./knowl/def-product-moments-mean-4-8.html" title="Definition 3.1.18: product moments about the mean">Definition 3.1.18</a> product moments about the mean</div>
-<div>
-<a class="xref" data-knowl="./knowl/def-covariance-4-9.html" title="Definition 3.1.19: covariance">Definition 3.1.19</a> covariance</div>
-<div>
-<a class="xref" data-knowl="./knowl/def-conditional-expectation-4-10.html" title="Definition 3.1.29: conditional expectation">Definition 3.1.29</a> conditional expectation</div>
-<div>
-<a class="xref" data-knowl="./knowl/def-conditional-mean.html" title="Definition 3.1.30: conditional mean">Definition 3.1.30</a> conditional mean</div>
-<div>
-<a class="xref" data-knowl="./knowl/def-conditional-variance.html" title="Definition 3.1.31: conditional variance">Definition 3.1.31</a> conditional variance</div>
-<h5 class="heading" title="Section 3.2: Probability distributions">
-<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Probability distributions</span>
+<a class="xref" data-knowl="./knowl/def-conditional-distribution-3-10.html" title="Definition 3.1.9: conditional distribution">Definition 3.1.9</a> conditional distribution</div>
+<h5 class="heading" title="Section 3.2: Mathematical expectation of discrete random variables">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Mathematical expectation of discrete random variables</span>
 </h5>
 <div>
-<a class="xref" data-knowl="./knowl/def-probability-distribution-3-2.html" title="Definition 3.2.1: probability distribution">Definition 3.2.1</a> probability distribution</div>
+<a class="xref" data-knowl="./knowl/def-expected-value-4-1.html" title="Definition 3.2.1: expected value">Definition 3.2.1</a> expected value</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-distribution-function-3-3.html" title="Definition 3.2.3: distribution function">Definition 3.2.3</a> distribution function</div>
+<a class="xref" data-knowl="./knowl/def-moments-about-origin-4-2.html" title="Definition 3.2.8: moments about the origin">Definition 3.2.8</a> moments about the origin</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-joint-probability-distribution-3-6.html" title="Definition 3.2.5: joint probability distribution">Definition 3.2.5</a> joint probability distribution</div>
+<a class="xref" data-knowl="./knowl/def-mean-4-3.html" title="Definition 3.2.9: mean of a discrete random variable">Definition 3.2.9</a> mean of a discrete random variable</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-joint-distribution-function-3-7.html" title="Definition 3.2.7: joint distribution function">Definition 3.2.7</a> joint distribution function</div>
+<a class="xref" data-knowl="./knowl/def-moments-about-mean-4-4.html" title="Definition 3.2.10: moments about the mean">Definition 3.2.10</a> moments about the mean</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-marginal-distribution-3-10.html" title="Definition 3.2.8: marginal distribution">Definition 3.2.8</a> marginal distribution</div>
+<a class="xref" data-knowl="./knowl/def-mgf-4-6.html" title="Definition 3.2.11: moment-generating function">Definition 3.2.11</a> moment-generating function</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-conditional-distribution-3-10.html" title="Definition 3.2.9: conditional distribution">Definition 3.2.9</a> conditional distribution</div>
+<a class="xref" data-knowl="./knowl/def-product-moments-origin-4-7.html" title="Definition 3.2.17: product moments about the origin">Definition 3.2.17</a> product moments about the origin</div>
+<div>
+<a class="xref" data-knowl="./knowl/def-product-moments-mean-4-8.html" title="Definition 3.2.18: product moments about the mean">Definition 3.2.18</a> product moments about the mean</div>
+<div>
+<a class="xref" data-knowl="./knowl/def-covariance-4-9.html" title="Definition 3.2.19: covariance">Definition 3.2.19</a> covariance</div>
+<div>
+<a class="xref" data-knowl="./knowl/def-conditional-expectation-4-10.html" title="Definition 3.2.29: conditional expectation">Definition 3.2.29</a> conditional expectation</div>
+<div>
+<a class="xref" data-knowl="./knowl/def-conditional-mean.html" title="Definition 3.2.30: conditional mean">Definition 3.2.30</a> conditional mean</div>
+<div>
+<a class="xref" data-knowl="./knowl/def-conditional-variance.html" title="Definition 3.2.31: conditional variance">Definition 3.2.31</a> conditional variance</div>
 <h5 class="heading" title="Section 3.3: Special probability distributions">
 <span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Special probability distributions</span>
 </h5>
@@ -191,9 +205,9 @@ MathJax.Hub.Config({
 <span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Probability densities</span>
 </h5>
 <div>
-<a class="xref" data-knowl="./knowl/def-continuous-probability-density-3-2.html" title="Definition 4.1.1: probability density">Definition 4.1.1</a> probability density</div>
+<a class="xref" data-knowl="./knowl/def-continuous-probability-density-3-2.html" title="Definition 4.1.1: Probability density function">Definition 4.1.1</a> Probability density function</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-continuous-distribution-function-3-3.html" title="Definition 4.1.3">Definition 4.1.3</a> </div>
+<a class="xref" data-knowl="./knowl/def-continuous-distribution-function-3-3.html" title="Definition 4.1.9">Definition 4.1.9</a> </div>
 <h5 class="heading" title="Section 4.2: Expectation of continuous random variables">
 <span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Expectation of continuous random variables</span>
 </h5>
@@ -204,7 +218,7 @@ MathJax.Hub.Config({
 <div>
 <a class="xref" data-knowl="./knowl/def-moments-about-mean-4-4-cont.html" title="Definition 4.2.5: moments about the mean (continuous)">Definition 4.2.5</a> moments about the mean (continuous)</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-mgf-4-6-cont.html" title="Definition 4.2.7: moment-generating function (continuous)">Definition 4.2.7</a> moment-generating function (continuous)</div>
+<a class="xref" data-knowl="./knowl/def-mgf-4-6-cont.html" title="Definition 4.2.8: moment-generating function (continuous)">Definition 4.2.8</a> moment-generating function (continuous)</div>
 <h5 class="heading" title="Section 4.4: Multivariate continuous densities">
 <span class="type">Section</span> <span class="codenumber">4.4</span> <span class="title">Multivariate continuous densities</span>
 </h5>
@@ -213,19 +227,19 @@ MathJax.Hub.Config({
 <div>
 <a class="xref" data-knowl="./knowl/def-joint-density-function-3-7-cont.html" title="Definition 4.4.3: joint distribution function (continuous)">Definition 4.4.3</a> joint distribution function (continuous)</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-marginal-density-3-10-cont.html" title="Definition 4.4.4: marginal density">Definition 4.4.4</a> marginal density</div>
+<a class="xref" data-knowl="./knowl/def-marginal-density-3-10-cont.html" title="Definition 4.4.5: marginal density">Definition 4.4.5</a> marginal density</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-conditional-density-3-10-cont.html" title="Definition 4.4.5: conditional density">Definition 4.4.5</a> conditional density</div>
+<a class="xref" data-knowl="./knowl/def-conditional-density-3-10-cont.html" title="Definition 4.4.6: conditional density">Definition 4.4.6</a> conditional density</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-product-moments-origin-4-7-cont.html" title="Definition 4.4.6: product moments about the origin">Definition 4.4.6</a> product moments about the origin</div>
+<a class="xref" data-knowl="./knowl/def-product-moments-origin-4-7-cont.html" title="Definition 4.4.7: product moments about the origin">Definition 4.4.7</a> product moments about the origin</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-product-moments-mean-4-8-cont.html" title="Definition 4.4.7: product moments about the mean">Definition 4.4.7</a> product moments about the mean</div>
+<a class="xref" data-knowl="./knowl/def-product-moments-mean-4-8-cont.html" title="Definition 4.4.8: product moments about the mean">Definition 4.4.8</a> product moments about the mean</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-conditional-expectation-4-10.html" title="Definition 4.4.8: conditional expectation">Definition 4.4.8</a> conditional expectation</div>
+<a class="xref" data-knowl="./knowl/def-conditional-expectation-4-10.html" title="Definition 4.4.9: conditional expectation">Definition 4.4.9</a> conditional expectation</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-conditional-mean.html" title="Definition 4.4.9: conditional mean">Definition 4.4.9</a> conditional mean</div>
+<a class="xref" data-knowl="./knowl/def-conditional-mean.html" title="Definition 4.4.10: conditional mean">Definition 4.4.10</a> conditional mean</div>
 <div>
-<a class="xref" data-knowl="./knowl/def-conditional-variance.html" title="Definition 4.4.10: conditional variance">Definition 4.4.10</a> conditional variance</div></section></div></main>
+<a class="xref" data-knowl="./knowl/def-conditional-variance.html" title="Definition 4.4.11: conditional variance">Definition 4.4.11</a> conditional variance</div></section></div></main>
 </div>
 </body>
 </html>

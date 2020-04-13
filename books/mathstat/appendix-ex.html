@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-09T21:52:45-05:00    *-->
+<!--*    on 2020-04-12T22:58:44-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -40,6 +40,20 @@ MathJax.Hub.Config({
         scale: 88,
         mtextFontInherit: true,
     },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
 });
 </script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -95,8 +109,8 @@ MathJax.Hub.Config({
 </li>
 <li class="link">
 <a href="chap-discrete.html" data-scroll="chap-discrete"><span class="codenumber">3</span> <span class="title">Discrete Random Variables</span></a><ul>
-<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
 <li><a href="section-probability-distributions.html" data-scroll="section-probability-distributions">Probability distributions</a></li>
+<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
 <li><a href="section-special-distributions.html" data-scroll="section-special-distributions">Special probability distributions</a></li>
 </ul>
 </li>
@@ -120,17 +134,17 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="appendix" id="appendix-ex"><h2 class="heading hide-type">
 <span class="type">Appendix</span> <span class="codenumber">C</span> <span class="title">Examples</span>
 </h2>
-<a href="appendix-ex.html" class="permalink">¶</a><h5 class="heading" title="Section 3.1: Mathematical expectation of discrete random variables">
-<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Mathematical expectation of discrete random variables</span>
+<a href="appendix-ex.html" class="permalink">¶</a><h5 class="heading" title="Section 3.2: Mathematical expectation of discrete random variables">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Mathematical expectation of discrete random variables</span>
 </h5>
 <div>
-<a class="xref" data-knowl="./knowl/ex-maclaurin.html" title="Example 3.1.12: moment-generating function via Taylor series">Example 3.1.12</a> moment-generating function via Taylor series</div>
+<a class="xref" data-knowl="./knowl/ex-maclaurin.html" title="Example 3.2.12: moment-generating function via Taylor series">Example 3.2.12</a> moment-generating function via Taylor series</div>
 <div>
-<a class="xref" data-knowl="./knowl/ex-three-cards-mgf.html" title="Example 3.1.13: moment-generating function for three cards">Example 3.1.13</a> moment-generating function for three cards</div>
+<a class="xref" data-knowl="./knowl/ex-three-cards-mgf.html" title="Example 3.2.13: moment-generating function for three cards">Example 3.2.13</a> moment-generating function for three cards</div>
 <div>
-<a class="xref" data-knowl="./knowl/ex-three-cards-mgf2.html" title="Example 3.1.15: moment-generating function for three cards, via differentiation">Example 3.1.15</a> moment-generating function for three cards, via differentiation</div>
+<a class="xref" data-knowl="./knowl/ex-three-cards-mgf2.html" title="Example 3.2.15: moment-generating function for three cards, via differentiation">Example 3.2.15</a> moment-generating function for three cards, via differentiation</div>
 <div>
-<a class="xref" data-knowl="./knowl/ex-var-covar.html" title="Example 3.1.26: covariances of linear combinations">Example 3.1.26</a> covariances of linear combinations</div>
+<a class="xref" data-knowl="./knowl/ex-var-covar.html" title="Example 3.2.26: covariances of linear combinations">Example 3.2.26</a> covariances of linear combinations</div>
 <h5 class="heading" title="Section 3.3: Special probability distributions">
 <span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Special probability distributions</span>
 </h5>
@@ -153,7 +167,31 @@ MathJax.Hub.Config({
 <div>
 <a class="xref" data-knowl="./knowl/ex-negbin-mgf.html" title="Example 3.3.20: moment generating function of the negative binomial distribution">Example 3.3.20</a> moment generating function of the negative binomial distribution</div>
 <div>
-<a class="xref" data-knowl="./knowl/ex-hyper.html" title="Example 3.3.26: hypergeometric distribution for truck inspections">Example 3.3.26</a> hypergeometric distribution for truck inspections</div></section></div></main>
+<a class="xref" data-knowl="./knowl/ex-hyper.html" title="Example 3.3.26: hypergeometric distribution for truck inspections">Example 3.3.26</a> hypergeometric distribution for truck inspections</div>
+<h5 class="heading" title="Section 4.1: Probability densities">
+<span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Probability densities</span>
+</h5>
+<div>
+<a class="xref" data-knowl="./knowl/ex-exponential.html" title="Example 4.1.6: specifying an exponential probability density">Example 4.1.6</a> specifying an exponential probability density</div>
+<div>
+<a class="xref" data-knowl="./knowl/ex-exponential2.html" title="Example 4.1.7: using exponential probability density">Example 4.1.7</a> using exponential probability density</div>
+<div>
+<a class="xref" data-knowl="./knowl/ex-hat.html" title="Example 4.1.8: a hat-shaped probability density">Example 4.1.8</a> a hat-shaped probability density</div>
+<div>
+<a class="xref" data-knowl="./knowl/ex-hat-cdf.html" title="Example 4.1.11: cumulative distribution for a hat-shaped probability density">Example 4.1.11</a> cumulative distribution for a hat-shaped probability density</div>
+<div>
+<a class="xref" data-knowl="./knowl/ex-F-to-f.html" title="Example 4.1.14: a ramp-shaped cumulative distribution">Example 4.1.14</a> a ramp-shaped cumulative distribution</div>
+<h5 class="heading" title="Section 4.2: Expectation of continuous random variables">
+<span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Expectation of continuous random variables</span>
+</h5>
+<div>
+<a class="xref" data-knowl="./knowl/ex-cont-exp.html" title="Example 4.2.2: expected value (continuous)">Example 4.2.2</a> expected value (continuous)</div>
+<div>
+<a class="xref" data-knowl="./knowl/ex-poly.html" title="Example 4.2.6: \(8^{\text{th}}\)-order polynomial density">Example 4.2.6</a> \(8^{\text{th}}\)-order polynomial density</div>
+<div>
+<a class="xref" data-knowl="./knowl/ex-exp-MGF.html" title="Example 4.2.9: moment-generating function by definition">Example 4.2.9</a> moment-generating function by definition</div>
+<div>
+<a class="xref" data-knowl="./knowl/ex-exp-mgf-by-diff.html" title="Example 4.2.10: moments of an exponential by differentiation">Example 4.2.10</a> moments of an exponential by differentiation</div></section></div></main>
 </div>
 </body>
 </html>

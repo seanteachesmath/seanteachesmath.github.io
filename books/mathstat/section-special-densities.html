@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-09T21:52:44-05:00    *-->
+<!--*    on 2020-04-12T22:58:44-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -40,6 +40,20 @@ MathJax.Hub.Config({
         scale: 88,
         mtextFontInherit: true,
     },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
 });
 </script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
@@ -95,8 +109,8 @@ MathJax.Hub.Config({
 </li>
 <li class="link">
 <a href="chap-discrete.html" data-scroll="chap-discrete"><span class="codenumber">3</span> <span class="title">Discrete Random Variables</span></a><ul>
-<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
 <li><a href="section-probability-distributions.html" data-scroll="section-probability-distributions">Probability distributions</a></li>
+<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
 <li><a href="section-special-distributions.html" data-scroll="section-special-distributions">Special probability distributions</a></li>
 </ul>
 </li>
@@ -120,22 +134,22 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section class="section" id="section-special-densities"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Special probability densities</span>
 </h2>
-<a href="section-special-densities.html" class="permalink">¶</a><section class="introduction" id="introduction-22"><p id="p-251">Some words</p></section><section class="subsection" id="sub-continuous-unif"><h3 class="heading hide-type">
+<a href="section-special-densities.html" class="permalink">¶</a><section class="introduction" id="introduction-22"><p id="p-281">Some words</p></section><section class="subsection" id="sub-continuous-unif"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.1</span> <span class="title">Continuous uniform</span>
 </h3>
-<a href="section-special-densities.html#sub-continuous-unif" class="permalink">¶</a><p id="p-252">Some words</p></section><section class="subsection" id="sub-exponential"><h3 class="heading hide-type">
+<a href="section-special-densities.html#sub-continuous-unif" class="permalink">¶</a><p id="p-282">Some words</p></section><section class="subsection" id="sub-exponential"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.2</span> <span class="title">Exponential family</span>
 </h3>
-<a href="section-special-densities.html#sub-exponential" class="permalink">¶</a><p id="p-253">Some words</p></section><section class="subsection" id="sub-beta"><h3 class="heading hide-type">
+<a href="section-special-densities.html#sub-exponential" class="permalink">¶</a><p id="p-283">Some words</p></section><section class="subsection" id="sub-beta"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.3</span> <span class="title">Beta distribution</span>
 </h3>
-<a href="section-special-densities.html#sub-beta" class="permalink">¶</a><p id="p-254">Some words</p></section><section class="subsection" id="sub-normal"><h3 class="heading hide-type">
+<a href="section-special-densities.html#sub-beta" class="permalink">¶</a><p id="p-284">Some words</p></section><section class="subsection" id="sub-normal"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.4</span> <span class="title">Normal distribution</span>
 </h3>
-<a href="section-special-densities.html#sub-normal" class="permalink">¶</a><p id="p-255">Some words</p></section><section class="subsection" id="sub-normal-approx"><h3 class="heading hide-type">
+<a href="section-special-densities.html#sub-normal" class="permalink">¶</a><p id="p-285">Some words</p></section><section class="subsection" id="sub-normal-approx"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.3.5</span> <span class="title">Normal approximation to the binomial distribution</span>
 </h3>
-<a href="section-special-densities.html#sub-normal-approx" class="permalink">¶</a><p id="p-256">Some words</p></section></section></div></main>
+<a href="section-special-densities.html#sub-normal-approx" class="permalink">¶</a><p id="p-286">Some words</p></section></section></div></main>
 </div>
 </body>
 </html>

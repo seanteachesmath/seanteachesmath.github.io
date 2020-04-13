@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-11T23:05:03-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Applications of functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="images/cover.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="gened.html"><span class="title">Math for General Education:</span> <span class="subtitle">Based on <em class="emphasis">The Joy of \(X\)</em></span></a></h1>
+<p class="byline">Sean M. Laverty</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-catalog-of-mathematical-functions.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-the-joy-of-x.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap-geometry.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-catalog-of-mathematical-functions.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-the-joy-of-x.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap-geometry.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="front-colophon.html" data-scroll="front-colophon">Colophon</a></li>
+<li><a href="author-bio-SML.html" data-scroll="author-bio-SML">Author Biography</a></li>
+<li><a href="dedication.html" data-scroll="dedication">Dedication</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface">Preface</a></li>
+<li><a href="contributors.html" data-scroll="contributors">Contributors to the 0\(^\mathrm{th}\) Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-building-numeracy.html" data-scroll="chap-building-numeracy"><span class="codenumber">1</span> <span class="title">Numeracy</span></a><ul>
+<li><a href="sec-counting-and-multiplication.html" data-scroll="sec-counting-and-multiplication">Counting and multiplication</a></li>
+<li><a href="sec-Negatives.html" data-scroll="sec-Negatives">Negatives</a></li>
+<li><a href="sec-Fractions-and-decimals.html" data-scroll="sec-Fractions-and-decimals">Fractions and decimals</a></li>
+<li><a href="sec-Number-systems-and-powers.html" data-scroll="sec-Number-systems-and-powers">Number systems and powers</a></li>
+<li><a href="sec-Our-numbers-so-far.html" data-scroll="sec-Our-numbers-so-far">Our numbers so far</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-the-joy-of-x.html" data-scroll="chap-the-joy-of-x"><span class="codenumber">2</span> <span class="title">The Joy of \(X\)</span></a><ul>
+<li><a href="sec-From-arithmetic-to-algebra.html" data-scroll="sec-From-arithmetic-to-algebra">From arithmetic to algebra</a></li>
+<li><a href="sec-From-formulas-to-functions.html" data-scroll="sec-From-formulas-to-functions">From formulas to functions</a></li>
+<li><a href="sec-Imagine.html" data-scroll="sec-Imagine">Imagine</a></li>
+<li><a href="sec-Finding-your-roots.html" data-scroll="sec-Finding-your-roots">Finding your roots</a></li>
+<li><a href="sec-word-problems.html" data-scroll="sec-word-problems">Word problems</a></li>
+<li><a href="sec-Modeling-with-functions.html" data-scroll="sec-Modeling-with-functions">Modeling with functions</a></li>
+<li><a href="sec-catalog-of-mathematical-functions.html" data-scroll="sec-catalog-of-mathematical-functions">Catalog of mathematical functions</a></li>
+<li><a href="sec-Applications-of-functions.html" data-scroll="sec-Applications-of-functions" class="active">Applications of functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">3</span> <span class="title">Geometry</span></a><ul>
+<li><a href="sub-Square-dancing.html" data-scroll="sub-Square-dancing">Square dancing</a></li>
+<li><a href="sub-Sine-Qua-Non.html" data-scroll="sub-Sine-Qua-Non">Sine Qua Non</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-def.html" data-scroll="appendix-def"><span class="codenumber">A</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thm.html" data-scroll="appendix-thm"><span class="codenumber">B</span> <span class="title">Theorems</span></a></li>
+<li class="link"><a href="appendix-ex.html" data-scroll="appendix-ex"><span class="codenumber">C</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-gfdl.html" data-scroll="appendix-gfdl"><span class="codenumber">D</span> <span class="title">GNU Free Documentation License</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="back-colophon.html" data-scroll="back-colophon"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-Applications-of-functions"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.8</span> <span class="title">Applications of functions</span>
+</h2>
+<a href="sec-Applications-of-functions.html" class="permalink">¶</a><section class="introduction" id="introduction-34"><p id="p-187">...</p></section><section class="subsection" id="sub-Mathematical-modeling-reprise"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.8.1</span> <span class="title">Mathematical-modeling-reprise</span>
+</h3>
+<a href="sec-Applications-of-functions.html#sub-Mathematical-modeling-reprise" class="permalink">¶</a><section class="introduction" id="introduction-35"><p id="p-188">...</p></section><p id="p-189">When modeling spread of something infectious (a pathogen, a rumor, a behavior) we break a population into relevant groups.  One of the simplest breakdowns is into groups of</p>
+<ol class="decimal">
+<li id="li-22"><p id="p-190">susceptible (these are the `healthy' people)</p></li>
+<li id="li-23"><p id="p-191">infectious</p></li>
+<li id="li-24"><p id="p-192">recovered</p></li>
+</ol>
+<p data-braille="continuation">There are some subtleties here that I will mention, but not spend any more time on.  The name of the group `infectious' suggests that these individuals are not only \textit{infected}, but are also capable of transmitting their infection to others. The `recovered' group is sometimes called `removed' to indicate the group of individuals that are \textit{removed} from the process of infection either by natural recovery or death.</p>
+<p id="p-193">The way infection is modeled is by a system of \textit{differential equations} which describe how the number of individuals within each population is assumed to change over time, as individuals flow between groups.  A diagram of the possible transitions is given in Figure \ref{fig::SIR}.</p>
+<p id="p-194"></p>
+<p id="p-195">When we try to translate these assumptions into a mathematical model we begin with</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+\text{change in susceptible} \amp = -\text{(people getting sick)} +
+\text{(people losing imunity)}\\
+\text{change in infectious} \amp = + \text{(people getting sick)} -
+\text{(people recovering)} - \text{(people dying from infection)}\\
+\text{change in recovered} \amp = + \text{(people recovering)} -
+\text{(people losing immunity)}
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">We translate this to more mathematical language involving some calculus as follows</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+\dfrac{dS}{dt}\amp = -\beta S I + \rho R\\
+\dfrac{dI}{dt} \amp =  \beta S I - \gamma I - \delta I\\
+\dfrac{dR}{dt} \amp = \gamma I - \rho R
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">The specific equations are not of great importance here, but you could hopefully imagine that the number of new infections depends on the number that are susceptible to infection (\(S\)) and the number that can transmit infection (\(I\)), so in some way the amount of new infections combines those two values.  Similarly, the number of individuals that recover should depend on the amount that are infectious and the number of individuals that lose immunity should depend on the number that have recovered.</p>
+<p id="p-196">The Greek letters are called `parameters'; these are symbols used to represent various numbers like the transmission parameter \(\beta\) or the recovery rate \(\gamma\) (see Table \ref{tab::epi}).  Sometimes it is easier to write and study the model generically without having to worry about the precise decimal values that go in these positions, so we use the Greek letters as placeholders. This is similar to how we use the formula \(y=mx+b\) to describe a linear function between variables \(y\) and \(x\text{.}\)  Whether or not we have acknowledged this before, \(m\) and \(b\) are parameters of the linear formula (`slope' and `\(y\)-intercept', respectively). Changes to these numbers might change the appearance, but do not change the fundamental nature of the relationship between \(y\) and \(x\text{.}\) % "&gt;</p></section><section class="subsection" id="sub-dots"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.8.2</span> <span class="title">...</span>
+</h3>
+<a href="sec-Applications-of-functions.html#sub-dots" class="permalink">¶</a><section class="introduction" id="introduction-36"><p id="p-197">...</p></section><p id="p-198">Then a week went by as we experienced the early stages of a pandemic. Models have been used as decision-making tools worldwide. Models have been both fairly and unfairly criticized.  Graphs, tables, jargon have showed up \textit{everywhere}.</p>
+<p id="p-199"> </p></section></section></div></main>
+</div>
+</body>
+</html>
