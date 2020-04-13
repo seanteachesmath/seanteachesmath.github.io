@@ -1,0 +1,3398 @@
+plot(function(x)exp(0.14*(x-min(dat2$julian)), xlim=c(min(dat2$julian), max(dat2$julian)), add=T)
+)
+plot(function(x)exp(0.14*(x-min(dat2$julian))), xlim=c(min(dat2$julian), max(dat2$julian)), add=T)
+plot(function(x)exp(0.147*(x-min(dat2$julian))), xlim=c(min(dat2$julian), max(dat2$julian)), add=T)
+plot(function(x)exp(0.1476*(x-min(dat2$julian))), xlim=c(min(dat2$julian), max(dat2$julian)), add=T)
+plot(function(x)exp(0.147*(x-min(dat2$julian))), xlim=c(min(dat2$julian), max(dat2$julian)), add=T)
+plot(function(x)10*exp(0.1476*(x-min(dat2$julian))), xlim=c(min(dat2$julian), max(dat2$julian)), add=T)
+x
+unique(dat2$julian)
+plot(function(x)2*exp(0.1476*(x-18285)), xlim=c(min(dat2$julian), max(dat2$julian)), add=T)
+plot(aggregate(dat2$cases, by=list(dat2$julian), sum), axes=F)
+plot(function(x)2*exp(0.1476*(x-18285)), xlim=c(min(dat2$julian), max(dat2$julian)), add=T)
+plot(y ~ x, las=1)
+abline(lm(y ~ 0 + x))
+abline(lm(y ~ 0 + x, subset= x<1e5))
+abline(lm(y ~ 0 + x, subset= x>=1e5))
+abline(lm(y ~ 0 + x, subset= x<1e5))
+abline(lm(y ~ 0 + x, subset= x>=1e5))
+abline(lm(y ~ x, subset= x>=1e5))
+plot(y ~ x, las=1)#
+abline(lm(y ~ 0 + x, subset= x<1e5))#
+abline(lm(y ~ x, subset= x>=1e5
+))
+lm(y ~ 0 + x, subset= x<1e5)
+lm(y ~ 0 + x, subset= x>=1e5)
+lm(y ~ 0 + x)
+log(1.245)
+log(1.148)
+log(1.159)
+plot(function(x)2*exp(0.219*(x-min(dat2$julian))), xlim=c(min(dat2$julian), max(dat2$julian)), add=T)
+plot(aggregate(dat2$cases, by=list(dat2$julian), sum), axes=F)
+plot(function(x)2*exp(0.219*(x-min(dat2$julian))), xlim=c(min(dat2$julian), max(dat2$julian)), add=T)
+plot(function(x)1*exp(0.219*(x-min(dat2$julian))), xlim=c(min(dat2$julian), max(dat2$julian)), add=T)
+plot(function(x)1*exp(0.159*(x-min(dat2$julian))), xlim=c(min(dat2$julian), max(dat2$julian)), add=T)
+plot(function(x)1*exp(0.169*(x-min(dat2$julian))), xlim=c(min(dat2$julian), max(dat2$julian)), add=T)
+library(animation)#
+#
+dat2 <- read.delim("~/Documents/GitHub/covid-19-data/us-states.csv", header=T, sep=',')#
+#
+dat2$julian <- julian(as.Date(dat2$date, "%Y-%m-%d"))
+aggregate(dat2[, c("cases", "death")], by=list(dat2$julian), sum)
+head(dat2)
+aggregate(dat2[, c("cases", "deaths")], by=list(dat2$julian), sum)
+plot(aggregate(dat2[, c("cases", "deaths")], by=list(dat2$julian), sum)[, 2:3])
+matplot(aggregate(dat2[, c("cases", "deaths")], by=list(dat2$julian), sum)[, 2:3])
+matplot(aggregate(dat2[, c("cases", "deaths")], by=list(dat2$julian), sum)[, 2:3], type='l')
+matplot(aggregate(dat2[, c("cases", "deaths")], by=list(dat2$julian), sum)[, 2:3], type='l', log='y')
+matplot(aggregate(dat2[, c("cases", "deaths")], by=list(dat2$julian), sum)[, 2:3], type='l', log='y', lty=1, lwd=2)
+legend("topleft", c("confirmations", "deaths"), lty=1, lwd=2, col=c(1,2))
+matplot(aggregate(dat2[, c("cases", "deaths")], by=list(dat2$julian), sum)[, 2:3], type='l', log='y', lty=1, lwd=2, xlab="time", ylab="number")
+legend("topleft", c("confirmations", "deaths"), lty=1, lwd=2, col=c(1,2))
+matplot(aggregate(dat2[, c("cases", "deaths")], by=list(dat2$julian), sum)[, 2:3], type='l', log='n', lty=1, lwd=2, xlab="time", ylab="number")
+matplot(aggregate(dat2[, c("cases", "deaths")], by=list(dat2$julian), sum)[, 2:3], type='l',lty=1, lwd=2, xlab="time", ylab="number")
+matplot(aggregate(dat2[, c("cases", "deaths")], by=list(dat2$julian), sum)[, 2:3], type='l', log='n', lty=1, lwd=2, xlab="time", ylab="number")
+matplot(aggregate(dat2[, c("cases", "deaths")], by=list(dat2$julian), sum)[, 2:3], type='l',lty=1, lwd=2, xlab="time", ylab="number")
+legend("topleft", c("confirmations", "deaths"), lty=1, lwd=2, col=c(1,2))
+par(mar=c(0, 0, 0, 0), xaxs='i', yaxs='i')#
+#
+plot(NULL, xlim=c(-5.5, 5.5), ylim=c(0, 8.5))#
+plot(f, xlim=c(-5.5, 5.5), add=T)#
+f <- function(x) 0.25*x^2+1#
+#
+xs <- -5:5#
+ys <- 1:8#
+#
+points(c(0, xs), c(2, sapply(xs, f)), pch=19)#
+#
+for(i in xs){abline(v=i, col="gray", lwd=0.5)}#
+for(i in ys){abline(h=i, col="gray", lwd=0.5)}#
+#
+sqrt((f(-1)-2)^2+(-1-0)^2)#
+#
+for(i in xs)print(c(f(i), sqrt((f(i)-2)^2+(i-0)^2)))#
+#
+for(i in xs){#
+	segments(i, 0, i, f(i), lwd=2)#
+	segments(i, f(i), 0, 2, lwd=2)#
+}
+cols <- hcl.colors(length(xs), palette="viridis")
+par(mar=c(0, 0, 0, 0), xaxs='i', yaxs='i')#
+#
+plot(NULL, xlim=c(-5.5, 5.5), ylim=c(0, 8.5))#
+plot(f, xlim=c(-5.5, 5.5), add=T)#
+f <- function(x) 0.25*x^2+1#
+#
+xs <- -5:5#
+ys <- 1:8#
+#
+points(c(0, xs), c(2, sapply(xs, f)), pch=19)#
+#
+for(i in xs){abline(v=i, col="gray", lwd=0.5)}#
+for(i in ys){abline(h=i, col="gray", lwd=0.5)}#
+#
+sqrt((f(-1)-2)^2+(-1-0)^2)#
+#
+for(i in xs)print(c(f(i), sqrt((f(i)-2)^2+(i-0)^2)))#
+#
+cols <- hcl.colors(length(xs), palette="viridis")#
+for(i in xs){#
+	segments(i, 0, i, f(i), lwd=2, col=cols[i])#
+	segments(i, f(i), 0, 2, lwd=2, col=cols[i])#
+}
+length(xs)
+par(mar=c(0, 0, 0, 0), xaxs='i', yaxs='i')#
+#
+plot(NULL, xlim=c(-5.5, 5.5), ylim=c(0, 8.5))#
+plot(f, xlim=c(-5.5, 5.5), add=T)#
+f <- function(x) 0.25*x^2+1#
+#
+xs <- -5:5#
+ys <- 1:8#
+#
+points(c(0, xs), c(2, sapply(xs, f)), pch=19)#
+#
+for(i in xs){abline(v=i, col="gray", lwd=0.5)}#
+for(i in ys){abline(h=i, col="gray", lwd=0.5)}#
+#
+sqrt((f(-1)-2)^2+(-1-0)^2)#
+#
+for(i in xs)print(c(f(i), sqrt((f(i)-2)^2+(i-0)^2)))#
+#
+cols <- hcl.colors(length(xs), palette="viridis")#
+for(i in xs){#
+	segments(i, 0, i, f(i), lwd=2, col=cols[which(xs)==i])#
+	segments(i, f(i), 0, 2, lwd=2, col=cols[which(xs)==i])#
+}
+xs
+i
+xs==i
+which(xs=i)
+which(xs==i)
+which(xs==3)
+cols[which(xs)==i]
+par(mar=c(0, 0, 0, 0), xaxs='i', yaxs='i')#
+#
+plot(NULL, xlim=c(-5.5, 5.5), ylim=c(0, 8.5))#
+plot(f, xlim=c(-5.5, 5.5), add=T)#
+f <- function(x) 0.25*x^2+1#
+#
+xs <- -5:5#
+ys <- 1:8#
+#
+points(c(0, xs), c(2, sapply(xs, f)), pch=19)#
+#
+for(i in xs){abline(v=i, col="gray", lwd=0.5)}#
+for(i in ys){abline(h=i, col="gray", lwd=0.5)}#
+#
+sqrt((f(-1)-2)^2+(-1-0)^2)#
+#
+for(i in xs)print(c(f(i), sqrt((f(i)-2)^2+(i-0)^2)))#
+#
+cols <- hcl.colors(length(xs), palette="viridis")#
+for(i in xs){#
+	segments(i, 0, i, f(i), lwd=2, col=cols[which(xs==i)])#
+	segments(i, f(i), 0, 2, lwd=2, col=cols[which(xs==i)])#
+}
+library(deSolve) ## see text
+## give model#
+  POPmod <- function(t, x, parms)  {#
+     with(as.list(c(parms, x)), {#
+     dP <- lambda*P#
+     list(c(dP))#
+})}
+## list parameter(s)#
+     parms  <- c(lambda = 0.3)#
+  ## specify times solution should be returned#
+     times <- seq(0, 10, by=0.01)#
+  ## specify initial condition(s)#
+     xstart <- c(P = 8.0)#
+  ## apply solver#
+     out <-  lsoda(xstart, times, POPmod, parms)#
+     out <-  as.data.frame(out)#
+# # # # # # # # # # # # # # # ##
+#
+  ## plot solution#
+     plot(out$time, out$P, type='l', col='red',#
+     lwd=2, ylim=c(0, max(out$P)), las=1)
+install.packages(“deSolve”)
+install.packages("deSolve")
+2000*4000000/28000000
+700/285
+700/4000000
+2000/28000000
+(2000/28000000)*4000000
+rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")
+trans <- as.data.frame(trans)
+rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")
+length(rownames(trans))
+trans <- NULL#
+rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+length(rownames(trans))
+trans <- NULL
+rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")
+trans
+trans <- NULL
+rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))
+trans <- as.data.frame(trans)
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")
+trans
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, +1, 0, +1))
+trans
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, +1, 0, +1))#
+trans <- cbind(trans, ItoD = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, ItoD = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, ItoD = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, ItoD = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- parms['p']/parms['m']*c(S = 0.98, V = 0.01, I=0.01, N=0, R=0, D=0, C=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 10, 0, 0,0, 0)#
+Xsol <- matrix(0, nrow=5e4, ncol=7)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 10, 0, 0,0, 0)#
+Xsol <- matrix(0, nrow=5e4, ncol=7)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=5e4, ncol=7)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=5e3, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+files <- T#
+#
+for(num in 1:10){#
+	dat <- sols[[num]]#
+if(files)pdf(paste("flu_stoch",num,".pdf",sep=''), height=5, width=5)#
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+matplot(dat$time, dat[, c("S", "L", "E", "I", "Q", "H", "R", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))#
+#
+legend("topright", c("S", "L", "E", "I", "Q", "H", "R", "D"), col=c(hcl.colors(8, palette="viridis"), "black"), lty=1, lwd=2, bty='n')#
+mtext("Population densities (number/area)", 2, line=2.75, cex=1.5, font=2) # y axis#
+mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+if(files)dev.off()
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=5e4, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}#
+	files <- T#
+#
+for(num in 1:10){#
+	dat <- sols[[num]]#
+if(files)pdf(paste("cor_stoch",num,".pdf",sep=''), height=5, width=5)#
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+matplot(dat$time, dat[, c("S", "L", "E", "I", "Q", "H", "R", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))#
+#
+legend("topright", c("S", "L", "E", "I", "Q", "H", "R", "D"), col=c(hcl.colors(8, palette="viridis"), "black"), lty=1, lwd=2, bty='n')#
+mtext("Population densities (number/area)", 2, line=2.75, cex=1.5, font=2) # y axis#
+mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+if(files)dev.off()#
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=1e6, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}#
+	files <- T#
+#
+for(num in 1:10){#
+	dat <- sols[[num]]#
+if(files)pdf(paste("cor_stoch",num,".pdf",sep=''), height=5, width=5)#
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+matplot(dat$time, dat[, c("S", "L", "E", "I", "Q", "H", "R", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))#
+#
+legend("topright", c("S", "L", "E", "I", "Q", "H", "R", "D"), col=c(hcl.colors(8, palette="viridis"), "black"), lty=1, lwd=2, bty='n')#
+mtext("Population densities (number/area)", 2, line=2.75, cex=1.5, font=2) # y axis#
+mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+if(files)dev.off()#
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=1e5, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}#
+	files <- T#
+#
+for(num in 1:10){#
+	dat <- sols[[num]]#
+if(files)pdf(paste("cor_stoch",num,".pdf",sep=''), height=5, width=5)#
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+matplot(dat$time, dat[, c("S", "L", "E", "I", "Q", "H", "R", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))#
+#
+legend("topright", c("S", "L", "E", "I", "Q", "H", "R", "D"), col=c(hcl.colors(8, palette="viridis"), "black"), lty=1, lwd=2, bty='n')#
+mtext("Population densities (number/area)", 2, line=2.75, cex=1.5, font=2) # y axis#
+mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+if(files)dev.off()#
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=1e6, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}#
+	files <- T#
+#
+for(num in 1:10){#
+	dat <- sols[[num]]#
+if(files)pdf(paste("cor_stoch",num,".pdf",sep=''), height=5, width=5)#
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+matplot(dat$time, dat[, c("S", "L", "E", "I", "Q", "H", "R", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))#
+#
+legend("top", c("S", "L", "E", "I", "Q", "H", "R", "D"), col=c(hcl.colors(8, palette="viridis"), "black"), lty=1, lwd=2, bty='n', col=2)#
+mtext("Population densities (number/area)", 2, line=2.75, cex=1.5, font=2) # y axis#
+mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+if(files)dev.off()#
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}#
+	files <- T#
+#
+for(num in 1:10){#
+	dat <- sols[[num]]#
+if(files)pdf(paste("cor_stoch",num,".pdf",sep=''), height=5, width=5)#
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+matplot(dat$time, dat[, c("S", "L", "E", "I", "Q", "H", "R", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))#
+#
+legend("top", c("S", "L", "E", "I", "Q", "H", "R", "D"), col=c(hcl.colors(8, palette="viridis"), "black"), lty=1, lwd=2, bty='n', col=2)#
+mtext("Population densities (number/area)", 2, line=2.75, cex=1.5, font=2) # y axis#
+mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+if(files)dev.off()#
+}
+prop
+head(dat)
+head(Xsol)
+tail(Xsol)
+Xsol <- matrix(0, nrow=8e5, ncol=8)
+Xsol
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+if(sum(Xsol[nrow(Xsol), ])>0){#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+}else{#
+	break;#
+}#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}#
+	files <- T#
+#
+for(num in 1:10){#
+	dat <- sols[[num]]#
+if(files)pdf(paste("cor_stoch",num,".pdf",sep=''), height=5, width=5)#
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+matplot(dat$time, dat[, c("S", "L", "E", "I", "Q", "H", "R", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))#
+#
+legend("top", c("S", "L", "E", "I", "Q", "H", "R", "D"), col=c(hcl.colors(8, palette="viridis"), "black"), lty=1, lwd=2, bty='n', col=2)#
+mtext("Population densities (number/area)", 2, line=2.75, cex=1.5, font=2) # y axis#
+mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+if(files)dev.off()#
+}
+Xsol[nrow(Xsol), ]
+sum(Xsol[nrow(Xsol), ])
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+if(sum(Xsol[nrow(Xsol), ])>0){#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+}else{#
+	print("stop")#
+}#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+if(sum(Xsol[nrow(Xsol), ])>0){#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+}else{#
+	print("stop")#
+	break;#
+}#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+?'break'
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+if(sum(Xsol[nrow(Xsol), ])>0){#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+}else{#
+	print("stop")#
+	next;#
+}#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+files <- T#
+#
+for(num in 1:10){#
+	dat <- sols[[num]]#
+if(files)pdf(paste("cor_stoch",num,".pdf",sep=''), height=5, width=5)#
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+matplot(dat$time, dat[, c("S", "L", "E", "I", "Q", "H", "R", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))#
+#
+legend("top", c("S", "L", "E", "I", "Q", "H", "R", "D"), col=c(hcl.colors(8, palette="viridis"), "black"), lty=1, lwd=2, bty='n', col=2)#
+mtext("Population densities (number/area)", 2, line=2.75, cex=1.5, font=2) # y axis#
+mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+if(files)dev.off()#
+}
+str(sols)
+print(i)
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+if(sum(Xsol[nrow(Xsol), ])>0){#
+for(i in 1:nrow(Xsol)){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}#
+}else{#
+	print(i)#
+	next;#
+}#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:nrow(Xsol)){#
+if(sum(Xsol[nrow(Xsol), ])>0){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}else{#
+	print(i)#
+	next;#
+}#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:nrow(Xsol)){#
+if(sum(Xsol[i, ])>0){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}else{#
+	print(i)#
+	next;#
+}#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:nrow(Xsol)){#
+if(sum(Xsol[i, ])>0){#
+	(rn <- runif(2, 0, 1))#
+	## move 'rate' below#
+	# S <- X[1]#
+	# V <- X[2]#
+	# I <- X[3]#
+	# R <- X[4]#
+	# N <- X[5]#
+	# D <- X[6]#
+	# C <- X[7]#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}else{#
+print("stop")#
+}#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+i
+i <- 50
+Xsol[i, ]
+Xsol[1, ]
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+Xsol[, 1] <- X#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 2:nrow(Xsol)){#
+if(sum(Xsol[i, ])>0){#
+	(rn <- runif(2, 0, 1))#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}else{#
+print("stop")#
+}#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:2){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+Xsol[, 1] <- X#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 2:nrow(Xsol)){#
+if(sum(Xsol[i-1, ])>0){#
+	(rn <- runif(2, 0, 1))#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}else{#
+print("stop")#
+}#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+prop
+i
+Xsol[, i]
+Xsol[i, ]
+Xsol[i-1, ]
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:2){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+Xsol[, 1] <- X#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 2:nrow(Xsol)){#
+if(sum(Xsol[i-1, 1:6])>0){#
+	(rn <- runif(2, 0, 1))#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}else{#
+print("stop")#
+}#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+i
+Xsol[i, ]
+Xsol[i-1, ]
+Xsol[i-2, ]
+Xsol[i-3, ]
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:2){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+Xsol[1, ] <- X#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:(nrow(Xsol)-1)){#
+if(sum(Xsol[i, 1:6]) > 0){#
+	(rn <- runif(2, 0, 1))#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}else{#
+print("stop")#
+}#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+Xsol[1, ] <- X
+head(Xsol)
+(sum(Xsol[i, 1:6])
+)
+i
+i <- 1
+sum(Xsol[i, 1:6])
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:2){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+Xsol[1, ] <- X#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:(nrow(Xsol)-1)){#
+if(sum(Xsol[i, 1:6]) > 0){#
+	(rn <- runif(2, 0, 1))#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}else{#
+print("stop")#
+}#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:2){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+Xsol[1, ] <- X#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 1:10){##}(nrow(Xsol)-1)){#
+if(sum(Xsol[i, 1:6]) > 0){#
+	(rn <- runif(2, 0, 1))#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}else{#
+print("stop")#
+}#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+Xsol
+head(Xsol)
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:2){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+Xsol[1, ] <- t(X)#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 2:10){##}(nrow(Xsol)-1)){#
+if(sum(Xsol[i-1, 1:6]) > 0){#
+	(rn <- runif(2, 0, 1))#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}else{#
+print("stop")#
+}#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+Xsol
+head(Xsol)
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.1, betal = 0.001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:2){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+Xsol[1, ] <- t(X)#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 2:(nrow(Xsol)-1)){#
+if(sum(Xsol[i-1, 1:6]) > 0){#
+	(rn <- runif(2, 0, 1))#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}else{#
+print("stop")#
+}#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}
+num <- 1
+dat <- sols[[num]]
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+matplot(dat$time, dat[, c("S", "L", "E", "I", "Q", "H", "R", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))#
+#
+legend("top", c("S", "L", "E", "I", "Q", "H", "R", "D"), col=c(hcl.colors(8, palette="viridis"), "black"), lty=1, lwd=2, bty='n', col=2)#
+mtext("Population densities (number/area)", 2, line=2.75, cex=1.5, font=2) # y axis#
+mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis
+dev.off()
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+matplot(dat$time, dat[, c("S", "L", "E", "I", "Q", "H", "R", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))#
+#
+legend("top", c("S", "L", "E", "I", "Q", "H", "R", "D"), col=c(hcl.colors(8, palette="viridis"), "black"), lty=1, lwd=2, bty='n', ncol=2)#
+mtext("Population densities (number/area)", 2, line=2.75, cex=1.5, font=2) # y axis#
+mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis
+head(dat)
+tail(dat)
+matplot(dat[dat$time>0, "time"], dat[dat$time>0, , c("S", "L", "E", "I", "Q", "H", "R", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))
+matplot(dat[dat$time>0, "time"], dat[dat$time>0, c("S", "L", "E", "I", "Q", "H", "R", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("S", "L")], 2, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("S", "L")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))
+?hcl.colors
+hcl.pals
+hcl.pals()
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(2, 2))#
+#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("S", "L")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="Lisbon")[1]))#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>, c("E", "I")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="Lisbon")[2]))#
+plot(dat[dat$time>0, "time"], dat[dat$time>0, "H"], 1, type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="Lisbon")[3]))#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("Q", "R")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="Lisbon")[4]))#
+plot(dat[dat$time>0, "time"], dat[dat$time>0, "D"], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c("black"))
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(2, 2))#
+#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("S", "L")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="Lisbon")[1]))#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("E", "I")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="Lisbon")[2]))#
+plot(dat[dat$time>0, "time"], dat[dat$time>0, "H"], 1, type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="Lisbon")[3]))#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("Q", "R")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="Lisbon")[4]))#
+plot(dat[dat$time>0, "time"], dat[dat$time>0, "D"], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c("black"))
+dat[dat$time>0, "H"]
+plot(dat[dat$time>0, "time"], dat[dat$time>0, "D"], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c("black"))
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("Q", "R")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="Lisbon")[4]))
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("E", "I")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="Lisbon")[2]))
+time
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("S", "L")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="Lisbon")[1]))
+plot(dat[dat$time>0, "time"], dat[dat$time>0, "H"], 1, type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="Lisbon")[3]))
+plot(dat[dat$time>0, "time"], dat[dat$time>0, "H"], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="Lisbon")[3]))
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(2, 2))#
+#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("S", "L")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="viridis")[1]))#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("E", "I")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="viridis")[2]))#
+#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("Q", "R")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="viridis")[3]))#
+#
+plot(dat[dat$time>0, "time"], dat[dat$time>0, c("H", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="viridis")[4], "black"))
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(2, 2))#
+#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("S", "L")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="viridis")[1]))#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("E", "I")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="viridis")[2]))#
+#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("Q", "R")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="viridis")[3]))#
+#
+matplot(dat[dat$time>0, "time"], dat[dat$time>0, c("H", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="viridis")[4], "black"))
+set.seed(101)#
+parms <- c(sd = 0.9, sr = 0.01, betas = 0.01, betal = 0.0001, lambda = 1/3, deltai = 0.05,#
+			q = 0.1, h = 0.5, deltaq = 0.05, deltah = 0.25, recq=0.1, rech=0.3)#
+#
+# parms <- parms2#
+#
+sols <- list(NULL)#
+xstart <- c(S = 1e5, L = 0.0, E = 0.0, I=10, R=0, Q=0, H=0, D=0)#
+#
+trans <- NULL#
+# rownames(trans) <- c("S", "L", "E", "I", "R", "Q", "H", "D")#
+#
+trans <- cbind(trans, StoL = c(-1, 1, 0, 0, 0, 0, 0, 0))#
+trans <- as.data.frame(trans)#
+#
+rownames(trans) <- c("S", "L", "E", "I", "Q", "H", "R", "D")#
+trans <- cbind(trans, LtoS = c(+1, -1, 0, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, StoE = c(-1, 0, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, LtoE = c(0, -1, +1, 0, 0, 0, 0, 0))#
+trans <- cbind(trans, EtoI = c(0, 0, -1, +1, 0, 0, 0, 0))#
+trans <- cbind(trans, Ideath = c(0, 0, 0, -1, 0, 0, 0, +1))#
+trans <- cbind(trans, ItoQ = c(0, 0, 0, -1, +1, 0, 0, 0))#
+trans <- cbind(trans, ItoH = c(0, 0, 0, -1, 0, +1, 0, 0))#
+trans <- cbind(trans, Qdeath = c(0, 0, 0, 0, -1, 0, 0, +1))#
+trans <- cbind(trans, Hdeath = c(0, 0, 0, 0, 0, -1, 0, +1))#
+trans <- cbind(trans, QtoR = c(0, 0, 0, 0, -1, 0, +1, 0))#
+trans <- cbind(trans, HtoR = c(0, 0, 0, 0, 0, -1, +1, 0))#
+#trans <- cbind(trans, RtoS = c(+1, 0, 0, -1, 0, 0, 0))#
+#trans <- cbind(trans, NtoS = c(+1, 0, 0, 0, -1, 0, 0))#
+trans#
+#
+## if we're lucky this should run your model with almost no modification#
+for(num in 1:10){#
+X <- c(1e5, 0, 0, 10, 0, 0, 0, 0)#
+Xsol <- matrix(0, nrow=8e5, ncol=8)#
+Xsol[1, ] <- t(X)#
+tsol <- rep(0, nrow(Xsol)) #pre allocated memory to solve our slowness problem by making these matrix/vector combos#
+t <- 0#
+for(i in 2:(nrow(Xsol)-1)){#
+if(sum(Xsol[i-1, 1:6]) > 0){#
+	(rn <- runif(2, 0, 1))#
+#	 StoL LtoS StoE LtoE EtoI Ideath ItoQ ItoH ItoD Qdeath Hdeath QtoR HtoR#
+# S   -1    1   -1    0    0      0    0    0    0      0      0    0    0#
+# L    1   -1    0   -1    0      0    0    0    0      0      0    0    0#
+# E    0    0    1    1   -1      0    0    0    0      0      0    0    0#
+# I    0    0    0    0    1     -1   -1   -1   -1      0      0    0    0#
+# Q    0    0    0    0    0      0    1    0    0     -1      0   -1    0#
+# H    0    0    0    0    0      0    0    1    0      0     -1    0   -1#
+# R    0    0    0    0    0      0    0    0    0      0      0    1    1#
+# D    0    0    0    0    0      1    0    0    1      1      1    0    0#
+#
+	rate <- with(as.list(parms), {c(#
+		sd*X[1],#
+		sr*X[2], #
+		betas*X[1]*X[4],#
+		betal*X[2]*X[4],#
+		lambda*X[3],#
+		deltai*X[4], #
+		q*X[4], #
+		h*X[4], #
+		deltaq*X[5], #
+		deltah*X[6],#
+		recq*X[5],#
+		rech*X[6]#
+		)})#
+	(prop <- cumsum(rate)/sum(rate))#
+	(rxn <- min(which(rn[1] < prop)))#
+#
+	## increment X#
+	(X <- X + as.matrix(trans[, rxn], 1, 8))#
+	# if(min(X)==-1)break## before something goes negative, things can be zero, but not negative#
+	## store Xs#
+#
+	(Xsol[i, ] <- t(X)) ## other ways to do this#
+	## increment t#
+	t <- t + -log(rn[2])/sum(rate)#
+	## store t#
+	tsol[i] <- t#
+	#if(i/100000==floor(i/100000))print(i)#
+}else{#
+print("stop")#
+next;#
+}#
+}#
+#
+  dat <- cbind(tsol, Xsol)#
+  dat <- as.data.frame(dat)#
+  names(dat) <- c("time", "S", "L", "E", "I", "Q", "H", "R", "D")#
+  head(dat)#
+  ## we'll eventually turn this into a function that eats parameters and intial conditions and returns a result so that our applications will be cleaner to look at#
+sols[[num]] <- dat#
+}#
+	files <- T#
+#
+for(num in 1:10){#
+	dat <- sols[[num]]#
+if(files)pdf(paste("cor_stoch",num,".pdf",sep=''), height=5, width=5)#
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+matplot(dat[dat$time>0, "time"], dat[dat$time>0, c("S", "L", "E", "I", "Q", "H", "R", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(8, palette="viridis"), "black"))#
+#
+legend("top", c("S", "L", "E", "I", "Q", "H", "R", "D"), col=c(hcl.colors(8, palette="viridis"), "black"), lty=1, lwd=2, bty='n', ncol=2)#
+mtext("Population densities (number/area)", 2, line=2.75, cex=1.5, font=2) # y axis#
+mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+if(files)dev.off()#
+#
+if(files)pdf(paste("cor_stoch_totals",num,".pdf",sep=''), height=5, width=5)#
+par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(2, 2))#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("S", "L")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="viridis")[1]), main="healthy")#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("E", "I")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="viridis")[2]), main="infected (exposed + infectious)")#
+plot(dat[dat$time>0, "time"], apply(dat[dat$time>0, c("Q", "R")], 1, sum), type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="viridis")[3]), main="quarantined + recovered")#
+matplot(dat[dat$time>0, "time"], dat[dat$time>0, c("H", "D")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c(hcl.colors(4, palette="viridis")[4], "black"), main="hospitalized and dead")#
+if(files)dev.off()#
+}#
+#
+# # #
+# if(files)pdf(paste("flu_cost",num,".pdf",sep=''), height=5, width=5)#
+# par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+# plot(dat[dat$time<=100, "time"], dat[dat$time<=100, "C"]/1e6, type='l', lty=1, lwd=1, xlab="", ylab="", las=1, xlim=c(0, 100), ylim=c(0, 5))#
+# mtext("Cost (millions USD)", 2, line=2.75, cex=1.5, font=2) # y axis#
+# mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+# matlines(out[out$time<=100, "time"], out[out$time<=100, "C"]/1e6, type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c("black"))#
+#
+# if(files)dev.off()#
+# if(files)pdf(paste("flu_compare",num,".pdf", sep=''), height=5, width=5)#
+# par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+# matplot(dat[dat$time<=100, "time"], dat[dat$time<=100, c("S", "V", "I",  "R", "N")], type='l', lty=1, lwd=1, xlab="", ylab="", las=1, col=c("red", "darkgray", "green", "blue", "magenta"), xlim=c(0, 100))#
+#
+# legend("topright", c("Susceptible", "Vaccinated", "Infectious",  "Treated", "Natural"), col=c("red", "darkgray", "green", "blue", "magenta"), lty=1, lwd=2, bty='n')#
+# mtext("Population densities (number/area)", 2, line=2.95, cex=1.5, font=2) # y axis#
+# mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+# matlines(out[out$time<=100, "time"], out[out$time<=100, c("S", "V", "I",  "R","N")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c("red", "darkgray", "green", "blue", "magenta"))#
+# points(dat[which(dat$I==min(dat$I)), c("time")], rep(-10, length(which(dat$I==min(dat$I)))), pch=19, cex=0.5)#
+# if(files)dev.off()#
+# }#
+#
+# num <- 2#
+# dat <- sols[[num]]#
+# min(dat[out$time<=100, "I"])#
+#
+# if(files)pdf("flu_sample.pdf",  height=5, width=5)#
+# par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+# matplot(out[out$time<=100, "time"], out[out$time<=100, c("S", "V", "I",  "R","N")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c("red", "darkgray", "green", "blue", "magenta"))#
+#
+# # matplot(dat[dat$time<=100, "time"], dat[dat$time<=100, c("S", "V", "I",  "R", "N")], type='l', lty=1, lwd=1, xlab="", ylab="", las=1, col=c("red", "darkgray", "green", "blue", "magenta"), xlim=c(0, 100))#
+#
+# legend("topright", c("Susceptible", "Vaccinated", "Infectious",  "Treated", "Natural"), col=c("red", "darkgray", "green", "blue", "magenta"), lty=1, lwd=2, bty='n')#
+# mtext("Population densities (number/area)", 2, line=2.95, cex=1.5, font=2) # y axis#
+# mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+#
+# if(files)dev.off()#
+#
+# if(files)pdf("cost_sample.pdf",  height=5, width=5)#
+# par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+# matplot(out[out$time<=100, "time"], out[out$time<=100, "C"]/1e6, type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c("black"), xlim=c(0, 100), ylim=c(0, 5))#
+#
+# mtext("Cost (millions USD)", 2, line=2.75, cex=1.5, font=2) # y axis#
+# mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+# if(files)dev.off()#
+# if(files)pdf("flu_compare.pdf",  height=5, width=5)#
+# par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+# matplot(dat[dat$time<=100, "time"], dat[dat$time<=100, c("S", "V", "I",  "R", "N")], type='l', lty=1, lwd=1, xlab="", ylab="", las=1, col=c("red", "darkgray", "green", "blue", "magenta"), xlim=c(0, 100))#
+#
+# legend("topright", c("Susceptible", "Vaccinated", "Infectious",  "Treated", "Natural"), col=c("red", "darkgray", "green", "blue", "magenta"), lty=1, lwd=2, bty='n')#
+# mtext("Population densities (number/area)", 2, line=2.95, cex=1.5, font=2) # y axis#
+# mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+#
+# matlines(out[out$time<=100, "time"], out[out$time<=100, c("S", "V", "I",  "R","N")], type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c("red", "darkgray", "green", "blue", "magenta"))#
+# points(dat[which(dat$I==min(dat$I)), c("time")], rep(-10, length(which(dat$I==min(dat$I)))), pch=19, cex=0.5)#
+# if(files)dev.off()#
+# if(files)pdf("cost_compare.pdf", height=5, width=5)#
+# par(mar=c(4.1, 4.1, 1.1, 1.1), mfrow=c(1, 1))#
+# matplot(dat[dat$time<=100, "time"], dat[dat$time<=100, "C"]/1e6, type='l', lty=1, lwd=1, xlab="", ylab="", las=1, col=c("black"), xlim=c(0, 100), ylim=c(0, 5))#
+# mtext("Cost (millions USD)", 2, line=2.75, cex=1.5, font=2) # y axis#
+# mtext("Time (weeks)", 1, line=2.5, cex=1.5, font=2) # x axis#
+#
+# matlines(out[out$time<=100, "time"], out[out$time<=100, "C"]/1e6, type='l', lty=1, lwd=2, xlab="", ylab="", las=1, col=c("black"))#
+# points(dat[which(dat$I==min(dat$I)), c("time")], rep(-10, length(which(dat$I==min(dat$I)))), pch=19, cex=0.5)#
+# if(files)dev.off()
+dat2 <- read.delim("~/Documents/GitHub/covid-19-data/us-states.csv", header=T, sep=',')
+dat2[dat2$state=="New Hampshire",]
+dat <- read.delim("~/Documents/GitHub/covid-19-data/us-counties.csv", header=T, sep=',')
+dat[dat$state=="New Hampshire",]
+head(dat[dat$state=="New Hampshire",])
+head(dat[dat$state=="New Hampshire" & dat$county=="Hillsborough",])
+dat[dat$state=="New Hampshire" & dat$county=="Hillsborough",]
+library(deSolve) #
+## The parameters #
+parms <- c(#
+  ## type parameter values here#
+  r = 0.066,#
+  k = 0.005, # carrying capacity#
+  Omega = 1/365, ## vaccination rate ## vary this, multiply by 0.1, 0.01#
+  Beta = 0.0019, ## infection rate#
+  Gamma = 1/8, ##recovery rate#
+  Delta = 1/(365*74), #natural death rate#
+  Sigma = 0.95, ##avg of 2 vaccines#
+  Rho = 1/10, ## exposure rate #
+  Alpha = 0.09,#
+  b = 10, #
+  h = 12037, #
+  g = 3037,#
+  a = 76.68#
+)#
+parms[10:13] <- parms[10:13]/1000#
+#
+## if r*(S + V + R)*exp(-k*(S + V + R)) were r*(S + V + R + E + I)*exp(-k*(S + V + R + E + I))#
+## then r*N*exp(-k*N) - delta*N == 0 means: #
+nstar <- log(parms['r']/parms['Delta'])/parms['k']#
+## is the equilibrium#
+## vector of timesteps#
+times <- seq(0, 365*300, by=1)#
+## name this something that makes sense for your model. e.g., MEASmod #
+MEASmod <- function(t, x, parms)  {#
+  with(as.list(c(parms, x)), {#
+    dS <- r*(S + V + R)*exp(-k*(S + V + R)) - Omega*S - Beta*S*I - Delta*S#
+    dV <- Omega*S - Beta*(1.0-Sigma)*V*I - Delta*V    #
+    dE <- Beta*S*I + Beta*(1.0- Sigma)*V*I - Rho*E - Delta*E #
+    dI <- Rho*E - Gamma*I - Delta*I ## infected   #
+    dR <- Gamma*I - Delta*R ## recovered#
+    dC <- (1.0 - Alpha)*b*Beta*S*I + Alpha*h*Beta*S*I + a*Omega*S + g*Gamma*I    #
+    list(c(dS, dV, dE, dI, dR, dC))#
+  })#
+}#
+## intial conditions ##set the initial conditions for each variable. make sure these are in the same order as they are defined above#
+## (xstart <- c(S=999, V=0, E=0, I=1, R=0, C=0))#
+initi <- 0.001#
+initv <- 0.01#
+(xstart <- c(S=1-initi-initv, V=initv, E=0, I=initi, R=0, C=0)*nstar)#
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+##run model#
+out <- as.data.frame(lsoda(xstart, times, MEASmod, parms, rtol=1e-3))#
+## try this#
+out$N <- apply(out[c('S', 'V', 'E', 'I', 'R')], 1, sum)#
+out$time <- out$time/365#
+ym <- 1000*max(ceiling(out$N/1000))#
+plot(out$time, out$N, type='l', lty=1, lwd=2, xlab ='time (in years)',  ylab= 'Population', las=1, ylim=c(0, ym), col="gray")#
+matlines(out$time, out[c('S', 'V', 'E', 'I', 'R')], type='l', lty=1, lwd=2)#
+legend("topright", c("S", "V", "E", "I", "R", "N"), lty=1, col=c(1:5, "gray"), ncol=3, bg="white", lwd=2)#
+ics <- out[out$time==90, ][2:7]#
+for(i in 1:length(ics))xstart[i] <- ics[i]#
+xstart <- unlist(xstart)#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+pdf("plots.pdf", height=10, width=10)#
+par(mfrow=c(2, 2), mar=c(4.1,5.1,1.1,1.1))#
+ym <- 1000*max(ceiling(out$N/1000))#
+plot(out$time, out$N, type='l', lty=1, lwd=2, xlab ='time (in years)',  ylab= 'Population', las=1, ylim=c(0, ym), col="gray")#
+matlines(out$time, out[c('S', 'V', 'E', 'I', 'R')], type='l', lty=1, lwd=2)#
+legend("topright", c("S", "V", "E", "I", "R", "N"), lty=1, col=c(1:5, "gray"), ncol=3, bg="white", lwd=2)#
+#
+points(rep(90, length(ics)), ics, col=1:5, pch=19)#
+par(new=T)#
+matplot(out$time, out[c('E', 'I')], type='l', col=c(3:4), lty=3, lwd=1,  axes=F, xlab="", ylab="", ylim=c(0, 50))#
+axis(4, las=1)#
+#
+plot(out$time, out[,'C'], type='l', lty=1, lwd=2, xlab ='time (in years)', ylab= 'Cost', log='y', las=1)#
+#
+matplot(out$time, out[c('S', 'V', 'E', 'I', 'R')]/out[, 'N'], type='l', lty=1, lwd=2, xlab ='time (in years)',  ylab= 'Proportion', las=1)#
+lines(out$time, apply(out[c('S', 'V', 'E', 'I', 'R')]/out[, 'N'], 1, sum), type='l', lty=1, lwd=2, col="gray")#
+points(rep(90, length(ics)), ics/sum(ics[1:5]), col=1:5, pch=19)#
+par(new=T)#
+matplot(out$time, out[c('E', 'I')]/out[, 'N'], type='l', col=3:4, lty=3, lwd=1,  axes=F, xlab="", ylab="", ylim=c(0, 0.0025))#
+axis(4, las=1)#
+#
+plot(out$time, parms['r']*(out$S + out$V + out$R)*exp(-parms['k']*(out$S + out$V + out$R)), type='l', lty=1, lwd=2, xlab ='time (in years)', ylab= 'birth rate', las=1, ylim=c(0, 5))#
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#
+par(mfrow=c(2, 2), mar=c(4.1,5.1,1.1,1.1))#
+plot(out$time, out$N, type='l', lty=1, lwd=2, xlab ='time (in years)',  ylab= 'Population', las=1, ylim=c(0, ym), col="gray", xlim=c(0, 2))#
+matlines(out$time, out[c('S', 'V', 'E', 'I', 'R')], type='l', lty=1, lwd=2)#
+legend("topright", c("S", "V", "E", "I", "R", "N"), lty=1, col=c(1:5, "gray"), ncol=3, bg="white", lwd=2)#
+#
+plot(out$time, out[,'C'], type='l', lty=1, lwd=2, xlab ='time (in years)', ylab= 'Cost', log='y', las=1, xlim=c(0, 2))#
+#
+matplot(out$time, out[c('S', 'V', 'E', 'I', 'R')]/out[, 'N'], type='l', lty=1, lwd=2, xlab ='time (in years)',  ylab= 'Proportion', las=1, xlim=c(0, 2))#
+lines(out$time, apply(out[c('S', 'V', 'E', 'I', 'R')]/out[, 'N'], 1, sum), type='l', lty=1, lwd=2, col="gray")#
+#
+plot(out$time, parms['r']*(out$S + out$V + out$R)*exp(-parms['k']*(out$S + out$V + out$R)), type='l', lty=1, lwd=2, xlab ='time (in years)', ylab= 'birth rate', las=1, xlim=c(0, 5))#
+dev.off()
+library(deSolve) #
+## The parameters #
+parms <- c(#
+  ## type parameter values here#
+  r = 0.066,#
+  k = 0.5, # carrying capacity#
+  Omega = 1/365, ## vaccination rate ## vary this, multiply by 0.1, 0.01#
+  Beta = 0.0019, ## infection rate#
+  Gamma = 1/8, ##recovery rate#
+  Delta = 1/(365*74), #natural death rate#
+  Sigma = 0.95, ##avg of 2 vaccines#
+  Rho = 1/10, ## exposure rate #
+  Alpha = 0.09,#
+  b = 10, #
+  h = 12037, #
+  g = 3037,#
+  a = 76.68#
+)#
+parms[10:13] <- parms[10:13]/1000#
+#
+## if r*(S + V + R)*exp(-k*(S + V + R)) were r*(S + V + R + E + I)*exp(-k*(S + V + R + E + I))#
+## then r*N*exp(-k*N) - delta*N == 0 means: #
+nstar <- log(parms['r']/parms['Delta'])/parms['k']#
+## is the equilibrium#
+## vector of timesteps#
+times <- seq(0, 365*300, by=1)#
+## name this something that makes sense for your model. e.g., MEASmod #
+MEASmod <- function(t, x, parms)  {#
+  with(as.list(c(parms, x)), {#
+    dS <- r*(S + V + R)*exp(-k*(S + V + R)) - Omega*S - Beta*S*I - Delta*S#
+    dV <- Omega*S - Beta*(1.0-Sigma)*V*I - Delta*V    #
+    dE <- Beta*S*I + Beta*(1.0- Sigma)*V*I - Rho*E - Delta*E #
+    dI <- Rho*E - Gamma*I - Delta*I ## infected   #
+    dR <- Gamma*I - Delta*R ## recovered#
+    dC <- (1.0 - Alpha)*b*Beta*S*I + Alpha*h*Beta*S*I + a*Omega*S + g*Gamma*I    #
+    list(c(dS, dV, dE, dI, dR, dC))#
+  })#
+}#
+## intial conditions ##set the initial conditions for each variable. make sure these are in the same order as they are defined above#
+## (xstart <- c(S=999, V=0, E=0, I=1, R=0, C=0))#
+initi <- 0.001#
+initv <- 0.01#
+(xstart <- c(S=1-initi-initv, V=initv, E=0, I=initi, R=0, C=0)*nstar)#
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+##run model#
+out <- as.data.frame(lsoda(xstart, times, MEASmod, parms, rtol=1e-3))#
+## try this#
+out$N <- apply(out[c('S', 'V', 'E', 'I', 'R')], 1, sum)#
+out$time <- out$time/365#
+ym <- 1000*max(ceiling(out$N/1000))#
+plot(out$time, out$N, type='l', lty=1, lwd=2, xlab ='time (in years)',  ylab= 'Population', las=1, ylim=c(0, ym), col="gray")#
+matlines(out$time, out[c('S', 'V', 'E', 'I', 'R')], type='l', lty=1, lwd=2)#
+legend("topright", c("S", "V", "E", "I", "R", "N"), lty=1, col=c(1:5, "gray"), ncol=3, bg="white", lwd=2)
+library(deSolve) #
+## The parameters #
+parms <- c(#
+  ## type parameter values here#
+  r = 0.066,#
+  k = 0.05, # carrying capacity#
+  Omega = 1/365, ## vaccination rate ## vary this, multiply by 0.1, 0.01#
+  Beta = 0.0019, ## infection rate#
+  Gamma = 1/8, ##recovery rate#
+  Delta = 1/(365*74), #natural death rate#
+  Sigma = 0.95, ##avg of 2 vaccines#
+  Rho = 1/10, ## exposure rate #
+  Alpha = 0.09,#
+  b = 10, #
+  h = 12037, #
+  g = 3037,#
+  a = 76.68#
+)#
+parms[10:13] <- parms[10:13]/1000#
+#
+## if r*(S + V + R)*exp(-k*(S + V + R)) were r*(S + V + R + E + I)*exp(-k*(S + V + R + E + I))#
+## then r*N*exp(-k*N) - delta*N == 0 means: #
+nstar <- log(parms['r']/parms['Delta'])/parms['k']#
+## is the equilibrium#
+## vector of timesteps#
+times <- seq(0, 365*300, by=1)#
+## name this something that makes sense for your model. e.g., MEASmod #
+MEASmod <- function(t, x, parms)  {#
+  with(as.list(c(parms, x)), {#
+    dS <- r*(S + V + R)*exp(-k*(S + V + R)) - Omega*S - Beta*S*I - Delta*S#
+    dV <- Omega*S - Beta*(1.0-Sigma)*V*I - Delta*V    #
+    dE <- Beta*S*I + Beta*(1.0- Sigma)*V*I - Rho*E - Delta*E #
+    dI <- Rho*E - Gamma*I - Delta*I ## infected   #
+    dR <- Gamma*I - Delta*R ## recovered#
+    dC <- (1.0 - Alpha)*b*Beta*S*I + Alpha*h*Beta*S*I + a*Omega*S + g*Gamma*I    #
+    list(c(dS, dV, dE, dI, dR, dC))#
+  })#
+}#
+## intial conditions ##set the initial conditions for each variable. make sure these are in the same order as they are defined above#
+## (xstart <- c(S=999, V=0, E=0, I=1, R=0, C=0))#
+initi <- 0.001#
+initv <- 0.01#
+(xstart <- c(S=1-initi-initv, V=initv, E=0, I=initi, R=0, C=0)*nstar)#
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+##run model#
+out <- as.data.frame(lsoda(xstart, times, MEASmod, parms, rtol=1e-3))#
+## try this#
+out$N <- apply(out[c('S', 'V', 'E', 'I', 'R')], 1, sum)#
+out$time <- out$time/365#
+ym <- 1000*max(ceiling(out$N/1000))#
+plot(out$time, out$N, type='l', lty=1, lwd=2, xlab ='time (in years)',  ylab= 'Population', las=1, ylim=c(0, ym), col="gray")#
+matlines(out$time, out[c('S', 'V', 'E', 'I', 'R')], type='l', lty=1, lwd=2)#
+legend("topright", c("S", "V", "E", "I", "R", "N"), lty=1, col=c(1:5, "gray"), ncol=3, bg="white", lwd=2)
+2^(-(1:8))
+pdf("change_k.pdf", height=10, width=10)#
+par(mfrow=c(1, 1), mar=c(4.1,5.1,1.1,1.1))#
+for(i in 1:8){#
+	(xstart <- c(S=1-initi-initv, V=initv, E=0, I=initi, R=0, C=0)*nstar)#
+	parms['k'] <- 2^(-i)#
+	out <- as.data.frame(lsoda(xstart, times, MEASmod, parms, rtol=1e-3))#
+	out$N <- apply(out[c('S', 'V', 'E', 'I', 'R')], 1, sum)#
+	out$time <- out$time/365#
+	ym <- 1000*max(ceiling(out$N/1000))#
+	plot(out$time, out$N, type='l', lty=1, lwd=2, xlab ='time (in years)',  ylab= 'Population', las=1, ylim=c(0, ym), col="gray")#
+	matlines(out$time, out[c('S', 'V', 'E', 'I', 'R')], type='l', lty=1, lwd=2)#
+	legend("topright", c("S", "V", "E", "I", "R", "N"), lty=1, col=c(1:5, "gray"), ncol=3, 	bg="white", lwd=2)#
+}#
+dev.off()
+plot(function(x)sin(3072*x), xlim=c(-2, 2)/100)
+plot(function(x)sin(3072*x), xlim=c(-2, 2)/1000)
+plot(function(x)sin(3072*x), xlim=c(-2, 2)/1000, lwd=2)
+plot(function(x)sin(3072*x), xlim=c(-2, 2)/1000, add=T, col=2, lwd=2)
+plot(function(x)sin(3072*x), xlim=c(-2, 2)/1000, add=T, col=3, lwd=2)
+plot(function(x)sin(3072*x), xlim=c(-2, 2)/1000, lwd=2)#
+plot(function(x)sin(6144*x), xlim=c(-2, 2)/1000, add=T, col=2, lwd=2)#
+plot(function(x)sin(12288*x), xlim=c(-2, 2)/1000, add=T, col=3, lwd=2)
+plot(function(x)sin(12288*x), xlim=c(-2, 2)/1000, add=T, col=4, lwd=2)
+curve(function(x)sin(6144*x), xlim=c(-2, 2)/1000, col=2, lwd=2)
+curve(function(x)sin(12288*x), xlim=c(-2, 2)/1000, col=4, lwd=2)
+plot(function(x)sin(3072*x), xlim=c(-2, 2)/1000, lwd=2)#
+curve(function(x)sin(6144*x), xlim=c(-2, 2)/1000, col=2, lwd=2)#
+curve(function(x)sin(12288*x), xlim=c(-2, 2)/1000, col=4, lwd=2)
+curve(function(x)sin(6144*x), from=-0.002, to = 0.002, n=1000, col=2, lwd=2)
+curve(sin(6144*x), from=-0.002, to = 0.002, n=1000, col=2, lwd=2)
+curve(sin(12288*x), from=-0.002, to = 0.002, n=1000, col=4, lwd=2, add=T)
+plot(function(x)sin(3072*x), xlim=c(-2, 2)/1000, lwd=2)
+curve(sin(6144*x), from=-0.002, to = 0.002, n=1000, col=2, lwd=2, add=T)
+curve(sin(12288*x), from=-0.002, to = 0.002, n=1000, col=4, lwd=2, add=T)
+curve(sin(12288*x), from=a, to = b, n=1000, col=4, lwd=2, add=T)
+a <- -2*pi/(3072)
+b <- 2*pi/(3072)
+plot(function(x)sin(3072*x), xlim=c(-a, b)/1000, lwd=2)
+curve(sin(6144*x), from=a, to = b, n=1000, col=2, lwd=2, add=T)
+curve(sin(12288*x), from=a, to = b, n=1000, col=4, lwd=2, add=T)
+a <- -2*pi/(3072)
+b <- 2*pi/(3072)
+plot(function(x)sin(3072*x), xlim=c(-a, b)/1000, lwd=2)
+curve(sin(6144*x), from=a, to = b, n=1000, col=2, lwd=2, add=T)
+curve(sin(12288*x), from=a, to = b, n=1000, col=4, lwd=2, add=T)
+a
+plot(function(x)sin(3072*x), xlim=c(a, b)/1000, lwd=2)
+curve(sin(6144*x), from=a, to = b, n=1000, col=2, lwd=2, add=T)
+plot(function(x)sin(3072*x), xlim=c(a, b), lwd=2)
+curve(sin(6144*x), from=a, to = b, n=1000, col=2, lwd=2, add=T)
+curve(sin(12288*x), from=a, to = b, n=1000, col=4, lwd=2, add=T)
+plot(function(x)sin(3072*x) + sin(6144*x) + sin(12288*x) xlim=c(a, b), lwd=2)
+plot(function(x)sin(3072*x) + sin(6144*x) + sin(12288*x), xlim=c(a, b), lwd=2)
+curve(sin(3072*x) + sin(6144*x) + sin(12288*x), from=a, to = b, n=1000, col=1, lwd=2)
+curve(sin(12288*x), from=a, to = b, n=1000, col=4, lwd=2)
+curve(sin(6144*x), from=a, to = b, n=1000, col=1, lwd=2, las=1)
+par(xaxs='i')
+curve(sin(6144*x), from=a, to = b, n=1000, col=1, lwd=2, las=1)
+grid()
+curve(sin(6144*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")
+curve(sin(3072*x) + sin(6144*x) + sin(12288*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")#
+grid()
+par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))
+curve(sin(6144*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")
+grid()
+par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))
+curve(sin(6144*x), from=a, to = b, n=1000, col=2, lwd=2, las=1, xlab="x", ylab="y")
+curve(sin(3072*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")
+par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))
+curve(sin(3072*x) + sin(6144*x) + sin(12288*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")
+grid()
+png("slow_sin.png")#
+par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))#
+curve(sin(3072*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")#
+grid()#
+dev.off()#
+png("med_sin.png")#
+par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))#
+curve(sin(6144*x), from=a, to = b, n=1000, col=2, lwd=2, las=1, xlab="x", ylab="y")#
+grid()#
+dev.off()#
+#
+png("fast_sin.png")#
+par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))#
+#
+curve(sin(12288*x), from=a, to = b, n=1000, col=4, lwd=2, las=1, xlab="x", ylab="y")#
+grid()#
+dev.off()#
+#
+png("composite_sin.png")#
+par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))#
+#
+curve(sin(3072*x) + sin(6144*x) + sin(12288*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")#
+grid()#
+dev.off()
