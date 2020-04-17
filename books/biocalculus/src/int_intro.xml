@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--********************************************************************
+Copyright 2020 Sean M. Laverty
+This file is part of MathBook XML.
+MathBook XML is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 or version 3 of the
+License (at your option).
+MathBook XML is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************-->
+<!--This file was originally part of the book     -->
+<!--(as copied on 2015/07/12)     -->
+<!--      -->
+<!--  Abstract Algebra: Theory and Applications   -->
+<!--      -->
+<!--Copyright (C) 1997-2014  Thomas W. Judson     -->
+
+<section xml:id="section-integration">
+<title>Introduction to differential equations</title>
+<introduction>
+<p>
+ We introduce a new category of calculus problems called
+integrals.
+</p>
+</introduction>
+
+<subsection xml:id="sub-integration">
+<title>Applications of derivatives: differential equations</title>
+<introduction>
+<p>
+So far we have built methods and skills that allow us to take derivatives of known functions. When we revisit derivatives at the end of the semester, we will see quite a few more applications of derivatives. For now switch perspective and build systematic methods that allow us figure out what original function that a particular derivative comes from.
+</p>
+</introduction>
+<p>
+ Methods. To find what original function a derivative comes from,
+we might
+<ol>
+<li>guess the original function</li>
+<li>graph the original function (from behaviors encoded by the
+derivative)</li>
+<li>approximate the graph of the original function (Eulers
+method/tangent line approximations)  skipped</li>
+<li>integrate to find the original function</li>
+</ol>
+</p>
+<definition xml:id="differential-equation">
+<statement>
+<p>
+A <term>differential equation</term> (often shortened DE) describes
+the instantaneous rate of change of a measurement.
+<ul>
+<li> <p>
+a <term>pure-time DE</term> is of the form <m>\dfrac{dp}{dt} =
+f(t)</m> where the instantaneous rate of change of <m>p(t)</m> is
+measured as a function of time <m>f(t)</m>.
+</p></li>
+<li> <p>
+an <term>autonomous DE</term> is of the form <m>\dfrac{dp}{dt}
+= f(p)</m> where the instantaneous rate of change of <m>p(t)</m> is
+described as a function of the measurement itself <m>f(p)</m>.
+</p></li>
+</ul>
+</p>
+</statement>
+</definition>
+<!-->
+is, find the function whose derivative is
+Guess it: Graph it:
+= e = 2p
+ we will return to autonomous DEs at the end of the chapter
+-->
+
+
+<example xml:id="ex-classify-des">
+<title>Classifying DEs</title>
+<statement>
+<p>
+Identify whether each of the following is a pure-time or autonomous differential equation for the given variable:
+<ol>
+<li><p> <m>\dfrac{dp}{dt} = e^{-t}</m></p></li>
+<li><p> <m>\dfrac{dn}{dt} = 2n</m></p></li>
+<li><p> <m>\dfrac{dx}{dt} = 2x\Big(1-\dfrac{x}{10}\Big)</m></p></li>
+</ol>
+</p>
+<solution>
+<ol>
+<li><p> <m>\dfrac{dp}{dt} = e^{-t}</m> is a pure-time DE for the variable <m>p</m></p></li>
+<li><p> <m>\dfrac{dn}{dt} = 2n</m> is an autonomous DE for the variable <m>n</m></p></li>
+<li><p> <m>\dfrac{dx}{dt} = 2x\Big(1-\dfrac{x}{10}\Big)</m> is an autonomous DE for the variable <m>x</m></p></li>
+</ol>
+</solution>
+</statement>
+</example>
+
+
+<example xml:id="ex-walking">
+<title>Velocity during a walk</title>
+<statement>
+<p>
+Velocity, the instantaneous change in position, of a moving person is
+given by
+the pure-time DE <m>\dfrac{dp}{dt} = 1.8</m>,
+where position <m>p(t)</m> is the quantity being differentiated with
+respect to time. Find the solution <m>p(t)</m>, that satisfies the differential
+equation.
+</p>
+<p>
+We have to options: Guess it, Graph it.
+</p>
+<solution>
+<p>Guessing involves thinking of what original function has a derivative of
+1.8, based on our experience of taking derivatives.  If our derivative
+is the constant function <m>1.8</m>, what was the original function
+<m>p(t)</m>? In other words, "the derivative of <em>what</em> is <m>1.8</m>?"</p>
+</solution>
+</statement>
+</example>
+<remark xml:id="re-notation">
+<title>Notation for pure-time DEs</title>
+<p>
+In general, we study a pure-time differential equation
+<m>\dfrac{dF}{dt} = f(t)</m>.
+Solving this pure-time DE for the unknown function <m>F(t)</m> involves
+finding the function whose derivative is <m>f(t)</m>. We want to undo
+the derivative to find <m>F(t)</m>, called the antiderivative of
+<m>f(t)</m>.
+</p>
+</remark>
+</subsection>
+
+<subsection xml:id="sub-antiderivatives">
+<title>Antiderivatives and indefinite integrals</title>
+<introduction>
+<p>
+...
+</p>
+</introduction>
+
+<definition xml:id="antiderivative">
+<statement>
+<p>
+An antiderivative of the function <m>f(t)</m> is a function <m>F(t)</m>
+whose derivative equal to <m>f(t)</m>. We say, ""<m>F</m> of <m>t</m> is
+equal to the integral of <m>f</m> of <m>t</m> with respect to <m>t</m>"", and we write
+<me>F(t) = \int f(t) \, dt</me>
+</p>
+</statement>
+</definition>
+
+<!--><remark xml:id="uniqueness-warning">
+</remark>-->
+
+
+<example xml:id="ex-walking-again">
+<statement>
+<p>
+The equation <m>\dfrac{dp}{dt} = 1.8</m> has solution <me> p(t) =\int 1.8\,dt = 1.8t + c</me>
+</p>
+<p>
+What is c?
+</p>
+</statement>
+</example>
+
+<definition xml:id="indefinite-integral">
+<statement>
+<p>
+The set of all antiderivatives of the function <m>f(t)</m> is called the
+indefinite integral of <m>f</m> and is written
+<me>\int f(t)\,dt = F(t) + c</me>
+</p>
+</statement>
+</definition>
+
+<example xml:id="ex-antiderivatives">
+<statement>
+<p>
+Solve pure-time DE <me>\dfrac{dF}{dt} = 2</me> by computing the indefinite integral.
+</p>
+</statement>
+</example>
+
+<example xml:id="ex-antiderivatives2">
+<statement>
+<p>
+Solve pure-time DE <me>\dfrac{dF}{dt} = 2t</me> by computing the indefinite integral.
+</p>
+</statement>
+</example>
+
+<theorem xml:id="power-rule-integrals">
+<title>Power rule for integrals</title>
+<statement>
+<p>
+Suppose that <m>f(x) = x^n</m> with <m>n\ne 1</m>, then  <me>\int x^n\,dx = \left(\dfrac{1}{n+1}\right)x^{n + 1} + c</me>
+</p>
+</statement>
+</theorem>
+ 
+
+<example xml:id="ex-compute">
+<statement>
+<p>
+Compute <m>\displaystyle \int x^2\,dx</m>.
+</p>
+</statement>
+</example>
+
+<example xml:id="ex-indef-int">
+<statement>
+<p>
+Compute the indefinite integral of <m>g(x) = x^{0.4}</m>.
+</p>
+</statement>
+</example>
+
+<example xml:id="ex-compute2">
+<statement>
+<p>
+Compute <m>\displaystyle \int t^5\,dt</m>.
+</p>
+</statement>
+</example>
+
+<example xml:id="ex-indef-int2">
+<statement>
+<p>
+Compute the indefinite integral of <m>f(t) = \dfrac{1}{t^4}</m>.
+</p>
+</statement>
+</example>
+
+<theorem xml:id="constant-product-integrals">
+<title>Constant product rule for integrals</title>
+<statement>
+<p>
+ Suppose that <m>\int f(x)\, dx = F(x) + c</m>, then for any constant <m>a</m>,
+<me>\int af(x)\,dx = a \int f(x)\,dx=aF(x)+c</me>
+</p>
+</statement>
+</theorem>
+
+<example xml:id="ex-compute3">
+<statement>
+<p>
+Compute <m>\displaystyle \int 12t^5\,dt</m>.
+</p>
+</statement>
+</example>
+
+<example xml:id="ex-compute4">
+<statement>
+<p>
+Compute <m>\displaystyle \int \dfrac{3}{t^4}\,dt</m>.
+</p>
+</statement>
+</example>
+
+<theorem xml:id="thm-integral-sum">
+<title>Sum rule for integrals</title>
+<statement>
+<p>
+Suppose that <m>\int f(x)\, dx = F(x) + c</m> and <m>\int g(x)\, dx = G(x) + c</m>, then
+<me>\int f(x) + g(x)\, dx = \int f(x)\, dx + \int g(x)\, dx = F(x) + G(x) + c</me>
+</p>
+</statement>
+</theorem>
+
+<example xml:id="ex-compute5">
+<statement>
+<p>
+Compute <m>\displaystyle \int 12t^5 + \dfrac{3}{t^4}\,dt</m>.
+</p>
+</statement>
+</example>
+
+<example xml:id="ex-seeds-in-a-tree-revisited">
+<statement>
+<p>
+ Consider a seed in a flower in a very tall tree. From an initial height
+of <m>14.7</m> meters, the seed pops straight into the air with an initial
+velocity of <m>9.8 \text{meters per second}</m> 
+<m>v(0) = 9.8 \text{m}</m> and an acceleration due to gravity of <m>a(t) = 9.8 \text{m}</m> (in
+the downward direction). Find the 
+velocity function <m>v(t)</m> and use that to find its position function <m>s(t)</m> of the seed. Then address the following questions
+<ol>
+<li><p>
+When will the seed land?
+</p></li>
+<li><p>
+What is the velocity of the seed when it smashes into the ground?
+</p></li>
+</ol>
+</p>
+</statement>
+</example>
+</subsection>
+
+<exercises>
+<title>Quick Practice</title>
+<exercise>
+<!--><title>Exponential</title>-->
+<statement>
+<p>
+Is <m>\dfrac{dq}{dt} = 2.1q(1 − q)</m> a pure-time or autonomous differential equation? 
+</p>
+</statement>
+</exercise>
+<exercise>
+<!--><title>Fraction</title>-->
+<statement>
+Compute <m>\int 3x+2\, dx</m>.
+</statement>
+</exercise>
+<exercise>
+<!--><title>Sum of terms</title>-->
+<statement>
+What quantity is obtained when a pure-time growth rate indicating a rate of change of length is integrated?
+</statement>
+</exercise>
+<exercise>
+<!--><title>Differential</title>-->
+<statement>
+Compute <m>\int 0\, dx</m>.
+</statement>
+</exercise>
+</exercises>
+</section>
