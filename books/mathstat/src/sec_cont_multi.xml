@@ -34,10 +34,22 @@ given by <m>f(x,y) = P(X=x, Y=y)</m> for each pair of values
 <p>
 Consider  <me>f(x) = \begin{cases}\dfrac{3}{5}\Big(x\Big(x+y\Big)\Big),\amp \quad 0 \lt x \lt 1; 0 \lt y \lt 2\\
 0,\amp \quad \text{otherwise}\end{cases}</me> and use it to find <m>P(0 \lt x \lt 0.5, 1 \lt y \lt 1.5)</m>.</p>
+
+<figure xml:id="fig-ex-joint">
+
+	<caption>Graph of a probability density function.</caption>
+		<image xml:id="image-ex-joint" source="./images/little_f.png"
+width='50%'>
+		</image>
+</figure>
+
 <hint>
-Set up and evaluate a double integral.</hint>
+<p>Set up and evaluate a double integral. Here instead of area under a curve, we are looking for the volume under a surface that has been accumulated over the region of interest.
+</p></hint>
 </statement>
 </example>
+
+
 
 <theorem xml:id="thm-continuous-th-3-7-cont">
 <title>conditions for a joint probability density</title>
@@ -69,6 +81,48 @@ function</term> or <term>joint cumulative density</term> of <m>X</m> and
 </p>
 </statement>
 </definition>
+
+<example xml:id="ex-joint-cdf">
+<title>joint c.d.f.</title>
+<statement>
+<p>
+Consider  <me>f(x) = \begin{cases}\dfrac{3}{5}\Big(x\Big(x+y\Big)\Big),\amp \quad 0 \lt x \lt 1; 0 \lt y \lt 2\\
+0,\amp \quad \text{otherwise}\end{cases}</me> and use it to find <m>F(x, y) = P(X \lt x, Y \lt y)</m>.</p>
+
+<hint>
+<p>Set up and evaluate a double integral to an arbitrary point in the plane.</p></hint>
+
+<solution> Here instead of area under a curve, we are looking for the volume under a surface that has been accumulated up to the arbitrary point <m>(x, y)</m>.
+<me>
+\begin{aligned}[t]
+F(x,y) = 
+\begin{cases}
+0 \amp \quad x\le 0\text{ or }y\le 0\\
+\dfrac{3x^2y^2}{20} + \dfrac{x^3y}{5} \amp \quad 0 \lt x \lt 1, 0 \lt y \lt 2\\
+\dfrac{3y^2}{20}+\dfrac{y}{5} \amp \quad  1\le x, 0 \lt y \lt 2\\
+\dfrac{12x^2}{20} +\dfrac{6x^3}{15} \amp \quad 0 \lt x \lt 1, 2\le y\\
+1 \amp \quad 1\le x, 2\le y
+\end{cases}
+\end{aligned}
+</me>
+
+Notice that for <m>x \ge 1</m> and <m> 0 \lt y \lt 2</m>, the result depends only on the <m>y</m>-value, we are no longer accumulating probability in the <m>x</m>-direction (lower right region in <xref ref="fig-ex-joint-cdf"/>).  Reversing the roles of the variables, the is true for the upper left region where <m>0 \lt x \lt 1</m> and <m>y \ge 2</m>.
+
+<figure xml:id="fig-ex-joint-cdf">
+
+	<caption>Graph of the joint cumulative distribution function.</caption>
+		<image xml:id="image-ex-joint-cdf" source="./images/big_F.png"
+width='50%'>
+		</image>
+</figure>
+</solution>
+
+
+
+</statement>
+</example>
+
+
 
 <remark xml:id="rmk-jpdf-jcdf">
 <statement>
