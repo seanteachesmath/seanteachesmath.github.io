@@ -4,36 +4,169 @@
  
  <introduction>
  
- <p>Some words</p>
+ <p>...</p>
 
 </introduction>
 
 <subsection xml:id="sub-continuous-unif">
  <title>Continuous uniform</title>
- <p>Some words</p> 
+ <p>...</p> 
  
- </subsection>
+<definition xml:id="def-cont-unif">
+<title>continuous uniform distribution</title>
+<statement>
+<p>A continuous random variable <m>\displaystyle X</m> has a
+<term>continuous uniform distribution</term> and is referred to as a
+<term>continuous uniform random variable</term> if and only if its probability density is given by  <me>u(x; \alpha, \beta) =
+\begin{cases}\dfrac{1}{\beta - \alpha}, \amp \quad \text{ for }\alpha
+\lt x \lt \beta\\0, \amp \quad \text{elsewhere}\end{cases}</me> where <m>\alpha, \beta \gt 0</m>.
+</p>
+</statement>
+</definition>
+
+
+<theorem xml:id="thm-cont-unif-mean"> 
+<title>mean and variance of continuous uniform</title>
+<statement>
+<p>The mean and variance of the uniform distribution are given by 
+<me>\mu = \dfrac{\alpha + \beta}{2}\text{ and }\sigma^2 = \dfrac{1}{12}(\beta-\alpha)^2</me>
+</p>
+</statement></theorem>
+
+</subsection>
+
+<!--*****************************************-->
+<!--*****************************************-->
 
 <subsection xml:id="sub-exponential">
  <title> Exponential family</title>
- <p>Some words</p> 
- 
+ <p>...</p> 
+<!--*****************************************-->
+
+  <definition xml:id="def-gamma-func">
+<title>gamma function</title>
+<statement>
+<p>The <term>gamma function</term> is given by  <me>\Gamma(\alpha)
+=\int_0^\infty y^{\alpha - 1}e^{-y}\,dy</me> where <m>\alpha \gt
+0</m>.
+</p>
+</statement>
+</definition>
+
+<definition xml:id="def-cont-gamma">
+<title>gamma distribution</title>
+<statement>
+<p>A continuous random variable <m>\displaystyle X</m> has a
+<term>gamma distribution</term> and is referred to as a
+<term>gamma random variable</term> if and only if its probability density is given by  <me>f(x; \alpha, \beta) =
+\begin{cases}\dfrac{1}{\beta^\alpha \Gamma(\alpha)}x^{\alpha-1}e^{-\sfrac{x}{\beta}}, \amp \quad \text{
+for }0 \lt x\\0, \amp \quad \text{elsewhere}\end{cases}</me> where <m>\alpha, \beta \gt 0</m>.
+</p>
+</statement>
+</definition>
+
+<!--*****************************************-->
+
+<theorem xml:id="thm-cont-gamma-moments"> 
+<title>moments about the origin of the gamma</title>
+<statement>
+<p>The <m>r^{\text{th}}</m> moment about hte origin of the gamma distribution is given by 
+<me>\mu_r' = \dfrac{\beta^r\Gamma(\alpha+r)}{\Gamma(\alpha)}</me>
+</p>
+</statement></theorem>
+
+<theorem xml:id="thm-cont-gamma-mean"> 
+<title>mean and variance of gamma</title>
+<statement>
+<p>The mean and variance of the gamma distribution are given by 
+<me>\mu = \alpha\beta\text{ and }\sigma^2 = \alpha\beta^2</me>
+</p>
+</statement></theorem>
+
+<theorem xml:id="thm-cont-gamma-mgf"> 
+<title>moment-generating function of the gamma</title>
+<statement>
+<p>The moment-generating function of the gamma distribution is given by 
+<me>M_X(t) = (1-\beta t)^{-\alpha}</me>
+</p>
+</statement></theorem>
+
+
+  <definition xml:id="def-cont-exp">
+<title>exponential distribution</title>
+<statement>
+<p>A continuous random variable <m>\displaystyle X</m> has an
+<term>exponential distribution</term> and is referred to as an
+<term>exponential random variable</term> if and only if its probability density is given by  <me>f(x; \theta) =
+\begin{cases}\dfrac{1}{\theta}e^{-\sfrac{x}{\theta}}, \amp \quad \text{
+for } 0 \lt x\\0, \amp \quad \text{elsewhere}\end{cases}</me> where <m>\theta \gt 0</m>.
+</p>
+</statement>
+</definition>
+
+
+<corollary xml:id="cor-cont-exp-mean"> 
+<title>mean and variance of exponential</title>
+<statement>
+<p>The mean and variance of the exponential distribution are given by 
+<me>\mu = \theta \text{ and }\sigma^2 = \theta^2</me>
+</p>
+</statement></corollary>
+
+
+<definition xml:id="def-cont-chi">
+<title>chi-suqare distribution</title>
+<statement>
+<p>A continuous random variable <m>\displaystyle X</m> has a
+<term>chi-square distribution</term> and is referred to as a
+chi-square random variable if and only if its probability density is given by  <me>f(x; \nu) =
+\begin{cases}\dfrac{1}{2^{\sfrac{\nu}{2}} \Gamma(\sfrac{\nu}{2})}x^{\frac{\nu-2}{2}}e^{-\sfrac{x}{2}}, \amp \quad \text{
+for }0 \lt x\\0, \amp \quad \text{elsewhere}\end{cases}</me> where <m>\nu</m> is a parameter describing the <em> number of degrees of freedom</em>.
+</p>
+</statement>
+</definition>
+
  </subsection>
  
  <subsection xml:id="sub-beta">
  <title>Beta distribution</title>
- <p>Some words</p> 
+ <p>...</p> 
  
+ <definition xml:id="def-cont-beta">
+<title>Beta distribution</title>
+<statement>
+<p>A continuous random variable <m>\displaystyle X</m> has a
+<term>Beta distribution</term> and is referred to as a
+Beta random variable if and only if its probability density is given by  <me>f(x; \alpha, \beta) =
+\begin{cases}\dfrac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}x^{\alpha-1}(1-x)^{\beta-1}, \amp \quad \text{
+for }0 \lt x \lt 1\\0, \amp \quad \text{elsewhere}\end{cases}</me> where <m>\alpha, \beta \gt 0</m>.
+</p>
+</statement>
+</definition>
+
  </subsection>
  
  <subsection xml:id="sub-normal">
  <title>Normal distribution</title>
- <p>Some words</p> 
+ <p>...</p> 
+
+ <definition xml:id="def-cont-normal">
+<title>Normal distribution</title>
+<statement>
+<p>A continuous random variable <m>\displaystyle X</m> has a
+<term>normal distribution</term> and is referred to as a
+normal random variable if and only if its probability density is given by  <me>n(x; \mu, \sigma) =
+\dfrac{1}{\sigma\sqrt{2\pi}}e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2}, \quad \text{
+for }-\infty \lt x \lt \infty</me> where <m>\sigma \gt 0</m>.
+</p>
+</statement>
+</definition>
+
  
  </subsection>
  <subsection xml:id="sub-normal-approx">
  <title>Normal approximation to the binomial distribution</title>
- <p>Some words</p> 
+ <p>...</p> 
  
  </subsection>
  
