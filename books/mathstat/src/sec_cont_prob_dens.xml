@@ -341,7 +341,7 @@ for }-\infty \lt x \lt \infty</me>
 <p>
 It is the standard normal distribution for which areas under the curve
 given by <me>\int_0^z \dfrac{1}{\sqrt{2\pi}}
-e^{-\dfrac{1}{2}x^2}\,dz</me> are tabulated. </p>
+e^{-\dfrac{1}{2}x^2}\,dx</me> are tabulated. </p>
 
 <p>Other areas can be calculated by symmetry. </p>
 </statement>
@@ -370,7 +370,9 @@ Find the following probabilities from the standard normal distribution.
 </p>
 
 <solution>
-<p>To find <m>P(|z|\lt 0.3)</m>, we must first find <m>P(z\lt 0.3)</m>. Once we have that, we can double this value by symmetry of the PDF.</p> 
+<p>To find <m>P(|z|\lt 0.3)</m>, we must first find <m>P(0 \lt z\lt
+0.3)</m>. Once we have that, we can double this value by symmetry of the
+PDF. </p>
 <figure xml:id="fig-std-norm1">
 	<caption>Area under the curve corresponding to desired probability.</caption>
 		<image xml:id="image-std-norm1"
@@ -379,7 +381,11 @@ width='50%'>
 		</image>
 </figure>
 
-<p>Now to find <m>P(|z|\lt 0.3)</m>, we have the following image.</p>
+<p>Now to find <m>P(|z|\lt 0.3)</m>, we have the following image. By
+table we have that <m>P(0 \lt z \lt 0.3) = 0.1179</m>, so 
+<m>P(|z|\lt 0.3) = 2(0.1179) = 0.2358</m>.  For simplicity we will use
+an equality here, even though the tabulated areas are numerical
+approximations.</p>
 <figure xml:id="fig-std-norm2">
 	<caption>Area under the curve corresponding to desired probability.</caption>
 		<image xml:id="image-std-norm2"
@@ -391,7 +397,9 @@ width='50%'>
 <!--><li><p><m>P(0.3 \lt z \lt 0.6)</m></p></li>
 <li><p><m>P(0.6 \lt z)</m></p></li>
 </ol>-->
-<p>Now to find <m>P(0.3 \lt z \lt 0.6 \lt z)</m>, we have the following image.</p>
+<p>Now to find <m>P(0.3 \lt z \lt 0.6)</m>, we have the following image.
+ To solve this problem we find the area from <m>z=0</m> to <m>z=0.6</m>,
+then subtract the area from <m>z=0</m> to <m>z=0.3</m>.</p>
 <figure xml:id="fig-std-norm3">
 	<caption>Area under the curve corresponding to desired probability.</caption>
 		<image xml:id="image-std-norm3"
@@ -399,7 +407,10 @@ source="./images/std_norm3.png"
 width='50%'>
 		</image>
 </figure>
-<p>Now to find <m>P(0.6 \lt z)</m>, we have the following image.</p>
+<p>Now to find <m>P(0.6 \lt z)</m>, we have the following image.  To
+solve this problem we find the area from <m>z=0</m> to <m>z=0.6</m>,
+then subtract this from the area under the entire right half of the
+curve.  So <m>P(0.6 \lt z)</m> = 0.5 - 0.2257 = 0.2743</p>
 <figure xml:id="fig-std-norm4">
 	<caption>Area under the curve corresponding to desired probability.</caption>
 		<image xml:id="image-std-norm4"

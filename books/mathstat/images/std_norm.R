@@ -12,8 +12,12 @@ x1 <- seq(0, 0.3, length=100)
 y1 <- dnorm(x1)
 
 polygon(c(x1, rev(x1)), c(0*x1, rev(y1)), col=2, density=20, lwd=2)
+dev.off()
+
 
 png("std_norm2.png")
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')
+
 plot(x, y, xlim=c(-2.5, 2.5), ylim=c(0, 0.5), type='l', las=1, axes=F, ylab="Standard Normal", lwd=2)
 axis(1, at=-5:5)
 axis(2, at=(0:5)/10, las=1)
