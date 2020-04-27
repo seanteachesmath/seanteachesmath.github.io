@@ -426,10 +426,22 @@ width='50%'>
 </statement>
 </example>
 
+<!--><example xml:id="ex-std-norm-probs2">
+<title>probabilities from the standard normal</title>
+<statement>
+<p>
+Find the associated standard normal 
+</p>
+
+<solution>
 
 
+</solution>
+</statement>
+</example>-->
 
 </subsection>
+
 <subsection xml:id="sub-normal-approx">
 <title>Normal approximation to the binomial distribution</title>
 <introduction><p>
@@ -441,13 +453,25 @@ width='50%'>
 <p>If <m>X</m> has a binomial distribution with parameters <m>n</m> and
 <m>\theta</m>, then the moment-generating function of <m>
 \dfrac{X-n\theta}{\sqrt{n\theta(1-\theta)}}</m> approaches <m> M_X(t) =
-\underbrace{e^{\sfrac{1}{2}t^2}}_{\text{standard normal}}</m> as
+\underbrace{e^{\sfrac{1}{2}t^2}}_{\text{standard\newline normal}}</m> as
 <m>n\to\infty</m>.
 </p>
 </statement></theorem>
+<p>This is because of a <m>1:1</m> correspondence between
+moment-generating functions and PMFs/PDFs and the (unstated) fact that
+if <m>M_X(t) \to M_Y(t)</m>, then <m>\text{the distribution of }X
+\to\text{ the distribution of }Y</m>.</p>
 
+<p>The approximation is true as <m>n\to\infty</m> and can be used when
+both <m>n\theta, n(1-\theta) \gt 5</m>.  This is theoretically important
+and was of great historical importance, but is less practically
+important </p>
 
-
+<p>Since calculating densities reqires intervals, a <em>continuity
+correction</em> represents the binomial integer <m>k</m> by the
+<em>standard normal</em> interval <m>(k-\sfrac{1}{2},
+k+\sfrac{1}{2})</m> for the purposes of integration.
+</p>
 </subsection>
 
  </section>
