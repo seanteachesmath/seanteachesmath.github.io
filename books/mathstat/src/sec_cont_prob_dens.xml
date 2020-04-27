@@ -261,6 +261,13 @@ for }0 \lt x \lt 1\\0, \amp \quad \text{elsewhere}\end{cases}</me> where
 </statement>
 </definition>
 
+<remark xml:id="rmk-beta">
+<statement>
+<p>The function used in <xref ref="ex-poly"/> was a beta distribution with <m>\alpha=\beta=5</m>.
+</p>
+</statement>
+</remark>
+
 <figure xml:id="fig-beta-plots">
 	<caption>A few folksy sketches of the beta distribution. Notice that for 
 <m>\alpha = \beta = 0.5</m>, the PDF has vertical asymptotes at <m>x = 0, 1</m>. 
@@ -285,17 +292,139 @@ width='50%'>
 <p>A continuous random variable <m>\displaystyle X</m> has a
 <term>normal distribution</term> and is referred to as a
 normal random variable if and only if its probability density is given
-by  <me>n(x; \mu, \sigma) = \dfrac{1}{\sigma\sqrt{2\pi}} e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2}, \quad \text{
+by  <me>n(x; \mu, \sigma) = \dfrac{1}{\sigma\sqrt{2\pi}}
+e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2}, \quad \text{
 for }-\infty \lt x \lt \infty</me> where <m>\sigma \gt 0</m>.
 </p>
 </statement>
 </definition>
 
+<theorem xml:id="thm-cont-normal-mean"> 
+<title>mean and variance of normal</title>
+<statement>
+<p>The mean and variance of the normal distribution are given by 
+<me>\mu = \mu\text{ and }\sigma^2 = \sigma^2</me>
+</p>
+</statement></theorem>
+
+<theorem xml:id="thm-cont-normal-mgf"> 
+<title>moment-generating function of the normal</title>
+<statement>
+<p>The moment-generating function of the normal distribution is given by 
+<me>M_X(t) = e^{\mu t + \sfrac{1}{2}\sigma^2t^2}</me>
+</p>
+</statement></theorem>
+
+<remark xml:id="rmk-params-normal">
+<statement>
+<p>
+The PDF is parameterized by <m>\mu</m> and <m>\sigma = \sqrt{\sigma^2} =
+\sqrt{\operatorname{Var}(X)}</m>.
+</p>
+</statement>
+</remark>
+
+<corollary xml:id="corr-std-normal">
+<statement>
+<p>
+The <term>standard normal</term> has <m>\mu = 0</m> and <m>\sigma =
+1</m> and is given by <me>f(x; \mu = 0, \sigma = 1) =
+\dfrac{1}{\sqrt{2\pi}}
+e^{-\dfrac{1}{2}x^2}, \quad \text{
+for }-\infty \lt x \lt \infty</me>
+</p>
+</statement>
+</corollary>
+
+<remark xml:id="rmk-table-std-normal">
+<statement>
+<p>
+It is the standard normal distribution for which areas under the curve
+given by <me>\int_0^z \dfrac{1}{\sqrt{2\pi}}
+e^{-\dfrac{1}{2}x^2}\,dz</me> are tabulated. </p>
+
+<p>Other areas can be calculated by symmetry. </p>
+</statement>
+</remark>
+
+<theorem xml:id="thm-cont-std-normal"> 
+<title>transforming to standard normal</title>
+<statement>
+<p>If <m>X</m> has a normal distribution with <m>\mu</m> and
+<m>\sigma</m>, then <m>\displaystyle Z = \dfrac{X - \mu}{\sigma}</m> has
+the standard normal distribution.
+</p>
+</statement></theorem>
+
+
+
+<example xml:id="ex-std-norm-probs">
+<title>probabilities from the standard normal</title>
+<statement>
+<p>
+Find the following probabilities from the standard normal distribution.
+<ol>
+<li><p><m>P(|z|\lt 0.3)</m></p></li>
+<li><p><m>P(0.3 \lt z \lt 0.6)</m></p></li>
+<li><p><m>P(0.6 \lt z)</m></p></li>
+</ol>
+</p>
+
+<solution>
+<p>To find <m>P(|z|\lt 0.3)</m>, we must first find <m>P(z\lt 0.3)</m>. Once we have that, we can double this value by symmetry of the PDF.</p> 
+<figure xml:id="fig-std-norm1">
+	<caption>Area under the curve corresponding to desired probability.</caption>
+		<image xml:id="image-std-norm1"
+source="./images/std_norm1.png"
+width='50%'>
+		</image>
+</figure>
+
+<p>Now to find <m>P(|z|\lt 0.3)</m>, we have the following image.</p>
+<figure xml:id="fig-std-norm2">
+	<caption>Area under the curve corresponding to desired probability.</caption>
+		<image xml:id="image-std-norm2"
+source="./images/std_norm2.png"
+width='50%'>
+		</image>
+</figure>
+
+<!--><li><p><m>P(0.3 \lt z \lt 0.6)</m></p></li>
+<li><p><m>P(0.6 \lt z)</m></p></li>
+</ol>-->
+<p>Now to find <m>P(0.3 \lt z \lt 0.6 \lt z)</m>, we have the following image.</p>
+<figure xml:id="fig-std-norm3">
+	<caption>Area under the curve corresponding to desired probability.</caption>
+		<image xml:id="image-std-norm3"
+source="./images/std_norm3.png"
+width='50%'>
+		</image>
+</figure>
+<p>Now to find <m>P(0.6 \lt z)</m>, we have the following image.</p>
+<figure xml:id="fig-std-norm4">
+	<caption>Area under the curve corresponding to desired probability.</caption>
+		<image xml:id="image-std-norm4"
+source="./images/std_norm4.png"
+width='50%'>
+		</image>
+</figure>
+
+
+
+
+</solution>
+</statement>
+</example>
+
+
+
 
 </subsection>
 <subsection xml:id="sub-normal-approx">
 <title>Normal approximation to the binomial distribution</title>
-<p>...</p> 
+<introduction><p>
+
+</p></introduction>
 
 </subsection>
 
