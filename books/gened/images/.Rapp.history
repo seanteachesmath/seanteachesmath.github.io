@@ -1,77 +1,3 @@
-plot(function(x)sin(3072*x) + sin(6144*x) + sin(12288*x), xlim=c(a, b), lwd=2)
-curve(sin(3072*x) + sin(6144*x) + sin(12288*x), from=a, to = b, n=1000, col=1, lwd=2)
-curve(sin(12288*x), from=a, to = b, n=1000, col=4, lwd=2)
-curve(sin(6144*x), from=a, to = b, n=1000, col=1, lwd=2, las=1)
-par(xaxs='i')
-curve(sin(6144*x), from=a, to = b, n=1000, col=1, lwd=2, las=1)
-grid()
-curve(sin(6144*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")
-curve(sin(3072*x) + sin(6144*x) + sin(12288*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")#
-grid()
-par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))
-curve(sin(6144*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")
-grid()
-par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))
-curve(sin(6144*x), from=a, to = b, n=1000, col=2, lwd=2, las=1, xlab="x", ylab="y")
-curve(sin(3072*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")
-par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))
-curve(sin(3072*x) + sin(6144*x) + sin(12288*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")
-grid()
-png("slow_sin.png")#
-par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))#
-curve(sin(3072*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")#
-grid()#
-dev.off()#
-png("med_sin.png")#
-par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))#
-curve(sin(6144*x), from=a, to = b, n=1000, col=2, lwd=2, las=1, xlab="x", ylab="y")#
-grid()#
-dev.off()#
-#
-png("fast_sin.png")#
-par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))#
-#
-curve(sin(12288*x), from=a, to = b, n=1000, col=4, lwd=2, las=1, xlab="x", ylab="y")#
-grid()#
-dev.off()#
-#
-png("composite_sin.png")#
-par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))#
-#
-curve(sin(3072*x) + sin(6144*x) + sin(12288*x), from=a, to = b, n=1000, col=1, lwd=2, las=1, xlab="x", ylab="y")#
-grid()#
-dev.off()
-curve(2+3*x, from = -2.33, to 1)
-curve(2+3*x, from = -2.33, to = 1)
-curve(2+3*x, from = -2.33, to = 1, las=1)
-grid()
-curve(2+3*x, from = -2.33, to = 1, las=1, xlab="x", ylab="y")
-grid()
-par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))
-grid()
-curve(2+3*x, from = -2.33, to = 1, las=1, xlab="x", ylab="y")
-grid()
-curve(2-3*x, from = -2.33, to = 1, las=1, xlab="x", ylab="y")
-curve(2+3*x, from = -2, to = 2, ylim=c(0, 1), las=1, xlab="x", ylab="y")
-curve(2+3*x, from = -2, to = 2, ylim=c(-2, 8), las=1, xlab="x", ylab="y")
-grid()
-curve(2+3*x, from = -2, to = 2, ylim=c(-4, 8), las=1, xlab="x", ylab="y")
-grid()
-abline(v=0)
-abline(h=0)
-curve(2-3*x, from = -2.33, to = 1, las=1, xlab="x", ylab="y", lwd=2)
-par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))#
-curve(2+3*x, from = -2, to = 2, ylim=c(-4, 8), las=1, xlab="x", ylab="y", lwd=2)#
-grid()#
-abline(h=0)#
-abline(v=0)
-par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))#
-curve(2-3*x, from = -2, to = 2, ylim=c(-4, 8), las=1, xlab="x", ylab="y", lwd=2)#
-grid()#
-abline(h=0)#
-abline(v=0)
-curve(2, from = -2, to = 2, ylim=c(-4, 8), las=1, xlab="x", ylab="y", lwd=2)
-curve(2+0*x, from = -2, to = 2, ylim=c(-4, 8), las=1, xlab="x", ylab="y", lwd=2)
 grid()
 abline(h=0)
 abline(v=0)
@@ -527,8 +453,6 @@ legend("topleft", c(expression(f(x)==x**(1/2)), expression(g(x) == x), expressio
 legend("topleft", c(expression(f(x)==sqrt(x)**(1/2)), expression(g(x) == x), expression(h(x) == x**2)))
 legend("topleft", c(expression(f(x)==sqrt(x), expression(g(x) == x), expression(h(x) == x**2)), col=c(2, 1, 4), lwd=2)
 legend("topleft", c(expression(f(x)==sqrt(x), expression(g(x) == x), expression(h(x) == x**2)), col=c(2, 1, 4), lwd=2, bg="white", lty=1)
-legend("topleft", c(expression(f(x)==sqrt(x), expression(g(x) == x), expression(h(x) == x**2)), col=c(2, 1, 4), lwd=2, bg="white", lty=1)
-legend("topleft", c(expression(f(x)==sqrt(x)), expression(g(x) == x), expression(h(x) == x**2)), col=c(2, 1, 4), lwd=2, bg="white", lty=1)
 legend("topleft", c(expression(f(x)==sqrt(x)), expression(g(x) == x), expression(h(x) == x**2)), col=c(2, 1, 4), lwd=2, bg="white", lty=1)
 par(mar=c(4.1, 4.1, 0.8, 0.8), xaxs='i', yaxs='i')#
 plot(NULL, xlim=c(0, 2), ylim=c(0, 2), las=1, xlab="", ylab="", axes=F)#
@@ -735,148 +659,6 @@ curve(x**1, from = -2, to = 4, ylim=c(-4, 8), lwd=2, col=1, add=T, lty=2)#
 curve(x**2, from = -2, to = 4, ylim=c(-4, 8), lwd=2, col=4, add=T, lty=3)#
 box()#
 legend("topleft", c(expression(f(x)==sqrt(x)), expression(g(x) == x), expression(h(x) == x**2)), col=c(2, 1, 4), lwd=2, bg="white", lty=c(1, 2, 3))#
-dev.off()
-png("linear_up.png")#
-par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))#
-plot(NULL, xlim=c(-2, 2), ylim=c(-4, 8), las=1, xlab="", ylab="", axes=F)#
-mtext("x", 1, line=2, cex=1.25, font=2)#
-mtext("y = f(x)", 2, line=2, cex=1.25, font=2)#
-#
-grid()#
-abline(h=0)#
-abline(v=0)#
-curve(2+3*x, from = -2, to = 2, ylim=c(-4, 8), lwd=2, add=T, col=4)#
-box()#
-dev.off()#
-#
-png("linear_down.png")#
-par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))#
-plot(NULL, xlim=c(-2, 2), ylim=c(-4, 8), las=1, xlab="", ylab="", axes=F)#
-mtext("x", 1, line=2, cex=1.25, font=2)#
-mtext("y = f(x)", 2, line=2, cex=1.25, font=2)#
-grid()#
-abline(h=0)#
-abline(v=0)#
-curve(2-3*x, from = -2, to = 2, ylim=c(-4, 8), lwd=2, add=T, col=2)#
-box()#
-dev.off()#
-#
-png("linear_flat.png")#
-par(xaxs='i', mar=c(4.1, 4.1, 0.8, 0.8))#
-plot(NULL, xlim=c(-2, 2), ylim=c(-4, 8), las=1, xlab="", ylab="", axes=F)#
-mtext("x", 1, line=2, cex=1.25, font=2)#
-mtext("y = f(x)", 2, line=2, cex=1.25, font=2)#
-grid()#
-abline(h=0)#
-abline(v=0)#
-curve(2+0*x, from = -2, to = 2, ylim=c(-4, 8), lwd=2, add=T)#
-box()#
-dev.off()#
-#
-# # # # # # # # # # # # # # # # # # # # # # # # #
-#
-png("quadratic_down.png")#
-par(mar=c(4.1, 4.1, 0.8, 0.8), xaxs='i', yaxs='i')#
-plot(NULL, xlim=c(0, 2), ylim=c(0, 20), las=1, xlab="", ylab="", axes=F)#
-mtext("Time (sec)", 1, line=2, cex=1.25, font=2)#
-mtext("Position (meters)", 2, line=2, cex=1.25, font=2)#
-axis(1, labels=F)#
-axis(2, labels=F)#
-grid()#
-abline(h=0)#
-abline(v=0)#
-curve(-4.9*x**2-10*x+12, from = -2, to = 2, ylim=c(-4, 8), lwd=2, add=T, col=2, lty=1)#
-box()#
-dev.off()#
-png("quadratic_top.png")#
-par(mar=c(4.1, 4.1, 0.8, 0.8), xaxs='i', yaxs='i')#
-plot(NULL, xlim=c(0, 2), ylim=c(0, 20), las=1, xlab="", ylab="", axes=F)#
-mtext("Time (sec)", 1, line=2, cex=1.25, font=2)#
-mtext("Position (meters)", 2, line=2, cex=1.25, font=2)#
-axis(1, labels=F)#
-axis(2, labels=F)#
-grid()#
-abline(h=0)#
-abline(v=0)#
-curve(-4.9*x**2+0*x+12, from = -2, to = 2, ylim=c(-4, 8), lwd=2, add=T, col=1, lty=2)#
-box()#
-dev.off()#
-#
-png("quadratic_up.png")#
-par(mar=c(4.1, 4.1, 0.8, 0.8), xaxs='i', yaxs='i')#
-plot(NULL, xlim=c(0, 4), ylim=c(0, 20), las=1, xlab="", ylab="", axes=F)#
-mtext("Time (sec)", 1, line=2, cex=1.25, font=2)#
-mtext("Position (meters)", 2, line=2, cex=1.25, font=2)#
-axis(1, labels=F)#
-axis(2, labels=F)#
-grid()#
-abline(h=0)#
-abline(v=0)#
-curve(-4.9*x**2+10*x+12, from = -2, to = 4, ylim=c(-4, 8), lwd=2, add=T, col=4, lty=3)#
-box()#
-dev.off()#
-#
-png("quadratic_all.png")#
-par(mar=c(4.1, 4.1, 0.8, 0.8), xaxs='i', yaxs='i')#
-plot(NULL, xlim=c(-4, 4), ylim=c(0, 20), las=1, xlab="", ylab="", axes=F)#
-mtext("Time (sec)", 1, line=2, cex=1.25, font=2)#
-mtext("Position (meters)", 2, line=2, cex=1.25, font=2)#
-axis(1, labels=F)#
-axis(2, labels=F)#
-grid()#
-abline(h=0)#
-abline(v=0)#
-curve(-4.9*x**2-10*x+12, from = -4, to = 4, ylim=c(-4, 8), lwd=2, add=T, col=2, lty=1)#
-curve(-4.9*x**2+0*x+12, from = -2, to = 4, ylim=c(-4, 8), lwd=2, add=T, col=1, lty=2)#
-curve(-4.9*x**2+10*x+12, from = -2, to = 4, ylim=c(-4, 8), lwd=2, add=T, col=4, lty=3)#
-box()#
-dev.off()#
-# # # # # # # # # # # # # # # # # ##
-png("cubic_simple.png")#
-par(mar=c(4.1, 4.1, 0.8, 0.8), xaxs='i', yaxs='i')#
-plot(NULL, xlim=c(-2, 2), ylim=c(-8, 8), las=1, xlab="", ylab="", axes=F)#
-mtext("x", 1, line=2, cex=1.25, font=2)#
-mtext("y = f(x)", 2, line=2, cex=1.25, font=2)#
-axis(1, labels=F)#
-axis(2, labels=F)#
-grid()#
-abline(h=0)#
-abline(v=0)#
-curve(x*(x-1)*(x+1), from = -2, to = 4, ylim=c(-4, 8), lwd=2, add=T)#
-box()#
-dev.off() #
-#
-png("cubic_factored.png")#
-par(mar=c(4.1, 4.1, 0.8, 0.8), xaxs='i', yaxs='i')#
-plot(NULL, xlim=c(-2, 2), ylim=c(-8, 8), las=1, xlab="", ylab="", axes=F)#
-mtext("x", 1, line=2, cex=1.25, font=2)#
-mtext("y = f(x)", 2, line=2, cex=1.25, font=2)#
-axis(1, labels=F)#
-axis(2, labels=F)#
-grid()#
-abline(h=0)#
-abline(v=0)#
-curve(x**3, from = -2, to = 4, ylim=c(-4, 8), lwd=2, add=T)#
-box()#
-dev.off() #
-#
-# # # # # # # # # # # # # # # # # # # # # # # # # #
-png("power_funs.png")#
-par(mar=c(4.1, 4.1, 0.8, 0.8), xaxs='i', yaxs='i')#
-plot(NULL, xlim=c(0, 2), ylim=c(0, 2), las=1, xlab="", ylab="", axes=F)#
-mtext("x", 1, line=2, cex=1.25, font=2)#
-mtext("y", 2, line=2, cex=1.25, font=2)#
-axis(1, labels=F)#
-axis(2, labels=F)#
-grid()#
-abline(h=0)#
-abline(v=0)#
-curve(x**0.5, from = -2, to = 4, ylim=c(-4, 8), n=1000, lwd=2, col=2, add=T, lty=1)#
-curve(x**1, from = -2, to = 4, ylim=c(-4, 8), lwd=2, col=1, add=T, lty=2)#
-curve(x**2, from = -2, to = 4, ylim=c(-4, 8), lwd=2, col=4, add=T, lty=3)#
-box()#
-legend("topleft", c(expression(f(x)==sqrt(x)), expression(g(x) == x), expression(h(x) == x**2)), col=c(2, 1, 4), lwd=2, bg="white", lty=c(1, 2, 3))#
-dev.off()
 dev.off()
 dev.off()
 png("linear_up.png")#
@@ -1103,7 +885,6 @@ legend("topleft", c(expression(f(x)==10**x), expression(g(x) == x), expression(h
 legend("topleft", c(expression(f(x)==10**x), expression(g(x) == e**x), expression(h(x) == 2**x)), col=c(2, 1, 4), lwd=2, bg="white", lty=c(1, 2, 3))
 legend("topleft", c(expression(f(x)==e**{2.3*x}), expression(g(x) == e**x), expression(h(x) == 2**x)), col=c(2, 1, 4), lwd=2, bg="white", lty=c(1, 2, 3))
 legend("topleft", c(expression(f(x)==e**{2.3*x}), expression(g(x) == e**x), expression(h(x) == e**{0.6931x})), col=c(2, 1, 4), lwd=2, bg="white", lty=c(1, 2, 3))
-legend("topleft", c(expression(f(x)==e**{2.3*x}), expression(g(x) == e**x), expression(h(x) == e**{0.6931x})), col=c(2, 1, 4), lwd=2, bg="white", lty=c(1, 2, 3))
 legend("topleft", c(expression(f(x)==e**{2.3*x}), expression(g(x) == e**x), expression(h(x) == e**{0.6931*x})), col=c(2, 1, 4), lwd=2, bg="white", lty=c(1, 2, 3))
 plot(NULL, xlim=c(0, 2), ylim=c(0, 5), las=1, xlab="", ylab="", axes=F)
 par(mar=c(4.1, 4.1, 0.8, 0.8), xaxs='i', yaxs='i')#
@@ -1322,7 +1103,6 @@ curve(x/(1+x), from = -2, to = 4, ylim=c(-4, 8), n=1000, lwd=2, col=2, add=T, lt
 curve(x/(1+x^2), from = -2, to = 4, ylim=c(-4, 8), lwd=2, col=1, add=T, lty=2)#
 box()#
 legend("topleft", c(expression(f(x)==frac(x,1+x^2)), expression(g(x) == frac(1,1+x^2))), col=c(2, 1), lwd=2, bg="white", lty=c(1, 2), box.lwd=0)
-box()
 box()
 grid()
 box()
@@ -1767,3 +1547,221 @@ curve(0.8**x, from = -2, to = 5, ylim=c(-4, 8), lwd=2, col=4, add=T, lty=3)#
 box()#
 legend("topright", c(expression(f(x)==e**{-2.30*x}), expression(g(x) == e**x), expression(h(x) == e**{-0.223*x})), col=c(2, 1, 4), lwd=2, bg="white", lty=c(1, 2, 3))#
 dev.off()
+library(jpeg)
+dat <- readJPEG("butterfly.jpg")
+image(as.matrix(dat[,,1]), main="R: post oak_2.0")
+image(as.matrix(dat[,,2]), main="butterfly (green layer)")
+image(as.matrix(dat[,,3]), main="butterfly (blue layer)")
+image(as.matrix(dat[,,1]), main="butterfly (red layer)", col=hcl.colors(265))
+red <- t(as.matrix(dat[,,1]))
+image(head(red), main="butterfly (red layer)", col=hcl.colors(265))
+image(red, main="butterfly (red layer)", col=hcl.colors(265))
+if(file)pdf("sample.pdf", height=5, width=5)#
+red <- t(as.matrix(dat[,,1]))#
+green <- t(as.matrix(dat[,,2]))#
+blue <- t(as.matrix(dat[,,3]))#
+image(red, main="butterfly (red layer)", col=hcl.colors(265), axes=F)#
+image(green, main="butterfly (green layer)", col=hcl.colors(265), axes=F)#
+image(blue, main="butterfly (blue layer)", col=hcl.colors(265), axes=F)#
+#
+if(file)dev.off()
+file <- T#
+#
+if(file)pdf("sample.pdf", height=5, width=5)#
+red <- t(as.matrix(dat[,,1]))#
+green <- t(as.matrix(dat[,,2]))#
+blue <- t(as.matrix(dat[,,3]))#
+image(red, main="butterfly (red layer)", col=hcl.colors(265), axes=F)#
+image(green, main="butterfly (green layer)", col=hcl.colors(265), axes=F)#
+image(blue, main="butterfly (blue layer)", col=hcl.colors(265), axes=F)#
+#
+if(file)dev.off()
+summary(red)
+apply(red, 1, unique)
+apply(as.matrix(red), 1, unique)
+apply(as.matrix(red), 1, unique)
+apply(as.matrix(red), 1, unique)
+apply(as.matrix(red), 1, unique)
+sapply(as.matrix(red),  unique)
+image(red, main="butterfly (red layer)", col=rainbow(255, start=0, end=1/6), axes=F)
+image(green, main="butterfly (green layer)", col=rainbow(255, start=2/6, end=3/6), axes=F)
+if(file)pdf("sample.pdf", height=5, width=5)#
+red <- t(as.matrix(dat[,,1]))#
+green <- t(as.matrix(dat[,,2]))#
+blue <- t(as.matrix(dat[,,3]))#
+image(red, main="butterfly (red layer)", col=hcl.colors(255), axes=F)#
+image(green, main="butterfly (green layer)", col=hcl.colors(255), axes=F)#
+image(blue, main="butterfly (blue layer)", col=hcl.colors(255), axes=F)#
+if(file)dev.off()
+if(file)png("red-butterfly.png")#
+image(red, main="butterfly (red layer)", col=hcl.colors(255), axes=F)#
+if(file)dev.off()#
+if(file)png("green-butterfly.png")#
+image(green, main="butterfly (green layer)", col=hcl.colors(255), axes=F)#
+if(file)dev.off()#
+if(file)png("blue-butterfly.png")#
+image(blue, main="butterfly (blue layer)", col=hcl.colors(255), axes=F)#
+if(file)dev.off()
+1:255/255
+0:255/255
+dat <- readJPEG("butterfly.jpg")
+red <- t(as.matrix(dat[,,1]))#
+green <- t(as.matrix(dat[,,2]))#
+blue <- t(as.matrix(dat[,,3]))#
+if(file)png("butterfly-red.png")#
+image(red, main="butterfly (red layer)", col=gray(0:255/255), axes=F)#
+if(file)dev.off()#
+if(file)png("butterfly-green.png")#
+image(green, main="butterfly (green layer)", col=gray(0:255/255), axes=F)#
+if(file)dev.off()#
+if(file)png("butterfly-blue.png")#
+image(blue, main="butterfly (blue layer)", col=gray(0:255/255), axes=F)#
+if(file)dev.off()
+tmp <- t(as.matrix(dat[,,1]))
+tmp <- t(as.matrix(dat[,,1]))
+r <- nrow(tmp)
+col <- ncol(tmp)
+par(mfrow=c(2, 2))#
+for(n in 0:3){#
+noise <- matrix(runif(r*col, 0.2*n, 1), nrow=r, ncol=col)#
+tmp2 <- tmp*(noise)#
+image(tmp2)#
+}
+str(dat)
+dat <- readJPEG("butterfly2.jpg")
+str(dat)
+tmp <- t(as.matrix(dat[,,1]))#
+r <- nrow(tmp)#
+col <- ncol(tmp)#
+#
+par(mfrow=c(2, 2))#
+for(n in 0:3){#
+noise <- matrix(runif(r*col, 0.2*n, 1), nrow=r, ncol=col)#
+tmp2 <- tmp*(noise)#
+image(tmp2)#
+}
+dat <- readJPEG("butterfly2.jpg")
+red <- t(as.matrix(dat[,,1]))
+green <- t(as.matrix(dat[,,2]))
+blue <- t(as.matrix(dat[,,3]))
+image(red, main="butterfly (red layer)", col=gray(0:255/255), axes=F)
+image(green, main="butterfly (green layer)", col=gray(0:255/255), axes=F)
+image(blue, main="butterfly (blue layer)", col=gray(0:255/255), axes=F)
+tmp <- t(as.matrix(dat[,,1]))#
+r <- nrow(tmp)#
+col <- ncol(tmp)#
+#
+par(mfrow=c(2, 2))#
+for(n in 0:3){#
+noise <- matrix(runif(r*col, 0.2*n, 1), nrow=r, ncol=col)#
+tmp2 <- tmp*(noise)#
+image(tmp2)#
+}
+library(jpeg)#
+#
+dat <- readJPEG("butterfly2.jpg")#
+#
+file <- T#
+#
+# if(file)pdf("sample.pdf", height=5, width=5)#
+#
+red <- t(as.matrix(dat[,,1]))#
+green <- t(as.matrix(dat[,,2]))#
+blue <- t(as.matrix(dat[,,3]))#
+if(file)png("butterfly-red.png")#
+par(mar=c(4.1, 5.1, 0.8, 0.8), mfrow=c(1, 1))#
+image(red, main="butterfly (red layer)", col=gray(0:255/255), axes=F)#
+if(file)dev.off()#
+if(file)png("butterfly-green.png")#
+par(mar=c(4.1, 5.1, 0.8, 0.8), mfrow=c(1, 1))#
+image(green, main="butterfly (green layer)", col=gray(0:255/255), axes=F)#
+if(file)dev.off()#
+if(file)png("butterfly-blue.png")#
+par(mar=c(4.1, 5.1, 0.8, 0.8), mfrow=c(1, 1))#
+image(blue, main="butterfly (blue layer)", col=gray(0:255/255), axes=F)#
+if(file)dev.off()#
+tmp <- t(as.matrix(dat[,,1]))#
+r <- nrow(tmp)#
+col <- ncol(tmp)#
+#
+if(file)png("butterfly-noise.png")#
+par(mar=c(4.1, 5.1, 0.8, 0.8), mfrow=c(2, 2))#
+for(n in 0:3){#
+noise <- matrix(runif(r*col, 0.2*n, 1), nrow=r, ncol=col)#
+tmp2 <- tmp*(noise)#
+image(tmp2, col=gray(0:255/255), axes=F)#
+}#
+if(file)dev.off()
+library(jpeg)#
+#
+dat <- readJPEG("butterfly2.jpg")#
+#
+file <- T#
+#
+# if(file)pdf("sample.pdf", height=5, width=5)#
+#
+red <- t(as.matrix(dat[,,1]))#
+green <- t(as.matrix(dat[,,2]))#
+blue <- t(as.matrix(dat[,,3]))#
+if(file)png("butterfly-red.png")#
+par(mar=c(0.8, 0.8, 0.8, 0.8), mfrow=c(1, 1))#
+image(red, main="butterfly (red layer)", col=gray(0:255/255), axes=F)#
+if(file)dev.off()#
+if(file)png("butterfly-green.png")#
+par(mar=c(0.8, 0.8, 0.8, 0.8), mfrow=c(1, 1))#
+image(green, main="butterfly (green layer)", col=gray(0:255/255), axes=F)#
+if(file)dev.off()#
+if(file)png("butterfly-blue.png")#
+par(mar=c(0.8, 0.8, 0.8, 0.8), mfrow=c(1, 1))#
+image(blue, main="butterfly (blue layer)", col=gray(0:255/255), axes=F)#
+if(file)dev.off()#
+tmp <- t(as.matrix(dat[,,1]))#
+r <- nrow(tmp)#
+col <- ncol(tmp)#
+#
+if(file)png("butterfly-noise.png")#
+par(mar=c(0.8, 0.8, 0.8, 0.8), mfrow=c(2, 2))#
+for(n in 0:3){#
+noise <- matrix(runif(r*col, 0.2*n, 1), nrow=r, ncol=col)#
+tmp2 <- tmp*(noise)#
+image(tmp2, col=gray(0:255/255), axes=F)#
+}#
+if(file)dev.off()
+par(mfrow=c(2,1), mar=c(4.1, 4.1, 0.8, 0.8), xaxs='i', yaxs='i')#
+image(1:ds[1], 1:ds[2], as.matrix(dat[,,3]), main="B: post oak_2.0", xlim=c(0, ds[1]), ylim=c(0, ds[2]))#
+abline(h=row)#
+#
+plot(as.matrix(dat[, , 1]+dat[, , 2]+dat[, , 3])[, row], pch=".", xlim=c(0, ds[1]), ylim=c(0, 3), las=1)#
+# points(as.matrix(dat[, , 1])[, row], pch=".", col=2)#
+# points(as.matrix(dat[, , 2])[, row], pch=".", col=3)#
+points(as.matrix(dat[, , 3])[, row], pch=".", col=4)
+ds <- dim(as.matrix(dat[,,3]))#
+row <- ceiling(2.25*ds[2]/5)#
+#
+par(mfrow=c(2,1), mar=c(4.1, 4.1, 0.8, 0.8), xaxs='i', yaxs='i')#
+image(1:ds[1], 1:ds[2], as.matrix(dat[,,3]), main="B: post oak_2.0", xlim=c(0, ds[1]), ylim=c(0, ds[2]))#
+abline(h=row)#
+#
+plot(as.matrix(dat[, , 1]+dat[, , 2]+dat[, , 3])[, row], pch=".", xlim=c(0, ds[1]), ylim=c(0, 3), las=1)#
+# points(as.matrix(dat[, , 1])[, row], pch=".", col=2)#
+# points(as.matrix(dat[, , 2])[, row], pch=".", col=3)#
+points(as.matrix(dat[, , 3])[, row], pch=".", col=4)
+ds <- dim(as.matrix(dat[,,3]))#
+#
+row <- ceiling(2.25*ds[2]/5)#
+layout(matrix(1:6, nrow=2, ncol=3, byrow=F))#
+par(mar=c(4.1, 4.1, 0.8, 0.8), xaxs='i', yaxs='i')#
+#
+image(1:ds[1], 1:ds[2], as.matrix(dat[,,1]), main="R: post oak_2.0", xlim=c(0, ds[1]), ylim=c(0, ds[2]))#
+abline(h=row)#
+plot(as.matrix(dat[, , 1]+dat[, , 2]+dat[, , 3])[, row], pch=".", xlim=c(0, ds[1]), ylim=c(0, 3), las=1)#
+points(as.matrix(dat[, , 1])[, row], pch=".", col=2)#
+image(1:ds[1], 1:ds[2], as.matrix(dat[,,2]), main="G: post oak_2.0", xlim=c(0, ds[1]), ylim=c(0, ds[2]))#
+abline(h=row)#
+plot(as.matrix(dat[, , 1]+dat[, , 2]+dat[, , 3])[, row], pch=".", xlim=c(0, ds[1]), ylim=c(0, 3), las=1)#
+points(as.matrix(dat[, , 2])[, row], pch=".", col=3)#
+#
+image(1:ds[1], 1:ds[2], as.matrix(dat[,,3]), main="B: post oak_2.0", xlim=c(0, ds[1]), ylim=c(0, ds[2]))#
+abline(h=row)#
+plot(as.matrix(dat[, , 1]+dat[, , 2]+dat[, , 3])[, row], pch=".", xlim=c(0, ds[1]), ylim=c(0, 3), las=1)#
+points(as.matrix(dat[, , 3])[, row], pch=".", col=4)
