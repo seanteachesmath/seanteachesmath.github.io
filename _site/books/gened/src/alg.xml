@@ -1,0 +1,1844 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter xml:id="chap-the-joy-of-x">
+<title> The Joy of <m>X</m> </title>
+
+<introduction>
+<p>Two key themes are abstraction and generalization. This includes the
+flexibility to abstract from arithmetic calculations with specific
+quantities to algebraic work with symbols representing those quantities.
+This allows us to move from a very specific situation towards studying
+other problems that fit a similar pattern.</p>
+</introduction>
+
+
+<section xml:id="sec-From-arithmetic-to-algebra">
+<title> From arithmetic to algebra </title>
+
+<introduction> <p>
+Previously we discussed a situation where we know we have run for 25
+minutes and covered 5 km or <me>\dfrac{25 \text{minutes}}{5
+\text{km}}</me>
+Now, say we ran other races or friends have other times at the same
+race. Rather than repeat the calculation at each instance, we could
+think of generalizing this thought process and building a formula that
+works for any time represented by the value of the symbol <m>x</m>. We
+would begin by
+<me>\dfrac{x \text{minutes}}{5 \cancel{\text{km}}}\times\dfrac{1.609 \
+cancel{\text{km}}}{1 \text{mi}} =
+0.3218x \dfrac{\text{minutes}}{\text{mi}}</me></p>
+
+<p> ... </p> </introduction>
+
+<p>With this we would say that given a time <m>x</m> our pace is given
+by
+<me>\text{pace}= 0.3218x \dfrac{\text{minutes}}{\text{mi}}</me> Then we
+could
+consider calculations of <me>any</me> reasonable value for <m>x</m>, or
+time in minutes. For example,</p>
+
+<table xml:id="tab-pace">
+<title>Pace for a few lengths of time.</title>
+<tabular halign="center" left="minor" right="minor" top="minor"
+bottom="minor">
+<row><cell><m>x</m> </cell> <cell> <m>\text{pace} =
+0.3218x</m></cell></row>
+<row><cell>15 </cell> <cell> 4.827</cell></row>
+<row><cell>20 </cell> <cell> 6.436</cell></row>
+<row><cell>25 </cell> <cell> 8.045</cell></row>
+<row><cell>30 </cell> <cell> 9.654</cell></row>
+</tabular>
+</table>
+
+<p>You might notice that multiplication by <m>0.3218</m> is a rather
+specific
+detail and ask if, as you were running with your eye on the watch, you
+could do a reasonable job estimating your pace with a simpler
+calculation. We could argue that <me>0.3218 \approx 0.333\dots =
+\sfrac{1}{3}</me> noticing this we might consider
+<me>0.3218x\approx\left(\sfrac{1}{3}\right)x</me> and furthermore that
+multiplication by <m>\sfrac{1}{3}</m> is equivalent to division by
+<m>3</m>. We could reasonably approximate our pace by <me>\text{pace} =
+\sfrac{x}{3}</me> which might be a bit easier than multiplying by
+<m>0.3218</m> in your tired mind.</p>
+
+
+<table xml:id="tab-pace2">
+<title>Pace for a few lengths of time, but also
+quickly approximated by a simpler calculation.</title>
+<tabular halign="center" left="minor" right="minor" top="minor"
+bottom="minor">
+<row><cell><m>x</m> </cell> <cell> <m>\text{pace} =
+0.3218x</m></cell><cell> <m>\text{pace} \approx
+\sfrac{x}{3}</m></cell></row>
+<row><cell>15 </cell> <cell> 4.827</cell><cell> 5.000</cell></row>
+<row><cell>20 </cell> <cell> 6.436</cell><cell> 6.666</cell></row>
+<row><cell>25 </cell> <cell> 8.045</cell><cell> 8.333</cell></row>
+<row><cell>30 </cell> <cell> 9.654</cell><cell> 10.00</cell></row>
+</tabular>
+</table>
+
+
+<p>It is worth pointing out that we spend most of our time in math
+classes
+(and other classes) looking at problems that we can solve exactly and to
+a unique answer. This is not the case in almost any real situation.
+Approximation is valid and valuable as a strategy, we do just need to be
+aware of the error we introduce and its consequences. Entire fields of
+advanced mathematics are devoted to such issues. The limitations of
+doing arithmetic on base-2 computers? That is a big part of numerical
+analysis. How important is a specific (and often `small') term in a
+great big formula? That is a big part of perturbation theory.</p>
+
+<p><!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... --></p>
+
+</section>
+
+<section xml:id="sec-From-formulas-to-functions">
+<title> From formulas to functions </title>
+<introduction> <p> ... </p> </introduction>
+
+<p>
+Given a formula we are really just a step away from thinking of
+functions. While a function has some extra mathematical properties, we
+can really think of a function <m>f(x)</m> as the label for a particular
+calculation involving the quantity <m>x</m>. The major string attached
+to
+this designation is that a particular <m>x</m>-value can only give rise
+to
+a single calculated value.</p>
+
+<p>Imagine referring to the calculation of the quantity
+<m>(50+x)(50+x)</m>,
+it would be a bit of a drag if, any time that we wanted to make
+reference to the calculation, we had to refer to the complete formula.
+Instead we could assign this special calculation to a function <m>f(x) =
+(50+x)(50+x)</m>, at which point we could refer to our action by either
+the formula or the function name. Setting <m>x = 3</m> and calculating
+we
+could say ''lets take the quantity <m>50</m> plus <m>3</m> times the
+quantity
+<m>50</m> plus <m>3</m>'' to calculate a particular value. As a much
+more
+convenient alternative we could simply say <m>f(3)</m>, the value of the
+function whose formula defines the calculation.</p>
+
+<p>Now, a major source of confusion about functions lies in the notation
+itself. In particular, parentheses show up in two places, with two
+different meanings, 
+<me>\underbrace{f(x)}_{\text{function notation}}= \underbrace{(50 +
+x)(50
++ x)}_{\text{grouping and multiplication}}</me>
+We read the notation <m>f(x)</m> as ''<m>f</m> of <m>x</m>'' referring
+to the
+value generated by a particular choice of <m>x</m>; these parentheses
+serve
+as `function notation'. In contrast, each pair of parentheses on the
+right (''<m>(50 + x)</m>'') serve as grouping the two terms to be added;
+abutting these two factors indicates a step of multiplying the results
+of the two completed addition operations. </p>
+
+<p>As an added example of the use and misuse of parenthesis with respect
+to
+function notation consider the natural logarithm function <m>\ln(x)</m>.
+When solving equations that require the application of natural
+logarithms for simplification, novice users often write things like
+<m>3\cdot \ln</m> when they mean, or should mean, <m>\ln(3)</m>. This
+can be
+contrasted with how we use the square root symbol
+`<m>\sqrt{\phantom{8}}</m>'. To take the square root of <m>8</m>, we
+would
+always write `<m>\sqrt{8}</m>' and not
+`<m>8\cdot\sqrt{\phantom{8}}</m>.'</p>
+
+<p>Sometimes we say <m>y = f(x)</m> to indicate that a particular
+function
+<m>f(x)</m> generates a value called <m>y</m>, to form an ordered pair
+<m>(x,
+y)</m>. Occasionally we try to use more meaningful symbols than
+<m>y</m>,
+<m>f</m>, and <m>x</m>. For example, in discussing our pace we could
+somewhat
+generically write a function <m>f(x) = 0.3218x</m>. This gives very
+little
+insight into the meaning of the symbol <m>x</m> or the result of the
+calculation. We might then say <m>p = f(x) = 0.3218</m>, just as we have
+said <m>y = f(x) =0.3218</m> in many instances before. Better yet would
+be
+<m>p = p(x) = 0.3218</m>, where the function and variable name are the
+same
+- one fewer thing to keep track of - and indicative of the measurement
+of `pace'. Better <em>still</em> would be <m>p = p(t) = 0.3218t</m> were
+the variable <m>t</m> could be a reminder of the measurement of
+time.</p>
+
+<p>Given a function there are really two things we might do
+<ol>
+<li><p>''plug in'' or evaluate with a known input value</p></li>
+<li><p>set up and solve an equation for an unknown input value</p></li>
+</ol>
+The first of these tends to be a bit easier, the second can be much
+harder (or in some cases impossible using or typical methods). </p>
+
+<example xml:id="ex-aa">
+<title> ... </title>
+<statement>
+<p>
+In this case, given \text{any} value for <m>x</m> we can evaluate our
+function <m>f(x) = (50+x)(50+x)</m>. For example, taking <m>x=6</m> we
+write
+<me>f(6) = (50+6)(50+6) = (56)(56) = 3136</me> and read ''<m>f</m> of
+<m>6</m>
+equals the quantity <m>50</m> plus <m>6</m> times the quantity <m>50</m>
+plus
+<m>6</m>.'' We plug in <m>6</m> for every instance of <m>x</m> on the
+left-hand
+side and the right hand side. We then use arithmetic operations to
+calculate the value of the expression on the right-hand side. For
+<m>x=0</m> we find <me>f(0) = (50+0)(50+0) = (50)(50) = 2500.</me>
+
+</p>
+</statement>
+</example>
+
+</section>
+<p><!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... --></p>
+
+<section xml:id="sec-Imagine">
+<title>Imagine</title>
+<introduction> <p> ... </p> </introduction>
+
+
+<p><!-->\footnote{Imagine because we won't actually
+devote too much time to this from an algebraic perspective.}">-->
+One of the things we do with functions is set up and solve equations.
+With this in mind we want to think about the mechanics of how we
+actually solve the equations and what the solutions might mean. </p>
+
+<p><!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... --></p>
+
+</section>
+
+<section xml:id="sec-Finding-your-roots">
+<title> Finding your roots </title>
+<introduction> <p> ... </p> </introduction>
+
+<p>Here `roots' refers to the zeros of a function <m>f(x)</m> or the
+solutions
+to the equation <m>f(x) = 0</m>. This is the set of all numbers
+(associated
+to a particular function) for which plugging in these values returns the
+function value of zero. This can be most easily pictured as where the
+graph of a function crosses the horizontal axis, though this isn't
+always enough.</p>
+
+<p>Thinking of a formula such as <m>y = 3x-7</m> we remind ourselves
+that
+there are two things we can do: `plug in' or solve an equation. Suppose
+we know that <m>x = 4</m>, what can we do with this information? We can
+evaluate right-hand side to say that when <m>x=4</m>, <me>y = 3(4)- 7 =
+12 -
+7 = 5</me>. Often when we talk about such formulas we think of them as
+functions, for example, we might prefer to say <m>y = f(x) = 3x-7</m>.
+This
+really just says we generate a set of function values <m>y</m> that
+correspond to the set of values <m>x</m>. In this case we might revisit
+our
+earlier problem with the notation that <m>f(4) = 3(4)-7 = 12</m>. We
+have
+`plugged in' the value <m>x=4</m> on each side of the function, on the
+left
+as a particular value of its argument and on the right in each position
+that the argument occurs.</p>
+
+<p>The other thing we can do given a formula or function is to calculate
+an
+unknown input from a known output. For example, we can answer the
+question `what is <m>x</m> given that <m>y=17</m>?' Here we begin with
+<me>17 =
+3x-7</me> and solve for <m>x</m>. Specifically,
+<me>\begin{aligned}[t]
+17 \amp = 3x-7\\
+17+7 \amp = 3x-7 +7\\
+24 \amp = 3x\\
+x \amp = \sfrac{24}{3} = 8
+\end{aligned}</me></p>
+
+<p>Of these two tasks, plugging in or evaluating a function is typically
+easier than setting up and solving an equation. That is not to say it is
+easy, but typically easier than the other task.</p>
+
+<subsection xml:id="sub-Square-roots-new-ideas">
+<title> Square roots new ideas </title>
+<introduction> <p> ... </p> </introduction>
+
+<p>
+Way back when we discussed numbers, first the counting numbers, we saw
+we could add and multiply and remain within that set of numbers.
+Introducing subtraction required us to think about negative number (and
+zero). Introducing division required us to think about rational numbers
+and decimals (and soon after irrational numbers). Assuming we are
+interested in calculating square roots of numbers in order to identify
+what number can be multiplied twice to generate another, we have to
+prepare for yet another complication. If we think of the square root
+arising in the problem <me>(\underline{\quad})(\underline{\quad}) =
+25</me>
+we might recognize that a number that can be used in both blanks
+simultaneously is <m>5</m>\footnote{It turns out that <m>-5</m> is a
+valid
+choice as well, since <m>(-5)(-5) = 25</m> also.}. Picturing this
+multiplication problem we can think of other pairs of similarly related
+numbers also,
+<me>\begin{aligned}[t]
+({5})({5}) \amp= 25\\
+({3})({3}) \amp= 9\\
+({-1})({-1}) \amp= 1\\
+({-3})({-3}) \amp = 9
+\end{aligned}</me>
+It turns out that there are two ways to generate the value <m>9</m> by
+multiplication: of a <m>3</m> with itself and of a <m>-3</m> with
+itself. We
+write <me>\sqrt{9} = \pm3</me> in order to indicate both possibilities.
+One
+thing we might notice is that two positive factors yield in a positive
+result, but so do two negative factors. A question is, ''what, if
+anything, can we multiply against itself to generate a negative
+result?''</p>
+
+<p>The answer to this requires us to think of a new type of number, the
+imaginary number. Here we say that the imaginary number <m>i</m> is a
+number such that, <me>i\cdot i = i^2 = -1</me> or, from the reverse that
+<me>\sqrt{-1} = i.</me> With this new concept we can build numbers
+called
+complex numbers that consist of our typical `real part' combined with a
+term representing this new `imaginary part'. In general complex numbers
+are of the form <m>a+bi</m>, where <m>a</m> and <m>b</m> come from our
+usual sets
+of numbers; they can be whole numbers, fractions or decimals, positives
+or negatives.</p>
+
+<p>For the moment we will (try to) accept this concept of a new kind of
+number, just like we have for others along the way, and practice with it
+in calculations. </p>
+
+<example xml:id="complex-arithmetic">
+<title> ... </title>
+<statement>
+<p>
+Consider the real number <m>3</m> and four successive rounds of
+multiplication by <m>i</m>. <me>\begin{aligned}[t]
+(3)(i) \amp = 3i\\
+(3i)(i) \amp = 3(i^2) = 3(-1) = -3\\
+(-3)i \amp = -3i\\
+(-3i)(i) \amp = (-3)(i^2) = (-3)(-1) = 3
+\end{aligned}</me>
+In this case multiplication by <m>i</m> flips a the real number <m>3</m>
+back
+and forth between real and imaginary. Four steps of multiplication sends
+us back to our starting point. Notice, for example, that <m>i^4 =
+(i^2)(i^2) = (-1)(-1) = 1</m>. In fact, no matter how we break up stages
+of this calculation we see that <m>i^4 = 1</m>. So multiplying by
+<m>i</m>
+four times or by <m>i^4</m> one time both yield the same outcome.
+</p>
+</statement>
+</example>
+
+
+<example xml:id="complex-arithmetic-II">
+<title> ... </title>
+<statement>
+<p>Consider the complex number <m>3+2i</m> and four successive rounds of
+multiplication by <m>1+i</m>. <me>\begin{aligned}[t]
+(3+2i)(1+i) \amp = 3\cdot1+3\cdot i+2i\cdot1 + 2i\cdot i\\
+ \amp = 3 + 3i + 2i + 2(i^2)\\
+ \amp = 3 + 3i + 2i + 2(-1)\\
+ \amp = 3 + 5i - 2\\
+ \amp 1 + 5i
+\end{aligned}</me>
+Now the point that used to be at coordinates <m>(3, 2)</m> has moved to
+the
+point at coordinates <m>(-1, 5)</m>. Convince yourself that one
+additional
+multiplication moves the point to <m>(-4,6)</m> corresponding to the
+complex number <m>-4+6i</m>.</p>
+
+<p>We visualize these steps in the image below, where <m>j</m> refers to
+the
+number of steps of multiplication.
+<figure xml:id="figure-complex">
+
+<image source = "./images/complex.png" width="85%" text="fingers for
+counting">
+              <description>Complex numbers.</description>
+</image>
+</figure>
+<!-->\begin{center}\includegraphics[width=0.75\textwidth]{\figs/complex}
+\end{
+center">
+--></p>
+</statement>
+</example>
+
+
+<p>We can visualize this multiplication by constructing the complex
+plane:
+two perpendicular axes, one that describes real values and one that
+describes imaginary values, which collectively describe all of the
+complex numbers. Plotting these values in the complex plane and tracing
+out the steps of multiplication, we can convince ourselves that each
+step multiplication by <m>i</m> serves to rotate our number
+counterclockwise around the origin of the graph. Here our numbers lie on
+the axes (which are perpendicular to one another), so tracking the
+rotations might be pictured a bit more easily than it can be in
+general.</p>
+
+<exercise xml:id="chall-complex-arithmetic">
+<p>Complete four successive multiplications of <m>3+i</m> by <m>i</m>.
+Do this
+arithmetically and visually by using rotations about the origin. Did one
+method come to you more easily than the other? Was one method more
+interesting than the other?</p>
+</exercise>
+
+<exercise xml:id="chall-complex-arithmetic-II">
+<p>Calculate each of the following.
+<ol>
+<li><p><m>(3+i)(1-2i)</m> <em>Hint: expand by FOIL.</em></p></li>
+<li><p><m>(2-i)(3+2i)</m></p></li>
+<li><p><m>(2-i) + (3+2i)</m> <em>Hint: combine real and complex
+parts.</em></p></li>
+<li><p><m>(1+i) - (5-2i)</m> <em>Hint: combine real and complex
+parts.</em></p></li>
+</ol>
+</p>
+</exercise>
+
+<p>Complex numbers are typically first encountered in algebra when
+working
+with solutions to quadratic equations (but historically it seems that
+they were first `invented' or realized when working with cubic
+equations). Focusing on just the quadratic equations, analytical (i.e.,
+on paper) solutions to <me>ax^2+bx+c=0</me> can generally be found by
+factoring, completing the square, or applying the quadratic formula.
+</p>
+
+<p>We may remember the quadratic formula as <me>x = \frac{x = -b\pm
+\sqrt{b^2
+- 4ac}}{2a}</me> Without imaginary and complex numbers, we run into
+trouble
+when the term in the square root, called the `discriminant', is negative
+because without them we could not take the square root. Indeed,
+solutions are complex numbers if <me>b^2 -4ac \lt 0</me> this means we
+can solve
+the equation in terms of complex numbers, but that the graph will not
+actually cross the horizontal axis as we are used to seeing happen.</p>
+
+<p>Stepping aside, now that we have a need for square roots and an
+appreciation of the connection to complex numbers, we will look at the
+generation of fractals. The mathematical details of this will happen
+behind the scenes, but the connection from complex numbers to fractals
+is a strong one. After a brief discussion of fractals, we will return to
+the world of real numbers, but look at the effects of repetition or
+iteration on some more concrete problems.</p>
+
+</subsection>
+
+<subsection xml:id="iteration-fractals">
+<title>Repetition and a descent to fractals</title>
+
+<introduction>
+<p>Though the technical details are a bit much at the moment, there is a
+strong connection between thinking about and working with complex
+numbers and the generation of what are known mathematically as fractals.
+</p>
+</introduction>
+
+In addition to being useful in their own way, when carefully visualized,
+solutions to certain math problems generate neat pictures. Our first
+fractal, Newton's map (see Fig. \ref{fig::nmap}), shows the `shooting
+chart' for finding solutions to a particular mathematical problem that
+arise by starting at different points on the `floor'.
+
+<figure xml:id="figure-newtons88">
+
+<image source = "./images/alpha8over8.png" width="85%" text="fingers for
+counting">
+              <description>A Newton's map fractal.</description>
+</image>
+</figure>
+<!--\begin{figure}[h!">
+\centering
+\includegraphics[width=0.5\textwidth]{\figs/alpha8over8">
+\caption{A classic representation of the Newton's Map fractal generated
+using the program Processing.}\label{fig::nmap">
+\end{figure">-->
+
+<p>An analogy: If our goal is to keep track of basketball scoring, we
+might
+map all of the locations on one end of floor by a color that indicates
+if a player that scored or missed from that location. We might even
+change the intensity of the color by the number of makes or misses, or
+the ratio of makes to misses.</p>
+
+<figure xml:id="figure-newtons58">
+
+<image source = "./images/alpha5over8.png" width="85%" text="fingers for
+counting">
+              <description>A Newton's map fractal.</description>
+</image>
+</figure>
+<!--\begin{figure}[h!">
+\centering
+\begin{minipage}{0.48\textwidth">
+\centering
+\includegraphics[width=0.95\textwidth]{\figs/alpha5over8"></p>
+-->
+<figure xml:id="figure-newtons78">
+
+<image source = "./images/alpha7over8.png" width="85%" text="fingers for
+counting">
+              <description>A Newton's map fractal.</description>
+</image>
+</figure>
+<!-->
+<p>\end{minipage">
+\begin{minipage}{0.48\textwidth">
+\centering
+\includegraphics[width=0.95\textwidth]{\figs/alpha7over8">
+\end{minipage"></p>
+-->
+<figure xml:id="figure-newtons98">
+
+<image source = "./images/alpha9over8.png" width="85%" text="fingers for
+counting">
+              <description>A Newton's map fractal.</description>
+</image>
+</figure><!-->
+<p>\begin{minipage}{0.48\textwidth">
+\centering
+\includegraphics[width=0.95\textwidth]{\figs/alpha9over8"></p>
+-->
+<figure xml:id="figure-newtons118">
+
+<image source = "./images/alpha11over8.png" width="85%" text="fingers
+for counting">
+              <description>A Newton's map fractal.</description>
+</image>
+</figure>
+<!-->
+<p>\end{minipage">
+\begin{minipage}{0.48\textwidth">
+\centering
+\includegraphics[width=0.95\textwidth]{\figs/alpha11over8">
+\end{minipage"></p>
+
+<p>\caption{Slight variations of the Newton's Map fractal generated
+using
+the program Processing.}\label{fig::nmap2">
+\end{figure">-->
+<!-->
+%\paragraph{MORE PICTURES!} 
+\subsubsection{Paper folding">
+Other repetitive processes can generate interesting patterns as well.
+Paper folding is on the cusp of art and science.
+%\paragraph{PAPER FOLDING!">
+%-->
+%
+<figure xml:id="figure-paper">
+
+<image source = "./images/paper1.jpg" width="85%" text="fingers for
+counting">
+              <description>Paper folding.</description>
+</image>
+</figure>
+<!--\begin{figure}[h!">
+\centering
+\begin{minipage}{0.48\textwidth">
+\centering
+\includegraphics[width=0.95\textwidth, angle=-90]{\figs/paper1"></p>
+--><figure xml:id="figure-paper2">
+
+<image source = "./images/paper2.jpg" width="85%" text="fingers for
+counting">
+              <description>Paper folding.</description>
+</image>
+</figure>
+<!-->
+<p>\end{minipage">
+\begin{minipage}{0.48\textwidth">
+\centering
+\includegraphics[width=0.95\textwidth, angle=-90]{\figs/paper2">
+\end{minipage"></p>
+--><figure xml:id="figure-paper3">
+
+<image source = "./images/paper3.jpg" width="85%" text="fingers for
+counting">
+              <description>Paper folding.</description>
+</image>
+</figure><!-->
+<p>\begin{minipage}{0.48\textwidth">
+\centering
+\includegraphics[width=0.95\textwidth, angle=-90]{\figs/paper3"></p>
+
+<p>\end{minipage">
+\begin{minipage}{0.48\textwidth">
+\centering
+\includegraphics[width=0.95\textwidth, angle=-90]{\figs/paper4">
+\end{minipage"></p>
+--><figure xml:id="figure-paper4">
+
+<image source = "./images/paper4.jpg" width="85%" text="fingers for
+counting">
+              <description>Paper folding.</description>
+</image>
+</figure>
+<!-->
+<p>\caption{Stages of paperfolding and cutting.}\label{fig::paper">
+\end{figure">-->
+</subsection>
+
+<subsection xml:id="sub-Repeated-approximation">
+<title> Repeated approximation </title>
+
+<p>
+Having seen square roots arise in solving certain algebraic problems
+(quadratic equations) or just certain arithmetic problems (square roots
+of numbers), we will pause to think about how we might actually
+calculate square roots of arbitrary numbers. We might know that because
+<me>5\cdot5=25</me> that we can say <me>\sqrt{25} = 5</me> this is true
+and
+reflects the `principal square root'. But, we also have that
+<me>(-5)\cdot(-5) = 25</me> and in general say <me>\sqrt{25} = \pm
+5</me> to
+indicate both ways of squaring a number to get <m>25</m>. Certain
+numbers
+we can take square roots of mentally by thinking about the repeated
+factors that give rise to that number, but for others we are unable to
+easily do so.</p>
+
+<p>For example, what is the <m>\sqrt{3}</m>? At the start we might
+observe
+that <m>1\cdot1 = 1</m> and <m>2\cdot2=4</m>. We might believe that the
+answer, the number that we multiply by itself to result in a value of
+<m>3</m>, should be between <m>1</m> and <m>2</m>, perhaps even a little
+closer
+to <m>2</m> than to <m>1</m>. In a very surprising coincidence, the
+mathematical technique, and even the more general approach, that lets us
+approximate <m>\sqrt{3}</m> is actually the same as the one that
+generated
+our fractals. A technique called Newton's Method, when applied to this
+problem, gives a mathematical rule for calculating a sequence of
+approximations to a square root. The rule is given by <me>x_{n+1} =
+\frac{1}{2}\left(x_n+\frac{\alpha}{x_n}\right)</me> where <m>x_n</m> is
+the
+<m>n^\text{th}</m> approximation to the square root. We imagine
+<m>x_n</m> as
+a sequence (or ordered list) of numbers starting at <m>n=0</m> with a
+value
+<m>x_0</m> and continuing as <m>n</m> grows by one at a time.</p>
+
+<example xml:id="Approximating-sqrt-3">
+<title>Approximating <m>\sqrt{3}</m></title>
+<statement>
+<p>Assuming that our <m>\alpha = 3</m> in our hopes of approximating
+<m>\sqrt{3}</m>, we might start by guessing that <m>x_0 = 1</m> and
+noticing
+that the step after step <m>n=0</m> is step <m>n+1 = 0+1 = 1</m>, such
+that
+<me>\begin{aligned}[t]
+x_{0+1} \amp= \frac{1}{2}\left(x_0+\frac{3}{x_0}\right)\\
+x_1 \amp= \frac{1}{2}\left(1+\frac{3}{1}\right)\\
+ \amp= \frac{1}{2}\left(4\right)\\
+ x_1 \amp = 2
+\end{aligned}</me>
+Now starting from <m>x_1 = 2</m> we take another step to calculate
+<m>x_2</m>.
+<me>\begin{aligned}[t]
+x_{1+1} \amp= \frac{1}{2}\left(x_1+\frac{3}{x_1}\right)\\
+x_2 \amp= \frac{1}{2}\left(2+\frac{3}{2}\right)\\
+ \amp= \frac{1}{2}\left(\frac{7}{2}\right)\\
+ x_2 \amp = \frac{7}{4} = 1.75
+\end{aligned}</me>
+Repeating this some more (one last time in greater detail), 
+<me>\begin{aligned}[t]
+x_3 \amp= \frac{1}{2}\left(\frac{7}{4}+\frac{3}{\sfrac{7}{4}}\right)\\
+    \amp=
+\frac{1}{2}\left(\frac{7}{4}+\frac{3}{1}\cdot\frac{4}{7}\right)\\
+<!--text{replace <m>\div</m> with <m>\times</m> by reciprocal}\\-->
+ \amp= \frac{1}{2}\left(\frac{7}{4}+\frac{12}{7}\right)\\
+ \amp=
+\frac{1}{2}\left(\frac{7}{7}\cdot\frac{7}{4}+\frac{4}{4}\cdot\frac{12}{7
+}\right)\\
+ \amp= \frac{1}{2}\left(\frac{49 + 48}{28}\right)\\
+x_3 \amp= \frac{97}{56}\approx 1.732143
+\end{aligned}</me></p>
+
+<p>Continuing this it might help to visualize the results in a table.
+Additionally it will no longer make sense to store exact fractions at
+any step, since our computers are unable to do so anyway. This does save
+us from having to do things like find common denominators, but does
+require us to write down some fairly lengthy decimal numbers at
+times.</p>
+
+<table xml:id="tab-a-table">
+<title>Application to approximate <m>\sqrt{3}</m> with Newton's Method.
+After only 4 steps, the approximation is exact to 8 digits; after just
+one more step, the first 16 digits are exact (correct digits are
+bolded)</title>
+<!-->\caption{Application to approximate <m>\sqrt{3}</m> with Newton's
+Method.
+After only 4 steps, the approximation is exact to 8 digits; after just
+one more step, the first 16 digits are exact (correct digits are
+underlined).}\label{tab::roots}\centering
+-->
+<tabular halign="center" left="minor" right="minor" top="minor"
+bottom="minor">
+<row><cell><m>n</m></cell><cell><m>x_n</m></cell></row>
+<row><cell> 0 </cell> <cell> 1.0000000</cell></row>
+<row><cell> 1 </cell> <cell> 2.0000000</cell></row>
+<row><cell> 2 </cell> <cell> <alert>1.7</alert>500000</cell></row>
+<row><cell> 3 </cell> <cell> <alert>1.732</alert>1429</cell></row>
+<row><cell> 4 </cell> <cell> <alert>1.7320508</alert></cell></row>
+<row><cell> 5 </cell> <cell> <alert>1.7320508</alert></cell></row>
+</tabular>
+</table>
+
+<p>Our approximation of <m>\sqrt{3}</m> by <m>x_5\approx
+1.732050807568877</m>
+squares to <me>1.732050807568877^2=2.999999999999998</me> which is quite
+impressive.</p>
+</statement>
+</example>
+
+
+<exercise xml:id="ex-">
+<p>We approximated <m>\sqrt{3}</m> to 8 correct digits in only 4 steps
+starting from <m>x_0=1</m>. Do you think that the choice of <m>x_0</m>
+matters? For each of <m>x_0</m> equal to each integer from <m>1</m> to
+<m>10</m>
+see how many steps it takes to reach 8 correct digits from that number.
+Graph your results with points illustrating the number of steps required
+(vertical) against the value of <m>x_0</m> (horizontal). This can be
+done
+by hand but will be a miserable amount of work, instead see if you can
+use spreadsheet software to automate the calculation.
+</p>
+</exercise>
+
+<exercise xml:id="ex-nnn">
+<p>Try to approximate <m>\sqrt{7}</m> to 6 digits. What is a sensible
+choice
+of <m>x_0</m> and why?
+</p>
+</exercise>
+
+</subsection>
+<p><!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... --></p>
+
+</section>
+
+<section xml:id="sec-word-problems">
+<title> Word problems </title>
+<introduction> <p>
+Word problems get a bad rap. 
+<ul>
+<li><p>What goes where?</p></li>
+<li><p>What even matters?</p></li>
+<li><p>Formatting numbers (e.g., is it <m>50\%</m> or
+<m>0.50</m>?)</p></li>
+<li><p>''I have to think!?!''</p></li>
+<li><p>Show your work.</p></li>
+<li><p>Problems are time-consuming.</p></li>
+<li><p>Interpretation of answer often required.</p></li>
+</ul>
+But, work problems are an idealized version of most real-world problem
+solving; in this case we know the course or book we are studying, the
+unit or chapter, and the topic or section. So, it should be the case
+that we know roughly <em>what</em> to do, even if we do not exactly know
+<em>how</em> to do it mechanically. </p>
+
+<p> ... </p> </introduction>
+
+
+
+<subsection xml:id="sub-Life-is-a-word-problem">
+<title> Life is a word problem </title>
+<introduction> <p> ... </p> </introduction>
+
+<p>
+Mathematical modeling is the art, and science, of writing and studying
+your own word problems about interesting situations. We 1) take
+real-world knowledge, 2) identify, often with the help of experts,
+seemingly important facts and details, 3) develop a verbal or visual
+`story' about what is happening, 4) translate the words and diagrams to
+mathematical notation and formulas, and 5) study the math problem and
+see what we have learned. This process is visualized in
+Fig. \ref{fig::modeling}.</p>
+
+<p>As we generate results, we compare those to the original mathematical
+problem for consistency, then to the details of the biological problem.
+If those first two stages are successful, we see if there is anything
+that can be said about the real-world problem. If not, we revise our
+assumptions, model, or analysis and try again. Here failure is expected
+and provides a valuable chance to learn.</p>
+
+<figure xml:id="figure-hard-problem">
+
+<image source = "./images/hard_problem.png" width="85%" text="fingers
+for counting">
+              <description>Paper folding.</description>
+</image>
+</figure>
+
+<p><!--\begin{figure}[h!">
+\centering
+\includegraphics[width=0.75\textwidth]{\figs/hard_problem">
+\caption{Process of mathematical modeling.}\label{fig::modeling">
+\end{figure">--></p>
+
+<p>Unlike when we find ourselves solving word problems, here we do
+<em>not</em> know the tool we are supposed to use. It requires a broad
+training with a diverse set of techniques to pursue mathematical
+modeling. Almost always one of these tools is a computer and an ability
+to edit and write computer programs.</p>
+
+<p>Mathematical modeling of infectious disease
+Nearly every year we are faced with a newly emerged or reemerged
+infectious pathogen somewhere around the planet. This is a math problem,
+though one shared with experts from <em>many</em> other disciplines.
+During the current coronavirus outbreak, caused by the pathogen known as
+COVID19, mathematicians, some acting as mathematicians and others more
+as statisticians, have featured prominently. Mathematicians (and
+specialty-statisticians often referred to as epidemiologists) and others
+are using the best available knowledge about the virus, its origin, its
+transmission, and its effect on the infected, to try to understand the
+pace of the current outbreak and to try to understand its future. </p>
+
+<p>Many tools, most with mathematical and statistical roots, are coming
+together to help interpret biological data (e.g., virus genetics,
+patient responses) and population-level `public health' data (e.g.,
+infections across geographic borders). Any time you see a graph of cases
+plotted against time or deaths plotted against cases, or see the phrase
+<m>R_0</m> (the British `naught' for <m>0</m>, so ''R-naught''), you are
+seeing the results of mathematical reasoning or analysis. Specifically
+the quantity <m>R_0</m> characterizes how infectious a pathogen is
+expected
+to be and gives the expected number of cases that one infectious person
+might cause in a completely susceptible population. </p>
+
+<p>The <em>simplest</em> example of a mathematical model, represented by
+the diagram in <xref ref="fig-sir"/>, tracks the amount of a population
+that is susceptible to infection and those that have the infection and
+are infectious. The Greek symbols in the diagram denote
+<em>parameters</em> and each symbol is acting as placeholder for a
+particular number that is important to understanding how the possible
+outbreak unfolds. Of the two numbers, <m>\beta</m> is slightly more
+complicated and attempts to summarize how frequently individuals
+interact and how likely it is that one of those interactions results in
+transmission; <m>\gamma</m> is less complicated and reflects how long a
+person remains infectious (i.e., it describes a `recovery rate').</p>
+
+<figure xml:id="figure-compartment">
+
+<image source = "./images/compartment.png" width="85%" text="fingers for
+counting">
+              <description>Compartment models.</description>
+</image>
+</figure>
+<p><!--\begin{figure}[h!">
+\centering
+\includegraphics[width=0.5\textwidth]{\figs/compartment">
+\caption{The simplest possible model diagram.}\label{fig::SI">
+\end{figure">--></p>
+
+<p><!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... --></p>
+
+</subsection>
+</section>
+
+<section xml:id="sec-Modeling-with-functions">
+<title> Modeling with functions </title>
+<introduction> <p> ... </p> </introduction>
+
+<p>
+If we are ultimately interested in modeling using mathematical
+functions, we need to build up a catalog of mathematical functions.
+Before we diversify too much, we will spend a but of time looking at
+quadratic functions. Quadratic functions <me>f(x) = ax^2 + bx + c</me>
+coupled with the quadratic formula <me>x =
+\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}</me> which gives the <m>x</m> values
+that
+solve <m>f(x) = 0</m>. What is surprising, perhaps, is just how often
+and
+in how many places the quadratic formula shows up as the lynchpin of so
+many mathematical problems. Partly this is because so many problems are
+ultimately studied in two dimensions. For example, we are used to
+visualizing so many problems in the <m>xy</m>-plane.</p>
+
+<p>As an example, consider a new problem in which we try to solve the
+following <em>system</em> of equations,
+<me>\begin{aligned}[t]
+\begin{cases}
+2x+3y \amp = 7\\
+5x+4y \amp = 9
+\end{cases}
+\end{aligned}</me></p>
+
+<p>Specifically we are looking for the numbers <m>x</m> and <m>y</m>
+that
+<em>simultaneously</em> satisfy these equations. We could solve for one
+variable from one equation and substitute into the other equation to
+solve. Alternatively, we could solve each equation for <m>y</m>, graph,
+and
+look for the intersection. Proceeding in this direction,
+<me>\begin{aligned}[t]
+2x+3y\amp=7\\
+3y \amp = 7 - 2x\\
+y \amp = -\dfrac{2}{3}x+\dfrac{7}{3}
+\end{aligned}</me>
+Similarly from the second equation,
+<me>\begin{aligned}[t]
+5x+4y\amp=9\\
+4y \amp = 9 - 5x\\
+y \amp = -\dfrac{5}{4}x+\dfrac{9}{4}
+\end{aligned}</me></p>
+
+<p>We could start by graphing one of these, perhaps the second, whose
+graph
+is a straight line with slope of <m>m=-\sfrac{5}{4}</m> and
+<m>y</m>-intercept of <m>b=\sfrac{9}{4}</m>. The graph of the line
+starts
+at a value of <m>\sfrac{9}{4}</m> on the <m>y</m>-axis, from there we go
+down <m>5</m> units for every <m>5</m> units we move to the right (we
+could
+also picture going down <m>\sfrac{5}{4}</m> units for every <m>1</m> we
+move to the right). We could superimpose a graph of the other and
+identify the intersection, which corresponds to the solution to the
+system of equations.</p>
+
+<subsection xml:id="sub-Another-approach">
+<title> Another approach </title>
+<introduction> <p> ... </p> </introduction>
+
+<p>
+Using some very different methods, we could rewrite the system 
+<me>\begin{aligned}[t]
+\begin{cases}
+2x+3y \amp = 7\\
+5x+4y \amp = 9
+\end{cases}
+\end{aligned}</me>
+in <em>matrix-vector</em> form as follows,
+<me>\left(\begin{array}{cc}2 \amp 3 \\ 5 \amp
+4\end{array}\right)\left(\begin{array}{c}x\\y\end{array}\right) =
+\left(\begin{array}{c}7\\9\end{array}\right) </me>
+To confirm that these are equal we perform <em>matrix-vector</em>
+multiplication. To recover the first equation in the system we multiply
+the entries in the first row by <m>x</m> and <m>y</m> and add between
+each
+step of multiplication. The result is equal to the top entry on the
+right-hand side, the <m>7</m>. </p>
+
+<p>With this square arrangement of numbers, the matrix, we enter the
+field
+of <em>linear algebra</em> (note: very closely associated with linear
+algebra, especially in two dimensions, is the study of
+<em>differential equations</em>). Linear algebra plays an essential role
+in differential equations, and by association, so does the quadratic
+formula.} which is broadly concerned with techniques for solving linear
+systems of equations. Often we are less concerned with the solutions to
+linear systems and we are more concerned with properties of the matrix
+itself. One such property of the matrix actually requires us to
+calculate solutions to an associated quadratic equation using the
+quadratic formula. To say it again, there is a direct connection between
+2D matrices (2 rows, 2 columns) and the quadratic formula. </p>
+</subsection>
+
+<p><!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... --></p>
+
+<p><!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... --></p>
+
+</section>
+
+<section xml:id="sec-catalog-of-mathematical-functions">
+<title> Catalog of mathematical functions </title>
+<introduction> <p> ... </p> </introduction>
+
+<subsection xml:id="sub-Linear-functions">
+<title> Linear-functions </title>
+<introduction> <p> ... </p> </introduction>
+
+<p>Linear functions are those of the form <m>y = f(x) = mx+b</m>, we
+call
+<m>m</m> the slope and <m>b</m> the <m>y</m>-coordinate of the
+<m>y</m>-intercept.
+We can solve equations of evaluate functions. Graphs of linear functions
+are straight lines. If the slope is positive, the line increases from
+left to right (bigger <m>x</m> results in bigger <m>y</m>). If the slope
+is
+negative, the line decreases from left to right (bigger <m>x</m> results
+in
+smaller <m>y</m>). If the slope is zero, the line is flat or constant.
+
+
+
+<figure xml:id="fig-linear-up">
+	<caption>Graph of an increasing linear function.</caption>
+		<image xml:id="image-linear-up" source="./images/linear_up.png"
+width='50%'>
+		</image>
+</figure>
+
+
+<figure xml:id="fig-linear-down">
+	<caption>Graph of an decreasing linear function.</caption>
+		<image xml:id="image-linear-down"
+source="./images/linear_down.png"
+width='50%'>
+		</image>
+</figure>
+
+<figure xml:id="fig-linear-flat">
+	<caption>Graph of an flat or constant linear function.</caption>
+		<image xml:id="image-linear-flat"
+source="./images/linear_flat.png"
+width='50%'>
+		</image>
+</figure>
+
+Linear functions are often used in regression to determine the slope and
+intercept of a line that best summarize information in a scatterplot of
+points.</p>
+
+<example xml:id="Temperature-conversions">
+<title> ... </title>
+<statement>
+<p>
+A popular example of a linear function is <me>F = \dfrac{9}{5}C +
+32</me>
+which describes the temperature in degrees Fahrenheit as a function of
+temperature in degrees Celsius. We might remember that the freezing
+point of water is <m>32 {}^\circ\text{F}</m> and that the boiling point
+is
+<m>212 {}^\circ\text{F}</m>. We might be interested in representing
+these
+values in Celsius, and can pursue this by solving each of the following
+equations for <m>C</m>,
+<me>\begin{aligned}[t]
+32 \amp = \dfrac{9}{5}C+32\\
+212 \amp = \dfrac{9}{5}C+32
+\end{aligned}</me>
+To solve each, we subtract <m>32</m> from each side and then multiply by
+<m>\dfrac{5}{9}</m> to find that the freezing point of water os
+<m>0 {}^\circ\text{C}</m> and the bioling point is
+<m>100 {}^\circ\text{C}</m>. For example, 
+<me>\begin{aligned}[t]
+32 \amp = \dfrac{9}{5}C+32\\
+\cancel{32-32} \amp = \dfrac{9}{5}C+\cancel{32 - 32}\\
+0 \amp = \dfrac{9}{5}C\\
+\dfrac{5}{9}\cdot0 \amp = \cancel{\dfrac{5}{9}\cdot\dfrac{9}{5}}C\\
+C \amp = 0
+\end{aligned}</me>
+</p>
+</statement>
+</example>
+
+<exercise xml:id="chall-boiling-point">
+Repeat the calculation to confirm the
+boiling point of water in Celsius.
+</exercise>
+
+<example xml:id="Lime-rides">
+<title> ... </title>
+<statement>
+<p>
+Consider you are taking a \sout{taxi} Lime scooter ride. The
+\sout{taxi">
+Lime scooter charges a <m>$1.00</m> `unlock fee' then charges an
+additional <m>$0.29</m> per minute. Write the linear function that
+describes cost <m>c</m> as function of time spend riding <m>t</m>.
+</p>
+</statement>
+
+<solution>
+We can imagine in words that the cost is equal to the initial charge
+plus the cost per minute multiplied by the number of minutes. This is
+<me>c = c(t) = (\text{initial charge}) + (\text{cost per
+minute})(\text{time spent riding})</me> or <me>c = c(t) = 1.00 +
+0.29t</me> 
+</solution>
+</example>
+
+<p>We can ask our usual sorts of questions about this function. For
+example
+''What if we made the poor decision to skip class and go on a 75-minute
+camps joyride? How much would this cost?''</p>
+
+<example xml:id="Joyride">
+<title> ... </title>
+<statement>
+<p>''What if we made the poor decision to skip class and go on a
+75-minute
+campus joyride instead? How much would this cost?''
+</p>
+</statement>
+<solution>
+To answer this question, we evaluate <m>c(75)</m> to find the associated
+cost.
+<me>\begin{aligned}[t]
+c(75) \amp = 1.00 + 0.29(75)\\
+\amp= 22.75
+\end{aligned}</me>
+</solution>
+</example>
+
+<p>Or, ''How long could I ride if I had a $5 credit?''</p>
+<example xml:id="Account-credit">
+<title> ... </title>
+<statement>
+<p>''How long could I ride if I had a $5 credit?''</p>
+</statement>
+<solution>
+To answer this question, we solve <m>c(t) = 5</m> for the unknown value
+of
+<m>t</m>.
+<me>\begin{aligned}[t]
+%5 \amp = c(t) \\
+5 \amp= 1.00 + 0.29t\\
+4.00 \amp= 0.29t\\
+t\amp= \dfrac{4.00}{0.29} = 13.79\\
+\end{aligned}</me>
+</solution>
+
+</example>
+</subsection>
+
+<subsection xml:id="sub-Quadratic-functions">
+<title>Quadratic functions</title>
+<introduction> <p> ... </p> </introduction>
+
+<p>The simplest quadratic function is <m>f(x) = x^2</m>, whose graph is
+a
+`u'-shaped parabola (as opposed to `n'-shaped). This term is an example
+of a power function, built from a variable raised to a number as a
+power, <me>x^2 \text{ is of the form }
+(\text{variable})^\text{number}.</me>
+This form has important consequences for the properties of the formula
+and its use in applications. With similar terms we can construct
+polynomial functions such as, <me>g(x) = 3x^2+x^4</me> which are sums of
+constants multiplied by powers of a variable.</p>
+
+<p>Quadratic functions show up frequently in applications, for example
+in
+physics. We often study problems such as <m>s(t) = -4.9t^2 + 10t +
+12</m>
+where <m>s(t)</m> represents the height of an object thrown from a
+height
+of <m>12 \text{meters}</m> with an initial velocity of <m>10
+\text{meters
+per second}</m>. Because the number in front of <m>t^2</m> is negative,
+the
+graph of the corresponding parabola opens downward (as an upside down
+`u'). There are a few ways that we can learn a little more about the
+graph to determine the position of the curve within the <m>t-s</m> plane
+(that is, in a plot of <m>s</m> against <m>t</m>).</p>
+
+<p></p>
+
+<p>
+Notice that when <m>t = 0</m>, <m>s(0) = -4.9(0)^2 + 10(0) + 12 =
+10</m>; the
+graph of <m>s(t)</m> crosses the vertical axis at a value of <m>12</m>.
+But
+given the shape of the curve (an upside-down parabola), does the graph
+intersect the point <m>(0, 12)</m> on its downstroke, at its vertex, or
+on
+its upstroke? There are a number of ways to answer this question
+<ol>
+<li><p>`cheat' and graph the formula using a computer (e.g., with Desmos
+online, or even Google!) or graphing calculator</p></li>
+<li><p>put the function in vertex form</p></li>
+<li><p>apply methods of calculus</p></li>
+<li><p>explore the formula using a hodge-podge of approaches</p></li>
+</ol></p>
+
+<p>We will take the last of these approaches. A question is (not
+unrelated
+to how we might reason about functions using calculus or even more
+sophisticated approaches) is ''what does the graph look like when
+<m>t</m>
+is ''small''?'' Here we mean <m>t\approx0</m> to give an estimate of
+what
+we consider to be ''small'' values of <m>t</m>. Here thinking
+numerically
+about the relative contribution of each term gives some indication of
+the value of the function in general. The values of each term and the
+exact and approximate values of each function are given in
+Table \ref{tab::position}.</p>
+
+
+Sketches of possible graphs of an object in freefall that
+starts from an initial height of <m>12 \text{meters}</m>. The graph must
+pass through the point <m>(0, 12)</m> and be concave-down or `n`-shaped.
+As
+sketches, the axes are intentionally left without
+numbers.
+
+<figure xml:id="fig-quadratic-down">
+	<caption>Graph of a possible quadratic position function for an
+object in freefall.</caption>
+		<image xml:id="image-quadratic-down"
+source="./images/quadratic_down.png"
+width='50%'>
+		</image>
+</figure>
+
+<figure xml:id="fig-quadratic-top">
+	<caption>Graph of a possible quadratic position function for an
+object in freefall.</caption>
+		<image xml:id="image-quadratic-top"
+source="./images/quadratic_top.png"
+width='50%'>
+		</image>
+</figure>
+
+
+<figure xml:id="fig-quadratic-up">
+	<caption>Graph of a possible quadratic position function for an
+object in freefall.</caption>
+		<image xml:id="image-quadratic-up"
+source="./images/quadratic_up.png"
+width='50%'>
+		</image>
+</figure>
+
+
+<!--><tabular halign="center" left="minor" right="minor" top="minor"
+bottom="minor">
+<title>For values of <m>t</m> that are near and far from zero, the
+contributions of each term in <m>s(t)</m> are given in the middle
+columns.
+For the first 4 rows, where <m>t</m> is `near' zero, we might imagine
+ignoring the contribution of the quadratic term and notice that the
+exact and approximate function values are still reasonably
+close.</title>
+<row><cell><m><m>t</m></m></cell><cell><m>-4.9t^2</m></cell></row>
+<row><cell> 0 </cell> <cell> 1.0000000</cell></row>
+<row><cell> 1 </cell> <cell> 2.0000000</cell></row>
+<row><cell> 2 </cell> <cell> <alert>1.7</alert>500000</cell></row>
+<row><cell> 3 </cell> <cell> <alert>1.732</alert>1429</cell></row>
+<row><cell> 4 </cell> <cell> <alert>1.7320508</alert></cell></row>
+<row><cell> 5 </cell> <cell> <alert>1.7320508</alert></cell></row>
+</tabular>
+</table>-->
+
+
+<!--\begin{table}[h!]\centering
+\caption{For values of <m>t</m> that are near and far from zero, the
+contributions of each term in <m>s(t)</m> are given in the middle
+columns.
+For the first 4 rows, where <m>t</m> is `near' zero, we might imagine
+ignoring the contribution of the quadratic term and notice that the
+exact and approximate function values are still reasonably
+close.}\label{tab::position">
+\vspace{1em">
+%\begin{tabular}{S[table-format=2.3]|S[table-format=3.3]S[table-format=3
+%.3]S[table-format=3.3]||c|c">
+\begin{tabular}{c|ccc||c|c">
+{<m>t</m>} \amp {<m>-4.9t^2</m>} \amp {<m>10t</m>} \amp {<m>12</m>} \amp
+{<m>s(t) \text{(exact)}</m>} \amp {<m>s(t) \text{(approx.)}</m>}\\
+\hline\hline
+\phantom{1}0.001 \amp \phantom{00}-0.0000049 \amp \phantom{10}0.010 \amp
+12.0 \amp
+\phantom{00}12.0099 \amp \phantom{-0}12.01\\
+\phantom{1}0.010 \amp \phantom{00}-0.0004900 \amp \phantom{10}0.100 \amp
+12.0 \amp
+\phantom{00}12.0995 \amp \phantom{-0}12.10\\
+\phantom{1}0.100 \amp \phantom{00}-0.0490000 \amp \phantom{10}1.000 \amp
+12.0 \amp
+\phantom{00}12.9510 \amp \phantom{-0}13.00\\
+\phantom{0}1.000 \amp \phantom{00}-4.9000000 \amp \phantom{0}10.000 \amp
+12.0 \amp
+\phantom{00}17.1\phantom{000} \amp\phantom{-0}22.00\\
+10.000 \amp -490.0000000 \amp 100.000 \amp 12.0 \amp -378.0\phantom{000}
+\amp -378.00
+\end{tabular">
+\end{table-->
+
+<p>The results in Tab. XX (are not shown because they weren't
+particularly helpful) suggests that the height is
+initially increasing (by the exact values, or by the approximation). The
+approximation, neglecting the contribution of the <m>t^2</m> term for
+small
+values of <m>t</m> suggests that the position initially increases in an
+approximately linear fashion. At some point though, the quadratic term
+starts to play a role. It seems quite strange that <m>s(10) = -378</m>,
+this would suggest that the object is <m>378 \text{meters}</m> below the
+surface of the ground. It should be the case that at some point prior,
+the model stops making sense. In fact, we could use the quadratic
+formula to determine when the object lands. Solving for <m>s(t) = 0</m>
+gives the value(s) of time <m>t</m> for which the height from the ground
+is
+zero.
+<me>\begin{aligned}[t]
+x \amp= \dfrac{-10\pm\sqrt{10^2 - 4(-4.9)(12)}}{2(-4.9)}\\
+\amp = \dfrac{-10\pm\sqrt{335.2}}{-9.8}\\
+x \amp = -0.847,\,\,2.889\\
+\end{aligned}</me>
+The negative value does not make as much sense because this suggests
+that the object was on the ground \text{before} we threw it upwards - we
+are only really concerned with the future after <m>t=0</m>. From our
+hodge-podge analysis we have that the object starts from a height of
+<m>12 \text{meters}</m>, increases approximately linearly for a brief
+span,
+and with the shape of a parabola eventually comes back down and lands at
+<m>t\approx2.899</m>. The mathematical equation is valid for all time,
+but
+after this the equation as a mathematical object of the flight of the
+object stops making sense.
+</p>
+</subsection>
+
+<subsection xml:id="sub-Polynomials">
+<title>Polynomials</title>
+<introduction> <p> ... </p> </introduction>
+
+<p>As mentioned in the previous section, <me>g(x) = 3x^2+x^4</me> is an
+example
+of a polynomial. This category can be written as a sum of multiples of
+powers of a variable, for example <me>p_n(x) = \sum_{i=0}^n a_i x_i</me>
+where in the example for <m>g(x)</m> we would have <m>n=4</m> with
+<m>a_0 = a_1
+= a_3 = 0</m>, and <m>a_2 = 3</m> and <m>a_4 = 1</m>. In summation form,
+<me>g(x)
+= \sum_{i=0}^4 a_i x^i = 0x^0 + 0x^1 + 3x^2 + 0x^3 + 1x^4 = 3x^2 +
+x^4</me></p>
+
+<p>
+Applications of polynomials are numerous, this stems partly from the
+fact that they are `easy' to evaluate. The word `easy' refers to the
+fact that there might be many, many terms to keep track of, but that it
+only requires elementary operations of addition or subtraction and
+multiplication. As a consequence, polynomials play an important role in
+how we evaluate most functions using calculators or computers.</p>
+
+<p>As a few examples of polynomials, consider <m>f(x) = x^3</m> and
+<m>g(x) =
+x^3-x</m>. In the second of these, the subtraction of <m>x</m> has a
+dramatic
+impact on the graph (see <xref ref="fig-cubic-factored"/>). </p>
+
+<figure xml:id="fig-cubic-simple">
+	<caption>The graph of <m>f(x) = x^3</m> crosses the horizontal axis
+only once.</caption>
+		<image xml:id="image-cubic-simple"
+source="./images/cubic_simple.png" width='50%'>
+		</image>
+</figure>
+
+
+<figure xml:id="fig-cubic-factored">
+	<caption>The graph of <m>g(x) = x^3-x</m> crosses the horizontal
+axis at three distinct
+values.</caption>
+		<image xml:id="image-cubic-factored"
+source="./images/cubic_factored.png" width='50%'>
+		</image>
+</figure>
+
+<p>Side-by-side, the graph of <m>f(x) = x^3</m> is relatively less
+interesting
+than that of <m>g(x) = x^3 - x</m>. Given a sketch, it appears that
+<m>x^3</m>
+only has one zero, while <m>x^3-x</m> has three zeroes. In general it
+isn't
+as easy to use something like the quadratic formula for solutions to
+polynomial equations with higher powers. Here however, we get a bit
+lucky and can do some factoring of <m>x^3-x</m>. It turns out that in
+solving this, we can write <me>x(x^2-1)= 0 </me> as a first step. To
+solve
+this equation either factor can be zero. From the first factor we have
+<m>x=0</m>, additionally from the second we can solve <m>x^2-1=0</m> to
+find
+the locations of other solutions. We have three strategies, guessing
+solutions, attempting to factor, or applying the quadratic formula (the
+second equation is a quadratic after all).</p>
+
+<p>If we factor, we might notice this as a difference of squares
+(<m>x^2</m>
+and <m>1</m> can each be written as squares, of <m>x</m> and <m>1</m>,
+respectively). We have <me>x^2-1 = (x+1)(x-1)</me> From here we set each
+factor to zero to find the <m>x</m> values that solve this equation and
+the
+original equation. The value are <m>x = -1</m> and <m>x=1</m>, or
+<m>x=\pm 1</m>.
+Alternatively we could apply the quadratic formula to this quadratic
+with <m>a = 1</m>, <m>b=0</m>, and <m>c=-1</m>
+<me>\begin{aligned}[t]
+x \amp= \dfrac{-0\pm\sqrt{0^2 - 4(1)(-1)}}{2(1)}\\
+\amp = \dfrac{\pm\sqrt{4}}{2}\\
+x \amp = \pm 1\\
+\end{aligned}</me>
+Taking a peek back at the original formula for <m>g(x) = x^3-x</m> we
+might
+notice we could have originally factored this as <m>g(x) =
+x(x+1)(x-1)</m>
+(we can multiply this out to check that it agrees with the original
+formula). The factored form illustrates that for <m>g(x) = 0</m> any one
+of
+the factors can be zero, each of which agrees with our solutions
+above.</p>
+</subsection>
+
+
+<subsection xml:id="sub-Power-functions">
+<title> Power functions </title>
+<introduction> <p> ... </p> </introduction>
+
+<p>
+In some sense power functions are simpler than polynomials, they only
+contain a single term. But often that term is less familiar than those
+that occur in polynomials. For example, we might be interested in
+<m>f(x)
+= x^{0.5}</m> or <m>g(x) = x^{0.75}</m> where are non-integer powers of
+the
+variable of interest. These functions take on very different shapes and
+are useful in a variety of situations. The square root function is an
+example of a power function <m>\sqrt{x} = x^{0.5}</m> which has the
+shape
+of a `sideways parabola', <m>x^1 = x</m> is another (a straight line),
+<m>x^2</m> which has the shape of a normal parabola, as well as <m>x</m>
+raised to any other power. We can also put a constant factor out in
+front, for example <me>f(x) = 1.4x^{0.24}</me></p>
+
+
+
+<figure xml:id="fig-power">
+	<caption>Graphs of three power functions, <m>f(x) = \sqrt{x}</m>
+(red, solid),  <m>g(x) = x</m> (black, dashed),  <m>h(x) = x^2</m>
+(blue, dotted).</caption>
+		<image xml:id="image-power" source="./images/power_funs.png"
+width='50%'>
+		</image>
+</figure>
+
+<p>Power functions are often used as formulas to represent simple
+nonlinear
+patterns.  Three classic examples are species-area accumulation curves,
+the skull length-backbone length relationship in fossil fish, and the
+connection between the metabolism-body mass relationship of mammals and
+the accidental overdoes of an elephant with LSD.</p>
+</subsection>
+
+
+<subsection xml:id="sub-Species-area-curves">
+<title>Species-area curves </title>
+<introduction> <p> ... </p> </introduction>
+<p><me>S = ma^b</me></p>
+
+</subsection>
+
+<subsection xml:id="sub-Skull-backbone-curve">
+<title> Skull-backbone curve </title>
+<introduction> <p> ... </p> </introduction>
+<p><me>S = 1.162B^{0.993}</me></p>
+
+</subsection>
+
+<subsection xml:id="sub-Kleibers-Law-curve">
+<title> Kleiber's Law curve </title>
+<introduction> <p> ... </p> </introduction>
+
+<p>In terms of energy use (i.e., metabolism), a mouse must eat half of
+its
+body mass per day in order to survive, an elephant much less.  In fact,
+the energy metabolism, <m>E</m>, of an animal as a function of its body
+mass, <m>M</m>, is described by <me>E = (\#)M^{0.75}</me> This
+relationship
+holds across a remarkable range of organism sizes and was originally
+built by trying to understand the relationship between the surface area
+(amount of skin) and volume (amount within the skin).</p>
+</subsection>
+
+<subsection xml:id="sub-Rational-functions">
+<title> Rational functions </title>
+<introduction> <p> ... </p> </introduction>
+
+<p>Rational functions are any ratios of two separate polynomials. For
+example, <me>r(x) = \dfrac{-4.9x^2+10x+12}{x^3-x}</me> is a rational
+function. These functions can take on a variety of interesting and
+useful shapes as graphs.</p>
+
+<figure xml:id="fig-rats">
+	<caption>Graphs of two rational functions, <m>f(x) =
+\dfrac{x}{1+x}</m> (red, solid) and <m>g(x) = \dfrac{x}{1+x^2}</m>
+(black, dashed).</caption>
+		<image xml:id="image-rats" source="./images/rats.png"
+width='50%'>
+		</image>
+</figure>
+
+</subsection>
+
+<subsection xml:id="sub-Exponentials-and-Logarithms">
+<title> Exponentials and Logarithms </title>
+<introduction> <p> ... </p> </introduction>
+
+<p>Most importantly is that we recognize that exponential functions are
+of the form
+<me>(\text{number})^\text{variable}</me> in contrast to power functions
+which
+are of the form <me>(\text{variable})^\text{number}</me> Exponential
+functions (see Fig. \ref{fig::exp}) seem to be frequently confused with
+quadratic functions (see Fig. \ref{fig::power}).  Looking at the graphs
+however, the quadratic has a symmetry (for <m>x^2</m> a fold along the
+vertical axis) that the exponentials lack.
+</p>
+
+<figure xml:id="fig-exps">
+	<caption>The coincidence of exponentials written in arbitrary bases
+and
+base-<m>e</m>. Left: Graphs of three exponential functions, each of the
+form <m>(\text{number})^\text{variable}</m>. Right: Same exponential
+functions as graphed in at left, but now written in terms of
+base-<m>e</m>
+exponentials.</caption>
+		<image xml:id="image-exps" source="./images/exps.png"
+width='100%'>
+		</image>
+</figure>
+
+
+<p>Exponential decay functions are plotted in Figure
+\ref{fig::expdecay}.</p>
+
+<figure xml:id="fig-exp-decay">
+	<caption>The coincidence of exponential decay functions written in
+arbitrary bases and
+base-<m>e</m>. Left: Graphs of three exponential decay functions, each
+of the
+form <m>(\text{number})^\text{variable}</m>. Right: Same exponential
+decay 
+functions as graphed in at left, but now written in terms of
+base-<m>e</m>
+exponentials.</caption>
+		<image xml:id="image-exp-decay" source="./images/exp_decays.png"
+width='100%'>
+		</image>
+</figure>
+
+
+<p><!--\begin{figure}[h!]\centering</p>
+
+<p>\begin{minipage}{0.48\textwidth"></p>
+
+<p>\begin{tikzpicture}[yscale=1.5, xscale=1.5">
+ \draw[step=0.5, very thin, color=gray] (-2.1,-0.1) grid (2.1, 3.1);
+ \draw[->] (-2.1,0) __ (2.1,0) node[below left] {$x$};
+ \draw[->] (0,-0.1) __ (0,3.1) node[above] {$y$};
+ \draw[color=red, very thick, domain=-0.49:2.0, <->] plot[id=fastdecay">
+function{0.1**x)} node[right] {$0.1^{x}$};
+ \draw[color=blue, very thick, domain=-1.13:2.0, <->] plot[id=edecay">
+function{exp(-x)} node[above right] {$0.36^x$};
+ \draw[color=black, very thick, domain=-2.1:2.0, <->]
+plot[id=slowdecay">
+function{0.8**x} node[above right] {$0.8^x$};
+\end{tikzpicture"></p>
+
+<p>\end{minipage">
+\begin{minipage}{0.48\textwidth"></p>
+
+<p>\begin{tikzpicture}[yscale=1.5, xscale=1.5">
+ \draw[step=0.5, very thin, color=gray] (-2.1,-0.1) grid (2.1, 3.1);
+ \draw[->] (-2.1,0) __ (2.1,0) node[below left] {$x$};
+ \draw[->] (0,-0.1) __ (0,3.1) node[above] {$y$};
+ \draw[color=red, very thick, domain=-0.49:2.0, <->] plot[id=fastdecay">
+function{exp(-2.3*x)} node[right] {$e^{-2.3x}$};
+ \draw[color=blue, very thick, domain=-1.13:2.0, <->] plot[id=edecay">
+function{exp(-x)} node[above right] {$e^{-x}$};
+ \draw[color=black, very thick, domain=-2.1:2.0, <->]
+plot[id=slowdecay">
+function{exp(-0.22*x)} node[above right] {$e^{-0.22x}$};
+\end{tikzpicture">
+\end{minipage"></p>
+
+<p>\caption{The coincidence of exponentials written in arbitrary bases
+and
+base-<m>e</m>. Left: Graphs of three exponential functions, each of the
+form <m>(\text{number})^\text{variable}</m>. Right: Same exponential
+functions as graphed on the left, but now written in terms of
+base-<m>e</m>
+exponentials.}\label{fig::expdecay">
+\end{figure">--></p>
+
+
+<example xml:id="Paper-folding">
+<title> ... </title>
+<statement>
+<p>
+Exponential functions show up in a variety of places, such as population
+growth.  A return to paperfolding provides a somewhat surprising
+connection to exponential functions.  Taking the thickness of a piece of
+paper after fold number <m>n</m> to be represented by <m>t_n</m>, we can
+track
+the thickness of the paper as we fold.  For example, <me>t_1 = 2t_0 =
+2(0.01) = 0.02</me> and <me>t_2 = 2t_1 = 2(0.02) = 0.04</me> After
+<m>n</m> folds
+we actually have doubled <m>n</m> times, and can write <me>t_n =
+2^n(t_0)</me>
+This is precisely exponential growth, as illustrated in
+Table \ref{tab::paper}.  Since the width is divided in half after each
+fold, we can also calculate the remaining width of paper in a similar
+manner.
+<!-->\begin{table">
+\centering
+\caption{Thickness and width of standard copy paper after <m>n</m>
+folds.}\label{tab::paper"></p>
+
+<p>\begin{tabular}{ccc">
+number of folds, <m>n</m> \amp thickness of paper,  <m>t_n
+(\text{mm})</m> \amp
+width of paper (mm)\\
+\hline\hline
+0 \amp  0.01 \amp 27.94\\
+1 \amp 0.02 \amp 13.97\\
+2 \amp 0.04 \amp 6.99\\
+3 \amp 0.08 \amp 3.49\\
+4 \amp 0.16 \amp 1.75\\
+5 \amp 0.32 \amp 0.87\\
+6 \amp 0.64 \amp 0.44\\
+7 \amp 1.28 \amp 0.22\\
+8 \amp 2.56 \amp 0.11
+\end{tabular">
+\end{table--></p>
+
+<p>An easily overlooked complication lies in Table \ref{tab::paper}: by
+the
+sixth fold, the paper is actually thicker than it is wide. There is no
+longer enough paper to fold!  <em>Assuming</em> that we could fold the
+paper 100 times, it would be <m>1.268\times10^{28} \text{mm}</m> (or
+<m>1.268\times10^{22} \text{kilometers}</m>) thick!  These results, are
+illustrated in Fig. \ref{fig::paper_exp}.  The diameter of the earth is
+<m>1.2742\times10^4 \text{kilometers}</m>, so this result is shocking if
+not almost incomprehensible.</p>
+
+<figure xml:id="figure-exp-folds">
+
+<image source = "./images/exp_folds.pdf" width="85%" text="fingers for
+counting">
+</image>
+</figure>
+<p><!--\begin{figure}\centering
+\includegraphics[width=0.45\textwidth]{\figs/exp_folds">
+\caption{Theoretical results showing the thickness and width (in mm) as
+a piece of standard printer paper is repeatedly
+folded.}\label{fig::paper_exp">
+\end{figure">-->
+</p>
+</statement>
+</example>
+
+<p>As a follow-up to exponential functions are logarithmic functions. 
+Recall that we can think of the logarithm of some number of interest as
+the power to which we raise another number to get that number of
+interest. For example, in terms of powers of <m>10</m>, <me>10^4 =
+10,000 \text{can be expressed as} \log_{10}(10,000) = 4</me> Each of
+these
+translates to the understanding that <m>4</m> factors of <m>10</m> is
+ten
+thousand or <m>10</m> to the fourth power is <m>10,000</m>.  Similarly
+the
+relationship <me>2^4 = 16 \text{can be expressed as} \log_2(16) =
+4</me></p>
+
+<p>In addition to thinking of single calculations of logarithms of
+numbers,
+we can talk about logarithm <em>functions</em>.  We plot the graph of
+the natural logarithm in Fig. \ref{fig::ln}.  The natural logarithm
+<m>\ln(x)</m> gives the exponent to to which we raise <m>e</m> to arrive
+at
+the argument of the natural logarithm.</p>
+
+<p><!--\begin{figure}[h!]\centering</p>
+
+<p>\begin{tikzpicture}[yscale=1.5, xscale=1.5">
+ \draw[step=0.5, very thin, color=gray] (-2.1,-2.1) grid (2.1, 2.1);
+ \draw[->] (-2.1,0) __ (2.1,0) node[ right] {$x$};
+ \draw[->] (0,-2.1) __ (0, 2.1) node[above] {$y$};
+ \draw[color=blue, very thick, domain=-2.1:0.6931, <->] plot[id=e2">
+function{exp(x)} node[above ] {$e^x$};
+ \draw[color=black, thick, dashed, domain=-2:2, <->] plot[id=x">
+function{x} node[above right] {$y=x$};
+ \draw[color=red, very thick, domain=0.122:2.0, <->] plot[id=ln">
+function{log(x)} node[ right] {$\ln(x)$};
+\end{tikzpicture">
+\caption{Reflection of <m>e^x</m> across <m>y = x</m> to give the
+inverse,
+<m>\ln(x)</m>.}\label{fig::ln">
+\end{figure">--></p>
+
+</subsection>
+
+<p>
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+</p>
+</section>
+
+<section xml:id="sec-Applications-of-functions">
+<title> Applications of functions </title>
+<introduction> <p> ... </p> </introduction>
+
+<subsection xml:id="sub-Mathematical-modeling-reprise">
+<title> Mathematical-modeling-reprise </title>
+<introduction> <p> ... </p> </introduction>
+
+<p>
+When modeling spread of something infectious (a pathogen, a rumor, a
+behavior) we break a population into relevant groups.  One of the
+simplest breakdowns is into groups of 
+<ol>
+<li><p>susceptible (these are the `healthy' people)</p></li>
+<li><p>infectious</p></li>
+<li><p>recovered</p></li>
+</ol>
+There are some subtleties here that I will mention, but not spend any
+more time on.  The name of the group `infectious' suggests that these
+individuals are not only <em>infected</em>, but are also capable of
+transmitting their infection to others. The `recovered' group is
+sometimes called `removed' to indicate the group of individuals that are
+<em>removed</em> from the process of infection either by natural
+recovery or death.</p>
+
+<p>The way infection is modeled is by a system of <em>differential
+equations</em> which describe how the number of individuals within each
+population is assumed to change over time, as individuals flow between
+groups.  A diagram of the possible transitions is given in
+<xref ref="fig-sir-diagram"/>.</p>
+
+<figure xml:id="fig-sir-diagram">
+<caption>One of the simpler versions of an SIR <em>compartment</em>
+model.</caption>
+<image source = "./images/sir.png" width="50%">
+</image>
+<!--><latex-image>
+\begin{tikzpicture}[node distance=2.5cm,auto,>=latex]
+    \node [draw, minimum size=1cm, fill=blue] (a)
+{\textcolor{white}{\(\mathbf S\)}};
+    \node [draw, minimum size=1cm, fill=red] (b) [right of=a]
+{\textcolor{white}{\(\mathbf I\)}};
+    \node [draw, minimum size=1cm, fill=black] (c) [right of=b]
+{\textcolor{white}{\(\mathbf R\)}};
+    \node (d) [above right of = b] {};
+    \path[->, thick] (a) edge node {\small Infection} (b);
+    \path[->, thick] (b) edge node {\small Recovery} (c);
+    \path[->, thick] (b) edge [] node {\small Death} (d);
+    \path[->, bend right, out=90, in=90, thick] (c) edge node {\small
+Loss of immunity} (a);
+\end{tikzpicture}
+                </latex-image>
+            </image>-->
+        </figure>
+
+
+<p>When we try to translate these assumptions into a mathematical model
+we
+begin with
+<me>\begin{aligned}[t]
+\text{change in susceptible} \amp = -\text{(people getting sick)} +
+\text{(people losing imunity)}\\
+\text{change in infectious} \amp = + \text{(people getting sick)} -
+\text{(people recovering)} - \text{(people dying from infection)}\\
+\text{change in recovered} \amp = + \text{(people recovering)} -
+\text{(people losing immunity)}
+\end{aligned}</me>
+We translate this to more mathematical language involving some calculus
+as follows
+<me>\begin{aligned}[t]
+\dfrac{dS}{dt}\amp = -\beta S I + \rho R\\
+\dfrac{dI}{dt} \amp =  \beta S I - \gamma I - \delta I\\
+\dfrac{dR}{dt} \amp = \gamma I - \rho R
+\end{aligned}</me>
+The specific equations are not of great importance here, but you could
+hopefully imagine that the number of new infections depends on the
+number that are susceptible to infection (<m>S</m>) and the number that
+can
+transmit infection (<m>I</m>), so in some way the amount of new
+infections
+combines those two values.  Similarly, the number of individuals that
+recover should depend on the amount that are infectious and the number
+of individuals that lose immunity should depend on the number that have
+recovered.  </p>
+
+<p>The Greek letters are called `parameters'; these are symbols used to
+represent various numbers like the transmission parameter <m>\beta</m>
+or
+the recovery rate <m>\gamma</m> (see Table \ref{tab::epi}).  Sometimes
+it
+is easier to write and study the model generically without having to
+worry about the precise decimal values that go in these positions, so we
+use the Greek letters as placeholders. This is similar to how we use the
+formula <m>y=mx+b</m> to describe a linear function between variables
+<m>y</m>
+and <m>x</m>.  Whether or not we have acknowledged this before, <m>m</m>
+and
+<m>b</m> are parameters of the linear formula (`slope' and
+`<m>y</m>-intercept', respectively). Changes to these numbers might
+change
+the appearance, but do not change the fundamental nature of the
+relationship between <m>y</m> and <m>x</m>.
+
+
+<!--\begin{table}[h!]\centering
+\caption{Connections between real-world features of disease and
+mathematical parameters.}\label{tab::epi">
+\begin{tabular}{cc">
+Factor \amp Related parameter\\
+\hline\hline
+Transmission parameter \amp <m>\beta</m>\\
+Average time sick \amp <m>\gamma</m>\\w
+Percent infections resulting in death \amp <m>\delta</m>\\
+Duration of immunity \amp <m>\rho</m>\\
+\hline
+\end{tabular}\end{table-->"></p>
+
+</subsection>
+
+
+<subsection xml:id="sub-dots">
+<title> ... </title>
+<introduction> <p> ... </p> </introduction>
+
+<p>Then a week went by as we experienced the early stages of a pandemic.
+
+Models have been used as decision-making tools worldwide. Models have
+been both fairly and unfairly criticized.  Graphs, tables, jargon have
+showed up <em>everywhere</em>.</p>
+
+<p><!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... -->
+<!-- ....... .............. .............. ....... --></p>
+
+</subsection>
+</section>
+</chapter>

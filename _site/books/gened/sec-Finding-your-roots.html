@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-28T08:50:17-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Finding your roots</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{cancel}\require{nicefrac}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="images/cover.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="gened.html"><span class="title">Math for General Education:</span> <span class="subtitle">Based on <em class="emphasis">The Joy of \(X\)</em></span></a></h1>
+<p class="byline">Sean M. Laverty</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-Imagine.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-the-joy-of-x.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec-word-problems.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-Imagine.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-the-joy-of-x.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec-word-problems.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="front-colophon.html" data-scroll="front-colophon">Colophon</a></li>
+<li><a href="author-bio-SML.html" data-scroll="author-bio-SML">Author Biography</a></li>
+<li><a href="dedication.html" data-scroll="dedication">Dedication</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface">Preface</a></li>
+<li><a href="contributors.html" data-scroll="contributors">Contributors to the 0\(^\mathrm{th}\) Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-building-numeracy.html" data-scroll="chap-building-numeracy"><span class="codenumber">1</span> <span class="title">Numeracy</span></a><ul>
+<li><a href="sec-counting-and-multiplication.html" data-scroll="sec-counting-and-multiplication">Counting and multiplication</a></li>
+<li><a href="sec-Negatives.html" data-scroll="sec-Negatives">Negatives</a></li>
+<li><a href="sec-Fractions-and-decimals.html" data-scroll="sec-Fractions-and-decimals">Fractions and decimals</a></li>
+<li><a href="sec-Number-systems-and-powers.html" data-scroll="sec-Number-systems-and-powers">Number systems and powers</a></li>
+<li><a href="sec-Our-numbers-so-far.html" data-scroll="sec-Our-numbers-so-far">Our numbers so far</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-the-joy-of-x.html" data-scroll="chap-the-joy-of-x"><span class="codenumber">2</span> <span class="title">The Joy of \(X\)</span></a><ul>
+<li><a href="sec-From-arithmetic-to-algebra.html" data-scroll="sec-From-arithmetic-to-algebra">From arithmetic to algebra</a></li>
+<li><a href="sec-From-formulas-to-functions.html" data-scroll="sec-From-formulas-to-functions">From formulas to functions</a></li>
+<li><a href="sec-Imagine.html" data-scroll="sec-Imagine">Imagine</a></li>
+<li><a href="sec-Finding-your-roots.html" data-scroll="sec-Finding-your-roots" class="active">Finding your roots</a></li>
+<li><a href="sec-word-problems.html" data-scroll="sec-word-problems">Word problems</a></li>
+<li><a href="sec-Modeling-with-functions.html" data-scroll="sec-Modeling-with-functions">Modeling with functions</a></li>
+<li><a href="sec-catalog-of-mathematical-functions.html" data-scroll="sec-catalog-of-mathematical-functions">Catalog of mathematical functions</a></li>
+<li><a href="sec-Applications-of-functions.html" data-scroll="sec-Applications-of-functions">Applications of functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">3</span> <span class="title">Geometry</span></a><ul>
+<li><a href="sub-Square-dancing.html" data-scroll="sub-Square-dancing">Square dancing</a></li>
+<li><a href="sub-Sine-Qua-Non.html" data-scroll="sub-Sine-Qua-Non">Sine Qua Non</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-calculus.html" data-scroll="chap-calculus"><span class="codenumber">4</span> <span class="title">Calculus</span></a><ul>
+<li><a href="sub-derivatives.html" data-scroll="sub-derivatives">Derivatives</a></li>
+<li><a href="sub-integrals.html" data-scroll="sub-integrals">Integrals</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-beyond.html" data-scroll="chap-beyond"><span class="codenumber">5</span> <span class="title">Beyond</span></a><ul>
+<li><a href="sub-networks.html" data-scroll="sub-networks">Networks</a></li>
+<li><a href="sub-images.html" data-scroll="sub-images">Images</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-def.html" data-scroll="appendix-def"><span class="codenumber">A</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thm.html" data-scroll="appendix-thm"><span class="codenumber">B</span> <span class="title">Theorems</span></a></li>
+<li class="link"><a href="appendix-ex.html" data-scroll="appendix-ex"><span class="codenumber">C</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-gfdl.html" data-scroll="appendix-gfdl"><span class="codenumber">D</span> <span class="title">GNU Free Documentation License</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="back-colophon.html" data-scroll="back-colophon"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="sec-Finding-your-roots"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Finding your roots</span>
+</h2>
+<a href="sec-Finding-your-roots.html" class="permalink">¶</a><section class="introduction" id="introduction-17"><p id="p-71">...</p></section><p id="p-72">Here `roots' refers to the zeros of a function \(f(x)\) or the solutions to the equation \(f(x) = 0\text{.}\) This is the set of all numbers (associated to a particular function) for which plugging in these values returns the function value of zero. This can be most easily pictured as where the graph of a function crosses the horizontal axis, though this isn't always enough.</p>
+<p id="p-73">Thinking of a formula such as \(y = 3x-7\) we remind ourselves that there are two things we can do: `plug in' or solve an equation. Suppose we know that \(x = 4\text{,}\) what can we do with this information? We can evaluate right-hand side to say that when \(x=4\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+y = 3(4)- 7 =
+12 -
+7 = 5\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Often when we talk about such formulas we think of them as functions, for example, we might prefer to say \(y = f(x) = 3x-7\text{.}\) This really just says we generate a set of function values \(y\) that correspond to the set of values \(x\text{.}\) In this case we might revisit our earlier problem with the notation that \(f(4) = 3(4)-7 = 12\text{.}\) We have `plugged in' the value \(x=4\) on each side of the function, on the left as a particular value of its argument and on the right in each position that the argument occurs.</p>
+<p id="p-74">The other thing we can do given a formula or function is to calculate an unknown input from a known output. For example, we can answer the question `what is \(x\) given that \(y=17\text{?}\)' Here we begin with</p>
+<div class="displaymath">
+\begin{equation*}
+17 =
+3x-7
+\end{equation*}
+</div>
+<p data-braille="continuation">and solve for \(x\text{.}\) Specifically,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+17 \amp = 3x-7\\
+17+7 \amp = 3x-7 +7\\
+24 \amp = 3x\\
+x \amp = \sfrac{24}{3} = 8
+\end{aligned}
+\end{equation*}
+</div>
+<p id="p-75">Of these two tasks, plugging in or evaluating a function is typically easier than setting up and solving an equation. That is not to say it is easy, but typically easier than the other task.</p>
+<section class="subsection" id="sub-Square-roots-new-ideas"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Square roots new ideas</span>
+</h3>
+<a href="sec-Finding-your-roots.html#sub-Square-roots-new-ideas" class="permalink">¶</a><section class="introduction" id="introduction-18"><p id="p-76">...</p></section><p id="p-77">Way back when we discussed numbers, first the counting numbers, we saw we could add and multiply and remain within that set of numbers. Introducing subtraction required us to think about negative number (and zero). Introducing division required us to think about rational numbers and decimals (and soon after irrational numbers). Assuming we are interested in calculating square roots of numbers in order to identify what number can be multiplied twice to generate another, we have to prepare for yet another complication. If we think of the square root arising in the problem</p>
+<div class="displaymath">
+\begin{equation*}
+(\underline{\quad})(\underline{\quad}) =
+25
+\end{equation*}
+</div>
+<p data-braille="continuation">we might recognize that a number that can be used in both blanks simultaneously is \(5\)\footnote{It turns out that \(-5\) is a valid choice as well, since \((-5)(-5) = 25\) also.}. Picturing this multiplication problem we can think of other pairs of similarly related numbers also,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+({5})({5}) \amp= 25\\
+({3})({3}) \amp= 9\\
+({-1})({-1}) \amp= 1\\
+({-3})({-3}) \amp = 9
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">It turns out that there are two ways to generate the value \(9\) by multiplication: of a \(3\) with itself and of a \(-3\) with itself. We write</p>
+<div class="displaymath">
+\begin{equation*}
+\sqrt{9} = \pm3
+\end{equation*}
+</div>
+<p data-braille="continuation">in order to indicate both possibilities. One thing we might notice is that two positive factors yield in a positive result, but so do two negative factors. A question is, ''what, if anything, can we multiply against itself to generate a negative result?''</p>
+<p id="p-78">The answer to this requires us to think of a new type of number, the imaginary number. Here we say that the imaginary number \(i\) is a number such that,</p>
+<div class="displaymath">
+\begin{equation*}
+i\cdot i = i^2 = -1
+\end{equation*}
+</div>
+<p data-braille="continuation">or, from the reverse that</p>
+<div class="displaymath">
+\begin{equation*}
+\sqrt{-1} = i.
+\end{equation*}
+</div>
+<p data-braille="continuation">With this new concept we can build numbers called complex numbers that consist of our typical `real part' combined with a term representing this new `imaginary part'. In general complex numbers are of the form \(a+bi\text{,}\) where \(a\) and \(b\) come from our usual sets of numbers; they can be whole numbers, fractions or decimals, positives or negatives.</p>
+<p id="p-79">For the moment we will (try to) accept this concept of a new kind of number, just like we have for others along the way, and practice with it in calculations.</p>
+<article class="example example-like" id="complex-arithmetic"><a data-knowl="" class="id-ref original" data-refid="hk-complex-arithmetic"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">....</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-complex-arithmetic"><article class="example example-like"><p id="p-80">Consider the real number \(3\) and four successive rounds of multiplication by \(i\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+(3)(i) \amp = 3i\\
+(3i)(i) \amp = 3(i^2) = 3(-1) = -3\\
+(-3)i \amp = -3i\\
+(-3i)(i) \amp = (-3)(i^2) = (-3)(-1) = 3
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">In this case multiplication by \(i\) flips a the real number \(3\) back and forth between real and imaginary. Four steps of multiplication sends us back to our starting point. Notice, for example, that \(i^4 =
+(i^2)(i^2) = (-1)(-1) = 1\text{.}\) In fact, no matter how we break up stages of this calculation we see that \(i^4 = 1\text{.}\) So multiplying by \(i\) four times or by \(i^4\) one time both yield the same outcome.</p></article></div>
+<article class="example example-like" id="complex-arithmetic-II"><a data-knowl="" class="id-ref original" data-refid="hk-complex-arithmetic-II"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">....</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-complex-arithmetic-II"><article class="example example-like"><p id="p-81">Consider the complex number \(3+2i\) and four successive rounds of multiplication by \(1+i\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+(3+2i)(1+i) \amp = 3\cdot1+3\cdot i+2i\cdot1 + 2i\cdot i\\
+\amp = 3 + 3i + 2i + 2(i^2)\\
+\amp = 3 + 3i + 2i + 2(-1)\\
+\amp = 3 + 5i - 2\\
+\amp 1 + 5i
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Now the point that used to be at coordinates \((3, 2)\) has moved to the point at coordinates \((-1, 5)\text{.}\) Convince yourself that one additional multiplication moves the point to \((-4,6)\) corresponding to the complex number \(-4+6i\text{.}\)</p>
+<p id="p-82">We visualize these steps in the image below, where \(j\) refers to the number of steps of multiplication. <figure class="figure figure-like" id="figure-complex"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="./images/complex.png" style="width: 100%; height: auto;" alt="Complex numbers."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></p></article></div>
+<p id="p-83">We can visualize this multiplication by constructing the complex plane: two perpendicular axes, one that describes real values and one that describes imaginary values, which collectively describe all of the complex numbers. Plotting these values in the complex plane and tracing out the steps of multiplication, we can convince ourselves that each step multiplication by \(i\) serves to rotate our number counterclockwise around the origin of the graph. Here our numbers lie on the axes (which are perpendicular to one another), so tracking the rotations might be pictured a bit more easily than it can be in general.</p>
+<article class="exercise exercise-like" id="chall-complex-arithmetic"><a data-knowl="" class="id-ref original" data-refid="hk-chall-complex-arithmetic"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-chall-complex-arithmetic"><article class="exercise exercise-like"><p id="p-84">Complete four successive multiplications of \(3+i\) by \(i\text{.}\) Do this arithmetically and visually by using rotations about the origin. Did one method come to you more easily than the other? Was one method more interesting than the other?</p></article></div>
+<article class="exercise exercise-like" id="chall-complex-arithmetic-II"><a data-knowl="" class="id-ref original" data-refid="hk-chall-complex-arithmetic-II"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-chall-complex-arithmetic-II"><article class="exercise exercise-like"><p id="p-85">Calculate each of the following.</p>
+<ol class="decimal">
+<li id="li-7"><p id="p-86">\((3+i)(1-2i)\) <em class="emphasis">Hint: expand by FOIL.</em></p></li>
+<li id="li-8"><p id="p-87">\((2-i)(3+2i)\)</p></li>
+<li id="li-9"><p id="p-88">\((2-i) + (3+2i)\) <em class="emphasis">Hint: combine real and complex parts.</em></p></li>
+<li id="li-10"><p id="p-89">\((1+i) - (5-2i)\) <em class="emphasis">Hint: combine real and complex parts.</em></p></li>
+</ol></article></div>
+<p id="p-90">Complex numbers are typically first encountered in algebra when working with solutions to quadratic equations (but historically it seems that they were first `invented' or realized when working with cubic equations). Focusing on just the quadratic equations, analytical (i.e., on paper) solutions to</p>
+<div class="displaymath">
+\begin{equation*}
+ax^2+bx+c=0
+\end{equation*}
+</div>
+<p data-braille="continuation">can generally be found by factoring, completing the square, or applying the quadratic formula.</p>
+<p id="p-91">We may remember the quadratic formula as</p>
+<div class="displaymath">
+\begin{equation*}
+x = \frac{x = -b\pm
+\sqrt{b^2
+- 4ac}}{2a}
+\end{equation*}
+</div>
+<p data-braille="continuation">Without imaginary and complex numbers, we run into trouble when the term in the square root, called the `discriminant', is negative because without them we could not take the square root. Indeed, solutions are complex numbers if</p>
+<div class="displaymath">
+\begin{equation*}
+b^2 -4ac \lt 0
+\end{equation*}
+</div>
+<p data-braille="continuation">this means we can solve the equation in terms of complex numbers, but that the graph will not actually cross the horizontal axis as we are used to seeing happen.</p>
+<p id="p-92">Stepping aside, now that we have a need for square roots and an appreciation of the connection to complex numbers, we will look at the generation of fractals. The mathematical details of this will happen behind the scenes, but the connection from complex numbers to fractals is a strong one. After a brief discussion of fractals, we will return to the world of real numbers, but look at the effects of repetition or iteration on some more concrete problems.</p></section><section class="subsection" id="iteration-fractals"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.2</span> <span class="title">Repetition and a descent to fractals</span>
+</h3>
+<a href="sec-Finding-your-roots.html#iteration-fractals" class="permalink">¶</a><section class="introduction" id="introduction-19"><p id="p-93">Though the technical details are a bit much at the moment, there is a strong connection between thinking about and working with complex numbers and the generation of what are known mathematically as fractals.</p></section> In addition to being useful in their own way, when carefully visualized, solutions to certain math problems generate neat pictures. Our first fractal, Newton's map (see Fig. \ref{fig::nmap}), shows the `shooting chart' for finding solutions to a particular mathematical problem that arise by starting at different points on the `floor'. <figure class="figure figure-like" id="figure-newtons88"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="./images/alpha8over8.png" style="width: 100%; height: auto;" alt="A Newton's map fractal."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-94">An analogy: If our goal is to keep track of basketball scoring, we might map all of the locations on one end of floor by a color that indicates if a player that scored or missed from that location. We might even change the intensity of the color by the number of makes or misses, or the ratio of makes to misses.</p>
+<figure class="figure figure-like" id="figure-newtons58"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="./images/alpha5over8.png" style="width: 100%; height: auto;" alt="A Newton's map fractal."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figure class="figure figure-like" id="figure-newtons78"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="./images/alpha7over8.png" style="width: 100%; height: auto;" alt="A Newton's map fractal."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figure class="figure figure-like" id="figure-newtons98"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="./images/alpha9over8.png" style="width: 100%; height: auto;" alt="A Newton's map fractal."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.9<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figure class="figure figure-like" id="figure-newtons118"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="./images/alpha11over8.png" style="width: 100%; height: auto;" alt="A Newton's map fractal."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.10<span class="period">.</span></span><span class="space"> </span></figcaption></figure> % <figure class="figure figure-like" id="figure-paper"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="./images/paper1.jpg" style="width: 100%; height: auto;" alt="Paper folding."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.11<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figure class="figure figure-like" id="figure-paper2"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="./images/paper2.jpg" style="width: 100%; height: auto;" alt="Paper folding."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.12<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figure class="figure figure-like" id="figure-paper3"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="./images/paper3.jpg" style="width: 100%; height: auto;" alt="Paper folding."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.13<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figure class="figure figure-like" id="figure-paper4"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="./images/paper4.jpg" style="width: 100%; height: auto;" alt="Paper folding."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.14<span class="period">.</span></span><span class="space"> </span></figcaption></figure></section><section class="subsection" id="sub-Repeated-approximation"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.3</span> <span class="title">Repeated approximation</span>
+</h3>
+<a href="sec-Finding-your-roots.html#sub-Repeated-approximation" class="permalink">¶</a><p id="p-95">Having seen square roots arise in solving certain algebraic problems (quadratic equations) or just certain arithmetic problems (square roots of numbers), we will pause to think about how we might actually calculate square roots of arbitrary numbers. We might know that because</p>
+<div class="displaymath">
+\begin{equation*}
+5\cdot5=25
+\end{equation*}
+</div>
+<p data-braille="continuation">that we can say</p>
+<div class="displaymath">
+\begin{equation*}
+\sqrt{25} = 5
+\end{equation*}
+</div>
+<p data-braille="continuation">this is true and reflects the `principal square root'. But, we also have that</p>
+<div class="displaymath">
+\begin{equation*}
+(-5)\cdot(-5) = 25
+\end{equation*}
+</div>
+<p data-braille="continuation">and in general say</p>
+<div class="displaymath">
+\begin{equation*}
+\sqrt{25} = \pm
+5
+\end{equation*}
+</div>
+<p data-braille="continuation">to indicate both ways of squaring a number to get \(25\text{.}\) Certain numbers we can take square roots of mentally by thinking about the repeated factors that give rise to that number, but for others we are unable to easily do so.</p>
+<p id="p-96">For example, what is the \(\sqrt{3}\text{?}\) At the start we might observe that \(1\cdot1 = 1\) and \(2\cdot2=4\text{.}\) We might believe that the answer, the number that we multiply by itself to result in a value of \(3\text{,}\) should be between \(1\) and \(2\text{,}\) perhaps even a little closer to \(2\) than to \(1\text{.}\) In a very surprising coincidence, the mathematical technique, and even the more general approach, that lets us approximate \(\sqrt{3}\) is actually the same as the one that generated our fractals. A technique called Newton's Method, when applied to this problem, gives a mathematical rule for calculating a sequence of approximations to a square root. The rule is given by</p>
+<div class="displaymath">
+\begin{equation*}
+x_{n+1} =
+\frac{1}{2}\left(x_n+\frac{\alpha}{x_n}\right)
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(x_n\) is the \(n^\text{th}\) approximation to the square root. We imagine \(x_n\) as a sequence (or ordered list) of numbers starting at \(n=0\) with a value \(x_0\) and continuing as \(n\) grows by one at a time.</p>
+<article class="example example-like" id="Approximating-sqrt-3"><a data-knowl="" class="id-ref original" data-refid="hk-Approximating-sqrt-3"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Approximating \(\sqrt{3}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-Approximating-sqrt-3"><article class="example example-like"><p id="p-97">Assuming that our \(\alpha = 3\) in our hopes of approximating \(\sqrt{3}\text{,}\) we might start by guessing that \(x_0 = 1\) and noticing that the step after step \(n=0\) is step \(n+1 = 0+1 = 1\text{,}\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+x_{0+1} \amp= \frac{1}{2}\left(x_0+\frac{3}{x_0}\right)\\
+x_1 \amp= \frac{1}{2}\left(1+\frac{3}{1}\right)\\
+\amp= \frac{1}{2}\left(4\right)\\
+x_1 \amp = 2
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Now starting from \(x_1 = 2\) we take another step to calculate \(x_2\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+x_{1+1} \amp= \frac{1}{2}\left(x_1+\frac{3}{x_1}\right)\\
+x_2 \amp= \frac{1}{2}\left(2+\frac{3}{2}\right)\\
+\amp= \frac{1}{2}\left(\frac{7}{2}\right)\\
+x_2 \amp = \frac{7}{4} = 1.75
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Repeating this some more (one last time in greater detail),</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+x_3 \amp= \frac{1}{2}\left(\frac{7}{4}+\frac{3}{\sfrac{7}{4}}\right)\\
+\amp=
+\frac{1}{2}\left(\frac{7}{4}+\frac{3}{1}\cdot\frac{4}{7}\right)\\
+\amp= \frac{1}{2}\left(\frac{7}{4}+\frac{12}{7}\right)\\
+\amp=
+\frac{1}{2}\left(\frac{7}{7}\cdot\frac{7}{4}+\frac{4}{4}\cdot\frac{12}{7
+}\right)\\
+\amp= \frac{1}{2}\left(\frac{49 + 48}{28}\right)\\
+x_3 \amp= \frac{97}{56}\approx 1.732143
+\end{aligned}
+\end{equation*}
+</div>
+<p id="p-98">Continuing this it might help to visualize the results in a table. Additionally it will no longer make sense to store exact fractions at any step, since our computers are unable to do so anyway. This does save us from having to do things like find common denominators, but does require us to write down some fairly lengthy decimal numbers at times.</p>
+<figure class="table figure-like" id="tab-a-table"><table>
+<tr>
+<td class="c m b1 r1 l1 t1 lines">\(n\)</td>
+<td class="c m b1 r1 l0 t1 lines" data-braille="last-cell">\(x_n\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">0</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">1.0000000</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">1</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">2.0000000</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">2</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">
+<em class="alert">1.7</em>500000</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">3</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">
+<em class="alert">1.732</em>1429</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">4</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell"><em class="alert">1.7320508</em></td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">5</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell"><em class="alert">1.7320508</em></td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.4.16<span class="period">.</span></span><span class="space"> </span>Application to approximate \(\sqrt{3}\) with Newton's Method. After only 4 steps, the approximation is exact to 8 digits; after just one more step, the first 16 digits are exact (correct digits are bolded)</figcaption></figure><p id="p-99">Our approximation of \(\sqrt{3}\) by \(x_5\approx
+1.732050807568877\) squares to</p>
+<div class="displaymath">
+\begin{equation*}
+1.732050807568877^2=2.999999999999998
+\end{equation*}
+</div>
+<p data-braille="continuation">which is quite impressive.</p></article></div>
+<article class="exercise exercise-like" id="ex-"><a data-knowl="" class="id-ref original" data-refid="hk-ex-"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.17</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-"><article class="exercise exercise-like"><p id="p-100">We approximated \(\sqrt{3}\) to 8 correct digits in only 4 steps starting from \(x_0=1\text{.}\) Do you think that the choice of \(x_0\) matters? For each of \(x_0\) equal to each integer from \(1\) to \(10\) see how many steps it takes to reach 8 correct digits from that number. Graph your results with points illustrating the number of steps required (vertical) against the value of \(x_0\) (horizontal). This can be done by hand but will be a miserable amount of work, instead see if you can use spreadsheet software to automate the calculation.</p></article></div>
+<article class="exercise exercise-like" id="ex-nnn"><a data-knowl="" class="id-ref original" data-refid="hk-ex-nnn"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.4.18</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-nnn"><article class="exercise exercise-like"><p id="p-101">Try to approximate \(\sqrt{7}\) to 6 digits. What is a sensible choice of \(x_0\) and why?</p></article></div></section><p id="p-102"> </p></section></div></main>
+</div>
+</body>
+</html>

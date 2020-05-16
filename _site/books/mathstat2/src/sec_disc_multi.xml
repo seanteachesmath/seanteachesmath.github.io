@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="section-multivariate-discree-probability">
+<title>Multivariate discrete random variables</title>
+
+<introduction>
+<p> Some words.</p>
+</introduction>
+
+<!-- *********************************** -->
+<!-- *********************************** -->
+<!-- *********************************** -->
+
+<subsection xml:id="sub-multi-variable">
+<title>Multivariate, marginal, and conditional distributions</title>
+<introduction>
+<p> See sections 3.5, 3.6, 3.7. Recommended problems: (pg 101) 42, 44,
+45, 49, 53, 54</p></introduction>
+
+<definition xml:id="def-joint-probability-distribution-3-6">
+<title>joint probability distribution</title>
+<statement>
+<p>
+If <m>\displaystyle X</m> and <m>\displaystyle Y</m> are discrete
+random variables, the function given by <m>\displaystyle f(x,y) = P(X=x,
+Y=y)</m> for each pair of values <m>\displaystyle (x,y)</m> within the
+range of <m>\displaystyle X</m> and <m>\displaystyle Y</m> is called the
+<term>joint probability distribution</term> of <m>\displaystyle X</m>
+and <m>\displaystyle Y</m>.
+</p>
+</statement></definition>
+
+<theorem xml:id="thm-3-7">
+<title>conditions for a joint probability distribution</title>
+<statement>
+<p> A bivariate function can serve as a joint probability distribution
+for a pair of discrete random variables <m>\displaystyle X</m> and
+<m>\displaystyle Y</m> if and only if its values, <m>\displaystyle f(x,
+y)</m>, satisfy the conditions
+<ol>
+<li> <m>\displaystyle f(x, y) \ge 0</m> for each pair of values
+<m>\displaystyle (x, y)</m> within its domain;</li>
+<li> <m>\displaystyle \sum_x\sum_y f(x, y) = 1</m> where the double
+summation extends over all possible pairs <m>\displaystyle (x,
+y)</m>.</li>
+</ol>
+</p>
+</statement></theorem>
+
+
+<definition xml:id="def-joint-distribution-function-3-7">
+<title>joint distribution function</title>
+<statement>
+<p>
+If <m>\displaystyle X</m> and <m>\displaystyle Y</m> are discrete random
+variables, the function given by <me>F(x, y) = P(X \le x, Y \le y) =
+\sum_{s\le x} \sum_{t\le y} f(s, t) \text{ for } \infty \lt x, y \lt
+\infty</me> where <m>\displaystyle f(s, t)</m> is the value of the joint
+probability distribution of <m>\displaystyle X</m> and <m>\displaystyle
+Y</m> at <m>\displaystyle (s, t)</m>, is called the <term>joint
+distribution function</term> or <term>joint cumulative
+distribution</term> of <m>\displaystyle X</m> and <m>\displaystyle
+Y</m>.
+</p>
+</statement></definition>
+
+<definition xml:id="def-marginal-distribution-3-10">
+<title>marginal distribution</title>
+<statement>
+<p>
+If <m>\displaystyle X</m> and <m>\displaystyle Y</m> are discrete random
+variables and <m>\displaystyle f(x, y)</m> is the value of their joint
+probability distribution at <m>\displaystyle (x, y)</m>, the function
+given by <me>g(x) = \sum_y f(x, y)</me> for each <m>\displaystyle x</m>
+within the range of <m>\displaystyle X</m> is called the <term>marginal
+distribution</term> of <m>\displaystyle X</m>. Correspondingly, the
+function given by <me>h(y) = \sum_x f(x, y)</me> for each
+<m>\displaystyle y</m> within the range of <m>\displaystyle Y</m> is
+called the <term>marginal distribution</term> of <m>\displaystyle Y</m>.
+
+</p>
+</statement></definition>
+
+<definition xml:id="def-conditional-distribution-3-10">
+<title>conditional distribution</title>
+<statement>
+<p>
+<term>conditional distribution</term>
+<me>f(x|y) = \dfrac{f(x, y)}{h(y)}, h(y)\ne 0</me>
+<me>w(y|x) = \dfrac{f(x, y)}{g(x)}, g(x)\ne 0</me>
+</p>
+</statement></definition>
+</subsection>
+
+<!-- Recommended problems: (pg 101) discrete: 42, 44, 45; continuous:
+49, 53, 54 -->
+<exercises>
+ <exercise>
+ <title>Problem 3.42</title>
+ <statement>
+ <p>If the values of the joint probability distribution of \(X\) and
+\(Y\) are shown below,
+<me>\begin{aligned}[t]
+P[x=0, y=0] \amp = \frac{1}{12}\\
+P[x=1, y=0] \amp = \frac{1}{6}\\
+P[x=2, y=0] \amp = \frac{1}{24}\\
+P[x=0, y=1] \amp = \frac{1}{4}\\
+P[x=1, y=1] \amp = \frac{1}{4}\\
+P[x=2, y=1] \amp = \frac{1}{40}\\
+P[x=0, y=2] \amp = \frac{1}{8}\\
+P[x=1, y=2] \amp = \frac{1}{20}\\
+P[x=0, y=3] \amp = \frac{1}{120}\\
+\end{aligned}
+</me>
+find 
+<ol>
+<li><p>(b) <m>P(X = 0, 1\le Y \lt 3)</m></p></li>
+<li><p>(c) <m>P(X + Y \le 1)</m></p></li>
+<li><p>(d) <m>P(X \gt Y)</m></p></li>
+</ol>
+
+ </p>
+ </statement>
+ </exercise>
+ 
+  <exercise>
+ <title>Problem 3.44</title>
+ <statement>
+ <p>If the joint probability distribution of <m>X</m> and <m>Y</m> is
+given by <me>f(x, y) = c(x^2+y^2) \text{ for } x=0, 3; y=0, 1, 2</me>
+find the value of <m>c</m>.</p>
+ </statement>
+ </exercise>
+ 
+   <exercise>
+ <title>Problem 3.45</title>
+ <statement>
+ <p>With references to the previous problem find
+ <ol>
+<li><p> <m>P(X\le 1, Y \gt 2)</m></p></li>
+<li><p> <m>P(X=0, Y\le 2)</m></p></li>
+<li><p> <m>P(X +Y \gt 2)</m></p></li>
+</ol>
+</p>
+ </statement>
+ </exercise>
+
+   <exercise>
+ <title>Problem 3.70</title>
+ <statement>
+ <p>With reference to 3.42, find 
+ <ol>
+<li><p> the marginal distribution of <m>X</m></p></li>
+<li><p> the marginal distribution of <m>X</m></p></li>
+<li><p> the conditional distribution of <m>X</m> given
+<m>Y=1</m></p></li>
+<li><p> the conditional distribution of <m>Y</m> given
+<m>X=0</m></p></li>
+</ol>
+</p>
+ </statement>
+ </exercise>
+</exercises>
+
+<!-- *********************************** -->
+<!-- *********************************** -->
+<!-- *********************************** -->
+
+<subsection xml:id="sub-product-moments">
+<title>Product moments</title>
+<p>See section 4.6.</p>
+
+
+<definition xml:id="def-product-moments-origin-4-7">
+<title>product moments about the origin</title>
+
+<statement>
+<p> The <term><m>\displaystyle r^\text{th}</m> and <m>\displaystyle
+s^\text{th}</m> product moment about the origin</term> of the random
+variables
+<m>X</m> and <m>Y</m>, denoted by
+<m>\displaystyle \mu_{r,s}</m>, is the expected value of
+<m>\displaystyle X^rY^s</m>; symbolically 
+<me>\mu_{r,s}'=E[X^rY^s] = \sum_x\sum_y x^r y^s\cdot f(x, y)</me>
+<m>\displaystyle r = 0,1,2, \dots</m> and <m>\displaystyle s = 0,1,2,
+\dots</m>
+when <m>X</m> and Y are discrete.</p>
+</statement></definition>
+
+<p>
+Special cases of product moments are <m>\displaystyle \mu_{1,0}' =
+E[X^1Y^0] = E[X] = \mu_X</m> and <m>\displaystyle \mu_{0,1}' = E[X^0Y^1]
+= E[Y] = \mu_Y</m>.
+</p>
+
+<p>
+As complicated as the definitions of the product moments may be, they
+lead to a way to define and calculate the very important concept of
+covariance.
+<ul>
+<li> If we have a high probability of large <m>X</m>
+paired with large <m>Y</m> and small <m>\displaystyle
+X</m> paired with small <m>Y</m>, <m>\displaystyle
+\operatorname{cov}(X,Y) \gt 0</m></li>
+<li> If we have a high probability of large <m>X</m>
+paired with small <m>Y</m> and small <m>\displaystyle
+X</m> paired with large <m>Y</m>, <m>\displaystyle
+\operatorname{cov}(X,Y) \lt 0</m></li>
+</ul>
+</p>
+
+<definition xml:id="def-product-moments-mean-4-8">
+<title>product moments about the mean</title>
+
+<statement>
+<p> The <term><m>\displaystyle r^\text{th}</m> and <m>\displaystyle
+s^\text{th}</m> product moment about the mean</term> of the random
+variables
+<m>X</m> and <m>Y</m>, denoted by
+<m>\displaystyle \mu_{r,s}'</m>, is the expected value of
+<m>\displaystyle (X-\mu_X)^r(Y-\mu_Y)^s</m>; symbolically 
+<me>\mu_{r,s}=E[(X-\mu_X)^r(Y-\mu_Y)^s] = \sum_x\sum_y (x-\mu_X)^r
+(y-\mu_Y)^s\cdot f(x, y)</me> <m>\displaystyle r = 0,1,2, \dots</m> and
+<m>\displaystyle s = 0,1,2, \dots</m>
+when <m>X</m> and Y are discrete.
+</p>
+</statement></definition>
+
+<definition xml:id="def-covariance-4-9">
+<title>covariance</title>
+
+<statement>
+<p>
+<m>\displaystyle \mu_{1,1}</m> is called the <term>covariance</term> of
+<m>X</m> and <m>Y</m>, and it is denoted by
+<m>\displaystyle \sigma_{XY}</m> or <m>\displaystyle
+\operatorname{cov}(X, Y)</m>, or <m>\displaystyle C(X, Y)</m>.
+</p>
+</statement></definition>
+
+<theorem xml:id="thm-4-11">
+<title>covariance from moments about the origin</title>
+<statement>
+<p>
+<m>\displaystyle \sigma_{XY} = \mu_{1,1}' - \mu_X \mu_Y</m>
+</p>
+</statement></theorem>
+
+<theorem xml:id="thm-4-12">
+<title>independence and covariance</title>
+<statement>
+<p> If <m>X</m> and <m>Y</m> are
+independent, then <me>\displaystyle E[XY] = E[X]\cdot E[Y]</me> and
+<m>\displaystyle \sigma_{XY} = 0</m>.
+</p>
+</statement></theorem>
+
+<remark xml:id="rmrk-4-12">
+In terms of moments,
+<me>\displaystyle\mu_{1,1}' = \mu_{1,0}'\cdot \mu_{0,1}'</me>
+</remark>
+
+<theorem xml:id="thm-4-13">
+<title>product moments of independent random variables</title>
+
+<statement>
+<p> If <m>\displaystyle X_1, X_2, \dots, X_n</m> are independent, then
+<m>\displaystyle E[X_1X_2\cdots X_n] = E[X_1]\cdot
+E[X_2]\cdot\cdots\cdot E[X_n]</m>.
+</p>
+</statement></theorem>
+
+<p>Independence means covariance is zero, but covariances of zero does
+not mean independence.
+</p>
+
+</subsection>
+
+<exercises>
+ <exercise>
+ <title>Problem 4.41</title>
+ <statement>
+ <p>If <m>X</m> and <m>Y</m> have the joint probability distribution
+<m>f(x, y) = \dfrac{1}{4}</m> for <m>(-3, -5)</m>,  <m>(-1, -1)</m>, 
+<m>(1, 1)</m>,  <m>(3, 5)</m>, find <m>\operatorname{cov}(X, Y)</m>.
+ </p>
+ </statement>
+ </exercise>
+ 
+ <exercise>
+ <title>Problem 4.45</title>
+ <statement>
+ <p>If <m>X</m> and <m>Y</m> have the joint probability distribution
+ <m>f(-1, 0) = 0</m>,  <m>f(-1, 1) = \dfrac{1}{4}</m>, 
+<m>f(0, 0) = \dfrac{1}{6}</m>, <m>f(1, 0) = \dfrac{1}{12}</m>, <m>f(1,
+1) = \dfrac{1}{2}</m> show that
+<ol>
+<li><p> <m>\operatorname{cov}(X, Y) = 0</m>;</p></li>
+<li><p> the two random variables are not independent.</p></li>
+</ol>
+ </p>
+ </statement>
+ </exercise>
+ 
+ </exercises>
+
+<!-- *********************************** -->
+<!-- *********************************** -->
+<!-- *********************************** -->
+
+<subsection xml:id="sub-conditional-expectation">
+<title>Conditional expectation</title>
+<p>See section 4.8.</p>
+
+
+<definition xml:id="def-conditional-expectation-4-10">
+<title>conditional expectation</title>
+<statement>
+<p>If <m>X</m> is a discrete random variable and
+<m>\displaystyle f(x|y)</m> is the value of the conditional probability
+distribution of <m>X</m> given <m>\displaystyle Y = y</m>
+at <m>X</m>, the <term>conditional expectation</term> of
+<m>\displaystyle u(X)</m> given <m>\displaystyle Y = y</m> is 
+<me>E[u(X)|y] = \sum_x u(x)\cdot f(x|y)</me> and the <term>conditional
+expectation</term> of <m>\displaystyle v(Y)</m> given <m>\displaystyle X
+= x</m> is 
+<me>E[v(Y)|x] = \sum_y v(y)\cdot w(y|x)</me>
+</p>
+</statement></definition>
+
+<definition xml:id="def-conditional-mean">
+<title>conditional mean</title>
+<statement>
+<p> If <m>X</m> is a discrete random variable and
+<m>\displaystyle f(x|y)</m> is the value of the conditional probability
+distribution of <m>X</m> given <m>\displaystyle Y = y</m>
+at <m>X</m>, the <term>conditional mean</term> of
+<m>\displaystyle u(X) = X</m> given <m>\displaystyle Y = y</m> is 
+<me>\mu_{X|y} = E[X|y] = \sum_x x\cdot f(x|y)</me> and the
+<term>conditional mean</term> of <m>\displaystyle v(Y) = Y</m> given
+<m>\displaystyle X = x</m> is 
+<me>\displaystyle \mu_{Y|x} = E[Y|x] = \sum_y y\cdot w(y|x)</me>
+</p>
+</statement></definition>
+
+<definition xml:id="def-conditional-variance">
+<title>conditional variance</title>
+<statement>
+<p>If <m>X</m> is a discrete random variable and
+<m>\displaystyle f(x|y)</m> is the value of the conditional probability
+distribution of <m>X</m> given <m>\displaystyle Y = y</m>
+at <m>X</m>, the <term>conditional variance</term> of
+<m>X</m> given <m>\displaystyle Y = y</m> is 
+<me>\sigma^2_{X|y} = E[(X-\mu_{X|y})^2|y] = E[X^2]-\mu^2_{X|y}</me> and
+the <term>conditional expectation</term> of <m>Y</m> given
+<m>\displaystyle X = x</m> is 
+<me>\displaystyle\sigma^2_{Y|x} = E[(Y-\mu_{Y|x})^2|y] =
+E[Y^2]-\mu^2_{Y|x}</me>
+</p>
+</statement>
+</definition>
+
+
+</subsection>
+
+
+</section>
