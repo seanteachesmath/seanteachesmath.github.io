@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-05-15T20:56:31-05:00    *-->
+<!--*    on 2020-05-15T20:58:43-05:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -18,14 +18,25 @@
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}[t]
-M_X(t) \amp = \sum_{x=0}^1 e^{tx} f(x; \theta)\\
-\amp = e^{0\cdot t}\left(\theta^0(1-\theta)^1\right) + e^{1\cdot
-t}\left(\theta^1(1-\theta)^0\right)\\
-\amp = (1-\theta) + \theta e^t\\
-M_X(t) \amp = 1 + \theta (e^t-1)
+M_X(t) \amp = \sum_{x=0}^n e^{tx} b(x; n, \theta)\\
+\amp = \sum_{x=0}^n e^{tx} {n \choose x} \theta^x (1-\theta)^{n-x}\\
+\amp = \sum_{x=0}^n {n \choose x} \left(\theta e^t\right)^x
+(1-\theta)^{n-x}\\
+\amp = \sum_{x=0}^n {n \choose x} (1-\theta)^{n-x}\left(\theta
+e^t\right)^x\\
+M_X(t) \amp = \left((1-\theta) + \theta e^t\right)^n
 \end{aligned}\text{.}
 \end{equation*}
 </div>
+<p data-braille="continuation">That last step, though a big leap in print, comes from applying the binomial theorem in reverse, that is</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{k=0}^n {n \choose
+r}a^{n-r} b^r = (a+b)^n
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(a=1-\theta\) and \(b = \theta
+e^t\text{.}\)</p>
 <span class="incontext"><a href="section-special-distributions.html#p-127">in-context</a></span>
 </body>
 </html>
