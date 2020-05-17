@@ -2,6 +2,6 @@
 layout: default
 title: About
 ---
-# About page
+# About me
 
-This page tells you a little bit about me.
+Sean teaches math at the University of Central Oklahoma.
