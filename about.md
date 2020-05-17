@@ -1,5 +1,7 @@
 ---
-layout: page
-author: sean
+layout: default
+title: About
 ---
-seanteachesmath should be a blog.
+# About page
+
+This page tells you a little bit about me.
