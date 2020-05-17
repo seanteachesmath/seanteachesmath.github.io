@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="section-special-distributions">
+<title>Special probability distributions</title>
+
+<introduction>
+<p> Now we look at a collection of formulas for probability
+distributions. These describe how probabilities are assigned across a
+range of discrete values of a random variable. It turns out to be the
+case that values of random variables associated with certain kinds of
+experiments follow certain formulas. In this chapter, we will look at
+the formulas that describe certain discrete random variables. </p>
+<p> For the purposes of generality we will emphasize that certain
+formulas include one or more parameters, these are symbols to which we
+will associate particular numerical values, much like we do <m>m</m> and
+<m>b</m> in the formula <m>y = f(x) = mx+b</m>. We should have a general
+understanding of something that follows this relationship and an
+understanding of the roles of both <m>m</m> and <m>b</m> in specifying
+that relationship. </p>
+</introduction>
+
+<!-- ....... .............. .............. ....... -->
+<!-- ....... discrete-unif ....... -->
+<!-- ....... .............. .............. ....... -->
+
+<subsection xml:id="sub-discrete-unif">
+<title>Discrete uniform</title>
+
+<definition xml:id="def-discrete-unif">
+<title>discrete uniform distribution</title>
+
+<statement>
+<p>A discrete random variable <m>\displaystyle X</m> has a
+<term>discrete uniform distribution</term> and is referred to as a
+<term>discrete uniform random variable</term> if and only if its
+probability distribution is given by <me>f(x) = \frac{1}{k} \text{ for }
+x = x_1, x_2, \dots, x_k \text{ where }x_i\ne x_j \text{ for } i \ne
+j</me>.
+</p>
+</statement></definition>
+
+<p> This is sometimes written as <m>\operatorname{DU}(k)</m>, where
+<m>k</m> is the parameter of the distribution.</p>
+
+<example xml:id="ex-disc-unif-mean"> 
+<title>mean of a discrete uniform distribution</title>
+
+<statement>
+<p>Find the mean of a discrete uniform random variable (or of the
+discrete uniform distribution).</p>
+<solution>
+<p>Recall that <me>f(x) = \frac{1}{k} \text{ for } x = x_1, x_2, \dots,
+x_k \text{ where }x_i\ne x_j \text{ for } i \ne j</me> and that <me>\mu
+= \sum_x x\cdot f(x)</me>. This becomes <me>\mu = \sum_{i=1}^k
+x_i\left(\frac{1}{k}\right)</me>. This is about as far as we can go in
+general without knowing more about <m>k</m> or the values of <m>x_i</m>.
+</p>
+</solution>
+</statement></example>
+
+<p>Similar to the previous "Example", the variance of a discrete uniform
+random variable (or of the discrete uniform distribution) is given by
+<me>\sigma^2 = \sum_x (x-\mu)^2\cdot f(x)= \sum_x (x-\mu)^2
+\left(\frac{1}{k}\right)</me>. Once again, this is about as far as we
+can go in general.
+</p>
+
+<example xml:id="ex-disc-unif-simple">
+<title>simple discrete uniform distribution</title>
+<statement>
+<p>Find the mean of a discrete uniform random variable (or of the
+discrete uniform distribution) for which <m>x_i = i</m>.</p>
+<solution>
+<p>Recall that <me>f(x) = \frac{1}{k} \text{ for } x = 1, 2, \dots,
+k</me> and that <me>\mu = \sum_x x\cdot f(x)</me>.
+This becomes <me>
+\begin{aligned}[t]
+\mu \amp = \sum_{i=1}^k i\left(\frac{1}{k}\right)\\
+	\amp = \frac{1}{k}\left(\sum_{i=1}^k i\right)\\
+	\amp = \frac{1}{k}\left(\dfrac{k(k+1)}{2}\right)\\
+\mu	\amp = \dfrac{k+1}{2}
+\end{aligned}</me>. Now, verify our earlier work on the mean number of
+dots to show on a balanced, 6-sided die.
+</p>
+</solution>
+</statement></example>
+
+</subsection>
+<exercises>
+ <exercise>
+ <title>5.2</title>
+ <statement>
+ <p>If <m>X</m> has a discrete uniform distribution <m>f(x) =
+\dfrac{1}{k}</m> for <m>x = 1, 2, \dots, k</m>, show that 
+its moment-generating function is given by <me>M_x(t) =
+\dfrac{e^t(1-e^{kt})}{k(1-e^t)}</me>.
+<!--> <ol>
+ <li><p>its mean is <m>\mu = \dfrac{}</m></p></li>
+ <li><p><m></m></p></li>
+  </ol>-->
+ </p>
+ </statement>
+ </exercise>
+ 
+</exercises>
+
+<!-- ....... .............. .............. ....... -->
+<!-- ....... bern-bin ....... -->
+<!-- ....... .............. .............. ....... -->
+
+<subsection xml:id="sub-discrete-bern-bin">
+<title>Bernoulli and Binomial distributions</title>
+
+<introduction>
+<p> Consider an experiment with two possible outcomes, flipping a coin
+for example. We consider one of those outcomes, say 'heads' as a
+success, and the other of those outcomes, in this case 'tails` as a
+failure. We allow these outcomes to each occur with a given probability.
+Here <m>\theta</m> gives the probability of 'success' and
+<m>1-\theta</m> is the corresponding probability of 'failure'.</p>
+
+<p>Though the outcome of a single event may be useful, the Bernoulli
+distribution is perhaps most useful as a building block to describe the 
+results of more complex experiments.</p>
+
+<p>You will find tools for visualization at the following <url
+href="https://buddy.uco.edu/shiny/slaverty/mathstat/Binomial/">
+link</url>.</p>
+
+</introduction>
+
+<definition xml:id="def-bern">
+<title>Bernoulli distribution</title>
+
+<statement>
+<p>A discrete random variable <m>\displaystyle X</m> has a
+<term>Bernoulli distribution</term> and is referred to as a
+<term>Bernoulli random variable</term> if and only if its probability
+distribution is given by <me>f(x; \theta) = \theta^x(1-\theta)^{1-x}
+\text{ for }x = 0, 1</me>.
+</p>
+</statement></definition>
+
+<example xml:id="ex-bern-mean-var"> 
+<title>mean and variance of a Bernoulli distribution</title>
+<statement>
+<p>Find the mean and variance of a Bernoulli random variable (or of the
+Bernoulli distribution).</p>
+<solution>
+<p>Generally we calculate the mean as <me>\mu = \sum_x x\cdot f(x)</me>.
+
+Specifically this becomes <me>\begin{aligned}[t]
+\mu \amp = \sum_{i=0}^1 x f(x; \theta)\\
+\amp = 0\left(\theta^0(1-\theta)^1\right) +
+1\left(\theta^1(1-\theta)^0\right)\\
+\mu \amp = \theta
+\end{aligned}</me>.
+</p>
+
+<p>We calculate the variance as <m> \sigma^2 =
+E[X^2]-\left(E[X]\right)^2</m>. Keep in mind that we now know that
+<m>E[X] = \theta</m>, so we know that <m>\left(E[X]\right)^2 =
+\theta^2</m>
+</p>
+<p> Now <me>\begin{aligned}[t]
+E[X^2] \amp = \sum_{i=0}^1 x^2 f(x; \theta)\\
+\amp = 0^2\left(\theta^0(1-\theta)^1\right) +
+1^2\left(\theta^1(1-\theta)^0\right)\\
+E[X^2] \amp = \theta
+\end{aligned}</me> Given this, <me>\begin{aligned}[t]
+\sigma^2 \amp = E[X^2]-\left(E[X]\right)^2\\
+\amp = \theta - \theta^2 \\
+\sigma^2 \amp = \theta(1-\theta)
+\end{aligned}</me>
+</p>
+</solution>
+</statement></example>
+
+<example xml:id="ex-bern-mgf"> 
+<title>moment-generating function of a Bernoulli distribution</title>
+
+<statement>
+<p>Find the moment-generating function of a Bernoulli random variable
+(or of the Bernoulli distribution).</p>
+<solution>
+<p>Recall that <m>\displaystyle M_X(t) = E[e^{tx}] = \sum_x e^{tx} f(x;
+\theta)</m>. 
+This becomes <me>
+\begin{aligned}[t]
+M_X(t) \amp = \sum_{x=0}^1 e^{tx} f(x; \theta)\\
+\amp = e^{0\cdot t}\left(\theta^0(1-\theta)^1\right) + e^{1\cdot
+t}\left(\theta^1(1-\theta)^0\right)\\
+\amp = (1-\theta) + \theta e^t\\
+M_X(t) \amp = 1 + \theta (e^t-1)
+\end{aligned}</me>.
+</p>
+</solution>
+</statement></example>
+
+
+<p> You could use the moment-generating function and the earlier
+theorem to calculate moments about the origin used to find the mean and
+variance.</p>
+
+<p> Consider now a new random variable <m>Y</m> whose value is the sum
+of independent Bernoulli trials. This new variable has a 'binomial
+distribution' as defined below.</p>
+
+<definition xml:id="def-bin">
+<title>binomial distribution</title>
+
+<statement>
+<p>A discrete random variable <m>\displaystyle X</m> has a
+<term>binomial distribution</term> and is referred to as a
+<term>binomial random variable</term> if and only if its probability
+distribution is given by <me>b(x; n, \theta) = {n\choose
+x}\theta^x(1-\theta)^{n-x} \text{ for }x = 0, 1, \dots, n</me>.
+</p>
+</statement></definition>
+
+<p>In the definition, the term <m>\displaystyle {n \choose x}</m> gives
+the number of ways to select the order of the <m>x</m> successes in
+<m>n</m> trials. The values of <m>b(x; n, \theta)</m> give the
+coefficients of terms in the expansion of <m>\displaystyle
+\left((1-\theta) + \theta\right)^n</m>.
+</p>
+
+<example xml:id="ex-bin-coins"> 
+<title>Binomial coin flips</title>
+
+<statement>
+<p>Find the probability of 5 heads in 9 coin flips under each of the
+following situations.
+<ol>
+<li>The coin is balanced and <m>P(\text{success}) = P(\text{failure}) =
+0.5</m></li>
+<li>The coin is unbalanced and <m>P(\text{success})</m> is <m>3</m>
+times larger than <m>P(\text{failure})</m></li>
+</ol>
+</p>
+
+<solution>
+This problem can be done by evaluating the binomial using 'Table 1' of
+the 'Statistical Tables Appendix' (see book), or by using the definition
+of probability distribution of the binomial random variable.
+<ol>
+<li><p>The coin is balanced and <m>P(\text{success}) = P(\text{failure})
+= 0.5</m>. 
+We are looking to evaluate the binomial probability, sometimes written
+<m>\operatorname{Bin}(n=9, \theta=0.5)</m>, specifically <m>b(5; 9,
+0.5)</m>. 
+This is, <me>b(5; 9, 0.5) = {9 \choose 5}0.5^5(1-0.5)^{9-5} \approx
+0.2461 </me></p></li>
+<li><p>The coin is unbalanced and <m>P(\text{success})</m> is <m>3</m>
+times larger than <m>P(\text{failure})</m>. 
+We first have to figure out the value for <m>P(\text{success}) =
+\theta</m>. 
+We have said that <m>P(\text{success}) = 3\cdot P(\text{failure})</m> or
+<m>\theta = 3\cdot (1-\theta)</m>.
+This gives <m>\theta = 0.75</m> and, as above, <me>b(5; 9, 0.75) = {9
+\choose 5}0.75^5(1-0.75)^{9-5} \approx 0.1168 </me></p></li>
+</ol>
+
+</solution>
+</statement></example>
+
+<example xml:id="ex-bin-bball">
+<title>Free throws</title>
+<statement>
+<p> What is the probability of making <m>2</m> in <m>5</m> free throws
+if the probability of making one is <m>0.86</m>?
+</p>
+
+<solution>
+<p>
+We need to calculate <me>b(2; 5, 0.86) = {5\choose2}0.86^2(1-0.86)^{5-2}
+= 10(0.86)^2(0.14)^3 \approx 0.0203</me>.  This calculation corresponds
+to the ten
+possible orderings of 2 makes in 5 shot attempts, the probabilities
+associated with 2 'makes', and the probabilities associated with 3
+'misses'.
+</p>
+</solution>
+</statement>
+</example>
+
+<p>Switching focus from <m>x</m> successes in <m>n</m> trials with a
+probability of success <m>\theta</m>, we have <m>n-x</m> failures in
+<m>n</m> trials with a probability of failure <m>1-\theta</m>.</p>
+
+<theorem xml:id="thm-bin-param"> 
+<title>reparameterizing a binomial</title>
+<statement>
+<p>
+<me> b(x; n, \theta) = b(n-x; n, 1-\theta)</me>
+</p>
+</statement></theorem>
+
+<example xml:id="ex-bin-bball2">
+<title>Free throws - revisited</title>
+<statement>
+<p> Using theorem <xref ref="thm-bin-param"/>, find the probability of
+making <m>2</m> in <m>5</m> free throws if the probability of making one
+is <m>0.86</m>?
+</p>
+
+<solution>
+<p>
+We need to calculate <me>
+\begin{aligned}[t]
+b(5-2; 5, 1-0.86) \amp = b(3; 5, 0.14)\\
+\amp = {5\choose3}0.14^3(1-0.14)^{5-3}\\
+\amp = 10(0.14)^3(0.86)^2\\
+\amp \approx 0.020
+\end{aligned}</me>.  This calculation corresponds to the ten
+possible orderings of 2 makes in 5 shot attempts, the probabilities
+associated with 2 'makes', and the probabilities associated with 3
+'misses'.
+</p>
+</solution>
+</statement>
+</example>
+
+<p>For certain calculations, it is helpful to use the theorem to reduce
+the sizes of numbers used in the factorial or to find parameterizations
+for which the probabilities are known by a table.</p>
+
+<theorem xml:id="thm-bin-mean-var"> 
+<title>Mean and variance of binomial distribution</title>
+
+<statement>
+<p>The mean and variance of a binomial random variable (or of the
+binomial distribution) are <me>\mu = n\theta \text{ and } \sigma^2 =
+n\theta(1-\theta)</me>.</p>
+<proof><p>
+These can be proved using the expectation and some clever re-indexing in
+evaluating the sum. 
+</p>
+</proof>
+</statement></theorem>
+
+<theorem xml:id="thm-bin-successes"> 
+<title>Proportion of binomial successes</title>
+<statement>
+<p>If <m>X</m> is a binomially-distributed random variable with
+parameters <m>n</m>, <m>\theta</m>, and <m>Y = \dfrac{X}{n}</m> gives
+the proportion of successes, 
+<me>E[Y] = \theta \text{ and } \sigma_Y^2 =
+\dfrac{\theta(1-\theta)}{n}</me>.</p>
+</statement></theorem>
+
+<exercise xml:id="exer-bin-dice">
+<title>probabilities of dice rolls</title>
+<statement>
+<p> Find the expected value of the number of times a 2 or 3 shows in 15
+rolls of a standard 6-sided die.
+</p>
+<hint>
+What is the probability of 'success'?
+</hint>
+</statement>
+</exercise>
+
+<example xml:id="ex-bin-mgf"> 
+<title>moment-generating function of a binomial distribution</title>
+
+<statement>
+<p>Find the moment-generating function of a binomial random variable
+(or of the binomial distribution).</p>
+</statement>
+
+<statement>
+<solution>
+<p>Recall that <m>\displaystyle M_X(t) = E[e^{tx}] = \sum_x e^{tx} f(x;
+\theta)</m>. 
+This becomes <me>
+\begin{aligned}[t]
+M_X(t) \amp = \sum_{x=0}^n e^{tx} b(x; n, \theta)\\
+\amp = \sum_{x=0}^n e^{tx} {n \choose x} \theta^x (1-\theta)^{n-x}\\
+\amp = \sum_{x=0}^n {n \choose x} \left(\theta e^t\right)^x
+(1-\theta)^{n-x}\\
+\amp = \sum_{x=0}^n {n \choose x} (1-\theta)^{n-x}\left(\theta
+e^t\right)^x\\
+M_X(t) \amp = \left((1-\theta) + \theta e^t\right)^n
+\end{aligned}</me>.
+That last step, though a big leap in print, comes from applying the
+binomial theorem in reverse, that is <me>\sum_{k=0}^n {n \choose
+r}a^{n-r} b^r = (a+b)^n</me> where <m>a=1-\theta</m> and <m>b = \theta
+e^t</m>.
+</p>
+</solution>
+</statement></example>
+
+<p>You might recognize this as <m>n</m> factors of the moment-generating
+function of a Bernoulli random variable.</p>
+
+<p> You could use the moment-generating function and <xref
+ref="thm-4-9"/> to calculate moments about the origin used to find the
+mean and
+variance as a mechanism to prove <xref ref="thm-bin-mean-var"/>.
+</p>
+
+</subsection>
+<exercises>
+
+  <exercise>
+ <title>Problem 5.7</title>
+ <statement>
+ <p> Verify <xref ref="thm-bin-successes"/>. 
+  </p>
+ </statement>
+ </exercise>
+ 
+ <exercise>
+ <title>Problem 5.10</title>
+ <statement>
+ <p>If <m>X</m> is a binomial random variable, for what value of
+<m>\theta</m> is the probability <m>b(x; n, \theta)</m> a maximum? In
+other words, maximize <m>b(x; n, \theta)</m> with respect to
+<m>\theta</m>.
+ </p>
+ </statement>
+ </exercise> 
+
+</exercises>
+
+
+<!-- ....... .............. .............. ....... -->
+<!-- ....... negbin-geom ....... -->
+<!-- ....... .............. .............. ....... -->
+
+<subsection xml:id="sub-discrete-negbin-geom">
+<title>Negative Binomial and Geometric distributions</title>
+<introduction>
+<p>The binomial distribution describes the probability of a certain
+number of successes in a certain amount of trials. Sometimes, instead,
+we are
+interested in the trial on which a particular success occurs.  This is
+described by the negative binomial distribution.</p>
+
+<p>This situation requires obtaining <m>k-1</m> successes across the
+first <m>x-1</m> trials, with the <m>k^{\text{th}}</m> and final success
+to occur on the <m>x^{\text{th}}</m> trial.</p>
+
+<p>You will find tools for visualization at the following <url
+href="https://buddy.uco.edu/shiny/slaverty/mathstat/NegBin/">
+link</url>.</p>
+
+</introduction>
+
+
+<definition xml:id="def-neg-bin">
+<title>negative binomial distribution</title>
+
+<statement>
+<p>A discrete random variable <m>\displaystyle X</m> has a
+<term>negative binomial distribution</term> and is referred to as a
+<term>negative binomial random variable</term> if and only if its
+probability
+distribution is given by <me>b^*(x; k, \theta) = {x-1\choose
+k-1}\theta^k(1-\theta)^{x-k} \text{ for }x = k, k+1, \dots</me>.
+</p>
+</statement>
+</definition>
+
+<p> Sometimes we refer to the random variable as being distributed
+according to <m>\operatorname{NegBin}(k, \theta)</m> or
+<m>\operatorname{NB}(k, \theta)</m>.   The values of the random variable
+describe <em> binomial waiting-times</em>, since the result is the
+number of trials until arriving at a particular outcome of interest.
+</p>
+
+<theorem xml:id="thm-bin-negbin">
+<title>negative binomial probability as a binomial probability</title>
+<statement>
+<p>
+<me>b^*(x; k, \theta) = \frac{k}{x}b(k; x, \theta)</me>.
+</p>
+</statement>
+<proof>
+<p>
+This can be shown, relatively quickly by relatively simple manipulation
+of the definitions. Notice that we are equating on the left the negative
+binomial and on the right the binomial.</p>
+</proof>
+</theorem>
+
+<exercise xml:id="exer-negbin-bball">
+<title>Free throws with the negative binomial</title>
+<statement>
+<p> A player makes a free throw with probability <m>0.86</m>. What is
+the probability that the shooter makes her <m>3^{\text{rd}}</m> shot on
+her <m>5^{\text{th}}</m> attempt?
+</p>
+
+<solution>
+<p>
+We need to calculate <me>b^*(5; 3, 0.86) =
+{5-1\choose3-1}0.86^3(1-0.86)^{5-3}
+= 6(0.86)^3(0.14)^2</me>.  This means <m>2</m> shots were made in the
+first <m>4</m> attempts, followed by the <m>3^{\text{rd}}</m> make on
+the <m>5^{\text{th}}</m> attempt.
+</p>
+</solution>
+</statement>
+</exercise>
+
+<theorem>
+<title>Mean and variance of the negative binomial distribution</title>
+<statement>
+<p>
+The mean and variance of the negative binomial distribution are <me>\mu
+= \frac{k}{\theta}</me> and <me>\sigma^2 =
+\frac{k}{\theta}\left(\frac{1}{\theta}-1\right)</me>.
+</p>
+</statement>
+<!--><proof>
+<p>
+This can be shown, relatively quickly by relatively simple manipulation
+of the definition.</p>
+</proof>-->
+</theorem>
+
+<example xml:id="ex-negbin-mgf"> 
+<title>moment generating function of the negative binomial
+distribution</title>
+<statement>
+<p>Find the moment-generating function of a negative binomial random
+variable
+(or of the negative binomial distribution).</p>
+<solution>
+<p>Recall that <m>\displaystyle M_X(t) = E[e^{tx}] = \sum_x e^{tx} f(x;
+\theta)</m>. 
+This becomes <me>
+M_X(t) = \left(\dfrac{\theta e^t}{1-(1-\theta)e^t}\right)^k</me>.
+</p>
+</solution>
+</statement></example>
+
+<p> The question about when the first success occurs is a common one. 
+So common, in fact, that it gets its own name, the <em>geometric
+distribution</em>.  Now it should first be noted that we sometimes view
+'success' strangely. Often we are instead thinking of a particular
+'outcome of interest' rather than the traditional interpretation of
+'success' as 'a good thing'.</p>
+
+
+<definition xml:id="def-geom">
+<title>geometric distribution</title>
+<statement>
+<p>A discrete random variable <m>\displaystyle X</m> has a
+<term>geometric distribution</term> and is referred to as a
+<term>geometric random variable</term> if and only if its probability
+distribution is given by <me>g(x; \theta) = \theta(1-\theta)^{x-1}
+\text{ for }x = 1, 2, \dots</me>.
+</p>
+</statement>
+</definition>
+
+<p>The geometric distribution answers the age-old question "if at first
+you don't succeed, how many times did you fail?"
+</p>
+
+<theorem>
+<title>Mean and variance of the geometric distribution</title>
+<statement>
+<p>
+The mean and variance of the geometric distribution are <me>\mu =
+\frac{1}{\theta}</me> and <me>\sigma^2 =
+\frac{1}{\theta}\left(\frac{1}{\theta}-1\right)</me>.
+</p>
+</statement>
+</theorem>
+
+<p> Sometimes we refer to the random variable as being distributed
+according to <m>\operatorname{Geom}(\theta)</m>.
+</p>
+
+
+</subsection>
+<exercises>
+ <exercise>
+ <title>Problem 5.18</title>
+ <statement>
+ <p> Prove <xref ref="thm-bin-negbin"/>.
+ </p>
+ </statement>
+ </exercise>
+ 
+ <exercise>
+ <title>Problem 5.20</title>
+ <statement>
+ <p> Show that the moment-generating function of the geometric
+distribution is given by <me>M_X(t) = \dfrac{\theta
+e^t}{1-e^t(1-\theta)}</me>.
+ </p>
+ </statement>
+ </exercise>
+ 
+ <exercise>
+ <title>Problem 5.21</title>
+ <statement>
+ <p> Use <xref ref="thm-4-9"/> and <me>M_X(t) = \dfrac{\theta
+e^t}{1-e^t(1-\theta)}</me> to find <m>\mu</m> and <m>\sigma^2</m> by
+differentiation.
+ </p>
+ </statement>
+ </exercise>
+ 
+
+</exercises>
+
+
+<!-- ....... .............. .............. ....... -->
+<!-- ....... hypergeom ....... -->
+<!-- ....... .............. .............. ....... -->
+
+<subsection xml:id="sub-discrete-hypergeom">
+<title>Hypergeometric distribution</title>
+
+
+<introduction>
+<p> The Hypergeometric distribution describes the probabilities of
+sampling from a finite population without replacement.  Unlike the
+binomial where it is assumed that the probability of success is a
+constant, with the hypergeometric distribution, the probability of
+success changes with the selection process.</p>
+
+<p>You will find tools for visualization at the following <url
+href="https://buddy.uco.edu/shiny/slaverty/mathstat/Hyper/">
+link</url>.</p>
+
+</introduction>
+
+
+<definition xml:id="def-hyper">
+<title>hypergeometric distribution</title>
+<statement>
+<p>A discrete random variable <m>\displaystyle X</m> has a
+<term>hypergeometric distribution</term> and is referred to as a
+<term>hypergeometric random variable</term> if and only if its
+probability
+distribution is given by <me>h(x; n, N, M) = \dfrac{{M \choose x}{N-M
+\choose{n-x}}}{{N \choose n}}
+\text{ for }x = 1, 2, \dots, n; x \le M \text{ and } n-x \le N-M</me>.
+</p>
+</statement>
+</definition>
+
+<theorem>
+<title>Mean and variance of the hypergeometric distribution</title>
+<statement>
+<p>
+The mean and variance of the hypergeometric distribution are <me>\mu =
+\frac{nM}{N}</me> and <me>\sigma^2 =
+\frac{nM(N-M)(N-n)}{N^2(N-1)}</me>.
+</p>
+</statement>
+</theorem>
+
+<remark xml:id="typo-hyper">
+<statement>
+<p>There is a typo in the printed book for the class in the second
+numerator term.</p>
+</statement>
+</remark>
+
+<example xml:id="ex-hyper">
+<title>hypergeometric distribution for truck inspections</title>
+<statement>
+<p>You randomly choose 6 out of 24 trucks for a new fleet of work
+trucks.  It is known that 4 of the 24 trucks have failed a recent
+emissions inspection. What is the probability that none of the trucks in
+your fleet are "polluters"?</p>
+<solution>
+<p>Let <m>x = \text{# of polluters selected}</m>.  Then, we are looking
+for <me>
+h(0; 6, 24, 4) = \dfrac{{4 \choose 0}{24-4 \choose{6-0}}}{{24 \choose
+6}}</me>.
+Notice the denominator is the total number of ways that we can choose
+<m>6</m> of <m>24</m> trucks.  The first term in the numerator is the
+number of ways that we can choose <m>0</m> trucks from the collection of
+<m>4</m> defective trucks.   The second term in the numerator is the
+number of ways that we can choose <m>6-0</m> trucks from the <m>24-4</m>
+non-defective trucks.
+</p>
+</solution>
+</statement></example>
+
+
+<remark xml:id="re-mean-var-hyper">
+<statement>
+<p> Below let <m>\theta = \dfrac{M}{N}</m> (think through this). The
+mean and variance of the hypergeometric distribution can be written
+<me>\mu =
+\frac{nM}{N} = n\theta</me> and <me>\sigma^2 =
+\frac{nM(N-M)(N-n)}{N^2(N-1)} =
+n\theta(1-\theta)\left(\dfrac{N-n}{N-1}\right)</me>.
+Above, the term <m>\left(\dfrac{N-n}{N-1}\right)</m> is called the
+"finite population correction factor".
+</p>
+<p>
+With this we might interpret the fraction <m>\theta = \dfrac{M}{N}</m>
+as the "probability of success", given that we are choosing <m>M</m>
+successes from <m>N</m> objects.
+</p>
+</statement>
+</remark>
+
+<p>As indicated at the beginning of this section, the binomial and
+hypergeometric are related. The binomial describes a situation where
+sampling is done with replacement, while the hypergeometric describes a
+situation where sampling is done without replacement.</p>
+
+<p>You will find tools for visualization at the following <url
+href="https://buddy.uco.edu/shiny/slaverty/mathstat/HyperBin/">
+link</url>.</p>
+
+
+
+</subsection>
+
+<exercises>
+ <exercise>
+ <title>4.xx</title>
+ <statement>
+ <p>xx
+ </p>
+ </statement>
+ </exercise>
+ 
+</exercises>
+
+
+<!-- ....... .............. .............. ....... -->
+<!-- ....... poisson ....... -->
+<!-- ....... .............. .............. ....... -->
+
+<subsection xml:id="sub-discrete-poisson">
+<title>Poisson distribution</title>
+
+<introduction>
+<p> The Poisson distribution describes the occurrence of events taking
+place at a constant rate in time or over space.  For example, if car
+accidents take place at a rate of 3 per 100 miles, we would use a
+Poisson distribution to describe the probabilities of certain numbers of
+accidents occurring along a known distance of highway.</p>
+
+<p>You will find tools for visualization at the following <url
+href="https://buddy.uco.edu/shiny/slaverty/mathstat/Poisson/">
+link</url>.</p>
+</introduction>
+
+<definition xml:id="def-poiss">
+<title>Poisson distribution</title>
+<statement>
+<p>A discrete random variable <m>\displaystyle X</m> has a
+<term>Poisson distribution</term> and is referred to as a
+<term>Poisson random variable</term> if and only if its probability
+distribution is given by <me>p(x; \lambda) = \dfrac{\lambda^x
+e^{-\lambda}}{x!}</me>.
+</p>
+</statement>
+</definition>
+
+<theorem>
+<title>Mean, variance, and MGF of the Poisson distribution</title>
+<statement>
+<p>
+The mean and variance of the Poisson distribution are <me>\mu =
+\lambda</me> and <me>\sigma^2 = \lambda</me>.
+</p>
+<p>
+The moment-generating function of the Poisson distribution is <me>M_X(t)
+= e^{\lambda(t-1)}</me></p>
+</statement>
+</theorem>
+
+<p>The Poisson distribution is derived from the binomial distribution
+(see pgs. 81-82 in Hogg, Tanis, Zimmerman, 10th ed. for a very good
+derivation).  Though this is the case, and though the Poisson can be
+used to approximate the binomial under certain circumstances when the
+binomial probabilities would be numerically challenging to calculate,
+many applications of the Poisson distribute have absolutely nothing to
+do with an underlying binomial process.
+</p>
+
+<p>You will find tools for visualization at the following <url
+href="https://buddy.uco.edu/shiny/slaverty/mathstat/BinPoi/">
+link</url>.</p>
+
+
+<p>As described above, it is generally regarded as safe to use the
+Poisson as a means of approximating binomial probabilities when <m>n \ge
+20</m> and <m>\theta \le 0.05</m> or if <m>n \gt 100</m> and <m>\theta
+\lt 0.10</m>.  In some cases the approximation will work quite well even
+in violation of these bounds. Approximation may be slightly less
+important in modern times than it was in the past due to the ubiquity of
+computers and software, though the connection is still worth
+remembering.</p>
+
+<p>Beyond its use in approximation, the Poisson distribution has
+numerous applications for calculation probabilities of events occurring
+over time or across space.  </p>
+
+</subsection>
+<exercises>
+ <exercise>
+ <title>4.xx</title>
+ <statement>
+ <p>xx
+ </p>
+ </statement>
+ </exercise>
+ 
+</exercises>
+
+<!-- ....... .............. .............. ....... -->
+<!-- ....... multivariate-discrete ....... -->
+<!-- ....... .............. .............. ....... -->
+
+<subsection xml:id="sub-discrete-multivariate">
+<title>Multivariate distributions</title>
+<p>See Sec. 5.8, 5.9</p> 
+
+<introduction>
+<p>The multinomial distribution is an extension of the binomial
+distribution that tracks the occurrence in number of multiple types of
+outcomes.</p>
+
+<p>The multivariate hypergeometric distribution is an extension of the
+hypergeometric distribution that tracks the occurrence in number of
+multiple types of outcomes.</p>
+</introduction>
+
+</subsection> 
+<exercises>
+ <exercise>
+ <title>4.xx</title>
+ <statement>
+ <p>xx
+ </p>
+ </statement>
+ </exercise>
+ 
+</exercises>
+
+</section>
