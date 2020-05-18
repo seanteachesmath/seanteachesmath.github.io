@@ -18,7 +18,7 @@ and introductory symbolic manipulation.
 * **MATH 49/5910 Introduction to Biological Dynamics**
 * **MATH 4263/5373 Applied Numerical Analysis** This class limps along
 using the oldest possible edition of the great book _Numerical Analysis_
-by Burden and Faires.
+by Burden and Faires. I try to spice it up by doing interesting things with the order of topics and bringing in more modern, but still accessible, research papers and reviews.
 * **MATH 49/5910 Industrial Applications**
 * STAT 4113 Mathematical Statistics I - I get to teach a class using my
 own copy of _Freund's Mathematical Statistics_ (from when I took the class
