@@ -3,8 +3,7 @@ layout: default
 title: Teaching
 ---
 # Teaching
-# 
-Courses taught (or **developed**)
+## Courses taught (or **developed**)
 * MATH 1113 Mathematics for General Education
 * **MATH 2153 Bio-Calculus** This class uses custom materials that have
 substantially devolved from the inspiring textbook _Modeling the
