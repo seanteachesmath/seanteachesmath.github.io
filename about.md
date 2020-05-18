@@ -6,7 +6,7 @@ title: About
 
 Sean teaches math at the University of Central Oklahoma.
 
-Prior to that he was at Swarthmore College for a year spent in the math and biology departments,
+Prior to that he was at Swarthmore College for a year spent in the math and biology departments.
 
 Prior to that he was in graduate school at the University of Utah.
 
