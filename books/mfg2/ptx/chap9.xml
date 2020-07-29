@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <mathbook><book> -->
+<chapter xml:id="chap9"  xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Sequences and Series</title>
+<introduction>
+
+<sidebyside width="60%" margins="0% 40%"><image source="images/fig-9-1intro.png"><description>bunnies</description></image></sidebyside>
+<p>
+    In this chapter we study functions whose inputs are natural numbers, rather than an interval of the real line.  We will also learn techniques for summing a sequence and for finding powers of a binomial.  These skills are used in discrete mathematics, which has applications in finance, computer science, and many other fields.
+</p>
+
+<investigation><title>Scheduling a Soccer League</title>
+<p>
+	Francine is the Program Director for the City Park Summer Program.  This week she is planning the soccer league for seven-to-nine-year-olds.  In this league, each team plays every other team once before the play-offs.  The number of games Francine must schedule (not including the play-off games) depends on how many teams she allows in the league.  To get a feel for the numbers involved, Francine does some calculations.
+</p>
+<p><ol label="1">
+		<li><p>How many games will be needed if there is only one team in the league?  (This event is not very likely, but Francine is looking for a pattern, so she considers all possibilities.)  How many games will be needed if there are two teams?  Record your findings in the table. </p></li>
+		<li><p>The number of games gets harder to calculate as the number of teams increases.  Francine discovers that she can model the problem by drawing one dot for each team in the league, and then connecting each dot to every other dot with a straight line.  The number of lines represents the number of games needed.  The diagrams for three teams and for four teams are shown below.  Use similar diagrams to fill in the table up to eight teams. (Be careful that no three of your dots "line up.")</p>
+		<sidebyside width="50%"><image source="images/fig-9-1invest.png"><description>diagrams</description></image></sidebyside>
+		<sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+                    <row bottom="minor">
+                        <cell>Teams</cell>
+                        <cell>Games</cell></row>
+                    <row> 
+                        <cell><m>1</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>2</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>3</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>4</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>5</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>6</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>7</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>8</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>                                             
+                    </tabular></sidebyside></li>
+        <li><p>Plot the data points on a graph, using the number of teams (<m>n</m>) on the horizontal axis, and the number of games (<m>G</m>) on the vertical axis.  For this problem, we cannot really connect the points because <m>n</m> cannot have fractional values.  (Remember that <m>n</m> is the number of teams.)  However, we will draw a faint curve through the points anyway to help us see a pattern.  Do the points lie on a straight line?</p>
+        <sidebyside width="60%"><image source="images/fig-9-1invest2.svg"><description>grid</description></image></sidebyside></li>
+        <li><p>Can you see a quick way to obtain more entries in the table?  Here is a hint:  Add another column to your table, as shown below.  We will call this column <m>\Delta G</m>,  which means "change in <m>G</m>."  As you move down the table, how much does <m>G</m> increase at each step?  The first few values of<m>\Delta G</m> are filled in for you.  Do you see a pattern?  Use this pattern to fill in the table up to <m>n=12</m>.</p>
+        <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">              
+                    <row bottom="minor">
+                        <cell><m>n</m></cell>
+                        <cell><m>G</m></cell>
+                        <cell><m>\Delta G</m></cell></row>
+                    <row> 
+                        <cell><m>1</m></cell>
+                        <cell><m>0</m></cell>
+                    	<cell><mdash/></cell></row>
+                    <row> 
+                        <cell><m>2</m></cell>
+                        <cell><m>1</m></cell>
+                        <cell><m>1</m></cell></row>
+                    <row> 
+                        <cell><m>3</m></cell>
+                        <cell><m>3</m></cell>
+                        <cell><m>2</m></cell></row>
+                    <row> 
+                        <cell><m>4</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>5</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>6</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>7</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>8</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>9</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>10</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>11</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>
+                    <row> 
+                        <cell><m>12</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell>
+                        <cell><m>\hphantom{0000}</m></cell></row>                                                     
+                    </tabular></sidebyside></li>
+        <li><p>Explain how you would compute the number of games needed for 21 teams if <m>k</m> games are needed for 20 teams.</p></li>
+		<li><p>If <m>G=f(n)</m> represents the total number games needed for <m>n</m> teams, write an equation that shows how to compute <m>f(n+1)</m> in terms of <m>f(n)</m>.</p></li>
+		<li><p>Summarize your work:  In your own words, describe the relationship between the number of teams in the league and the number of games Francine must schedule.  Include in your discussion a description of your graph.</p></li>
+        </ol></p>
+</investigation>
+
+
+
+
+</introduction>
+
+
+    <xi:include href="./section-9-1.xml" />     
+</chapter> 
+<!-- </book>  </mathbook> -->

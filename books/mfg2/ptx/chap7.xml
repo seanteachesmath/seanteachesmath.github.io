@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <mathbook><book> -->
+<chapter xml:id="chap7"  xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Polynomial and Rational Functions</title>
+<introduction>
+<sidebyside width="60%" margins="0% 40%"><image source="images/Durer-font.png"><description>font designed by Albrecht Durer</description></image></sidebyside>
+<p>
+    The graphs of linear, quadratic, exponential and power functions all have a characteristic shape. But the graphs of polynomials have a huge variety of different shapes.
+</p>
+<p>
+    Ever since Gutenberg's invention of movable type in 1455, artists and printers have been interested in the design of pleasing and practical fonts. In 1525, Albrecht Durer published <pubtitle>On the Just Shaping of Letters</pubtitle>, which set forth a system of rules for the geometric construction of Roman capitals. The letters shown above are examples of Durer's font. Until the twentieth century, a ruler and compass were the only practical design tools, so straight lines and circular arcs were the only geometric objects that could be accurately reproduced.
+</p>
+<p>
+    With the advent of computers, complex curves and surfaces, such as the smooth contours of modern cars, can be defined precisely. In the 1960s the French automobile engineer Pierre Bézier developed a new design tool based on polynomials. <term>Bézier curves</term><idx>Bézier curves</idx> are widely used today in all fields of design, from technical plans and blueprints to the most creative artistic projects.  Many computer drawing programs and printer languages use quadratic and cubic Bézier curves.
+</p>
+<sidebyside width="50%"><image source="images/Letter-a">
+  <description>
+    design of the letter a
+  </description>
+</image></sidebyside>
+
+<investigation xml:id="investigation-bezier"><title>Bézier Curves</title><statement>
+<p>
+    A Bézier curve is actually a sequence of short curves pieced together. Each piece has two endpoints and (for nonlinear curves) at least one control point. The control points do not lie on the curve itself, but they determine its shape. Two polynomials define the curve, one for the <m>x</m>-coordinate and one for the <m>y</m>-coordinate.
+</p>
+<p><ol label="A">
+    <li>
+        <p>Linear Bézier Curves</p>
+        <p>
+            The linear Bézier curve for two endpoints, <m>(x_1, y_1)</m> and <m>(x_2, y_2)</m>, is the straight line segment joining those two points. The curve is defined by the two functions
+            <me>
+                \begin{aligned}[t]
+                x \amp= f(t) = x_1\cdot (1 - t) + x_2\cdot t \\
+                y \amp = g(t) = y_1 \cdot (1 - t) + y_2 \cdot t
+                \end{aligned}
+            </me>
+            for <m>0\le t\le 1</m>.</p>
+            <sidebyside widths="50% 45%">
+            <ol label="1">
+                <li xml:id="bezier-linear-formulas"><p>
+                    Find the functions <m>f</m> and <m>g</m> defining the linear Bézier curve joining the two points <m>(-4, 7)</m> and <m>(2, 0)</m>. Simplify the formulas defining each function.
+                </p></li>
+                <li xml:id="y-stroke"><p>
+                    Fill in the table of values and plot the curve.</p><sidebyside>
+                    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                        <row bottom="minor">
+                            <cell><m>t</m></cell>
+                            <cell><m>0</m></cell>
+                            <cell><m>0.25</m></cell>
+                            <cell><m>0.5</m></cell>
+                            <cell><m>0.75</m></cell>
+                            <cell><m>1</m></cell>
+                        </row>
+                        <row>
+                            <cell><m>x</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                        </row>
+                        <row>
+                            <cell><m>y</m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                        </row>
+                    </tabular>    
+                </sidebyside></li>
+            </ol>
+            <image source="images/fig-8x8-grid"><description>8 by 8 grid</description></image>
+        </sidebyside>
+    </li>
+    <li>
+        <p>
+            Quadratic Bézier Curves: Drawing a Simple Numeral 7
+        </p>
+        <p>
+            The quadratic Bézier curve is defined by two endpoints, <m>(x_1, y_1)</m> and <m>(x_3, y_3)</m>, and a control point, <m>(x_2, y_2)</m>.
+            <me>
+                \begin{aligned}[t]
+                x \amp= f(t)=x_1\cdot(1 - t)^2+2x_2\cdot t (1 - t) + x_3\cdot t^2 \\
+                y \amp = g(t)= y_1\cdot(1 - t)^2 +2y_2\cdot t (1 - t) + y_3 \cdot  t^2
+                \end{aligned}
+            </me>
+            for <m>0\le t\le 1</m>.
+            <ol label="1">
+                <li xml:id="bezier-quad-formulas"><p>
+                    Find the functions <m>f</m> and <m>g</m> for the quadratic Bézier curve defined by the endpoints <m>(-4, 7)</m> and <m>(2, 0)</m>, and the control point <m>(0, 5)</m>. Simplify the formulas defining each function.
+                </p></li>
+                <li><p>
+                    Fill in the table of values and plot the curve.</p>     
+             <sidebyside widths="40% 50%" valigns="middle middle">
+                    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                        <row bottom="minor">
+                            <cell><m>t</m></cell>
+                            <cell><m>0</m></cell>
+                            <cell><m>0.25</m></cell>
+                            <cell><m>0.5</m></cell>
+                            <cell><m>0.75</m></cell>
+                            <cell><m>1</m></cell>
+                        </row>
+                        <row>
+                            <cell><m>x</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                        </row>
+                        <row>
+                            <cell><m>y</m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                        </row>
+                    </tabular>
+                    <image source="images/fig-8x8-grid"><description>8 by 8 grid</description></image>
+                </sidebyside>
+                </li>
+                    <li xml:id="quadratic-bezier"><p>Draw a line segment from <m>(-4, 7)</m> to <m>(4, 7)</m> on the grid above to complete the numeral 7.
+                </p></li>
+                <li xml:id="bezier-quad-formulas2"><p>
+                    We can adjust the curvature of the diagonal stroke of the 7 by moving the control point. Find the functions <m>f</m> and <m>g</m> for the quadratic Bézier curve defined by the endpoints <m>(4, 7)</m> and <m>(0,-7)</m>, and the control point <m>(0,-3)</m>. Simplify the formulas defining each function.
+                </p></li>
+                <li><p>
+                    Fill in the table of values and plot the curve.</p>
+                <sidebyside widths="40% 50%" valigns="middle middle">
+                    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                        <row bottom="minor">
+                            <cell><m>t</m></cell>
+                            <cell><m>0</m></cell>
+                            <cell><m>0.25</m></cell>
+                            <cell><m>0.5</m></cell>
+                            <cell><m>0.75</m></cell>
+                            <cell><m>1</m></cell>
+                        </row>
+                        <row>
+                            <cell><m>x</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                        </row>
+                        <row>
+                            <cell><m>y</m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                        </row>
+                    </tabular>
+            <image source="images/fig-8x8-grid"><description>8 by 8 grid</description></image></sidebyside>
+                    
+                </li>
+                <li xml:id="quadratic-bezier2"><p>Draw a line segment from <m>(-4, 7)</m> to <m>(4, 7)</m> on the grid above to complete the numeral 7.
+                </p></li>
+                <li><p>
+                    On your graphs in <xref ref="quadratic-bezier">steps</xref> and <xref ref="quadratic-bezier2" text="global"/>, plot the three points that defined the curved section of the numeral 7, then connect them in order with line segments. How does the position of the control point change the curve?
+                </p></li>
+            </ol>
+        </p>
+    </li>
+    <li>
+        <p>Cubic Bézier Curves: Drawing a Letter y</p>
+        <p>
+            A cubic Bézier curve is defined by two endpoints, <m>(x_1, y_1)</m> and <m>(x_4, y_4)</m>, and two control points, <m>(x_2, y_2)</m> and <m>(x_3, y_3)</m>.
+            <me>
+                \begin{aligned}[t]
+                x \amp= f(t) = x_1\cdot (1 - t)^2 +3x_2\cdot t(1 - t)^2 +3x_3\cdot t^2(1 - t) + x_4\cdot t^3\\
+                y \amp = g(t) = y_1\cdot (1 - t)^2 +3y_2\cdot t(1 - t)^2 +3y_3\cdot t^2(1 - t) + y_4 \cdot t^3
+                \end{aligned}
+            </me>
+            for <m>0\le t \le 1</m>.
+            <ol label="1">
+                <li xml:id="bezier-cubic-formulas"><p>
+                    Find the functions <m>f</m> and <m>g</m> for the cubic Bézier curve defined by the endpoints <m>(4, 7)</m> and <m>(-4,-5)</m>, and the control points <m>(3, 3)</m> and <m>(0,-8)</m>. Simplify the formulas defining each function.
+                </p></li>
+                <li><p>
+                    Fill in the table of values and plot the curve.</p>
+                    <sidebyside widths="40% 50%" valigns="middle middle">
+                    <tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+                        <row bottom="minor">
+                            <cell><m>t</m></cell>
+                            <cell><m>0</m></cell>
+                            <cell><m>0.25</m></cell>
+                            <cell><m>0.5</m></cell>
+                            <cell><m>0.75</m></cell>
+                            <cell><m>1</m></cell>
+                        </row>
+                        <row>
+                            <cell><m>x</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                            <cell><m>\hphantom{000}</m></cell>
+                        </row>
+                        <row>
+                            <cell><m>y</m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                            <cell><m></m></cell>
+                        </row>
+                    </tabular>
+                    <image source="images/fig-8x8-grid">
+                      <description>
+                        8 by 8 grid
+                      </description>
+                    </image></sidebyside>
+                </li>
+                <li><p>
+                    Connect the four given points in order using three line segments. How does the position of the control points affect the curve? Finish the letter y by including the linear Bézier curve you drew for <xref ref="y-stroke">step</xref>.
+                </p></li>
+            </ol>
+        </p>
+    </li>
+</ol>
+</p></statement></investigation>
+
+
+</introduction>
+
+
+    <xi:include href="./section-7-1.xml" />     <!-- Polynomial Functions  -->
+    <xi:include href="./section-7-2.xml" />     <!-- Graphing Polynomial Functions  -->
+    <xi:include href="./section-7-3.xml" />     <!-- Complex numbers  -->
+    <xi:include href="./section-7-4.xml" />     <!-- Graphing Rational Functions  -->
+    <xi:include href="./section-7-5.xml" />     <!-- Equations that include algebraic fractions  -->
+    <xi:include href="./chap7-summary.xml" />       <!-- Summary and Review-->
+    <xi:include href="./chap7-rev-projects.xml" />  <!-- projects  -->
+</chapter> 
+<!-- </book>  </mathbook> -->

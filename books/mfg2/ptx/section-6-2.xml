@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <mathbook><book> -->
+
+<section xml:id="Solving-Quadratic-Equations"   xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Solving Quadratic Equations</title>
+<introduction>
+
+<p>Not every quadratic equation can be solved by factoring or by extraction of roots. For example, the expression <m>x^2 + x - 1</m> cannot be factored, so the equation <m>x^2 + x - 1 = 0</m> cannot be solved by factoring. For other equations, factoring may be difficult. In this section we learn two methods that can be used to solve any quadratic equation.</p></introduction>
+
+<subsection><title>Quadratic Formula</title><idx>quadratic formula</idx>
+
+<p>Instead of completing the square every time we solve a new quadratic equation, we can complete the square on the general quadratic equation,
+	<me>ax^2 + bx + c = 0\text{, }~~~ a \ne 0</me>
+and obtain a formula for the solutions of any quadratic equation.</p>
+
+<xi:include href="./assemblage-quadratic-formula.xml" />
+
+<p>This formula expresses the solutions of a quadratic equation in terms of its coefficients. (The proof of the formula is considered in the Homework problems.) The symbol <m>\pm</m>, read plus or minus, is used to combine the two equations
+	<me>x =\dfrac{-b + \sqrt{b^2 - 4ac}}{2a} ~~~~ \text{and} ~~~~x =\dfrac{-b - \sqrt{b^2 - 4ac}}{2a}</me> 
+into a single equation.</p>
+
+<p>To solve a quadratic equation using the quadratic formula, all we have to do is substitute the coefficients <m>a</m>, <m>b</m>, and <m>c</m> into the formula.</p>
+
+<example xml:id="example-quadratic-formula"><statement><p>Solve <m>~~2x^2 + 1 = 4x</m>.</p></statement>
+<solution><p>Write the equation in standard form as
+		<me>2x^2 - 4x + 1 = 0</me>
+Substitute <m>\alert{2}</m> for <m>a</m>, <m>\alert{-4}</m> for <m>b</m>, and <m>\alert{1}</m> for <m>c</m> into the quadratic formula, then simplify.
+		<!--*****--><me>\begin{aligned}[t]
+		x \amp =\frac{-(\alert{-4})\pm \sqrt{(\alert{-4})^2 - 4(\alert{2})(\alert{1})}}{2(\alert{2})} \\
+		\amp = \frac{4 \pm \sqrt{8}}{4}
+		\end{aligned}</me><!--*****-->
+Using a calculator, we find that the solutions are approximately <m>1.707</m> and <m>0.293</m>.</p>
+		<p> We can also verify that the <m>x</m>-intercepts of the graph of <m>y = 2x^2 - 4x + 1</m> are approximately <m>1.707</m>
+and <m>0.293</m>, as shown below.</p>
+	<sidebyside  width="30%"><image source="images/fig-parabola-intercepts" ><description>parabola with irrational x-intercepts</description></image></sidebyside></solution></example>
+
+<exercise><statement><p>Use the quadratic formula to solve <m>~~x^2 - 3x = 1</m>.</p>
+</statement>
+<answer><p><m>x=\dfrac{3\pm \sqrt{13}}{2} </m></p></answer></exercise>
+
+<!--><p>Note that the solutions to this equation are the same as the solutions we found in <xref ref="exercise-completing-the-square2" text="type-global"/>.</p>-->
+</subsection>
+
+<subsection><title>Applications</title>
+
+<p>We have now seen four different algebraic methods for solving quadratic equations:<ol>
+		<li>Factoring</li>
+		<li>Extraction of roots</li>
+		<li>Completing the square</li>
+		<li>Quadratic formula</li>
+	</ol>
+	Factoring and extraction of roots are relatively fast and simple, but they do not work on all quadratic equations. The quadratic formula will work on any quadratic equation.</p>
+
+<example xml:id="example-fencing-areas"><statement><p>The owners of a day-care center plan to enclose a divided play area against the back wall of their building, as shown below. They have <m>300</m> feet of picket fence and would like the total area of the playground to be <m>6000</m> square feet. Can they enclose the playground with the fence they have, and if so, what should the dimensions of the playground be?</p>
+	<sidebyside  width="30%"><image source="images/fig-fencing-areas" ><description>two fenced rectangles against wall</description></image> </sidebyside></statement>
+<solution><p>Suppose the width of the play area is <m>x</m> feet. Because there are three sections of fence along the width of the play area, that leaves <m>300 - 3x</m> feet of fence for its length. The area of the play area should be <m>6000</m> square feet, so we have the equation
+		<me>x(300 - 3x) = 6000</me>
+This is a quadratic equation. In standard form,
+		<!--*****--><me>\begin{aligned}[t]
+		3x^2 - 300x + 6000 \amp= 0\amp\amp \blert{\text{Divide each term by 3.}}\\
+		x^2 - 100x + 2000 \amp= 0
+		\end{aligned}</me><!--*****--> 
+The left side cannot be factored, so we use the quadratic formula with <m>a = \alert{1}</m>, <m>b = \alert{-100}</m>, and <m>c = \alert{2000}</m>.
+		<!--*****--><me>\begin{aligned}[t]
+		x \amp=\frac{-(\alert{-100}) \pm\sqrt{(\alert{-100})^2 - 4(\alert{1})(\alert{2000})}}{2(\alert{1})}\\
+		\amp= \frac{100 \pm\sqrt{2000}}{2}\approx \frac{100 \pm 44.7}{2}
+		\end{aligned}</me><!--*****-->
+Simplifying the last fraction, we find that <m>x \approx 72.35</m> or <m>x\approx 27.65</m>. Both values give solutions to the problem.<ul>
+	<li> If the width of the play area is <m>72.35</m> feet, then the length is <m>300 - 3(72.35)</m>, or <m>82.95</m> feet.</li>
+	<li> If the width is <m>27.65</m> feet, the length is <m>300 - 3(27.65)</m>, or <m>217.05</m> feet.</li>
+	</ul></p></solution></example>
+
+<exercise><statement><p>In <xref ref="investigation-height-of-baseball" text="type-global"/>, we considered the height of a baseball, given by the equation
+	<me>h = -16t^2 + 64t + 4</me>
+Find two times when the ball is at a height of <m>20</m> feet. Give your answers to two decimal places.</p></statement>
+<answer><p><m>0.27</m> sec, <m>3.73</m> sec</p></answer></exercise>
+
+<p>Sometimes it is useful to solve a quadratic equation for one variable in terms of the others.</p>
+
+<example xml:id="example-quadratic-in-two-variables"><statement><p>Solve <m>~~x^2 - xy + y = 2~~</m> for <m>x</m> in terms of <m>y</m>.</p></statement>
+<solution><p>We first write the equation in standard form as a quadratic equation in the variable <m>x</m>.
+		<me>x^2 - yx + (y - 2) = 0</me>
+Expressions in <m>y</m> are treated as constants with respect to <m>x</m>, so that <m>a = \alert{1}</m>, <m>b = \alert{-y}</m>, and <m>c = \alert{y - 2}</m>. Substitute these expressions into the quadratic formula.
+		<!--*****--><me>\begin{aligned}[t]
+		x \amp=\frac{-(\alert{-y}) \pm\sqrt{(\alert{-y})^2 - 4(\alert{1})(\alert{y - 2})}}{2(\alert{1})}\\
+		\amp = \frac{y \pm\sqrt{y^2 - 4y + 8}}{2}
+		\end{aligned}</me><!--*****--></p></solution></example>
+
+<exercise xml:id="exercise-quadratic-in-two-variables"><statement><p>Solve <m>~~2x^2 + kx + k^2 = 1~~</m> for <m>x</m> in terms of <m>k</m>.</p></statement>
+<answer><p><m>x=\dfrac{-k\pm\sqrt{8-7k^2}}{4} </m></p></answer></exercise>
+
+</subsection>
+
+<!--new-->
+<subsection><title>Introduction to complex numbers</title>
+
+<p>You know that not all quadratic equations have real solutions. </p><sidebyside widths="55% 25%" margins="0% 10%"><p>For example, the graph of
+	<me>f(x) = x^2 - 2x + 2</me>
+	has no <m>x</m>-intercepts (as shown at right), and the equation
+	<me>x^2 - 2x + 2 = 0</me>
+has no real solutions.</p>
+<image source="images/fig-parabola-without-x-intercepts"><description>parabola without x-intercepts</description></image></sidebyside>
+<p>We can still use completing the square or the quadratic formula to solve the equation.</p>
+
+<example xml:id="example-complex-roots"><statement><p>Solve the equation <m>x^2 - 2x + 2 = 0</m> by using the quadratic formula.
+</p></statement>
+<solution><p>We substitute <m>a = 1</m>, <m>b =-2</m>, and <m>c= 2</m> into the quadratic formula to get
+		<me>x=\frac{-(-2)\pm\sqrt{(-2)^2-4(1)(2)}}{2(1)}=\frac{2\pm\sqrt{-4}}{2}</me>
+Because <m>\sqrt{-4}</m> is not a real number, the equation <m>x^2 - 2x + 2 = 0</m> has no real solutions.</p>
+</solution></example>
+
+<exercise><statement><p>Solve the equation <m>x^2 - 6x + 13 = 0</m> by using the quadratic formula.</p></statement>
+<answer><p><m>x=\dfrac{6\pm\sqrt{-16} }{2} </m></p></answer></exercise>
+</subsection>
+
+<subsubsection><title>Imaginary Numbers</title>
+
+<p>Although square roots of negative numbers such as <m>\sqrt{-4}</m> are not real numbers, they occur often in mathematics and its applications.</p> 
+	
+<p>Mathematicians began working with square roots of negative numbers in the sixteenth century, in their attempts to solve quadratic and cubic equations. René Descartes gave them the name imaginary numbers, which reflected the mistrust with which mathematicians regarded them at the time. Today, however, such numbers are well understood and used routinely by scientists and engineers.</p>
+
+<p>We begin by defining a new number, <m>i</m>, whose square is <m>-1</m>.</p>
+
+<assemblage><title>Imaginary Unit</title><idx>i</idx>
+<p>We define the <term>imaginary unit</term><idx>imaginary unit</idx> <m>i</m> by
+	<me>i^2=-1 ~~~\text{ or }~~~ i=\sqrt{-1}</me></p></assemblage>
+
+<warning><p>The letter <m>i</m> used in this way is not a variable; it is the name of a specific number and hence is a constant. </p></warning>
+	
+<p> The square root of any negative number can be written as the product of a real number and <m>i</m>. For example,
+	<md>
+		<mrow>\sqrt{-4}\amp=\sqrt{-1\cdot 4}</mrow>
+		<mrow>\amp= \sqrt{-1}\sqrt{4}=i\cdot2</mrow>
+	</md>
+or <m>\sqrt{-4}=2i</m>. Any number that is the product of <m>i</m> and a real number is called an <term>imaginary number</term>.
+</p>
+
+<assemblage><title>Imaginary Numbers</title><idx>imaginary number</idx>
+<p>For <m>a\gt 0</m>,
+	<me>\sqrt{-a}=\sqrt{-1}\cdot\sqrt{a}=i\sqrt{a}
+	</me></p></assemblage>
+
+<p>Examples of imaginary numbers are
+	<me>3i\text{, }~~~\frac{7}{8}i\text{, } ~~~-38i\text{, }~~~\text{ and }~~~ i\sqrt{5} </me></p>
+
+<example><statement><p>Write each radical as an imaginary number.<ol label="a" cols="2">
+			<li><m>\sqrt{-25}</m></li>
+			<li><m>2\sqrt{-3}</m></li>
+		</ol></p></statement>
+<solution><p><ol label="a" cols="2">
+			<li><m>\begin{aligned}[t]\\
+						\sqrt{-25}\amp=\sqrt{-1}\sqrt{25}\\
+						\amp=i\sqrt{25}=5i
+					\end{aligned}</m></li>
+			<li><m>\begin{aligned}[t]\\
+						2\sqrt{-3}\amp=2\sqrt{-1}\sqrt{3}\\
+						\amp=2i\sqrt{3}
+					\end{aligned}</m></li>
+		</ol></p></solution></example>
+
+<exercise><statement><p>Write each radical as an imaginary number.<ol label="a" cols="2">
+			<li><m>\sqrt{-18}</m></li>
+			<li><m>-6\sqrt{-5}</m></li>
+		</ol></p></statement>
+<answer><p><ol label="a" cols="2">
+	<li><p><m>3i\sqrt{2} </m></p></li>
+	<li><p><m>-6i\sqrt{5} </m></p></li>
+</ol></p></answer></exercise>
+
+<note><p>Every negative real number has two imaginary square roots, <m>i\sqrt{a}</m>  and <m>-i\sqrt{a}</m>, because
+	<me>\left(i\sqrt{a}\right)^2=i^2(\sqrt{a})^2=-a</me>
+		and
+	<me>\left(-i\sqrt{a}\right)^2=(-i)^2(\sqrt{a})^2=-a</me>
+For example, the two square roots of <m>-9</m> are <m>3i</m> and <m>-3i</m>.</p></note>
+</subsubsection>
+
+<subsubsection><title>Complex Numbers</title>
+
+<p>Consider the quadratic equation
+	<me>x^2 - 2x + 5 = 0</me>
+Using the quadratic formula to solve the equation, we find
+	<me>x=\frac{-(-2)\pm\sqrt{(-2)^2-4(1)(5)}}{2}=\frac{2\pm\sqrt{-16}}{2}</me>
+If we now replace <m>\sqrt{-16}</m> with <m>4i</m>, we have
+	<me>x=\frac{2\pm4i}{2}=1\pm2i</me>
+The two solutions are <m>1 + 2i</m> and <m>1 - 2i</m>. These numbers are examples of <term>complex numbers</term><idx>complex numbers</idx>.</p>
+
+<assemblage><title>Complex Numbers</title>
+<p>A <term>complex number</term><idx>complex number</idx> can be written in the form <m>a+bi</m>, where <m>a</m> and <m>b</m> are real numbers.</p></assemblage>
+
+<p>Examples of complex numbers are
+	<me>3-5i\text{, }~~~2+\sqrt{7}i\text{, }~~~\frac{4-i}{3}\text{, }~~~6i\text{, }~~~\text{ and } -9	</me>
+In a complex number <m>a+bi</m>, <m>a</m> is called the <term>real part</term><idx>real part</idx>, and <m>b</m> is called the <term>imaginary part</term><idx>imaginary part</idx>. All real numbers are also complex numbers (with the imaginary part equal to zero). A complex number whose real part equals zero is called a <term>pure imaginary</term><idx>pure imaginary</idx> number.</p>
+
+<example><statement><p>Write the solutions to <xref ref="example-complex-roots" text="type-global"/>,
+		<m>\dfrac{2\pm\sqrt{-4}}{2}</m>, as complex numbers.
+</p></statement>
+<solution><p>Because <m>\sqrt{-4}=\sqrt{-1}\sqrt{4}=2i</m>, we have <m>\dfrac{2\pm\sqrt{-4}}{2}=\dfrac{2\pm2i}{2}</m>, or <m>1\pm i</m>. The solutions are <m>1+i</m> and <m>1-i</m>.</p></solution></example>
+
+<exercise><statement><p>Use extraction of roots to solve <m>(2x + 1)^2 + 9 = 0</m>. Write your answers as complex numbers.</p>
+</statement>
+<answer><p><m>x=\dfrac{-1}{2}\pm\dfrac{3}{2}i </m></p></answer></exercise>
+</subsubsection>
+
+<subsection><title>Arithmetic of Complex Numbers</title>
+
+<p>All the properties of real numbers listed in Algebra Skills Refresher  <xref ref="appendix-The-Real-Number-System" text="type-global"/>  are also true of complex numbers. We can carry out arithmetic operations with complex numbers.</p>
+
+<p>We add and subtract complex numbers by combining their real and imaginary parts separately. For example,
+	<md>
+		<mrow>(4 + 5i ) + (2 - 3i ) \amp= (4 + 2) + (5 - 3)i</mrow>
+		<mrow>\amp= 6 + 2i</mrow>
+	</md></p>
+
+<assemblage><title>Sums and Differences of Complex Numbers</title>
+<p><me>(a + bi) + (c + di) = (a + c) + (b + d)i</me>
+	<me>(a + bi) - (c + di) = (a - c) + (b - d)i</me></p></assemblage>
+
+<example><statement><p>Subtract: <m>(8 - 6i ) - (5 + 2i )</m>.</p></statement>
+<solution><p>Combine the real and imaginary parts.
+		<md>
+			<mrow>(8 - 6i ) - (5 + 2i ) \amp= (8 - 5) + (-6 - 2)i</mrow>
+			<mrow>\amp = 3 + (-8)i = 3 - 8i</mrow>
+		</md></p></solution></example>
+
+<exercise><statement><p>Subtract: <m>(-3 + 2i ) - (-3 - 2i )</m>.</p></statement>
+<answer><p><m>4i</m></p></answer></exercise>
+</subsection>
+
+<!--end new-->
+<xi:include href="./summary-6-2.xml" /> <!-- summary  -->
+<xi:include href="./section-6-2-exercises.xml" /> <!-- exercises  -->
+</section> 
+<!-- </book>  </mathbook> -->

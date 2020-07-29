@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <mathbook><book> -->
+
+<section xml:id="TranslatedConics"   xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<title>Translated Conics</title>
+    <introduction>
+    <p>In this section we consider ellipses and hyperbolas that are not centered at the origin, and parabolas whose vertices are not at the origin. These figures are <term>translations</term> of the central conics.</p>
+</introduction>
+                
+<subsection><title>Ellipses</title>   
+    <p> We used the distance formula to derive the equation of a circle centered at the point <m>(h,k)</m>.  The standard form for this equation is
+        <me>(x-h)^2 + (y-k)^2 = r^2</me>
+    The standard form for the equation of an ellipse centered at any point <m>(h,k)</m> can also be derived from the distance formula.</p>
+
+    <assemblage><title>Ellipse</title>
+    <p>The standard equation for an ellipse centered at <m>(h,k)</m> is
+        <me>\dfrac{(x-h)^2}{a^2} + \dfrac{(y-k)^2}{b^2} = 1</me></p></assemblage>
+
+    <p> The horizontal axis of the ellipse has length <m>2a</m>, and the vertical axis has length <m>2b</m>. When <m>a \gt b</m>, the major axis is horizontal and the ellipse is short and wide. When <m>a \lt b</m>, the major axis is vertical and the ellipse is tall and narrow.</p>
+
+        <sidebyside width="90%"><image source="images/fig-10-2-intro.png"><description>ellipses</description></image></sidebyside>  
+
+    
+<example><statement><p><ol label="a">
+    <li>Graph <m>~~\dfrac{(x+2)^2}{16} + \dfrac{(y-1)^2}{5} = 1</m></li>
+    <li>Find the exact coordinates of the intercepts of the graph.</li></ol></p></statement>
+    
+<solution><p>
+    <ol label="a">
+        <li><p>The graph is an ellipse with center at <m>(-2,1)</m>.  We have <m>a^2=16</m> and <m>b^2=5</m>,  and the major axis is parallel to the <m>x</m>-axis because <m>a \gt b</m>. The vertices lie four units to the left and right of the center, at <m>(-6,1)</m> and <m>(2,1)</m>. The covertices lie <m>\sqrt{5}</m> units above and below the center, at approximately <m>(-2, 3.2)</m> and <m>(-2, -1.2)</m>. The graph is shown below.</p>
+
+   <sidebyside width="60%"><image source="images/fig-10-2-exm1ans.png"><description>ellipse</description></image></sidebyside></li>
+    
+    <li><p>We set <m>y=\alert{0}</m> and solve the resulting equation to find the <m>x</m>-intercepts.
+
+        <!--*****--><me>\begin{aligned}[t]
+                \dfrac{(x+2)^2}{16} + \dfrac{(\alert{0}-1)^2}{5} \amp = 1 \amp\amp \blert{\text{Subtract}~ \dfrac{1}{5}~ \text{from both sides.}}\\
+                \dfrac{(x+2)^2}{16} \amp = \dfrac{4}{5} \amp\amp \blert{\text{Multiply both sides by 16.}}\\
+                (x+2)^2 \amp = \dfrac{64}{5} \amp\amp \blert{\text{Extract roots.}}\\ 
+                x+2 \amp = \pm \sqrt{\dfrac{64}{5}}\\
+                x \amp = -2 \pm \dfrac{8\sqrt{5}}{5}\\               
+                \end{aligned}</me><!--*****--></p>
+
+    <p>The <m>x</m>-intercepts are <m>(-2 \pm \dfrac{8\sqrt{5}}{5}, 0)</m> or approximately <m>(1.6,0)</m> and <m>(-5.6,0)</m>.
+    We set <m>x=\alert{0}</m> to find the <m>y</m>-intercepts.
+
+        <!--*****--><me>\begin{aligned}[t]
+                \dfrac{(\alert{0}+2)^2}{16} + \dfrac{(y-1)^2}{5} \amp = 1 \amp\amp \blert{\text{Subtract}~ \dfrac{1}{4}~ \text{from both sides.}}\\
+                \dfrac{(y-1)^2}{5} \amp = \dfrac{3}{4} \amp\amp \blert{\text{Multiply both sides by 5.}}\\
+                (y-1)^2 \amp = \dfrac{15}{4} \amp\amp \blert{\text{Extract roots.}}\\ 
+                y-1 \amp = \pm \sqrt{\dfrac{15}{4}}\\
+                y \amp = 1 \pm \dfrac{\sqrt{15}}{2}\\               
+                \end{aligned}</me><!--*****--></p>
+
+    <p>The <m>y</m>-intercepts are <m>(0, 1 \pm \dfrac{\sqrt{15}}{4})</m> or approximately <m>(0, 2.9)</m> and <m>(0, -0.9)</m></p></li></ol></p>
+</solution></example>
+
+<exercise><statement><p><ol label="a">
+    <li>Graph <m>~~\dfrac{(x-5)^2}{15} + \dfrac{(y+3)^2}{8} = 1</m></li>
+    <li>Find the coordinates of the vertices.</li>
+    </ol></p></statement>
+
+<answer><p><ol label="a">
+    <li><sidebyside width="45%"><image source="images/fig-10-2-exans1.png"><description>ellipse</description></image></sidebyside></li>
+    <li><m>(5-\sqrt{15}, -3),~(5+\sqrt{15}, -3),~(5, -3+\sqrt{8}),~(5, -3-\sqrt{8})</m></li></ol></p></answer></exercise>
+
+<p>Second-degree equations in which the coefficients of <m>x^2</m> and <m>y^2</m> have the same sign can be written in one of the standard forms for an ellipse by completing the square. As with circles, the equation can be graphed easily from the standard form.  (You may want to review completing the square for circles.)</p>
+
+<example><statement><p><ol label="a">
+    <li>Write the equation in standard form.
+            <me>4x^2 + 9y^2 - 16x - 18y -11 = 0</me></li>
+    <li>Graph the equation.</li>
+    <li>Find the coordinates of the intercepts.</li></ol></p></statement>
+
+<solution><p><ol label="a">
+    <li>We first prepare to complete the square in both <m>x</m> and <m>y</m>. Begin by factoring out the coefficients of <m>x^2</m> and <m>y^2</m>.
+        <me>\alert{4}(x^2-4x \hphantom{0000}) + \alert{9}(y^2 - 2y \hphantom{0000}) = 11</me> 
+    We complete the square in <m>x</m> by adding <m>4 \cdot 4</m>, or <m>\alert{16}</m>, to each side of the equation, and complete the square in <m>y</m> by adding <m>9 \cdot 1</m>, or <m>\alert{9}</m>, to each side to obtain
+        <me>4(x^2-4x+\alert{4}) + 9(y^2 - 2y + \alert{1}) = 11 + \alert{16} + \alert{9}</me>
+    We write each term on the left side as a perfect square to get
+        <me>4(x-2)^2 + 9(y-1)^2 = 36</me>
+    To write this equation in standard form, we divide each side by <m>36</m> to get 
+        <me>\dfrac{(x-2)^2}{9} + \dfrac{(y-1)^2}{4} = 1</me></li>
+    <li>The graph is an ellipse with center at <m>(2, 1),~a^2=9</m>, and <m>b^2=4</m>  The vertices lie 3 units to the right and left of the center at <m>(5,1)</m> and <m>(-1,1)</m>, and the covertices lie 2 units above and below the center at <m>(2,3)</m> and <m>(2,-1)</m>.  The graph is shown below.
+    
+<sidebyside width="45%"><image source="images/fig-10-2-exm2ans.png"><description>ellipse</description></image></sidebyside></li>
+
+    <li><p>To find the <m>x</m>-intercepts, we substitute <m>y=\alert{0}</m> into the original equation to obtain
+            <!--*****--><me>\begin{aligned}[t]
+            4x^2 + 9(\alert{0})^2 - 16x - 18 (\alert{0}) - 11 \amp = 0\\
+            4x^2 - 16x - 11 \amp = 0\\
+                \end{aligned}</me><!--*****-->
+
+    We use the quadratic formula to solve for <m>x</m>.
+    
+        <me> x = \dfrac{16 \pm \sqrt{432}}{8} = 2 \pm \dfrac{3\sqrt{3}}{2}</me>
+
+    The <m>x</m>-intercepts are <m>( 2 \pm \dfrac{3\sqrt{3}}{2}, 0)</m>, or approximately <m>(4.6,0)</m> and <m>(-0.6,0)</m>.  To find the <m>y</m>-intercepts, we substitute <m>x=\alert{0}</m> into the given equation to obtain
+            <!--*****--><me>\begin{aligned}[t]
+            4(\alert{0})^2 + 9y^2 - 16(\alert{0}) - 18y - 11 \amp = 0\\
+            9y^2 - 18y - 11 \amp = 0\\
+                \end{aligned}</me><!--*****-->
+
+    We use the quadratic formula to solve for <m>y</m>.
+    
+        <me>y = \dfrac{18 \pm \sqrt{720}}{18} = 1 \pm \dfrac{2\sqrt{5}}{3}</me> 
+
+    The <m>y</m>-intercepts are <m>(0, 1 \pm \dfrac{2\sqrt{5}}{3})</m>, or approximately <m>(0, 2.5)</m> and <m>(0,-0.5)</m>.</p></li></ol></p></solution></example>
+
+<exercise> <statement><p><ol label="a">
+    <li>Write the equation in standard form.
+            <me>x^2 + 4y^2 + 4x - 16y + 4 = 0</me></li>
+    <li>Graph the equation.</li></ol></p></statement>
+    
+<answer><p><ol label="a">
+    <li><m>\dfrac{(x+2)^2}{16} + \dfrac{(y-2)^2}{4} = 1</m></li>
+    <li>
+    <sidebyside width="35%"><image source="images/fig-10-2-exans2.png"><description>ellipse</description></image></sidebyside></li>
+</ol></p></answer></exercise>
+</subsection>
+
+<subsection><title>Finding the Equation of an Ellipse</title>
+
+<p>To write the equation of an ellipse from a description of its properties, we must find the center of the ellipse and the lengths of its axes.  We can then substitute this information into the standard form.</p>
+    
+<example><statement><p>Find the equation of the ellipse with vertices at <m>(3,3)</m> and <m>(3,-5)</m> and covertices at <m>(1,-1)</m> and <m>(5,-1)</m>.</p></statement>
+
+<solution><p>To find the center of the ellipse, we find the midpoint of the major (or minor) axis.  
+            <!--*****--><me>\begin{aligned}[t]
+                h \amp = \overline{x} = \dfrac{1+5}{2} = 3\\
+                k \amp = \overline{y} = \dfrac{3-5}{2} = -1\\            
+                \end{aligned}</me><!--*****-->
+        
+     The center of the ellipse is the point <m>(3, -1)</m>. In this example the covertices lie on the horizontal axis, so <m>a</m> is the distance between the center and either covertex, say <m>(5,-1)</m>, which we compute by subtracting their <m>x</m>-coordinates: 
+
+            <me>a = \abs{5-3} = 2</me>
+
+    The value of <m>b</m> is the distance from the center to one of the vertices, say <m>(3,3)</m>:
+
+            <me>b = \abs{3-(-1)} = 4</me>
+
+    The equation of the ellipse has the form
+
+            <me>\dfrac{(x-h)^2}{a^2} + \dfrac{(y-k)^2}{b^2} = 1</me>
+
+    with  <m>h=3,~k=-1,~a=2,~b=4</m>. Thus, the equation is
+    
+            <me>\dfrac{(x-3)^2}{4} + \dfrac{(y+1)^2}{16} = 1</me>                
+
+    If we clear this equation of fractions and expand the powers, we obtain the general form
+
+            <!--*****--><me>\begin{aligned}[t]
+                4(x-3)^2 + (y+1)^2 \amp = 16\\
+                4(x^2-6x+9) +(y^2+2y+1) \amp = 16\\
+                4x^2-24x+36+y^2+2y+1 \amp = 16\\ 
+                4x^2+y^2-24x+2y+21 \amp = 0\\                
+                \end{aligned}</me><!--*****-->
+        </p></solution></example>
+
+<exercise> <statement><p>Find the equation of the ellipse with vertices at <m>(-7,1)</m> and <m>(-1,1)</m> and a minor axis of length 4.</p></statement>
+    
+<answer><m>>\dfrac{(x+4)^2}{9} + \dfrac{(y-1)^2}{4} = 1</m></answer></exercise>   
+</subsection>
+
+<subsection><title>Hyperbolas</title>
+
+ <p>The following standard forms for equations of hyperbolas centered at the point  can be derived using the distance formula and the definition of hyperbola.</p>
+
+      <assemblage><title>Hyperbola</title>
+    <p>The standard equations for a hyperbola centered at <m>(h,k)</m> are
+        <me>\dfrac{(x-h)^2}{a^2} - \dfrac{(y-k)^2}{b^2} = 1~~~~\text{and}~~~~\dfrac{(y-k)^2}{b^2} - \dfrac{(x-h)^2}{a^2} = 1</me>
+    </p></assemblage>
+
+<p>The first equation describes a hyperbola whose transverse axis is parallel to the -axis, so that the branches open left and right, and the second equation describes a hyperbola whose transverse axis is parallel to <m>x</m>the <m>y</m>-axis, so that the branches open up and down.</p>
+
+<sidebyside width="80%"><image source="images/fig-10-2-hyperbs.png"><description>hyperbolas</description></image></sidebyside>
+
+<example><statement><p><ol label="a">
+    <li>Graph <m>~~\dfrac{(x-3)^2}{8} - \dfrac{(y+2)^2}{10} = 1</m></li>
+    <li>Find the equations of the asymptotes.</li></ol></p></statement>
+    
+<solution><p><ol label="a">
+    <li><p>The graph is a hyperbola with <m>(h,k) = (3,-2),~a = \sqrt{8} = 2\sqrt{2},</m> and <m>b=\sqrt{10}</m>.  Because the <m>x^2</m>-term is positive, the branches open left and right. The coordinates of the vertices are thus <m>(3+2\sqrt{2},-2)</m> and <m>(3-2\sqrt{2},-2)</m>, or approximately <m>(5.8,-2)</m> and <m>(0.2,-2)</m>. The ends of the conjugate axis are <m>(3,-2+\sqrt{10}</m>) and <m>(3,-2-\sqrt{10}</m>), or approximately <m>(3,1.2)</m> and <m>(3,-5.2)</m>.</p>
+    <p>The central rectangle is centered at the point <m>(3,-2)</m> and extends to the vertices in the horizontal direction and to the ends of the conjugate axis in the vertical direction. We draw the asymptotes through the opposite corners of the central rectangle, and sketch the hyperbola through the vertices and approaching the asymptotes to obtain the graph shown below.</p>
+
+<sidebyside width="50%"><image source="images/fig-10-2-exm4ans.png"><description>hyperbola</description></image></sidebyside></li>
+
+    <li>Both asymptotes pass through the center of the hyperbola, <m>(3,-2)</m>.  Their slopes are <m>\dfrac{\sqrt{10}}{\sqrt{8}} = \dfrac{\sqrt{5}}{2}</m> and <m>\dfrac{-\sqrt{5}}{2}</m>.  We substitute these values into the point-slope formula to find the equations
+        <me>y + 2 = \dfrac{\sqrt{5}}{2}(x-3)~~~~\text{and}~~~~y + 2 = \dfrac{-\sqrt{5}}{2}(x-3)</me></li></ol></p>
+    </solution></example>
+
+<exercise> <statement><p><ol label="a">
+    <li>Graph <m>~~\dfrac{y^2}{9} - \dfrac{(x+4)^2}{12} = 1</m></li>
+    <li>Find the equations of the asymptotes.</li></ol></p>
+</statement>
+    
+<answer><p><ol label="a">
+    <li><sidebyside width="40%"><image source="images/fig-10-2-exans4.png"><description>hyperbola</description></image></sidebyside></li>
+    <li><m>y=\dfrac{\sqrt{3}{2}}x+4,~~y=\dfrac{-\sqrt{3}{2}}x+4</m></li></ol></p>
+    </answer></exercise>
+
+ <p>Quadratic equations in which the <m>x^2</m> term and the <m>y^2</m> term have opposite signs describe hyperbolas.  We can write such equations in one of the standard forms by completing the squares in <m>x</m> and <m>y</m>.</p>
+
+  <example><statement><p><ol label="a">
+    <li>Write the equation in standard form.
+        <me>y^2-4x^2+4y-8x-9=0</me></li>
+    <li>Graph the equation.</li></ol></p></statement>
+
+<solution><p><ol label="a">
+    <li><p>We prepare to complete the square by writing
+
+        <me>(y^2 + 4y \hphantom{0000}) - 4(x^2 + 2x \hphantom{0000}) = 9</me>
+
+     Then we complete the square in <m>y</m> by adding <m>\alert{4}</m> to each side of the equation, and complete the square in <m>x</m> by adding <m>-4\cdot \alert{1}</m>, or <m>\alert{-4}</m> to each side to get
+    <me> (y^2 + 4y + \alert{4}) - 4(x^2 + 2x + \alert{1}) = 9 + \alert{4}~\alert{- 4}</me>
+
+    or
+        <me>(y+2)^2 - 4(x+1)^2 = 9</me>
+
+    We divide each side by 9 to obtain the standard form
+        <me>\dfrac{(y+2)^2}{9} - \dfrac{(x+1)^2}{\dfrac{9}{4}} = 1</me></p></li>    
+
+    <li><p>The graph is a hyperbola with center at <m>(-1,-2)</m>. Because the <m>y^2</m>-term is positive, the transverse axis is parallel to the <m>y</m>-axis, and
+        <me>b^2 = 9,~~a^2 = \dfrac{9}{4}</me>
+
+    Thus, <m>b=3</m> and <m>a = \dfrac{3}{2}</m>, and the vertices are <m>(-1,1)</m> and <m>(-1,5)</m>. The ends of the conjugate axis are <m>(\dfrac{-5}{2}, -2)</m> and <m>(\dfrac{1}{2}, -2)</m>.</p>  
+    <p>The central rectangle is centered at <m>(-1,-2)</m> and passes through the vertices and the ends of the conjugate axis.  We draw the asymptotes through the corners of the rectangle, then sketch the hyperbola by starting at the vertices and approaching the asymptotes to obtain the graph shown below.</p>    
+
+  <sidebyside width="45%"><image source="images/fig-10-2-exm5ans.png"><description>hyperbola</description></image></sidebyside></li></ol></p>  </solution></example>
+
+<exercise><statement><p><ol label = "a">
+    <li>Write the equation <m>4x^2 - 6y^2 + 16x-12y-14=0</m> in standard form.</li>
+    <li>Graph the equation.</li></ol></p></statement>
+    
+<answer><p><ol label = "a">
+    <li><m>\dfrac{(x+2)^2}{6} - \dfrac{(y+1)^2}{4}=1</m></li>
+    <li><sidebyside width="40%"><image source="images/fig-10-2-exans5.png"><description>hyperbola</description></image></sidebyside></li></ol></p></answer></exercise>
+</subsection>
+
+<subsection><title>Parabolas</title>
+
+<p>The equation of a parabola whose vertex is located at the point <m>(h,k)</m> can also be derived from the distance formula.</p>
+
+<assemblage><title>Parabola</title>
+<p>The standard equation for a parabola with vertex at <m>(h,k)</m> has one of the following forms.
+    <me>y-k=a(x-h)^2~~~~~\text{opens upward if}~a \gt 0;~~\text{downward if}~a \lt 0</me>
+    <me>x-h=a(y-k)^2~~~~~\text{opens to the right if}~a \gt 0;~~\text{to the left if}~a \lt 0</me>
+</p></assemblage>
+
+<p> The constant <m>a</m> is equal to <m>\dfrac{\pm1}{4p}</m>, where <m>p</m> is the distance between the vertex and the focus of the parabola.  It controls the width of the parabola; the smaller the absolute value of <m>a</m>, the wider the parabola.  </p>
+
+<example><statement><p>Describe the graph of <m>~y-3 = \dfrac{-1}{8}(x+2)^2</m>. </p></statement>
+
+<solution><p>The graph is a parabola the opens downward, because <m>a \lt 0</m>. The vertex of the parabola is the point <m>(-2,3)</m>.  Because <m>\abs{a} = \dfrac{1}{8} \lt 1</m>, the parabola is relatively wide.</p>.
+<p>To improve our description, we can locate one or two points besides the vertex.  For example, if <m>x=\alert{2}</m>, then
+    <me>y = \dfrac{-1}{8}(\alert{2} + 2)^2 + 3 = 1</me>
+ so <m>(2,1)</m> lies on the graph.  By symmetry, there is another point with the same <m>y</m>-coordinate at an equal distance from the axis of the parabola.  This point is <m>(-6,1)</m>, as shown below.</p>
+
+  <sidebyside width="45%"><image source="images/fig-10-2-exm6ans.png"><description>parabola</description></image></sidebyside>     
+</solution></example>
+
+<exercise><statement><p>Graph the equation <m>~x+3=\dfrac{1}{12}(y-5)^2</m></p></statement>
+    
+<answer><p><sidebyside width="35%"><image source="images/fig-10-2-exans6.png"><description>parabola</description></image></sidebyside>  </p></answer></exercise>
+
+<p>A quadratic equation that includes either an <m>x^2</m> term or a <m>y^2</m> term, but not both, can be put into one of the standard forms for a parabola by completing the square.</p>
+
+<example><statement><p><ol label="a">
+    <li><p>Write the equation in standard form.
+        <me>y^2+2y+8x-31=0</me></p></li>
+    <li>Graph the equation.</li></ol></p></statement>
+
+ <solution><p><ol label="a">
+ <li><p>First, we prepare to complete the square in <m>y</m> by writing
+        <me>(y^2+2y \hphantom{0000}) = -8x+31</me>   
+    We complete the square by adding <m>\alert{1}</m> to each side of the equation to get
+        <me>(y^2+2y+1) = -8x+32</me>
+    or
+        <me>(y+1)^2 = -8(x+4)</me></p></li>
+ <li><p>The graph is a parabola that opens to the left. Its vertex is the point <m>(4,-1)</m>.  To find another point on the       graph, choose a value for <m>y</m>, say <m>y=\alert{3}</m>. Solving for <m>x</m> yields
+         <!--*****--><me>\begin{aligned}[t]
+                (\alert{3} + 1)^2 \amp = -8(x-4) \amp\amp \blert{\text{Divide both sides by }-8.}\\
+                \dfrac{16}{-8} \amp = x-4 \amp\amp \blert{\text{Add 4 to both sides.}}\\
+                2 \amp = x\\              
+                \end{aligned}</me><!--*****-->
+
+Thus, <m>(2,3)</m> lies on the graph. Because of symmetry, there is another point on the graph with the same <m>x</m>-coordinate and at an equal distance from the parabola's axis, which is the line <m>y=-1</m>. This point is <m>(2,-5)</m>, as shown below.</p>
+
+<sidebyside width="45%"><image source="images/fig-10-2-exm7ans.png"><description>parabola</description></image></sidebyside></li>
+</ol></p></solution></example>
+
+ <exercise><statement><p><ol label="a">
+    <li>Write <m>~x=y^2-8y+13~</m> in standard form.</li>
+    <li>Graph the equation.</li></ol></p></statement>
+
+<answer><p><ol label="a"> 
+    <li><m>x+3 = (y-4)^2</m></li>   
+    <li><sidebyside width="35%"><image source="images/fig-10-2-exans7.png"><description>parabola</description></image></sidebyside></li></ol></p></answer></exercise>
+</subsection>
+
+<subsection><title>General Quadratic Equation in Two Variables</title>
+
+<p>The general quadratic equation in two variables has the form
+
+        <me>Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0</me>
+
+We have considered the graphs of examples in which <m>B=0</m>. These graphs are conic sections whose axes are parallel to one or both of the coordinate axes. (If <m>B \not= 0</m>, the axes of the conic section are rotated with respect to the coordinate axes.)</p> 
+<p>The type of conic section depends upon the coefficients of the quadratic terms, <m>A</m> and <m>C</m>.</p> 
+
+<assemblage><title>Graphs of Conic Sections</title>
+<p>The graph of <m>~Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0~</m> is</p>
+<p><ol label = "1">
+    <li>a circle if <m>A=C</m>.</li>
+    <li>a parabola if <m>A=0</m> or <m>C=0</m> (but not both).</li>
+    <li>an ellipse if <m>A \not= C</m> and they have the same sign.</li>
+    <li>a hyperbola if <m>A</m> and <m>C</m> have opposite signs.</li></ol></p></assemblage>
+
+ <p>The coefficients <m>D,~E</m>, and <m>F</m> do not affect the type of conic section the equation represents, but they do determine the position of the graph relative to the origin. Once we recognize the form of the graph, we can write the equation in the appropriate standard form to discover more information about the graph.</p>  
+ <p>The graph can also be a point, a line, a pair of lines, or no graph at all, depending on the values of the coefficients <m>A</m> through <m>F</m>. These graphs are called <term>degenerate conics</term>.  We'll see some examples of degenerate conics in the Homework Problems.</p>  
+
+<example><statement><p>Name the graph of each equation, assuming that the graph is not degenerate.</p>
+<p><ol label="a">
+    <li><m>3x^2+3y^2-2x+4y-6=0</m></li>
+    <li><m>4y^2+8x^2-3y=0</m></li>
+    <li><m>4x^2-6y^2+x-2y=0</m></li>
+    <li><m>y+x^2-4x+1=0</m></li></ol></p></statement>
+
+<solution><p><ol label="a">
+    <li>The graph is a circle because the coefficients of <m>x^2</m> and <m>y^2</m> are equal.</li>
+    <li>The graph is an ellipse because the coefficients of <m>x^2</m> and <m>y^2</m> are both positive.</li>
+    <li>The graph is a hyperbola because the coefficients of <m>x^2</m> and <m>y^2</m> have opposite signs.</li>
+    <li>The graph is a parabola because <m>y</m> is of first degree and <m>x</m> is of second degree.</li></ol></p>
+    </solution></example>     
+
+<exercise><statement><p>Describe the graph of each equation without graphing.</p><p><ol label="a">
+    <li><m>x^2=9y^2-9</m></li>
+    <li><m>x^2-y=2x+4</m></li>
+    <li><m>x^2+9y^2+4x-18y+9=0</m></li></ol></p></statement>
+
+<answer><p><ol label="a">
+    <li>A hyperbola centered at the origin with vertices <m>(0,1)</m> and <m>(0,-1)</m> and asymptotes <m>y=\dfrac{1}{3}x</m> and <m>y=\dfrac{-1}{3}x</m>.</li> 
+    <li>A parabola that opens upward from the vertex <m>(1,-5)</m>.</li>
+    <li>An ellipse centered at <m>(-2,1)</m> with a horizontal major axis of length <m>2a=4</m>. It has vertices at <m>(0,1)</m> and <m>(-4,1)</m> and covertices at <m>(-2,\dfrac{5}{3})</m> and <m>(-2,\dfrac{1}{3})</m>.</li></ol></p>
+</answer></exercise>          
+
+</subsection>
+
+
+<!-- <xi:include href="./summary-10-1.xml" /> summary  
+<xi:include href="./section-10-1-exercises.xml" /> exercises  -->
+
+</section> 
+<!-- </book>  </mathbook> -->

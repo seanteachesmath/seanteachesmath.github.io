@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <mathbook><book> -->
+
+<section xml:id="Series"   xmlns:xi="http://www.w3.org/2001/XInclude">
+            <title>Series</title>
+                
+<introduction>   
+                   
+<p> Often we are more interested in the sum of a sequence than in the sequence itself.  For example, suppose that for 5 years you have made payments of $100 a month into a savings account that pays 12% annual interest compounded monthly. The sequence
+
+<me>p_n = 100(1.01)^n</me>
+
+gives the current value of the payment you made <m>n</m> months ago (plus interest).  However, you are probably more interested in the total amount in your savings account, which is the sum of the terms <m>p_n</m> from <m>n=1</m> to <m>n=60</m>.</p>
+
+<p>The sum of the terms of a sequence is called a <term>series</term>.  </p>
+
+<note><p>Although the words "sequence" and "series" are often used interchangeably in everyday English, they have different meanings in mathematics. A sequence is a list of numbers, whereas a series is a single number obtained by computing a sum.  For example, the list of numbers 
+    <me>2, 4, 8, 16, 32 </me>
+is a sequence. The sum of those five terms is the series
+<me>2+4+8+16+32=62</me>
+</p></note>
+
+<p> We use the symbol <m>S_n</m> to denote the sum of the first <m>n</m> terms of a sequence. Thus, for the sequence above, <m>S_5 = 62</m>.</p> 
+
+<example><statement>
+    <p>Find the series <m>S_6</m> for the sequence with general term <m>a_n = 3n + 1</m>. </p></statement>
+
+<solution>
+    <p>The first six terms of the sequence are  4, 7, 10, 13, 16, and 19  Thus,
+        <me>S_6 =  4 + 7 + 10 + 13 + 16 + 19 = 69</me>
+    </p></solution></example>
+
+<exercise><statement><p>Find the series <m>S_5</m> for the sequence with general term <m>b_n = b^2</m>.</p></statement>
+    <answer><p>55</p></answer></exercise>
+
+</introduction>
+
+<subsection><title>Arithmetic Series</title>
+
+<p>We can find a formula for the sum of the first <m>n</m> terms of an arithmetic sequence.</p> 
+
+<investigation><title>Sum of an Arithmetic Sequence</title>
+
+<p>Consider the sum of the first 12 terms of the sequence with general term <m>a_n = 4n+1</m>. That is,
+<me>S_{12} = 5 + 9 + 13 + \cdots + 41 + 45 + 49</me>
+In mathematics, as in other fields, making discoveries often depends on looking at familiar objects in a new way.</p>
+<p><ol lable = "1">
+    <li><p>Let's write the terms of the series in the opposite order:
+        <me>S_{12} = 49 + 45 + 41 + \cdots + 13 + 9 + 5</me></p></li>
+    <li><p>Now add these two equations term by term, to find
+    <!--*****--><me>\begin{aligned}[t]
+                S_{12} \amp = 5 + 9 + 13 + \cdots + 41 + 45 + 49\\
+                S_{12} \amp = 49 + 45 + 41 + \cdots + 13 + 9 + 5\\
+                2S_{12} \amp = \\ 
+                \end{aligned}</me><!--*****--></p></li>
+    <li><p>Each term of the sum is the same, namely, 54! (Do you see why?) Also, the term 54 occurs 12 times because we are adding 12 terms of the sequence.  We have discoverd that
+        <me>2S_{12} = 12(54)</me>
+        so
+        <me>S_{12} = \dfrac{(\hphantom{0000})(\hphantom{0000})}{(\hphantom{0000})} = </me>  </p></li>
+    <li><p>Notice that the number 54 is the sum of the first term of the arithmetic series, 5, and the last term, 49. In other words, <m>54 = a_1 + a_n</m>. This is the key observation we need to produce our formula.</p></li>
+    <li><p>In general, this sum <m>a_1 + a_n</m> occurs <m>n</m> times and results in twice the series we want. Thus,
+    <me>2S_n = a_1 + a_n</me>
+        and dividing both sides by 2 gives us the following formula for computing an arithmetic series.</p></li></ol></p>
+</investigation> 
+
+<assemblage><title>Arithmetic Series</title>
+<p>The sum <m>S_n</m> of the first <m>n</m> terms of an arithmetic sequence is 
+<me>S_n = \dfrac{n}{2} (a_1 + a_n)</me></p></assemblage>
+
+<example><statement><p>Find the sum of the first 15 odd integers.</p></statement>
+
+<solution><p>The odd integers form an arithmetic sequence with first term <m>a_1 = 1</m> and common difference 2. Thus, the general term of the sequence is <m>a_n = 1 + (n - 1)2</m>, and we would like to find the series <m>S_{15}</m>.  We begin by finding the last term of the series, <m>a_{15}</m>.
+<me>a_{15} = 1 + (15-1)2 = 29</me>
+Next we use the formula for <m>S_n</m> with <m>n = 15,~a_1 = 1,</m> and <m>a_{15} = 29</m>: 
+<me>S_{15} = \dfrac{15}{2} (1 + 29) = 225</me></p></solution></example>
+
+<exercise><statement><p>Find the sum of the first 100 terms of the sequence <m>2, 5, 8, 11, \cdots</m>.</p>
+</statement>
+
+<answer><m>15,050</m></answer></exercise>
+
+<example><statement><p>Arlene starts a part-time job in a print shop at a salary of $800 per month. If she keeps up with the training program her salary will increase by $35 per month. How much will Arlene have earned at the end of the 18-month training program?</p></statement>
+
+<solution><p>Arlene's monthly salary is an arithmetic sequence with <m>a_1 = 800</m> and <m>d = 35</m>. Thus, the general tern of the sequence is <m>a_n = 800 + (n-1)35</m>, and we would like to find the series <m>S_{18}</m>. We begin by finding the last term of the series, <m>a_{18}</m>.  
+<me>a_{18} = 800 + (18-1)(35) = 1395</me>
+Next we use the formula for <m>S_n</m> with <m>n = 18,~ a_1 = 800</m>, and <m>a_{18} = 1395</m>.
+<me>S_{18} = \dfrac{18}{2} (800 + 1395) = 19,755</me>
+Arlene's total earnings for the 18 months will be $19,755.</p></solution></example>
+
+ <exercise><statement><p>Arlene from the previous example decides to start a savings account.  After her first paycheck, she deposits $50, and plans to increase her deposits by $5 per month.  How much will she have in the savings account at the end of the 18-month training program?</p></statement>
+
+ <answer>$1665</answer></exercise>
+    
+ </subsection>
+
+<subsection><title>Geometric Series</title>
+
+ <p>We can also find a formula for the sum of the first <m>n</m> terms of a geometric sequence.</p>
+
+ <investigation><title>Sum of a Geometric Sequrnce</title>
+
+ <p>We'll compute the sum of the first 9 terms of the geometric sequence with <m>a=3</m> and <m>r=3</m>. Its general term is <m>a_n = 3(3)^{n-1}</m>, or <m>3^n</m>. Then
+ <me>S_9 = 3 + 3^2 + 3^3 + \cdots + 3^9</me></p>
+ <p><ol label = "1">
+    <li><p>Instead of writing the terms in the opposite order, as we did for the arithmetic series, this time we will multiply each term of <m>S_9</m> by the common ratio, 3.
+    <me>3 \cdot S_9 = 3 \cdot 3 + 3 \cdot 3^2 + 3 \cdot 3^3 + \cdots + 3 \cdot 3^8 + 3 \cdot 3^9</me>
+    or
+    <me>3S_9 = 3^2 + 3^3 + 3^4 + \cdots + 3^9 + 3^{10}</me></p></li>
+    <li><p>Next we subtract the first equation from the second equation. Most of the terms will cancel out in the subtraction.
+        <!--*****--><me>\begin{aligned}[t]
+                3S_9 \amp = ~~~~~~~~~~~3^2 + 3^3 + \cdots + 3^9 + 3^{10}\\
+                -[S_9  \amp = ~~~3 + 3^2 + 3^3 + \cdots + 3^9]\\
+                2S_9 \amp = -3 ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ + 3^{10}\\ 
+                \end{aligned}</me><!--*****--></p></li>
+    <li><p>Thus
+    <me>2S_9 = 3^{10} - 3</me>
+    so
+    <me> S_9 = \dfrac{(\hphantom{0000}) - (\hphantom{0000})}{(\hphantom{0000})} =  </me></p></li>
+    <li><p>Notice that the second term of the numerator is <m>a_1</m> (3 in this example) and the first term is <m>a_{10}~ (3 \cdot 3^9</m> or <m>3^{10})</m>.</p></li>
+    <li><p>Although you might not guess it from this example, the denominator of the expression, 2, is equal to <m>r-1</m>. In general, we can derive the following formula for computing a geometric series.</p></li></ol></p></investigation>
+         
+ <assemblage><title>Geometric Series</title>
+ <p>The sum <m>S_n</m> of the first <m>n</m> terms of a geometric sequence is
+ <me>S_n = \dfrac{a_{n+1} - a_1}{r-1}</me></p></assemblage> 
+              
+<example><statement><p>Find the sum of the first five terms of the sequence <m>5, \dfrac{10}{3}, \dfrac{20}{9}, \dfrac{40}{27}, \cdots</m>.</p></statement>
+
+<solution><p>The sequence is geometric with <m>a_1 = 5</m>. We find  by dividing <m>\dfrac{10}{3}</m> by 5.
+<me>\dfrac{10}{3} \div 5 = \dfrac{2}{3}</me>
+Thus, the general term of the series is <m>a_n = 5(\dfrac{2}{3})^{n-1}</m>. We use the formula for a geometric series with <m>n=5</m>,
+<me>S_5 = \dfrac{a_6 - a_1}{r-1}</me>
+We substitute <m>a_1 = 5,~a_6 = 5(\dfrac{2}{3})^5</m>, and <m>r=\dfrac{2}{3}</m>. Thus
+<!--*****--><me>\begin{aligned}[t]
+                S_5 \amp = \dfrac{5(\dfrac{2}{3})^5 - 5}{\dfrac{2}{3}-1} = \dfrac{5(\dfrac{32}{243} - 1)}{-\dfrac{1}{3}}\\
+                 \amp = 5(\dfrac{32-243}{243})(\dfrac{-3}{1}) \approx 13.02\\ 
+                \end{aligned}</me><!--*****-->
+</p></solution></example>
+
+<exercise><statement><p>Find the sum of the first ten terms of the geometric sequence <m>100,~ 110,~ 121,~ \cdots</m>.
+</p></statement>
+
+<answer><p>1593.74</p></answer></exercise>
+
+<example><statement><p>Payam's starting salary as an engineer is $60,000 with a 5% annual raise for each of the next five years, depending on suitable progress. If Payam receives each salary increase, how much will he make over the next six years?
+</p></statement>
+
+<solution><p>Payam's salary is multiplied each year by a factor of 1.05, so its values form a geometric sequence with a common ratio of <m>r=1.05</m>. The general term of the sequence is <m>a_n = 60,000(1.05)^{n-1}</m>. His total income over the six years will be the sum of the first six terms of the sequence.  Thus,
+<!--*****--><me>\begin{aligned}[t]
+                S_6 \amp = \dfrac{a_7 - a_1}{r-1} = \dfrac{60,000(1.05)^6 - 60,000}{1.05-1}\\
+                 \amp = 408,114.77 \\ 
+                \end{aligned}</me><!--*****-->
+Payam will earn $408,114.77 over the next six years.</p></solution></example>
+
+<exercise><statement><p> Show that the formula for a geometric series can also be written as
+<me>S_n = \dfrac{a_1(r^n - 1)}{r-1}</me>
+</p></statement>
+
+<answer><p><m>S_n = \dfrac{a_{n+1} - a_1}{r-1} = \dfrac{a_1r^n - a_1)}{r-1} = \dfrac{a_1(r^n - 1)}{r-1}</m></p></answer></exercise>
+
+</subsection>
+
+<xi:include href="./summary-9-3.xml" />
+<xi:include href="./section-9-3-exercises.xml" /> 
+
+</section> 
+<!-- </book>  </mathbook> -->

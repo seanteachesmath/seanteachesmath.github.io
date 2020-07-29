@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- <mathbook><book> -->
+
+<section xml:id="AbsoluteValue"   xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Absolute Value Function</title>
+<subsection><title>Introduction</title>
+
+<p>The absolute value function is used to model problems involving distance. Recall that the absolute value of a number gives the distance from the origin to that number on the number line.</p>
+
+<assemblage><title>Distance and Absolute Value</title>
+<p>The distance between two points <m>x</m> and <m>a</m> is given by <m>\abs{x - a}</m>.</p>
+</assemblage>
+
+<p>For example, the equation <m>\abs{x - 2} = 6</m> means "the distance between <m>x</m> and <m>2</m> is <m>6</m> units." The number <m>x</m> could be to the left or the right of <m>2</m> on the number line. Thus, the equation has two solutions, <m>8</m> and <m>-4</m>, as shown below.</p>
+<sidebyside width="70%"><image source="images/fig-abs-x-minus-2-is-6"  ><description>6 units from 2</description></image></sidebyside>
+
+<example xml:id="example-distances"><statement><p>Write each statement using absolute value notation. Illustrate the solutions on a number line.<ol label="a">
+        <li><m>x</m> is three units from the origin.</li>
+        <li><m>p</m> is two units from <m>5</m>.</li>
+        <li><m>a</m> is within four units of <m>-2</m>.</li>
+    </ol></p></statement>
+<solution><p>First, restate each statement in terms of distance.<ol label="a">
+        <li><p>The distance between <m>x</m> and the origin is three units, or <m>\abs{x} = 3</m>. Thus, <m>x</m> can be <m>3</m> or <m>-3</m>. </p>
+        <sidebyside width="70%"><image source="images/fig-abs-x-is-3"><description>absolut value of x is 3</description></image></sidebyside></li>
+        <li><p>The distance between <m>p</m> and <m>5</m> is two units, or 
+        <m>\abs{p - 5} = 2</m>. If we count two units on either side of <m>5</m>, we see that <m>p</m> can be <m>3</m> or <m>7</m>. </p>
+        <sidebyside width="70%"><image source="images/fig-abs-p-minus-5-is-2" ><description>absolut value of p-5 is 2</description></image></sidebyside></li>
+        <li><p>The distance between <m>a</m> and <m>-2</m> is less than four units, or <m>\abs{a - (-2)} \lt 4</m>, or <m>\abs{a + 2} \lt 4</m>. Count four units on either side of <m>-2</m>, to find <m>-6</m> and <m>2</m>. Then <m>a</m> is between <m>-6</m> and <m>2</m>, or <m>-6 \lt a \lt 2</m>.</p>
+        <sidebyside width="70%"><image source="images/fig-4-units-from-negative-2"><description>4 units from -2</description></image></sidebyside></li>
+    </ol></p></solution></example>
+
+<exercise xml:id="exercise-write-abs"><statement><p>
+    Write each statement using absolute value notation; then illustrate the solutions on a number line.
+    <ol label="a">
+        <li><p><m>x</m> is five units away from <m>-3</m>.</p></li>
+        <li><p><m>x</m> is at least six units away from <m>4</m>.</p></li>
+    </ol>
+</p></statement><answer><p><ol label="a">
+    <li><p><m>\abs{x+3}=5</m></p>
+    <sidebyside width="55%" margins="0% 45%">
+    <image xml:id="fig-ex-2-5-1">
+        <description>number line</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.7]
+        \draw[black,thick,->,>=stealth'] (-9.4,0)--(2.85,0);
+        \foreach \x  in  {-8, -7, ..., 2}
+         \draw[black] (\x,.15) --++(0,-.3);
+        \foreach \x in  {-8, -6, ..., 2} {
+         \node[below] at (\x,-.1) {\x};
+        }
+        \draw [black, decorate, decoration={brace,amplitude=5pt}]
+        (-8,.25) -- ++(5,0) node [black,above,midway, yshift=.2cm] 
+        {Five units};
+        \draw [black, decorate, decoration={brace,amplitude=5pt}]
+        (-3,.25) -- ++(5,0) node [black,above,midway, yshift=.2cm] 
+        {Five units};
+        \filldraw[red] (-8,0) circle (.1);
+        \filldraw[red] (2,0) circle (.1);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li><p><m>\abs{x-4}\ge 6</m></p>
+    <sidebyside width="55%" margins="0% 45%">
+    <image xml:id="fig-ex-2-5-1b">
+        <description>number line</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.4]
+        \draw[black,thick] (-5.9,0)--(13.,0);
+        \foreach \x  in  {-5, -4, ..., 13}
+         \draw[black] (\x,.25) --++(0,-.5);
+        \foreach \x in  {-4, -2, ..., 12} {
+         \node[below] at (\x,-.2) {\x};
+        }
+        \draw [black, decorate, decoration={brace,amplitude=5pt}]
+        (-2,.35) -- ++(6,0) node [black,above,midway, yshift=.2cm] 
+        {Six units};
+        \draw [black, decorate, decoration={brace,amplitude=5pt}]
+        (4,.35) -- ++(6,0) node [black,above,midway, yshift=.2cm] 
+        {Six units};
+        \draw[red, ultra thick,->, >=stealth'] (-2,0)--(-5.9,0);
+        \draw[red, ultra thick,->, >=stealth'] (10,0)--(13.9,0);
+        \filldraw[red] (-2,0) circle (.15);
+        \filldraw[red] (10,0) circle (.15);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+</ol></p></answer></exercise>
+</subsection>
+
+<subsection><title>Absolute Value Equations</title>
+
+<p>We can use distances on a number line to solve simple equations such as
+    <me>\abs{3x - 6} = 9</me>
+ First, we factor out the coefficient of <m>x</m>, to get <m>\abs{3(x - 2)} = 9</m>. Because of the multiplicative property of the absolute value, namely that 
+    <m>\abs{ab} = \abs{a}\abs{b}</m>, we can write the left side as 
+    <!--*****--><me>\begin{aligned}[t]
+    \abs{3}\abs{x - 2} \amp = 9 \\
+    3\abs{x - 2} \amp= 9 \amp\amp \blert{\text{Divide both sides by 3.}}\\
+     \abs{x - 2} \amp = 3 
+     \end{aligned}</me><!--*****-->
+which tells us that the distance between <m>x</m> and <m>2</m> is <m>3</m> units, so the solutions are <m>x = -1</m> and <m>x = 5</m>. </p>
+
+<sidebyside widths= "55% 35%" valigns="middle middle" margins="0% 5%">
+<stack><p>Alternatively, we can use graphs when working with absolute values. For example, we know that the simple equation <m>\abs{x} = 5</m> has two solutions, <m>x = 5</m> and <m>x = -5</m>.</p><p> In fact, we can see from the graph at right that the equation <m>\abs{x} = k</m> has two solutions if <m>k \gt 0</m>, one solution if <m>k = 0</m>, and no solution if <m>k \lt 0</m>.</p></stack>
+<image source="images/fig-abs-x-is-k"><description>4 units from -2</description></image></sidebyside>
+
+<example xml:id="example-abs-equation"><statement><p><ol label="a">
+        <li><p>Use a graph of <m>y = \abs{3x - 6}</m> to solve the equation 
+            <m>\abs{3x - 6} = 9</m>.</p></li>
+        <li><p>Use a graph of <m>y = \abs{3x - 6}</m> to solve the equation
+            <m>\abs{3x - 6} = -2</m>.</p></li>
+    </ol></p></statement>
+<solution><sidebyside width="30%"><image source="images/fig-abs-3x-6"><description>absolute value of 3x-6</description></image></sidebyside><p><ol label="a">
+    <li><p>The graph shows the graphs of <m>y = \abs{3x - 6}</m> and <m>y = 9</m>. We see that there are two points on the graph of <m>y = \abs{3x - 6}</m> that have <m>y = 9</m>, and those points have <m>x</m>-coordinates <m>x = -1</m> and <m>x = 5</m>. We can verify algebraically that the solutions are <m>-1</m> and <m>5</m>. 
+        <!--*****--><me>\begin{aligned}[t]
+            x \amp = \alert{-1}\text{: } 
+            ~ ~ \abs{3(\alert{-1}) - 6} = \abs{-9} = 9\\
+            x \amp = \alert{5}\text{: } 
+            ~ ~ \abs{3(\alert{5}) - 6} = \abs{9} = 9
+         \end{aligned}</me><!--*****--></p></li>
+    <li><p>There are no points on the graph of <m>y = \abs{3x - 6}</m> with <m>y = -2</m>, so the equation <m>\abs{3x - 6} = -2</m> has no solutions.</p></li>
+    </ol></p></solution></example>
+
+
+
+<exercise xml:id="exercise-GC-solve-abs-equation"><statement>
+    <ol label="a">
+        <li>Graph <m>y = \abs{2x + 7}</m> for <m>-12 \le x \le 8</m>.</li>
+        <li>Use your graph to solve the equation <m>\abs{2x + 7} = 11</m>.</li>
+    </ol>
+</statement><answer><p><ol label="a" cols="2">
+    <li><sidebyside>
+    <image xml:id="exercise-2-5-2">
+        <description>abs(2x+3)</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.3]
+        \draw[cyan] (-12,-4) grid[step=2] (8,16);
+        \draw[black,thick, ->, >=stealth'] (-12,0)--(8.9,0) node[right]{$x$};
+        \draw[black,thick, ->, >=stealth'] (0,-4)--(0,16.9) node[above]{$y$};
+        \foreach \x in  {-8, 6, 8} {
+         \node[below, fill=white, inner sep=1] at (\x,-.3) {\x};
+        }
+        \draw[gray, very thick, dashed] (-9,0)--++(0,11);
+        \draw[gray, very thick, dashed] (2,0)--++(0,11);
+        \draw[blue, very thick] (-12,11)--(8,11) node[above, xshift=-0.52cm, fill=white, inner sep=1] {$y=11$};
+        \\draw[red, ultra thick,->, >=stealth'] (-2,0)--(-5.9,0);
+        \draw[red, thick,->, >=stealth'] (-7/2,0)--(-11.5,16) node[right, xshift=.4cm, yshift=-.5cm, fill=white, inner sep=1] {$y= | 2x+7|$};
+        \draw[red, thick,->, >=stealth'] (-7/2,0)--(4.5,16);
+        \filldraw[red] (-9,0) circle (.25);
+        \filldraw[red] (2,0) circle (.25);
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li><p><m>x=9</m> or <m>x=2</m></p></li>
+</ol></p></answer></exercise>
+
+<p>To solve an absolute value equation algebraically, we use the definition of absolute value.</p>
+
+<example xml:id="example-abs-algebraic"><statement><p>Solve the equation <m>\abs{3x - 6} = 9</m> algebraically.</p></statement>
+<solution><p>We write the piecewise definition of <m>\abs{3x - 6}</m>.
+    <me>
+    \abs{3x-6} =
+    \begin{cases}
+    3x-6 \amp \text{if } 3x-6\ge 0 \text{, or  } x\ge 2\\
+    -(3x-6)  \amp \text{if } 3x - 6\lt 0  \text{, or  }x\lt 2
+    \end{cases}
+    </me>
+Thus, the absolute value equation <m>\abs{3x - 6} = 9</m> is equivalent to two regular equations:
+    <me>3x - 6 =9~~~  \text{ or }~~~ -(3x - 6) = 9</me>
+or, by simplifying the second equation,
+    <me>3x - 6 =9~~~ \text{ or }~~~ 3x - 6 = -9</me>
+Solving these two equations gives us the same solutions we found in <xref ref="example-abs-equation" text="type-global"/>, namely <m>x = 5</m> and <m>-1</m>.</p></solution></example>
+
+<p>In general, we have the following strategy for solving absolute value equations.</p>
+
+<assemblage><title>Absolute Value Equations</title><p></p>
+<p>The equation
+    <me>\abs{ax + b} = c \hphantom{break} (c \gt 0)</me>
+    is equivalent to
+    <me>ax + b = c ~~\text{ or }~~ ax + b = -c</me></p>
+</assemblage>
+
+<exercise><statement><p>Solve <m>\abs{2x + 7} = 11</m> algebraically.</p></statement>
+<answer><p><m>x=-9</m> or <m>x=2</m></p></answer></exercise>
+</subsection>
+
+<subsection><title>Absolute Value Inequalities</title>
+
+<p>We can also use graphs to solve absolute value inequalities. Look again at the graph of <m>y = \abs{3x - 6}</m> in figure (a) below. </p>
+
+    <sidebyside width="70%"><image source="images/fig-abs-inequality"><description>abs-3x-6</description></image></sidebyside>
+
+<p>Because of the V-shape of the graph, all points with <m>y</m>-values less than <m>9</m> lie between the two solutions of <m>~\abs{3x - 6} = 9~</m>, that is, between <m>-1</m> and <m>5</m>. Thus, the solutions of the inequality <m>~\abs{3x - 6} \lt 9~</m> are <m>-1 \lt x \lt 5</m>. (In the Homework Problems, you will be asked to show this algebraically.) </p>
+
+<p>On the other hand, to solve the inequality <m>~\abs{3x - 6} \gt 9~</m>, we look for points on the graph with <m>y</m>-values greater than <m>9</m>. In figure (b), we see that these points have <m>x</m>-values outside the interval between <m>-1</m> and <m>5</m>. In other words, the solutions of the inequality <m>~\abs{3x - 6} \gt 9~</m> are <m>x \lt -1</m> or <m>x \gt 5</m>.</p>
+
+<p>Thus, we can solve an absolute value inequality by first solving the related equation.</p>
+
+<assemblage><title>Absolute Value Inequalities</title>
+<p>Suppose the solutions of the equation <m>\abs{ax+b}=c</m> are <m>r</m> and <m>s</m>, with <m>r \lt s</m>. Then
+    <ol>
+        <li>The solutions of <m>~\abs{ax+b} \lt c~</m> are 
+        <me>r \lt  x \lt  s</me></li>
+        <li>The solutions of <m>~\abs{ax+b} \gt c~</m> are
+        <me>x \lt  r ~~\text{ or }~~ x \gt  s</me></li>
+    </ol></p></assemblage>
+
+<example xml:id="example-abs-inequality"><statement><p>Solve <m>~\abs{4x - 15} \lt 0.01</m></p></statement>
+<solution><p>First, we solve the equation <m>~\abs{4x - 15} = 0.01</m>. There are two cases:
+    <me>
+        \begin{aligned}[t]
+        4x - 15 \amp = 0.01 \amp \text{or} \amp\amp 4x - 15 \amp= -0.01 \\
+        4x \amp = 15.01 \amp\amp\amp 4x \amp = 14.99 \\
+        x \amp = 3.7525 \amp\amp\amp x \amp= 3.7475
+        \end{aligned}
+    </me>
+Because the inequality symbol is <m>\lt</m>, the solutions of the inequality are between these two values: <m>3.7475 \lt x \lt 3.7525</m>. In interval notation, the solutions are <m>(3.7475, 3.7525)</m>.</p> </solution></example>
+
+<exercise><statement><ol label="a">
+        <li>Solve the inequality <m>~\abs{2x + 7} \lt 11</m></li>
+        <li>Solve the inequality <m>~\abs{2x + 7} \gt 11</m></li>
+    </ol></statement>
+<answer><p><ol label="a" cols="2">
+    <li><p><m>(-9,2)</m></p></li>
+    <li><p><m>(-\infty,-9) \cup (2, \infty)</m></p></li>
+    </ol></p>  </answer></exercise>
+</subsection>
+
+<subsection><title>Using the Absolute Value in Modeling</title>
+
+<p>In the next Example, we use the absolute value function to model a problem about distances.</p>
+
+<example xml:id="example-Marlene-highway"><statement><p>Marlene is driving to a new outlet mall on Highway 17. There is a gas station at Marlene's on-ramp, where she buys gas and resets her odometer to zero before getting on the highway. The mall is only 15 miles from Marlene’s on-ramp, but she mistakenly drives past the mall and continues down the highway. Marlene's distance from the mall is a function of how far she has driven on Highway 17. </p>
+    <sidebyside width="80%"><image source="images/fig-Marlene-highway"><description>highway 17 with gas station and mall</description></image></sidebyside>
+    <p><ol label="a">
+        <li>Make a table of values showing how far Marlene has driven on Highway 17 and how far she is from the mall.</li>
+        <li>Make a graph of Marlene’s distance from the mall versus the number of miles she has driven on the highway. Which of the basic graphs from Section 2.2 does your graph most resemble?</li>
+        <li>Find a piecewise defined formula that describes Marlene’s distance from the mall as a function of the distance she has driven on the highway.</li>
+    </ol></p></statement>
+<solution><p><ol label="a">
+    <li><p>Marlene gets closer to the mall for each mile that she has driven on the highway until she has driven 15 miles, and after that she gets farther from the mall.</p>
+        <sidebyside><tabular top="major" halign="center" right="minor" left="minor" bottom="minor">
+            <row bottom="minor">
+                <cell>Miles on highway</cell>
+                <cell><m>0</m></cell>
+                <cell><m>5</m></cell>
+                <cell><m>10</m></cell>
+                <cell><m>15</m></cell>
+                <cell><m>20</m></cell>
+                <cell><m>25</m></cell>
+                <cell><m>30</m></cell></row>
+            <row>
+                <cell>Miles from mall</cell>
+                <cell><m>15</m></cell>
+                <cell><m>10</m></cell>
+                <cell><m>5</m></cell>
+                <cell><m>0</m></cell>
+                <cell><m>5</m></cell>
+                <cell><m>10</m></cell>
+                <cell><m>15</m></cell></row>
+        </tabular></sidebyside></li>
+    <li><p>We plot the points in the table to obtain the graph shown below. This graph looks like the absolute value function defined in <xref ref="basic-functions" text="type-global"/>, except that the vertex is the point <m>(15, 0)</m> instead of the origin.</p>
+        <sidebyside width="50%"><image source="images/fig-abs-highway-distance"><description>graph of distance from mall</description></image></sidebyside></li>
+    <li><p>Let <m>x</m> represent the number of miles on the highway and <m>f (x)</m> the number of miles from the mall. For <m>x</m>-values less than <m>15</m>, the graph is a straight line with slope <m>-1</m> and <m>y</m>-intercept at <m>(0, 15)</m>, so its equation is <m>y = -x + 15</m>. Thus,
+        <me>f (x) = -x + 15~~~ \text{ when } ~~~0 \le x \lt 15</me>
+    On the other hand, when <m>x \ge 15</m>, the graph of <m>f</m> is a straight line with slope <m>1</m> that passes through the point <m>(15, 0)</m>. The point-slope form of this line is
+        <me>y = 0 + 1(x - 15)</me>
+    so <m>y = x - 15</m>. Thus,
+        <me>f (x) = x - 15~~~ \text{ when }~~~  x \ge 15</me>
+    Combining the two pieces, we obtain
+        <me>
+        f (x) =
+        \begin{cases}
+        -x + 15~~~ \amp \text{when }~~~ 0\le x\lt 15\\
+        x - 15~~~  \amp \text{when }~~~ x\ge 15
+        \end{cases}
+        </me>
+    The graph of <m>f (x)</m> is a part of the graph of <m>y = \abs{x - 15}</m>. If we think of the highway as a portion of the real number line, with Marlene’s on-ramp located at the origin, then the outlet mall is located at <m>15</m>. Marlene's coordinate as she drives along the highway is <m>x</m>, and the distance from Marlene to the mall is given by <m>f (x) = \abs{x - 15}</m>.</p></li>
+</ol></p></solution></example>
+
+<exercise><statement><ol label="a">
+        <li>Use the graph in <xref ref="example-Marlene-highway" text="type-global"/> to determine how far Marlene has driven when she is within <m>5</m> miles of the mall. Write and solve an absolute value inequality to verify your answer.</li>
+        <li>Write and solve an absolute value inequality to determine how far Marlene has driven when she is at least <m>10</m> miles from the mall.</li>
+    </ol></statement>
+<answer><ol label="a">
+    <li><p><m>\abs{x-15} \lt 5</m>; <m>~10 \lt x \lt 20</m></p><sidebyside width="45%" margins="0% 55%">
+    <image xml:id="fig-ex-2-5-5a">
+        <description>absolute value inequality</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.2]
+        \draw[cyan] (0,0) grid[step=5/2] (30,15);
+        \draw[black,thick, ->, >=stealth'] (0,0)--(32,0) node[right]{$x$};
+        \draw[black,thick, ->, >=stealth'] (0,0)--(0,17) node[above]{$y$};
+        \foreach \x in  {10,20,30} {
+         \node[below] at (\x,-.4) {\x};
+        }
+        \foreach \y in  {5,10,15} {
+         \node[left, fill=white, inner sep=1] at (-.3,\y) {\y};
+        }
+        \draw[black,thick] (0,15)--(15,0)--(30,15);
+        \draw[red, very thick] (10,5)--(15,0)--(20,5);
+        \draw[red, very thick] (10,0)--(20,0);
+        \draw[red, fill=white] (10,5) circle (.35);
+        \draw[red, fill=white] (20,5) circle (.35);
+        \draw[red, fill=white] (10,0) circle (.35);
+        \draw[red, fill=white] (20,0) circle (.35);
+          \node[label=left:\rotatebox{90}{Miles from mall}] at (-2.5,8) {};
+          \node[below] at (15,-2.5) {Miles on highway};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>
+    <li><p><m>\abs{x-15} \ge 10</m>; <m>~x\le 5~</m> or <m>~x\ge25</m></p><sidebyside width="45%" margins="0% 55%">
+    <image xml:id="fig-ex-2-5-5b">
+        <description>absolute value inequality</description>
+        <latex-image>
+        <!-- CDATA prevents certain LaTeX code from being interpreted as xml -->
+        <![CDATA[\tikzset{%
+        }
+        \begin{tikzpicture} [scale=.2]
+        \draw[cyan] (0,0) grid[step=5/2] (30,15);
+        \draw[black,thick, ->, >=stealth'] (0,0)--(32,0) node[right]{$x$};
+        \draw[black,thick, ->, >=stealth'] (0,0)--(0,17) node[above]{$y$};
+        \foreach \x in  {10,20,30} {
+         \node[below] at (\x,-.4) {\x};
+        }
+        \foreach \y in  {5,10,15} {
+         \node[left, fill=white, inner sep=1] at (-.3,\y) {\y};
+        }
+        \draw[black,thick] (0,15)--(15,0)--(30,15);
+        \draw[red, very thick] (0,15)--(5,10);
+        \draw[red, very thick] (0,0)--(5,0);
+        \draw[red, very thick] (30,15)--(25,10);
+        \draw[red, very thick] (30,0)--(25,0);
+        \draw[red, fill=red] (5,10) circle (.35);
+        \draw[red, fill=red] (25,10) circle (.35);
+        \draw[red, fill=red] (5,0) circle (.35);
+        \draw[red, fill=red] (25,0) circle (.35);
+          \node[label=left:\rotatebox{90}{Miles from mall}] at (-2.5,8) {};
+          \node[below] at (15,-2.5) {Miles on highway};
+        \end{tikzpicture}]]>
+    </latex-image>
+    </image>
+    </sidebyside></li>    
+</ol></answer></exercise>
+</subsection>
+
+<subsection><title>Measurement Error</title>
+
+<p>If you weigh a sample in chemistry lab, the scale’s digital readout might show <m>6.0</m> grams. But it is unlikely that the sample weighs <em>exactly</em> <m>6</m> grams; there is always some error in measured values.</p>
+<p> Because the scale shows the weight as <m>6.0</m> grams, we know that the true weight of the sample must be between <m>5.95</m> grams and <m>6.05</m> grams: If the weight were less than <m>5.95</m> grams, the scale would round down to <m>5.9</m> grams, and if the weight were more than <m>6.05</m> grams, the scale would round up to <m>6.1</m> grams. We should report the mass of the sample as <m>6 \pm 0.05</m> grams, which tells the reader that the error in the measurement is no more than <m>0.05</m> grams. </p>
+
+<p>We can also describe this measurement error, or <term>error tolerance</term><idx>error tolerance</idx>, using an absolute value inequality. Because the measured mass m can be no more than <m>0.05</m> from <m>6</m>, we write 
+    <me>\abs{m - 6} \le 0.05</me> 
+Note that the solution of this inequality is <m>5.95 \le m \le 6.05</m>.</p>   
+
+<example xml:id="example-tolerance-chip-and-dosage"><statement><p><ol label="a">
+    <li>The specifications for a computer chip state that its thickness in millimeters must satisfy <m>\abs{t - 0.023} \lt 0.001</m>. What are the acceptable values for the thickness of the chip?</li>
+    <li>The safe dosage of a new drug is between <m>250</m> and <m>450</m> milligrams, inclusive. Write the safe dosage as an error tolerance involving absolute values.</li>
+</ol></p></statement>
+<solution><p><ol label="a">
+        <li><p>The error tolerance can also be stated as <m>t = 0.023 \pm 0.001</m> millimeters, so the acceptable values are between <m>0.022</m> and <m>0.024</m> millimeters.</p></li>
+        <li><p>The safe dosage <m>d</m> satisfies <m>250 \le d \le 450</m>, as shown below.</p>
+        <sidebyside width="70%"><image source="images/fig-dosage-tolerance"><description>safe dosage</description></image></sidebyside>
+        <p>The center of this interval is <m>350</m>, and the endpoints are each <m>100</m> units from the center. Thus, the safe values are within <m>100</m> units of <m>350</m>, or
+        <me>\abs{d - 350} \le 100</me></p></li>
+    </ol></p></solution></example>
+
+<exercise><statement><p>The temperature, <m>T</m>, in a laboratory must remain between <m>9\degree\text{C}</m> and <m>12\degree\text{C}</m>.<ol label="a">
+        <li>Write the error tolerance as an absolute value inequality.</li>
+        <li>For a special experiment, the temperature in degrees celsius must satisfy <m>~~\abs{T - 6.7} \le 0.03</m>. Give the interval of possible temperatures.</li>
+    </ol></p></statement>
+<answer><p><ol label="a" cols="2">
+    <li><p><m>\abs{T-10.5} \lt 1.5</m></p></li>
+    <li><p><m>6.67 \le T \le 6.73</m></p></li>
+</ol></p></answer></exercise>
+
+</subsection>
+<xi:include href="./summary-2-5.xml" /> <!-- summary  -->
+<xi:include href="./section-2-5-exercises.xml" /> <!-- exercises  -->
+
+</section> 
+<!-- </book>  </mathbook> -->

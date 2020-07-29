@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+
+<!-- This file was originally part of the book     -->
+<!--   Applied Algebra   -->
+<!--           4th                                     -->
+<!-- Copyright (C) Sean Laverty (with others, via Katherine Yoshiwara)      -->
+
+<section xml:id="chap10-rev-projects"  xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Projects for Chapter 10</title>
+
+<exercise><title>Global Positioning System</title>
+    <p>The Global Positioning System (GPS) is used to determine a location anywhere on the surface of the Earth.  The system depends upon a collection of satellites in orbit around the Earth. Each GPS satellite transmits its own position and the current time at regular intervals.</p>  
+    <p>Knowing the speed of the transmissions, a person with a GPS receiver on earth can calculate his or her distance from the satellite by comparing the time of transmission with the time when it receives the signal. Of course, there are many points at the same distance from the satellite—in fact, the set of all points at a certain distance <m>r</m> from the satellite lie on a sphere centered at the satellite.  That is why there are several satellites:  you calculate your position by finding the intersection point of several such spheres centered on different satellites.</p>
+
+    <p>Here is a simplified, two-dimensional model of a GPS system in which the satellites and the receiver all lie in the <m>xy</m>-plane, instead of in three-dimensional space.  In this model we'll need data from two GPS satellites.  The satellites are orbiting along a circle of radius 100 meters centered at the origin.  You have a receiver inside that circle, and would like to know the coordinates of your position within the circle.  To make the computations simpler, we will also assume that the satellite transmissions travel at 5 meters per second.</p>
+
+    <p><ol label="1">
+    <li>A signal from Satellite A arrives 18 seconds after it was transmitted.  How far are you from Satellite A?</li>
+
+    <li>The signal says that Satellite A was located at <m>(100, 0)</m> at the time of transmission.  On the grid below, use a compass to sketch a graph showing your possible positions relative to Satellite A.
+
+    <sidebyside width="100%"><image source="images/fig-10-proj.png"><description>grid</description></image></sidebyside></li>   
+
+    <li>Find an equation for the graph you sketched in part 2.</li>
+
+    <li>A signal from Satellite B arrives 8.4 seconds after it was transmitted.  How far are you from Satellite B?</li>
+
+    <li>The signal says that Satellite B was located at <m>(28, 96)</m> at the time of transmission.  Use a compass to sketch a graph showing your possible positions relative to Satellite B.</li>
+
+    <li>Find an equation for the graph you sketched in part 5.</li>
+
+    <li>Your position must lie at the intersection point, <m>P</m>, of your two graphs.  Estimate the coordinates of your position from the graph.  (Remember that you are within the orbits of the satellites.)</li>
+
+    <li>Find the coordinates of <m>P</m> algebraically by solving a system of equations.</li>  
+
+    <li>Verify that the ordered pairs <m>(28, 54)</m> and <m>(68.32, 84.24)</m> both satisfy the equations you wrote in part 3 and part 6.  What are the coordinates of <m>P</m>?</li></ol></p>
+
+    <p>There are important extra considerations for the real Global Positioning System.  The receiver's position is not restricted to the <m>xy</m>-plane, so it is given by three coordinates instead of two.  Also, the receiver's clock may not be synchronized with the clocks on the satellites, so there is a fourth variable corresponding to the possible error in the receiver's clock.  Thus the GPS receiver must solve a system of four quadratic equations in four unknowns.  Each equation comes from a different satellite, so there must be at least four satellites "visible" to the receiver at any given time.</p>
+</exercise> 
+
+<exercise><title>Long Range Navigation</title>
+
+<p>The Global Positioning System (GPS) is very accurate, but it depends on perfectly synchronized clocks. An older navigational system, called LORAN (Long Range Navigation), is still used by sailors to locate their position at sea.  The system works by finding the intersection of two hyperbolas.</p>
+<p> Radio transmitters at known positions broadcast signals simultaneously, and the navigator notes the difference in the arrival times of the two signals. (This difference is calculated using only the navigator's clock, and does not depend on the time when the signals were transmitted.) From the time difference the navigator computes the difference in the distances to the two transmitters, using the speed of radio waves.</p>
+
+<sidebyside width="40%"><image source="images/fig-10-proj2.png"><description>hyperbolas</description></image></sidebyside> 
+
+<p>We know that a hyperbola is the set of all points in the plane for which the difference of the distances from two fixed points is a constant.  Thus, the navigator's position lies on a hyperbola with the two transmitters as the foci, as shown above.  A third transmitter signal compared with either of the first two determines a second hyperbola.  The navigator's position must be at the intersection of the two hyperbolas.</p>
+
+<p>Your ship receives LORAN signals from transmitters located at <m>A(0,28),~ B(0,-28)</m>, and <m>C(-120, -28)</m>. You calculate that you are 14 kilometers closer to <m>A</m> than to <m>B</m>, and 72 kilometers closer to <m>B</m> than to <m>C</m>. It follows that your position must lie on the hyperbolas 
+    <!--*****--><me>\begin{aligned}[t]
+                \dfrac{y^2}{49}-\dfrac{y^2}{735}\amp = 1\\
+                \dfrac{(x+60)^2}{36^2}+\dfrac{(y+28)^2}{48^2} \amp = 1\\           
+                \end{aligned}</me><!--*****-->
+A graph of the hyperbolas is shown below.</p> 
+
+<sidebyside width="80%"><image source="images/fig-10-proj3.png"><description>hyperbolas</description></image></sidebyside>
+
+<p><ol label="1">
+    <li>Identify which hyperbola is the graph of each equation.  On which branch of each hyperbola is your ship located?</li>
+    <li>Solve the equation of each hyperbola for <m>y</m>.</li>
+    <li><p>Use a graphing utility to graph the two hyperbolas on the window
+        <!--*****--><me>\begin{aligned}[t]
+                \text{Xmin} = -130~~~\amp \text{Xmax} = 130\\
+                \text{Ymin} = -130~~~\amp \text{Ymax} = 40\\           
+                \end{aligned}</me><!--*****--> 
+        Locate the point <m>P</m> corresponding to the position of your ship.</p></li>
+    <li>Use your graphing utility to find the coordinates of your ship.</li>
+    <li>Calculate the distances <m>AP, ~BP</m>, and <m>CP</m>.</li>
+    <li>Verify that your position is 14 kilometers closer to <m>A</m> than to <m>B</m>, and 72 kilometers closer to <m>B</m> than to <m>C</m>.</li>
+</ol></p></exercise>    
+    
+</section>

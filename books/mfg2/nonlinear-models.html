@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-07-28T17:21:07-05:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MFG Nonlinear Models</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\require{cancel}\newcommand\degree[0]{^{\circ}}
+\newcommand\Ccancel[2][black]{\renewcommand\CancelColor{\color{#1}}\cancel{#2}}
+\newcommand{\alert}[1]{\boldsymbol{\color{magenta}{#1}}}
+\newcommand{\blert}[1]{\boldsymbol{\color{blue}{#1}}}
+\newcommand{\bluetext}[1]{\color{blue}{#1}} 
+\delimitershortfall-1sp
+\newcommand\abs[1]{\left|#1\right|}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="https://yoshiwarabooks.org/" target="_blank"><img src="images/cover.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="Fall2020.html"><span class="title">Applied Algebra:</span> <span class="subtitle">Modeling and functions</span></a></h1>
+<p class="byline">compiled by Sean Laverty on behalf of others</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap2.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap2.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="basic-functions.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap2.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap2.html" title="Up">Up</a><a class="next-button button toolbar-item" href="basic-functions.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="front.html" data-scroll="front"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap1.html" data-scroll="chap1"><span class="codenumber">1</span> <span class="title">Functions and Their Graphs</span></a><ul>
+<li><a href="LinMod.html" data-scroll="LinMod">Linear Models</a></li>
+<li><a href="functions.html" data-scroll="functions">Functions</a></li>
+<li><a href="graphs-of-functions.html" data-scroll="graphs-of-functions">Graphs of Functions</a></li>
+<li><a href="slope-and-rate-of-change.html" data-scroll="slope-and-rate-of-change">Slope and Rate of Change</a></li>
+<li><a href="linear-functions.html" data-scroll="linear-functions">Linear Functions</a></li>
+<li><a href="chap1-summary.html" data-scroll="chap1-summary">Chapter Summary and Review</a></li>
+<li><a href="chap1-rev-projects.html" data-scroll="chap1-rev-projects">Projects for Chapter 1</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap2.html" data-scroll="chap2"><span class="codenumber">2</span> <span class="title">Modeling with Functions</span></a><ul>
+<li><a href="nonlinear-models.html" data-scroll="nonlinear-models" class="active">Nonlinear Models</a></li>
+<li><a href="basic-functions.html" data-scroll="basic-functions">Some Basic Functions</a></li>
+<li><a href="transformations.html" data-scroll="transformations">Transformations of Graphs</a></li>
+<li><a href="MathModels.html" data-scroll="MathModels">Functions as Mathematical Models</a></li>
+<li><a href="Domain-Range.html" data-scroll="Domain-Range">Domain and Range</a></li>
+<li><a href="chap2-summary.html" data-scroll="chap2-summary">Chapter Summary and Review</a></li>
+<li><a href="chap2-rev-projects.html" data-scroll="chap2-rev-projects">Projects for Chapter 2: Periodic Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap3.html" data-scroll="chap3"><span class="codenumber">3</span> <span class="title">Power Functions</span></a><ul>
+<li><a href="Variation.html" data-scroll="Variation">Variation</a></li>
+<li><a href="Integer-Exponents.html" data-scroll="Integer-Exponents">Integer Exponents</a></li>
+<li><a href="Roots-and-Radicals.html" data-scroll="Roots-and-Radicals">Roots and Radicals</a></li>
+<li><a href="Rational-Exponents.html" data-scroll="Rational-Exponents">Rational Exponents</a></li>
+<li><a href="chap3-summary.html" data-scroll="chap3-summary">Chapter Summary and Review</a></li>
+<li><a href="chap3-rev-projects.html" data-scroll="chap3-rev-projects">Projects for Chapter 3</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap4.html" data-scroll="chap4"><span class="codenumber">4</span> <span class="title">Exponential Functions</span></a><ul>
+<li><a href="Exponential-Growth-and-Decay.html" data-scroll="Exponential-Growth-and-Decay">Exponential Growth and Decay</a></li>
+<li><a href="Exponential-Functions.html" data-scroll="Exponential-Functions">Exponential Functions</a></li>
+<li><a href="Logarithms.html" data-scroll="Logarithms">Logarithms</a></li>
+<li><a href="Properties-of-Logarithms.html" data-scroll="Properties-of-Logarithms">Properties of Logarithms</a></li>
+<li><a href="Exponential-Models.html" data-scroll="Exponential-Models">Exponential Models</a></li>
+<li><a href="chap4-summary.html" data-scroll="chap4-summary">Chapter Summary and Review</a></li>
+<li><a href="chap4-rev-projects.html" data-scroll="chap4-rev-projects">Projects for Chapter 4</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap5.html" data-scroll="chap5"><span class="codenumber">5</span> <span class="title">Logarithmic Functions</span></a><ul>
+<li><a href="Inverse-Functions.html" data-scroll="Inverse-Functions">Inverse Functions</a></li>
+<li><a href="Logarithmic-Functions.html" data-scroll="Logarithmic-Functions">Logarithmic Functions</a></li>
+<li><a href="The-Natural-Base.html" data-scroll="The-Natural-Base">The Natural Base</a></li>
+<li><a href="Logarithm-Scales.html" data-scroll="Logarithm-Scales">Logarithmic Scales</a></li>
+<li><a href="chap5-summary.html" data-scroll="chap5-summary">Chapter Summary and Review</a></li>
+<li><a href="chap5-rev-projects.html" data-scroll="chap5-rev-projects">Projects for Chapter 5</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap6.html" data-scroll="chap6"><span class="codenumber">6</span> <span class="title">Quadratic Functions</span></a><ul>
+<li><a href="Factors-and-x-Intercepts.html" data-scroll="Factors-and-x-Intercepts">Factors and \(x\)-Intercepts</a></li>
+<li><a href="Solving-Quadratic-Equations.html" data-scroll="Solving-Quadratic-Equations">Solving Quadratic Equations</a></li>
+<li><a href="Graphing-Parabolas.html" data-scroll="Graphing-Parabolas">Graphing Parabolas</a></li>
+<li><a href="Problem-Solving.html" data-scroll="Problem-Solving">Problem Solving</a></li>
+<li><a href="chap6-summary.html" data-scroll="chap6-summary">Chapter Summary and Review</a></li>
+<li><a href="chap6-rev-projects.html" data-scroll="chap6-rev-projects">Projects for Chapter 6</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap7.html" data-scroll="chap7"><span class="codenumber">7</span> <span class="title">Polynomial and Rational Functions</span></a><ul>
+<li><a href="Polynomial-Functions.html" data-scroll="Polynomial-Functions">Polynomial Functions</a></li>
+<li><a href="Graphing-Polynomial-Functions.html" data-scroll="Graphing-Polynomial-Functions">Graphing Polynomial Functions</a></li>
+<li><a href="Complex-Numbers.html" data-scroll="Complex-Numbers">Complex Numbers</a></li>
+<li><a href="Graphing-Rational-Functions.html" data-scroll="Graphing-Rational-Functions">Graphing Rational Functions</a></li>
+<li><a href="Equations-That-Include-Algebraic-Fractions.html" data-scroll="Equations-That-Include-Algebraic-Fractions">Equations That Include Algebraic Fractions</a></li>
+<li><a href="chap7-summary.html" data-scroll="chap7-summary">Chapter Summary and Review</a></li>
+<li><a href="chap7-rev-projects.html" data-scroll="chap7-rev-projects">Projects for Chapter 7</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap8.html" data-scroll="chap8"><span class="codenumber">8</span> <span class="title">Extra!!</span></a><ul>
+<li><a href="linear-regression.html" data-scroll="linear-regression">Linear Regression</a></li>
+<li><a href="Curve-Fitting.html" data-scroll="Curve-Fitting">Curve Fitting</a></li>
+</ul>
+</li>
+<li class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Appendices</span></a></li>
+<li class="link">
+<a href="appendix-a.html" data-scroll="appendix-a"><span class="codenumber">A</span> <span class="title">Algebra Skills Refresher</span></a><ul>
+<li><a href="Numbers-and-Operations.html" data-scroll="Numbers-and-Operations">Numbers and Operations</a></li>
+<li><a href="appendix-Linear-Equations-and-Inequalities.html" data-scroll="appendix-Linear-Equations-and-Inequalities">Linear Equations and Inequalities</a></li>
+<li><a href="appendix-Algebraic-Expressions-and-Problem-Solving.html" data-scroll="appendix-Algebraic-Expressions-and-Problem-Solving">Algebraic Expressions and Problem Solving</a></li>
+<li><a href="appendix-Graphs-and-Equations.html" data-scroll="appendix-Graphs-and-Equations">Graphs and Equations</a></li>
+<li><a href="appendix-Linear-Systems-in-Two-Variables.html" data-scroll="appendix-Linear-Systems-in-Two-Variables">Linear Systems in Two Variables</a></li>
+<li><a href="appendix-Laws-of-Exponents.html" data-scroll="appendix-Laws-of-Exponents">Laws of Exponents</a></li>
+<li><a href="appendix-Polynomials-and-Factoring.html" data-scroll="appendix-Polynomials-and-Factoring">Polynomials and Factoring</a></li>
+<li><a href="appendix-Factoring-Quadratic-Trinomials.html" data-scroll="appendix-Factoring-Quadratic-Trinomials">Factoring Quadratic Trinomials</a></li>
+<li><a href="appendix-Working-with-Algebraic-Fractions.html" data-scroll="appendix-Working-with-Algebraic-Fractions">Working with Algebraic Fractions</a></li>
+<li><a href="appendix-Working-with-Radicals.html" data-scroll="appendix-Working-with-Radicals">Working with Radicals</a></li>
+<li><a href="appendix-Facts-from-Geometry.html" data-scroll="appendix-Facts-from-Geometry">Facts from Geometry</a></li>
+<li><a href="Properties-of-Lines.html" data-scroll="Properties-of-Lines">Properties of Lines</a></li>
+<li><a href="appendix-The-Real-Number-System.html" data-scroll="appendix-The-Real-Number-System">The Real Number System</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="appendix-b.html" data-scroll="appendix-b"><span class="codenumber">B</span> <span class="title">Using a Graphing Calculator</span></a><ul>
+<li><a href="appendix-Getting-Started.html" data-scroll="appendix-Getting-Started">Getting Started</a></li>
+<li><a href="appendix-Entering-Expressions.html" data-scroll="appendix-Entering-Expressions">Entering Expressions</a></li>
+<li><a href="appendix-Editing-Expressions.html" data-scroll="appendix-Editing-Expressions">Editing Expressions</a></li>
+<li><a href="appendix-Graphing-an-Equation.html" data-scroll="appendix-Graphing-an-Equation">Graphing an Equation</a></li>
+<li><a href="appendix-Making-a-Table.html" data-scroll="appendix-Making-a-Table">Making a Table</a></li>
+<li><a href="appendix-Regression.html" data-scroll="appendix-Regression">Regression</a></li>
+<li><a href="appendix-Function-Notation-and-Transformation-of-Graphs.html" data-scroll="appendix-Function-Notation-and-Transformation-of-Graphs">Function Notation and Transformation of Graphs</a></li>
+</ul>
+</li>
+<li class="link"><a href="glossary.html" data-scroll="glossary"><span class="codenumber">C</span> <span class="title">Glossary</span></a></li>
+<li class="link"><a href="technology.html" data-scroll="technology"><span class="codenumber">D</span> <span class="title">Technology (Graphing calculators)</span></a></li>
+<li class="link"><a href="geometry.html" data-scroll="geometry"><span class="codenumber">E</span> <span class="title">Geometry formulas</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1"><span class="codenumber">F</span> <span class="title">Answers to Selected Exercises</span></a></li>
+<li class="link"><a href="appendix-gfdl.html" data-scroll="appendix-gfdl"><span class="codenumber">G</span> <span class="title">GNU Free Documentation License</span></a></li>
+<li class="link"><a href="bibliography.html" data-scroll="bibliography"><span class="title">Bibliography</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="nonlinear-models"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Nonlinear Models</span>
+</h2>
+<a href="nonlinear-models.html" class="permalink">¶</a><section class="introduction" id="introduction-66"><p id="p-2466">In Chapter 1, we considered models described by linear functions. In this chapter, we begin our study of nonlinear models.</p></section><section class="subsection" id="subsection-35"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.1</span> <span class="title">Solving Nonlinear Equations</span>
+</h3>
+<p id="p-2467">When studying nonlinear models, we will need to solve nonlinear equations. For example, in <a class="xref" data-knowl="./knowl/investigation-Perimeter-and-Area.html" title="Investigation 2.0.2: Perimeter and Area">Investigation 2</a> we used a graph to solve the quadratic equation</p>
+<div class="displaymath">
+\begin{equation*}
+18x - x^2 = 80
+\end{equation*}
+</div>
+<p id="p-2468">Here is another example. The figure shows a table and a graph for the function \(y = 2x^2 - 5\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:6%;margin-right:6%;">
+<div class="sbspanel" style="width:34.0909090909091%;justify-content:flex-start;"><img src="images/fig-parabola.svg" style="width: 100%; height: auto;" alt="parabola"></div>
+<div class="sbspanel fixed-width" style="width:56.8181818181818%;justify-content:center;"><table>
+<tr>
+<td class="c m b1 r1 l1 t3 lines">\(x\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(-3\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(-2\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(-1\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(0\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t3 lines" data-braille="last-cell">\(3\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(y\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(13\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(-3\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(-5\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(-3\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(13\)</td>
+</tr>
+</table></div>
+</div></div>
+<p id="p-2469">You can see that there are two points on the graph for each \(y\)-value greater than \(-5\text{.}\) For example, the two points with \(y\)-coordinate \(7\) are shown. To solve the equation</p>
+<div class="displaymath">
+\begin{equation*}
+2x^2 - 5 = 7
+\end{equation*}
+</div>
+<p data-braille="continuation">we need only find the \(x\)-coordinates of these points. From the graph, the solutions appear to be about \(2.5\) and \(-2.5\text{.}\)</p>
+<p id="p-2470">How can we solve this equation algebraically? The opposite operation for squaring a number is taking a square root. So we can undo the operation of squaring by extracting square roots. We first solve for \(x^2\) to get</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+2x^2 \amp= 12 \\
+x^2 \amp= 6\\
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">and then take square roots to find</p>
+<div class="displaymath">
+\begin{equation*}
+x = \pm\sqrt{6}
+\end{equation*}
+</div>
+<article class="warning remark-like" id="warning-3"><h6 class="heading">
+<span class="type">Caution</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-2471">Don't forget that every positive number has two square roots. The symbol \(\blert{\pm}\) (read “plus or minus”) is a shorthand notation used to indicate both square roots of \(6\text{.}\)</p></article><p id="p-2472">The exact solutions are thus \(\sqrt{6}\) and \(-\sqrt{6}\text{.}\) We can also find decimal approximations for the solutions using a calculator. Rounded to two decimal places, the approximate solutions are \(2.45\) and \(-2.45\text{.}\)</p>
+<p id="p-2473">In general, we can solve equations of the form \(ax^2 + c = 0\) by isolating \(x^2\) on one side of the equation and then taking the square root of each side. This method for solving equations is called <dfn class="terminology">extraction of roots</dfn>.</p>
+<article class="assemblage assemblage-like" id="assemblage-21"><h6 class="heading"><span class="title">Extraction of Roots.</span></h6>
+<p id="p-2474">To solve the equation</p>
+<div class="displaymath">
+\begin{equation*}
+ax^2 + c = 0
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-1585">Isolate \(x^2\text{.}\)</li>
+<li id="li-1586">Take square roots of both sides. There are two solutions.</li>
+</ol></article><article class="example example-like" id="example-cat-falling"><a data-knowl="" class="id-ref original" data-refid="hk-example-cat-falling"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-cat-falling"><article class="example example-like"><p id="p-2475">If a cat falls off a tree branch 20 feet above the ground, its height \(t\) seconds later is given by \(h = 20 - 16t^2\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-1587">What is the height of the cat \(0.5\) second later?</li>
+<li id="li-1588">How long does the cat have to get in position to land on its feet before it reaches the ground?</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like">
+<ol id="p-2476" class="lower-alpha">
+<li id="li-1589">
+<p id="p-2477">In this question, we are given a value of \(t\) and asked to find the corresponding value of \(h\text{.}\) To do this, we evaluate the formula for \(t = 0.5\text{.}\) We substitute \(\alert{0.5}\) for \(t\) into the formula and simplify.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+h \amp= 20 - 16(\alert{0.5})^2 \amp\amp \blert{\text{Compute the power.}}\\
+\amp = 20 - 16 (0.25) \amp\amp \blert{\text{Multiply; then subtract.}}\\
+\amp = 20 - 4 = 16
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">The cat is \(16\) feet above the ground after \(0.5\) second.</p>
+</li>
+<li id="li-1590">
+<p id="p-2478">We would like to find the value of \(t\) when the height, \(h\text{,}\) is known. We substitute \(h = \alert{0}\) into the equation to obtain</p>
+<div class="displaymath">
+\begin{equation*}
+\alert{0} = 20 - 16t^2
+\end{equation*}
+</div>
+<p data-braille="continuation">To solve this equation, we use extraction of roots. First we isolate \(t^2\) on one side of the equation.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+16t^2 \amp= 20 \amp\amp \blert{\text{Divide by 16.}}\\
+t^2 \amp= \frac{20}{16}=1.25
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Then we take the square root of both sides of the equation to find</p>
+<div class="displaymath">
+\begin{equation*}
+t = \pm \sqrt{1.25} \approx \pm1.118
+\end{equation*}
+</div>
+</li>
+</ol>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:8%;margin-right:8%;">
+<div class="sbspanel" style="width:29.7619047619048%;justify-content:flex-start;"><img src="images/fig-cat-falling.svg" style="width: 100%; height: auto;" alt="cat falling"></div>
+<div class="sbspanel" style="width:59.5238095238095%;justify-content:flex-start;">
+<p id="p-2479">Only the positive solution makes sense here, so the cat has approximately 1.12 seconds to get into position for landing.</p>
+<p id="p-2480">A graph of the cat's height after \(t\) seconds is shown at left. The points corresponding to parts (a) and (b) are labeled.</p>
+</div>
+</div></div>
+</div></div>
+</div></article></div>
+<article class="note remark-like" id="note-12"><h6 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-2481">In part (a) of <a class="xref" data-knowl="./knowl/example-cat-falling.html" title="Example 2.1.2">Example 2.1.2</a> we <dfn class="terminology">evaluated</dfn> the expression \(20 - 16t^2\) to find a value for \(h\text{,}\) and in part (b) we <dfn class="terminology">solved</dfn> the equation \(0 = 20 - 16t^2\) to find a value for \(t\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-445"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-445"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-445"><article class="exercise exercise-like"><ol id="p-2482" class="lower-alpha">
+<li id="li-1591">
+<p id="p-2483">Solve by extracting roots \(\dfrac{3x^2 - 8}{5}= 10.\)</p>
+<p id="p-2484">\(\blert{\text{First, isolate } x^2.}\)</p>
+<p id="p-2485">\(\blert{\text{Take the square root of both sides.}}\)</p>
+</li>
+<li id="li-1592"><p id="p-2486">Give exact answers; then give approximations rounded to two decimal places.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-237" id="answer-237"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-237"><div class="answer solution-like"><p id="p-2487">\(x=\pm\sqrt{\dfrac{58}{3}}\approx \pm 4.40 \)</p></div></div>
+</div></article></div></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.2</span> <span class="title">Solving Formulas</span>
+</h3>
+<p id="p-2488">We can use extraction of roots to solve many formulas involving the square of the variable.</p>
+<article class="example example-like" id="example-volume-cone"><a data-knowl="" class="id-ref original" data-refid="hk-example-volume-cone"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-volume-cone"><article class="example example-like"><p id="p-2489">The formula \(V = \dfrac{1}{3} \pi r^2h\) gives the volume of a cone in terms of its height and radius. Solve the formula for \(r\) in terms of \(V\) and \(h\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-43" id="solution-43"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like">
+<p id="p-2490">Because the variable we want is squared, we use extraction of roots. First, we multiply both sides by \(3\) to clear the fraction.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+\alert{3}V \amp = \alert{3}(\frac{1}{3} \pi r^2h)\\
+3V \amp = \pi r^2h \amp\amp \blert{\text{Divide both sides by } \pi h.}\\
+\frac{3V}{\pi h}\amp= r^2 \amp\amp \blert{\text{Take square roots.}}\\
+\pm\sqrt{\dfrac{3V}{\pi h}}\amp= r
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Because the radius of a cone must be a positive number, we use only the positive square root: \(r = \sqrt{\dfrac{3V}{\pi h}}\text{.}\)</p>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-446"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-446"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-446"><article class="exercise exercise-like"><p id="p-2491">Find a formula for the radius of a circle in terms of its area.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-hint-4" id="hint-4"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like">
+<p id="p-2492">Start with the formula for the area of a circle: \(A =\) <span class="fillin" role="img" aria-label="8-character blank" style="width: 3.636363636363636em;"></span></p>
+<p id="p-2493">Solve for \(r\) in terms of \(A\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-238" id="answer-238"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-238"><div class="answer solution-like"><p id="p-2494">\(r=\sqrt{A/ \pi} \)</p></div></div>
+</div></article></div></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.3</span> <span class="title">More Extraction of Roots</span>
+</h3>
+<p id="p-2495">Equations of the form</p>
+<div class="displaymath">
+\begin{equation*}
+a(px + q)^2 + r = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">can also be solved by extraction of roots after isolating the squared expression, \((px + q)^2\text{.}\)</p>
+<article class="example example-like" id="example-extracting-roots"><a data-knowl="" class="id-ref original" data-refid="hk-example-extracting-roots"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-extracting-roots"><article class="example example-like"><p id="p-2496">Solve the equation \(~3(x - 2)^2 = 48\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-44" id="solution-44"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like">
+<p id="p-2497">First, we isolate the perfect square, \((x - 2)^2\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+3(x - 2)^2 \amp = 48 \amp\amp\blert{\text{Divide both sides by }3.}\\
+(x - 2)^2 \amp = 16 \amp\amp\blert{\text{Take the square root of each side.}}\\
+x - 2 \amp = \pm\sqrt{16} = \pm 4
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">This gives us two equations for \(x\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+x - 2 \amp =4 \amp\amp \text{or }\amp x - 2 \amp =-4\amp\amp\blert{\text {Solve each equation.}}\\
+x \amp=6 \amp\amp \text{or }\amp x \amp =-2
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">The solutions are \(6\) and \(-2\text{.}\)</p>
+</div></div>
+</div></article></div>
+<p id="p-2498">Here is a general strategy for solving equations by extraction of roots.</p>
+<article class="assemblage assemblage-like" id="assemblage-22"><h6 class="heading"><span class="title">Extraction of Roots.</span></h6>
+<p id="p-2499">To solve the equation</p>
+<div class="displaymath">
+\begin{equation*}
+a(px+q)^2 +r=0
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-1593">Isolate the squared expression, \((px + q)^2\text{.}\)</li>
+<li id="li-1594">Take the square root of each side of the equation. Remember that a positive number has two square roots.</li>
+<li id="li-1595">Solve each equation. There are two solutions.</li>
+</ol></article><article class="exercise exercise-like" id="exercise-447"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-447"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-447"><article class="exercise exercise-like"><p id="p-2500">Solve \(~~2(5x + 3)^2 = 38~~\) by extracting roots.</p>
+<ol class="lower-alpha">
+<li id="li-1596">Give your answers as exact values.</li>
+<li id="li-1597">Find approximations for the solutions to two decimal places.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-239" id="answer-239"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-239"><div class="answer solution-like"><ol id="p-2501" class="lower-alpha cols2">
+<li id="li-1598"><p id="p-2502">\(x=\dfrac{-3\pm \sqrt{19}}{5} \)</p></li>
+<li id="li-1599"><p id="p-2503">\(x\approx -1.47\) or \(x\approx 0.27\)</p></li>
+</ol></div></div>
+</div></article></div></section><section class="subsection" id="subsection-38"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.4</span> <span class="title">Compound Interest and Inflation</span>
+</h3>
+<p id="p-2504">Many savings institutions offer accounts on which the interest is <em class="emphasis">compounded annually</em>. At the end of each year, the interest earned is added to the principal, and the interest for the next year is computed on this larger sum of money.</p>
+<article class="assemblage assemblage-like" id="assemblage-23"><h6 class="heading"><span class="title">Compound Interest.</span></h6>
+<p id="p-2505">If interest is compounded annually for \(n\) years, the amount, \(A\text{,}\) of money in an account is given by</p>
+<div class="displaymath">
+\begin{equation*}
+A = P(1 + r)^n
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(P\) is the principal and \(r\) is the interest rate, expressed as a decimal fraction.</p></article><article class="example example-like" id="example-49"><a data-knowl="" class="id-ref original" data-refid="hk-example-49"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-49"><article class="example example-like"><p id="p-2506">Carmella invests $3000 in an account that pays an interest rate, \(r\text{,}\) compounded annually.</p>
+<ol class="lower-alpha">
+<li id="li-1600">Write an expression for the amount of money in Carmella’s account after two years.</li>
+<li id="li-1601">What interest rate would be necessary for Carmella's account to grow to $3500 in two years?</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-45" id="solution-45"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-45"><div class="solution solution-like"><ol id="p-2507" class="lower-alpha">
+<li id="li-1602">We use the formula above with \(P = 3000\) and \(n = 2\text{.}\) Carmella’s account balance will be<div class="displaymath">
+\begin{equation*}
+A = 3000(1 + r)^2
+\end{equation*}
+</div>
+</li>
+<li id="li-1603">We substitute \(3500\) for \(A\) in the equation.<div class="displaymath">
+\begin{equation*}
+\alert{3500} = 3000(1 + r)^2
+\end{equation*}
+</div>We can solve this equation in \(r\) by extraction of roots. First, we isolate the perfect square.<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+3500 \amp = 3000(1 + r )^2 \amp\amp \blert{\text{Divide both sides by 3000.}} \\
+1.1\overline{6} \amp = (1 + r )^2 \amp\amp \blert{\text{Take the square root of both sides.}} \\
+\pm 1.0801 \amp\approx 1 + r \amp\amp \blert{\text{Subtract 1 from both sides.}}\\
+r \amp\approx 0.0801   \text{  or  } r \approx -2.0801
+\end{aligned}
+\end{equation*}
+</div>Because the interest rate must be a positive number, we discard the negative solution. Carmella needs an account with interest rate \(r \approx 0.0801\text{,}\) or just over 8%, to achieve an account balance of $3500 in two years.</li>
+</ol></div></div>
+</div></article></div>
+<p id="p-2508">The formula for compound interest also applies to the effects of inflation. For instance, if there is a steady inflation rate of 4% per year, in two years an item that now costs $100 will cost</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+A \amp= P(1 + r)^2\\
+\amp = 100(1 + 0.04)2 = $108.16
+\end{aligned}
+\end{equation*}
+</div>
+<article class="exercise exercise-like" id="exercise-448"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-448"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-448"><article class="exercise exercise-like"><p id="p-2509">Two years ago, the average cost of dinner and a movie was $24. This year the average cost is $25.44. What was the rate of inflation over the past two years?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-240" id="answer-240"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-240"><div class="answer solution-like"><p id="p-2510">\(r\approx 2.96\%\)</p></div></div>
+</div></article></div></section><section class="subsection" id="subsection-39"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.5</span> <span class="title">Other Nonlinear Equations</span>
+</h3>
+<p id="p-2511">Because squaring and taking square roots are opposite operations, we can solve the equation</p>
+<div class="displaymath">
+\begin{equation*}
+\sqrt{x} = 8.2
+\end{equation*}
+</div>
+<p data-braille="continuation">by squaring both sides to get</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+(\sqrt{x})^2 \amp= 8.2^2 \\
+x \amp = 67.24
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Similarly, we can solve</p>
+<div class="displaymath">
+\begin{equation*}
+x^3 = 258
+\end{equation*}
+</div>
+<p data-braille="continuation">by taking the cube root of both sides, because cubing and taking cube roots are opposite operations. Rounding to three places, we find</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+\sqrt[3]{x^3}\amp=258\\
+x \amp \approx 6.366
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">The notion of undoing operations can help us solve a variety of simple nonlinear equations. The operation of taking a reciprocal is its own opposite, so we solve the equation</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{x} = 50
+\end{equation*}
+</div>
+<p data-braille="continuation">by taking the reciprocal of both sides to get</p>
+<div class="displaymath">
+\begin{equation*}
+x = \frac{1}{50}= 0.02
+\end{equation*}
+</div>
+<article class="example example-like" id="example-nonlinear-equation"><a data-knowl="" class="id-ref original" data-refid="hk-example-nonlinear-equation"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.11</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-nonlinear-equation"><article class="example example-like"><p id="p-2512">Solve \(~~\dfrac{3}{x - 2}= 4\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-solution-46" id="solution-46"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-46"><div class="solution solution-like">
+<p id="p-2513">We begin by taking the reciprocal of both sides of the equation to get</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{x - 2}{3}= \frac{1}{4}
+\end{equation*}
+</div>
+<p data-braille="continuation">We continue to undo the operations in reverse order. First, we multiply both sides by \(3\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+x - 2 \amp = \frac{3}{4} \amp\amp \blert{\text{Add 2 to both sides.}}\\
+x \amp = 2 + \frac{3}{4}= \frac{11}{4} \amp\amp \blert{\tfrac{2}{1}=\tfrac{8}{4}
+\text{, so } \tfrac{2}{1}+ \tfrac{3}{4}=\tfrac{8}{4}+\tfrac{3}{4}=\tfrac{11}{4}}\\
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">The solution is \(\dfrac{11}{4}\text{,}\) or \(2.75\text{.}\)</p>
+</div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-449"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-449"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.12</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-449"><article class="exercise exercise-like"><p id="p-2514">Solve \(~~2\sqrt{x + 4} = 6\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-241" id="answer-241"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-241"><div class="answer solution-like"><p id="p-2515">\(x=5\)</p></div></div>
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-450"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-450"><h6 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.1.13</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-450"><article class="exercise exercise-like"><p id="p-2516">Use the intersect feature to solve the equation \(2x^2 - 5 = 7\text{.}\) Round your answers to three decimal places.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-242" id="answer-242"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-242"><div class="answer solution-like"><p id="p-2517">\(x=\pm 2.449\)</p></div></div>
+</div></article></div></section><section class="subsection" id="summary-2-1"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1.6</span> <span class="title">Section Summary</span>
+</h3>
+<a href="nonlinear-models.html#summary-2-1" class="permalink">¶</a><section class="subsubsection" id="subsubsection-21"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">2.1.6.1</span> <span class="title">Vocabulary</span>
+</h4>
+<p id="p-2518">Look up the definitions of new terms in the Glossary.</p>
+<ul class="disc cols3">
+<li id="li-1604"><p id="p-2519">Quadratic</p></li>
+<li id="li-1605"><p id="p-2520">Compound interest</p></li>
+<li id="li-1606"><p id="p-2521">Exact solution</p></li>
+<li id="li-1607"><p id="p-2522">Perfect square</p></li>
+<li id="li-1608"><p id="p-2523">Extraction of roots</p></li>
+<li id="li-1609"><p id="p-2524">Inflation</p></li>
+<li id="li-1610"><p id="p-2525">Area</p></li>
+<li id="li-1611"><p id="p-2526">Cube root</p></li>
+<li id="li-1612"><p id="p-2527">Isolate</p></li>
+<li id="li-1613"><p id="p-2528">Height</p></li>
+<li id="li-1614"><p id="p-2529">Perimeter</p></li>
+<li id="li-1615"><p id="p-2530">Reciprocal</p></li>
+</ul></section><section class="subsubsection" id="subsubsection-22"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">2.1.6.2</span> <span class="title">CONCEPTS</span>
+</h4>
+<ol id="p-2531" class="decimal">
+<li id="li-1616"><article class="assemblage assemblage-like" id="assemblage-24"><h6 class="heading"><span class="title">Extraction of Roots.</span></h6>
+<p id="p-2532">To solve the equation</p>
+<div class="displaymath">
+\begin{equation*}
+a(px+q)^2 +r=0
+\end{equation*}
+</div>
+<ol class="decimal">
+<li id="li-1617"><p id="p-2533">Isolate the squared expression, \((px + q)^2\text{.}\)</p></li>
+<li id="li-1618"><p id="p-2534">Take the square root of each side of the equation. Remember that a positive number has two square roots.</p></li>
+<li id="li-1619"><p id="p-2535">Solve each equation. There are two solutions.</p></li>
+</ol></article></li>
+<li id="li-1620"><p id="p-2536"><article class="assemblage assemblage-like" id="assemblage-25"><h6 class="heading"><span class="title">Compound Interest.</span></h6>
+<p id="p-2537">If interest is compounded annually for \(n\) years, the amount, \(A\text{,}\) of money in an account is given by</p>
+<div class="displaymath">
+\begin{equation*}
+A = P(1 + r)^n
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(P\) is the principal and \(r\) is the interest rate, expressed as a decimal fraction.</p></article></p></li>
+<li id="li-1621"><p id="p-2538">We can give exact answers to a simple nonlinear equation, or we can give decimal approximations.</p></li>
+<li id="li-1622"><p id="p-2539">Simple nonlinear equations can be solved by undoing the operations on the variable.</p></li>
+</ol></section><section class="subsubsection" id="subsubsection-23"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">2.1.6.3</span> <span class="title">STUDY QUESTIONS</span>
+</h4>
+<ol id="p-2540" class="decimal">
+<li id="li-1623"><p id="p-2541">How many square roots does a positive number have?</p></li>
+<li id="li-1624"><p id="p-2542">What is the first step in solving the equation \(a(px + q)^2 = r\) by extraction of roots?</p></li>
+<li id="li-1625"><p id="p-2543">Give the exact solutions of the equation \(x^2 = 10\text{,}\) and then give decimal approximations rounded to hundredths.</p></li>
+<li id="li-1626"><p id="p-2544">State a formula for the amount in an account on which \(5\%\) interest is compounded annually.</p></li>
+<li id="li-1627"><p id="p-2545">Give an example of two rectangles with the same perimeter but different areas.</p></li>
+<li id="li-1628"><p id="p-2546">The perimeter of a rectangle is \(50\) meters. Write an expression for the length of the rectangle in terms of its width.</p></li>
+<li id="li-1629"><p id="p-2547">What is the opposite operation for taking a reciprocal?</p></li>
+<li id="li-1630"><p id="p-2548">What is the reciprocal of \(\dfrac{1}{\sqrt{x}} \) ?</p></li>
+</ol></section><section class="subsubsection" id="subsubsection-24"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">2.1.6.4</span> <span class="title">SKILLS</span>
+</h4>
+<p id="p-2549">Practice each skill in the <a href="nonlinear-models.html#section-2-1-exercises" class="internal" title="Exercises 2.1.7: Homework 2.1">Homework 2.1.7</a> problems listed.</p>
+<ol class="decimal">
+<li id="li-1631"><p id="p-2550">Solve equations by extraction of roots: #1–12, 31–42</p></li>
+<li id="li-1632"><p id="p-2551">Solve formulas: #13–16, 63–68</p></li>
+<li id="li-1633"><p id="p-2552">Use the Pythagorean theorem: #19–24</p></li>
+<li id="li-1634"><p id="p-2553">Solve equations graphically: #25–30</p></li>
+<li id="li-1635"><p id="p-2554">Solve simple nonlinear equations: #43–54</p></li>
+<li id="li-1636"><p id="p-2555">Solve problems: #55–62</p></li>
+</ol></section></section><section class="exercises" id="section-2-1-exercises"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.1.7</span> <span class="title">Homework 2.1</span>
+</h3>
+<a href="nonlinear-models.html#section-2-1-exercises" class="permalink">¶</a><div class="exercisegroup" id="exercisegroup-63">
+<div class="introduction" id="introduction-67"><p id="p-2556">For Problems 1-6, solve by extracting roots. Give exact values for your answers.</p></div>
+<div class="exercisegroup-exercises cols3">
+<article class="exercise exercise-like" id="exercise-451"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-2557">\(9x^2=25\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-243" id="answer-243"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-243"><div class="answer solution-like"><p id="p-2558">\(\pm\dfrac{5}{3} \)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-452"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-2559">\(4x^2=9\)</p></article><article class="exercise exercise-like" id="exercise-453"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-2560">\(4x^2-24=0\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-244" id="answer-244"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-244"><div class="answer solution-like"><p id="p-2561">\(\pm\sqrt{6} \)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-454"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-2562">\(3x^2-9=0\)</p></article><article class="exercise exercise-like" id="exercise-455"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-2563">\(\dfrac{2x^2}{3} =4\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-245" id="answer-245"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-245"><div class="answer solution-like"><p id="p-2564">\(\pm \sqrt{6} \)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-456"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-2565">\(\dfrac{3x^2}{5}=6\)</p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-64">
+<div class="introduction" id="introduction-68"><p id="p-2566">For Problems 7-12, solve by extracting roots. Round your answers to two decimal places.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-457"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-2567">\(2x^2 = 14\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-246" id="answer-246"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-246"><div class="answer solution-like"><p id="p-2568">\(\pm 2.65\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-458"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-2569">\(3x^2=15\)</p></article><article class="exercise exercise-like" id="exercise-459"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-2570">\(1.5x^2 = 0.7x^2 + 26.2\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-247" id="answer-247"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-247"><div class="answer solution-like"><p id="p-2571">\(\pm 5.72\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-460"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-2572">\(0.4x^2 = 2x^2 - 8.6\)</p></article><article class="exercise exercise-like" id="exercise-461"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-2573">\(5x^2 - 97 = 3.2x^2 - 38\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-248" id="answer-248"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-248"><div class="answer solution-like"><p id="p-2574">\(\pm 5.73\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-462"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-2575">\(17 - \dfrac{x^2}{4}= 43 - x^2\)</p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-65">
+<div class="introduction" id="introduction-69"><p id="p-2576">&gt;For Problems 13-16, solve the formulas for the specified variable.</p></div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-463"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-2577">\(F = \dfrac{mv^2}{r}\text{,}\) for \(v\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-249" id="answer-249"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-249"><div class="answer solution-like"><p id="p-2578">\(\pm\sqrt{\dfrac{Fr}{m}} \)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-464"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-2579">\(A =\dfrac{\sqrt{3}}{4}s^2\text{,}\) for \(s\)</p></article><article class="exercise exercise-like" id="exercise-465"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-2580">\(s = \dfrac{1}{2}gt^2\text{,}\) for \(t\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-250" id="answer-250"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-250"><div class="answer solution-like"><p id="p-2581">\(\pm\sqrt{\dfrac{2s}{g}} \)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-466"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-2582">\(S = 4\pi r^2\text{,}\) for \(r\)</p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-66">
+<div class="introduction" id="introduction-70"><p id="p-2583">For Problems 17 and 18, refer to the geometric formulas in  <a href="geometry.html" class="internal" title="Appendix E: Geometry formulas">Appendix E</a>.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-467"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-2584">A conical coffee filter is \(8.4\) centimeters tall.</p>
+<ol class="lower-alpha">
+<li id="li-1637"><p id="p-2585">Write a formula for the filter's volume in terms of its widest radius (at the top of the filter).</p></li>
+<li id="li-1638">
+<p id="p-2586">Complete the table of values for the volume equation. If you double the radius of the filter, by what factor does the volume increase?</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t1 lines">\(r\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(4\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(5\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(6\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(7\)</td>
+<td class="c m b1 r1 l0 t1 lines" data-braille="last-cell">\(8\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(V\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\hphantom{000}\)</td>
+</tr>
+</table></div></div></div>
+</li>
+<li id="li-1639"><p id="p-2587">If the volume of the filter is \(302.4\) cubic centimeters, what is its radius?</p></li>
+<li id="li-1640"><p id="p-2588">Use your calculator to graph the volume equation. Locate the point on the graph that corresponds to the filter in part (c).</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-251" id="answer-251"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-251"><div class="answer solution-like"><ol id="p-2589" class="lower-alpha">
+<li id="li-1641"><p id="p-2590">\(V = 2.8 \pi r^2\approx 8.8r^2\)</p></li>
+<li id="li-1642">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t1 lines">\(r\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(4\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(5\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(6\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(7\)</td>
+<td class="c m b1 r1 l0 t1 lines" data-braille="last-cell">\(8\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(V\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(8.8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(35.2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(79.2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(140.7\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(219.9\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(316.7\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(431.0\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(563.0\)</td>
+</tr>
+</table></div></div></div>
+<p id="p-2591">The volume increases by a factor of \(4\text{.}\)</p>
+</li>
+<li id="li-1643"><p id="p-2592">\(5.86\) cm</p></li>
+<li id="li-1644"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:50%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-ans-2-1-17.jpg" style="width: 100%; height: auto;" alt="GC graph"></div></div></div></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-468"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-2593">A large bottle of shampoo is \(20\) centimeters tall and cylindrical in shape.</p>
+<ol class="lower-alpha">
+<li id="li-1645"><p id="p-2594">Write a formula for the volume of the bottle in terms of its radius.</p></li>
+<li id="li-1646">
+<p id="p-2595">Complete the table of values for the volume equation. If you halve the radius of the bottle, by what factor does the volume decrease?</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t1 lines">\(r\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(4\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(5\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(6\)</td>
+<td class="c m b1 r1 l0 t1 lines">\(7\)</td>
+<td class="c m b1 r1 l0 t1 lines" data-braille="last-cell">\(8\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(V\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\hphantom{000}\)</td>
+</tr>
+</table></div></div></div>
+</li>
+<li id="li-1647"><p id="p-2596">What radius should the bottle have if it must hold \(240\) milliliters of shampoo? (One milliliter is equal to 1 cubic centimeter.)</p></li>
+<li id="li-1648"><p id="p-2597">Use your calculator to graph the volume equation. Locate the point on the graph that corresponds to the bottle in part (c).</p></li>
+</ol></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-67">
+<div class="introduction" id="introduction-71">
+<p id="p-2598">For Problems 19–24,</p>
+<ol class="lower-alpha">
+<li id="li-1649"><p id="p-2599">Make a sketch of the situation described, and label a right triangle.</p></li>
+<li id="li-1650"><p id="p-2600">Use the Pythagorean theorem to solve each problem. (See Algebra Skills Refresher <a href="appendix-Facts-from-Geometry.html" class="internal" title="Section A.11: Facts from Geometry">Section A.11</a> to review the Pythagorean theorem.)</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-469"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-2601">The size of a TV screen is the length of its diagonal. If the width of a \(35\)-inch TV screen is \(28\) inches, what is its height?</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-2-1-19.jpg" style="width: 100%; height: auto;" alt="tv screen"></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-252" id="answer-252"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-252"><div class="answer solution-like"><p id="p-2602">\(21\) in.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-470"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-2603">How high on a building will a \(25\)-foot ladder reach if its foot is \(15\) feet away from the base of the wall?</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-2-1-20.jpg" style="width: 100%; height: auto;" alt="ladder against building"></div></div></div></article><article class="exercise exercise-like" id="exercise-471"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<p id="p-2604">If a \(30\)-meter pine tree casts a shadow of \(30\) meters, how far is the tip of the shadow from the top of the tree?</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-2-1-21.jpg" style="width: 100%; height: auto;" alt="tree and shadow"></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-253" id="answer-253"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-253"><div class="answer solution-like"><p id="p-2605">\(\sqrt{1800}\approx 42.4\) m</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-472"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<p id="p-2606">A baseball diamond is a square whose sides are \(90\) feet in length. Find the straight-line distance from home plate to second base.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-2-1-22.jpg" style="width: 100%; height: auto;" alt="baseball diamond"></div></div></div></article><article class="exercise exercise-like" id="exercise-473"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-2607">What size square can be inscribed in a circle of radius \(8\) inches?</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-2-1-23.jpg" style="width: 100%; height: auto;" alt="square in circle"></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-254" id="answer-254"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-254"><div class="answer solution-like"><p id="p-2608">\(\sqrt{128}\) in. by \(\sqrt{128}\) in. \(\approx 11.3\) in. \({}\times{} 11.3\) in.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-474"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<p id="p-2609">What size rectangle can be inscribed in a circle of radius 30 feet if the length of the rectangle must be 3 times its width?</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-2-1-24.jpg" style="width: 100%; height: auto;" alt="rectangle in circle"></div></div></div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-68">
+<div class="introduction" id="introduction-72">
+<p id="p-2610">For Problems 25–30,</p>
+<ol class="lower-alpha">
+<li id="li-1651"><p id="p-2611">Use a calculator or computer to graph the function in the suggested window.</p></li>
+<li id="li-1652"><p id="p-2612">Use your graph to find two solutions for the given equation. (See <a href="graphs-of-functions.html" class="internal" title="Section 1.3: Graphs of Functions">Section 1.3</a> to review graphical solution of equations.)</p></li>
+<li id="li-1653"><p id="p-2613">Check your solutions algebraically, using mental arithmetic.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises cols2">
+<article class="exercise exercise-like" id="exercise-475"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<ol id="p-2614" class="lower-alpha">
+<li id="li-1654">
+<p id="p-2615">\(y=\dfrac{1}{4}x^2 \)</p>
+<div class="displaymath">
+\begin{align*}
+{\text{Xmin}} \amp = -15 \amp\amp {\text{Xmax}} = 15\\
+{\text{Ymin}} \amp = -10 \amp\amp {\text{Ymax}} = 40
+\end{align*}
+</div>
+</li>
+<li id="li-1655"><p id="p-2616">\(\dfrac{1}{4}x^2=36 \)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-255" id="answer-255"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-255"><div class="answer solution-like"><ol id="p-2617" class="lower-alpha">
+<li id="li-1656"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:40%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-ans-2-1-25.jpg" style="width: 100%; height: auto;" alt="GC graph"></div></div></div></li>
+<li id="li-1657"><p id="p-2618">\(x=\pm 12\)</p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-476"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<ol id="p-2619" class="lower-alpha">
+<li id="li-1658">
+<p id="p-2620">\(y=8x^2 \)</p>
+<div class="displaymath">
+\begin{align*}
+{\text{Xmin}} \amp = -15 \amp\amp {\text{Xmax}} = 15\\
+{\text{Ymin}} \amp = -50 \amp\amp {\text{Ymax}} = 450
+\end{align*}
+</div>
+</li>
+<li id="li-1659"><p id="p-2621">\(8x^2=392 \)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-477"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<ol id="p-2622" class="lower-alpha">
+<li id="li-1660">
+<p id="p-2623">\(y=(x-5)^2 \)</p>
+<div class="displaymath">
+\begin{align*}
+{\text{Xmin}} \amp = -5 \amp\amp {\text{Xmax}} = 15\\
+{\text{Ymin}} \amp = -5 \amp\amp {\text{Ymax}} = 25
+\end{align*}
+</div>
+</li>
+<li id="li-1661"><p id="p-2624">\((x-5)^2=16 \)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-256" id="answer-256"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-256"><div class="answer solution-like"><ol id="p-2625" class="lower-alpha">
+<li id="li-1662"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:40%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-ans-2-1-27.jpg" style="width: 100%; height: auto;" alt="GC graph"></div></div></div></li>
+<li id="li-1663"><p id="p-2626">\(x= 1\) or \(x=9\)</p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-478"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<ol id="p-2627" class="lower-alpha">
+<li id="li-1664">
+<p id="p-2628">\(y=(x+2)^2 \)</p>
+<div class="displaymath">
+\begin{align*}
+{\text{Xmin}} \amp = -10 \amp\amp {\text{Xmax}} = 10\\
+{\text{Ymin}} \amp = -2 \amp\amp {\text{Ymax}} = 12
+\end{align*}
+</div>
+</li>
+<li id="li-1665"><p id="p-2629">\((x+2)^2=9 \)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-479"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<ol id="p-2630" class="lower-alpha">
+<li id="li-1666">
+<p id="p-2631">\(y=3(x-4)^2 \)</p>
+<div class="displaymath">
+\begin{align*}
+{\text{Xmin}} \amp = -5 \amp\amp {\text{Xmax}} = 15\\
+{\text{Ymin}} \amp = -20 \amp\amp {\text{Ymax}} = 130
+\end{align*}
+</div>
+</li>
+<li id="li-1667"><p id="p-2632">\(3(x-4)^2=108 \)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-257" id="answer-257"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-257"><div class="answer solution-like"><ol id="p-2633" class="lower-alpha">
+<li id="li-1668"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:40%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-ans-2-1-29.jpg" style="width: 100%; height: auto;" alt="GC graph"></div></div></div></li>
+<li id="li-1669"><p id="p-2634">\(x= 10\) or \(x=-2\)</p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-480"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<ol id="p-2635" class="lower-alpha">
+<li id="li-1670">
+<p id="p-2636">\(y=\dfrac{1}{2} (x+3)^2 \)</p>
+<div class="displaymath">
+\begin{align*}
+{\text{Xmin}} \amp = -15 \amp\amp {\text{Xmax}} = 5\\
+{\text{Ymin}} \amp = -5 \amp\amp {\text{Ymax}} = 15
+\end{align*}
+</div>
+</li>
+<li id="li-1671"><p id="p-2637">\(\dfrac{1}{2} (x+3)^2=8 \)</p></li>
+</ol></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-69">
+<div class="introduction" id="introduction-73"><p id="p-2638">For Problems 31-42, solve by extraction of roots.</p></div>
+<div class="exercisegroup-exercises cols3">
+<article class="exercise exercise-like" id="exercise-481"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<p id="p-2639">\((x-2)^2=9 \)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-258" id="answer-258"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-258"><div class="answer solution-like"><p id="p-2640">\(5, -1\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-482"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<p id="p-2641">\((x+3)^2=4 \)</p></article><article class="exercise exercise-like" id="exercise-483"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<p id="p-2642">\((2x-1)^2=16 \)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-259" id="answer-259"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-259"><div class="answer solution-like"><p id="p-2643">\(\dfrac{5}{2}, \dfrac{-3}{2}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-484"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<p id="p-2644">\((3x+1)^2=25 \)</p></article><article class="exercise exercise-like" id="exercise-485"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<p id="p-2645">\(4(x+2)^2=12 \)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-260" id="answer-260"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-260"><div class="answer solution-like"><p id="p-2646">\(-2 \pm \sqrt{3}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-486"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<p id="p-2647">\(6(x-5)^2=42 \)</p></article><article class="exercise exercise-like" id="exercise-487"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<p id="p-2648">\(\left(x-\dfrac{1}{2} \right)^2=\dfrac{3}{4} \)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-261" id="answer-261"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-261"><div class="answer solution-like"><p id="p-2649">\(\dfrac{1}{2} \pm \dfrac{\sqrt{3}}{2} \)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-488"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<p id="p-2650">\(\left(x-\dfrac{2}{3} \right)^2=\dfrac{5}{9} \)</p></article><article class="exercise exercise-like" id="exercise-489"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<p id="p-2651">\(81\left(x+\dfrac{1}{3} \right)^2=1 \)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-262" id="answer-262"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-262"><div class="answer solution-like"><p id="p-2652">\(\dfrac{-2}{9} , \dfrac{-4}{9} \)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-490"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<p id="p-2653">\(16\left(x+\dfrac{1}{2} \right)^2=1 \)</p></article><article class="exercise exercise-like" id="exercise-491"><h6 class="heading"><span class="codenumber">41<span class="period">.</span></span></h6>
+<p id="p-2654">\(3(8x-7)^2=24 \)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-263" id="answer-263"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-263"><div class="answer solution-like"><p id="p-2655">\(\dfrac{7}{8} \pm \dfrac{\sqrt{8}}{8}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-492"><h6 class="heading"><span class="codenumber">42<span class="period">.</span></span></h6>
+<p id="p-2656">\(-2(5x-12)^2=48 \)</p></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-70">
+<div class="introduction" id="introduction-74">
+<p id="p-2657">For Problems 43–54,</p>
+<ol class="lower-alpha">
+<li id="li-1672"><p id="p-2658">Solve algebraically.</p></li>
+<li id="li-1673"><p id="p-2659">Use the <dfn class="terminology">intersect</dfn> feature on a graphing calculator to solve.</p></li>
+</ol>
+</div>
+<div class="exercisegroup-exercises cols3">
+<article class="exercise exercise-like" id="exercise-493"><h6 class="heading"><span class="codenumber">43<span class="period">.</span></span></h6>
+<p id="p-2660">\(4x^3 - 12 = 852\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-264" id="answer-264"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-264"><div class="answer solution-like"><p id="p-2661">\(6\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-494"><h6 class="heading"><span class="codenumber">44<span class="period">.</span></span></h6>
+<p id="p-2662">\(\dfrac{8x^3 + 6}{3}= 74\)</p></article><article class="exercise exercise-like" id="exercise-495"><h6 class="heading"><span class="codenumber">45<span class="period">.</span></span></h6>
+<p id="p-2663">\(5\sqrt{x} - 9 = 31\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-265" id="answer-265"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-265"><div class="answer solution-like"><p id="p-2664">\(64\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-496"><h6 class="heading"><span class="codenumber">46<span class="period">.</span></span></h6>
+<p id="p-2665">\(25-2\sqrt{x} =1\)</p></article><article class="exercise exercise-like" id="exercise-497"><h6 class="heading"><span class="codenumber">47<span class="period">.</span></span></h6>
+<p id="p-2666">\(\dfrac{1}{2x-3}=\dfrac{3}{4} \)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-266" id="answer-266"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-266"><div class="answer solution-like"><p id="p-2667">\(\dfrac{13}{6} \)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-498"><h6 class="heading"><span class="codenumber">48<span class="period">.</span></span></h6>
+<p id="p-2668">\(\dfrac{15}{x+16}=3\)</p></article><article class="exercise exercise-like" id="exercise-499"><h6 class="heading"><span class="codenumber">49<span class="period">.</span></span></h6>
+<p id="p-2669">\(8-6\sqrt[3]{x} =-4\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-267" id="answer-267"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-267"><div class="answer solution-like"><p id="p-2670">\(8\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-500"><h6 class="heading"><span class="codenumber">50<span class="period">.</span></span></h6>
+<p id="p-2671">\(\dfrac{4\sqrt[3]{x}}{5}+3 =7\)</p></article><article class="exercise exercise-like" id="exercise-501"><h6 class="heading"><span class="codenumber">51<span class="period">.</span></span></h6>
+<p id="p-2672">\(\sqrt{3x-2}+3 =8\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-268" id="answer-268"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-268"><div class="answer solution-like"><p id="p-2673">\(9\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-502"><h6 class="heading"><span class="codenumber">52<span class="period">.</span></span></h6>
+<p id="p-2674">\(6\sqrt{1-2x} =30\)</p></article><article class="exercise exercise-like" id="exercise-503"><h6 class="heading"><span class="codenumber">53<span class="period">.</span></span></h6>
+<p id="p-2675">\(\dfrac{2}{\sqrt{4x-2}} =8\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-269" id="answer-269"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-269"><div class="answer solution-like"><p id="p-2676">\(\dfrac{33}{64} \)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-504"><h6 class="heading"><span class="codenumber">54<span class="period">.</span></span></h6>
+<p id="p-2677">\(\dfrac{1}{\sqrt{x+2}} =\dfrac{3}{4} \)</p></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-505"><h6 class="heading"><span class="codenumber">55<span class="period">.</span></span></h6>
+<p id="p-2678">Cyril plans to invest $\(5000\) in a money market account that pays interest compounded annually.</p>
+<ol class="lower-alpha">
+<li id="li-1674"><p id="p-2679">Write a formula for the balance, \(B\text{,}\) in Cyril's account after two years as a function of the interest rate, \(r\text{.}\)</p></li>
+<li id="li-1675"><p id="p-2680">If Cyril would like to have $\(6250\) in two years, what interest rate must the account pay?</p></li>
+<li id="li-1676"><p id="p-2681">Use your calculator to graph the formula for Cyril's account balance. Locate the point on the graph that corresponds to the amount in part (b).</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-270" id="answer-270"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-270"><div class="answer solution-like"><ol id="p-2682" class="lower-alpha cols2">
+<li id="li-1677"><p id="p-2683">\(B = 5000 (1 + r )^2\)</p></li>
+<li id="li-1678"><p id="p-2684">\(11.8\%\)</p></li>
+<li id="li-1679"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-ans-2-1-55.jpg" style="width: 100%; height: auto;" alt="GC graph"></div></div></div></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-506"><h6 class="heading"><span class="codenumber">56<span class="period">.</span></span></h6>
+<p id="p-2685">You plan to deposit your savings of $\(1600\) in an account that compounds interest annually.</p>
+<ol class="lower-alpha">
+<li id="li-1680"><p id="p-2686">Write a formula for the amount in your savings account after two years as a function of the interest rate, \(r\text{.}\)</p></li>
+<li id="li-1681"><p id="p-2687">To the nearest tenth of a percent, what interest rate will you require if you want your $\(1600\) to grow to $\(2000\) in two years?</p></li>
+<li id="li-1682"><p id="p-2688">Use your calculator to graph the formula for the account balance. Locate the point on the graph that corresponds to the amount in part (b).</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-507"><h6 class="heading"><span class="codenumber">57<span class="period">.</span></span></h6>
+<p id="p-2689">Carol's living expenses two years ago were $\(1200\) per month. This year, the same items cost Carol $\(1400\) per month. What was the annual inflation rate for the past two years?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-271" id="answer-271"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-271"><div class="answer solution-like"><p id="p-2690">\(8\%\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-508"><h6 class="heading"><span class="codenumber">58<span class="period">.</span></span></h6>
+<p id="p-2691">Two years ago, the average price of a house in the suburbs was $\(188,600\text{.}\) This year, the average price is $\(203,700\text{.}\) What was the annual percent increase in the cost of a house?</p></article><article class="exercise exercise-like" id="exercise-509"><h6 class="heading"><span class="codenumber">59<span class="period">.</span></span></h6>
+<p id="p-2692">A machinist wants to make a metal section of pipe that is \(80\) millimeters long and has an interior volume of \(9000\) cubic millimeters. If the pipe is \(2\) millimeters thick, its interior volume is given by the formula</p>
+<div class="displaymath">
+\begin{equation*}
+V = \pi (r - 2)^2h
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(h\) is the length of the pipe and \(r\) is its radius. What should the radius of the pipe be?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-272" id="answer-272"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-272"><div class="answer solution-like"><p id="p-2693">\(7.98\) mm</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-510"><h6 class="heading"><span class="codenumber">60<span class="period">.</span></span></h6>
+<p id="p-2694">A storage box for sweaters is constructed from a square sheet of corrugated cardboard measuring \(x\) inches on a side. The volume of the box, in cubic inches, is</p>
+<div class="displaymath">
+\begin{equation*}
+V = 10(x - 20)^2
+\end{equation*}
+</div>
+<p data-braille="continuation">If the box should have a volume of \(1960\) cubic inches, what size cardboard square is needed?</p></article><article class="exercise exercise-like" id="exercise-511"><h6 class="heading"><span class="codenumber">61<span class="period">.</span></span></h6>
+<p id="p-2695">The area of an equilateral triangle is given by the formula \(A = \dfrac{\sqrt{3}}{4}s^2\text{,}\) where \(s\) is the length of the side.</p>
+<ol class="lower-alpha">
+<li id="li-1683"><p id="p-2696">Find the areas of equilateral triangles with sides of length \(2\) centimeters, \(4\) centimeters, and \(10\) centimeters. First give exact values, then approximations to hundredths.</p></li>
+<li id="li-1684">
+<p id="p-2697">Graph the area equation in the window</p>
+<div class="displaymath">
+\begin{align*}
+{\text{Xmin}} \amp = 0 \amp\amp {\text{Xmax}} = 14.1\\
+{\text{Ymin}} \amp = 0 \amp\amp {\text{Ymax}} = 60
+\end{align*}
+</div>
+<p data-braille="continuation">Use the <code class="code-inline tex2jax_ignore">TRACE</code> or <dfn class="terminology">value</dfn> feature to verify your answers to part (a).</p>
+</li>
+<li id="li-1685"><p id="p-2698">What does the coordinate \((5.1, 11.26266)\) represent?</p></li>
+<li id="li-1686"><p id="p-2699">Use your graph to estimate the side of an equilateral triangle whose area is \(20\) square centimeters.</p></li>
+<li id="li-1687"><p id="p-2700">Write and solve an equation to answer part (d).</p></li>
+<li id="li-1688"><p id="p-2701">If the area of an equilateral triangle is \(100\sqrt{3}\) square centimeters, what is the length of its side?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-273" id="answer-273"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-273"><div class="answer solution-like"><ol id="p-2702" class="lower-alpha">
+<li id="li-1689"><p id="p-2703">\(\sqrt{3}\approx 1.73\)  sq cm, \(4\sqrt{3}\approx 6.93\) sq cm, \(25\sqrt{3}\approx  43.3\) sq cm</p></li>
+<li id="li-1690"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:65%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-ans-2-1-61.jpg" style="width: 100%; height: auto;" alt="GC graph"></div></div></div></li>
+<li id="li-1691"><p id="p-2704">An equilateral triangle with side \(5.1\) cm has area \(11.263 \text{ cm}^2\text{.}\)</p></li>
+<li id="li-1692"><p id="p-2705">\(\text{side}\approx 6.8 \) cm</p></li>
+<li id="li-1693"><p id="p-2706">\(\dfrac{\sqrt{3}}{4}s^2=20\text{;}\) \(s \approx 6.8\)</p></li>
+<li id="li-1694"><p id="p-2707">\(\approx 20 \) cm</p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-512"><h6 class="heading"><span class="codenumber">62<span class="period">.</span></span></h6>
+<p id="p-2708">The area of the ring in the figure is given by the formula \(A =\pi R^2 -\pi r^2\text{,}\) where \(R\) is the radius of the outer circle and \(r\) is the radius of the inner circle.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:39.5%;margin-right:39.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-2-1-62.svg" style="width: 100%; height: auto;" alt="annulus"></div></div></div>
+<ol id="p-2709" class="lower-alpha">
+<li id="li-1695"><p id="p-2710">Suppose the inner radius of the ring is kept fixed at \(r = 4\) centimeters, but the radius of the outer circle, \(R\text{,}\) is allowed to vary. Find the area of the ring when the outer radius is \(6\) centimeters, \(8\) centimeters, and \(12\) centimeters. First give exact values, then approximations to hundredths.</p></li>
+<li id="li-1696">
+<p id="p-2711">Graph the area equation, with r = 4, in the window</p>
+<div class="displaymath">
+\begin{align*}
+{\text{Xmin}} \amp = 0 \amp\amp {\text{Xmax}} = 14.1\\
+{\text{Ymin}} \amp = 0 \amp\amp {\text{Ymax}} = 400
+\end{align*}
+</div>
+<p data-braille="continuation">Use the <code class="code-inline tex2jax_ignore">TRACE</code> feature to verify your answers to part (a).</p>
+</li>
+<li id="li-1697"><p id="p-2712"><dfn class="terminology">Trace</dfn> along the curve to the point \((9.75, 248.38217)\text{.}\) What do the coordinates of this point represent?</p></li>
+<li id="li-1698"><p id="p-2713">Use your graph to estimate the outer radius of the ring when its area is \(100\) square centimeters.</p></li>
+<li id="li-1699"><p id="p-2714">Write and solve an equation to answer part (d).</p></li>
+<li id="li-1700"><p id="p-2715">If the area of the ring is \(9\pi\) square centimeters, what is the radius of the outer circle?</p></li>
+</ol></article><div class="exercisegroup" id="exercisegroup-71">
+<div class="introduction" id="introduction-75"><p id="p-2716">For Problems 63–68, solve for \(x\) in terms of \(a\text{,}\) \(b\text{,}\) and \(c\text{.}\)</p></div>
+<div class="exercisegroup-exercises cols3">
+<article class="exercise exercise-like" id="exercise-513"><h6 class="heading"><span class="codenumber">63<span class="period">.</span></span></h6>
+<p id="p-2717">\(\dfrac{ax^2}{b}=c \)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-274" id="answer-274"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-274"><div class="answer solution-like"><p id="p-2718">\(\pm \sqrt{\dfrac{bc}{a}}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-514"><h6 class="heading"><span class="codenumber">64<span class="period">.</span></span></h6>
+<p id="p-2719">\(\dfrac{bx^2}{c}-a=0 \)</p></article><article class="exercise exercise-like" id="exercise-515"><h6 class="heading"><span class="codenumber">65<span class="period">.</span></span></h6>
+<p id="p-2720">\((x-a)^2=16 \)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-275" id="answer-275"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-275"><div class="answer solution-like"><p id="p-2721">\(a \pm 4\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-516"><h6 class="heading"><span class="codenumber">66<span class="period">.</span></span></h6>
+<p id="p-2722">\((x+a)^2=36 \)</p></article><article class="exercise exercise-like" id="exercise-517"><h6 class="heading"><span class="codenumber">67<span class="period">.</span></span></h6>
+<p id="p-2723">\((ax+b)^2=9 \)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-276" id="answer-276"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-276"><div class="answer solution-like"><p id="p-2724">\(\dfrac{-b\pm 3}{a} \)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-518"><h6 class="heading"><span class="codenumber">68<span class="period">.</span></span></h6>
+<p id="p-2725">\((ax-b)^2=25 \)</p></article>
+</div>
+</div>
+<article class="exercise exercise-like" id="exercise-519"><h6 class="heading"><span class="codenumber">69<span class="period">.</span></span></h6>
+<p id="p-2726">You have \(36\) feet of rope and you want to enclose a rectangular display area against one wall of an exhibit hall. The area enclosed depends on the dimensions of the rectangle you make. Because the wall makes one side of the rectangle, the length of the rope accounts for only three sides. Thus</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Base} + 2 (\text{Height}) = 36
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-2-1-69.svg" style="width: 100%; height: auto;" alt="rectangle against wall"></div></div></div>
+<ol id="p-2727" class="lower-alpha">
+<li id="li-1701">
+<p id="p-2728">Complete the table showing the base and the area of the rectangle for the given heights.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t3 lines">Height</td>
+<td class="c m b1 r1 l0 t3 lines">Base</td>
+<td class="c m b1 r1 l0 t3 lines">Area</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t3 lines">Height</td>
+<td class="c m b1 r1 l0 t3 lines">Base</td>
+<td class="c m b1 r1 l0 t3 lines" data-braille="last-cell">Area</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(34\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(34\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(10\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(32\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(64\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(11\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(12\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(4\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(13\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(5\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(14\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(15\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(7\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(16\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(17\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(9\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(18\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+</table></div></div></div>
+</li>
+<li id="li-1702"><p id="p-2729">Make a graph with <em class="emphasis">Height</em> on the horizontal axis and <em class="emphasis">Area</em> on the vertical axis. Draw a smooth curve through your data points.</p></li>
+<li id="li-1703"><p id="p-2730">What is the area of the largest rectangle you can enclose in this way? What are its dimensions? On your graph, label the point that corresponds to this rectangle with the letter \(M\text{.}\)</p></li>
+<li id="li-1704"><p id="p-2731">Let \(x\) stand for the height of a rectangle and write algebraic expressions for the base and the area of the rectangle.</p></li>
+<li id="li-1705"><p id="p-2732">Enter your algebraic expression for the area in your calculator, then use the <dfn class="terminology">Table</dfn> feature to verify the entries in your table in part (a).</p></li>
+<li id="li-1706"><p id="p-2733">Graph your formula for area on your graphing calculator. Use your table of values and your handdrawn graph to help you choose appropriate <code class="code-inline tex2jax_ignore">WINDOW</code> settings.</p></li>
+<li id="li-1707"><p id="p-2734">Use the <dfn class="terminology">intersect</dfn> command to find the height of the rectangle whose area is \(149.5\) square feet.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-277" id="answer-277"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-277"><div class="answer solution-like"><ol id="p-2735" class="lower-alpha">
+<li id="li-1708"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:30%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t3 lines">Height</td>
+<td class="c m b1 r1 l0 t3 lines">Base</td>
+<td class="c m b1 r1 l0 t3 lines">Area</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t3 lines">Height</td>
+<td class="c m b1 r1 l0 t3 lines">Base</td>
+<td class="c m b1 r1 l0 t3 lines" data-braille="last-cell">Area</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(34\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(34\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(10\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(16 \)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(160\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(32\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(64\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(11\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(14\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(154\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(30\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(90\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(12\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(12\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(144\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(4\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(28\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(112\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(13\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(10\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(130\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(5\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(26\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(130\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(14\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(8\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(112\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(6\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(24\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(144\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(15\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(6\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(90\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(7\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(22\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(154\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(16\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(4\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(64\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(20\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(160\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(17\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(34\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(9\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(18\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(162\)</td>
+<td class="c m b0 r1 l0 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">\(18\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(0\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(0\)</td>
+</tr>
+</table></div></div></div></li>
+<li id="li-1709"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:60%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-ans-2-1-69.svg" style="width: 100%; height: auto;" alt="points and curve"></div></div></div></li>
+<li id="li-1710"><p id="p-2736">\(162\) sq ft, with base \(18\) ft, height \(9\) ft</p></li>
+<li id="li-1711"><p id="p-2737">Base: \(36 - 2x\text{;}\) area: \(x (36 - 2x)\)</p></li>
+<li id="li-1712"><p id="p-2738">See (a)</p></li>
+<li id="li-1713"><p id="p-2739">\(6.5\) ft or \(11.5\) ft</p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-520"><h6 class="heading"><span class="codenumber">70<span class="period">.</span></span></h6>
+<p id="p-2740">We are going to make an open box from a square piece of cardboard by cutting \(3\)-inch squares from each corner and then turning up the edges as shown in the figure.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-2-1-70.svg" style="width: 100%; height: auto;" alt="rectangle box"></div></div></div>
+<ol id="p-2741" class="lower-alpha">
+<li id="li-1714">
+<p id="p-2742">Complete the table showing the side of the original sheet of cardboard, the dimensions of the box created from it, and the volume of the box.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t3 lines">Side</td>
+<td class="c m b1 r1 l0 t3 lines">Length<br>of box</td>
+<td class="c m b1 r1 l0 t3 lines">Width<br>of box</td>
+<td class="c m b1 r1 l0 t3 lines">Height<br>of box</td>
+<td class="c m b1 r1 l0 t3 lines" data-braille="last-cell">Volume<br>of box</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(7\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(3\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(8\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(12\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(9\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(10\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(11\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(12\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(13\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(14\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(15\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\)</td>
+</tr>
+</table></div></div></div>
+<p id="p-2743">Explain why the side of the cardboard square cannot be smaller than \(6\) inches. What happens if the cardboard is exactly \(6\) inches on a side?</p>
+</li>
+<li id="li-1715"><p id="p-2744">Make a graph with <em class="emphasis">Side</em> on the horizontal axis and <em class="emphasis">Volume</em> on the vertical axis. Draw a smooth curve through your data points. (Use your table to help you decide on appropriate scales for the axes.)</p></li>
+<li id="li-1716"><p id="p-2745">Let \(x\) represent the side of the original sheet of cardboard. Write algebraic expressions for the dimensions of the box and for its volume.</p></li>
+<li id="li-1717"><p id="p-2746">Enter your expression for the volume of the box in your calculator; then use the <dfn class="terminology">Table</dfn> feature to verify the values in your table in part (a).</p></li>
+<li id="li-1718"><p id="p-2747">Graph your formula for volume on your graphing calculator. Use your table of values and your handdrawn graph to help you choose appropriate <code class="code-inline tex2jax_ignore">WINDOW</code> settings.</p></li>
+<li id="li-1719"><p id="p-2748">Use the <dfn class="terminology">intersect</dfn> command to find out how large a square of cardboard you need to make a box with volume \(126.75\) cubic inches.</p></li>
+<li id="li-1720"><p id="p-2749">Does your graph have a highest point? What happens to the volume of the box as you increase \(x\text{?}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-521"><h6 class="heading"><span class="codenumber">71<span class="period">.</span></span></h6>
+<p id="p-2750">The jump height, \(J\text{,}\) in meters, achieved by a pole vaulter is given approximately by \(J = v^2/(2g)\text{,}\) where v is the vaulter's speed in meters per second at the end of his run, and \(g = 9.8\) is the gravitational acceleration. (Source: Alexander, 1992)</p>
+<ol class="lower-alpha">
+<li id="li-1721">
+<p id="p-2751">Fill in the table of values for jump heights achieved with values of \(v\) from \(0\) to \(11\) meters per second.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t3 lines">\(v\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(0\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(4\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(5\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(6\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(7\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(8\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(9\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(10\)</td>
+<td class="c m b1 r1 l0 t3 lines" data-braille="last-cell">\(11\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(J\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\hphantom{000}\)</td>
+</tr>
+</table></div></div></div>
+</li>
+<li id="li-1722"><p id="p-2752">Graph the jump height versus final speed. (Use the table values to help you choose a window for the graph.)</p></li>
+<li id="li-1723">
+<p id="p-2753">The jump height should be added to the height of the vaulter's center of gravity (at about hip level) to give the maximum height, \(H\text{,}\) he can clear. For a typical pole vaulter, his center of gravity at the end of the run is \(0.9\) meters from the ground. Complete the table of values for maximum heights, \(H\text{,}\) and graph \(H\) on your graph of \(J\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t3 lines">\(v\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(0\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(4\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(5\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(6\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(7\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(8\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(9\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(10\)</td>
+<td class="c m b1 r1 l0 t3 lines" data-braille="last-cell">\(11\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(H\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(\hphantom{000}\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(\hphantom{000}\)</td>
+</tr>
+</table></div></div></div>
+</li>
+<li id="li-1724"><p id="p-2754">A good pole vaulter can reach a final speed of \(9.5\) meters per second. What height will he clear?</p></li>
+<li id="li-1725"><p id="p-2755">In 2016, the world record in pole vaulting, established by Renaud Lavillenie in 2014, was 6.16 meters. What was the vaulter's speed at the end of his run?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref original" data-refid="hk-answer-278" id="answer-278"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-278"><div class="answer solution-like"><ol id="p-2756" class="lower-alpha">
+<li id="li-1726"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t3 lines">\(v\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(0\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(4\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(5\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(6\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(7\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(8\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(9\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(10\)</td>
+<td class="c m b1 r1 l0 t3 lines" data-braille="last-cell">\(11\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(J\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(0\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(0.05\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(0.2\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(0.46\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(0.82\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.28\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.84\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.5\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3.27\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(4.13\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(5.1\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(6.17\)</td>
+</tr>
+</table></div></div></div></li>
+<li id="li-1727"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:60%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/fig-ans-2-1-71.svg" style="width: 100%; height: auto;" alt="two curves"></div></div></div></li>
+<li id="li-1728"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="c m b1 r1 l1 t3 lines">\(v\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(0\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(1\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(2\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(3\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(4\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(5\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(6\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(7\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(8\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(9\)</td>
+<td class="c m b1 r1 l0 t3 lines">\(10\)</td>
+<td class="c m b1 r1 l0 t3 lines" data-braille="last-cell">\(11\)</td>
+</tr>
+<tr>
+<td class="c m b1 r1 l1 t0 lines">\(H\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(0.9\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(0.95\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.1\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.36\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(1.72\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.18\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2.74\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(3.4\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(4.17\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(5.03\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(6.0\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(7.07\)</td>
+</tr>
+</table></div></div></div></li>
+<li id="li-1729"><p id="p-2757">\(5.5\) meters</p></li>
+<li id="li-1730"><p id="p-2758">\(10.15\) meters per second</p></li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-522"><h6 class="heading"><span class="codenumber">72<span class="period">.</span></span></h6>
+<p id="p-2759">To be launched into space, a satellite must travel fast enough to escape Earth's gravity. This escape velocity, \(v\text{,}\) satisfies the equation</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{2}mv^2=\frac{GMm}{R} 
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(m\) is the mass of the satellite, \(M\) is the mass of the Earth, \(R\) is the radius of the Earth, and \(G\) is the universal gravitational constant.</p>
+<ol class="lower-alpha">
+<li id="li-1731"><p id="p-2760">Solve the equation for \(v\) in terms of the other variables.</p></li>
+<li id="li-1732">
+<p id="p-2761">The equation</p>
+<div class="displaymath">
+\begin{equation*}
+mg=\frac{GMm}{R^2} 
+\end{equation*}
+</div>
+<p data-braille="continuation">gives the force of gravity at the Earth's surface. We can use this equation to simplify the expression for \(v\text{:}\) First, multiply both sides of the equation by \(\frac{R}{m}\text{.}\) You now have an expression for \(\frac{GM}{R}\text{.}\) Substitute this new expression into your formula for \(v\text{.}\)</p>
+</li>
+<li id="li-1733"><p id="p-2762">The radius of the Earth is about \(6400\) km, and \(g = 0.0098 \frac{\text{km}}{\text{s}^2}\text{.}\) Calculate the escape velocity from Earth in kilometers per second. Convert your answer to miles per hour. (One kilometer is \(0.621\) miles.)</p></li>
+<li id="li-1734"><p id="p-2763">The radius of the moon is \(1740\) km, and the value of \(g\) at the moon's surface is \(0.0016\text{.}\) Calculate the escape velocity from the moon in kilometers per second and convert to miles per hour.</p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>
