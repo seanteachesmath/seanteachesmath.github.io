@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-08-23T22:02:38-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>More complicated integrals and integration by substitution</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="article-1.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="introduction-to-differential-equations.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="article-1.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="the-definite-integral.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="introduction-to-differential-equations.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="article-1.html" title="Up">Up</a><a class="next-button button toolbar-item" href="the-definite-integral.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="users-guide.html" data-scroll="users-guide"><span class="title">Users guide</span></a></li>
+<li class="link"><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus"><span class="codenumber">1</span> <span class="title">What is bio-calculus?</span></a></li>
+<li class="link">
+<a href="introduction-to-modeling-variables-parameters-functions-and-graphs.html" data-scroll="introduction-to-modeling-variables-parameters-functions-and-graphs"><span class="codenumber">2</span> <span class="title">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</span></a><ul><li><a href="introduction-to-modeling-variables-parameters-functions-and-graphs.html#quick-practice" data-scroll="quick-practice">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1"><span class="codenumber">3</span> <span class="title">Dimensions and units</span></a><ul><li><a href="dimensions-and-units-1.html#quick-practice-1" data-scroll="quick-practice-1">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs"><span class="codenumber">4</span> <span class="title">Linear functions and their graphs</span></a><ul><li><a href="linear-functions-and-their-graphs.html#quick-practice-2" data-scroll="quick-practice-2">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms"><span class="codenumber">5</span> <span class="title">Exponentials and logarithms</span></a><ul><li><a href="exponentials-and-logarithms.html#quick-practice-3" data-scroll="quick-practice-3">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds"><span class="codenumber">6</span> <span class="title">Introduction to discrete-time dynamical systems (DTDS)</span></a><ul><li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html#quick-practice-4" data-scroll="quick-practice-4">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="introduction-to-limits.html" data-scroll="introduction-to-limits"><span class="codenumber">7</span> <span class="title">Introduction to limits</span></a><ul><li><a href="introduction-to-limits.html#quick-practice-5" data-scroll="quick-practice-5">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="continuous-functions.html" data-scroll="continuous-functions"><span class="codenumber">8</span> <span class="title">Continuous functions</span></a><ul><li><a href="continuous-functions.html#quick-practice-6" data-scroll="quick-practice-6">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity"><span class="codenumber">9</span> <span class="title">Limits and behaviors at infinity</span></a><ul><li><a href="limits-and-behaviors-at-infinity.html#quick-practice-7" data-scroll="quick-practice-7">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change"><span class="codenumber">10</span> <span class="title">Introduction to derivatives: Rates of change</span></a><ul><li><a href="introduction-to-derivatives-rates-of-change.html#quick-practice-8" data-scroll="quick-practice-8">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions"><span class="codenumber">11</span> <span class="title">Derivatives of basic functions</span></a><ul><li><a href="derivatives-of-basic-functions.html#quick-practice-9" data-scroll="quick-practice-9">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions"><span class="codenumber">12</span> <span class="title">Derivatives of exponential and logarithmic functions</span></a><ul><li><a href="derivatives-of-exponential-and-logarithmic-functions.html#quick-practice-10" data-scroll="quick-practice-10">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule"><span class="codenumber">13</span> <span class="title">Derivatives of compositions: chain rule</span></a><ul><li><a href="derivatives-of-compositions-chain-rule.html#quick-practice-11" data-scroll="quick-practice-11">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients"><span class="codenumber">14</span> <span class="title">Derivatives of products and quotients</span></a><ul><li><a href="derivatives-of-products-and-quotients.html#quick-practice-12" data-scroll="quick-practice-12">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications"><span class="codenumber">15</span> <span class="title">Second derivatives and applications</span></a><ul><li><a href="second-derivatives-and-applications.html#quick-practice-13" data-scroll="quick-practice-13">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations"><span class="codenumber">16</span> <span class="title">Introduction to differential equations</span></a><ul><li><a href="introduction-to-differential-equations.html#quick-practice-14" data-scroll="quick-practice-14">Quick practice</a></li></ul>
+</li>
+<li class="link active">
+<a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution"><span class="codenumber">17</span> <span class="title">More complicated integrals and integration by substitution</span></a><ul><li><a href="more-complicated-integrals-and-integration-by-substitution.html#quick-practice-15" data-scroll="quick-practice-15">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="the-definite-integral.html" data-scroll="the-definite-integral"><span class="codenumber">18</span> <span class="title">The definite integral</span></a><ul><li><a href="the-definite-integral.html#quick-practice-16" data-scroll="quick-practice-16">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral"><span class="codenumber">19</span> <span class="title">Applications of the definite integral</span></a><ul><li><a href="applications-of-the-definite-integral.html#quick-practice-17" data-scroll="quick-practice-17">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry"><span class="codenumber">20</span> <span class="title">Applications to chemistry</span></a><ul><li><a href="applications-to-chemistry.html#quick-practice-18" data-scroll="quick-practice-18">Quick practice</a></li></ul>
+</li>
+<li class="link"><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds"><span class="codenumber">21</span> <span class="title">Applications: nonlinear discrete-time dynamical systems (DTDS)</span></a></li>
+<li class="link"><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations"><span class="codenumber">22</span> <span class="title">Applications: autonomous differential equations</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="more-complicated-integrals-and-integration-by-substitution"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">17</span> <span class="title">More complicated integrals and integration by substitution</span>
+</h2>
+<article class="paragraphs" id="the-plan.-15"><h5 class="heading"><span class="title">The Plan..</span></h5>
+<p id="p-731">We continue our work on integration by introducing exponential and logarithmic functions, as well as those involving compositions.</p>
+<article class="paragraphs" id="evaluating-complicated-integrals."><h5 class="heading"><span class="title">Evaluating complicated integrals..</span></h5>
+<p id="p-732">We have learned a lot of techniques of differentiation. We will only learn how to undo a few of these, such as those derivatives involving \(e^x\text{,}\) \(\ln(x)\text{,}\) and the chain rule. For example, we omit the method required to ‘undo’ derivatives computed with the product rule.</p>
+<article class="paragraphs" id="derivatives-of-ex-and-lnx."><h5 class="heading"><span class="title">Derivatives of \(e^x\) and \(\ln(x)\text{.}\).</span></h5>
+<p id="p-733">Recall from our earlier work that \(\displaystyle\frac{d}{dx}(e^x)=e^x\) and \(\displaystyle\frac{d}{dx}(\ln{(x)})=\frac{1}{x}\text{.}\)What consequences do these facts have when we approach this problem from integration? Our new approach is to ask ‘what (unknown) function has a derivative that matches the integrand?’ rather than to ask ‘what is the derivative of the (known) function?’ In other words, ‘where did this derivative come from?’</p></article><article class="paragraphs" id="facts-about-ex-and-lnx."><h5 class="heading"><span class="title">Facts about \(e^x\) and \(\ln(x)\text{.}\).</span></h5>
+<p id="p-734">Since the indefinite integral undoes the action of the derivative</p>
+<div class="displaymath">
+\begin{equation*}
+\boxed{\int e^x \, dx=e^x +c}
+\end{equation*}
+</div>
+<p id="p-735">and</p>
+<div class="displaymath" id="p-736">
+\begin{equation*}
+\boxed{\int \frac{1}{x} \, dx=\ln{|x|} +c}
+\end{equation*}
+</div>
+<p id="p-737">Compute \(\displaystyle\int 3e^x+\frac{1}{x}+x^2 \, dx\text{.}\)</p>
+<p id="p-738">Compute \(\displaystyle\int \displaystyle\frac{2}{x} +\frac{1}{4}e^x+\frac{1}{x^4} \, dx\text{.}\)</p>
+<p id="p-739">Compute \(\displaystyle\int 15e^{5x}\, dx\text{.}\) Taking the derivative of what function gives us \(f(x) = 15e^{5x}\text{?}\)</p></article><article class="paragraphs" id="undoing-differentiation-by-the-chain-rule."><h5 class="heading"><span class="title">Undoing differentiation by the Chain Rule..</span></h5>
+<p id="p-740">Recall that the Chain Rule says that</p>
+<div class="displaymath">
+\begin{equation*}
+\boxed{\displaystyle\frac{d}{dx}\Big(f\circ g\Big)=\frac{d}{dx}\Big(f(g(x))\Big)=\frac{df}{dg}\frac{dg}{dx}}
+\end{equation*}
+</div>
+<p data-braille="continuation">We can undo the chain rule using integration by a substitution process as well.</p>
+<p id="p-741">Before we begin, we need a brief definition for the <dfn class="terminology">differential</dfn> \(du\text{.}\) For \(u=g(x)\text{,}\) the differential is defined as</p>
+<div class="displaymath">
+\begin{equation*}
+\boxed{du = g'(x)\,dx}
+\end{equation*}
+</div>
+<p id="p-742">This is often called ‘\(u\)-substitution’ since we think of \(u\) as the name assigned to the inside function \(g(x)\) from the Chain Rule. To outline the method we will think of integrating with respect to the variable \(x\text{,}\) though where you see an \(x\) below you can imagine another variable such as \(t\text{.}\)</p>
+<ol id="p-743" class="decimal">
+<li id="li-273"><p id="p-744">Define a new variable, called \(u=g(x)\text{,}\) as some function of the old variable \(x\text{.}\)</p></li>
+<li id="li-274"><p id="p-745">Compute the differential \(du = g'(x)\,dx\text{.}\)</p></li>
+<li id="li-275"><p id="p-746">Put everything in the integral in terms of the new variable, \(u\text{.}\)(Replace the ‘inside function’ by the letter \(u\) and replace what remains by the definition for \(du\text{.}\)) Sometimes we have to rearrange a bit here so that \(du\) fits back in the integral.</p></li>
+<li id="li-276"><p id="p-747">Try to integrate in terms of the new variable, \(u\text{.}\)</p></li>
+<li id="li-277"><p id="p-748">After integrating, try to put everything back in terms of the old variable \(x\text{.}\)</p></li>
+</ol>
+<p id="p-749">Find \(\displaystyle\int 2xe^{x^2} \, dx\text{.}\)</p>
+<p id="p-750">Evaluate \(\displaystyle\int \frac{e^{3t}}{(1+e^{3t})} \, dt\text{.}\)</p></article><article class="paragraphs" id="warning."><h5 class="heading"><span class="title">Warning..</span></h5>
+<p id="p-751">Integration by substitution does not always work!</p>
+<p id="p-752">Try to evaluate \(\displaystyle\int 2x^2e^{x^2} \, dx\text{.}\)</p>
+<p id="p-753">The growth of female Atlantic sturgeon (fish) in the Hudson River, New York, approximately follows the differential equation</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\frac{dL}{dt}=19.56e^{-0.074t}
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(L(0)=14.65\) (age in yr, length in cm, measured from hatching). Solve this differential equation.</p>
+<p id="p-754">Female sturgeon mature and begin to reproduce when they are roughly \(191\) cm long. How long does it take the female sturgeon to mature?</p></article></article></article><section class="subsection" id="quick-practice-15"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">17.1</span> <span class="title">Quick practice</span>
+</h3>
+<ol id="p-755" class="decimal">
+<li id="li-278"><p id="p-756">Compute \(\displaystyle\int 3e^{7x}\,dx\text{.}\)</p></li>
+<li id="li-279"><p id="p-757">Compute \(\displaystyle\int \frac{1}{2x}\,dx\text{.}\)</p></li>
+<li id="li-280"><p id="p-758">Compute \(\displaystyle\int 3e^{7x}+\frac{1}{2x}+x^2\,dx\text{.}\)</p></li>
+<li id="li-281"><p id="p-759">In a \(u\)-substitution problem, if \(u = f(x) = 3x^2+2x\text{,}\) what is \(du\text{?}\)</p></li>
+</ol>
+<p id="p-760">Answers:</p>
+<ol id="p-761" class="decimal">
+<li id="li-282"><p id="p-762">The indefinite integral \(\displaystyle\int 3e^{7x}\,dx\) evaluates to \(\displaystyle\int 3e^{7x}\,dx = \dfrac{3}{7}e^{7x}+c\text{.}\)</p></li>
+<li id="li-283"><p id="p-763">The indefinite integral \(\displaystyle\int \frac{1}{2x}\,dx\) evaluates to \(\displaystyle\int \frac{1}{2x}\,dx = \dfrac{1}{2}\int \frac{1}{x}\,dx = \dfrac{1}{2}\ln|x|+c\text{.}\)</p></li>
+<li id="li-284"><p id="p-764">The indefinite integral \(\displaystyle\int 3e^{7x}+\frac{1}{2x}+x^2\,dx\) evaluates to \(\displaystyle\int 3e^{7x}+\frac{1}{2x}+x^2\,dx = \dfrac{3}{7}e^{7x}+\dfrac{1}{2}\ln|x|+\dfrac{1}{3}x^3+c\text{.}\)</p></li>
+<li id="li-285"><p id="p-765">In a \(u\)-substitution problem, if \(u = f(x) = 3x^2+2x\text{,}\) then \(du\) is \(du = f'(x)dx = (6x+2)dx\text{.}\)</p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

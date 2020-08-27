@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-08-23T22:02:32-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Introduction to Modeling: Variables, Parameters, Functions, and Graphs</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-article has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="article-1.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="what-is-bio-calculus.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="article-1.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="dimensions-and-units-1.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="what-is-bio-calculus.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="article-1.html" title="Up">Up</a><a class="next-button button toolbar-item" href="dimensions-and-units-1.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link"><a href="users-guide.html" data-scroll="users-guide"><span class="title">Users guide</span></a></li>
+<li class="link"><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus"><span class="codenumber">1</span> <span class="title">What is bio-calculus?</span></a></li>
+<li class="link active">
+<a href="introduction-to-modeling-variables-parameters-functions-and-graphs.html" data-scroll="introduction-to-modeling-variables-parameters-functions-and-graphs"><span class="codenumber">2</span> <span class="title">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</span></a><ul><li><a href="introduction-to-modeling-variables-parameters-functions-and-graphs.html#quick-practice" data-scroll="quick-practice">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1"><span class="codenumber">3</span> <span class="title">Dimensions and units</span></a><ul><li><a href="dimensions-and-units-1.html#quick-practice-1" data-scroll="quick-practice-1">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs"><span class="codenumber">4</span> <span class="title">Linear functions and their graphs</span></a><ul><li><a href="linear-functions-and-their-graphs.html#quick-practice-2" data-scroll="quick-practice-2">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms"><span class="codenumber">5</span> <span class="title">Exponentials and logarithms</span></a><ul><li><a href="exponentials-and-logarithms.html#quick-practice-3" data-scroll="quick-practice-3">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds"><span class="codenumber">6</span> <span class="title">Introduction to discrete-time dynamical systems (DTDS)</span></a><ul><li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html#quick-practice-4" data-scroll="quick-practice-4">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="introduction-to-limits.html" data-scroll="introduction-to-limits"><span class="codenumber">7</span> <span class="title">Introduction to limits</span></a><ul><li><a href="introduction-to-limits.html#quick-practice-5" data-scroll="quick-practice-5">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="continuous-functions.html" data-scroll="continuous-functions"><span class="codenumber">8</span> <span class="title">Continuous functions</span></a><ul><li><a href="continuous-functions.html#quick-practice-6" data-scroll="quick-practice-6">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity"><span class="codenumber">9</span> <span class="title">Limits and behaviors at infinity</span></a><ul><li><a href="limits-and-behaviors-at-infinity.html#quick-practice-7" data-scroll="quick-practice-7">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change"><span class="codenumber">10</span> <span class="title">Introduction to derivatives: Rates of change</span></a><ul><li><a href="introduction-to-derivatives-rates-of-change.html#quick-practice-8" data-scroll="quick-practice-8">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions"><span class="codenumber">11</span> <span class="title">Derivatives of basic functions</span></a><ul><li><a href="derivatives-of-basic-functions.html#quick-practice-9" data-scroll="quick-practice-9">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions"><span class="codenumber">12</span> <span class="title">Derivatives of exponential and logarithmic functions</span></a><ul><li><a href="derivatives-of-exponential-and-logarithmic-functions.html#quick-practice-10" data-scroll="quick-practice-10">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule"><span class="codenumber">13</span> <span class="title">Derivatives of compositions: chain rule</span></a><ul><li><a href="derivatives-of-compositions-chain-rule.html#quick-practice-11" data-scroll="quick-practice-11">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients"><span class="codenumber">14</span> <span class="title">Derivatives of products and quotients</span></a><ul><li><a href="derivatives-of-products-and-quotients.html#quick-practice-12" data-scroll="quick-practice-12">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications"><span class="codenumber">15</span> <span class="title">Second derivatives and applications</span></a><ul><li><a href="second-derivatives-and-applications.html#quick-practice-13" data-scroll="quick-practice-13">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations"><span class="codenumber">16</span> <span class="title">Introduction to differential equations</span></a><ul><li><a href="introduction-to-differential-equations.html#quick-practice-14" data-scroll="quick-practice-14">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution"><span class="codenumber">17</span> <span class="title">More complicated integrals and integration by substitution</span></a><ul><li><a href="more-complicated-integrals-and-integration-by-substitution.html#quick-practice-15" data-scroll="quick-practice-15">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="the-definite-integral.html" data-scroll="the-definite-integral"><span class="codenumber">18</span> <span class="title">The definite integral</span></a><ul><li><a href="the-definite-integral.html#quick-practice-16" data-scroll="quick-practice-16">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral"><span class="codenumber">19</span> <span class="title">Applications of the definite integral</span></a><ul><li><a href="applications-of-the-definite-integral.html#quick-practice-17" data-scroll="quick-practice-17">Quick practice</a></li></ul>
+</li>
+<li class="link">
+<a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry"><span class="codenumber">20</span> <span class="title">Applications to chemistry</span></a><ul><li><a href="applications-to-chemistry.html#quick-practice-18" data-scroll="quick-practice-18">Quick practice</a></li></ul>
+</li>
+<li class="link"><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds"><span class="codenumber">21</span> <span class="title">Applications: nonlinear discrete-time dynamical systems (DTDS)</span></a></li>
+<li class="link"><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations"><span class="codenumber">22</span> <span class="title">Applications: autonomous differential equations</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="introduction-to-modeling-variables-parameters-functions-and-graphs"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2</span> <span class="title">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</span>
+</h2>
+<article class="paragraphs" id="the-plan.-1"><h5 class="heading"><span class="title">The Plan..</span></h5>
+<p id="p-32">We will introduce basic <dfn class="terminology">mathematical</dfn> theory and terminology by developing an example <dfn class="terminology">scientific</dfn> experiment.</p>
+<article class="paragraphs" id="problemtopic"><h5 class="heading"><span class="title">Problem/Topic:.</span></h5>
+<p id="p-33">(Pick a topic.)</p>
+<article class="paragraphs" id="question"><h5 class="heading"><span class="title">Question:.</span></h5>
+<p id="p-34">(What do you hope to answer?)</p></article><article class="paragraphs" id="measurements"><h5 class="heading"><span class="title">Measurements:.</span></h5>
+<p id="p-35">(What do you plan to measure?)<em class="emphasis">Dependent variable:</em></p>
+<p id="p-36">a symbol for measurement of interest that changes during course of an experiment and whose change depends on the value of some other measurements</p>
+<p id="p-37"><em class="emphasis">Dependent variable (example):</em></p>
+<p id="p-38"><em class="emphasis">Independent variable:</em></p>
+<p id="p-39">a symbol for measurement that also changes during course of an experiment, but which does so independently of all other measurements</p>
+<p id="p-40"><em class="emphasis">Independent variable (example):</em></p></article><article class="paragraphs" id="conditions"><h5 class="heading"><span class="title">Conditions:.</span></h5>
+<p id="p-41">(What do you plan to control?)<em class="emphasis">Parameters:</em></p>
+<p id="p-42">conceptually, a symbol or symbols representing the effect of measurement(s) or condition(s) that are constant for any one trial of an experiment, but that vary between trialsmathematically, all constants (either symbols or numerical values) in a formula that are not variables</p>
+<p id="p-43"><em class="emphasis">Parameters (example):</em></p></article><article class="paragraphs" id="dimensions-and-units"><h5 class="heading"><span class="title">Dimensions and Units:.</span></h5>
+<p id="p-44">(What kind of measurements did you take?)<em class="emphasis">Dimensions:</em></p>
+<p id="p-45">a key feature or fundamental aspect of a type of measurement</p>
+<p id="p-46"><em class="emphasis">Dimensions (examples):</em></p>
+<p id="p-47"><em class="emphasis">Units:</em></p>
+<p id="p-48">a particular standard of measurement for a given dimension</p>
+<p id="p-49"><em class="emphasis">Units (examples):</em></p></article><article class="paragraphs" id="results"><h5 class="heading"><span class="title">Results:.</span></h5>
+<p id="p-50">(How would you describe and display your findings?)</p>
+<p id="p-51"><em class="emphasis">Graph (features):</em></p>
+<figure class="figure figure-like" id="figure-2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="../../../images/graph.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure></article><article class="paragraphs" id="functions"><h5 class="heading"><span class="title">Functions:.</span></h5>
+<p id="p-52">(How can we represent our results using mathematics?)</p></article><article class="paragraphs" id="thinking-about-graphs."><h5 class="heading"><span class="title">Thinking about graphs..</span></h5>
+<p id="p-53">Given our experiment, how else might we have graphed the results?</p>
+<p id="p-54"><em class="emphasis">Graph:</em></p>
+<figure class="figure figure-like" id="figure-3"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="../../../images/graph.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-55"><em class="emphasis">Observations:</em></p>
+<p id="p-56">To make the most of our experiment, it is best to show all of our data simultaneously. Here we can more carefully examine the roles of the variables and parameters and the graphical and mathematical connections.</p>
+<p id="p-57"><em class="emphasis">Graph:</em></p>
+<figure class="figure figure-like" id="figure-4"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="../../../images/graph.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-58"><em class="emphasis">Observations:</em></p></article><article class="paragraphs" id="developing-your-own-experiment."><h5 class="heading"><span class="title">Developing your own experiment..</span></h5>
+<p id="p-59">In your groups, discuss the Problem, Question, Measurements, Conditions, Dimensions and Units, and <em class="emphasis">potential</em> Results of your experiment.</p></article><article class="paragraphs" id="concept-of-a-function"><h5 class="heading"><span class="title">Concept of a function:.</span></h5>
+<p id="p-60">Functions give us a compact way to describe how one measurement (the ‘output’) depends on another (the ‘input’):</p></article><article class="paragraphs" id="describing-a-function"><h5 class="heading"><span class="title">Describing a function:.</span></h5>
+<p id="p-61">We can describe functions in four ways:</p>
+<ul id="p-62" class="disc">
+<li id="li-14"><p id="p-63">in words</p></li>
+<li id="li-15"><p id="p-64">in a graph</p></li>
+<li id="li-16"><p id="p-65">as data (a table)</p></li>
+<li id="li-17"><p id="p-66">as a formula</p></li>
+</ul></article><article class="paragraphs" id="combining-functions"><h5 class="heading"><span class="title">Combining functions:.</span></h5>
+<p id="p-67">We can combine functions by</p>
+<ul id="p-68" class="disc">
+<li id="li-18"><p id="p-69">addition and subtraction</p></li>
+<li id="li-19"><p id="p-70">multiplication or division (if the denominator is nonzero)</p></li>
+<li id="li-20"><p id="p-71">composition</p></li>
+</ul>
+<p id="p-72">Consider two functions \(F(x)=3x^2+2x\) and \(H(x)=-x+1\text{.}\)</p>
+<ol id="p-73" class="decimal">
+<li id="li-21">
+<p id="p-74">adding and subtracting: “\(F\) plus/minus \(H\) of \(x\)”</p>
+<ul id="p-75" class="disc">
+<li id="li-22"><p id="p-76">\(\displaystyle (F + H)(x) = F(x) + H(x) =\)</p></li>
+<li id="li-23"><p id="p-77">\(\displaystyle (F - H)(x) = F(x) - H(x) =\)</p></li>
+<li id="li-24"><p id="p-78">\(\displaystyle (H - F)(x) = H(x) - F(x) =\)</p></li>
+</ul>
+</li>
+<li id="li-25">
+<p id="p-79">multiplying and dividing: “\(F\) multiplied/divided by \(H\) of \(x\)”</p>
+<ul id="p-80" class="disc">
+<li id="li-26"><p id="p-81">\(\displaystyle (F \cdot H)(x) = F(x) \cdot H(x) =\)</p></li>
+<li id="li-27"><p id="p-82">\(\displaystyle (F / H)(x) = F(x) / H(x) =\)</p></li>
+<li id="li-28"><p id="p-83">\(\displaystyle (H / F)(x) = H(x) / F(x) =\)</p></li>
+</ul>
+</li>
+<li id="li-29">
+<p id="p-84">composition: : “\(F\) of \(H\) of \(x\)” or “\(H\) of \(F\) of \(x\)”</p>
+<ul id="p-85" class="disc">
+<li id="li-30"><p id="p-86">\(\displaystyle (F \circ H)(x) = F(H(x)) =\)</p></li>
+<li id="li-31"><p id="p-87">\(\displaystyle (H\circ F)(x) = H(F(x)) =\)</p></li>
+<li id="li-32"><p id="p-88">Are \((H\circ F)(x)\) and \((F\circ H)(x)\) the same?</p></li>
+</ul>
+</li>
+</ol></article><article class="paragraphs" id="note-composition-of-functions."><h5 class="heading"><span class="title">Note (composition of functions)..</span></h5>
+<p id="p-89">Consider two functions \(f(x)\) and \(g(x)\text{.}\) In the composition \(f(g(x))\text{,}\) \(g(x)\) is the ‘inner function’ and \(f(x)\) is the ‘outer function.’ Here, \(g\) is applied to \(x\) first, then \(f\) is applied to the result.</p>
+<p id="p-90">Consider the following composed functions. For each identify the pair of inner and outer functions involved in defining the composition.</p>
+<ul id="p-91" class="disc">
+<li id="li-33"><p id="p-92">\(f(x) = (7x+1)^4\) is composition of functions \(G(H(x))\text{,}\) define the functions \(G(H)\) and \(H(x)\text{.}\)</p></li>
+<li id="li-34"><p id="p-93">\(\displaystyle a(t) = \frac{5}{3t^2+t}\) is composition of functions \(b(c(t))\text{,}\) define the functions \(b(c)\) and \(c(t)\text{.}\)</p></li>
+<li id="li-35"><p id="p-94">\(w(x) = (e^x+2x)^2+1\) is composition of functions \(u(v(x))\text{,}\) define the functions \(u(v)\) and \(v(x)\text{.}\)</p></li>
+</ul></article><article class="paragraphs" id="inverse-functions."><h5 class="heading"><span class="title">Inverse functions..</span></h5>
+<p id="p-95">Functions allow us to compute output for a given input. Sometimes it is useful to know from which input we arrived a particular output. We can use output to find the input by using the <em class="emphasis">inverse</em> of a function.In general, we would write that the function \(f^{-1}\) is the inverse of \(f\text{,}\) meaning</p>
+<div class="displaymath">
+\begin{equation*}
+f^{-1}(f(x))=x\text{ \,and\, }f(f^{-1}(x)) = x.
+\end{equation*}
+</div>
+<p data-braille="continuation">We will make use of this when solving a variety of equations involving exponential functions.</p></article></article></article><section class="subsection" id="quick-practice"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.1</span> <span class="title">Quick practice</span>
+</h3>
+<ol id="p-96" class="decimal">
+<li id="li-36"><p id="p-97">You measure cytotoxicity of three different concentrations of a cancer drug over time. Identify the variables and parameters.[quick::cancer]</p></li>
+<li id="li-37"><p id="p-98">How would you graph the results obtained in Question <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "quick::cancer" missing]</code>? [quick::cancer2]</p></li>
+<li id="li-38"><p id="p-99">Simplify \(\dfrac{1}{5}+\dfrac{5}{x}\text{.}\)[quick::addfractions]</p></li>
+<li id="li-39"><p id="p-100">For \(f(x) = 3x^2+2x\) evaluate \(f(1)\text{,}\) \(f(2)\text{,}\) and \(f(x+2)\text{.}\)[quick::feval]</p></li>
+</ol>
+<p id="p-101">Answers:</p>
+<ol id="p-102" class="decimal">
+<li id="li-40"><p id="p-103"><dfn class="terminology">DV</dfn>: cytoxicity (number of cells killed), <dfn class="terminology">IV</dfn>: time (probably in hours), <dfn class="terminology">parameter</dfn>: the concentration as varied between trials.</p></li>
+<li id="li-41"><p id="p-104">It would be interesting to see cytotoxicity (number of cells killed) plotted against time with sets of points or curves colored by the drug concentration used.</p></li>
+<li id="li-42"><p id="p-105">We need a common denominator to add, so \(\dfrac{1}{5}+\dfrac{5}{x} = \dfrac{1}{5}\cdot\dfrac{x}{x}+\dfrac{5}{x}\cdot\dfrac{5}{5} = \dfrac{x}{5x}+\dfrac{25}{5x} = \dfrac{x+25}{5x}\text{.}\)</p></li>
+<li id="li-43">
+<p id="p-106">For \(f(x) = 3x^2+2x\) the values are</p>
+<ul id="p-107" class="disc">
+<li id="li-44"><p id="p-108">\(f(1) = 3(1)^2+2(1) = 5\text{,}\)</p></li>
+<li id="li-45"><p id="p-109">\(f(2) = 3(2)^2+2(2) = 16\text{,}\) and</p></li>
+<li id="li-46"><p id="p-110">\(f(x+2) = 3(x+2)^2+2(x+2)\text{.}\)</p></li>
+</ul>
+<p id="p-111">For the last of these, some simplification is still required to show that the final answer simplifies to \(f(x+2) = 3x^2+14x+16\text{.}\)</p>
+</li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>
