@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-08-26T11:11:11-05:00       *-->
+<!--*       on 2020-08-31T13:48:53-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -64,8 +64,8 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="book-1.html"><span class="title"></span></a></h1>
-<p class="byline"></p>
+<h1 class="heading"><a href="Tech-Prof-Math-Stat.html"><span class="title">Technology for Professional Mathematics and Statistics</span></a></h1>
+<p class="byline">Sean Laverty</p>
 </div>
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
@@ -78,10 +78,9 @@ MathJax.Hub.Config({
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
-<li class="link">
-<a href="preface.html" data-scroll="preface"><span class="codenumber">1</span> <span class="title">Preface</span></a><ul><li><a href="themes.html" data-scroll="themes">Themes</a></li></ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul><li><a href="preface-1.html" data-scroll="preface-1">Introduction</a></li></ul>
 </li>
-<li class="link"><a href="work.html" data-scroll="work"><span class="codenumber">2</span> <span class="title">Work</span></a></li>
 <li class="link">
 <a href="latex.html" data-scroll="latex"><span class="codenumber">1</span> <span class="title"><span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span></span></a><ul>
 <li><a href="setting-up-folders-and-files-testing-latex.html" data-scroll="setting-up-folders-and-files-testing-latex">Setting up folders and files, testing <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span></a></li>
@@ -125,19 +124,19 @@ MathJax.Hub.Config({
 <section class="subsection" id="preview-22"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">Preview</span>
 </h3>
-<p id="p-65">We will examine the rather peculiar Mathematica ‘pattern’ and understand how it can be used in practice.</p></section><section class="subsection" id="review-22"><h3 class="heading hide-type">
+<p id="p-64">We will examine the rather peculiar Mathematica ‘pattern’ and understand how it can be used in practice.</p></section><section class="subsection" id="review-22"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.2</span> <span class="title">Review</span>
 </h3>
-<p id="p-66">In many situations we might imagine solving an equation or system of equations, with the hope of using the value or values for subsequent calculations. For example, one might want to compute critical points of a function and use those points to evaluate the values of the function or its second derivative. Once we get these values, we have to consider how we might use them in subsequent work. We do not (or at least should not) necessarily want to copy and paste these into subsequent calculations, because should our original problem change for some reason (a typo, new information, a new but related situation) we would have to copy and paste again. Instead we want to attempt to automate the extraction and use of this newly found information.</p>
-<p id="p-67">It turns out that rather small changes to the code can have a tremendous impact on its usability. Consider the code below where <code class="code-inline tex2jax_ignore">&gt;&gt;</code> identifies output of the preceding line. The replacement symbol <code class="code-inline tex2jax_ignore">/.</code> INDEX  Mathematica , commands , replacement operator attempts to replace the variable to its left (above called <code class="code-inline tex2jax_ignore">X</code>) with the corresponding value in the solution (above <code class="code-inline tex2jax_ignore">x -&gt;
+<p id="p-65">In many situations we might imagine solving an equation or system of equations, with the hope of using the value or values for subsequent calculations. For example, one might want to compute critical points of a function and use those points to evaluate the values of the function or its second derivative. Once we get these values, we have to consider how we might use them in subsequent work. We do not (or at least should not) necessarily want to copy and paste these into subsequent calculations, because should our original problem change for some reason (a typo, new information, a new but related situation) we would have to copy and paste again. Instead we want to attempt to automate the extraction and use of this newly found information.</p>
+<p id="p-66">It turns out that rather small changes to the code can have a tremendous impact on its usability. Consider the code below where <code class="code-inline tex2jax_ignore">&gt;&gt;</code> identifies output of the preceding line. The replacement symbol <code class="code-inline tex2jax_ignore">/.</code> INDEX  Mathematica , commands , replacement operator attempts to replace the variable to its left (above called <code class="code-inline tex2jax_ignore">X</code>) with the corresponding value in the solution (above <code class="code-inline tex2jax_ignore">x -&gt;
 7/3</code> or \(x = 7/3\)). Since <code class="code-inline tex2jax_ignore">X</code> and <code class="code-inline tex2jax_ignore">x</code> are different (i.e., case sensitivity matters), this replacement fails. Instead we must solve the equation using the concept of a ‘pattern’ which roughly says “Solve three times ‘something’ minus seven equals zero for the unknown.”</p>
-<p id="p-68">Instead, if we merely replace <code class="code-inline tex2jax_ignore">x</code> by <code class="code-inline tex2jax_ignore">x_</code> in the solution, things proceed smoothly since <code class="code-inline tex2jax_ignore">x_</code> refers less explicitly to \(x\text{,}\) but instead to something that can be best described as ‘\(x\)-like’. There are a variety of applications of this sort of replacement technique, graphical or computational. We used <code class="code-inline tex2jax_ignore">ListPlot[x0, y0, x1,y1, ..., ...]</code> INDEX  Mathematica , commands , ListPlot to plot ordered pairs, specifically to point out where the roots to a polynomial occurred. We took some time to extend this to higher order polynomials with additional roots, embedding this within a <code class="code-inline tex2jax_ignore">Do[]</code> INDEX  Mathematica , commands , Do loop to reduce the repetition.</p></section><section class="subsection" id="student-perspective-22"><h3 class="heading hide-type">
+<p id="p-67">Instead, if we merely replace <code class="code-inline tex2jax_ignore">x</code> by <code class="code-inline tex2jax_ignore">x_</code> in the solution, things proceed smoothly since <code class="code-inline tex2jax_ignore">x_</code> refers less explicitly to \(x\text{,}\) but instead to something that can be best described as ‘\(x\)-like’. There are a variety of applications of this sort of replacement technique, graphical or computational. We used <code class="code-inline tex2jax_ignore">ListPlot[x0, y0, x1,y1, ..., ...]</code> INDEX  Mathematica , commands , ListPlot to plot ordered pairs, specifically to point out where the roots to a polynomial occurred. We took some time to extend this to higher order polynomials with additional roots, embedding this within a <code class="code-inline tex2jax_ignore">Do[]</code> INDEX  Mathematica , commands , Do loop to reduce the repetition.</p></section><section class="subsection" id="student-perspective-22"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.3</span> <span class="title">Student perspective</span>
 </h3>
-<p id="p-69">Still waiting.</p></section><section class="subsection" id="instructional-notes-22"><h3 class="heading hide-type">
+<p id="p-68">Still waiting.</p></section><section class="subsection" id="instructional-notes-22"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.3.4</span> <span class="title">Instructional notes</span>
 </h3>
-<p id="p-70">See the file <code class="code-inline tex2jax_ignore">day3.nb</code> INDEX  notes , Mathematica , day3 in the ‘Mathematica’ notes folder for our work in class.</p></section></section></div></main>
+<p id="p-69">See the file <code class="code-inline tex2jax_ignore">day3.nb</code> INDEX  notes , Mathematica , day3 in the ‘Mathematica’ notes folder for our work in class.</p></section></section></div></main>
 </div>
 </body>
 </html>
