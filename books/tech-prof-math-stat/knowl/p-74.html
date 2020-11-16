@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-11-16T11:41:32-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>We have \(f_\text{tan}(x) = f(x_0) + f'(x_0)(x-x_0)\text{,}\) and letting \(x_1\) be the approximate solution to this equation, set \(f_\text{tan}(x_1) = 0\text{,}\) which gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+0 \amp = f(x_0) + f'(x_0)(x_1 - x_0)\\
+-f'(x_0)(x_1 - x_0) \amp = f(x_0)\\
+(x_1 - x_0) \amp = \frac{f(x_0)}{-f'(x_0)}\\
+x_1 \amp = x_0 - \frac{f(x_0)}{f'(x_0)}\\
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Repeating this from \(x_1\) to generate a value for \(x_2\) allows us to generalize the rule</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
+\end{equation*}
+</div>
+<p data-braille="continuation">Applying this method gives a sequence of values that most often approach a solution to the original equation.</p>
+<pre class="code-block tex2jax_ignore">
+x0 &lt;- 1
+xs &lt;- x0
+for(i in 1:n){
+  x1 &lt;- x0 - f(x0)/fp(x0)     ## calculate new value
+  xs &lt;- c(xs, x1)   ## store the new number
+  x0 &lt;- x1          ## replace the old number by the new number, repeat
+}
+</pre>
+<span class="incontext"><a href="r-recurrence.html#p-74">in-context</a></span>
+</body>
+</html>
