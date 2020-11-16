@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-11-16T11:55:56-06:00       *-->
+<!--*       on 2020-11-16T13:17:37-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -120,6 +120,9 @@ MathJax.Hub.Config({
 <p id="p-72">Applications of repeated function evaluation.</p></section><section class="subsection" id="r-recurrence-review"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.2</span> <span class="title">Review</span>
 </h3>
+<section class="subsubsection" id="r-newtons-method"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">3.3.2.1</span> <span class="title">Newton's Method</span>
+</h4>
 <p id="p-73">A famous method in all of mathematics is <dfn class="terminology">Newton's Method</dfn>.  The idea is simple: when trying to solve complicated or otherwise analytically intractable equations of the form \(f(x) = 0\) for \(x\text{,}\) we often approximate the function by its tangent line and solve \(f_\text{tan}(x) = 0\) for \(x\) instead.  Repeated application of this procedure generates a sequence of values that most often converges to the true solution of the original problem.</p>
 <p id="p-74">We have \(f_\text{tan}(x) = f(x_0) + f'(x_0)(x-x_0)\text{,}\) and letting \(x_1\) be the approximate solution to this equation, set \(f_\text{tan}(x_1) = 0\text{,}\) which gives</p>
 <div class="displaymath">
@@ -147,8 +150,10 @@ for(i in 1:n){
   xs &lt;- c(xs, x1)   ## store the new number
   x0 &lt;- x1          ## replace the old number by the new number, repeat
 }
-</pre>
-<p id="p-75">In a similar fashion, we can quickly calculate and store <dfn class="terminology">Fibonacci numbers</dfn>.  This is done by calculating terms according to \(x_{n+2} = x_{n+1} + x_{n}\) where \(x_{1} = x_{0} = 1\text{.}\) Consequently, the first few terms are</p>
+</pre></section><section class="subsubsection" id="r-fib-seq"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">3.3.2.2</span> <span class="title">Fibonacci numbers</span>
+</h4>
+<p id="p-75">In a similar fashion, we can quickly calculate and store <dfn class="terminology">Fibonacci numbers</dfn>.  This is done by calculating terms according to \(x_{n+2} = x_{n+1} + x_{n}\) where \(x_{2} = x_{1} = 1\) (some, more modern, authors begin with \(x_{0} = 0\)). Consequently, the first few terms are</p>
 <div class="displaymath">
 \begin{equation*}
 1, 1, 2, 3, 5, 8, 13, \dots.
@@ -164,15 +169,17 @@ for(i in 1:n){
   x0 &lt;- x1          ## replace the oldest number by the second oldest
   x1 &lt;- x2          ## replace the second oldest by the newest, repeat
 }
-</pre>
-<p id="p-76"> Also known as <dfn class="terminology">discrete-time dynamical systems</dfn> or <dfn class="terminology">recurrence relations</dfn>, <dfn class="terminology">difference equations</dfn> generically refer to the application of some mathematical function to generate terms in a sequence of values. One last, and famous, example of this family of problems is the <dfn class="terminology">discrete-logistic map</dfn> or the discrete-logistic equation</p>
+</pre></section><section class="subsubsection" id="r-diff-eqs"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span> <span class="codenumber">3.3.2.3</span> <span class="title">Difference equations</span>
+</h4>
+<p id="p-76">Also known as <dfn class="terminology">discrete-time dynamical systems</dfn> or <dfn class="terminology">recurrence relations</dfn>, <dfn class="terminology">difference equations</dfn> generically refer to the application of some mathematical function to generate terms in a sequence of values. One last, and famous, example of this family of problems is the <dfn class="terminology">discrete-logistic map</dfn> or the discrete-logistic equation</p>
 <div class="displaymath">
 \begin{equation*}
 x_{n+1} = rx_{n}(1-x_{n})
 \end{equation*}
 </div>
 <p data-braille="continuation">for \(0\lt x_{0}\lt 1\) and \(0 \lt r \lt 4\text{.}\)</p>
-<p id="p-77">The idea here is simple, we are engaging in function composition, applying a function, generating a value, and re-applying the function to that value.  We do this repeatedly and interesting patterns often emerge from the sequence of values.</p></section><section class="subsection" id="r-recurrence-summary"><h3 class="heading hide-type">
+<p id="p-77">The idea here is simple, we are engaging in function composition, applying a function, generating a value, and re-applying the function to that value.  We do this repeatedly and interesting patterns often emerge from the sequence of values.</p></section></section><section class="subsection" id="r-recurrence-summary"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">3.3.3</span> <span class="title">Student Perspective</span>
 </h3>
 <p id="p-78"></p></section></section></div></main>
