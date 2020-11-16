@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-11-16T13:17:37-06:00       *-->
+<!--*       on 2020-11-16T14:05:30-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -141,7 +141,9 @@ x_1 \amp = x_0 - \frac{f(x_0)}{f'(x_0)}\\
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
 \end{equation*}
 </div>
-<p data-braille="continuation">Applying this method gives a sequence of values that most often approach a solution to the original equation.</p>
+<p data-braille="continuation">Applying this method gives a sequence of values that most often approach a solution to the original equation. <article class="algorithm theorem-like" id="algorithm-1"><h6 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">R code for approximating solutions to \(f(x) = 0\) by Newton's Method.</span>
+</h6>
 <pre class="code-block tex2jax_ignore">
 x0 &lt;- 1
 xs &lt;- x0
@@ -150,7 +152,7 @@ for(i in 1:n){
   xs &lt;- c(xs, x1)   ## store the new number
   x0 &lt;- x1          ## replace the old number by the new number, repeat
 }
-</pre></section><section class="subsubsection" id="r-fib-seq"><h4 class="heading hide-type">
+</pre></article></p></section><section class="subsubsection" id="r-fib-seq"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span> <span class="codenumber">3.3.2.2</span> <span class="title">Fibonacci numbers</span>
 </h4>
 <p id="p-75">In a similar fashion, we can quickly calculate and store <dfn class="terminology">Fibonacci numbers</dfn>.  This is done by calculating terms according to \(x_{n+2} = x_{n+1} + x_{n}\) where \(x_{2} = x_{1} = 1\) (some, more modern, authors begin with \(x_{0} = 0\)). Consequently, the first few terms are</p>
@@ -159,6 +161,9 @@ for(i in 1:n){
 1, 1, 2, 3, 5, 8, 13, \dots.
 \end{equation*}
 </div>
+<p data-braille="continuation"><article class="algorithm theorem-like" id="algorithm-2"><h6 class="heading">
+<span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">R code for calculating Fibonacci numbers.</span>
+</h6>
 <pre class="code-block tex2jax_ignore">
 x0 &lt;- 1
 x1 &lt;- 1
@@ -169,7 +174,7 @@ for(i in 1:n){
   x0 &lt;- x1          ## replace the oldest number by the second oldest
   x1 &lt;- x2          ## replace the second oldest by the newest, repeat
 }
-</pre></section><section class="subsubsection" id="r-diff-eqs"><h4 class="heading hide-type">
+</pre></article></p></section><section class="subsubsection" id="r-diff-eqs"><h4 class="heading hide-type">
 <span class="type">Subsubsection</span> <span class="codenumber">3.3.2.3</span> <span class="title">Difference equations</span>
 </h4>
 <p id="p-76">Also known as <dfn class="terminology">discrete-time dynamical systems</dfn> or <dfn class="terminology">recurrence relations</dfn>, <dfn class="terminology">difference equations</dfn> generically refer to the application of some mathematical function to generate terms in a sequence of values. One last, and famous, example of this family of problems is the <dfn class="terminology">discrete-logistic map</dfn> or the discrete-logistic equation</p>
