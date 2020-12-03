@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-12-02T12:16:14-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="paragraphs"><h5 class="heading"><span class="title">Example..</span></h5>
+<p>Continuing with our current model, we will compute the Jacobian.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\frac{\partial^{} {F}}{\partial {Y}^{}} &amp;= \frac{\partial^{} {}}{\partial {Y}^{}}\left(rY-pZY\right)= r-pZ\\
+\frac{\partial^{} {F}}{\partial {Z}^{}} &amp;= \frac{\partial^{} {}}{\partial {Z}^{}}\left(rY-pZY\right)= -pY\\
+\frac{\partial^{} {G}}{\partial {Y}^{}} &amp;= \frac{\partial^{} {}}{\partial {Y}^{}}\left(gYZ-mZ\right)= gZ\\
+\frac{\partial^{} {G}}{\partial {Z}^{}} &amp;= \frac{\partial^{} {}}{\partial {Z}^{}}\left(gYZ-mZ\right)= gY+m, \quad\text{this should be a $+m$ not a $-m$}.\end{aligned}
+\end{equation*}
+</div>
+<p>So,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+J(Y,Z)=\left(\begin{array}{cc}
+r-pZ\ &amp; -pY\\[8pt]
+gZ &amp; gY+m
+\end{array}\right), \quad\text{this should be a $+m$ not a $-m$}.
+\end{equation*}
+</div>
+<p>So at the ‘zero’ equilibrium,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+J(0,0)=\left(\begin{array}{cc}
+r\ &amp; 0\\[8pt]
+0 &amp; m
+\end{array}\right), \quad\text{this should be a $+m$ not a $-m$}..
+\end{equation*}
+</div>
+<p>So at the nontrivial equilibrium,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+J^*=J(Y^*,Z^*)=\left(\begin{array}{cc}
+r-p\left(\frac{r-1}{p}\right)\ &amp; -p\left(\frac{1-m}{g}\right)\\[8pt]
+g\left(\frac{r-1}{p}\right) &amp; g\left(\frac{1-m}{g}\right)+m
+\end{array}\right)=
+\left(\begin{array}{cc}
+1 &amp; -p\left(\frac{1-m}{g}\right)\\[8pt]
+g\left(\frac{r-1}{p}\right) &amp; 1
+\end{array}\right).
+\end{equation*}
+</div>
+<p>Rather than compute and study the eigenvalues directly, we’ll take the scenic route to our solution. We will compute a few key properties of the matrix to understand the behavior of eigenvalues: trace, determinant, and discriminant. The trace of \(J^*\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\tau(J^*)=\operatorname{Tr}(J^*),
+\end{equation*}
+</div>
+<p data-braille="continuation">is the sum of its diagonal entries, and in this case the diagonal sums to \(\tau=2\text{.}\) The determinant of \(J^*\) is,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\Delta(J^*)=\operatorname{det}(J^*)=1+(1-m)(r-1).
+\end{equation*}
+</div>
+<p data-braille="continuation">The discriminant of \(J^*\text{,}\) is \(\operatorname{Disc}(J^*)=\tau^2-4\Delta\text{,}\) and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\operatorname{Disc}(J^*)=-4(1-m)(r-1).
+\end{equation*}
+</div>
+<p data-braille="continuation">Eigenvalues are given by,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lambda_\pm=\frac{\tau\pm\sqrt{\tau^2-4\Delta}}{2},
+\end{equation*}
+</div>
+<p data-braille="continuation">and they are real if \(\operatorname{Disc}(J^*)=\tau^2-4\Delta&gt;0\) and imaginary otherwise. One thing is certain, we need</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+-1&lt;\frac{\tau}{2}&lt;1.
+\end{equation*}
+</div>
+<p data-braille="continuation">This is because we want the roots to be between \((-1,1)\text{.}\) If we want <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">roots</em> in this interval, the vertex of the parabola better be there too. We’ll use the location of the vertex and <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">distance</em> to the roots to compute some stability criterion and build a stability diagram, next time.</p>
+<figure class="table table-like"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.18<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">Equilibrium</td>
+<td class="c m b0 r0 l0 t0 lines">\(\tau=\operatorname{Tr}(J^*)\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\Delta=\operatorname{det}(J^*)\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\operatorname{Disc}(J^*)=\tau^2-4\Delta\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\lambda_i\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\((0, 0)\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(r+m\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(rm\)</td>
+<td class="c m b0 r0 l0 t0 lines">\((r-m)^2\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">Real</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\((Y^*, Z^*)\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(1+(1-m)(r-1)\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(-4(1-m)(r-1)\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">Complex (if \(r&gt;1\))</td>
+</tr>
+</table></figure><p xmlns:svg="http://www.w3.org/2000/svg">We will briefly see why this is a worrisome model, and move on to more biologically interesting models. The trivial equilibrium \((0, 0)\) will be stable for stupidly small values of \(r, m\text{.}\) The nontrivial equilibrium is unstable and oscillatory, meaning that practically a species will crash into the number zero and go extinct.</p></article><span class="incontext"><a href="discrete-time.html#example.-2">in-context</a></span>
+</body>
+</html>

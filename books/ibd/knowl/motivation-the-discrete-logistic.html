@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2020-12-02T12:16:13-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="paragraphs"><h5 class="heading"><span class="title">Motivation: the discrete logistic.</span></h5>
+<p>The discrete logistic model is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Y_{t+1}=r(1-Y_t)Y_t,
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(Y_t\) between \([0,1]\) is the ‘scaled density’ of hosts, and \(p.c.p.=r(1-Y_t).\) Expanding the model we can write,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Y_{t+1}=rY_t-(rY_t)Y_t.
+\end{equation*}
+</div>
+<p data-braille="continuation">Reading the model in this form, we can think of constant per capita births \(r\) but it looks like the per capita mortality is of the form \(rY_t\text{.}\) One interpretation of this is,</p>
+<ul class="disc">
+<li><p xmlns:svg="http://www.w3.org/2000/svg">births are independent of population density</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">death increases with population density</p></li>
+</ul>
+<p>What if instead of your own species controlling your mortality (assuming you are a \(Y_t\)) a second species, \(Z_t\text{,}\) is responsible for your mortality. We’ll assume that it benefits from eating you, but would otherwise die out, its a specialist. We will assume that it is either better or worse at eating you than you are at eating/killing yourself, so that your per capita mortality as a function of the density of \(Z_t\) is \(pZ_t\text{.}\) We can rewrite ‘your’ equation as,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Y_{t+1}=rY_t-(pZ_t)Y_t.
+\end{equation*}
+</div>
+<p>We’ll assume that a \(Z_t\) turns some fraction \(\epsilon\) of consumed \(Y_t\)’s into new \(Z_t\) (i.e., growth of \(Z_t\) depends directly on the amount of \(Y_t\) consumed). But again, in the absence of food \(Z_t\) will die. The equation for \(Z_t\) looks like,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Z_{t+1}=\epsilon(pY_t)Z_t-mZ_t.
+\end{equation*}
+</div>
+<p data-braille="continuation">Putting these together, we have our first 2D nonlinear system,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned}
+Y_{t+1}&amp;=rY_t-pZ_tY_t\\
+Z_{t+1}&amp;=\epsilon pY_tZ_t+mZ_t, \quad\text{this should be a $+m$ not a $-m$!}\end{aligned}
+\end{equation*}
+</div>
+<p>Notice that we could define \(g=\epsilon p\) if we wanted to simplify (the appearance) of the first term in \(Z_{t+1}\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned}
+Y_{t+1}&amp;=rY_t-pZ_tY_t\\
+Z_{t+1}&amp;= gY_tZ_t+mZ_t, \quad\text{this should be a $+m$ not a $-m$}!\end{aligned}
+\end{equation*}
+</div>
+<article class="paragraphs"><h5 class="heading"><span class="title">An approach to nonlinear, multi-species dynamics..</span></h5>
+<p xmlns:svg="http://www.w3.org/2000/svg">To study this model we could,</p>
+<ul class="disc">
+<li><p xmlns:svg="http://www.w3.org/2000/svg">Iterate solutions numerically</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">Attempt to ‘solve it’</p></li>
+</ul>
+<p xmlns:svg="http://www.w3.org/2000/svg">To iterate our model, we would have to have parameter values and a suitable initial condition. We might not have a clue what these values are so we will ignore that approach and try to ‘solve it.’ Solving such a model typically means,</p>
+<ul class="disc">
+<li><p xmlns:svg="http://www.w3.org/2000/svg">compute equilibria</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">compute linearization</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">analyze stability</p></li>
+</ul>
+<p>As before, equilibria requires \(Y_{t+1}=Y_t=Y^*\) and simultaneously \(Z_{t+1}=Z_t=Z^*\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned}
+Y^*&amp;=rY^* -pZ^*Y^*\\
+Z^*&amp;= gY^*Z^*+mZ^*, \quad\text{this should be a $+m$ not a $-m$!}\end{aligned}
+\end{equation*}
+</div>
+<p>To satisfy the first, either \(Y^*=0\) or \(1=r-pZ^*\text{,}\) the second of which implies,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Z^*=\frac{r-1}{p}.
+\end{equation*}
+</div>
+<p data-braille="continuation">To satisfy the second, either \(Z^*=0\) or \(1=gY^*+m,\) the second of which implies,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Y^*=\frac{1-m}{g}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Thus our equilibria are \((Y^*, Z^*)=(0, 0)\) or \((Y^*, Z^*)=(\frac{1-m}{g}, \frac{r-1}{p})\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">We have to figure out how to determine stability at each equilibrium point to know whether or not species persist or go extinct. We might think that linear matrix theory, determinants, and eigenvalues would be of use here. Our first step is to form a linear approximation to our nonlinear dynamics near equilibria. To do so, we compute the Jacobian matrix, a matrix of partial derivatives.</p>
+<p>We notice that our model can be written as a set of two updating functions each depending on two variables,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned}
+Y_{t+1}&amp;=F(Y_t, Z_t)=rY_t-pZ_tY_t\\
+Z_{t+1}&amp;= G(Y_t, Z_t)=gY_tZ_t+mZ_t, \quad\text{this should be a $+m$ not a $-m$!}\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Now, the motivation and methodology are the same as with 1D models, we are interested in thinking about \(Y_t=Y^*+y_t\) and \(Z_t=Z^*+z_t\text{,}\) which means each solution (e.g., \(Y_t\)) is a combination of equilibrium value (e.g., \(Y^*\)) and some small perturbation (e.g., \(y_t\)). The Jacobian is a matrix of partial derivatives of our updating functions with respect to the state variables. We could derive this as we did with a Taylor series expansion of a 1D model.</p>
+<p>Then, skipping some steps, we can compute the Jacobian as follows (we will drop the subscripts for simplicity),</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+J(Y, Z)=\left(\begin{array}{cc}
+\frac{\partial^{} {F}}{\partial {Y}^{}} &amp; \frac{\partial^{} {F}}{\partial {Z}^{}}\\[8pt]
+\frac{\partial^{} {G}}{\partial {Y}^{}} &amp; \frac{\partial^{} {G}}{\partial {Z}^{}}
+\end{array}\right).
+\end{equation*}
+</div>
+<p>Our work is not done, just yet. Since we are concerned with the dynamics ‘near equilibrium’ we have to evaluate the Jacobian at the equilibrium. An example, in just a minute, should make this clear.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left(\begin{array}{cc}
+y_{t_1}\\[8pt]
+z_{t+1}
+\end{array}\right)=\left.\left(\begin{array}{cc}
+\frac{\partial^{} {F}}{\partial {Y}^{}} &amp; \frac{\partial^{} {F}}{\partial {Z}^{}}\\[8pt]
+\frac{\partial^{} {G}}{\partial {Y}^{}} &amp; \frac{\partial^{} {G}}{\partial {Z}^{}}
+\end{array}\right)\right|_{(Y^*, Z^*)}\times\left(\begin{array}{cc}
+y_{t}\\[8pt]
+z_{t}
+\end{array}\right).
+\end{equation*}
+</div>
+<article class="paragraphs"><h5 class="heading"><span class="title">Example..</span></h5>
+<p>Continuing with our current model, we will compute the Jacobian.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\frac{\partial^{} {F}}{\partial {Y}^{}} &amp;= \frac{\partial^{} {}}{\partial {Y}^{}}\left(rY-pZY\right)= r-pZ\\
+\frac{\partial^{} {F}}{\partial {Z}^{}} &amp;= \frac{\partial^{} {}}{\partial {Z}^{}}\left(rY-pZY\right)= -pY\\
+\frac{\partial^{} {G}}{\partial {Y}^{}} &amp;= \frac{\partial^{} {}}{\partial {Y}^{}}\left(gYZ-mZ\right)= gZ\\
+\frac{\partial^{} {G}}{\partial {Z}^{}} &amp;= \frac{\partial^{} {}}{\partial {Z}^{}}\left(gYZ-mZ\right)= gY+m, \quad\text{this should be a $+m$ not a $-m$}.\end{aligned}
+\end{equation*}
+</div>
+<p>So,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+J(Y,Z)=\left(\begin{array}{cc}
+r-pZ\ &amp; -pY\\[8pt]
+gZ &amp; gY+m
+\end{array}\right), \quad\text{this should be a $+m$ not a $-m$}.
+\end{equation*}
+</div>
+<p>So at the ‘zero’ equilibrium,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+J(0,0)=\left(\begin{array}{cc}
+r\ &amp; 0\\[8pt]
+0 &amp; m
+\end{array}\right), \quad\text{this should be a $+m$ not a $-m$}..
+\end{equation*}
+</div>
+<p>So at the nontrivial equilibrium,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+J^*=J(Y^*,Z^*)=\left(\begin{array}{cc}
+r-p\left(\frac{r-1}{p}\right)\ &amp; -p\left(\frac{1-m}{g}\right)\\[8pt]
+g\left(\frac{r-1}{p}\right) &amp; g\left(\frac{1-m}{g}\right)+m
+\end{array}\right)=
+\left(\begin{array}{cc}
+1 &amp; -p\left(\frac{1-m}{g}\right)\\[8pt]
+g\left(\frac{r-1}{p}\right) &amp; 1
+\end{array}\right).
+\end{equation*}
+</div>
+<p>Rather than compute and study the eigenvalues directly, we’ll take the scenic route to our solution. We will compute a few key properties of the matrix to understand the behavior of eigenvalues: trace, determinant, and discriminant. The trace of \(J^*\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\tau(J^*)=\operatorname{Tr}(J^*),
+\end{equation*}
+</div>
+<p data-braille="continuation">is the sum of its diagonal entries, and in this case the diagonal sums to \(\tau=2\text{.}\) The determinant of \(J^*\) is,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\Delta(J^*)=\operatorname{det}(J^*)=1+(1-m)(r-1).
+\end{equation*}
+</div>
+<p data-braille="continuation">The discriminant of \(J^*\text{,}\) is \(\operatorname{Disc}(J^*)=\tau^2-4\Delta\text{,}\) and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\operatorname{Disc}(J^*)=-4(1-m)(r-1).
+\end{equation*}
+</div>
+<p data-braille="continuation">Eigenvalues are given by,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lambda_\pm=\frac{\tau\pm\sqrt{\tau^2-4\Delta}}{2},
+\end{equation*}
+</div>
+<p data-braille="continuation">and they are real if \(\operatorname{Disc}(J^*)=\tau^2-4\Delta&gt;0\) and imaginary otherwise. One thing is certain, we need</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+-1&lt;\frac{\tau}{2}&lt;1.
+\end{equation*}
+</div>
+<p data-braille="continuation">This is because we want the roots to be between \((-1,1)\text{.}\) If we want <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">roots</em> in this interval, the vertex of the parabola better be there too. We’ll use the location of the vertex and <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">distance</em> to the roots to compute some stability criterion and build a stability diagram, next time.</p>
+<figure class="table table-like"><figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.18<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">Equilibrium</td>
+<td class="c m b0 r0 l0 t0 lines">\(\tau=\operatorname{Tr}(J^*)\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\Delta=\operatorname{det}(J^*)\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\operatorname{Disc}(J^*)=\tau^2-4\Delta\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\lambda_i\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\((0, 0)\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(r+m\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(rm\)</td>
+<td class="c m b0 r0 l0 t0 lines">\((r-m)^2\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">Real</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\((Y^*, Z^*)\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(1+(1-m)(r-1)\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(-4(1-m)(r-1)\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">Complex (if \(r&gt;1\))</td>
+</tr>
+</table></figure><p xmlns:svg="http://www.w3.org/2000/svg">We will briefly see why this is a worrisome model, and move on to more biologically interesting models. The trivial equilibrium \((0, 0)\) will be stable for stupidly small values of \(r, m\text{.}\) The nontrivial equilibrium is unstable and oscillatory, meaning that practically a species will crash into the number zero and go extinct.</p></article></article></article><span class="incontext"><a href="discrete-time.html#motivation-the-discrete-logistic">in-context</a></span>
+</body>
+</html>
