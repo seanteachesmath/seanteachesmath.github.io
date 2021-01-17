@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-12-02T12:16:07-06:00       *-->
+<!--*       on 2021-01-16T18:04:11-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -20,26 +20,31 @@
 <p>Much like in class we will build a word model as we go.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{aligned}
-\text{change in }S &amp; = \text{gain from recovery} - \text{loss to infection}\\
-\text{change in }I &amp; = \text{loss to recovery} + \text{gain from infection},\end{aligned}
+\begin{aligned} \text{change in }S &amp;
+= \text{gain from recovery} - \text{loss to
+infection}\\ \text{change in }I &amp; = \text{loss
+to recovery} + \text{gain from
+infection},\end{aligned}
 \end{equation*}
 </div>
 <p data-braille="continuation">and replace the terms with symbols. Our ‘first’ term is ‘loss to recovery’ in the \(I\) equation. We can think of \(\gamma\) as the leaving rate from the \(I\) compartment, much like \(m\) was the ‘leaving rate from the living’ (i.e., dying) compartment of a population model. Everything, in this model, that leaves one compartment enters another (i.e., there are no ‘leaks’). We can also argue for the infection rate as follows, since infection is only transmitted directly and by infectious hosts, we might expect that the rate that \(S\) individuals gain infection is proportional to the density (zombies per hectare) of infectious zombies, \(I\text{.}\) In fact here, we assume that the infection rate is a linearly increasing function of \(I\text{.}\) There are plenty of other models of transmission, some we will study in the homework, others later in the semester, still more in our projects.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{aligned}
-{2}
-\text{change in }S &amp; = \text{gain from recovery} &amp;&amp;-\text{loss to infection}\\
-\frac{d^{} {S}}{d {t}^{}}&amp;=\gamma I &amp;&amp; - {\beta I} S\\
-\text{change in }I &amp; = \text{loss to recovery} &amp;&amp; +\text{gain from infection}\\
-\frac{d^{} {I}}{d {t}^{}}&amp;=-{\gamma} I &amp;&amp; + \beta I S\\\end{aligned}
+\begin{aligned} {2} \text{change in }S &amp;
+= \text{gain from recovery} &amp;&amp;-\text{loss to
+infection}\\ \frac{d^{} {S}}{d {t}^{}}&amp;=\gamma I
+&amp;&amp; - {\beta I} S\\ \text{change in }I &amp;
+= \text{loss to recovery} &amp;&amp; +\text{gain
+from infection}\\ \frac{d^{} {I}}{d
+{t}^{}}&amp;=-{\gamma} I &amp;&amp; + \beta I
+S\\\end{aligned}
 \end{equation*}
 </div>
 <p>Since the total number of zombies \(N\) is preserved, we can replace the equation for \(S\) by an algebraic constraint \(S=N-I\text{.}\) We can substitute this into the equation for \(I\) and derive a 1-dimensional, nonlinear model,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\frac{d^{} {I}}{d {t}^{}}=\beta I (N-I)-\gamma I.
+\frac{d^{} {I}}{d {t}^{}}=\beta I
+(N-I)-\gamma I.
 \end{equation*}
 </div>
 <p data-braille="continuation">If we define our model \(h(I)=\beta I (N-I)-\gamma I,\) we can plot the more interesting version of our phase line as in Fig. <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::phase" missing]</code>. Ignoring graphs for the moment, we can also compute equilibria of continuous time models, <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">defined as</dfn> solutions to \(h(I^*)=0\text{.}\) This gives \(I^*=0\) and \(I^*=N-\frac{\gamma}{\beta}.\) It might prove useful to notice that our nontrivial solution exists when \(\gamma&lt;\beta N\) this suggests a limitation on the recovery rate that depends on the contact parameter \(\beta\) and the total zombie population size \(N\text{.}\)</p></article><span class="incontext"><a href="introduction.html#a-disease-model">in-context</a></span>
