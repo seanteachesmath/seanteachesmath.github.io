@@ -45,12 +45,295 @@ pretext.lua --> <pretext> <article>
 	<subsection xml:id="modeling-fundamentals"> <title>Modeling
 	fundamentals</title>
 
+	<subsubsection xml:id="introduction-to-models-and-notation">
+	<title>Introduction to models and notation</title>
+
+
+	<paragraphs xml:id="what-is-mathematical-biology">
+	<title>What is mathematical biology?</title>
+
+
+		<paragraphs xml:id="what-is-mathematics">
+		<title>What is mathematics?</title>
+
+	<p> The study of number, quantity, space. </p>
+
+
+	<paragraphs xml:id="what-is-biology">
+	<title>What is biology?</title>
+
+		<p> The study of life. </p>
+
+	</paragraphs>
+
+	<paragraphs
+	xml:id="what-is-mathematical-biology-1">
+	<title>What is mathematical biology?</title>
+
+		<p> Using mathematical tools to study life.
+		</p>
+
+		<p><ul> <li> <p> Understanding the details
+		of interactions between interacting
+		populations of chemicals, cells, or
+		individuals </p> </li>
+
+		<li> <p> Understanding or hypothesizing
+		the mechanisms by which any biological
+		quantities (numbers, densities,
+		concentrations) change over time (or
+		space) </p> </li>
+
+		</ul></p>
+
+	</paragraphs>
+
+	<paragraphs
+	xml:id="biological-science-vs.-physical-science"
+	> <title>Biological science vs. Physical
+	science</title>
+
+		<p> Physics has <sq>laws</sq>, biology has
+		no such <sq>laws</sq>. </p>
+
+	</paragraphs> </paragraphs> </paragraphs>
+
+	<paragraphs
+	xml:id="what-are-our-goals-for-mathematical-biology">
+	<title>What are our goals for mathematical
+	biology</title>
+
+		<p><ul> <li> <p> Draw qualitative conclusions about
+		biological processes. </p> </li>
+
+	<li> <p> Apply simplified mechanisms to complex
+	systems. </p> </li>
+
+	<li> <p> Guide thought experiments and physical
+	experiments. </p> </li>
+
+	<li> <p> Occasionally make precise, quantitative
+	predictions. </p> </li>
+
+		</ul></p>
+
+	</paragraphs>
+
+	<paragraphs xml:id="what-is-a-mathematical-model">
+	<title>What is a mathematical model?</title>
+
+
+		<paragraphs xml:id="features-and-definitions">
+		<title>Features and definitions</title>
+
+	<p> A mathematical model is an abstract
+	mathematical description of any (biological)
+	system, using logic, notation, and techniques of
+	mathematics. </p>
+
+		</paragraphs>
+
+		<paragraphs xml:id="a-familiar-example"> <title>A
+		familiar example</title>
+
+	<p> Picture a tall, cylindrical water tower with
+	radius <m>r</m> in which the height of the water
+	is <m>h</m>. We want to know how fast the water
+	level is dropping as we draw water from the
+	bottom of the tank at a fixed flow. Our
+	situation relies on the following relationship
+	between volume of water and height of water.
+	<me>(\text{change in
+	volume})\propto(\text{change in height})</me>
+	But what is the actual relationship between the
+	two, and how do we replace
+	<sq><m>\propto</m></sq> with <sq><m>=</m></sq>?
+	First, <me>V=\pi r^2 h,</me> and
+	differentiating, <me>\frac{d^{} {V}}{d {t}^{}} =
+	\pi r^2 \frac{d^{} {h}}{d {t}^{}}.</me> </p>
+
+	<p> Pause to think about this. We want to know
+	how the height <m>h(t)</m> is changing as a
+	function of time. We are thinking of a cylinder
+	with a fixed radius, <m>r</m>. We will assume
+	that we are in control of the outflow from the
+	tank, <m>\displaystyle \frac{d^{} {V}}{d
+	{t}^{}}</m>. </p>
+
+	<p> We can write a model for the height,
+	<me>\frac{d^{} {h}}{d {t}^{}}=\frac{\frac{d^{}
+	{V}}{d {t}^{}}}{\pi r^2}.</me> </p>
+
+	<p> Let’s assume we fix the outflow at
+	<m>\displaystyle100\,\frac{\text{ft}^3}{\text{
+	sec}}</m>, by adjusting the outflow knob. The
+	first consequence is that the volume of water in
+	the tank is decreasing, so that
+	<m>\displaystyle\frac{d^{} {V}}{d {t}^{}}</m>
+	should be negative. </p>
+
+	<p> We’ll now use our model to study the
+	dynamics of water depth in two theoretical water
+	tanks: one tall and thin and the other short and
+	thick. </p>
+
+	<p> When <m>r=10</m>, <me>\frac{d^{} {h}}{d
+	{t}^{}}=\frac{-100\,\frac{\text{ft}^3}{\text{sec
+	}}}{\pi \times(10
+	\text{ft})^2}=-\frac{1}{\pi}\,\frac{\text{ft}}{\
+	text{sec}}.</me> So that the water height
+	<em>drops</em> about 1 foot in approximately 3
+	seconds. </p>
+
+	<p> When <m>r=100</m>, <me>\frac{d^{} {h}}{d
+	{t}^{}}=\frac{-100\,\frac{\text{ft}^3}{\text{sec
+	}}}{\pi \times(100
+	\text{ft})^2}=-\frac{1}{100\pi}\,\frac{\text{ft}
+	}{\text{sec}}.</me> So that the water height
+	<em>drops</em> about 1 foot in approximately 5
+	minutes! </p>
+
+	<p> This model allows us to discuss two
+	important and often confused concepts in
+	modeling: the distinction between parameters and
+	(state) variables. The <q>state variable</q> is
+	the <sq>thing</sq> that we are making an effort
+	to model. Here it is the height, <m>h(t)</m> of
+	the water in the tower. Everything else - the
+	outflow volume <m>\left(\displaystyle \frac{d^{}
+	{V}}{d {t}^{}}\right)</m> and the radius
+	<m>(r)</m> is known, or under our control. We
+	call these things parameters. Changing
+	parameters affects the evolution of state
+	variables. </p>
+
+		</paragraphs> </paragraphs>
+
+	<paragraphs
+	xml:id="why-do-we-write-models-and-what-can-we-model">
+	<title>Why do we write models and what can we
+	model?</title>
+
+
+		<paragraphs xml:id="counting">
+		<title>Counting</title>
+
+	<p> Models allow us to count things that might
+	be too expensive, too time consuming, or
+	otherwise impossible to count: animals, cells,
+	proteins, viruses, molecules. </p>
+
+		</paragraphs>
+
+		<paragraphs xml:id="what-do-we-count"> <title>What
+		do we count?</title>
+
+	<p><ul> <li> <p> Populations of individual
+	plants or animals that interact (Ecology) </p>
+	</li>
+
+		<li> <p> Populations of cells
+		<em>within</em> individuals that interact
+		(Physiology, e.g., Immunology) </p> </li>
+
+		<li> <p> Populations of molecules and
+		chemicals <em>within</em> cells that
+		interact (Physiology, e.g., Neurobiology)
+		</p> </li>
+
+	</ul></p>
+
+		</paragraphs> </paragraphs>
+
+	<paragraphs xml:id="what-does-a-model-look-like">
+	<title>What does a model look like?</title>
+
+		<p> A model is a description of <q>how things
+		change</q> (like the height of water in a water
+		tower). Biologically similar things might change in
+		very different ways and be governed by very
+		different processes. </p>
+
+
+		<paragraphs xml:id="thinking-about-time">
+		<title>Thinking about time</title>
+
+	<p> We should think about how the organisms, or
+	components of our model, interact with one
+	another.<!-- linebreak -->Dynamics of some
+	plants and animals are characterized by
+	discrete, non-overlapping generations. </p>
+
+	<p><ul> <li> <p> Insects might reproduce over
+	just a few days and be dormant over the
+	remainder of the year. </p> </li>
+
+		<li> <p> Plants might set seeds over a short
+		season. </p> </li>
+
+	</ul></p>
+
+	<p> Alternatively, we might have a set of
+	measurements at a regular interval (e.g.,
+	2-weeks) that we wish to explain. Many human
+	diseases are often reported to organizations
+	like CDC and WHO at weekly, bi-weekly, or
+	monthly intervals (e.g, measles, cholera, HIV).
+	</p>
+
+	<p> Other organisms like yeast, bacteria, mice,
+	and so on, might be best described by
+	<sq>continuous-time</sq> dynamics. </p>
+
+		</paragraphs>
+
+		<paragraphs xml:id="thinking-about-interactions">
+		<title>Thinking about interactions</title>
+
+	<p> Interactions might be characterized as
+	linear or non-linear. </p>
+
+	<p><ul> <li> <p> From chemistry, <q>first-order
+	reactions</q> are linear - exponential growth or
+	decay result from first order reactions
+	(linear-models). </p> </li>
+
+		<li> <p> Reactions with multiple reactants
+		(interactions between Na and Cl, foxes and
+		bunnies, humans and zombies are give rise to
+		nonlinear models - products or functions
+		state variables. </p> </li>
+
+	</ul></p>
+
+		</paragraphs>
+
+		<paragraphs
+		xml:id="do-we-always-arrive-at-the-same-answer">
+		<title>Do we always arrive at the same
+		answer?</title>
+
+	<p> Most of the models we study will be
+	deterministic. This means our model (a set of
+	rules, and initial conditions) will always give
+	the same answer. </p>
+
+	<p> In contrast, some models can handle (random)
+	variability between individuals or at different
+	points in time. These are stochastic models, and
+	while often more complicated, they allow us to
+	ask and answer very different questions. As an
+	example we’ll look at <q>birth-death process</q>
+	models a bit later. </p>
+
+		</paragraphs> </paragraphs></subsubsection>
+		
 	</subsection>
 
 	<subsection xml:id="one-dimensional-continuous-time-models">
 	<title>One-dimensional, continuous-time models</title>
 
-	<figure> <image source="coin_flips.pdf"/>
+	<figure> <image source="images/coin_flips.png"/>
 	<caption>Coin-flipping simulations of a death
 	process.</caption> </figure>
 
@@ -254,7 +537,7 @@ pretext.lua --> <pretext> <article>
 		behavior (see Fig <xref ref="fig::det_stoch" />).
 		</p>
 
-		<figure> <image source="coin_flips_1000.pdf"/>
+		<figure> <image source="images/coin_flips_1000.png"/>
 		<caption>Results of 1000 stochastic simulations
 		(colored) and exponential solution to the
 		deterministic model <m>\dfrac{dN}{dt} = rN</m> with
@@ -689,7 +972,7 @@ pretext.lua --> <pretext> <article>
 		<p> A sample result for two populations is plotted
 		in Fig. <xref ref="fig::death_sim" />. </p>
 
-		<figure> <image source="inclass_sim.pdf"/>
+		<figure> <image source="images/inclass_sim.png"/>
 		<caption>Numbers of survivors in independent
 		simulations with probability of death equal to one
 		half. Red curve illustrates the expected number of
@@ -746,7 +1029,7 @@ pretext.lua --> <pretext> <article>
 		death interval, and we are more likely to have a
 		birth. </p>
 
-		<figure> <image source="event_prob.pdf"/> <caption>A
+		<figure> <image source="images/event_prob.png"/> <caption>A
 		uniform random random number has an 80% chance of
 		landing in the <sq>blue</sq> (birth) interval,
 		making this event the more likely outcome. That
@@ -790,7 +1073,7 @@ pretext.lua --> <pretext> <article>
 		Fig. <xref ref="fig::death_sim" /> the rate of birth
 		is non-zero. </p>
 
-		<figure> <image source="sample.pdf"/>
+		<figure> <image source="images/sample.png"/>
 		<caption>Sample solutions to the stochastic process
 		with the deterministic result (or expectation) in
 		red. One population (black) rather quickly goes
@@ -969,7 +1252,7 @@ pretext.lua --> <pretext> <article>
 		from a given initial condition, <m>N(0)</m>, by
 		reading the derivative. </p>
 
-		<figure> <image source="phase.pdf"/>
+		<figure> <image source="images/phase.png"/>
 		<caption>Phase-line diagram. The dotted line,
 		<m>\frac{d^{} {N}}{d {t}^{}}=0</m> for all <m>N</m>
 		requires <m>r=0</m>. The change in the ’blue’
@@ -1237,7 +1520,7 @@ pretext.lua --> <pretext> <article>
 	trajectories in the phase plane and
 	<sq>direction arrows.</sq> </p>
 
-	<figure> <image source="pred_X.pdf"/>
+	<figure> <image source="images/pred_X.png"/>
 	<caption>On lines <m>\frac{d^{} {X}}{d
 	{t}^{}}=0</m>, motion is in the vertical
 	direction. On lines <m>\frac{d^{} {Y}}{d
@@ -1274,7 +1557,7 @@ pretext.lua --> <pretext> <article>
 	solutions, we might as well plot them in time
 	(see Fig. <xref ref="fig::pred_prey" />). </p>
 
-	<figure> <image source="pred_XY_t.pdf"/>
+	<figure> <image source="images/pred_XY_t.png"/>
 	<caption>Numbers (or
 	<m>\text{densities}=\frac{\text{number}}{\text{area}}</m>) 
 	of prey (<m>X</m>) and predators (<m>Y</m>).
@@ -1468,7 +1751,7 @@ pretext.lua --> <pretext> <article>
 		ref="fig::Aonly" /> - Fig. <xref ref="fig::Saddle"
 		/> </p>
 
-		<figure> <image source="compet_A.pdf"/>
+		<figure> <image source="images/compet_A.png"/>
 		<caption>When <m>\frac{K_A}{\alpha}&gt;K_B</m> and
 		<m>\frac{K_B}{\gamma}&lt;K_A</m>, only <m>A</m>
 		exists at equilibrium. This is equivalent to
@@ -1478,7 +1761,7 @@ pretext.lua --> <pretext> <article>
 		<m>A</m> has a strong effect on <m>B</m>.</caption>
 		</figure>
 
-		<figure> <image source="compet_B.pdf"/>
+		<figure> <image source="images/compet_B.png"/>
 		<caption>When <m>\frac{K_A}{\alpha}&lt;K_B</m> and
 		<m>\frac{K_B}{\gamma}&gt;K_A</m>, only <m>B</m>
 		exists at equilibrium. This is equivalent to
@@ -1488,7 +1771,7 @@ pretext.lua --> <pretext> <article>
 		<m>A</m> has a weak effect on <m>B</m>.</caption>
 		</figure>
 
-		<figure> <image source="compet_AB.pdf"/>
+		<figure> <image source="images/compet_AB.png"/>
 		<caption>When <m>\frac{K_A}{\alpha}&gt;K_B</m> and
 		<m>\frac{K_B}{\gamma}&gt;K_A</m>, nullclines
 		intersect, and the coexistence equilibrium is
@@ -1499,7 +1782,7 @@ pretext.lua --> <pretext> <article>
 		<m>A</m> has a weak effect on <m>B</m>.</caption>
 		</figure>
 
-		<figure> <image source="compet_saddle.pdf"/>
+		<figure> <image source="images/compet_saddle.png"/>
 		<caption>When <m>\frac{K_A}{\alpha}&lt;K_B</m> and
 		<m>\frac{K_B}{\gamma}&lt;K_A</m>, but the
 		coexistence equilibrium is unstable. This is
@@ -1759,7 +2042,7 @@ pretext.lua --> <pretext> <article>
 		trajectory are illustrated in Fig. <xref
 		ref="fig::mm_kinetics" />. </p>
 
-		<figure> <image source="mm_nullclines.pdf"/>
+		<figure> <image source="images/mm_nullclines.png"/>
 		<caption>Nutrient-receptor reaction.</caption>
 		</figure>
 
@@ -1803,293 +2086,11 @@ pretext.lua --> <pretext> <article>
 
 
 	<subsection
-	xml:id="introduction-and-linear-discrete-time-models">
-	<title>Introduction and Linear discrete-time models</title>
-
-
-	<subsubsection xml:id="introduction-to-models-and-notation">
-	<title>Introduction to models and notation</title>
-
-
-	<paragraphs xml:id="what-is-mathematical-biology">
-	<title>What is mathematical biology?</title>
-
-
-		<paragraphs xml:id="what-is-mathematics">
-		<title>What is mathematics?</title>
-
-	<p> The study of number, quantity, space. </p>
-
-
-	<paragraphs xml:id="what-is-biology">
-	<title>What is biology?</title>
-
-		<p> The study of life. </p>
-
-	</paragraphs>
-
-	<paragraphs
-	xml:id="what-is-mathematical-biology-1">
-	<title>What is mathematical biology?</title>
-
-		<p> Using mathematical tools to study life.
-		</p>
-
-		<p><ul> <li> <p> Understanding the details
-		of interactions between interacting
-		populations of chemicals, cells, or
-		individuals </p> </li>
-
-		<li> <p> Understanding or hypothesizing
-		the mechanisms by which any biological
-		quantities (numbers, densities,
-		concentrations) change over time (or
-		space) </p> </li>
-
-		</ul></p>
-
-	</paragraphs>
-
-	<paragraphs
-	xml:id="biological-science-vs.-physical-science"
-	> <title>Biological science vs. Physical
-	science</title>
-
-		<p> Physics has <sq>laws</sq>, biology has
-		no such <sq>laws</sq>. </p>
-
-	</paragraphs> </paragraphs> </paragraphs>
-
-	<paragraphs
-	xml:id="what-are-our-goals-for-mathematical-biology">
-	<title>What are our goals for mathematical
-	biology</title>
-
-		<p><ul> <li> <p> Draw qualitative conclusions about
-		biological processes. </p> </li>
-
-	<li> <p> Apply simplified mechanisms to complex
-	systems. </p> </li>
-
-	<li> <p> Guide thought experiments and physical
-	experiments. </p> </li>
-
-	<li> <p> Occasionally make precise, quantitative
-	predictions. </p> </li>
-
-		</ul></p>
-
-	</paragraphs>
-
-	<paragraphs xml:id="what-is-a-mathematical-model">
-	<title>What is a mathematical model?</title>
-
-
-		<paragraphs xml:id="features-and-definitions">
-		<title>Features and definitions</title>
-
-	<p> A mathematical model is an abstract
-	mathematical description of any (biological)
-	system, using logic, notation, and techniques of
-	mathematics. </p>
-
-		</paragraphs>
-
-		<paragraphs xml:id="a-familiar-example"> <title>A
-		familiar example</title>
-
-	<p> Picture a tall, cylindrical water tower with
-	radius <m>r</m> in which the height of the water
-	is <m>h</m>. We want to know how fast the water
-	level is dropping as we draw water from the
-	bottom of the tank at a fixed flow. Our
-	situation relies on the following relationship
-	between volume of water and height of water.
-	<me>(\text{change in
-	volume})\propto(\text{change in height})</me>
-	But what is the actual relationship between the
-	two, and how do we replace
-	<sq><m>\propto</m></sq> with <sq><m>=</m></sq>?
-	First, <me>V=\pi r^2 h,</me> and
-	differentiating, <me>\frac{d^{} {V}}{d {t}^{}} =
-	\pi r^2 \frac{d^{} {h}}{d {t}^{}}.</me> </p>
-
-	<p> Pause to think about this. We want to know
-	how the height <m>h(t)</m> is changing as a
-	function of time. We are thinking of a cylinder
-	with a fixed radius, <m>r</m>. We will assume
-	that we are in control of the outflow from the
-	tank, <m>\displaystyle \frac{d^{} {V}}{d
-	{t}^{}}</m>. </p>
-
-	<p> We can write a model for the height,
-	<me>\frac{d^{} {h}}{d {t}^{}}=\frac{\frac{d^{}
-	{V}}{d {t}^{}}}{\pi r^2}.</me> </p>
-
-	<p> Let’s assume we fix the outflow at
-	<m>\displaystyle100\,\frac{\text{ft}^3}{\text{
-	sec}}</m>, by adjusting the outflow knob. The
-	first consequence is that the volume of water in
-	the tank is decreasing, so that
-	<m>\displaystyle\frac{d^{} {V}}{d {t}^{}}</m>
-	should be negative. </p>
-
-	<p> We’ll now use our model to study the
-	dynamics of water depth in two theoretical water
-	tanks: one tall and thin and the other short and
-	thick. </p>
-
-	<p> When <m>r=10</m>, <me>\frac{d^{} {h}}{d
-	{t}^{}}=\frac{-100\,\frac{\text{ft}^3}{\text{sec
-	}}}{\pi \times(10
-	\text{ft})^2}=-\frac{1}{\pi}\,\frac{\text{ft}}{\
-	text{sec}}.</me> So that the water height
-	<em>drops</em> about 1 foot in approximately 3
-	seconds. </p>
-
-	<p> When <m>r=100</m>, <me>\frac{d^{} {h}}{d
-	{t}^{}}=\frac{-100\,\frac{\text{ft}^3}{\text{sec
-	}}}{\pi \times(100
-	\text{ft})^2}=-\frac{1}{100\pi}\,\frac{\text{ft}
-	}{\text{sec}}.</me> So that the water height
-	<em>drops</em> about 1 foot in approximately 5
-	minutes! </p>
-
-	<p> This model allows us to discuss two
-	important and often confused concepts in
-	modeling: the distinction between parameters and
-	(state) variables. The <q>state variable</q> is
-	the <sq>thing</sq> that we are making an effort
-	to model. Here it is the height, <m>h(t)</m> of
-	the water in the tower. Everything else - the
-	outflow volume <m>\left(\displaystyle \frac{d^{}
-	{V}}{d {t}^{}}\right)</m> and the radius
-	<m>(r)</m> is known, or under our control. We
-	call these things parameters. Changing
-	parameters affects the evolution of state
-	variables. </p>
-
-		</paragraphs> </paragraphs>
-
-	<paragraphs
-	xml:id="why-do-we-write-models-and-what-can-we-model">
-	<title>Why do we write models and what can we
-	model?</title>
-
-
-		<paragraphs xml:id="counting">
-		<title>Counting</title>
-
-	<p> Models allow us to count things that might
-	be too expensive, too time consuming, or
-	otherwise impossible to count: animals, cells,
-	proteins, viruses, molecules. </p>
-
-		</paragraphs>
-
-		<paragraphs xml:id="what-do-we-count"> <title>What
-		do we count?</title>
-
-	<p><ul> <li> <p> Populations of individual
-	plants or animals that interact (Ecology) </p>
-	</li>
-
-		<li> <p> Populations of cells
-		<em>within</em> individuals that interact
-		(Physiology, e.g., Immunology) </p> </li>
-
-		<li> <p> Populations of molecules and
-		chemicals <em>within</em> cells that
-		interact (Physiology, e.g., Neurobiology)
-		</p> </li>
-
-	</ul></p>
-
-		</paragraphs> </paragraphs>
-
-	<paragraphs xml:id="what-does-a-model-look-like">
-	<title>What does a model look like?</title>
-
-		<p> A model is a description of <q>how things
-		change</q> (like the height of water in a water
-		tower). Biologically similar things might change in
-		very different ways and be governed by very
-		different processes. </p>
-
-
-		<paragraphs xml:id="thinking-about-time">
-		<title>Thinking about time</title>
-
-	<p> We should think about how the organisms, or
-	components of our model, interact with one
-	another.<!-- linebreak -->Dynamics of some
-	plants and animals are characterized by
-	discrete, non-overlapping generations. </p>
-
-	<p><ul> <li> <p> Insects might reproduce over
-	just a few days and be dormant over the
-	remainder of the year. </p> </li>
-
-		<li> <p> Plants might set seeds over a short
-		season. </p> </li>
-
-	</ul></p>
-
-	<p> Alternatively, we might have a set of
-	measurements at a regular interval (e.g.,
-	2-weeks) that we wish to explain. Many human
-	diseases are often reported to organizations
-	like CDC and WHO at weekly, bi-weekly, or
-	monthly intervals (e.g, measles, cholera, HIV).
-	</p>
-
-	<p> Other organisms like yeast, bacteria, mice,
-	and so on, might be best described by
-	<sq>continuous-time</sq> dynamics. </p>
-
-		</paragraphs>
-
-		<paragraphs xml:id="thinking-about-interactions">
-		<title>Thinking about interactions</title>
-
-	<p> Interactions might be characterized as
-	linear or non-linear. </p>
-
-	<p><ul> <li> <p> From chemistry, <q>first-order
-	reactions</q> are linear - exponential growth or
-	decay result from first order reactions
-	(linear-models). </p> </li>
-
-		<li> <p> Reactions with multiple reactants
-		(interactions between Na and Cl, foxes and
-		bunnies, humans and zombies are give rise to
-		nonlinear models - products or functions
-		state variables. </p> </li>
-
-	</ul></p>
-
-		</paragraphs>
-
-		<paragraphs
-		xml:id="do-we-always-arrive-at-the-same-answer">
-		<title>Do we always arrive at the same
-		answer?</title>
-
-	<p> Most of the models we study will be
-	deterministic. This means our model (a set of
-	rules, and initial conditions) will always give
-	the same answer. </p>
-
-	<p> In contrast, some models can handle (random)
-	variability between individuals or at different
-	points in time. These are stochastic models, and
-	while often more complicated, they allow us to
-	ask and answer very different questions. As an
-	example we’ll look at <q>birth-death process</q>
-	models a bit later. </p>
-
-		</paragraphs> </paragraphs>
-
+	xml:id="linear-discrete-time-models">
+	<title>Linear discrete-time models</title>
+
+<subsubsection xml:id="subsec-one-dimensional-linear-discrete-time-dynamical-systems"> <title>One-dimensional, Linear, discrete-time
+	dynamical systems</title>>
 	<paragraphs
 	xml:id="one-dimensional-linear-discrete-time-dynamical-systems"> <title>One-dimensional, Linear, discrete-time
 	dynamical systems</title>
@@ -2692,7 +2693,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 	for population growth to occur (<m>r, ELR,
 	\lambda&gt;1</m>). </p>
 
-	<figure> <image source="elr_vs_eig_a.pdf"/>
+	<figure> <image source="images/elr_vs_eig_a.png"/>
 	<caption>Relationships between <m>r</m>,
 	<m>ELR</m>, and <m>\lambda</m>, for fixed
 	<m>s=\frac{16}{9}</m> and (left)
@@ -2701,7 +2702,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 	weekly survival probabilities, <m>0\leq a\leq
 	1</m>.</caption> </figure>
 
-	<figure> <image source="elr_vs_eig_b.pdf"/>
+	<figure> <image source="images/elr_vs_eig_b.png"/>
 	<caption>Relationships between <m>r</m>,
 	<m>ELR</m>, and <m>\lambda</m>, for fixed
 	<m>s=\frac{16}{9}</m> and (left)
@@ -2749,7 +2750,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 		<m>ELR&gt;\lambda_+&gt;1</m>, so that the
 		population grows. </p>
 
-		<figure> <image source="SAD.pdf"/>
+		<figure> <image source="images/SAD.png"/>
 		<caption>Left) Weekly temporal dynamics of
 		vegetative and reproductive plants. Right)
 		Stable age distribution and iterated
@@ -2848,7 +2849,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 		ref="fig::exac_app" /> </p>
 
 		<figure> <image
-		source="exact_vs_approx.pdf"/>
+		source="exact_vs_approx.png"/>
 		<caption>Left) Approximate dynamics using
 		first eigenpair. Right) Iterated solutions
 		starting from <m>(V_0, R_0)=(0,1)</m> for
@@ -2906,7 +2907,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 		linear and nonlinear models is given in Fig. <xref
 		ref="fig::pcp" />. </p>
 
-		<figure> <image source="lin_nonlin_pcp.pdf"/>
+		<figure> <image source="images/lin_nonlin_pcp.png"/>
 		<caption>Per capita production plots. Left)
 		Generation to generation change independent of
 		population size, Right) change dependent on
@@ -2939,7 +2940,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 		these nonlinear models possess multiple equilibria!
 		</p>
 
-		<figure> <image source="lin_nonlin_upd.pdf"/>
+		<figure> <image source="images/lin_nonlin_upd.png"/>
 		<caption>Cobwebbing diagrams. Left) Updating
 		functions of linear model, Right) change dependent
 		on population size for three famous models of
@@ -2975,7 +2976,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 	find the following diagram and iterated
 	solution. </p>
 
-	<figure> <image source="f3.pdf"/>
+	<figure> <image source="images/f3.png"/>
 	<caption>Cobwebbing diagram and iterated
 	solution for <m>r=3.7</m>, <m>k=0.15</m>. Left)
 	Updating function and cobwebbing, Right)
@@ -3010,7 +3011,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 	the crossing point of the updating function and
 	resetting line (left panel). </p>
 
-	<figure> <image source="f3_rmax.pdf"/>
+	<figure> <image source="images/f3_rmax.png"/>
 	<caption>Cobwebbing diagrams and iterated
 	solutions as they depend on the maximal per
 	capita production. Left) A collection of nice
@@ -3070,8 +3071,8 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 		Fig. <xref ref="fig::pcp_upd" />. Notice that we
 		explicitly ignore immigration here. </p>
 
-		<p> <image source='lin_nonlin_pcp.pdf'/><!--
-		linebreak --><image source='lin_nonlin_upd.pdf'/>
+		<p> <image source='lin_nonlin_pcp.png'/><!--
+		linebreak --><image source='lin_nonlin_upd.png'/>
 		</p>
 
 		<p> Notice that there are some major qualitative
@@ -3142,7 +3143,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 	ref="fig::rick_bif" />. Also, <m>G^*=0</m> is
 	stable when <m>r&lt;1</m>. </p>
 
-	<figure> <image source="ricker_stab.pdf"/>
+	<figure> <image source="images/ricker_stab.png"/>
 	<caption>Left). <m>G^*=\frac{\ln(r)}{k}</m> is
 	stable for <m>1&lt;r&lt;e^2</m>. Right).
 	<m>G^*=0</m> is stable for <m>0&lt;r&lt;1</m>.
@@ -3151,7 +3152,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 	oscillations emerge around the nontrivial
 	equilibrium.</caption> </figure>
 
-	<figure> <image source="ricker_bif.pdf"/>
+	<figure> <image source="images/ricker_bif.png"/>
 	<caption>Left). <m>G^*=\frac{\ln(r)}{k}</m> is
 	stable for <m>1&lt;r&lt;e^2</m>. Right).
 	<m>G^*=0</m> is stable for <m>0&lt;r&lt;1</m>.
@@ -3160,7 +3161,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 	oscillations emerge around the nontrivial
 	equilibrium.</caption> </figure>
 
-	<p> <image source='ricker.pdf'/><!-- linebreak
+	<p> <image source='ricker.png'/><!-- linebreak
 	--> </p>
 
 		</paragraphs>
@@ -3553,7 +3554,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 		than the distance from the vertex to the enclosing
 		endpoint (see Fig. <xref ref="fig::roots" />). </p>
 
-		<figure> <image source="char_poly.pdf"/>
+		<figure> <image source="images/char_poly.png"/>
 		<caption>Roots of the characteristic
 		polynomial.</caption> </figure>
 
@@ -3585,7 +3586,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 
 	</ul></p>
 
-	<figure> <image source="discrete_stab.pdf"/>
+	<figure> <image source="images/discrete_stab.png"/>
 	<caption>Roots of the characteristic polynomial.
 	<m>\tau</m> lies along the horizontal axis and
 	<m>\Delta</m> along the vertical axis.</caption>
@@ -3631,7 +3632,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 		<m>(X_t\rightarrow\infty, Y_t\rightarrow\infty)</m>
 		are often uninteresting outcomes. </p>
 
-		<figure> <image source="discrete_stability.pdf"/>
+		<figure> <image source="images/discrete_stability.png"/>
 		<caption>Eigenvalues are real in the hatched region
 		and the equilibrium is stable. Eigenvalues are
 		complex in the solid region and the equilibrium is
@@ -3721,7 +3722,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 		in the book) are plotted in Fig. <xref
 		ref="fig::NBsols" />. </p>
 
-		<figure> <image source="pars_pert.pdf"/>
+		<figure> <image source="images/pars_pert.png"/>
 		<caption>Sample dynamics of Nicholson-Bailey. Left)
 		Perturbations in three parameters. Notice that some
 		host populations appear to escape parasitoids.
@@ -3729,7 +3730,7 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 		changes in initial conditions drastically effect
 		dynamics.</caption> </figure>
 
-		<figure> <image source="IC_pert.pdf"/>
+		<figure> <image source="images/IC_pert.png"/>
 		<caption>Sample dynamics of Nicholson-Bailey. Left)
 		Perturbations in three parameters. Notice that some
 		host populations appear to escape parasitoids.
