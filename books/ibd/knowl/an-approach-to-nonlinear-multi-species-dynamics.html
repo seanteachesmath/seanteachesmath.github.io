@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-01-28T19:20:33-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="paragraphs"><h5 class="heading"><span class="title">An approach to nonlinear, multi-species dynamics..</span></h5>
+<p>To study this model we could,</p>
+<ul class="disc">
+<li><p xmlns:svg="http://www.w3.org/2000/svg">Iterate solutions numerically</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">Attempt to ‘solve it’</p></li>
+</ul>
+<p xmlns:svg="http://www.w3.org/2000/svg">To iterate our model, we would have to have parameter values and a suitable initial condition. We might not have a clue what these values are so we will ignore that approach and try to ‘solve it.’ Solving such a model typically means,</p>
+<ul class="disc">
+<li><p xmlns:svg="http://www.w3.org/2000/svg">compute equilibria</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">compute linearization</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">analyze stability</p></li>
+</ul>
+<p>As before, equilibria requires \(Y_{t+1}=Y_t=Y^*\) and simultaneously \(Z_{t+1}=Z_t=Z^*\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned} Y^*&amp;=rY^* -pZ^*Y^*\\
+Z^*&amp;= gY^*Z^*+mZ^*, \quad\text{this should be a $+m$ not a
+$-m$!}\end{aligned}
+\end{equation*}
+</div>
+<p>To satisfy the first, either \(Y^*=0\) or \(1=r-pZ^*\text{,}\) the second of which implies,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Z^*=\frac{r-1}{p}.
+\end{equation*}
+</div>
+<p data-braille="continuation">To satisfy the second, either \(Z^*=0\) or \(1=gY^*+m,\) the second of which implies,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+Y^*=\frac{1-m}{g}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Thus our equilibria are \((Y^*, Z^*)=(0,
+0)\) or \((Y^*, Z^*)=(\frac{1-m}{g}, \frac{r-1}{p})\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">We have to figure out how to determine stability at each equilibrium point to know whether or not species persist or go extinct. We might think that linear matrix theory, determinants, and eigenvalues would be of use here. Our first step is to form a linear approximation to our nonlinear dynamics near equilibria. To do so, we compute the Jacobian matrix, a matrix of partial derivatives.</p>
+<p>We notice that our model can be written as a set of two updating functions each depending on two variables,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned} Y_{t+1}&amp;=F(Y_t, Z_t)=rY_t-pZ_tY_t\\
+Z_{t+1}&amp;= G(Y_t, Z_t)=gY_tZ_t+mZ_t, \quad\text{this should be a $+m$
+not a $-m$!}\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Now, the motivation and methodology are the same as with 1D models, we are interested in thinking about \(Y_t=Y^*+y_t\) and \(Z_t=Z^*+z_t\text{,}\) which means each solution (e.g., \(Y_t\)) is a combination of equilibrium value (e.g., \(Y^*\)) and some small perturbation (e.g., \(y_t\)). The Jacobian is a matrix of partial derivatives of our updating functions with respect to the state variables. We could derive this as we did with a Taylor series expansion of a 1D model.</p>
+<p>Then, skipping some steps, we can compute the Jacobian as follows (we will drop the subscripts for simplicity),</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+J(Y, Z)=\left(\begin{array}{cc}
+\frac{\partial^{} {F}}{\partial {Y}^{}} &amp; \frac{\partial^{}
+{F}}{\partial {Z}^{}}\\[8pt] \frac{\partial^{} {G}}{\partial {Y}^{}}
+&amp; \frac{\partial^{} {G}}{\partial {Z}^{}} \end{array}\right).
+\end{equation*}
+</div>
+<p>Our work is not done, just yet. Since we are concerned with the dynamics ‘near equilibrium’ we have to evaluate the Jacobian at the equilibrium. An example, in just a minute, should make this clear.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left(\begin{array}{cc} y_{t_1}\\[8pt] z_{t+1}
+\end{array}\right)=\left.\left(\begin{array}{cc} \frac{\partial^{}
+{F}}{\partial {Y}^{}} &amp; \frac{\partial^{} {F}}{\partial
+{Z}^{}}\\[8pt] \frac{\partial^{} {G}}{\partial {Y}^{}} &amp;
+\frac{\partial^{} {G}}{\partial {Z}^{}} \end{array}\right)\right|_{(Y^*,
+Z^*)}\times\left(\begin{array}{cc} y_{t}\\[8pt] z_{t}
+\end{array}\right).
+\end{equation*}
+</div></article><span class="incontext"><a href="discrete-time-with-linear-algebra.html#an-approach-to-nonlinear-multi-species-dynamics">in-context</a></span>
+</body>
+</html>

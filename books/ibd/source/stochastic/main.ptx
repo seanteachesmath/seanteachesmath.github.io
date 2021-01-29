@@ -60,8 +60,8 @@ continuous time. An example of a deterministic model is <me>\frac{d^{}
 {N}}{d {t}^{}}=rN,</me> where <m>r</m> is the growth rate of species
 <m>N</m>. The solution to such a model is <me>N(t)=N_0e^{rt},</me> where
 <m>N_0</m> is the initial population size. As <m>t\rightarrow\infty</m>,
-we have either <m>N\rightarrow 0</m> if <m>b&lt;m</m> <m>r&lt;0</m>), or
-<m>N\rightarrow \infty</m> if <m>b&gt;m</m> <m>r&gt;0</m>). In decaying
+we have either <m>N\rightarrow 0</m> if <m>b&lt;m</m> (<m>r&lt;0</m>), or
+<m>N\rightarrow \infty</m> if <m>b&gt;m</m> (<m>r&gt;0</m>). In decaying
 populations <m>r&lt;0</m>), solutions decay exponentially towards zero,
 rather than actually reaching zero. Thus, we reach extinction
 asymptotically, rather than in finite time. 
@@ -97,43 +97,35 @@ all <m>n</m>. One important fact is that <me>P_i(0)=\begin{cases}1,
 \,\text{if \(i=n\)}\\0, \,\text{otherwise}\end{cases},</me> since we
 know that we start from <m>N_0=n</m> animals with absolute certainty. We
 can derive the differential equation by conservation,
-<me>\begin{aligned} {2} P_n(t+\Delta t) &amp; =\text{Prob(a
-birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)})
-&amp;&amp;\\ &amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\)
-animals at time \(t\)}) &amp;&amp;\\ &amp; +\text{Prob(no
-change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)})
-&amp;&amp;\end{aligned}</me> First we will apply the definition of
+<me>\begin{aligned}
+P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\\
+&amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\\
+&amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;
+\end{aligned}</me> First we will apply the definition of
 <m>P_n(t)</m> and the others (i.e., <m>P_{n-1}(t)</m>). Notice that the
 equation is presented in two columns, on the left is the format 
 <sq>in
 words
 </sq> and on the right introduces the corresponding notation,
-<me>\begin{aligned} {2} P_n(t+\Delta t) &amp; =\text{Prob(a
-birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)})
-&amp;&amp;\qquad=\text{Prob(a birth)}\times P_{n-1}(t) \\ &amp;
-+\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time
-\(t\)}) &amp;&amp;\qquad+\text{Prob(a death)}\times P_{n+1}(t)\\ &amp;
-+\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time
-\(t\)}) &amp;&amp;\qquad+\text{Prob(no change)}\times P_{n}(t)
-\end{aligned}</me> Below we could also consider <m>\text{Prob(no
-change)}</m> as <m>(1-\text{Prob(change)})</m>, where
+<me>\begin{aligned}
+P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\qquad=\text{Prob(a birth)}\times P_{n-1}(t) \\ 
+&amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\qquad+\text{Prob(a death)}\times P_{n+1}(t)\\
+&amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;\qquad+\text{Prob(no change)}\times P_{n}(t)
+\end{aligned}</me> Below we could also consider <m>\text{Prob(no change)}</m> as <m>(1-\text{Prob(change)})</m>, where
 <m>\text{Prob(change)}</m> is given by the probability of events
 resulting in exit <em>from
 </em> size <m>n</m>. The event probabilities
-are, <me>\begin{aligned} {2} P_n(t+\Delta t) &amp; =\text{Prob(a
-birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)})
-&amp;&amp;\qquad=(n-1)r\Delta t P_{n-1}(t) \\ &amp; +\text{Prob(a
-death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)})
-&amp;&amp;\qquad+(n+1)\mu\Delta t P_{n+1}(t)\\ &amp; +\text{Prob(no
-change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)})
-&amp;&amp;\qquad+(1-nr\Delta t-n\mu\Delta t) P_{n}(t) \end{aligned}</me>
+are, <me>\begin{aligned}
+P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\qquad=(n-1)r\Delta t P_{n-1}(t) \\
+&amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\qquad+(n+1)\mu\Delta t P_{n+1}(t)\\
+&amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;\qquad+(1-nr\Delta t-n\mu\Delta t) P_{n}(t)
+\end{aligned}</me>
 Finally, we can begin rearranging to derive the differential equation
-for <m>P_n(t)</m>, <me>\begin{aligned} P_n(t+\Delta t)
-&amp;=(n-1)r\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)+(1-nr\Delta
-t-n\mu\Delta t) P_{n}(t) \\ P_n(t+\Delta t) -P_n(t)&amp;=(n-1)r\Delta t
-P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)-(nr\Delta t-n\mu\Delta t)
-P_{n}(t) \\ \frac{P_n(t+\Delta t) -P_n(t)}{\Delta t}&amp;=(n-1)r
-P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-n(r -\mu) P_{n}(t) \end{aligned}</me>
+for <m>P_n(t)</m>, <me>\begin{aligned}
+P_n(t+\Delta t) &amp;=(n-1)r\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)+(1-nr\Delta t-n\mu\Delta t) P_{n}(t) \\ 
+P_n(t+\Delta t) -P_n(t)&amp;=(n-1)r\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)-(nr\Delta t-n\mu\Delta t) P_{n}(t) \\
+\frac{P_n(t+\Delta t) -P_n(t)}{\Delta t}&amp;=(n-1)r P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-n(r -\mu) P_{n}(t)
+\end{aligned}</me>
 Now, taking the limit <m>\Delta t\rightarrow0</m>,<me>\frac{d^{}
 {P_n(t)}}{d {t}^{}}=(n-1)r P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-(nr-n\mu)
 P_{n}(t) .</me> We have to assume that <m>P_i(t)=0</m> for any
