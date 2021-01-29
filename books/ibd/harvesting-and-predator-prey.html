@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-01-28T18:13:51-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Harvesting and predator-prey</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\BibTeX}{\textsc{Bib}\TeX}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="intro-bio-dynamics.html"><span class="title">Introduction to Biological Dynamics</span></a></h1>
+<p class="byline">Sean Laverty</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="two-dimensional-systems.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="systems-des.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="higher-dimensional-systems.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="two-dimensional-systems.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="systems-des.html" title="Up">Up</a><a class="next-button button toolbar-item" href="higher-dimensional-systems.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="preface-disclaimer.html" data-scroll="preface-disclaimer">Disclaimer</a></li>
+<li><a href="preface-motto.html" data-scroll="preface-motto">Preface</a></li>
+<li><a href="preface-themes.html" data-scroll="preface-themes">Themes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="introduction.html" data-scroll="introduction"><span class="codenumber">1</span> <span class="title">introduction</span></a><ul><li><a href="what-is-modeling.html" data-scroll="what-is-modeling">What is modeling</a></li></ul>
+</li>
+<li class="link">
+<a href="introduction.html" data-scroll="introduction"><span class="codenumber">2</span> <span class="title">Single differential equations as models</span></a><ul>
+<li><a href="single-species-population-models.html" data-scroll="single-species-population-models">Single-species population models</a></li>
+<li><a href="continuous-time-models-derivations.html" data-scroll="continuous-time-models-derivations">Continuous-time models</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="systems-des.html" data-scroll="systems-des"><span class="codenumber">3</span> <span class="title">Systems of differential equations as models</span></a><ul>
+<li><a href="two-dimensional-systems.html" data-scroll="two-dimensional-systems">Two-dimensional systems of differential equations as models</a></li>
+<li><a href="harvesting-and-predator-prey.html" data-scroll="harvesting-and-predator-prey" class="active">Harvesting and predator-prey</a></li>
+<li><a href="higher-dimensional-systems.html" data-scroll="higher-dimensional-systems">Higher-dimensional systems of differential equations as models</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="introduction-to-stochastic-processes.html" data-scroll="introduction-to-stochastic-processes"><span class="codenumber">4</span> <span class="title">Stochastic models</span></a><ul>
+<li><a href="stochastic-model.html" data-scroll="stochastic-model">What is a stochastic process?</a></li>
+<li><a href="introduction-to-stochastic-models.html" data-scroll="introduction-to-stochastic-models">Introduction to stochastic models</a></li>
+<li><a href="birth-death-processes-and-the-gillespie-algorithm.html" data-scroll="birth-death-processes-and-the-gillespie-algorithm">Birth-death processes and the Gillespie algorithm</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="introduction-single-dtds.html" data-scroll="introduction-single-dtds"><span class="codenumber">5</span> <span class="title">Discrete-time dynamical systems</span></a><ul><li><a href="what-is-dtds.html" data-scroll="what-is-dtds">What is a discrete-time dynamical system?</a></li></ul>
+</li>
+<li class="link">
+<a href="higher-order-dtds.html" data-scroll="higher-order-dtds"><span class="codenumber">6</span> <span class="title">Discrete-time dynamical systems with linear algebra</span></a><ul><li><a href="discrete-time-with-linear-algebra.html" data-scroll="discrete-time-with-linear-algebra">Discrete-time dynamical systems with linear algebra</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="harvesting-and-predator-prey"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Harvesting and predator-prey</span>
+</h2>
+<article class="paragraphs" id="key-concepts-in-continuous-time-models-1"><h5 class="heading"><span class="title">Key concepts in continuous-time models.</span></h5>
+<p id="p-92">Consider the model</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} \frac{d^{} {N}}{d
+{t}^{}}&amp;=\left(r\left(1-\frac{N}{K}\right)-\frac
+{hF}{1+sN}\right)N\\ &amp;= (f(N)-g(N))N,\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">that describes the dynamics of a logistically-growing population subjected to harvesting. Equilibria of this model are \(N^*\) and \(f(N^*)=g(N^*)\text{.}\) The removal rate due to harvesting is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{hF}{1+sN},
+\end{equation*}
+</div>
+<p data-braille="continuation">per \(N\text{.}\) One short derivation of this functional form is given here, we will see another derivation in a few lectures.</p></article><article class="paragraphs" id="derivation-of-a-functional-response"><h5 class="heading"><span class="title">Derivation of a functional response.</span></h5>
+<p id="p-93">A harvester spends its time, of which it has \(T\text{,}\) searching (\(T_S\)) or handling (\(T_H\)), thus,</p>
+<div class="displaymath">
+\begin{equation*}
+T=T_S+T_H.
+\end{equation*}
+</div>
+<p data-braille="continuation">The handling time depends on the number of prey captured (\(N_C\)) and the handling time per prey (\(\hat s\)), so that,</p>
+<div class="displaymath">
+\begin{equation*}
+T_H=\hat s N_C.
+\end{equation*}
+</div>
+<p data-braille="continuation">In turn, the number captured depends on the searching or finding rate (\(\hat h\)), the number of prey available (\(N\)), and the time spend searching by predators or harvesters (\(T_S\)),</p>
+<div class="displaymath">
+\begin{equation*}
+N_C=\hat h
+N T_S.
+\end{equation*}
+</div>
+<p data-braille="continuation">Solving for the search time,</p>
+<div class="displaymath">
+\begin{equation*}
+T_S=\frac{N_C}{\hat h
+N},
+\end{equation*}
+</div>
+<p data-braille="continuation">so that</p>
+<div class="displaymath">
+\begin{equation*}
+T=T_S+T_H=\hat s N_C+\frac{N_C}{\hat h N}=
+N_C\left(\hat s + \frac{1}{\hat h N}\right).
+\end{equation*}
+</div>
+<p data-braille="continuation">Solving for \(N_C\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+N_C=T\left(\frac{\hat h N}{1+\hat s \hat h
+N}\right).
+\end{equation*}
+</div>
+<p id="p-94">The per predator feeding rate is,</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{N_C}{T}=\left(\frac{\hat h N}{1+\hat s \hat h N}\right),
+\end{equation*}
+</div>
+<p data-braille="continuation">since the definition of \(T\) was ‘per predator’. Redefining constants \(h=\hat h\) and \(s=\hat s \hat h\text{,}\) we can finally write the per predator harvesting rate as</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{N_C}{T}=h_{II}(N)=\left(\frac{h N}{1+ s N}\right),
+\end{equation*}
+</div>
+<p data-braille="continuation">so that the harvesting term is \(h_{II}(N)F.\) If predators instantaneously consume their prey, \(s=0\) which returns the Type I response, because saturation vanishes.</p>
+<p id="p-95">Consider now, a two dimensional extension where \(F\) is no longer a parameter, but instead a dynamic variable. Whose growth is proportional to the consumption of prey, up to a scaling factor \(\epsilon\text{.}\) Such a model is,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} \frac{d^{} {N}}{d
+{t}^{}}&amp;=\left(r\left(1-\frac{N}{K}\right)-\
+frac{hF}{1+sN}\right)N\\ \frac{d^{} {F}}{d {t}^{}}&amp;=\frac{\epsilon
+hFN}{1+sN}-mF.\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">We can give ourselves a slightly simpler situation if we assume that the predator is a ‘Type I’ predator,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} \frac{d^{} {N}}{d
+{t}^{}}&amp;=\left(r\left(1-\frac{N}{K}\right)- hF\right)N\\ \frac{d^{}
+{F}}{d {t}^{}}&amp;=\epsilon hFN-mF.\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">A common approach to studying such a model is to first ‘nondimensionalize’ the variables by scaling by some relevant value. Here we have a carrying capacity for \(N\text{,}\) so if we scale \(N\) by \(K\) we can define \(x=\frac{N}{K},\) and study the dynamics of \(x\) which describes the proportion of carrying capacity that is filled. The goal of this is to combine parameters and reduce the dimension of parameter space. We also rescale time by setting \(T=rt\) and replacing the derivative \(\displaystyle\frac{d^{} {}}{d {t}^{}}\) by \(\displaystyle
+r\frac{d^{} {}}{d {T}^{}}\text{.}\) The definition involving \(F\) is less clear from the start, but as we step through the process we find that using \(\displaystyle y=\frac{h}{r}F\) works pretty well. Ultimately, after some failed attempts, we find something like,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\frac{d^{} {x}}{d {t}^{}}&amp;=\left(\left(1-x\right)-y\right)x\\
+\frac{d^{} {y}}{d {t}^{}}&amp;=\beta(x-\alpha)y.\end{aligned}
+\end{equation*}
+</div>
+<p id="p-96">Just as we used phase lines in one dimension, we will use phase planes in two dimensions. To introduce this process we will use an even simpler model describing the densities of prey (\(X\)) and predator (\(Y\)),</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} \frac{d^{} {X}}{d {t}^{}}&amp;=rX-mXY\\
+\frac{d^{} {Y}}{d {t}^{}}&amp;=nXY-sY.\end{aligned}
+\end{equation*}
+</div>
+<p id="p-97">First, we hope to compute equilibria. We can start by solving when each of the equations is equal to zero (i.e., when individual quantities are unchanging). Setting</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d^{} {X}}{d {t}^{}}=0\Rightarrow
+(r-mY)X=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">This equation implies that \(X\) is unchanging along the lines \(X=0\) and \(Y=\frac{r}{m}\) in the \((X,
+Y)\)-plane. Additionally, setting</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d^{} {Y}}{d
+{t}^{}}=0\Rightarrow (nX-s)Y=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">This equation implies that \(Y\) is unchanging along the lines \(Y=0\) and \(X=\frac{s}{n}\) in the \((X, Y)\)-plane. Equilibria require both equations be satisfied simultaneously, thus opposite nullclines must intersect so that <em class="emphasis">both</em> of \(X\) and \(Y\) are unchanging. We will jump ahead and plot <em class="emphasis">everything</em> in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::pred_prey_pp" missing]</code>, this includes trajectories in the phase plane and ‘direction arrows.’</p>
+<figure class="figure figure-like" id="figure-2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="pred_X.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.1<span class="period">.</span></span><span class="space"> </span>On lines \(\frac{d^{} {X}}{d {t}^{}}=0\text{,}\) motion is in the vertical direction. On lines \(\frac{d^{} {Y}}{d {t}^{}}=0\text{,}\) motion is in the horizontal direction.</figcaption></figure><p id="p-98">Direction arrows in Fig.. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::pred_prey_pp" missing]</code>, are obtained by treating the individual differential equations as inequalities. The motivation is that we know that</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d^{} {X}}{d {t}^{}}&gt;0
+\end{equation*}
+</div>
+<p data-braille="continuation">when</p>
+<div class="displaymath">
+\begin{equation*}
+(r-mY)X&gt;0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(X&gt;0\) is of interest, the to ensure the derivative is positive, we need</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{r}{m}&gt;Y.
+\end{equation*}
+</div>
+<p data-braille="continuation">Thus, \(X\) is increasing below the (nonzero) \(X\)-nullcline. Similarly, \(X\) is decreasing above this nullcline. Lastly, we can show that \(Y\) is decreasing ‘to the left’ of the (again, nonzero) vertical \(Y\)-nullcline, and decreasing to the right. This shows that motion is counterclockwise. Numerical solutions show that we have closed orbits around the equilibrium point \((X^*, Y^*)\text{.}\) We call this point <em class="emphasis">neutrally stable</em>.</p>
+<p id="p-99">If we hadn’t computed solutions, we wouldn’t necessarily know from the phase portrait that these solutions do not spiral in towards or out from the equilibrium. To know for certain, we would need to study the ‘linearized’ dynamics near each equilibrium point, including the point \((0, 0)\text{,}\) as well. Since we have solutions, we might as well plot them in time (see Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::pred_prey" missing]</code>).</p>
+<figure class="figure figure-like" id="figure-3"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="pred_XY_t.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.2<span class="period">.</span></span><span class="space"> </span>Numbers (or \(\text{densities}=\frac{\text{number}}{\text{area}}\)) of prey (\(X\)) and predators (\(Y\)).</figcaption></figure></article><section class="subsection" id="the-trace-determinant-method"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.1</span> <span class="title">The ‘Trace-Determinant Method’</span>
+</h3>
+<article class="paragraphs" id="diagnostics-for-eigenvalues-and-stability"><h5 class="heading"><span class="title">Diagnostics for eigenvalues and stability.</span></h5>
+<p id="p-100">In many cases, the calculation of eigenvalues from the Jacobian matrix at equilibria is unnecessary. Instead, we prefer a simpler approach that we refer to as the ‘trace-determinant method.’ Combined with a cautious sketch of the phase plane, the inspection of \(\tau=\operatorname{Tr}{J^*}\) and \(\Delta=\operatorname{det}{J^*}.\)</p>
+<p id="p-101">In some situations, the phase plan suggests that trajectories might oscillate about a fixed point. Yet, without the aid of computers we are often unable to distinguish between equilibria that attract, repel, or do neither. We call these attracting (repelling) equilibria stable (unstable) foci, the plural of focus, or neutrally stable centers, in the third case. Since we expect solutions to oscillate given the phase plane, all that remains is to determine whether or not the real part of the eigenvalue is positive, negative, or zero. This is <em class="emphasis">obvious</em> from the sign of \(\tau\text{.}\) The eigenvalues corresponding to the characteristic polynomial</p>
+<div class="displaymath">
+\begin{equation*}
+C(\lambda)=\lambda^2-\tau \lambda
++\Delta,
+\end{equation*}
+</div>
+<p data-braille="continuation">are given by</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda_\pm=\frac{\tau}{2}\pm\frac{\sqrt{\tau^2- 4\Delta}}{2}.
+\end{equation*}
+</div>
+<p data-braille="continuation">We can see that \(\tau&gt;0\) implies \(\operatorname{Re}(\lambda)&gt;0\text{,}\) which means perturbations from equilibria decay and a particular equilibrium is a stable focus. We can repeat the argument for \(\tau&lt;0\text{,}\) which suggests an unstable focus, characterized by growing oscillations. Eigenvalues are purely imaginary, giving rise to neutrally stable centers, if \(\tau=0\text{.}\) Thus, if we expect oscillations, \(\tau\) tells us whether oscillations grow (\(\tau&gt;0\)), decay (\(\tau&lt;0\)), or are sustained (\(\tau=0\)), all without ever calculating the actual eigenvalue.</p>
+<p id="p-102">Another interesting case, that gives us yet another <em class="emphasis">obvious</em> conclusion, is \(\Delta&lt;0\text{.}\) If we consider a matrix, \(J^*\text{,}\) then \(\tau\) is the sum of its eigenvalues while \(\Delta\) is the product. Thus, for a \(2\times2\) matrix \(J^*\text{,}\) \(\Delta=\lambda_1\lambda_2.\) If \(\Delta&lt;0\text{,}\) then eigenvalues must be of opposite sign. This gives rise the the dynamics of a saddle point, stable in one direction, unstable in the other.</p>
+<p id="p-103">The only other nondegenerate cases occur when we have distinct, real eigenvalues of the same sign. The corresponding equilibria are termed nodes, with stability governed by the sign of \(\tau\text{,}\) since \(\Delta&gt;0\text{.}\)</p>
+<p id="p-104">We have our degenerate cases on the \(\Delta=0\) axis and along the curve \(\Delta=\frac{\tau^2}{4}\text{.}\) The case \(\Delta=0\) gives us a line of fixed points, where one quantity remains fixed (since one eigenvalue is zero) while the other grows from (\(\tau&gt;0\)) or decays towards (\(\tau&lt;0\)) zero. Along the curve \(\Delta=\frac{\tau^2}{4}\) equilibria are called ‘degenerate nodes,’ characterized by a repeated eigenvalue.</p>
+<p id="p-105">Stable points, which attract trajectories, are often called ‘sinks.’ Unstable points, which repel trajectories, are often called ‘sources,’ since solutions emanate from such a source.</p></article></section><section class="subsection" id="ecological-competition"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.2</span> <span class="title">Ecological competition</span>
+</h3>
+<article class="paragraphs" id="method"><h5 class="heading"><span class="title">Method.</span></h5>
+<p id="p-106">To review, we apply the following method to study 2D nonlinear dynamical systems.</p>
+<ol id="p-107" class="decimal">
+<li id="li-22"><p id="p-108">Write a model.</p></li>
+<li id="li-23"><p id="p-109">Read and interpret the model (dimensional analysis of parameters.</p></li>
+<li id="li-24"><p id="p-110">Compute nullclines and equilibria.</p></li>
+<li id="li-25"><p id="p-111">Plot phase portraits with direction arrows and trajectories.</p></li>
+<li id="li-26"><p id="p-112">Refine knowledge of stability with linearization via Jacobian.</p></li>
+</ol>
+<p id="p-113">Consider two species \(A(t)\) and \(B(t)\) for ants and beetles, respectively. Assume that each grows (in the absence of the other) according to logistic growth,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} \begin{cases}
+\displaystyle\frac{d^{} {A}}{d {t}^{}}&amp;=r_A
+A\Big(1-\frac{A}{K_A}\Big)\\[10pt] \displaystyle\frac{d^{} {B}}{d
+{t}^{}}&amp;=r_B B\Big(1-\frac{B}{K_B}\Big).
+\end{cases}\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Here, each species grows independently of the other. Beetles have no effect on ants; ants have no effect on beetles. Our mechanism for interaction will be <em class="emphasis">interference</em> competition, which leads in increased mortality.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\begin{cases} \displaystyle\frac{d^{} {A}}{d {t}^{}}&amp;=r_A
+A\Big(1-\frac{A}{K_A}-\frac{\alpha B}{K_A}\Big)\\[10pt]
+\displaystyle\frac{d^{} {B}}{d {t}^{}}&amp;=r_B
+B\Big(1-\frac{B}{K_B}-\frac{\gamma A}{K_B}\Big).
+\end{cases}\end{aligned}
+\end{equation*}
+</div>
+<p id="p-114">To understand interspecific competition, we need to understand the units and magnitude of \(\alpha\) and \(\gamma\text{.}\) Roughly, \(\alpha\) translates from units of beetle density to an “effective ant density.” According to the ratio \(\frac{B}{K_A}\text{,}\) beetles ‘fill’ some of the carrying capacity allotted to ants. Just how much of the capacity that they fill is given by the parameter \(\alpha\text{,}\) which when multiplied by \(B\) gives the ‘ant equivalency’ of \(B\) beetles. We will look more closely at the equation for \(B\text{,}\) but note that we could make similar observations about the equation for \(A\text{.}\)</p>
+<p id="p-115">The dynamics of \(B\) are given by,</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d^{} {B}}{d
+{t}^{}}=r_B B\Big(1-\frac{B+\gamma A}{K_B}\Big),
+\end{equation*}
+</div>
+<p data-braille="continuation">which slightly more directly illustrates that both \(A\) and \(B\) fill the carrying capacity allotted to \(B\text{.}\) In one dimension, equilibria depend on the zeros of the right hand side of an equation like this. In two dimensions, equilibria depend on the values of both quantities \(A\) and \(B\text{.}\) The first step, as before, is to compute the nullclines for \(B\text{.}\) Setting \(\frac{d^{} {B}}{d {t}^{}}=0\) implies that either \(B=0\) or</p>
+<div class="displaymath">
+\begin{equation*}
+1-\frac{B+\gamma A}{K_B}=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">With a single species, this equation looks like</p>
+<div class="displaymath">
+\begin{equation*}
+1-\frac{\text{animals}}{K_B}=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">We can solve this equation for the density of animals at equilibrium to find,</p>
+<div class="displaymath">
+\begin{equation*}
+\text{animals}=K_B.
+\end{equation*}
+</div>
+<p data-braille="continuation">But we know that we have a particular composition of animals, such that</p>
+<div class="displaymath">
+\begin{equation*}
+\text{animals}=B+\gamma A.
+\end{equation*}
+</div>
+<p data-braille="continuation">Combining these equations,</p>
+<div class="displaymath">
+\begin{equation*}
+K_B=B+\gamma A,
+\end{equation*}
+</div>
+<p data-braille="continuation">gives \(B\) as a function of \(A\text{,}\) the abundance of \(A\) and \(B\) that guarantee that \(B\) is unchanging,</p>
+<div class="displaymath">
+\begin{equation*}
+B=K_B -\gamma A.
+\end{equation*}
+</div>
+<p id="p-116">Finally, we have that, if either or . By their definition, on , the motion in the \(B\) direction is zero, and dynamics are strictly increasing (or decreasing) in \(A\text{.}\)</p>
+<p id="p-117">Similarly, we can compute that, if either or . By their definition, on , the motion in the \(A\) direction is zero, and dynamics are strictly increasing (or decreasing) in \(B\text{.}\) We have to consider a variety of parameter combinations and relative magnitudes. This lets us plot four distinct phase portraits, shown in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::Aonly" missing]</code> - Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::Saddle" missing]</code></p>
+<figure class="figure figure-like" id="figure-4"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="compet_A.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.3<span class="period">.</span></span><span class="space"> </span>When \(\frac{K_A}{\alpha}&gt;K_B\) and \(\frac{K_B}{\gamma}&lt;K_A\text{,}\) only \(A\) exists at equilibrium. This is equivalent to \(\frac{K_A}{K_B}&gt;\alpha\) and \(\frac{K_B}{K_A}&lt;\gamma\text{,}\) which suggests that \(B\) has a weak effect on \(A\text{,}\) but \(A\) has a strong effect on \(B\text{.}\)</figcaption></figure><figure class="figure figure-like" id="figure-5"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="compet_B.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.4<span class="period">.</span></span><span class="space"> </span>When \(\frac{K_A}{\alpha}&lt;K_B\) and \(\frac{K_B}{\gamma}&gt;K_A\text{,}\) only \(B\) exists at equilibrium. This is equivalent to \(\frac{K_A}{K_B}&lt;\alpha\) and \(\frac{K_B}{K_A}&gt;\gamma\text{,}\) which suggests that \(B\) has a strong effect on \(A\text{,}\) but \(A\) has a weak effect on \(B\text{.}\)</figcaption></figure><figure class="figure figure-like" id="figure-6"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="compet_AB.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.5<span class="period">.</span></span><span class="space"> </span>When \(\frac{K_A}{\alpha}&gt;K_B\) and \(\frac{K_B}{\gamma}&gt;K_A\text{,}\) nullclines intersect, and the coexistence equilibrium is stable. This is equivalent to \(\frac{K_A}{K_B}&gt;\alpha\) and \(\frac{K_B}{K_A}&gt;\gamma\text{,}\) which suggests that \(B\) has a weak effect on \(A\text{,}\) and \(A\) has a weak effect on \(B\text{.}\)</figcaption></figure><figure class="figure figure-like" id="figure-7"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="compet_saddle.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.6<span class="period">.</span></span><span class="space"> </span>When \(\frac{K_A}{\alpha}&lt;K_B\) and \(\frac{K_B}{\gamma}&lt;K_A\text{,}\) but the coexistence equilibrium is unstable. This is equivalent to \(\frac{K_B}{K_A}&gt;\alpha\) and \(\frac{K_A}{K_B}&gt;\gamma\text{,}\) which suggests that \(B\) has a weak effect on \(A\text{,}\) and \(A\) has a weak effect on \(B\text{.}\) The ‘winner’ depends on the initial conditions.</figcaption></figure></article></section><section class="subsection" id="parameters-rates-and-units-prelude-to-chemical-kinetics"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.3</span> <span class="title">Parameters, rates, and units: Prelude to chemical kinetics</span>
+</h3>
+<article class="paragraphs" id="parameters-rates-and-units"><h5 class="heading"><span class="title">Parameters, rates, and units.</span></h5>
+<p id="p-118">We always need to keep in mind the fact that our parameters and rates have important units. We will review a few familiar examples to motivate this concept before moving on to biochemical kinetics of enzymatic reactions.</p></article><article class="example example-like" id="example1-sir-models"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example1-sir-models"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">SIR models.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example1-sir-models"><article class="example example-like"><p id="p-119">Recall the SIR model (illustrated in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::sir_flow" missing]</code>), where \(S\text{,}\) \(I\text{,}\) and \(R\) are the host population densities of susceptible, infect<em class="emphasis">ious</em>, and recovered (or removed) hosts. Susceptible hosts are infected at a rate \(\beta(N)\left(\frac{I}{N}\right)\) and infectious hosts recover (or are removed by death) at a rate \(\gamma\text{.}\) =[draw, fill=white, minimum size=3em, circle] =[ fill=white, minimum size=3em, circle]</p>
+<p id="p-120">The prevailing models in the literature are called ‘mass action’ and ‘constant contact’, which refers specifically to the choice of the function \(\beta(N)\) within our transmission function.</p>
+<p id="p-121"><p id="p-122">constant contact (frequency dependent) assumes that \(\beta(N)=\beta_0\)</p><div class="displaymath">
+\begin{equation*}
+\begin{aligned} \beta(N)\left(\frac{I}{N}\right)S&amp;=\overset{
+\overset{\displaystyle{\left[\frac{\text{1}}{\
+text{time}}\right]}}{\big\downarrow}}{\beta_0} \times\overset{
+\overset{\displaystyle{\left[\frac{\text{host}}{
+\text{host}}\right]}}{\big\downarrow}}{\left(\ frac{I}{N}\right)}
+\times\overset{ \overset{\displaystyle{\left[\text{host}\right]}
+}{\big\downarrow}}{S} \end{aligned}
+\end{equation*}
+</div>  <p id="p-123">mass action (density dependent) assumes that \(\beta(N)=\beta_1 N\)</p><div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\beta(N)\left(\frac{I}{N}\right)S&amp;=\ beta_1
+N\left(\frac{I}{N}\right)S\\ &amp;=\underset
+{\underset{\displaystyle{\left[\frac{\text{1 }}{\text{host $\cdot$
+time}}\right]}}{\big\uparrow}}{ \beta_1} \times\underset
+{\underset{\displaystyle{\left[\text{host}\ right]}}{\big\uparrow}}{
+I}\times\underset {\underset{\displaystyle{\left[\text{host}\
+right]}}{\big\uparrow}}{ S}\end{aligned}
+\end{equation*}
+</div> </p>
+<p id="p-124">Notice that we have to assign different units to the ‘transmission parameter’ \(\beta(N)\) depending on its form.</p></article></div>
+<article class="example example-like" id="example-predator-prey"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-predator-prey"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Predator - Prey equations.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-predator-prey"><article class="example example-like"><p id="p-125">Consider the densities of prey (\(X\)) and its predator (\(Y\)), given by the following (slightly incorrect, or at least misleading equations),</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} \frac{d^{} {X}}{d
+{t}^{}}&amp;=rX-sXY\\ \frac{d^{} {Y}}{d
+{t}^{}}&amp;=sXY-qY.\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">The interaction term, \(sXY\text{,}\) is the term that we focus on. This term represents predation in the \(\frac{d^{} {X}}{d {t}^{}}\)-equation, but growth in the \(\frac{d^{} {Y}}{d {t}^{}}\)-equation (see Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::PP_units" missing]</code>).</p>
+<figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.2.9<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">predation</td>
+<td class="c m b0 r0 l0 t0 lines">\(\rightarrow\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">growth</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">loss of \(X\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\rightarrow\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">gain of \(Y\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\(\frac{\text{prey}}{\text{ time}}\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\rightarrow\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{\text{predator}}{\ text{time}}\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\(sXY\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\rightarrow\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(sXY\)</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">\(\underset
+{\underset{\displaystyle{\left[\frac{\text{1 }}{\text{predator $\cdot$
+time}}\right]}}{\big\uparrow}}{ s} \times\underset
+{\underset{\displaystyle{\left[\text{prey}\ right]}}{\big\uparrow}}{
+X}\times\underset {\underset{\displaystyle{\left[\text{
+predator}\right]}}{\big\uparrow}}{ Y}\)</td>
+<td class="c m b0 r0 l0 t0 lines">\(\rightarrow\)</td>
+<td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">\(\underset
+{\underset{\displaystyle{\left[\frac{\text{1 }}{\text{predator $\cdot$
+time}}\right]}}{\big\uparrow}}{ s} \times\underset
+{\underset{\displaystyle{\left[\text{prey}\ right]}}{\big\uparrow}}{
+X}\times\underset {\underset{\displaystyle{\left[\text{
+predator}\right]}}{\big\uparrow}}{ Y}\)</td>
+</tr>
+</table></figure><p id="p-126">Indeed, \(sXY\) describes the rate of predation on \(X\text{,}\) but it cannot describe, as it is now, the growth rate of \(Y\text{.}\) The unit’s in the second equation are inconsistent, thus, the model must be wrong! In fact, we have</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} \frac{d^{} {X}}{d
+{t}^{}}&amp;=rX-sXY\\ \frac{d^{} {Y}}{d {t}^{}}&amp;=\varepsilon sXY-qY,
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">where</p>
+<div class="displaymath">
+\begin{equation*}
+\varepsilon\sim\frac{\text{predator}}{\
+text{prey}},
+\end{equation*}
+</div>
+<p data-braille="continuation">is some (probably small) number describing the ‘conversion efficiency’ of producing new predators from consumed prey.</p></article></div>
+<article class="paragraphs" id="michaelis-menten-kinetics"><h5 class="heading"><span class="title">Michaelis-Menten kinetics.</span></h5>
+<p id="p-127">The introduction to units will highlight the ‘fact’ that units in reaction kinetics are somewhat less tangible and slightly more difficult to interpret. We will study the dynamics of cell receptors (\(X_0, X_1\)) as they shuttle extracellular nutrients (\(N\)) into the cell. We denote the concentration of cellular nutrient by \(C\text{.}\)</p>
+<p id="p-128">We wish to apply the ‘law of mass action’ which simply states,</p>
+<p id="p-129"><em class="emphasis">in a bimolecular reaction, the reaction rate is proportionalto the product of the concentrations of reactants</em>.</p>
+<p id="p-130">Assuming that \([A]\) and \([B]\) are the concentrations of reactants,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} \text{rate}&amp;\propto [A][B]\\
+&amp;=k[A][B],\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">where the constant of proportionality, \(k\text{,}\) is called the ‘rate constant.’</p>
+<p id="p-131">Since the law of mass action relies on concentrations of reactants, we must reconsider our receptors and nutrients in terms of ‘concentrations’. For a given cellular component \(Z\text{,}\) the ‘volumetric concentration of \(Z\)’ is,</p>
+<div class="displaymath">
+\begin{equation*}
+\left[\begin{tabular}{c}\text{concentration}\\\ text{of
+$Z$}\end{tabular}\right]=\left[\begin{tabular}{c}\ text{average
+number}\\\text{of $Z$ per
+cell}\end{tabular}\right]\times\left[\begin{tabular} {c}\text{average
+number of}\\\text{cells per volume}\end{tabular}\right].
+\end{equation*}
+</div>
+<p data-braille="continuation">Treating \(N\text{,}\) \(X_0\text{,}\) \(X_1\text{,}\) and \(C\) as volumetric concentrations we can use the reaction diagram (Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::nutrient_recept" missing]</code>) to build differential equations to describe the changes in concentrations.</p>
+<p id="p-132">INSERT REACTION</p>
+<p id="p-133">As an example, there are two ways that the extracellular nutrient concentration changes giving two terms to the \(\frac{d^{} {N}}{d
+{t}^{}}\) equation.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} \frac{d^{} {N}}{d {t}^{}}
+&amp; = -\left(\text{losses when free nutrient binds to empty
+receptor}\right)\\ &amp;\qquad +\left(\text{gains when occupied
+receptors release nutrient extracellularly}\right)\\ &amp; = -k_+ N X_0
++ k_- X_1\end{aligned}
+\end{equation*}
+</div>
+<p id="p-134">Similarly, we can add the remaining equations,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N X_0 + k_- X_1\\ \frac{d^{}
+{X_0}}{d {t}^{}} &amp; = -k_+ N X_0 + k_- X_1 + k_i X_i\\ \frac{d^{}
+{X_1}}{d {t}^{}} &amp; = k_+ N X_0 - k_- X_1 - k_i X_i\\ \frac{d^{}
+{C}}{d {t}^{}} &amp; = k_i X_1\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Given this model, our first goal is to make some simplifications through astute observations. Both \(X_0\) and \(X_1\) are receptor states, and if we add the two differential equations,</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d^{} {X_0}}{d {t}^{}}+\frac{d^{}
+{X_1}}{d {t}^{}}=0,
+\end{equation*}
+</div>
+<p data-braille="continuation">we see that the total receptor concentration is conserved, \(R\text{.}\) With this we can write \(X_0=R-X_1.\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} \frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N (R-X_1) +
+k_- X_1\\ \frac{d^{} {X_1}}{d {t}^{}} &amp; = k_+ N (R-X_1) - k_- X_1 -
+k_i X_i\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Reshuffling a bit,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N R+(k_+N + k_-) X_1\\ \frac{d^{}
+{X_1}}{d {t}^{}} &amp; = k_+ N R- (k_+ N + k_- + k_i
+)X_i\end{aligned}
+\end{equation*}
+</div>
+<p id="p-135">We can study these equations in the phase plane. Assuming all parameters are positive, both nullclines saturate to a value \(X_1\rightarrow R\) at large \(N\text{.}\) Knowing very little about parameters, we know that the half saturation constant of the \(X_1\) nullcline is larger than that of the \(N\) nullcline. The nullclines, direction arrows on the nullclines, and a sample trajectory are illustrated in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::mm_kinetics" missing]</code>.</p></article><article class="paragraphs" id="equilibrium-assumption"><h5 class="heading"><span class="title">Equilibrium assumption.</span></h5></article><article class="paragraphs" id="quasi-steady-state-assumption"><h5 class="heading"><span class="title">Quasi-steady state assumption.</span></h5></article></section><section class="subsection" id="nullclines-and-neuroscience"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.2.4</span> <span class="title">Nullclines and Neuroscience</span>
+</h3>
+<p id="p-136">Following on the heels of the quasi-steady state assumption, we will close with an application of fast and slow dynamics that arises in mathematical models of neurons.</p>
+<p id="p-137">This example, called the FitzHugh-Nagumo model allows us to synthesize much of the material from continuous time dynamical systems: phase plane, equilibria, analysis, and approximation.</p></section></section></div></main>
+</div>
+</body>
+</html>

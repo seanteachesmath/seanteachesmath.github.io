@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-01-28T18:13:51-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Birth-death processes and the Gillespie algorithm</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\BibTeX}{\textsc{Bib}\TeX}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="intro-bio-dynamics.html"><span class="title">Introduction to Biological Dynamics</span></a></h1>
+<p class="byline">Sean Laverty</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="introduction-to-stochastic-models.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="introduction-to-stochastic-processes.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="introduction-single-dtds.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="introduction-to-stochastic-models.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="introduction-to-stochastic-processes.html" title="Up">Up</a><a class="next-button button toolbar-item" href="introduction-single-dtds.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="preface-disclaimer.html" data-scroll="preface-disclaimer">Disclaimer</a></li>
+<li><a href="preface-motto.html" data-scroll="preface-motto">Preface</a></li>
+<li><a href="preface-themes.html" data-scroll="preface-themes">Themes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="introduction.html" data-scroll="introduction"><span class="codenumber">1</span> <span class="title">introduction</span></a><ul><li><a href="what-is-modeling.html" data-scroll="what-is-modeling">What is modeling</a></li></ul>
+</li>
+<li class="link">
+<a href="introduction.html" data-scroll="introduction"><span class="codenumber">2</span> <span class="title">Single differential equations as models</span></a><ul>
+<li><a href="single-species-population-models.html" data-scroll="single-species-population-models">Single-species population models</a></li>
+<li><a href="continuous-time-models-derivations.html" data-scroll="continuous-time-models-derivations">Continuous-time models</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="systems-des.html" data-scroll="systems-des"><span class="codenumber">3</span> <span class="title">Systems of differential equations as models</span></a><ul>
+<li><a href="two-dimensional-systems.html" data-scroll="two-dimensional-systems">Two-dimensional systems of differential equations as models</a></li>
+<li><a href="harvesting-and-predator-prey.html" data-scroll="harvesting-and-predator-prey">Harvesting and predator-prey</a></li>
+<li><a href="higher-dimensional-systems.html" data-scroll="higher-dimensional-systems">Higher-dimensional systems of differential equations as models</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="introduction-to-stochastic-processes.html" data-scroll="introduction-to-stochastic-processes"><span class="codenumber">4</span> <span class="title">Stochastic models</span></a><ul>
+<li><a href="stochastic-model.html" data-scroll="stochastic-model">What is a stochastic process?</a></li>
+<li><a href="introduction-to-stochastic-models.html" data-scroll="introduction-to-stochastic-models">Introduction to stochastic models</a></li>
+<li><a href="birth-death-processes-and-the-gillespie-algorithm.html" data-scroll="birth-death-processes-and-the-gillespie-algorithm" class="active">Birth-death processes and the Gillespie algorithm</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="introduction-single-dtds.html" data-scroll="introduction-single-dtds"><span class="codenumber">5</span> <span class="title">Discrete-time dynamical systems</span></a><ul><li><a href="what-is-dtds.html" data-scroll="what-is-dtds">What is a discrete-time dynamical system?</a></li></ul>
+</li>
+<li class="link">
+<a href="higher-order-dtds.html" data-scroll="higher-order-dtds"><span class="codenumber">6</span> <span class="title">Discrete-time dynamical systems with linear algebra</span></a><ul><li><a href="discrete-time-with-linear-algebra.html" data-scroll="discrete-time-with-linear-algebra">Discrete-time dynamical systems with linear algebra</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="birth-death-processes-and-the-gillespie-algorithm"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Birth-death processes and the Gillespie algorithm</span>
+</h2>
+<article class="paragraphs" id="a-coin-flipping-exercise"><h5 class="heading"><span class="title">A coin-flipping exercise.</span></h5>
+<p id="p-147">We will simulate a pure-death process with events chosen by random ‘coin’ flips.</p>
+<ol id="p-148" class="decimal">
+<li id="li-27"><p id="p-149">Start with a room full of participants.</p></li>
+<li id="li-28">
+<p id="p-150">At the start of each discrete round, everyone should flip a coin:</p>
+<ol class="lower-alpha">
+<li id="li-29"><p id="p-151">a ‘head’ means death, so sit down and remain seated.</p></li>
+<li id="li-30"><p id="p-152">a ‘tail’ means survival, so keep standing.</p></li>
+</ol>
+</li>
+<li id="li-31"><p id="p-153">Repeat until all participants have vanished, recording the number alive at the start of each round.</p></li>
+</ol>
+<p id="p-154">A sample result for two populations is plotted in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::death_sim" missing]</code>.</p>
+<figure class="figure figure-like" id="figure-10"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="inclass_sim.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.1<span class="period">.</span></span><span class="space"> </span>Numbers of survivors in independent simulations with probability of death equal to one half. Red curve illustrates the expected number of survivors.</figcaption></figure></article><article class="paragraphs" id="bold-claim-revisited"><h5 class="heading"><span class="title">Bold claim revisited.</span></h5>
+<p id="p-155">Previously, we claimed that all populations go to extinction (in the absence of immigration). If we wish to simulate the process described in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::bdp2" missing]</code>, we need to track a few pieces of information: the event that occurs (a birth or a death), and the time that the event occurs. =[draw, fill=white, minimum size=3em, circle] =[ fill=white, minimum size=3em, circle]</p>
+<p id="p-156">Using Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::bdp2" missing]</code>, the <em class="emphasis">probability</em> that a birth occurs as the ‘next event’ is</p>
+<div class="displaymath">
+\begin{equation*}
+\operatorname{Prob}({\text{a birth}})=\frac{rn}{rn+\mu n}=
+\frac{r}{r+\mu},
+\end{equation*}
+</div>
+<p data-braille="continuation">and similarly for a death,</p>
+<div class="displaymath">
+\begin{equation*}
+\operatorname{Prob}({\text{a death}})=1-\operatorname{Prob}({\text{a birth}})=
+1-\frac{r}{r+\mu}=\frac{\mu}{r+\mu}.
+\end{equation*}
+</div>
+<p data-braille="continuation">To determine what happens we consider the interval \([0,1],\) which we divide, here, into two subintervals whose widths reflect the event probabilities above. For example, if \(r=0\) (\(\mu&gt;0\)), the probability of a birth is zero and probability of a death is one. In contrast, if \(\mu=0\) (\(r&gt;0\)), then the probability of a death is zero and the probability of a birth is one.</p>
+<p id="p-157">More interesting cases occur if, for example, \(r=8\) and \(\mu=2\text{,}\) then the probability of a birth is \(\frac{4}{5}\) and the probability of a death is \(\frac{1}{5}\text{.}\) To illustrate this last case, we divide the unit interval into subintervals \((0,
+\frac{4}{5}]\text{,}\) representing the probabilities of birth, and \((\frac{4}{5}, 1)\text{,}\) representing the probabilities of death. Then we choose a uniform random number (a dart) and throw it at the divided number line (a target). The interval in which it lands identifies our next event. In this example, since \(r&gt;&gt;\mu\text{,}\) the probability that a birth occurs is much larger than the probability that a death occurs. Thus, the birth interval in the target is much larger than the death interval, and we are more likely to have a birth.</p>
+<figure class="figure figure-like" id="figure-11"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="event_prob.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.2<span class="period">.</span></span><span class="space"> </span>A uniform random random number has an 80% chance of landing in the ‘blue’ (birth) interval, making this event the more likely outcome. That said, here we have the less likely outcome of a death.</figcaption></figure><p id="p-158">Given that we can identify the event that occurs, our next task is to identify the time until the event occurs. Here we assume that he events occur at a constant rate</p>
+<div class="displaymath">
+\begin{equation*}
+\lambda=(r+\mu)n,
+\end{equation*}
+</div>
+<p data-braille="continuation">and that the time until the next event, \(T\text{,}\) is exponentially distributed with parameter \(\lambda\text{.}\) Thus,</p>
+<div class="displaymath">
+\begin{equation*}
+T\sim\exp(\lambda).
+\end{equation*}
+</div>
+<p data-braille="continuation">We can easily sample numbers from certain distributions. To sample exponentially distributed random numbers, we take advantage of its cumulative distribution function, \(F(t)=1-\exp(-\lambda t)\text{.}\) We pick a uniform random number \(r_2\) and solve for \(t\) using \(r_2=F(t)\) to find our even time.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} r_2 &amp; =
+F(t)\\ &amp;= 1-\exp(-\lambda t)\\ \exp(-\lambda t) &amp; = 1-r_2\\
+-\lambda t &amp; =\ln(1-r_2)\\ t &amp;
+=-\frac{\ln(1-r_2)}{\lambda}\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Importantly, since \(r_2\) is a random number so is \(1-r_2\text{.}\) In slight abuse of notation, we relabel the argument of \(\ln(\cdot)\text{,}\) which is \(1-r_2\text{,}\) by \(r_2\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+t =-\frac{\ln(r_2)}{\lambda}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(r_2\in(0,1)\text{,}\) the logarithm is negative, so the negative in front ensures a positive event time \(t\text{.}\)</p>
+<p id="p-159">Now that we have identified both our event and the event eating time, \(t\text{,}\) we simply update our state and repeat the process for until we reach either a fixed number of events, a fixed final time, or a population that becomes extinct (or reaches some other pre-specified condition). An example solution to the birth-death process is plotted in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::bdp_result" missing]</code>, where unlike in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::death_sim" missing]</code> the rate of birth is non-zero.</p>
+<figure class="figure figure-like" id="figure-12"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="sample.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3.3<span class="period">.</span></span><span class="space"> </span>Sample solutions to the stochastic process with the deterministic result (or expectation) in red. One population (black) rather quickly goes extinct, while the other (blue) does better than expected. Only the first 500 events are shown.</figcaption></figure><p id="p-160">While the details of evaluating our claim are beyond our needs, we can and should temper our ‘everything vanishes’ statement. In the absence of immigration, populations that remain finite are bound to reach extinction. They tend to do so rather quickly, after a string of bad luck. Otherwise populations can grow to infinity, avoiding and escaping the threat of extinction.</p>
+<p id="p-161">More sophisticated approaches, using generating functions (special power series) let us calculate the mean extinction time for a given problem.</p></article></section></div></main>
+</div>
+</body>
+</html>
