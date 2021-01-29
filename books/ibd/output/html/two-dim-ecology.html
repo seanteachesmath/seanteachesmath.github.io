@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-01-28T22:43:01-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Two dimensional models in ecology</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\BibTeX}{\textsc{Bib}\TeX}
+\tikzstyle{int}=[draw, fill=white, minimum size=3em, circle]
+\tikzstyle{int2}=[ fill=white, minimum size=3em, circle]
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="intro-bio-dynamics.html"><span class="title">Introduction to Biological Dynamics</span></a></h1>
+<p class="byline">Sean Laverty</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="harvesting-and-predator-prey.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="systems-des.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="the-trace-determinant-method.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="harvesting-and-predator-prey.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="systems-des.html" title="Up">Up</a><a class="next-button button toolbar-item" href="the-trace-determinant-method.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="preface-disclaimer.html" data-scroll="preface-disclaimer">Disclaimer</a></li>
+<li><a href="preface-motto.html" data-scroll="preface-motto">Preface</a></li>
+<li><a href="preface-themes.html" data-scroll="preface-themes">Themes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="introduction.html" data-scroll="introduction"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul><li><a href="what-is-modeling.html" data-scroll="what-is-modeling">What is modeling</a></li></ul>
+</li>
+<li class="link">
+<a href="introduction.html" data-scroll="introduction"><span class="codenumber">2</span> <span class="title">Single differential equations as models</span></a><ul>
+<li><a href="single-species-population-models.html" data-scroll="single-species-population-models">Single-species population models</a></li>
+<li><a href="continuous-time-models-derivations.html" data-scroll="continuous-time-models-derivations">Continuous-time models</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="systems-des.html" data-scroll="systems-des"><span class="codenumber">3</span> <span class="title">Systems of differential equations as models</span></a><ul>
+<li><a href="two-dimensional-systems.html" data-scroll="two-dimensional-systems">Two-dimensional systems of differential equations as models</a></li>
+<li><a href="harvesting-and-predator-prey.html" data-scroll="harvesting-and-predator-prey">Harvesting and predator-prey</a></li>
+<li><a href="two-dim-ecology.html" data-scroll="two-dim-ecology" class="active">Two dimensional models in ecology</a></li>
+<li><a href="the-trace-determinant-method.html" data-scroll="the-trace-determinant-method">The ‘Trace-Determinant Method’</a></li>
+<li><a href="ecological-competition.html" data-scroll="ecological-competition">Ecological competition</a></li>
+<li><a href="parameters-rates-and-units-prelude-to-chemical-kinetics.html" data-scroll="parameters-rates-and-units-prelude-to-chemical-kinetics">Parameters, rates, and units: Prelude to chemical kinetics</a></li>
+<li><a href="michaelis-menten-kinetics.html" data-scroll="michaelis-menten-kinetics">Michaelis-Menten kinetics</a></li>
+<li><a href="nullclines-and-neuroscience.html" data-scroll="nullclines-and-neuroscience">Nullclines and Neuroscience</a></li>
+<li><a href="higher-dimensional-systems.html" data-scroll="higher-dimensional-systems">Higher-dimensional systems of differential equations as models</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="introduction-to-stochastic-processes.html" data-scroll="introduction-to-stochastic-processes"><span class="codenumber">4</span> <span class="title">Stochastic models</span></a><ul>
+<li><a href="stochastic-model.html" data-scroll="stochastic-model">What is a stochastic process?</a></li>
+<li><a href="introduction-to-stochastic-models.html" data-scroll="introduction-to-stochastic-models">Introduction to stochastic models</a></li>
+<li><a href="birth-death-processes-and-the-gillespie-algorithm.html" data-scroll="birth-death-processes-and-the-gillespie-algorithm">Birth-death processes and the Gillespie algorithm</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="introduction-single-dtds.html" data-scroll="introduction-single-dtds"><span class="codenumber">5</span> <span class="title">Discrete-time dynamical systems</span></a><ul>
+<li><a href="what-is-dtds.html" data-scroll="what-is-dtds">What is a discrete-time dynamical system?</a></li>
+<li><a href="nonlinear-discrete-time-models-1d.html" data-scroll="nonlinear-discrete-time-models-1d">Nonlinear discrete-time models (1D)</a></li>
+<li><a href="nonlinear-discrete-time-models-1-2d.html" data-scroll="nonlinear-discrete-time-models-1-2d">Nonlinear discrete-time models (1, 2D)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="higher-order-dtds.html" data-scroll="higher-order-dtds"><span class="codenumber">6</span> <span class="title">Discrete-time dynamical systems with linear algebra</span></a><ul><li><a href="discrete-time-with-linear-algebra.html" data-scroll="discrete-time-with-linear-algebra">Discrete-time dynamical systems with linear algebra</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="two-dim-ecology"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Two dimensional models in ecology</span>
+</h2>
+<p id="p-95">Consider now, a two dimensional extension where \(F\) is no longer a parameter, but instead a dynamic variable. Whose growth is proportional to the consumption of prey, up to a scaling factor \(\epsilon\text{.}\) Such a model is,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} 
+\frac{d^{} {N}}{d{t}^{}}&amp;=\left(r\left(1-\frac{N}{K}\right)-\
+frac{hF}{1+sN}\right)N\\ 
+\frac{d^{} {F}}{d {t}^{}}&amp;=\frac{\epsilon
+hFN}{1+sN}-mF.
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">We can give ourselves a slightly simpler situation if we assume that the predator is a ‘Type I’ predator,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} 
+\frac{d^{} {N}}{d
+{t}^{}}&amp;=\left(r\left(1-\frac{N}{K}\right)- hF\right)N\\
+\frac{d^{}{F}}{d {t}^{}}&amp;=\epsilon hFN-mF.
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">A common approach to studying such a model is to first ‘nondimensionalize’ the variables by scaling by some relevant value. Here we have a carrying capacity for \(N\text{,}\) so if we scale \(N\) by \(K\) we can define \(x=\frac{N}{K},\) and study the dynamics of \(x\) which describes the proportion of carrying capacity that is filled. The goal of this is to combine parameters and reduce the dimension of parameter space. We also rescale time by setting \(T=rt\) and replacing the derivative \(\displaystyle\frac{d^{} {}}{d {t}^{}}\) by \(\displaystyle
+r\frac{d^{} {}}{d {T}^{}}\text{.}\) The definition involving \(F\) is less clear from the start, but as we step through the process we find that using \(\displaystyle y=\frac{h}{r}F\) works pretty well. Ultimately, after some failed attempts, we find something like,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\frac{d^{} {x}}{d {t}^{}}&amp;=\left(\left(1-x\right)-y\right)x\\
+\frac{d^{} {y}}{d {t}^{}}&amp;=\beta(x-\alpha)y.\end{aligned}
+\end{equation*}
+</div>
+<p id="p-96">Just as we used phase lines in one dimension, we will use phase planes in two dimensions. To introduce this process we will use an even simpler model describing the densities of prey (\(X\)) and predator (\(Y\)),</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}
+\frac{d^{} {X}}{d {t}^{}}&amp;=rX-mXY\\
+\frac{d^{} {Y}}{d {t}^{}}&amp;=nXY-sY.
+\end{aligned}
+\end{equation*}
+</div>
+<p id="p-97">First, we hope to compute equilibria. We can start by solving when each of the equations is equal to zero (i.e., when individual quantities are unchanging). Setting</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d^{} {X}}{d {t}^{}}=0\Rightarrow
+(r-mY)X=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">This equation implies that \(X\) is unchanging along the lines \(X=0\) and \(Y=\frac{r}{m}\) in the \((X,
+Y)\)-plane. Additionally, setting</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d^{} {Y}}{d
+{t}^{}}=0\Rightarrow (nX-s)Y=0.
+\end{equation*}
+</div>
+<p data-braille="continuation">This equation implies that \(Y\) is unchanging along the lines \(Y=0\) and \(X=\frac{s}{n}\) in the \((X, Y)\)-plane. Equilibria require both equations be satisfied simultaneously, thus opposite nullclines must intersect so that <em class="emphasis">both</em> of \(X\) and \(Y\) are unchanging. We will jump ahead and plot <em class="emphasis">everything</em> in <a class="xref" data-knowl="./knowl/fig-pred-prey-pp.html" title="Figure 3.3.1">Figure 3.3.1</a>, this includes trajectories in the phase plane and ‘direction arrows.’</p>
+<figure class="figure figure-like" id="fig-pred-prey-pp"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="./images/pred_X.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.1<span class="period">.</span></span><span class="space"> </span>On lines \(\frac{d^{} {X}}{d {t}^{}}=0\text{,}\) motion is in the vertical direction. On lines \(\frac{d^{} {Y}}{d {t}^{}}=0\text{,}\) motion is in the horizontal direction.</figcaption></figure><p id="p-98">Direction arrows in <a class="xref" data-knowl="./knowl/fig-pred-prey-pp.html" title="Figure 3.3.1">Figure 3.3.1</a>, are obtained by treating the individual differential equations as inequalities. The motivation is that we know that</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{d^{} {X}}{d {t}^{}}&gt;0
+\end{equation*}
+</div>
+<p data-braille="continuation">when</p>
+<div class="displaymath">
+\begin{equation*}
+(r-mY)X&gt;0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(X&gt;0\) is of interest, the to ensure the derivative is positive, we need</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{r}{m}&gt;Y.
+\end{equation*}
+</div>
+<p data-braille="continuation">Thus, \(X\) is increasing below the (nonzero) \(X\)-nullcline. Similarly, \(X\) is decreasing above this nullcline. Lastly, we can show that \(Y\) is decreasing ‘to the left’ of the (again, nonzero) vertical \(Y\)-nullcline, and decreasing to the right. This shows that motion is counterclockwise. Numerical solutions show that we have closed orbits around the equilibrium point \((X^*, Y^*)\text{.}\) We call this point <em class="emphasis">neutrally stable</em>.</p>
+<p id="p-99">If we hadn’t computed solutions, we wouldn’t necessarily know from the phase portrait that these solutions do not spiral in towards or out from the equilibrium. To know for certain, we would need to study the ‘linearized’ dynamics near each equilibrium point, including the point \((0, 0)\text{,}\) as well. Since we have solutions, we might as well plot them in time (see <a class="xref" data-knowl="./knowl/fig-pred-prey.html" title="Figure 3.3.2">Figure 3.3.2</a>).</p>
+<figure class="figure figure-like" id="fig-pred-prey"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="./images/pred_XY_t.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>Numbers (or \(\text{densities}=\frac{\text{number}}{\text{area}}\)) of prey (\(X\)) and predators (\(Y\)).</figcaption></figure></section></div></main>
+</div>
+</body>
+</html>

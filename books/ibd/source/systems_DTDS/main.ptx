@@ -1,19 +1,14 @@
 <chapter xml:id="higher-order-dtds">
-<title>Discrete-time dynamical
-systems with linear algebra</title>
+<title>Discrete-time dynamical systems with linear algebra</title>
 
 <section xml:id="discrete-time-with-linear-algebra">
 <title>Discrete-time dynamical systems with linear algebra</title>
 
-
-<subsection xml:id="matrix-models-2d-linear-discrete-time-dynamics">
-<title>Matrix models: 2D, Linear, Discrete-time Dynamics</title>
-
-<p> We spent some time on the Nicholson-Bailey model for a few important
+<introduction> We spent some time on the Nicholson-Bailey model for a few important
 reasons: largely because it is a great example of the modeling process.
 The results it generates may be bothersome. But the idea that we told a
 rough story, then iteratively refined it is the art of mathematical
-modeling. </p>
+modeling. </introduction>
 
 <p> Recall our example concerning weekly dandelion dynamics. Previously,
 we counted only the number of flowering plants present in our
@@ -39,31 +34,49 @@ challenging to count seeds after they have left the plant, and nobody
 vacuums seeds from the yard, we’ll focus on the life stages above.</p>
 
 <table>
-<title></title> <tabular> <row class="odd"> <cell
-halign="left"><m>s</m></cell> <cell halign="left">be the number of
-seedlings generated per plant</cell> </row> <row class="even"> <cell
-halign="left"><m>\sigma</m></cell> <cell halign="left">be the fraction
+<title></title> <tabular> <row class="odd"> <cell halign="left"><m>s</m></cell> <cell halign="left">be the number of
+seedlings generated per plant</cell> </row> <row class="even"> <cell halign="left"><m>\sigma</m></cell> <cell halign="left">be the fraction
 of seedlings that survive to adulthood</cell> </row> <row class="odd">
 <cell halign="left"><m>a</m></cell> <cell halign="left">be the fraction
 of adults that survive</cell> </row> </tabular> </table>
 
 
-<p> This means we can write <me>\begin{aligned} V_{t+1}&amp;=0\cdot
-V_t+s\cdot R_t\\ R_{t+1}&amp;=\sigma \cdot V_t+ a\cdot
-R_t.\end{aligned}</me> This looks like a matrix equation,
-<me>\left(\begin{tabular}{c}$V_{t+1}$\\$R_{t+1}$\end {tabular}\right) =
-\left(\begin{tabular}{cc}$0$ &amp; $s$\\$\sigma$ &amp;
-$a$\end{tabular}\right)\left(\begin{tabular}{c}$V_{t
-}$\\$R_{t}$\end{tabular}\right).</me> With a single equation, it was
+<p> This means we can write <me>\begin{aligned}
+ 
+V_{t+1}&amp;=0\cdot V_t+s\cdot R_t\\ 
+R_{t+1}&amp;=\sigma \cdot V_t+ a\cdot R_t.
+\end{aligned}</me> This looks like a matrix equation,
+<me>\left(
+
+\begin{array}{c}
+V_{t+1}\\
+R_{t+1}\end{array}
+\right) =
+\left(
+
+\begin{array}{cc}
+0 &amp; s\\
+\sigma &amp;a
+\end{array}
+\right)\left(
+
+\begin{array}{c}V_{t}\\
+R_{t}
+\end{array}
+\right).</me> With a single equation, it was
 easy enough to determine growth. This is less obvious with a higher
 dimensional model. Additionally, we might be interested in the following
 questions: </p>
 
 
-<p><ul> <li> <p> Will the population grow? </p> </li> <li> <p> If it
-grows, how fast is it going to grow? </p> </li> <li> <p> What is the
-balance between reproductive and non-reproductive dandelions in the
-population? </p> </li> </ul></p>
+<p>
+<ul>
+<li> <p> Will the population grow? </p> </li> 
+<li> <p> If it grows, how fast is it going to grow? </p> </li> 
+<li> <p> What is the balance between reproductive and non-reproductive dandelions in the
+population? </p> </li>
+</ul>
+</p>
 
 
 <p> For a plant starting in the non-reproductive state (a one week old
@@ -73,21 +86,18 @@ plant), we track its lifetime reproduction in the following table: </p>
 <table>
 <title>Starting with a single female, she must survive to
 adulthood (<m>\sigma</m>), then every time after survive another week as
-an adult (a).</title> <tabular> <row header="yes"> <cell
-halign="left">Age (Weeks)</cell> <cell halign="left">Population</cell>
-<cell halign="left">Fecundity</cell> </row> <row class="odd"> <cell
-halign="left">1</cell> <cell halign="left">1</cell> <cell
-halign="left">0</cell> </row> <row class="even"> <cell
-halign="left">2</cell> <cell halign="left"><m>\sigma</m></cell> <cell
-halign="left"><m>s</m></cell> </row> <row class="odd"> <cell
-halign="left">3</cell> <cell halign="left"><m>\sigma</m> <m>a</m></cell>
-<cell halign="left"><m>s</m></cell> </row> <row class="even"> <cell
-halign="left">…</cell> <cell halign="left">…</cell> <cell
-halign="left">…</cell> </row> <row class="odd"> <cell
-halign="left">n</cell> <cell halign="left"><m>\sigma a ^{n-2}</m></cell>
-<cell halign="left"><m>s</m></cell> </row> <row class="even"> <cell
-halign="left">…</cell> <cell halign="left">…</cell> <cell
-halign="left">…</cell> </row> </tabular> </table>
+an adult (a).</title> 
+<tabular> <row header="yes"> <cell halign="left">Age (Weeks)</cell> 
+<cell halign="left">Population</cell>
+<cell halign="left">Fecundity</cell> </row> 
+<row class="odd"> <cell halign="left">1</cell> <cell halign="left">1</cell> <cell halign="left">0</cell> </row> 
+<row class="even"> <cell halign="left">2</cell> <cell halign="left"><m>\sigma</m></cell> <cell halign="left"><m>s</m></cell> </row> 
+<row class="odd"> <cell halign="left">3</cell> <cell halign="left"><m>\sigma</m> <m>a</m></cell>
+<cell halign="left"><m>s</m></cell> </row> 
+<row class="even"> <cell halign="left">…</cell> <cell halign="left">…</cell> <cell halign="left">…</cell> </row> 
+<row class="odd"> <cell halign="left">n</cell> <cell halign="left"><m>\sigma a ^{n-2}</m></cell>
+<cell halign="left"><m>s</m></cell> </row> 
+<row class="even"> <cell halign="left">…</cell> <cell halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular> </table>
 
 
 <p> Next we append a column for the reproductive value of each age
@@ -97,24 +107,16 @@ flower they <em>could</em> survive indefinitely): </p>
 <table>
 <title>Starting with a single female, she must survive to
 adulthood (<m>\sigma</m>), then every time after survive another week as
-an adult (a).</title> <tabular> <row header="yes"> <cell
-halign="left">Age (Weeks)</cell> <cell halign="left">Population</cell>
+an adult (a).</title>
+<tabular> <row header="yes"> <cell halign="left">Age (Weeks)</cell> <cell halign="left">Population</cell>
 <cell halign="left">Fecundity</cell> <cell halign="left">Value</cell>
-</row> <row class="odd"> <cell halign="left">1</cell> <cell
-halign="left">1</cell> <cell halign="left">0</cell> <cell
-halign="left">0</cell> </row> <row class="even"> <cell
-halign="left">2</cell> <cell halign="left"><m>\sigma</m></cell> <cell
-halign="left"><m>s</m></cell> <cell halign="left"><m>s\sigma</m></cell>
-</row> <row class="odd"> <cell halign="left">3</cell> <cell
-halign="left"><m>\sigma a</m></cell> <cell halign="left"><m>s</m></cell>
+</row> <row class="odd"> <cell halign="left">1</cell> <cell halign="left">1</cell> <cell halign="left">0</cell> <cell halign="left">0</cell> </row> <row class="even"> <cell halign="left">2</cell> <cell halign="left"><m>\sigma</m></cell> <cell halign="left"><m>s</m></cell> <cell halign="left"><m>s\sigma</m></cell>
+</row> <row class="odd"> <cell halign="left">3</cell> <cell halign="left"><m>\sigma a</m></cell> <cell halign="left"><m>s</m></cell>
 <cell halign="left"><m>s\sigma</m> a</cell> </row> <row class="even">
-<cell halign="left">…</cell> <cell halign="left">…</cell> <cell
-halign="left">…</cell> <cell halign="left">…</cell> </row> <row
+<cell halign="left">…</cell> <cell halign="left">…</cell> <cell halign="left">…</cell> <cell halign="left">…</cell> </row> <row
 class="odd"> <cell halign="left">n</cell> <cell halign="left"><m>\sigma
-a ^{n-2}</m></cell> <cell halign="left"><m>s</m></cell> <cell
-halign="left"><m>s\sigma a^{n-2}</m></cell> </row> <row class="even">
-<cell halign="left">…</cell> <cell halign="left">…</cell> <cell
-halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
+a ^{n-2}</m></cell> <cell halign="left"><m>s</m></cell> <cell halign="left"><m>s\sigma a^{n-2}</m></cell> </row> <row class="even">
+<cell halign="left">…</cell> <cell halign="left">…</cell> <cell halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 </table>
 
 
@@ -122,19 +124,22 @@ halign="left">…</cell> <cell halign="left">…</cell> </row> </tabular>
 plant is <me>ELR=s\sigma+s\sigma a + s\sigma a^2 + \dots .</me> By
 definition <m>a</m> is a weekly survival probability for adult plants,
 so <m>a\leq1</m>. Keep this in mind as we press on: <me>\begin{aligned}
-ELR &amp; = s\sigma+s\sigma a + s\sigma a^2 + \dots \\ &amp; =
-s\sigma\left(1+a+a^2+\dots\right)\\ &amp; = s\sigma \sum_{k=0}^\infty
-a^k\end{aligned}</me> Knowing what we do about geometric series, <me>ELR
-= s\sigma \sum_{k=0}^\infty a^k =
-s\sigma\left(\frac{1}{1-a}\right).</me> So, <m>ELR &gt;1</m> when
+ELR &amp; = s\sigma+s\sigma a + s\sigma a^2 + \dots \\ 
+&amp; = s\sigma\left(1+a+a^2+\dots\right)\\
+&amp; = s\sigma \sum_{k=0}^\infty a^k
+\end{aligned}</me> Knowing what we do about geometric series, <me>ELR = s\sigma \sum_{k=0}^\infty a^k = s\sigma\left(\frac{1}{1-a}\right).</me> So, <m>ELR &gt;1</m> when
 <m>s\sigma&gt;1-a</m>. This is identical to our <sq>adult
 plant</sq>-only model result,<me>s\sigma+a&gt;1!</me> </p>
 
 
 <paragraphs xml:id="questions">
-<title>Questions</title> <p> <ul>
+<title>Questions</title> 
+<p>
+<ul>
 <li><p> What’s so special about ELR as a measure of growth? </p> </li>
-<li> <p> How does ELR relate to eigenvalues? </p> </li> </ul></p>
+<li><p> How does ELR relate to eigenvalues? </p> </li> 
+</ul>
+</p>
 </paragraphs>
 
 <paragraphs xml:id="answers">
@@ -146,8 +151,7 @@ matrix multiplication into scalar multiplication. How do we find
 eigenvalues? </p> </paragraphs>
 
 <paragraphs xml:id="linear-algebra-review">
-<title>Linear algebra
-review</title>
+<title>Linear algebra review</title>
 
 
 <p> We first want to write our eigenvalue problem as:<me>Ax-\lambda
@@ -156,16 +160,27 @@ I)x=0,</me> where <m>I</m> is the appropriate <sq>identity matrix</sq>.
 </p>
 
 
-<p> Let’s take <me>A= \left(\begin{tabular}{cc}$a$ &amp; $b$\\$c$ &amp;
-$d$\end{tabular}\right),</me> so that <me>A-\lambda I=
-\left(\begin{tabular}{cc}$a-\lambda$ &amp; $b$\\$c$ &amp;
-$d-\lambda$\end{tabular}\right).</me> </p>
+<p> Let’s take <me>A= \left(
+
+\begin{array}{cc}
+a &amp; b\\
+c &amp; d
+\end{array}
+\right),</me> so that <me>A-\lambda I=
+\left(
+\begin{array}{cc}
+a-\lambda &amp; b\\
+c &amp; d-\lambda
+\end{array}
+\right).</me> </p>
 
 
 <p> Eigenvalues solve <me>\operatorname{det}(A-\lambda I)=0.</me>
-<me>\begin{aligned} 0&amp;=\operatorname{det}(A-\lambda I)\\
+<me>\begin{aligned}
+0&amp;=\operatorname{det}(A-\lambda I)\\
 &amp;=(a-\lambda)(d-\lambda)-bc\\
-0&amp;=\lambda^2-(a+d)\lambda+ad-bc\end{ aligned}</me> </p>
+0&amp;=\lambda^2-(a+d)\lambda+ad-bc
+\end{aligned}</me> </p>
 
 
 <p> Solutions are<me>\lambda_{\pm}=\frac{(a+d)\pm\sqrt{(a+
@@ -175,44 +190,61 @@ algebraic expressions. </p>
 
 </paragraphs>
 
-</subsection> <subsection xml:id="linear-discrete-time-models-2d-1">
+
+<subsection xml:id="linear-discrete-time-models-2d-1">
 <title>Linear discrete-time models (2D)</title>
 
 <paragraphs xml:id="question">
-<title>Question.</title>
+<title>Question</title>
 
 
 <p> How do structured and unstructured populations differ? From a one
 dimensional model ignoring plant developmental stage,<me>N_t=r N_t,</me>
 where <m>r=s\sigma+a</m>, we wrote a two-dimensional
 model,<me>P_{t+1}=MP_t,</me> where <m>P_0=(V_0, R_0)^T</m> and
-<me>M=\left(\begin{tabular}{cc}$0$ &amp; $s$\\$\sigma$ &amp;
-$a$\end{tabular}\right).</me> </p>
+<me>M=\left(
+\begin{array}{cc}0 &amp; s\\\sigma &amp;
+a\end{array}\right).</me> </p>
 
 
 <p> Keeping with our example, eigenvalues of <m>M</m> are found using
-<me>\det\left(\begin{tabular}{cc}$-\lambda$ &amp; $s$\\$\sigma$ &amp;
-$a-\lambda$\end{tabular}\right)=0.</me> This gives <me>\begin{aligned}
+<me>\det\left(
+\begin{array}{cc}
+-\lambda &amp; s\\
+\sigma &amp;
+a-\lambda
+\end{array}
+\right)=0.</me> This gives <me>\begin{aligned}
 0&amp;=-\lambda(a-\lambda)-s\sigma\\
-&amp;=\lambda^2-a\lambda-s\sigma\end{aligned}</me> Using the quadratic
+&amp;=\lambda^2-a\lambda-s\sigma
+\end{aligned}</me> Using the quadratic
 formula,<me>\lambda_\pm = \frac{a\pm\sqrt{a^2+4s\sigma}}{2}.</me> </p>
 
 
 <p> Suppose we know the initial plant distribution,
-<me>P_0=\left(\begin{tabular}{c}$V_0$\\$R_0$\end{ tabular}\right),</me>
+<me>P_0=\left(
+\begin{array}{c}
+V_0\\
+R_0
+\end{array}
+\right),</me>
 the solution to our model is <me>P_t=M^tP_0.</me> First write,
 <m>P_0=c_1 v_1+c_2 v_2</m>, where <m>c_1, c_2</m> are constants and
 <m>v_1, v_2</m> are eigenvectors. We are assuming that <m>v_1, v_2</m>
 are linearly independent, thus they form a basis in two-dimensions, such
 that any other vector can be written as a linear combination.
-<me>\begin{aligned} {2} P_1&amp;=A P_0 &amp; \quad\text{(start)}\\ &amp;
-= A(c_1 v_1+c_2 v_2)&amp; \quad\text{(basis vectors)}\\ &amp; = c_1
-Av_1+c_2 Av_2&amp; \quad\text{(distributive property)}\\ P_1&amp; = c_1
-\lambda_1 v_1+c_2 \lambda_2v_2&amp;
-\quad\text{(eigenvalues!)}\end{aligned}</me> We can compute <m>P_2</m>,
-<me>\begin{aligned} P_2&amp;=A P_1\\ &amp; = A(c_1 \lambda_1 v_1+c_2
-\lambda_2 v_2)\\ &amp; = (c_1 \lambda_1) Av_1+(c_2\lambda_2) Av_2\\
-&amp; = c_1 \lambda_1^2 v_1+c_2 \lambda_2^2v_2\end{aligned}</me> And
+<me>\begin{aligned}
+P_1&amp;=A P_0 &amp; \quad\text{(start)}\\
+&amp; = A(c_1 v_1+c_2 v_2)&amp; \quad\text{(basis vectors)}\\
+&amp; = c_1 Av_1+c_2 Av_2&amp; \quad\text{(distributive property)}\\
+P_1&amp; = c_1 \lambda_1 v_1+c_2 \lambda_2v_2&amp; \quad\text{(eigenvalues!)}
+\end{aligned}</me> We can compute <m>P_2</m>,
+<me>\begin{aligned}
+ P_2&amp;=A P_1\\
+ &amp; = A(c_1 \lambda_1 v_1+c_2 \lambda_2 v_2)\\
+ &amp; = (c_1 \lambda_1) Av_1+(c_2\lambda_2) Av_2\\
+ &amp; = c_1 \lambda_1^2 v_1+c_2 \lambda_2^2v_2
+ \end{aligned}</me> And
 similarly, <me>P_t=c_1\lambda_1^tv_1+c_2\lambda_2^tv_2.</me> If we
 assume that <m>|\lambda_1|&gt;|\lambda_2|</m>, then <me>P_t\approx c_1
 \lambda_1^t v_1.</me> We will see how this approximation works at the
@@ -225,12 +257,16 @@ generation. It grows if <m>\lambda_1&gt;1</m> and shrinks if
 
 
 <p> Let <m>\lambda_1</m> be the positive eigenvalue,
-<m>\lambda_1&gt;1</m>, <me>\begin{aligned} \lambda_1 =
-\frac{a+\sqrt{a^2+4s\sigma}}{2}&amp;&gt;1\\
-a+\sqrt{a^2+4s\sigma}&amp;&gt;2\\ \sqrt{a^2+4s\sigma}&amp;&gt;2-a\\
-a^2+4s\sigma&amp;&gt;(2-a)^2\\ a^2+4s\sigma&amp;&gt;4-4a+a^2\\
-4s\sigma&amp;&gt;4-4a\\ s\sigma&amp;&gt;1-a\\
-s\sigma+a&amp;&gt;1\end{aligned}</me> The positive eigenvalue
+<m>\lambda_1&gt;1</m>, <me>\begin{aligned}
+ \lambda_1 =\frac{a+\sqrt{a^2+4s\sigma}}{2}&amp;&gt;1\\
+a+\sqrt{a^2+4s\sigma}&amp;&gt;2\\
+ \sqrt{a^2+4s\sigma}&amp;&gt;2-a\\
+a^2+4s\sigma&amp;&gt;(2-a)^2\\ 
+a^2+4s\sigma&amp;&gt;4-4a+a^2\\
+4s\sigma&amp;&gt;4-4a\\ 
+s\sigma&amp;&gt;1-a\\
+s\sigma+a&amp;&gt;1
+\end{aligned}</me> The positive eigenvalue
 <m>\lambda_1&gt;1</m> if <m>r=s\sigma+a&gt;1</m>, but in general,
 <m>ELR\neq\lambda_1</m>! But, if <m>\lambda_1&gt;1</m> so is <m>ELR</m>,
 and vice versa. Again, our characteristic polynomial, that governs the
@@ -240,12 +276,15 @@ eigenvalues is<me>C(\lambda)=\lambda^2-a\lambda-s\sigma.</me> Since
 leading eigenvalue <m>\lambda&gt;1</m>. Lastly, let’s study the
 relationships between <m>1, \lambda_+</m>, and <m>r</m>. We’ve already
 looked at some of the relationships involving <m>1</m>. Now,
-<m>\lambda&lt;r=s\sigma+a</m> when <me>\begin{aligned} 0&amp;&lt;C(r)\\
-0&amp;&lt;r^2-ar-s\sigma\\ s\sigma&amp;&lt;r(r-a)\\
+<m>\lambda&lt;r=s\sigma+a</m> when <me>\begin{aligned}
+ 0&amp;&lt;C(r)\\
+0&amp;&lt;r^2-ar-s\sigma\\ 
+s\sigma&amp;&lt;r(r-a)\\
 s\sigma&amp;&lt;(s\sigma+a)(s\sigma+a-a)\\
 s\sigma&amp;&lt;s\sigma(s\sigma+a)\\
 0&amp;&lt;s\sigma(s\sigma+a)-s\sigma\\
-0&amp;&lt;s\sigma(s\sigma+a-1)\end{aligned}</me> This is satisfied when
+0&amp;&lt;s\sigma(s\sigma+a-1)
+\end{aligned}</me> This is satisfied when
 <m>r=s\sigma+a&gt;1</m>, thus <m>1&lt;\lambda&lt;ELR</m>. For the
 reverse, <m>ELR&lt;\lambda&lt;1</m> when <m>r=s\sigma+a&lt;1</m>. We
 will also look at the relationships between <m>r</m>, <m>ELR</m>, and
@@ -261,15 +300,15 @@ reproducing. When we considered the reproductive schedule of our plants,
 we derived <m>ELR</m> as a measure of the replacement rate of each
 individual plant. Let <m>a=\frac{2}{3}</m>, <m>s=\frac{16}{9}</m>,
 <m>\sigma=\frac{1}{2}</m>, so that,
-<m>r=\left(\frac{16}{9}\right)\left(\frac{1}{2}\ right)+
+<m>r=\left(\frac{16}{9}\right)\left(\frac{1}{2}\right)+
 \left(\frac{2}{3}\right)=
 \left(\frac{14}{9}\right)\approx1.\overline{55}</m>. Also,
-<m>ELR=\frac{\left(\frac{16}{9}\right)\left(\
-frac{1}{2}\right)}{\frac{1}{3}}=\frac{8}{3}\
-approx2.\overline{66}</m>.When vegetative plants are less likely to
+<m>ELR=\frac{\left(\frac{16}{9}\right)\left(\frac{1}{2}\right)}{\frac{1}{3}}=\frac{8}{3}\approx2.\overline{66}</m>. 
+When vegetative plants are less likely to
 mature (small <m>\sigma</m>, <xref ref="fig-elr-eig" />) weekly
 adult survivorship, <m>a</m>, must increase in order for population
 growth to occur (<m>r, ELR, \lambda&gt;1</m>). </p>
+
 <figure xml:id="fig-elr-eig"> 
 <image source="elr_vs_eig_a.png" width="50%"/>
 <caption>Relationships between <m>r</m>,
@@ -277,6 +316,7 @@ growth to occur (<m>r, ELR, \lambda&gt;1</m>). </p>
 (left) <m>\sigma=\frac{1}{2}</m> or (right) <m>\sigma=\frac{1}{3}</m>,
 over a range of adult weekly survival probabilities, <m>0\leq a\leq
 1</m>.</caption> </figure>
+
 <figure xml:id="fig-elr-eig2"> 
 <image source="./images/elr_vs_eig_b.png" width="50%"/>
 <caption>Relationships between <m>r</m>, <m>ELR</m>, and <m>\lambda</m>,
@@ -285,7 +325,7 @@ for fixed <m>s=\frac{16}{9}</m> and (left) <m>\sigma=\frac{1}{2}</m> or
 probabilities, <m>0\leq a\leq 1</m>.</caption> </figure> </example>
 
 <paragraphs xml:id="question-1">
-<title>Question.</title>
+<title>Question</title>
 
 
 <p> What is the effect of population structure (tracking flower types),
@@ -295,22 +335,33 @@ ref="fig-elr-eig" />)? </p>
 </paragraphs>
 
 <paragraphs xml:id="answer">
-<title>Answer.</title>
+<title>Answer</title>
 
 <p> Imposing structure reduces the growth rate (relative to <m>r</m>) in
 growing populations. Imposing structure slows the decay rate (relative
 to <m>r</m>) in shrinking populations. In this parameterization,
-<me>\begin{aligned} \lambda_\pm &amp;=
-\frac{\frac{2}{3}\pm\sqrt{\frac{4}{9}+4\left
-(\frac{16}{9}\right)\left(\frac{1}{2}\right) }}{2}\\
+<me>\begin{aligned}
+\lambda_\pm &amp;=\frac{\frac{2}{3}\pm\sqrt{\frac{4}{9}+4\left(\frac{16}{9}\right)\left(\frac{1}{2}\right) }}{2}\\
 &amp;=\frac{1}{3}\pm\frac{1}{2}\sqrt{\frac{4 }{9}+\frac{32}{9}}\\
-&amp;=\frac{1}{3}\pm1\\ \lambda_\pm&amp;=\frac{4}{3},
--\frac{2}{3}.\end{aligned}</me> <me>\left(\begin{tabular}{cc}$0$ &amp;
-$\frac{16}{9}$\\[2pt]$\frac{1}{2}$ &amp;
-$\frac{2}{3}$\end{tabular}\right)\left(\
-begin{tabular}{c}$x_1$\\$x_2$\end{tabular}\ right)=
-\frac{4}{3}\left(\begin{tabular}{c}$x_1$\\$
-x_2$\end{tabular}\right).</me> Notice that <m>ELR&gt;\lambda_+&gt;1</m>,
+&amp;=\frac{1}{3}\pm 1\\
+\lambda_\pm&amp;=\frac{4}{3}, -\frac{2}{3}.
+\end{aligned}</me> <me>\left(
+\begin{array}{cc}
+0 &amp;\frac{16}{9}\\[2pt]
+\frac{1}{2} &amp;\frac{2}{3}
+\end{array}\right)
+\left(
+\begin{array}{c}
+x_1\\
+x_2
+\end{array}
+\right)=
+\frac{4}{3}\left(
+\begin{array}{c}
+x_1\\
+x_2
+\end{array}
+\right).</me> Notice that <m>ELR&gt;\lambda_+&gt;1</m>,
 so that the population grows. </p>
 
 <figure xml:id="fig-SAD"> 
@@ -322,55 +373,114 @@ R_0)=(0,1)</m>. Initial condition is black dot.</caption> </figure>
 
 
 <p> The eigenvector associated with <m>\lambda=\frac{4}{3}</m> is of the
-form<me>v_1=\left(\begin{tabular}{c}$x_1$\\$
-\frac{3}{4}x_1$\end{tabular}\right).</me> The eigenvector associated
+form<me>v_1=\left(
+\begin{array}{c}x_1\\
+\frac{3}{4}x_1\end{array}\right).</me> The eigenvector associated
 with <m>\lambda=-\frac{2}{3}</m> is of the
-form<me>v_1=\left(\begin{tabular}{c}$x_1$\\$
--\frac{3}{8}x_1$\end{tabular}\right).</me> </p> </paragraphs>
+form<me>v_1=\left(
+\begin{array}{c}x_1\\
+-\frac{3}{8}x_1\end{array}\right).</me> </p> </paragraphs>
 
 <paragraphs xml:id="question-2">
-<title>Question.</title>
+<title>Question</title>
 
 
 <p> How do the eigenvectors help explain long term population growth
 (see <xref ref="fig-SAD" />)? </p> </paragraphs>
 
 <paragraphs xml:id="answer-1">
-<title>Answer.</title>
+<title>Answer</title>
 
 
 <p> Long-term proportions approach the distribution described by the
 leading eigenvector. Numbers increase geometrically. Start with a
 typical initial condition <m>P_0=(V_0, R_0)=(0,1)</m>. We first want to
 express <m>P_0</m> as a linear combination of
-eigenvectors.<me>\left(\begin{tabular}{c}$0$ \\$1$\end{tabular}\right) =
-c_1\left(\begin{tabular}{c}$1$\\$\frac{3}{4}
-$\end{tabular}\right)+c_2\left(\begin{
-tabular}{c}$1$\\$-\frac{3}{8}$\end{tabular}\ right).</me> Skipping a few
+eigenvectors.<me>\left(
+\begin{array}{c}
+0 \\
+1
+\end{array}
+\right) =
+c_1\left(
+\begin{array}{c}
+1\\
+\frac{3}{4}
+\end{array}
+\right)+c_2\left(
+\begin{array}{c}
+1\\
+-\frac{3}{8}
+\end{array}
+\right).</me> Skipping a few
 calculations, <m>c_1=-c_2</m> and <m>c_1=\frac{8}{9}</m>. Finally we can
-write, <me>\begin{aligned} P_1&amp;=A P_0\\ &amp; =
-A\left(c_1\left(\begin{tabular}{c}$1$\\$\
-frac{3}{4}$\end{tabular}\right)+c_2
-\left(\begin{tabular}{c}$1$\\$-\frac{3}{8}$\
-end{tabular}\right)\right)\\ &amp; = c_1
-A\left(\begin{tabular}{c}$1$\\$\frac{3}{4}$\ end{tabular}\right)+c_2
-A\left(\begin{tabular}{c}$1$\\$-\frac{3}{8}$ \end{tabular}\right)\\
-P_1&amp; = c_1 \lambda_1^2 \left(\begin{tabular}{c}$1$\\$\frac{3}{4}$\
-end{tabular}\right)+c_2 \lambda_2^2\left(\begin{tabular}{c}$1$\\$-\
-frac{3}{8}$\end{tabular}\right)\\ P_1&amp; = \left(\frac{8}{9}\right)
-\left(\frac{4}{3}\right)^2 \left(\begin{tabular}{c}$1$\\$\frac{3}{4}$\
-end{tabular}\right)- \left(\frac{8}{9}\right)
-\left(\frac{2}{3}\right)^2\left(\begin{
-tabular}{c}$1$\\$-\frac{3}{8}$\end{tabular}\right),\end{aligned} </me>
+write, <me>\begin{aligned}
+P_1&amp;=A P_0\\ 
+&amp; = A\left(c_1\left(
+\begin{array}{c}
+1\\
+\frac{3}{4}
+\end{array}
+\right)+c_2
+\left(
+\begin{array}{c}
+1\\
+-\frac{3}{8}
+\end{array}
+\right)\right)\\
+&amp; = c_1 A\left(
+\begin{array}{c}
+1\\
+\frac{3}{4}
+\end{array}\right)+c_2 A\left(
+\begin{array}{c}
+1\\
+-\frac{3}{8}
+\end{array}
+\right)\\
+P_1&amp; = c_1 \lambda_1^2 \left(
+\begin{array}{c}
+1\\
+\frac{3}{4}
+\end{array}\right)+c_2 \lambda_2^2\left(
+\begin{array}{c}
+1\\
+-\frac{3}{8}
+\end{array}\right)\\
+ P_1&amp; = \left(
+ \frac{8}{9}\right)
+\left(\frac{4}{3}\right)^2 \left(
+\begin{array}{c}
+1\\
+\frac{3}{4}
+\end{array}\right)- \left(\frac{8}{9}\right)
+\left(\frac{2}{3}\right)^2\left(
+\begin{array}{c}
+1\\
+-\frac{3}{8}
+\end{array}\right),
+\end{aligned} </me>
 as before. Iterating this solution we wind up with,
-<me>P_t=\frac{8}{9}\left(\frac{4}{3}\right)^
-t\left(\begin{tabular}{c}$1$\\$\frac{3}{4}$\end{tabular}\right)-
-\frac{8}{9}\left(\frac{2 }{3}\right)^t\left(\begin{tabular}{c}$1$\\$-
-\frac{3}{8}$\end{tabular}\right)</me> Since the second term contains a
+<me>P_t=\frac{8}{9}\left(\frac{4}{3}\right)^t\left(
+\begin{array}{c}
+1\\
+\frac{3}{4}
+\end{array}
+\right)-
+\frac{8}{9}\left(\frac{2}{3}\right)^t\left(
+\begin{array}{c}
+1\\
+-\frac{3}{8}
+\end{array}
+\right)</me> Since the second term contains a
 value <m>\lambda_2&lt;1</m> which is raised to a larger and larger
 power, its contribution decreases. If we ignore it (at large <m>t</m>),
-<me>P_t\approx\frac{8}{9}\left(\frac{4}{3}\right)^t\left(\begin{
-tabular}{c}$1$\\$\frac{ 3}{4}$\end{tabular}\right).</me> </p>
+<me>P_t\approx\frac{8}{9}\left(\frac{4}{3}\right)^t\left(
+\begin{array}{c}
+1\\
+\frac{3}{4}
+\end{array}
+\right).</me> </p>
 
 
 <p> The population will grow 33% larger each generation, but the
@@ -395,301 +505,11 @@ circles) and approximate solutions (closed circles).</caption> </figure>
 </subsection>
 
 
-<subsection xml:id="nonlinear-discrete-time-models-1d">
-<title>Nonlinear
-discrete-time models (1D)</title>
-
-<paragraphs xml:id="review-linear-models">
-<title>Review: Linear
-models</title>
-
-<p> We want to outline our options for solving linear, discrete-time,
-matrix models. We’ll take a model <me>P_{t+1}=M P_t,</me> for now we
-will think of <m>M</m> as a matrix and <m>P_t</m> as a vector. </p>
-</paragraphs>
-
-<paragraphs xml:id="per-capita-production-and-nonlinear-effects">
-<title>per capita production and nonlinear effects</title>
-
-<p> So far our model has roughly been, <me>N_{t+1}=r N_t,</me> or
-<me>P_{t+1}=M P_{t},</me> where <m>N_t</m> and <m>r</m> are scalars, or
-<m>P_t</m> is a vector and <m>M</m> is a matrix. </p>
-
-
-<p> As an example of a 1D model, our linear model assumes that
-<me>\frac{N_{t+1}}{N_t}=r,</me> or the ratio of current population to
-previous population is <m>r</m>, no matter the size of the previous
-generation. Instead, we might expect that, for a variety of reasons
-(like space, food, aggression, or lack of resources) this ratio
-decreases as the current population size increases. Mathematically, this
-requires <m>r=r(N_t)</m>. </p>
-
-<p> In words, small populations are capable of large increases from one
-generation to the next. But, large populations might only increase by
-slight amounts over generations. In fact, really large populations might
-actually shrink. The comparison of linear and nonlinear models is given
-in <xref ref="fig-pcp" />. </p>
-
-<figure xml:id="fig-pcp"> 
-<image source="./images/lin_nonlin_pcp.png" width="50%"/>
-<caption>Per capita
-production plots. Left) Generation to generation change independent of
-population size, Right) change dependent on population size for three
-famous models of <sq>density dependence</sq>.</caption> </figure>
-
-
-<p> Notice the peculiarity of the black line (or curve) in the right
-panel of <xref ref="fig-pcp" />(or <xref ref="fig-nonlin-upd"/>).
-It quite happily <sq>goes negative</sq>, which means for an initially
-large enough population, the subsequent generation is multiplied by a
-negative number. Simply stated, that is weird. Fortunately, our other
-models circumvent this problem by requiring <m>p.c.p.&gt;0</m> at all
-population sizes. </p>
-
-
-<p> Multiplying <m>p.c.p</m> by population size <m>N_t</m> gives our
-updating function, <m>f(N_t)=(p.c.p.)\times N_t</m>. Then, our model is
-<me>N_{t+1}=f(N_t)=(p.c.p.)\times N_t.</me> Some sample updating
-functions are plotted in <xref ref="fig-upd" />. Notice that there
-are some major qualitative changes when we compare the line in the left
-panel to any of the curves in the right panel. Most importantly, the
-updating function intersects the resetting line more than once. Again,
-these intersections suggest that <me>N_{t+1}=N_t=N^*.</me> Recalling our
-previous notation and definitions, these nonlinear models possess
-multiple equilibria! </p>
-
-<figure xml:id="fig-upd"> 
-<image source="./images/lin_nonlin_upd.png" width="50%"/>
-<caption>Cobwebbing
-diagrams. Left) Updating functions of linear model, Right) change
-dependent on population size for three famous models of <sq>density
-dependence</sq>.</caption> </figure> </paragraphs>
-
- <example xml:id="example-ricker">
-<title>Ricker Model</title>
-<p>
-We now consider a population <m>G_t</m>, which is the number of guppies
-living in a bowl on our desk. For simplicity, we will assume that we
-start with a female guppy who is gravid. Guppies are fascinating
-creatures that can spawn indefinitely after mating once. We’ll ignore
-the fact that she gives birth to males and females, so that <sq>number
-of guppies</sq> above actually means ‘number of <em>female</em> guppies.
-</p> <p> Guppies are fascinating, but cruel - they are quite happy to
-eat each other. It’s hard to track, but we know that as the guppy tank
-fills we see fewer baby guppies (i.e., per capita production drops as in <xref ref="fig-pcp"/>). For a model of guppy dynamics, we will
-assume <me>G_{t+1}=rG_t e^{-kG_t}.</me> This model has been sketched
-above in the green curves of <xref ref="fig-pcp" /> and <xref ref="fig-nonlin-upd" />. </p>
-
-<p> For a particular choice of parameters we find the following diagram
-and iterated solution. </p>
-<figure xml:id="fig-f3">
- <image source="./images/f3.png" width="50%"/>
-<caption>Cobwebbing diagram and iterated solution for <m>r=3.7</m>,
-<m>k=0.15</m>. Left) Updating function and cobwebbing, Right) Iterated
-solution.</caption> </figure>
-
-
-<p> It appears that these solutions converge to a value
-<m>G^*\approx8.4</m> guppies. Can we do better than this guess? We know
-that our equilibrium satisfies, <me>\begin{aligned} G^*&amp;=rG^*
-e^{-kG^*}\\ 1&amp;=r e^{-kG^*}\\ e^{kG^*}&amp;=r \\ kG^*&amp;=\ln r \\
-G^*&amp;=\frac{\ln r }{k}\end{aligned}</me> Immediately, we should see a
-few things. First <m>G^*=0</m> is always a solution to the first
-equation. Ignoring that, for <m>k&gt;0</m>, we have a positive
-equilibrium only when <m>r&gt;1</m> so that the logarithm is positive.
-We now know that for <m>r=3.7, k=0.15</m>, <m>G^*\approx8.722</m>. </p>
-
-
-<p> Depending on the intrinsic growth rate <m>r</m> (<term>rmax</term>
-in the code) of our guppies, we might see oscillatory or non-oscillatory
-approaches to equilibria. The solution generated by the black updating
-function (with <m>r=1</m>) approaches <m>G^*=0</m> (i.e., it has no
-<sq>nontrivial</sq> equilibrium point). Looking again at <xref
-ref="fig-f3-rmax"
-/>, try to uncover a relationship between the tendency of the
-trajectory to oscillate (right panel) and the crossing point of the
-updating function and resetting line (left panel). </p>
-
-<figure xml:id="fig-f3-rmax">
- <image source="./images/f3_rmax.png" width="50%"/>
-<caption>Cobwebbing diagrams and
-iterated solutions as they depend on the maximal per capita production.
-Left) A collection of nice updating functions. Right) The corresponding
-iterated solutions.</caption> </figure>
-
-</example>
-
-<paragraphs xml:id="a-note-on-stability">
-<title>A note on stability</title>
-
-<p> As before (perturbations of linear non-homogeneous models), let
-<m>G_t=G^*+x_t</m> and recall <m>G_{t+1}=rG_t e^{-kG_t}=F(G_t)</m>. We
-have, <me>\begin{aligned} \begin{split} x_{t+1}&amp;=G_{t+1}-G^*\\
-&amp;=F(G_t)-G^*\\
-&amp;=\left(F(G^*)+F'(G^*)x_t+{\mathcal{O}}(x_t^2)\right)-G^*\\
-&amp;=\left(\cancel{G^*}+F'(G^*)x_t+\cancel{{\mathcal{O}}(x_t^2)
-}\right)-\cancel{G^*}\\ x_{t+1}&amp;=F'(G^*)x_t
-\end{split}\end{aligned}</me> Now, perturbations are governed by the
-<em>linear</em> equation <me>x_{t+1}=F'(G^*)x_t=ax_t,</me> where
-<m>\displaystyle a=\left.\frac{d^{} {F}}{d {G_t}^{}}\right|_{G^*}</m>
-describes its growth. The slope of the updating function governs
-stability. When, </p>
-
-
-<p><ul> <li> <p> <m>a</m> is <sq>too steep</sq> at <m>G^*</m>
-perturbations near <m>G^*</m> grow, so solutions diverge <em>from</em>
-<m>G^*</m>. </p> </li> <li> <p> <m>a</m> is <sq>shallow enough</sq> at
-<m>G^*</m> perturbations near <m>G^*</m> decay, so solutions converge
-<em>to</em> <m>G^*</m>. </p> </li>
-
-</ul></p>
-
-</paragraphs>
-
-</subsection>
-
-
-<subsection xml:id="nonlinear-discrete-time-models-1-2d">
-<title>Nonlinear discrete-time models (1, 2D)</title>
-
-<paragraphs xml:id="review-pcp-vs-the-updating-function">
-<title>Review: p.c.p. vs. the updating function</title>
-
-
-<p> Multiplying <m>(p.c.p.)</m>, which is a function of <m>N_t</m>, by
-population size <m>N_t</m> gives our updating function,
-<m>f(N_t)=(p.c.p.)\times N_t</m>. Then, our model is
-<me>N_{t+1}=f(N_t)=(p.c.p.)\times N_t.</me> Some sample per capita
-production curves and the corresponding updating functions are plotted
-in <xref ref="fig-nonlin-pcp" />. Notice that we explicitly ignore
-immigration here. </p>
-
-
-<figure xml:id="fig-nonlin-pcp">
-<image source="./images/lin_nonlin_pcp.png" width="50%"/>
-<caption></caption>
-</figure>
-
-<figure xml:id="fig-nonlin-upd">
-<image source="./images/lin_nonlin_upd.png" width="50%"/> 
-<caption></caption>
-</figure>
-
-
-<p> Notice that there are some major qualitative changes when we compare
-the lines in the left panel to any of the curves in the right panel.
-Most importantly, the nonlinear updating function intersects the
-resetting line more than once. Again, at these intersections
-<me>N_{t+1}=N_t=N^*.</me> This suggests an alternative method to
-identify equilibria, which might sometimes be pictured more simply: </p>
-
-
-<p> Equilibria satisfy <m>N_{t+1}=N_t,</m> and we denote them by
-<m>N^*=N_{t+1}=N_t</m>. Given a model <m>N_{t+1}=f(N_t)N_t</m>, we can
-see that equilibria occur at points where <m>f(N_t)=1</m>. At values of
-<m>N_t</m> where our per capita production takes a value of one, we have
-equilibria. </p>
-
-
-<p> As before (perturbations of linear non-homogeneous models), let
-<m>G_t=G^*+x_t</m> and recall <m>G_{t+1}=rG_t e^{-kG_t}=F(G_t)</m>. We
-have, <me>\begin{aligned} \begin{split} x_{t+1}&amp;=G_{t+1}-G^*\\
-&amp;=F(G_t)-G^*\\ &amp;=\left(F(G^*)+F'(G^*)x_t+{\mathcal{O}}(x_t^2)\
-right)-G^*\\ &amp;=\left(\cancel{G^*}+F'(G^*)x_t+\cancel{{\
-mathcal{O}}(x_t^2)}\right)-\cancel{G^*}\\ x_{t+1}&amp;=F'(G^*)x_t
-\end{split}\end{aligned}</me> Now, the dynamics of
-<em>perturbations</em> are governed by the <em>linear</em> equation
-<me>x_{t+1}=F'(G^*)x_t=ax_t,</me> where <m>\displaystyle
-a=\left.\frac{d^{} {F}}{d {G_t}^{}}\right|_{G^*}</m> describes its
-growth. The slope of the updating function at or near the equilibrium
-point governs stability. When, </p>
-
-
-<p><ul> <li> <p> <m>a</m> is <sq>too steep</sq> at <m>G^*</m>
-perturbations near <m>G^*</m> grow, so solutions diverge <em>from</em>
-<m>G^*</m>. </p> </li> <li> <p> <m>a</m> is <sq>shallow enough</sq> at
-<m>G^*</m> perturbations near <m>G^*</m> decay, so solutions converge
-<em>to</em> <m>G^*</m>. </p> </li>
-
-</ul></p>
-
-
-<p> From our linear theory, we know that <m>x_t\rightarrow0</m> when
-<m>|a|&lt;1</m>. </p> </paragraphs>
-
-
-<example xml:id="example-cont">
-<title>Continued analysis of the Ricker
-Model</title> <p> Recall, <m>F(G)=rGe^{-kG}</m>, and <me>F'(G)=
-re^{-kG}(1-kG).</me> Evaluated at the equilibrium point,
-<m>G^*=\frac{\ln(r)}{k}</m>, <me>\begin{aligned}
-F'(G^*)&amp;=re^{-kG^*}(1-kG^*)\\
-&amp;=re^{-k\left(\frac{\ln(r)}{k}\right)}\left(
-1-k\left(\frac{\ln(r)}{k}\right)\right)\\
-&amp;=re^{-\ln(r)}\left(1-\ln(r)\right)\\
-F'(G^*)&amp;=1-\ln(r)\end{aligned}</me> We need <m>|F'(G^*)|&lt;1</m>,
-see <xref ref="fig-ricker-bif" />. Also, <m>G^*=0</m> is stable when
-<m>r&lt;1</m>. </p>
-
-<figure xml:id="fig-ricker">
-<image source="./images/ricker_stab.png" width="50%"/>
-<caption>Left). <m>G^*=\frac{\ln(r)}{k}</m> is stable for
-<m>1&lt;r&lt;e^2</m>. Right). <m>G^*=0</m> is stable for
-<m>0&lt;r&lt;1</m>. <m>G^*=\frac{\ln(r)}{k}</m> is stable for
-<m>1&lt;r&lt;e^2</m>. Beyond <m>r&gt;e^2</m>, oscillations emerge around
-the nontrivial equilibrium.</caption> </figure>
-
-<figure xml:id="fig-ricker-bif"> <image
-source="ricker_bif.png"/>
-<caption>Left). <m>G^*=\frac{\ln(r)}{k}</m> is
-stable for <m>1&lt;r&lt;e^2</m>. Right). <m>G^*=0</m> is stable for
-<m>0&lt;r&lt;1</m>. <m>G^*=\frac{\ln(r)}{k}</m> is stable for
-<m>1&lt;r&lt;e^2</m>. Beyond <m>r&gt;e^2</m>, oscillations emerge around
-the nontrivial equilibrium.</caption> </figure> 
-
-<p> <figure xml:id="fig-ricker">
-<image
-source='./images/ricker.png'/> </p>
-<caption></caption>
-</figre>
-</example>
-
-
-<paragraphs xml:id="catalog-of-models">
-<title>Catalog of models</title>
-
-<p><ul> <li> <p> <sq>Discrete logistic</sq> or Ricker model
-<me>N_{t+1}=N_te^{r(1-\frac{N_t}{K})},</me> Compare to our
-parameterization <me>N_{t+1}=rN_te^{-kN_t}.</me> </p> </li>
-
-<li> <p> Hassell model <me>N_{t+1}=\frac{aN_t}{(1+bN_t)^c}.</me> </p>
-</li>
-
-<li> <p> Beverton-Holt model <me>N_{t+1}=\frac{\lambda
-N_t}{(1+\left(\frac{\lambda-1}{K}\right)N_t) }.</me> </p> </li>
-</ul></p>
-
-</paragraphs>
-
-
-<paragraphs xml:id="summary-of-1d-nonlinear-difference-models">
-<title>Summary of 1D nonlinear difference models</title> <p><ul> <li>
-
-<p> Multiple equilibriaConsequence of regulation </p> </li>
-
-<li> <p> Bifurcations Existence of equilibria depends on parameters,
-stability depends on parameters </p> </li>
-
-<li> <p> Oscillations </p> </li> </ul></p>
-
-</paragraphs>
-
-</subsection>
-
-
-<subsection xml:id="nonlinear-discrete-time-models-2d">
-<title>Nonlinear
-discrete-time models (2D)</title>
+</section>
+
+<!-->
+<section xml:id="nonlinear-discrete-time-models-2d">
+<title>Nonlinear discrete-time models (2D)</title>
 
 
 
@@ -729,14 +549,17 @@ the absence of food <m>Z_t</m> will die. The equation for <m>Z_t</m>
 looks like, <me>Z_{t+1}=\epsilon(pY_t)Z_t-mZ_t.</me> Putting these
 together, we have our first 2D nonlinear system, <me>\begin{aligned}
 Y_{t+1}&amp;=rY_t-pZ_tY_t\\ Z_{t+1}&amp;=\epsilon pY_tZ_t+mZ_t,
-\quad\text{this should be a $+m$ not a $-m$!}\end{aligned}</me> </p>
+\quad\text{this should be a +m not a -m!}
+\end{aligned}</me> </p>
 
 
 <p> Notice that we could define <m>g=\epsilon p</m> if we wanted to
 simplify (the appearance) of the first term in <m>Z_{t+1}</m>.
-<me>\begin{aligned} Y_{t+1}&amp;=rY_t-pZ_tY_t\\ Z_{t+1}&amp;=
-gY_tZ_t+mZ_t, \quad\text{this should be a $+m$ not a
-$-m$}!\end{aligned}</me> </p> </paragraphs>
+<me>\begin{aligned}
+ Y_{t+1}&amp;=rY_t-pZ_tY_t\\ Z_{t+1}&amp;=
+gY_tZ_t+mZ_t, \quad\text{this should be a +m not a
+-m}!
+\end{aligned}</me> </p> </paragraphs>
 
 
 <paragraphs xml:id="an-approach-to-nonlinear-multi-species-dynamics">
@@ -753,9 +576,11 @@ equilibria </p> </li>
 
 <li> <p> analyze stability </p> </li> </ul></p> <p> As before,
 equilibria requires <m>Y_{t+1}=Y_t=Y^*</m> and simultaneously
-<m>Z_{t+1}=Z_t=Z^*</m>. <me>\begin{aligned} Y^*&amp;=rY^* -pZ^*Y^*\\
-Z^*&amp;= gY^*Z^*+mZ^*, \quad\text{this should be a $+m$ not a
-$-m$!}\end{aligned}</me> </p> <p> To satisfy the first, either
+<m>Z_{t+1}=Z_t=Z^*</m>. <me>\begin{aligned}
+ Y^*&amp;=rY^* -pZ^*Y^*\\
+Z^*&amp;= gY^*Z^*+mZ^*, \quad\text{this should be a +m not a
+-m!}
+\end{aligned}</me> </p> <p> To satisfy the first, either
 <m>Y^*=0</m> or <m>1=r-pZ^*</m>, the second of which implies,
 <me>Z^*=\frac{r-1}{p}.</me> To satisfy the second, either <m>Z^*=0</m>
 or <m>1=gY^*+m,</m> the second of which implies,
@@ -768,9 +593,10 @@ here. Our first step is to form a linear approximation to our nonlinear
 dynamics near equilibria. To do so, we compute the Jacobian matrix, a
 matrix of partial derivatives. </p> <p> We notice that our model can be
 written as a set of two updating functions each depending on two
-variables, <me>\begin{aligned} Y_{t+1}&amp;=F(Y_t, Z_t)=rY_t-pZ_tY_t\\
-Z_{t+1}&amp;= G(Y_t, Z_t)=gY_tZ_t+mZ_t, \quad\text{this should be a $+m$
-not a $-m$!}\end{aligned}</me> Now, the motivation and methodology are
+variables, <me>\begin{aligned}
+Y_{t+1}&amp;=F(Y_t, Z_t)=rY_t-pZ_tY_t\\
+Z_{t+1}&amp;= G(Y_t, Z_t)=gY_tZ_t+mZ_t, \quad\text{this should be a +m not a -m!}
+\end{aligned}</me> Now, the motivation and methodology are
 the same as with 1D models, we are interested in thinking about
 <m>Y_t=Y^*+y_t</m> and <m>Z_t=Z^*+z_t</m>, which means each solution
 (e.g., <m>Y_t</m>) is a combination of equilibrium value (e.g.,
@@ -779,19 +605,29 @@ is a matrix of partial derivatives of our updating functions with
 respect to the state variables. We could derive this as we did with a
 Taylor series expansion of a 1D model. </p> <p> Then, skipping some
 steps, we can compute the Jacobian as follows (we will drop the
-subscripts for simplicity), <me>J(Y, Z)=\left(\begin{array}{cc}
-\frac{\partial^{} {F}}{\partial {Y}^{}} &amp; \frac{\partial^{}
-{F}}{\partial {Z}^{}}\\[8pt] \frac{\partial^{} {G}}{\partial {Y}^{}}
-&amp; \frac{\partial^{} {G}}{\partial {Z}^{}} \end{array}\right).</me>
+subscripts for simplicity), <me>J(Y, Z)=\left(
+
+\begin{array}{cc}
+\frac{\partial^{} {F}}{\partial {Y}^{}} &amp; \frac{\partial^{}{F}}{\partial {Z}^{}}\\[8pt]
+\frac{\partial^{} {G}}{\partial {Y}^{}}&amp; \frac{\partial^{} {G}}{\partial {Z}^{}} 
+\end{array}\right).</me>
 </p> <p> Our work is not done, just yet. Since we are concerned with the
 dynamics <sq>near equilibrium</sq> we have to evaluate the Jacobian at
 the equilibrium. An example, in just a minute, should make this clear.
-<me>\left(\begin{array}{cc} y_{t_1}\\[8pt] z_{t+1}
-\end{array}\right)=\left.\left(\begin{array}{cc} \frac{\partial^{}
-{F}}{\partial {Y}^{}} &amp; \frac{\partial^{} {F}}{\partial
-{Z}^{}}\\[8pt] \frac{\partial^{} {G}}{\partial {Y}^{}} &amp;
-\frac{\partial^{} {G}}{\partial {Z}^{}} \end{array}\right)\right|_{(Y^*,
-Z^*)}\times\left(\begin{array}{cc} y_{t}\\[8pt] z_{t}
+<me>\left(
+
+\begin{array}{cc}
+y_{t_1}\\[8pt]
+z_{t+1}\end{array}
+\right)=\left.\left(
+
+\begin{array}{cc}
+\frac{\partial^{} {F}}{\partial {Y}^{}} &amp; \frac{\partial^{} {F}}{\partial {Z}^{}}\\[8pt] \frac{\partial^{} {G}}{\partial {Y}^{}} &amp;
+\frac{\partial^{} {G}}{\partial {Z}^{}} \end{array}\right)\right|_{(Y^*,Z^*)}\times\left(
+
+\begin{array}{cc} 
+y_{t}\\[8pt] 
+z_{t}
 \end{array}\right).</me> </p> </paragraphs>
 
 
@@ -801,32 +637,38 @@ Z^*)}\times\left(\begin{array}{cc} y_{t}\\[8pt] z_{t}
 
 
 <p> Continuing with our current model, we will compute the Jacobian.
-<me>\begin{aligned} \frac{\partial^{} {F}}{\partial {Y}^{}} &amp;=
+<me>
+\end{aligned} \frac{\partial^{} {F}}{\partial {Y}^{}} &amp;=
 \frac{\partial^{} {}}{\partial {Y}^{}}\left(rY-pZY\right)= r-pZ\\
 \frac{\partial^{} {F}}{\partial {Z}^{}} &amp;= \frac{\partial^{}
 {}}{\partial {Z}^{}}\left(rY-pZY\right)= -pY\\ \frac{\partial^{}
 {G}}{\partial {Y}^{}} &amp;= \frac{\partial^{} {}}{\partial
 {Y}^{}}\left(gYZ-mZ\right)= gZ\\ \frac{\partial^{} {G}}{\partial {Z}^{}}
 &amp;= \frac{\partial^{} {}}{\partial {Z}^{}}\left(gYZ-mZ\right)= gY+m,
-\quad\text{this should be a $+m$ not a $-m$}.\end{aligned}</me> </p>
+\quad\text{this should be a +m not a -m}.
+\end{aligned}</me> </p>
 
 
-<p> So,<me>J(Y,Z)=\left(\begin{array}{cc} r-pZ\ &amp; -pY\\[8pt] gZ
-&amp; gY+m \end{array}\right), \quad\text{this should be a $+m$ not a
-$-m$}.</me> </p>
+<p> So,<me>J(Y,Z)=\left(
+\begin{array}{cc} r-pZ\ &amp; -pY\\[8pt] gZ
+&amp; gY+m \end{array}\right), \quad\text{this should be a +m not a
+-m}.</me> </p>
 
 
 <p> So at the <sq>zero</sq> equilibrium,
-<me>J(0,0)=\left(\begin{array}{cc} r\ &amp; 0\\[8pt] 0 &amp; m
-\end{array}\right), \quad\text{this should be a $+m$ not a $-m$}..</me>
+<me>J(0,0)=\left(
+\begin{array}{cc} r\ &amp; 0\\[8pt] 0 &amp; m
+\end{array}\right), \quad\text{this should be a +m not a -m}..</me>
 </p>
 
 
 <p> So at the nontrivial equilibrium,
-<me>J^*=J(Y^*,Z^*)=\left(\begin{array}{cc}
+<me>J^*=J(Y^*,Z^*)=\left(
+\begin{array}{cc}
 r-p\left(\frac{r-1}{p}\right)\ &amp; -p\left(\frac{1-m}{g}\right)\\[8pt]
 g\left(\frac{r-1}{p}\right) &amp; g\left(\frac{1-m}{g}\right)+m
-\end{array}\right)= \left(\begin{array}{cc} 1 &amp;
+\end{array}\right)= \left(
+\begin{array}{cc} 1 &amp;
 -p\left(\frac{1-m}{g}\right)\\[8pt] g\left(\frac{r-1}{p}\right) &amp; 1
 \end{array}\right).</me> </p>
 
@@ -852,20 +694,11 @@ of the vertex and <em>distance</em> to the roots to compute some
 stability criterion and build a stability diagram, next time. </p>
 
 <table>
-<title></title> <tabular> <row header="yes"> <cell
-halign="center">Equilibrium</cell> <cell
-halign="center"><m>\tau=\operatorname{Tr}(J^ *)</m></cell> <cell
-halign="center"><m>\Delta=\operatorname{det} (J^*)</m></cell> <cell
-halign="center"><m>\operatorname{Disc}(J^*)= \tau^2-4\Delta</m></cell>
+<title></title> <\begin{aligned}
+> <row header="yes"> <cell halign="center">Equilibrium</cell> <cell halign="center"><m>\tau=\operatorname{Tr}(J^ *)</m></cell> <cell halign="center"><m>\Delta=\operatorname{det} (J^*)</m></cell> <cell halign="center"><m>\operatorname{Disc}(J^*)= \tau^2-4\Delta</m></cell>
 <cell halign="center"><m>\lambda_i</m></cell> </row> <row class="odd">
-<cell halign="center"><m>(0, 0)</m></cell> <cell
-halign="center"><m>r+m</m></cell> <cell halign="center"><m>rm</m></cell>
-<cell halign="center"><m>(r-m)^2</m></cell> <cell
-halign="center">Real</cell> </row> <row class="even"> <cell
-halign="center"><m>(Y^*, Z^*)</m></cell> <cell
-halign="center"><m>2</m></cell> <cell
-halign="center"><m>1+(1-m)(r-1)</m></cell> <cell
-halign="center"><m>-4(1-m)(r-1)</m></cell> <cell halign="center">Complex
+<cell halign="center"><m>(0, 0)</m></cell> <cell halign="center"><m>r+m</m></cell> <cell halign="center"><m>rm</m></cell>
+<cell halign="center"><m>(r-m)^2</m></cell> <cell halign="center">Real</cell> </row> <row class="even"> <cell halign="center"><m>(Y^*, Z^*)</m></cell> <cell halign="center"><m>2</m></cell> <cell halign="center"><m>1+(1-m)(r-1)</m></cell> <cell halign="center"><m>-4(1-m)(r-1)</m></cell> <cell halign="center">Complex
 (if <m>r&gt;1</m>)</cell> </row> </tabular> </table>
 
 
@@ -875,9 +708,6 @@ more biologically interesting models. The trivial equilibrium <m>(0,
 nontrivial equilibrium is unstable and oscillatory, meaning that
 practically a species will crash into the number zero and go extinct.
 </p> </example>
-
-
-</subsection>
 
 
 
@@ -890,7 +720,8 @@ xml:id="nonlinear-discrete-time-models-2d-stability-criterion">
 
 
 <p> Consider the Jacobian matrix <m>J^*</m> from the linearization of a
-2D model. For <me>J^*=\left(\begin{array}{cc}a &amp; b\\c&amp;
+2D model. For <me>J^*=\left(
+\begin{array}{cc}a &amp; b\\c&amp;
 d\end{array}\right),</me> the associated characteristic polynomial is
 <me>C(\lambda)=\lambda^2-\tau \lambda+\Delta,</me> where <m>\tau</m> is
 the trace and <m>\Delta</m> is the determinant. Solving this with the
@@ -905,22 +736,26 @@ We’ll assume the eigenvalues are distinct and that
 
 
 <p> For the leading eigenvalue, <m>\lambda_+&lt;1</m>, we need
-<me>\begin{aligned} \lambda_+=\frac{\tau}{2}+\frac{\sqrt{\tau^2-4\Delta}
+<me>\begin{aligned}
+ \lambda_+=\frac{\tau}{2}+\frac{\sqrt{\tau^2-4\Delta}
 }{2}&amp;&lt;1\\ \frac{\sqrt{\tau^2-4\Delta}}{2}&amp;&lt;1-\frac{\tau
 }{2}\\ \frac{\tau^2-4\Delta}{4}&amp;&lt;\left(1-\frac{\tau}
 {2}\right)^2\\ \frac{\tau^2}{4}-\Delta&amp;&lt;1-\tau+\frac{\tau^2}
 {4}\\ -\Delta&amp;&lt;1-\tau\Rightarrow
--1+\tau&lt;\Delta\end{aligned}</me> If the determinant satisfies
+-1+\tau&lt;\Delta
+\end{aligned}</me> If the determinant satisfies
 <me>-1+\tau&lt;\Delta,</me> then <m>\lambda_+&lt;1</m>. </p>
 
 
 <p> For the other eigenvalue, <m>\lambda_-&gt;-1</m>, we need
-<me>\begin{aligned} \lambda_-=\frac{\tau}{2}-\frac{\sqrt{\tau^2-4\Delta}
+<me>\begin{aligned}
+ \lambda_-=\frac{\tau}{2}-\frac{\sqrt{\tau^2-4\Delta}
 }{2}&amp;&gt;-1\\ 1+\frac{\tau}{2} &amp; &gt;
 \frac{\sqrt{\tau^2-4\Delta}}{2}\\ \left(1+\frac{\tau}{2}\right)^2 &amp;
 &gt; \frac{\tau^2-4\Delta}{4}\\ 1+\tau+\frac{\tau^2}{4} &amp; &gt;
 \frac{\tau^2}{4}-\Delta\\ 1+\tau&amp; &gt; -\Delta\Rightarrow
--1-\tau&lt;\Delta\end{aligned}</me> If the determinant satisfies
+-1-\tau&lt;\Delta
+\end{aligned}</me> If the determinant satisfies
 <me>-1-\tau&lt;\Delta,</me> then <m>\lambda_-&gt;-1</m>. </p>
 
 
@@ -942,7 +777,8 @@ characteristic polynomial.</caption> </figure>
 \lambda_\pm&amp;=\frac{\tau}{2}\pm\frac{\sqrt{\tau^2-4\Delta}}{2}\\
 &amp;=\frac{\tau}{2}\pm i \frac{\sqrt{4\Delta-\tau^2}}{2}\\
 |\lambda_\pm|&amp;=\frac{\tau^2}{4}+ \Delta-\frac{\tau^2}{4}\\
-|\lambda_\pm|&amp;=\Delta\Rightarrow \Delta&lt;1\end{aligned}</me>
+|\lambda_\pm|&amp;=\Delta\Rightarrow \Delta&lt;1
+\end{aligned}</me>
 </p> </paragraphs>
 
 <paragraphs xml:id="stability-triangle">
@@ -972,7 +808,7 @@ axis and <m>\Delta</m> along the vertical axis.</caption> </figure>
 
 
 <subsection xml:id="nicholson-bailey-and-on-to-continuous-tim">
-<title>Nicholson-Bailey and on to continuous tim</title>
+<title>Nicholson-Bailey and on to continuous time</title>
 
 <paragraphs xml:id="nicholson-bailey">
 <title>Nicholson-Bailey</title>
@@ -1028,12 +864,14 @@ where the right hand sides can become small, but remain positive. </p>
 model assumes that caterpillars are an engine for turning out
 parasitoids, each infected caterpillar produces a fixed amount of
 parasitoid larvae. The model of invertebrate host-parasitoid dynamics is
-of the form, <me>\begin{aligned} H_{t+1}&amp;= (\text{host
+of the form, <me>\begin{aligned}
+ H_{t+1}&amp;= (\text{host
 fecundity})\times(\text{host fraction surviving
 parasitism})\times(\text{host population size})\\ P_{t+1}&amp;=
 (\text{parasitoid production per host})\times(\text{host fraction
 succumbing parasitism})\\ &amp;\qquad\times(\text{host population
-size})\end{aligned}</me> </p>
+size})
+\end{aligned}</me> </p>
 
 
 <p> Host fecundity is just a constant, <m>\lambda</m>. The host fraction
@@ -1067,8 +905,10 @@ per host per generation is
 second assumption we only care whether a host is parasitized or not
 (i.e., whether <m>r=0</m> or <m>r&gt;0</m>). Thus, we want <me>f(N_t,
 P_t)=Q(0)=\frac{e^{-aP_t}(aP_t)^0}{0!}=e^{-aP_t}.</me> Plugging in
-<m>f(H_t, P_t)</m>, <me>\begin{aligned} H_{t+1}&amp;= \lambda e^{-a
-P_t}H_t\\ P_{t+1}&amp;=c (1-e^{-a P_t})H_t.\end{aligned}</me> A few
+<m>f(H_t, P_t)</m>, <me>\begin{aligned}
+ H_{t+1}&amp;= \lambda e^{-a
+P_t}H_t\\ P_{t+1}&amp;=c (1-e^{-a P_t})H_t.
+\end{aligned}</me> A few
 special cases suggest that when <m>P_t=0</m>, <m>H_t</m> grows
 geometrically, but when <m>P_t</m> is <sq>large</sq> few hosts escape
 parasitism. We might wish to limit host growth in the absence of
@@ -1108,7 +948,7 @@ borne. </p>
 </subsection>
 
 </section>
-
+-->
 
 
 </chapter>

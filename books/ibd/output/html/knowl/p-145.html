@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-28T20:32:09-06:00       *-->
+<!--*       on 2021-01-28T22:43:04-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,70 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Notice the peculiarity of the black line (or curve) in the right panel of <a class="xref" data-knowl="./knowl/fig-pcp.html" title="Figure 4.1.9">Figure 4.1.9</a>(or <a class="xref" data-knowl="./knowl/fig-nonlin-upd.html" title="Figure 4.1.15">Figure 4.1.15</a>). It quite happily ‘goes negative’, which means for an initially large enough population, the subsequent generation is multiplied by a negative number. Simply stated, that is weird. Fortunately, our other models circumvent this problem by requiring \(p.c.p.&gt;0\) at all population sizes.</p>
-<span class="incontext"><a href="discrete-time-with-linear-algebra.html#p-145">in-context</a></span>
+<p>To make use of the diagram in <a class="xref" data-knowl="./knowl/fig-bdp.html" title="Figure 4.2.1">Figure 4.2.1</a> we should let</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+P_n(t)=\text{Prob}(\text{counting \(n\) animals at time
+\(t\)}),
+\end{equation*}
+</div>
+<p data-braille="continuation">and consider how these probabilities evolve in time for all \(n\text{.}\) One important fact is that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+P_i(0)=\begin{cases}1,
+\,\text{if \(i=n\)}\\0, \,\text{otherwise}\end{cases},
+\end{equation*}
+</div>
+<p data-braille="continuation">since we know that we start from \(N_0=n\) animals with absolute certainty. We can derive the differential equation by conservation,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned}
+P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\\
+&amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\\
+&amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">First we will apply the definition of \(P_n(t)\) and the others (i.e., \(P_{n-1}(t)\)). Notice that the equation is presented in two columns, on the left is the format ‘in words’ and on the right introduces the corresponding notation,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned}
+P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\qquad=\text{Prob(a birth)}\times P_{n-1}(t) \\ 
+&amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\qquad+\text{Prob(a death)}\times P_{n+1}(t)\\
+&amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;\qquad+\text{Prob(no change)}\times P_{n}(t)
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Below we could also consider \(\text{Prob(no change)}\) as \((1-\text{Prob(change)})\text{,}\) where \(\text{Prob(change)}\) is given by the probability of events resulting in exit <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">from</em> size \(n\text{.}\) The event probabilities are,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned}
+P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\qquad=(n-1)r\Delta t P_{n-1}(t) \\
+&amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\qquad+(n+1)\mu\Delta t P_{n+1}(t)\\
+&amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;\qquad+(1-nr\Delta t-n\mu\Delta t) P_{n}(t)
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally, we can begin rearranging to derive the differential equation for \(P_n(t)\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned}
+P_n(t+\Delta t) &amp;=(n-1)r\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)+(1-nr\Delta t-n\mu\Delta t) P_{n}(t) \\ 
+P_n(t+\Delta t) -P_n(t)&amp;=(n-1)r\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)-(nr\Delta t-n\mu\Delta t) P_{n}(t) \\
+\frac{P_n(t+\Delta t) -P_n(t)}{\Delta t}&amp;=(n-1)r P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-n(r -\mu) P_{n}(t)
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Now, taking the limit \(\Delta t\rightarrow0\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{d^{}
+{P_n(t)}}{d {t}^{}}=(n-1)r P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-(nr-n\mu)
+P_{n}(t) .
+\end{equation*}
+</div>
+<p data-braille="continuation">We have to assume that \(P_i(t)=0\) for any \(i&lt;0\text{,}\) and accept a system of coupled equations for \(n=0, 1,
+2, \dots\text{.}\) We will study this particular model with a suite of techniques, including naive calculation, inspection, and somewhat elegant probability theory.</p>
+<span class="incontext"><a href="introduction-to-stochastic-models.html#p-145">in-context</a></span>
 </body>
 </html>

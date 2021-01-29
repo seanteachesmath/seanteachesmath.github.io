@@ -12,8 +12,7 @@ goals.
 <ul>
 <li> <p> Read and interpret models A term by
 term understanding of the assumptions of a model. </p> </li> 
-<li> <p> Analyze, <sq>solve,</sq> or simulate (compute) solutions.<!-- linebreak
--->Equilibria and stability, or transient dynamics. </p> </li> 
+<li> <p> Analyze, <sq>solve,</sq> or simulate (compute) solutions. Equilibria and stability, or transient dynamics. </p> </li> 
 <li> <p> Write models. </p> </li> 
 <li> <p> Evaluate results and draw biological
 or mathematical conclusions. Dynamics (of NB) were
@@ -36,15 +35,7 @@ Consider a mild infection circulating among members of a population, where the
 
 <figure xml:id="fig-epi">
   <caption>An $SI$ model for transmission of a mild infection in a closed population.</caption>
-  <image width="15%" xml:id="poset">
-<latex-image >
-\begin{tikzpicture}
- \node [int] (a) {$S$};
- \node [int2] (b) [right of=a] {$I$};
- \path[->, bend left] (a) edge node [label=above:{$\beta I$}] {} (b);
- \path[->, bend left] (b) edge node [label=below:{$\gamma$}] {} (a);
-\end{tikzpicture}
-</latex-image>
+  <image width="15%" xml:id="a">
   </image>
 </figure>
 
@@ -108,33 +99,28 @@ that depends on the contact parameter <m>\beta</m> and the total population size
 
 <paragraphs xml:id="equilibrium"> 
 <title>Equilibrium</title>
-
 </paragraphs>
 
 
 <paragraphs xml:id="phase-line-and-stability"> 
-<title>Phase line and
-stability</title>
+<title>Phase line and stability</title>
 </paragraphs>
 
 
 <paragraphs xml:id="solutions-and-observations"> 
-<title>Solutions and
-observations</title>
+<title>Solutions and observations</title>
 </paragraphs>
 
 
 <paragraphs xml:id="bifurcation-diagram"> 
-<title>Bifurcation
-diagram</title>
+<title>Bifurcation diagram</title>
 </paragraphs>
 </section>
 
 
 
 <section xml:id="harvesting-and-predator-prey"> 
-<title>Harvesting
-and predator-prey</title>
+<title>Harvesting and predator-prey</title>
 
 
 <paragraphs xml:id="key-concepts-in-continuous-time-models-1">
@@ -185,19 +171,28 @@ that the harvesting term is <m>h_{II}(N)F.</m> If predators
 instantaneously consume their prey, <m>s=0</m> which returns the Type I
 response, because saturation vanishes. 
 </p> 
+</paragraphs>
+</section>
+
+<section xml:id="two-dim-ecology">
+<title>Two dimensional models in ecology</title>
 <p>
 Consider now, a two
 dimensional extension where <m>F</m> is no longer a parameter, but
 instead a dynamic variable. Whose growth is proportional to the
 consumption of prey, up to a scaling factor <m>\epsilon</m>. Such a
-model is, <me>\begin{aligned} \frac{d^{} {N}}{d
-{t}^{}}&amp;=\left(r\left(1-\frac{N}{K}\right)-\
-frac{hF}{1+sN}\right)N\\ \frac{d^{} {F}}{d {t}^{}}&amp;=\frac{\epsilon
-hFN}{1+sN}-mF.\end{aligned}</me> We can give ourselves a slightly
+model is, <me>\begin{aligned} 
+\frac{d^{} {N}}{d{t}^{}}&amp;=\left(r\left(1-\frac{N}{K}\right)-\
+frac{hF}{1+sN}\right)N\\ 
+\frac{d^{} {F}}{d {t}^{}}&amp;=\frac{\epsilon
+hFN}{1+sN}-mF.
+\end{aligned}</me> We can give ourselves a slightly
 simpler situation if we assume that the predator is a <sq>Type I</sq>
-predator, <me>\begin{aligned} \frac{d^{} {N}}{d
-{t}^{}}&amp;=\left(r\left(1-\frac{N}{K}\right)- hF\right)N\\ \frac{d^{}
-{F}}{d {t}^{}}&amp;=\epsilon hFN-mF.\end{aligned}</me> A common approach
+predator, <me>\begin{aligned} 
+\frac{d^{} {N}}{d
+{t}^{}}&amp;=\left(r\left(1-\frac{N}{K}\right)- hF\right)N\\
+ \frac{d^{}{F}}{d {t}^{}}&amp;=\epsilon hFN-mF.
+ \end{aligned}</me> A common approach
 to studying such a model is to first <sq>nondimensionalize</sq> the
 variables by scaling by some relevant value. Here we have a carrying
 capacity for <m>N</m>, so if we scale <m>N</m> by <m>K</m> we can define
@@ -218,9 +213,12 @@ after some failed attempts, we find something like, <me>\begin{aligned}
 Just as we used phase lines in one dimension, we will use phase
 planes in two dimensions. To introduce this process we will use an even
 simpler model describing the densities of prey (<m>X</m>) and predator
-(<m>Y</m>), <me>\begin{aligned} \frac{d^{} {X}}{d {t}^{}}&amp;=rX-mXY\\
-\frac{d^{} {Y}}{d {t}^{}}&amp;=nXY-sY.\end{aligned}</me> 
+(<m>Y</m>), <me>\begin{aligned}
+ \frac{d^{} {X}}{d {t}^{}}&amp;=rX-mXY\\
+\frac{d^{} {Y}}{d {t}^{}}&amp;=nXY-sY.
+\end{aligned}</me> 
 </p> 
+
 <p>
 First,
 we hope to compute equilibria. We can start by solving when each of the
@@ -238,12 +236,13 @@ ahead and plot <em>everything</em> in <xref ref="fig-pred-prey-pp"
 />, this includes trajectories in the phase plane and <sq>direction
 arrows.</sq> 
 </p>
+
 <figure xml:id="fig-pred-prey-pp">
 <image source="./images/pred_X.png"  width="50%"/>
-<caption>On
-lines <m>\frac{d^{} {X}}{d {t}^{}}=0</m>, motion is in the vertical
+<caption>On lines <m>\frac{d^{} {X}}{d {t}^{}}=0</m>, motion is in the vertical
 direction. On lines <m>\frac{d^{} {Y}}{d {t}^{}}=0</m>, motion is in the
 horizontal direction. </caption> </figure> 
+
 <p>
 Direction arrows in <xref ref="fig-pred-prey-pp" />, are obtained by treating the
 individual differential equations as inequalities. The motivation is
@@ -267,15 +266,16 @@ equilibrium. To know for certain, we would need to study the
 point <m>(0, 0)</m>, as well. Since we have solutions, we might as well
 plot them in time (see <xref ref="fig-pred-prey" />). 
 </p>
+
 <figure xml:id="fig-pred-prey">
  <image source="./images/pred_XY_t.png"  width="50%"/> 
 <caption>Numbers (or
 <m>\text{densities}=\frac{\text{number}}{\text{area}}</m>) of prey
 (<m>X</m>) and predators (<m>Y</m>). </caption> </figure>
 
-</paragraphs>
+</section>
 
-<subsection xml:id="the-trace-determinant-method"> 
+<section xml:id="the-trace-determinant-method"> 
 <title>The <sq>Trace-Determinant Method</sq></title>
 
 <paragraphs xml:id="diagnostics-for-eigenvalues-and-stability">
@@ -357,9 +357,10 @@ called <sq>sources,</sq> since solutions emanate from such a source.
 </p>
 
 </paragraphs>
-</subsection>
 
-<subsection xml:id="ecological-competition"> 
+</section>
+
+<section xml:id="ecological-competition"> 
 <title>Ecological competition</title>
 
 
@@ -374,14 +375,12 @@ dynamical systems.
 
 
 <p>
-<ol> <li> <p> Write a model. </p> </li> <li> <p> Read and interpret
-the model (dimensional analysis of parameters. </p> </li> <li> <p> 
-Compute nullclines and equilibria. </p> </li> <li> <p> Plot phase
-portraits with direction arrows and trajectories. </p> </li> <li> <p> 
-Refine knowledge of stability with linearization via Jacobian. 
-</p>
-</li>
-
+<ol> 
+<li> <p> Write a model. </p> </li> 
+<li> <p> Read and interpret the model (dimensional analysis of parameters. </p> </li> 
+<li> <p> Compute nullclines and equilibria. </p> </li> 
+<li> <p> Plot phase portraits with direction arrows and trajectories. </p> </li> 
+<li> <p> Refine knowledge of stability with linearization via Jacobian. </p> </li>
 </ol>
 </p>
 
@@ -389,11 +388,13 @@ Refine knowledge of stability with linearization via Jacobian.
 <p>
 Consider two species <m>A(t)</m> and <m>B(t)</m> for ants and
 beetles, respectively. Assume that each grows (in the absence of the
-other) according to logistic growth, <me>\begin{aligned} \begin{cases}
-\displaystyle\frac{d^{} {A}}{d {t}^{}}&amp;=r_A
-A\Big(1-\frac{A}{K_A}\Big)\\[10pt] \displaystyle\frac{d^{} {B}}{d
-{t}^{}}&amp;=r_B B\Big(1-\frac{B}{K_B}\Big).
-\end{cases}\end{aligned}</me> Here, each species grows independently of
+other) according to logistic growth, <me>
+\begin{aligned}
+\begin{cases}
+\displaystyle\frac{d^{} {A}}{d {t}^{}}&amp;=r_A A\Big(1-\frac{A}{K_A}\Big)\\[10pt] 
+\displaystyle\frac{d^{} {B}}{d {t}^{}}&amp;=r_B B\Big(1-\frac{B}{K_B}\Big).
+\end{cases}
+\end{aligned}</me> Here, each species grows independently of
 the other. Beetles have no effect on ants; ants have no effect on
 beetles. Our mechanism for interaction will be <em>interference</em>
 competition, which leads in increased mortality. <me>\begin{aligned}
@@ -494,14 +495,13 @@ has a weak effect on <m>B</m>. The <sq>winner</sq> depends on the
 initial conditions.</caption> </figure>
 
 </paragraphs>
-</subsection>
+</section>
 
-<subsection
-xml:id="parameters-rates-and-units-prelude-to-chemical-kinetics">
 
-<title>Parameters, rates, and units: Prelude to chemical
-kinetics</title>
 
+<section xml:id="parameters-rates-and-units-prelude-to-chemical-kinetics">
+
+<title>Parameters, rates, and units: Prelude to chemical kinetics</title>
 
 <paragraphs xml:id="parameters-rates-and-units"> 
 <title>Parameters, rates, and units</title>
@@ -527,59 +527,22 @@ are removed by death) at a rate <m>\gamma</m>.
 
 <figure xml:id="fig-sir-flow">
   <caption>Flow diagram for SIR model.</caption>
-  <image width="15%" xml:id="poset">
-
-<latex-image >
-\begin{tikzpicture}
- \node [int2] (a) {};
- \node [int] (n-1) [right of=a] {$S$};
- \node [int] (n) [right of=n-1] {$I$};
- \node [int] (n+1) [right of=n] {$R$};
- \node [int2] (b) [right of=n+1]{};
- \path[->, bend left] (n-1) edge node [label=above:{$\beta(N)\left(\frac{I}{N}\right)$}] {} (n);
- \path[->, bend left] (n) edge node [label=above:{$\gamma$}] {} (n+1);
-\end{tikzpicture}
-</latex-image>
+  <image width="15%" xml:id="b">
   </image>
-
 </figure>
 
-<p>
-The prevailing models in the literature are called <sq>mass
+<p>The prevailing models in the literature are called <sq>mass
 action</sq> and <sq>constant contact</sq>, which refers specifically to
 the choice of the function <m>\beta(N)</m> within our transmission
 function. 
 </p> 
-<p>
-<!--><ol> <li> --><p>
-constant contact (frequency dependent)
-assumes that <m>\beta(N)=\beta_0</m><!-- linebreak
---><me>\begin{aligned} \beta(N)\left(\frac{I}{N}\right)S&amp;=\overset{
-\overset{\displaystyle{\left[\frac{\text{1}}{\
-text{time}}\right]}}{\big\downarrow}}{\beta_0} \times\overset{
-\overset{\displaystyle{\left[\frac{\text{host}}{
-\text{host}}\right]}}{\big\downarrow}}{\left(\ frac{I}{N}\right)}
-\times\overset{ \overset{\displaystyle{\left[\text{host}\right]}
-}{\big\downarrow}}{S} \end{aligned}</me> 
-</p> <!--></li>
 
-<li> -->
+<p><ul>
+<li><p>constant contact (frequency dependent) assumes that <m>\beta(N)=\beta_0</m></p> </li>
+<li><p>mass action (density dependent) assumes that<m>\beta(N)=\beta_1 N</m> </p></li>
+</ul></p>
 
-<p>
-mass action (density dependent) assumes that
-<m>\beta(N)=\beta_1 N</m> <me>\begin{aligned}
-\beta(N)\left(\frac{I}{N}\right)S&amp;=\ beta_1
-N\left(\frac{I}{N}\right)S\\ &amp;=\underset
-{\underset{\displaystyle{\left[\frac{\text{1 }}{\text{host $\cdot$
-time}}\right]}}{\big\uparrow}}{ \beta_1} \times\underset
-{\underset{\displaystyle{\left[\text{host}\ right]}}{\big\uparrow}}{
-I}\times\underset {\underset{\displaystyle{\left[\text{host}\
-right]}}{\big\uparrow}}{ S}\end{aligned}</me> 
-</p> <!--></li> </ol>-->
-</p> 
-
-<p>
-Notice that we have to assign different units to the <sq>transmission
+<p>Notice that we have to assign different units to the <sq>transmission
 parameter</sq> <m>\beta(N)</m> depending on its form. 
 </p>
 
@@ -592,63 +555,39 @@ parameter</sq> <m>\beta(N)</m> depending on its form.
 <p>
 Consider the densities of prey (<m>X</m>) and its predator
 (<m>Y</m>), given by the following (slightly incorrect, or at least
-misleading equations), <me>\begin{aligned} \frac{d^{} {X}}{d
-{t}^{}}&amp;=rX-sXY\\ \frac{d^{} {Y}}{d
-{t}^{}}&amp;=sXY-qY.\end{aligned}</me> The interaction term, <m>sXY</m>,
+misleading equations), <me>\begin{aligned}
+\frac{d^{} {X}}{d {t}^{}}&amp;=rX-sXY\\ 
+\frac{d^{} {Y}}{d {t}^{}}&amp;=sXY-qY.
+\end{aligned}</me> The interaction term, <m>sXY</m>,
 is the term that we focus on. This term represents predation in the
 <m>\frac{d^{} {X}}{d {t}^{}}</m>-equation, but growth in the
-<m>\frac{d^{} {Y}}{d {t}^{}}</m>-equation (see <xref
-ref="fig-PP-units" />). 
+<m>\frac{d^{} {Y}}{d {t}^{}}</m>-equation <!-->(see units diagram)-->. 
 </p>
 
-<table xml:id="tab-pp-units">
-<title></title>
-<tabular> <row class="odd"> <cell
-halign="center">predation</cell> <cell
-halign="center"><m>\rightarrow</m></cell> <cell
-halign="center">growth</cell> </row> <row class="even"> <cell
-halign="center">loss of <m>X</m></cell> <cell
-halign="center"><m>\rightarrow</m></cell> <cell halign="center">gain of
-<m>Y</m></cell> </row> <row class="odd"> <cell
-halign="center"><m>\frac{\text{prey}}{\text{ time}}</m></cell> <cell
-halign="center"><m>\rightarrow</m></cell> <cell
-halign="center"><m>\frac{\text{predator}}{\ text{time}}</m></cell>
-</row> <row class="even"> <cell halign="center"><m>sXY</m></cell> <cell
-halign="center"><m>\rightarrow</m></cell> <cell
-halign="center"><m>sXY</m></cell> </row> <row class="odd"> <cell
-halign="center"><m>\underset
-{\underset{\displaystyle{\left[\frac{\text{1 }}{\text{predator $\cdot$
-time}}\right]}}{\big\uparrow}}{ s} \times\underset
-{\underset{\displaystyle{\left[\text{prey}\ right]}}{\big\uparrow}}{
-X}\times\underset {\underset{\displaystyle{\left[\text{
-predator}\right]}}{\big\uparrow}}{ Y}</m></cell> <cell
-halign="center"><m>\rightarrow</m></cell> <cell
-halign="center"><m>\underset
-{\underset{\displaystyle{\left[\frac{\text{1 }}{\text{predator $\cdot$
-time}}\right]}}{\big\uparrow}}{ s} \times\underset
-{\underset{\displaystyle{\left[\text{prey}\ right]}}{\big\uparrow}}{
-X}\times\underset {\underset{\displaystyle{\left[\text{
-predator}\right]}}{\big\uparrow}}{ Y}</m></cell> </row> </tabular>
-</table>
+<!--table-->
 
 
 <p>
 Indeed, <m>sXY</m> describes the rate of predation on <m>X</m>, but
 it cannot describe, as it is now, the growth rate of <m>Y</m>. The
 unit’s in the second equation are inconsistent, thus, the model must be
-wrong! In fact, we have <me>\begin{aligned} \frac{d^{} {X}}{d
-{t}^{}}&amp;=rX-sXY\\ \frac{d^{} {Y}}{d {t}^{}}&amp;=\varepsilon sXY-qY,
-\end{aligned}</me> where <me>\varepsilon\sim\frac{\text{predator}}{\
-text{prey}},</me> is some (probably small) number describing the
+wrong! In fact, we have <me>\begin{aligned}
+\frac{d^{} {X}}{d{t}^{}}&amp;=rX-sXY\\ 
+\frac{d^{} {Y}}{d {t}^{}}&amp;=\varepsilon sXY-qY,
+\end{aligned}</me> where <me>\varepsilon\sim\frac{\text{predator}}{\text{prey}},</me> is some (probably small) number describing the
 <sq>conversion efficiency</sq> of producing new predators from consumed
 prey. 
 </p> 
 </example>
 
-<paragraphs xml:id="michaelis-menten-kinetics"> 
+</section>
+
+
+
+<section xml:id="michaelis-menten-kinetics"> 
 <title>Michaelis-Menten kinetics</title>
 
-
+<introduction>
 <p>
 The introduction to units will highlight the <sq>fact</sq> that
 units in reaction kinetics are somewhat less tangible and slightly more
@@ -657,7 +596,7 @@ difficult to interpret. We will study the dynamics of cell receptors
 into the cell. We denote the concentration of cellular nutrient by
 <m>C</m>. 
 </p>
-
+</introduction>
 
 <p>
 We wish to apply the <sq>law of mass action</sq> which simply
@@ -666,8 +605,7 @@ states,
 
 
 <p>
-<em>in a bimolecular reaction, the reaction rate is proportional<!--
-linebreak -->to the product of the concentrations of reactants</em>.
+<em>in a bimolecular reaction, the reaction rate is proportional to the product of the concentrations of reactants</em>.
 
 </p>
 
@@ -685,50 +623,48 @@ Since the law of mass action relies on concentrations of reactants,
 we must reconsider our receptors and nutrients in terms of
 <sq>concentrations</sq>. For a given cellular component <m>Z</m>, the
 <sq>volumetric concentration of <m>Z</m></sq> is,
-<me>\left[\begin{tabular}{c}\text{concentration}\\\ text{of
-$Z$}\end{tabular}\right]=\left[\begin{tabular}{c}\ text{average
-number}\\\text{of $Z$ per
-cell}\end{tabular}\right]\times\left[\begin{tabular} {c}\text{average
-number of}\\\text{cells per volume}\end{tabular}\right].</me> Treating
+<me>\left[\text{concentration}\atop{\text{of }Z}\right]=\left[\text{average number}\atop{\text{of}~Z~\text{per cell}}\right]\times\left[\text{average number of}\atop\text{cells per volume}\right].</me> Treating
 <m>N</m>, <m>X_0</m>, <m>X_1</m>, and <m>C</m> as volumetric
 concentrations we can use the reaction diagram (<xref ref="fig-nutrient-recept" />) to build differential equations to
 describe the changes in concentrations. 
 </p>
 
 
-<p>
-INSERT REACTION 
-</p>
+<figure xml:id="fig-nutrient-recept">
+<caption>INSERT REACTION </caption>
+</figure>
 
 
 <p>
 As an example, there are two ways that the extracellular nutrient
 concentration changes giving two terms to the <m>\frac{d^{} {N}}{d
-{t}^{}}</m> equation. <me>\begin{aligned} \frac{d^{} {N}}{d {t}^{}}
-&amp; = -\left(\text{losses when free nutrient binds to empty
-receptor}\right)\\ &amp;\qquad +\left(\text{gains when occupied
-receptors release nutrient extracellularly}\right)\\ &amp; = -k_+ N X_0
-+ k_- X_1\end{aligned}</me> 
+{t}^{}}</m> equation. <me>\begin{aligned}
+\frac{d^{} {N}}{d {t}^{}} &amp; = -\left(\text{losses when free nutrient binds to empty receptor}\right)\\
+&amp;\qquad +\left(\text{gains when occupied receptors release nutrient extracellularly}\right)\\
+&amp; = -k_+ N X_0+ k_- X_1
+\end{aligned}</me> 
 </p>
 
 
 <p>
 Similarly, we can add the remaining equations, <me>\begin{aligned}
-\frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N X_0 + k_- X_1\\ \frac{d^{}
-{X_0}}{d {t}^{}} &amp; = -k_+ N X_0 + k_- X_1 + k_i X_i\\ \frac{d^{}
-{X_1}}{d {t}^{}} &amp; = k_+ N X_0 - k_- X_1 - k_i X_i\\ \frac{d^{}
-{C}}{d {t}^{}} &amp; = k_i X_1\end{aligned}</me> Given this model, our
+\frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N X_0 + k_- X_1\\ 
+\frac{d^{}{X_0}}{d {t}^{}} &amp; = -k_+ N X_0 + k_- X_1 + k_i X_i\\ 
+\frac{d^{}{X_1}}{d {t}^{}} &amp; = k_+ N X_0 - k_- X_1 - k_i X_i\\ 
+\frac{d^{}{C}}{d {t}^{}} &amp; = k_i X_1
+\end{aligned}</me> Given this model, our
 first goal is to make some simplifications through astute observations.
 Both <m>X_0</m> and <m>X_1</m> are receptor states, and if we add the
 two differential equations, <me>\frac{d^{} {X_0}}{d {t}^{}}+\frac{d^{}
 {X_1}}{d {t}^{}}=0,</me> we see that the total receptor concentration is
 conserved, <m>R</m>. With this we can write <m>X_0=R-X_1.</m>
-<me>\begin{aligned} \frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N (R-X_1) +
-k_- X_1\\ \frac{d^{} {X_1}}{d {t}^{}} &amp; = k_+ N (R-X_1) - k_- X_1 -
-k_i X_i\end{aligned}</me> Reshuffling a bit, <me>\begin{aligned}
-\frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N R+(k_+N + k_-) X_1\\ \frac{d^{}
-{X_1}}{d {t}^{}} &amp; = k_+ N R- (k_+ N + k_- + k_i
-)X_i\end{aligned}</me> 
+<me>\begin{aligned} 
+\frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N (R-X_1) +k_- X_1\\ 
+\frac{d^{} {X_1}}{d {t}^{}} &amp; = k_+ N (R-X_1) - k_- X_1 -k_i X_i
+\end{aligned}</me> Reshuffling a bit, <me>\begin{aligned}
+\frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N R+(k_+N + k_-) X_1\\ 
+\frac{d^{}{X_1}}{d {t}^{}} &amp; = k_+ N R- (k_+ N + k_- + k_i)X_i
+\end{aligned}</me> 
 </p>
 
 
@@ -745,11 +681,9 @@ illustrated in <xref ref="fig-mm-kinetics" />.
 <figure xml:id="fig-mm-kinetics"> 
 <image source="./images/mm_nullclines.png" width="50%"/> 
 <caption>Nutrient-receptor reaction.</caption> </figure> 
-</paragraphs> 
-<!--></subsubsection>-->
 
-<subsubsection
-xml:id="equilibrium-assumption-vs.-the-quasi-steady-state-assumption ">
+
+<subsection xml:id="equilibrium-assumption-vs-quasi-steady-state-assumption">
 
 <title>Equilibrium assumption vs. the Quasi-steady state
 assumption</title> 
@@ -759,7 +693,6 @@ typeset. A rough, handwritten copy is included. If you have a better
 copy, I’d be happy to see it. 
 </p>
 
-</paragraphs>
 
 <paragraphs xml:id="equilibrium-assumption"> 
 <title>Equilibrium assumption</title> 
@@ -770,8 +703,11 @@ copy, I’d be happy to see it.
 </paragraphs>
 
 </subsection>
+</section>
 
-<subsection xml:id="nullclines-and-neuroscience"> 
+
+
+<section xml:id="nullclines-and-neuroscience"> 
 <title>Nullclines and Neuroscience</title>
 
 <p>
@@ -779,23 +715,19 @@ Following on the heels of the quasi-steady
 state assumption, we will close with an application of fast and slow
 dynamics that arises in mathematical models of neurons. 
 </p> 
+
 <p>
 This example, called the FitzHugh-Nagumo model allows us to synthesize much
 of the material from continuous time dynamical systems: phase plane,
 equilibria, analysis, and approximation. 
 </p> 
-</subsection>
 </section>
 
 <section xml:id="higher-dimensional-systems">
-
 <title>Higher-dimensional systems of differential equations as models</title>
-
 <p>
-
-
 </p>
-
 </section>
+
 </chapter>
 
