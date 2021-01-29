@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-01-28T17:54:22-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>What is a discrete-time dynamical system?</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\BibTeX}{\textsc{Bib}\TeX}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="intro-bio-dynamics.html"><span class="title">Introduction to Biological Dynamics</span></a></h1>
+<p class="byline">Sean Laverty</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="introduction-single-dtds.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="introduction-single-dtds.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="higher-order-dtds.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="introduction-single-dtds.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="introduction-single-dtds.html" title="Up">Up</a><a class="next-button button toolbar-item" href="higher-order-dtds.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="preface-disclaimer.html" data-scroll="preface-disclaimer">Disclaimer</a></li>
+<li><a href="preface-motto.html" data-scroll="preface-motto">Preface</a></li>
+<li><a href="preface-themes.html" data-scroll="preface-themes">Themes</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="introduction.html" data-scroll="introduction"><span class="codenumber">1</span> <span class="title">introduction</span></a><ul><li><a href="what-is-modeling.html" data-scroll="what-is-modeling">What is modeling</a></li></ul>
+</li>
+<li class="link">
+<a href="introduction.html" data-scroll="introduction"><span class="codenumber">2</span> <span class="title">Single differential equations as models</span></a><ul>
+<li><a href="single-species-population-models.html" data-scroll="single-species-population-models">Single-species population models</a></li>
+<li><a href="continuous-time-models-derivations.html" data-scroll="continuous-time-models-derivations">Continuous-time models</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="systems-des.html" data-scroll="systems-des"><span class="codenumber">3</span> <span class="title">Systems of differential equations as models</span></a><ul>
+<li><a href="two-dimensional-systems.html" data-scroll="two-dimensional-systems">Two-dimensional systems of differential equations as models</a></li>
+<li><a href="harvesting-and-predator-prey.html" data-scroll="harvesting-and-predator-prey">Harvesting and predator-prey</a></li>
+<li><a href="higher-dimensional-systems.html" data-scroll="higher-dimensional-systems">Higher-dimensional systems of differential equations as models</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="introduction-to-stochastic-processes.html" data-scroll="introduction-to-stochastic-processes"><span class="codenumber">4</span> <span class="title">Stochastic models</span></a><ul>
+<li><a href="stochastic-model.html" data-scroll="stochastic-model">What is a stochastic process?</a></li>
+<li><a href="introduction-to-stochastic-models.html" data-scroll="introduction-to-stochastic-models">Introduction to stochastic models</a></li>
+<li><a href="birth-death-processes-and-the-gillespie-algorithm.html" data-scroll="birth-death-processes-and-the-gillespie-algorithm">Birth-death processes and the Gillespie algorithm</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="introduction-single-dtds.html" data-scroll="introduction-single-dtds"><span class="codenumber">5</span> <span class="title">Discrete-time dynamical systems</span></a><ul><li><a href="what-is-dtds.html" data-scroll="what-is-dtds" class="active">What is a discrete-time dynamical system?</a></li></ul>
+</li>
+<li class="link">
+<a href="higher-order-dtds.html" data-scroll="higher-order-dtds"><span class="codenumber">6</span> <span class="title">Discrete-time dynamical systems with linear algebra</span></a><ul><li><a href="discrete-time-with-linear-algebra.html" data-scroll="discrete-time-with-linear-algebra">Discrete-time dynamical systems with linear algebra</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="what-is-dtds"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">What is a discrete-time dynamical system?</span>
+</h2>
+<p id="p-162"></p>
+<section class="subsection" id="one-dimensional-linear-discrete-time-dynamical-systems"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.1.1</span> <span class="title">One-dimensional, Linear, discrete-time dynamical systems</span>
+</h3>
+<article class="example example-like" id="example-plants"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-plants"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Example.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-plants"><article class="example example-like"><p id="p-163">Consider a population of dandelions living in your front yard over the course of one summer. Let,</p>
+<figure class="table table-like" id="table-2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.1.2<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(N_t\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">be the number of flowers at the start of week \(t\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(N_{t+1}\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">be the number of flowers at the start of week \(t+1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(r\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">be the per capita production of flowers</td>
+</tr>
+</table></figure><p id="p-164">Our model for the growth of dandelions over the summer is,</p>
+<div class="displaymath">
+\begin{equation*}
+N_{t+1}=r
+N_t,
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(N_t\) is the state variable and \(r\) is a parameter that characterizes our population. At the beginning of summer we are lucky enough to have only \(N_0=2\) dandelions in the front yard.</p>
+<p id="p-165">This is one of the few models we can actually solve.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} N_1&amp;=r N_0\\ N_2&amp;=r N_1\\ &amp;=r(r(N_0)\\
+N_2&amp;=r^2 N_0\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">In general, \(N_t=r^t N_0.\) As we have safely assumed, \(N_0\text{,}\) is a positive number (of flowers). When do the dandelions take over our yard?</p>
+<p id="p-166">\(N_t\) increases each generation if \(r&gt;1\) and decreases each generation if \(r&lt;1\text{.}\) Since we defined \(r\) as the ‘per capita production of new flowers,’ this should be comforting. If each flower does better than replacing itself we will always have an increasing number of flowers. If each flower fails to replace itself, our population will shrink. Solutions are tabulated in Tab. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "tab::dandelion_grow" missing]</code>.</p>
+<figure class="table table-like" id="table-3"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.1.3<span class="period">.</span></span><span class="space"> </span>Weekly dandelion growth over the summer, for growing (left) and shrinking (right) populations. Think about what a plot of these solutions would look like.</figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Week</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Population (with \(r&gt;1\))</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">4.5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">6.75</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">10.125</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">15.188</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">22.781</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">34.172</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">51.258</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">76.887</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">115.33</td>
+</tr>
+</table></figure><figure class="table table-like" id="table-4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.1.4<span class="period">.</span></span><span class="space"> </span>Weekly dandelion growth over the summer, for growing (left) and shrinking (right) populations. Think about what a plot of these solutions would look like.</figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Week</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">Population (with \(r&lt;1\))</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">115</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">57.5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">28.75</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">14.375</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">7.188</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">3.594</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">1.797</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">0.898</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">0.449</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">0.225</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">0.112</td>
+</tr>
+</table></figure><p id="p-167">We can extract more biological information by considering the factors contributing to the per capita production rate, \(r\text{.}\) Population growth depends on seedling recruitment and survival. Let,</p>
+<figure class="table table-like" id="table-5"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">5.1.5<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(s\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">be the number of seedlings generated per plant</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">be the fraction of seedlings that survive and grow to adulthood</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">be the fraction of adults that survive</td>
+</tr>
+</table></figure><p id="p-168">We can re-write our model</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} N_{t+1} &amp;= rN_t\\
+&amp;=s\sigma N_t+a N_t\\ N_{t+1} &amp;=
+(s\sigma+a)N_t\end{aligned}
+\end{equation*}
+</div>
+<p id="p-169">This suggests a few ways that a population can grow,</p>
+<ul id="p-170" class="disc">
+<li id="li-32"><p id="p-171">highly productive adult plants that generate lots of seedlings (large \(s\))</p></li>
+<li id="li-33"><p id="p-172">highly viable seedlings that are likely to survive to ‘adulthood’</p></li>
+<li id="li-34"><p id="p-173">tough adult plants that are likely to survive</p></li>
+</ul>
+<p id="p-174">In all, we need \(r=s\sigma+a&gt;1\) for the plants to grow.</p>
+<p id="p-175">Thinking about equilibria is key to understanding dynamics of dandelions. Equilibria (or steady-states, or fixed-points) are values at which the solution is unchanging. With our notation this means \(N_{t+1}=N_t=N^*\text{.}\) By inspection of Figure <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::dandelion" missing]</code>, the only equilibrium point is \(N^*=0\text{,}\) this is the only place that either of our labeled lines intersect the diagonal.</p></article></div>
+<article class="example example-like" id="example-immigration"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-immigration"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Growth with import.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-immigration"><article class="example example-like"><p id="p-176">It might be the case, however, that our neighbors secretly transplant dandelions in our yards at night. To mimic this unkind reality, assume that \(F\geq0\) flowers are arriving each week. Our new model is,</p>
+<div class="displaymath">
+\begin{equation*}
+N_{t+1}=r N_t+F.
+\end{equation*}
+</div>
+<p id="p-177">How does ‘flower immigration’ affect dynamics? If we replace both \(N_{t+1}\) and \(N_t\) by \(N^*\) the equilibrium value, we have</p>
+<div class="displaymath">
+\begin{equation*}
+N^*=rN^*+F.
+\end{equation*}
+</div>
+<p data-braille="continuation">This gives us a value for the flower population,</p>
+<div class="displaymath">
+\begin{equation*}
+N^*=\frac{F}{1-r},
+\end{equation*}
+</div>
+<p data-braille="continuation">which tells us that \(N^*&gt;0\) if \(r&lt;1\) and \(N^*&lt;0\) if \(r&gt;1\text{.}\) It is important to notice early on that only non-negative equilibria make sense on most biological situations, especially with regard to population dynamics. With immigration (importation of plants), solutions can be traced on the diagrams in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::dandelion2" missing]</code>.</p></article></div>
+<article class="paragraphs" id="computational-trick."><h5 class="heading"><span class="title">Computational trick..</span></h5>
+<p id="p-178">One way to solve this problem is to study deviations from the equilibrium, \(N^*\text{.}\) We’re going to assume that \(r&lt;1\text{,}\) since it is only then that we have a sensible equilibrium.</p>
+<p id="p-179">Let \(x_t\) be the deviation from equilibrium at time \(t\) so that,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} {2} N_t &amp;=N^*+x_t &amp; \qquad\text{(the
+definition)}\\ N_0&amp;=N^*+x_0 &amp; \qquad\text{(the initial
+condition)}\\\end{aligned}
+\end{equation*}
+</div>
+<p id="p-180">And finally,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} {2} x_{t+1} &amp;=N_{t+1}-N^* &amp;
+\qquad\text{(from the definition)}\\ x_{t+1}
+&amp;=\left(rN_t+F\right)-N^* &amp; \qquad\text{(from the model)}\\
+x_{t+1} &amp;=\left(r\left(N^*+x_t\right)+F\right)-N ^* &amp;
+\qquad\text{(from the definition)}\\ x_{t+1}
+&amp;=\left(rN^*+F\right)+rx_t-N^* &amp; \qquad\text{(shuffle)}\\
+x_{t+1} &amp;=\left(N^*\right)+rx_t-N^* &amp; \qquad\text{(equilibrium
+condition)}\\ x_{t+1} &amp;=rx_t &amp; \qquad\text{(evolution of
+}x_t\text{)}\\\end{aligned}
+\end{equation*}
+</div>
+<p id="p-181">So, it looks like \(x_t\) evolves according to</p>
+<div class="displaymath">
+\begin{equation*}
+x_t=r^tx_0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Which gives,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned} N_t&amp;=N^*+x_t\\
+&amp;=N^*+r^tx_0\\ &amp;=N^*+r^t\left(N_0-N^*\right)\\
+N_t&amp;=(1-r^t)N^*+r^tN_0.\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Thus, the solution is a weighted average of \(N^*\) and \(N_0\text{,}\) and depends on the weight \(r\text{.}\) For \(r&lt;1\) weight moves from \(N_0\) to \(N^*\) as \(t\) increases (the abundance of the initial flowers is reduced). Since we have a formula for \(N^*\text{,}\) we can also plug it into the final equation above  We can see what ‘generations’ form our population at any given week using the last of the above formulas. Of course, we could have started here by applying our model recursively. But, this approach gives some nice information about our solution in terms of equilibria (\(N^*\)), initial values (\(N_0\)), and perturbations (\(x_t\)).</p></article></section></section></div></main>
+</div>
+</body>
+</html>

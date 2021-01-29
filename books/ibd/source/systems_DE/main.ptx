@@ -1,0 +1,760 @@
+<chapter xml:id="systems-des">
+
+<title>Systems of differential equations as models</title>
+
+<section xml:id="two-dimensional-systems">
+
+<title>Two-dimensional systems of differential equations as models</title>
+
+<p>
+As we transition towards new topics, it is worth mentioning our
+goals. 
+<ul>
+<li> <p> Read and interpret models A term by
+term understanding of the assumptions of a model. </p> </li> 
+<li> <p> Analyze, <sq>solve,</sq> or simulate (compute) solutions.<!-- linebreak
+-->Equilibria and stability, or transient dynamics. </p> </li> 
+<li> <p> Write models. </p> </li> 
+<li> <p> Evaluate results and draw biological
+or mathematical conclusions. Dynamics (of NB) were
+unstable, might be missing biological ingredients. </p> </li>
+</ul>
+
+</p>
+
+
+<paragraphs xml:id="a-disease-model"> 
+<title>A disease model</title>
+
+
+<p>
+Consider a mild infection circulating among members of a population, where the
+<sq>healthy</sq> individuals are susceptible to the infection (<m>S</m>) and the
+<sq>infectious</sq> individuals are capable of transmitting the infection to others
+(<m>I</m>). 
+</p>
+
+<!-->
+<p>
+=[draw, fill=blue!20, minimum size=2em, circle] =[draw, fill=red!20,
+minimum size=2em, circle] 
+</p>-->
+
+
+<p>
+Much like in class we will build a word model as we go.
+<me>\begin{aligned}
+\text{change in }S &amp; = +\text{(gain from recovery)} - \text{(loss to infection)}\\
+\text{change in }I &amp; = +\text{(gain from infection)} - \text{(loss to recovery)},
+\end{aligned}</me> and replace
+the terms with symbols. Our <sq>first</sq> term is <sq>loss to
+recovery</sq> in the <m>I</m> equation. We can think of <m>\gamma</m> as
+the leaving rate from the <m>I</m> compartment, much like <m>m</m> was
+the <sq>leaving rate from the living</sq> (i.e., dying) compartment of a
+population model. Everything, in this model, that leaves one compartment
+enters another (i.e., there are no <sq>leaks</sq>). We can also argue
+for the infection rate as follows, since infection is only transmitted
+directly and by infectious hosts, we might expect that the rate that
+<m>S</m> individuals gain infection is proportional to the density
+(individuals per hectare) of infectious individuals, <m>I</m>. In fact here, we
+assume that the infection rate is a linearly increasing function of
+<m>I</m>. There are plenty of other models of transmission, some we will
+study in the homework, others later in the semester, still more in our
+projects. 
+</p>
+
+
+<p>
+<me>\begin{aligned}
+ \text{change in }S &amp; = +\text{(gain from recovery)} &amp;&amp;-\text{(loss to infection)}\\
+\frac{dS}{dt}&amp;= + \gamma I &amp;&amp; - {\beta I} S\\
+\text{change in }I &amp; =  + \text{(gain from infection)}&amp;&amp; -\text{(loss to recovery)}\\
+\frac{dI}{dt}&amp;= + \beta IS &amp;&amp; -{\gamma} I
+\end{aligned}</me> 
+</p>
+
+
+<p>
+Since the total number* of individuals <m>N</m> is preserved, we can
+replace the equation for <m>S</m> by an algebraic constraint
+<m>S=N-I</m>. We can substitute this into the equation for <m>I</m> and
+derive a 1-dimensional, nonlinear model,<me>\frac{d^{} {I}}{d
+{t}^{}}=\beta I (N-I)-\gamma I.</me> If we define our model
+<m>h(I)=\beta I (N-I)-\gamma I,</m> we can plot the more interesting
+version of our phase line as in Fig. <xref ref="fig::phase" />. Ignoring
+graphs for the moment, we can also compute equilibria of continuous time
+models, <term>defined as</term> solutions to <m>h(I^*)=0</m>. This gives
+<m>I^*=0</m> and <m>I^*=N-\frac{\gamma}{\beta}.</m> It might prove
+useful to notice that our nontrivial solution exists when
+<m>\gamma&lt;\beta N</m> this suggests a limitation on the recovery rate
+that depends on the contact parameter <m>\beta</m> and the total population size <m>N</m>. 
+</p> 
+
+
+</paragraphs>
+
+
+<paragraphs xml:id="analysis"> 
+<title>Analysis</title>
+</paragraphs>
+
+
+<paragraphs xml:id="equilibrium"> 
+<title>Equilibrium</title>
+
+</paragraphs>
+
+
+<paragraphs xml:id="phase-line-and-stability"> 
+<title>Phase line and
+stability</title>
+</paragraphs>
+
+
+<paragraphs xml:id="solutions-and-observations"> 
+<title>Solutions and
+observations</title>
+</paragraphs>
+
+
+<paragraphs xml:id="bifurcation-diagram"> 
+<title>Bifurcation
+diagram</title>
+</paragraphs>
+</section>
+
+
+
+<section xml:id="harvesting-and-predator-prey"> 
+<title>Harvesting
+and predator-prey</title>
+
+
+<paragraphs xml:id="key-concepts-in-continuous-time-models-1">
+
+<title>Key concepts in continuous-time models</title>
+
+
+<p>
+Consider the model <me>\begin{aligned} \frac{d^{} {N}}{d
+{t}^{}}&amp;=\left(r\left(1-\frac{N}{K}\right)-\frac
+{hF}{1+sN}\right)N\\ &amp;= (f(N)-g(N))N,\end{aligned}</me> that
+describes the dynamics of a logistically-growing population subjected to
+harvesting. Equilibria of this model are <m>N^*</m> and
+<m>f(N^*)=g(N^*)</m>. The removal rate due to harvesting is
+<me>\frac{hF}{1+sN},</me> per <m>N</m>. One short derivation of this
+functional form is given here, we will see another derivation in a few
+lectures. 
+</p>
+</paragraphs>
+
+
+<paragraphs xml:id="derivation-of-a-functional-response">
+
+<title>Derivation of a functional response</title> 
+<p>
+A harvester
+spends its time, of which it has <m>T</m>, searching (<m>T_S</m>) or
+handling (<m>T_H</m>), thus, <me>T=T_S+T_H.</me> The handling time
+depends on the number of prey captured (<m>N_C</m>) and the handling
+time per prey (<m>\hat s</m>), so that, <me>T_H=\hat s N_C.</me> In
+turn, the number captured depends on the searching or finding rate
+(<m>\hat h</m>), the number of prey available (<m>N</m>), and the time
+spend searching by predators or harvesters (<m>T_S</m>), <me>N_C=\hat h
+N T_S.</me> Solving for the search time, <me>T_S=\frac{N_C}{\hat h
+N},</me> so that <me>T=T_S+T_H=\hat s N_C+\frac{N_C}{\hat h N}=
+N_C\left(\hat s + \frac{1}{\hat h N}\right).</me> Solving for
+<m>N_C</m>, <me>N_C=T\left(\frac{\hat h N}{1+\hat s \hat h
+N}\right).</me> 
+</p> 
+<p>
+The per predator feeding rate is,
+<me>\frac{N_C}{T}=\left(\frac{\hat h N}{1+\hat s \hat h N}\right),</me>
+since the definition of <m>T</m> was <sq>per predator</sq>. Redefining
+constants <m>h=\hat h</m> and <m>s=\hat s \hat h</m>, we can finally
+write the per predator harvesting rate as
+<me>\frac{N_C}{T}=h_{II}(N)=\left(\frac{h N}{1+ s N}\right),</me> so
+that the harvesting term is <m>h_{II}(N)F.</m> If predators
+instantaneously consume their prey, <m>s=0</m> which returns the Type I
+response, because saturation vanishes. 
+</p> 
+<p>
+Consider now, a two
+dimensional extension where <m>F</m> is no longer a parameter, but
+instead a dynamic variable. Whose growth is proportional to the
+consumption of prey, up to a scaling factor <m>\epsilon</m>. Such a
+model is, <me>\begin{aligned} \frac{d^{} {N}}{d
+{t}^{}}&amp;=\left(r\left(1-\frac{N}{K}\right)-\
+frac{hF}{1+sN}\right)N\\ \frac{d^{} {F}}{d {t}^{}}&amp;=\frac{\epsilon
+hFN}{1+sN}-mF.\end{aligned}</me> We can give ourselves a slightly
+simpler situation if we assume that the predator is a <sq>Type I</sq>
+predator, <me>\begin{aligned} \frac{d^{} {N}}{d
+{t}^{}}&amp;=\left(r\left(1-\frac{N}{K}\right)- hF\right)N\\ \frac{d^{}
+{F}}{d {t}^{}}&amp;=\epsilon hFN-mF.\end{aligned}</me> A common approach
+to studying such a model is to first <sq>nondimensionalize</sq> the
+variables by scaling by some relevant value. Here we have a carrying
+capacity for <m>N</m>, so if we scale <m>N</m> by <m>K</m> we can define
+<m>x=\frac{N}{K},</m> and study the dynamics of <m>x</m> which describes
+the proportion of carrying capacity that is filled. The goal of this is
+to combine parameters and reduce the dimension of parameter space. We
+also rescale time by setting <m>T=rt</m> and replacing the derivative
+<m>\displaystyle\frac{d^{} {}}{d {t}^{}}</m> by <m>\displaystyle
+r\frac{d^{} {}}{d {T}^{}}</m>. The definition involving <m>F</m> is less
+clear from the start, but as we step through the process we find that
+using <m>\displaystyle y=\frac{h}{r}F</m> works pretty well. Ultimately,
+after some failed attempts, we find something like, <me>\begin{aligned}
+\frac{d^{} {x}}{d {t}^{}}&amp;=\left(\left(1-x\right)-y\right)x\\
+\frac{d^{} {y}}{d {t}^{}}&amp;=\beta(x-\alpha)y.\end{aligned}</me> 
+</p>
+
+<p>
+Just as we used phase lines in one dimension, we will use phase
+planes in two dimensions. To introduce this process we will use an even
+simpler model describing the densities of prey (<m>X</m>) and predator
+(<m>Y</m>), <me>\begin{aligned} \frac{d^{} {X}}{d {t}^{}}&amp;=rX-mXY\\
+\frac{d^{} {Y}}{d {t}^{}}&amp;=nXY-sY.\end{aligned}</me> 
+</p> 
+<p>
+First,
+we hope to compute equilibria. We can start by solving when each of the
+equations is equal to zero (i.e., when individual quantities are
+unchanging). Setting <me>\frac{d^{} {X}}{d {t}^{}}=0\Rightarrow
+(r-mY)X=0.</me> This equation implies that <m>X</m> is unchanging along
+the lines <m>X=0</m> and <m>Y=\frac{r}{m}</m> in the <m>(X,
+Y)</m>-plane. Additionally, setting <me>\frac{d^{} {Y}}{d
+{t}^{}}=0\Rightarrow (nX-s)Y=0.</me> This equation implies that <m>Y</m>
+is unchanging along the lines <m>Y=0</m> and <m>X=\frac{s}{n}</m> in the
+<m>(X, Y)</m>-plane. Equilibria require both equations be satisfied
+simultaneously, thus opposite nullclines must intersect so that
+<em>both</em> of <m>X</m> and <m>Y</m> are unchanging. We will jump
+ahead and plot <em>everything</em> in Fig. <xref ref="fig::pred_prey_pp"
+/>, this includes trajectories in the phase plane and <sq>direction
+arrows.</sq> 
+</p> <figure> <image source="pred_X.png"/> <caption>On
+lines <m>\frac{d^{} {X}}{d {t}^{}}=0</m>, motion is in the vertical
+direction. On lines <m>\frac{d^{} {Y}}{d {t}^{}}=0</m>, motion is in the
+horizontal direction. </caption> </figure> 
+<p>
+Direction arrows in
+Fig.. <xref ref="fig::pred_prey_pp" />, are obtained by treating the
+individual differential equations as inequalities. The motivation is
+that we know that <me>\frac{d^{} {X}}{d {t}^{}}&gt;0</me> when
+<me>(r-mY)X&gt;0.</me> Since <m>X&gt;0</m> is of interest, the to ensure
+the derivative is positive, we need <me>\frac{r}{m}&gt;Y.</me> Thus,
+<m>X</m> is increasing below the (nonzero) <m>X</m>-nullcline.
+Similarly, <m>X</m> is decreasing above this nullcline. Lastly, we can
+show that <m>Y</m> is decreasing <sq>to the left</sq> of the (again,
+nonzero) vertical <m>Y</m>-nullcline, and decreasing to the right. This
+shows that motion is counterclockwise. Numerical solutions show that we
+have closed orbits around the equilibrium point <m>(X^*, Y^*)</m>. We
+call this point <em>neutrally stable</em>. 
+</p> 
+<p>
+If we hadn’t
+computed solutions, we wouldn’t necessarily know from the phase portrait
+that these solutions do not spiral in towards or out from the
+equilibrium. To know for certain, we would need to study the
+<sq>linearized</sq> dynamics near each equilibrium point, including the
+point <m>(0, 0)</m>, as well. Since we have solutions, we might as well
+plot them in time (see Fig. <xref ref="fig::pred_prey" />). 
+</p>
+<figure> <image source="pred_XY_t.png"/> <caption>Numbers (or
+<m>\text{densities}=\frac{\text{number}}{\text{area}}</m>) of prey
+(<m>X</m>) and predators (<m>Y</m>). </caption> </figure>
+
+</paragraphs>
+
+<subsection xml:id="the-trace-determinant-method"> 
+<title>The <sq>Trace-Determinant Method</sq></title>
+
+<paragraphs xml:id="diagnostics-for-eigenvalues-and-stability">
+
+<title>Diagnostics for eigenvalues and stability</title>
+
+
+<p>
+In many cases, the calculation of eigenvalues from the Jacobian
+matrix at equilibria is unnecessary. Instead, we prefer a simpler
+approach that we refer to as the <sq>trace-determinant method.</sq>
+Combined with a cautious sketch of the phase plane, the inspection of
+<m>\tau=\operatorname{Tr}{J^*}</m> and
+<m>\Delta=\operatorname{det}{J^*}.</m> 
+</p>
+
+
+<p>
+In some situations, the phase plan suggests that trajectories might
+oscillate about a fixed point. Yet, without the aid of computers we are
+often unable to distinguish between equilibria that attract, repel, or
+do neither. We call these attracting (repelling) equilibria stable
+(unstable) foci, the plural of focus, or neutrally stable centers, in
+the third case. Since we expect solutions to oscillate given the phase
+plane, all that remains is to determine whether or not the real part of
+the eigenvalue is positive, negative, or zero. This is <em>obvious</em>
+from the sign of <m>\tau</m>. The eigenvalues corresponding to the
+characteristic polynomial <me>C(\lambda)=\lambda^2-\tau \lambda
++\Delta,</me> are given by
+<me>\lambda_\pm=\frac{\tau}{2}\pm\frac{\sqrt{\tau^2- 4\Delta}}{2}.</me>
+We can see that <m>\tau&gt;0</m> implies
+<m>\operatorname{Re}(\lambda)&gt;0</m>, which means perturbations from
+equilibria decay and a particular equilibrium is a stable focus. We can
+repeat the argument for <m>\tau&lt;0</m>, which suggests an unstable
+focus, characterized by growing oscillations. Eigenvalues are purely
+imaginary, giving rise to neutrally stable centers, if <m>\tau=0</m>.
+Thus, if we expect oscillations, <m>\tau</m> tells us whether
+oscillations grow (<m>\tau&gt;0</m>), decay (<m>\tau&lt;0</m>), or are
+sustained (<m>\tau=0</m>), all without ever calculating the actual
+eigenvalue. 
+</p>
+
+
+<p>
+Another interesting case, that gives us yet another <em>obvious</em>
+conclusion, is <m>\Delta&lt;0</m>. If we consider a matrix, <m>J^*</m>,
+then <m>\tau</m> is the sum of its eigenvalues while <m>\Delta</m> is
+the product. Thus, for a <m>2\times2</m> matrix <m>J^*</m>,
+<m>\Delta=\lambda_1\lambda_2.</m> If <m>\Delta&lt;0</m>, then
+eigenvalues must be of opposite sign. This gives rise the the dynamics
+of a saddle point, stable in one direction, unstable in the other. 
+</p>
+
+
+<p>
+The only other nondegenerate cases occur when we have distinct, real
+eigenvalues of the same sign. The corresponding equilibria are termed
+nodes, with stability governed by the sign of <m>\tau</m>, since
+<m>\Delta&gt;0</m>. 
+</p>
+
+
+<p>
+We have our degenerate cases on the <m>\Delta=0</m> axis and along
+the curve <m>\Delta=\frac{\tau^2}{4}</m>. The case <m>\Delta=0</m> gives
+us a line of fixed points, where one quantity remains fixed (since one
+eigenvalue is zero) while the other grows from (<m>\tau&gt;0</m>) or
+decays towards (<m>\tau&lt;0</m>) zero. Along the curve
+<m>\Delta=\frac{\tau^2}{4}</m> equilibria are called <sq>degenerate
+nodes,</sq> characterized by a repeated eigenvalue. 
+</p>
+
+
+<p>
+Stable points, which attract trajectories, are often called
+<sq>sinks.</sq> Unstable points, which repel trajectories, are often
+called <sq>sources,</sq> since solutions emanate from such a source.
+
+</p>
+
+</paragraphs>
+</subsection>
+
+<subsection xml:id="ecological-competition"> 
+<title>Ecological competition</title>
+
+
+<paragraphs xml:id="method"> 
+<title>Method</title>
+
+
+<p>
+To review, we apply the following method to study 2D nonlinear
+dynamical systems. 
+</p>
+
+
+<p>
+<ol> <li> <p> Write a model. </p> </li> <li> <p> Read and interpret
+the model (dimensional analysis of parameters. </p> </li> <li> <p> 
+Compute nullclines and equilibria. </p> </li> <li> <p> Plot phase
+portraits with direction arrows and trajectories. </p> </li> <li> <p> 
+Refine knowledge of stability with linearization via Jacobian. 
+</p>
+</li>
+
+</ol>
+</p>
+
+
+<p>
+Consider two species <m>A(t)</m> and <m>B(t)</m> for ants and
+beetles, respectively. Assume that each grows (in the absence of the
+other) according to logistic growth, <me>\begin{aligned} \begin{cases}
+\displaystyle\frac{d^{} {A}}{d {t}^{}}&amp;=r_A
+A\Big(1-\frac{A}{K_A}\Big)\\[10pt] \displaystyle\frac{d^{} {B}}{d
+{t}^{}}&amp;=r_B B\Big(1-\frac{B}{K_B}\Big).
+\end{cases}\end{aligned}</me> Here, each species grows independently of
+the other. Beetles have no effect on ants; ants have no effect on
+beetles. Our mechanism for interaction will be <em>interference</em>
+competition, which leads in increased mortality. <me>\begin{aligned}
+\begin{cases} \displaystyle\frac{d^{} {A}}{d {t}^{}}&amp;=r_A
+A\Big(1-\frac{A}{K_A}-\frac{\alpha B}{K_A}\Big)\\[10pt]
+\displaystyle\frac{d^{} {B}}{d {t}^{}}&amp;=r_B
+B\Big(1-\frac{B}{K_B}-\frac{\gamma A}{K_B}\Big).
+\end{cases}\end{aligned}</me> 
+</p>
+
+
+<p>
+To understand interspecific competition, we need to understand the
+units and magnitude of <m>\alpha</m> and <m>\gamma</m>. Roughly,
+<m>\alpha</m> translates from units of beetle density to an <q>effective
+ant density.</q> According to the ratio <m>\frac{B}{K_A}</m>, beetles
+<sq>fill</sq> some of the carrying capacity allotted to ants. Just how
+much of the capacity that they fill is given by the parameter
+<m>\alpha</m>, which when multiplied by <m>B</m> gives the <sq>ant
+equivalency</sq> of <m>B</m> beetles. We will look more closely at the
+equation for <m>B</m>, but note that we could make similar observations
+about the equation for <m>A</m>. 
+</p>
+
+
+<p>
+The dynamics of <m>B</m> are given by, <me>\frac{d^{} {B}}{d
+{t}^{}}=r_B B\Big(1-\frac{B+\gamma A}{K_B}\Big),</me> which slightly
+more directly illustrates that both <m>A</m> and <m>B</m> fill the
+carrying capacity allotted to <m>B</m>. In one dimension, equilibria
+depend on the zeros of the right hand side of an equation like this. In
+two dimensions, equilibria depend on the values of both quantities
+<m>A</m> and <m>B</m>. The first step, as before, is to compute the
+nullclines for <m>B</m>. Setting <m>\frac{d^{} {B}}{d {t}^{}}=0</m>
+implies that either <m>B=0</m> or <me>1-\frac{B+\gamma A}{K_B}=0.</me>
+With a single species, this equation looks like
+<me>1-\frac{\text{animals}}{K_B}=0.</me> We can solve this equation for
+the density of animals at equilibrium to find,
+<me>\text{animals}=K_B.</me> But we know that we have a particular
+composition of animals, such that <me>\text{animals}=B+\gamma A.</me>
+Combining these equations, <me>K_B=B+\gamma A,</me> gives <m>B</m> as a
+function of <m>A</m>, the abundance of <m>A</m> and <m>B</m> that
+guarantee that <m>B</m> is unchanging,<me>B=K_B -\gamma A.</me> 
+</p>
+
+
+<p>
+Finally, we have that, if either or . By their definition, on , the
+motion in the <m>B</m> direction is zero, and dynamics are strictly
+increasing (or decreasing) in <m>A</m>. 
+</p>
+
+
+<p>
+Similarly, we can compute that, if either or . By their definition,
+on , the motion in the <m>A</m> direction is zero, and dynamics are
+strictly increasing (or decreasing) in <m>B</m>. We have to consider a
+variety of parameter combinations and relative magnitudes. This lets us
+plot four distinct phase portraits, shown in Fig. <xref ref="fig::Aonly"/> - Fig. <xref ref="fig::Saddle" />
+</p>
+
+<figure> <image source="compet_A.png"/> <caption>When
+<m>\frac{K_A}{\alpha}&gt;K_B</m> and <m>\frac{K_B}{\gamma}&lt;K_A</m>,
+only <m>A</m> exists at equilibrium. This is equivalent to
+<m>\frac{K_A}{K_B}&gt;\alpha</m> and <m>\frac{K_B}{K_A}&lt;\gamma</m>,
+which suggests that <m>B</m> has a weak effect on <m>A</m>, but <m>A</m>
+has a strong effect on <m>B</m>.</caption> </figure>
+
+<figure> <image source="compet_B.png"/> <caption>When
+<m>\frac{K_A}{\alpha}&lt;K_B</m> and <m>\frac{K_B}{\gamma}&gt;K_A</m>,
+only <m>B</m> exists at equilibrium. This is equivalent to
+<m>\frac{K_A}{K_B}&lt;\alpha</m> and <m>\frac{K_B}{K_A}&gt;\gamma</m>,
+which suggests that <m>B</m> has a strong effect on <m>A</m>, but
+<m>A</m> has a weak effect on <m>B</m>.</caption> </figure>
+
+<figure> <image source="compet_AB.png"/> <caption>When
+<m>\frac{K_A}{\alpha}&gt;K_B</m> and <m>\frac{K_B}{\gamma}&gt;K_A</m>,
+nullclines intersect, and the coexistence equilibrium is stable. This is
+equivalent to <m>\frac{K_A}{K_B}&gt;\alpha</m> and
+<m>\frac{K_B}{K_A}&gt;\gamma</m>, which suggests that <m>B</m> has a
+weak effect on <m>A</m>, and <m>A</m> has a weak effect on
+<m>B</m>.</caption> </figure>
+
+<figure> <image source="compet_saddle.png"/> <caption>When
+<m>\frac{K_A}{\alpha}&lt;K_B</m> and <m>\frac{K_B}{\gamma}&lt;K_A</m>,
+but the coexistence equilibrium is unstable. This is equivalent to
+<m>\frac{K_B}{K_A}&gt;\alpha</m> and <m>\frac{K_A}{K_B}&gt;\gamma</m>,
+which suggests that <m>B</m> has a weak effect on <m>A</m>, and <m>A</m>
+has a weak effect on <m>B</m>. The <sq>winner</sq> depends on the
+initial conditions.</caption> </figure>
+
+</paragraphs>
+</subsection>
+
+<subsection
+xml:id="parameters-rates-and-units-prelude-to-chemical-kinetics">
+
+<title>Parameters, rates, and units: Prelude to chemical
+kinetics</title>
+
+
+<paragraphs xml:id="parameters-rates-and-units"> 
+<title>Parameters, rates, and units</title>
+
+<p>
+We always need to keep in mind the fact that our parameters and
+rates have important units. We will review a few familiar examples to
+motivate this concept before moving on to biochemical kinetics of
+enzymatic reactions. 
+</p>
+
+</paragraphs>
+
+<example xml:id="example1-sir-models"> 
+<title>SIR models</title> 
+<p>
+Recall the SIR model (illustrated in Fig. <xref
+ref="fig::sir_flow" />), where <m>S</m>, <m>I</m>, and <m>R</m> are the
+host population densities of susceptible, infect<em>ious</em>, and
+recovered (or removed) hosts. Susceptible hosts are infected at a rate
+<m>\beta(N)\left(\frac{I}{N}\right)</m> and infectious hosts recover (or
+are removed by death) at a rate <m>\gamma</m>. =[draw, fill=white,
+minimum size=3em, circle] =[ fill=white, minimum size=3em, circle] 
+</p>
+
+<p>
+The prevailing models in the literature are called <sq>mass
+action</sq> and <sq>constant contact</sq>, which refers specifically to
+the choice of the function <m>\beta(N)</m> within our transmission
+function. 
+</p> 
+<p>
+<!--><ol> <li> --><p>
+constant contact (frequency dependent)
+assumes that <m>\beta(N)=\beta_0</m><!-- linebreak
+--><me>\begin{aligned} \beta(N)\left(\frac{I}{N}\right)S&amp;=\overset{
+\overset{\displaystyle{\left[\frac{\text{1}}{\
+text{time}}\right]}}{\big\downarrow}}{\beta_0} \times\overset{
+\overset{\displaystyle{\left[\frac{\text{host}}{
+\text{host}}\right]}}{\big\downarrow}}{\left(\ frac{I}{N}\right)}
+\times\overset{ \overset{\displaystyle{\left[\text{host}\right]}
+}{\big\downarrow}}{S} \end{aligned}</me> 
+</p> <!--></li>
+
+<li> -->
+
+<p>
+mass action (density dependent) assumes that
+<m>\beta(N)=\beta_1 N</m> <me>\begin{aligned}
+\beta(N)\left(\frac{I}{N}\right)S&amp;=\ beta_1
+N\left(\frac{I}{N}\right)S\\ &amp;=\underset
+{\underset{\displaystyle{\left[\frac{\text{1 }}{\text{host $\cdot$
+time}}\right]}}{\big\uparrow}}{ \beta_1} \times\underset
+{\underset{\displaystyle{\left[\text{host}\ right]}}{\big\uparrow}}{
+I}\times\underset {\underset{\displaystyle{\left[\text{host}\
+right]}}{\big\uparrow}}{ S}\end{aligned}</me> 
+</p> <!--></li> </ol>-->
+</p> 
+
+<p>
+Notice that we have to assign different units to the <sq>transmission
+parameter</sq> <m>\beta(N)</m> depending on its form. 
+</p>
+
+</example>
+
+<example xml:id="example-predator-prey"> 
+<title>Predator - Prey equations</title>
+
+
+<p>
+Consider the densities of prey (<m>X</m>) and its predator
+(<m>Y</m>), given by the following (slightly incorrect, or at least
+misleading equations), <me>\begin{aligned} \frac{d^{} {X}}{d
+{t}^{}}&amp;=rX-sXY\\ \frac{d^{} {Y}}{d
+{t}^{}}&amp;=sXY-qY.\end{aligned}</me> The interaction term, <m>sXY</m>,
+is the term that we focus on. This term represents predation in the
+<m>\frac{d^{} {X}}{d {t}^{}}</m>-equation, but growth in the
+<m>\frac{d^{} {Y}}{d {t}^{}}</m>-equation (see Fig. <xref
+ref="fig::PP_units" />). 
+</p>
+
+<table> <caption></caption> <tabular> <row class="odd"> <cell
+halign="center">predation</cell> <cell
+halign="center"><m>\rightarrow</m></cell> <cell
+halign="center">growth</cell> </row> <row class="even"> <cell
+halign="center">loss of <m>X</m></cell> <cell
+halign="center"><m>\rightarrow</m></cell> <cell halign="center">gain of
+<m>Y</m></cell> </row> <row class="odd"> <cell
+halign="center"><m>\frac{\text{prey}}{\text{ time}}</m></cell> <cell
+halign="center"><m>\rightarrow</m></cell> <cell
+halign="center"><m>\frac{\text{predator}}{\ text{time}}</m></cell>
+</row> <row class="even"> <cell halign="center"><m>sXY</m></cell> <cell
+halign="center"><m>\rightarrow</m></cell> <cell
+halign="center"><m>sXY</m></cell> </row> <row class="odd"> <cell
+halign="center"><m>\underset
+{\underset{\displaystyle{\left[\frac{\text{1 }}{\text{predator $\cdot$
+time}}\right]}}{\big\uparrow}}{ s} \times\underset
+{\underset{\displaystyle{\left[\text{prey}\ right]}}{\big\uparrow}}{
+X}\times\underset {\underset{\displaystyle{\left[\text{
+predator}\right]}}{\big\uparrow}}{ Y}</m></cell> <cell
+halign="center"><m>\rightarrow</m></cell> <cell
+halign="center"><m>\underset
+{\underset{\displaystyle{\left[\frac{\text{1 }}{\text{predator $\cdot$
+time}}\right]}}{\big\uparrow}}{ s} \times\underset
+{\underset{\displaystyle{\left[\text{prey}\ right]}}{\big\uparrow}}{
+X}\times\underset {\underset{\displaystyle{\left[\text{
+predator}\right]}}{\big\uparrow}}{ Y}</m></cell> </row> </tabular>
+</table>
+
+
+<p>
+Indeed, <m>sXY</m> describes the rate of predation on <m>X</m>, but
+it cannot describe, as it is now, the growth rate of <m>Y</m>. The
+unit’s in the second equation are inconsistent, thus, the model must be
+wrong! In fact, we have <me>\begin{aligned} \frac{d^{} {X}}{d
+{t}^{}}&amp;=rX-sXY\\ \frac{d^{} {Y}}{d {t}^{}}&amp;=\varepsilon sXY-qY,
+\end{aligned}</me> where <me>\varepsilon\sim\frac{\text{predator}}{\
+text{prey}},</me> is some (probably small) number describing the
+<sq>conversion efficiency</sq> of producing new predators from consumed
+prey. 
+</p> 
+</example>
+
+<paragraphs xml:id="michaelis-menten-kinetics"> 
+<title>Michaelis-Menten kinetics</title>
+
+
+<p>
+The introduction to units will highlight the <sq>fact</sq> that
+units in reaction kinetics are somewhat less tangible and slightly more
+difficult to interpret. We will study the dynamics of cell receptors
+(<m>X_0, X_1</m>) as they shuttle extracellular nutrients (<m>N</m>)
+into the cell. We denote the concentration of cellular nutrient by
+<m>C</m>. 
+</p>
+
+
+<p>
+We wish to apply the <sq>law of mass action</sq> which simply
+states, 
+</p>
+
+
+<p>
+<em>in a bimolecular reaction, the reaction rate is proportional<!--
+linebreak -->to the product of the concentrations of reactants</em>.
+
+</p>
+
+
+<p>
+Assuming that <m>[A]</m> and <m>[B]</m> are the concentrations of
+reactants, <me>\begin{aligned} \text{rate}&amp;\propto [A][B]\\
+&amp;=k[A][B],\end{aligned}</me> where the constant of proportionality,
+<m>k</m>, is called the <sq>rate constant.</sq> 
+</p>
+
+
+<p>
+Since the law of mass action relies on concentrations of reactants,
+we must reconsider our receptors and nutrients in terms of
+<sq>concentrations</sq>. For a given cellular component <m>Z</m>, the
+<sq>volumetric concentration of <m>Z</m></sq> is,
+<me>\left[\begin{tabular}{c}\text{concentration}\\\ text{of
+$Z$}\end{tabular}\right]=\left[\begin{tabular}{c}\ text{average
+number}\\\text{of $Z$ per
+cell}\end{tabular}\right]\times\left[\begin{tabular} {c}\text{average
+number of}\\\text{cells per volume}\end{tabular}\right].</me> Treating
+<m>N</m>, <m>X_0</m>, <m>X_1</m>, and <m>C</m> as volumetric
+concentrations we can use the reaction diagram (Fig. <xref
+ref="fig::nutrient_recept" />) to build differential equations to
+describe the changes in concentrations. 
+</p>
+
+
+<p>
+INSERT REACTION 
+</p>
+
+
+<p>
+As an example, there are two ways that the extracellular nutrient
+concentration changes giving two terms to the <m>\frac{d^{} {N}}{d
+{t}^{}}</m> equation. <me>\begin{aligned} \frac{d^{} {N}}{d {t}^{}}
+&amp; = -\left(\text{losses when free nutrient binds to empty
+receptor}\right)\\ &amp;\qquad +\left(\text{gains when occupied
+receptors release nutrient extracellularly}\right)\\ &amp; = -k_+ N X_0
++ k_- X_1\end{aligned}</me> 
+</p>
+
+
+<p>
+Similarly, we can add the remaining equations, <me>\begin{aligned}
+\frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N X_0 + k_- X_1\\ \frac{d^{}
+{X_0}}{d {t}^{}} &amp; = -k_+ N X_0 + k_- X_1 + k_i X_i\\ \frac{d^{}
+{X_1}}{d {t}^{}} &amp; = k_+ N X_0 - k_- X_1 - k_i X_i\\ \frac{d^{}
+{C}}{d {t}^{}} &amp; = k_i X_1\end{aligned}</me> Given this model, our
+first goal is to make some simplifications through astute observations.
+Both <m>X_0</m> and <m>X_1</m> are receptor states, and if we add the
+two differential equations, <me>\frac{d^{} {X_0}}{d {t}^{}}+\frac{d^{}
+{X_1}}{d {t}^{}}=0,</me> we see that the total receptor concentration is
+conserved, <m>R</m>. With this we can write <m>X_0=R-X_1.</m>
+<me>\begin{aligned} \frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N (R-X_1) +
+k_- X_1\\ \frac{d^{} {X_1}}{d {t}^{}} &amp; = k_+ N (R-X_1) - k_- X_1 -
+k_i X_i\end{aligned}</me> Reshuffling a bit, <me>\begin{aligned}
+\frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N R+(k_+N + k_-) X_1\\ \frac{d^{}
+{X_1}}{d {t}^{}} &amp; = k_+ N R- (k_+ N + k_- + k_i
+)X_i\end{aligned}</me> 
+</p>
+
+
+<p>
+We can study these equations in the phase plane. Assuming all
+parameters are positive, both nullclines saturate to a value
+<m>X_1\rightarrow R</m> at large <m>N</m>. Knowing very little about
+parameters, we know that the half saturation constant of the <m>X_1</m>
+nullcline is larger than that of the <m>N</m> nullcline. The nullclines,
+direction arrows on the nullclines, and a sample trajectory are
+illustrated in Fig. <xref ref="fig::mm_kinetics" />. 
+</p>
+<!-->
+<figure> <image source="mm_nullclines.png"/> <caption>Nutrient-receptor
+reaction.</caption> </figure> </paragraphs> </subsubsection>
+<subsubsection
+xml:id="equilibrium-assumption-vs.-the-quasi-steady-state-assumption ">
+
+<title>Equilibrium assumption vs. the Quasi-steady state
+assumption</title> 
+<p>
+The notes of the following section have not been
+typeset. A rough, handwritten copy is included. If you have a better
+copy, I’d be happy to see it. 
+</p>-->
+
+</paragraphs>
+
+<paragraphs xml:id="equilibrium-assumption"> 
+<title>Equilibrium assumption</title> 
+</paragraphs>
+
+<paragraphs xml:id="quasi-steady-state-assumption"> 
+<title>Quasi-steady state assumption</title> 
+</paragraphs>
+
+</subsection>
+
+<subsection xml:id="nullclines-and-neuroscience"> 
+<title>Nullclines and Neuroscience</title>
+
+<p>
+Following on the heels of the quasi-steady
+state assumption, we will close with an application of fast and slow
+dynamics that arises in mathematical models of neurons. 
+</p> 
+<p>
+This example, called the FitzHugh-Nagumo model allows us to synthesize much
+of the material from continuous time dynamical systems: phase plane,
+equilibria, analysis, and approximation. 
+</p> 
+</subsection>
+</section>
+
+<section xml:id="higher-dimensional-systems">
+
+<title>Higher-dimensional systems of differential equations as models</title>
+
+<p>
+
+
+</p>
+
+</section>
+</chapter>
+

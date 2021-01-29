@@ -1,0 +1,317 @@
+<chapter xml:id="introduction-to-stochastic-processes">
+
+<title>Stochastic models</title>
+
+<section xml:id="stochastic-model">
+
+<title>What is a stochastic process?</title>
+<p>
+
+</p>
+
+<paragraphs xml:id="deterministic-or-stochastic-models">
+
+<title>Deterministic or stochastic models</title>
+<figure> <image source="coin_flips.png"/>
+<caption>Coin-flipping simulations of a death process.
+</caption>
+
+</figure>
+
+<p> Models presented so far have been deterministic, meaning that the
+structure of the model, combine with its initial conditions and
+parameter values completely determine the behavior of the solutions. In
+contrast, to this are stochastic models in which each application or
+investigation of the model gives a unique realization of the dynamics.
+In other words, the same model and conditions can give rise to
+
+<term>very</term> different dynamics. These are connected in that we
+understand the deterministic analog of a stochastic model to capture the
+mean behavior (see Fig <xref ref="fig::det_stoch" />). 
+</p>
+<figure> <image source="coin_flips_1000.png"/> <caption>Results of 1000
+stochastic simulations (colored) and exponential solution to the
+deterministic model <m>\dfrac{dN}{dt} = rN</m> with white dots
+indicating the mean of simulations at each generation.
+</caption>
+
+</figure>
+
+<p> Keep in mind that both deterministic models and stochastic models
+have their place in mathematical modeling, but that more importantly
+each allows us to apply different methods and to ask different
+questions. 
+</p>
+
+</paragraphs>
+
+</section>
+
+<section
+xml:id="introduction-to-stochastic-models"> 
+<title>Introduction to
+stochastic models</title>
+
+<paragraphs xml:id="motivation"> 
+<title>Motivation</title>
+
+<p> So far we have worked with deterministic models, most recently in
+continuous time. An example of a deterministic model is <me>\frac{d^{}
+{N}}{d {t}^{}}=rN,</me> where <m>r</m> is the growth rate of species
+<m>N</m>. The solution to such a model is <me>N(t)=N_0e^{rt},</me> where
+<m>N_0</m> is the initial population size. As <m>t\rightarrow\infty</m>,
+we have either <m>N\rightarrow 0</m> if <m>b&lt;m</m> <m>r&lt;0</m>), or
+<m>N\rightarrow \infty</m> if <m>b&gt;m</m> <m>r&gt;0</m>). In decaying
+populations <m>r&lt;0</m>), solutions decay exponentially towards zero,
+rather than actually reaching zero. Thus, we reach extinction
+asymptotically, rather than in finite time. 
+</p>
+
+<p> But, at low numbers chance events become important. A single cell
+could divide or die. If it dies, we have extinction. If <m>r&lt;0</m> we
+<em>expect
+</em> extinction, but what about when <m>r&gt;0</m>? If
+<m>r&gt;0</m>, a single cell could die rather than divide, by chance,
+even if it <em>should
+</em> divide and grow in number. 
+</p>
+
+<p> Since we are focusing on the fates of individual cells, it is
+perhaps important to think in terms of integer-valued states. Let
+<m>N_0=n</m> be the initial number of cells present, perhaps in come
+cell culture of a fascinating biological experiment. We should note
+that, while the process is discrete (in the number of cells), time is
+continuous. The number of animals changes by a single individual through
+births (to the right) and deaths (to the left) as illustrated in
+Fig. <xref ref="fig::bdp"
+/>. 
+</p>
+<!-->
+<p> =[draw, fill=white, minimum size=3em, circle] =[ fill=white, minimum
+size=3em, circle] 
+</p>-->
+
+<p> To make use of the diagram in Fig. <xref ref="fig::bdp" /> we should
+let <me>P_n(t)=\text{Prob}(\text{counting \(n\) animals at time
+\(t\)}),</me> and consider how these probabilities evolve in time for
+all <m>n</m>. One important fact is that <me>P_i(0)=\begin{cases}1,
+\,\text{if \(i=n\)}\\0, \,\text{otherwise}\end{cases},</me> since we
+know that we start from <m>N_0=n</m> animals with absolute certainty. We
+can derive the differential equation by conservation,
+<me>\begin{aligned} {2} P_n(t+\Delta t) &amp; =\text{Prob(a
+birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)})
+&amp;&amp;\\ &amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\)
+animals at time \(t\)}) &amp;&amp;\\ &amp; +\text{Prob(no
+change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)})
+&amp;&amp;\end{aligned}</me> First we will apply the definition of
+<m>P_n(t)</m> and the others (i.e., <m>P_{n-1}(t)</m>). Notice that the
+equation is presented in two columns, on the left is the format 
+<sq>in
+words
+</sq> and on the right introduces the corresponding notation,
+<me>\begin{aligned} {2} P_n(t+\Delta t) &amp; =\text{Prob(a
+birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)})
+&amp;&amp;\qquad=\text{Prob(a birth)}\times P_{n-1}(t) \\ &amp;
++\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time
+\(t\)}) &amp;&amp;\qquad+\text{Prob(a death)}\times P_{n+1}(t)\\ &amp;
++\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time
+\(t\)}) &amp;&amp;\qquad+\text{Prob(no change)}\times P_{n}(t)
+\end{aligned}</me> Below we could also consider <m>\text{Prob(no
+change)}</m> as <m>(1-\text{Prob(change)})</m>, where
+<m>\text{Prob(change)}</m> is given by the probability of events
+resulting in exit <em>from
+</em> size <m>n</m>. The event probabilities
+are, <me>\begin{aligned} {2} P_n(t+\Delta t) &amp; =\text{Prob(a
+birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)})
+&amp;&amp;\qquad=(n-1)r\Delta t P_{n-1}(t) \\ &amp; +\text{Prob(a
+death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)})
+&amp;&amp;\qquad+(n+1)\mu\Delta t P_{n+1}(t)\\ &amp; +\text{Prob(no
+change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)})
+&amp;&amp;\qquad+(1-nr\Delta t-n\mu\Delta t) P_{n}(t) \end{aligned}</me>
+Finally, we can begin rearranging to derive the differential equation
+for <m>P_n(t)</m>, <me>\begin{aligned} P_n(t+\Delta t)
+&amp;=(n-1)r\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)+(1-nr\Delta
+t-n\mu\Delta t) P_{n}(t) \\ P_n(t+\Delta t) -P_n(t)&amp;=(n-1)r\Delta t
+P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)-(nr\Delta t-n\mu\Delta t)
+P_{n}(t) \\ \frac{P_n(t+\Delta t) -P_n(t)}{\Delta t}&amp;=(n-1)r
+P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-n(r -\mu) P_{n}(t) \end{aligned}</me>
+Now, taking the limit <m>\Delta t\rightarrow0</m>,<me>\frac{d^{}
+{P_n(t)}}{d {t}^{}}=(n-1)r P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-(nr-n\mu)
+P_{n}(t) .</me> We have to assume that <m>P_i(t)=0</m> for any
+<m>i&lt;0</m>, and accept a system of coupled equations for <m>n=0, 1,
+2, \dots</m>. We will study this particular model with a suite of
+techniques, including naive calculation, inspection, and somewhat
+elegant probability theory. 
+</p>
+
+</paragraphs>
+
+<paragraphs xml:id="naive-calculation"> 
+<title>Naive calculation</title>
+<p> Looking at the first equation for <m>n=0</m>, <me>\frac{d^{}
+{P_0(t)}}{d {t}^{}}=(-1)r P_{-1}(t) +(1)\mu P_{1}(t)-0\cdot (r -\mu)
+P_{0}(t),</me> we simplify to <me>\frac{d^{} {P_0(t)}}{d {t}^{}}= \mu
+P_{1}(t).</me> If we were to look at the equilibrium of <m>P_0</m>,
+assuming <m>\mu\neq0</m>, we would need <m>P_1(t)\rightarrow0</m>. Since
+<m>P_1</m> appears in the next equation, we require all
+<m>P_i(t)\rightarrow0</m> for <m>i&gt;0</m>. Since <m>P_i(t)</m> are
+probabilities, we require <m>\displaystyle\sum_0^\infty P_i(t)=1</m>,
+which means that <m>P_0(t)\rightarrow1</m>. This suggests that
+extinction is unavoidable, but a bit more work provides additional
+insight. Specifically populations with <m>b&gt;m</m> can escape
+extinction, with the probability of extinction of
+<me>\left(\dfrac{m}{b}\right)^{N_0}</me> which for <m>b&gt;m</m> decays
+geometrically as a function of the initial population size. With quite a
+bit of effort, this result is very nicely illustrated in classic texts.
+
+</p>
+
+</paragraphs> 
+</section> 
+
+<section
+xml:id="birth-death-processes-and-the-gillespie-algorithm">
+
+<title>Birth-death processes and the Gillespie algorithm</title>
+
+<paragraphs xml:id="a-coin-flipping-exercise"> 
+<title>A coin-flipping
+exercise</title>
+
+<p> We will simulate a pure-death process with events chosen by random
+<sq>coin</sq> flips. 
+</p>
+
+<p>
+<ol>
+<li><p> Start with a room full of participants. </p> </li>
+<li><p> At the start of each discrete round, everyone should flip a coin:
+<ol>
+<li> <p> a <sq>head</sq> means death, so sit down and remain
+seated. </p> </li>
+<li> <p> a <sq>tail</sq> means survival, so keep standing. </p> </li>
+</ol>
+</p> 
+</li>
+<li> <p> Repeat until all participants have vanished,
+recording the number alive at the start of each round. </p> </li>
+</ol>
+</p>
+
+<p> A sample result for two populations is plotted in Fig. <xref
+ref="fig::death_sim" />. 
+</p>
+<figure> <image source="inclass_sim.png"/> <caption>Numbers of survivors
+in independent simulations with probability of death equal to one half.
+Red curve illustrates the expected number of survivors.
+</caption>
+
+</figure> 
+
+</paragraphs> 
+
+<paragraphs xml:id="bold-claim-revisited">
+
+<title>Bold claim revisited</title>
+
+<p> Previously, we claimed that all populations go to extinction (in the
+absence of immigration). If we wish to simulate the process described in
+Fig. <xref ref="fig::bdp2" />, we need to track a few pieces of
+information: the event that occurs (a birth or a death), and the time
+that the event occurs. =[draw, fill=white, minimum size=3em, circle] =[
+fill=white, minimum size=3em, circle] 
+</p>
+
+<p> Using Fig. <xref ref="fig::bdp2" />, the <em>probability
+</em> that a
+birth occurs as the 
+<sq>next event
+</sq> is
+<me>\operatorname{Prob}({\text{a birth}})=\frac{rn}{rn+\mu n}=
+\frac{r}{r+\mu},</me> and similarly for a death,
+<me>\operatorname{Prob}({\text{a death}})=1-\operatorname{Prob}({\text{a birth}})=
+1-\frac{r}{r+\mu}=\frac{\mu}{r+\mu}.</me> To determine what
+happens we consider the interval <m>[0,1],</m> which we divide, here,
+into two subintervals whose widths reflect the event probabilities
+above. For example, if <m>r=0</m> (<m>\mu&gt;0</m>), the probability of
+a birth is zero and probability of a death is one. In contrast, if
+<m>\mu=0</m> (<m>r&gt;0</m>), then the probability of a death is zero
+and the probability of a birth is one. 
+</p>
+
+<p> More interesting cases occur if, for example, <m>r=8</m> and
+<m>\mu=2</m>, then the probability of a birth is <m>\frac{4}{5}</m> and
+the probability of a death is <m>\frac{1}{5}</m>. To illustrate this
+last case, we divide the unit interval into subintervals <m>(0,
+\frac{4}{5}]</m>, representing the probabilities of birth, and
+<m>(\frac{4}{5}, 1)</m>, representing the probabilities of death. Then
+we choose a uniform random number (a dart) and throw it at the divided
+number line (a target). The interval in which it lands identifies our
+next event. In this example, since <m>r&gt;&gt;\mu</m>, the probability
+that a birth occurs is much larger than the probability that a death
+occurs. Thus, the birth interval in the target is much larger than the
+death interval, and we are more likely to have a birth. 
+</p>
+<figure> <image source="event_prob.png"/> <caption>A uniform random
+random number has an 80% chance of landing in the 
+<sq>blue
+</sq> (birth)
+interval, making this event the more likely outcome. That said, here we
+have the less likely outcome of a death.
+</caption> 
+</figure>
+
+<p> Given that we can identify the event that occurs, our next task is
+to identify the time until the event occurs. Here we assume that he
+events occur at a constant rate <me>\lambda=(r+\mu)n,</me> and that the
+time until the next event, <m>T</m>, is exponentially distributed with
+parameter <m>\lambda</m>. Thus, <me>T\sim\exp(\lambda).</me> We can
+easily sample numbers from certain distributions. To sample
+exponentially distributed random numbers, we take advantage of its
+cumulative distribution function, <m>F(t)=1-\exp(-\lambda t)</m>. We
+pick a uniform random number <m>r_2</m> and solve for <m>t</m> using
+<m>r_2=F(t)</m> to find our even time. <me>\begin{aligned} r_2 &amp; =
+F(t)\\ &amp;= 1-\exp(-\lambda t)\\ \exp(-\lambda t) &amp; = 1-r_2\\
+-\lambda t &amp; =\ln(1-r_2)\\ t &amp;
+=-\frac{\ln(1-r_2)}{\lambda}\end{aligned}</me> Importantly, since
+<m>r_2</m> is a random number so is <m>1-r_2</m>. In slight abuse of
+notation, we relabel the argument of <m>\ln(\cdot)</m>, which is
+<m>1-r_2</m>, by <m>r_2</m>,<me>t =-\frac{\ln(r_2)}{\lambda}.</me> Since
+<m>r_2\in(0,1)</m>, the logarithm is negative, so the negative in front
+ensures a positive event time <m>t</m>. 
+</p>
+
+<p> Now that we have identified both our event and the event eating
+time, <m>t</m>, we simply update our state and repeat the process for
+until we reach either a fixed number of events, a fixed final time, or a
+population that becomes extinct (or reaches some other pre-specified
+condition). An example solution to the birth-death process is plotted in
+Fig. <xref ref="fig::bdp_result" />, where unlike in Fig. <xref
+ref="fig::death_sim" /> the rate of birth is non-zero. 
+</p>
+<figure> <image source="sample.png"/> <caption>Sample solutions to the
+stochastic process with the deterministic result (or expectation) in
+red. One population (black) rather quickly goes extinct, while the other
+(blue) does better than expected. Only the first 500 events are
+shown.
+</caption> 
+</figure>
+
+<p> While the details of evaluating our claim are beyond our needs, we
+can and should temper our 
+<sq>everything vanishes
+</sq> statement. In the
+absence of immigration, populations that remain finite are bound to
+reach extinction. They tend to do so rather quickly, after a string of
+bad luck. Otherwise populations can grow to infinity, avoiding and
+escaping the threat of extinction. 
+</p>
+
+<p> More sophisticated approaches, using generating functions (special
+power series) let us calculate the mean extinction time for a given
+problem. 
+</p> 
+</paragraphs> 
+</section>
+
+</chapter>
