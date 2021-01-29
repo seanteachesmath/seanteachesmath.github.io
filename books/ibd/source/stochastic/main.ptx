@@ -12,7 +12,7 @@
 <paragraphs xml:id="deterministic-or-stochastic-models">
 
 <title>Deterministic or stochastic models</title>
-<figure> <image source="./images/coin_flips.png"/>
+<figure xml:id="fig-coin-flips"> <image source="./images/coin_flips.png"/>
 <caption>Coin-flipping simulations of a death process.
 </caption>
 
@@ -27,9 +27,9 @@ In other words, the same model and conditions can give rise to
 
 <term>very</term> different dynamics. These are connected in that we
 understand the deterministic analog of a stochastic model to capture the
-mean behavior (see Fig <xref ref="fig::det_stoch" />). 
+mean behavior (see Fig <xref ref="fig-stoch-sample" />). 
 </p>
-<figure> <image source="./images/coin_flips_1000.png"/> <caption>Results of 1000
+<figure xml:id="fig-coin-flips-100"> <image source="./images/coin_flips_1000.png"/> <caption>Results of 1000
 stochastic simulations (colored) and exponential solution to the
 deterministic model <m>\dfrac{dN}{dt} = rN</m> with white dots
 indicating the mean of simulations at each generation.
@@ -83,15 +83,14 @@ cell culture of a fascinating biological experiment. We should note
 that, while the process is discrete (in the number of cells), time is
 continuous. The number of animals changes by a single individual through
 births (to the right) and deaths (to the left) as illustrated in
-Fig. <xref ref="fig::bdp"
-/>. 
+Fig. <xref ref="fig-bdp"/>. 
 </p>
 <!-->
 <p> =[draw, fill=white, minimum size=3em, circle] =[ fill=white, minimum
 size=3em, circle] 
 </p>-->
 
-<p> To make use of the diagram in Fig. <xref ref="fig::bdp" /> we should
+<p> To make use of the diagram in Fig. <xref ref="fig-bdp" /> we should
 let <me>P_n(t)=\text{Prob}(\text{counting \(n\) animals at time
 \(t\)}),</me> and consider how these probabilities evolve in time for
 all <m>n</m>. One important fact is that <me>P_i(0)=\begin{cases}1,
@@ -201,7 +200,7 @@ recording the number alive at the start of each round. </p> </li>
 <p> A sample result for two populations is plotted in Fig. <xref
 ref="fig::death_sim" />. 
 </p>
-<figure> <image source="./images/inclass_sim.png"/> <caption>Numbers of survivors
+<figure xml:id="fig-in-class-sim"> <image source="./images/inclass_sim.png"/> <caption>Numbers of survivors
 in independent simulations with probability of death equal to one half.
 Red curve illustrates the expected number of survivors.
 </caption>
@@ -216,13 +215,13 @@ Red curve illustrates the expected number of survivors.
 
 <p> Previously, we claimed that all populations go to extinction (in the
 absence of immigration). If we wish to simulate the process described in
-Fig. <xref ref="fig::bdp2" />, we need to track a few pieces of
+Fig. <xref ref="fig-bdp2" />, we need to track a few pieces of
 information: the event that occurs (a birth or a death), and the time
 that the event occurs. =[draw, fill=white, minimum size=3em, circle] =[
 fill=white, minimum size=3em, circle] 
 </p>
 
-<p> Using Fig. <xref ref="fig::bdp2" />, the <em>probability
+<p> Using Fig. <xref ref="fig-bdp2" />, the <em>probability
 </em> that a
 birth occurs as the 
 <sq>next event
@@ -252,7 +251,7 @@ that a birth occurs is much larger than the probability that a death
 occurs. Thus, the birth interval in the target is much larger than the
 death interval, and we are more likely to have a birth. 
 </p>
-<figure> <image source="./images/event_prob.png"/> <caption>A uniform random
+<figure xml:id="fig-prob-diag"> <image source="./images/event_prob.png"/> <caption>A uniform random
 random number has an 80% chance of landing in the 
 <sq>blue
 </sq> (birth)
@@ -286,10 +285,10 @@ time, <m>t</m>, we simply update our state and repeat the process for
 until we reach either a fixed number of events, a fixed final time, or a
 population that becomes extinct (or reaches some other pre-specified
 condition). An example solution to the birth-death process is plotted in
-Fig. <xref ref="fig::bdp_result" />, where unlike in Fig. <xref
+Fig. <xref ref="fig-bdp-result" />, where unlike in Fig. <xref
 ref="fig::death_sim" /> the rate of birth is non-zero. 
 </p>
-<figure> <image source="./images/sample.png"/> <caption>Sample solutions to the
+<figure xml:id="fig-stoch-sample"> <image source="./images/sample.png"/> <caption>Sample solutions to the
 stochastic process with the deterministic result (or expectation) in
 red. One population (black) rather quickly goes extinct, while the other
 (blue) does better than expected. Only the first 500 events are
