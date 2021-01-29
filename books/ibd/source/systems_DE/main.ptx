@@ -34,12 +34,19 @@ Consider a mild infection circulating among members of a population, where the
 (<m>I</m>). 
 </p>
 
-<!-->
-<p>
-=[draw, fill=blue!20, minimum size=2em, circle] =[draw, fill=red!20,
-minimum size=2em, circle] 
-</p>-->
-
+<figure xml:id="fig-epi">
+  <caption>An $SI$ model for transmission of a mild infection in a closed population.</caption>
+  <image width="15%" xml:id="poset">
+<latex-image >
+\begin{tikzpicture}
+ \node [int] (a) {$S$};
+ \node [int2] (b) [right of=a] {$I$};
+ \path[->, bend left] (a) edge node [label=above:{$\beta I$}] {} (b);
+ \path[->, bend left] (b) edge node [label=below:{$\gamma$}] {} (a);
+\end{tikzpicture}
+</latex-image>
+  </image>
+</figure>
 
 <p>
 Much like in class we will build a word model as we go.
@@ -81,7 +88,7 @@ replace the equation for <m>S</m> by an algebraic constraint
 derive a 1-dimensional, nonlinear model,<me>\frac{d^{} {I}}{d
 {t}^{}}=\beta I (N-I)-\gamma I.</me> If we define our model
 <m>h(I)=\beta I (N-I)-\gamma I,</m> we can plot the more interesting
-version of our phase line as in Fig. <xref ref="fig-phase" />. Ignoring
+version of our phase line as in <xref ref="fig-phase" />. Ignoring
 graphs for the moment, we can also compute equilibria of continuous time
 models, <term>defined as</term> solutions to <m>h(I^*)=0</m>. This gives
 <m>I^*=0</m> and <m>I^*=N-\frac{\gamma}{\beta}.</m> It might prove
@@ -227,7 +234,7 @@ is unchanging along the lines <m>Y=0</m> and <m>X=\frac{s}{n}</m> in the
 <m>(X, Y)</m>-plane. Equilibria require both equations be satisfied
 simultaneously, thus opposite nullclines must intersect so that
 <em>both</em> of <m>X</m> and <m>Y</m> are unchanging. We will jump
-ahead and plot <em>everything</em> in Fig. <xref ref="fig-pred-prey-pp"
+ahead and plot <em>everything</em> in <xref ref="fig-pred-prey-pp"
 />, this includes trajectories in the phase plane and <sq>direction
 arrows.</sq> 
 </p> <figure xml:id="fig-pred-prey-pp"> <image source="./images/pred_X.png"/> <caption>On
@@ -235,8 +242,7 @@ lines <m>\frac{d^{} {X}}{d {t}^{}}=0</m>, motion is in the vertical
 direction. On lines <m>\frac{d^{} {Y}}{d {t}^{}}=0</m>, motion is in the
 horizontal direction. </caption> </figure> 
 <p>
-Direction arrows in
-Fig.. <xref ref="fig-pred-prey-pp" />, are obtained by treating the
+Direction arrows in <xref ref="fig-pred-prey-pp" />, are obtained by treating the
 individual differential equations as inequalities. The motivation is
 that we know that <me>\frac{d^{} {X}}{d {t}^{}}&gt;0</me> when
 <me>(r-mY)X&gt;0.</me> Since <m>X&gt;0</m> is of interest, the to ensure
@@ -256,7 +262,7 @@ that these solutions do not spiral in towards or out from the
 equilibrium. To know for certain, we would need to study the
 <sq>linearized</sq> dynamics near each equilibrium point, including the
 point <m>(0, 0)</m>, as well. Since we have solutions, we might as well
-plot them in time (see Fig. <xref ref="fig-pred-prey" />). 
+plot them in time (see <xref ref="fig-pred-prey" />). 
 </p>
 <figure xml:id="fig-pred-prey"> <image source="./images/pred_XY_t.png"/> <caption>Numbers (or
 <m>\text{densities}=\frac{\text{number}}{\text{area}}</m>) of prey
@@ -441,7 +447,7 @@ Similarly, we can compute that, if either or . By their definition,
 on , the motion in the <m>A</m> direction is zero, and dynamics are
 strictly increasing (or decreasing) in <m>B</m>. We have to consider a
 variety of parameter combinations and relative magnitudes. This lets us
-plot four distinct phase portraits, shown in Fig. <xref ref="fig-compet-A-only"/> - Fig. <xref ref="fig-compet-saddle" />
+plot four distinct phase portraits, shown in <xref ref="fig-compet-A-only"/> - <xref ref="fig-compet-saddle" />
 </p>
 
 <figure xml:id="fig-compet-A-only"> <image source="./images/compet_A.png"/> <caption>When
@@ -499,14 +505,31 @@ enzymatic reactions.
 <example xml:id="example1-sir-models"> 
 <title>SIR models</title> 
 <p>
-Recall the SIR model (illustrated in Fig. <xref
-ref="fig::sir_flow" />), where <m>S</m>, <m>I</m>, and <m>R</m> are the
+Recall the SIR model (illustrated in <xref ref="fig-sir-flow" />), where <m>S</m>, <m>I</m>, and <m>R</m> are the
 host population densities of susceptible, infect<em>ious</em>, and
 recovered (or removed) hosts. Susceptible hosts are infected at a rate
 <m>\beta(N)\left(\frac{I}{N}\right)</m> and infectious hosts recover (or
-are removed by death) at a rate <m>\gamma</m>. =[draw, fill=white,
-minimum size=3em, circle] =[ fill=white, minimum size=3em, circle] 
+are removed by death) at a rate <m>\gamma</m>. 
 </p>
+
+<figure xml:id="fig-sir-flow">
+  <caption>Flow diagram for SIR model.</caption>
+  <image width="15%" xml:id="poset">
+
+<latex-image >
+\begin{tikzpicture}
+ \node [int2] (a) {};
+ \node [int] (n-1) [right of=a] {$S$};
+ \node [int] (n) [right of=n-1] {$I$};
+ \node [int] (n+1) [right of=n] {$R$};
+ \node [int2] (b) [right of=n+1]{};
+ \path[->, bend left] (n-1) edge node [label=above:{$\beta(N)\left(\frac{I}{N}\right)$}] {} (n);
+ \path[->, bend left] (n) edge node [label=above:{$\gamma$}] {} (n+1);
+\end{tikzpicture}
+</latex-image>
+  </image>
+
+</figure>
 
 <p>
 The prevailing models in the literature are called <sq>mass
@@ -561,11 +584,13 @@ misleading equations), <me>\begin{aligned} \frac{d^{} {X}}{d
 {t}^{}}&amp;=sXY-qY.\end{aligned}</me> The interaction term, <m>sXY</m>,
 is the term that we focus on. This term represents predation in the
 <m>\frac{d^{} {X}}{d {t}^{}}</m>-equation, but growth in the
-<m>\frac{d^{} {Y}}{d {t}^{}}</m>-equation (see Fig. <xref
-ref="fig::PP_units" />). 
+<m>\frac{d^{} {Y}}{d {t}^{}}</m>-equation (see <xref
+ref="fig-PP-units" />). 
 </p>
 
-<table> <caption></caption> <tabular> <row class="odd"> <cell
+<table xml:id="tab-pp-units">
+<title></title>
+<tabular> <row class="odd"> <cell
 halign="center">predation</cell> <cell
 halign="center"><m>\rightarrow</m></cell> <cell
 halign="center">growth</cell> </row> <row class="even"> <cell
@@ -653,8 +678,7 @@ number}\\\text{of $Z$ per
 cell}\end{tabular}\right]\times\left[\begin{tabular} {c}\text{average
 number of}\\\text{cells per volume}\end{tabular}\right].</me> Treating
 <m>N</m>, <m>X_0</m>, <m>X_1</m>, and <m>C</m> as volumetric
-concentrations we can use the reaction diagram (Fig. <xref
-ref="fig::nutrient_recept" />) to build differential equations to
+concentrations we can use the reaction diagram (<xref ref="fig-nutrient-recept" />) to build differential equations to
 describe the changes in concentrations. 
 </p>
 
@@ -702,11 +726,14 @@ parameters are positive, both nullclines saturate to a value
 parameters, we know that the half saturation constant of the <m>X_1</m>
 nullcline is larger than that of the <m>N</m> nullcline. The nullclines,
 direction arrows on the nullclines, and a sample trajectory are
-illustrated in Fig. <xref ref="fig-mm-kinetics" />. 
+illustrated in <xref ref="fig-mm-kinetics" />. 
 </p>
-<!-->
-<figure xml:id="fig-mm-kinetics"> <image source="./images/mm_nullclines.png"/> <caption>Nutrient-receptor
-reaction.</caption> </figure> </paragraphs> </subsubsection>
+
+<figure xml:id="fig-mm-kinetics"> <image source="./images/mm_nullclines.png"/> 
+<caption>Nutrient-receptor reaction.</caption> </figure> 
+</paragraphs> 
+<!--></subsubsection>-->
+
 <subsubsection
 xml:id="equilibrium-assumption-vs.-the-quasi-steady-state-assumption ">
 
@@ -716,7 +743,7 @@ assumption</title>
 The notes of the following section have not been
 typeset. A rough, handwritten copy is included. If you have a better
 copy, I’d be happy to see it. 
-</p>-->
+</p>
 
 </paragraphs>
 

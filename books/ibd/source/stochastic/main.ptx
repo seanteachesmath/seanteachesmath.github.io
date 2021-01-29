@@ -27,7 +27,7 @@ In other words, the same model and conditions can give rise to
 
 <term>very</term> different dynamics. These are connected in that we
 understand the deterministic analog of a stochastic model to capture the
-mean behavior (see Fig <xref ref="fig-stoch-sample" />). 
+mean behavior (see <xref ref="fig-stoch-sample" />). 
 </p>
 <figure xml:id="fig-coin-flips-100"> <image source="./images/coin_flips_1000.png"/> <caption>Results of 1000
 stochastic simulations (colored) and exponential solution to the
@@ -82,15 +82,59 @@ perhaps important to think in terms of integer-valued states. Let
 cell culture of a fascinating biological experiment. We should note
 that, while the process is discrete (in the number of cells), time is
 continuous. The number of animals changes by a single individual through
-births (to the right) and deaths (to the left) as illustrated in
-Fig. <xref ref="fig-bdp"/>. 
+births (to the right) and deaths (to the left) as illustrated in <xref ref="fig-bdp"/>. 
 </p>
-<!-->
-<p> =[draw, fill=white, minimum size=3em, circle] =[ fill=white, minimum
-size=3em, circle] 
-</p>-->
 
-<p> To make use of the diagram in Fig. <xref ref="fig-bdp" /> we should
+<figure xml:id="fig-bdp">
+ <caption>Transitions and transition probabilities in Markov Process.</caption>
+ <image width="15%" xml:id="poset">
+
+<latex-image >
+<!-->\tikzstyle{int}=[draw, fill=white, minimum size=3em, circle]
+\tikzstyle{int2}=[ fill=white, minimum size=3em, circle]-->
+<!-->
+\begin{tikzpicture}
+ \node [circle] (a) {\dots};
+ \node [circle] (n-1) [right of=a] {\(n-1\)};
+ \node [circle] (n) [right of=n-1] {\(n\)};
+ \node [circle] (n+1) [right of=n] {\(n+1\)};
+ \node [circle] (b) [right of=n+1]{\dots};
+
+
+ \path[->, bend left] (a) edge node [label=above:{\((n-2)r\)}] {} (n-1);
+ \path[->, bend left] (n-1) edge node [label=above:{\( (n-1)r\)}] {} (n);
+ \path[->, bend left] (n) edge node [label=above:{\(nr\)}] {} (n+1);
+ \path[->, bend left] (n+1) edge node [label=above:{\((n+1)r\)}] {} (b);
+ 
+ \path[->, bend left] (b) edge node [label=below:{\((n+2)\mu\)}] {} (n+1);
+ \path[->, bend left] (n+1) edge node [label=below:{\((n+1)\mu\)}] {} (n);
+ \path[->, bend left] (n) edge node [label=below:{\(n\mu\)}] {} (n-1);
+ \path[->, bend left] (n-1) edge node [label=below:{\((n-1)\mu\)}] {} (a);
+\end{tikzpicture}-->
+\begin{tikzpicture}
+\draw (0,0) -- (0,1);
+\draw (1,0) -- (1,1) -- (1,2) -- (1,3);
+\draw (0,0) -- (1,2);
+\draw (0,1) -- (1,0);
+\draw [fill] (0,0) circle [radius=0.1];
+\draw [fill] (0,1) circle [radius=0.1];
+\draw [fill] (1,0) circle [radius=0.1];
+\draw [fill] (1,1) circle [radius=0.1];
+\draw [fill] (1,2) circle [radius=0.1];
+\draw [fill] (1,3) circle [radius=0.1];
+\node [left] at (0,0) {$x$};
+\node [left] at (0,1) {$b$};
+\node [right] at (1,0) {$a$};
+\node [right] at (1,1) {$y$};
+\node [right] at (1,2) {$c$};
+\node [right] at (1,3) {$d$};
+\end{tikzpicture}
+</latex-image>
+ </image>
+
+</figure>
+
+<p> To make use of the diagram in <xref ref="fig-bdp" /> we should
 let <me>P_n(t)=\text{Prob}(\text{counting \(n\) animals at time
 \(t\)}),</me> and consider how these probabilities evolve in time for
 all <m>n</m>. One important fact is that <me>P_i(0)=\begin{cases}1,
@@ -189,8 +233,7 @@ recording the number alive at the start of each round. </p> </li>
 </ol>
 </p>
 
-<p> A sample result for two populations is plotted in Fig. <xref
-ref="fig::death_sim" />. 
+<p> A sample result for two populations is plotted in <xref ref="fig-in-class-sim" />. 
 </p>
 <figure xml:id="fig-in-class-sim"> <image source="./images/inclass_sim.png"/> <caption>Numbers of survivors
 in independent simulations with probability of death equal to one half.
@@ -199,6 +242,25 @@ Red curve illustrates the expected number of survivors.
 
 </figure> 
 
+<figure xml:id="fig-bdp2">
+ <caption>Transitions and transition rates in Markov Process. In particular, the rates for leaving the state $n$.</caption>
+ <image width="15%" xml:id="poset">
+
+<latex-image >
+\begin{tikzpicture}
+ \node [int] (n-1) {$n-1$};
+ \node [int] (n) [right of=n-1] {$n$};
+ \node [int] (n+1) [right of=n] {$n+1$};
+
+ \path[->, bend left] (n) edge node [label=above:{$nr$}] {} (n+1);
+ \path[->, bend left] (n) edge node [label=above:{$n\mu$}] {} (n-1);
+\end{tikzpicture}
+</latex-image>
+ </image>
+
+</figure>
+
+
 </paragraphs> 
 
 <paragraphs xml:id="bold-claim-revisited">
@@ -206,8 +268,7 @@ Red curve illustrates the expected number of survivors.
 <title>Bold claim revisited</title>
 
 <p> Previously, we claimed that all populations go to extinction (in the
-absence of immigration). If we wish to simulate the process described in
-Fig. <xref ref="fig-bdp2" />, we need to track a few pieces of
+absence of immigration). If we wish to simulate the process described in <xref ref="fig-bdp2" />, we need to track a few pieces of
 information: the event that occurs (a birth or a death), and the time
 that the event occurs. =[draw, fill=white, minimum size=3em, circle] =[
 fill=white, minimum size=3em, circle] 
@@ -277,8 +338,7 @@ time, <m>t</m>, we simply update our state and repeat the process for
 until we reach either a fixed number of events, a fixed final time, or a
 population that becomes extinct (or reaches some other pre-specified
 condition). An example solution to the birth-death process is plotted in
-Fig. <xref ref="fig-bdp-result" />, where unlike in Fig. <xref
-ref="fig::death_sim" /> the rate of birth is non-zero. 
+<xref ref="fig-stoch-sample" />, where unlike in <xref ref="fig-in-class-sim" /> the rate of birth is non-zero. 
 </p>
 <figure xml:id="fig-stoch-sample"> <image source="./images/sample.png"/> <caption>Sample solutions to the
 stochastic process with the deterministic result (or expectation) in

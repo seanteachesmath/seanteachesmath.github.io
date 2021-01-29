@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-28T19:20:31-06:00       *-->
+<!--*       on 2021-01-28T20:32:07-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -58,6 +58,8 @@ MathJax.Hub.Config({
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{cancel}\newcommand{\BibTeX}{\textsc{Bib}\TeX}
+\tikzstyle{int}=[draw, fill=white, minimum size=3em, circle]
+\tikzstyle{int2}=[ fill=white, minimum size=3em, circle]
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -95,43 +97,33 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="systems-des.html" data-scroll="systems-des"><span class="codenumber">3</span> <span class="title">Systems of differential equations as models</span></a><ul>
-<li><a href="two-dimensional-systems.html" data-scroll="two-dimensional-systems">Two-dimensional systems of differential equations as models</a></li>
-<li><a href="harvesting-and-predator-prey.html" data-scroll="harvesting-and-predator-prey">Harvesting and predator-prey</a></li>
-<li><a href="higher-dimensional-systems.html" data-scroll="higher-dimensional-systems">Higher-dimensional systems of differential equations as models</a></li>
-</ul>
-</li>
-<li class="link">
-<a href="introduction-to-stochastic-processes.html" data-scroll="introduction-to-stochastic-processes"><span class="codenumber">4</span> <span class="title">Stochastic models</span></a><ul>
+<a href="introduction-to-stochastic-processes.html" data-scroll="introduction-to-stochastic-processes"><span class="codenumber">3</span> <span class="title">Stochastic models</span></a><ul>
 <li><a href="stochastic-model.html" data-scroll="stochastic-model">What is a stochastic process?</a></li>
 <li><a href="introduction-to-stochastic-models.html" data-scroll="introduction-to-stochastic-models">Introduction to stochastic models</a></li>
 <li><a href="birth-death-processes-and-the-gillespie-algorithm.html" data-scroll="birth-death-processes-and-the-gillespie-algorithm">Birth-death processes and the Gillespie algorithm</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="introduction-single-dtds.html" data-scroll="introduction-single-dtds"><span class="codenumber">5</span> <span class="title">Discrete-time dynamical systems</span></a><ul><li><a href="what-is-dtds.html" data-scroll="what-is-dtds">What is a discrete-time dynamical system?</a></li></ul>
-</li>
-<li class="link">
-<a href="higher-order-dtds.html" data-scroll="higher-order-dtds"><span class="codenumber">6</span> <span class="title">Discrete-time dynamical systems with linear algebra</span></a><ul><li><a href="discrete-time-with-linear-algebra.html" data-scroll="discrete-time-with-linear-algebra" class="active">Discrete-time dynamical systems with linear algebra</a></li></ul>
+<a href="higher-order-dtds.html" data-scroll="higher-order-dtds"><span class="codenumber">4</span> <span class="title">Discrete-time dynamical systems with linear algebra</span></a><ul><li><a href="discrete-time-with-linear-algebra.html" data-scroll="discrete-time-with-linear-algebra" class="active">Discrete-time dynamical systems with linear algebra</a></li></ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="discrete-time-with-linear-algebra"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">6.1</span> <span class="title">Discrete-time dynamical systems with linear algebra</span>
+<span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Discrete-time dynamical systems with linear algebra</span>
 </h2>
 <section class="subsection" id="matrix-models-2d-linear-discrete-time-dynamics"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.1.1</span> <span class="title">Matrix models: 2D, Linear, Discrete-time Dynamics</span>
+<span class="type">Subsection</span> <span class="codenumber">4.1.1</span> <span class="title">Matrix models: 2D, Linear, Discrete-time Dynamics</span>
 </h3>
-<p id="p-182">We spent some time on the Nicholson-Bailey model for a few important reasons: largely because it is a great example of the modeling process. The results it generates may be bothersome. But the idea that we told a rough story, then iteratively refined it is the art of mathematical modeling.</p>
-<p id="p-183">Recall our example concerning weekly dandelion dynamics. Previously, we counted only the number of flowering plants present in our ‘yard’ each week. We can count a bit more carefully, and take advantage of more biological information if we think about the ’structure’ of the population. Ignoring seeds, in reality we have at least a few ways to break down the plant community:</p>
-<ul id="p-184" class="disc">
-<li id="li-35"><p id="p-185">juveniles vs. adults</p></li>
-<li id="li-36"><p id="p-186">seedlings vs. vegetative vs. flowering vs. seed-setting</p></li>
-<li id="li-37"><p id="p-187">non-reproductive vs. reproductive</p></li>
+<p id="p-106">We spent some time on the Nicholson-Bailey model for a few important reasons: largely because it is a great example of the modeling process. The results it generates may be bothersome. But the idea that we told a rough story, then iteratively refined it is the art of mathematical modeling.</p>
+<p id="p-107">Recall our example concerning weekly dandelion dynamics. Previously, we counted only the number of flowering plants present in our ‘yard’ each week. We can count a bit more carefully, and take advantage of more biological information if we think about the ’structure’ of the population. Ignoring seeds, in reality we have at least a few ways to break down the plant community:</p>
+<ul id="p-108" class="disc">
+<li id="li-23"><p id="p-109">juveniles vs. adults</p></li>
+<li id="li-24"><p id="p-110">seedlings vs. vegetative vs. flowering vs. seed-setting</p></li>
+<li id="li-25"><p id="p-111">non-reproductive vs. reproductive</p></li>
 </ul>
-<p id="p-188">We will lump together the seedlings and vegetative plans as ‘non-reproductive’ and the flowering and seed-setting plants as ‘reproductive’. Let \(V_t\) be the number of non-reproductive (vegetative) plants in the yard and \(R_t\) be the number of reproductive plants in the yard, both at week \(t\text{.}\)</p>
-<p id="p-189">We will use familiar notation for parameters. Since it is challenging to count seeds after they have left the plant, and nobody vacuums seeds from the yard, we’ll focus on the life stages above.</p>
-<figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.1.1<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<p id="p-112">We will lump together the seedlings and vegetative plans as ‘non-reproductive’ and the flowering and seed-setting plants as ‘reproductive’. Let \(V_t\) be the number of non-reproductive (vegetative) plants in the yard and \(R_t\) be the number of reproductive plants in the yard, both at week \(t\text{.}\)</p>
+<p id="p-113">We will use familiar notation for parameters. Since it is challenging to count seeds after they have left the plant, and nobody vacuums seeds from the yard, we’ll focus on the life stages above.</p>
+<figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.1.1<span class="period">.</span></span><span class="space"> </span></figcaption><table>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(s\)</td>
 <td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">be the number of seedlings generated per plant</td>
@@ -144,7 +136,7 @@ MathJax.Hub.Config({
 <td class="l m b0 r0 l0 t0 lines">\(a\)</td>
 <td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">be the fraction of adults that survive</td>
 </tr>
-</table></figure><p id="p-190">This means we can write</p>
+</table></figure><p id="p-114">This means we can write</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned} V_{t+1}&amp;=0\cdot
@@ -162,13 +154,13 @@ $a$\end{tabular}\right)\left(\begin{tabular}{c}$V_{t
 \end{equation*}
 </div>
 <p data-braille="continuation">With a single equation, it was easy enough to determine growth. This is less obvious with a higher dimensional model. Additionally, we might be interested in the following questions:</p>
-<ul id="p-191" class="disc">
-<li id="li-38"><p id="p-192">Will the population grow?</p></li>
-<li id="li-39"><p id="p-193">If it grows, how fast is it going to grow?</p></li>
-<li id="li-40"><p id="p-194">What is the balance between reproductive and non-reproductive dandelions in the population?</p></li>
+<ul id="p-115" class="disc">
+<li id="li-26"><p id="p-116">Will the population grow?</p></li>
+<li id="li-27"><p id="p-117">If it grows, how fast is it going to grow?</p></li>
+<li id="li-28"><p id="p-118">What is the balance between reproductive and non-reproductive dandelions in the population?</p></li>
 </ul>
-<p id="p-195">For a plant starting in the non-reproductive state (a one week old plant), we track its lifetime reproduction in the following table:</p>
-<figure class="table table-like" id="table-7"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.1.2<span class="period">.</span></span><span class="space"> </span>Starting with a single female, she must survive to adulthood (\(\sigma\)), then every time after survive another week as an adult (a).</figcaption><table>
+<p id="p-119">For a plant starting in the non-reproductive state (a one week old plant), we track its lifetime reproduction in the following table:</p>
+<figure class="table table-like" id="table-2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.1.2<span class="period">.</span></span><span class="space"> </span>Starting with a single female, she must survive to adulthood (\(\sigma\)), then every time after survive another week as an adult (a).</figcaption><table>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Age (Weeks)</td>
 <td class="l m b0 r0 l0 t0 lines">Population</td>
@@ -204,8 +196,8 @@ $a$\end{tabular}\right)\left(\begin{tabular}{c}$V_{t
 <td class="l m b0 r0 l0 t0 lines">…</td>
 <td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">…</td>
 </tr>
-</table></figure><p id="p-196">Next we append a column for the reproductive value of each age (remembering that our model only tracks two age classes, but once plants flower they <em class="emphasis">could</em> survive indefinitely):</p>
-<figure class="table table-like" id="table-8"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.1.3<span class="period">.</span></span><span class="space"> </span>Starting with a single female, she must survive to adulthood (\(\sigma\)), then every time after survive another week as an adult (a).</figcaption><table>
+</table></figure><p id="p-120">Next we append a column for the reproductive value of each age (remembering that our model only tracks two age classes, but once plants flower they <em class="emphasis">could</em> survive indefinitely):</p>
+<figure class="table table-like" id="table-3"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.1.3<span class="period">.</span></span><span class="space"> </span>Starting with a single female, she must survive to adulthood (\(\sigma\)), then every time after survive another week as an adult (a).</figcaption><table>
 <tr>
 <td class="l m b0 r0 l0 t0 lines">Age (Weeks)</td>
 <td class="l m b0 r0 l0 t0 lines">Population</td>
@@ -249,7 +241,7 @@ a ^{n-2}\)</td>
 <td class="l m b0 r0 l0 t0 lines">…</td>
 <td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">…</td>
 </tr>
-</table></figure><p id="p-197">Starting from seedling, the expected lifetime reproduction of a plant is</p>
+</table></figure><p id="p-121">Starting from seedling, the expected lifetime reproduction of a plant is</p>
 <div class="displaymath">
 \begin{equation*}
 ELR=s\sigma+s\sigma a + s\sigma a^2 + \dots .
@@ -279,18 +271,18 @@ s\sigma+a&gt;1!
 \end{equation*}
 </div>
 <article class="paragraphs" id="questions"><h5 class="heading"><span class="title">Questions.</span></h5>
-<ul id="p-198" class="disc">
-<li id="li-41"><p id="p-199">What’s so special about ELR as a measure of growth?</p></li>
-<li id="li-42"><p id="p-200">How does ELR relate to eigenvalues?</p></li>
+<ul id="p-122" class="disc">
+<li id="li-29"><p id="p-123">What’s so special about ELR as a measure of growth?</p></li>
+<li id="li-30"><p id="p-124">How does ELR relate to eigenvalues?</p></li>
 </ul></article><article class="paragraphs" id="answers"><h5 class="heading"><span class="title">Answers.</span></h5>
-<p id="p-201">For a matrix \(A\text{,}\) like our transition matrix above, a number \(\lambda\) is an eigenvalue with eigenvector \(x\) if</p>
+<p id="p-125">For a matrix \(A\text{,}\) like our transition matrix above, a number \(\lambda\) is an eigenvalue with eigenvector \(x\) if</p>
 <div class="displaymath">
 \begin{equation*}
 Ax=\lambda x.
 \end{equation*}
 </div>
 <p data-braille="continuation">The eigenvalue reduces the dimension in multidimensional problems. It turns matrix multiplication into scalar multiplication. How do we find eigenvalues?</p></article><article class="paragraphs" id="linear-algebra-review"><h5 class="heading"><span class="title">Linear algebra review.</span></h5>
-<p id="p-202">We first want to write our eigenvalue problem as:</p>
+<p id="p-126">We first want to write our eigenvalue problem as:</p>
 <div class="displaymath">
 \begin{equation*}
 Ax-\lambda
@@ -305,7 +297,7 @@ I)x=0,
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(I\) is the appropriate ‘identity matrix’.</p>
-<p id="p-203">Let’s take</p>
+<p id="p-127">Let’s take</p>
 <div class="displaymath">
 \begin{equation*}
 A= \left(\begin{tabular}{cc}$a$ &amp; $b$\\$c$ &amp;
@@ -320,7 +312,7 @@ A-\lambda I=
 $d-\lambda$\end{tabular}\right).
 \end{equation*}
 </div>
-<p id="p-204">Eigenvalues solve</p>
+<p id="p-128">Eigenvalues solve</p>
 <div class="displaymath">
 \begin{equation*}
 \operatorname{det}(A-\lambda I)=0.
@@ -333,7 +325,7 @@ $d-\lambda$\end{tabular}\right).
 0&amp;=\lambda^2-(a+d)\lambda+ad-bc\end{ aligned}
 \end{equation*}
 </div>
-<p id="p-205">Solutions are</p>
+<p id="p-129">Solutions are</p>
 <div class="displaymath">
 \begin{equation*}
 \lambda_{\pm}=\frac{(a+d)\pm\sqrt{(a+
@@ -341,10 +333,10 @@ d)^2-4(ad-bc)}}{2}.
 \end{equation*}
 </div>
 <p data-braille="continuation">From here it helps to consider specific examples so we do not have to solve equations containing obtuse algebraic expressions.</p></article></section><section class="subsection" id="linear-discrete-time-models-2d-1"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.1.2</span> <span class="title">Linear discrete-time models (2D)</span>
+<span class="type">Subsection</span> <span class="codenumber">4.1.2</span> <span class="title">Linear discrete-time models (2D)</span>
 </h3>
 <article class="paragraphs" id="question"><h5 class="heading"><span class="title">Question..</span></h5>
-<p id="p-206">How do structured and unstructured populations differ? From a one dimensional model ignoring plant developmental stage,</p>
+<p id="p-130">How do structured and unstructured populations differ? From a one dimensional model ignoring plant developmental stage,</p>
 <div class="displaymath">
 \begin{equation*}
 N_t=r N_t,
@@ -363,7 +355,7 @@ M=\left(\begin{tabular}{cc}$0$ &amp; $s$\\$\sigma$ &amp;
 $a$\end{tabular}\right).
 \end{equation*}
 </div>
-<p id="p-207">Keeping with our example, eigenvalues of \(M\) are found using</p>
+<p id="p-131">Keeping with our example, eigenvalues of \(M\) are found using</p>
 <div class="displaymath">
 \begin{equation*}
 \det\left(\begin{tabular}{cc}$-\lambda$ &amp; $s$\\$\sigma$ &amp;
@@ -384,7 +376,7 @@ $a-\lambda$\end{tabular}\right)=0.
 \lambda_\pm = \frac{a\pm\sqrt{a^2+4s\sigma}}{2}.
 \end{equation*}
 </div>
-<p id="p-208">Suppose we know the initial plant distribution,</p>
+<p id="p-132">Suppose we know the initial plant distribution,</p>
 <div class="displaymath">
 \begin{equation*}
 P_0=\left(\begin{tabular}{c}$V_0$\\$R_0$\end{ tabular}\right),
@@ -428,7 +420,7 @@ P_t\approx c_1
 \end{equation*}
 </div>
 <p data-braille="continuation">We will see how this approximation works at the end of the following example. But, perhaps motivated by this approximation, we see that the magnitude of \(\lambda_1\) is important to the growth of the population, both \(V_t\) and \(R_t\text{.}\) The population changes by a factor \(\lambda_1\) each generation. It grows if \(\lambda_1&gt;1\) and shrinks if \(\lambda_1&lt;1\text{.}\)</p>
-<p id="p-209">Let \(\lambda_1\) be the positive eigenvalue, \(\lambda_1&gt;1\text{,}\)</p>
+<p id="p-133">Let \(\lambda_1\) be the positive eigenvalue, \(\lambda_1&gt;1\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned} \lambda_1 =
@@ -457,19 +449,19 @@ s\sigma&amp;&lt;s\sigma(s\sigma+a)\\
 \end{equation*}
 </div>
 <p data-braille="continuation">This is satisfied when \(r=s\sigma+a&gt;1\text{,}\) thus \(1&lt;\lambda&lt;ELR\text{.}\) For the reverse, \(ELR&lt;\lambda&lt;1\) when \(r=s\sigma+a&lt;1\text{.}\) We will also look at the relationships between \(r\text{,}\) \(ELR\text{,}\) and \(\lambda\) in the example, so that we can actually compute eigenpair.</p></article><article class="example example-like" id="example-matrix-model"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-matrix-model"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">A matrix model.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-matrix-model"><article class="example example-like"><p id="p-210">Recall \(r=s\sigma+a\) was the per generation growth rate from the one-equation model. In that model, we made no distinction between plant growth stages, an assumed that all plants were capable of reproducing. When we considered the reproductive schedule of our plants, we derived \(ELR\) as a measure of the replacement rate of each individual plant. Let \(a=\frac{2}{3}\text{,}\) \(s=\frac{16}{9}\text{,}\) \(\sigma=\frac{1}{2}\text{,}\) so that, \(r=\left(\frac{16}{9}\right)\left(\frac{1}{2}\ right)+
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">A matrix model.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-matrix-model"><article class="example example-like"><p id="p-134">Recall \(r=s\sigma+a\) was the per generation growth rate from the one-equation model. In that model, we made no distinction between plant growth stages, an assumed that all plants were capable of reproducing. When we considered the reproductive schedule of our plants, we derived \(ELR\) as a measure of the replacement rate of each individual plant. Let \(a=\frac{2}{3}\text{,}\) \(s=\frac{16}{9}\text{,}\) \(\sigma=\frac{1}{2}\text{,}\) so that, \(r=\left(\frac{16}{9}\right)\left(\frac{1}{2}\ right)+
 \left(\frac{2}{3}\right)=
 \left(\frac{14}{9}\right)\approx1.\overline{55}\text{.}\) Also, \(ELR=\frac{\left(\frac{16}{9}\right)\left(\
 frac{1}{2}\right)}{\frac{1}{3}}=\frac{8}{3}\
-approx2.\overline{66}\text{.}\)When vegetative plants are less likely to mature (small \(\sigma\text{,}\) Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::elr_eig" missing]</code>) weekly adult survivorship, \(a\text{,}\) must increase in order for population growth to occur (\(r, ELR, \lambda&gt;1\)).</p>
-<figure class="figure figure-like" id="figure-13"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="elr_vs_eig_a.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.5<span class="period">.</span></span><span class="space"> </span>Relationships between \(r\text{,}\) \(ELR\text{,}\) and \(\lambda\text{,}\) for fixed \(s=\frac{16}{9}\) and (left) \(\sigma=\frac{1}{2}\) or (right) \(\sigma=\frac{1}{3}\text{,}\) over a range of adult weekly survival probabilities, \(0\leq a\leq
-1\text{.}\)</figcaption></figure><figure class="figure figure-like" id="figure-14"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/elr_vs_eig_b.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.6<span class="period">.</span></span><span class="space"> </span>Relationships between \(r\text{,}\) \(ELR\text{,}\) and \(\lambda\text{,}\) for fixed \(s=\frac{16}{9}\) and (left) \(\sigma=\frac{1}{2}\) or (right) \(\sigma=\frac{1}{3}\text{,}\) over a range of adult weekly survival probabilities, \(0\leq a\leq 1\text{.}\)</figcaption></figure></article></div>
+approx2.\overline{66}\text{.}\)When vegetative plants are less likely to mature (small \(\sigma\text{,}\) <a class="xref" data-knowl="./knowl/fig-elr-eig.html" title="Figure 4.1.5">Figure 4.1.5</a>) weekly adult survivorship, \(a\text{,}\) must increase in order for population growth to occur (\(r, ELR, \lambda&gt;1\)).</p>
+<figure class="figure figure-like" id="fig-elr-eig"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="elr_vs_eig_a.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.5<span class="period">.</span></span><span class="space"> </span>Relationships between \(r\text{,}\) \(ELR\text{,}\) and \(\lambda\text{,}\) for fixed \(s=\frac{16}{9}\) and (left) \(\sigma=\frac{1}{2}\) or (right) \(\sigma=\frac{1}{3}\text{,}\) over a range of adult weekly survival probabilities, \(0\leq a\leq
+1\text{.}\)</figcaption></figure><figure class="figure figure-like" id="fig-elr-eig2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/elr_vs_eig_b.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.6<span class="period">.</span></span><span class="space"> </span>Relationships between \(r\text{,}\) \(ELR\text{,}\) and \(\lambda\text{,}\) for fixed \(s=\frac{16}{9}\) and (left) \(\sigma=\frac{1}{2}\) or (right) \(\sigma=\frac{1}{3}\text{,}\) over a range of adult weekly survival probabilities, \(0\leq a\leq 1\text{.}\)</figcaption></figure></article></div>
 <article class="paragraphs" id="question-1"><h5 class="heading"><span class="title">Question..</span></h5>
-<p id="p-211">What is the effect of population structure (tracking flower types), in growing and shrinking flower populations (see Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::elr_eig" missing]</code>)?</p></article><article class="paragraphs" id="answer"><h5 class="heading"><span class="title">Answer..</span></h5>
-<p id="p-212">Imposing structure reduces the growth rate (relative to \(r\)) in growing populations. Imposing structure slows the decay rate (relative to \(r\)) in shrinking populations. In this parameterization,</p>
+<p id="p-135">What is the effect of population structure (tracking flower types), in growing and shrinking flower populations (see <a class="xref" data-knowl="./knowl/fig-elr-eig.html" title="Figure 4.1.5">Figure 4.1.5</a>)?</p></article><article class="paragraphs" id="answer"><h5 class="heading"><span class="title">Answer..</span></h5>
+<p id="p-136">Imposing structure reduces the growth rate (relative to \(r\)) in growing populations. Imposing structure slows the decay rate (relative to \(r\)) in shrinking populations. In this parameterization,</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned} \lambda_\pm &amp;=
@@ -491,9 +483,9 @@ x_2$\end{tabular}\right).
 \end{equation*}
 </div>
 <p data-braille="continuation">Notice that \(ELR&gt;\lambda_+&gt;1\text{,}\) so that the population grows.</p>
-<figure class="figure figure-like" id="figure-15"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/SAD.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.7<span class="period">.</span></span><span class="space"> </span>Left) Weekly temporal dynamics of vegetative and reproductive plants. Right) Stable age distribution and iterated solutions starting from \((V_0,
-R_0)=(0,1)\text{.}\) Initial condition is black dot.</figcaption></figure><p id="p-213">The eigenvector associated with \(\lambda=\frac{4}{3}\) is of the form</p>
+<figure class="figure figure-like" id="fig-SAD"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/SAD.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.7<span class="period">.</span></span><span class="space"> </span>Left) Weekly temporal dynamics of vegetative and reproductive plants. Right) Stable age distribution and iterated solutions starting from \((V_0,
+R_0)=(0,1)\text{.}\) Initial condition is black dot.</figcaption></figure><p id="p-137">The eigenvector associated with \(\lambda=\frac{4}{3}\) is of the form</p>
 <div class="displaymath">
 \begin{equation*}
 v_1=\left(\begin{tabular}{c}$x_1$\\$
@@ -507,8 +499,8 @@ v_1=\left(\begin{tabular}{c}$x_1$\\$
 -\frac{3}{8}x_1$\end{tabular}\right).
 \end{equation*}
 </div></article><article class="paragraphs" id="question-2"><h5 class="heading"><span class="title">Question..</span></h5>
-<p id="p-214">How do the eigenvectors help explain long term population growth (see Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::SAD" missing]</code>)?</p></article><article class="paragraphs" id="answer-1"><h5 class="heading"><span class="title">Answer..</span></h5>
-<p id="p-215">Long-term proportions approach the distribution described by the leading eigenvector. Numbers increase geometrically. Start with a typical initial condition \(P_0=(V_0, R_0)=(0,1)\text{.}\) We first want to express \(P_0\) as a linear combination of eigenvectors.</p>
+<p id="p-138">How do the eigenvectors help explain long term population growth (see <a class="xref" data-knowl="./knowl/fig-SAD.html" title="Figure 4.1.7">Figure 4.1.7</a>)?</p></article><article class="paragraphs" id="answer-1"><h5 class="heading"><span class="title">Answer..</span></h5>
+<p id="p-139">Long-term proportions approach the distribution described by the leading eigenvector. Numbers increase geometrically. Start with a typical initial condition \(P_0=(V_0, R_0)=(0,1)\text{.}\) We first want to express \(P_0\) as a linear combination of eigenvectors.</p>
 <div class="displaymath">
 \begin{equation*}
 \left(\begin{tabular}{c}$0$ \\$1$\end{tabular}\right) =
@@ -552,20 +544,20 @@ P_t\approx\frac{8}{9}\left(\frac{4}{3}\right)^t\left(\begin{
 tabular}{c}$1$\\$\frac{ 3}{4}$\end{tabular}\right).
 \end{equation*}
 </div>
-<p id="p-216">The population will grow 33% larger each generation, but the proportion of young (non-reproductive) and old (reproductive) plants will remain fixed. This suggests that juvenile (tasty young plants) will outnumber the older flowering plants, specifically, the flowering plants will be 75% the abundance of young plants. Alternatively, young plants will be 33% more abundant than old plants. It might also be useful to use our leading eigenvector approximation, rather than our exact matrix solution. We plot the approximate dynamics of each plant type, as well as the comparison of the exact and approximate solutions in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::exac_app" missing]</code></p>
-<figure class="figure figure-like" id="figure-16"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/exact_vs_approx.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.8<span class="period">.</span></span><span class="space"> </span>Left) Approximate dynamics using first eigenpair. Right) Iterated solutions starting from \((V_0, R_0)=(0,1)\) for matrix solutions (open circles) and approximate solutions (closed circles).</figcaption></figure></article></section><section class="subsection" id="nonlinear-discrete-time-models-1d"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.1.3</span> <span class="title">Nonlinear discrete-time models (1D)</span>
+<p id="p-140">The population will grow 33% larger each generation, but the proportion of young (non-reproductive) and old (reproductive) plants will remain fixed. This suggests that juvenile (tasty young plants) will outnumber the older flowering plants, specifically, the flowering plants will be 75% the abundance of young plants. Alternatively, young plants will be 33% more abundant than old plants. It might also be useful to use our leading eigenvector approximation, rather than our exact matrix solution. We plot the approximate dynamics of each plant type, as well as the comparison of the exact and approximate solutions in <a class="xref" data-knowl="./knowl/fig-exac-app.html" title="Figure 4.1.8">Figure 4.1.8</a></p>
+<figure class="figure figure-like" id="fig-exac-app"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/exact_vs_approx.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.8<span class="period">.</span></span><span class="space"> </span>Left) Approximate dynamics using first eigenpair. Right) Iterated solutions starting from \((V_0, R_0)=(0,1)\) for matrix solutions (open circles) and approximate solutions (closed circles).</figcaption></figure></article></section><section class="subsection" id="nonlinear-discrete-time-models-1d"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.1.3</span> <span class="title">Nonlinear discrete-time models (1D)</span>
 </h3>
 <article class="paragraphs" id="review-linear-models"><h5 class="heading"><span class="title">Review: Linear models.</span></h5>
-<p id="p-217">We want to outline our options for solving linear, discrete-time, matrix models. We’ll take a model</p>
+<p id="p-141">We want to outline our options for solving linear, discrete-time, matrix models. We’ll take a model</p>
 <div class="displaymath">
 \begin{equation*}
 P_{t+1}=M P_t,
 \end{equation*}
 </div>
 <p data-braille="continuation">for now we will think of \(M\) as a matrix and \(P_t\) as a vector.</p></article><article class="paragraphs" id="per-capita-production-and-nonlinear-effects"><h5 class="heading"><span class="title">per capita production and nonlinear effects.</span></h5>
-<p id="p-218">So far our model has roughly been,</p>
+<p id="p-142">So far our model has roughly been,</p>
 <div class="displaymath">
 \begin{equation*}
 N_{t+1}=r N_t,
@@ -578,43 +570,43 @@ P_{t+1}=M P_{t},
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(N_t\) and \(r\) are scalars, or \(P_t\) is a vector and \(M\) is a matrix.</p>
-<p id="p-219">As an example of a 1D model, our linear model assumes that</p>
+<p id="p-143">As an example of a 1D model, our linear model assumes that</p>
 <div class="displaymath">
 \begin{equation*}
 \frac{N_{t+1}}{N_t}=r,
 \end{equation*}
 </div>
 <p data-braille="continuation">or the ratio of current population to previous population is \(r\text{,}\) no matter the size of the previous generation. Instead, we might expect that, for a variety of reasons (like space, food, aggression, or lack of resources) this ratio decreases as the current population size increases. Mathematically, this requires \(r=r(N_t)\text{.}\)</p>
-<p id="p-220">In words, small populations are capable of large increases from one generation to the next. But, large populations might only increase by slight amounts over generations. In fact, really large populations might actually shrink. The comparison of linear and nonlinear models is given in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::pcp" missing]</code>.</p>
-<figure class="figure figure-like" id="figure-17"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/lin_nonlin_pcp.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.9<span class="period">.</span></span><span class="space"> </span>Per capita production plots. Left) Generation to generation change independent of population size, Right) change dependent on population size for three famous models of ‘density dependence’.</figcaption></figure><p id="p-221">Notice the peculiarity of the black line (or curve) in the right panel of Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::pcp" missing]</code>(or <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::nonlin_upd" missing]</code>). It quite happily ‘goes negative’, which means for an initially large enough population, the subsequent generation is multiplied by a negative number. Simply stated, that is weird. Fortunately, our other models circumvent this problem by requiring \(p.c.p.&gt;0\) at all population sizes.</p>
-<p id="p-222">Multiplying \(p.c.p\) by population size \(N_t\) gives our updating function, \(f(N_t)=(p.c.p.)\times N_t\text{.}\) Then, our model is</p>
+<p id="p-144">In words, small populations are capable of large increases from one generation to the next. But, large populations might only increase by slight amounts over generations. In fact, really large populations might actually shrink. The comparison of linear and nonlinear models is given in <a class="xref" data-knowl="./knowl/fig-pcp.html" title="Figure 4.1.9">Figure 4.1.9</a>.</p>
+<figure class="figure figure-like" id="fig-pcp"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/lin_nonlin_pcp.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.9<span class="period">.</span></span><span class="space"> </span>Per capita production plots. Left) Generation to generation change independent of population size, Right) change dependent on population size for three famous models of ‘density dependence’.</figcaption></figure><p id="p-145">Notice the peculiarity of the black line (or curve) in the right panel of <a class="xref" data-knowl="./knowl/fig-pcp.html" title="Figure 4.1.9">Figure 4.1.9</a>(or <a class="xref" data-knowl="./knowl/fig-nonlin-upd.html" title="Figure 4.1.15">Figure 4.1.15</a>). It quite happily ‘goes negative’, which means for an initially large enough population, the subsequent generation is multiplied by a negative number. Simply stated, that is weird. Fortunately, our other models circumvent this problem by requiring \(p.c.p.&gt;0\) at all population sizes.</p>
+<p id="p-146">Multiplying \(p.c.p\) by population size \(N_t\) gives our updating function, \(f(N_t)=(p.c.p.)\times N_t\text{.}\) Then, our model is</p>
 <div class="displaymath">
 \begin{equation*}
 N_{t+1}=f(N_t)=(p.c.p.)\times N_t.
 \end{equation*}
 </div>
-<p data-braille="continuation">Some sample updating functions are plotted in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::upd" missing]</code>. Notice that there are some major qualitative changes when we compare the line in the left panel to any of the curves in the right panel. Most importantly, the updating function intersects the resetting line more than once. Again, these intersections suggest that</p>
+<p data-braille="continuation">Some sample updating functions are plotted in <a class="xref" data-knowl="./knowl/fig-upd.html" title="Figure 4.1.10">Figure 4.1.10</a>. Notice that there are some major qualitative changes when we compare the line in the left panel to any of the curves in the right panel. Most importantly, the updating function intersects the resetting line more than once. Again, these intersections suggest that</p>
 <div class="displaymath">
 \begin{equation*}
 N_{t+1}=N_t=N^*.
 \end{equation*}
 </div>
 <p data-braille="continuation">Recalling our previous notation and definitions, these nonlinear models possess multiple equilibria!</p>
-<figure class="figure figure-like" id="figure-18"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/lin_nonlin_upd.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.10<span class="period">.</span></span><span class="space"> </span>Cobwebbing diagrams. Left) Updating functions of linear model, Right) change dependent on population size for three famous models of ‘density dependence’.</figcaption></figure></article><article class="example example-like" id="example-ricker"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-ricker"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Ricker Model.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-ricker"><article class="example example-like"><p id="p-223">We now consider a population \(G_t\text{,}\) which is the number of guppies living in a bowl on our desk. For simplicity, we will assume that we start with a female guppy who is gravid. Guppies are fascinating creatures that can spawn indefinitely after mating once. We’ll ignore the fact that she gives birth to males and females, so that ‘number of guppies’ above actually means ‘number of <em class="emphasis">female</em> guppies.</p>
-<p id="p-224">Guppies are fascinating, but cruel - they are quite happy to eat each other. It’s hard to track, but we know that as the guppy tank fills we see fewer baby guppies (i.e., per capita production drops as in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::pcp" missing]</code>). For a model of guppy dynamics, we will assume</p>
+<figure class="figure figure-like" id="fig-upd"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/lin_nonlin_upd.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.10<span class="period">.</span></span><span class="space"> </span>Cobwebbing diagrams. Left) Updating functions of linear model, Right) change dependent on population size for three famous models of ‘density dependence’.</figcaption></figure></article><article class="example example-like" id="example-ricker"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-ricker"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Ricker Model.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-ricker"><article class="example example-like"><p id="p-147">We now consider a population \(G_t\text{,}\) which is the number of guppies living in a bowl on our desk. For simplicity, we will assume that we start with a female guppy who is gravid. Guppies are fascinating creatures that can spawn indefinitely after mating once. We’ll ignore the fact that she gives birth to males and females, so that ‘number of guppies’ above actually means ‘number of <em class="emphasis">female</em> guppies.</p>
+<p id="p-148">Guppies are fascinating, but cruel - they are quite happy to eat each other. It’s hard to track, but we know that as the guppy tank fills we see fewer baby guppies (i.e., per capita production drops as in <a class="xref" data-knowl="./knowl/fig-pcp.html" title="Figure 4.1.9">Figure 4.1.9</a>). For a model of guppy dynamics, we will assume</p>
 <div class="displaymath">
 \begin{equation*}
 G_{t+1}=rG_t e^{-kG_t}.
 \end{equation*}
 </div>
-<p data-braille="continuation">This model has been sketched above in the green curves of Figs. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::pcp" missing]</code>, <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::upd" missing]</code>.</p>
-<p id="p-225">For a particular choice of parameters we find the following diagram and iterated solution.</p>
-<figure class="figure figure-like" id="figure-19"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/f3.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.12<span class="period">.</span></span><span class="space"> </span>Cobwebbing diagram and iterated solution for \(r=3.7\text{,}\) \(k=0.15\text{.}\) Left) Updating function and cobwebbing, Right) Iterated solution.</figcaption></figure><p id="p-226">It appears that these solutions converge to a value \(G^*\approx8.4\) guppies. Can we do better than this guess? We know that our equilibrium satisfies,</p>
+<p data-braille="continuation">This model has been sketched above in the green curves of <a class="xref" data-knowl="./knowl/fig-pcp.html" title="Figure 4.1.9">Figure 4.1.9</a> and <a class="xref" data-knowl="./knowl/fig-nonlin-upd.html" title="Figure 4.1.15">Figure 4.1.15</a>.</p>
+<p id="p-149">For a particular choice of parameters we find the following diagram and iterated solution.</p>
+<figure class="figure figure-like" id="fig-f3"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/f3.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.12<span class="period">.</span></span><span class="space"> </span>Cobwebbing diagram and iterated solution for \(r=3.7\text{,}\) \(k=0.15\text{.}\) Left) Updating function and cobwebbing, Right) Iterated solution.</figcaption></figure><p id="p-150">It appears that these solutions converge to a value \(G^*\approx8.4\) guppies. Can we do better than this guess? We know that our equilibrium satisfies,</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned} G^*&amp;=rG^*
@@ -623,11 +615,11 @@ G^*&amp;=\frac{\ln r }{k}\end{aligned}
 \end{equation*}
 </div>
 <p data-braille="continuation">Immediately, we should see a few things. First \(G^*=0\) is always a solution to the first equation. Ignoring that, for \(k&gt;0\text{,}\) we have a positive equilibrium only when \(r&gt;1\) so that the logarithm is positive. We now know that for \(r=3.7, k=0.15\text{,}\) \(G^*\approx8.722\text{.}\)</p>
-<p id="p-227">Depending on the intrinsic growth rate \(r\) (<dfn class="terminology">rmax</dfn> in the code) of our guppies, we might see oscillatory or non-oscillatory approaches to equilibria. The solution generated by the black updating function (with \(r=1\)) approaches \(G^*=0\) (i.e., it has no ‘nontrivial’ equilibrium point). Looking again at Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::f3_rmax" missing]</code>, try to uncover a relationship between the tendency of the trajectory to oscillate (right panel) and the crossing point of the updating function and resetting line (left panel).</p>
-<figure class="figure figure-like" id="figure-20"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/f3_rmax.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.13<span class="period">.</span></span><span class="space"> </span>Cobwebbing diagrams and iterated solutions as they depend on the maximal per capita production. Left) A collection of nice updating functions. Right) The corresponding iterated solutions.</figcaption></figure></article></div>
+<p id="p-151">Depending on the intrinsic growth rate \(r\) (<dfn class="terminology">rmax</dfn> in the code) of our guppies, we might see oscillatory or non-oscillatory approaches to equilibria. The solution generated by the black updating function (with \(r=1\)) approaches \(G^*=0\) (i.e., it has no ‘nontrivial’ equilibrium point). Looking again at <a class="xref" data-knowl="./knowl/fig-f3-rmax.html" title="Figure 4.1.13">Figure 4.1.13</a>, try to uncover a relationship between the tendency of the trajectory to oscillate (right panel) and the crossing point of the updating function and resetting line (left panel).</p>
+<figure class="figure figure-like" id="fig-f3-rmax"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/f3_rmax.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.13<span class="period">.</span></span><span class="space"> </span>Cobwebbing diagrams and iterated solutions as they depend on the maximal per capita production. Left) A collection of nice updating functions. Right) The corresponding iterated solutions.</figcaption></figure></article></div>
 <article class="paragraphs" id="a-note-on-stability"><h5 class="heading"><span class="title">A note on stability.</span></h5>
-<p id="p-228">As before (perturbations of linear non-homogeneous models), let \(G_t=G^*+x_t\) and recall \(G_{t+1}=rG_t e^{-kG_t}=F(G_t)\text{.}\) We have,</p>
+<p id="p-152">As before (perturbations of linear non-homogeneous models), let \(G_t=G^*+x_t\) and recall \(G_{t+1}=rG_t e^{-kG_t}=F(G_t)\text{.}\) We have,</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned} \begin{split} x_{t+1}&amp;=G_{t+1}-G^*\\
@@ -645,30 +637,31 @@ x_{t+1}=F'(G^*)x_t=ax_t,
 \end{equation*}
 </div>
 <p data-braille="continuation">where \(\displaystyle a=\left.\frac{d^{} {F}}{d {G_t}^{}}\right|_{G^*}\) describes its growth. The slope of the updating function governs stability. When,</p>
-<ul id="p-229" class="disc">
-<li id="li-43"><p id="p-230">\(a\) is ‘too steep’ at \(G^*\) perturbations near \(G^*\) grow, so solutions diverge <em class="emphasis">from</em> \(G^*\text{.}\)</p></li>
-<li id="li-44"><p id="p-231">\(a\) is ‘shallow enough’ at \(G^*\) perturbations near \(G^*\) decay, so solutions converge <em class="emphasis">to</em> \(G^*\text{.}\)</p></li>
+<ul id="p-153" class="disc">
+<li id="li-31"><p id="p-154">\(a\) is ‘too steep’ at \(G^*\) perturbations near \(G^*\) grow, so solutions diverge <em class="emphasis">from</em> \(G^*\text{.}\)</p></li>
+<li id="li-32"><p id="p-155">\(a\) is ‘shallow enough’ at \(G^*\) perturbations near \(G^*\) decay, so solutions converge <em class="emphasis">to</em> \(G^*\text{.}\)</p></li>
 </ul></article></section><section class="subsection" id="nonlinear-discrete-time-models-1-2d"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.1.4</span> <span class="title">Nonlinear discrete-time models (1, 2D)</span>
+<span class="type">Subsection</span> <span class="codenumber">4.1.4</span> <span class="title">Nonlinear discrete-time models (1, 2D)</span>
 </h3>
 <article class="paragraphs" id="review-pcp-vs-the-updating-function"><h5 class="heading"><span class="title">Review: p.c.p. vs. the updating function.</span></h5>
-<p id="p-232">Multiplying \((p.c.p.)\text{,}\) which is a function of \(N_t\text{,}\) by population size \(N_t\) gives our updating function, \(f(N_t)=(p.c.p.)\times N_t\text{.}\) Then, our model is</p>
+<p id="p-156">Multiplying \((p.c.p.)\text{,}\) which is a function of \(N_t\text{,}\) by population size \(N_t\) gives our updating function, \(f(N_t)=(p.c.p.)\times N_t\text{.}\) Then, our model is</p>
 <div class="displaymath">
 \begin{equation*}
 N_{t+1}=f(N_t)=(p.c.p.)\times N_t.
 \end{equation*}
 </div>
-<p data-braille="continuation">Some sample per capita production curves and the corresponding updating functions are plotted in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::pcp_upd" missing]</code>. Notice that we explicitly ignore immigration here.</p>
-<p id="p-233"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="lin_nonlin_pcp.png" style="width: 100%; height: auto;" alt=""></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="lin_nonlin_upd.png" style="width: 100%; height: auto;" alt=""></div></p>
-<p id="p-234">Notice that there are some major qualitative changes when we compare the lines in the left panel to any of the curves in the right panel. Most importantly, the nonlinear updating function intersects the resetting line more than once. Again, at these intersections</p>
+<p data-braille="continuation">Some sample per capita production curves and the corresponding updating functions are plotted in <a class="xref" data-knowl="./knowl/fig-nonlin-pcp.html" title="Figure 4.1.14">Figure 4.1.14</a>. Notice that we explicitly ignore immigration here.</p>
+<figure class="figure figure-like" id="fig-nonlin-pcp"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/lin_nonlin_pcp.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.14<span class="period">.</span></span><span class="space"> </span></figcaption></figure><figure class="figure figure-like" id="fig-nonlin-upd"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/lin_nonlin_upd.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.15<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-157">Notice that there are some major qualitative changes when we compare the lines in the left panel to any of the curves in the right panel. Most importantly, the nonlinear updating function intersects the resetting line more than once. Again, at these intersections</p>
 <div class="displaymath">
 \begin{equation*}
 N_{t+1}=N_t=N^*.
 \end{equation*}
 </div>
 <p data-braille="continuation">This suggests an alternative method to identify equilibria, which might sometimes be pictured more simply:</p>
-<p id="p-235">Equilibria satisfy \(N_{t+1}=N_t,\) and we denote them by \(N^*=N_{t+1}=N_t\text{.}\) Given a model \(N_{t+1}=f(N_t)N_t\text{,}\) we can see that equilibria occur at points where \(f(N_t)=1\text{.}\) At values of \(N_t\) where our per capita production takes a value of one, we have equilibria.</p>
-<p id="p-236">As before (perturbations of linear non-homogeneous models), let \(G_t=G^*+x_t\) and recall \(G_{t+1}=rG_t e^{-kG_t}=F(G_t)\text{.}\) We have,</p>
+<p id="p-158">Equilibria satisfy \(N_{t+1}=N_t,\) and we denote them by \(N^*=N_{t+1}=N_t\text{.}\) Given a model \(N_{t+1}=f(N_t)N_t\text{,}\) we can see that equilibria occur at points where \(f(N_t)=1\text{.}\) At values of \(N_t\) where our per capita production takes a value of one, we have equilibria.</p>
+<p id="p-159">As before (perturbations of linear non-homogeneous models), let \(G_t=G^*+x_t\) and recall \(G_{t+1}=rG_t e^{-kG_t}=F(G_t)\text{.}\) We have,</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned} \begin{split} x_{t+1}&amp;=G_{t+1}-G^*\\
@@ -686,13 +679,13 @@ x_{t+1}=F'(G^*)x_t=ax_t,
 </div>
 <p data-braille="continuation">where \(\displaystyle
 a=\left.\frac{d^{} {F}}{d {G_t}^{}}\right|_{G^*}\) describes its growth. The slope of the updating function at or near the equilibrium point governs stability. When,</p>
-<ul id="p-237" class="disc">
-<li id="li-45"><p id="p-238">\(a\) is ‘too steep’ at \(G^*\) perturbations near \(G^*\) grow, so solutions diverge <em class="emphasis">from</em> \(G^*\text{.}\)</p></li>
-<li id="li-46"><p id="p-239">\(a\) is ‘shallow enough’ at \(G^*\) perturbations near \(G^*\) decay, so solutions converge <em class="emphasis">to</em> \(G^*\text{.}\)</p></li>
+<ul id="p-160" class="disc">
+<li id="li-33"><p id="p-161">\(a\) is ‘too steep’ at \(G^*\) perturbations near \(G^*\) grow, so solutions diverge <em class="emphasis">from</em> \(G^*\text{.}\)</p></li>
+<li id="li-34"><p id="p-162">\(a\) is ‘shallow enough’ at \(G^*\) perturbations near \(G^*\) decay, so solutions converge <em class="emphasis">to</em> \(G^*\text{.}\)</p></li>
 </ul>
-<p id="p-240">From our linear theory, we know that \(x_t\rightarrow0\) when \(|a|&lt;1\text{.}\)</p></article><article class="example example-like" id="example-cont"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-cont"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.14</span><span class="period">.</span><span class="space"> </span><span class="title">Continued analysis of the Ricker Model.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-cont"><article class="example example-like"><p id="p-241">Recall, \(F(G)=rGe^{-kG}\text{,}\) and</p>
+<p id="p-163">From our linear theory, we know that \(x_t\rightarrow0\) when \(|a|&lt;1\text{.}\)</p></article><article class="example example-like" id="example-cont"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-cont"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.16</span><span class="period">.</span><span class="space"> </span><span class="title">Continued analysis of the Ricker Model.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-cont"><article class="example example-like"><p id="p-164">Recall, \(F(G)=rGe^{-kG}\text{,}\) and</p>
 <div class="displaymath">
 \begin{equation*}
 F'(G)=
@@ -710,14 +703,14 @@ F'(G^*)&amp;=re^{-kG^*}(1-kG^*)\\
 F'(G^*)&amp;=1-\ln(r)\end{aligned}
 \end{equation*}
 </div>
-<p data-braille="continuation">We need \(|F'(G^*)|&lt;1\text{,}\) see Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::rick_bif" missing]</code>. Also, \(G^*=0\) is stable when \(r&lt;1\text{.}\)</p>
-<figure class="figure figure-like" id="figure-21"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/ricker_stab.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.15<span class="period">.</span></span><span class="space"> </span>Left). \(G^*=\frac{\ln(r)}{k}\) is stable for \(1&lt;r&lt;e^2\text{.}\) Right). \(G^*=0\) is stable for \(0&lt;r&lt;1\text{.}\) \(G^*=\frac{\ln(r)}{k}\) is stable for \(1&lt;r&lt;e^2\text{.}\) Beyond \(r&gt;e^2\text{,}\) oscillations emerge around the nontrivial equilibrium.</figcaption></figure><figure class="figure figure-like" id="figure-22"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="ricker_bif.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.16<span class="period">.</span></span><span class="space"> </span>Left). \(G^*=\frac{\ln(r)}{k}\) is stable for \(1&lt;r&lt;e^2\text{.}\) Right). \(G^*=0\) is stable for \(0&lt;r&lt;1\text{.}\) \(G^*=\frac{\ln(r)}{k}\) is stable for \(1&lt;r&lt;e^2\text{.}\) Beyond \(r&gt;e^2\text{,}\) oscillations emerge around the nontrivial equilibrium.</figcaption></figure><p id="p-242"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="ricker.png" style="width: 100%; height: auto;" alt=""></div></p></article></div>
+<p data-braille="continuation">We need \(|F'(G^*)|&lt;1\text{,}\) see <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig-rick-bif" missing]</code>. Also, \(G^*=0\) is stable when \(r&lt;1\text{.}\)</p>
+<figure class="figure figure-like" id="fig-ricker"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/ricker_stab.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.17<span class="period">.</span></span><span class="space"> </span>Left). \(G^*=\frac{\ln(r)}{k}\) is stable for \(1&lt;r&lt;e^2\text{.}\) Right). \(G^*=0\) is stable for \(0&lt;r&lt;1\text{.}\) \(G^*=\frac{\ln(r)}{k}\) is stable for \(1&lt;r&lt;e^2\text{.}\) Beyond \(r&gt;e^2\text{,}\) oscillations emerge around the nontrivial equilibrium.</figcaption></figure><figure class="figure figure-like" id="fig-ricker-bif"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="ricker_bif.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.18<span class="period">.</span></span><span class="space"> </span>Left). \(G^*=\frac{\ln(r)}{k}\) is stable for \(1&lt;r&lt;e^2\text{.}\) Right). \(G^*=0\) is stable for \(0&lt;r&lt;1\text{.}\) \(G^*=\frac{\ln(r)}{k}\) is stable for \(1&lt;r&lt;e^2\text{.}\) Beyond \(r&gt;e^2\text{,}\) oscillations emerge around the nontrivial equilibrium.</figcaption></figure><p id="p-165"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="ricker.png" style="width: 100%; height: auto;" alt=""></div></p></article></div>
 <article class="paragraphs" id="catalog-of-models"><h5 class="heading"><span class="title">Catalog of models.</span></h5>
-<ul id="p-243" class="disc">
-<li id="li-47">
-<p id="p-244">‘Discrete logistic’ or Ricker model</p>
+<ul id="p-166" class="disc">
+<li id="li-35">
+<p id="p-167">‘Discrete logistic’ or Ricker model</p>
 <div class="displaymath">
 \begin{equation*}
 N_{t+1}=N_te^{r(1-\frac{N_t}{K})},
@@ -730,16 +723,16 @@ N_{t+1}=rN_te^{-kN_t}.
 \end{equation*}
 </div>
 </li>
-<li id="li-48">
-<p id="p-245">Hassell model</p>
+<li id="li-36">
+<p id="p-168">Hassell model</p>
 <div class="displaymath">
 \begin{equation*}
 N_{t+1}=\frac{aN_t}{(1+bN_t)^c}.
 \end{equation*}
 </div>
 </li>
-<li id="li-49">
-<p id="p-246">Beverton-Holt model</p>
+<li id="li-37">
+<p id="p-169">Beverton-Holt model</p>
 <div class="displaymath">
 \begin{equation*}
 N_{t+1}=\frac{\lambda
@@ -748,15 +741,15 @@ N_t}{(1+\left(\frac{\lambda-1}{K}\right)N_t) }.
 </div>
 </li>
 </ul></article><article class="paragraphs" id="summary-of-1d-nonlinear-difference-models"><h5 class="heading"><span class="title">Summary of 1D nonlinear difference models.</span></h5>
-<ul id="p-247" class="disc">
-<li id="li-50"><p id="p-248">Multiple equilibriaConsequence of regulation</p></li>
-<li id="li-51"><p id="p-249">Bifurcations Existence of equilibria depends on parameters, stability depends on parameters</p></li>
-<li id="li-52"><p id="p-250">Oscillations</p></li>
+<ul id="p-170" class="disc">
+<li id="li-38"><p id="p-171">Multiple equilibriaConsequence of regulation</p></li>
+<li id="li-39"><p id="p-172">Bifurcations Existence of equilibria depends on parameters, stability depends on parameters</p></li>
+<li id="li-40"><p id="p-173">Oscillations</p></li>
 </ul></article></section><section class="subsection" id="nonlinear-discrete-time-models-2d"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.1.5</span> <span class="title">Nonlinear discrete-time models (2D)</span>
+<span class="type">Subsection</span> <span class="codenumber">4.1.5</span> <span class="title">Nonlinear discrete-time models (2D)</span>
 </h3>
 <article class="paragraphs" id="motivation-the-discrete-logistic"><h5 class="heading"><span class="title">Motivation: the discrete logistic.</span></h5>
-<p id="p-251">The discrete logistic model is</p>
+<p id="p-174">The discrete logistic model is</p>
 <div class="displaymath">
 \begin{equation*}
 Y_{t+1}=r(1-Y_t)Y_t,
@@ -769,17 +762,17 @@ Y_{t+1}=rY_t-(rY_t)Y_t.
 \end{equation*}
 </div>
 <p data-braille="continuation">Reading the model in this form, we can think of constant per capita births \(r\) but it looks like the per capita mortality is of the form \(rY_t\text{.}\) One interpretation of this is,</p>
-<ul id="p-252" class="disc">
-<li id="li-53"><p id="p-253">births are independent of population density</p></li>
-<li id="li-54"><p id="p-254">death increases with population density</p></li>
+<ul id="p-175" class="disc">
+<li id="li-41"><p id="p-176">births are independent of population density</p></li>
+<li id="li-42"><p id="p-177">death increases with population density</p></li>
 </ul>
-<p id="p-255">What if instead of your own species controlling your mortality (assuming you are a \(Y_t\)) a second species, \(Z_t\text{,}\) is responsible for your mortality. We’ll assume that it benefits from eating you, but would otherwise die out, its a specialist. We will assume that it is either better or worse at eating you than you are at eating/killing yourself, so that your per capita mortality as a function of the density of \(Z_t\) is \(pZ_t\text{.}\) We can rewrite ‘your’ equation as,</p>
+<p id="p-178">What if instead of your own species controlling your mortality (assuming you are a \(Y_t\)) a second species, \(Z_t\text{,}\) is responsible for your mortality. We’ll assume that it benefits from eating you, but would otherwise die out, its a specialist. We will assume that it is either better or worse at eating you than you are at eating/killing yourself, so that your per capita mortality as a function of the density of \(Z_t\) is \(pZ_t\text{.}\) We can rewrite ‘your’ equation as,</p>
 <div class="displaymath">
 \begin{equation*}
 Y_{t+1}=rY_t-(pZ_t)Y_t.
 \end{equation*}
 </div>
-<p id="p-256">We’ll assume that a \(Z_t\) turns some fraction \(\epsilon\) of consumed \(Y_t\)’s into new \(Z_t\) (i.e., growth of \(Z_t\) depends directly on the amount of \(Y_t\) consumed). But again, in the absence of food \(Z_t\) will die. The equation for \(Z_t\) looks like,</p>
+<p id="p-179">We’ll assume that a \(Z_t\) turns some fraction \(\epsilon\) of consumed \(Y_t\)’s into new \(Z_t\) (i.e., growth of \(Z_t\) depends directly on the amount of \(Y_t\) consumed). But again, in the absence of food \(Z_t\) will die. The equation for \(Z_t\) looks like,</p>
 <div class="displaymath">
 \begin{equation*}
 Z_{t+1}=\epsilon(pY_t)Z_t-mZ_t.
@@ -793,7 +786,7 @@ Y_{t+1}&amp;=rY_t-pZ_tY_t\\ Z_{t+1}&amp;=\epsilon pY_tZ_t+mZ_t,
 \quad\text{this should be a $+m$ not a $-m$!}\end{aligned}
 \end{equation*}
 </div>
-<p id="p-257">Notice that we could define \(g=\epsilon p\) if we wanted to simplify (the appearance) of the first term in \(Z_{t+1}\text{.}\)</p>
+<p id="p-180">Notice that we could define \(g=\epsilon p\) if we wanted to simplify (the appearance) of the first term in \(Z_{t+1}\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned} Y_{t+1}&amp;=rY_t-pZ_tY_t\\ Z_{t+1}&amp;=
@@ -801,18 +794,18 @@ gY_tZ_t+mZ_t, \quad\text{this should be a $+m$ not a
 $-m$}!\end{aligned}
 \end{equation*}
 </div></article><article class="paragraphs" id="an-approach-to-nonlinear-multi-species-dynamics"><h5 class="heading"><span class="title">An approach to nonlinear, multi-species dynamics..</span></h5>
-<p id="p-258">To study this model we could,</p>
+<p id="p-181">To study this model we could,</p>
 <ul class="disc">
-<li id="li-55"><p id="p-259">Iterate solutions numerically</p></li>
-<li id="li-56"><p id="p-260">Attempt to ‘solve it’</p></li>
+<li id="li-43"><p id="p-182">Iterate solutions numerically</p></li>
+<li id="li-44"><p id="p-183">Attempt to ‘solve it’</p></li>
 </ul>
-<p id="p-261">To iterate our model, we would have to have parameter values and a suitable initial condition. We might not have a clue what these values are so we will ignore that approach and try to ‘solve it.’ Solving such a model typically means,</p>
-<ul id="p-262" class="disc">
-<li id="li-57"><p id="p-263">compute equilibria</p></li>
-<li id="li-58"><p id="p-264">compute linearization</p></li>
-<li id="li-59"><p id="p-265">analyze stability</p></li>
+<p id="p-184">To iterate our model, we would have to have parameter values and a suitable initial condition. We might not have a clue what these values are so we will ignore that approach and try to ‘solve it.’ Solving such a model typically means,</p>
+<ul id="p-185" class="disc">
+<li id="li-45"><p id="p-186">compute equilibria</p></li>
+<li id="li-46"><p id="p-187">compute linearization</p></li>
+<li id="li-47"><p id="p-188">analyze stability</p></li>
 </ul>
-<p id="p-266">As before, equilibria requires \(Y_{t+1}=Y_t=Y^*\) and simultaneously \(Z_{t+1}=Z_t=Z^*\text{.}\)</p>
+<p id="p-189">As before, equilibria requires \(Y_{t+1}=Y_t=Y^*\) and simultaneously \(Z_{t+1}=Z_t=Z^*\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned} Y^*&amp;=rY^* -pZ^*Y^*\\
@@ -820,7 +813,7 @@ Z^*&amp;= gY^*Z^*+mZ^*, \quad\text{this should be a $+m$ not a
 $-m$!}\end{aligned}
 \end{equation*}
 </div>
-<p id="p-267">To satisfy the first, either \(Y^*=0\) or \(1=r-pZ^*\text{,}\) the second of which implies,</p>
+<p id="p-190">To satisfy the first, either \(Y^*=0\) or \(1=r-pZ^*\text{,}\) the second of which implies,</p>
 <div class="displaymath">
 \begin{equation*}
 Z^*=\frac{r-1}{p}.
@@ -834,8 +827,8 @@ Y^*=\frac{1-m}{g}.
 </div>
 <p data-braille="continuation">Thus our equilibria are \((Y^*, Z^*)=(0,
 0)\) or \((Y^*, Z^*)=(\frac{1-m}{g}, \frac{r-1}{p})\text{.}\)</p>
-<p id="p-268">We have to figure out how to determine stability at each equilibrium point to know whether or not species persist or go extinct. We might think that linear matrix theory, determinants, and eigenvalues would be of use here. Our first step is to form a linear approximation to our nonlinear dynamics near equilibria. To do so, we compute the Jacobian matrix, a matrix of partial derivatives.</p>
-<p id="p-269">We notice that our model can be written as a set of two updating functions each depending on two variables,</p>
+<p id="p-191">We have to figure out how to determine stability at each equilibrium point to know whether or not species persist or go extinct. We might think that linear matrix theory, determinants, and eigenvalues would be of use here. Our first step is to form a linear approximation to our nonlinear dynamics near equilibria. To do so, we compute the Jacobian matrix, a matrix of partial derivatives.</p>
+<p id="p-192">We notice that our model can be written as a set of two updating functions each depending on two variables,</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned} Y_{t+1}&amp;=F(Y_t, Z_t)=rY_t-pZ_tY_t\\
@@ -844,7 +837,7 @@ not a $-m$!}\end{aligned}
 \end{equation*}
 </div>
 <p data-braille="continuation">Now, the motivation and methodology are the same as with 1D models, we are interested in thinking about \(Y_t=Y^*+y_t\) and \(Z_t=Z^*+z_t\text{,}\) which means each solution (e.g., \(Y_t\)) is a combination of equilibrium value (e.g., \(Y^*\)) and some small perturbation (e.g., \(y_t\)). The Jacobian is a matrix of partial derivatives of our updating functions with respect to the state variables. We could derive this as we did with a Taylor series expansion of a 1D model.</p>
-<p id="p-270">Then, skipping some steps, we can compute the Jacobian as follows (we will drop the subscripts for simplicity),</p>
+<p id="p-193">Then, skipping some steps, we can compute the Jacobian as follows (we will drop the subscripts for simplicity),</p>
 <div class="displaymath">
 \begin{equation*}
 J(Y, Z)=\left(\begin{array}{cc}
@@ -853,7 +846,7 @@ J(Y, Z)=\left(\begin{array}{cc}
 &amp; \frac{\partial^{} {G}}{\partial {Z}^{}} \end{array}\right).
 \end{equation*}
 </div>
-<p id="p-271">Our work is not done, just yet. Since we are concerned with the dynamics ‘near equilibrium’ we have to evaluate the Jacobian at the equilibrium. An example, in just a minute, should make this clear.</p>
+<p id="p-194">Our work is not done, just yet. Since we are concerned with the dynamics ‘near equilibrium’ we have to evaluate the Jacobian at the equilibrium. An example, in just a minute, should make this clear.</p>
 <div class="displaymath">
 \begin{equation*}
 \left(\begin{array}{cc} y_{t_1}\\[8pt] z_{t+1}
@@ -865,8 +858,8 @@ Z^*)}\times\left(\begin{array}{cc} y_{t}\\[8pt] z_{t}
 \end{array}\right).
 \end{equation*}
 </div></article><article class="example example-like" id="example-2"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-2"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">Example.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-272">Continuing with our current model, we will compute the Jacobian.</p>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.19</span><span class="period">.</span><span class="space"> </span><span class="title">Example.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-195">Continuing with our current model, we will compute the Jacobian.</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned} \frac{\partial^{} {F}}{\partial {Y}^{}} &amp;=
@@ -879,7 +872,7 @@ Z^*)}\times\left(\begin{array}{cc} y_{t}\\[8pt] z_{t}
 \quad\text{this should be a $+m$ not a $-m$}.\end{aligned}
 \end{equation*}
 </div>
-<p id="p-273">So,</p>
+<p id="p-196">So,</p>
 <div class="displaymath">
 \begin{equation*}
 J(Y,Z)=\left(\begin{array}{cc} r-pZ\ &amp; -pY\\[8pt] gZ
@@ -887,14 +880,14 @@ J(Y,Z)=\left(\begin{array}{cc} r-pZ\ &amp; -pY\\[8pt] gZ
 $-m$}.
 \end{equation*}
 </div>
-<p id="p-274">So at the ‘zero’ equilibrium,</p>
+<p id="p-197">So at the ‘zero’ equilibrium,</p>
 <div class="displaymath">
 \begin{equation*}
 J(0,0)=\left(\begin{array}{cc} r\ &amp; 0\\[8pt] 0 &amp; m
 \end{array}\right), \quad\text{this should be a $+m$ not a $-m$}..
 \end{equation*}
 </div>
-<p id="p-275">So at the nontrivial equilibrium,</p>
+<p id="p-198">So at the nontrivial equilibrium,</p>
 <div class="displaymath">
 \begin{equation*}
 J^*=J(Y^*,Z^*)=\left(\begin{array}{cc}
@@ -905,7 +898,7 @@ g\left(\frac{r-1}{p}\right) &amp; g\left(\frac{1-m}{g}\right)+m
 \end{array}\right).
 \end{equation*}
 </div>
-<p id="p-276">Rather than compute and study the eigenvalues directly, we’ll take the scenic route to our solution. We will compute a few key properties of the matrix to understand the behavior of eigenvalues: trace, determinant, and discriminant. The trace of \(J^*\text{,}\)</p>
+<p id="p-199">Rather than compute and study the eigenvalues directly, we’ll take the scenic route to our solution. We will compute a few key properties of the matrix to understand the behavior of eigenvalues: trace, determinant, and discriminant. The trace of \(J^*\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \tau(J^*)=\operatorname{Tr}(J^*),
@@ -936,7 +929,7 @@ g\left(\frac{r-1}{p}\right) &amp; g\left(\frac{1-m}{g}\right)+m
 \end{equation*}
 </div>
 <p data-braille="continuation">This is because we want the roots to be between \((-1,1)\text{.}\) If we want <em class="emphasis">roots</em> in this interval, the vertex of the parabola better be there too. We’ll use the location of the vertex and <em class="emphasis">distance</em> to the roots to compute some stability criterion and build a stability diagram, next time.</p>
-<figure class="table table-like" id="table-9"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">6.1.18<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<figure class="table table-like" id="table-4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.1.20<span class="period">.</span></span><span class="space"> </span></figcaption><table>
 <tr>
 <td class="c m b0 r0 l0 t0 lines">Equilibrium</td>
 <td class="c m b0 r0 l0 t0 lines">\(\tau=\operatorname{Tr}(J^ *)\)</td>
@@ -958,12 +951,12 @@ g\left(\frac{r-1}{p}\right) &amp; g\left(\frac{1-m}{g}\right)+m
 <td class="c m b0 r0 l0 t0 lines">\(-4(1-m)(r-1)\)</td>
 <td class="c m b0 r0 l0 t0 lines" data-braille="last-cell">Complex (if \(r&gt;1\))</td>
 </tr>
-</table></figure><p id="p-277">We will briefly see why this is a worrisome model, and move on to more biologically interesting models. The trivial equilibrium \((0,
+</table></figure><p id="p-200">We will briefly see why this is a worrisome model, and move on to more biologically interesting models. The trivial equilibrium \((0,
 0)\) will be stable for stupidly small values of \(r, m\text{.}\) The nontrivial equilibrium is unstable and oscillatory, meaning that practically a species will crash into the number zero and go extinct.</p></article></div></section><section class="subsection" id="nonlinear-discrete-time-models-2d-stability-criterion"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.1.6</span> <span class="title">Nonlinear discrete-time models (2D): Stability criterion</span>
+<span class="type">Subsection</span> <span class="codenumber">4.1.6</span> <span class="title">Nonlinear discrete-time models (2D): Stability criterion</span>
 </h3>
 <article class="paragraphs" id="stability"><h5 class="heading"><span class="title">Stability.</span></h5>
-<p id="p-278">Consider the Jacobian matrix \(J^*\) from the linearization of a 2D model. For</p>
+<p id="p-201">Consider the Jacobian matrix \(J^*\) from the linearization of a 2D model. For</p>
 <div class="displaymath">
 \begin{equation*}
 J^*=\left(\begin{array}{cc}a &amp; b\\c&amp;
@@ -983,8 +976,8 @@ C(\lambda)=\lambda^2-\tau \lambda+\Delta,
 2}.
 \end{equation*}
 </div>
-<p id="p-279">We’ll take a graphical approach to understanding the behavior of roots. First, notice that the vertex of the parabola is at \(\frac{\tau}{2},\) since the roots are symmetric about the vertex. We’ll assume the eigenvalues are distinct and that \(\lambda_+&gt;\lambda_-\text{.}\)</p>
-<p id="p-280">For the leading eigenvalue, \(\lambda_+&lt;1\text{,}\) we need</p>
+<p id="p-202">We’ll take a graphical approach to understanding the behavior of roots. First, notice that the vertex of the parabola is at \(\frac{\tau}{2},\) since the roots are symmetric about the vertex. We’ll assume the eigenvalues are distinct and that \(\lambda_+&gt;\lambda_-\text{.}\)</p>
+<p id="p-203">For the leading eigenvalue, \(\lambda_+&lt;1\text{,}\) we need</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned} \lambda_+=\frac{\tau}{2}+\frac{\sqrt{\tau^2-4\Delta}
@@ -1002,7 +995,7 @@ C(\lambda)=\lambda^2-\tau \lambda+\Delta,
 \end{equation*}
 </div>
 <p data-braille="continuation">then \(\lambda_+&lt;1\text{.}\)</p>
-<p id="p-281">For the other eigenvalue, \(\lambda_-&gt;-1\text{,}\) we need</p>
+<p id="p-204">For the other eigenvalue, \(\lambda_-&gt;-1\text{,}\) we need</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned} \lambda_-=\frac{\tau}{2}-\frac{\sqrt{\tau^2-4\Delta}
@@ -1020,7 +1013,7 @@ C(\lambda)=\lambda^2-\tau \lambda+\Delta,
 \end{equation*}
 </div>
 <p data-braille="continuation">then \(\lambda_-&gt;-1\text{.}\)</p>
-<p id="p-282">We need both eigenvalue conditions satisfied simultaneously, so that</p>
+<p id="p-205">We need both eigenvalue conditions satisfied simultaneously, so that</p>
 <div class="displaymath">
 \begin{equation*}
 \Delta&gt;|\tau|-1.
@@ -1032,9 +1025,9 @@ C(\lambda)=\lambda^2-\tau \lambda+\Delta,
 \frac{\sqrt{\tau^2-4\Delta}}{2}
 \end{equation*}
 </div>
-<p data-braille="continuation">is less than the distance from the vertex to the enclosing endpoint (see Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::roots" missing]</code>).</p>
-<figure class="figure figure-like" id="figure-23"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/char_poly.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.19<span class="period">.</span></span><span class="space"> </span>Roots of the characteristic polynomial.</figcaption></figure><p id="p-283">Lastly, we need complex roots which arise when \(\tau^2-4\Delta&lt;0\text{,}\) to satisfy \(|\lambda_i|&lt;1\text{.}\)</p>
+<p data-braille="continuation">is less than the distance from the vertex to the enclosing endpoint (see <a class="xref" data-knowl="./knowl/fig-roots.html" title="Figure 4.1.21">Figure 4.1.21</a>).</p>
+<figure class="figure figure-like" id="fig-roots"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/char_poly.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.21<span class="period">.</span></span><span class="space"> </span>Roots of the characteristic polynomial.</figcaption></figure><p id="p-206">Lastly, we need complex roots which arise when \(\tau^2-4\Delta&lt;0\text{,}\) to satisfy \(|\lambda_i|&lt;1\text{.}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}
@@ -1044,27 +1037,27 @@ C(\lambda)=\lambda^2-\tau \lambda+\Delta,
 |\lambda_\pm|&amp;=\Delta\Rightarrow \Delta&lt;1\end{aligned}
 \end{equation*}
 </div></article><article class="paragraphs" id="stability-triangle"><h5 class="heading"><span class="title">Stability triangle.</span></h5>
-<p id="p-284">We need</p>
-<ul id="p-285" class="disc">
-<li id="li-60"><p id="p-286">\(\displaystyle \operatorname{det}(J^*)&lt;1\)</p></li>
-<li id="li-61"><p id="p-287">\(\displaystyle \operatorname{det}(J^*) &gt; -1+|
+<p id="p-207">We need</p>
+<ul id="p-208" class="disc">
+<li id="li-48"><p id="p-209">\(\displaystyle \operatorname{det}(J^*)&lt;1\)</p></li>
+<li id="li-49"><p id="p-210">\(\displaystyle \operatorname{det}(J^*) &gt; -1+|
 \operatorname{Tr}(J^*)|\)</p></li>
-<li id="li-62"><p id="p-288">Under \(\operatorname{det}(J^*)=\frac{\operatorname{Tr}(J^*)^2}{4}\)eigenvalues are real.</p></li>
+<li id="li-50"><p id="p-211">Under \(\operatorname{det}(J^*)=\frac{\operatorname{Tr}(J^*)^2}{4}\)eigenvalues are real.</p></li>
 </ul>
-<figure class="figure figure-like" id="figure-24"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/discrete_stab.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.20<span class="period">.</span></span><span class="space"> </span>Roots of the characteristic polynomial. \(\tau\) lies along the horizontal axis and \(\Delta\) along the vertical axis.</figcaption></figure></article></section><section class="subsection" id="nicholson-bailey-and-on-to-continuous-tim"><h3 class="heading hide-type">
-<span class="type">Subsection</span> <span class="codenumber">6.1.7</span> <span class="title">Nicholson-Bailey and on to continuous tim</span>
+<figure class="figure figure-like" id="fig-roots"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/discrete_stab.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.22<span class="period">.</span></span><span class="space"> </span>Roots of the characteristic polynomial. \(\tau\) lies along the horizontal axis and \(\Delta\) along the vertical axis.</figcaption></figure></article></section><section class="subsection" id="nicholson-bailey-and-on-to-continuous-tim"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.1.7</span> <span class="title">Nicholson-Bailey and on to continuous tim</span>
 </h3>
 <article class="paragraphs" id="nicholson-bailey"><h5 class="heading"><span class="title">Nicholson-Bailey.</span></h5>
-<p id="p-289">Stability of 2D, nonlinear, discrete-time models is summarized in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::tri" missing]</code>, using properties (matrix trace, determinant, and discriminant) of the Jacobian matrix evaluated at equilibrium. An equilibrium is stable only when its trace and determinant map to regions within the triangle. Transient dynamics are governed by the sign of the discriminant, when the discriminant is negative, eigenvalue are complex and trajectories are oscillatory. Otherwise, eigenvalues are real and non-oscillatory.</p>
-<p id="p-290">Why do we want ‘small’ eigenvalues? We want small eigenvalues because we have linearized the system near an equilibrium point. We want perturbations to decay so that our solution returns (in some way, oscillatory or not) to equilibrium. Thus, we want the \((0,0)\) equilibrium of our perturbed coordinate system to be stable. If we write for some 2D nonlinear system \((X_t, Y_t)=(X^*+\hat x_t, Y^*+\hat
+<p id="p-212">Stability of 2D, nonlinear, discrete-time models is summarized in <a class="xref" data-knowl="./knowl/fig-stab.html" title="Figure 4.1.23">Figure 4.1.23</a>, using properties (matrix trace, determinant, and discriminant) of the Jacobian matrix evaluated at equilibrium. An equilibrium is stable only when its trace and determinant map to regions within the triangle. Transient dynamics are governed by the sign of the discriminant, when the discriminant is negative, eigenvalue are complex and trajectories are oscillatory. Otherwise, eigenvalues are real and non-oscillatory.</p>
+<p id="p-213">Why do we want ‘small’ eigenvalues? We want small eigenvalues because we have linearized the system near an equilibrium point. We want perturbations to decay so that our solution returns (in some way, oscillatory or not) to equilibrium. Thus, we want the \((0,0)\) equilibrium of our perturbed coordinate system to be stable. If we write for some 2D nonlinear system \((X_t, Y_t)=(X^*+\hat x_t, Y^*+\hat
 y_t)\text{,}\) where \(\hat x_t\) and \(\hat y_t\) are our perturbations, we want both \(\hat x_t, \hat y_t\rightarrow0\) so that \((X_t, Y_t)\rightarrow(X^*, Y^*)\text{.}\) We keep using the phrase ‘want’ because biologically \((X_t\rightarrow0,Y_t\rightarrow0)\) and \((X_t\rightarrow\infty,
 Y_t\rightarrow\infty)\) are often uninteresting outcomes.</p>
-<figure class="figure figure-like" id="figure-25"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/discrete_stability.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.21<span class="period">.</span></span><span class="space"> </span>Eigenvalues are real in the hatched region and the equilibrium is stable. Eigenvalues are complex in the solid region and the equilibrium is stable, but approach to equilibrium is via damped oscillations. Outside these regions, corresponding equilibria are unstable. Above the parabola, solutions oscillation away from equilibria. \(\tau\) lies along the horizontal axis and \(\Delta\) along the vertical axis.</figcaption></figure></article><article class="example example-like" id="example-nicholson-bailey"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-nicholson-bailey"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.1.22</span><span class="period">.</span><span class="space"> </span><span class="title">Nicholson-Bailey model.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-nicholson-bailey"><article class="example example-like"><p id="p-291">We built our first 2D model from a poor starting point, the discrete logistic model. We learned, intentionally and accidentally, that multiplying by negative numbers is a bad idea. We hope to develop models where the right hand sides can become small, but remain positive.</p>
-<p id="p-292">We will quickly look at the classic Nicholson-Bailey model. The model assumes that caterpillars are an engine for turning out parasitoids, each infected caterpillar produces a fixed amount of parasitoid larvae. The model of invertebrate host-parasitoid dynamics is of the form,</p>
+<figure class="figure figure-like" id="fig-stab"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/discrete_stability.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.23<span class="period">.</span></span><span class="space"> </span>Eigenvalues are real in the hatched region and the equilibrium is stable. Eigenvalues are complex in the solid region and the equilibrium is stable, but approach to equilibrium is via damped oscillations. Outside these regions, corresponding equilibria are unstable. Above the parabola, solutions oscillation away from equilibria. \(\tau\) lies along the horizontal axis and \(\Delta\) along the vertical axis.</figcaption></figure></article><article class="example example-like" id="example-nicholson-bailey"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-nicholson-bailey"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.24</span><span class="period">.</span><span class="space"> </span><span class="title">Nicholson-Bailey model.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-nicholson-bailey"><article class="example example-like"><p id="p-214">We built our first 2D model from a poor starting point, the discrete logistic model. We learned, intentionally and accidentally, that multiplying by negative numbers is a bad idea. We hope to develop models where the right hand sides can become small, but remain positive.</p>
+<p id="p-215">We will quickly look at the classic Nicholson-Bailey model. The model assumes that caterpillars are an engine for turning out parasitoids, each infected caterpillar produces a fixed amount of parasitoid larvae. The model of invertebrate host-parasitoid dynamics is of the form,</p>
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned} H_{t+1}&amp;= (\text{host
@@ -1075,15 +1068,15 @@ succumbing parasitism})\\ &amp;\qquad\times(\text{host population
 size})\end{aligned}
 \end{equation*}
 </div>
-<p id="p-293">Host fecundity is just a constant, \(\lambda\text{.}\) The host fraction surviving parasitism is, for now, some arbitrary function of \(P_t\) and \(H_t\text{,}\) \(f(H_t, P_t)\text{.}\) The parasitoid production per host is another constant, \(c\text{.}\) Since all hosts are either parasitized or not, the fraction that succumbs to parasitism is \(1-f(H_t, P_t)\text{.}\)</p>
-<p id="p-294">The fraction that survives parasitism, \(f(H_t, P_t)\text{,}\) is an important component of the model. We will now build a model for this term using some basic logic, a few key assumptions, and probability. We define the number of host-parasitoid encounters, \(E\text{,}\) and assume it is proportional to the densities of \(H_t\) and \(P_t\text{,}\)</p>
+<p id="p-216">Host fecundity is just a constant, \(\lambda\text{.}\) The host fraction surviving parasitism is, for now, some arbitrary function of \(P_t\) and \(H_t\text{,}\) \(f(H_t, P_t)\text{.}\) The parasitoid production per host is another constant, \(c\text{.}\) Since all hosts are either parasitized or not, the fraction that succumbs to parasitism is \(1-f(H_t, P_t)\text{.}\)</p>
+<p id="p-217">The fraction that survives parasitism, \(f(H_t, P_t)\text{,}\) is an important component of the model. We will now build a model for this term using some basic logic, a few key assumptions, and probability. We define the number of host-parasitoid encounters, \(E\text{,}\) and assume it is proportional to the densities of \(H_t\) and \(P_t\text{,}\)</p>
 <div class="displaymath">
 \begin{equation*}
 E=aH_tP_t.
 \end{equation*}
 </div>
 <p data-braille="continuation">The parameter \(a\) is the constant of proportionality, and the number of encounters is bilinear in \(H_t\) and \(P_t\text{.}\) Caterpillars are a fixed size and only ’have space’ for a fixed number of parasitoids. Think of them as a parasitoid hotel, at some point all rooms are full and it doesn’t matter how many new travelers stop - they can try but there are no more rooms left.</p>
-<p id="p-295">On to our last piece of the model: the Poisson distribution. This distribution governs the number of events to occur in some time interval, when events occur at some fixed rate, \(\mu\text{.}\) The probability of \(r\) events is</p>
+<p id="p-218">On to our last piece of the model: the Poisson distribution. This distribution governs the number of events to occur in some time interval, when events occur at some fixed rate, \(\mu\text{.}\) The probability of \(r\) events is</p>
 <div class="displaymath">
 \begin{equation*}
 Q(r)=\frac{e^{-\mu}\mu^r}{r!}.
@@ -1109,10 +1102,10 @@ P_t)=Q(0)=\frac{e^{-aP_t}(aP_t)^0}{0!}=e^{-aP_t}.
 P_t}H_t\\ P_{t+1}&amp;=c (1-e^{-a P_t})H_t.\end{aligned}
 \end{equation*}
 </div>
-<p data-braille="continuation">A few special cases suggest that when \(P_t=0\text{,}\) \(H_t\) grows geometrically, but when \(P_t\) is ‘large’ few hosts escape parasitism. We might wish to limit host growth in the absence of parasitism, which could be accomplished by defining \(\lambda=\lambda(H_t)\) as some reasonable decreasing function of host population density. Some trajectories (for parameters corresponding to those in the book) are plotted in Fig. <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "fig::NBsols" missing]</code>.</p>
-<figure class="figure figure-like" id="figure-26"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/pars_pert.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.23<span class="period">.</span></span><span class="space"> </span>Sample dynamics of Nicholson-Bailey. Left) Perturbations in three parameters. Notice that some host populations appear to escape parasitoids. Right) Perturbations in initial conditions. Small changes in initial conditions drastically effect dynamics.</figcaption></figure><figure class="figure figure-like" id="figure-27"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/IC_pert.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">6.1.24<span class="period">.</span></span><span class="space"> </span>Sample dynamics of Nicholson-Bailey. Left) Perturbations in three parameters. Notice that some host populations appear to escape parasitoids. Right) Perturbations in initial conditions. Small changes in initial conditions drastically effect dynamics.</figcaption></figure><p id="p-296">We can pretty easily see the ‘problems’ with these dynamics. Actually evaluating the stability conditions for this and other models is occasionally quite enlightening and can give a nice interpretation of the relationships between certain terms (rates and interactions) in our model. One particularly interesting situation occurs when matrix traces and determinants lie on the edges of stability, where bifurcations are borne.</p></article></div></section></section></div></main>
+<p data-braille="continuation">A few special cases suggest that when \(P_t=0\text{,}\) \(H_t\) grows geometrically, but when \(P_t\) is ‘large’ few hosts escape parasitism. We might wish to limit host growth in the absence of parasitism, which could be accomplished by defining \(\lambda=\lambda(H_t)\) as some reasonable decreasing function of host population density. Some trajectories (for parameters corresponding to those in the book) are plotted in <a class="xref" data-knowl="./knowl/fig-NB-sols.html" title="Figure 4.1.25">Figure 4.1.25</a>.</p>
+<figure class="figure figure-like" id="fig-NB-sols"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/pars_pert.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.25<span class="period">.</span></span><span class="space"> </span>Sample dynamics of Nicholson-Bailey. Left) Perturbations in three parameters. Notice that some host populations appear to escape parasitoids. Right) Perturbations in initial conditions. Small changes in initial conditions drastically effect dynamics.</figcaption></figure><figure class="figure figure-like" id="fig-NB-sols2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/IC_pert.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.26<span class="period">.</span></span><span class="space"> </span>Sample dynamics of Nicholson-Bailey. Left) Perturbations in three parameters. Notice that some host populations appear to escape parasitoids. Right) Perturbations in initial conditions. Small changes in initial conditions drastically effect dynamics.</figcaption></figure><p id="p-219">We can pretty easily see the ‘problems’ with these dynamics. Actually evaluating the stability conditions for this and other models is occasionally quite enlightening and can give a nice interpretation of the relationships between certain terms (rates and interactions) in our model. One particularly interesting situation occurs when matrix traces and determinants lie on the edges of stability, where bifurcations are borne.</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

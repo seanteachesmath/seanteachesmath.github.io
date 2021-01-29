@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-28T19:20:33-06:00       *-->
+<!--*       on 2021-01-28T20:07:12-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,17 +15,33 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>So at the nontrivial equilibrium,</p>
+<p>On to our last piece of the model: the Poisson distribution. This distribution governs the number of events to occur in some time interval, when events occur at some fixed rate, \(\mu\text{.}\) The probability of \(r\) events is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-J^*=J(Y^*,Z^*)=\left(\begin{array}{cc}
-r-p\left(\frac{r-1}{p}\right)\ &amp; -p\left(\frac{1-m}{g}\right)\\[8pt]
-g\left(\frac{r-1}{p}\right) &amp; g\left(\frac{1-m}{g}\right)+m
-\end{array}\right)= \left(\begin{array}{cc} 1 &amp;
--p\left(\frac{1-m}{g}\right)\\[8pt] g\left(\frac{r-1}{p}\right) &amp; 1
-\end{array}\right).
+Q(r)=\frac{e^{-\mu}\mu^r}{r!}.
 \end{equation*}
 </div>
+<p data-braille="continuation">The average number of attacks per host per generation is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\mu=\frac{E}{H_t}=\frac{aH_tP_t}{H_t}=aP_t.
+\end{equation*}
+</div>
+<p data-braille="continuation">According to our second assumption we only care whether a host is parasitized or not (i.e., whether \(r=0\) or \(r&gt;0\)). Thus, we want</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f(N_t,
+P_t)=Q(0)=\frac{e^{-aP_t}(aP_t)^0}{0!}=e^{-aP_t}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Plugging in \(f(H_t, P_t)\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned} H_{t+1}&amp;= \lambda e^{-a
+P_t}H_t\\ P_{t+1}&amp;=c (1-e^{-a P_t})H_t.\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">A few special cases suggest that when \(P_t=0\text{,}\) \(H_t\) grows geometrically, but when \(P_t\) is ‘large’ few hosts escape parasitism. We might wish to limit host growth in the absence of parasitism, which could be accomplished by defining \(\lambda=\lambda(H_t)\) as some reasonable decreasing function of host population density. Some trajectories (for parameters corresponding to those in the book) are plotted in Fig. <a class="xref" data-knowl="./knowl/fig-NB-sols.html" title="Figure 5.1.23">Figure 5.1.23</a>.</p>
 <span class="incontext"><a href="discrete-time-with-linear-algebra.html#p-275">in-context</a></span>
 </body>
 </html>
