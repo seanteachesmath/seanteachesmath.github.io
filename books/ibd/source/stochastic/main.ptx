@@ -84,16 +84,100 @@ that, while the process is discrete (in the number of cells), time is
 continuous. The number of animals changes by a single individual through
 births (to the right) and deaths (to the left) as illustrated in <xref ref="fig-bdp"/>. 
 </p>
+        <figure xml:id="fig-bdp" acro="bdp">
+            <caption>Transitions and transition probabilities in Markov Process</caption>
+            <image xml:id="image-bdp">
+                <latex-image>
+                \begin{tikzpicture}
+                
+                \tikzset{ltvect/.style={shape=circle, minimum size=0.30em, inner sep=0pt, draw, fill=black}}
+                \tikzset{birth/.style={->, bend left=20, thick, shorten \lt=0.1em, shorten >=0.1em}}
+                \tikzset{death/.style={->, bend left=20, thick, shorten \lt=0.1em, shorten >=0.1em}}
+                % base generic picture
+                \draw ( 5em, 5em) circle [x radius=2em, y radius=2em, thick];
+                \draw (10em, 5em) circle [x radius=2em, y radius=2em, thick];
+                \draw (15em, 5em) circle [x radius=2em, y radius=2em, thick];
+                \draw (20em, 5em) circle [x radius=2em, y radius=2em, thick];
 
-<figure xml:id="fig-bdp">
+                \node (zero) at ( 5em, 5em) {\(0\)};
+                \node (one) at ( 10em, 5em) {\(1\)};
+                \node (two) at ( 15em, 5em) {\(2\)};
+                \node (three) at ( 20em, 5em) {\(3\)};
+                \node (dots) at ( 25em, 5em) {\(\dots\)};
+				
+				\node (b1) at (10em, 7em) {};
+				\node (b2) at (15em, 7em) {};
+				\node (b3) at (20em, 7em) {};
+				\node (b4) at (25em, 7em) {};
+				
+				\node (d0) at (5em, 3em) {};
+				\node (d1) at (10em, 3em) {};
+				\node (d2) at (15em, 3em) {};
+				\node (d3) at (20em, 3em) {};
+				\node (d4) at (25em, 3em) {};
+				\draw[birth] (b1) to node[auto] {births} (b2);
+
+                \draw[birth] (b2) to (b3);				
+                \draw[birth] (b3) to (b4);				
+                \draw[death] (d1) to (d0);
+				\draw[birth] (d2) to node[auto] {deaths} (d1);
+
+                \draw[death] (d2) to (d1);
+                \draw[death] (d3) to (d2);
+                \draw[death] (d4) to (d3);
+                
+                <!-->\draw[->, thick, draw] (U) to node[auto] {\(T\)} (V);
+                % inputs
+                \node (u1) [ltvect]                           at (5em, 13em) {};
+                \node (u2) [ltvect]                           at (5em, 11em) {};
+                \node (u)  [ltvect, label=left:\(\vect{u}\)]  at (5em,  8em) {};
+                \node (w)  [ltvect, label=left:\(\vect{w}\)]  at (5em,  6em) {};
+                % outputs
+                \node (v1) [ltvect]                           at (20em, 12em) {};
+                \node (v)  [ltvect, label=right:\(\vect{v}\)] at (20em,  7em) {};
+                \node (v2) [ltvect]                           at (19em,  3em) {};
+                \node (v3) [ltvect]                           at (21em,  3em) {};
+                % associations
+                \draw[ltedge] (u1) to (v1);
+                \draw[ltedge] (u2) to (v1);
+                \draw[ltedge] (u)  to (v);
+                \draw[ltedge] (w)  to (v);-->
+                
+                <!-->
+				\draw (0em, 8em) circle [x radius=5em, y radius=5em, thick];
+                \draw (10em, 8em) circle [x radius=5em, y radius=5em, thick];
+                \draw (20em, 8em) circle [x radius=5em, y radius=5em, thick];
+                \draw (30em, 8em) circle [x radius=5em, y radius=5em, thick];
+				\node (b1) []                           at (5em, 13em) {};
+				\node (b2) []                           at (15em, 13em) {};
+				\draw[->, bend left=20, thick, shorten \lt=0.1em, shorten >=0.1em] (u1) to (v1);-->
+<!--> \node (0em, 0em)[circle] (a) {\dots};
+ \node  (5em, 0em) [circle] (n-1) [right of=a] {\(n-1\)};
+ \node  (10em, 0em)[circle] (n) [right of=n-1] {\(n\)};
+ \node  (15em, 0em)[circle] (n+1) [right of=n] {\(n+1\)};
+ \node  (20em, 0em)[circle] (b) [right of=n+1]{\dots};
+
+
+ \path[->, bend left] (a) edge node [label=above:{\((n-2)r\)}] {} (n-1);
+ \path[->, bend left] (n-1) edge node [label=above:{\( (n-1)r\)}] {} (n);
+ \path[->, bend left] (n) edge node [label=above:{\(nr\)}] {} (n+1);
+ \path[->, bend left] (n+1) edge node [label=above:{\((n+1)r\)}] {} (b);
+ 
+ \path[->, bend left] (b) edge node [label=below:{\((n+2)\mu\)}] {} (n+1);
+ \path[->, bend left] (n+1) edge node [label=below:{\((n+1)\mu\)}] {} (n);
+ \path[->, bend left] (n) edge node [label=below:{\(n\mu\)}] {} (n-1);
+ \path[->, bend left] (n-1) edge node [label=below:{\((n-1)\mu\)}] {} (a);-->
+                \end{tikzpicture}
+                </latex-image>
+            </image>
+        </figure>
+        
+<!--><figure xml:id="fig-bdp">
  <caption>Transitions and transition probabilities in Markov Process.</caption>
- <image width="15%" xml:id="poset">
-
-<latex-image >
-<!-->\tikzstyle{int}=[draw, fill=white, minimum size=3em, circle]
-\tikzstyle{int2}=[ fill=white, minimum size=3em, circle]-->
-<!-->
-\begin{tikzpicture}
+--><!-->
+<diagram acro="diag-markov">
+<title>Matrix Representation and Composition of Linear Transformations</title>
+<tikz>
  \node [circle] (a) {\dots};
  \node [circle] (n-1) [right of=a] {\(n-1\)};
  \node [circle] (n) [right of=n-1] {\(n\)};
@@ -110,29 +194,11 @@ births (to the right) and deaths (to the left) as illustrated in <xref ref="fig
  \path[->, bend left] (n+1) edge node [label=below:{\((n+1)\mu\)}] {} (n);
  \path[->, bend left] (n) edge node [label=below:{\(n\mu\)}] {} (n-1);
  \path[->, bend left] (n-1) edge node [label=below:{\((n-1)\mu\)}] {} (a);
-\end{tikzpicture}-->
-\begin{tikzpicture}
-\draw (0,0) -- (0,1);
-\draw (1,0) -- (1,1) -- (1,2) -- (1,3);
-\draw (0,0) -- (1,2);
-\draw (0,1) -- (1,0);
-\draw [fill] (0,0) circle [radius=0.1];
-\draw [fill] (0,1) circle [radius=0.1];
-\draw [fill] (1,0) circle [radius=0.1];
-\draw [fill] (1,1) circle [radius=0.1];
-\draw [fill] (1,2) circle [radius=0.1];
-\draw [fill] (1,3) circle [radius=0.1];
-\node [left] at (0,0) {$x$};
-\node [left] at (0,1) {$b$};
-\node [right] at (1,0) {$a$};
-\node [right] at (1,1) {$y$};
-\node [right] at (1,2) {$c$};
-\node [right] at (1,3) {$d$};
-\end{tikzpicture}
-</latex-image>
- </image>
-
+</tikz>
+</diagram>-->
+<!-->
 </figure>
+-->
 
 <p> To make use of the diagram in <xref ref="fig-bdp" /> we should
 let <me>P_n(t)=\text{Prob}(\text{counting \(n\) animals at time
@@ -244,24 +310,67 @@ Red curve illustrates the expected number of survivors.
 </figure> 
 
 <figure xml:id="fig-bdp2">
- <caption>Transitions and transition rates in Markov Process. In particular, the rates for leaving the state $n$.</caption>
- <image width="15%" xml:id="poset">
+ <caption>Transitions and transition rates in Markov Process. In particular, the rates for leaving the state <m>n</m>.</caption>
 
-<latex-image >
-\begin{tikzpicture}
- \node [int] (n-1) {$n-1$};
- \node [int] (n) [right of=n-1] {$n$};
- \node [int] (n+1) [right of=n] {$n+1$};
+            <image xml:id="image-bdp2">
+                <latex-image>
+                \begin{tikzpicture}
+                
+                \tikzset{ltvect/.style={shape=circle, minimum size=0.30em, inner sep=0pt, draw, fill=black}}
+                \tikzset{birth/.style={->, bend left=20, thick, shorten \lt=0.1em, shorten >=0.1em}}
+                \tikzset{death/.style={->, bend left=20, thick, shorten \lt=0.1em, shorten >=0.1em}}
+                % base generic picture
+<!-->                \draw ( 5em, 5em) circle [x radius=2em, y radius=2em, thick];-->
+                \draw (10em, 5em) circle [x radius=2em, y radius=2em, thick];
+                \draw (15em, 5em) circle [x radius=2em, y radius=2em, thick];
+                \draw (20em, 5em) circle [x radius=2em, y radius=2em, thick];
 
- \path[->, bend left] (n) edge node [label=above:{$nr$}] {} (n+1);
- \path[->, bend left] (n) edge node [label=above:{$n\mu$}] {} (n-1);
-\end{tikzpicture}
-</latex-image>
- </image>
+                \node (zero) at ( 5em, 5em) {\(\dots\)};
+                \node (one) at ( 10em, 5em) {\(n-1\)};
+                \node (two) at ( 15em, 5em) {\(n\)};
+                \node (three) at ( 20em, 5em) {\(n+1\)};
+                \node (dots) at ( 25em, 5em) {\(\dots\)};
+				
+				\node (b1) at (10em, 7em) {};
+				\node (b2) at (15em, 7em) {};
+				\node (b3) at (20em, 7em) {};
+				\node (b4) at (25em, 7em) {};
+				
+				\node (d0) at (5em, 3em) {};
+				\node (d1) at (10em, 3em) {};
+				\node (d2) at (15em, 3em) {};
+				\node (d3) at (20em, 3em) {};
+				\node (d4) at (25em, 3em) {};
+				\draw[birth] (b1) to node[auto] {\(r\cdot(n-1)\)} (b2);
+                \draw[birth] (b2) to node[auto] {\(r\cdot(n)\)}  (b3);				
+                \draw[birth] (b3) to node[auto] {\(r\cdot(n+1)\)} (b4);
+                				
+                \draw[death] (d1) to node[auto] {\(\mu\cdot(n-1)\)}  (d0);
+				\draw[death] (d2) to node[auto] {\(\mu\cdot(n)\)} (d1);
+                \draw[death] (d3) to node[auto] {\(\mu\cdot(n+1)\)} (d2);
+                \draw[death] (d4) to node[auto] {\(\mu\cdot(n+2)\)} (d3);
+                
+ <!-->
+ \node  (5em, 0em) [circle] (n-1) [right of=a] {\(n-1\)};
+ \node  (10em, 0em)[circle] (n) [right of=n-1] {\(n\)};
+ \node  (15em, 0em)[circle] (n+1) [right of=n] {\(n+1\)};
+ \node  (20em, 0em)[circle] (b) [right of=n+1]{\dots};
 
-</figure>
 
-
+ \path[->, bend left] (a) edge node [label=above:{\((n-2)r\)}] {} (n-1);
+ \path[->, bend left] (n-1) edge node [label=above:{\( (n-1)r\)}] {} (n);
+ \path[->, bend left] (n) edge node [label=above:{\(nr\)}] {} (n+1);
+ \path[->, bend left] (n+1) edge node [label=above:{\((n+1)r\)}] {} (b);
+ 
+ \path[->, bend left] (b) edge node [label=below:{\((n+2)\mu\)}] {} (n+1);
+ \path[->, bend left] (n+1) edge node [label=below:{\((n+1)\mu\)}] {} (n);
+ \path[->, bend left] (n) edge node [label=below:{\(n\mu\)}] {} (n-1);
+ \path[->, bend left] (n-1) edge node [label=below:{\((n-1)\mu\)}] {} (a);-->
+                \end{tikzpicture}
+                </latex-image>
+            </image>
+        </figure>
+        
 </paragraphs> 
 
 <paragraphs xml:id="bold-claim-revisited">

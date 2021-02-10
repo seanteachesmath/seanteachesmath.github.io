@@ -35,9 +35,31 @@ Consider a mild infection circulating among members of a population, where the
 
 <figure xml:id="fig-epi">
   <caption>An $SI$ model for transmission of a mild infection in a closed population.</caption>
-  <image width="15%" xml:id="a">
-  </image>
-</figure>
+            <image xml:id="image-epi">
+                <latex-image>
+                \begin{tikzpicture}
+                \tikzset{infect/.style={->, bend left=20, thick, shorten \lt=0.1em, shorten >=0.1em}}
+                \tikzset{recover/.style={->, bend left=20, thick, shorten \lt=0.1em, shorten >=0.1em}}
+                \draw (10em, 5em) circle [x radius=2em, y radius=2em, thick];
+                \draw (20em, 5em) circle [x radius=2em, y radius=2em, thick];
+
+                \node (S) at ( 10em, 5em) {\(S\)};
+                \node (I) at ( 20em, 5em) {\(I\)};
+				
+				\node (Stop) at (10em, 7em) {};
+				\node (Itop) at (20em, 7em) {};
+				
+				\node (Sbot) at (10em, 3em) {};
+				\node (Ibot) at (20em, 3em) {};
+				
+				\draw[infect] (Stop) to node[auto] {Infection} (Itop);
+                \draw[recover] (Ibot) to node[auto] {Recovery}  (Sbot);
+
+                \end{tikzpicture}
+                </latex-image>
+            </image>
+        </figure>
+        
 
 <p>
 Much like in class we will build a word model as we go.
