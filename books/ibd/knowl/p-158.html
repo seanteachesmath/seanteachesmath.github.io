@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-28T20:32:09-06:00       *-->
+<!--*       on 2021-02-05T23:31:55-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,34 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Equilibria satisfy \(N_{t+1}=N_t,\) and we denote them by \(N^*=N_{t+1}=N_t\text{.}\) Given a model \(N_{t+1}=f(N_t)N_t\text{,}\) we can see that equilibria occur at points where \(f(N_t)=1\text{.}\) At values of \(N_t\) where our per capita production takes a value of one, we have equilibria.</p>
-<span class="incontext"><a href="discrete-time-with-linear-algebra.html#p-158">in-context</a></span>
+<p>Given that we can identify the event that occurs, our next task is to identify the time until the event occurs. Here we assume that he events occur at a constant rate</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lambda=(r+\mu)n,
+\end{equation*}
+</div>
+<p data-braille="continuation">and that the time until the next event, \(T\text{,}\) is exponentially distributed with parameter \(\lambda\text{.}\) Thus,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+T\sim\exp(\lambda).
+\end{equation*}
+</div>
+<p data-braille="continuation">We can easily sample numbers from certain distributions. To sample exponentially distributed random numbers, we take advantage of its cumulative distribution function, \(F(t)=1-\exp(-\lambda t)\text{.}\) We pick a uniform random number \(r_2\) and solve for \(t\) using \(r_2=F(t)\) to find our even time.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned} r_2 &amp; =
+F(t)\\ &amp;= 1-\exp(-\lambda t)\\ \exp(-\lambda t) &amp; = 1-r_2\\
+-\lambda t &amp; =\ln(1-r_2)\\ t &amp;
+=-\frac{\ln(1-r_2)}{\lambda}\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">Importantly, since \(r_2\) is a random number so is \(1-r_2\text{.}\) In slight abuse of notation, we relabel the argument of \(\ln(\cdot)\text{,}\) which is \(1-r_2\text{,}\) by \(r_2\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+t =-\frac{\ln(r_2)}{\lambda}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(r_2\in(0,1)\text{,}\) the logarithm is negative, so the negative in front ensures a positive event time \(t\text{.}\)</p>
+<span class="incontext"><a href="birth-death-processes-and-the-gillespie-algorithm.html#p-158">in-context</a></span>
 </body>
 </html>

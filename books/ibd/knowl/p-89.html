@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-28T20:45:10-06:00       *-->
+<!--*       on 2021-02-05T23:31:54-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,70 +15,16 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p>To make use of the diagram in <a class="xref" data-knowl="./knowl/fig-bdp.html" title="Figure 3.2.1">Figure 3.2.1</a> we should let</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P_n(t)=\text{Prob}(\text{counting \(n\) animals at time
-\(t\)}),
-\end{equation*}
-</div>
-<p data-braille="continuation">and consider how these probabilities evolve in time for all \(n\text{.}\) One important fact is that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P_i(0)=\begin{cases}1,
-\,\text{if \(i=n\)}\\0, \,\text{otherwise}\end{cases},
-\end{equation*}
-</div>
-<p data-braille="continuation">since we know that we start from \(N_0=n\) animals with absolute certainty. We can derive the differential equation by conservation,</p>
+<p>Much like in class we will build a word model as we go.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \begin{aligned}
-P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\\
-&amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\\
-&amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;
+\text{change in }S &amp; = +\text{(gain from recovery)} - \text{(loss to infection)}\\
+\text{change in }I &amp; = +\text{(gain from infection)} - \text{(loss to recovery)},
 \end{aligned}
 \end{equation*}
 </div>
-<p data-braille="continuation">First we will apply the definition of \(P_n(t)\) and the others (i.e., \(P_{n-1}(t)\)). Notice that the equation is presented in two columns, on the left is the format ‘in words’ and on the right introduces the corresponding notation,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{aligned}
-P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\qquad=\text{Prob(a birth)}\times P_{n-1}(t) \\ 
-&amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\qquad+\text{Prob(a death)}\times P_{n+1}(t)\\
-&amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;\qquad+\text{Prob(no change)}\times P_{n}(t)
-\end{aligned}
-\end{equation*}
-</div>
-<p data-braille="continuation">Below we could also consider \(\text{Prob(no change)}\) as \((1-\text{Prob(change)})\text{,}\) where \(\text{Prob(change)}\) is given by the probability of events resulting in exit <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">from</em> size \(n\text{.}\) The event probabilities are,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{aligned}
-P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\qquad=(n-1)r\Delta t P_{n-1}(t) \\
-&amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\qquad+(n+1)\mu\Delta t P_{n+1}(t)\\
-&amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;\qquad+(1-nr\Delta t-n\mu\Delta t) P_{n}(t)
-\end{aligned}
-\end{equation*}
-</div>
-<p data-braille="continuation">Finally, we can begin rearranging to derive the differential equation for \(P_n(t)\text{,}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\begin{aligned}
-P_n(t+\Delta t) &amp;=(n-1)r\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)+(1-nr\Delta t-n\mu\Delta t) P_{n}(t) \\ 
-P_n(t+\Delta t) -P_n(t)&amp;=(n-1)r\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)-(nr\Delta t-n\mu\Delta t) P_{n}(t) \\
-\frac{P_n(t+\Delta t) -P_n(t)}{\Delta t}&amp;=(n-1)r P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-n(r -\mu) P_{n}(t)
-\end{aligned}
-\end{equation*}
-</div>
-<p data-braille="continuation">Now, taking the limit \(\Delta t\rightarrow0\text{,}\)</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\frac{d^{}
-{P_n(t)}}{d {t}^{}}=(n-1)r P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-(nr-n\mu)
-P_{n}(t) .
-\end{equation*}
-</div>
-<p data-braille="continuation">We have to assume that \(P_i(t)=0\) for any \(i&lt;0\text{,}\) and accept a system of coupled equations for \(n=0, 1,
-2, \dots\text{.}\) We will study this particular model with a suite of techniques, including naive calculation, inspection, and somewhat elegant probability theory.</p>
-<span class="incontext"><a href="introduction-to-stochastic-models.html#p-89">in-context</a></span>
+<p data-braille="continuation">and replace the terms with symbols. Our ‘first’ term is ‘loss to recovery’ in the \(I\) equation. We can think of \(\gamma\) as the leaving rate from the \(I\) compartment, much like \(m\) was the ‘leaving rate from the living’ (i.e., dying) compartment of a population model. Everything, in this model, that leaves one compartment enters another (i.e., there are no ‘leaks’). We can also argue for the infection rate as follows, since infection is only transmitted directly and by infectious hosts, we might expect that the rate that \(S\) individuals gain infection is proportional to the density (individuals per hectare) of infectious individuals, \(I\text{.}\) In fact here, we assume that the infection rate is a linearly increasing function of \(I\text{.}\) There are plenty of other models of transmission, some we will study in the homework, others later in the semester, still more in our projects.</p>
+<span class="incontext"><a href="two-dimensional-systems.html#p-89">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-01-28T20:32:09-06:00       *-->
+<!--*       on 2021-01-28T22:21:56-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -52,32 +52,39 @@ Y^*=\frac{1-m}{g}.
 <p>We notice that our model can be written as a set of two updating functions each depending on two variables,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\begin{aligned} Y_{t+1}&amp;=F(Y_t, Z_t)=rY_t-pZ_tY_t\\
-Z_{t+1}&amp;= G(Y_t, Z_t)=gY_tZ_t+mZ_t, \quad\text{this should be a $+m$
-not a $-m$!}\end{aligned}
+\begin{aligned}
+Y_{t+1}&amp;=F(Y_t, Z_t)=rY_t-pZ_tY_t\\
+Z_{t+1}&amp;= G(Y_t, Z_t)=gY_tZ_t+mZ_t, \quad\text{this should be a $+m$ not a $-m$!}
+\end{aligned}
 \end{equation*}
 </div>
 <p data-braille="continuation">Now, the motivation and methodology are the same as with 1D models, we are interested in thinking about \(Y_t=Y^*+y_t\) and \(Z_t=Z^*+z_t\text{,}\) which means each solution (e.g., \(Y_t\)) is a combination of equilibrium value (e.g., \(Y^*\)) and some small perturbation (e.g., \(y_t\)). The Jacobian is a matrix of partial derivatives of our updating functions with respect to the state variables. We could derive this as we did with a Taylor series expansion of a 1D model.</p>
 <p>Then, skipping some steps, we can compute the Jacobian as follows (we will drop the subscripts for simplicity),</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-J(Y, Z)=\left(\begin{array}{cc}
-\frac{\partial^{} {F}}{\partial {Y}^{}} &amp; \frac{\partial^{}
-{F}}{\partial {Z}^{}}\\[8pt] \frac{\partial^{} {G}}{\partial {Y}^{}}
-&amp; \frac{\partial^{} {G}}{\partial {Z}^{}} \end{array}\right).
+J(Y, Z)=\left(
+\begin{array}{cc}
+\frac{\partial^{} {F}}{\partial {Y}^{}} &amp; \frac{\partial^{}{F}}{\partial {Z}^{}}\\[8pt]
+\frac{\partial^{} {G}}{\partial {Y}^{}}&amp; \frac{\partial^{} {G}}{\partial {Z}^{}} 
+\end{array}\right).
 \end{equation*}
 </div>
 <p>Our work is not done, just yet. Since we are concerned with the dynamics ‘near equilibrium’ we have to evaluate the Jacobian at the equilibrium. An example, in just a minute, should make this clear.</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\left(\begin{array}{cc} y_{t_1}\\[8pt] z_{t+1}
-\end{array}\right)=\left.\left(\begin{array}{cc} \frac{\partial^{}
-{F}}{\partial {Y}^{}} &amp; \frac{\partial^{} {F}}{\partial
-{Z}^{}}\\[8pt] \frac{\partial^{} {G}}{\partial {Y}^{}} &amp;
-\frac{\partial^{} {G}}{\partial {Z}^{}} \end{array}\right)\right|_{(Y^*,
-Z^*)}\times\left(\begin{array}{cc} y_{t}\\[8pt] z_{t}
+\left(
+\begin{array}{cc}
+y_{t_1}\\[8pt]
+z_{t+1}\end{array}
+\right)=\left.\left(
+\begin{array}{cc}
+\frac{\partial^{} {F}}{\partial {Y}^{}} &amp; \frac{\partial^{} {F}}{\partial {Z}^{}}\\[8pt] \frac{\partial^{} {G}}{\partial {Y}^{}} &amp;
+\frac{\partial^{} {G}}{\partial {Z}^{}} \end{array}\right)\right|_{(Y^*,Z^*)}\times\left(
+\begin{array}{cc} 
+y_{t}\\[8pt] 
+z_{t}
 \end{array}\right).
 \end{equation*}
-</div></article><span class="incontext"><a href="discrete-time-with-linear-algebra.html#an-approach-to-nonlinear-multi-species-dynamics">in-context</a></span>
+</div></article><span class="incontext"><a href="nonlinear-discrete-time-models-2d.html#an-approach-to-nonlinear-multi-species-dynamics">in-context</a></span>
 </body>
 </html>
