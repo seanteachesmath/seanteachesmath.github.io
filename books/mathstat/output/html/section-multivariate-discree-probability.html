@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-08T13:24:55-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Multivariate discrete random variables</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="images/cover.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="mathstat.html"><span class="title">Mathematical Statistics I:</span> <span class="subtitle">Based on course notes developed using Freund's Mathematical Statistics</span></a></h1>
+<p class="byline">Sean M. Laverty</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-special-distributions.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-discrete.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap-continuous.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-special-distributions.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-discrete.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap-continuous.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="front-colophon.html" data-scroll="front-colophon">Colophon</a></li>
+<li><a href="author-bio-SML.html" data-scroll="author-bio-SML">Author Biography</a></li>
+<li><a href="dedication.html" data-scroll="dedication">Dedication</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface">Preface</a></li>
+<li><a href="contributors.html" data-scroll="contributors">Contributors to the 0\(^\mathrm{th}\) Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-counting.html" data-scroll="chap-counting"><span class="codenumber">1</span> <span class="title">Counting</span></a><ul><li><a href="section-counting.html" data-scroll="section-counting">Counting</a></li></ul>
+</li>
+<li class="link">
+<a href="chap-prob.html" data-scroll="chap-prob"><span class="codenumber">2</span> <span class="title">Probability</span></a><ul><li><a href="section-probability.html" data-scroll="section-probability">Probability</a></li></ul>
+</li>
+<li class="link">
+<a href="chap-discrete.html" data-scroll="chap-discrete"><span class="codenumber">3</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="section-probability-distributions.html" data-scroll="section-probability-distributions">Probability distributions</a></li>
+<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
+<li><a href="section-special-distributions.html" data-scroll="section-special-distributions">Special probability distributions</a></li>
+<li><a href="section-multivariate-discree-probability.html" data-scroll="section-multivariate-discree-probability" class="active">Multivariate discrete random variables</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-continuous.html" data-scroll="chap-continuous"><span class="codenumber">4</span> <span class="title">Continuous Random Variables</span></a><ul>
+<li><a href="section-probability-densities.html" data-scroll="section-probability-densities">Probability densities</a></li>
+<li><a href="section-continuous-expectation.html" data-scroll="section-continuous-expectation">Expectation of continuous random variables</a></li>
+<li><a href="section-special-densities.html" data-scroll="section-special-densities">Special probability densities</a></li>
+<li><a href="sec-multi-cont.html" data-scroll="sec-multi-cont">Multivariate continuous random variables</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-def.html" data-scroll="appendix-def"><span class="codenumber">A</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thm.html" data-scroll="appendix-thm"><span class="codenumber">B</span> <span class="title">Theorems</span></a></li>
+<li class="link"><a href="appendix-ex.html" data-scroll="appendix-ex"><span class="codenumber">C</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-gfdl.html" data-scroll="appendix-gfdl"><span class="codenumber">D</span> <span class="title">GNU Free Documentation License</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="back-colophon.html" data-scroll="back-colophon"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-multivariate-discree-probability"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Multivariate discrete random variables</span>
+</h2>
+<section class="introduction" id="introduction-16"><p id="p-177">Some words.</p></section><section class="subsection" id="sub-multi-variable"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.4.1</span> <span class="title">Multivariate, marginal, and conditional distributions</span>
+</h3>
+<section class="introduction" id="introduction-17"><p id="p-178">See sections 3.5, 3.6, 3.7. Recommended problems: (pg 101) 42, 44, 45, 49, 53, 54</p></section><article class="definition definition-like" id="def-joint-probability-distribution-3-6"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">joint probability distribution.</span>
+</h6>
+<p id="p-179">If \(\displaystyle X\) and \(\displaystyle Y\) are discrete random variables, the function given by \(\displaystyle f(x,y) = P(X=x,
+Y=y)\) for each pair of values \(\displaystyle (x,y)\) within the range of \(\displaystyle X\) and \(\displaystyle Y\) is called the <dfn class="terminology">joint probability distribution</dfn> of \(\displaystyle X\) and \(\displaystyle Y\text{.}\)</p></article><article class="theorem theorem-like" id="thm-3-7"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">conditions for a joint probability distribution.</span>
+</h6>
+<p id="p-180">A bivariate function can serve as a joint probability distribution for a pair of discrete random variables \(\displaystyle X\) and \(\displaystyle Y\) if and only if its values, \(\displaystyle f(x,
+y)\text{,}\) satisfy the conditions</p>
+<ol class="decimal">
+<li id="li-21">\(\displaystyle f(x, y) \ge 0\) for each pair of values \(\displaystyle (x, y)\) within its domain;</li>
+<li id="li-22">\(\displaystyle \sum_x\sum_y f(x, y) = 1\) where the double summation extends over all possible pairs \(\displaystyle (x,
+y)\text{.}\)</li>
+</ol></article><article class="definition definition-like" id="def-joint-distribution-function-3-7"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">joint distribution function.</span>
+</h6>
+<p id="p-181">If \(\displaystyle X\) and \(\displaystyle Y\) are discrete random variables, the function given by</p>
+<div class="displaymath">
+\begin{equation*}
+F(x, y) = P(X \le x, Y \le y) =
+\sum_{s\le x} \sum_{t\le y} f(s, t) \text{ for } \infty \lt x, y \lt
+\infty
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(\displaystyle f(s, t)\) is the value of the joint probability distribution of \(\displaystyle X\) and \(\displaystyle
+Y\) at \(\displaystyle (s, t)\text{,}\) is called the <dfn class="terminology">joint distribution function</dfn> or <dfn class="terminology">joint cumulative distribution</dfn> of \(\displaystyle X\) and \(\displaystyle
+Y\text{.}\)</p></article><article class="definition definition-like" id="def-marginal-distribution-3-10"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">marginal distribution.</span>
+</h6>
+<p id="p-182">If \(\displaystyle X\) and \(\displaystyle Y\) are discrete random variables and \(\displaystyle f(x, y)\) is the value of their joint probability distribution at \(\displaystyle (x, y)\text{,}\) the function given by</p>
+<div class="displaymath">
+\begin{equation*}
+g(x) = \sum_y f(x, y)
+\end{equation*}
+</div>
+<p data-braille="continuation">for each \(\displaystyle x\) within the range of \(\displaystyle X\) is called the <dfn class="terminology">marginal distribution</dfn> of \(\displaystyle X\text{.}\) Correspondingly, the function given by</p>
+<div class="displaymath">
+\begin{equation*}
+h(y) = \sum_x f(x, y)
+\end{equation*}
+</div>
+<p data-braille="continuation">for each \(\displaystyle y\) within the range of \(\displaystyle Y\) is called the <dfn class="terminology">marginal distribution</dfn> of \(\displaystyle Y\text{.}\)</p></article><article class="definition definition-like" id="def-conditional-distribution-3-10"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">conditional distribution.</span>
+</h6>
+<p id="p-183"><dfn class="terminology">conditional distribution</dfn></p>
+<div class="displaymath">
+\begin{equation*}
+f(x|y) = \dfrac{f(x, y)}{h(y)}, h(y)\ne 0
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+w(y|x) = \dfrac{f(x, y)}{g(x)}, g(x)\ne 0
+\end{equation*}
+</div></article></section><section class="exercises" id="exercises-12"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.4.2</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-26"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.42.</span>
+</h6>
+<p id="p-184">If the values of the joint probability distribution of \​(X\) and \​(Y\) are shown below,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+P[x=0, y=0] \amp = \frac{1}{12}\\
+P[x=1, y=0] \amp = \frac{1}{6}\\
+P[x=2, y=0] \amp = \frac{1}{24}\\
+P[x=0, y=1] \amp = \frac{1}{4}\\
+P[x=1, y=1] \amp = \frac{1}{4}\\
+P[x=2, y=1] \amp = \frac{1}{40}\\
+P[x=0, y=2] \amp = \frac{1}{8}\\
+P[x=1, y=2] \amp = \frac{1}{20}\\
+P[x=0, y=3] \amp = \frac{1}{120}\\
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">find</p>
+<ol class="lower-alpha">
+<li id="li-23"><p id="p-185">(b) \(P(X = 0, 1\le Y \lt 3)\)</p></li>
+<li id="li-24"><p id="p-186">(c) \(P(X + Y \le 1)\)</p></li>
+<li id="li-25"><p id="p-187">(d) \(P(X \gt Y)\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.44.</span>
+</h6>
+<p id="p-188">If the joint probability distribution of \(X\) and \(Y\) is given by</p>
+<div class="displaymath">
+\begin{equation*}
+f(x, y) = c(x^2+y^2) \text{ for } x=0, 3; y=0, 1, 2
+\end{equation*}
+</div>
+<p data-braille="continuation">find the value of \(c\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.45.</span>
+</h6>
+<p id="p-189">With references to the previous problem find</p>
+<ol class="lower-alpha">
+<li id="li-26"><p id="p-190">\(\displaystyle P(X\le 1, Y \gt 2)\)</p></li>
+<li id="li-27"><p id="p-191">\(\displaystyle P(X=0, Y\le 2)\)</p></li>
+<li id="li-28"><p id="p-192">\(\displaystyle P(X +Y \gt 2)\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.70.</span>
+</h6>
+<p id="p-193">With reference to 3.42, find</p>
+<ol class="lower-alpha">
+<li id="li-29"><p id="p-194">the marginal distribution of \(X\)</p></li>
+<li id="li-30"><p id="p-195">the marginal distribution of \(X\)</p></li>
+<li id="li-31"><p id="p-196">the conditional distribution of \(X\) given \(Y=1\)</p></li>
+<li id="li-32"><p id="p-197">the conditional distribution of \(Y\) given \(X=0\)</p></li>
+</ol></article></section><section class="subsection" id="sub-product-moments"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.4.3</span> <span class="title">Product moments</span>
+</h3>
+<p id="p-198">See section 4.6.</p>
+<article class="definition definition-like" id="def-product-moments-origin-4-7"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">product moments about the origin.</span>
+</h6>
+<p id="p-199">The <dfn class="terminology">\(\displaystyle r^\text{th}\) and \(\displaystyle
+s^\text{th}\) product moment about the origin</dfn> of the random variables \(X\) and \(Y\text{,}\) denoted by \(\displaystyle \mu_{r,s}\text{,}\) is the expected value of \(\displaystyle X^rY^s\text{;}\) symbolically</p>
+<div class="displaymath">
+\begin{equation*}
+\mu_{r,s}'=E[X^rY^s] = \sum_x\sum_y x^r y^s\cdot f(x, y)
+\end{equation*}
+</div>
+<p data-braille="continuation">\(\displaystyle r = 0,1,2, \dots\) and \(\displaystyle s = 0,1,2,
+\dots\) when \(X\) and Y are discrete.</p></article><p id="p-200">Special cases of product moments are \(\displaystyle \mu_{1,0}' =
+E[X^1Y^0] = E[X] = \mu_X\) and \(\displaystyle \mu_{0,1}' = E[X^0Y^1]
+= E[Y] = \mu_Y\text{.}\)</p>
+<p id="p-201">As complicated as the definitions of the product moments may be, they lead to a way to define and calculate the very important concept of covariance.</p>
+<ul class="disc">
+<li id="li-33">If we have a high probability of large \(X\) paired with large \(Y\) and small \(\displaystyle
+X\) paired with small \(Y\text{,}\) \(\displaystyle
+\operatorname{cov}(X,Y) \gt 0\)</li>
+<li id="li-34">If we have a high probability of large \(X\) paired with small \(Y\) and small \(\displaystyle
+X\) paired with large \(Y\text{,}\) \(\displaystyle
+\operatorname{cov}(X,Y) \lt 0\)</li>
+</ul>
+<article class="definition definition-like" id="def-product-moments-mean-4-8"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">product moments about the mean.</span>
+</h6>
+<p id="p-202">The <dfn class="terminology">\(\displaystyle r^\text{th}\) and \(\displaystyle
+s^\text{th}\) product moment about the mean</dfn> of the random variables \(X\) and \(Y\text{,}\) denoted by \(\displaystyle \mu_{r,s}'\text{,}\) is the expected value of \(\displaystyle (X-\mu_X)^r(Y-\mu_Y)^s\text{;}\) symbolically</p>
+<div class="displaymath">
+\begin{equation*}
+\mu_{r,s}=E[(X-\mu_X)^r(Y-\mu_Y)^s] = \sum_x\sum_y (x-\mu_X)^r
+(y-\mu_Y)^s\cdot f(x, y)
+\end{equation*}
+</div>
+<p data-braille="continuation">\(\displaystyle r = 0,1,2, \dots\) and \(\displaystyle s = 0,1,2, \dots\) when \(X\) and Y are discrete.</p></article><article class="definition definition-like" id="def-covariance-4-9"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">covariance.</span>
+</h6>
+<p id="p-203">\(\displaystyle \mu_{1,1}\) is called the <dfn class="terminology">covariance</dfn> of \(X\) and \(Y\text{,}\) and it is denoted by \(\displaystyle \sigma_{XY}\) or \(\displaystyle
+\operatorname{cov}(X, Y)\text{,}\) or \(\displaystyle C(X, Y)\text{.}\)</p></article><article class="theorem theorem-like" id="thm-4-11"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">covariance from moments about the origin.</span>
+</h6>
+<p id="p-204">\(\displaystyle \sigma_{XY} = \mu_{1,1}' - \mu_X \mu_Y\)</p></article><article class="theorem theorem-like" id="thm-4-12"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">independence and covariance.</span>
+</h6>
+<p id="p-205">If \(X\) and \(Y\) are independent, then</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle E[XY] = E[X]\cdot E[Y]
+\end{equation*}
+</div>
+<p data-braille="continuation">and \(\displaystyle \sigma_{XY} = 0\text{.}\)</p></article><article class="remark remark-like" id="rmrk-4-12"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.4.11</span><span class="period">.</span>
+</h6>In terms of moments,<div class="displaymath">
+\begin{equation*}
+\displaystyle\mu_{1,1}' = \mu_{1,0}'\cdot \mu_{0,1}'
+\end{equation*}
+</div></article><article class="theorem theorem-like" id="thm-4-13"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">product moments of independent random variables.</span>
+</h6>
+<p id="p-206">If \(\displaystyle X_1, X_2, \dots, X_n\) are independent, then \(\displaystyle E[X_1X_2\cdots X_n] = E[X_1]\cdot
+E[X_2]\cdot\cdots\cdot E[X_n]\text{.}\)</p></article><p id="p-207">Independence means covariance is zero, but covariances of zero does not mean independence.</p></section><section class="exercises" id="exercises-13"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.4.4</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-30"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 4.41.</span>
+</h6>
+<p id="p-208">If \(X\) and \(Y\) have the joint probability distribution \(f(x, y) = \dfrac{1}{4}\) for \((-3, -5)\text{,}\)  \((-1, -1)\text{,}\) \((1, 1)\text{,}\)  \((3, 5)\text{,}\) find \(\operatorname{cov}(X, Y)\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-31"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 4.45.</span>
+</h6>
+<p id="p-209">If \(X\) and \(Y\) have the joint probability distribution \(f(-1, 0) = 0\text{,}\)  \(f(-1, 1) = \dfrac{1}{4}\text{,}\) \(f(0, 0) = \dfrac{1}{6}\text{,}\) \(f(1, 0) = \dfrac{1}{12}\text{,}\) \(f(1,
+1) = \dfrac{1}{2}\) show that</p>
+<ol class="lower-alpha">
+<li id="li-35"><p id="p-210">\(\operatorname{cov}(X, Y) = 0\text{;}\)</p></li>
+<li id="li-36"><p id="p-211">the two random variables are not independent.</p></li>
+</ol></article></section><section class="subsection" id="sub-conditional-expectation"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.4.5</span> <span class="title">Conditional expectation</span>
+</h3>
+<p id="p-212">See section 4.8.</p>
+<article class="definition definition-like" id="def-conditional-expectation-4-10"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.13</span><span class="period">.</span><span class="space"> </span><span class="title">conditional expectation.</span>
+</h6>
+<p id="p-213">If \(X\) is a discrete random variable and \(\displaystyle f(x|y)\) is the value of the conditional probability distribution of \(X\) given \(\displaystyle Y = y\) at \(X\text{,}\) the <dfn class="terminology">conditional expectation</dfn> of \(\displaystyle u(X)\) given \(\displaystyle Y = y\) is</p>
+<div class="displaymath">
+\begin{equation*}
+E[u(X)|y] = \sum_x u(x)\cdot f(x|y)
+\end{equation*}
+</div>
+<p data-braille="continuation">and the <dfn class="terminology">conditional expectation</dfn> of \(\displaystyle v(Y)\) given \(\displaystyle X
+= x\) is</p>
+<div class="displaymath">
+\begin{equation*}
+E[v(Y)|x] = \sum_y v(y)\cdot w(y|x)
+\end{equation*}
+</div></article><article class="definition definition-like" id="def-conditional-mean"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.14</span><span class="period">.</span><span class="space"> </span><span class="title">conditional mean.</span>
+</h6>
+<p id="p-214">If \(X\) is a discrete random variable and \(\displaystyle f(x|y)\) is the value of the conditional probability distribution of \(X\) given \(\displaystyle Y = y\) at \(X\text{,}\) the <dfn class="terminology">conditional mean</dfn> of \(\displaystyle u(X) = X\) given \(\displaystyle Y = y\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\mu_{X|y} = E[X|y] = \sum_x x\cdot f(x|y)
+\end{equation*}
+</div>
+<p data-braille="continuation">and the <dfn class="terminology">conditional mean</dfn> of \(\displaystyle v(Y) = Y\) given \(\displaystyle X = x\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle \mu_{Y|x} = E[Y|x] = \sum_y y\cdot w(y|x)
+\end{equation*}
+</div></article><article class="definition definition-like" id="def-conditional-variance"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">conditional variance.</span>
+</h6>
+<p id="p-215">If \(X\) is a discrete random variable and \(\displaystyle f(x|y)\) is the value of the conditional probability distribution of \(X\) given \(\displaystyle Y = y\) at \(X\text{,}\) the <dfn class="terminology">conditional variance</dfn> of \(X\) given \(\displaystyle Y = y\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma^2_{X|y} = E[(X-\mu_{X|y})^2|y] = E[X^2]-\mu^2_{X|y}
+\end{equation*}
+</div>
+<p data-braille="continuation">and the <dfn class="terminology">conditional expectation</dfn> of \(Y\) given \(\displaystyle X = x\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\sigma^2_{Y|x} = E[(Y-\mu_{Y|x})^2|y] =
+E[Y^2]-\mu^2_{Y|x}
+\end{equation*}
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>

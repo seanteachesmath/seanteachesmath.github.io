@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-08T13:24:53-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Probability distributions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="images/cover.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="mathstat.html"><span class="title">Mathematical Statistics I:</span> <span class="subtitle">Based on course notes developed using Freund's Mathematical Statistics</span></a></h1>
+<p class="byline">Sean M. Laverty</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap-discrete.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-discrete.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-discrete-expectation.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap-discrete.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-discrete.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-discrete-expectation.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="front-colophon.html" data-scroll="front-colophon">Colophon</a></li>
+<li><a href="author-bio-SML.html" data-scroll="author-bio-SML">Author Biography</a></li>
+<li><a href="dedication.html" data-scroll="dedication">Dedication</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface">Preface</a></li>
+<li><a href="contributors.html" data-scroll="contributors">Contributors to the 0\(^\mathrm{th}\) Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-counting.html" data-scroll="chap-counting"><span class="codenumber">1</span> <span class="title">Counting</span></a><ul><li><a href="section-counting.html" data-scroll="section-counting">Counting</a></li></ul>
+</li>
+<li class="link">
+<a href="chap-prob.html" data-scroll="chap-prob"><span class="codenumber">2</span> <span class="title">Probability</span></a><ul><li><a href="section-probability.html" data-scroll="section-probability">Probability</a></li></ul>
+</li>
+<li class="link">
+<a href="chap-discrete.html" data-scroll="chap-discrete"><span class="codenumber">3</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="section-probability-distributions.html" data-scroll="section-probability-distributions" class="active">Probability distributions</a></li>
+<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
+<li><a href="section-special-distributions.html" data-scroll="section-special-distributions">Special probability distributions</a></li>
+<li><a href="section-multivariate-discree-probability.html" data-scroll="section-multivariate-discree-probability">Multivariate discrete random variables</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-continuous.html" data-scroll="chap-continuous"><span class="codenumber">4</span> <span class="title">Continuous Random Variables</span></a><ul>
+<li><a href="section-probability-densities.html" data-scroll="section-probability-densities">Probability densities</a></li>
+<li><a href="section-continuous-expectation.html" data-scroll="section-continuous-expectation">Expectation of continuous random variables</a></li>
+<li><a href="section-special-densities.html" data-scroll="section-special-densities">Special probability densities</a></li>
+<li><a href="sec-multi-cont.html" data-scroll="sec-multi-cont">Multivariate continuous random variables</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-def.html" data-scroll="appendix-def"><span class="codenumber">A</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thm.html" data-scroll="appendix-thm"><span class="codenumber">B</span> <span class="title">Theorems</span></a></li>
+<li class="link"><a href="appendix-ex.html" data-scroll="appendix-ex"><span class="codenumber">C</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-gfdl.html" data-scroll="appendix-gfdl"><span class="codenumber">D</span> <span class="title">GNU Free Documentation License</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="back-colophon.html" data-scroll="back-colophon"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-probability-distributions"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Probability distributions</span>
+</h2>
+<section class="introduction" id="introduction-6"><p id="p-14">Some words.</p></section><section class="subsection" id="sub-single-variable-disc"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.1.1</span> <span class="title">Random variables and probability distributions</span>
+</h3>
+<section class="introduction" id="introduction-7"><p id="p-15">See sections 3.1, 3.2. Recommended problems: (pg80)1,3,4ab,5,6,7a</p></section><article class="definition definition-like" id="def-probability-distribution-3-2"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">probability distribution.</span>
+</h6>
+<p id="p-16">If \(\displaystyle X\) is a discrete random variable, the function given by \(\displaystyle f(x) = P(X = x)\) for each \(\displaystyle
+x\) within the range of \(\displaystyle X\) is called the <dfn class="terminology">probability distribution</dfn>.</p></article><article class="theorem theorem-like" id="thm-conditions-3-1"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">conditions for probability distribution.</span>
+</h6>
+<p id="p-17">A function can serve as the probability distribution for a discrete random variable \(\displaystyle X\) if and only if its values, \(\displaystyle f(x)\text{,}\) satisfy the conditions</p>
+<ol class="decimal">
+<li id="li-1"><p id="p-18">\(\displaystyle f(x) \ge 0\) for each value within its domain;</p></li>
+<li id="li-2"><p id="p-19">\(\displaystyle \sum_x f(x) = 1\text{,}\) where the summation extends over all the values within its domain</p></li>
+</ol></article><article class="definition definition-like" id="def-distribution-function-3-3"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">distribution function.</span>
+</h6>
+<p id="p-20">If \(\displaystyle X\) is a discrete random variable, the function given by  where \(\displaystyle f(t)\) is the value of the probability distribution of \(\displaystyle X\) at \(\displaystyle t\text{,}\) is called the <dfn class="terminology">distribution function</dfn>, or the <dfn class="terminology">cumulative distribution (function)</dfn>, of \(\displaystyle X\text{.}\)</p></article><article class="theorem theorem-like" id="thm-3-2"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">properties of a distribution function.</span>
+</h6>
+<p id="p-21">The values \(\displaystyle F(x)\) of the distribution function of a discrete random variable \(\displaystyle X\) satisfy the conditions</p>
+<ol class="decimal">
+<li id="li-3">\(\displaystyle F(-\infty) = 0\) and \(\displaystyle F(\infty)
+= 1\) (more carefully stated as \(\displaystyle
+\lim_{x\to-\infty}F(x) = 0\) and \(\displaystyle \lim_{x\to\infty}
+F(x) = 1\));</li>
+<li id="li-4">if \(\displaystyle a \lt b\text{,}\) then \(\displaystyle F(a) \le
+F(b)\) for any real numbers \(\displaystyle a\) and \(\displaystyle b\)</li>
+</ol></article><article class="example example-like" id="ex-disc-pmf"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-disc-pmf"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">simple probability mass function.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-disc-pmf"><article class="example example-like"><p id="p-22">Identify whether the function \(f(x) = \dfrac{2x-1}{5}\) is a probability mass function for the discrete random variable \(X\) with values \(x=1,2,3,4,5\text{.}\)  If it is not a valid distribution "fix it".</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
+<p id="p-23">Notice that values of \(f(x) \ge 0\) for all possible \(x\text{,}\) but</p>
+<div class="displaymath">
+\begin{equation*}
+\sum\limits_{x=1}^5 f(x) = 5 \gt 1.
+\end{equation*}
+</div>
+<p data-braille="continuation">The function must be recalled so that probabilities sum to one.  The function \(f(x) =
+\dfrac{2x-1}{25}\) is a valid probability mass function.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="ex-disc-pmf-to-cdf"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-disc-pmf-to-cdf"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">CDF of a simple probability mass function.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-disc-pmf-to-cdf"><article class="example example-like"><p id="p-24">The function \(f(x) = \dfrac{2x-1}{25}\) is a probability mass function for the discrete random variable \(X\) with values \(x=1,2,3,4,5\text{.}\)  Find the cumulative distribution function.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
+<p id="p-25">(Scratchwork pending) We have</p>
+<div class="displaymath">
+\begin{equation*}
+F(x) = \begin{cases} 0, \amp \quad x \lt 1\\
+f(1), \amp \quad 1 \le x \lt 2\\
+f(1) + f(2), \amp \quad 2 \le x \lt 3\\
+f(1) + f(2) + f(3), \amp \quad 3 \le x \lt 4\\
+f(1) + f(2) + f(3) + f(4), \amp \quad 4 \le x \lt 5\\
+f(1) + f(2) + f(3) + f(4) + f(5), \amp \quad 5 \le x
+\end{cases}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div></section><section class="exercises" id="exercises-1"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.1.2</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-1"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.1.</span>
+</h6>
+<p id="p-26">For each of the following, determine whether the given values can serve as the values of a probability distribution of a random variable with the range \(x = 1, 2, 3, \text{ and } 4\text{:}\)</p>
+<ol class="lower-alpha">
+<li id="li-5"><p id="p-27">\(\displaystyle f(1) = 0.25,f(2) = 0.75,f(3) = 0.25,\text{ and }f(4) =
+0.25\)</p></li>
+<li id="li-6"><p id="p-28">\(\displaystyle f(1) = 0.15,f(2) = 0.27,f(3) = 0.29,\text{ and }f(4) =
+0.29\)</p></li>
+<li id="li-7"><p id="p-29">\(\displaystyle f(1) = \dfrac{1}{19},f(2) = \dfrac{10}{19},f(3) =
+\dfrac{2}{19},\text{ and }f(4) = \dfrac{5}{19}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-2"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.3.</span>
+</h6>
+<p id="p-30">Verify that \(\displaystyle f(x) = \dfrac{2x}{k(k+1)}\) for \(x=1, 2,
+3, \dots, k\) can serve as the probability distribution of a random variable with the given range. <em class="emphasis">Bonus:</em> Find or describe \(F(x)\text{.}\)}</p></article><article class="exercise exercise-like" id="exercise-3"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.4b.</span>
+</h6>
+<p id="p-31">Determine \(c\) so that the function \(\displaystyle f(x) =
+c{5\choose x}\) for \(x = 0, 1, 2, 3, 4, 5\) can serve as a probability distribution of a random variable with the given range.</p></article><article class="exercise exercise-like" id="exercise-4"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.5.</span>
+</h6>
+<p id="p-32">For what values of \(k\) an</p>
+<div class="displaymath">
+\begin{equation*}
+f(x) = (1-k)k^x
+\end{equation*}
+</div>
+<p data-braille="continuation">serve as the values of the probability distribution of a random variable with countably infinite range \(x = 0, 1, 2, \dots\text{?}\)</p></article><article class="exercise exercise-like" id="exercise-5"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.7a.</span>
+</h6>
+<p id="p-33">Show that there are no values of \(c\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+f(x) =
+\dfrac{c}{x}
+\end{equation*}
+</div>
+<p data-braille="continuation">can serve as the values of the probability distribution of a random variable with countably infinite range \(x = 0, 1, 2, \dots\)</p></article><article class="exercise exercise-like" id="exercise-6"><h6 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.6.</span>
+</h6>
+<p id="p-34">Construct a probability histogram for the probability distribution</p>
+<div class="displaymath">
+\begin{equation*}
+f(x) = \dfrac{{2\choose x}{4\choose{3-x}}}{{6\choose3}} \text{ for
+}x=0, 1, 2
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-7"><h6 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.87.</span>
+</h6>
+<p id="p-35">The probability distribution of \(V\text{,}\) the number of weekly accidents at a certain intersection, is given by \(g(0) = 0.4, g(1) =
+0.3, g(2) = 0.2, g(3) = 0.1\text{.}\) Construct the distribution function of \(V\) and draw its graph.</p></article><article class="exercise exercise-like" id="exercise-8"><h6 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.88.</span>
+</h6>
+<p id="p-36">Using the statement and result of the previous problem, find the probability that there will be at least two accidents in any one week using</p>
+<ol class="lower-alpha">
+<li id="li-8"><p id="p-37">the original probabilities, and</p></li>
+<li id="li-9"><p id="p-38">the values of the distribution function.</p></li>
+</ol></article></section></section></div></main>
+</div>
+</body>
+</html>
