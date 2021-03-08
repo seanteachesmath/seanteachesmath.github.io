@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-03-08T12:19:22-06:00       *-->
+<!--*       on 2021-03-08T13:25:02-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,20 +13,49 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><div class="solution solution-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+<body><div class="solution solution-like">
+<p>For \(x \lt 0\text{,}\) \(F(x) = 0\) (no area has yet been accumulated). Now things get interesting.  For \(0 \le x \lt 1\text{,}\) we integrate \(f(t)\) to a variable limit of integration \(x\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
 \begin{aligned}[t]
-E[X] \amp = \int_{-\infty}^\infty x\cdot f(x)\,dx\\
-\amp = \int_{-\infty}^0 0\,dx + \int_{0}^1 \underbrace{x\cdot
-x}_{x^2}\,dx + \int_{1}^2 \underbrace{x\cdot(2-x)}_{2x-x^2}\,dx +
-\int_2^{\infty} 0\,dx\\
-\amp = 0 + \int_{0}^1 x^2\,dx + \int_{1}^2 2x-x^2\,dx + 0\\
-\amp = \Big(\dfrac{x^3}{3}\Big)\Big|_0^1 +
-\Big(x^2-\dfrac{x^3}{3}\Big)\Big|_1^2\\
-\amp = \Big(\dfrac{1}{3} - 0\Big) + \Big(\Big(4-\dfrac{8}{3}\Big) -
-\Big(1-\dfrac{1}{3}\Big)\Big)\\ 
-E[X] \amp = 1
+\int_0^x t\,dt \amp = \Big(\dfrac{t^2}{2}\Big)\Big|_0^x\\
+\amp = \Big(\dfrac{x^2}{2} - \dfrac{0^2}{2}\Big)\\
+\int_0^x t\,dt \amp = \dfrac{x^2}{2}
 \end{aligned}
 \end{equation*}
-</div></div></body>
+</div>
+<p data-braille="continuation">For \(1 \le x \lt 2\text{,}\) we integrate \(f(t)\) to a variable limit of integration \(x\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned}[t]
+\int_1^x 2-t\,dt \amp = \Big(2t-\dfrac{t^2}{2}\Big)\Big|_1^x\\
+\amp = \Big(\Big(2x - \dfrac{x^2}{2}\Big) - \Big(2(1) -
+\dfrac{1^2}{2}\Big)\Big)\\
+\int_1^x 2-t\,dt \amp = 2x - \dfrac{x^2}{2} - \dfrac{3}{2}
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">It is important here to remember that in writing \(F(x)\) for points in \(1 \le x \lt 2\text{,}\) the complete area from \(0 \le x \lt 1\) has already been accumulated in full. Beyond \(x = 2\text{,}\) all area under \(f(x)\) has been accumulated. In other words for a point in \(1 \le x \lt 2\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{aligned}[t] 
+\int_0^x f(t)\,dt \amp = \int_0^1 t\,dt + \int_1^x 2-t\,dt\\
+\amp = \dfrac{1}{2} + 2x - \dfrac{x^2}{2} - \dfrac{3}{2}\\
+\amp = 1 + 2x - \dfrac{x^2}{2}
+\end{aligned}
+\end{equation*}
+</div>
+<p data-braille="continuation">With this in mind we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+F(x) = \begin{cases}
+0,\amp \quad x \lt 0\\
+\dfrac{x^2}{2}, \amp \quad 0 \le x \lt 1\\
+1 + 2x - \dfrac{x^2}{2}, \amp \quad 1 \le x
+\lt 2\\
+1, \amp \quad 2 \le x
+\end{cases}
+\end{equation*}
+</div>
+</div></body>
 </html>
