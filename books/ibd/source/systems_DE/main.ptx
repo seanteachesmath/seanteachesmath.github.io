@@ -68,7 +68,7 @@ Much like in class we will build a word model as we go.
 \text{change in }I &amp; = +\text{(gain from infection)} - \text{(loss to recovery)},
 \end{aligned}</me> and replace
 the terms with symbols. Our <sq>first</sq> term is <sq>loss to
-recovery</sq> in the <m>I</m> equation. We can think of <m>\gamma</m> as
+recovery</sq> in the <m>I</m> equation. We can think of <m>\delta</m> as
 the leaving rate from the <m>I</m> compartment, much like <m>m</m> was
 the <sq>leaving rate from the living</sq> (i.e., dying) compartment of a
 population model. Everything, in this model, that leaves one compartment
@@ -87,9 +87,9 @@ projects.
 <p>
 <me>\begin{aligned}
  \text{change in }S &amp; = +\text{(gain from recovery)} &amp;&amp;-\text{(loss to infection)}\\
-\frac{dS}{dt}&amp;= + \gamma I &amp;&amp; - {\beta I} S\\
+\frac{dS}{dt}&amp;= + \delta I &amp;&amp; - {\beta I} S\\
 \text{change in }I &amp; =  + \text{(gain from infection)}&amp;&amp; -\text{(loss to recovery)}\\
-\frac{dI}{dt}&amp;= + \beta IS &amp;&amp; -{\gamma} I
+\frac{dI}{dt}&amp;= + \beta IS &amp;&amp; -{\delta} I
 \end{aligned}</me> 
 </p>
 
@@ -99,14 +99,14 @@ Since the total number* of individuals <m>N</m> is preserved, we can
 replace the equation for <m>S</m> by an algebraic constraint
 <m>S=N-I</m>. We can substitute this into the equation for <m>I</m> and
 derive a 1-dimensional, nonlinear model,<me>\frac{d^{} {I}}{d
-{t}^{}}=\beta I (N-I)-\gamma I.</me> If we define our model
-<m>h(I)=\beta I (N-I)-\gamma I,</m> we can plot the more interesting
+{t}^{}}=\beta I (N-I)-\delta I.</me> If we define our model
+<m>h(I)=\beta I (N-I)-\delta I,</m> we can plot the more interesting
 version of our phase line as in <xref ref="fig-phase" />. Ignoring
 graphs for the moment, we can also compute equilibria of continuous time
 models, <term>defined as</term> solutions to <m>h(I^*)=0</m>. This gives
-<m>I^*=0</m> and <m>I^*=N-\frac{\gamma}{\beta}.</m> It might prove
+<m>I^*=0</m> and <m>I^*=N-\frac{\delta}{\beta}.</m> It might prove
 useful to notice that our nontrivial solution exists when
-<m>\gamma&lt;\beta N</m> this suggests a limitation on the recovery rate
+<m>\delta&lt;\beta N</m> this suggests a limitation on the recovery rate
 that depends on the contact parameter <m>\beta</m> and the total population size <m>N</m>. 
 </p> 
 
@@ -226,7 +226,7 @@ clear from the start, but as we step through the process we find that
 using <m>\displaystyle y=\frac{h}{r}F</m> works pretty well. Ultimately,
 after some failed attempts, we find something like, <me>\begin{aligned}
 \frac{d^{} {x}}{d {t}^{}}&amp;=\left(\left(1-x\right)-y\right)x\\
-\frac{d^{} {y}}{d {t}^{}}&amp;=\beta(x-\alpha)y.\end{aligned}</me> 
+\frac{d^{} {y}}{d {t}^{}}&amp;=\beta(x-\mu)y.\end{aligned}</me> 
 </p>
 
 <p>
@@ -411,29 +411,29 @@ beetles, respectively. Assume that each grows (in the absence of the
 other) according to logistic growth, <me>
 \begin{aligned}
 \begin{cases}
-\displaystyle\frac{d^{} {A}}{d {t}^{}}&amp;=r_A A\Big(1-\frac{A}{K_A}\Big)\\[10pt] 
-\displaystyle\frac{d^{} {B}}{d {t}^{}}&amp;=r_B B\Big(1-\frac{B}{K_B}\Big).
+\displaystyle\frac{d^{} {A}}{d {t}^{}}&amp;=a A\Big(1-\frac{A}{K_A}\Big)\\[10pt] 
+\displaystyle\frac{d^{} {B}}{d {t}^{}}&amp;=b B\Big(1-\frac{B}{K_B}\Big).
 \end{cases}
 \end{aligned}</me> Here, each species grows independently of
 the other. Beetles have no effect on ants; ants have no effect on
 beetles. Our mechanism for interaction will be <em>interference</em>
 competition, which leads in increased mortality. <me>\begin{aligned}
-\begin{cases} \displaystyle\frac{d^{} {A}}{d {t}^{}}&amp;=r_A
-A\Big(1-\frac{A}{K_A}-\frac{\alpha B}{K_A}\Big)\\[10pt]
-\displaystyle\frac{d^{} {B}}{d {t}^{}}&amp;=r_B
-B\Big(1-\frac{B}{K_B}-\frac{\gamma A}{K_B}\Big).
+\begin{cases} \displaystyle\frac{d^{} {A}}{d {t}^{}}&amp;=a
+A\Big(1-\frac{A}{K_A}-\frac{\mu B}{K_A}\Big)\\[10pt]
+\displaystyle\frac{d^{} {B}}{d {t}^{}}&amp;=b
+B\Big(1-\frac{B}{K_B}-\frac{\delta A}{K_B}\Big).
 \end{cases}\end{aligned}</me> 
 </p>
 
 
 <p>
 To understand interspecific competition, we need to understand the
-units and magnitude of <m>\alpha</m> and <m>\gamma</m>. Roughly,
-<m>\alpha</m> translates from units of beetle density to an <q>effective
+units and magnitude of <m>\mu</m> and <m>\delta</m>. Roughly,
+<m>\mu</m> translates from units of beetle density to an <q>effective
 ant density.</q> According to the ratio <m>\frac{B}{K_A}</m>, beetles
 <sq>fill</sq> some of the carrying capacity allotted to ants. Just how
 much of the capacity that they fill is given by the parameter
-<m>\alpha</m>, which when multiplied by <m>B</m> gives the <sq>ant
+<m>\mu</m>, which when multiplied by <m>B</m> gives the <sq>ant
 equivalency</sq> of <m>B</m> beetles. We will look more closely at the
 equation for <m>B</m>, but note that we could make similar observations
 about the equation for <m>A</m>. 
@@ -442,22 +442,22 @@ about the equation for <m>A</m>.
 
 <p>
 The dynamics of <m>B</m> are given by, <me>\frac{d^{} {B}}{d
-{t}^{}}=r_B B\Big(1-\frac{B+\gamma A}{K_B}\Big),</me> which slightly
+{t}^{}}=b B\Big(1-\frac{B+\delta A}{K_B}\Big),</me> which slightly
 more directly illustrates that both <m>A</m> and <m>B</m> fill the
 carrying capacity allotted to <m>B</m>. In one dimension, equilibria
 depend on the zeros of the right hand side of an equation like this. In
 two dimensions, equilibria depend on the values of both quantities
 <m>A</m> and <m>B</m>. The first step, as before, is to compute the
 nullclines for <m>B</m>. Setting <m>\frac{d^{} {B}}{d {t}^{}}=0</m>
-implies that either <m>B=0</m> or <me>1-\frac{B+\gamma A}{K_B}=0.</me>
+implies that either <m>B=0</m> or <me>1-\frac{B+\delta A}{K_B}=0.</me>
 With a single species, this equation looks like
 <me>1-\frac{\text{animals}}{K_B}=0.</me> We can solve this equation for
 the density of animals at equilibrium to find,
 <me>\text{animals}=K_B.</me> But we know that we have a particular
-composition of animals, such that <me>\text{animals}=B+\gamma A.</me>
-Combining these equations, <me>K_B=B+\gamma A,</me> gives <m>B</m> as a
+composition of animals, such that <me>\text{animals}=B+\delta A.</me>
+Combining these equations, <me>K_B=B+\delta A,</me> gives <m>B</m> as a
 function of <m>A</m>, the abundance of <m>A</m> and <m>B</m> that
-guarantee that <m>B</m> is unchanging,<me>B=K_B -\gamma A.</me> 
+guarantee that <m>B</m> is unchanging,<me>B=K_B -\delta A.</me> 
 </p>
 
 
@@ -479,37 +479,37 @@ plot four distinct phase portraits, shown in <xref ref="fig-compet-A-only"/> -
 <figure xml:id="fig-compet-A-only">
  <image source="./images/compet_A.png"  width="50%"/>
  <caption>When
-<m>\frac{K_A}{\alpha}&gt;K_B</m> and <m>\frac{K_B}{\gamma}&lt;K_A</m>,
+<m>\frac{K_A}{\mu}&gt;K_B</m> and <m>\frac{K_B}{\delta}&lt;K_A</m>,
 only <m>A</m> exists at equilibrium. This is equivalent to
-<m>\frac{K_A}{K_B}&gt;\alpha</m> and <m>\frac{K_B}{K_A}&lt;\gamma</m>,
+<m>\frac{K_A}{K_B}&gt;\mu</m> and <m>\frac{K_B}{K_A}&lt;\delta</m>,
 which suggests that <m>B</m> has a weak effect on <m>A</m>, but <m>A</m>
 has a strong effect on <m>B</m>.</caption> </figure>
 
 <figure xml:id="fig-compet-B-only">
  <image source="./images/compet_B.png" width="50%"/>
 <caption>When
-<m>\frac{K_A}{\alpha}&lt;K_B</m> and <m>\frac{K_B}{\gamma}&gt;K_A</m>,
+<m>\frac{K_A}{\mu}&lt;K_B</m> and <m>\frac{K_B}{\delta}&gt;K_A</m>,
 only <m>B</m> exists at equilibrium. This is equivalent to
-<m>\frac{K_A}{K_B}&lt;\alpha</m> and <m>\frac{K_B}{K_A}&gt;\gamma</m>,
+<m>\frac{K_A}{K_B}&lt;\mu</m> and <m>\frac{K_B}{K_A}&gt;\delta</m>,
 which suggests that <m>B</m> has a strong effect on <m>A</m>, but
 <m>A</m> has a weak effect on <m>B</m>.</caption> </figure>
 
 <figure xml:id="fig-compet-AB">
  <image source="./images/compet_AB.png" width="50%"/>
  <caption>When
-<m>\frac{K_A}{\alpha}&gt;K_B</m> and <m>\frac{K_B}{\gamma}&gt;K_A</m>,
+<m>\frac{K_A}{\mu}&gt;K_B</m> and <m>\frac{K_B}{\delta}&gt;K_A</m>,
 nullclines intersect, and the coexistence equilibrium is stable. This is
-equivalent to <m>\frac{K_A}{K_B}&gt;\alpha</m> and
-<m>\frac{K_B}{K_A}&gt;\gamma</m>, which suggests that <m>B</m> has a
+equivalent to <m>\frac{K_A}{K_B}&gt;\mu</m> and
+<m>\frac{K_B}{K_A}&gt;\delta</m>, which suggests that <m>B</m> has a
 weak effect on <m>A</m>, and <m>A</m> has a weak effect on
 <m>B</m>.</caption> </figure>
 
 <figure xml:id="fig-compet-saddle">
  <image source="./images/compet_saddle.png" width="50%"/>
 <caption>When
-<m>\frac{K_A}{\alpha}&lt;K_B</m> and <m>\frac{K_B}{\gamma}&lt;K_A</m>,
+<m>\frac{K_A}{\mu}&lt;K_B</m> and <m>\frac{K_B}{\delta}&lt;K_A</m>,
 but the coexistence equilibrium is unstable. This is equivalent to
-<m>\frac{K_B}{K_A}&gt;\alpha</m> and <m>\frac{K_A}{K_B}&gt;\gamma</m>,
+<m>\frac{K_B}{K_A}&gt;\mu</m> and <m>\frac{K_A}{K_B}&gt;\delta</m>,
 which suggests that <m>B</m> has a weak effect on <m>A</m>, and <m>A</m>
 has a weak effect on <m>B</m>. The <sq>winner</sq> depends on the
 initial conditions.</caption> </figure>
@@ -542,7 +542,7 @@ Recall the SIR model (illustrated in <xref ref="fig-sir-flow" />), where <m>S</m
 host population densities of susceptible, infect<em>ious</em>, and
 recovered (or removed) hosts. Susceptible hosts are infected at a rate
 <m>\beta(N)\left(\frac{I}{N}\right)</m> and infectious hosts recover (or
-are removed by death) at a rate <m>\gamma</m>. 
+are removed by death) at a rate <m>\delta</m>. 
 </p>
 
 <figure xml:id="fig-sir-flow">
