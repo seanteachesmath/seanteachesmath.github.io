@@ -30,6 +30,29 @@ at <m>X</m>, the <term>expected value</term> of
 </p>
 </statement></definition>
 
+<example xml:id="ex-disc-pmf-mean">
+<title>expected value of a random variable</title>
+<statement>
+<p>Recall the function <m>f(x) = \dfrac{2x-1}{25}</m> from <xref ref="ex-disc-pmf"/>, which is a
+probability mass function for the discrete random variable <m>X</m> with
+values <m>x=1,2,3,4,5</m>.  Find <m>\mu = E[X]</m>
+</p>
+</statement>
+<solution>
+<p> Since <m>\mu = E[X]</m>, we have
+<md>
+<mrow> \mu = E[X] \amp = \sum\limits_{x=1}^5 x\cdot f(x)</mrow>
+<mrow> 	   		  \amp = \sum\limits_{x=1}^5 x\cdot \left(\dfrac{2x-1}{25}\right)</mrow>
+<mrow> 	   		  \amp = \sum\limits_{x=1}^5 \left(\dfrac{2}{25}x^2 - \dfrac{1}{25}x\right)</mrow>
+<mrow> 	   		  \amp = \left(\dfrac{2}{25}\sum\limits_{x=1}^5 x^2\right) - \left(\dfrac{1}{25}\sum\limits_{x=1}^5 x\right)</mrow>
+<mrow> 	   		  \amp = \left(\dfrac{2}{25}\left(55\right)\right) - \left(\dfrac{1}{25}\left(15\right)\right)</mrow>
+<mrow> \mu = E[X] \amp = \dfrac{19}{5}</mrow>
+</md>
+</p>
+<p> So, the mean of the distribution of the random variable <m>X</m> is <me>\mu = E[X] = \dfrac{19}{6}</me>.</p>
+</solution>
+</example>
+
 <theorem xml:id="thm-expected-value-function-random-variable-4-1">
 <title>expected value of a function of a random variable</title>
 <statement>
@@ -131,6 +154,43 @@ mean</term> of a random variable <m>X</m>, denoted by
 0,1,2, \dots</m> when <m>X</m> is discrete.
 </p>
 </statement></definition>
+
+
+
+<example xml:id="ex-disc-pmf-variance">
+<title>variance of a random variable</title>
+<statement>
+<p>Recall the function <m>f(x) = \dfrac{2x-1}{25}</m> from <xref ref="ex-disc-pmf"/> and <xref ref="ex-disc-pmf-mean"/>, which is a
+probability mass function for the discrete random variable <m>X</m> with
+values <m>x=1,2,3,4,5</m>.  Find <m>\sigma^2 = \mu_{2} = E[(X - \mu)^2]</m>
+</p>
+</statement>
+
+<solution>
+<p> Recall that <m>\sigma^2 = \mu_{2}' - \left(E[x]\right)^2</m> or <m>\sigma^2 = E[X^2] - \left(E[x]\right)^2</m>.
+Since <m>\mu_{2}' = E[X^2]</m>, we have
+<md>
+<mrow> \mu_{2}' = E[X^2] \amp = \sum\limits_{x=1}^5 x^2\cdot f(x)</mrow>
+<mrow> 	   		  \amp = \sum\limits_{x=1}^5 x^2\cdot \left(\dfrac{2x-1}{25}\right)</mrow>
+<mrow> 	   		  \amp = \sum\limits_{x=1}^5 \left(\dfrac{2}{25}x^3 - \dfrac{1}{25}x^2\right)</mrow>
+<mrow> 	   		  \amp = \left(\dfrac{2}{25}\sum\limits_{x=1}^5 x^3\right) - \left(\dfrac{1}{25}\sum\limits_{x=1}^5 x^2\right)</mrow>
+<mrow> 	   		  \amp = \left(\dfrac{2}{25}\left(225\right)\right) - \left(\dfrac{1}{25}\left(55\right)\right)</mrow>
+<mrow> \mu_{2}' = E[X^2] \amp = \dfrac{79}{25}</mrow>
+</md>
+</p>
+
+<p>
+Now, by theorem, 
+<md>
+<mrow> \sigma^2 = \amp E[X^2] - \left(E[x]\right)^2</mrow>
+<mrow> 	   		= \amp \dfrac{79}{5} - \left(\dfrac{19}{5}\right)^2</mrow>
+<mrow> \sigma^2 = \amp  \dfrac{34}{25}</mrow>
+</md>
+</p>
+</solution>
+</example>
+
+
 
 <p>
 Now, you could imagine in some cases the moments being difficult to
@@ -252,7 +312,7 @@ written
 differentiation</title>
 <statement>
 <p>
-Referencing Example <xref ref="ex-three-cards-mgf"/>, the mean of the
+Referencing <xref ref="ex-three-cards-mgf"/>, the mean of the
 random variable, given by <m>\mu_1'</m>, whose MGF is <m>M_X(t) =
 \frac{1}{8} (1+e^t)^3</m> is found as follows
 <me>

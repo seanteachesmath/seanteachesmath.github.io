@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-03-08T21:15:46-06:00       *-->
+<!--*       on 2021-03-15T22:49:05-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -16,53 +16,25 @@
 <body>
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">3.2.2.1</span><span class="period">.</span>
 </h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">First, \(\mu_W = (3)\mu_X + (-1)\mu_Y + (2)\mu_Z = 17\text{.}\)</p>
-<p>We could apply the theorem directly, but we can do this more directly with linear algebra. The idea is that we can picture the linear combination \(W = 3X-Y+2Z\) as</p>
+<p>Since \(\mu = E[X]\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\mu = E[X] \amp = \sum\limits_{x=1}^5 x\cdot f(x)\\
+\amp = \sum\limits_{x=1}^5 x\cdot \left(\dfrac{2x-1}{25}\right)\\
+\amp = \sum\limits_{x=1}^5 \left(\dfrac{2}{25}x^2 - \dfrac{1}{25}x\right)\\
+\amp = \left(\dfrac{2}{25}\sum\limits_{x=1}^5 x^2\right) - \left(\dfrac{1}{25}\sum\limits_{x=1}^5 x\right)\\
+\amp = \left(\dfrac{2}{25}\left(55\right)\right) - \left(\dfrac{1}{25}\left(15\right)\right)\\
+\mu = E[X] \amp = \dfrac{19}{5}
+\end{align*}
+</div>
+<p>So, the mean of the distribution of the random variable \(X\) is</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-W =
-\left[\begin{array}{ccc}3 \amp -1 \amp
-2\end{array}\right]\cdot\left[\begin{array}{c}X \\Y\\
-Z\end{array}\right] = (3)X + (-1)Y + (2)Z
+\mu = E[X] = \dfrac{19}{6}\text{.}
 \end{equation*}
 </div>
-<p>Let \(a\) be the row vector \(a = \left[\begin{array}{ccc}3 \amp -1
-\amp 2\end{array}\right]\text{,}\) its transpose be the column vector \(a^T\text{,}\) and the matrix \(\Sigma\) be defined as follows,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-\Sigma = \left[\begin{array}{ccc}
-1 \amp -2 \amp -1\\
--2 \amp 5 \amp 1\\
--1 \amp 1 \amp 2
-\end{array}\right]
-\end{equation*}
-</div>
-<p xmlns:svg="http://www.w3.org/2000/svg">This approach can be justified by expanding the sums in <a class="xref" data-knowl="./knowl/thm-4-14.html" title="Theorem 3.2.15: variance">Theorem 3.2.15</a> with a sum of 2 random variables.</p>
-<p>We can calculate the variance of \(W\) by \(\operatorname{var}(W)
-= a\Sigma a^T\text{.}\) Specifically,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-a \Sigma a^T = \left[\begin{array}{ccc}3 \amp -1 \amp
-2\end{array}\right]\cdot\left[\begin{array}{ccc}
-1 \amp -2 \amp -1\\
--2 \amp 5 \amp 1\\
--1 \amp 1 \amp 2
-\end{array}\right]\cdot\left[\begin{array}{c}3 \\-1\\
-2\end{array}\right]
-\end{equation*}
-</div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Notice \(Sigma\) is symmetric and that the covariances lie in order along the main diagonal and the variances off-diagonal.</p>
-<p>Multiplying the square matrix and column vector first, we have</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-a \Sigma a^T = \left[\begin{array}{ccc}3 \amp -1 \amp
-2\end{array}\right]\cdot\left[\begin{array}{c}3 \\-9\\
-0\end{array}\right]
-\end{equation*}
-</div>
-<p xmlns:svg="http://www.w3.org/2000/svg">And finally, \(a \Sigma a^T = 18\text{.}\)</p>
 </div>
 <span class="incontext"><a href="section-discrete-expectation.html#solution-3">in-context</a></span>
 </body>

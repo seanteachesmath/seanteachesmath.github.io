@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-03-08T21:15:44-06:00       *-->
+<!--*       on 2021-03-15T22:49:03-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -115,7 +115,6 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
 <li><a href="section-probability-distributions.html" data-scroll="section-probability-distributions" class="active">Probability distributions</a></li>
 <li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
 <li><a href="section-special-distributions.html" data-scroll="section-special-distributions">Special probability distributions</a></li>
-<li><a href="section-multivariate-discree-probability.html" data-scroll="section-multivariate-discree-probability">Multivariate discrete random variables</a></li>
 </ul>
 </li>
 <li class="link">
@@ -123,6 +122,11 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
 <li><a href="section-probability-densities.html" data-scroll="section-probability-densities">Probability densities</a></li>
 <li><a href="section-continuous-expectation.html" data-scroll="section-continuous-expectation">Expectation of continuous random variables</a></li>
 <li><a href="section-special-densities.html" data-scroll="section-special-densities">Special probability densities</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-multi.html" data-scroll="chap-multi"><span class="codenumber">5</span> <span class="title">Multivariate Probability Distributions and Densities</span></a><ul>
+<li><a href="section-multivariate-discrete-probability.html" data-scroll="section-multivariate-discrete-probability">Multivariate discrete random variables</a></li>
 <li><a href="sec-multi-cont.html" data-scroll="sec-multi-cont">Multivariate continuous random variables</a></li>
 </ul>
 </li>
@@ -167,37 +171,119 @@ F(x) = 1\));</li>
 <li id="li-4">if \(\displaystyle a \lt b\text{,}\) then \(\displaystyle F(a) \le
 F(b)\) for any real numbers \(\displaystyle a\) and \(\displaystyle b\)</li>
 </ol></article><article class="example example-like" id="ex-disc-pmf"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-disc-pmf"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">simple probability mass function.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Verifying a simple probability mass function.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-disc-pmf"><article class="example example-like"><p id="p-22">Identify whether the function \(f(x) = \dfrac{2x-1}{5}\) is a probability mass function for the discrete random variable \(X\) with values \(x=1,2,3,4,5\text{.}\)  If it is not a valid distribution "fix it".</p>
 <div class="solutions">
 <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like">
 <p id="p-23">Notice that values of \(f(x) \ge 0\) for all possible \(x\text{,}\) but</p>
 <div class="displaymath">
 \begin{equation*}
-\sum\limits_{x=1}^5 f(x) = 5 \gt 1.
+\sum\limits_{x=1}^5 f(x) = 5 \neq 1.
 \end{equation*}
 </div>
-<p data-braille="continuation">The function must be recalled so that probabilities sum to one.  The function \(f(x) =
-\dfrac{2x-1}{25}\) is a valid probability mass function.</p>
+<p data-braille="continuation"><figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.6<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(f(x)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(f(1) = \frac{1}{5}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(f(2) = \frac{3}{5}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(f(3) = \frac{5}{5}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(f(4) = \frac{7}{5}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(f(5) = \frac{9}{5}\)</td>
+</tr>
+</table></figure> The function must be rescaled so that probabilities sum to one.  The function \(f(x) =
+\dfrac{2x-1}{25}\) is a valid probability mass function for the values of the random variable mentioned above. <figure class="table table-like" id="table-2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.7<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(f(x) = \dfrac{2x-1}{25}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(f(1) = \frac{1}{25}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(f(2) = \frac{3}{25}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(f(3) = \frac{5}{25}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(f(4) = \frac{7}{25}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(f(5) = \frac{9}{25}\)</td>
+</tr>
+</table></figure></p>
 </div></div>
 </div></article></div>
 <article class="example example-like" id="ex-disc-pmf-to-cdf"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-disc-pmf-to-cdf"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">CDF of a simple probability mass function.</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">CDF of a simple probability mass function.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-disc-pmf-to-cdf"><article class="example example-like"><p id="p-24">The function \(f(x) = \dfrac{2x-1}{25}\) is a probability mass function for the discrete random variable \(X\) with values \(x=1,2,3,4,5\text{.}\)  Find the cumulative distribution function.</p>
 <div class="solutions">
 <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like">
-<p id="p-25">(Scratchwork pending) We have</p>
+<p id="p-25"><figure class="table table-like" id="table-3"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.9<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">\(x\)</td>
+<td class="c m b2 r0 l0 t0 lines">\(\operatorname{Pr}(X \le x)\)</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(F(x)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(f(1) \)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{25}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(f(1) + f(2) \)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{1}{25} + \frac{3}{25}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(f(1) + f(2) + f(3) \)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{4}{25} + \frac{5}{25}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(f(1) + f(2) + f(3) + f(4) \)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{9}{25} + \frac{7}{25}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(f(1) + f(2) + f(3) + f(4) + f(5) \)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\frac{16}{25} + \frac{9}{25}\)</td>
+</tr>
+</table></figure> We have</p>
 <div class="displaymath">
 \begin{equation*}
 F(x) = \begin{cases} 0, \amp \quad x \lt 1\\
-f(1), \amp \quad 1 \le x \lt 2\\
-f(1) + f(2), \amp \quad 2 \le x \lt 3\\
-f(1) + f(2) + f(3), \amp \quad 3 \le x \lt 4\\
-f(1) + f(2) + f(3) + f(4), \amp \quad 4 \le x \lt 5\\
-f(1) + f(2) + f(3) + f(4) + f(5), \amp \quad 5 \le x
+\frac{1}{25}, \amp \quad 1 \le x \lt 2\\
+\frac{4}{25}, \amp \quad 2 \le x \lt 3\\
+\frac{9}{25}, \amp \quad 3 \le x \lt 4\\
+\frac{16}{25}, \amp \quad 4 \le x \lt 5\\
+1, \amp \quad 5 \le x
 \end{cases}
 \end{equation*}
 </div>
+<p data-braille="continuation">The function \(F(x)\text{,}\) is piecewise constant, accumulating new probability at the values of \(x = 1, 2, 3, 4, 5\text{.}\)</p>
 </div></div>
 </div></article></div></section><section class="exercises" id="exercises-1"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">3.1.2</span> <span class="title">Exercises</span>
@@ -205,14 +291,14 @@ f(1) + f(2) + f(3) + f(4) + f(5), \amp \quad 5 \le x
 <article class="exercise exercise-like" id="exercise-1"><h6 class="heading">
 <span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.1.</span>
 </h6>
-<p id="p-26">For each of the following, determine whether the given values can serve as the values of a probability distribution of a random variable with the range \(x = 1, 2, 3, \text{ and } 4\text{:}\)</p>
+<p id="p-26">For each of the following, determine whether the given values can serve as the values of a probability distribution of a random variable with the range \(x = 1, 2, 3, \text{and } 4\text{:}\)</p>
 <ol class="lower-alpha">
-<li id="li-5"><p id="p-27">\(\displaystyle f(1) = 0.25,f(2) = 0.75,f(3) = 0.25,\text{ and }f(4) =
+<li id="li-5"><p id="p-27">\(\displaystyle f(1) = 0.25,f(2) = 0.75,f(3) = 0.25, \text{and } f(4) =
 0.25\)</p></li>
-<li id="li-6"><p id="p-28">\(\displaystyle f(1) = 0.15,f(2) = 0.27,f(3) = 0.29,\text{ and }f(4) =
+<li id="li-6"><p id="p-28">\(\displaystyle f(1) = 0.15,f(2) = 0.27,f(3) = 0.29, \text{and } f(4) =
 0.29\)</p></li>
 <li id="li-7"><p id="p-29">\(\displaystyle f(1) = \dfrac{1}{19},f(2) = \dfrac{10}{19},f(3) =
-\dfrac{2}{19},\text{ and }f(4) = \dfrac{5}{19}\)</p></li>
+\dfrac{2}{19}, \text{and } f(4) = \dfrac{5}{19}\)</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-2"><h6 class="heading">
 <span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 3.3.</span>
 </h6>
