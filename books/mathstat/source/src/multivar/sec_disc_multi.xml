@@ -332,6 +332,175 @@ not mean independence.
 <!-- *********************************** -->
 <!-- *********************************** -->
 
+<subsection xml:id="sub-moments-linear-combinations">
+    <title>Moments of linear combinations of random variables</title>
+    <introduction>
+        <p>See section 4.7. Recommended problems: 4.7-8 (pg 158) 48, 49, 57 </p>
+    </introduction>
+    
+    <theorem xml:id="thm-4-14">
+        <title>variance</title>
+        <statement>
+            <p> If <m>\displaystyle X_1, X_2, \dots, X_n</m> are random variables
+                and <m>\displaystyle Y = \sum_{i=1}^n a_iX_i</m> where <m>\displaystyle
+                    a_1, a_2, \dots, a_n</m> are constants, then <me> E[Y] = \sum_{i=1}^n
+                        a_iE[X_i]</me>
+                    and <me>\operatorname{var}[Y] = \sum_{i=1}^n a_i^2
+                        \operatorname{var}[X_i] + 2 \mathop{\sum \sum}_{i \lt j} a_i
+                        a_j\operatorname{cov}[X_i,X_j]</me>.
+            </p>
+        </statement></theorem>
+    
+    <corollary xml:id="cor-4-3">
+        <title>variance of independent random variables</title>
+        <statement>
+            <p>
+                If <m>\displaystyle X_1, X_2, \dots, X_n</m> are independent random
+                variables and <m>\displaystyle Y = \sum_{i=1}^n a_iX_i</m> where
+                <m>\displaystyle a_1, a_2, \dots, a_n</m> are constants, then
+                <me>\operatorname{var}[Y] = \sum_{i=1}^n
+                    a_i^2\operatorname{var}[X_i]</me>
+            </p>
+        </statement></corollary>
+    
+    <example xml:id="ex-var-covar">
+        <title>covariances of linear combinations</title>
+        <statement>
+            <p>
+                Consider three random variables <m>X</m>, <m>Y</m>, and <m>Z</m> with
+                <m>\mu_X = 2</m>, with <m>\mu_Y = -3</m>, with <m>\mu_Z = 4</m>;
+                with <m>\sigma_X^2 = 1</m>, <m>\sigma_Y^2 = 5</m>, <m>\sigma_Z^2 =
+                    2</m>;
+                and <m>\operatorname{cov}(X, Y) = -2</m>, <m>\operatorname{cov}(X, Z) =
+                    -1</m>, and <m>\operatorname{cov}(Y, Z) = 1</m>.
+            </p>
+            
+            <p>Find <m>\mu_W</m> and <m>\operatorname{var}(W) = \sigma_W^2</m> for
+                <m>W = 3X-Y+2Z</m>.</p>
+            
+            <solution>
+                <p> First, <m>\mu_W = (3)\mu_X + (-1)\mu_Y + (2)\mu_Z = 17</m>.
+                </p>
+                
+                <p>We could apply the theorem directly, but we can do this more directly
+                    with linear algebra. The idea is that we can picture the linear
+                    combination <m>W = 3X-Y+2Z</m> as <me>W =
+                        \left[\begin{array}{ccc}3 \amp -1 \amp
+                        2\end{array}\right]\cdot\left[\begin{array}{c}X \\Y\\
+                        Z\end{array}\right] = (3)X + (-1)Y + (2)Z
+                    </me></p>
+                
+                <p>
+                    Let <m>a</m> be the row vector <m>a = \left[\begin{array}{ccc}3 \amp -1
+                        \amp 2\end{array}\right]</m>,
+                    its transpose be the column vector <m>a^T</m>, and the matrix
+                    <m>\Sigma</m> be defined as follows,
+                    <me>\Sigma = \left[\begin{array}{ccc}
+                        1 \amp -2 \amp -1\\
+                        -2 \amp 5 \amp 1\\
+                        -1 \amp 1 \amp 2
+                        \end{array}\right]
+                    </me>
+                </p>
+                
+                <p>
+                    This approach can be justified by expanding the sums in <xref
+                    ref="thm-4-14"/> with a sum of 2 random variables.
+                </p>
+                
+                <p>We can calculate the variance of <m>W</m> by <m>\operatorname{var}(W)
+                    = a\Sigma a^T</m>.
+                Specifically, <me>a \Sigma a^T = \left[\begin{array}{ccc}3 \amp -1 \amp
+                    2\end{array}\right]\cdot\left[\begin{array}{ccc}
+                    1 \amp -2 \amp -1\\
+                    -2 \amp 5 \amp 1\\
+                    -1 \amp 1 \amp 2
+                    \end{array}\right]\cdot\left[\begin{array}{c}3 \\-1\\
+                    2\end{array}\right]
+                </me>
+                </p>
+                
+                <p>Notice <m>Sigma</m> is symmetric and that the covariances lie in
+                    order along the main diagonal and the variances off-diagonal.</p>
+                
+                <p>Multiplying the square matrix and column vector first, we have
+                    <me>a \Sigma a^T = \left[\begin{array}{ccc}3 \amp -1 \amp
+                        2\end{array}\right]\cdot\left[\begin{array}{c}3 \\-9\\
+                        0\end{array}\right]
+                    </me></p>
+                
+                <p>And finally, <m>a \Sigma a^T = 18</m>.</p>
+                
+            </solution>
+        </statement></example>
+    
+    <theorem xml:id="thm-4-15">
+        <title>covariance of two linear combinations</title>
+        
+        <statement>
+            <p>
+                If <m>\displaystyle X_1, X_2, \dots, X_n</m> are random variables and
+                <m>\displaystyle Y_1 = \sum_{i=1}^n a_i X_i \text{ and } Y_2 =
+                    \sum_{i=1}^n b_iX_i</m> where <m>\displaystyle a_1, a_2, \dots, a_n,
+                        b_1, b_2, \dots, b_n</m> are constants, then <me>\operatorname{cov}[Y_1,
+                            Y_2] = \sum_{i=1}^n a_i b_i\operatorname{var}[X_i] + \mathop{\sum
+                            \sum}_{i \lt j} (a_ib_j + a_jb_i)\operatorname{cov}[X_i,X_j]</me>.
+            </p>
+        </statement></theorem>
+    
+    <corollary xml:id="cor-4-3b">
+        <statement>
+            <p>
+                If <m>\displaystyle X_1, X_2, \dots, X_n</m> are independent random
+                variables and
+                <m>\displaystyle Y_1 = \sum_{i=1}^n a_iX_i \text{ and } Y_2 =
+                    \sum_{i=1}^n b_iX_i</m>, then <me>\operatorname{cov}[Y_1, Y_2] =
+                        \sum_{i=1}^n a_i b_i\operatorname{var}[X_i]</me>
+            </p>
+        </statement></corollary>
+    
+    The same logic used in <xref ref="ex-var-covar"/> allows us to compute
+    the covariance between two linear combinations of random variables
+    directly also. Instead of calculating <m>a\Sigma a^T</m> we will
+    calculate <m>a \Sigma b^T</m> where <m>b</m> is the vector of
+    coefficients of the second linear combination.
+    
+</subsection>
+<exercises>
+    
+    
+    <exercise>
+        <title>Problem 4.48</title>
+        <statement>
+            <p>If <m>X_1</m>, <m>X_2</m>, <m>X_3</m> are independent and have the
+                means <m>4, 9, 3</m> and the variances <m>3, 7, 5</m>, find the mean and
+                variance of  show that
+                <ol>
+                    <li><p> <m>Y = 2X_1 - 3X_2 + 4X_3</m>;</p></li>
+                    <li><p> <m>Z = X_1 + 2X_2 -X_3</m>.</p></li>
+                </ol>
+            </p>
+        </statement>
+    </exercise>
+    
+    <exercise>
+        <title>Problem 4.49</title>
+        <statement>
+            <p>Repeat both parts of the previous exercise after dropping the
+                assumption of independence and using instead that
+                <m>\operatorname{cov}(X_1, X_2) = 1</m>, <m>\operatorname{cov}(X_2, X_3)
+                    = -2</m>, <m>\operatorname{cov}(X_1, X_3) = -3</m>.
+            </p>
+        </statement>
+    </exercise>
+    
+    
+</exercises>
+
+<!-- *********************************** -->
+<!-- *********************************** -->
+<!-- *********************************** -->
+
 <subsection xml:id="sub-conditional-expectation">
 <title>Conditional expectation</title>
 <p>See section 4.8.</p>

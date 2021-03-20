@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-19T22:08:53-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Introduction to R programming</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="images/cover.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="ana.html"><span class="title">Applied Numerical Analysis:</span> <span class="subtitle"></span></a></h1>
+<p class="byline">Sean M. Laverty</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap-basics.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-basics.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap-rootfinding.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap-basics.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-basics.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap-rootfinding.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="front-colophon.html" data-scroll="front-colophon">Colophon</a></li>
+<li><a href="author-bio-SML.html" data-scroll="author-bio-SML">Author Biography</a></li>
+<li><a href="dedication.html" data-scroll="dedication">Dedication</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface">Preface</a></li>
+<li><a href="contributors.html" data-scroll="contributors">Contributors to the 0\(^\mathrm{th}\) Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-basics.html" data-scroll="chap-basics"><span class="codenumber">1</span> <span class="title">Counting</span></a><ul><li><a href="section-R-intro.html" data-scroll="section-R-intro" class="active">Introduction to R programming</a></li></ul>
+</li>
+<li class="link">
+<a href="chap-rootfinding.html" data-scroll="chap-rootfinding"><span class="codenumber">2</span> <span class="title">Root-finding and fixed-point problems</span></a><ul><li><a href="section-continuous-expectation.html" data-scroll="section-continuous-expectation">Expectation of continuous random variables</a></li></ul>
+</li>
+<li class="link">
+<a href="chap-interpolation.html" data-scroll="chap-interpolation"><span class="codenumber">3</span> <span class="title">Interpolation</span></a><ul>
+<li><a href="sec-multi-cont.html" data-scroll="sec-multi-cont">Multivariate continuous densities</a></li>
+<li><a href="section-special-densities.html" data-scroll="section-special-densities">Special probability densities</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-approximation.html" data-scroll="chap-approximation"><span class="codenumber">4</span> <span class="title">Approximation</span></a><ul>
+<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
+<li><a href="section-probability-densities.html" data-scroll="section-probability-densities">Probability densities</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-calculus.html" data-scroll="chap-calculus"><span class="codenumber">5</span> <span class="title">Numerical calculus</span></a><ul>
+<li><a href="section-special-distributions.html" data-scroll="section-special-distributions">Special probability distributions</a></li>
+<li><a href="section-probability-distributions.html" data-scroll="section-probability-distributions">Probability distributions</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-def.html" data-scroll="appendix-def"><span class="codenumber">A</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thm.html" data-scroll="appendix-thm"><span class="codenumber">B</span> <span class="title">Theorems</span></a></li>
+<li class="link"><a href="appendix-ex.html" data-scroll="appendix-ex"><span class="codenumber">C</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-gfdl.html" data-scroll="appendix-gfdl"><span class="codenumber">D</span> <span class="title">GNU Free Documentation License</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="back-colophon.html" data-scroll="back-colophon"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-R-intro"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Introduction to R programming</span>
+</h2>
+<section class="introduction" id="introduction-2"><p id="p-12">Some words.</p></section><section class="subsection" id="sub-calculator"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.1</span> <span class="title">Calculator functions</span>
+</h3>
+<p id="p-13"> We can use R for basic calculator functionality. <code class="code-inline tex2jax_ignore">
+2+2
+sin(2)
+log(10)
+exp(1)
+5%%2 ## what might this operator '%%' do?
+6%%2
+</code></p></section><section class="subsection" id="sub-date"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.2</span> <span class="title">Generating data</span>
+</h3>
+<p id="p-14">We can make vectors with the <code class="code-inline tex2jax_ignore">c()</code> command and assign them to a variable with the assignment operator <code class="code-inline tex2jax_ignore">&lt;-</code>.  Later we will use more advanced commands to read comma-separate files or spreadsheet output.</p>
+<pre class="code-block tex2jax_ignore">
+w &lt;- 1:10
+z &lt;- seq(0, 10, length=11)
+(z &lt;- seq(0, 10, by=0.5))
+
+# what are the major differences between these lines?
+
+length(z) # how big?
+
+rev(z) # reverse the order of elements
+
+c(w, z) # combine objects
+
+x &lt;- c(1, 2, 3, 4)
+y &lt;- 2*x
+plot(x,y)
+</pre></section><section class="subsection" id="sub-functions"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.3</span> <span class="title">Defining and using functions</span>
+</h3>
+<p id="p-15">We can use a <code class="code-inline tex2jax_ignore">\verb|function(...)|</code> to define mathematical functions or programs.  For mathematical functions there are a variety of tools for evaluation.</p>
+<pre class="code-block tex2jax_ignore">
+f &lt;- function(x) sqrt(x)
+sapply(x, f)
+plot(x, sapply(x, f))
+</pre></section><section class="subsection" id="sub-basic"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.4</span> <span class="title">Basic programming</span>
+</h3>
+<p id="p-16">We can use for loops for automation.</p>
+<pre class="code-block tex2jax_ignore">
+for(i in 1:5){
+  print(i^2)
+}
+</pre>
+<p data-braille="continuation">We can use for conditionals for control.</p>
+<pre class="code-block tex2jax_ignore">
+for(i in 1:5){
+  if(i%%2 == 1){ ## note the == for equality testing
+    print(i^2)
+  }else{
+    print(i^3)
+  }
+}
+</pre></section><section class="subsection" id="sub-less-basic"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.5</span> <span class="title">Putting it all together</span>
+</h3>
+<p id="p-17">Suppose we wanted to run the following small program and store the results for later use.</p>
+<pre class="code-block tex2jax_ignore">
+output &lt;- NULL
+for(i in 1:5){
+  if(i%%2==1){
+       output &lt;- c(output, f(i)) ## odd i
+  }else{
+       output &lt;- c(output, 2*f(i)) ## even i
+  }
+}
+output
+plot(output)
+plot(output, type='l')
+</pre></section><section class="subsection" id="sub-more-advanced"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.6</span> <span class="title">Putting it all together (and more)</span>
+</h3>
+<p id="p-18">Suppose we wanted to run the following small program and store the results for later use and do some work with the output.</p>
+<pre class="code-block tex2jax_ignore">
+prog &lt;- function(N){ ## function 'prog' has argument N
+output &lt;- NULL       ## initialize storage
+for(i in 1:N){
+  if(i%%2==1){       ## sample logic
+       output &lt;- c(output, f(i))  ## sample storage
+  }else{
+       output &lt;- c(output, 2*f(i))
+  }
+}
+return(output)       ## return result
+}
+
+out &lt;- prog(100)     ## execute program, store result
+head(out)
+tail(out)
+min(out)
+max(out)
+plot(out, type='l', col=2)
+</pre></section><section class="subsection" id="sub-buildin"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.7</span> <span class="title">Built-in functions</span>
+</h3>
+<p id="p-19">R has a variety of built-in commands for our current and future needs. We want to build these capabilities ourselves, but it is good to know about what is available.</p>
+<pre class="code-block tex2jax_ignore">
+g &lt;- function(x) f(x) - 4
+
+plot(g, xlim=c(0, 20))
+abline(h=0, lty=3)
+abline(v=0, lty=3)
+
+uniroot(g, lower=0, upper = 20) ## based on bisection
+root &lt;- uniroot(g, lower=0, upper = 20)$root
+?uniroot
+</pre></section><section class="subsection" id="sub-challenge-arithmetic"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.8</span> <span class="title">Challenges - Arithmetic</span>
+</h3>
+<p id="p-20">Experiment with the commands for manipulating numerical values. Exploring the help menu might show you related commands.</p>
+<pre class="code-block tex2jax_ignore">
+pi
+
+ceiling(pi)
+floor(pi)
+trunc(pi)
+
+round(pi, 5)
+signif(pi, 3)
+signif(pi - 3, 3)
+</pre>
+<p data-braille="continuation">How do these differ if we use \(-\pi\) rather than \(\pi\text{?}\)</p></section><section class="subsection" id="sub-root"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.9</span> <span class="title">Rootfinding</span>
+</h3>
+<p id="p-21">Try a few steps of the bisection method by hand.  Define \(a\) and \(b\) and your function \(f\text{.}\)  Start by storing approximations manually, \(p0, p1, \dots\text{,}\) but consider how you might streamline your scratchwork by using a loop.  After that you might wrap a function on the outside that accepts parameters, or you might practice using print statements to return information to the screen.  This might be a good place to review the script posted to D2L.</p>
+<pre class="code-block tex2jax_ignore">
+for(i in 1:5){
+  ##print(c(i,i^2)) ## unformatted
+  print(paste("For i=",i,", the value i^2=", i^2, ".", sep=''))
+}
+</pre>
+<pre class="code-block tex2jax_ignore">
+for(i in 1:5){
+  ##print(c(i, i^2)) ## unformatted
+  cat("For i=",i,", the value i^2=", i^2, ".\n",sep='')
+</pre></section><section class="subsection" id="sub-RMarkdown"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.10</span> <span class="title">RMarkdown</span>
+</h3>
+<p id="p-22">You can use a script and console to run and save calculations (use it like a calculator, but with better record keeping), or ultimately to write programs and script your function calls to generate output. Ultimately Markdown languages are a powerful communcation and recordkeeping tool - this document was written in RMarkdown, which allows for a combination of computation and formatted typsetting with a hybrid <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> language.  The downside to this is the simultaneous use and debugging of two languages.</p></section></section></div></main>
+</div>
+</body>
+</html>

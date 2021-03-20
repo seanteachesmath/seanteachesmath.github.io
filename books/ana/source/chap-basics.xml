@@ -33,19 +33,240 @@ along with MathBook XML. If not, see <http://www.gnu.org/licenses/>.
 
  </introduction>
 
- <section xml:id="section-counting">
- <title>Counting</title>
+ <section xml:id="section-R-intro">
+ <title>Introduction to R programming</title>
  
 
  <introduction>
 <p> Some words.</p>
  </introduction>
 
-<definition xml:id="counting">
+
+
+<subsection xml:id="sub-calculator">
+<title>Calculator functions</title>
+
+<p>
+
+<!--><definition xml:id="counting">
 <p>
 <m>1, 2, 3, \dots</m>
 </p>
-</definition>
+</definition>-->
+
+We can use R for basic calculator functionality.
+<c>
+2+2
+sin(2)
+log(10)
+exp(1)
+5&#37;&#37;2 &#35;&#35; what might this operator '&#37;&#37;' do?
+6&#37;&#37;2
+</c>
+</p>
+
+</subsection>
+
+<subsection xml:id="sub-date">
+<title>Generating data</title>
+
+<p>
+We can make vectors with the <c>c()</c> command and assign them to a
+variable with the assignment operator <c>&#60;-</c>.  Later we will use more
+advanced commands to read comma-separate files or spreadsheet output.
+
+<cd>
+w &#60;- 1:10
+z &#60;- seq(0, 10, length=11)
+(z &#60;- seq(0, 10, by=0.5))
+
+&#35; what are the major differences between these lines?
+
+length(z) &#35; how big?
+
+rev(z) &#35; reverse the order of elements
+
+c(w, z) &#35; combine objects
+
+x &#60;- c(1, 2, 3, 4)
+y &#60;- 2*x
+plot(x,y)
+</cd>
+</p>
+</subsection>
+
+<subsection xml:id="sub-functions">
+<title>Defining and using functions</title>
+<p>
+We can use a <c>function(...)</c> to define mathematical functions or
+programs.  For mathematical functions there are a variety of tools for
+evaluation.
+<cd>
+f &#60;- function(x) sqrt(x)
+sapply(x, f)
+plot(x, sapply(x, f))
+</cd>
+</p>
+</subsection>
+
+<subsection xml:id="sub-basic">
+<title>Basic programming</title>
+
+<p>
+We can use for loops for automation.
+<cd>
+for(i in 1:5){
+  print(i^2)
+}
+</cd>
+
+We can use for conditionals for control.
+<cd>
+for(i in 1:5){
+  if(i&#37;&#37;2 == 1){ &#35;&#35; note the == for equality testing
+    print(i^2)
+  }else{
+    print(i^3)
+  }
+}
+</cd>
+</p>
+</subsection>
+
+<subsection xml:id="sub-less-basic">
+<title>Putting it all together</title>
+
+<p>
+Suppose we wanted to run the following small program and store the
+results for later use.
+<cd>
+output &#60;- NULL
+for(i in 1:5){
+  if(i&#37;&#37;2==1){
+       output &#60;- c(output, f(i)) &#35;&#35; odd i
+  }else{
+       output &#60;- c(output, 2*f(i)) &#35;&#35; even i
+  }
+}
+output
+plot(output)
+plot(output, type='l')
+</cd>
+</p>
+
+</subsection>
+<subsection xml:id="sub-more-advanced">
+<title>Putting it all together (and more)</title>
+<p>
+Suppose we wanted to run the following small program and store the
+results for later use and do some work with the output.
+
+<cd>
+prog &#60;- function(N){ &#35;&#35; function 'prog' has argument N
+output &#60;- NULL       &#35;&#35; initialize storage
+for(i in 1:N){
+  if(i&#37;&#37;2==1){       &#35;&#35; sample logic
+       output &#60;- c(output, f(i))  &#35;&#35; sample storage
+  }else{
+       output &#60;- c(output, 2*f(i))
+  }
+}
+return(output)       &#35;&#35; return result
+}
+
+out &#60;- prog(100)     &#35;&#35; execute program, store result
+head(out)
+tail(out)
+min(out)
+max(out)
+plot(out, type='l', col=2)
+</cd>
+</p>
+</subsection>
+
+<subsection xml:id="sub-buildin">
+<title>Built-in functions</title>
+
+<p>
+R has a variety of built-in commands for our current and future needs. 
+We want to build these capabilities ourselves, but it is good to know
+about what is available.
+
+<cd>
+g &#60;- function(x) f(x) - 4
+
+plot(g, xlim=c(0, 20))
+abline(h=0, lty=3)
+abline(v=0, lty=3)
+
+uniroot(g, lower=0, upper = 20) ## based on bisection
+root &#60;- uniroot(g, lower=0, upper = 20)$root
+?uniroot
+</cd>
+</p>
+</subsection>
+
+<subsection xml:id="sub-challenge-arithmetic">
+<title>Challenges - Arithmetic</title>
+<p>
+Experiment with the commands for manipulating numerical values. 
+Exploring the help menu might show you related commands.
+
+<cd>
+pi
+
+ceiling(pi)
+floor(pi)
+trunc(pi)
+
+round(pi, 5)
+signif(pi, 3)
+signif(pi - 3, 3)
+</cd>
+
+How do these differ if we use <m>-&#92;pi</m> rather than <m>&#92;pi</m>?
+</p>
+
+</subsection>
+
+<subsection xml:id="sub-root">
+<title>Rootfinding</title>
+<p>
+Try a few steps of the bisection method by hand.  Define <c>a</c> and <c>b</c>
+and your function <m>f</m>.  Start by storing approximations manually,
+<c>p0, p1, ... </c>, but consider how you might streamline your
+scratchwork by using a loop.  After that you might wrap a function on
+the outside that accepts parameters, or you might practice using print
+statements to return information to the screen.  This might be a good
+place to review the script posted to D2L.
+
+<cd>
+for(i in 1:5){
+  &#35;&#35;print(c(i,i^2)) &#35;&#35; unformatted
+  print(paste("For i=",i,", the value i^2=", i^2, ".", sep=''))
+}
+</cd>
+
+<cd>
+for(i in 1:5){
+  &#35;&#35;print(c(i, i^2)) &#35;&#35; unformatted
+  cat("For i=",i,", the value i^2=", i^2, ".&#92;n",sep='')
+</cd>
+</p>
+</subsection>
+
+<subsection xml:id="sub-RMarkdown">
+<title> RMarkdown</title>
+<p>You can use a script and console to run and save calculations (use it
+like a calculator, but with better record keeping), or ultimately to
+write programs and script your function calls to generate output.
+Ultimately Markdown languages are a powerful communcation and
+recordkeeping tool - this document was written in RMarkdown, which
+allows for a combination of computation and formatted typsetting with a
+hybrid <latex/> language.  The downside to this is the simultaneous use
+and debugging of two languages.
+</p>
+</subsection>
 
  </section>
  
