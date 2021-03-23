@@ -1,10 +1,10 @@
 <chapter xml:id="systems-des">
 
-<title>Systems of differential equations as models</title>
+<title>Systems of differential equations as ecological models</title>
 
 <section xml:id="two-dimensional-systems">
 
-<title>Two-dimensional systems of differential equations as models</title>
+<title>Two-dimensional systems of differential equations as ecological models</title>
 
 <p>
 As we transition towards new topics, it is worth mentioning our
@@ -34,7 +34,7 @@ Consider a mild infection circulating among members of a population, where the
 </p>
 
 <figure xml:id="fig-epi">
-  <caption>An $SI$ model for transmission of a mild infection in a closed population.</caption>
+  <caption>An <m>SI</m> model for transmission of a mild infection in a closed population.</caption>
             <image xml:id="image-epi">
                 <latex-image>
                 \begin{tikzpicture}
@@ -295,90 +295,6 @@ plot them in time (see <xref ref="fig-pred-prey" />).
 
 </section>
 
-<section xml:id="the-trace-determinant-method"> 
-<title>The <sq>Trace-Determinant Method</sq></title>
-
-<paragraphs xml:id="diagnostics-for-eigenvalues-and-stability">
-
-<title>Diagnostics for eigenvalues and stability</title>
-
-
-<p>
-In many cases, the calculation of eigenvalues from the Jacobian
-matrix at equilibria is unnecessary. Instead, we prefer a simpler
-approach that we refer to as the <sq>trace-determinant method.</sq>
-Combined with a cautious sketch of the phase plane, the inspection of
-<m>\tau=\operatorname{Tr}{J^*}</m> and
-<m>\Delta=\operatorname{det}{J^*}.</m> 
-</p>
-
-
-<p>
-In some situations, the phase plan suggests that trajectories might
-oscillate about a fixed point. Yet, without the aid of computers we are
-often unable to distinguish between equilibria that attract, repel, or
-do neither. We call these attracting (repelling) equilibria stable
-(unstable) foci, the plural of focus, or neutrally stable centers, in
-the third case. Since we expect solutions to oscillate given the phase
-plane, all that remains is to determine whether or not the real part of
-the eigenvalue is positive, negative, or zero. This is <em>obvious</em>
-from the sign of <m>\tau</m>. The eigenvalues corresponding to the
-characteristic polynomial <me>C(\lambda)=\lambda^2-\tau \lambda
-+\Delta,</me> are given by
-<me>\lambda_\pm=\frac{\tau}{2}\pm\frac{\sqrt{\tau^2- 4\Delta}}{2}.</me>
-We can see that <m>\tau&gt;0</m> implies
-<m>\operatorname{Re}(\lambda)&gt;0</m>, which means perturbations from
-equilibria decay and a particular equilibrium is a stable focus. We can
-repeat the argument for <m>\tau&lt;0</m>, which suggests an unstable
-focus, characterized by growing oscillations. Eigenvalues are purely
-imaginary, giving rise to neutrally stable centers, if <m>\tau=0</m>.
-Thus, if we expect oscillations, <m>\tau</m> tells us whether
-oscillations grow (<m>\tau&gt;0</m>), decay (<m>\tau&lt;0</m>), or are
-sustained (<m>\tau=0</m>), all without ever calculating the actual
-eigenvalue. 
-</p>
-
-
-<p>
-Another interesting case, that gives us yet another <em>obvious</em>
-conclusion, is <m>\Delta&lt;0</m>. If we consider a matrix, <m>J^*</m>,
-then <m>\tau</m> is the sum of its eigenvalues while <m>\Delta</m> is
-the product. Thus, for a <m>2\times2</m> matrix <m>J^*</m>,
-<m>\Delta=\lambda_1\lambda_2.</m> If <m>\Delta&lt;0</m>, then
-eigenvalues must be of opposite sign. This gives rise the the dynamics
-of a saddle point, stable in one direction, unstable in the other. 
-</p>
-
-
-<p>
-The only other nondegenerate cases occur when we have distinct, real
-eigenvalues of the same sign. The corresponding equilibria are termed
-nodes, with stability governed by the sign of <m>\tau</m>, since
-<m>\Delta&gt;0</m>. 
-</p>
-
-
-<p>
-We have our degenerate cases on the <m>\Delta=0</m> axis and along
-the curve <m>\Delta=\frac{\tau^2}{4}</m>. The case <m>\Delta=0</m> gives
-us a line of fixed points, where one quantity remains fixed (since one
-eigenvalue is zero) while the other grows from (<m>\tau&gt;0</m>) or
-decays towards (<m>\tau&lt;0</m>) zero. Along the curve
-<m>\Delta=\frac{\tau^2}{4}</m> equilibria are called <sq>degenerate
-nodes,</sq> characterized by a repeated eigenvalue. 
-</p>
-
-
-<p>
-Stable points, which attract trajectories, are often called
-<sq>sinks.</sq> Unstable points, which repel trajectories, are often
-called <sq>sources,</sq> since solutions emanate from such a source.
-
-</p>
-
-</paragraphs>
-
-</section>
 
 <section xml:id="ecological-competition"> 
 <title>Ecological competition</title>
@@ -519,6 +435,91 @@ initial conditions.</caption> </figure>
 
 
 
+<section xml:id="the-trace-determinant-method"> 
+<title>The <sq>Trace-Determinant Method</sq></title>
+
+<introduction xml:id="diagnostics-for-eigenvalues-and-stability">
+
+<title>Diagnostics for eigenvalues and stability</title>
+
+
+<p>
+In many cases, the calculation of eigenvalues from the Jacobian
+matrix at equilibria is unnecessary. Instead, we prefer a simpler
+approach that we refer to as the <sq>trace-determinant method.</sq>
+Combined with a cautious sketch of the phase plane, the inspection of
+<m>\tau=\operatorname{Tr}{J^*}</m> and
+<m>\Delta=\operatorname{det}{J^*}.</m> 
+</p>
+</introduction>
+
+<p>
+In some situations, the phase plan suggests that trajectories might
+oscillate about a fixed point. Yet, without the aid of computers we are
+often unable to distinguish between equilibria that attract, repel, or
+do neither. We call these attracting (repelling) equilibria stable
+(unstable) foci, the plural of focus, or neutrally stable centers, in
+the third case. Since we expect solutions to oscillate given the phase
+plane, all that remains is to determine whether or not the real part of
+the eigenvalue is positive, negative, or zero. This is <em>obvious</em>
+from the sign of <m>\tau</m>. The eigenvalues corresponding to the
+characteristic polynomial <me>C(\lambda)=\lambda^2-\tau \lambda
++\Delta,</me> are given by
+<me>\lambda_\pm=\frac{\tau}{2}\pm\frac{\sqrt{\tau^2- 4\Delta}}{2}.</me>
+We can see that <m>\tau&gt;0</m> implies
+<m>\operatorname{Re}(\lambda)&gt;0</m>, which means perturbations from
+equilibria decay and a particular equilibrium is a stable focus. We can
+repeat the argument for <m>\tau&lt;0</m>, which suggests an unstable
+focus, characterized by growing oscillations. Eigenvalues are purely
+imaginary, giving rise to neutrally stable centers, if <m>\tau=0</m>.
+Thus, if we expect oscillations, <m>\tau</m> tells us whether
+oscillations grow (<m>\tau&gt;0</m>), decay (<m>\tau&lt;0</m>), or are
+sustained (<m>\tau=0</m>), all without ever calculating the actual
+eigenvalue. 
+</p>
+
+
+<p>
+Another interesting case, that gives us yet another <em>obvious</em>
+conclusion, is <m>\Delta&lt;0</m>. If we consider a matrix, <m>J^*</m>,
+then <m>\tau</m> is the sum of its eigenvalues while <m>\Delta</m> is
+the product. Thus, for a <m>2\times2</m> matrix <m>J^*</m>,
+<m>\Delta=\lambda_1\lambda_2.</m> If <m>\Delta&lt;0</m>, then
+eigenvalues must be of opposite sign. This gives rise the the dynamics
+of a saddle point, stable in one direction, unstable in the other. 
+</p>
+
+
+<p>
+The only other nondegenerate cases occur when we have distinct, real
+eigenvalues of the same sign. The corresponding equilibria are termed
+nodes, with stability governed by the sign of <m>\tau</m>, since
+<m>\Delta&gt;0</m>. 
+</p>
+
+
+<p>
+We have our degenerate cases on the <m>\Delta=0</m> axis and along
+the curve <m>\Delta=\frac{\tau^2}{4}</m>. The case <m>\Delta=0</m> gives
+us a line of fixed points, where one quantity remains fixed (since one
+eigenvalue is zero) while the other grows from (<m>\tau&gt;0</m>) or
+decays towards (<m>\tau&lt;0</m>) zero. Along the curve
+<m>\Delta=\frac{\tau^2}{4}</m> equilibria are called <sq>degenerate
+nodes,</sq> characterized by a repeated eigenvalue. 
+</p>
+
+
+<p>
+Stable points, which attract trajectories, are often called
+<sq>sinks.</sq> Unstable points, which repel trajectories, are often
+called <sq>sources,</sq> since solutions emanate from such a source.
+
+</p>
+
+
+</section>
+
+
 <section xml:id="parameters-rates-and-units-prelude-to-chemical-kinetics">
 
 <title>Parameters, rates, and units: Prelude to chemical kinetics</title>
@@ -602,152 +603,4 @@ prey.
 
 </section>
 
-
-
-<section xml:id="michaelis-menten-kinetics"> 
-<title>Michaelis-Menten kinetics</title>
-
-<introduction>
-<p>
-The introduction to units will highlight the <sq>fact</sq> that
-units in reaction kinetics are somewhat less tangible and slightly more
-difficult to interpret. We will study the dynamics of cell receptors
-(<m>X_0, X_1</m>) as they shuttle extracellular nutrients (<m>N</m>)
-into the cell. We denote the concentration of cellular nutrient by
-<m>C</m>. 
-</p>
-</introduction>
-
-<p>
-We wish to apply the <sq>law of mass action</sq> which simply
-states, 
-</p>
-
-
-<p>
-<em>in a bimolecular reaction, the reaction rate is proportional to the product of the concentrations of reactants</em>.
-
-</p>
-
-
-<p>
-Assuming that <m>[A]</m> and <m>[B]</m> are the concentrations of
-reactants, <me>\begin{aligned} \text{rate}&amp;\propto [A][B]\\
-&amp;=k[A][B],\end{aligned}</me> where the constant of proportionality,
-<m>k</m>, is called the <sq>rate constant.</sq> 
-</p>
-
-
-<p>
-Since the law of mass action relies on concentrations of reactants,
-we must reconsider our receptors and nutrients in terms of
-<sq>concentrations</sq>. For a given cellular component <m>Z</m>, the
-<sq>volumetric concentration of <m>Z</m></sq> is,
-<me>\left[\text{concentration}\atop{\text{of }Z}\right]=\left[\text{average number}\atop{\text{of}~Z~\text{per cell}}\right]\times\left[\text{average number of}\atop\text{cells per volume}\right].</me> Treating
-<m>N</m>, <m>X_0</m>, <m>X_1</m>, and <m>C</m> as volumetric
-concentrations we can use the reaction diagram (<xref ref="fig-nutrient-recept" />) to build differential equations to
-describe the changes in concentrations. 
-</p>
-
-
-<figure xml:id="fig-nutrient-recept">
-<caption>INSERT REACTION </caption>
-</figure>
-
-
-<p>
-As an example, there are two ways that the extracellular nutrient
-concentration changes giving two terms to the <m>\frac{d^{} {N}}{d
-{t}^{}}</m> equation. <me>\begin{aligned}
-\frac{d^{} {N}}{d {t}^{}} &amp; = -\left(\text{losses when free nutrient binds to empty receptor}\right)\\
-&amp;\qquad +\left(\text{gains when occupied receptors release nutrient extracellularly}\right)\\
-&amp; = -k_+ N X_0+ k_- X_1
-\end{aligned}</me> 
-</p>
-
-
-<p>
-Similarly, we can add the remaining equations, <me>\begin{aligned}
-\frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N X_0 + k_- X_1\\ 
-\frac{d^{}{X_0}}{d {t}^{}} &amp; = -k_+ N X_0 + k_- X_1 + k_i X_i\\ 
-\frac{d^{}{X_1}}{d {t}^{}} &amp; = k_+ N X_0 - k_- X_1 - k_i X_i\\ 
-\frac{d^{}{C}}{d {t}^{}} &amp; = k_i X_1
-\end{aligned}</me> Given this model, our
-first goal is to make some simplifications through astute observations.
-Both <m>X_0</m> and <m>X_1</m> are receptor states, and if we add the
-two differential equations, <me>\frac{d^{} {X_0}}{d {t}^{}}+\frac{d^{}
-{X_1}}{d {t}^{}}=0,</me> we see that the total receptor concentration is
-conserved, <m>R</m>. With this we can write <m>X_0=R-X_1.</m>
-<me>\begin{aligned} 
-\frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N (R-X_1) +k_- X_1\\ 
-\frac{d^{} {X_1}}{d {t}^{}} &amp; = k_+ N (R-X_1) - k_- X_1 -k_i X_i
-\end{aligned}</me> Reshuffling a bit, <me>\begin{aligned}
-\frac{d^{} {N}}{d {t}^{}} &amp; = -k_+ N R+(k_+N + k_-) X_1\\ 
-\frac{d^{}{X_1}}{d {t}^{}} &amp; = k_+ N R- (k_+ N + k_- + k_i)X_i
-\end{aligned}</me> 
-</p>
-
-
-<p>
-We can study these equations in the phase plane. Assuming all
-parameters are positive, both nullclines saturate to a value
-<m>X_1\rightarrow R</m> at large <m>N</m>. Knowing very little about
-parameters, we know that the half saturation constant of the <m>X_1</m>
-nullcline is larger than that of the <m>N</m> nullcline. The nullclines,
-direction arrows on the nullclines, and a sample trajectory are
-illustrated in <xref ref="fig-mm-kinetics" />. 
-</p>
-
-<figure xml:id="fig-mm-kinetics"> 
-<image source="./images/mm_nullclines.png" width="50%"/> 
-<caption>Nutrient-receptor reaction.</caption> </figure> 
-
-
-<subsection xml:id="equilibrium-assumption-vs-quasi-steady-state-assumption">
-
-<title>Equilibrium assumption vs. the Quasi-steady state
-assumption</title> 
-<p>
-The notes of the following section have not been
-typeset. A rough, handwritten copy is included. If you have a better
-copy, I’d be happy to see it. 
-</p>
-
-
-<paragraphs xml:id="equilibrium-assumption"> 
-<title>Equilibrium assumption</title> 
-</paragraphs>
-
-<paragraphs xml:id="quasi-steady-state-assumption"> 
-<title>Quasi-steady state assumption</title> 
-</paragraphs>
-
-</subsection>
-</section>
-
-
-
-<section xml:id="nullclines-and-neuroscience"> 
-<title>Nullclines and Neuroscience</title>
-
-<p>
-Following on the heels of the quasi-steady
-state assumption, we will close with an application of fast and slow
-dynamics that arises in mathematical models of neurons. 
-</p> 
-
-<p>
-This example, called the FitzHugh-Nagumo model allows us to synthesize much
-of the material from continuous time dynamical systems: phase plane,
-equilibria, analysis, and approximation. 
-</p> 
-</section>
-
-<section xml:id="higher-dimensional-systems">
-<title>Higher-dimensional systems of differential equations as models</title>
-<p>
-</p>
-</section>
-
 </chapter>
-
