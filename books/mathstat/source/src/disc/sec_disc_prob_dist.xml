@@ -221,8 +221,98 @@ x}\theta^x(1-\theta)^{n-x} \text{ for }x = 0, 1, \dots, n</me>.
 the number of ways to select the order of the <m>x</m> successes in
 <m>n</m> trials. The values of <m>b(x; n, \theta)</m> give the
 coefficients of terms in the expansion of <m>\displaystyle
-\left((1-\theta) + \theta\right)^n</m>.
+\left((1-\theta) + \theta\right)^n</m> (for more see <xref ref="rmk-connection-to-pascal"/>).
 </p>
+
+<remark xml:id="rmk-connection-to-pascal">
+<title>Connection to binomial theorem</title>
+<p>You may be wondering, what does <m>\displaystyle
+\left((1-\theta) + \theta\right)^n</m> have to do with anything?
+</p>
+
+<p> Recall that the binomial theorem suggests that <me>(x+y)^{n} = \sum\limits_{k=0}^n {n \choose k}x^{n-k}y^k = {n \choose 0} x^{n}y^{0} + {n \choose 1} x^{n-1}y^{1} + \dots + {n \choose n} x^{0}y^{n}.</me> By connecting these, we see that with <m>y = \theta</m> and <m>x = 1-\theta</m>, we have, 
+<md>
+<mrow>\sum\limits_{x=0}^n b(x; n, \theta) \amp = \sum\limits_{x=0}^n {n \choose x}\theta^{x}(1-\theta)^{n-x} </mrow>
+<mrow>\ \amp = \sum\limits_{x=0}^n {n \choose x}(1-\theta)^{n-x}\theta^{x} </mrow>
+<mrow> \amp = \left[(1-\theta) + \theta)\right]^{n} </mrow>
+<mrow> \amp = \left[1\right]^{n} </mrow>
+<mrow> \sum\limits_{x=0}^n b(x; n, \theta) \amp = 1 </mrow></md>
+This verifies that the nonnegative values of <m>b(x; n, \theta)</m> also sum to one and that the function meets the requirements of a probability mass function.
+</p>
+</remark>
+
+
+
+
+<example xml:id="ex-bin-basketball-dumb"> 
+<title>Basketball free throws</title>
+
+<statement>
+<p>What is the probability that an <m>86\%</m> free throw-shooter makes <m>2</m> of <m>5</m> shots during a game?
+</p>
+
+<solution>
+<p>
+Let's try without invoking the binomial distribution.  Shots could occur as follows,
+<table xml:id="tab-basketball" >
+			<title>Sequences of shots totalling 2 makes in 5 attempts.</title>
+			<tabular>
+			<row header="yes" bottom="medium">
+<cell  halign="center">shot sequence</cell> <cell  halign="center"><m>\operatorname{Pr}(\text{shot sequence})</m></cell>
+</row>			<row>
+<cell>(make)(make)(miss)(miss)(miss)</cell> <cell><m>(0.86)(0.86)(0.14)(0.14)(0.14)</m></cell>
+</row>			<row>
+<cell>(make)(miss)(make)(miss)(miss)</cell> <cell><m>(0.86)(0.14)(0.86)(0.14)(0.14)</m></cell>
+</row>			<row>
+<cell>(make)(miss)(miss)(make)(miss)</cell> <cell><m>(0.86)(0.14)(0.14)(0.86)(0.14)</m></cell>
+</row>			<row>
+<cell>(make)(miss)(miss)(miss)(make)</cell> <cell><m>(0.86)(0.14)(0.14)(0.14)(0.86)</m></cell>
+</row>			<row>
+<cell>(miss)(make)(make)(miss)(miss)</cell> <cell><m>(0.14)(0.86)(0.86)(0.14)(0.14)</m></cell>
+</row>			<row>
+<cell>(miss)(make)(miss)(make)(miss)</cell> <cell><m>(0.14)(0.86)(0.14)(0.86)(0.14)</m></cell>
+</row>			<row>
+<cell>(miss)(make)(miss)(miss)(make)</cell> <cell><m>(0.14)(0.86)(0.14)(0.14)(0.86)</m></cell>
+</row>			<row>
+<cell>(miss)(miss)(make)(make)(miss)</cell> <cell><m>(0.14)(0.14)(0.86)(0.86)(0.14)</m></cell>
+</row>			<row>
+<cell>(miss)(miss)(make)(miss)(make)</cell> <cell><m>(0.14)(0.14)(0.86)(0.14)(0.86)</m></cell>
+</row>			<row>
+<cell>(miss)(miss)(miss)(make)(make)</cell> <cell><m>(0.14)(0.14)(0.14)(0.86)(0.86)</m></cell>
+</row>
+			</tabular>
+		</table>
+</p>
+
+<p>
+In all cases, the probability is given by <m>(0.86)^2(0.14)^3 \approx 0.00203</m>, and since there are ten possible ways that this could happen, <me>\operatorname{Pr}(\text{making 2 of 5 shots}) = (10 \text{ ways})\cdot(0.00203 \text{ each way}) \approx 0.0203</me>.
+</p>
+
+</solution>
+</statement>
+</example>
+
+
+
+<example xml:id="ex-bin-bball">
+<title>Free throws</title>
+<statement>
+<p> Use the binomial distribution to find the probability of making <m>2</m> in <m>5</m> free throws
+if the probability of making one is <m>0.86</m>?
+</p>
+
+<solution>
+<p>
+We need to calculate <me>b(2; 5, 0.86) = {5\choose2}0.86^2(1-0.86)^{5-2}
+= 10(0.86)^2(0.14)^3 \approx 0.0203</me>.  This calculation corresponds
+to the ten
+possible orderings of 2 makes in 5 shot attempts, the probabilities
+associated with 2 'makes', and the probabilities associated with 3
+'misses'.  The ten orders shown in <xref ref="ex-bin-basketball-dumb"/> are reflected in the coefficient <m>{5 \choose 2}</m> in the binomial distribution.
+</p>
+</solution>
+</statement>
+</example>
 
 <example xml:id="ex-bin-coins"> 
 <title>Binomial coin flips</title>
@@ -263,25 +353,6 @@ This gives <m>\theta = 0.75</m> and, as above, <me>b(5; 9, 0.75) = {9
 </solution>
 </statement></example>
 
-<example xml:id="ex-bin-bball">
-<title>Free throws</title>
-<statement>
-<p> What is the probability of making <m>2</m> in <m>5</m> free throws
-if the probability of making one is <m>0.86</m>?
-</p>
-
-<solution>
-<p>
-We need to calculate <me>b(2; 5, 0.86) = {5\choose2}0.86^2(1-0.86)^{5-2}
-= 10(0.86)^2(0.14)^3 \approx 0.0203</me>.  This calculation corresponds
-to the ten
-possible orderings of 2 makes in 5 shot attempts, the probabilities
-associated with 2 'makes', and the probabilities associated with 3
-'misses'.
-</p>
-</solution>
-</statement>
-</example>
 
 <p>Switching focus from <m>x</m> successes in <m>n</m> trials with a
 probability of success <m>\theta</m>, we have <m>n-x</m> failures in
