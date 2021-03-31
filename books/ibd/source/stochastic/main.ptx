@@ -219,25 +219,25 @@ words
 </sq> and on the right introduces the corresponding notation,
 <me>\begin{aligned}
 P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\qquad=\text{Prob(a birth)}\times P_{n-1}(t) \\ 
-&amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\qquad+\text{Prob(a death)}\times P_{n+1}(t)\\
 &amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;\qquad+\text{Prob(no change)}\times P_{n}(t)
+&amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\qquad+\text{Prob(a death)}\times P_{n+1}(t)\\
 \end{aligned}</me> Below we could also consider <m>\text{Prob(no change)}</m> as <m>(1-\text{Prob(change)})</m>, where
 <m>\text{Prob(change)}</m> is given by the probability of events
 resulting in exit <em>from
 </em> size <m>n</m>. The event probabilities
 are, <me>\begin{aligned}
-P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\qquad=(n-1)r\Delta t P_{n-1}(t) \\
+P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\qquad=(n-1)b\Delta t P_{n-1}(t) \\
+&amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;\qquad+(1-nb\Delta t-n\mu\Delta t) P_{n}(t)
 &amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\qquad+(n+1)\mu\Delta t P_{n+1}(t)\\
-&amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;\qquad+(1-nr\Delta t-n\mu\Delta t) P_{n}(t)
 \end{aligned}</me>
 Finally, we can begin rearranging to derive the differential equation
 for <m>P_n(t)</m>, <me>\begin{aligned}
-P_n(t+\Delta t) &amp;=(n-1)r\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)+(1-nr\Delta t-n\mu\Delta t) P_{n}(t) \\ 
-P_n(t+\Delta t) -P_n(t)&amp;=(n-1)r\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)-(nr\Delta t-n\mu\Delta t) P_{n}(t) \\
-\frac{P_n(t+\Delta t) -P_n(t)}{\Delta t}&amp;=(n-1)r P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-n(r -\mu) P_{n}(t)
+P_n(t+\Delta t) &amp;=(n-1)b\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)+(1-nb\Delta t-n\mu\Delta t) P_{n}(t) \\ 
+P_n(t+\Delta t) -P_n(t)&amp;=(n-1)b\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)-(nb\Delta t+n\mu\Delta t) P_{n}(t) \\
+\frac{P_n(t+\Delta t) -P_n(t)}{\Delta t}&amp;=(n-1)b P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-n(b + \mu) P_{n}(t)
 \end{aligned}</me>
 Now, taking the limit <m>\Delta t\rightarrow0</m>,<me>\frac{d^{}
-{P_n(t)}}{d {t}^{}}=(n-1)r P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-(nr-n\mu)
+{P_n(t)}}{d {t}^{}}=(n-1)b P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-(nb-n\mu)
 P_{n}(t) .</me> We have to assume that <m>P_i(t)=0</m> for any
 <m>i&lt;0</m>, and accept a system of coupled equations for <m>n=0, 1,
 2, \dots</m>. We will study this particular model with a suite of
@@ -250,7 +250,7 @@ elegant probability theory.
 <paragraphs xml:id="naive-calculation"> 
 <title>Naive calculation</title>
 <p> Looking at the first equation for <m>n=0</m>, <me>\frac{d^{}
-{P_0(t)}}{d {t}^{}}=(-1)r P_{-1}(t) +(1)\mu P_{1}(t)-0\cdot (r -\mu)
+{P_0(t)}}{d {t}^{}}=(-1)b P_{-1}(t) +(1)\mu P_{1}(t)-0\cdot (b -\mu)
 P_{0}(t),</me> we simplify to <me>\frac{d^{} {P_0(t)}}{d {t}^{}}= \mu
 P_{1}(t).</me> If we were to look at the equilibrium of <m>P_0</m>,
 assuming <m>\mu\neq0</m>, we would need <m>P_1(t)\rightarrow0</m>. Since

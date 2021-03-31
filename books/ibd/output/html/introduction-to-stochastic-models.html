@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-03-22T22:00:10-05:00       *-->
+<!--*       on 2021-03-24T22:28:11-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -180,8 +180,8 @@ P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) anima
 \begin{equation*}
 \begin{aligned}
 P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\qquad=\text{Prob(a birth)}\times P_{n-1}(t) \\ 
-&amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\qquad+\text{Prob(a death)}\times P_{n+1}(t)\\
 &amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;\qquad+\text{Prob(no change)}\times P_{n}(t)
+&amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\qquad+\text{Prob(a death)}\times P_{n+1}(t)\\
 \end{aligned}
 \end{equation*}
 </div>
@@ -189,9 +189,9 @@ P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) anima
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}
-P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\qquad=(n-1)r\Delta t P_{n-1}(t) \\
+P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) animals at time \(t\)}) &amp;&amp;\qquad=(n-1)b\Delta t P_{n-1}(t) \\
+&amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;\qquad+(1-nb\Delta t-n\mu\Delta t) P_{n}(t)
 &amp; +\text{Prob(a death)}\times\text{Prob}(\text{\(n+1\) animals at time \(t\)}) &amp;&amp;\qquad+(n+1)\mu\Delta t P_{n+1}(t)\\
-&amp; +\text{Prob(no change)}\times\text{Prob}(\text{\(n\) animals at time \(t\)}) &amp;&amp;\qquad+(1-nr\Delta t-n\mu\Delta t) P_{n}(t)
 \end{aligned}
 \end{equation*}
 </div>
@@ -199,9 +199,9 @@ P_n(t+\Delta t) &amp; =\text{Prob(a birth)}\times\text{Prob}(\text{\(n-1\) anima
 <div class="displaymath">
 \begin{equation*}
 \begin{aligned}
-P_n(t+\Delta t) &amp;=(n-1)r\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)+(1-nr\Delta t-n\mu\Delta t) P_{n}(t) \\ 
-P_n(t+\Delta t) -P_n(t)&amp;=(n-1)r\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)-(nr\Delta t-n\mu\Delta t) P_{n}(t) \\
-\frac{P_n(t+\Delta t) -P_n(t)}{\Delta t}&amp;=(n-1)r P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-n(r -\mu) P_{n}(t)
+P_n(t+\Delta t) &amp;=(n-1)b\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)+(1-nb\Delta t-n\mu\Delta t) P_{n}(t) \\ 
+P_n(t+\Delta t) -P_n(t)&amp;=(n-1)b\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}(t)-(nb\Delta t+n\mu\Delta t) P_{n}(t) \\
+\frac{P_n(t+\Delta t) -P_n(t)}{\Delta t}&amp;=(n-1)b P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-n(b + \mu) P_{n}(t)
 \end{aligned}
 \end{equation*}
 </div>
@@ -209,7 +209,7 @@ P_n(t+\Delta t) -P_n(t)&amp;=(n-1)r\Delta t P_{n-1}(t) +(n+1)\mu\Delta t P_{n+1}
 <div class="displaymath">
 \begin{equation*}
 \frac{d^{}
-{P_n(t)}}{d {t}^{}}=(n-1)r P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-(nr-n\mu)
+{P_n(t)}}{d {t}^{}}=(n-1)b P_{n-1}(t) +(n+1)\mu P_{n+1}(t)-(nb-n\mu)
 P_{n}(t) .
 \end{equation*}
 </div>
@@ -219,7 +219,7 @@ P_{n}(t) .
 <div class="displaymath">
 \begin{equation*}
 \frac{d^{}
-{P_0(t)}}{d {t}^{}}=(-1)r P_{-1}(t) +(1)\mu P_{1}(t)-0\cdot (r -\mu)
+{P_0(t)}}{d {t}^{}}=(-1)b P_{-1}(t) +(1)\mu P_{1}(t)-0\cdot (b -\mu)
 P_{0}(t),
 \end{equation*}
 </div>
