@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-09T23:28:52-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>We start with the definition of variance and manipulate the integral rather creatively. First note that,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sigma^2 = \int_{-\infty}^\infty (x-\mu)^2f(x)\,dx\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">Now, we are interested in the interval \(\mu-k\sigma \lt x \lt \mu + k\sigma\text{,}\) and rewrite the integral accordingly,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sigma^2 = \int_{-\infty}^{\mu-k\sigma} (x-\mu)^2f(x)\,dx + \int_{\mu+k\sigma}^{\mu+k\sigma} (x-\mu)^2f(x)\,dx + \int_{\mu+k\sigma}^\infty (x-\mu)^2f(x)\,dx
+\end{equation*}
+</div>
+<p data-braille="continuation">The integrand of the middle integral is nonnegative, so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\int_{\mu+k\sigma}^{\mu+k\sigma} (x-\mu)^2f(x)\,dx \ge 0,
+\end{equation*}
+</div>
+<p data-braille="continuation">this means</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sigma^2 \ge \int_{-\infty}^{\mu-k\sigma} (x-\mu)^2f(x)\,dx +
+\int_{\mu+k\sigma}^\infty (x-\mu)^2f(x)\,dx
+\end{equation*}
+</div>
+<p data-braille="continuation">since at most we have dropped a nonzero term from the right-hand side.</p>
+<p>Now things get a bit more tricky - we are considering the intervals \((-\infty, \mu-k\sigma]\) and \([\mu+k\sigma, \infty)\text{.}\)  This means either \(x \le \mu - k\sigma\) or \(x\ge \mu + k\sigma\text{.}\)  Alternatively  \(x - \mu \le - k\sigma\) or \(x - \mu \ge k\sigma\text{.}\)  Together these give \((x - \mu)^2 \ge (k\sigma)^2\text{.}\)  With this</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sigma^2 \amp\ge \int_{-\infty}^{\mu-k\sigma} (x-\mu)^2f(x)\,dx +
+\int_{\mu+k\sigma}^\infty (x-\mu)^2f(x)\,dx\\
+\amp\ge \int_{-\infty}^{\mu-k\sigma} (k\sigma)^2f(x)\,dx +
+\int_{\mu+k\sigma}^\infty (k\sigma)^2f(x)\,dx\\
+1 \amp\ge k^2\left(\int_{-\infty}^{\mu-k\sigma}  f(x)\,dx +
+\int_{\mu+k\sigma}^\infty f(x)\,dx\right)
+\end{align*}
+</div>
+<p>Provided that \(\sigma\neq0\text{,}\) we can divide a common factor of \(\sigma^2\) from both sides to reach the last line in the calculation above.  Now, at this point</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+1 \ge k^2\left(\int_{-\infty}^{\mu-k\sigma}  f(x)\,dx +
+\int_{\mu+k\sigma}^\infty f(x)\,dx\right)
+\end{equation*}
+</div>
+<p data-braille="continuation">or</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\dfrac{1}{k^2} \ge \left(\int_{-\infty}^{\mu-k\sigma}  f(x)\,dx +
+\int_{\mu+k\sigma}^\infty f(x)\,dx\right)\text{.}
+\end{equation*}
+</div>
+<p data-braille="continuation">The integrals give \(\operatorname{P}(|x-\mu| \ge k\sigma)\) or \(1 - \operatorname{P}(|x-\mu| \lt k\sigma)\text{.}\)</p>
+<p>So,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\dfrac{1}{k^2} \ge \left(\int_{-\infty}^{\mu-k\sigma}  f(x)\,dx +
+\int_{\mu+k\sigma}^\infty f(x)\,dx\right)\\
+\dfrac{1}{k^2} \ge 1 - \operatorname{P}(|x-\mu| \lt k\sigma)\\
+\operatorname{P}(|x-\mu| \lt k\sigma) \ge 1 - \dfrac{1}{k^2} 
+\end{gather*}
+</div></article></body>
+</html>

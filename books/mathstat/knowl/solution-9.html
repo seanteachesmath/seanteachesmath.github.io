@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-03-17T15:53:42-05:00       *-->
+<!--*       on 2021-04-09T23:28:51-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -17,29 +17,59 @@
 <div class="solution solution-like">
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
 <span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="period">.</span>
-</h6>This problem can be done by evaluating the binomial using 'Table 1' of the 'Statistical Tables Appendix' (see book), or by using the definition of probability distribution of the binomial random variable. <ol class="decimal">
-<li>
-<p>The coin is balanced and \(P(\text{success}) = P(\text{failure})
-= 0.5\text{.}\) We are looking to evaluate the binomial probability, sometimes written \(\operatorname{Bin}(n=9, \theta=0.5)\text{,}\) specifically \(b(5; 9,
-0.5)\text{.}\) This is,</p>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Let's try without invoking the binomial distribution.  Shots could occur as follows, <figure class="table table-like"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.3.10<span class="period">.</span></span><span class="space"> </span>Sequences of shots totalling 2 makes in 5 attempts.</figcaption><table>
+<tr>
+<td class="c m b2 r0 l0 t0 lines">shot sequence</td>
+<td class="c m b2 r0 l0 t0 lines" data-braille="last-cell">\(\operatorname{Pr}(\text{shot sequence})\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(make)(make)(miss)(miss)(miss)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((0.86)(0.86)(0.14)(0.14)(0.14)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(make)(miss)(make)(miss)(miss)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((0.86)(0.14)(0.86)(0.14)(0.14)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(make)(miss)(miss)(make)(miss)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((0.86)(0.14)(0.14)(0.86)(0.14)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(make)(miss)(miss)(miss)(make)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((0.86)(0.14)(0.14)(0.14)(0.86)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(miss)(make)(make)(miss)(miss)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((0.14)(0.86)(0.86)(0.14)(0.14)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(miss)(make)(miss)(make)(miss)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((0.14)(0.86)(0.14)(0.86)(0.14)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(miss)(make)(miss)(miss)(make)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((0.14)(0.86)(0.14)(0.14)(0.86)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(miss)(miss)(make)(make)(miss)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((0.14)(0.14)(0.86)(0.86)(0.14)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(miss)(miss)(make)(miss)(make)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((0.14)(0.14)(0.86)(0.14)(0.86)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">(miss)(miss)(miss)(make)(make)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\((0.14)(0.14)(0.14)(0.86)(0.86)\)</td>
+</tr>
+</table></figure></p>
+<p>In all cases, the probability is given by \((0.86)^2(0.14)^3 \approx 0.00203\text{,}\) and since there are ten possible ways that this could happen,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-b(5; 9, 0.5) = {9 \choose 5}0.5^5(1-0.5)^{9-5} \approx
-0.2461 
+\operatorname{Pr}(\text{making 2 of 5 shots}) = (10 \text{ ways})\cdot(0.00203 \text{ each way}) \approx 0.0203\text{.}
 \end{equation*}
 </div>
-</li>
-<li>
-<p>The coin is unbalanced and \(P(\text{success})\) is \(3\) times larger than \(P(\text{failure})\text{.}\) We first have to figure out the value for \(P(\text{success}) =
-\theta\text{.}\) We have said that \(P(\text{success}) = 3\cdot P(\text{failure})\) or \(\theta = 3\cdot (1-\theta)\text{.}\) This gives \(\theta = 0.75\) and, as above,</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-b(5; 9, 0.75) = {9
-\choose 5}0.75^5(1-0.75)^{9-5} \approx 0.1168 
-\end{equation*}
-</div>
-</li>
-</ol>
 </div>
 <span class="incontext"><a href="section-special-distributions.html#solution-9">in-context</a></span>
 </body>
