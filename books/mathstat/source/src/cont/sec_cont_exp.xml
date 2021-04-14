@@ -377,8 +377,7 @@ when <m>X</m> is discrete.
 Notce that a moment-generating function <m>\displaystyle M_X(t)</m>
 itself is a function of the variable <m>\displaystyle t</m> not
 <m>X</m>. As it turns out, we are most interested in
-values
-of the function at or near <m>t=0</m>.
+values of the function at or near <m>t=0</m>.
 </p>
 
 <p>
@@ -417,8 +416,7 @@ For the first integral to converge we require <m>t \lt 1</m>.
 <p>
 With the result from <xref ref="ex-exp-MGF"/>, assuming <m>|t| \lt 1</m>
 we can expand around <m>t=0</m> to find <me>M_X(t) = \dfrac{1}{1-t} = 1
-+ t + t^2 + \dots + t^r +
-\dots</me> Remembering that <m>\mu_r'</m> is the coefficient of
++ t + t^2 + \dots + t^r + \dots</me> Remembering that <m>\mu_r'</m> is the coefficient of
 <m>\dfrac{t^r}{r!}</m>, we can rewrite the previous expansion as
 <me>M_X(t) = \dfrac{1}{1-t} = 1 + 1\Big(\dfrac{t^1}{1!}\Big) +
 2!\Big(\dfrac{t^2}{2!}\Big) + \dots + r!\Big(\dfrac{t^r}{r!}\Big) +
@@ -426,11 +424,16 @@ we can expand around <m>t=0</m> to find <me>M_X(t) = \dfrac{1}{1-t} = 1
 </p>
 
 <p>
-Above the primary difficulty once the moment-generating function has
-been calculated is probably in the expansion of the Maclaurin series.
+Once the moment-generating function has been calculated, 
+the main challenge probably lies in the expansion of the Maclaurin
+series.  Recall that that the Maclaurin series for <m>f(t)</m> is in
+general given by <me>f(t) = \sum_{k=0}^{\infty}\dfrac{f^{(k)}(0)(t)^k}{k!}</me>. 
 One alternative to this requires calculating the integrals that define
-the necessary expectations <me>\mu_r' = E[X^r] = \int_{-\infty}^\infty
-x^r e^{-x}\,dx</me> by integration by parts or tabular integration. 
+the necessary expectations, for example <me>\mu_r' = E[X^r] = \int_{0}^\infty
+x^r e^{-x}\,dx</me> by integration by parts or tabular integration.
+</p>
+
+<p>
 Instead, given the moment-generating function, we could apply <xref
 ref="thm-4-9"/>.</p>
 
