@@ -1,0 +1,2657 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:19:14-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Green's Theorem</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_divergenceThm.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_integral_theorems.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_StokesThm.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_divergenceThm.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_integral_theorems.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_StokesThm.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm" class="active">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_GreenThm"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">15.3</span> <span class="title">Green's Theorem</span>
+</h2>
+<p id="p-17919">Our next variant of the fundamental theorem of calculus is Green's<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-677" id="fn-677"><sup> 1 </sup></a> theorem, which relates an integral, of a derivative of a (vector-valued) function, over a region  in the \(xy\)-plane, with an integral of the function over the curve bounding the region. First we need to define some properties of curves.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-677"><div class="fn">George Green (1793–1841) was a British mathematical physicist. He spent much of the early part of his life working in his father's bakery and grain mill. He was finally admitted as an undergraduate to Cambridge in 1832, aged nearly forty.</div></div>
+<article class="definition definition-like" id="def_Green"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">15.3.1</span><span class="period">.</span>
+</h6>
+<ol id="p-17920" class="lower-alpha">
+<li id="li-7368">A curve \(C\) with parametrization \(\vr(t)\text{,}\) \(a\le t\le b\text{,}\) is said to be <dfn class="terminology">closed</dfn> if \(\vr(a)=\vr(b)\text{.}\)</li>
+<li id="li-7369">A curve \(C\) is said to be <dfn class="terminology">simple</dfn> if it does not cross itself. More precisely, if \(\vr(t)\text{,}\) \(a\le t\le b\text{,}\) is a parametrization of the curve and if \(a\le t_1,t_2\le b\) obey \(t_1\ne t_2\) and \(\{t_1,t_2\}
+\ne\{a,b\}\text{,}\) then \(\vr(t_1)\ne \vr(t_2)\text{.}\) That is, if \(\vr(t_1)=\vr(t_2)\text{,}\) then either \(t_1=t_2\) or \(t_1=a\text{,}\) \(t_2=b\text{,}\) or \(t_1=b\text{,}\) \(t_2=a\text{.}\)</li>
+<li id="li-7370">
+<p id="p-17921">A curve \(C\) is <dfn class="terminology">piecewise smooth</dfn> if it has a parametrization \(\vr(t)\) which</p>
+<ul class="disc">
+<li id="li-7371">is continuous and which</li>
+<li id="li-7372">is differentiable except possibly at finitely many points with</li>
+<li id="li-7373">the derivative being continuous and nonzero except possibly at finitely many points.</li>
+</ul>
+</li>
+</ol></article><p id="p-17922">Here are sketches of some examples.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.375%;margin-right:1.375%;">
+<div class="sbspanel" style="width:20.5655526992288%;justify-content:center;"><img src="figs/curve1.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:26.7352185089974%;justify-content:center;"><img src="figs/curve2.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:20.5655526992288%;justify-content:center;"><img src="figs/curve3.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:23.6503856041131%;justify-content:center;"><img src="figs/astroid5.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-17923">And here is Green's theorem.</p>
+<article class="theorem theorem-like" id="thm_Green"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Green's Theorem.</span>
+</h6>
+<p id="p-17924">Let</p>
+<ul class="disc">
+<li id="li-7374">\(R\) be a finite region in the \(xy\)-plane,</li>
+<li id="li-7375">
+<p id="p-17925">the boundary, \(C\text{,}\) of \(R\) consist of a finite number of piecewise smooth, simple closed curves</p>
+<ul class="circle"><li id="li-7376">that are oriented (i.e. arrows are put on \(C\)) consistently with \(R\) in the sense that if you walk along \(C\) in the direction of the arrows, then \(R\) is on your left</li></ul>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12%;margin-right:12%;">
+<div class="sbspanel" style="width:32.8947368421053%;justify-content:center;"><img src="figs/greens1.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:35.5263157894737%;justify-content:center;"><img src="figs/dcircleE.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+</li>
+<li id="li-7377">\(F_1(x,y)\) and \(F_2(x,y)\) have continuous first partial derivatives at <em class="emphasis">every</em> point of \(R\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Then</p>
+<div class="displaymath">
+\begin{equation*}
+\oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+=\dblInt_{R}\left(\frac{\partial F_2}{\partial x}
+- \frac{\partial F_1}{\partial y}\right)\ \dee{x}\dee{y}
+\end{equation*}
+</div></article><article class="warning remark-like" id="warn_Green"><h6 class="heading">
+<span class="type">Warning</span><span class="space"> </span><span class="codenumber">15.3.3</span><span class="period">.</span>
+</h6>
+<p id="p-17926">Note that in Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a> we are assuming that \(F_1\) and \(F_2\) have continuous first partial derivatives at <em class="emphasis">every</em> point of \(R\text{.}\) If that is not the case, for example because \(F_1\) or \(F_2\) is not defined on all of \(R\text{,}\) then the conclusion of Green's theorem can fail. An example is \(F_1=-\frac{y}{x^2+y^2}\text{,}\) \(F_2=\frac{x}{x^2+y^2}\text{,}\) \(R=\Set{(x,y)}{x^2+y^2\le 1}\text{.}\) See Examples <a class="xref" data-knowl="./knowl/eg_greenC.html" title="Example 15.3.7: Trick Question">15.3.7</a> and <a class="xref" data-knowl="./knowl/eg_greenCC.html" title="Example 15.3.8: Example 15.3.7, again.">15.3.8</a>.</p></article><p id="p-17927">Here are three notational remarks before we start the proof.</p>
+<ul class="disc">
+<li id="li-7378">One way to remember the integrand on the right hand side is to write it as \((\vnabla\times\vF)\cdot\hk\text{.}\)</li>
+<li id="li-7379">Many people use \(M\) instead of \(F_1\) and \(N\) instead of \(F_2\text{.}\) Then Green's theorem becomes \(\oint_{C} \big[M(x,y)\,\dee{x} +N(x,y)\,\dee{y}\big]
+=\dblInt_{R}\Big(\frac{\partial N}{\partial x}
+- \frac{\partial M}{\partial y}\Big)\ \dee{x}\dee{y}\)</li>
+<li id="li-7380">The symbol \(\oint_C\) is just an alternate notation for \(\int_C\) that is sometimes used when \(C\) is a closed curve. See Notation <a class="xref" data-knowl="./knowl/not_workIntegral.html" title="Definition 13.4.1">13.4.1</a>.</li>
+</ul>
+<article class="hiddenproof" id="proof-67"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-67"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-67"><article class="hiddenproof"><p id="p-17928">We prove the result by reformulating it as a divergence theorem statement. To that end, we define</p>
+<div class="displaymath">
+\begin{align*}
+V&amp;=\Set{(x,y,z)}{ (x,y)\in R,\ \ 0\le z\le 1}\\
+\vG(x,y,z) &amp;= F_2(x,y)\,\hi -F_1(x,y)\,\hj
+\end{align*}
+</div>
+<p data-braille="continuation">Notice that \(V\) is exactly the volume obtained by expanding \(R\) vertically upward by one unit.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/greens2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17929">The definition of \(\vG\) does <em class="emphasis">not</em> contain a typo — the \(x\)-component of \(\vG\) really is \(F_2\) and the \(y\)-component of \(\vG\) really is \(-F_1\text{.}\) (More or less the reverse of what you would normally write down.)</p>
+<p id="p-17930">These definitions have been rigged so that the divergence theorem applied to \(\vG\) and \(V\text{,}\) namely</p>
+<div class="displaymath">
+\begin{align*}
+\dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
+&amp;=\tripInt_V\vnabla\cdot\vG\ \dee{V}
+\end{align*}
+</div>
+<p data-braille="continuation">gives us exactly Green's theorem, as we shall now see.</p>
+<p id="p-17931">Since \(\vnabla\cdot\vG = \frac{\partial F_2}{\partial x}
+- \frac{\partial F_1}{\partial y}\text{,}\)  the right hand side is just</p>
+<div class="displaymath">
+\begin{align*}
+\tripInt_V\vnabla\cdot\vG\ \dee{V}
+&amp;= \dblInt_{R}\dee{x}\dee{y}\int_0^1\dee{z} \ \vnabla\cdot\vG\\
+&amp;= \dblInt_{R}\dee{x}\dee{y}\int_0^1\dee{z} \
+\left(\frac{\partial F_2}{\partial x}(x,y)
+- \frac{\partial F_1}{\partial y}(x,y)\right)\\
+&amp;= \dblInt_{R}\dee{x}\dee{y}\
+\left(\frac{\partial F_2}{\partial x}(x,y)
+- \frac{\partial F_1}{\partial y}(x,y)\right)
+\end{align*}
+</div>
+<p data-braille="continuation">because the integrand is independent of \(z\text{.}\) This is exactly the right hand side of Green's theorem.</p>
+<p id="p-17932">Now for the left hand side. The boundary, \(\partial V\text{,}\) of \(V\) is the union of the (flat) bottom, the (flat) top and the (curved) side. The outward unit normal on the (horizontal, flat) top is \(+\hk\) and the outward unit normal on the (horizontal, flat) bottom is \(-\hk\)  so that</p>
+<div class="displaymath">
+\begin{align*}
+\dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
+&amp;=\dblInt_{\text{top}} \vG\cdot\hk\,\dee{S}
++\dblInt_{\text{bottom}} \vG\cdot(-\hk)\,\dee{S}
++\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}\\
+&amp;=\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}
+\end{align*}
+</div>
+<p data-braille="continuation">We have used the fact that the \(\hk\) component of \(\vG\) is exactly zero to discard the integrals over the top and bottom of \(\partial V\text{.}\) To evaluate the integral over the side, we'll parametrize the side. Suppose that \(\vr(t)=x(t)\,\hi +y(t)\,\hj\text{,}\) \(a\le t\le b\text{,}\) is a parametrization of \(C\text{,}\) with the arrow in the figure above giving the direction of increasing \(t\text{.}\) Then we can use</p>
+<div class="displaymath">
+\begin{gather*}
+\vR(t,z)  = \vr(t) +z\,\hk
+= x(t)\,\hi +y(t)\,\hj +z\,\hk \qquad a\le t\le b,\ 0\le z\le 1
+\end{gather*}
+</div>
+<p data-braille="continuation">as a parametrization of the side. We'll use (<a class="xref" data-knowl="./knowl/eq_SUdSparam.html" title="Equation 14.3.1">14.3.1</a>) to determine \(\hn\,\dee{S}\) for the side. Since</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial\vR}{\partial t}(t,z) &amp; = x'(t)\,\hi +y'(t)\,\hj\\
+\frac{\partial\vR}{\partial z}(t,z) &amp; = \hk
+\end{align*}
+</div>
+<p data-braille="continuation">(<a class="xref" data-knowl="./knowl/eq_SUdSparam.html" title="Equation 14.3.1">14.3.1</a>) gives</p>
+<div class="displaymath">
+\begin{align*}
+\hn\,\dee{S} &amp;= \frac{\partial\vR}{\partial t}(t,z)\times
+\frac{\partial\vR}{\partial z}(t,z)\ \dee{t}\dee{z}\\
+&amp;= \big(x'(t)\,\hi +y'(t)\,\hj\big)\times \hk\ \dee{t}\dee{z}\\
+&amp;= \big(-x'(t)\,\hj +y'(t)\,\hi\big)\ \dee{t}\dee{z}
+\end{align*}
+</div>
+<p data-braille="continuation">Note that with this choice of \(\pm\) sign (that is, \(\frac{\partial\vR}{\partial t}\times
+\frac{\partial\vR}{\partial z}\ \dee{t}\dee{z}\) rather than \(-\frac{\partial\vR}{\partial t}\times
+\frac{\partial\vR}{\partial z}\ \dee{t}\dee{z}\)), the vector \(\hn\) really is the <em class="emphasis">outward</em> pointing normal, as we see from the sketch</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/greens3.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17933">We can now compute the surface integral directly.</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
+=\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}\\
+&amp;\hskip0.25in=\int_a^b\dee{t}\int_0^1\dee{z}\ \vG\big(\vR(t,z)\big)\cdot
+\big(-x'(t)\,\hj +y'(t)\,\hi\big)\\
+&amp;\hskip0.25in=\int_a^b\dee{t}\int_0^1\dee{z}\
+\big(F_2(x(t),y(t))\,\hi -F_1(x(t),y(t))\,\hj\big)\cdot
+\big(-x'(t)\,\hj +y'(t)\,\hi\big)\\
+&amp;\hskip0.25in=\int_a^b\dee{t}\
+\big[F_2(x(t),y(t))\,y'(t) +F_1(x(t),y(t))\,x'(t)\big]\\
+&amp;\hskip2in \text{since the integrand is independent of } z\\
+&amp;\hskip0.25in=\oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+\end{align*}
+</div>
+<p data-braille="continuation">This is exactly the left hand side of Green's theorem.</p></article></div>
+<article class="example example-like" id="eg_greenA"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_greenA"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.3.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_greenA"><article class="example example-like"><p id="p-17934">Evaluate</p>
+<div class="displaymath">
+\begin{equation*}
+\oint_C\big[(x-xy)\,\dee{x} + (y^3+1)\,\dee{y}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(C\) is the curve given in the figure</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30.5%;margin-right:30.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/greensSquare.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2326" id="solution-2326"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2326"><div class="solution solution-like">
+<p id="p-17935">Let \(R=\Set{(x,y)}{1\le x\le 2,\ 0\le y\le 1}\text{.}\) By Green's theorem</p>
+<div class="displaymath">
+\begin{align*}
+\oint_C\big[(x-xy)\,\dee{x} + (y^3+1)\,\dee{y}
+&amp;=\dblInt_R\Big[\frac{\partial }{\partial x}(y^3+1)
+- \frac{\partial }{\partial y}(x-xy)\Big]\dee{x}\dee{y}\\
+&amp;=\int_1^2\dee{x}\int_0^1\dee{y}\ x
+=\frac{x^2}{2}\bigg|_1^2
+=\frac{3}{2}
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-17936">Here is a simple corollary of Green's theorem that tells how to compute the area enclosed by a curve in the \(xy\)-plane.</p>
+<article class="corollary theorem-like" id="cor_greens"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">15.3.5</span><span class="period">.</span>
+</h6>
+<p id="p-17937">Let</p>
+<ul class="disc">
+<li id="li-7381">\(R\) be a finite region in the \(xy\)-plane whose boundary</li>
+<li id="li-7382">\(C\) consists of a finite number of piecewise smooth, simple closed curves.</li>
+<li id="li-7383">Orient \(C\) (i.e. put arrows on \(C\)) so that if you walk along \(C\) in the direction of the arrows, then \(R\) is on your left.</li>
+</ul>
+<p data-braille="continuation">Then</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Area}(R)
+=\oint_C x\dee{y}
+=-\oint_C y\dee{x}
+=\frac{1}{2}\oint_C \big[x\dee{y} -y\dee{x}\big]
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-68"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-68"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-68"><article class="hiddenproof"><p id="p-17938">This is just Green's theorem applied first with \(\vF = x\,\hj\text{,}\) then with \(\vF= -y\,\hi\) and finally with \(\vF = \frac{1}{2}\big[-y\,\hi +x\,\hj\big]\text{.}\) For all three of these \(\vF\)'s,</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial F_2}{\partial x}
+- \frac{\partial F_1}{\partial y} = 1
+\end{equation*}
+</div>
+<p data-braille="continuation">so that Green's theorem gives</p>
+<div class="displaymath">
+\begin{align*}
+\oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+&amp;=\dblInt_{R}\Big(\frac{\partial F_2}{\partial x}
+- \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y}
+=\dblInt_{R}\ \dee{x}\dee{y}\\
+&amp; = \text{Area}(R)
+\end{align*}
+</div></article></div>
+<article class="example example-like" id="eg_greenB"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_greenB"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.3.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_greenB"><article class="example example-like"><p id="p-17939">In this example we will use Green's theorem to compute the area enclosed by the astroid \(x^{2/3} + y^{2/3} = a^{2/3}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:35.5%;margin-right:35.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/astroid6.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17940">In Example <a class="xref" data-knowl="./knowl/eg_astroid.html" title="Example 12.1.9: Perimeter of the astroid">12.1.9</a> we found the parametrization</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) = x(t)\,\hi + y(t)\,\hj = a\cos^3t\,\hi + a\sin^3 t\,\hj
+\qquad 0\le t\le 2\pi
+\end{equation*}
+</div>
+<p data-braille="continuation">for the astroid. So, by Corollary <a class="xref" data-knowl="./knowl/cor_greens.html" title="Corollary 15.3.5">15.3.5</a>,</p>
+<div class="displaymath">
+\begin{align*}
+\text{Area}
+&amp;=\frac{1}{2}\oint_C \big[x\dee{y} -y\dee{x}\big]
+=\frac{1}{2}\int_0^{2\pi} \big[x(t)y'(t) -y(t)x'(t)\big]\dee{t}\\
+&amp;=\frac{3a^2}{2}\int_0^{2\pi} \big[\cos^3t\sin^2t\cos t
++\sin^3t\cos^2 t\sin t\big]\dee{t}\\
+&amp;=\frac{3a^2}{2}\int_0^{2\pi} \cos^2t\sin^2t\big[\cos^2t
++\sin^2t\big]\dee{t}\\
+&amp;=\frac{3a^2}{2}\int_0^{2\pi} \cos^2t\sin^2t\ \dee{t}\\
+&amp;=\frac{3a^2}{8}\int_0^{2\pi} \sin^2(2t)\ \dee{t}
+=\frac{3a^2}{16}\int_0^{2\pi} [1-\cos(4t)]\ \dee{t}\\
+&amp;=\frac{3}{8}a^2\pi
+\end{align*}
+</div></article></div>
+<article class="example example-like" id="eg_greenC"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_greenC"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Trick Question.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_greenC"><article class="example example-like"><p id="p-17941">Evaluate</p>
+<div class="displaymath">
+\begin{equation*}
+\oint_C\vB\cdot\dee{\vr}
+\end{equation*}
+</div>
+<p data-braille="continuation">where</p>
+<div class="displaymath">
+\begin{equation*}
+\vB = \frac{-y\,\hi+x\,\hj}{x^2+y^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">and \(C\) is the curve</p>
+<div class="displaymath">
+\begin{align*}
+x(t) &amp;= \sin(\cos t)\\
+y(t) &amp;= \sin(\sin t)\\
+z(t) &amp;= 0
+\end{align*}
+</div>
+<p data-braille="continuation">with \(0\le t\le 2\pi\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2327" id="solution-2327"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2327"><div class="solution solution-like">
+<p id="p-17942">First let's think about the curve \(C\text{.}\) If the curve were just \(X(t)=\cos t\text{,}\) \(Y(t)=\sin t\text{,}\) \(Z(t)=0\text{,}\) it would be the unit circle centred on the origin in the \(xy\)-plane, traversed counterclockwise. For \(-\frac{\pi}{2}\le u\le \frac{\pi}{2}\text{,}\) the function \(\sin u\) increases monotonically with  \(u\) and is of the same sign as \(u\) so that, since \(|\sin t|,|\cos t|\le 1 \lt \frac{\pi}{2}\text{,}\)</p>
+<ul class="disc">
+<li id="li-7384">\(x(t) = \sin\big(\cos t)\) has the same sign as \(X(t)=\cos t\) and is increasing at precisely the same \(t\)'s as is \(X(t)\)</li>
+<li id="li-7385">\(y(t) = \sin\big(\sin t)\) has the same sign as \(Y(t)=\sin t\) and is increasing at precisely the same \(t\)'s as is \(Y(t)\)</li>
+</ul>
+<p data-braille="continuation">So the extra sine in our parametrization of \(C\) just distorts the circle, straightening the sides a little as depicted here.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:36%;margin-right:36%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/dcircleA.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17943">It looks like our problem is a straightforward Green's theorem problem like Example <a class="xref" data-knowl="./knowl/eg_greenA.html" title="Example 15.3.4">15.3.4</a>. Let's just try using the strategy of Example <a class="xref" data-knowl="./knowl/eg_greenA.html" title="Example 15.3.4">15.3.4</a>. Because</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial \vB_2}{\partial x} - \frac{\partial \vB_1}{\partial y}
+&amp;=\frac{\partial }{\partial x}\frac{x}{x^2+y^2}
+- \frac{\partial }{\partial y}\frac{-y}{x^2+y^2}\\
+&amp;= \frac{1}{x^2+y^2} - \frac{2x^2}{{(x^2+y^2)}^2}
++\frac{1}{x^2+y^2} - \frac{2y^2}{{(x^2+y^2)}^2}\\
+&amp;= \frac{(x^2+y^2) - 2x^2 + (x^2+y^2) - 2y^2}{{(x^2+y^2)}^2}\\
+&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">it looks like Green's theorem gives us, trivially,</p>
+<div class="displaymath">
+\begin{equation*}
+\oint_C\vB\cdot\dee{\vr}
+=\oint_C\big[\vB_1\,\dee{x} +\vB_2\,\dee{y}\big]
+= \dblInt_{R}\left(\frac{\partial B_2}{\partial x}
+- \frac{\partial B_1}{\partial y}\right)\ \dee{x}\dee{y}
+=0
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(R\) is the region inside our curve \(C\text{.}\)</p>
+<p id="p-17944">That was easy — but it's also very <em class="alert">wrong</em>! Our next steps are to</p>
+<ul class="disc">
+<li id="li-7386">verify that \(\oint_C\vB\cdot\dee{\vr}\ne 0\text{,}\) and</li>
+<li id="li-7387">explain why we got the wrong answer, and</li>
+<li id="li-7388">modify our computation so as to give the correct answer. We'll do this in Example <a class="xref" data-knowl="./knowl/eg_greenCC.html" title="Example 15.3.8: Example 15.3.7, again.">15.3.8</a>.</li>
+</ul>
+<p id="p-17945"><em class="emphasis">Verification that \(\oint_C\vB\cdot\dee{\vr}\ne 0\text{:}\)}</em></p>
+<p id="p-17946">Since</p>
+<div class="displaymath">
+\begin{align*}
+x'(t) &amp;= -\cos(\cos t)\ \sin t\\
+y'(t) &amp;= \cos(\sin t)\ \cos t\\
+z'(t) &amp;= 0
+\end{align*}
+</div>
+<p data-braille="continuation">our integral is</p>
+<div class="displaymath">
+\begin{align*}
+\oint_C\vB\cdot\dee{\vr}
+&amp;=\oint_C\big[\vB_1\,\dee{x} +\vB_2\,\dee{y}\big]\\
+&amp;=\int_0^{2\pi}\big[\vB_1\big(x(t),y(t)\big)\,x'(t)
++\vB_2\,\big(x(t),y(t)\big)\,y'(t)\big]\dee{t}\\
+&amp;=\int_0^{2\pi}
+\frac{\sin(\sin t)\,\cos(\cos t)\,\sin t
++\sin(\cos t)\,\cos(\sin t)\,\cos t}
+{\sin^2(\cos t) +\sin^2(\sin t)}
+\dee{t}
+\end{align*}
+</div>
+<p data-braille="continuation">This is a very ugly looking integral<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-678" id="fn-678"><sup> 2 </sup></a>. But even if we can't evaluate the integral, we can see that the integrand is strictly positive, and that forces \(\oint_C\vB\cdot\vr \gt 0\text{.}\) Because</p>
+<div class="displaymath">
+\begin{equation*}
+0\le|\sin t|,|\cos t|\le 1 \lt \frac{\pi}{2}
+\end{equation*}
+</div>
+<ul class="disc">
+<li id="li-7389">\(\cos(\cos t) \gt 0\text{,}\) and \(\sin(\sin t)\) has the same sign as \(\sin t\text{,}\) and \(\sin(\sin t)\) is zero if and only if \(\sin t=0\text{.}\) So the first term in the numerator,<div class="displaymath">
+\begin{equation*}
+\cos(\cos t)\,\sin(\sin t)\,\sin t\ge 0
+\end{equation*}
+</div>and is zero if and only if \(\sin t=0\)</li>
+<li id="li-7390">\(\cos(\sin t) \gt 0\text{,}\) and \(\sin(\cos t)\) has the same sign as \(\cos t\text{,}\) and \(\sin(\cos t)\) is zero if and only if \(\cos t=0\text{.}\) So the second term in the numerator,<div class="displaymath">
+\begin{equation*}
+\cos(\sin t)\,\sin(\cos t)\,\cos t\ge 0
+\end{equation*}
+</div>and is zero if and only if \(\cos t=0\text{.}\)</li>
+<li id="li-7391">There is no \(t\) for which both \(\sin t\) and \(\cos t\) are simultaneously zero. So the whole numerator<div class="displaymath">
+\begin{equation*}
+\sin(\sin t)\,\cos(\cos t)\,\sin t
++\sin(\cos t)\,\cos(\sin t)\,\cos t \gt 0
+\end{equation*}
+</div>is strictly positive.</li>
+</ul>
+<p data-braille="continuation">Since the integrand is strictly positive, the integral is strictly positive.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-678"><div class="fn">Indeed!</div></div>
+<p id="p-17947"><em class="emphasis">Why we got the wrong answer:</em></p>
+<p id="p-17948">In our initial and wrong calculation above, we assumed that \(\frac{\partial B_2}{\partial x}(x,y)
+- \frac{\partial B_1}{\partial y}(x,y)=0\) at all points \((x,y)\) of the region \(R\) inside \(C\text{.}\) That's not true. While it is true for most points, it is not true for  <em class="emphasis">all</em> points. The vector field \(\vB(x,y)\) is not defined at \((x,y)=(0,0)\text{.}\) So \(\frac{\partial B_2}{\partial x}(x,y)
+- \frac{\partial B_1}{\partial y}(x,y)\) is also not defined at \((x,y)=(0,0)\text{.}\) That's enough to invalidate Green's theorem. Read the statement of Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a> again carefully.</p>
+</div></div>
+</div></article></div>
+<article class="example example-like" id="eg_greenCC"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_greenCC"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Example 15.3.7, again..</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_greenCC"><article class="example example-like"><p id="p-17949">Evaluate</p>
+<div class="displaymath">
+\begin{equation*}
+\oint_C\vB\cdot\dee{\vr}
+\end{equation*}
+</div>
+<p data-braille="continuation">where</p>
+<div class="displaymath">
+\begin{equation*}
+\vB = \frac{-y\,\hi+x\,\hj}{x^2+y^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">and \(C\) is the curve</p>
+<div class="displaymath">
+\begin{align*}
+x(t) &amp;= \sin(\cos t)\\
+y(t) &amp;= \sin(\sin t)\\
+z(t) &amp;= 0
+\end{align*}
+</div>
+<p data-braille="continuation">with \(0\le t\le 2\pi\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2328" id="solution-2328"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2328"><div class="solution solution-like">
+<p id="p-17950">This is the same integral that we computed incorrectly in Example <a class="xref" data-knowl="./knowl/eg_greenC.html" title="Example 15.3.7: Trick Question">15.3.7</a>. We'll use two ingredients to compute \(\oint_C\vB\cdot\dee{\vr}\) correctly.</p>
+<ul id="p-17951" class="disc">
+<li id="li-7392">Let \(a \gt 0\) and denote by \(C_a\) the clockwise oriented circle in the \(xy\)-plane that is of radius \(a\) and is centered on the origin. We can explicitly compute \(\oint_{C_a}\vB\cdot\dee{\vr}\text{.}\) To do so just parametrize \(C_a\) by \(x(t)=a\cos t\text{,}\) \(y(t) = a\sin t\text{,}\) \(z(t)=0\text{.}\) Then \(x'(t)=-a\sin t\text{,}\) \(y(t) = a\cos t\) and<div class="displaymath">
+\begin{align*}
+\oint_{C_a}\vB\cdot\dee{\vr}
+&amp;=\int_0^{2\pi}\Big[\frac{-a\sin t\,\hi+a\cos t\,\hj}
+{a^2\cos^2t+a^2\sin^2t}\Big]
+\cdot\big[-a\sin t\,\hi+a\cos t\,\hj\big]
+\dee{t}\\
+&amp;=\int_0^{2\pi}\dee{t}=2\pi
+\end{align*}
+</div>
+</li>
+<li id="li-7393">
+<p id="p-17952">Pick an \(a\) that is small enough that \(C_a\) lies entirely inside \(C\) and apply Green's theorem with the region, \(R_a\text{,}\) that is between \(C\) and \(C_a\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/dcircleB.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17953">The curve bounding \(R_a\) has two components — \(C\) and \(C_a\text{,}\) but now \(C_a\) is oriented clockwise. (Recall that, in Green's theorem, when you walk along a boundary curve in the direction of the arrow, \(R_a\) has to be on your left.). Use \(-C_a\) to denote \(C_a\) oriented clockwise. \(\frac{\partial B_2}{\partial x}(x,y)
+- \frac{\partial B_1}{\partial y}(x,y)\) really is zero at <em class="emphasis">all</em> points \((x,y)\) of the region \(R_a\text{.}\) So Green's theorem gives</p>
+<div class="displaymath">
+\begin{align*}
+0&amp;= \dblInt_{R_a}\Big(\frac{\partial B_2}{\partial x}
+- \frac{\partial B_1}{\partial y}\Big)\ \dee{x}\dee{y}
+= \oint_{C}\vB\cdot\dee{\vr} + \oint_{-C_a}\vB\cdot\dee{\vr}\\
+&amp; = \oint_{C}\vB\cdot\dee{\vr} - \oint_{C_a}\vB\cdot\dee{\vr}
+\end{align*}
+</div>
+<p data-braille="continuation">and so</p>
+<div class="displaymath">
+\begin{gather*}
+\oint_{C}\vB\cdot\dee{\vr}
+= \oint_{C_a}\vB\cdot\dee{\vr}
+=2\pi
+\end{gather*}
+</div>
+</li>
+</ul>
+</div></div>
+</div></article></div>
+<section class="exercises" id="exercises-108"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">15.3.1</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-303">
+<div class="introduction" id="introduction-448"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-2233"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-17954">Let \(R\) be the square</p>
+<div class="displaymath">
+\begin{gather*}
+R=\Set{(x,y)}{0\le x\le 1,\ 0\le y\le 1}
+\end{gather*}
+</div>
+<p data-braille="continuation">and let \(f(x,y)\) have continuous first partial derivatives.</p>
+<ol class="lower-alpha">
+<li id="li-7394">Use the fundamental theorem of calculus to show that<div class="displaymath">
+\begin{gather*}
+\dblInt_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
+=\int_0^1 f(x,1)\ \dee{x}
+- \int_0^1 f(x,0)\ \dee{x}
+\end{gather*}
+</div>
+</li>
+<li id="li-7395">Use Green's theorem to show that<div class="displaymath">
+\begin{gather*}
+\dblInt_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
+=\int_0^1 f(x,1)\ \dee{x}
+- \int_0^1 f(x,0)\ \dee{x}
+\end{gather*}
+</div>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2233" id="answer-2233"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2233"><div class="answer solution-like"><p id="p-17955">See the solution.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2329" id="solution-2329"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2329"><div class="solution solution-like">
+<p id="p-17956">(a) Expressing the left hand side as an iterated integral, with \(y\) as the inner integration variable, we have</p>
+<div class="displaymath">
+\begin{align*}
+\dblInt_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
+&amp;=\int_0^1\dee{x}\left[\int_0^1\dee{y}\
+\frac{\partial f}{\partial y}(x,y)\right]\\
+&amp;=\int_0^1\dee{x}\ \big[f(x,1)-f(x,0)\big]\\
+&amp;\hskip1in\text{by the fundamental theorem of calculus}\\
+&amp;=\int_0^1 f(x,1)\ \dee{x} - \int_0^1 f(x,0)\ \dee{x}
+\end{align*}
+</div>
+<p id="p-17957">(b) Define \(F_1(x,y)=f(x,y)\) and \(F_2(x,y)=0\text{.}\) Then. by Green's theorem</p>
+<div class="displaymath">
+\begin{align*}
+\dblInt_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
+&amp;=-\dblInt_R\Big[\frac{\partial F_2}{\partial x}(x,y)
+-\frac{\partial F_1}{\partial y}(x,y)\Big]\ \dee{x}\,\dee{y}\\
+&amp;=-\int_{\partial R}\big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]\\
+&amp;=-\int_{\partial R}f(x,y)\,\dee{x}
+\end{align*}
+</div>
+<p data-braille="continuation">The boundary of \(R\text{,}\) oriented counterclockwise, is the union of four line segments.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:6.25%;margin-right:6.25%;">
+<div class="sbspanel" style="width:51.4285714285714%;justify-content:center;"><div class="displaymath" id="p-17958">
+\begin{gather*}
+C_1 \text{ from } (0,0) \text{ to } (1,0)\\
+C_2 \text{ from } (1,0) \text{ to } (1,1)\\
+C_3 \text{ from } (1,1) \text{ to } (0,1)\\
+C_4 \text{ from } (0,1) \text{ to } (0,0)
+\end{gather*}
+</div></div>
+<div class="sbspanel" style="width:34.2857142857143%;justify-content:center;"><img src="pfigs/domainSquare.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-17959">Now \(x\) is constant on \(C_2\) and \(C_4\) so that</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{C_2}f(x,y)\,\dee{x} = \int_{C_4}f(x,y)\,\dee{x} =0
+\end{equation*}
+</div>
+<p data-braille="continuation">So, using \(-C_3\) to denote the line segment from \((0,1)\) to \((1,1)\)</p>
+<div class="displaymath">
+\begin{align*}
+\dblInt_R\frac{\partial f}{\partial y}(x,y)\ \dee{x}\,\dee{y}
+&amp;=-\left[\int_{C_1}f(x,y)\,\dee{x}+\int_{C_3}f(x,y)\,\dee{x}\right]\\
+&amp;=\int_{-C_3}f(x,y)\,\dee{x}-\int_{C_1}f(x,y)\,\dee{x}\\
+&amp;=\int_0^1 f(x,1)\ \dee{x}  - \int_0^1 f(x,0)\ \dee{x}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2234"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-17960">Let \(R\) be a finite region in the \(xy\)-plane, whose boundary, \(C\text{,}\) consists of a single, piecewise smooth, simple closed curve that is oriented couterclockwise. “Simple” means that the curve does not intersect itself. Use Green's theorem to show that</p>
+<div class="displaymath">
+\begin{equation*}
+\dblInt_R\vnabla\cdot\vF\ \dee{x}\,\dee{y}=\oint_C\vF\cdot\hn\,\dee{s}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(\vF=F_1\,\hi+F_2\,\hj\text{,}\) \(\hn\) is the outward unit normal to \(C\) and \(s\) is the arclength along \(C\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/GreenDiv.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1757" id="hint-1757"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1757"><div class="hint solution-like">
+<p id="p-17961">Let \(\vr(s)=x(s)\,\hi+y(s)\,\hj\) be a counterclockwise parametrization of \(C\) by arc length. Then \(\hT(s) = \vr'(s) = x'(s)\,\hi+y'(s)\,\hj\) is the forward pointing unit tangent vector to \(C\) at \(\vr(s)\) and \(\hn(s) = \vr'(s)\times\hk=y'(s)\,\hi-x'(s)\,\hj\text{.}\) To see that \(\vr'(s)\times\hk\) really is \(\hn(s)\text{,}\) note that \(y'(s)\,\hi-x'(s)\,\hj\)</p>
+<ul class="disc">
+<li id="li-7396">has the same length, namely \(1\text{,}\) as \(\vr'(s)\) (recall that \(\vr(s)\) is a parametrization by arc length),</li>
+<li id="li-7397">lies in the \(xy\)-plane and</li>
+<li id="li-7398">is perpendicular to \(\vr'(s)\text{.}\) (Check that \(\vr'(s)\cdot\big[y'(s)\,\hi-x'(s)\,\hj\big]=0\text{.}\))</li>
+<li id="li-7399">Use the right hand rule to check that \(\vr'(s)\times\hk\) is \(\hn\) rather than \(-\hn\text{.}\)</li>
+</ul>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2234" id="answer-2234"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2234"><div class="answer solution-like"><p id="p-17962">See the solution.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2330" id="solution-2330"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2330"><div class="solution solution-like">
+<p id="p-17963">Let \(\vr(s)=x(s)\,\hi+y(s)\,\hj\) be a counterclockwise parametrization of \(C\) by arc length. Then \(\hT(s) = \vr'(s) = x'(s)\,\hi+y'(s)\,\hj\) is the forward pointing unit tangent vector to \(C\) at \(\vr(s)\) and \(\hn(s) = \vr'(s)\times\hk=y'(s)\,\hi-x'(s)\,\hj\text{.}\) To see that \(\vr'(s)\times\hk\) really is \(\hn(s)\text{,}\) note that \(y'(s)\,\hi-x'(s)\,\hj\)</p>
+<ul class="disc">
+<li id="li-7400">has the same length, namely \(1\text{,}\) as \(\vr'(s)\) (recall that \(\vr(s)\) is a parametrization by arc length),</li>
+<li id="li-7401">lies in the \(xy\)-plane and</li>
+<li id="li-7402">is perpendicular to \(\vr'(s)\text{.}\) (Check that \(\vr'(s)\cdot\big[y'(s)\,\hi-x'(s)\,\hj\big]=0\text{.}\))</li>
+<li id="li-7403">Use the right hand rule to check that \(\vr'(s)\times\hk\) is \(\hn\) rather than \(-\hn\text{.}\)</li>
+</ul>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:32.5%;margin-right:32.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/GreenDivB.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17964">So, by Green's theorem,</p>
+<div class="displaymath">
+\begin{align*}
+\oint_C\vF\cdot\hn\,\dee{s}
+&amp;=\oint_C\left[F_1\,\diff{y}{s}-F_2\,\diff{x}{s}\right]\,\dee{s}
+=\oint_C\left[-F_2\,\dee{x}+F_1\,\dee{y}\right]\\
+&amp;=\dblInt_R\left[\pdiff{}{x}F_1-\pdiff{}{y}(-F_2)\right]\ \dee{x}\,\dee{y}\\
+&amp;=\dblInt_R\vnabla\cdot\vF\ \dee{x}\,\dee{y}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prb_Green_singular"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-17965">Integrate \(\ds\frac{1}{2\pi}\oint_C \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}\) counterclockwise around</p>
+<ol class="lower-alpha">
+<li id="li-7404">the circle \(x^2+y^2=a^2\)</li>
+<li id="li-7405">the boundary of the square with vertices \((-1,-1)\text{,}\) \((-1,1)\text{,}\) \((1,1)\) and \((1,-1)\)</li>
+<li id="li-7406">the boundary of the region \(1\le x^2+y^2\le 2,\ y\ge0\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1758" id="hint-1758"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1758"><div class="hint solution-like"><p id="p-17966">Use direct evaluation!</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2235" id="answer-2235"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2235"><div class="answer solution-like">
+<p id="p-17967">(a) \(1\)</p>
+<p id="p-17968">(b) \(1\)</p>
+<p id="p-17969">(c) \(0\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2331" id="solution-2331"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2331"><div class="solution solution-like">
+<p id="p-17970">(a) Parametrize the circle by \(x=a\cos\theta,\ y=a\sin\theta\text{,}\) \(0\le\theta\le 2\pi\text{.}\) Then \(\dee{x}=-a\sin\theta\,\dee{\theta}\) and \(\dee{y}=a\cos\theta\,\dee{\theta}\) so that</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{2\pi}\oint_C \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+&amp;=\frac{1}{2\pi}\int_0^{2\pi} \frac{a^2\cos^2\theta\,\dee{\theta}+a^2\sin^2\theta\,\dee{\theta}}
+{a^2\cos^2\theta+a^2\sin^2\theta}
+=\frac{1}{2\pi}\int_0^{2\pi}\dee{\theta}\\
+&amp;=1
+\end{align*}
+</div>
+<p id="p-17971">(b) The boundary of the square has four sides — one with \(y=-1\text{,}\) one with \(x=1\text{,}\) one with \(y=1\) and one with \(x=-1\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/singGnA.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17972">To evaluate the integrals over the four sides</p>
+<ul class="disc">
+<li id="li-7407">parametrize the \(y=-1\) part by \(x\) so that \(\vr(x)  = x\,\hi-\hj\text{,}\) \(\vr'(x)=\hi\text{,}\) with \(x\) running from \(-1\) to \(1\text{,}\)</li>
+<li id="li-7408">parametrize the \(x=+1\) part by \(y\) so that \(\vr(y)  = \hi+y\,\hj\text{,}\) \(\vr'(y)=\hj\text{,}\) with \(y\) running from \(-1\) to \(1\text{,}\)</li>
+<li id="li-7409">parametrize the \(y=+1\) part by \(x\) so that \(\vr(x)  = x\,\hi+\hj\text{,}\) \(\vr'(x)=\hi\text{,}\) with \(x\) running from \(1\) to \(-1\text{,}\) and</li>
+<li id="li-7410">parametrize the \(x=-1\) part by \(y\) so that \(\vr(y)  = -\hi+y\,\hj\text{,}\) \(\vr'(y)=\hj\text{,}\) with \(y\) running from \(1\) to \(-1\text{,}\)</li>
+</ul>
+<p data-braille="continuation">so that the integral</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{2\pi}\oint_C \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+&amp;=\frac{1}{2\pi}\overbrace{\int_{-1}^1 \frac{-(-1)\dee{x}}{x^2+1}}^{y=-1{\rm\ part}}
++\frac{1}{2\pi}\overbrace{\int_{-1}^1 \frac{(1)\dee{y}}{1+y^2}}^{x=+1{\rm\ part}}\\
+&amp;\hskip0.25in
++\frac{1}{2\pi}\overbrace{\int^{-1}_1 \frac{-(1)\dee{x}}{x^2+1}}^{y=+1{\rm\ part}}
++\frac{1}{2\pi}\overbrace{\int^{-1}_1 \frac{(-1)\dee{y}}{1+y^2}}^{x=-1{\rm\ part}}\\
+&amp;=4\frac{1}{2\pi}\arctan x\bigg|_{-1}^1
+=\frac{2}{\pi}\Big[\frac{\pi}{4}+\frac{\pi}{4}\Big]
+=1
+\end{align*}
+</div>
+<p id="p-17973">(c) As in part (a) with \(a=\sqrt{2}\text{,}\) but with \(\theta\) running from \(0\) to \(\pi\text{,}\) the outer semicircle gives</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{2\pi}\int_0^{\pi} \frac{a^2\cos^2\theta\,\dee{\theta}+a^2\sin^2\theta\,\dee{\theta}}
+{a^2\cos^2\theta+a^2\sin^2\theta}
+=\frac{1}{2\pi}\int_0^{\pi}\dee{\theta}
+=\frac{1}{2}
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:22.5%;margin-right:22.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/singGnB.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17974">As in part (a) with \(a=1\text{,}\) but with \(\theta\) running from \(\pi\) to \(0\text{,}\) the inner semicircle gives</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{2\pi}\int^0_{\pi} \frac{a^2\cos^2\theta\,\dee{\theta}+a^2\sin^2\theta\,\dee{\theta}}
+{a^2\cos^2\theta+a^2\sin^2\theta}
+=\frac{1}{2\pi}\int^0_{\pi}\dee{\theta}
+=-\frac{1}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">The two flat pieces each give zero, since on them \(y=0\) and \(\dee{y}=0\text{.}\) So</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{2\pi}\oint_C \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+=\frac{1}{2}+0-\frac{1}{2}+0=0
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2236"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-17975">Show that</p>
+<div class="displaymath">
+\begin{gather*}
+\pdiff{}{x}\Big( \frac{x}{x^2+y^2}\Big)
+=\pdiff{}{y}\Big( \frac{-y}{x^2+y^2}\Big)
+\end{gather*}
+</div>
+<p data-braille="continuation">for all \((x,y)\ne (0,0)\text{.}\) Discuss the connection between this result and the results of Q[<a class="xref" data-knowl="./knowl/prb_Green_singular.html" title="Exercise 15.3.1.3">15.3.1.3</a>].</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1759" id="hint-1759"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1759"><div class="hint solution-like"><p id="p-17976">The functions \(\frac{x}{x^2+y^2}\) and \(\frac{-y}{x^2+y^2}\) are not defined, let alone continuous or differentiable, at \(x=y=0\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2236" id="answer-2236"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2236"><div class="answer solution-like"><p id="p-17977">See the solution.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2332" id="solution-2332"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2332"><div class="solution solution-like">
+<p id="p-17978">The two partial derivatives</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+\pdiff{}{x}\Big( \frac{x}{x^2+y^2}\Big)
+&amp;=\ \ \frac{(x^2+y^2)-x(2x)}{{(x^2+y^2)}^2}
+&amp;&amp;=\frac{y^2-x^2}{{(x^2+y^2)}^2}\\
+\pdiff{}{y}\Big( \frac{-y}{x^2+y^2}\Big)
+&amp;=\frac{-(x^2+y^2)-(-y)(2y)}{{(x^2+y^2)}^2}
+&amp;&amp;=\frac{y^2-x^2}{{(x^2+y^2)}^2}
+\end{alignat*}
+</div>
+<p data-braille="continuation">are well-defined and equal everywhere except at the origin \((0,0)\text{.}\)</p>
+<p id="p-17979"><em class="emphasis">Short discussion:</em> Were it not for the singularity at \((0,0)\text{,}\) the vector field of the last problem would be conservative and the integral \(\int\vF\cdot \dee{\vr}\) around any closed curve would be zero. But as we saw in parts (a) and (b) of Q[<a class="xref" data-knowl="./knowl/prb_Green_singular.html" title="Exercise 15.3.1.3">15.3.1.3</a>], this is not the case. On the other hand, by Green's theorem  (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>), the integral around the boundary of any region that does not contain \((0,0)\) is zero, as happened in part (c) of Q[<a class="xref" data-knowl="./knowl/prb_Green_singular.html" title="Exercise 15.3.1.3">15.3.1.3</a>].</p>
+<p id="p-17980"><em class="emphasis">Long discussion:</em> First consider part (c) of Q[<a class="xref" data-knowl="./knowl/prb_Green_singular.html" title="Exercise 15.3.1.3">15.3.1.3</a>]. The curve \(C\) is the boundary of the region</p>
+<div class="displaymath">
+\begin{equation*}
+R = \Set{(x,y)}{1\le x^2+y^2\le 2,\ y\ge 0}
+\end{equation*}
+</div>
+<p data-braille="continuation">The partial derivatives \(\pdiff{}{x}\Big( \frac{x}{x^2+y^2}\Big)\) and \(\pdiff{}{y}\Big( \frac{-y}{x^2+y^2}\Big)\) are well-defined and equal everywhere in \(R\text{.}\) So by Green's theorem</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{2\pi}\oint_C \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+&amp;=\frac{1}{2\pi}\dblInt_R\left[
+\pdiff{}{x}\Big( \frac{x}{x^2+y^2}\Big)
+-\pdiff{}{y}\Big( \frac{-y}{x^2+y^2}\Big)\right]\dee{x}\, \dee{y}\\
+&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">which is the answer we got before.</p>
+<p id="p-17981">We cannot apply Green's theorem in this way for parts (a) and (b) of Q[<a class="xref" data-knowl="./knowl/prb_Green_singular.html" title="Exercise 15.3.1.3">15.3.1.3</a>] because the singularity at \((0,0)\) is inside the curve \(C\) for both parts (a) and (b). On the other hand suppose, for simplicity, that \(0 \lt a \lt 1\text{.}\) Denote by \(C_a\text{,}\) \(C_b\) the curves of parts (a) and (b), respectively. Define \(R\) to be the set of points that are inside \(C_b\) and outside \(C_a\text{.}\) That is,</p>
+<div class="displaymath">
+\begin{equation*}
+R=\Set{(x,y)}{-1\le x \le 1,\ -1\le y\le 1,\ x^2+y^2\ge a^2 }
+\end{equation*}
+</div>
+<p data-braille="continuation">Then the boundary, \(\partial R\text{,}\) of \(R\) consists of two parts. One part is \(C_b\text{.}\) The other part is \(C_a\text{,}\) but oriented clockwise rather than counterclockwise. We'll call it \(-C_a\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:31.5%;margin-right:31.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/singGnC.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17982">Again the partial derivatives \(\pdiff{}{x}\Big( \frac{x}{x^2+y^2}\Big)\) and \(\pdiff{}{y}\Big( \frac{-y}{x^2+y^2}\Big)\) are well-defined and equal everywhere in \(R\text{.}\) So by Green's theorem</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{2\pi}\oint_{\partial R} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+&amp;=\frac{1}{2\pi}\dblInt_R\left[
+\pdiff{}{x}\Big( \frac{x}{x^2+y^2}\Big)
+-\pdiff{}{y}\Big( \frac{-y}{x^2+y^2}\Big)\right]\dee{x}\, \dee{y}\\
+&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">Consequently</p>
+<div class="displaymath">
+\begin{align*}
+0 &amp;= \frac{1}{2\pi}\oint_{\partial R} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+= \frac{1}{2\pi}\oint_{C_b} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
++ \frac{1}{2\pi}\oint_{-C_a} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}\\
+&amp;=\frac{1}{2\pi}\oint_{C_b} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+- \frac{1}{2\pi}\oint_{C_a} \frac{x\,\dee{y}-y\,\dee{x}}{x^2+y^2}
+\end{align*}
+</div>
+<p data-braille="continuation">and we conclude that the answers to parts (a) and (b) should be the same.We did indeed see that in Q[<a class="xref" data-knowl="./knowl/prb_Green_singular.html" title="Exercise 15.3.1.3">15.3.1.3</a>].</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-304">
+<div class="introduction" id="introduction-449"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-2237"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-17983">Evaluate   \(\int_C\vF\cdot d\vr\) where \(\vF = x^2y^2\,\hi + 2xy\,\hj\) and \(C\) is the boundary of the square in the \(xy\)-plane having one vertex at the origin and diagonally opposite vertex at the point \((3, 3)\text{,}\) oriented counterclockwise.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1760" id="hint-1760"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1760"><div class="hint solution-like"><p id="p-17984">For practice, evaluate this integral twice — once directly and once using Green's theorem.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2237" id="answer-2237"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2237"><div class="answer solution-like"><p id="p-17985">\(-54\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2333" id="solution-2333"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="space"> </span><span class="title">Direct evaluation</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2333"><div class="solution solution-like">
+<p id="p-17986">Here is a sketch of \(C\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/square3.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17987">The square consists of four line segments.</p>
+<ul class="disc">
+<li id="li-7411">The bottom line segment may be parametrized \(\vr(x)=(x,0),\ 0\le x\le 3\text{.}\) So the line integral along this segment is<div class="displaymath">
+\begin{equation*}
+\int_0^3 \vF(\vr(x))\cdot\diff{\vr}{x}\ \dee{x}
+=\int_0^3 (0, 0)\cdot(1, 0)\ \dee{x}
+=0
+\end{equation*}
+</div>
+</li>
+<li id="li-7412">The second line segment may be parametrized \(\vr(y)=(3,y),\ 0\le y\le 3\text{.}\) So the line integral along this segment is<div class="displaymath">
+\begin{equation*}
+\int_0^3 \vF(\vr(y))\cdot\diff{\vr}{y}\ \dee{y}
+=\int_0^3 (9y^2, 6y)\cdot(0, 1)\ \dee{y}
+=\int_0^3 6y\ \dee{y}
+=27
+\end{equation*}
+</div>
+</li>
+<li id="li-7413">The third line segment may be parametrized \(\vr(t)=(3-t,3),\ 0\le t\le 3\text{.}\) So the line integral along this segment is<div class="displaymath">
+\begin{align*}
+\int_0^3 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
+&amp;=\int_0^3 \big(9(3-t)^2\,,\, 6(3-t)\big)\cdot(-1\,,\,0)\ \dee{t}\\
+&amp;=-\int_0^3 9(3-t)^2\ \dee{t}
+=-81
+\end{align*}
+</div>
+</li>
+<li id="li-7414">The final line segment may be parametrized \(\vr(t)=(0,3-t),\ 0\le t\le 3\text{.}\) So the line integral along this segment is<div class="displaymath">
+\begin{equation*}
+\int_0^3 \vF(\vr(t))\cdot\diff{\vr}{t}\ \dee{t}
+=\int_0^3 (0, 0)\cdot(0, -1)\ \dee{t}
+=0
+\end{equation*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">The full line integral is</p>
+<div class="displaymath">
+\begin{equation*}
+\oint_C\vF\cdot d\vr=0+27-81+0=-54
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2334" id="solution-2334"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">2</span><span class="space"> </span><span class="title">By Green's theorem</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2334"><div class="solution solution-like">
+<p id="p-17988">We apply Green's Theorem.</p>
+<div class="displaymath">
+\begin{align*}
+\oint_C x^2y^2\,\dee{x}+2xy\,\dee{y}
+&amp;=\int_0^3\dee{x}\int_0^3 \dee{y}\
+\left[\pdiff{}{x}(2xy)-\pdiff{}{y}(x^2y^2)\right]\\
+&amp;=\int_0^3\dee{x}\int_0^3 \dee{y}\ \big[2y-2x^2y\big]\\
+&amp;=\int_0^3\dee{x}\ \big[9-9x^2\big]\\
+&amp;=27-9\frac{3^3}{3}=-54
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2238"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-17989">Evaluate \(\ds\oint_C (x\sin y^2 -y^2)\,\dee{x}+(x^2y\cos y^2+3x)\,\dee{y}\) where \(C\) is the counterclockwise boundary of the trapezoid with vertices \((0,-2),\ (1,-1),\
+(1,1)\) and \((0,2)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1761" id="hint-1761"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1761"><div class="hint solution-like"><p id="p-17990">The \(\sin y^2\) and \(\cos y^2\) in the integrand look hard to integrate. Try Green's theorem.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2238" id="answer-2238"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2238"><div class="answer solution-like"><p id="p-17991">\(9\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2335" id="solution-2335"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2335"><div class="solution solution-like">
+<p id="p-17992">Call the trapezoid \(T\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37%;margin-right:37%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/trapGn.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17993">By Green's theorem,</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\oint_C (x\sin y^2 -y^2)\,\dee{x}+(x^2y\cos y^2+3x)\,\dee{y}\\
+&amp;\hskip1in=\dblInt_T\left\{\pdiff{}{x}(x^2y\cos y^2+3x)
+-\pdiff{}{y} (x\sin y^2 -y^2)\right\}\,\dee{x}\,\dee{y}\\
+&amp;\hskip1in=\dblInt_T\big(2xy\cos y^2+3-2xy\cos y^2+2y\big)\,\dee{x}\,\dee{y}\\
+&amp;\hskip1in=\dblInt_T\big(3+2y\big)\,\dee{x}\,\dee{y}
+\end{align*}
+</div>
+<p data-braille="continuation">The integral \(\dblInt_T(2y)\,\dee{x}\,\dee{y}\) vanishes because \(2y\) changes sign under \(y\rightarrow-y\) while the domain of integration is invariant under \(y\rightarrow -y\text{.}\)  The integral \(\dblInt_T 3\,\dee{x}\,\dee{y}\) is \(3\) times the area of the trapezoid, which is its width (1) times the average of its heights \((\half[2+4])=3\text{.}\) So</p>
+<div class="displaymath">
+\begin{equation*}
+\oint_C (x\sin y^2 -y^2)\,\dee{x}+(x^2y\cos y^2+3x)\,\dee{y}
+=3\times 1\times 3 = 9
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2239"><h6 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">M317 1999A.</span>
+</h6>
+<p id="p-17994">Evaluate \(I=
+\ds\oint_{\cC} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
++\big(xy^4+x^3y^2\big)\,\dee{y}\) counterclockwise around the boundary of the half-disk \(0\le y\le \sqrt{4-x^2}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1762" id="hint-1762"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1762"><div class="hint solution-like"><p id="p-17995">Don't do the integral directly.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2239" id="answer-2239"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2239"><div class="answer solution-like"><p id="p-17996">\(\frac{32}{3}\pi\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2336" id="solution-2336"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span><span class="space"> </span><span class="title">Using Green's theorem</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2336"><div class="solution solution-like">
+<p id="p-17997">By Green's theorem  (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>), using \(D\) to denote the half-disk \(0\le y\le \sqrt{4-x^2}\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\ds\oint_{\cC} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
++\big(xy^4+x^3y^2\big)\,\dee{y}\\
+&amp;\hskip1in
+=\dblInt_D\Big[\pdiff{}{x}\big(xy^4+x^3y^2\big)
+-\pdiff{}{y}\Big(\frac{1}{3}x^2y^3-x^4y\Big) \Big] \dee{x} \dee{y}\\
+&amp;\hskip1in=\dblInt_D\big(x^4+2x^2y^2+y^4\big)\ \dee{x} \dee{y}\\
+&amp;=\dblInt_D\big(x^2+y^2\big)^2\ \dee{x} \dee{y}
+\end{align*}
+</div>
+<p data-braille="continuation">Switching to polar coordinates</p>
+<div class="displaymath">
+\begin{align*}
+\ds\oint_{\cC} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
++\big(xy^4+x^3y^2\big)\,\dee{y}
+&amp;=\int_0^2 dr\ r\int_0^{\pi}\dee{\theta}\ r^4
+={\pi\frac{r^6}{6}\bigg|}_0^2\\
+&amp;=\frac{32}{3}\pi
+\end{align*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2337" id="solution-2337"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">2</span><span class="space"> </span><span class="title">By direct evaluation</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2337"><div class="solution solution-like">
+<p id="p-17998">Write \(\cC\) as the union of \(\cC_1\text{,}\) the straight line from \((-2,0)\) to \((2,0)\text{,}\) and \(\cC_2\text{,}\) the half-circle \(\vr(\theta)=x(\theta)\,\hi+y(\theta)\,\hj=2\cos\theta\,\hi+2\sin\theta\,\hj\text{,}\) \(0\le\theta\le \pi\text{.}\) As \(y=0\) at every point of \(\cC_1\text{,}\) \(\
+\int_{\cC_1} \big(\frac{1}{3}x^2y^3-x^4y\big)\,\dee{x}
++\big(xy^4+x^3y^2\big)\,\dee{y}=0
+\ \) and</p>
+<div class="displaymath">
+\begin{align*}
+I&amp;=\int_{\cC_2} \Big(\frac{1}{3}x^2y^3-x^4y\Big)\,\dee{x}
++\big(xy^4+x^3y^2\big)\,\dee{y}\\
+&amp;=\int_0^\pi\Big[ \Big(\frac{1}{3}x(\theta)^2y(\theta)^3-x(\theta)^4y(\theta)\Big)\,x'(\theta)\\
+&amp;\hskip2in
++\big(x(\theta)y(\theta)^4+x(\theta)^3y(\theta)^2\big)y'(\theta)\Big]
+\dee{\theta}\\
+&amp;=\int_0^\pi\Big[ \Big(\frac{1}{3}2^5\cos^2\theta\sin^3\theta-2^5\cos^4\theta\sin\theta\Big)\,
+(-2\sin\theta)\\
+&amp;\hskip2in
++\big(2^5\cos\theta\sin^4\theta+2^5\cos^3\theta\sin^2\theta\big)\,
+(2\cos\theta)\Big]\dee{\theta}\\
+&amp;=2^5\int_0^\pi \Big(\frac{4}{3}\cos^2\theta\sin^4\theta+4\cos^4\theta\sin^2\theta\Big)
+\dee{\theta}\\
+&amp;=2^5\int_0^\pi \sin^2(2\theta)\big(\frac{1}{3}\sin^2\theta+\cos^2\theta\big)\,
+\dee{\theta}\\
+&amp;=2^4\int_0^\pi \sin^2(2\theta)\Big(\frac{1}{3}[1-\cos(2\theta)]+[1+\cos(2\theta)]\Big)\,
+\dee{\theta}\\
+&amp;\hskip2in\hbox{ since }\cos(2\theta)=2\cos^2\theta-1=1-2\sin^2\theta\\
+&amp;=\frac{2^5}{3}\int_0^\pi \sin^2(2\theta)\big[2+\cos(2\theta)\big]\ \dee{\theta}\\
+&amp;=\frac{2^5}{3}\int_0^\pi \big[1-\cos(4\theta)+\sin^2(2\theta)\cos(2\theta)\big]\ \dee{\theta}\\
+&amp;=\frac{2^5}{3} \Big[\theta-\frac{1}{4}\sin(4\theta)+\frac{1}{6}\sin^3(2\theta)\Big]_0^\pi
+=\frac{32}{3}\pi
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2240"><h6 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2018A.</span>
+</h6>
+<p id="p-17999">Let \(\cC\) be the counterclockwise boundary of the rectangle with vertices \((1,0)\text{,}\) \((3,0)\text{,}\) \((3,1)\) and \((1,1)\text{.}\) Evaluate</p>
+<div class="displaymath">
+\begin{equation*}
+\oint_\cC\big(3y^2+2xe^{y^2}\big)\,\dee{x} + \big(2yx^2 e^{y^2}\big)\,\dee{y}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1763" id="hint-1763"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1763"><div class="hint solution-like"><p id="p-18000">Don't do the integral directly. Sketch the rectangle.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2240" id="answer-2240"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2240"><div class="answer solution-like"><p id="p-18001">\(-6\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2338" id="solution-2338"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2338"><div class="solution solution-like">
+<p id="p-18002">Let's use Green's theorem. The rectangle, which we shall denote \(\cR\text{,}\) is</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
+<div class="sbspanel" style="width:45.9183673469388%;justify-content:center;"><p id="p-18003">\(\cR=\set{(x,y)}{1\le x\le 3,\ 0\le y\le 1}\)</p></div>
+<div class="sbspanel" style="width:52.0408163265306%;justify-content:center;"><img src="pfigs/domainPlgmB.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-18004">So Green's theorem gives</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\oint_\cC\big(3y^2+2xe^{y^2}\big)\,\dee{x} + \big(2yx^2 e^{y^2}\big)\,\dee{y}\\
+&amp;\hskip1in=\dblInt_\cR \Big[
+\pdiff{}{x}\big(2yx^2 e^{y^2}\big)
+-\pdiff{}{y}\big(3y^2+2xe^{y^2}\big)
+\Big]\,\dee{x} \dee{y}\\
+&amp;\hskip1in=\dblInt_\cR \Big[
+4xy e^{y^2}
+-6y -4xye^{y^2}
+\Big]\,\dee{x} \dee{y}\\
+&amp;\hskip1in = -6 \int_1^3 \dee{x}\int_0^1 \dee{y}\ y
+= -6 \int_1^3 \dee{x}\ \frac{1}{2}\\
+&amp;\hskip1in=-6
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2241"><h6 class="heading">
+<span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2016A.</span>
+</h6>
+<p id="p-18005">Consider the closed region enclosed by the curves \(y = x^2 + 4x + 4\) and \(y = 4 - x^2\text{.}\) Let \(C\) be its boundary and suppose that \(C\) is oriented counter-clockwise.</p>
+<ol class="lower-alpha">
+<li id="li-7415">Draw the <em class="emphasis">oriented</em> curve \(C\) carefully in the \(xy\)-plane.</li>
+<li id="li-7416">Determine the value of<div class="displaymath">
+\begin{equation*}
+\oint_C xy\, \dee{x} + (e^y + x^2 ) \dee{y}
+\end{equation*}
+</div>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1764" id="hint-1764"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1764"><div class="hint solution-like"><p id="p-18006">Do not compute the integral directly.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2241" id="answer-2241"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2241"><div class="answer solution-like">
+<p id="p-18007">(a)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:21.5%;margin-right:21.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE16A_1a.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-18008">(b) \(-\frac{8}{3}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2339" id="solution-2339"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2339"><div class="solution solution-like">
+<p id="p-18009">(a) The curves \(y = x^2 + 4x + 4\) and \(y = 4 - x^2\) meet when</p>
+<div class="displaymath">
+\begin{equation*}
+x^2 + 4x + 4 = 4 - x^2
+\iff 2x^2  +4x = 2x(x+2) = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">So the curves intersect at \((0,4)\) and  \((-2,0)\text{.}\) Here is a sketch.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:21.5%;margin-right:21.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE16A_1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-18010">(b) Let</p>
+<div class="displaymath">
+\begin{equation*}
+R=\Set{(x,y)\in\bbbr^2}{ x^2+4x+4\le y\le  4-x^2,\ -2\le x\le 0}
+\end{equation*}
+</div>
+<p data-braille="continuation">By Green's theorem (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>)</p>
+<div class="displaymath">
+\begin{align*}
+\oint_C xy\, \dee{x} + (e^y + x^2 ) \dee{y}
+&amp;=\dblInt_R \left\{
+\tfrac{\partial }{\partial x}(e^y+x^2)
+-\tfrac{\partial }{\partial y}(xy)
+\right\}\dee{x}\dee{y}\\
+&amp;= \int_{-2}^0\dee{x} \int_{x^2+4x+4}^{4-x^2}\dee{y} \ x\\
+&amp;= \int_{-2}^0\dee{x}\ (-2x^2-4x) x\\
+&amp;=\left[-\frac{x^4}{2} -\frac{4x^3}{3}\right]^0_{-2}\\
+&amp;=-\frac{8}{3}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2242"><h6 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2010D.</span>
+</h6>
+<p id="p-18011">Let</p>
+<div class="displaymath">
+\begin{equation*}
+\vF(x, y) = \big(y^2 - e^{-y^2} + \sin x\,,\, 2xye^{-y^2} + x\big)
+\end{equation*}
+</div>
+<p data-braille="continuation">Let \(C\) be the boundary of the triangle with vertices \((0, 0)\text{,}\) \((1, 0)\) and \((1, 2)\text{,}\) oriented counter-clockwise. Compute</p>
+<div class="displaymath">
+\begin{equation*}
+\int_C \vF\cdot\dee{\vr}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1765" id="hint-1765"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1765"><div class="hint solution-like"><p id="p-18012">Don't do the integral directly. Sketch the triangle.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2242" id="answer-2242"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2242"><div class="answer solution-like"><p id="p-18013">\(-\frac{1}{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2340" id="solution-2340"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2340"><div class="solution solution-like">
+<p id="p-18014">The integral that would be used for direct evaluation looks very complicated. So let's try Green's theorem. The curve \(C\) is the boundary of the triangle</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:55.5555555555556%;justify-content:center;"><p id="p-18015">\(T = \Set{(x,y)}{0\le x\le 1, 0\le y\le 2x}\)</p></div>
+<div class="sbspanel" style="width:33.3333333333333%;justify-content:center;"><img src="pfigs/OE10D_4.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-18016">So</p>
+<div class="displaymath">
+\begin{align*}
+\int_C \vF\cdot\dee{\vr}
+&amp;= \int_C \big\{\big(y^2 - e^{-y^2} + \sin x\big)\dee{x}
++\big(2xye^{-y^2} + x\big)\dee{y}\big\}\\
+&amp;= \dblInt_T \big\{
+\tfrac{\partial }{\partial x}\big(2xye^{-y^2} + x\big)
+-\tfrac{\partial }{\partial y}\big(y^2 - e^{-y^2} + \sin x\big)
+\big\}\dee{x}\dee{y} \hskip0.1in\\
+&amp;= \dblInt_T \big\{
+\big(2ye^{-y^2} + 1\big)
+- \big(2y +2y e^{-y^2} \big)
+\big\}\dee{x}\dee{y}\\
+&amp;= \int_0^1\dee{x}\int_0^{2x}\dee{y}\  \big\{1-2y\big\}\\
+&amp;= \int_0^1\dee{x}\  \big\{2x-4x^2\big\}\\
+&amp;=1-\frac{4}{3} = -\frac{1}{3}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2243"><h6 class="heading">
+<span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2009A.</span>
+</h6>
+<p id="p-18017">Suppose the curve \(C\) is the boundary of the region enclosed between the curves \(y = x^2 - 4x+3\) and \(y = 3 - x^2 + 2x\text{.}\) Determine the value of the line integral</p>
+<div class="displaymath">
+\begin{equation*}
+\int_C \big(2xe^y + \sqrt{2 + x^2}\big)\, \dee{x}
++ x^2 (2 + e^y)\, \dee{y}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(C\) is traversed counter-clockwise.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1766" id="hint-1766"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1766"><div class="hint solution-like"><p id="p-18018">The integrand for direct evaluation looks complicated — don't evaluate this integral directly.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2243" id="answer-2243"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2243"><div class="answer solution-like"><p id="p-18019">\(54\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2341" id="solution-2341"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2341"><div class="solution solution-like">
+<p id="p-18020">Here is a sketch of the two curves in question.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE09A_4.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-18021">Note that the curves \(y = x^2 - 4x+3\) and \(y = 3 - x^2 + 2x\) intersect when \(x^2 - 4x+3 = 3 - x^2 + 2x\) or \(2x^2-6x=2x(x-3)=0\) or \(x=0\text{,}\) \(3\text{.}\)</p>
+<p id="p-18022">The integrand for direct evaluation looks complicated. So let's use Green's theorem with \(F_1(x,y) = 2xe^y + \sqrt{2 + x^2}\text{,}\) \(F_2(x,y)= x^2 (2 + e^y)\) and</p>
+<div class="displaymath">
+\begin{equation*}
+R=\Set{(x,y)}{x^2 - 4x+3 \le y\le 3 - x^2 + 2x,\ 0\le x\le 3}
+\end{equation*}
+</div>
+<p data-braille="continuation">By Green's theorem, which is Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>,</p>
+<div class="displaymath">
+\begin{align*}
+\int_C \big(2xe^y + \sqrt{2 + x^2}\big)\, \dee{x}
++ x^2 (2 + e^y)\, \dee{y}
+&amp;=\dblInt_R\left\{\frac{\partial F_2}{\partial x}
+-\frac{\partial F_1}{\partial y}\right\}\ \dee{x}\dee{y}\\
+&amp;=\dblInt_R\left\{2x(2+e^y) - 2xe^y\right\}\ \dee{x}\dee{y}\\
+&amp;=4 \int_0^3\dee{x} \int_{x^2 - 4x+3}^{3 - x^2 + 2x}\dee{y}\ x\\
+&amp;=4 \int_0^3\dee{x}\ (6x-2x^2) x\\
+&amp;=4\left[2x^3-\frac{1}{2}x^4\right]_0^3\\
+&amp;=54
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2244"><h6 class="heading">
+<span class="codenumber">12<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2006A.</span>
+</h6>
+<p id="p-18023">Let</p>
+<div class="displaymath">
+\begin{gather*}
+\vF(x,y) = \big(\tfrac{3}{2}y^2 + e^{-y} +\sin x\big)\,\hi
++\big(\tfrac{1}{2}x^2+x-x e^{-y}\big)\,\hj
+\end{gather*}
+</div>
+<p data-braille="continuation">Find \(\int_C\vF\cdot\dee{\vr}\text{,}\) where \(C\) is the boundary of the triangle \((0,0)\text{,}\) \((1,-2)\text{,}\) \((1,2)\text{,}\) oriented anticlockwise.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1767" id="hint-1767"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1767"><div class="hint solution-like"><p id="p-18024">Direct evaluation is not the most efficient method available.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2244" id="answer-2244"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2244"><div class="answer solution-like"><p id="p-18025">\(\frac{10}{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2342" id="solution-2342"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2342"><div class="solution solution-like">
+<p id="p-18026">Direct evaluation will lead to three integrals, one for each side of the triangle. The integral from \((0,0)\) and \((1,-2)\) and the integral from \((1,2)\) to \((0,0)\) will each contain six (nonconstant) terms. This does not look very efficient. So let's try Green's theorem. Denote by \(T\text{,}\) the triangle</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:4.25%;margin-right:4.25%;">
+<div class="sbspanel" style="width:54.6448087431694%;justify-content:center;"><p id="p-18027">\(T = \Set{(x,y)}{0\le x\le 1,\ -2x\le y\le 2x}\)</p></div>
+<div class="sbspanel" style="width:36.0655737704918%;justify-content:center;"><img src="pfigs/OE06A_4.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-18028">It has boundary \(\partial T=C\text{,}\) oriented counterclockwise as desired. So, by Green's theorem,</p>
+<div class="displaymath">
+\begin{align*}
+\int_C \vF\cdot\dee{\vr}
+&amp;= \int_{\partial T} \big\{\big(\tfrac{3}{2}y^2 + e^{-y} +\sin x\big)\dee{x}
++\big(\tfrac{1}{2}x^2+x-x e^{-y}\big)\dee{y}\big\}\\
+&amp;= \dblInt_T \big\{
+\tfrac{\partial }{\partial x}\big(\tfrac{1}{2}x^2+x-x e^{-y}\big)
+-\tfrac{\partial }{\partial y}\big(\tfrac{3}{2}y^2 + e^{-y} +\sin x\big)
+\big\}\dee{x}\dee{y}\\
+&amp;= \dblInt_T \big\{
+\big(x + 1-e^{-y}\big)
+- \big(3y - e^{-y} \big)
+\big\}\dee{x}\dee{y}\\
+&amp;= \dblInt_T \big\{ x -3y + 1 \big\}\dee{x}\dee{y}
+\end{align*}
+</div>
+<p data-braille="continuation">Now</p>
+<div class="displaymath">
+\begin{align*}
+\dblInt_T  \dee{x}\dee{y} &amp;=\text{Area}(T) = \frac{1}{2}(4)(1) = 2\\
+\dblInt_T  y\ \dee{x}\dee{y} &amp;= 0
+\qquad\text{since $y$ is odd under } y\rightarrow-y\\
+\dblInt_T  x\ \dee{x}\dee{y}
+&amp;=\int_0^1\dee{x}\int_{-2x}^{2x} \dee{y}\ x
+=\int_0^1 4x^2\ \dee{x}
+=\frac{4}{3}
+\end{align*}
+</div>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{equation*}
+\int_C \vF\cdot\dee{\vr} = \frac{4}{3}-3\times 0 +2 =\frac{10}{3}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2245"><h6 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2015A.</span>
+</h6>
+<ol id="p-18029" class="lower-alpha">
+<li id="li-7417">Use Green's theorem to evaluate the line integral<div class="displaymath">
+\begin{equation*}
+\int_C \frac{-y}{x^2+y^2}\dee{x} + \frac{x}{x^2+y^2}\dee{y}
+\end{equation*}
+</div>where \(C\) is the arc of the parabola \(y = \frac{1}{4}x^2 + 1\) from \((-2, 2)\) to \((2, 2)\text{.}\)</li>
+<li id="li-7418">Use Green's theorem to evaluate the line integral<div class="displaymath">
+\begin{equation*}
+\int_C \frac{-y}{x^2+y^2}\dee{x} + \frac{x}{x^2+y^2}\dee{y}
+\end{equation*}
+</div>where \(C\) is the arc of the parabola \(y = x^2 -2\) from \((-2, 2)\) to \((2, 2)\text{.}\)</li>
+<li id="li-7419">Is the vector field<div class="displaymath">
+\begin{equation*}
+\vF=\frac{-y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj
+\end{equation*}
+</div>conservative? Provide a reason for your answer based on your answers to the previous parts of this question.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1768" id="hint-1768"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1768"><div class="hint solution-like">
+<p id="p-18030">Green's theorem must be applied to a closed curve; note that the curve \(C\) is not closed.</p>
+<p id="p-18031">Consider carefully the point \((0, 0)\) in your analysis.</p>
+<p id="p-18032">You may use the fact that \(\int \frac{\dee{t}}{1+t^2} = \arctan(t) + C\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2245" id="answer-2245"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2245"><div class="answer solution-like">
+<p id="p-18033">(a) \(-\frac{\pi}{2}\)</p>
+<p id="p-18034">(b) \(\frac{3\pi}{2}\)</p>
+<p id="p-18035">(c) No.</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2343" id="solution-2343"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2343"><div class="solution solution-like">
+<p id="p-18036">Set</p>
+<div class="displaymath">
+\begin{equation*}
+\vF=\frac{-y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj
+\end{equation*}
+</div>
+<p id="p-18037">(a) Green's theorem must be applied to a curve that is closed, so that it is the boundary of a region in \(\bbbr^2\text{.}\) The given curve \(C\) is not closed. But it is  part of the boundary of</p>
+<div class="displaymath">
+\begin{equation*}
+R = \Set{(x,y)}{-2\le x\le 2,\ \tfrac{x^2}{4}+1\le y\le 2}
+\end{equation*}
+</div>
+<p data-braille="continuation">Here is a sketch of \(R\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE15A_3.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-18038">The boundary of \(R\) consists of two parts — \(C\) on the bottom and the line segment \(L\) from \((2,2)\) to \((-2,2)\) on the top. Note that \(\vF\) is well-defined on all of \(R\) and that</p>
+<div class="displaymath">
+\begin{align*}
+\pdiff{}{x} \vF_2 -
+\pdiff{}{y} \vF_1
+&amp;=\pdiff{}{x} \frac{x}{x^2+y^2} +
+\pdiff{}{y} \frac{y}{x^2+y^2}\\
+&amp;=\frac{(x^2+y^2) - x(2x)}{{(x^2+y^2)}^2}
++\frac{(x^2+y^2) - y(2y)}{{(x^2+y^2)}^2}\\
+&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">on all of \(R\text{.}\) So, by Green's theorem (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>),</p>
+<div class="displaymath">
+\begin{align*}
+\int_C \frac{-y}{x^2+y^2}\dee{x} + \frac{x}{x^2+y^2}\dee{y}
+&amp;=\dblInt_R \Big(\pdiff{}{x} \vF_2 -
+\pdiff{}{y} \vF_1 \Big)\dee{x}\dee{y}
+- \int_L\vF\cdot\dee{\vr}\\
+&amp;=\int_{-L}\vF\cdot\dee{\vr}
+=\int_{-2}^2 \vF_1\,\dee{x}\\
+&amp;
+=-\int_{-2}^2\frac{2}{x^2+4} \,\dee{x}\quad\text{since $y=2$ on $L$}\\
+&amp;=-\int_{-1}^1\frac{4}{4u^2+4} \,\dee{x}
+\quad\text{with } x=2u, \dee{x}=2\dee{u}\\
+&amp;=-\arctan u\Big|_{-1}^1 =-\frac{\pi}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">In the second line, we used the notation \(-L\) for the line segment from \((-2,2)\) to \((2,2)\text{.}\)</p>
+<p id="p-18039">(b) This question looks a lot like that of part (a). But there is a critical difference. Again \(C\) is not closed and again it is part of the boundary of a simple region in the \(xy\)-plane, namely</p>
+<div class="displaymath">
+\begin{equation*}
+R = \Set{(x,y)}{-2\le x\le 2,\ x^2-2\le y\le 2}
+\end{equation*}
+</div>
+<p data-braille="continuation">This \(R\) is sketched below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:24%;margin-right:24%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE15A_3b1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-18040">We <em class="emphasis">cannot</em> continue as in part (a), using this \(R\text{,}\) because \(\pdiff{}{x} \vF_2 -
+\pdiff{}{y} \vF_1 \) is <em class="emphasis">not</em> zero througout \(R\text{.}\) In fact, it is <em class="emphasis">not</em> even defined throughout \(R\) — it is not defined at \((0,0)\text{,}\) which is a point of \(R\text{.}\) We can work around this obstruction by</p>
+<ul class="disc">
+<li id="li-7420">choosing a number \(\rho \gt 0\) that is small enough that the circle \(C_\rho\) parametrized by<div class="displaymath">
+\begin{equation*}
+\vr(\theta) = \rho\cos\theta\,\hi +\rho\sin\theta\,\hj\qquad
+0\le \theta \le 2\pi
+\end{equation*}
+</div>is completely contained inside \(R\) (ror example, \(\rho=1\) is fine)</li>
+<li id="li-7421">and then removing from \(R\) the interior of \(C_\rho\text{.}\)</li>
+</ul>
+<p data-braille="continuation">This produces the “deformed washer”</p>
+<div class="displaymath">
+\begin{equation*}
+W = \Set{(x,y)}{-2\le x\le 2,\ x^2-2\le y\le 2,\ x^2+y^2\ge\rho^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">that is sketched below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:24%;margin-right:24%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE15A_3b2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-18041">The boundary of \(W\) consists the three parts — the curve of interest \(C\) on the bottom, the line segment \(L\) from \((2,2)\) to \((-2,2)\) on the top, and the circle \(-C_\rho\) (that is \(C_\rho\) but oriented clockwise, rather than counter-clockwise) around the hole in the middle. Now \(\pdiff{}{x} \vF_2 -
+\pdiff{}{y} \vF_1 \) is well-defined and zero throughout \(W\text{.}\) So, by Green's theorem (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>),</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\int_C \frac{-y}{x^2+y^2}\dee{x} + \frac{x}{x^2+y^2}\dee{y}\\
+&amp;\hskip0.5in=\dblInt_W \Big(\pdiff{}{x} \vF_2 -
+\pdiff{}{y} \vF_1 \Big)\dee{x}\dee{y}
+- \int_L\vF\cdot\dee{\vr}- \int_{-C_\rho}\vF\cdot\dee{\vr}\\
+&amp;\hskip0.5in=\int_{-L}\vF\cdot\dee{\vr}
++ \int_{C_\rho}\vF\cdot\dee{\vr}
+\end{align*}
+</div>
+<p data-braille="continuation">We have already found, in part (a), that \(\int_{-L}\vF\cdot\dee{\vr}=-\frac{\pi}{2}\text{.}\) So it remains only to use</p>
+<div class="displaymath">
+\begin{align*}
+\vr(\theta) &amp;= \rho\cos\theta\,\hi +\rho\sin\theta\,\hj\\
+\vr'(\theta) &amp;= -\rho\sin\theta\,\hi +\rho\cos\theta\,\hj
+\end{align*}
+</div>
+<p data-braille="continuation">to evaluate</p>
+<div class="displaymath">
+\begin{align*}
+\int_{C_\rho}\vF\cdot\dee{\vr}
+&amp;=\int_0^{2\pi} \vF\big(\vr(\theta)\big)\cdot\vr'(\theta)\,\dee{\theta}\\
+&amp;= \int_0^{2\pi} \Big(\overbrace{-\frac{1}{\rho}\sin\theta\,\hi+\frac{1}{\rho}\cos\theta\,\hj}^
+{\vF(\vr(\theta))}\Big)
+\cdot\big(\overbrace{-\rho\sin\theta\,\hi +\rho\cos\theta\,\hj}^
+{\vr'(\theta)}\big)\,\dee{\theta}\\
+&amp;=\int_0^{2\pi}\dee{\theta}\\
+&amp;=2\pi
+\end{align*}
+</div>
+<p data-braille="continuation">All together</p>
+<div class="displaymath">
+\begin{equation*}
+\int_C \frac{-y}{x^2+y^2}\dee{x} + \frac{x}{x^2+y^2}\dee{y}
+=\int_{-L}\vF\cdot\dee{\vr}
++ \int_{C_\rho}\vF\cdot\dee{\vr}
+=-\frac{\pi}{2} +2\pi
+=\frac{3\pi}{2}
+\end{equation*}
+</div>
+<p id="p-18042">(c) No, \(\vF\) is not conservative. We found, in parts (a) and (b), two different values for the integrals along two paths, both of which start at \((-2,2)\) and end at \((2,2)\text{.}\) So \(\vF\) does not have the “path independence” property of Theorem <a class="xref" data-knowl="./knowl/thm_pathIndepConserv.html" title="Theorem 13.4.7">13.4.7</a>.c and cannot be conservative.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2246"><h6 class="heading">
+<span class="codenumber">14<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2012J.</span>
+</h6>
+<p id="p-18043">Suppose the curve \(C\) is the boundary of the region enclosed between the curves \(y = x^2 - 4x + 3\) and \(y = 3 - x^2 + 2x\text{.}\) Determine the value of the line integral</p>
+<div class="displaymath">
+\begin{equation*}
+\int_C \big(2xe^y + \sqrt{2} + x^2\big)\dee{x}
++ x^2 \big(2 + e^y)\dee{y}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(C\) is traversed counter-clockwise.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1769" id="hint-1769"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1769"><div class="hint solution-like"><p id="p-18044">If we were to try to evaluate this integral directly, then on the \(y=x^2-4x+3\) part of \(C\text{,}\) the integrand would contain \(x^2 e^y = x^2 e^{x^2-4x+3}\text{.}\) That looks hard to integrate, so try Green's theorem.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2246" id="answer-2246"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2246"><div class="answer solution-like"><p id="p-18045">\(54\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2344" id="solution-2344"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2344"><div class="solution solution-like">
+<p id="p-18046">The given integral is of the form \(\int_C \vF\cdot\dee{\vr}\) with</p>
+<div class="displaymath">
+\begin{equation*}
+\vF = \big(2xe^y + \sqrt{2} + x^2\big)\,\hi
++ x^2 \big(2 + e^y)\,\hj
+\end{equation*}
+</div>
+<p data-braille="continuation">If we were to try to evaluate this integral directly, then on the \(y=x^2-4x+3\) part of \(C\text{,}\) the integrand would contain \(x^2 e^y = x^2 e^{x^2-4x+3}\text{.}\) That looks hard to integrate, so let's try Green's theorem. The parabolas \(y = x^2 - 4x + 3\) and \(y = 3 - x^2 + 2x\) intersect at \((x,y)\) with</p>
+<div class="displaymath">
+\begin{align*}
+x^2 - 4x + 3 = 3 - x^2 + 2x
+&amp;\iff
+2x^2 -6x = 0
+\iff
+2x(x-3)=0\\
+&amp;\iff
+x=0\text{ or }x=3
+\end{align*}
+</div>
+<p data-braille="continuation">The curve \(C\) is the boundary of</p>
+<div class="displaymath">
+\begin{equation*}
+R= \Set{(x,y)}{0\le x\le 3,\ x^2 - 4x + 3 \le y\le  3 - x^2 + 2x}
+\end{equation*}
+</div>
+<p data-braille="continuation">It is sketched below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:16%;margin-right:16%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE12J_7.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-18047">By Green's theorem  (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>),</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\int_C \big(2xe^y + \sqrt{2} + x^2\big)\dee{x}
++ x^2 \big(2 + e^y)\dee{y}\\
+&amp;\hskip1in
+= \dblInt_R\Big[\pdiff{}{x}\big(x^2 \big(2 + e^y)\big)
+-\pdiff{}{y}\big(2xe^y + \sqrt{2} + x^2\big)\Big] \dee{x}\dee{y}\\
+&amp;\hskip1in = \dblInt_R \big(2x(2+e^y) - 2xe^y\big)\,\dee{x}\dee{y}\\
+&amp;\hskip1in =4 \int_0^3\dee{x}\int_{x^2 - 4x + 3}^{3 - x^2 + 2x}\dee{y}\  x\\
+&amp;=4 \int_0^3\dee{x}\ x\big[(3 - x^2 + 2x) - (x^2 - 4x + 3)\big]\\
+&amp;\hskip1in =4 \int_0^3\dee{x}\ \big(6x^2-2x^3\big)
+= 4\big(2\times 3^3-\frac{1}{2}3^4\big)
+=54
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2247"><h6 class="heading">
+<span class="codenumber">15<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2016D.</span>
+</h6>
+<p id="p-18048">Let \(\vF(x, y) = P \,\hi + Q\,\hj\) be a smooth plane vector field defined for \((x,y) \ne (0, 0)\text{,}\) and suppose \(Q_x = P_y\) for \((x,y) \ne  (0, 0)\text{.}\) In the following \(I_j = \int_{C_j} \vF\cdot\dee{\vr}\) for integer \(j\text{,}\) and all \(C_j\) are positively oriented circles. Suppose \(I_1 = \pi\) where \(C_1\) is the circle \(x^2 + y^2 = 1\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-7422">Find \(I_2\) for \(C_2 : (x - 2)^2 + y^2 = 1\text{.}\) Explain briefly.</li>
+<li id="li-7423">Find \(I_3\) for \(C_3 : (x - 2)^2 + y^2 = 9\text{.}\) Explain briefly.</li>
+<li id="li-7424">Find \(I_4\) for \(C_4 : (x - 2)^2 + (y-2)^2 = 9\text{.}\) Explain briefly.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1770" id="hint-1770"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1770"><div class="hint solution-like"><p id="p-18049">Beware the point \((0,0)\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2247" id="answer-2247"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2247"><div class="answer solution-like">
+<p id="p-18050">(a) \(I_2=0\)</p>
+<p id="p-18051">(b) \(I_3=\pi\)</p>
+<p id="p-18052">(c) \(I_4=\pi\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2345" id="solution-2345"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2345"><div class="solution solution-like">
+<p id="p-18053">(a) Denote by</p>
+<div class="displaymath">
+\begin{equation*}
+R_2=\Set{(x,y)}{ (x-2)^2+y^2\le 1}
+\end{equation*}
+</div>
+<p data-braille="continuation">the interior of the circle \(C_2\text{.}\) Note that \((0,0)\) is <em class="emphasis">not</em> in \(R_2\text{.}\) Consequently, \(Q_x-P_y=0\) <em class="emphasis">everywhere</em> in \(R_2\) and, by Green's theorem (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>),</p>
+<div class="displaymath">
+\begin{equation*}
+I_2 = \int_{C_2} \vF\cdot\dee{\vr}
+=\dblInt_{R_2} \big(Q_x-P_y\big)\,\dee{x}\dee{y}
+=0
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:3.5%;margin-right:3.5%;">
+<div class="sbspanel" style="width:46.2365591397849%;justify-content:center;"><img src="pfigs/OE16D_4a.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:46.2365591397849%;justify-content:center;"><img src="pfigs/OE16D_4b.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-18054">(b) We cannot blindly apply Green's theorem to \(I_3=\int_{C_3}\vF\cdot\dee{\vr}\) because \((0,0)\) <em class="emphasis">is</em> in the interior of \(C_3\text{,}\) so that \(Q_x-P_y\) is not identically zero in the interior of \(C_3\) — it is not even defined throughout the interior of \(C_3\text{.}\) We can work around this obstruction by considering the interior of \(C_3\) with the interior of \(C_1\) removed. That is, by considering</p>
+<div class="displaymath">
+\begin{equation*}
+R_3 = \Set{(x,y)}{x^2 + (y - 2)^2 \le 9,\ x^2+y^2\ge 1}
+\end{equation*}
+</div>
+<p data-braille="continuation">It is sketched on the right above. The boundary of \(R_3\) consists of two parts</p>
+<ul class="disc">
+<li id="li-7425">the circle \(C_3\text{,}\) oriented counterclockwise, and</li>
+<li id="li-7426">the circle \(-C_1\text{.}\) That is, the circle \(C_1\) but oriented clockwise, rather than counterclockwise.</li>
+</ul>
+<p data-braille="continuation">Then \(Q_x-P_y\) is well-defined and zero throughout \(R_3\) and, by Green's theorem,</p>
+<div class="displaymath">
+\begin{align*}
+0 &amp;=\dblInt_{R_3} \big(Q_x-P_y\big)\,\dee{x}\dee{y}
+= \int_{C_3} \vF\cdot\dee{\vr}
++ \int_{-C_1} \vF\cdot\dee{\vr}\\
+&amp;= \int_{C_3} \vF\cdot\dee{\vr}
+- \int_{C_1} \vF\cdot\dee{\vr}\\
+&amp;= \int_{C_3} \vF\cdot\dee{\vr}
+- \pi
+\end{align*}
+</div>
+<p data-braille="continuation">So \(\int_{C_3} \vF\cdot\dee{\vr} = \pi\text{.}\)</p>
+<p id="p-18055">(c) Again, we cannot blindly apply Green's theorem to \(I_4=\int_{C_4}\vF\cdot\dee{\vr}\) because \((0,0)\) <em class="emphasis">is</em> in the interior of \(C_4\text{.}\) This time we cannot remove the interior of \(C_1\) from the interior of \(C_4\text{,}\) because \(C_1\) is not contained in the interior of \(C_4\text{.}\) Instead we pick a number \(\rho \gt 0\) which is small enough that the positively oriented circle</p>
+<div class="displaymath">
+\begin{equation*}
+C_\rho = \Set{(x,y)}{x^2+y^2=\rho^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">is completely inside \(C_4\text{.}\) Then we can define</p>
+<div class="displaymath">
+\begin{equation*}
+R_4 = \Set{(x,y)}{(x-2)^2 + (y - 2)^2 \le 9,\ x^2+y^2\ge \rho^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">It is sketched on the left below. We can now argue as in part (b). The boundary of \(R_4\) consists of two parts</p>
+<ul class="disc">
+<li id="li-7427">the circle \(C_4\text{,}\) oriented counterclockwise, and</li>
+<li id="li-7428">the circle \(-C_\rho\text{.}\) That is, the circle \(C_\rho\) but oriented clockwise, rather than counterclockwise.</li>
+</ul>
+<p data-braille="continuation">Then \(Q_x-P_y\) is well-defined and zero throughout \(R_4\) and, by Green's theorem,</p>
+<div class="displaymath">
+\begin{align*}
+0 &amp;=\dblInt_{R_4} \big(Q_x-P_y\big)\,\dee{x}\dee{y}\\
+&amp;= \int_{C_4} \vF\cdot\dee{\vr}
++ \int_{-C_\rho} \vF\cdot\dee{\vr}\\
+&amp;= \int_{C_4} \vF\cdot\dee{\vr}
+- \int_{C_\rho} \vF\cdot\dee{\vr}
+\end{align*}
+</div>
+<p data-braille="continuation">So \(\int_{C_4} \vF\cdot\dee{\vr} = \int_{C_\rho} \vF\cdot\dee{\vr}\text{.}\)</p>
+<p id="p-18056">To complete our computation, we have to determine \(\int_{C_\rho} \vF\cdot\dee{\vr}\text{.}\) We can do so by repeating the same “removing a small disk containing \((0,0)\)” argument for the third time. Set</p>
+<div class="displaymath">
+\begin{equation*}
+R_5 = \Set{(x,y)}{x^2 + y^2 \le 1,\ x^2+y^2\ge \rho^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">Then the boundary of \(R_5\) consists of \(C_1\) and \(-C_\rho\text{,}\) and, as \(Q_x-P_y\) is well-defined and zero throughout \(R_5\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+0 &amp;=\dblInt_{R_5} \big(Q_x-P_y\big)\,\dee{x}\dee{y}\\
+&amp;= \int_{C_1} \vF\cdot\dee{\vr}
++ \int_{-C_\rho} \vF\cdot\dee{\vr}\\
+&amp;= \pi
+- \int_{C_\rho} \vF\cdot\dee{\vr}
+\end{align*}
+</div>
+<p data-braille="continuation">So \(\int_{C_4} \vF\cdot\dee{\vr} = \int_{C_\rho} \vF\cdot\dee{\vr}=\pi\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:3.5%;margin-right:3.5%;">
+<div class="sbspanel" style="width:46.2365591397849%;justify-content:center;"><img src="pfigs/OE16D_4c.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:46.2365591397849%;justify-content:center;"><img src="pfigs/OE16D_4d.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2248"><h6 class="heading">
+<span class="codenumber">16<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2017A.</span>
+</h6>
+<p id="p-18057">Consider the vector field \(\vF = P\,\hi + Q\,\hj\text{,}\) where</p>
+<div class="displaymath">
+\begin{equation*}
+P=\frac{x+y}{x^2+y^2},\qquad
+Q=\frac{y-x}{x^2+y^2}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-7429">Compute and simplify \(Q_x - P_y\text{.}\)</li>
+<li id="li-7430">Compute the integral \(\int_{C_R} \vF \cdot \dee{\vr}\) directly using a parameterization, where \(C_R\) is the circle of radius \(R\text{,}\) centered at the origin, and oriented in the counterclockwise direction.</li>
+<li id="li-7431">Is \(\vF\) conservative? Carefully explain how your answer fits with the results you got in the first two parts.</li>
+<li id="li-7432">Use Green's theorem to compute \(\int_C \vF \cdot \dee{\vr}\) where \(C\) is the triangle with vertices \((1, 1)\text{,}\) \((1, 0)\text{,}\) \((0, 1)\) oriented in the counterclockwise direction.</li>
+<li id="li-7433">Use Green's theorem to compute \(\int_C \vF \cdot \dee{\vr}\) where \(C\) is the triangle with vertices \((-1, -1)\text{,}\) \((1, 0)\text{,}\) \((0, 1)\) oriented in the counterclockwise direction.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2248" id="answer-2248"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2248"><div class="answer solution-like">
+<p id="p-18058">(a) \(Q_x-P_y=0\) except at \((0,0)\) where it is not defined.</p>
+<p id="p-18059">(b) \(-2\pi\)</p>
+<p id="p-18060">(c) No.</p>
+<p id="p-18061">(d) \(0\)</p>
+<p id="p-18062">(e) \(-2\pi\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2346" id="solution-2346"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2346"><div class="solution solution-like">
+<p id="p-18063">(a)  If \((x,y)\ne (0,0)\text{,}\) we have</p>
+<div class="displaymath">
+\begin{align*}
+Q_x - P_y
+&amp;=\pdiff{}{x}\Big(\frac{y-x}{x^2+y^2}\Big)
+-\pdiff{}{y}\Big(\frac{x+y}{x^2+y^2}\Big)\\
+&amp;=\frac{-(x^2+y^2)-(y-x)(2x)}{{(x^2+y^2)}^2}
+-\frac{(x^2+y^2)-(x+y)(2y)}{{(x^2+y^2)}^2}\\
+&amp;=0
+\end{align*}
+</div>
+<p id="p-18064">(b) Parametrize \(C_R\) by</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(\theta) = R\cos\theta\,\hi +R\sin\theta\,\hj\qquad
+0\le\theta\le 2\pi
+\end{equation*}
+</div>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{align*}
+\int_{C_R} \vF \cdot \dee{\vr}
+&amp;=\int_0^{2\pi} \overbrace{\frac{1}{R}
+\left\{\big(\cos\theta+\sin\theta\big)\hi
++\big(\sin\theta-\cos\theta\big)\hj\right\}}^{\vF(\vr(\theta))}\\
+&amp;\hskip2in       \cdot
+\big(\overbrace{-R\sin\theta\,\hi+R\cos\theta\,\hj}^{\vr'(\theta)}\big)
+\,\dee{\theta}\\
+&amp;=\int_0^{2\pi}(-1)\ \dee{\theta}\\
+&amp;=-2\pi
+\end{align*}
+</div>
+<p id="p-18065">(c) If \(\vF\) were conservative, the line integral \(\int_C\vF\cdot\dee{\vr}\) would be \(0\) for any closed curve \(C\text{,}\) by Theorem <a class="xref" data-knowl="./knowl/thm_pathIndepConserv.html" title="Theorem 13.4.7">13.4.7</a>.b. So \(\vF\) is <em class="emphasis">not</em> conservative. Note that \(\vF\) is not defined at \((x,y) = (0,0)\) and so fails the screening test \(\vnabla\times\vF=\vZero\) at \((x,y)=(0,0)\text{.}\)</p>
+<p id="p-18066">(d) Denote by \(\cR\) the interior of the triangle \(C\text{.}\) It is the grey region in the figure</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:31.5%;margin-right:31.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE17A_6a.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-18067">Note that \((0,0)\) is <em class="emphasis">not</em> in \(\cR\text{.}\) So \(Q_x - P_y\) is defined and zero throughout \(\cR\text{.}\) So, by Green's theorem  (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>),</p>
+<div class="displaymath">
+\begin{align*}
+\int_C \vF \cdot \dee{\vr}
+&amp;= \dblInt_\cR\big(Q_x - P_y\big)\,\dee{x}\dee{y}
+=0
+\end{align*}
+</div>
+<p id="p-18068">(e) Note that \((0,0)\) <em class="emphasis">is</em> in the interior of triangle \(C\) specified for this part. So \(Q_x - P_y\) is <em class="emphasis">not</em> defined in that interior and we cannot apply Green's theorem precisely as we did in part (d). We can work around this obstruction by</p>
+<ul class="disc">
+<li id="li-7434">picking a number \(r \gt 0\) that is small enough that the circle \(C_r\text{,}\) of radius \(r\) centred on \((0,0)\text{,}\) is completely contained in the interior of the triangle \(C\text{.}\)</li>
+<li id="li-7435">
+<p id="p-18069">Then we work with the region \(\cR\) defined by removing the interior of the circle \(C_r\) from the interior of the triangle \(C\text{.}\) It is the grey region sketched below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:23.5%;margin-right:23.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE17A_6b.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+</ul>
+<p data-braille="continuation">The boundary of \(\cR\) consists of two parts</p>
+<ul class="disc">
+<li id="li-7436">the triangle \(C\text{,}\) oriented counterclockwise, and</li>
+<li id="li-7437">the circle \(-C_r\text{.}\) That is, the circle \(C_r\text{,}\) but oriented clockwise, rather than counterclockwise.</li>
+</ul>
+<p data-braille="continuation">Then \(Q_x-P_y\) is well-defined and zero throughout \(\cR\) and, by Green's theorem,</p>
+<div class="displaymath">
+\begin{align*}
+0 &amp;=\dblInt_\cR \big(Q_x-P_y\big)\,\dee{x}\dee{y}\\
+&amp;= \int_C \vF\cdot\dee{\vr}
++ \int_{-C_r} \vF\cdot\dee{\vr}\\
+&amp;= \int_C \vF\cdot\dee{\vr}
+- \int_{C_r} \vF\cdot\dee{\vr}
+\end{align*}
+</div>
+<p data-braille="continuation">So \(\int_C \vF\cdot\dee{\vr} = \int_{C_r} \vF\cdot\dee{\vr} \text{.}\) By part (b), with \(R=r\text{,}\) \(\int_{C_r} \vF\cdot\dee{\vr}=-2\pi\text{,}\) so \(\int_C \vF\cdot\dee{\vr} = -2\pi\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2249"><h6 class="heading">
+<span class="codenumber">17<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2017D.</span>
+</h6>
+<ol id="p-18070" class="lower-alpha">
+<li id="li-7438">Evaluate<div class="displaymath">
+\begin{equation*}
+\int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y}
+\end{equation*}
+</div>where \(C\) is the unit circle \(x^2+y^2 = 1\text{,}\) oriented counterclockwise.</li>
+<li id="li-7439">Evaluate<div class="displaymath">
+\begin{equation*}
+\int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y}
+\end{equation*}
+</div>where \(C\) is now the part of the unit circle \(x^2+y^2 = 1\text{,}\) with \(x\ge 0\text{,}\) still oriented counterclockwise.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2249" id="answer-2249"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2249"><div class="answer solution-like">
+<p id="p-18071">(a) \(\frac{\pi}{2}\)</p>
+<p id="p-18072">(b) \(\frac{\pi}{4}+\frac{2}{3}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2347" id="solution-2347"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2347"><div class="solution solution-like">
+<p id="p-18073">(a) The given integral is of the form \(\int_C F_1(x,y)\,\dee{x}+F_2(x,y)\,\dee{y}\) with</p>
+<div class="displaymath">
+\begin{equation*}
+F_1(x,y) = \sqrt{1+x^3}\qquad
+F_2(x,y) = 2xy^2 + y^2\qquad
+\frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y} = 2y^2
+\end{equation*}
+</div>
+<p data-braille="continuation">As \(C\) is \(\partial R\) with</p>
+<div class="displaymath">
+\begin{equation*}
+R = \Set{(x,y)}{ x^2+y^2\le 1}
+\end{equation*}
+</div>
+<p data-braille="continuation">Green's theorem (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>) gives</p>
+<div class="displaymath">
+\begin{align*}
+\int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y}
+&amp; = \int_C F_1(x,y)\,\dee{x}+F_2(x,y)\,\dee{y}\\
+&amp;  = \dblInt_R \Big(\frac{\partial F_2}{\partial x}
+- \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y}\\
+&amp;= 2 \dblInt_R y^2\ \dee{x}\dee{y}
+\end{align*}
+</div>
+<p data-braille="continuation">Switching to polar coordinates</p>
+<div class="displaymath">
+\begin{align*}
+\int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y}
+&amp;= 2\int_0^{2\pi}\dee{\theta} \int_0^1\dee{r}\
+r\big(r\sin\theta\big)^2\\
+&amp;= 2\left[\int_0^{2\pi}\dee{\theta}\ \sin^2\theta\right]
+\left[\int_0^1\dee{r}\ r^3\right]\\
+&amp;=2\ \pi\ \frac{1}{4}
+=\frac{\pi}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">To do the \(\theta\) integral, we have used</p>
+<div class="displaymath">
+\begin{gather*}
+\int_0^{2\pi} \sin^2 \theta\ \dee{\theta}
+=\int_0^{2\pi} \Big(\frac{1-\cos(2\theta)}{2}\Big)\,\dee{\theta}
+=\Big[\frac{\theta-\sin(2\theta)/2}{2} \Big]_0^{2\pi}
+= \pi
+\end{gather*}
+</div>
+<p data-braille="continuation">For an efficient, sneaky, way to evaluate \(\int_0^{2\pi} \sin^2 \theta\ \dee{\theta}\text{,}\) see Example <a class="xref" data-knowl="./knowl/eg_workIntegralB.html" title="Example 13.4.4">13.4.4</a>.</p>
+<p id="p-18074">(b) It is again natural to use Green's theorem. But Green's theorem must be applied to a curve that is closed, so that it is the boundary of a region in \(\bbbr^2\text{.}\) The given curve \(C\) is not closed. But it is  part of the boundary of</p>
+<div class="displaymath">
+\begin{equation*}
+R = \Set{(x,y)}{x^2+y^2\le 1,\ x\ge 0}
+\end{equation*}
+</div>
+<p data-braille="continuation">Here is a sketch of \(R\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE17D_7.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-18075">The boundary of \(R\) consists of two parts — \(C\) on the right and the line segment \(L\) from \((0,1)\) to \((0,-1)\) on the left. Note that \(\vF=F_1\,\hi +F_2\,\hj\) is well-defined on all of \(R\) and that we still have, from part (a),</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial F_2}{\partial x}  -
+\frac{\partial F_1}{\partial y}
+&amp;=2y^2
+\end{align*}
+</div>
+<p data-braille="continuation">on all of \(R\text{.}\) So, by Green's theorem (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>),</p>
+<div class="displaymath">
+\begin{align*}
+\int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y}
+&amp;=\dblInt_R \Big(\frac{\partial F_2}{\partial x} -
+\frac{\partial F_2}{\partial y} \Big)\dee{x}\dee{y}
+- \int_L\vF\cdot\dee{\vr}\\
+&amp;=\dblInt_{\Atop{x^2+y^2\le 1}{x\ge 0}} 2y^2\  \dee{x}\dee{y}
++ \int_{-L} F_2\,\dee{y}\\
+&amp;=\dblInt_{x^2+y^2\le 1} y^2\  \dee{x}\dee{y}
++ \int_{-1}^1 y^2\,\dee{y}\\
+&amp;\hskip0.25in\text{by symmetry for the first integral and}\\
+&amp;\hskip0.25in\text{since $x=0$ and $\dee{x}=0$ in the}\\
+&amp;\hskip0.25in\text{second integral}\\
+&amp;=\frac{\pi}{4} + \frac{2}{3}
+\end{align*}
+</div>
+<p data-braille="continuation">In the second line, we used the notation \(-L\) for the line segment from \((0,-1)\) to \((0,1)\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-305">
+<div class="introduction" id="introduction-450"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-2250"><h6 class="heading">
+<span class="codenumber">18<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2007A.</span>
+</h6>
+<p id="p-18076">Evaluate the line integral</p>
+<div class="displaymath">
+\begin{equation*}
+\int_C (x^2 + y e^x ) \,\dee{x} + (x \cos y + e^x ) \,\dee{y}
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(C\) is the arc of the curve \(x = \cos y\) for \(-\pi/2 \le y \le \pi/2\text{,}\) traversed in the direction of increasing \(y\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1771" id="hint-1771"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1771"><div class="hint solution-like"><p id="p-18077">It is possible to evaluate this integral by three different methods, one of them being direct evaluation (though it requires some ingenuity). Try to find all three.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2250" id="answer-2250"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2250"><div class="answer solution-like"><p id="p-18078">\(\frac{3\pi}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2348" id="solution-2348"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2348"><div class="solution solution-like">
+<p id="p-18079">First, here is a sketch of the curve \(C\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:36.5%;margin-right:36.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE07A_6.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-18080">We'll evaluate this integral in three different ways.</p>
+<ol class="decimal">
+<li id="li-7440">
+<p id="p-18081"><em class="emphasis">Direct evaluation:</em> To evaluate the integral directly, we'll parametrize \(C\) using \(y\) as the parameter. That is, we'll make \(y(t)=t\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t) &amp;= x(t)\,\hi+y(t)\,\hj
+= \cos t\,\hi + t\,\hj\qquad -\frac{\pi}{2}\le t\le\frac{\pi}{2}\\
+\vr'(t) &amp;= x'(t)\,\hi+y'(t)\,\hj
+= -\sin t\,\hi + \hj
+\end{align*}
+</div>
+<p data-braille="continuation">So the integral is</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\int_C (x^2 + y e^x ) \,\dee{x} + (x \cos y + e^x ) \,\dee{y}\\
+&amp;\hskip0.5in
+=\int_{-\pi/2}^{\pi/2}\Big\{ \big[x(t)^2 +y(t) e^{x(t)}\big]\diff{x}{t}(t)\\
+&amp;\hskip2in     +  \big[x(t) \cos(y(t)) + e^{x(t)}\big]\diff{y}{t}(t)
+\Big\}\dee{t}\\
+&amp;\hskip0.5in
+=\int_{-\pi/2}^{\pi/2}\Big\{ -\big[\cos^2 t + t e^{\cos t}\big]\sin t
++  \big[\cos^2 t + e^{\cos t}\big]
+\Big\}\dee{t}\\
+&amp;\hskip0.5in
+=\int_{-\pi/2}^{\pi/2}\Big\{ -\cos^2 t\sin t +\cos^2 t
+- t e^{\cos t}\sin t + e^{\cos t}
+\Big\}\dee{t}\\
+&amp;\hskip0.5in
+=\int_{-\pi/2}^{\pi/2}\Big\{ \cos^2 t
++\diff{ }{t}\Big[\frac{\cos^3 t}{3} +te^{\cos t}\Big]
+\Big\}\dee{t}\\
+&amp;\hskip0.5in
+=\int_{-\pi/2}^{\pi/2}\Big\{ \frac{\cos(2t)+1}{2}
++\diff{ }{t}\Big[\frac{\cos^3 t}{3} +te^{\cos t}\Big]
+\Big\}\dee{t}\\
+&amp;\hskip0.5in
+=\Big[ \frac{\sin(2t)}{4} +\frac{t}{2}+
+\frac{\cos^3 t}{3} +te^{\cos t}
+\Big]_{-\pi/2}^{\pi/2}\\
+&amp;\hskip0.5in
+=\frac{3\pi}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">For an efficient, sneaky, way to evaluate \(\int_{-\pi/2}^{\pi/2} \cos^2 t\ \dee{t}\) see Example <a class="xref" data-knowl="./knowl/eg_workIntegralB.html" title="Example 13.4.4">13.4.4</a>.</p>
+</li>
+<li id="li-7441">
+<p id="p-18082"><em class="emphasis">Green's (or Stokes') theorem:</em> The curve \(C\) is not closed so we cannot apply Green's theorem directly. However the boundary of the region</p>
+<div class="displaymath">
+\begin{equation*}
+R = \Set{(x,y)}{ 0\le x\le\cos y,\
+-\frac{\pi}{2}\le y\le \frac{\pi}{2} }
+\end{equation*}
+</div>
+<p data-braille="continuation">(sketched below) consists of two parts, one of which is \(C\text{.}\) The other is the line \(L\) from \(\big(0,\frac{\pi}{2}\big)\) to \(\big(0,-\frac{\pi}{2}\big)\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:36%;margin-right:36%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE07A_6b.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-18083">So Green's theorem gives</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\int_C (x^2 + y e^x ) \,\dee{x} + (x \cos y + e^x ) \,\dee{y}\\
+&amp;\hskip0.25in=\dblInt_R \Big\{\pdiff{}{x}(x \cos y + e^x )
+-\pdiff{}{y}(x^2 + y e^x )\Big\}\dee{x}\dee{y}\\
+&amp;\hskip0.5in
+-\int_L (x^2 + y e^x ) \,\dee{x} + (x \cos y + e^x ) \,\dee{y}\\
+&amp;\hskip0.25in=\dblInt_R \cos y\ \dee{x}\dee{y}  -  \int_L \,\dee{y}\qquad
+\text{since $x=0$ and $\dee{x}=0$ on } L\\
+&amp;\hskip0.25in=\int_{-\pi/2}^{\pi/2}\dee{y}\int_0^{\cos y}\dee{x}\ \cos y
+-\int_{\pi/2}^{-\pi/2}\dee{y}\\
+&amp;\hskip0.25in=\int_{-\pi/2}^{\pi/2}\dee{y}\ \cos^2 y
++ \pi\\
+&amp;\hskip0.25in
+=\int_{-\pi/2}^{\pi/2} \frac{\cos(2y)+1}{2}\ \dee{y} + \pi\\
+&amp;\hskip0.25in
+=\Big[ \frac{\sin(2y)}{4} +\frac{y}{2}\Big]_{-\pi/2}^{\pi/2} +\pi\\
+&amp;\hskip0.25in
+=\frac{3\pi}{2}
+\end{align*}
+</div>
+</li>
+<li id="li-7442">
+<p id="p-18084"><em class="emphasis">(Sort of) conservative fields:</em> The given integral is \(\int_C\vF\cdot\dee{\vr}\) with \(\vF = (x^2 + y e^x ) \,\hi + (x \cos y + e^x ) \,\hj\text{.}\) The curl of this field is</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk\\
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+\tfrac{\partial }{\partial z}\\
+x^2 + y e^x &amp; x \cos y + e^x &amp; 0
+\end{matrix}
+\right]
+=\cos y\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">So \(\vF\) violates our screening test and consequently is not conservative. But it violates the screening test only because of the term \(x\cos y\,\hj\text{.}\) This suggests that we split up</p>
+<div class="displaymath">
+\begin{equation*}
+\vF = \vG +\vH\qquad\text{with}\quad
+\vG= (x^2 + y e^x ) \,\hi + e^x \,\hj,\quad
+\vH = x\cos y\,\hj
+\end{equation*}
+</div>
+<p data-braille="continuation">Then \(\vG\) is conservative with potential \(g=\frac{x^3}{3}+ye^x\) and \(\vH\) is pretty simple, so that it is not hard to evaluate \(\int_C\vH\cdot\dee{\vr}\) directly. Using the parametrization \(\vr(t) = \cos t\,\hi + t\,\hj\text{,}\)  \(-\frac{\pi}{2}\le t\le\frac{\pi}{2}\) as above,</p>
+<div class="displaymath">
+\begin{align*}
+\int_C\vF\cdot\dee{\vr}
+&amp;= \int_C\vG\cdot\dee{\vr} + \int_C\vH\cdot\dee{\vr}\\
+&amp;= \int_C\vnabla g\cdot\dee{\vr} + \int_C\vH\cdot\dee{\vr}\\
+&amp;=g\big(\vr(\frac{\pi}{2})\big) -g\big(\vr(-\frac{\pi}{2})\big)
++ \int_{-\pi/2}^{\pi/2} x(t) \cos(y(t)) \diff{y}{t}(t)\ \dee{t}\\
+&amp; =g\big(0,\frac{\pi}{2}\big) -g\big(0,-\frac{\pi}{2}\big)
++\int_{-\pi/2}^{\pi/2} \cos^2 t \,\dee{t}\\
+&amp;=\frac{\pi}{2} -\Big(-\frac{\pi}{2}\Big)
++\int_{-\pi/2}^{\pi/2} \frac{\cos(2t)+1}{2} \dee{t}\\
+&amp;=\pi  + \Big[ \frac{\sin(2t)}{4} +\frac{t}{2}\Big]_{-\pi/2}^{\pi/2}\\
+&amp;=\frac{3\pi}{2}
+\end{align*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2251"><h6 class="heading">
+<span class="codenumber">19<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2004A.</span>
+</h6>
+<p id="p-18085">Use Green's theorem to establish that if \(C\) is a simple closed curve in the plane, then the area \(A\) enclosed by \(C\) is given by</p>
+<div class="displaymath">
+\begin{equation*}
+A=\frac{1}{2}\oint_C x\,\dee{y}-y\,\dee{x}
+\end{equation*}
+</div>
+<p data-braille="continuation">Use this to calculate the area inside the curve \(x^{2/3}+y^{2/3}=1\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2251" id="answer-2251"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2251"><div class="answer solution-like"><p id="p-18086">\(\frac{3\pi}{8}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2349" id="solution-2349"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2349"><div class="solution solution-like">
+<p id="p-18087">Call the region enclosed by the curve \(R\text{.}\) By Green's theorem, Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>,</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{2}\oint_C x\,\dee{y}-y\,\dee{x}
+&amp;=\frac{1}{2}\dblInt_R\Big(\pdiff{}{x}x
+-\pdiff{}{y}(-y)\Big)\ \dee{x}\dee{y}
+=\frac{1}{2}\dblInt_R 2\ \dee{x}\dee{y}\\
+&amp;=A
+\end{align*}
+</div>
+<p data-braille="continuation">as desired. The curve \(x^{2/3}+y^{2/3}=1\) may be parametrized in the counterclockwise orientation by \(x(\theta)=\cos^3\theta\text{,}\) \(y(\theta)=\sin^3\theta\text{,}\) \(0\le\theta\le 2\pi\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+A&amp;=\frac{1}{2}\oint_C x\,\dee{y}-y\,\dee{x}\\
+&amp;=\frac{1}{2}\int_0^{2\pi}\big( x(\theta)y'(\theta)-y(\theta)x'(\theta)\big)\ \dee{\theta}\\
+&amp;=\frac{1}{2}\int_0^{2\pi}\big( 3\cos^4\theta\sin^2\theta+3\sin^4\theta\cos^2\theta\big)\ \dee{\theta}\\
+&amp;=\frac{3}{2}\int_0^{2\pi}\sin^2\theta\cos^2\theta\ \dee{\theta}
+=\frac{3}{8}\int_0^{2\pi}\sin^2(2\theta)\ \dee{\theta}\\
+&amp;=\frac{3}{16}\int_0^{2\pi}\big(1-\cos(4\theta)\big)\ \dee{\theta}
+=\frac{3}{16}\Big[\theta-\frac{1}{4}\sin(4\theta)\Big]_0^{2\pi}
+=\frac{3\pi}{8}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2252"><h6 class="heading">
+<span class="codenumber">20<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2001D.</span>
+</h6>
+<p id="p-18088">Let \(\vF(x,y)=(x+3y)\,\hi+(x+y)\,\hj\) and \(\vG(x,y)=(x+y)\,\hi+(2x-3y)\,\hj\) be vector fields. Find a number \(A\) such that for each circle \(C\) in the plane</p>
+<div class="displaymath">
+\begin{equation*}
+\oint_C\vF\cdot \dee{\vr}=A\oint_C\vG\cdot \dee{\vr}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1772" id="hint-1772"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1772"><div class="hint solution-like"><p id="p-18089">Write \(\oint_C\vF\cdot \dee{\vr}-A\oint_C\vG\cdot \dee{\vr}
+=\oint_C(\vF-A\vG)\cdot \dee{\vr}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2252" id="answer-2252"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2252"><div class="answer solution-like"><p id="p-18090">\(A=-2\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2350" id="solution-2350"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2350"><div class="solution solution-like">
+<p id="p-18091">If we use \(D\) to denote the disk inside the circle \(C\) then we want</p>
+<div class="displaymath">
+\begin{align*}
+\oint_C\vF\cdot \dee{\vr}-A\oint_C\vG\cdot \dee{\vr}
+&amp;=\oint_C(\vF-A\vG)\cdot \dee{\vr}\\
+&amp;=\dblInt_D \Big[\pdiff{}{x}(\vF-A\vG)_2
+-\pdiff{}{y}(\vF-A\vG)_1\Big]\,\dee{x}\dee{y}
+\end{align*}
+</div>
+<p data-braille="continuation">to vanish for all disks \(D\text{.}\) We used Green's theorem, which is Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>,  in the last step. This is the case if and only if</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\pdiff{}{x}(\vF-A\vG)_2
+=\pdiff{}{y}(\vF-A\vG)_1\\
+\iff&amp;
+\pdiff{}{x}[(x+y)-A(2x-3y)]
+=\pdiff{}{y}[(x+3y)-A(x+y)]\\
+\iff&amp;
+1-2A=3-A\\
+\iff&amp; A=-2
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2253"><h6 class="heading">
+<span class="codenumber">21<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2001D.</span>
+</h6>
+<p id="p-18092">Let \(\vF(x,y) = \frac{y^3}{ {(x^2+y^2)}^2}\hi
+-\frac{xy^2}{ {(x^2+y^2)}^2}\hj\text{,}\) \((x,y)\ne (0,0)\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-7443">Compute \(\oint_C\vF\cdot \dee{\vr}\) where \(C\) is the unit circle in the \(xy\)-plane, positively oriented.</li>
+<li id="li-7444">Use (a) and Green's theorem to find \(\oint_{C_0}\vF\cdot \dee{\vr}\) where \(C_0\) is the ellipse \(\frac{x^2}{16}+\frac{y^2}{25}=1\text{,}\) positively oriented.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1773" id="hint-1773"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1773"><div class="hint solution-like"><p id="p-18093">Note that \(\vF(x,y)\) is not defined at \((x,y)=(0,0)\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2253" id="answer-2253"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2253"><div class="answer solution-like"><p id="p-18094">\(-\pi\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2351" id="solution-2351"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2351"><div class="solution solution-like">
+<p id="p-18095">(a) Parametrize the circle \(\vr(\theta)=(\cos\theta,\sin\theta)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\vF\big(\vr(\theta)\big)
+&amp;=\sin^3\theta\,\hi -\cos\theta \sin^2\theta\,\hj\\
+\diff{\vr}{\theta}(\theta)&amp;=-\sin\theta\,\hi+\cos\theta\,\hj\\
+\vF\big(\vr(\theta)\big)\cdot \diff{\vr}{\theta}(\theta)
+&amp;=-\sin^4\theta-\cos^2\theta\sin^2\theta=-\sin^2\theta\\
+\oint_C\vF\cdot \dee{\vr}
+&amp;=\int_0^{2\pi}\vF\big(\vr(\theta)\big)\cdot \diff{\vr}{\theta}(\theta)\ \dee{\theta}
+=-\int_0^{2\pi}\sin^2\theta\ \dee{\theta}\\
+&amp;=-\int_0^{2\pi}\frac{1-\cos(2\theta)}{2}\ \dee{\theta}\\
+&amp;=-{\Big[\frac{\theta}{2}-\frac{\sin(2\theta)}{4}\Big]}_0^{2\pi}
+=-\pi
+\end{align*}
+</div>
+<p data-braille="continuation">For an efficient, sneaky, way to evaluate \(\int_0^{2\pi} \sin^2\theta\ \dee{\theta}\) see Example <a class="xref" data-knowl="./knowl/eg_workIntegralB.html" title="Example 13.4.4">13.4.4</a>.</p>
+<p id="p-18096">(b) Denote by \(W\) the washer shaped region between the circle \(x^2+y^2=1\) and the ellipse \(\frac{x^2}{16}+\frac{y^2}{25}=1\text{.}\) It is sketched below. By Green's theorem</p>
+<div class="displaymath">
+\begin{gather*}
+\oint_{C_0}\vF\cdot \dee{\vr}-\oint_C\vF\cdot \dee{\vr}
+=\dblInt_W \Big[\pdiff{}{x}\vF_2
+-\pdiff{}{y}\vF_1\Big]\,\dee{x}\dee{y}
+\end{gather*}
+</div>
+<p data-braille="continuation">For the specified \(\vF\)</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\pdiff{}{x}\vF_2
+-\pdiff{}{y}\vF_1
+=-\pdiff{}{x}\frac{xy^2}{ {(x^2+y^2)}^2}
+-\pdiff{}{y}\frac{y^3}{ {(x^2+y^2)}^2}\\
+&amp;\hskip0.5in=-\frac{y^2}{ {(x^2+y^2)}^2}+2\frac{xy^2(2x)}{ {(x^2+y^2)}^3}
+-\frac{3y^2}{ {(x^2+y^2)}^2}+2\frac{y^3(2y)}{ {(x^2+y^2)}^3}\\
+&amp;\hskip0.5in=\frac{-y^2(x^2+y^2)+4x^2y^2-3y^2(x^2+y^2)+4y^4}{ {(x^2+y^2)}^3}\\
+&amp;\hskip0.5in=0
+\end{align*}
+</div>
+<p data-braille="continuation">Consequently</p>
+<div class="displaymath">
+\begin{equation*}
+\oint_{C_0}\vF\cdot \dee{\vr}-\oint_C\vF\cdot \dee{\vr}=0
+\implies
+\oint_{C_0}\vF\cdot \dee{\vr}=\oint_C\vF\cdot \dee{\vr}=-\pi
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE01DQ6.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2254"><h6 class="heading">
+<span class="codenumber">22<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2001A.</span>
+</h6>
+<p id="p-18097">Let \(\cC_1\) be the circle \((x-2)^2+y^2=1\) and let \(\cC_2\) be the circle \((x-2)^2+y^2=9\text{.}\) Let \(\vF=-\frac{y}{x^2+y^2}\,\hi+\frac{x}{x^2+y^2}\,\hj\text{.}\) Find the integrals \(\oint_{\cC_1}\vF\cdot \dee{\vr}\) and \(\oint_{\cC_2}\vF\cdot \dee{\vr}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1774" id="hint-1774"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1774"><div class="hint solution-like"><p id="p-18098">Note that \(\vF(x,y)\) is not defined at \((x,y)=(0,0)\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2254" id="answer-2254"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2254"><div class="answer solution-like"><p id="p-18099">\(\oint_{\cC_1}\vF\cdot \dee{\vr}=0\) and \(\oint_{\cC_2}\vF\cdot \dee{\vr}=2\pi\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2352" id="solution-2352"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2352"><div class="solution solution-like">
+<p id="p-18100">Observe that</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial F_2}{\partial x}
+-\frac{\partial F_1}{\partial y}
+&amp;=\frac{\partial  }{\partial x}\Big( \frac{x}{x^2+y^2}\Big)
+-\frac{\partial  }{\partial y}\Big( \frac{-y}{x^2+y^2}\Big)\\
+&amp;=\frac{(x^2+y^2)-x(2x)}{{(x^2+y^2)}^2}
++\frac{(x^2+y^2)-y(2y)}{{(x^2+y^2)}^2}=0
+\end{align*}
+</div>
+<p data-braille="continuation">except at \((0,0)\text{,}\) where \(\vF\) is not defined. Hence by Green's theorem (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>), \(\oint_{\cC}\vF\cdot \dee{\vr}=0\) for any closed curve that does not contain \((0,0)\) in its interior. In particular, \(\oint_{\cC_1}\vF\cdot \dee{\vr}=0\text{.}\) On the other hand, \((0,0)\) is contained in the interior of \(\cC_2\text{,}\) so we cannot use Green's theorem to conclude that \(\oint_{\cC_2}\vF\cdot \dee{\vr}=0\text{.}\)</p>
+<p id="p-18101">Let \(\cC_3\) be the circle of radius one centred on \((0,0)\) and denote by \(W\) the washer shaped region between the circle \(\cC_2\) and the circle \(\cC_3\text{.}\) It is sketched below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:28.5%;margin-right:28.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE01AQ5.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-18102">By Green's theorem (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>),</p>
+<div class="displaymath">
+\begin{gather*}
+\oint_{\cC_2}\vF\cdot \dee{\vr}-\oint_{\cC_3}\vF\cdot \dee{\vr}
+=\dblInt_W \Big[\pdiff{}{x}\vF_2
+-\pdiff{}{y}\vF_1\Big]\,\dee{x}\dee{y}
+=0
+\end{gather*}
+</div>
+<p data-braille="continuation">So \(\oint_{\cC_2}\vF\cdot \dee{\vr}=\oint_{\cC_3}\vF\cdot \dee{\vr}\text{.}\) Parameterize \(\cC_3\) by \(x=\cos\theta\text{,}\) \(y=\sin\theta\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\vr(\theta)&amp;=\cos\theta\,\hi+\sin\theta\,\hj\qquad 0\le \theta\le 2\pi\\
+\vr'(\theta)&amp;=-\sin\theta\,\hi+\cos\theta\,\hj\\
+\vF\big(\vr(\theta)\big)&amp;=-\sin\theta\,\hi+\cos\theta\,\hj\\
+\vF\big(\vr(\theta)\big)\cdot\vr'(\theta)
+&amp;=1
+\end{align*}
+</div>
+<p data-braille="continuation">so that</p>
+<div class="displaymath">
+\begin{equation*}
+\oint_{\cC_2}\vF\cdot \dee{\vr}
+=\oint_{\cC_3}\vF\cdot \dee{\vr}
+=\int_0^{2\pi} \dee{\theta}\ 1
+=2\pi
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2255"><h6 class="heading">
+<span class="codenumber">23<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2000A.</span>
+</h6>
+<p id="p-18103">Let \(R\) be the region in the first quadrant of the \(xy\)-plane bounded by the coordinate axes and the curve \(y=1-x^2\text{.}\) Let \(\cC\) be the boundary of \(R\text{,}\) oriented counterclockwise.</p>
+<ol class="lower-alpha">
+<li id="li-7445">Evaluate \(\int_\cC x\,\dee{s}\text{.}\)</li>
+<li id="li-7446">Evaluate \(\int_\cC \vF\cdot \dee{\vr}\text{,}\) where \(\vF(x,y)
+=\big(\sin(x^2)-xy\big)\,\hi+\big(x^2+\cos(y^2)\big)\,\hj\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2255" id="answer-2255"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2255"><div class="answer solution-like">
+<p id="p-18104">(a) \(\frac{1}{2}+\frac{1}{12}\big[5^{3/2}-1\big]\approx 1.3484\)</p>
+<p id="p-18105">(b) \(\frac{3}{4}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2353" id="solution-2353"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2353"><div class="solution solution-like">
+<p id="p-18106">(a) Let \(\cC_1\) be the line segment from \((0,1)\) to \((0,0)\text{,}\) \(\cC_2\) be the line segment from \((0,0)\) to \((1,0)\) and \(\cC_3\) be the curve \(y=1-x^2\) from \((1,0)\) to \((0,1)\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37%;margin-right:37%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE00AQ3.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-18107">Then</p>
+<div class="displaymath">
+\begin{align*}
+\int_{\cC_1} x\,\dee{s}&amp;=\int_{\cC_1} 0\,\dee{s}=0\\
+\int_{\cC_2} x\,\dee{s}&amp;=\int_0^1 x\,\dee{x}=\frac{1}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">On \(\cC_3\text{,}\) \(y=1-x^2\) so that \(\diff{y}{x}=-2x\) and</p>
+<div class="displaymath">
+\begin{equation*}
+\dee{s} =\sqrt{\dee{x}^2+\dee{y}^2}
+=\sqrt{1+\Big(\diff{y}{x}\Big)^2}\,\dee{x}
+=\sqrt{1+4x^2}\,\dee{x}
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{align*}
+\int_{\cC_3} x\,\dee{s}
+&amp;
+=\int_0^1 x\sqrt{1+4x^2}\,\dee{x}\\
+&amp;=\Big[\frac{1}{12}(1+4x^2)^{3/2}\Big]_0^1
+=\frac{1}{12}\big[5^{3/2}-1\big]
+\end{align*}
+</div>
+<p data-braille="continuation">All together</p>
+<div class="displaymath">
+\begin{equation*}
+\int_{\cC} x\,\dee{s}=\frac{1}{2}+\frac{1}{12}\big[5^{3/2}-1\big]
+\approx 1.3484
+\end{equation*}
+</div>
+<p id="p-18108">(b) By either Stokes' theorem or Green's theorem</p>
+<div class="displaymath">
+\begin{align*}
+\int_\cC \vF\cdot \dee{\vr}
+&amp;=\dblInt_R\Big[\pdiff{}{x}\big(x^2+\cos(y^2)\big)
+-\pdiff{}{y}\big(\sin(x^2)-xy\big) \Big]\ \dee{x} \dee{y}\\
+&amp;=\dblInt_R3x\ \dee{x} \dee{y}\\
+&amp;=3\int_0^1 \dee{x}\int_0^{1-x^2}\dee{y}\ x\\
+&amp;=3\int_0^1 \dee{x}\ (1-x^2) x\\
+&amp;=3\Big[\frac{1}{2}-\frac{1}{4}\Big]=\frac{3}{4}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2256"><h6 class="heading">
+<span class="codenumber">24<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2010A.</span>
+</h6>
+<p id="p-18109">Let \(C\) be the curve defined by the intersection of the surfaces \(z = x + y\) and \(z = x^2 + y^2\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-7447">Show that \(C\) is a simple closed curve.</li>
+<li id="li-7448">
+<p id="p-18110">Evaluate \(\oint_C \vF \cdot \dee{\vr}\) where</p>
+<ol class="lower-roman">
+<li id="li-7449">\(\vF = x^2\,\hi + y^2\,\hj + 3 e^z\,\hk\text{.}\)</li>
+<li id="li-7450">\(\vF = y^2\,\hi + x^2\,\hj + 3 e^z\,\hk\text{.}\)</li>
+</ol>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1775" id="hint-1775"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1775"><div class="hint solution-like">
+<p id="p-18111">(a) All points on the curve obey an equation that contains \(x\)'s and \(y\)'s, but no \(z\)'s.</p>
+<p id="p-18112">(b) Exploit conservativeness as much as possible.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2256" id="answer-2256"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2256"><div class="answer solution-like">
+<p id="p-18113">(a) The projection of the curve on the \(xy\)-plane (i.e. the top view of the curve) is a circle. See the solution for more details.</p>
+<p id="p-18114">(b) (i) \(0\)</p>
+<p id="p-18115">(b) (ii) \(0\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2354" id="solution-2354"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2354"><div class="solution solution-like">
+<p id="p-18116">(a) If \((x,y,z)\) is on the curve, it must obey both \(z=x+y\) and \(z=x^2+y^2\) and hence it must also obey \(x^2+y^2=x+y\) or \((x-\frac{1}{2})^2 + (y-\frac{1}{2})^2 = \frac{1}{2}\text{.}\) That's a circle. We can parametrize the curve by</p>
+<div class="displaymath">
+\begin{align*}
+x(\theta)&amp;= \frac{1}{2} +\frac{1}{\sqrt{2}}\cos\theta\\
+y(\theta)&amp;= \frac{1}{2} +\frac{1}{\sqrt{2}}\sin\theta\\
+z(\theta)&amp;= x+y = 1+ \frac{1}{\sqrt{2}}\big[\cos\theta+\sin\theta\big]
+\end{align*}
+</div>
+<p data-braille="continuation">with \(0\le\theta \lt 2\pi\text{.}\) As \(\theta\) runs from \(0\) to \(2\pi\text{,}\) \(\big(x(\theta),y(\theta)\big)\) runs once around the circle without crossing itself so that  \(\big(x(\theta),y(\theta),z(\theta)\big)\) runs once around the curve without crossing itself. As \(\big(x(2\pi),y(2\pi),z(2\pi)\big)=\big(x(0),y(0),z(0)\big)\text{,}\) \(C\) is a simple closed curve.</p>
+<p id="p-18117">(b) (i) The vector field \(\vF= x^2\,\hi + y^2\,\hj + 3 e^z\,\hk\) is conservative (with potential \(\frac{1}{3}x^3 +\frac{1}{3}y^3 + 3e^z\)). So \(\oint_C\vF\cdot\dee{\vr}=0\text{.}\)</p>
+<p id="p-18118">(b) (ii) Note that the question did not specify the orientation of \(C\text{.}\) It should have. We'll stick with the most commonly used orientation — counterclockwise when viewed from high on the \(z\)-axis. The vector field \(\vG= 3 e^z\,\hk\) is conservative (with potential \(3e^z\)). So \(\oint_C\vG\cdot\dee{\vr}=0\) and, using the parametrization</p>
+<div class="displaymath">
+\begin{align*}
+\vr(\theta) &amp;= \Big[\frac{1}{2}\!+\!\frac{1}{\sqrt{2}}\cos\theta\Big]\hi
++\Big[\frac{1}{2}\! +\!\frac{1}{\sqrt{2}}\sin\theta\Big]\hj
++\Big[1 \!+\!\frac{1}{\sqrt{2}}\sin\theta
+\!+\!\frac{1}{\sqrt{2}}\cos\theta\Big]\hk\\
+\vr'(\theta) &amp;= -\frac{1}{\sqrt{2}}\sin\theta\,\hi
++\frac{1}{\sqrt{2}}\cos\theta\,\hj
++\Big[\frac{1}{\sqrt{2}}\cos\theta
+-\frac{1}{\sqrt{2}}\sin\theta\Big]\hk
+\end{align*}
+</div>
+<p data-braille="continuation">of part (a), we have</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\oint_C\vF\cdot\dee{\vr}
+= \oint_C(\vF-\vG)\cdot\dee{\vr}\\
+&amp;\hskip0.25in= \int_0^{2\pi} \big[y(\theta)^2x'(\theta) +x(\theta)^2y'(\theta)\big]
+\dee{\theta}\\
+&amp;\hskip0.25in= \int_0^{2\pi} \Big\{-\Big[\frac{1}{2} +\frac{1}{\sqrt{2}}\sin\theta\Big]^2
+\frac{1}{\sqrt{2}}\sin\theta
++\Big[\frac{1}{2} +\frac{1}{\sqrt{2}}\cos\theta\Big]^2
+\frac{1}{\sqrt{2}}\cos\theta\Big\}
+\dee{\theta}
+\end{align*}
+</div>
+<p data-braille="continuation">Because the integral of any odd power of \(\sin\theta\) or \(\cos\theta\) over \(0\le\theta\le 2\pi\) is zero (see Example <a class="xref" data-knowl="./knowl/eg_stokesD.html" title="Example 15.4.6">15.4.6</a> in the  text),</p>
+<div class="displaymath">
+\begin{align*}
+\oint_c\vF\cdot\dee{\vr}
+&amp;= \int_0^{2\pi} \Big\{-\frac{1}{2} \sin^2\theta
++\frac{1}{2} \cos^2\theta\Big\}
+\dee{\theta}\\
+&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">since  (see Example <a class="xref" data-knowl="./knowl/eg_workIntegralB.html" title="Example 13.4.4">13.4.4</a> in the  text)</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^{2\pi}\cos^2\theta\ \dee{\theta}
+=\int_0^{2\pi}\sin^2\theta\ \dee{\theta}
+=\pi
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2257"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-18119">Find a smooth, simple, closed, counterclockwise oriented curve, \(C\text{,}\) in the \(xy\)-plane for the which the value of the line integral \(\oint_C(y^3-y)\,\dee{x}-2x^3\,dy\) is a maximum among all smooth, simple, closed, counterclockwise oriented curves.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1776" id="hint-1776"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1776"><div class="hint solution-like"><p id="p-18120">Use Green's theorem to convert the integral over \(C\) into an integral over the region \(R\) in the \(xy\)-plane whose boundary is \(C\text{.}\) Consider the sign of the integrand of the integral over \(R\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2257" id="answer-2257"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2257"><div class="answer solution-like"><p id="p-18121">\(6x^2+3y^2= 1\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2355" id="solution-2355"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2355"><div class="solution solution-like">
+<p id="p-18122">By Green's Theorem</p>
+<div class="displaymath">
+\begin{align*}
+\oint_C(y^3-y)\,\dee{x}-2x^3\,\dee{y}
+&amp;=\dblInt_R\Big[\pdiff{}{x}(-2x^3)
+-\pdiff{}{y}(y^3-y)\Big]\ \dee{x}\,\dee{y}\\
+&amp;=\dblInt_R\Big[1-6x^2-3y^2\Big]\ \dee{x}\,\dee{y}
+\end{align*}
+</div>
+<p data-braille="continuation">where \(R\) is the region in the \(xy\)-plane whose boundary is \(C\text{.}\) Observe that the integrand \(1-6x^2-3y^2\) is positive in the elliptical region \(6x^2+3y^2\le 1\) and negative outside of it. To maximize the integral \(\dblInt_R\big[1-6x^2-3y^2\big]\ \dee{x}\,\dee{y}\) we should choose \(R\) to contain all points \((x,y)\) with the integrand \(1-6x^2-3y^2\ge 0\) and to exclude all points \((x,y)\) with the integrand \(1-6x^2-3y^2 \lt  0\text{.}\) So we choose</p>
+<div class="displaymath">
+\begin{equation*}
+R=\Set{(x,y)}{6x^2+3y^2\le 1}
+\end{equation*}
+</div>
+<p data-braille="continuation">The corresponding \(C\) is \(6x^2+3y^2= 1\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

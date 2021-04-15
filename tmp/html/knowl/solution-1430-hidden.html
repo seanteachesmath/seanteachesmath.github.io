@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:31:44-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Our plan is as follows:</p>
+<ul class="disc">
+<li>Make a Taylor series for \(f(x)\)</li>
+<li>Calculate the tenth derivative of the Taylor series of \(f(x)\text{.}\)</li>
+<li>Decide how many terms we need to add to achieve the desired accuracy.</li>
+<li>Approximate \(f^{(10)}\left(\frac15\right)\) with a partial sum.</li>
+</ul>
+<p>We know that the Taylor series for \(\arctan x\) is \(\displaystyle\sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{2n+1}\text{,}\) which converges for \(-1\le x\le1\text{.}\) So, the Taylor series for \(\arctan(x^3)\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f(x)=\arctan(x^3)=\sum_{n=0}^\infty (-1)^n\frac{(x^3)^{2n+1}}{2n+1}
+=\sum_{n=0}^\infty (-1)^n\frac{x^{6n+3}}{2n+1}
+\end{equation*}
+</div>
+<p>It is much easier to differentiate this series many times than it is to differentiate \(\arctan(x^3)\) directly many times.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f'(x)&amp;=\sum_{n=0}^\infty (-1)^n\frac{(6n+3)x^{6n+2}}{2n+1}\\
+f''(x)&amp;=\sum_{n=0}^\infty (-1)^n\frac{(6n+3)(6n+2)x^{6n+1}}{2n+1}\\
+f'''(x)&amp;=\sum_{n=0}^\infty (-1)^n\frac{(6n+3)(6n+2)(6n+1)x^{6n}}{2n+1}\\
+\vdots&amp;\\
+f^{(10)}(x)&amp;=\sum_{n=0}^\infty (-1)^n\frac{(6n+3)(6n+2)(6n+1)\cdots(6n-6)x^{6n-7}}{2n+1}\\
+&amp;=\sum_{n=2}^\infty (-1)^n\frac{(6n+3)(6n+2)(6n+1)\cdots(6n-6)x^{6n-7}}{2n+1}\\
+&amp;=\sum_{n=2}^\infty (-1)^n\frac{(6n+3)!}{(2n+1)(6n-7)!}x^{6n-7}\\
+f^{(10)}\left(\frac{1}{5}\right)&amp;=\sum_{n=2}^\infty (-1)^n\frac{(6n+3)!}{(2n+1)(6n-7)!\cdot 5^{6n-7}}
+\end{align*}
+</div>
+<p data-braille="continuation">(Notice, after ten differentiations, the terms \(a_0\) and \(a_1\) are both zero.)</p>
+<p>Since this is an alternating series, the absolute error involved in using the approximation \(S_N\) is at most</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+|a_{N+1}|=\frac{(6N+9)!}{(2N+3)(6N-1)!\cdot 5^{6N-1}}
+\end{equation*}
+</div>
+<p>By testing a few values of \(N\text{,}\) we find</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+|a_6|=|a_{5+1}|=\frac{39!}{(13)(29!)\cdot 5^{29}}\approx 0.00000095 \lt 10^{-6}
+\end{equation*}
+</div>
+<p>So, \(S_5\) is a sufficient approximation. That is,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\amp f^{(10)}\left(\frac15\right)\approx \sum_{n=2}^5 (-1)^n\frac{(6n+3)!}{(2n+1)(6n-7)!\cdot 5^{6n-7}}\\
+&amp;=(-1)^2\frac{15!}{5\cdot 5!\cdot 5^{5}}+(-1)^3\frac{21!}{7!\cdot 11!\cdot 5^{11}}+
+(-1)^4\frac{27!}{9!\cdot 17!\cdot 5^{17}}\\
+\amp\hskip2in +(-1)^5\frac{33!}{11!\cdot 23!\cdot 5^{23}}\\
+&amp;=\frac{15!}{5!\cdot5^6}-\frac{21!}{7!\cdot 11!\cdot 5^{11}}+\frac{27!}{9!\cdot 17!\cdot 5^{17}}-\frac{33!}{11!\cdot 23!\cdot 5^{23}}
+\end{align*}
+</div>
+<p data-braille="continuation">Remark: if we had calculated \(f^{(10)}(1/5)\) directly, using derivative rules instead of series, we would have found an exact value; however, our value here is easier to find, and is highly accurate (if not exact).</p>
+</div></body>
+</html>

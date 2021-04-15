@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:07:18-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>(a) The stated integral property is characteristic of conservative fields (Theorem <a class="xref" data-knowl="./knowl/thm_pathIndepConserv.html" title="Theorem 13.4.7">13.4.7</a>). Since all partial derivatives of \(\vF\) are defined on all of \(\bbbr^3\text{,}\) an equivalent property is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vZero &amp;= \nabla\times\vF
+= \left|\begin{matrix} \hi &amp; \hj &amp; \hk\\
+\frac{\partial }{\partial x} &amp; \frac{\partial }{\partial y} &amp; \frac{\partial }{\partial z}\\
+(mxyz + z^2 - ny^2) &amp; (x^2 z - 4xy) &amp; (x^2y + pxz + qz^3) \end{matrix}\right|\\
+&amp;= \hi\,\big(x^2-x^2\big) - \hj\,(2xy+pz-mxy-2z) + \hk\,(2xz-4y-mxz+2ny).
+\end{align*}
+</div>
+<p data-braille="continuation">This requires \(p=2\text{,}\) \(m=2\text{,}\) and \(n=2\text{,}\) but leaves \(q\in\bbbr\) completely free.</p>
+<p>(b) <em xmlns:svg="http://www.w3.org/2000/svg" class="alert">Solution 1:</em> The choices from (a) give</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vF
+= (2xyz + z^2 - 2y^2)\,\hi + (x^2 z - 4xy)\,\hj + (x^2y + 2xz + qz^3)\,\hk.
+\end{equation*}
+</div>
+<p data-braille="continuation">We find a potential \(\varphi\) for \(\vF\) by antidifferentiating its partial derivatives.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= 2xyz + z^2 - 2y^2\\
+&amp;\implies \varphi(x,y,z)=x^2yz+xz^2-2xy^2+\psi_1(y,z)\\
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= x^2 z - 4xy\\
+&amp;\implies \varphi(x,y,z)=x^2yz-2xy^2+\psi_2(x,z)\\
+\frac{\partial \varphi}{\partial z}(x,y,z) \varphi(x,y,z)&amp;= x^2y + 2xz + qz^3\\
+&amp;\implies \varphi(x,y,z)=x^2yz+xz^2+\frac{q}{4}z^4+\psi_3(x,y)
+\end{align*}
+</div>
+<p data-braille="continuation">All together, \(\vF=\nabla\varphi\) for</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\varphi(x,y,z) = x^2 y z + x z^2 - 2 x y^2 + \frac{1}{4}q z^4 + C
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(C\) is any constant.</p>
+<p>Rearranging the sphere's equation to \(x^2 + y^2 + (z-1)^2 = 1\) reveals that its bottom is at \(\vr_0 = (0,0,0)\text{,}\) and its top is at \(\vr_1 = (0,0,2)\text{.}\) Hence the work done is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+W
+= \int_\cC \vF\cdot \dee{\vr}
+= \int_\cC \nabla\varphi\cdot \dee{\vr}
+= \varphi(0,0,2) - \varphi(0,0,0)
+= 4q
+\end{equation*}
+</div>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="alert">Solution 2:</em> Since the integral is path-independent, all paths from \(\vr_0\) to \(\vr_1\) produce the same result.  A simple choice is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\cC:\qquad \vr = (0,0,t),\quad 0\le t\le 2
+\end{equation*}
+</div>
+<p data-braille="continuation">Here \(\vr'(t) = (0,0,1)\text{,}\) so direct calculation gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\int_\cC \vF\cdot \dee{\vr}
+= \int_{t=0}^2 \vF\big(\vr(t)\big)\cdot\vr'(t)\,\dee{t}
+= \int_{t=0}^2 qt^3\,\dee{t}
+= \Big[\frac{1}{4}qt^4\Big]_{t=0}^2 = 4q
+\end{equation*}
+</div>
+</div></body>
+</html>

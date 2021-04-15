@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:16:14-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">15.2.6.40.1</span><span class="period">.</span>
+</h6>
+<p>(a) The divergence of \(\vF\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vnabla\cdot\vF
+&amp;= \tfrac{\partial }{\partial x}(x+\sin y)
++\tfrac{\partial }{\partial y}(z+y)
++\tfrac{\partial }{\partial z}(z^2)\\
+&amp;=2+2z
+\end{align*}
+</div>
+<p>(b) Set</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V &amp;= \Set{(x,y,z)}{x^2+y^2\le 25,\ 0\le z\le \sqrt{25-x^2-y^2}}\\
+S_T &amp;= \Set{(x,y,z)}{x^2+y^2+z^2 = 25,\ z\ge 0}\\
+S_B &amp;= \Set{(x,y,z)}{x^2+y^2 \le 25,\ z= 0}
+\end{align*}
+</div>
+<p data-braille="continuation">Note that the boundary, \(\partial V\text{,}\) of \(V\) consists ot two parts — \(S_T\) with upward normal, and \(S_B\) with normal \(-\hk\text{.}\) We are to find the flux through \(S_T\) with upward normal. By the divergence theorem, it is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_{S_T} \vF\cdot\hn\,\dee{S}
+&amp;=\tripInt_V \vnabla\cdot\vF\,\dee{V}
+- \dblInt_{S_B} \vF\cdot(-\hk)\,\dee{S}\\
+&amp;= \tripInt_V (2+2z)\,\dee{V}
+\end{align*}
+</div>
+<p data-braille="continuation">since \(\vF\cdot\hk=z^2=0\) on \(S_B\text{.}\) We'll compute the volume integral by expressing it as an iterated integral, with the \(z\) integration on the outside. In \(V\text{,}\) \(z\) ranges for \(0\) to \(5\text{.}\) The set of points at exactly height \(z\) in \(V\) is  \(\Set{(x,y,z)}{x^2+y^2\le 25-z^2}\text{.}\) So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_{S_T} \vF\cdot\hn\,\dee{S}
+&amp;= \int_0^5\dee{z} \dblInt_{x^2+y^2\le 25-z^2}
+\dee{x}\,\dee{y}\  (2+2z)\\
+&amp;= \int_0^5\dee{z}\ (2+2z)\dblInt_{x^2+y^2\le 25-z^2}
+\dee{x}\,\dee{y}\\
+&amp;= \int_0^5\dee{z}\ \pi(25-z^2) (2+2z)
+\end{align*}
+</div>
+<p data-braille="continuation">since \(\dblInt_{x^2+y^2\le 25-z^2} \dee{x}\,\dee{y}\) is the area of a disk of radius \(\sqrt{25-z^2}\text{.}\) Continuing,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_{S_T} \vF\cdot\hn\,\dee{S}
+&amp;= \pi\int_0^5\dee{z}\ (50 -2z^2 +50z -2z^3)\\
+&amp;=\pi\Big(50\times 5-2\frac{5^3}{3} +50\frac{5^2}{2}-2\frac{5^4}{4}\Big)\\
+&amp;=\pi 5^3 \Big(2-\frac{2}{3} +5-\frac{5}{2}\Big)\\
+&amp;= \pi\,5^3 \Big(\frac{4}{3}+\frac{5}{2}\Big)\\
+&amp;=\pi\frac{23}{6} 5^3
+=479\frac{1}{6}\pi
+\end{align*}
+</div>
+<p>(c) To start, consider any closed surface \(S\) that is the boundary of a solid \(V\text{.}\) Use</p>
+<ul class="disc">
+<li>the outward pointing normal for \(S\text{,}\)</li>
+<li>\(|V|\) to denote the volume of \(V\text{,}\) and</li>
+<li>\(\bar z=\frac{1}{|V|}\tripInt_V z\ \dee{V}\) to denote the \(z\)-component of the centroid (i.e. centre of mass with constant density) of \(V\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Then, by the divergence theorem</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_{S} \vF\cdot\hn\,\dee{S}
+&amp;=\tripInt_V \vnabla\cdot\vF\,\dee{V}
+=\tripInt_V (2+2z)\,\dee{V}\\
+&amp;=2\tripInt_V \,\dee{V} +2\tripInt_V z\,\dee{V}\\
+&amp;=2|V| +2|V|\bar z
+\end{align*}
+</div>
+<p data-braille="continuation">This takes the value \(-9\) if and only if</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+2|V|\bar z =-9-2|V| \iff
+\bar z = -\frac{9}{2|V|}-1
+\end{gather*}
+</div>
+<p data-braille="continuation">One surface which obeys this condition is the unit cube (with outward normal) centred on \(\big(0,0, -\frac{11}{2}\big)\text{.}\)</p>
+</div>
+<span class="incontext"><a href="sec_divergenceThm.html#solution-2315">in-context</a></span>
+</body>
+</html>

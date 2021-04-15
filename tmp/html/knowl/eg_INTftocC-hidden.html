@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:52:47-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>Consider the integral</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\int_x^{x^2} e^{-t^2}\dee{t}
+\end{gather*}
+</div>
+<p data-braille="continuation">As was the case in the previous example, we have to do a little pre-processing  before we can apply the fundamental theorem.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">This time (by design), not only is the upper limit of integration \(x^2\) rather  than \(x\text{,}\) but the lower limit of integration also depends on \(x\) — this is  different from the integral \(\int_a^x f(t)\dee{t}\) in the fundamental theorem  where the <em class="emphasis">lower</em> limit of integration is a constant.</p>
+<p>Fortunately we can use the basic properties of integrals  (Theorem <a class="xref" data-knowl="./knowl/thm_Intdomain.html" title="Theorem 6.2.3: Arithmetic for the Domain of Integration">6.2.3</a>(b) and (c)) to split \(\int_x^{x^2} e^{-t^2}\dee{t}\)  into pieces whose derivatives we already know.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_x^{x^2} e^{-t^2}\dee{t}
+&amp;=\int_x^0 e^{-t^2}\dee{t}+\int_0^{x^2} e^{-t^2}\dee{t}
+&amp;\text{by Theorem }\knowl{./knowl/thm_Intdomain.html}{\text{6.2.3}}\text{(c)}\\
+&amp;=-\int^x_0 e^{-t^2}\dee{t}+\int_0^{x^2} e^{-t^2}\dee{t}
+&amp;\text{by Theorem }\knowl{./knowl/thm_Intdomain.html}{\text{6.2.3}}\text{(b)}
+\end{align*}
+</div>
+<p data-braille="continuation">With this pre-processing, both integrals are of the right form. Using what  we have learned in the the previous two examples,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\diff{}{x}\int_x^{x^2} e^{-t^2}\dee{t}
+&amp;=\diff{}{x}\left( -\int_0^{x} e^{-t^2}\dee{t} + \int_0^{x^2} e^{-t^2}\dee{t}  \right)\\
+&amp;=-\diff{}{x}\int^x_0 e^{-t^2}\dee{t} +\diff{}{x}\int_0^{x^2} e^{-t^2}\dee{t}\\
+&amp;=- e^{-x^2} +2x e^{-x^4}
+\end{align*}
+</div></article></body>
+</html>

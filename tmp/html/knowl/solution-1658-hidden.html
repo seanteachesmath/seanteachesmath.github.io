@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:42:08-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>(a) The first order partial derivatives of \(P(x,y)\) at \(x=x_0\) and \(y=y_0\) are</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+P_x(x_0,y_0) = m x_0^{m-1} y_0^n\qquad
+P_y(x_0,y_0) = n x_0^m y_0^{n-1}
+\end{equation*}
+</div>
+<p data-braille="continuation">So, by (<a class="xref" data-knowl="./knowl/eqn_lin_approx_2d.html" title="Equation 10.6.1">10.6.1</a>), the linear approximation is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+P(x_0+\De x,y_0+\De y)
+&amp;\approx P(x_0,y_0) + P_x(x_0,y_0)\,\De x  + P_y(x_0,y_0)\,\De y\\
+&amp;\approx P(x_0,y_0) + mx_0^{m-1}y_0^n\,\De x  + nx_0^m y_0^{n-1}\,\De y
+\end{align*}
+</div>
+<p>(b) By part (a)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{P(x_0+\De x,y_0+\De y)-P(x_0,y_0)}{P(x_0,y_0)}
+&amp;\approx \frac{mx_0^{m-1}y_0^n\,\De x  + nx_0^m y_0^{n-1}\,\De y}{x_0^my_0^n}\\
+&amp;=m\frac{\De x}{x_0} + n\frac{\De y}{y_0}
+\end{align*}
+</div>
+<p data-braille="continuation">Hence</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+P_\% &amp;\approx 100\left|m\frac{\De x}{x_0} + n\frac{\De y}{y_0}\right|\\
+&amp;\le |m| 100\left|\frac{\De x}{x_0}\right|
++ |n| 100\left|\frac{\De y}{y_0}\right|\\
+&amp;\le |m| x_\% + |n| y_\%
+\end{align*}
+</div>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Warning.</em> The answer \(m\,x_\% +n\,y_\%\text{,}\) without absolute values on \(m\) and \(n\text{,}\) can be seriously wrong. As an example, suppose that \(m=1\text{,}\) \(n=-1\text{,}\) \(x_0=y_0=1\text{,}\) \(\De x = 0.05\) and \(\De y=-0.05\text{.}\) Then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+P_\%  &amp;\approx 100\left|m\frac{\De x}{x_0} + n\frac{\De y}{y_0}\right|\\
+&amp;= 100\left|(1)\frac{0.05}{1} + (-1)\frac{-0.05}{1}\right|\\
+&amp; = 10\%
+\end{align*}
+</div>
+<p data-braille="continuation">while</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+m\,x_\% +n\,y_\% &amp;= m\, 100\left|\frac{\De x}{x_0}\right|
++ n\, 100\left|\frac{\De y}{y_0}\right|\\
+&amp;=  (1) 100\left|\frac{0.05}{1}\right|
++ (-1) 100\left|\frac{-0.05}{1}\right|\\
+&amp;= 0
+\end{align*}
+</div>
+<p data-braille="continuation">The point is that \(m\) and \(n\) being of opposite sign does not guarantee that there is a cancelation between the two terms of \(m\frac{\De x}{x_0} + n\frac{\De y}{y_0}\text{,}\) because \(\frac{\De x}{x_0}\) and \(\frac{\De y}{y_0}\) can also be of opposite sign.</p>
+</div></body>
+</html>

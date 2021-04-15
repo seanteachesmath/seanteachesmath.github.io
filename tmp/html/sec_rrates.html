@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T15:17:18-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Related Rates</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_vel_acc.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chapter-4.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_ExpGthDecay.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_vel_acc.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-4.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_ExpGthDecay.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates" class="active">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_rrates"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Related Rates</span>
+</h2>
+<section class="subsection" id="subsection-43"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2.1</span> <span class="title">Related Rates</span>
+</h3>
+<p id="p-3001">Consider the following problem</p>
+<blockquote class="blockquote" id="blockquote-27"><p id="p-3002">A spherical balloon is being inflated at a rate of \(13cm^3/sec\text{.}\) How fast is the radius changing when the balloon has radius \(15cm\text{?}\)</p></blockquote>
+<p id="p-3003">There are several pieces of information in the statement:</p>
+<ul class="disc">
+<li id="li-803">The balloon is spherical</li>
+<li id="li-804">The volume is changing at a rate of \(13cm^3/sec\) — so we need variables for volume (in \(cm^3\)) and time (in \(sec\)). Good choices are \(V\) and \(t\text{.}\)</li>
+<li id="li-805">We are asked for the rate at which the radius is changing — so we need a variable for radius and units. A good choice is \(r\text{,}\) measured in \(cm\) — since volume is measured in \(cm^3\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Since the balloon is a sphere we know <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-113" id="fn-113"><sup> 1 </sup></a> that</p>
+<div class="displaymath">
+\begin{align*}
+V &amp;= \frac{4}{3} \pi r^3
+\end{align*}
+</div>
+<p data-braille="continuation">Since both the volume and radius are changing with time, both \(V\) and \(r\) are implicitly functions of time; we could really write</p>
+<div class="displaymath">
+\begin{align*}
+V(t) &amp;= \frac{4}{3}\pi r(t)^3.
+\end{align*}
+</div>
+<p data-braille="continuation">We are told the rate at which the volume is changing and we need to find the rate at which the radius is changing. That is, from a knowledge of \(\diff{V}{t}\text{,}\) find the related rate <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-114" id="fn-114"><sup> 2 </sup></a> \(\diff{r}{t}\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-113"><div class="fn">If you don't know the formula for the volume of a sphere, now is a good time to revise by looking at Appendix <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec_volumes" missing]</code>.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-114"><div class="fn">Related rate problems are problems in which you are given the rate of change of one quantity and are to determine the rate of change of another, related, quantity.</div></div>
+<p id="p-3004">In this case, we can just differentiate our equation by \(t\) to get</p>
+<div class="displaymath">
+\begin{align*}
+\diff{V}{t} &amp;= 4 \pi r^2 \diff{r}{t}\\
+\end{align*}
+<p class="intertext">This can then be rearranged to give</p>
+\begin{align*}
+\diff{r}{t} &amp;= \frac{1}{4\pi r^2} \diff{V}{t}.
+\end{align*}
+</div>
+<p data-braille="continuation">Now we were told that \(\diff{V}{t} = 13\text{,}\) so</p>
+<div class="displaymath">
+\begin{align*}
+\diff{r}{t} &amp;= \frac{13}{4\pi r^2}.
+\end{align*}
+</div>
+<p data-braille="continuation">We were also told that the radius is \(15cm\text{,}\) so at that moment in time</p>
+<div class="displaymath">
+\begin{align*}
+\diff{r}{t} &amp;= \frac{13}{\pi 4 \times 15^2}.
+\end{align*}
+</div>
+<p id="p-3005">This is a very typical example of a related rate problem. This section is really just a collection of problems, but all will follow a similar pattern.</p>
+<ul class="disc">
+<li id="li-806">The statement of the problem will tell you quantities that must be related (above it was volume, radius and, implicitly, time).</li>
+<li id="li-807">Typically a little geometry (or some physics or…) will allow you to relate these quantities (above it was the formula that links the volume of a sphere to its radius).</li>
+<li id="li-808">Implicit differentiation will then allow you to link the rate of change of one quantity to another.</li>
+</ul>
+<p id="p-3006">Another balloon example</p>
+<article class="example example-like" id="example-119"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-119"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">A rising balloon.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-119"><article class="example example-like"><p id="p-3007">Consider a helium balloon rising vertically from a fixed point 200m away from you. You are trying to work out how fast it is rising. Now — computing the velocity directly is difficult, but you can measure angles. You observe that when it is at an angle of \(\pi/4\) its angle is changing by \(0.05\) radians per second.</p>
+<ul id="p-3008" class="disc">
+<li id="li-809">
+<p id="p-3009">Start by drawing a picture with the relevant variables</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/balloon1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-810">So denote the angle to be \(\theta\) (in radians), the height of the balloon (in m) by \(h\) and time (in seconds) by \(t\text{.}\) Then trigonometry tells us<div class="displaymath">
+\begin{align*}
+h &amp;= 200 \cdot \tan \theta
+\end{align*}
+</div>
+</li>
+<li id="li-811">Differentiating allows us to relate the rates of change<div class="displaymath">
+\begin{align*}
+\diff{h}{t} &amp;= 200 \sec^2 \theta \cdot \diff{\theta}{t}
+\end{align*}
+</div>
+</li>
+<li id="li-812">We are told that when \(\theta =\pi/4\) we observe \(\diff{\theta}{t} =
+0.05\text{,}\) so<div class="displaymath">
+\begin{align*}
+\diff{h}{t} &amp;= 200 \cdot \sec^2(\pi/4) \cdot 0.05\\
+&amp;= 200 \cdot 0.05 \cdot \left( \sqrt{2} \right)^2\\
+&amp;= 200 \cdot \frac{5}{100} \cdot 2\\
+&amp;= 20 m/s
+\end{align*}
+</div>
+</li>
+<li id="li-813">So the balloon is rising at a rate of 20m/s.</li>
+</ul></article></div>
+<p id="p-3010">The following problem is perhaps <em class="emphasis">the</em> classic related rate problem.</p>
+<article class="example example-like" id="example-120"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-120"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">A sliding ladder.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-120"><article class="example example-like"><p id="p-3011">A 5m ladder is leaning against a wall. The floor is quite slippery and the base of the ladder slides out from the wall at a rate of \(1m/s\text{.}\) How fast is the top of the ladder sliding down the wall when the base of the ladder is 3m from the wall?</p>
+<ul id="p-3012" class="disc">
+<li id="li-814">
+<p id="p-3013">A good first step is to draw a picture stating all relevant quantities. This will also help us define variables and units.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/ladder1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-815">So now define \(x(t)\) to be the distance between the bottom of the ladder and the wall, at time \(t\text{,}\) and let \(y(t)\) be the distance between the top of the ladder and the ground at time \(t\text{.}\) Measure time in seconds, but both distances in meters.</li>
+<li id="li-816">We can relate the quantities using Pythagoras:<div class="displaymath">
+\begin{align*}
+x^2 + y^2 &amp;= 5^2
+\end{align*}
+</div>
+</li>
+<li id="li-817">Differentiating with respect to time then gives<div class="displaymath">
+\begin{align*}
+2x \diff{x}{t} + 2y \diff{y}{t} &amp;= 0
+\end{align*}
+</div>
+</li>
+<li id="li-818">We know that \(\diff{x}{t} = 1\) and \(x=3\text{,}\) so<div class="displaymath">
+\begin{align*}
+6 \cdot 1 + 2y \diff{y}{t} &amp;= 0
+\end{align*}
+</div>but we need to determine \(y\) before we can go further. Thankfully we know that \(x^2+y^2=25\) and \(x=3\text{,}\) so \(y^2=25-9=16\) and <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-115" id="fn-115"><sup> 3 </sup></a> so \(y=4\text{.}\)</li>
+<li id="li-819">So finally putting everything together<div class="displaymath">
+\begin{align*}
+6 \cdot 1 + 8 \diff{y}{t} &amp;= 0\\
+\diff{y}{t} &amp;= - \frac{3}{4} m/s.
+\end{align*}
+</div>Thus the top of the ladder is sliding towards the floor at a rate of \(\frac{3}{4} m/s\text{.}\)</li>
+</ul>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-115"><div class="fn">Since the ladder isn't buried in the ground, we can discard the solution \(y=-4\text{.}\)</div></div></article></div>
+<p id="p-3014">The next example is complicated by the rates of change being stated not just as “the rate of change per unit time” but instead being stated as “the percentage rate of change per unit time”. If a quantity \(f\) is changing with rate \(\diff{f}{t}\text{,}\) then we can say that</p>
+<blockquote class="blockquote" id="blockquote-28"><p id="p-3015">\(f\) is changing at a rate of \(\ds 100 \cdot \frac{\diff{f}{t}}{f}\) percent.</p></blockquote>
+<p id="p-3016">Thus if, at time \(t\text{,}\) \(f\) has rate of change \(r\%\text{,}\) then</p>
+<div class="displaymath">
+\begin{gather*}
+100\frac{f'(t)}{f(t)}=r
+\implies f'(t) =\frac{r}{100} f(t)
+\end{gather*}
+</div>
+<p data-braille="continuation">so that if \(h\) is a very small time increment</p>
+<div class="displaymath">
+\begin{gather*}
+\frac{f(t+h) - f(t)}{h} \approx \frac{r}{100} f(t)
+\implies f(t+h) \approx f(t) + \frac{rh}{100} f(t)
+\end{gather*}
+</div>
+<p data-braille="continuation">That is, over a very small time interval \(h\text{,}\) \(f\) increases by the fraction \(\frac{rh}{100}\) of its value at time \(t\text{.}\)</p>
+<p id="p-3017">So armed with this, let's look at the problem.</p>
+<article class="example example-like" id="eg_percentGrowth"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_percentGrowth"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">Percentage rate of change of \(R=PQ\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_percentGrowth"><article class="example example-like"><p id="p-3018">The quantities \(P,\ Q\) and \(R\) are functions of time and are related by the equation \(R=PQ\text{.}\) Assume that \(P\) is increasing instantaneously at the rate of \(8\%\) per year (meaning that \(100\frac{P'}{P}=8\)) and that \(Q\) is decreasing instantaneously at the rate of \(2\%\) per year (meaning that \(100\frac{Q'}{Q}=-2\)). Determine the percentage rate of change for \(R\text{.}\)</p>
+<p id="p-3019"><em class="alert">Solution</em> This one is a little different — we are given the variables and the formula, so no picture drawing or defining required. Though we do need to define a time variable — let \(t\) denote time in years.</p>
+<ul class="disc">
+<li id="li-820">Since \(R(t) = P(t)\cdot Q(t)\) we can differentiate with respect to \(t\) to get<div class="displaymath">
+\begin{align*}
+\diff{R}{t} &amp;= P Q' + Q P'
+\end{align*}
+</div>
+</li>
+<li id="li-821">But we need the percentage change in \(R\text{,}\) namely<div class="displaymath">
+\begin{align*}
+100 \frac{R'}{R} &amp;= 100 \frac{PQ' +QP'}{R}\\
+\end{align*}
+<p class="intertext">but \(R = PQ\text{,}\) so rewrite it as</p>
+\begin{align*}
+&amp;= 100 \frac{PQ' +QP'}{PQ}\\
+&amp;= 100 \frac{PQ'}{PQ} + 100 \frac{QP'}{PQ}\\
+&amp;= 100 \frac{Q'}{Q} + 100 \frac{P'}{P}
+\end{align*}
+</div>so we have stated the instantaneous percentage rate of change in \(R\) as the sum of the percentage rate of change in \(P\) and \(Q\text{.}\)</li>
+<li id="li-822">We know the percentage rate of change of \(P\) and \(Q\text{,}\) so<div class="displaymath">
+\begin{align*}
+100 \frac{R'}{R} &amp;= -2 + 8 =6
+\end{align*}
+</div>That is, the instantaneous percentage rate of change of \(R\) is 6\(\%\) per year.</li>
+</ul></article></div>
+<p id="p-3020">Yet another falling object example.</p>
+<article class="example example-like" id="eg_fallingBall"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_fallingBall"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">The shadow of a falling ball.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_fallingBall"><article class="example example-like"><p id="p-3021">A ball is dropped from a height of \(49\)m above level ground. The height of the ball at time \(t\) is \(h(t)=49-4.9 t^2\) m. A light, which is also \(49\)m above the ground, is \(10\)m to the left of the ball's original position. As the ball descends, the shadow of the ball caused by the light moves across the ground. How fast is the shadow moving one second after the ball is dropped?</p>
+<p id="p-3022"><em class="alert">Solution</em> There is quite a bit going on in this example, so read carefully.</p>
+<ul class="disc">
+<li id="li-823">
+<p id="p-3023">First a diagram; the one below is perhaps a bit over the top.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/falling_ball.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-824">Let's call \(s(t)\) the distance from the shadow to the point on the ground directly underneath the ball.</li>
+<li id="li-825">By similar triangles we see that<div class="displaymath">
+\begin{gather*}
+\frac{4.9 t^2}{10}=\frac{49-4.9 t^2}{s(t)}
+\end{gather*}
+</div>We can then solve for \(s(t)\) by just multiplying both sides by \(\frac{10}{4.9 t^2}s(t)\text{.}\) This gives<div class="displaymath">
+\begin{gather*}
+s(t)=10\frac{49-4.9 t^2}{4.9 t^2}=\frac{100}{t^2}-10
+\end{gather*}
+</div>
+</li>
+<li id="li-826">Differentiating with respect to \(t\) will then give us the rates,<div class="displaymath">
+\begin{gather*}
+s'(t)=-2\frac{100}{t^3}
+\end{gather*}
+</div>
+</li>
+<li id="li-827">So, at \(t=1\text{,}\) \(s'(1)=-200\)m/sec. That is, the shadow is moving to the left at \(200\)m/sec.</li>
+</ul></article></div>
+<p id="p-3024">A more nautical example.</p>
+<article class="example example-like" id="example-123"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-123"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">The distance between moving boats.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-123"><article class="example example-like"><p id="p-3025">Two boats spot each other in the ocean at midday — Boat \(A\) is 15km west of Boat \(B\text{.}\) Boat \(A\) is travelling east at 3km/h and boat \(B\) is travelling north at 4km/h. At 3pm how fast is the distance between the boats changing.</p>
+<ul class="disc">
+<li id="li-828">
+<p id="p-3026">First we draw a picture.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/boats1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-829">Let \(x(t)\) be the distance at time \(t\text{,}\) in km, from boat \(A\) to the original position of boat \(B\) (i.e. to the position of boat \(B\) at noon). And let \(y(t)\) be the distance at time \(t\text{,}\) in km, of boat \(B\) from its original position. And let \(z(t)\) be the distance between the two boats at time \(t\text{.}\)</li>
+<li id="li-830">Additionally we are told that \(x'=-3\) and \(y'=4\) — notice that \(x'  \lt 0\) since that distance is getting smaller with time, while \(y' \gt 0\) since that distance is increasing with time.</li>
+<li id="li-831">Further at \(3pm\) boat \(A\) has travelled 9km towards the original position of boat \(B\text{,}\) so \(x=15-9 = 6\text{,}\) while boat \(B\) has travelled 12km away from its original position, so \(y=12\text{.}\)</li>
+<li id="li-832">The distances \(x,y\) and \(z\) form a right-angled triangle, and Pythagoras tells us that<div class="displaymath">
+\begin{align*}
+z^2 &amp;= x^2 + y^2.
+\end{align*}
+</div>At 3pm we know \(x=6,y=12\) so<div class="displaymath">
+\begin{align*}
+z^2 &amp;= 36 + 144 = 180\\
+z&amp;= \sqrt{180} = 6\sqrt{5}.
+\end{align*}
+</div>
+</li>
+<li id="li-833">Differentiating then gives<div class="displaymath">
+\begin{align*}
+2z \diff{z}{t} &amp;= 2x \diff{x}{t} + 2y \diff{y}{t}\\
+&amp;= 12 \cdot (-3) + 24 \cdot(4)\\
+&amp;= 60.\\
+\end{align*}
+<p class="intertext">Dividing through by \(2z = 12\sqrt{5}\) then gives</p>
+\begin{align*}
+\diff{z}{t} &amp;= \frac{60}{12\sqrt{5}} = \frac{5}{\sqrt{5}} = \sqrt{5}
+\end{align*}
+</div>So the distance between the boats is increasing at \(\sqrt{5} km/h\text{.}\)</li>
+</ul></article></div>
+<p id="p-3027">One last one before we move on to another topic.</p>
+<article class="example example-like" id="eg_fuel"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_fuel"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Fuel level in a cylindrical tank.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_fuel"><article class="example example-like"><p id="p-3028">Consider a cylindrical fuel tank of radius \(r\) and length \(L\) (in some appropriate units) that is lying on its side. Suppose that fuel is being pumped into the tank at a rate \(q\text{.}\) At what rate is the fuel level rising?</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/fuel1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3029"><em class="alert">Solution</em> If the tank were vertical everything would be much easier. Unfortunately the tank is on its side, so we are going to have to work a bit harder to establish the relation between the depth and volume. Also notice that we have not been supplied with units for this problem — so we do not need to state the units of our variables.</p>
+<ul id="p-3030" class="disc">
+<li id="li-834">
+<p id="p-3031">Again — draw a picture. Here is an end view of the tank; the shaded part of the circle  is filled with fuel.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/fuel2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-835">Let us denote by \(V(t)\) the volume of fuel in the tank at time \(t\) and by \(h(t)\) the fuel level at time \(t\text{.}\)</li>
+<li id="li-836">We have been told that \(V'(t)=q\) and have been asked to determine \(h'(t)\text{.}\) While it is possible to do so by finding a formula relating \(V(t)\) and \(h(t)\text{,}\) it turns out to be quite a bit easier to first find a formula relating \(V\) and the angle \(\theta\) shown in the end view. We can then translate this back into a formula in terms of \(h\) using the relation<div class="displaymath">
+\begin{align*}
+h(t) &amp;= r - r\cos \theta(t).
+\end{align*}
+</div>Once we know \(\theta'(t)\text{,}\) we can easily obtain \(h'(t)\) by differentiating the above equation.</li>
+<li id="li-837">The computation that follows below gets a little involved in places, so we will drop the “\((t)\)” on the variables \(V,h\) and \(\theta\text{.}\) The reader must never forget that these three quantities are really functions of time, while \(r\) and \(L\) are constants that do not depend on time.</li>
+<li id="li-838">
+<p id="p-3032">The volume of fuel is \(L\) times the cross–sectional area filled by the fuel. That is,</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0.5%;margin-right:0.5%;">
+<div class="sbspanel" style="width:25.2525252525253%;justify-content:center;"><p id="p-3033"></p></div>
+<div class="sbspanel" style="width:5.05050505050505%;justify-content:center;"><p id="p-3034">\(V = \)</p></div>
+<div class="sbspanel" style="width:20.2020202020202%;justify-content:center;"><p id="p-3035">\(L \times\) Area of</p></div>
+<div class="sbspanel" style="width:20.2020202020202%;justify-content:center;"><img src="text/figs/fuel3.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:25.2525252525253%;justify-content:center;"><p id="p-3036"></p></div>
+</div></div>
+<p id="p-3037">While we do not have a canned formula for the area of a chord of a circle like this, it is easy to express the area of the chord in terms of two areas that we can compute.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0.0625%;margin-right:0.0625%;">
+<div class="sbspanel" style="width:7.008760951188986%;justify-content:center;"><p id="p-3038"></p></div>
+<div class="sbspanel" style="width:5.006257822277847%;justify-content:center;"><p id="p-3039">\(V\)</p></div>
+<div class="sbspanel" style="width:22.0275344180225%;justify-content:center;"><p id="p-3040">\(= L\times\text{Area of}\)</p></div>
+<div class="sbspanel" style="width:20.0250312891114%;justify-content:center;"><img src="text/figs/fuel3.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:18.0225281602002%;justify-content:center;"><p id="p-3041"></p></div>
+<div class="sbspanel" style="width:20.0250312891114%;justify-content:center;"><p id="p-3042"></p></div>
+<div class="sbspanel" style="width:0%;justify-content:center;"><p id="p-3043"></p></div>
+<div class="sbspanel" style="width:7.008760951188986%;justify-content:center;"><p id="p-3044"></p></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0.0625%;margin-right:0.0625%;">
+<div class="sbspanel" style="width:7.008760951188986%;justify-content:center;"><p id="p-3045"></p></div>
+<div class="sbspanel" style="width:5.006257822277847%;justify-content:center;"><p id="p-3046"></p></div>
+<div class="sbspanel" style="width:22.0275344180225%;justify-content:center;"><p id="p-3047">\(= L\times\bigg[ \text{Area of}\)</p></div>
+<div class="sbspanel" style="width:20.0250312891114%;justify-content:center;"><img src="text/figs/fuel4.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:18.0225281602002%;justify-content:center;"><p id="p-3048">- Area of</p></div>
+<div class="sbspanel" style="width:20.0250312891114%;justify-content:center;"><img src="text/figs/fuel5.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:0%;justify-content:center;"><p id="p-3049">\(\bigg]\)</p></div>
+<div class="sbspanel" style="width:7.008760951188986%;justify-content:center;"><p id="p-3050"></p></div>
+</div></div>
+</li>
+<li id="li-839">
+<p id="p-3051">The piece of pie</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:41%;margin-right:41%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/fuel4.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3052">is the fraction \(\tfrac{2\theta}{2\pi}\) of the full circle, so its area is \(\tfrac{2\theta}{2\pi}\pi r^2=\theta r^2\text{.}\)</p>
+</li>
+<li id="li-840">
+<p id="p-3053">The triangle</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:41%;margin-right:41%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/fuel5.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3054">has height \(r\cos\theta\) and base \(2r\sin\theta\) and hence has area \(\frac{1}{2}(r\cos\theta)(2r\sin\theta)=r^2\sin\theta\cos\theta =
+\frac{r^2}{2} \sin(2\theta)\text{,}\) where we have used a double-angle formula (see Appendix <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec_must_deriv" missing]</code>).</p>
+</li>
+<li id="li-841">Subbing these two areas into the above expression for \(V\) gives<div class="displaymath">
+\begin{align*}
+V &amp; = L\times\left[\theta r^2- \frac{r^2}{2}\sin2\theta\right]
+= \frac{Lr^2}{2} \big[2\theta-\sin2\theta \big]
+\end{align*}
+</div>Oof!</li>
+<li id="li-842">Now we can differentiate to find the rate of change. Recalling that \(V=V(t)\) and \(\theta=\theta(t)\text{,}\) while \(r\) and \(L\) are constants,<div class="displaymath">
+\begin{align*}
+V'
+&amp;=\frac{Lr^2}{2} \left[ 2\theta' - 2\cos2\theta \cdot \theta' \right]\\
+&amp;= Lr^2 \cdot \theta' \cdot \left[1 - \cos2\theta \right]
+\end{align*}
+</div>Solving this for \(\theta'\) and using \(V'=q\) gives<div class="displaymath">
+\begin{align*}
+\theta' &amp;= \frac{q}{Lr^2 (1-\cos2\theta)}
+\end{align*}
+</div>This is the rate at which \(\theta\) is changing, but we need the rate at which \(h\) is changing. We get this from<div class="displaymath">
+\begin{align*}
+h &amp;= r - r\cos \theta &amp; \text{differentiating this gives}\\
+h' &amp;= r\sin\theta \cdot \theta'
+\end{align*}
+</div>Substituting our expression for \(\theta'\) into the expression for \(h'\) gives<div class="displaymath">
+\begin{align*}
+h' &amp;= r\sin\theta \cdot \frac{q}{Lr^2 (1-\cos2\theta)}
+\end{align*}
+</div>
+</li>
+<li id="li-843">We can clean this up a bit more — recall more double-angle formulas <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-116" id="fn-116"><sup> 4 </sup></a><div class="displaymath">
+\begin{align*}
+h'
+&amp;= r\sin\theta \cdot \frac{q}{Lr^2 (1-\cos2\theta)} &amp; \text{substitute $\cos2\theta =
+1-2\sin^2\theta$}\\
+&amp;= r\sin\theta \cdot \frac{q}{Lr^2 \cdot 2\sin^2\theta} &amp; \text{now cancel $r$'s and a $\sin\theta$}\\
+&amp;= \frac{q}{2Lr\sin\theta}
+\end{align*}
+</div>
+</li>
+<li id="li-844">
+<p id="p-3055">But we can clean this up even more — instead of writing this rate in terms of \(\theta\) it is more natural to write it in terms of \(h\) (since the initial problem is stated in terms of \(h\)). From the triangle</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:41%;margin-right:41%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/fuel6.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3056">and Pythagoras we have</p>
+<div class="displaymath">
+\begin{gather*}
+\sin\theta =\frac{\sqrt{r^2-(r-h)^2}}{r}=\frac{\sqrt{2rh-h^2}}{r}
+\end{gather*}
+</div>
+<p data-braille="continuation">and hence</p>
+<div class="displaymath">
+\begin{gather*}
+h' = \frac{q}{2L\sqrt{2rh-h^2}}.
+\end{gather*}
+</div>
+</li>
+<li id="li-845">As a check, notice that \(h'\) becomes undefined when \(h \lt 0\) and also when \(h \gt 2r\text{,}\) because then the argument of the square root in the denominator is negative. Both make sense — the fuel level in the tank must obey \(0\le h\le 2r\text{.}\)</li>
+</ul>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-116"><div class="fn">Take another look at Appendix <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec_must_deriv" missing]</code>.</div></div></article></div></section><section class="exercises" id="exercises-21"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">4.2.2</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-55">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-82"></div>
+<div class="exercisegroup-exercises"><article class="exercise exercise-like" id="exercise-429"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-3057">Suppose the quantities \(P\) and \(Q\) are related by the formula \(P=Q^3\text{.}\) \(P\) and \(Q\) are changing with respect to time, \(t\text{.}\) Given this information, which of the following are problems you could solve?</p>
+<ol class="lower-roman">
+<li id="li-846">Given \(\ds\diff{P}{t}(0)\text{,}\) find \(\ds\diff{Q}{t}(0)\text{.}\) (Remember: the notation \(\ds\diff{P}{t}(0)\) means the derivative of \(P\) with respect to \(t\) at the time \(t=0\text{.}\))</li>
+<li id="li-847">Given \(\ds\diff{P}{t}(0)\) and the value of \(Q\) when \(t=0\text{,}\) find \(\ds\diff{Q}{t}(0)\text{.}\)</li>
+<li id="li-848">Given \(\ds\diff{Q}{t}(0)\text{,}\) find \(\ds\diff{P}{t}(0)\text{.}\)</li>
+<li id="li-849">Given \(\ds\diff{Q}{t}(0)\)  and the value of \(P\) when \(t=0\text{,}\) find \(\ds\diff{P}{t}(0)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-368" id="hint-368"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-368"><div class="hint solution-like"><p id="p-3058">If you know \(P\text{,}\) you can figure out \(Q\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-429" id="answer-429"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-429"><div class="answer solution-like"><p id="p-3059">ii and iv</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-429" id="solution-429"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-429"><div class="solution solution-like">
+<p id="p-3060">We have an equation relating \(P\) and \(Q\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+P&amp;=Q^3\\
+\end{align*}
+<p class="intertext">We differentiate implicitly with respect to a third variable, \(t\text{:}\)</p>
+\begin{align*}
+\diff{P}{t}&amp;=3Q^2\cdot\diff{Q}{t}
+\end{align*}
+</div>
+<p data-braille="continuation">If we know two of the three quantities \(\ds\diff{P}{t}\text{,}\) \(Q\text{,}\) and \(\ds\diff{Q}{t}\text{,}\) then we can find the third. Therefore, ii is a question we can solve. If we know \(P\text{,}\) then we also know \(Q\) (it's just the cube root of \(P\)), so also we can solve iv. However, if we know neither \(P\) nor \(Q\text{,}\) then we can't find \(\ds\diff{P}{t}\) based only off \(\ds\diff{Q}{t}\text{,}\) and we can't find \(\ds\diff{Q}{t}\) based only off \(\ds\diff{P}{t}\text{.}\) So we can't solve i or iii.</p>
+</div></div>
+</div></article></div>
+</div>
+<div class="exercisegroup" id="exercisegroup-56">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-83"><p id="p-3061">For problems <a class="xref" data-knowl="./knowl/s3_2relationshipfirst.html" title="Exercise 4.2.2.2: 2007H">4.2.2.2</a> through <a class="xref" data-knowl="./knowl/s3_2relationshiplast.html" title="Exercise 4.2.2.4: 1997A">4.2.2.4</a>, the relationship between several variables is explicitly given. Use this information to relate their rates of change.</p></div>
+<div class="introduction" id="introduction-84"><p id="p-3079">For Questions <a class="xref" data-knowl="./knowl/s3_2Pythagorusfirst.html" title="Exercise 4.2.2.5: 2015Q">4.2.2.5</a> through <a class="xref" data-knowl="./knowl/s3_2Pythagoruslast.html" title="Exercise 4.2.2.9: 2015Q">4.2.2.9</a>, look for a way to use the Pythagorean Theorem.</p></div>
+<div class="introduction" id="introduction-85"><p id="p-3101">For Questions <a class="xref" data-knowl="./knowl/s3_2trianglesfirst.html" title="Exercise 4.2.2.10">4.2.2.10</a> through <a class="xref" data-knowl="./knowl/s3_2triangleslast.html" title="Exercise 4.2.2.14">4.2.2.14</a>, look for tricks from trigonometry.</p></div>
+<div class="introduction" id="introduction-86"><p id="p-3142">For Questions <a class="xref" data-knowl="./knowl/s3_2annulus.html" title="Exercise 4.2.2.15: 2006H">4.2.2.15</a> through <a class="xref" data-knowl="./knowl/s3_2formulaslast.html" title="Exercise 4.2.2.20">4.2.2.20</a>, you'll need to know formulas for volume or area.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="s3_2relationshipfirst"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">2007H.</span>
+</h6>
+<p id="p-3062">A point is moving on the unit circle \(\set{ (x, y)\;:\; x^2 + y^2 = 1 }\) in the \(xy\)--plane. At \((2/\sqrt{5}, 1/\sqrt{5})\text{,}\) its \(y\)--coordinate is increasing at rate 3. What is the rate of change of its \(x\)--coordinate?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-369" id="hint-369"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-369"><div class="hint solution-like"><p id="p-3063">Since the point moves along the unit circle, we know that \(x^2+y^2=1\text{,}\) where \(x\) and \(y\) are functions of time.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-430" id="answer-430"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-430"><div class="answer solution-like"><p id="p-3064">\(-\dfrac{3}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-430" id="solution-430"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-430"><div class="solution solution-like">
+<p id="p-3065">Suppose that at time \(t\text{,}\) the point is at \(\big(x(t),y(t)\big)\text{.}\) Then \(x(t)^2+y(t)^2=1\) so that \(2x(t)x'(t)+2y(t)y'(t)=0\text{.}\) We are told that at some time \(t_0\text{,}\) \(x(t_0)=2/\sqrt{5}\text{,}\) \(y(t_0)=1/\sqrt{5}\) and \(y'(t_0)=3\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+2x(t_0)x'(t_0)+2y(t_0)y'(t_0)&amp;=0 \qquad \Rightarrow\\
+2\left(\frac{2}{\sqrt{5}}\right)x'(t)+2\left(\frac{1}{\sqrt5}\right)(3)&amp;=0
+\qquad \Rightarrow\\
+x'(t_0)&amp;=-\frac{3}{2}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-431"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">1997D, 2012H.</span>
+</h6>
+<p id="p-3066">The quantities \(P,\ Q\) and \(R\) are functions of time and are related by the equation \(R=PQ\text{.}\) Assume that \(P\) is increasing instantaneously at the rate of \(8\%\) per year and that \(Q\) is decreasing instantaneously at the rate of \(2\%\) per year. That is, \(\dfrac{P'}{P}=0.08\) and \(\dfrac{Q'}{Q}=-0.02\text{.}\) Determine the percentage rate of change for \(R\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-370" id="hint-370"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-370"><div class="hint solution-like"><p id="p-3067">You'll need some implicit differentiation: what should your variable be? Example <a class="xref" data-knowl="./knowl/eg_percentGrowth.html" title="Example 4.2.3: Percentage rate of change of \(R=PQ\)">4.2.3</a> shows how to work with percentage rate of change.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-431" id="answer-431"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-431"><div class="answer solution-like"><p id="p-3068">\(6\%\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-431" id="solution-431"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-431"><div class="solution solution-like">
+<p id="p-3069">The instantaneous percentage rate of change for \(R\) is</p>
+<div class="displaymath">
+\begin{align*}
+100\frac{R'}{R}&amp;=100\frac{(PQ)'}{PQ}&amp;\mbox{R=PQ}\\
+&amp;=100\frac{P'Q+PQ'}{PQ}&amp;\mbox{product rule}\\
+&amp;=100\left[\frac{P'}{P}+\frac{Q'}{Q}\right]&amp;\mbox{simplify}\\
+&amp;=100[0.08-0.02]
+=6\%
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s3_2relationshiplast"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">1997A.</span>
+</h6>
+<p id="p-3070">Three quantities, \(F\text{,}\) \(P\) and \(Q\) all depend upon time \(t\) and are related by the equation</p>
+<div class="displaymath">
+\begin{equation*}
+F=\frac{P}{Q}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="s3_2FPQ1">Assume that at a particular moment in time \(P=25\) and \(P\) is increasing at the instantaneous rate of 5 units/min. At the same moment, \(Q=5\) and \(Q\) is increasing at the instantaneous rate of 1 unit/min. What is the instantaneous rate of change in \(F\) at this moment?</li>
+<li id="s3_2FPQ2">Assume that at another moment in time \(P\) is increasing at the instantaneous rate of \(10\%\) and \(Q\) is decreasing at the instantaneous rate \(5\%\text{.}\) What can you conclude about the rate of change of \(F\) at this moment?</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-371" id="hint-371"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-371"><div class="hint solution-like"><p id="p-3071">For <a class="xref" data-knowl="./knowl/s3_2FPQ2.html" title="Item 4.2.2.4.b">4.2.2.4.b</a>, refer to Example <a class="xref" data-knowl="./knowl/eg_percentGrowth.html" title="Example 4.2.3: Percentage rate of change of \(R=PQ\)">4.2.3</a> for percentage rate of change.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-432" id="answer-432"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-432"><div class="answer solution-like">
+<p id="p-3072"><a class="xref" data-knowl="./knowl/s3_2FPQ1.html" title="Item 4.2.2.4.a">4.2.2.4.a</a> 0</p>
+<p id="p-3073"><a class="xref" data-knowl="./knowl/s3_2FPQ2.html" title="Item 4.2.2.4.b">4.2.2.4.b</a> \(100\dfrac{F'}{F}=15\%\text{,}\) or \(F'=0.15F\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-432" id="solution-432"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-432"><div class="solution solution-like">
+<p id="p-3074"><a class="xref" data-knowl="./knowl/s3_2FPQ1.html" title="Item 4.2.2.4.a">4.2.2.4.a</a> By the quotient rule, \(F'=\dfrac{P'Q-PQ'}{Q^2}\text{.}\) At the moment in question, \(F'=\dfrac{5\times5-25\times 1}{5^2}=0.\)</p>
+<p id="p-3075"><a class="xref" data-knowl="./knowl/s3_2FPQ2.html" title="Item 4.2.2.4.b">4.2.2.4.b</a> We are told that, at the second moment in time, \(P'=0.1 P\)  and \(Q'=-0.05 Q\)</p>
+<p id="p-3076">\(\big(\)or equivalently \(100\frac{P'}{P}=10\) and \(100\frac{Q'}{Q}=-5\big)\text{.}\) Substituting in these values:</p>
+<div class="displaymath" id="p-3077">
+\begin{align*}
+F'&amp;=\frac{P'Q-PQ'}{Q^2}\\
+&amp;=\frac{0.1PQ-P(-0.05Q)}{Q^2}\\
+&amp;=\frac{0.15PQ}{Q^2}\\
+&amp;=0.15\frac{P}{Q}\\
+&amp;=0.15 F\\
+\implies\qquad F'&amp;=0.15F
+\end{align*}
+</div>
+<p id="p-3078">or  \(100\frac{F'}{F}=15\%\text{.}\) That is, the instantaneous percentage rate of change of \(F\) is 15%.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s3_2Pythagorusfirst"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-3080">Two particles move in the Cartesian plane. Particle A travels on the \(x\)-axis starting at  \((10,0)\) and moving towards the origin with a speed of \(2\) units per second. Particle B travels on the \(y\)-axis starting at \((0,12)\) and moving towards the origin with a speed of \(3\) units per second. What is the rate of change of the distance between the two particles when particle A reaches the point \((4,0)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-372" id="hint-372"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-372"><div class="hint solution-like"><p id="p-3081">Pay attention to direction, and what it means for the sign (plus/minus) of the velocities of the particles.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-433" id="answer-433"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-433"><div class="answer solution-like"><p id="p-3082">\(-\dfrac{17}{5}\) units per second</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-433" id="solution-433"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-433"><div class="solution solution-like"><ul id="p-3083" class="disc">
+<li id="li-852">The distance \(z(t)\) between the particles at any moment in time is<div class="displaymath">
+\begin{align*}
+z^2(t)&amp;= x(t)^2+y(t)^2,
+\end{align*}
+</div>where \(x(t)\) is the position on the \(x\)-axis of the particle A at time \(t\) (measured in seconds) and \(y(t)\) is the position on the \(y\)-axis of the particle B at the same time \(t\text{.}\)</li>
+<li id="li-853">We differentiate the above equation with respect to \(t\) and get<div class="displaymath">
+\begin{align*}
+2z \cdot z' &amp;= 2x \cdot x' + 2 y \cdot y',
+\end{align*}
+</div>
+</li>
+<li id="li-854">We are told that \(x'=-2\) and \(y'=-3\text{.}\) (The values are negative because \(x\) and \(y\) are decreasing.) It will take \(3\) seconds for particle \(A\) to reach \(x=4\text{,}\) and in this time particle \(B\) will reach \(y=3\text{.}\)</li>
+<li id="li-855">At this point \(z = \sqrt{x^2+y^2}=\sqrt{3^2+4^2}=5\text{.}\)</li>
+<li id="li-856">Hence<div class="displaymath">
+\begin{align*}
+10z' &amp;= 8\cdot(-2)+6\cdot(-3) = -34\\
+z' &amp;= -\frac{34}{10} = -\frac{17}{5} \text{ units per second}.
+\end{align*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-434"><h6 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-3084">Two particles \(A\) and \(B\) are placed on the Cartesian plane at \((0,0)\) and \((3,0)\) respectively. At time 0, both start to move in the \(+y\) direction. Particle \(A\) moves at 3 units per second, while \(B\) moves at \(2\) units per second. How fast is the distance between the particles changing when particle \(A\) is at a distance of \(5\) units from \(B\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-373" id="hint-373"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-373"><div class="hint solution-like"><p id="p-3085">You'll want to think about the difference in the \(y\)-coordinates of the two particles.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-434" id="answer-434"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-434"><div class="answer solution-like"><p id="p-3086">\(\dfrac{4}{5}\) units per second</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-434" id="solution-434"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-434"><div class="solution solution-like"><ul id="p-3087" class="disc">
+<li id="li-857">We compute the distance \(z(t)\) between the two particles after \(t\) seconds as<div class="displaymath">
+\begin{align*}
+z^2(t)&amp;= 3^2 + (y_A(t)-y_B(t))^2,
+\end{align*}
+</div>where \(y_A(t)\) and \(y_B(t)\) are the \(y\)-coordinates of particles \(A\) and \(B\) after \(t\) seconds, and the horizontal distance between the two particles is always 3 units.</li>
+<li id="li-858">We are told the distance between the particles is 5 units, this happens when<div class="displaymath">
+\begin{align*}
+(y_A-y_B)^2 &amp;= 5^2-3^2 = 16\\
+y_A-y_B&amp;=4
+\end{align*}
+</div>That is, when the difference in \(y\)-coordinates is \(4\text{.}\) This happens when \(t=4\text{.}\)</li>
+<li id="li-859">We differentiate the distance equation (from the first bullet point) with respect to \(t\) and get<div class="displaymath">
+\begin{align*}
+2z \cdot z' &amp;= 2 ({y_A}' - {y_B}') (y_A - y_B),
+\end{align*}
+</div>
+</li>
+<li id="li-860">We know that \((y_A-y_B)=4\text{,}\) and we are told that \(z=5\text{,}\) \(y_A'=3\text{,}\) and \(y_B'=2\text{.}\) Hence<div class="displaymath">
+\begin{align*}
+10z'(4) &amp;=  2 \times1\times4 = 8
+\end{align*}
+</div>
+</li>
+<li id="li-861">Therefore<div class="displaymath">
+\begin{align*}
+z'(4) &amp;= \frac{8}{10} = \frac{4}{5} \text{ units per second}.
+\end{align*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-435"><h6 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">1997D.</span>
+</h6>
+<p id="p-3088">Ship A is 400 miles directly south of Hawaii and is sailing south at 20 miles/hour. Ship B is 300 miles directly east of Hawaii and is sailing west at 15 miles/hour. At what rate is the distance between the ships changing?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-374" id="hint-374"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-374"><div class="hint solution-like"><p id="p-3089">Draw a picture, and be careful about signs.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-435" id="answer-435"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-435"><div class="answer solution-like"><p id="p-3090">increasing at \(7\) mph</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-435" id="solution-435"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-435"><div class="solution solution-like">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="problems/figs/ship.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3091">If \(x(t),\ y(t)\) and \(z(t)\) are the distances shown, at time \(t\text{,}\) then</p>
+<div class="displaymath">
+\begin{align*}
+x(t)^2+y(t)^2&amp;=z(t)^2\\
+\end{align*}
+<p class="intertext">Differentiating with respect to \(t\text{,}\)</p>
+\begin{align*}
+2x(t)x'(t)+2y(t)y'(t)&amp;=2z(t)z'(t)\\
+x(t)x'(t)+y(t)y'(t)&amp;=z(t)z'(t)\\
+\end{align*}
+<p class="intertext">At the specified time, \(x(t)\) is decreasing, so \(x'(t)\) is negative.</p>
+\begin{align*}
+(300)(-15)+(400)(20) &amp;= \sqrt{300^2+400^2}z'(t)\\
+500 z'(t)&amp;=3500\\
+z'(t)&amp;=7 \mbox{ mph}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-436"><h6 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-3092">Two tall sticks are vertically planted into the ground, separated by a distance of \(30\) cm. We simultaneously put two snails at the base of each stick. The two snails then begin to climb their respective sticks. The first snail is moving with a speed of \(25\) cm per minute, while the second snail is moving with a speed of \(15\) cm per minute. What is the rate of change of the distance between the two snails when the first snail reaches \(100\) cm above the ground?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-375" id="hint-375"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-375"><div class="hint solution-like"><p id="p-3093">You'll want to think about the <em class="emphasis">difference</em> in height of the two snails.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-436" id="answer-436"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-436"><div class="answer solution-like"><p id="p-3094">\(8\) cm per minute</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-436" id="solution-436"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-436"><div class="solution solution-like"><ul id="p-3095" class="disc">
+<li id="li-862">We compute the distance \(d(t)\) between the two snails after \(t\) minutes as<div class="displaymath">
+\begin{align*}
+d^2(t)&amp;= 30^2 + (y_1(t)-y_2(t))^2,
+\end{align*}
+</div>where \(y_1(t)\) is the altitude of the first snail, and \(y_2(t)\) the altitude of the second snail after \(t\) minutes.</li>
+<li id="li-863">We differentiate the above equation with respect to \(t\) and get<div class="displaymath">
+\begin{align*}
+2d \cdot d' &amp;= 2 ({y_1}' - {y_2}') (y_1 - y_2)\\
+d \cdot d' &amp;=  ({y_1}' - {y_2}') (y_1 - y_2)
+\end{align*}
+</div>
+</li>
+<li id="li-864">We are told that \({y_1}'=25\) and \({y_2}'=15\text{.}\) It will take \(4\) minutes for the first snail to reach \(y_1=100\text{,}\) and in this time  the second snail will reach \(y_2=60\text{.}\)</li>
+<li id="li-865">At this point \(d^2 = 30^2 + (100-60)^2 = 900 + 1600 = 2500\text{,}\) hence \(d = 50\text{.}\)</li>
+<li id="li-866">Therefore<div class="displaymath">
+\begin{align*}
+50  d' &amp;=  (25 - 15) \times (100 - 60)\\
+d' &amp;= \frac{400}{50} = 8 \text{ cm per minute}.
+\end{align*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="s3_2Pythagoruslast"><h6 class="heading">
+<span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-3096">A \(20\)m long extension ladder leaning against a wall starts collapsing in on itself at a rate of \(2\)m/s, while the foot of the ladder remains a constant \(5\)m from the wall. How fast is the ladder moving down the wall after \(3.5\) seconds?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-376" id="hint-376"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-376"><div class="hint solution-like"><p id="p-3097">The length of the ladder is changing.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-437" id="answer-437"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-437"><div class="answer solution-like"><p id="p-3098">\(-\dfrac{13}{6}\) metres per second</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-437" id="solution-437"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-437"><div class="solution solution-like"><ul id="p-3099" class="disc">
+<li id="li-867">
+<p id="p-3100">If we write \(z(t)\) for the length of the ladder at time \(t\) and \(y(t)\) for the height of the top end of the ladder at time \(t\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+z(t)^2 = 5^2 + y(t)^2.
+\end{equation*}
+</div>
+</li>
+<li id="li-868">We differentiate the above equation with respect to \(t\) and get<div class="displaymath">
+\begin{align*}
+2z \cdot z' &amp;= 2y \cdot y',
+\end{align*}
+</div>
+</li>
+<li id="li-869">We are told that \(z'(t)=-2\text{,}\) so \(z(3.5)=20-3.5\cdot2 = 13\text{.}\)</li>
+<li id="li-870">At this point \(y = \sqrt{z^2-5^2} = \sqrt{169-25} = \sqrt{144} = 12\text{.}\)</li>
+<li id="li-871">Hence<div class="displaymath">
+\begin{align*}
+2\cdot 13 \cdot (-2) &amp;= 2 \cdot 12 y'\\
+y' &amp;= -\frac{2\cdot 13}{12} = -\frac{13}{6} \text{ meters per second}.
+\end{align*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="s3_2trianglesfirst"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-3102">A watering trough has a cross section shaped like an isosceles trapezoid. The trough is 2 metres long, 50 cm high, 1 metre wide at the top, and 60 cm wide at the bottom.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-248.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3103">A pig is drinking water from the trough at a rate of 3 litres per minute. When the height of the water is 25 cm, how fast is the height decreasing?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-377" id="hint-377"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-377"><div class="hint solution-like"><p id="p-3104">If a  trapezoid has height \(h\) and (parallel) bases \(b_1\) and \(b_2\text{,}\) then its area is \(h\left(\frac{b_1+b_2}{2}\right)\text{.}\) To figure out how wide the top of the water is when the water is at height \(h\text{,}\) you can cut the trapezoid up into a rectangle and two triangles, and make use of similar triangles.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-438" id="answer-438"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-438"><div class="answer solution-like"><p id="p-3105">The height of the water is decreasing at \(\dfrac{3}{16}=0.1875\;\frac{\mathrm{cm}}{\mathrm{min}}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-438" id="solution-438"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-438"><div class="solution solution-like">
+<p id="p-3106">What we're given is \(\ds\diff{V}{t}\) (where \(V\) is volume of water in the trough, and \(t\) is time), and what we are asked for is \(\ds\diff{h}{t}\) (where \(h\) is the height of the water). So, we need an equation relating \(V\) and \(h\text{.}\) First, let's get everything in the same units: centimetres.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-249.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3107">We can calculate the volume of water in the trough by multiplying the area of its trapezoidal cross section by 200 cm. A  trapezoid with height \(h\) and bases \(b_1\) and \(b_2\) has area \(h\left(\frac{b_1+b_2}{2}\right)\text{.}\) (To see why this is so, draw the trapezoid as a rectangle flanked by two triangles.) So, using  \(w\) as the width of the top of the water (as in the diagram above), the area of the cross section of the water in the trough is</p>
+<div class="displaymath">
+\begin{equation*}
+A=h\left(\frac{60+w}{2}\right)
+\end{equation*}
+</div>
+<p id="p-3108">and therefore the volume of water in the trough is</p>
+<div class="displaymath">
+\begin{equation*}
+V=100h(60+w)\;\text{cm}^3.
+\end{equation*}
+</div>
+<p id="p-3109">We need a formula for \(w\) in terms of \(h\text{.}\) If we draw lines straight up from the bottom corners of the trapezoid, we break it into rectangles and triangles.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-250.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3110">Using similar triangles, \(\dfrac{a}{h}=\dfrac{20}{50}\text{,}\) so \(a=\dfrac{2}{5}h\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+w&amp;=60+2a\\
+&amp;=60+2\left(\frac{2}{5}h\right)=60+\frac{4}{5}h\\
+\end{align*}
+<p class="intertext">so</p>
+\begin{align*}
+V&amp;=100h(60+w)\\
+&amp;=100h(120+\frac{4}{5}h)\\
+&amp;=80h^2+12000h\\
+\end{align*}
+<p class="intertext">This is the equation we need, relating \(V\) and \(h\text{.}\) Differentiating implicitly with respect to \(t\text{:}\)</p>
+\begin{align*}
+\diff{V}{t}
+&amp;=2\cdot80h\cdot\diff{h}{t}+12000\diff{h}{t}\\
+&amp;=\left(160h+12000\right)\diff{h}{t}\\
+\end{align*}
+<p class="intertext">We are given that \(h=25\) and \(\ds\diff{V}{t}=3\) litres per minute. Converting to cubic centimetres, \(\ds\diff{V}{t} = -3000\) cubic centimetres per minute. So:</p>
+\begin{align*}
+-3000&amp;=\left(160\cdot25+12000\right)\diff{h}{t}\\
+\diff{h}{t}&amp;=-\frac{3}{16}=-.1875\;\frac{\mathrm{cm}}{\mathrm{min}}
+\end{align*}
+</div>
+<p data-braille="continuation">So, the water level is dropping at \(\dfrac{3}{16}\) centimetres per minute.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-439"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-3111">A tank is 5 metres long, and has a trapezoidal cross section with the dimensions shown below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-251.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3112">A hose is filling the tank up at a rate of one litre per second. How fast is the height of the water increasing when the water is 10 centimetres deep?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-378" id="hint-378"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-378"><div class="hint solution-like"><p id="p-3113">Be careful with units. One litre is 1000 cm\(^3\text{,}\) which is not the same as \(10\) m\(^3\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-439" id="answer-439"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-439"><div class="answer solution-like"><p id="p-3114">\(\dfrac{1}{29200}\) metres per second (or about 1 centimetre every five minutes)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-439" id="solution-439"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-439"><div class="solution solution-like">
+<p id="p-3115">If \(V\) is the volume of the water in the tank, and \(t\) is time, then we are given \(\ds\diff{V}{t}\text{.}\) What we want to know is \(\ds\diff{h}{t}\text{,}\) where \(h\) is the height of the water in the tank. A reasonable plan is to find an equation relating \(V\) and \(h\text{,}\) and differentiate it implicitly with respect to \(t\text{.}\)</p>
+<p id="p-3116">Let's be a little careful about units. The volume of water in the tank is</p>
+<div class="displaymath">
+\begin{equation*}
+\text{(area of cross section of water)$\times$(length of tank)}
+\end{equation*}
+</div>
+<p data-braille="continuation">If we measure these values in metres (area in square metres, length in metres), then the volume is going to be in cubic metres. So, when we differentiate with respect to time, our units will be cubic metres per second. The water is flowing in at one litre per second, or \(1000\) cubic centimetres per second. So, we either have to measure our areas and distances in centimetres, or convert litres to cubic metres. We'll do the latter, but both are fine.</p>
+<p id="p-3117">If we imagine one cubic metre as a cube, with each side of length 1 metre, then it's easy to see the volume inside is \((100)^3=10^6\) cubic centimetres: it's the volume of a cube with each side of length 100 cm. Since a litre is \(10^3\) cubic centimetres, and a cubic metre is \(10^{6}\) cubic centimetres, one litre is \(10^{-3}\) cubic metres. So, \(\textcolor{red}{\ds\diff{V}{t}=\frac{1}{10^3}}\) cubic metres per second.</p>
+<p id="p-3118">Let \(h\) be the height of the water (in metres). We can figure out the area of the cross section by breaking it into three pieces: a triangle on the left, a rectangle in the middle, and a trapezoid on the right.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-252.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<ul id="p-3119" class="disc">
+<li id="li-872">The triangle on the left has height \(h\) metres. Let its base be \(a\) metres. It forms a similar triangle with the triangle whose height is 1.25 metres and width is 1 metre, so:<div class="displaymath">
+\begin{align*}
+\frac{a}{h}&amp;=\frac{1}{1.25}\\
+a&amp;=\frac{4}{5}h\\
+\end{align*}
+<p class="intertext">So, the area of the triangle on the left is</p>
+\begin{align*}
+\frac{1}{2}ah&amp;=\frac{2}{5}h^2
+\end{align*}
+</div>
+</li>
+<li id="li-873">The rectangle in the middle has length 3 metres and height \(h\) metres, so its area is \(3h\) square metres.</li>
+<li id="li-874">The trapezoid on the right is a portion of a triangle with base 3 metres and height 1.25 metres. So, its area is<div class="displaymath">
+\begin{align*}
+&amp;\underbrace{\left(\frac{1}{2}(3)(1.25)\right) }_{\mbox{area of big triangle}}- \underbrace{\left(\frac{1}{2}(b)(1.25-h)\right)}_{\mbox{area of little triangle}}\\
+\end{align*}
+<p class="intertext">The little triangle (of base \(b\) and height \(1.25-h\)) is formed by the <em class="emphasis">air</em> on the right side of the tank. It is a similar triangle to the triangle of base 3 and height 1.25, so</p>
+\begin{align*}
+\frac{b}{1.25-h}&amp;=\frac{3}{1.25}\\
+b&amp;=\frac{3}{1.25}(1.25-h)\\
+\end{align*}
+<p class="intertext">So, the area of the trapezoid on the right is</p>
+\begin{align*}
+&amp;\frac{1}{2}(3)(1.25)-\frac{1}{2}\left(\frac{3}{1.25}\right)\left(1.25-h\right)(1.25-h)\\
+&amp;=3h-\frac{6}{5}h^2
+\end{align*}
+</div>
+</li>
+</ul>
+<p id="p-3120">So, the area \(A\) of the cross section of the water is</p>
+<div class="displaymath">
+\begin{align*}
+A&amp;=\underbrace{\frac{2}{5}h^2}_{\mbox{triangle}}+
+\underbrace{3h}_{\mbox{rectangle}}+
+\underbrace{3h-\frac{6}{5}h^2}_{\mbox{trapezoid}}\\
+&amp;=6h-\frac{4}{5}h^2\\
+\end{align*}
+<p class="intertext">So, the volume of water is</p>
+\begin{align*}
+V&amp;=5\left(6h-\frac{4}{5}h^2\right)=30h-4h^2\\
+\end{align*}
+<p class="intertext">Differentiating with respect to time, \(t\text{:}\)</p>
+\begin{align*}
+\diff{V}{t}&amp;=30\diff{h}{t}-8h\diff{h}{t}\\
+\end{align*}
+<p class="intertext">When \(h=\dfrac{1}{10}\) metre, and \(\ds\diff{V}{t}=\frac{1}{10^3}\) cubic metres per second,</p>
+\begin{align*}
+\frac{1}{10^3}&amp;=30\diff{h}{t}-8\left(\frac{1}{10}\right)\diff{h}{t}\\
+\diff{h}{t}&amp;=\frac{1}{29200} \mbox{ metres per second}
+\end{align*}
+</div>
+<p data-braille="continuation">This is about 1 centimetre every five minutes. You might want a bigger hose.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-440"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-3121">A rocket is blasting off, 2 kilometres away from you. You and the rocket start at the same height. The height of the rocket in kilometres, \(t\) hours after liftoff, is given by</p>
+<div class="displaymath">
+\begin{equation*}
+h(t)=61750t^2
+\end{equation*}
+</div>
+<p id="p-3122">How fast (in radians per second) is your line of sight rotating to keep looking at the rocket, one minute after liftoff?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-379" id="hint-379"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-379"><div class="hint solution-like"><p id="p-3123">You, the rocket, and the rocket's original position form a right triangle.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-440" id="answer-440"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-440"><div class="answer solution-like"><p id="p-3124">\(\left(\dfrac{2}{\left(\frac{1235}{72}\right)^2+4}\right)\left(\dfrac{6175}{3}\right)\approx
+13.8\;\frac{\mathrm{rad}}{\mathrm{hour}} \approx 0.0038\;\frac{\mathrm{rad}}{\mathrm{sec}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-440" id="solution-440"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-440"><div class="solution solution-like">
+<p id="p-3125">Let \(\theta\) be the angle of your head, where \(\theta=0\)  means you are looking straight ahead, and \(\theta=\dfrac{\pi}{2}\) means you are looking straight up. We are interested in \(\ds\diff{\theta}{t}\text{,}\) but we only have information about \(h\text{.}\) So, a reasonable plan is to find an equation relating \(h\) and \(\theta\text{,}\) and differentiate with respect to time.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-253.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3126">The right triangle formed by you, the rocket, and the rocket's original position has adjacent side (to \(\theta\)) length 2km, and opposite side (to \(\theta\)) length \(h(t)\) kilometres, so</p>
+<div class="displaymath">
+\begin{align*}
+\tan\theta&amp;=\frac{h}{2}\\
+\end{align*}
+<p class="intertext">Differentiating with respect to \(t\text{:}\)</p>
+\begin{align*}
+\sec^2\theta \cdot \diff{\theta}{t}&amp;=\frac{1}{2}\diff{h}{t}\\
+\diff{\theta}{t}&amp;=\frac{1}{2}\cos^2\theta\cdot\diff{h}{t}
+\end{align*}
+</div>
+<p data-braille="continuation">We know \(\tan\theta= \frac{h}{2}\text{.}\) We draw a right triangle with angle \(\theta\) (filling in the sides using SOH CAH TOA and the Pythagorean theorem) to figure out \(\cos\theta\text{:}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-254.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3127">Using the triangle, \(\cos\theta = \dfrac{2}{\sqrt{h^2+4}}\text{,}\) so</p>
+<div class="displaymath">
+\begin{align*}
+\diff{\theta}{t}&amp;=\frac{1}{2}\left(\frac{2}{\sqrt{h^2+4}}\right)^2\cdot\diff{h}{t}\\
+&amp;=\left(\frac{2}{h^2+4}\right)\diff{h}{t}\\
+\end{align*}
+<p class="intertext">So, the quantities we need to know one minute after liftoff (that is, when \(t = \dfrac{1}{60}\)) are \(h\left(\dfrac{1}{60}\right)\) and \(\ds\diff{h}{t}\left(\frac{1}{60}\right)\text{.}\) Recall \(h(t)=61750t^2\text{.}\)</p>
+\begin{align*}
+h\left(\frac{1}{60}\right)&amp;=\frac{61750}{3600}=\frac{1235}{72}\\
+\diff{h}{t}&amp;=2(61750)t\\
+\diff{h}{t}\left(\frac{1}{60}\right)&amp;=\frac{2(61750)}{60}=\frac{6175}{3}\\
+\end{align*}
+<p class="intertext">Returning to the equation \(\ds\diff{\theta}{t}=\left(\dfrac{2}{h^2+4}\right)\ds\diff{h}{t}
+\text{:}\)</p>
+\begin{align*}
+\diff{\theta}{t}\left(\frac{1}{60}\right)&amp;=\left(\frac{2}{\left(\frac{1235}{72}\right)^2+4}\right)\left(\frac{6175}{3}
+\right)\approx 13.8\;\frac{\mathrm{rad}}{\mathrm{hour}}\approx 0.0038\;\frac{\mathrm{rad}}{\mathrm{sec}}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-441"><h6 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">1998H.</span>
+</h6>
+<p id="p-3128">A high speed train is traveling at 2 km/min along a straight track. The train is moving away from a movie camera which is located 0.5 km from the track.</p>
+<ol class="lower-alpha">
+<li id="s3_2train1">How fast is the distance between the train and the camera increasing when they are 1.3 km apart?</li>
+<li id="s3_2train2">Assuming that the camera is always pointed at the train, how fast (in radians per min) is the camera rotating when the train and the camera are 1.3 km apart?</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-380" id="hint-380"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-380"><div class="hint solution-like"><p id="p-3129">Your picture should be a triangle.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-441" id="answer-441"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-441"><div class="answer solution-like">
+<p id="p-3130"><a class="xref" data-knowl="./knowl/s3_2train1.html" title="Item 4.2.2.13.a">4.2.2.13.a</a> \(\dfrac{24}{13}\approx 1.85\) km/min</p>
+<p id="p-3131"><a class="xref" data-knowl="./knowl/s3_2train2.html" title="Item 4.2.2.13.b">4.2.2.13.b</a> about \(.592\) radians/min</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-441" id="solution-441"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-441"><div class="solution solution-like">
+<p id="p-3132"><a class="xref" data-knowl="./knowl/s3_2train1.html" title="Item 4.2.2.13.a">4.2.2.13.a</a> Let \(x(t)\) be the distance of the train along the track at time \(t\text{,}\) measured from the point on the track nearest the camera. Let \(z(t)\) be the distance from the camera to the train at time \(t\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="problems/figs/train2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3133">Then \(\textcolor{red}{x'(t)=2}\) and at the time in question, \(\textcolor{red}{z(t)=1.3}\) km and \(\textcolor{red}{x(t)}=\sqrt{1.3^2-0.5^2}=\textcolor{red}{1.2}\) km. So</p>
+<div class="displaymath">
+\begin{align*}
+z(t)^2&amp;=x(t)^2+0.5^2\\
+2z(t)z'(t)&amp;=2x(t)x'(t)\\
+2\times 1.3z'(t)&amp;=2\times 1.2\times 2\\
+\color{red}{z'(t)}&amp;\textcolor{red}{=\frac{2\times 1.2}{1.3}}\approx1.85 \mbox{ km/min}
+\end{align*}
+</div>
+<p id="p-3134"><a class="xref" data-knowl="./knowl/s3_2train2.html" title="Item 4.2.2.13.b">4.2.2.13.b</a> Let \(\theta(t)\) be the angle shown at time \(t\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\sin\left(\theta(t)\right)&amp;=\frac{x(t)}{z(t)}\\
+\end{align*}
+<p class="intertext">Differentiating with respect to \(t\text{:}\)</p>
+\begin{align*}
+\theta'(t)\cos\left(\theta(t)\right)
+&amp;=\frac{x'(t)z(t)-x(t)z'(t)}{z(t)^2}\\
+\theta'(t)&amp;=\frac{x'(t)z(t)-x(t)z'(t)}{z(t)^2\cos\left(\theta(t)\right)}\\
+\end{align*}
+<p class="intertext">From our diagram, we see \(\cos\left(\theta(t)\right)=\dfrac{0.5}{z(t)}\text{,}\) so:</p>
+\begin{align*}
+&amp;=2\frac{x'(t)z(t)-x(t)z'(t)}{z(t)}\\
+\end{align*}
+<p class="intertext">Substituting in \(x'(t)=2\text{,}\) \(z(t)=1.3\text{,}\) \(x(t)=1.2\text{,}\) and \(z'(t)=\dfrac{2\times1.2}{1.3}\text{:}\)</p>
+\begin{align*}
+\theta'(t)
+&amp;=2\frac{2\times 1.3-1.2\times\frac{2\times 1.2}{1.3}}{1.3}
+\approx .592  \mbox{ radians/min}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s3_2triangleslast"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-3135">A clock has a minute hand that is 10 cm long, and an hour hand that is 5 cm long. Let \(D\) be the distance between the tips of the two hands. How fast is \(D\) decreasing at 4:00?</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-256.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-381" id="hint-381"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-381"><div class="hint solution-like"><p id="p-3136">Let \(\theta\) be the angle between the two hands. Using the Law of Cosines, you can get an expression for \(D\) in terms of \(\theta\text{.}\)  To find \(\ds\diff{\theta}{t}\text{,}\) use what you know about how fast clock hands move.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-442" id="answer-442"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-442"><div class="answer solution-like"><p id="p-3137">\(\dfrac{55\sqrt{21}\pi}{42}\approx 19\) centimetres per hour.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-442" id="solution-442"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-442"><div class="solution solution-like">
+<p id="p-3138">Let \(\theta\) be the angle between the two hands.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-257.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3139">The Law of Cosines (Appendix <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "app_cosine_law" missing]</code>) tells us that</p>
+<div class="displaymath">
+\begin{align*}
+D^2&amp;=5^2+10^2-2\cdot5\cdot10\cdot\cos\theta\\
+D^2&amp;=125-100\cos\theta\\
+\end{align*}
+<p class="intertext">Differentiating with respect to time \(t\text{,}\)</p>
+\begin{align*}
+2D\diff{D}{t}&amp;=100\sin\theta\cdot\diff{\theta}{t}
+\end{align*}
+</div>
+<p data-braille="continuation">Our tasks now are to find  \(D\text{,}\) \(\theta\) and \(\ds\diff{\theta}{t}\) when the time is 4:00. At 4:00, the minute hand is straight up, and the hour hand is \(\dfrac{4}{12}=\dfrac{1}{3}\) of the way around the clock, so \(\textcolor{red}{\theta = \dfrac{1}{3}(2\pi)=\dfrac{2\pi}{3}}\) at 4:00. Then \(D^2=125-100\cos\left(\frac{2\pi}{3}\right)=125-100\left(-\frac{1}{2}\right)=175\text{,}\) so \(\textcolor{red}{D=\sqrt{175}=5\sqrt{7}}\) at 4:00.</p>
+<p id="p-3140">To calculate \(\ds\diff{\theta}{t}\text{,}\) remember that both hands are moving. The hour hand makes a full rotation every 12 hours, so its rotational speed is \(\dfrac{2\pi}{12}=\dfrac{\pi}{6}\) radians per hour. The hour hand is being chased by the minute hand. The minute hand makes a full rotation every hour, so its rotational speed is \(\dfrac{2\pi}{1}=2\pi\) radians per hour. Therefore, the angle \(\theta\) <em class="emphasis">between</em> the two hands is changing at a rate of</p>
+<div class="displaymath">
+\begin{equation*}
+\color{red}{\ds\diff{\theta}{t}=-\left(2\pi-\dfrac{\pi}{6}\right)=\dfrac{-11\pi}{6}\;\frac{\mathrm{rad}}{\mathrm{hr}}.}
+\end{equation*}
+</div>
+<p id="p-3141">Now, we plug in \(D\text{,}\) \(\theta\text{,}\) and \(\ds\diff{\theta}{t}\) to find \(\ds\diff{D}{t}\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+2D\diff{D}{t}&amp;=100\sin\theta\cdot\diff{\theta}{t}\\
+2\left(5\sqrt{7}\right)\diff{D}{t}&amp;=100\sin\left(\frac{2\pi}{3}\right)\left(\frac{-11\pi}{6}\right)\\
+10\sqrt{7}\diff{D}{t}&amp;=
+100\left(\frac{\sqrt3}{2}\right)\left(\frac{-11\pi}{6}\right)
+=-\frac{275\pi}{\sqrt3}\\
+\diff{D}{t}&amp;=\frac{-55\sqrt{21}\pi}{42}\;\frac{\mathrm{cm}}{\mathrm{hr}}
+\end{align*}
+</div>
+<p data-braille="continuation">So \(D\) is decreasing at \(\dfrac{55\sqrt{21}\pi}{42} \approx 19\) centimetres per hour.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s3_2annulus"><h6 class="heading">
+<span class="codenumber">15<span class="period">.</span></span><span class="space"> </span><span class="title">2006H.</span>
+</h6>
+<p id="p-3143">Find the rate of change of the area of the annulus \(\{ (x, y) \;:\; r^2 \le x^2 + y^2 \le R^2 \}\text{.}\) (i.e. the points inside the circle of radius \(R\) but outside the circle of radius \(r\)) if \(R = 3 \;\mathrm{cm}\text{,}\) \(r = 1\;\mathrm{cm}\text{,}\) \(\ds\diff{R}{t} = 2\;\frac{\mathrm{cm}}{\mathrm{s}}\text{,}\) and \(\ds\diff{r}{t} = 7\;\frac{\mathrm{cm}}{\mathrm{s}}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-258.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-382" id="hint-382"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-382"><div class="hint solution-like"><p id="p-3144">The area in the annulus is the area of the outer circle minus the area of the inner circle.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-443" id="answer-443"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-443"><div class="answer solution-like"><p id="p-3145">\(\ds\diff{A}{t}=-2\pi\;\dfrac{\mathrm{cm}^2}{\mathrm{s}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-443" id="solution-443"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-443"><div class="solution solution-like">
+<p id="p-3146">The area at time \(t\) is the area of the outer circle minus the area of the inner circle:</p>
+<div class="displaymath">
+\begin{align*}
+A(t)&amp;=\pi\big(R(t)^2-r(t)^2\big)\\
+\mbox{So, }\;A'(t)&amp;=2\pi\big(R(t)R'(t)-r(t)r'(t)\big)\\
+\end{align*}
+<p class="intertext">Plugging in the given data,</p>
+\begin{align*}
+A'&amp;=2\pi\big(3\cdot 2-1\cdot 7\big)=-2\pi
+\end{align*}
+</div>
+<p data-braille="continuation">So the area is <em class="emphasis">shrinking</em> at a rate of \(2\pi\;\dfrac{\mathrm{cm}^2}{\mathrm{s}}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-444"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-3147">Two spheres are centred at the same point. The radius \(R\) of the bigger sphere at time \(t\) is given by \(R(t)=10+2t\text{,}\) while the radius \(r\) of the smaller sphere is given by \(r(t)=6t\text{,}\) \(t \ge 0\text{.}\) How fast is the volume between the spheres (inside the big sphere and outside the small sphere) changing when the bigger sphere has a radius twice as large as the smaller?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-383" id="hint-383"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-383"><div class="hint solution-like"><p id="p-3148">The volume of a sphere with radius \(R\) is \(\dfrac{4}{3}\pi r^3\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-444" id="answer-444"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-444"><div class="answer solution-like"><p id="p-3149">\(288\) cubic units per unit time</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-444" id="solution-444"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-444"><div class="solution solution-like">
+<p id="p-3150">The volume between the spheres, while the little one is inside the big one, is</p>
+<div class="displaymath">
+\begin{equation*}
+V=\frac{4}{3}\pi R^3 - \frac{4}{3}\pi r^3
+\end{equation*}
+</div>
+<p id="p-3151">Differentiating implicitly with respect to \(t\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{V}{t}=4\pi R^2\diff{R}{t}-4\pi r^2\diff{r}{t}
+\end{equation*}
+</div>
+<p id="p-3152">We differentiate \(R=10+2t\) and \(r=6t\) to find \(\ds\diff{R}{t}=2\) and \(\ds\diff{r}{t}=6\text{.}\) When \(R=2r\text{,}\) \(10+2t=2(6t)\text{,}\) so \(t=1\text{.}\) When \(t=1\text{,}\) \(R=12\) and \(r=6\text{.}\) So:</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{V}{t}=4\pi\left(12^2\right)(2)-4\pi\left(6^2\right)(6)=288\pi
+\end{equation*}
+</div>
+<p id="p-3153">So the volume between the two spheres is increasing at 288 cubic units per unit time.</p>
+<p id="p-3154">Remark: when the radius of the inner sphere increases, we are “subtracting” more area. Since the radius of the inner sphere grows faster than the radius of the outer sphere, we might expect the area between the spheres to be decreasing. Although the radius of the outer sphere grows more slowly, a small increase in the radius of the outer sphere results in a larger change in volume than the same increase in the radius of the inner sphere. So, a result showing that the volume between the spheres is increasing is not unreasonable.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-445"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-3155">You attach two sticks together at their ends, and stick the other ends in the mud. One stick is 150 cm long, and the other is 200 cm.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-259.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3156">The structure starts out being 1.4 metres high at its peak, but the sticks slide, and the height decreases at a constant rate of three centimetres per minute. How quickly is the area of the triangle (formed by the two sticks and the level ground) changing when the height of the structure is 120 cm?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-384" id="hint-384"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-384"><div class="hint solution-like"><p id="p-3157">The area of a triangle is half its base times its height. To find the base, split the triangle into two right triangles.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-445" id="answer-445"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-445"><div class="answer solution-like"><p id="p-3158">0 square centimetres per minute</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-445" id="solution-445"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-445"><div class="solution solution-like">
+<p id="p-3159">We know something about the rate of change of the  height \(h\) of the triangle, and we want to know something about the rate of change of its area, \(A\text{.}\) A reasonable plan is to find an equation relating \(A\) and \(h\text{,}\) and differentiate implicitly with respect to \(t\text{.}\) The area of a triangle with height \(h\) and base \(b\) is</p>
+<div class="displaymath">
+\begin{align*}
+A&amp;=\frac{1}{2}bh\\
+\end{align*}
+<p class="intertext">Note, \(b\) will change with time as well as \(h\text{.}\) So, differentiating with respect to time, \(t\text{:}\)</p>
+\begin{align*}
+\diff{A}{t}&amp;=\frac{1}{2}\left(\diff{b}{t}\cdot h+b\cdot\diff{h}{t}\right)
+\end{align*}
+</div>
+<p data-braille="continuation">We are given \(\diff{h}{t}\) and \(h\text{,}\) but those \(b\)'s are a mystery. We need to relate them to \(h\text{.}\) We can do this by breaking our triangle into  two right triangles and using the Pythagorean Theorem:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-260.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3160">So, the base of the triangle is</p>
+<div class="displaymath">
+\begin{align*}
+b&amp;=\sqrt{150^2-h^2}+\sqrt{200^2-h^2}\\
+\end{align*}
+<p class="intertext">Differentiating with respect to \(t\text{:}\)</p>
+\begin{align*}
+\diff{b}{t}&amp;=\frac{-2h\diff{h}{t}}{2\sqrt{150^2-h^2}}+
+\frac{-2h\diff{h}{t}}{2\sqrt{200^2-h^2}}\\
+&amp;=\frac{-h\diff{h}{t}}{\sqrt{150^2-h^2}}+
+\frac{-h\diff{h}{t}}{\sqrt{200^2-h^2}}\\
+\end{align*}
+<p class="intertext">Using \(\ds\diff{h}{t}=-3\) centimetres per minute:</p>
+\begin{align*}
+\diff{b}{t}&amp;=\frac{3h}{\sqrt{150^2-h^2}}+
+\frac{3h}{\sqrt{200^2-h^2}}\\
+\end{align*}
+<p class="intertext">When \(h=120\text{,}\) \(\sqrt{150^2-h^2}=90\) and \(\sqrt{200^2-h^2}=160\text{.}\) So, at this moment in time:</p>
+\begin{align*}
+b&amp;=90+160=250\\
+\diff{b}{t}&amp;=\frac{3(120)}{90}+\frac{3(120)}{160}
+=
+4+\frac{9}{4}=\frac{25}{4}\\
+\end{align*}
+<p class="intertext">We return to our equation relating the derivatives of \(A\text{,}\) \(b\text{,}\) and \(h\text{.}\)</p>
+\begin{align*}
+\diff{A}{t}&amp;=\frac{1}{2}\left(\diff{b}{t}\cdot h + b \cdot \diff{h}{t}\right)\\
+\end{align*}
+<p class="intertext">When \(h=120\) cm, \(b=250\text{,}\) \(\ds\diff{h}{t}=-3\text{,}\) and \(\ds\diff{b}{t}=\dfrac{25}{4}\text{:}\)</p>
+\begin{align*}
+\diff{A}{t}&amp;=\frac{1}{2}\left(\frac{25}{4}(120)+250(-3)\right)\\
+&amp;=0
+\end{align*}
+</div>
+<p id="p-3161">Remark: What does it mean that \(\left.\ds\diff{A}{t}\right|_{h=120}=0\text{?}\) Certainly, as the height changes, the area changes as well. As the height sinks to 120 cm, the area is increasing, but after it sinks <em class="emphasis">past</em> 120 cm, the area is <em class="emphasis">decreasing</em>. So, at the instant when the height is exactly 120 cm, the area is neither increasing nor decreasing: it is at a local maximum. You'll learn more about this kind of problem in Section <a href="sec_optimise.html" class="internal" title="Section 4.5: Optimisation">4.5</a>.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s3_2segment"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-3162">The circular lid of a salt shaker has radius 8. There is a cut-out to allow the salt to pour out of the lid, and a door that rotates around to cover the cut-out. The door is a quarter-circle of radius 7 cm. The cut-out has the shape of a quarter-annulus with outer radius 6 cm and inner radius 1 cm. If the uncovered area of the cut-out is \(A\) cm\(^2\text{,}\) then the salt flows out at \(\frac{1}{5}A\) cm\(^3\) per second.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:9.25%;margin-right:9.25%;">
+<div class="sbspanel" style="width:36.8098159509202%;justify-content:flex-start;"><img src="images/image-261.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:40.4907975460123%;justify-content:flex-start;"><img src="images/image-262.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-3163">Recall: an annulus is the set of points inside one circle and outside another,  like a flat doughnut (see Question <a class="xref" data-knowl="./knowl/s3_2annulus.html" title="Exercise 4.2.2.15: 2006H">4.2.2.15</a>).</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;">
+<div class="sbspanel" style="width:33.3333333333333%;justify-content:flex-start;"><img src="images/image-263.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:33.3333333333333%;justify-content:flex-start;"><img src="images/image-264.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-3164">While pouring out salt, you spin the door around the lid at a constant rate of \(\frac{\pi}{6}\) radians per second, covering more and more of the cut-out. When exactly half of the cut-out is covered, how fast is the flow of salt changing?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-385" id="hint-385"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-385"><div class="hint solution-like"><p id="p-3165">The easiest way to figure out the area of the sector of an annulus (or a circle) is to figure out the area of the entire annulus, then multiply by what proportion of the entire annulus the sector is. For example, if your sector is \(\frac{1}{10}\) of the entire annulus, then its area is \(\frac{1}{10}\) of the area of the entire annulus. (See Section <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "app_rad_arc_sec" missing]</code> to  see how this works out for circles.)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-446" id="answer-446"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-446"><div class="answer solution-like"><p id="p-3166">\(-\dfrac{7\pi}{12}\approx -1.8\;\dfrac{\mathrm{cm}^3}{\mathrm{sec}^2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-446" id="solution-446"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-446"><div class="solution solution-like">
+<p id="p-3167">Let \(S\) be the flow of salt (in cubic centimetres per second). We want to know \(\ds\diff{S}{t}\text{:}\) how fast the flow is changing at time \(t\text{.}\) We are given an equation for \(S\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+S=\frac{1}{5}A
+\end{equation*}
+</div>
+<p id="p-3168">where \(A\) is the uncovered area of the cut-out. So,</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{S}{t}=\frac{1}{5}\diff{A}{t}
+\end{equation*}
+</div>
+<p id="p-3169">If we can find \(\ds\diff{A}{t}\text{,}\) then we can find \(\ds\diff{S}{t}\text{.}\) We are given information about how quickly the door is rotating. If we let \(\theta\) be the angle made by the leading edge of the door and the far edge of the cut-out (shown below), then \(\ds\diff{\theta}{t}=-\dfrac{\pi}{6}\) radians per second. (Since the door is covering more and more of the cut-out, \(\theta\) is getting smaller, so \(\ds\diff{\theta}{t}\) is negative.)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-265.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3170">Since we know \(\ds\diff{\theta}{t}\text{,}\) and we want to know \(\ds\diff{A}{t}\) (in order to get \(\ds\diff{S}{t}\)), it is reasonable to look for an equation relating \(A\) and \(\theta\text{,}\) and differentiate it implicitly with respect to \(t\) to get an equation relating \(\ds\diff{A}{t}\) and \(\ds\diff{\theta}{t}\text{.}\)</p>
+<p id="p-3171">The area of an annulus with outer radius 6 cm and inner radius 1 cm is \(\pi\cdot 6^2-\pi\cdot1^2=35\pi\) square centimetres. A sector of that same annulus with angle \(\theta\) has area \(\left(\frac{\theta}{2\pi}\right)(35\pi)\text{,}\) since \(\frac{\theta}{2\pi}\) is the ratio of the sector to the entire annulus. (For example, if \(\theta=\pi\text{,}\) then the sector is  <em class="emphasis">half</em> of the entire annulus, so its area is \((1/2)35\pi\text{.}\))</p>
+<p id="p-3172">So, when \(0 \leq \theta \leq \frac{\pi}{2}\text{,}\) the area of the cutout that is open is</p>
+<div class="displaymath">
+\begin{align*}
+A&amp;=\frac{\theta}{2\pi}(35\pi)=\frac{35}{2}\theta\\
+\end{align*}
+<p class="intertext">This is the formula we wanted, relating \(A\) and \(\theta\text{.}\) Differentiating with respect to \(t\text{,}\)</p>
+\begin{align*}
+\diff{A}{t}&amp;=\frac{35}{2}\diff{\theta}{t}=\frac{35}{2}\left(-\frac{\pi}{6}\right)=-\frac{35\pi}{12}\\
+\end{align*}
+<p class="intertext">Since \(\ds\diff{S}{t}=\frac{1}{5}\ds\diff{A}{t}\text{,}\)</p>
+\begin{align*}
+\diff{S}{t}&amp;=-\frac{1}{5}\frac{35\pi}{12}=-\frac{7\pi}{12}\approx -1.8\;\frac{\mathrm{cm}^3}{\mathrm{sec}^2}
+\end{align*}
+</div>
+<p id="p-3173">Remark: the change in flow of salt is constant while the door covers more and more of the cut-out, so we never used the fact that precisely half of the cut-out was open. We also never used the radius of the lid, which is immaterial to the flow of salt.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-447"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-3174">A cylindrical sewer pipe with radius 1 metre has a vertical rectangular door that slides  in front of it to block the flow of water, as shown below. If the uncovered area of the pipe is \(A\) m\(^2\text{,}\) then the flow of water through the pipe is \(\frac{1}{5}A\) cubic metres per second.</p>
+<p id="p-3175">The door slides over the pipe, moving vertically at a rate of 1 centimetre per second. How fast is the flow of water changing when the door covers the top 25 centimetres of the pipe?</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-266.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-386" id="hint-386"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-386"><div class="hint solution-like"><p id="p-3176">Think about the ways in which this problem is similar to and different from Example <a class="xref" data-knowl="./knowl/eg_fuel.html" title="Example 4.2.6: Fuel level in a cylindrical tank">4.2.6</a> and Question <a class="xref" data-knowl="./knowl/s3_2segment.html" title="Exercise 4.2.2.18">4.2.2.18</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-447" id="answer-447"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-447"><div class="answer solution-like"><p id="p-3177">The flow is decreasing at a rate of \(\dfrac{\sqrt{7}}{1000}\;\dfrac{\mathrm{m}^3}{\mathrm{sec}^2}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-447" id="solution-447"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-447"><div class="solution solution-like">
+<p id="p-3178">Let \(F\) be the flow of water through the pipe, so \(F=\dfrac{1}{5}A\text{.}\) We want to know \(\ds\diff{F}{t}\text{,}\) so differentiating implicitly with respect to \(t\text{,}\) we find</p>
+<div class="displaymath">
+\begin{equation*}
+\ds\diff{F}{t}=\frac{1}{5}\ds\diff{A}{t}.
+\end{equation*}
+</div>
+<p id="p-3179">If we can find \(\ds\diff{A}{t}\text{,}\) then we can find \(\ds\diff{F}{t}\text{.}\) We know something about the shape of the uncovered area of the pipe; a reasonable plan is to find an equation relating the height of the door with the uncovered area of the pipe. Let \(h\) be the distance from the top of the pipe to the bottom of the door, measured in metres.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-267.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3180">Since the radius of the pipe is 1 metre, the orange line has length \(1-h\) metres, and the blue line has length 1 metre. Using the Pythagorean Theorem, the green line has length \(\sqrt{1^2-(1-h)^2}=\sqrt{2h-h^2}\) metres.</p>
+<p id="p-3181">The uncovered area of the pipe can be broken up into a triangle (of height \(\textcolor{orange}{1-h}\) and base \(\textcolor{green}{2\sqrt{2h-h^2}}\)) and a sector of a circle (with angle \(2\pi-2\theta\)). The area of the triangle is</p>
+<div class="displaymath">
+\begin{equation*}
+\underbrace{(1-h)}_{\mbox{height}}\underbrace{\sqrt{2h-h^2}}_{\frac{1}{2}\mbox{base}}.
+\end{equation*}
+</div>
+<p data-braille="continuation">The area of the sector is</p>
+<div class="displaymath">
+\begin{equation*}
+\underbrace{\left(\frac{2\pi-2\theta}{2\pi}\right)}_{\atp{\mbox{fraction}}{\mbox{of circle}}}
+\underbrace{(\pi\cdot 1^2)}_{
+\atp{\mbox{area}
+}{\mbox{of circle}
+}}
+=\pi-\theta.
+\end{equation*}
+</div>
+<p id="p-3182">Remember: what we want is to find \(\ds\diff{A}{t}\text{,}\) and what we know is \(\ds\diff{h}{t}=0.01\) metres per second. If we find \(\theta\) in terms of \(h\text{,}\) we find \(A\) in terms of \(h\text{,}\) and then differentiate with respect to \(t\text{.}\)</p>
+<p id="p-3183">Since \(\theta\) is an angle in a right triangle with hypotenuse \(1\) and adjacent side length \(1-h\text{,}\) \(\cos\theta = \frac{1-h}{1} =1-h\text{.}\) We want to conclude that \(\theta = \arccos(1-h)\text{,}\) but let's be a little careful: remember that the range of the arccosine function is angles in \([0,\pi]\text{.}\) We must be confident that \(0\le\theta\le\pi\) in order to conclude \(\theta = \arccos(1-h)\)--but clearly, \(\theta\) is in this range. (Remark: we could also have said \(\sin\theta=\frac{\sqrt{2h-h^2}}{1}\text{,}\) and so \(\theta = \arcsin\left(\sqrt{2h-h^2}\right)\text{.}\) This would require \(-\frac{\pi}{2}\leq \theta\leq\frac{\pi}{2}\text{,}\) which is true when \(h \lt 1\text{,}\) but false for \(h \gt 1\text{.}\) Since our problem asks about \(h=0.25\text{,}\) we could also use arcsine.)</p>
+<p id="p-3184">Now, we know the area of the open pipe in terms of \(h\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+A&amp;=(\mbox{area of triangle})+(\mbox{area of sector})\\
+&amp;=(1-h)\sqrt{2h-h^2}+(\pi-\theta)\\
+&amp;=(1-h)\sqrt{2h-h^2}+\pi-\arccos\left(1-h\right)\\
+\end{align*}
+<p class="intertext">We want to differentiate with respect to \(t\text{.}\) Using the chain rule:</p>
+\begin{align*}
+\diff{A}{t}&amp;=\diff{A}{h}\cdot\diff{h}{t}\\
+\diff{A}{t}&amp;=\left((1-h)\frac{2-2h}{2\sqrt{2h-h^2}}+(-1)\sqrt{2h-h^2}
++\frac{-1}{\sqrt{1-(1-h)^2}}\right)\diff{h}{t}\\
+&amp;=\left(\frac{(1-h)^2}{\sqrt{2h-h^2}}-\sqrt{2h-h^2}-\frac{1}{\sqrt{2h-h^2}}\right)\diff{h}{t}\\
+&amp;=\left(\frac{(1-h)^2-1}{\sqrt{2h-h^2}}-\sqrt{2h-h^2}\right)\diff{h}{t}\\
+&amp;=\left(\frac{-(2h-h^2)}{\sqrt{2h-h^2}}-\sqrt{2h-h^2}\right)\diff{h}{t}\\
+&amp;=\left(-\sqrt{2h-h^2}-\sqrt{2h-h^2}\right)\diff{h}{t}\\
+&amp;=-2\sqrt{2h-h^2}\diff{h}{t}\\
+\end{align*}
+<p class="intertext">We note here that the negative sign makes sense: as the door lowers, \(h\) increases and \(A\) decreases, so \(\ds\diff{h}{t}\) and \(\ds\diff{A}{t}\) should have opposite signs.</p>
+\begin{align*}
+\\
+\end{align*}
+<p class="intertext">When \(h=\dfrac{1}{4}\) metres, and \(\ds\diff{h}{t}=\frac{1}{100}\) metres per second:</p>
+\begin{align*}
+\diff{A}{t}&amp;=-2\sqrt{\frac{2}{4}-\frac{1}{4^2}}\left(\frac{1}{100}\right)=-\frac{\sqrt{7}}{200}\;\frac{\mathrm{cm}^2}{\mathrm{s}}\\
+\end{align*}
+<p class="intertext">Since \(\ds\diff{F}{t}=\frac{1}{5}\ds\diff{A}{t}\text{:}\)</p>
+\begin{align*}
+\diff{F}{t}&amp;=-\frac{\sqrt{7}}{1000}\;\frac{\mathrm{m}^3}{\mathrm{sec^2}}
+\end{align*}
+</div>
+<p data-braille="continuation">That is, the flow is decreasing at a rate of \(\dfrac{\sqrt{7}}{1000}\;\dfrac{\mathrm{m}^3}{\mathrm{sec}^2}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s3_2formulaslast"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-3185">A martini glass is shaped like a cone, with top diameter 10 cm and side length 10 cm.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-268.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3186">When the liquid in the glass is 7 cm high, it is evaporating at a rate of 5 mL per minute. How fast is the height of the liquid decreasing?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-387" id="hint-387"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-387"><div class="hint solution-like"><p id="p-3187">The volume of a cone with height \(h\) and radius \(r\) is \(\frac{1}{3}\pi r^2h\text{.}\) Also, one millilitre is the same as one cubic centimetre.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-448" id="answer-448"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-448"><div class="answer solution-like"><p id="p-3188">\(\dfrac{-15}{49\pi}\approx -0.097\)  cm per minute</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-448" id="solution-448"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-448"><div class="solution solution-like">
+<p id="p-3189">We are given the rate of change of the volume of liquid, and are asked for the rate of change of the height of the liquid. So, we need an equation relating volume and height.</p>
+<p id="p-3190">The volume \(V\) of a cone with height \(h\) and radius \(r\) is \(\frac{1}{3}\pi r^2h\text{.}\) Since we know \(\ds\diff{V}{t}\text{,}\) and want to know \(\ds\diff{h}{t}\text{,}\) we need to find a way to deal with the unwanted variable \(r\text{.}\) We can find \(r\) in terms of \(h\) by using similar triangles. Viewed from the side, the conical glass is an equilateral triangle, as is the water in it. Using the Pythagorean Theorem, the cone has height \(5\sqrt{3}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-269.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3191">Using similar triangles, \(\dfrac{r}{h}=\dfrac{5}{5\sqrt{3}}\text{,}\) so \(r=\dfrac{h}{\sqrt{3}}\text{.}\) (Remark: we could also use the fact that the water forms a cone that looks like an equilateral triangle when viewed from the side to conclude \(r=\dfrac{h}{\sqrt{3}}\text{.}\))</p>
+<p id="p-3192">Now, we can write the volume of water in the cone in terms of \(h\text{,}\) and no other variables.</p>
+<div class="displaymath">
+\begin{align*}
+V&amp;=\frac{1}{3}\pi r^2h\\
+&amp;=\frac{1}{3}\pi \left(\frac{h}{\sqrt{3}}\right)^2h\\
+&amp;=\frac{\pi}{9}h^3\\
+\end{align*}
+<p class="intertext">Differentiating with respect to \(t\text{:}\)</p>
+\begin{align*}
+\diff{V}{t}&amp;=\frac{\pi}{3}h^2\diff{h}{t}\\
+\end{align*}
+<p class="intertext">When \(h=7\) cm and \(\ds\diff{V}{t}=-5\) mL per minute,</p>
+\begin{align*}
+-5&amp;=\frac{\pi}{3}(49)\diff{h}{t}\\
+\diff{h}{t}&amp;=\frac{-15}{49\pi}\approx -0.097 \mbox{ cm per minute}
+\end{align*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-57">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-87"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-449"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<p id="p-3193">A floating buoy is anchored to the bottom of a river. As the river flows, the buoy is pulled in the direction of flow until its 2-metre rope is taught. A sensor at the anchor reads the angle \(\theta\) between the rope and the riverbed, as shown in the diagram below. This data is used to measure the depth \(D\) of water in the river, which depends on time.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-270.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<ol id="p-3194" class="lower-alpha">
+<li id="li-877">If \(\theta = \dfrac{\pi}{4}\) and \(\ds\diff{\theta}{t}=0.25\;\frac{\mathrm{rad}}{\mathrm{hr}}\text{,}\) how fast is the depth \(D\) of the water changing?</li>
+<li id="li-878">A measurement shows \(\ds\diff{\theta}{t}=0\text{,}\) but \(\ds\diff{D}{t}\neq0\text{.}\) Under what circumstances does this occur?</li>
+<li id="li-879">A measurement shows \(\ds\diff{\theta}{t} \gt 0\text{,}\) but \(\ds\diff{D}{t} \lt 0\text{.}\) Under what circumstances does this occur?</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-388" id="hint-388"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-388"><div class="hint solution-like"><p id="p-3195">If you were to install the buoy, how would you choose the length of rope? For which values of \(\theta\) do \(\sin\theta\) and \(\cos\theta\) have different signs? How would those values of \(\theta\) look on the diagram?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-449" id="answer-449"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-449"><div class="answer solution-like"><ol id="p-3196" class="lower-alpha">
+<li id="li-880">\(\ds\diff{D}{t}=\dfrac{1}{2\sqrt{2}}\) metres per hour</li>
+<li id="li-881">The river is higher than 2 metres.</li>
+<li id="li-882">The river's flow has reversed direction. (This can happen near an ocean at high tide.)</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-449" id="solution-449"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-449"><div class="solution solution-like">
+<p id="p-3197">As is so often the case, we use a right triangle in this problem to relate the quantities.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-271.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="displaymath" id="p-3198">
+\begin{align*}
+\sin\theta&amp;=\frac{D}{2}\\
+D&amp;=2\sin\theta\\
+\end{align*}
+<p class="intertext">Using the chain rule, we differentiate both sides with respect to time, \(t\text{.}\)</p>
+\begin{align*}
+\diff{D}{t}&amp;=2\cos\theta\cdot\diff{\theta}{t}\\
+\end{align*}
+<p class="intertext">So, if \(\ds\diff{\theta}{t}=0.25\) radians per hour and \(\theta = \dfrac{\pi}{4}\) radians, then</p>
+\begin{align*}
+(a)\qquad\diff{D}{t}&amp;=2\cos\left(\frac{\pi}{4}\right)\cdot 0.25=2\left(\frac{1}{\sqrt{2}}\right)\frac{1}{4}=\frac{1}{2\sqrt{2}}\;\mbox{metres per hour}.
+\end{align*}
+</div>
+<p id="p-3199">Setting aside part (b) for a moment, let's think about (c). If \(\ds\diff{\theta}{t}\) and \(\ds\diff{D}{t}\) have different signs, then because \(\ds\diff{D}{t}=2\cos\theta\cdot\ds\diff{\theta}{t}\text{,}\) that means \(\cos\theta \lt 0\text{.}\) We have to have a nonnegative depth, so \(D \gt 0\) and \(D=2\sin\theta\) implies \(\sin \theta  \gt 0\text{.}\) If \(\sin\theta\ge0\) and \(\cos \theta \lt 0\text{,}\) then \(\theta\in(\pi/2,\pi]\text{.}\) On the diagram, that looks like this:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-272.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3200">That is: the water has reversed direction. This happens, for instance, when a river empties into the ocean and the tide is high.  Skookumchuck Narrows provincial park, in the Sunshine Coast, has reversing rapids.</p>
+<p id="p-3201">Now, let's return to (b). If the rope is only 2 metres long, and the river rises <em class="emphasis">higher</em> than 2 metres, then our equation \(D=2\sin\theta\) doesn't work any more: the buoy might be stationary underwater while the water rises or falls (but stays at or above \(2\) metres deep).</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-450"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<p id="p-3202">A point is moving in the \(xy\)-plane along the quadrilateral shown below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-273.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<ol id="p-3203" class="lower-alpha">
+<li id="li-883">When the point is at \((0,-2)\text{,}\) it is moving to the right. An observer stationed at the origin must turn at a rate of one radian per second to keep looking directly at the point. How fast is the point moving?</li>
+<li id="li-884">When the point is at \((0,2)\text{,}\) its \(x\)-coordinate is increasing at a rate of one unit per second. How fast it its \(y\)-coordinate changing? How fast is  the point moving?</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-389" id="hint-389"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-389"><div class="hint solution-like">
+<p id="p-3204">At both points of interest, the point is moving along  a straight line. From the diagram, you can figure out the equation of that line.</p>
+<p id="p-3205">For the question “How fast is the point moving?” in part (b), remember that the velocity of an object can be found by differentiating  (with respect to <em class="emphasis">time</em>) the equation that gives the position of the object. The complicating factors in this case are that (1) the position of our object is not given as a function of time, and (2) the position of our object is given in two dimensions, not one.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-450" id="answer-450"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-450"><div class="answer solution-like">
+<p id="p-3206">(a) 2 units per second</p>
+<p id="p-3207">(b) Its \(y\)-coordinate is decreasing at \(\dfrac{1}{2}\) unit per second. The point is moving at \(\dfrac{\sqrt{5}}{2}\) units per second.</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-450" id="solution-450"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-450"><div class="solution solution-like">
+<p id="p-3208">(a) When the point is at \((0,-2)\text{,}\) its \(y\)-coordinate is not changing, because it is moving along a horizontal line. So, the rate at which the particle moves is simply \(\ds\diff{x}{t}\text{.}\) Let \(\theta\) be the angle an observer would be looking at, in order to watch the point. Since we know \(\ds\diff{\theta}{t}\text{,}\) a reasonable plan is to find an equation relating \(\theta\) and \(x\text{,}\) and then differentiate implicitly with respect to \(t\text{.}\) To do this, let's return to our diagram.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-274.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3209">When the point is a little to the right of \((0,-2)\text{,}\) then we can make a triangle with the origin, as shown. If we let \(\theta\) be the indicated angle, then \(\ds\diff{\theta}{t}=1\) radian per second. (It is given that the observer is turning one radian per second, so this is how fast \(\theta\) is increasing.) From the right triangle in the diagram, we see</p>
+<div class="displaymath">
+\begin{equation*}
+\tan\theta=\frac{x}{2}
+\end{equation*}
+</div>
+<p id="p-3210">Now, we have to take care of a subtle point. The diagram we drew only makes sense for the point when it is at a position a little to the <em class="emphasis">right</em> of \((0,-2)\text{.}\) So, right now, we've only made a set-up that will find the derivative <em class="emphasis">from the right</em>. But, with a little more thought, we see that even when \(x\) is negative (that is, when the point is a little to the <em class="emphasis">left</em> of \((0,-2)\)), our equation holds if we are careful about how we define \(\theta\text{.}\) Let \(\theta\) be  the angle between the line connecting the point and the origin, and the \(y\)-axis, where \(\theta\) is <em class="emphasis">negative</em> when the point is to the left of the \(y\)-axis.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-275.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3211">Since \(x\) and \(\theta\) are both negative when the point is to the left of the \(y\)-axis,</p>
+<div class="displaymath">
+\begin{align*}
+\tan|\theta|&amp;=\frac{2}{|x|}\\
+\tan(-\theta) &amp;= \frac{-x}{2}\\
+\end{align*}
+<p class="intertext">So, since \(\tan(-\theta)=-\tan(\theta)\text{:}\)</p>
+\begin{align*}
+\tan\theta&amp;=\frac{x}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">So, we've shown that the relationship \(\tan\theta=\dfrac{x}{2}\) holds when our point is at \((x,-2)\text{,}\) regardless of the sign of \(x\text{.}\)</p>
+<p id="p-3212">Moving on, since we are given \(\ds\diff{\theta}{t}\) and asked for \(\ds\diff{x}{t}\text{,}\) we differentiate with respect to \(t\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\sec^2\theta \cdot \diff{\theta}{t}&amp;=\frac{1}{2}\cdot\diff{x}{t}\\
+\end{align*}
+<p class="intertext">When the point is at \((0,-2)\text{,}\) since the observer is turning at one radian per second, also \(\ds\diff{\theta}{t}=1\text{.}\) Also, looking at the diagram, \(\theta=0\text{.}\) Plugging in these values:</p>
+\begin{align*}
+\sec^2\left(0\right)\cdot(1)&amp;=\frac{1}{2}\cdot\diff{x}{t}\\
+1&amp;=\frac{1}{2}\cdot\diff{x}{t}\\
+\diff{x}{t}&amp;=2
+\end{align*}
+</div>
+<p data-braille="continuation">So, the particle is moving at 2 units per second.</p>
+<p id="p-3213">(b) When the point is at \((0,2)\text{,}\) it is moving along a line with slope \(-\frac{1}{2}\) and \(y\)-intercept \(2\text{.}\) So, it is on the line</p>
+<div class="displaymath">
+\begin{equation*}
+y=2-\frac{1}{2}x
+\end{equation*}
+</div>
+<p id="p-3214">That is, at time \(t\text{,}\) if the point is at \((x(t),y(t))\text{,}\) then \(x(t)\) and \(y(t)\) satisfy \(y(t)=2-\frac{1}{2}x(t)\text{.}\) Implicitly differentiating with respect to \(t\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{y}{t}=-\frac{1}{2}\cdot\diff{x}{t}
+\end{equation*}
+</div>
+<p id="p-3215">So, when \(\ds\diff{x}{t}=1\text{,}\) \(\ds\diff{y}{t}=-\dfrac{1}{2}\text{.}\) That is, its \(y\)-coordinate is decreasing at \(\dfrac{1}{2}\) unit per second.</p>
+<p id="p-3216">For the question “How fast is the point moving?”, remember that the velocity of an object can be found by differentiating  (with respect to <em class="emphasis">time</em>) the equation that gives the position of the object. The complicating factors in this case are that (1) the position of our object is not given as a function of time, and (2) the position of our object is given in two dimensions (an \(x\) coordinate and a \(y\) coordinate), not one.</p>
+<p id="p-3217">Remark: the solution below is actually pretty complicated.  It is within your abilities to figure it out, but later on in your mathematical career you will learn an easier way, using vectors. For now, take this as a relatively tough exercise, and a motivation to keep learning: your intuition that <em class="emphasis">there must be an easier way</em> is well founded!</p>
+<p id="p-3218">The point is moving along a straight line. So, to take care of complication (2), we can give its position as a point on the line. We can take the line as a sort of axis. We'll need to choose a point on the axis to be the “origin”: \((2,1)\) is a convenient point. Let \(D\) be the point's (signed) distance along the “axis” from \((2,1)\text{.}\) When the point is a distance of one unit to the left of \((2,1)\text{,}\) we'll have \(D=-1\text{,}\) and when the point is a distance of one unit to the right of \((2,1)\text{,}\) we'll have \(D=1\text{.}\) Then \(D\) changes with respect to time, and \(\ds\diff{D}{t}\) is the velocity of the point. Since we know \(\ds\diff{x}{t}\) and \(\ds\diff{y}{t}\text{,}\) a reasonable plan is to find an equation relating \(x\text{,}\) \(y\text{,}\) and \(D\text{,}\) and differentiate implicitly with respect to \(t\text{.}\) (This implicit differentiation takes care of complication (1).) Using the Pythagorean Theorem:</p>
+<div class="displaymath" id="p-3219">
+\begin{align*}
+D^2&amp;=(x-2)^2+(y-1)^2\\
+\end{align*}
+<p class="intertext">Differentiating with respect to \(t\text{:}\)</p>
+\begin{align*}
+2D\cdot\diff{D}{t}&amp;=2(x-2)\cdot\diff{x}{t}+2(y-1)\cdot\diff{y}{t}\\
+\end{align*}
+<p class="intertext">We plug in \(x=0\text{,}\) \(y=2\text{,}\) \(\diff{x}{t}=1\text{,}\) \(\diff{y}{t}=-\frac{1}{2}\text{,}\) and \(D=-\sqrt{(0-2)^2+(2-1)^2}=-\sqrt{5}\) (negative because the point is to the left of \((2,1)\)):</p>
+\begin{align*}
+-2\sqrt{5}\cdot\diff{D}{t}&amp;=2(-2)(1)+2(1)\left(-\frac{1}{2}\right)\\
+\diff{D}{t}&amp;=\frac{\sqrt{5}}{2}\;\mbox{units per second}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-451"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-3220">You have a cylindrical water bottle 20 cm high, filled with water. Its cross section is a circle of radius 5. You slowly smoosh the sides, so the cross section becomes an ellipse with major axis (widest part) \(2a\) and minor axis (skinniest part) \(2b\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-276.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-3221">After \(t\) seconds of smooshing the bottle, \(a=5+t\) cm. The perimeter of the cross section is unchanged as the bottle deforms. The perimeter of an ellipse is actually quite difficult to calculate, but we will use an approximation derived by Ramanujan and assume that the perimeter \(p\) of our ellipse is</p>
+<div class="displaymath">
+\begin{equation*}
+p \approx \pi\left[3(a+b)-\sqrt{(a+3b)(3a+b)}\right].
+\end{equation*}
+</div>
+<p id="p-3222">The area of an ellipse is \(\pi a b\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-885">Give an equation that relates \(a\) and \(b\) (and no other variables).</li>
+<li id="li-886">Give an expression for the volume of the bottle as it is being smooshed, in terms of \(a\) and \(b\) (and no other variables).</li>
+<li id="li-887">Suppose the bottle was full when its cross section was a circle. How fast is the water spilling out when \(a\) is twice as big as \(b\text{?}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-390" id="hint-390"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-390"><div class="hint solution-like">
+<p id="p-3223">(a) Since the perimeter of the cross section of the bottle does not change, \(p\) (the perimeter of the ellipse) is the same as the perimeter of the circle of radius 5.</p>
+<p id="p-3224">(b) The volume of the bottle will be the area of its cross section times its height. This is always the case when you have some two-dimensional shape, and turn it into a three-dimensional object by “pulling” the shape straight up. (For example, you can think of a cylinder as a circle that has been “pulled” straight up. To understand why this formula works, think about what is means to measure the area of a shape in square centimetres, and the volume of an object in cubic centimetres.)</p>
+<p id="p-3225">(c) You can use what you know about \(a\) and the formula from (a) to find \(b\) and \(\ds\diff{b}{t}\text{.}\) Then use the formula from \((b)\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-451" id="answer-451"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-451"><div class="answer solution-like">
+<p id="p-3226">(a)  \(10\pi=\pi\left[3(a+b)-\sqrt{(a+3b)(3a+b)}\right]\) or equivalently, \(10=3(a+b)-\sqrt{(a+3b)(3a+b)}\)</p>
+<p id="p-3227">(b) \(20\pi a b\)</p>
+<p id="p-3228">(c) The water is spilling out at about 375.4 cubic centimetres per second. The exact amount is \(-\dfrac{200\pi}{9-\sqrt{35}}\left(1-2\left(\dfrac{3\sqrt{35}-11}{3\sqrt{35}-13}\right)\right)\;\dfrac{\mathrm{cm}^3}{\mathrm{sec}}\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-451" id="solution-451"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-451"><div class="solution solution-like">
+<p id="p-3229">(a) Since the perimeter of the bottle is unchanged (you aren't stretching the plastic), it is always the same as the perimeter before it was smooshed, which is the circumference of a circle of radius 5, or \(2\pi(5)=10\pi\text{.}\) So, using our approximation for the perimeter of an ellipse,</p>
+<div class="displaymath">
+\begin{align*}
+10\pi&amp;=\pi\left[3(a+b)-\sqrt{(a+3b)(3a+b)}\right]\\
+10&amp;=3(a+b)-\sqrt{(a+3b)(3a+b)}
+\end{align*}
+</div>
+<p id="p-3230">(b) The area of the base of the bottle is \(\pi a b\) (see Section <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "app_sec_areas" missing]</code>), and its height is 20 cm, so the volume of the bottle is</p>
+<div class="displaymath">
+\begin{equation*}
+V=20\pi a b
+\end{equation*}
+</div>
+<p id="p-3231">(c) As you smoosh the bottle, its volume decreases, so the water spills out. (If it turns out that the volume is increasing, then no water is spilling out--but life experience suggests, and our calculations verify, that this is not the case.) The water will spill out at a rate of \(-\ds\diff{V}{t}\) cubic centimetres per second, where \(V\) is the volume inside the bottle. We know something about \(a\) and \(\ds\diff{a}{t}\text{,}\) so a reasonable plan is to differentiate the equation from (b) (relating \(V\) and \(a\)) with respect to \(t\text{.}\)</p>
+<p id="p-3232">Using the product rule, we differentiate the equation in (b) implicitly with respect to \(t\) and get</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{V}{t}=20\pi\left(\diff{a}{t}b+a\diff{b}{t}\right)
+\end{equation*}
+</div>
+<p id="p-3233">So, we need to find the values of \(\textcolor{red}{a}\text{,}\) \(\textcolor{red}{b}\text{,}\) \(\textcolor{red}{\ds\diff{a}{t}}\text{,}\) and \(\textcolor{red}{\ds\diff{b}{t}}\) at the moment when \(a=2b\text{.}\)</p>
+<p id="p-3234">The equation from (a) tells us \(10=3(a+b)-\sqrt{(a+3b)(3a+b)}\text{.}\) So, when \(a=2b\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+10&amp;=3(2b+b)-\sqrt{(2b+3b)(6b+b)}\\
+10&amp;=9b-\sqrt{(5b)(7b)}=b\left(9-\sqrt{35}\right)\\
+\color{red}b&amp;\color{red}{=\frac{10}{9-\sqrt{35}}}\\
+\end{align*}
+<p class="intertext">where we use the fact that \(b\) is a positive number, so \(\sqrt{b^2}=|b|=b\text{.}\)</p>
+\begin{align*}
+\\
+\end{align*}
+<p class="intertext">Since \(a=2b\text{,}\)</p>
+\begin{align*}
+\color{red}a&amp;\color{red}{=\frac{20}{9-\sqrt{35}}}\\
+\end{align*}
+<p class="intertext">Now we know \(a\) and \(b\) at the moment when \(a=2b\text{.}\) We still need to know \(\ds\diff{a}{t}\) and \(\ds\diff{b}{t}\) at that moment. Since \(a=5+t\text{,}\) always \(\textcolor{red}{\ds\diff{a}{t}=1}\text{.}\) The equation from (a) relates \(a\) and \(b\text{,}\) so differentiating both sides with respect to \(t\) will give us an equation relating \(\ds\diff{a}{t}\) and \(\ds\diff{b}{t}\text{.}\) When differentiating the portion with a square root, be careful not to forget the chain rule.</p>
+\begin{align*}
+0&amp;=3\left(\diff{a}{t}+\diff{b}{t}\right)-\frac{\left(\diff{a}{t}+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3\diff{a}{t}+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}\\
+\end{align*}
+<p class="intertext">Since \(\ds\diff{a}{t}=1\text{:}\)</p>
+\begin{align*}
+0&amp;=3\left(1+\diff{b}{t}\right)-\frac{\left(1+3\diff{b}{t}\right)(3a+b)+(a+3b)\left(3+\diff{b}{t}\right)}{2\sqrt{(a+3b)(3a+b)}}
+\end{align*}
+</div>
+<p data-braille="continuation">At this point, we could plug in the values we know for \(a\) and \(b\) at the moment when \(a=2b\text{.}\) However, the algebra goes a little smoother if we start by plugging in \(a=2b\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+0&amp;=3\left(1+\diff{b}{t}\right)-\frac{\left(1+3\diff{b}{t}\right)(7b)+(5b)\left(3+\diff{b}{t}\right)}{2\sqrt{(5b)(7b)}}\\
+0&amp;=3\left(1+\diff{b}{t}\right)-\frac{b\left(7+21\diff{b}{t}+15+5\diff{b}{t}\right)}{2b\sqrt{35}}\\
+0&amp;=3\left(1+\diff{b}{t}\right)-\frac{22+26\diff{b}{t}}{2\sqrt{35}}\\
+0&amp;=3+3\diff{b}{t}-\frac{11}{\sqrt{35}}-\frac{13}{\sqrt{35}}\diff{b}{t}\\
+-3+\frac{11}{\sqrt{35}}&amp;=\left(3-\frac{13}{\sqrt{35}}\right)\diff{b}{t}\\
+\diff{b}{t}&amp;=\frac{-3+\frac{11}{\sqrt{35}}}{3-\frac{13}{\sqrt{35}}}
+=\frac{-3\sqrt{35}+11}{3\sqrt{35}-13}
+\end{align*}
+</div>
+<p data-braille="continuation">Now, we can calculate \(\ds\diff{V}{t}\) at the moment when \(a=2b\text{.}\) We already found</p>
+<div class="displaymath">
+\begin{align*}
+\diff{V}{t}&amp;=20\pi\left(\diff{a}{t}b+a\diff{b}{t}\right)
+\end{align*}
+</div>
+<p data-braille="continuation">So, plugging in the values of \(a\text{,}\) \(b\text{,}\) \(\ds\diff{a}{t}\text{,}\) and \(\ds\diff{b}{t}\) at the moment when \(a=2b\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\diff{V}{t}&amp;=20\pi\left((1)\left(\frac{10}{9-\sqrt{35}}\right)+\left(\frac{20}{9-\sqrt{35}}\right)\left(\frac{-3\sqrt{35}+11}{3\sqrt{35}-13}\right)\right)\\
+&amp;=\frac{200\pi}{9-\sqrt{35}}\left(1-2\left(\frac{3\sqrt{35}-11}{3\sqrt{35}-13}\right)\right)\\
+&amp;\approx -375.4\;\frac{\mathrm{cm}^3}{\mathrm{sec}}
+\end{align*}
+</div>
+<p data-braille="continuation">So the water is spilling out of the cup at about 375.4 cubic centimetres per second.</p>
+<p id="p-3235">Remark: the algebra in this problem got a little nasty, but the method behind its solution is no more difficult than most of the problems in this section. One of the reasons why calculus is so widely taught in universities is to give you lots of practice with problem-solving: taking a big problem, breaking it into pieces you can manage, solving the pieces, and getting a solution.</p>
+<p id="p-3236">A problem like this can sometimes derail people. Breaking it up into pieces isn't so hard, but when you actually do those pieces, you can get confused and forget why you are doing the calculations you're doing. If you find yourself in this situation, look back a few steps to remind yourself why you started the calculation you just did. It can also be helpful to write notes, like “We are trying to find \(\diff{V}{t}\text{.}\) We already know that \(\diff{V}{t} = ...\text{.}\) We still need to find \(a\text{,}\) \(b\text{,}\) \(\diff{a}{t}\) and \(\diff{b}{t}\text{.}\)”</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-452"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<p id="p-3237">The quantities \(A\text{,}\) \(B\text{,}\) \(C\text{,}\) and \(D\) all depend on time, and are related by the formula</p>
+<div class="displaymath">
+\begin{equation*}
+AB=\log\left(C^2+D^2+1\right).
+\end{equation*}
+</div>
+<p id="p-3238">At time \(t=10\text{,}\) the following values are known:</p>
+<ul class="disc">
+<li id="li-888">\(\displaystyle A=0\)</li>
+<li id="li-889">\(\ds\diff{A}{t}=2\) units per second</li>
+</ul>
+<p data-braille="continuation">What is \(B\) when \(t=10\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-391" id="hint-391"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-391"><div class="hint solution-like"><p id="p-3239">If \(A=0\text{,}\) you can figure out \(C\) and \(D\) from the relationship given.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-452" id="answer-452"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-452"><div class="answer solution-like"><p id="p-3240">\(B(10)=0\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-452" id="solution-452"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-452"><div class="solution solution-like">
+<p id="p-3241">Since \(A=0\text{,}\) the equation relating the variables tells us:</p>
+<div class="displaymath">
+\begin{align*}
+0&amp;=\log\left(C^2+D^2+1\right)\\
+1&amp;=C^2+D^2+1\\
+0&amp;=C^2+D^2\\
+0&amp;=C=D\\
+\end{align*}
+<p class="intertext">This will probably be useful information. Since we're also given the value of a derivative, let's differentiate the equation relating the variables implicitly with respect to \(t\text{.}\) For ease of notation, we will write \(\ds\diff{A}{t}=A'\text{,}\) etc.</p>
+\begin{align*}
+A'B+AB'&amp;=\frac{2CC'+2DD'}{C^2+D^2+1}\\
+\end{align*}
+<p class="intertext">At \(t=10\text{,}\) \(A=C=D=0\text{:}\)</p>
+\begin{align*}
+A'B+0&amp;=\frac{0+0}{0+0+1}\\
+A'B&amp;=0\\
+\end{align*}
+<p class="intertext">at \(t=10\text{,}\) \(A'=2\) units per second:</p>
+\begin{align*}
+2B&amp;=0\\
+B&amp;=0.
+\end{align*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

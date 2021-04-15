@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:20:07-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>The integral looks messy. Let's compute the curl of</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vF = (z + \sin z) \,\hi
++ (x^3 - x^2 y) \,\hj
++ (x \cos z - y) \,\hk
+\end{equation*}
+</div>
+<p data-braille="continuation">to help gauge if Stokes' theorem would be easier.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk\\
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+\tfrac{\partial }{\partial z}\\
+z + \sin z &amp; x^3 - x^2 y &amp; x \cos z - y
+\end{matrix}
+\right]\\
+&amp;=-\hi +\hj +(3x^2-2xy)\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">That's a lot simpler than \(\vF\text{.}\) For the surface \(z=f(x,y)=xy^2\text{,}\) with downward pointing normal (since \(C\) is traversed clockwise)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\hn\,\dee{S} = -\big(-f_x,-f_y,1\big)\,\dee{x}\dee{y}
+=\big(y^2,2xy,-1\big)\,\dee{x}\dee{y}
+\end{equation*}
+</div>
+<p data-braille="continuation">by (<a class="xref" data-knowl="./knowl/eq_SUdSgraph.html" title="Equation 14.3.2">14.3.2</a>), So, writing</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S&amp;=\Set{(x,y,z)}{z=xy^2,\ x^2+y^2\le 1}\\
+D&amp;=\Set{(x,y)}{x^2+y^2\le 1}
+\end{align*}
+</div>
+<p data-braille="continuation">Stoke's theorem gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_C\vF\cdot\dee{\vr}
+&amp;=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+=\dblInt_D\big\{-y^2+2xy -3x^2+2xy\big\}\,\dee{x}\dee{y}\\
+&amp;=-\dblInt_{x^2+y^2\le 1}\big\{3x^2+y^2-4xy\big\}\,\dee{x}\dee{y}
+\end{align*}
+</div>
+<p data-braille="continuation">To evaluate this integral, switch to polar coordinates.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_C\vF\cdot\dee{\vr}
+&amp;=-\int_0^1\dee{r}\ r\int_0^{2\pi}\dee{\theta}\
+\big\{3r^2\cos^2\theta+r^2\sin^2\theta
+-4r^2\sin\theta\cos\theta\big\}\\
+&amp;=-4\pi \int_0^1\dee{r}\ r^3 =-\pi
+\end{align*}
+</div>
+<p data-braille="continuation">since \(\int_0^{2\pi}\sin\theta\cos\theta\,\dee{\theta}
+=\frac{1}{2}\int_0^{2\pi}\sin(2\theta)\,\dee{\theta}=0\) and \(\int_0^{2\pi}\sin^2\theta\,\dee{\theta}
+=\int_0^{2\pi}\cos^2\theta\,\dee{\theta}
+=\pi\text{.}\) (See Example <a class="xref" data-knowl="./knowl/eg_workIntegralB.html" title="Example 13.4.4">13.4.4</a>.)</p>
+</div></body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:11:49-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>First we have to parametrize \(S\text{.}\) It is natural to use spherical coordinates with \(\rho=\sqrt{2}\text{.}\) However if we use the standard spherical coordinates</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+x=\sqrt{2}\,\sin\varphi\cos\theta \qquad
+y=\sqrt{2}\,\sin\varphi\sin\theta \qquad
+z=\sqrt{2}\,\cos\varphi
+\end{gather*}
+</div>
+<p data-braille="continuation">the condition \(y\ge 1\) becomes \(\sin\varphi\sin\theta\ge\frac{1}{\sqrt{2}}\text{,}\) which is very complicated. So let's back up and think a bit before we compute. The condition \(z\ge 1\text{,}\) as opposed to \(y\ge 1\text{,}\) is easy to implement in spherical coordinates. It is \(\cos\varphi\ge \frac{1}{\sqrt{2}}\) or \(0\le\varphi\le\frac{\pi}{4}\text{.}\) So let's modify spherical coordinates to make the \(y\)-axis play the role of the \(z\)-axis, by just exchanging \(y\) and \(z\) in the parametrization.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+x=\sqrt{2}\,\sin\varphi\cos\theta \qquad
+y=\sqrt{2}\,\cos\varphi\qquad
+z=\sqrt{2}\,\sin\varphi\sin\theta
+\end{gather*}
+</div>
+<p data-braille="continuation">The condition \(y\ge 1\) is then \(\sqrt{2}\cos\varphi\ge 1\text{,}\) which is turn is \(0\le\varphi\le\frac{\pi}{4}\text{.}\) Since we have just exchanged \(y\) and \(z\) we could probably just guess \(\hn\,\dee{S}\) and \(\dee{S}\) from standard spherical coordinates. (See Appendix <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[cross-reference to target(s) "ap_spherCoord" missing]</code> and recall that \(\rho=\sqrt{2}\text{.}\))  But to be on the safe side, let's derive them. We are using the parametrization</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\vr(\theta, \varphi) = \sqrt{2}\,\sin\varphi\cos\theta\,\hi
++\sqrt{2}\,\cos\varphi\,\hj
++\sqrt{2}\,\sin\varphi\sin\theta\,\hk\\
+&amp;0\le\theta\le 2\pi,\ 0\le \varphi\le \frac{\pi}{4}
+\end{align*}
+</div>
+<p data-braille="continuation">Since</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{\partial\vr}{\partial\theta}
+&amp;= -\sqrt{2}\,\sin\varphi\sin\theta\,\hi
++\sqrt{2}\,\sin\varphi\cos\theta\,\hk\\
+\frac{\partial\vr}{\partial\varphi}
+&amp;= \sqrt{2}\,\cos\varphi\cos\theta\,\hi - \sqrt{2}\,\sin\varphi\,\hj
++ \sqrt{2}\,\cos\varphi\sin\theta\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{\partial\vr}{\partial\theta}\times\frac{\partial\vr}{\partial\varphi}
+&amp;= \det\left[\begin{matrix} \hi &amp; \hj &amp; \hk \\
+-\sqrt{2}\,\sin\varphi\sin\theta &amp; 0  &amp;
+\sqrt{2}\,\sin\varphi\cos\theta \\
+\sqrt{2}\,\cos\varphi\cos\theta &amp;- \sqrt{2}\,\sin\varphi &amp;
+\sqrt{2}\,\cos\varphi\sin\theta
+\end{matrix}\right]\\
+&amp;= 2\sin^2\varphi\cos\theta\,\hi +2\sin\varphi\cos\varphi\,\hj
++ 2\sin^2\varphi\sin\theta\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">(<a class="xref" data-knowl="./knowl/eq_SUdSparam.html" title="Equation 14.3.1">14.3.1</a>) gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{2}
+\hn\,\dee{S} &amp;= \pm \frac{\partial\vr}{\partial\theta}\times
+\frac{\partial\vr}{\partial\varphi}\,\dee{\theta}\dee{\varphi}
+&amp;&amp;= \pm 2\sin\varphi
+\big(\sin\varphi\cos\theta\,,\,\cos\varphi\,,\, \sin\varphi\sin\theta\big)
+\,\dee{\theta}\dee{\varphi}\\
+\dee{S} &amp;= \left|\frac{\partial\vr}{\partial\theta}\times
+\frac{\partial\vr}{\partial\varphi}\right|\,\dee{\theta}\dee{\varphi}
+&amp;&amp;= 2\sin\varphi \,\dee{\theta}\dee{\varphi}
+\end{alignat*}
+</div>
+<p data-braille="continuation">Choose the plus sign to give the outward pointing normal.</p>
+<span class="incontext"><a href="sec_surfaceIntegrals.html#p-17303">in-context</a></span>
+</body>
+</html>

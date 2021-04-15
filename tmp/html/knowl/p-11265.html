@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:31:55-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>In order to show that the value of this integral is an integer we will use  integration by parts. You have already practiced using  integration by parts to integrate quantities like</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\int x^2\sin(x)\,\dee{x}
+\end{gather*}
+</div>
+<p data-braille="continuation">and this integral isn't much different. For the moment let us just  use the fact that \(f(x)\) is a polynomial of degree  \(2n\text{.}\) Using integration by parts with \(u=f(x)\text{,}\) \(\dee{v}=\sin(x)\) and \(v=-\cos(x)\) gives us</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int f(x) \sin(x) \,\dee{x}
+&amp;= -f(x)\cos(x)  + \int f'(x)\cos(x)\,\dee{x}\\
+\end{align*}
+<p class="intertext">Use integration by parts again with \(u=f'(x)\text{,}\) \(\dee{v}=\cos(x)\) and \(v=\sin(x)\text{.}\)</p>
+\begin{align*}
+&amp;= -f(x)\cos(x)  + f'(x)\sin(x) - \int f''(x)\sin(x)\,\dee{x}\\
+\end{align*}
+<p class="intertext">Use integration by parts yet again, with \(u=f''(x)\text{,}\)  \(\dee{v}=\sin(x)\) and \(v=-\cos(x)\text{.}\)</p>
+\begin{align*}
+&amp;= -f(x)\cos(x)  + f'(x)\sin(x) + f''(x)\cos(x)  - \int f'''(x)\cos(x)\,\dee{x}
+\end{align*}
+</div>
+<p data-braille="continuation">And now we can see the pattern; we get alternating signs, and then derivatives multiplied by sines and cosines:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int f(x) \sin(x) \dee{x}
+&amp;= \cos(x)\left(-f(x)+f''(x)-f^{(4)}(x)+f^{(6)}(x) - \cdots \right)\\
+&amp;\phantom{=} + \sin(x)\left(f'(x)-f'''(x)+f^{(5)}(x)-f^{(7)}(x) + \cdots \right)
+\end{align*}
+</div>
+<p data-braille="continuation">This terminates at the \(2n^\mathrm{th}\) derivative since \(f(x)\) is a polynomial of degree \(2n\text{.}\)  We can check this  computation by differentiating the terms on the right-hand side:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\diff{}{x}\left(
+\cos(x)\left(-f(x)+f''(x)-f^{(4)}(x)+f^{(6)}(x) - \cdots \right)
+\right)\\
+= -\sin(x)\left(-f(x)+f''(x)-f^{(4)}(x)+f^{(6)}(x) - \cdots \right)\\
++ \cos(x)\left(-f'(x)+f'''(x)-f^{(5)}(x)+f^{(7)}(x) - \cdots \right)
+\end{gather*}
+</div>
+<p data-braille="continuation">and similarly</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\diff{}{x} \left(
+\sin(x)\left(f'(x)-f'''(x)+f^{(5)}(x)-f^{(7)}(x) + \cdots \right)
+\right)\\
+= \cos(x)\left(f'(x)-f'''(x)+f^{(5)}(x)-f^{(7)}(x) + \cdots \right)\\
++ \sin(x) \left(f''(x)-f^{(4)}(x)+f^{(6)}(x) - \cdots \right)
+\end{gather*}
+</div>
+<p data-braille="continuation">When we add these two expressions together all the terms cancel except \(f(x)\sin(x)\text{,}\) as required.</p>
+<span class="incontext"><a href="sec_RatIrr.html#p-11265">in-context</a></span>
+</body>
+</html>

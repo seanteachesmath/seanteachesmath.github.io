@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:51:33-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\int_0^1 2^x\dee{x}=\lim_{n \to \infty}\sum_{i=1}^n \Delta x f({a+i\Delta x})\\
+&amp;=\lim_{n \to \infty}\sum_{i=1}^n \frac{1}{n} f\left(\frac{i}{n}\right)\\
+&amp;=\lim_{n \to \infty}\sum_{i=1}^n  \frac{1}{n}\cdot 2^{i/n}\\
+&amp;=\lim_{n \to \infty}\frac{1}{n}\left(2^{1/n}+2^{2/n}+2^{3/n}+\cdots + 2^{n/n}\right)\\
+&amp;=\lim_{n \to \infty}\frac{2^{1/n}}{n}\left(1+2^{1/n}+2^{2/n}+\cdots + 2^{\frac{n-1}{n}}\right)\\
+&amp;=\lim_{n \to \infty}\frac{2^{1/n}}{n}\left(1+2^{1/n}+\left(2^{1/n}\right)^2+\cdots + \left(2^{1/n}\right)^{n-1}\right)\\
+\end{align*}
+<p class="intertext">The sum in parenthesis has the form of a geometric sum, with \(r=2^{1/n}\text{:}\)</p>
+\begin{align*}
+&amp;=\lim_{n \to \infty}\frac{2^{1/n}}{n}\left(
+\frac{\left(2^{1/n}\right)^n-1}{2^{1/n}-1}
+\right)\\
+&amp;=\lim_{n \to \infty}\frac{2^{1/n}}{n}\left(
+\frac{2-1}{2^{1/n}-1}
+\right)\\
+&amp;=\lim_{n \to \infty}
+\frac{2^{1/n}}{n(2^{1/n}-1)}\\
+\end{align*}
+<p class="intertext">Note as \(n \to \infty\text{,}\) \(1/n \to 0\text{,}\) so the numerator has limit 1, while the denominator has indeterminate form \(\infty\cdot 0\text{.}\) So, we'll do a little algebra to get this into a l'Hôpital-style indeterminate form:</p>
+\begin{align*}
+&amp;=\lim_{n \to \infty}
+\frac{\frac{1}{n}\cdot2^{1/n}}{2^{1/n}-1}\\
+&amp;=\lim_{n \to \infty}
+\underbrace{\frac{\frac{1}{n}}{1-2^{-1/n}}}_{\atp{\mathrm{num}\to 0}{\mathrm{den}\to 0}}\\
+\end{align*}
+<p class="intertext">Now we can use l'Hôpital's rule. Recall \(\diff{}{x}\left\{2^x\right\}=2^x\log x\text{,}\) where \(\log x\) is the natural logarithm of \(x\text{,}\) also sometimes written \(\ln x\text{.}\) We'll need to use the chain rule when we differentiate the denominator.</p>
+\begin{align*}
+&amp;=\lim_{n \to \infty}
+\frac{\frac{-1}{n^2}}{-2^{-1/n}\log 2 \cdot \frac{1}{n^2}}\\
+&amp;=\lim_{n \to \infty}
+\frac{2^{1/n}}{\log 2}\\
+&amp;=\frac{1}{\log 2}
+\end{align*}
+</div>
+<span class="incontext"><a href="sec_intdef.html#mjx-eqn-mrow-4783">in-context</a></span>
+</body>
+</html>

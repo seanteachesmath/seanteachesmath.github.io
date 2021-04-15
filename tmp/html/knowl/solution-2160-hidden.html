@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:06:47-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>(a) The curl of \(\vF\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk\\
+\pdiff{}{x} &amp; \pdiff{}{y} &amp;
+\pdiff{}{z}\\
+\cos x &amp; 2+\sin y &amp; e^z
+\end{matrix}
+\right]
+=\vZero
+\end{align*}
+</div>
+<p data-braille="continuation">Because \(F_1\) is a function only of \(x\text{,}\) \(F_2\) is a function only of \(y\text{,}\) and \(F_3\) is a function only of \(z\text{,}\) that all partial derivatives used in computing the curl are 0.</p>
+<p>(b) The vector field  \(\vF\) passes the screening test on all of \(\bbbr^3\) and so is conservative by Theorem <a class="xref" data-knowl="./knowl/thm_screenConserv.html" title="Theorem 13.4.8">13.4.8</a> in the  text. Alternatively, we can see that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vF=\vnabla\big(\sin x +2y-\cos y +e^z\big)
+\end{equation*}
+</div>
+<p data-braille="continuation">by inspection. Alternatively, \(f\) can be found by antidifferentiating its partial derivatives:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\pdiff{f}{x}(x,y,z) &amp;= \cos x &amp;\implies
+f(x,y,z)&amp;=\sin x + \psi_1(y,z)\\
+\pdiff{f}{y}(x,y,z) &amp;= 2 + \sin y &amp;\implies
+f(x,y,z)&amp;=2y-\cos y + \psi_2(x,z)\\
+\pdiff{f}{z}(x,y,z) &amp;= e^z&amp;\implies
+f(x,y,z)&amp;=e^z+\psi_3(x,y)
+\end{align*}
+</div>
+<p data-braille="continuation">We'd like a single function \(f(x,y,z)\) that simultaneously obeys all three of these equations, for some \(\psi_j\)'s. An initial guess is simply the sum of all of the distinct terms, other than the \(\psi_j\)'s, that appear in the three equations. The term \(\sin x\) appears in the \(\psi_1\) equation, the terms \(2y\) and \(-\cos y\) appears in the \(\psi_2\) equation, and the term \(e^z\) appears in the \(\psi_3\) equation. So we guess</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f(x,y,z)\stackrel{?}{=} \sin x +2y-\cos y +e^z 
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">If we let \(\psi_1(y,z)=2y-\cos y +e^z\text{,}\) \(\psi_2(x,z)=\sin x +e^z\text{,}\) and \(\psi_3(x,y)=\sin x +2y-\cos y\text{,}\) then we see this function \(f(x,y,z)\) is indeed a potential for \(\vF\text{.}\)</p>
+<p>(c) Since \(\vF=\vnabla f\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_C\vF\cdot\dee{\vr}
+&amp;= f\big(\vr(3\pi)\big) -f\big(\vr(0)\big)\\
+&amp;= f(3\pi,-1,0) - f(0,1,0)\\
+&amp;=\big(0-2-\cos (-1)+1\big)-\big(0+2-\cos 1+1\big)\\
+\end{align*}
+<p class="intertext">Since cosine is an even function, \(\cos(-1)=\cos1\text{.}\)</p>
+\begin{align*}
+&amp;=-4
+\end{align*}
+</div>
+</div></body>
+</html>

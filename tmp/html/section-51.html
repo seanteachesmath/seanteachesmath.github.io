@@ -1,0 +1,2614 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T15:32:08-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>More Integration Examples</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_improp_int.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_integral.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="chap_int_app.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_improp_int.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_integral.html" title="Up">Up</a><a class="next-button button toolbar-item" href="chap_int_app.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51" class="active">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-51"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.13</span> <span class="title">More Integration Examples</span>
+</h2>
+<section class="introduction" id="introduction-241"></section><section class="exercises" id="exercises-57"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">6.13.1</span> <span class="title">Exercises</span>
+</h3>
+<section class="introduction" id="introduction-242"><p id="p-8149">Recall that we are using \(\log x\) to denote the logarithm of \(x\) with base \(e\text{.}\) In other courses it is often denoted \(\ln x\text{.}\)</p></section><div class="exercisegroup" id="exercisegroup-152">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-243"></div>
+<div class="exercisegroup-exercises"><article class="exercise exercise-like" id="exercise-1055"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-8150">Match the integration method to a common kind of integrand it's used to antidifferentiate.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">(A) \(u\)-substitution</td>
+<td class="l m b1 r1 l0 t1 lines">(I)</td>
+<td class="l m b1 r1 l0 t1 lines" data-braille="last-cell">a function multiplied by its derivative</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">(B) trigonometric substitution</td>
+<td class="l m b1 r1 l0 t0 lines">(II)</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">a polynomial times an exponential</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">(C) integration by parts</td>
+<td class="l m b1 r1 l0 t0 lines">(III)</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">a rational function</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">(D) partial fractions</td>
+<td class="l m b1 r1 l0 t0 lines">(IV)</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">the square root of a quadratic function</td>
+</tr>
+</table></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-973" id="hint-973"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-973"><div class="hint solution-like"><p id="p-8151">Each option in each column should be used exactly once.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1055" id="answer-1055"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1055"><div class="answer solution-like"><p id="p-8152">(A)–(I), (B)–(IV), (C)–(II), (D)–(III)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1055" id="solution-1055"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1055"><div class="solution solution-like">
+<p id="p-8153">(A) Note \(\int f'(x)f(x)\ \dee{x} = \int u\ \dee{u} \) if we substitute \(u=f(x)\text{.}\) This is the kind of integrand described in (I). It's quite possible that a \(u\)-substitution would work on the others, as well, but (I) is the most reliable kind of integrand for a \(u\)-substitution.</p>
+<p id="p-8154">(B) A trigonometric substitution usually allows us to cancel out a square root containing a quadratic function, as in (IV).</p>
+<p id="p-8155">(C) We can often antidifferentiate the product of a polynomial with an exponential function using integration by parts: see Examples <a class="xref" data-knowl="./knowl/eg_PRTSxex.html" title="Example 6.7.1: \(\int xe^x \dee{x}\)">6.7.1</a>, <a class="xref" data-knowl="./knowl/eg_PRTSxtwoex.html" title="Example 6.7.6: \(\int x^2 e^x \dee{x}\)">6.7.6</a>. If we let \(u\) be the polynomial function and \(\dee{v}\) be the exponential, as long as we can antidifferentiate \(\dee{v}\text{,}\) we can repeatedly apply integration by parts until the polynomial function goes away. So, we go with (II)</p>
+<p id="p-8156">(D) We apply partial fractions to rational functions, (III).</p>
+<p id="p-8157">Note: without knowing more about the functions, there's no guarantee that the methods we chose will be the best methods, or even that they will work (with the exception of (I)).  With practice, you gain intuition about likely methods for different integrals. Luckily for you, there's lots of practice below.</p>
+</div></div>
+</div></article></div>
+</div>
+<div class="exercisegroup" id="exercisegroup-153">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-244"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1056"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-8158">Evaluate \(\displaystyle\int_0^{{\pi}/{2}} \sin^4 x \cos^5 x \dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-974" id="hint-974"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-974"><div class="hint solution-like">
+<p id="p-8159">The integrand is the product of sines and cosines. See how this was handled with a substitution in Section <a href="sec_trigint.html#sec_sincos" class="internal" title="Subsection 6.8.1: Integrating \(\int \sin^m x\cos^n x\dee{x}\)">6.8.1</a>.</p>
+<p id="p-8160">After your substitution, you should have a polynomial expression in \(u\)—but it might take some simplification to get it into a form you can easily integrate.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1056" id="answer-1056"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1056"><div class="answer solution-like"><p id="p-8161">\(\dfrac{1}{5}-\dfrac{2}{7}+\dfrac{1}{9}
+=\dfrac{8}{315}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1056" id="solution-1056"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1056"><div class="solution solution-like">
+<p id="p-8162">The integrand is a product of powers of sine and cosine. Since cosine has an odd power, we want to substitute \(u=\sin x\text{,}\) \(\dee{u}=\cos x \dee{x}\text{.}\) Therefore, we should:</p>
+<ul class="disc">
+<li id="li-3117">reserve one cosine for the derivative of sine in our substitution, and</li>
+<li id="li-3118">change the rest of the cosines to sines using the identity \(\sin^2x+\cos^2x=1\text{.}\)</li>
+</ul>
+<div class="displaymath">
+\begin{align*}
+\int_0^{\pi/2}\sin^4x\cos^5x\dee{x}&amp;=
+\int_{0}^{\pi/2}\sin^4x(\cos^2x)^2\cos x\dee{x}\\
+&amp;=\int_{0}^{\pi/2}\sin^4x(1-\sin^2x)^2\underbrace{\cos x\dee{x}}_{du}\\
+&amp;=
+\int_{\sin(0)}^{\sin(\pi/2)}u^4(1-u^2)^2du\\
+&amp;=
+\int_{0}^{1}u^4(1-2u^2+u^4)du\\
+&amp;=
+\int_{0}^{1}(u^4-2u^6+u^8)du\\
+&amp;=\left[
+\frac{1}{5}u^5-\frac{2}{7}u^7+\frac{1}{9}u^9
+\right]_{u=0}^{u=1}\\
+&amp;=
+\left(\frac{1}{5}-\frac{2}{7}+\frac{1}{9}\right)
+-
+0\\
+&amp;=\dfrac{8}{315}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1057"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-8163">Evaluate \(\displaystyle\int \sqrt{3-5x^2}\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-975" id="hint-975"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-975"><div class="hint solution-like">
+<p id="p-8164">We notice that the integrand has a quadratic polynomial under the square root. If that polynomial were a perfect square, we could get rid of the square root: try a trig substitution, as in Section <a href="sec_trigsub.html" class="internal" title="Section 6.9: Trigonometric Substitution">6.9</a>.</p>
+<p id="p-8165">The identity \(\sin(2\theta)=2\sin\theta\cos\theta\) might come in handy.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1057" id="answer-1057"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1057"><div class="answer solution-like"><p id="p-8166">\(\dfrac{3}{2\sqrt{5}}
+\arcsin\left(x\sqrt{\dfrac{5}{3}}\right) + \dfrac{x}{2}\sqrt{3-5x^2}
++C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1057" id="solution-1057"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1057"><div class="solution solution-like">
+<p id="p-8167">We notice that there is a quadratic equation under the square root. If that equation were a perfect square, we could get rid of the square root: so we'll mould it into a perfect square using a trig substitution.</p>
+<p id="p-8168">Our candidates will use one of the following identities:</p>
+<div class="displaymath">
+\begin{equation*}
+1-\sin^2\theta=\cos^2\theta \hspace{1cm} \tan^2\theta+1=\sec^2\theta \hspace{1cm} \sec^2\theta-1=\tan^2\theta
+\end{equation*}
+</div>
+<p id="p-8169">We'll be substituting \(x=\)(something), so we notice that \(3-5x^2\) has the general form of (constant)\(-\)(function), as does \(1-\sin^2\theta\text{.}\) In order to get the constant right, we multiply through by three:</p>
+<div class="displaymath">
+\begin{equation*}
+3-3\sin^2\theta = 3\cos^2\theta
+\end{equation*}
+</div>
+<p id="p-8170">Our goal is to get \(3-5x^2=3-3\sin^2\theta\text{;}\) so we solve this equation for \(x\) and decide on the substitution</p>
+<div class="displaymath">
+\begin{equation*}
+x=\sqrt{\frac{3}{5}}\sin\theta,\hspace{1cm}
+\dee{x}=\sqrt{\frac{3}{5}}\cos\theta \dee{\theta}
+\end{equation*}
+</div>
+<p id="p-8171">Now we evaluate our integral.</p>
+<div class="displaymath">
+\begin{align*}
+\int\sqrt{3-5x^2}\dee{x}&amp;=\int\sqrt{3-5\left( \sqrt{\frac{3}{5}}\sin\theta\right)^2}\sqrt{\frac{3}{5}}\cos\theta d \theta\\
+&amp;=\int
+\sqrt{3-3\sin^2\theta}\sqrt{3/5}\cos\theta
+\dee{\theta}\\
+&amp;=\int
+\sqrt{3\cos^2\theta}\sqrt{3/5}\cos\theta
+\dee{\theta}\\
+&amp;=\int
+\sqrt{3}\cos\theta\sqrt{3/5}\cos\theta
+\dee{\theta}\\
+&amp;=\frac{3}{\sqrt{5}}\int
+\cos^2\theta
+\dee{\theta}\\
+&amp;=\frac{3}{\sqrt{5}}\int
+\frac{1+\cos 2\theta}{2}
+\dee{\theta}\\
+&amp;=\frac{3}{2\sqrt{5}}\int
+(1+\cos2\theta)
+\dee{\theta}\\
+&amp;=
+\frac{3}{2\sqrt{5}}\left[
+\theta+\frac{1}{2}\sin(2\theta)
+\right]+C\\
+&amp;=\frac{3}{2\sqrt{5}}\left[
+\theta + \sin\theta\cos\theta
+\right]+C
+\end{align*}
+</div>
+<p data-braille="continuation">From our substitution \(x=\sqrt{3/5}\sin\theta\text{,}\) we glean \(\sin\theta = x\sqrt{5/3}\text{,}\) and \(\theta = \arcsin \left(x\sqrt{5/3} \right)\text{.}\) To figure out \(\cos\theta\text{,}\) we draw a right triangle. Let \(\theta\) be one angle, and since \(\sin\theta = \dfrac{x\sqrt{5}}{\sqrt{3}}\text{,}\) we let the hypotenuse be \(\sqrt{3}\) and the side opposite \(\theta\) be \(x\sqrt{5}\text{.}\) By Pythagorus, the missing side (adjacent to \(\theta\)) has length \(\sqrt{3-5x^2}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-827.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-8172">Therefore, \(\cos\theta = \frac{\mbox{adj}}{\mbox{hyp}} = \dfrac{\sqrt{3-5x^2}}{\sqrt{3}}\text{.}\) So our integral evaluates to:</p>
+<div class="displaymath" id="p-8173">
+\begin{align*}
+\amp\frac{3}{2\sqrt{5}}\left[
+\theta + \sin\theta\cos\theta
+\right]+C\\
+&amp;\hskip0.5in=
+\frac{3}{2\sqrt{5}}\left[
+\arcsin(x\sqrt{5/3}) + x\sqrt{5/3}\cdot \frac{\sqrt{3-5x^2}}{\sqrt{3}}
+\right]+C\\
+&amp;\hskip0.5in=
+\frac{3}{2\sqrt{5}}
+\arcsin(x\sqrt{5/3}) + \frac{x}{2}\cdot {\sqrt{3-5x^2}}
++C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1058"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-8174">Evaluate \(\displaystyle\int_0^\infty \dfrac{x-1}{e^x}\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-976" id="hint-976"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-976"><div class="hint solution-like">
+<p id="p-8175">Notice the integral is improper. When you compute the limit, l'Hôpital's rule might help.</p>
+<p id="p-8176">If you're struggling to think of how to antidifferentiate, try writing \(\dfrac{x-1}{e^x} = (x-1)e^{-x}\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1058" id="answer-1058"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1058"><div class="answer solution-like"><p id="p-8177">0</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1058" id="solution-1058"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1058"><div class="solution solution-like">
+<p id="p-8178">First, we note the integral is improper. So, we'll need to replace the top bound with a variable, and take a limit. Second, we're going to have to antidifferentiate. The integrand is the product of an exponential function, \(e^{-x}\text{,}\) with a polynomial function, \(x-1\text{,}\) so we use integration by parts with \(u=x-1\text{,}\) \(\dee{v}=e^{-x}\dee{u}\text{,}\) \(\dee{u}=\dee{x}\text{,}\) and \(v = -e^{-x}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int \dfrac{x-1}{e^x} \dee{x}&amp;=-(x-1)e^{-x} + \int e^{-x} \dee{x}\\
+&amp;=-(x-1)e^{-x} -e^{-x}+C
+=-xe^{-x}+C\\
+\text{So,}\qquad\int_0^\infty \dfrac{x-1}{e^x} \dee{x} &amp; = \lim_{b \to \infty}\int_0^b \dfrac{x-1}{e^x} \dee{x}\\
+&amp; = \lim_{b \to \infty}\left[-\frac{x}{e^x}\right]_0^b = \lim_{b \to \infty}\bigg[-\underbrace{\frac{b}{e^b}}_{\atp{\mathrm{num}\to\infty}{\mathrm{den}\to\infty}}\bigg]\\
+&amp; \stackrel{(*)}{=} \lim_{b \to \infty}\frac{1}{e^b}=0
+\end{align*}
+</div>
+<p data-braille="continuation">(In the equality marked (\(*\)), we used l'Hôpital's rule.)</p>
+<p id="p-8179">So, \(\displaystyle\int_0^\infty \dfrac{x-1}{e^x}\dee{x}=0\text{.}\)</p>
+<p id="p-8180">Remark: this shows that, interestingly, \(\displaystyle\int_0^\infty \dfrac{x}{e^x}\dee{x}=\displaystyle\int_0^\infty \dfrac{1}{e^x}\dee{x}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1059"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-8181">Evaluate \(\displaystyle\int \frac{-2}{3x^2+4x+1}\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-977" id="hint-977"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-977"><div class="hint solution-like"><p id="p-8182">Which method usually works for rational functions (the quotient of two polynomials)?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1059" id="answer-1059"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1059"><div class="answer solution-like"><p id="p-8183">\(\log\left|\dfrac{x+1}{3x+1}\right|+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1059" id="solution-1059"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1059"><div class="solution solution-like"><ul id="p-8184" class="disc">
+<li id="li-3119">
+<p id="p-8185">Solution 1: Notice the denominator factors as \((x+1)(3x+1)\text{.}\) Since the integrand is a rational function (the quotient of two polynomials), we can use partial fraction decomposition.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{-2}{3x^2+4x+1}&amp;=\frac{-2}{(x+1)(3x+1)}\\
+&amp;=\frac{A}{x+1}+\frac{B}{3x+1}\\
+&amp;=\frac{A(3x+1)+B(x+1)}{(x+1)(3x+1)}\\
+&amp;=\frac{(3A+B)x+(A+B)}{(x+1)(3x+1)}\\
+\end{align*}
+<p class="intertext">So:</p>
+\begin{align*}
+-2&amp;=(3A+B)x+(A+B)\\
+0&amp;=3A+B \mbox{ and }-2=A+B\\
+B&amp;=-3A \mbox{ and hence } -2=A+(-3A)\\
+{\color{red}{A}}&amp;{\textcolor{red}{=1}} \mbox{ so then } {\color{red}{B=-3}}\\
+\end{align*}
+<p class="intertext">So now:</p>
+\begin{align*}
+\frac{-2}{3x^2+4x+1}&amp;=\frac{1}{x+1}-\frac{3}{3x+1}\\
+\int \frac{-2}{3x^2+4x+1}\dee{x}&amp;=\int\left(\frac{1}{x+1}-\frac{3}{3x+1}\right)\dee{x}\\
+&amp;=\log|x+1|-\log|3x+1|+C\\
+&amp;=\log\left|\dfrac{x+1}{3x+1}\right|+C
+\end{align*}
+</div>
+</li>
+<li id="li-3120">
+<p id="p-8186">Solution 2: The previous solution is probably the nicest. However, for the foolhardy or the brave, this integral can also be evaluated using trigonometric substitution.</p>
+<p id="p-8187">We start by completing the square on the denominator.</p>
+<div class="displaymath">
+\begin{align*}
+3x^2+4x+1 &amp;= 3\left(x^2+\frac{4}{3}x+\frac{1}{3}\right)\\
+&amp;=3\left(x^2+2\cdot\frac{2}{3}x+\frac{4}{9}-\frac{4}{9}+\frac{1}{3}\right)\\
+&amp;=3\left(\left(x+\frac{2}{3}\right)^2-\frac{4}{9}+\frac{3}{9}\right)\\
+&amp;=3\left(\left(x+\frac{2}{3}\right)^2-\frac{1}{9}\right)\\
+&amp;=3\left(x+\frac{2}{3}\right)^2-\frac{1}{3}\\
+\end{align*}
+<p class="intertext">This has the form of a function minus a constant, which matches the trigonometric identity \(\sec^2\theta - 1 = \tan^2\theta\text{.}\) Multiplying through by \(\frac{1}{3}\text{,}\) we see we can use the identity \(\frac{1}{3}\sec^2\theta - \frac{1}{3} = \frac{1}{3}\tan^2\theta\text{.}\) So, to get the substitution right, we want to choose a substitution that makes the following true:</p>
+\begin{align*}
+3\left(x+\frac{2}{3}\right)^2-\frac{1}{3}&amp;=\frac{1}{3}\sec^2\theta-\frac{1}{3}\\
+3\left(x+\frac{2}{3}\right)^2&amp;=\frac{1}{3}\sec^2\theta\\
+9\left(x+\frac{2}{3}\right)^2&amp;=\sec^2\theta\\
+\color{red}{3x+2}&amp;=\color{blue}{\sec\theta}\\
+\end{align*}
+<p class="intertext">And, accordingly:</p>
+\begin{align*}
+\color{red}{3\dee{x}}&amp;=\color{blue}{\sec\theta\tan\theta \dee{\theta}}
+\end{align*}
+</div>
+<p data-braille="continuation">Now, let's  simplify a little and use this substitution on our integral:</p>
+<div class="displaymath">
+\begin{align*}
+\amp\int\dfrac{-2}{3x^2+4x+1}\dee{x}
+=\int\dfrac{-2}{3\left(x+\frac{2}{3}\right)^2-\frac{1}{3}}\dee{x}\\
+&amp;\hskip0.5in=\int\dfrac{-2}{9\left(x+\frac{2}{3}\right)^2-1}3\dee{x}\\
+&amp;\hskip0.5in=\int\dfrac{-2}{\left({\color{red}{3x+2}}\right)^2-1}\textcolor{red}{3\dee{x}}\\
+&amp;\hskip0.5in=\int\dfrac{-2}{\left({\color{blue}{\sec\theta}}\right)^2-1}\color{blue}{\sec\theta\tan\theta \dee{\theta}}\\
+&amp;\hskip0.5in=\int\dfrac{-2}{\tan^2\theta}\sec\theta\tan\theta \dee{\theta}\\
+&amp;=\hskip0.5in\int -2\dfrac{\sec\theta}{\tan\theta}\dee{\theta}\\
+&amp;\hskip0.5in=\int -2\dfrac{1}{\cos\theta}\cdot\dfrac{\cos\theta}{\sin\theta} \dee{\theta}\\
+&amp;\hskip0.5in=\int -2\dfrac{1}{\sin\theta} \dee{\theta}\\
+&amp;\hskip0.5in=\int -2\csc\theta \dee{\theta}\\
+\end{align*}
+<p class="intertext">Using the result of Example <a class="xref" data-knowl="./knowl/eg_TRGINToptc.html" title="Example 6.8.21: \(\int \csc x\dee{x}\) — by the \(u=\tan\frac{x}{2}\) substitution">6.8.21</a>, or a table of integrals:</p>
+\begin{align*}
+&amp;=2\log\left|\csc\theta+\cot\theta \right|+C
+\end{align*}
+</div>
+<p data-braille="continuation">Our final task is to translate this back from \(\theta\) to \(x\text{.}\) Recall we used the substitution \(3x+2=\sec\theta\text{.}\) Using this information, and \(\sec\theta = \dfrac{\mathrm{hypotenuse}}{\mathrm{adjacent}}\text{,}\) we can fill in two sides of a right triangle with angle \(\theta\text{.}\) The Pythagorean theorem tells us the third side (opposite to \(\theta\)) has measure \(\sqrt{(3x+2)^2-1}=\sqrt{9x^2-12x+3}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-828.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="displaymath" id="p-8188">
+\begin{align*}
+\amp 2\log\left|\csc\theta+\cot\theta \right|+C\\
+\hskip0.5in&amp;=
+2\log\left|\dfrac{3x+2}{\sqrt{9x^2+12x+3}}+\dfrac{1}{\sqrt{9x^2+12x+3}} \right|+C\\
+&amp;\hskip0.5in=
+2\log\left|\dfrac{3x+3}{\sqrt{9x^2+12x+3}}\right|+C\\
+&amp;\hskip0.5in=
+\log\left|\dfrac{(3x+3)^2}{\sqrt{9x^2+12x+3}^2}\right|+C\\
+&amp;\hskip0.5in=
+\log\left|\dfrac{(3x+3)^2}{9x^2+12x+3}\right|+C\\
+&amp;\hskip0.5in=
+\log\left|\dfrac{9(x+1)^2}{3(3x+1)(x+1)}\right|+C\\
+&amp;\hskip0.5in=
+\log\left|\dfrac{3(x+1)^2}{(3x+1)(x+1)}\right|+C\\
+&amp;\hskip0.5in=
+\log\left|\dfrac{3(x+1)}{3x+1}\right|+C\\
+&amp;\hskip0.5in=
+\log\left|\dfrac{x+1}{3x+1}\right|+\log3+C\\
+\end{align*}
+<p class="intertext">Since \(C\) is an arbitrary constant, we can write our final answer as</p>
+\begin{align*}
+&amp; \log\left|\dfrac{x+1}{3x+1}\right|+C
+\end{align*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1060"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-8189">Evaluate \(\displaystyle\int_1^2 x^2\log x \dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-978" id="hint-978"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-978"><div class="hint solution-like"><p id="p-8190">It would be nice to replace logarithm with its derivative, \(\dfrac{1}{x}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1060" id="answer-1060"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1060"><div class="answer solution-like"><p id="p-8191">\(\dfrac{8}{3}\log2-\dfrac{7}{9}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1060" id="solution-1060"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1060"><div class="solution solution-like">
+<p id="p-8192">We see that we have two functions multiplied, but they don't simplify nicely with each other. However, if we differentiate logarithm, and integrate \(x^2\text{,}\) we'll get a polynomial. So, let's use integration by parts.</p>
+<div class="displaymath" id="p-8193">
+\begin{equation*}
+u=\log x \hspace{1cm} \dee{v}=x^2\dee{x}
+\end{equation*}
+</div>
+<div class="displaymath" id="p-8194">
+\begin{equation*}
+\dee{u}=(1/x)\dee{x} \hspace{1cm} v=x^3/3
+\end{equation*}
+</div>
+<p id="p-8195">First, let's antidifferentiate. We'll deal with the limits of integration later.</p>
+<div class="displaymath">
+\begin{align*}
+\int x^2\log x \dee{x} &amp;=\underbrace{(\log x)}_{u}\underbrace{(x^3/3)}_{v})-\int\underbrace{(x^3/3)}_{v}\underbrace{(1/x)\dee{x}}_{\dee{u}}\\
+&amp;=\frac{1}{3}x^3\log x - \frac{1}{3}\int x^2\dee{x}\\
+&amp;=\frac{1}{3}x^3\log x -\frac{1}{3}\cdot\frac{1}{3}x^3+C\\
+&amp;=\frac{1}{3}x^3\log x - \frac{1}{9}x^3+C\\
+\end{align*}
+<p class="intertext">We use the Fundamental Theorem of Calculus Part 2 to evaluate the definite integral.</p>
+\begin{align*}
+\int_1^2 x^3\log x \dee{x}&amp;=
+\left[\frac{1}{3}x^3\log x - \frac{1}{9}x^3\right]_1^2\\
+&amp;=\left[\frac{1}{3}2^3\log 2 - \frac{1}{9}2^3 \right] - \left[\frac{1}{3}1^3\log 1 - \frac{1}{9}1^3 \right]\\
+&amp;=\frac{8\log 2}{3}-\frac{8}{9}-0+\frac{1}{9}\\
+&amp;=\frac{8}{3}\log2-\frac{7}{9}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1061"><h6 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">2014D.</span>
+</h6>
+<p id="p-8196">Evaluate  \(\displaystyle\int\frac{x}{x^2-3}\,\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-979" id="hint-979"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-979"><div class="hint solution-like"><p id="p-8197">The integrand is a rational function, so it is possible to use partial fractions. But there is a much easier way!</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1061" id="answer-1061"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1061"><div class="answer solution-like"><p id="p-8198">\(\dfrac{1}{2}\log\big|x^2-3\big| + C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1061" id="solution-1061"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1061"><div class="solution solution-like">
+<p id="p-8199">The derivative of the denominator shows up in the numerator, only differing by a constant, so we perform a substitution. Specifically, substitute \(u=x^2-3\text{,}\) \(\dee{u}=2x\,\dee{x}\text{.}\) This gives</p>
+<div class="displaymath">
+\begin{gather*}
+\int\frac{x}{x^2-3}\dee{x}
+=\int\frac{\dee{u}/2}{u}
+=\frac{1}{2}\log|u| + C
+=\frac{1}{2}\log\big|x^2-3\big| + C
+\end{gather*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1062"><h6 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">1997A.</span>
+</h6>
+<p id="p-8200">Evaluate the following integrals.</p>
+<ol class="lower-alpha">
+<li id="li-3121">\(\displaystyle \displaystyle\int_0^4\frac{x}{\sqrt{9+x^2}}\,\dee{x}\)</li>
+<li id="li-3122">\(\displaystyle \displaystyle\int_0^{\pi/2}\cos^3x\ \sin^2x\,\dee{x}\)</li>
+<li id="li-3123">\(\displaystyle \displaystyle\int_1^{e}x^3\log x\,\dee{x}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-980" id="hint-980"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-980"><div class="hint solution-like"><p id="p-8201">You should prepare your own personal internal list of integration techniques ordered from easiest to hardest. You should have associated to each technique your own personal list of signals that you use to decide when the technique is likely to be useful.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1062" id="answer-1062"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1062"><div class="answer solution-like">
+<p id="p-8202">(a) \(2\)</p>
+<p id="p-8203">(b) \(\dfrac{2}{15}\)</p>
+<p id="p-8204">(c) \(\dfrac{3e^4}{16}+\dfrac{1}{16}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1062" id="solution-1062"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1062"><div class="solution solution-like">
+<p id="p-8205">(a)  Although a quadratic under a square root often suggests trigonometric substitution, in this case we have an easier substitution. Specifically, let \(y=9+x^2\text{.}\) Then \(\dee{y}=2x\dee{x},\ x\dee{x}=\frac{\dee{y}}{2},\ y(0)=9,\) and \(y(4)=25\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^4\frac{x}{\sqrt{9+x^2}}\,\dee{x}
+&amp;=\int_9^{25}\frac{1}{\sqrt{y}}\,\frac{\dee{y}}{2}
+=\frac{1}{2}\cdot\frac{\sqrt{y}}{1/2}\Big|_9^{25}
+=5-3= 2
+\end{align*}
+</div>
+<p id="p-8206">(b) The power of cosine is odd, so we can reserve one cosine for the differential and change the rest to sines. Substituting \(y=\sin x,\) \(\dee{y}=\cos x\text{,}\) \(\dee{x},\) \(y(0)=0,\)  \(y(\pi/2)=1,\) \(\cos^2x=1-y^2\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^{\pi/2}\hskip-.2in\cos^3x\ \sin^2x\,\dee{x}
+&amp;=\int_0^{\pi/2}\hskip-.2in\cos^2x\ \sin^2x\ \cos x\,\dee{x}\\
+\amp=\int_0^1\!(1-y^2)y^2\,\dee{y}
+=\int_0^1(y^2-y^4)\,\dee{y}\\
+&amp;=\bigg[\frac{y^3}{3}-\frac{y^5}{5}\bigg]_0^1
+=\frac{1}{3}-\frac{1}{5}\\
+&amp;= \frac{2}{15}
+\end{align*}
+</div>
+<p id="p-8207">(c) The integrand is the product of two different kinds of functions, with no obvious substitution or simplification. If we differentiate \(\log x\text{,}\) it will match better with the polynomial nature of the rest of the integrand. So, integrate by parts with \(u(x)=\log x\) and \(\dee{v}=x^3\,\dee{x}\text{,}\) then \(\dee{u}=\frac{1}{x}\,\dee{x}\) and \(v=x^4/4\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int_1^{e}x^3\log x\,\dee{x}
+&amp;=\frac{x^4}{4}\log x\bigg|_1^e
+-\int_1^{e}\frac{x^4}{4}\cdot\frac{1}{x}\,\dee{x}
+=\frac{e^4}{4}-\int_1^{e}\frac{x^3}{4}\,\dee{x}\\
+&amp;=\frac{e^4}{4}-\frac{x^4}{16}\bigg|_1^e
+=\frac{3e^4}{16}+\frac{1}{16}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1063"><h6 class="heading">
+<span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">1997D.</span>
+</h6>
+<p id="p-8208">Evaluate the following integrals.</p>
+<ol class="lower-alpha">
+<li id="li-3124">\(\displaystyle \displaystyle\int_0^{\pi/2} x\sin x\,\dee{x} \)</li>
+<li id="li-3125">\(\displaystyle \displaystyle\int_0^{\pi/2} \cos^5 x\,\dee{x} \)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-981" id="hint-981"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-981"><div class="hint solution-like"><p id="p-8209">Despite both containing a trig function, the two integrals are easiest to evaluate using  different methods.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1063" id="answer-1063"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1063"><div class="answer solution-like">
+<p id="p-8210">(a) \(1\)</p>
+<p id="p-8211">(b) \(\dfrac{8}{15}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1063" id="solution-1063"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1063"><div class="solution solution-like">
+<p id="p-8212">(a) Integrate by parts with \(u=x\) and \(\dee{v}=\sin x\,\dee{x}\) so that \(\dee{u}=\dee{x}\) and \(v=-\cos x\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int x\sin x\,\dee{x}&amp;= -x\cos x-\int (-\cos x)\,\dee{x}
+=-x\cos x+\sin x+C
+\end{align*}
+</div>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^{\pi/2} x\sin x\,\dee{x}&amp;=\Big[-x\cos x+\sin x\Big]_0^{\pi/2}
+=1
+\end{align*}
+</div>
+<p id="p-8213">(b) The power of cosine is odd, so we can reserve one cosine for \(\dee{u}\) and change the rest into sines. Make the substitution \(u=\sin x\text{,}\) \(\dee{u}=\cos x\,\dee{x}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^{\pi/2} \cos^5 x\,\dee{x}
+&amp;=\int_0^{\pi/2} \big(1-\sin^2x\big)^2\cos x\,\dee{x}\\
+\amp=\int_0^1\big(1-u^2\big)^2\,\dee{u}
+=\int_0^1\big(1-2u^2+u^4\big)\,\dee{u}\cr
+&amp;=\left[u-\frac{2}{3}u^3+\frac{1}{5}u^5\right]_0^1
+=1-\frac{2}{3}+\frac{1}{5}
+=\frac{8}{15}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1064"><h6 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">1998A.</span>
+</h6>
+<p id="p-8214">Evaluate the following integrals.</p>
+<ol class="lower-alpha">
+<li id="li-3126">\(\displaystyle \displaystyle\int_0^2 xe^x\,\dee{x}\)</li>
+<li id="li-3127">\(\displaystyle \displaystyle\int_0^1\frac{1}{\sqrt{1+x^2}}\,\dee{x}\)</li>
+<li id="li-3128">\(\displaystyle \displaystyle\int_3^5\frac{4x}{(x^2-1)(x^2+1)}\,\dee{x}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-982" id="hint-982"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-982"><div class="hint solution-like">
+<p id="p-8215">For the integral of secant, see See Section <a href="sec_trigint.html#sec_secantEtc" class="internal" title="Subsection 6.8.3: Optional — Integrating \(\sec x\text{,}\) \(\csc x\text{,}\) \(\sec^3 x\) and \(\csc^3 x\)">6.8.3</a> or Example <a class="xref" data-knowl="./knowl/eg_PFe.html" title="Example 6.10.5: \(\int\sec x\dee{x}\)">6.10.5</a>.</p>
+<p id="p-8216">In (c), notice the denominator is not yet entirely factored.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1064" id="answer-1064"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1064"><div class="answer solution-like"><p id="p-8217">(a) \(e^2+1\) <p id="p-8218"></p> (b) \(\log(\sqrt{2}+1)\) <p id="p-8219"></p> (c) \(\log\frac{15}{13}\approx 0.1431\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1064" id="solution-1064"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1064"><div class="solution solution-like">
+<p id="p-8220">(a) This is a classic integration-by-parts example. If we integrate \(e^x\text{,}\) it doesn't change, and if we differentiate \(x\) it becomes a constant. So, let \(u=x\) and \(\dee{v}=e^x\,\dee{x}\text{,}\) so that \(\dee{u}=\dee{x}\) and \(v=e^x\text{.}\)</p>
+<div class="displaymath">
+\begin{gather*}
+\int_0^2 xe^x\,\dee{x}=\Big[xe^x\Big]_0^2-\int_0^2 e^x\,\dee{x}
+=2e^2-\Big[e^x\Big]_0^2
+=e^2+1
+\end{gather*}
+</div>
+<p id="p-8221">(b)  We have a quadratic function underneath a square root. In the absence of an easier substitution, we can get rid of the square root with a trigonometric substitution. Substitute \(x=\tan y\text{,}\) \(\dee{x}=\sec^2 y\,\dee{y}\text{.}\) When \(x=0\text{,}\) \(\tan y=0\) so \(y=0\text{.}\) When \(x=1\text{,}\) \(\tan y=1\) so \(y=\frac{\pi}{4}\text{.}\) Also \(\sqrt{1+x^2}
+=\sqrt{1+\tan^2y}=\sqrt{\sec^2 y}=\sec y\text{,}\) since \(\sec y\ge 0\) for all \(0\le y\le\frac{\pi}{4}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^1\frac{1}{\sqrt{1+x^2}}\,\dee{x}
+&amp;=\int_0^{\pi/4} \frac{\sec^2y\,\dee{y}}{\sec y}
+=\int_0^{\pi/4} \sec y\,\dee{y}\\
+\amp=\Big[\log|\sec y+\tan y|\Big]_0^{\pi/4}\\
+&amp;=\log\left| \sec \frac{\pi}{4}  + \tan\frac{\pi}{4}\right|-\log\left| \sec 0 + \tan 0\right|\\
+&amp;=\log\left| \sqrt{2}  + 1\right|-\log\left| 1+  0\right|=\log(\sqrt{2}+1)\\
+\text{So,}\qquad\int_0^1\frac{1}{\sqrt{1+x^2}}\,\dee{x}&amp;=\log(\sqrt{2}+1)
+\end{align*}
+</div>
+<p id="p-8222">(c)  The integral is a rational function. In the absence of an obvious substitution, we use partial fractions.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{4x}{(x^2-1)(x^2+1)}
+&amp;=\frac{4x}{(x-1)(x+1)(x^2+1)}\\
+\amp=\frac{a}{x-1}+\frac{b}{x+1}+\frac{cx+d}{x^2+1}
+\end{align*}
+</div>
+<p data-braille="continuation">Multiplying by the denominator,</p>
+<div class="displaymath">
+\begin{align*}
+4x&amp;=a(x+1)(x^2+1)+b(x-1)(x^2+1)\\
+\amp\hskip2in+(cx+d)(x-1)(x+1)\tag{$*$}
+\end{align*}
+</div>
+<p data-braille="continuation">Setting \(x=1\) gives \(4a=4\text{,}\) so \(\textcolor{red}{a=1}\text{.}\) Setting \(x=-1\) gives \(-4b=-4\text{,}\) so \(\textcolor{red}{b=1}\text{.}\) Substituting in \(a=b=1\) in (\(*\)) gives:</p>
+<div class="displaymath">
+\begin{align*}
+4x&amp;=(x+1)(x^2+1)+(x-1)(x^2+1)\\
+\amp\hskip1in+(cx+d)(x-1)(x+1)\\
+4x&amp;= 2x(x^2+1)+(cx+d)(x-1)(x+1)\cr
+4x-2x(x^2+1)&amp;=(cx+d)(x-1)(x+1)\cr
+-2x(x^2-1)&amp;=(cx+d)(x^2-1)\cr
+-2x&amp;=cx+d\cr
+\color{red}{c}&amp;\color{red}{=-2,\ d=0}\cr
+\end{align*}
+</div>
+<p data-braille="continuation">So,</p>
+<div class="displaymath">
+\begin{align*}
+\amp\int_3^5\frac{4x}{(x^2-1)(x^2+1)}\,\dee{x}
+=\int_3^5\Big(\frac{1}{x-1}+\frac{1}{x+1}-\frac{2x}{x^2+1}\Big)\,\dee{x}\\
+&amp;\hskip0.5in=\Big[\log|x-1|+\log|x+1|-\log(x^2+1)\Big]_3^5\\
+&amp;\hskip0.5in=\log 4+\log 6-\log 26-\log 2-\log 4+\log 10\\
+&amp;\hskip0.5in=\log\frac{6\times 10}{26\times 2}
+=\log\frac{15}{13}\approx 0.1431
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1065"><h6 class="heading">
+<span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">2000D.</span>
+</h6>
+<p id="p-8223">Calculate the following integrals.</p>
+<ol class="lower-alpha">
+<li id="li-3129">\(\displaystyle \displaystyle\int_0^3\sqrt{9-x^2}\,\dee{x}\)</li>
+<li id="li-3130">\(\displaystyle \displaystyle\int_0^1\log(1+x^2)\,\dee{x}\)</li>
+<li id="li-3131">\(\displaystyle \displaystyle\int_3^\infty\frac{x}{(x-1)^2(x-2)}\,\dee{x}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-983" id="hint-983"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-983"><div class="hint solution-like"><p id="p-8224">Part (a) can be done by inspection — use a little highschool geometry! Part (b) is reminiscent of the antiderivative of logarithm—how did we find that one out? Part (c) is an improper integral.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1065" id="answer-1065"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1065"><div class="answer solution-like">
+<p id="p-8225">(a) \(\dfrac{9}{4}\pi\)</p>
+<p id="p-8226">(b) \(\log 2-2+\dfrac{\pi}{2}\approx 0.264\)</p>
+<p id="p-8227">(c) \(2\log 2-\half\approx0.886\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1065" id="solution-1065"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1065"><div class="solution solution-like">
+<p id="p-8228">(a) \(\int_0^3\sqrt{9-x^2}\,\dee{x}\) is the area of the portion of the disk \(x^2+y^2\le 9\) that lies in the first quadrant. It is \(\frac{1}{4}\pi 3^3={\frac{9}{4}\pi}\,\text{.}\) Alternatively, you could also evaluate this integral using the substitution \(x=3\sin y\text{,}\) \(\dee{x}=3\cos y\,\dee{y}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^3\sqrt{9-x^2}\,\dee{x}
+&amp;=\int_0^{\pi/2}\sqrt{9-9\sin^2y}\ (3\cos y)\,\dee{y}
+=9\int_0^{\pi/2}\cos^2 y\,\dee{y}\\
+&amp;=\frac{9}{2}\int_0^{\pi/2}[1+\cos(2y)]\,\dee{y}
+=\frac{9}{2}{\Big[y+\frac{\sin(2y)}{2}\Big]}_0^{\pi/2}\\
+&amp;=\frac{9}{4}\pi
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-829.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-8229">(b) It's not immediately obvious what to do with this one, but remember we found \(\int \log x \dee{x}\) using integration by parts with \(u=\log x\) and \(\dee{v}=\dee{x}\text{.}\) Let's hope a similar trick works here. Integrate by parts, using \(u=\log(1+x^2)\) and \(\dee{v}=\dee{x}\text{,}\) so that \(\dee{u}=\frac{2x}{1+x^2}\,\dee{x}\text{,}\) \(v=x\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^1\log(1+x^2)\,\dee{x}
+\amp=\Big[x\log(1+x^2)\Big]_0^1-\int_0^1 x\frac{2x}{1+x^2}\,\dee{x}\\
+\amp=\log 2-2\int_0^1 \frac{x^2}{1+x^2}\,\dee{x}\\
+&amp;=\log 2-2\int_0^1\Big(1- \frac{1}{1+x^2}\Big)\,\dee{x}\\
+\amp=\log 2-2\big[x-\arctan x\big]_0^1\\
+&amp;=\log 2-2+\frac{\pi}{2}\approx 0.264
+\end{align*}
+</div>
+<p id="p-8230">(c) The integrand is a rational function with no obvious substitution, so we use partial fractions.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{x}{(x-1)^2(x-2)}
+&amp;=\frac{a}{(x-1)^2}+\frac{b}{x-1}+\frac{c}{x-2}\\
+\amp=\frac{a(x-2)+b(x-1)(x-2)+c(x-1)^2}{(x-1)^2(x-2)}
+\end{align*}
+</div>
+<p data-braille="continuation">Multiply by the denominator.</p>
+<div class="displaymath">
+\begin{align*}
+x&amp;=a(x-2)+b(x-1)(x-2)+c(x-1)^2
+\end{align*}
+</div>
+<p data-braille="continuation">Setting \(x=1\) gives \(\textcolor{red}{a=-1}\text{.}\) Setting \(x=2\) gives \(\textcolor{red}{c=2}\text{.}\) Substituting in \(a=-1\) and \(c=2\) gives</p>
+<div class="displaymath">
+\begin{align*}
+b(x-1)(x-2)&amp;=x+(x-2)-2(x-1)^2\\
+\amp=-2x^2+6x-4=-2(x-1)(x-2)\\
+\amp\implies \color{red}{b}\color{red}{=-2}
+\end{align*}
+</div>
+<p data-braille="continuation">Hence</p>
+<div class="displaymath">
+\begin{align*}
+\amp\int_3^\infty\frac{x}{(x-1)^2(x-2)}\,\dee{x}\\
+\amp\hskip0.25in=\lim_{M\rightarrow\infty}
+\int_3^M\left(-\frac{1}{(x-1)^2}-\frac{2}{x-1}+\frac{2}{x-2}\right)\,\dee{x}\\
+&amp;\hskip0.25in=\lim_{M\rightarrow\infty}
+\left[\frac{1}{x-1}-2\log|x-1|+2\log|x-2|\right]_3^M\\
+&amp;\hskip0.25in=\lim_{M\rightarrow\infty}
+\bigg[\frac{1}{x-1}+2\log\bigg|\frac{x-2}{x-1}\bigg|\bigg]_3^M\\
+&amp;\hskip0.25in=\lim_{M\rightarrow\infty}
+\bigg[\frac{1}{M-1}+2\log\bigg|\frac{M-2}{M-1}\bigg|\bigg]
+-\bigg[\frac{1}{3-1}+2\log\bigg|\frac{3-2}{3-1}\bigg|\bigg]\\
+&amp;\hskip0.25in=2\log 2-\frac{1}{2}\approx0.886
+\end{align*}
+</div>
+<p data-braille="continuation">since</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{M\rightarrow\infty}\log\frac{M-2}{M-1}
+&amp;=\lim_{M\rightarrow\infty}\log\frac{1-2/M}{1-1/M}
+=\log 1=0\\
+\text{and}\qquad \log\frac{1}{2}&amp;=-\log2
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1066"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-8231">Evaluate \(\displaystyle\int\frac{\sin^4\theta-5\sin^3\theta+4\sin^2\theta+10\sin\theta}{\sin^2\theta-5\sin\theta+6}\cos\theta\dee{\theta}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-984" id="hint-984"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-984"><div class="hint solution-like"><p id="p-8232">Use the substitution \(u=\sin\theta\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1066" id="answer-1066"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1066"><div class="answer solution-like"><p id="p-8233">\(\displaystyle\frac{1}{3}\sin^3\theta-2\sin\theta+12\log\left|\frac{\sin\theta-3}{\sin\theta-2}\right|+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1066" id="solution-1066"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1066"><div class="solution solution-like">
+<p id="p-8234">This looks quite a lot like a rational function, but with variable \(\sin\theta\) instead of \(x\text{.}\) So, we use the substitution \(x=\sin\theta\text{,}\) \(\dee{x} = \cos\theta\dee{\theta}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\amp\int\frac{\sin^4\theta-5\sin^3\theta+4\sin^2\theta+10\sin\theta}{\sin^2\theta-5\sin\theta+6}\cos\theta\dee{\theta}\\
+&amp;\hskip0.5in=\int \frac{x^4-5x^3+4x^2+10x}{x^2-5x+6}\dee{x}
+\end{align*}
+</div>
+<p data-braille="continuation">Since the numerator does not have smaller degree than the denominator, we need to do some long division before we can set up our partial fractions decomposition.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-830.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-8235">That is,</p>
+<div class="displaymath">
+\begin{align*}
+\frac{x^4-5x^3+4x^2+10x}{x^2-5x+6}
+\amp=x^2-2+\frac{12}{x^2-5x+6}\\
+\amp=x^2-2+\frac{12}{(x-2)(x-3)}
+\end{align*}
+</div>
+<p id="p-8236">We use partial fractions decomposition on the rightmost term.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{12}{(x-2)(x-3)}&amp;=\frac{A}{x-2}+\frac{B}{x-3}\\
+12&amp;=A(x-3)+B(x-2)\\
+\end{align*}
+<p class="intertext">Setting \(x=3\) and \(x=2\) gives us</p>
+\begin{align*}
+\color{red}{B}&amp;\color{red}{=12,\quad A=-12}
+\end{align*}
+</div>
+<p data-braille="continuation">Now we can evaluate our integral.</p>
+<div class="displaymath">
+\begin{align*}
+\amp \int\frac{\sin^4\theta-5\sin^3\theta+4\sin^2\theta+10\sin\theta}{\sin^2\theta-5\sin\theta+6}\cos\theta\dee{\theta}\\
+&amp;\hskip0.5in=\int \frac{x^4-5x^3+4x^2+10x}{x^2-5x+6}\dee{x}\\
+&amp;=\int\left( x^2-2+\frac{12}{(x-2)(x-3)}\right)\dee{x}\\
+&amp;\hskip0.5in=\int\left( x^2-2\textcolor{red}{ -} \frac{\textcolor{red}{12}}{x-2}+\frac{\textcolor{red}{12}}{x-3}\right)\dee{x}\\
+&amp;\hskip0.5in=\frac{1}{3}x^3-2x-12\log|x-2|+12\log|x-3|+C\\
+&amp;\hskip0.5in=\frac{1}{3}x^3-2x+12\log\left|\frac{x-3}{x-2}\right|+C\\
+&amp;\hskip0.5in=\frac{1}{3}\sin^3\theta-2\sin\theta+12\log\left|\frac{\sin\theta-3}{\sin\theta-2}\right|+C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1067"><h6 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">2001A.</span>
+</h6>
+<p id="p-8237">Evaluate the following integrals. <em class="emphasis">Show your work.</em></p>
+<ol class="lower-alpha">
+<li id="li-3132">\(\displaystyle \displaystyle\int_0^{\pi\over 4}\sin^2(2x)\cos^3(2x)\ \dee{x}\)</li>
+<li id="li-3133">\(\displaystyle \displaystyle\int\big(9+x^2\big)^{-{3\over 2}}\ \dee{x}\)</li>
+<li id="li-3134">\(\displaystyle \displaystyle\int\frac{\dee{x}}{(x-1)(x^2+1)}\)</li>
+<li id="li-3135">\(\displaystyle \displaystyle\int x\arctan x\ \dee{x}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-985" id="hint-985"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-985"><div class="hint solution-like"><p id="p-8238">For (c), try a little algebra to split the integral into pieces that are easy to antidifferentiate.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1067" id="answer-1067"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1067"><div class="answer solution-like">
+<p id="p-8239">(a) \(\dfrac{1}{15}\)</p>
+<p id="p-8240">(b) \(\dfrac{1}{9}\cdot\dfrac{x}{\sqrt{x^2+9}}+C\)</p>
+<p id="p-8241">(c) \(\dfrac{1}{2}\log|x-1|-\dfrac{1}{4}\log(x^2+1)-\dfrac{1}{2}\arctan x+C\)</p>
+<p id="p-8242">(d) \(\dfrac12\big[ x^2\arctan  x -x +\arctan x\big]+C\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1067" id="solution-1067"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1067"><div class="solution solution-like">
+<p id="p-8243">(a) It doesn't matter to us right now that the arguments of sine and cosine are \(2x\) rather than \(x\text{.}\) This is still the integral of powers of products of sines and cosines. Since cosine has an odd power, we make the substitution \(u=\sin (2x)\text{,}\) \(\dee{u}=2\cos(2 x)\,\dee{x}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^{\pi\over 4}\sin^2(2x)\cos^3(2x)\ \dee{x}
+&amp;=\int_0^{\pi\over 4} \sin^2(2x)\big[1-\sin^2(2x)\big]\cos(2 x)\ \dee{x}\\
+\amp=\frac{1}{2}\int_0^1 u^2\big[1-u^2\big]\ \dee{u}\cr
+&amp;=\frac{1}{2}\int_0^1\big(u^2-u^4\big)\ \dee{u}
+=\frac{1}{2}{\Big[\frac{1}{3}u^3-\frac{1}{5}u^5\Big]}_0^1\\
+\amp=\frac{1}{15}
+\end{align*}
+</div>
+<p id="p-8244">(b) Make the substitution \(x=3\tan t\text{,}\) \(\dee{x}=3\sec^2t\,\dee{t}\) and use the trig identity \(9+9\tan^2 t = 9\sec^2 t\text{.}\)</p>
+<div class="displaymath" id="p-8245">
+\begin{align*}
+\int\big(9+x^2\big)^{-{3\over 2}}\ \dee{x}
+&amp;=\int\big(9+9\tan^2t\big)^{-{3\over 2}}\ 3\sec^2t\,\dee{t}\\
+\amp=\int\big(3\sec t\big)^{-3}\ 3\sec^2t\,\dee{t}\\
+&amp;=\frac{1}{9}\int\cos t\ \dee{t}
+=\frac{1}{9}\sin t+C\\
+\amp=\frac{1}{9}\frac{x}{\sqrt{x^2+9}}+C
+\end{align*}
+</div>
+<p data-braille="continuation">To convert back to \(x\text{,}\) in the last step, we used the triangle below, which is rigged to have \(\tan t =\frac{x}{3}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-831.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-8246">(c) Seeing a rational function with no obvious substitutions, we use partial fractions.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{(x-1)(x^2+1)}
+&amp;=\frac{a}{x-1}+\frac{bx+c}{x^2+1}
+=\frac{a(x^2+1)+(bx+c)(x-1)}{(x-1)(x^2+1)}\\
+\end{align*}
+<p class="intertext">Multiply by the original denominator.</p>
+\begin{align*}
+1&amp;=a(x^2+1)+(bx+c)(x-1)\tag{$*$}
+\end{align*}
+</div>
+<p data-braille="continuation">Setting \(x=1\) gives \(2a=1\) or \(\textcolor{red}{a=\half}\text{.}\) Substituting in \(a=\half\) in \((*)\) gives</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{1}{2}(x^2+1)+(bx+c)(x-1)=1\cr
+\iff\qquad&amp; (bx+c)(x-1)=\frac{1}{2}(1-x^2)=-\frac{1}{2}(x-1)(x+1)\cr
+\iff\qquad&amp; (bx+c)=-\frac{1}{2}(x+1)\cr
+\iff\qquad&amp;\color{red}{ b=c=-\frac{1}{2}}\cr
+\end{align*}
+</div>
+<p data-braille="continuation">So,</p>
+<div class="displaymath">
+\begin{align*}
+\int\frac{\dee{x}}{(x-1)(x^2+1)}
+&amp;=\int\Big[\frac{1/2}{x-1}-\frac{\frac{1}{2}(x+1)}{x^2+1}\Big]\,\dee{x}\\
+\end{align*}
+<p class="intertext">To antidifferentiate the second piece, we split it into two integrals: one that can be handled with the substitution \(u=x^2+1\text{,}\) and another that looks like the derivative of arctangent.</p>
+\begin{align*}
+&amp;=\int\Big(\frac{1/2}{x-1}-\frac{x/2}{x^2+1}
+-\frac{1/2}{x^2+1}\Big)\,\dee{x}\cr
+&amp;=\int\Big(\frac{1/2}{x-1}-\frac{1}{4}\cdot\frac{2x}{x^2+1}
+-\frac{1/2}{x^2+1}\Big)\,\dee{x}\cr
+&amp;=\frac{1}{2}\log|x-1|-\frac{1}{4}\log(x^2+1)-\frac{1}{2}\arctan x+C
+\end{align*}
+</div>
+<p id="p-8247">(d) We know the derivative of arctangent, and it would integrate nicely if multiplied to the antiderivative of \(x\text{.}\) So, we integrate by parts with \(u=\arctan x\) and \(\dee{v}=x\,\dee{x}\) so that \(\dee{u}=\frac{1}{1+x^2}\dee{x}\) and \(v=\frac{1}{2} x^2\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\int x\arctan  x\,\dee{x}&amp;= \frac{1}{2} x^2\arctan  x
+-\frac{1}{2}\int \frac{x^2}{1+x^2}\,\dee{x}\\
+&amp;= \frac{1}{2} x^2\arctan  x-\frac{1}{2}\int \frac{1+x^2-1}{1+x^2}\,\dee{x}\cr
+&amp;= \frac{1}{2} x^2\arctan  x-\frac{1}{2}\int \left(1-\frac{1}{1+x^2}\right)\,\dee{x}\cr
+&amp;=\frac{1}{2}\big[ x^2\arctan  x -x +\arctan x\big]+C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1068"><h6 class="heading">
+<span class="codenumber">14<span class="period">.</span></span><span class="space"> </span><span class="title">M121 2000A.</span>
+</h6>
+<p id="p-8248">Evaluate the following integrals.</p>
+<ol class="lower-alpha">
+<li id="li-3136">\(\displaystyle \displaystyle\int_0^{\pi/4}\sin^5(2x)\,\cos(2x)\ \dee{x}\)</li>
+<li id="li-3137">\(\displaystyle \displaystyle\int\sqrt{4-x^2}\ \dee{x}\)</li>
+<li id="li-3138">\(\displaystyle \displaystyle\int\frac{x+1}{x^2(x-1)}\ \dee{x}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-986" id="hint-986"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-986"><div class="hint solution-like"><p id="p-8249">If you're stumped, review Sections <a href="sec_trigint.html" class="internal" title="Section 6.8: Trigonometric Integrals">6.8</a>, <a href="sec_trigsub.html" class="internal" title="Section 6.9: Trigonometric Substitution">6.9</a>, and <a href="sec_parfrac.html" class="internal" title="Section 6.10: Partial Fractions">6.10</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1068" id="answer-1068"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1068"><div class="answer solution-like">
+<p id="p-8250">(a) \(\dfrac{1}{12}\)</p>
+<p id="p-8251">(b) \(\displaystyle2\sin^{-1}\frac{x}{2}+x\sqrt{1-\frac{x^2}{4}}+C\)</p>
+<p id="p-8252">(c) \(\displaystyle-2\log|x|+\frac{1}{x}+2\log|x-1|+C\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1068" id="solution-1068"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1068"><div class="solution solution-like">
+<p id="p-8253">(a) We substitute \(y=\sin(2x)\text{,}\) \(\dee{y}=2\cos(2x)\ \dee{x}\text{.}\) Note \(\sin(2\cdot 0)=0\) and \(\sin(2\cdot\frac{\pi}{4}) = 1.\)</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^{\pi/4}\sin^5(2x)\,\cos(2x)\ \dee{x}
+=\int_{0}^{1} y^5\,\frac{\dee{y}}{2}
+=\frac{1}{12}\bigg[y^6\bigg]_0^1
+=\frac{1}{12}
+\end{equation*}
+</div>
+<p id="p-8254">(b) We can get rid of the square root with a trig substitution. Substituting \(x=2\sin y\text{,}\) \(\dee{x}=2\cos y\ \dee{y}\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int\sqrt{4-x^2}\ \dee{x}
+&amp;=\int \sqrt{4-4\sin^2 y}\ 2\cos y\ \dee{y}
+=4\int \cos^2y\ \dee{y}\\
+\amp=2\int\big[1+\cos(2y)\big]\ \dee{y}\\
+&amp;=2 y +\sin(2y)+C
+=2y+2\sin y\cos y+C\\
+&amp;=2\sin^{-1}\frac{x}{2}+x\sqrt{1-\frac{x^2}{4}}+C
+\end{align*}
+</div>
+<p data-braille="continuation">since \(\sin y =\frac{x}{2}\) and \(\cos y=\sqrt{1-\sin^2y}
+=\sqrt{1-\frac{x^2}{4}}\text{.}\) Alternately, we can draw a triangle with \(\sin y = \frac{x}{2}\text{,}\) and use the Pythagorean theorem to find the adjacent side.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-832.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-8255">(c) Seeing a rational function with no obvious substitution, we use the method of partial fractions. The denominator is already completely factored.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{x+1}{x^2(x-1)}&amp;=\frac{A}{x}+\frac{B}{x^2}+\frac{C}{x-1}\\
+x+1&amp;=Ax(x-1)+B(x-1)+Cx^2
+\end{align*}
+</div>
+<p data-braille="continuation">Setting \(x=1\) gives us \(\textcolor{red}{C=2}\text{.}\) Setting \(x=0\) gives us \(\textcolor{red}{B=-1}\text{.}\) Furthermore,  the coefficient of \(x^2\) on the left hand side (after collecting like terms), namely \(A+C\text{,}\) must be the same as the  coefficient of \(x^2\) on the right hand side, namely \(0\text{.}\) So \(A+C=0\) and \(\textcolor{red}{A=-2}\text{.}\) Checking,</p>
+<div class="displaymath">
+\begin{equation*}
+-2x(x-1)-(x-1)+2x^2=-2x^2+2x-x+1+2x^2=x+1
+\end{equation*}
+</div>
+<p data-braille="continuation">as desired. Thus,</p>
+<div class="displaymath">
+\begin{align*}
+\int\frac{x+1}{x^2(x-1)}\ \dee{x}
+\amp=\int\Big[\textcolor{red}{-}\frac{\textcolor{red}{2}}{x}\textcolor{red}{-}\frac{\textcolor{red}{1}}{x^2}+\frac{\textcolor{red}{2}}{x-1}\Big]\ \dee{x}\\
+\amp=-2\log|x|+\frac{1}{x}+2\log|x-1|+C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1069"><h6 class="heading">
+<span class="codenumber">15<span class="period">.</span></span><span class="space"> </span><span class="title">2001D.</span>
+</h6>
+<p id="p-8256">Calculate the following integrals.</p>
+<ol class="lower-alpha">
+<li id="li-3139">\(\displaystyle \displaystyle\int_0^\infty e^{-x} \sin(2x)\,\dee{x}\)</li>
+<li id="li-3140">\(\displaystyle \displaystyle\int_0^{\sqrt{2}}\frac{1}{(2+x^2)^{3/2}}\,\dee{x}\)</li>
+<li id="li-3141">\(\displaystyle \displaystyle\int_0^1 x\log(1+x^2)\,\dee{x}\)</li>
+<li id="li-3142">\(\displaystyle \displaystyle\int_3^\infty\frac{1}{(x-1)^2(x-2)}\,\dee{x}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-987" id="hint-987"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-987"><div class="hint solution-like"><p id="p-8257">For part (a), see  Example <a class="xref" data-knowl="./knowl/eg_PRTSexsinx.html" title="Example 6.7.11: \(\int_a^b e^x\sin x\dee{x}\) and \(\int_a^b e^x\cos x\dee{x}\)">6.7.11</a>. For part (d), see  Example <a class="xref" data-knowl="./knowl/eg_PFdd.html" title="Example 6.10.4: \(\int\frac{4x^3+23x^2+45x+27}{x^3+5x^2+8x+4}\dee{x}\)">6.10.4</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1069" id="answer-1069"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1069"><div class="answer solution-like">
+<p id="p-8258">(a) \(\displaystyle\frac{2}{5}\)</p>
+<p id="p-8259">(b) \(\displaystyle\frac{1}{2\sqrt{2}}\)</p>
+<p id="p-8260">(c) \(\displaystyle\log 2-\frac{1}{2}\approx 0.193\)</p>
+<p id="p-8261">(d) \(\displaystyle\log 2-\frac{1}{2}\approx0.193\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1069" id="solution-1069"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1069"><div class="solution solution-like">
+<p id="p-8262">(a) Define</p>
+<div class="displaymath">
+\begin{gather*}
+I_1=\int_0^\infty e^{-x} \sin(2x)\,\dee{x}\qquad
+I_2=\int_0^\infty e^{-x} \cos(2x)\,\dee{x}
+\end{gather*}
+</div>
+<p data-braille="continuation">We integrate by parts, with \(u=\sin(2x)\) or \(\cos(2x)\) and \(\dee{v}=e^{-x}\,\dee{x}\text{.}\) That is, \(v=-e^{-x}\text{.}\)</p>
+<div class="displaymath">
+\begin{alignat*}{1}
+I_1&amp;=\int_0^\infty e^{-x} \sin(2x)\,\dee{x}
+=\lim_{R\rightarrow\infty}\int_0^R e^{-x} \sin(2x)\,\dee{x}\\
+&amp;=
+\lim_{R\rightarrow\infty}\bigg(\Big[-e^{-x}\sin(2x)\Big]_0^R+2\int_0^R e^{-x} \cos(2x)\,\dee{x}\bigg)\\
+\amp=2I_2\\
+I_2&amp;=\int_0^\infty e^{-x} \cos(2x)\,\dee{x}
+=\lim_{R\rightarrow\infty}\int_0^R e^{-x} \cos(2x)\,\dee{x}\\
+&amp;=\lim_{R\rightarrow\infty}
+\bigg(\Big[-e^{-x}\cos(2x)\Big]_0^R-2\int_0^R e^{-x} \sin(2x)\,\dee{x}
+\bigg)\\
+\amp=1-2I_1
+\end{alignat*}
+</div>
+<p data-braille="continuation">Substituting \(I_2=\dfrac12 I_1\) into \(I_2=1-2I_1\) gives \(\dfrac{5}{2}I_1=1\text{,}\) or \(\displaystyle\int_0^\infty e^{-x} \sin(2x)\,\dee{x}=\dfrac{2}{5}\text{.}\)</p>
+<p id="p-8263">(b) We can cancel out the square root if we use a trig substitution. Substitute \(x=\sqrt{2}\tan y\text{,}\) \(\dee{x}=\sqrt{2}\sec^2 y\,\dee{y}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^{\sqrt{2}}\frac{1}{(2+x^2)^{3/2}}\,\dee{x}
+\amp=\sqrt{2}\int_0^{\pi/4}\frac{\sec^2 y}{(2+2\tan^2y)^{3/2}}\,\dee{y}\\
+\amp=\frac{1}{2}\int_0^{\pi/4}\cos y\,\dee{y}
+=\frac{1}{2} \bigg[\sin y\bigg]_0^{\pi/4}\\
+\amp=\frac{1}{2\sqrt{2}}
+\end{align*}
+</div>
+<p id="p-8264">(c)</p>
+<ul class="disc">
+<li id="li-3143">Solution 1: Integrate by parts, using \(u=\log(1+x^2)\) and \(\dee{v}=x\,\dee{x}\text{,}\) so that \(\dee{u}=\frac{2x}{1+x^2}\text{,}\) \(v=\frac{x^2}{2}\text{.}\)<div class="displaymath">
+\begin{align*}
+\int_0^1 x\log(1+x^2)\,\dee{x}
+&amp;=\Big[\frac{1}{2} x^2\log(1+x^2)\Big]_0^1-\int_0^1 \frac{x^3}{1+x^2}\,\dee{y}\\
+\amp=\frac{1}{2} \log 2 -\int_0^1\Big[x-\frac{x}{1+x^2}\Big]\,\dee{x}\\
+&amp;=\frac{1}{2} \log 2 -\Big[\frac{x^2}{2}-\frac{1}{2}\log(1+x^2)\Big]_0^1\\
+\amp=\log 2-\frac{1}{2}\approx 0.193
+\end{align*}
+</div>
+</li>
+<li id="li-3144">Solution 2: First substitute \(y=1+x^2\text{,}\) \(\dee{y}=2x\,\dee{x}\text{.}\)<div class="displaymath">
+\begin{gather*}
+\int_0^1 x\log(1+x^2)\,\dee{x}
+=\frac{1}{2}\int_1^2\log y\ \dee{y}
+\end{gather*}
+</div>Then integrate by parts, using \(u=\log y\) and \(\dee{v}=\dee{y}\text{,}\) so that \(\dee{u}=\frac{1}{y}\text{,}\) \(v=y\text{.}\)<div class="displaymath">
+\begin{align*}
+\int_0^1 x\log(1+x^2)\,\dee{x}
+\amp=\frac{1}{2}\int_1^2\log y\ \dee{y}\\
+\amp=\Big[\frac{1}{2} y\log y\Big]_1^2-\frac{1}{2}\int_1^2 y\frac{1}{y}\,\dee{y}
+=\log 2-\frac{1}{2}\\
+\amp\approx 0.193
+\end{align*}
+</div>
+</li>
+</ul>
+<p id="p-8265">(d) Seeing a rational function with no obvious substitution, we use partial fractions.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{(x-1)^2(x-2)}
+&amp;=\frac{a}{(x-1)^2}+\frac{b}{x-1}+\frac{c}{x-2}\\
+1&amp;=a(x-2)+b(x-1)(x-2)+c(x-1)^2\tag{$*$}
+\end{align*}
+</div>
+<p data-braille="continuation">Setting \(x=1\) gives \(\textcolor{red}{a=-1}\text{.}\) Setting \(x=2\) gives \(\textcolor{red}{c=1}\text{.}\) Substituting in \(a=-1\) and \(c=1\) to (\(*\)) gives</p>
+<div class="displaymath">
+\begin{align*}
+b(x-1)(x-2)&amp;=1+(x-2)-(x-1)^2\\
+&amp;=-x^2+3x-2\\
+&amp;=-(x-1)(x-2)\\
+\implies\qquad \color{red}{b}&amp;\color{red}{=-1}
+\end{align*}
+</div>
+<p data-braille="continuation">Hence:</p>
+<div class="displaymath">
+\begin{align*}
+\amp\int_3^\infty\frac{x}{(x-1)^2(x-2)}\,\dee{x}\\
+&amp;\hskip0.5in=\lim_{M\rightarrow\infty}
+\int_3^M\Big(-\frac{1}{(x-1)^2}-\frac{1}{x-1}+\frac{1}{x-2}\Big)\,\dee{x}\\
+&amp;\hskip0.5in=\lim_{M\rightarrow\infty}
+\Big[\frac{1}{x-1}-\log(x-1)+\log(x-2)\Big]_3^M\\
+&amp;\hskip0.5in=\lim_{M\rightarrow\infty}
+\Big[\frac{1}{M-1}+\log\frac{M-2}{M-1}\Big]
+-\Big[\frac{1}{3-1}+\log\frac{3-2}{3-1}\Big]\\
+&amp;\hskip0.5in=\log 2-\frac{1}{2}\approx0.193
+\end{align*}
+</div>
+<p data-braille="continuation">since</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{M\rightarrow\infty}\log\frac{M-2}{M-1}
+=\lim_{M\rightarrow\infty}\log\frac{1-2/M}{1-1/M}
+=\log 1=0
+\end{gather*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1070"><h6 class="heading">
+<span class="codenumber">16<span class="period">.</span></span><span class="space"> </span><span class="title">2002A.</span>
+</h6>
+<p id="p-8266">Evaluate the following integrals.</p>
+<ol class="lower-alpha">
+<li id="li-3145">\(\displaystyle \displaystyle\int x\,\log x\ \dee{x}\)</li>
+<li id="li-3146">\(\displaystyle \displaystyle\int\frac{(x-1)\,\dee{x}}{x^2+4x+5}\)</li>
+<li id="li-3147">\(\displaystyle \displaystyle\int\frac{\dee{x}}{x^2-4x+3}\)</li>
+<li id="li-3148">\(\displaystyle \displaystyle\int\frac{x^2\,\dee{x}}{1+x^6}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-988" id="hint-988"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-988"><div class="hint solution-like"><p id="p-8267">For part (b), first complete the square in the denominator. You can save some work by first comparing the derivative of the denominator with the numerator. For part (d) use a simple substitution.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1070" id="answer-1070"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1070"><div class="answer solution-like">
+<p id="p-8268">(a) \(\displaystyle\frac12 x^2\log x -\frac{1}{4} x^2+C\)</p>
+<p id="p-8269">(b) \(\displaystyle\frac{1}{2} \log [x^2+4x+5] -3\arctan(x+2)+C\)</p>
+<p id="p-8270">(c) \(\displaystyle\frac12\log|x-3|-\frac12\log|x-1|+C\)</p>
+<p id="p-8271">(d) \(\displaystyle\frac{1}{3}\arctan x^3 +C\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1070" id="solution-1070"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1070"><div class="solution solution-like">
+<p id="p-8272">(a) Integrate by parts with \(u=\log x\) and \(\dee{v}=x\,\dee{x}\text{,}\) so that \(\dee{u}=\frac{\dee{x}}{x}\) and \(v=\half x^2\text{.}\)</p>
+<div class="displaymath">
+\begin{gather*}
+\int x\,\log x\ \dee{x}= \frac{1}{2} x^2\log x- \frac{1}{2} \int x^2\cdot\frac{1}{x}\,\dee{x}
+=\frac{1}{2} x^2\log x -\frac{1}{4} x^2+C
+\end{gather*}
+</div>
+<p id="p-8273">(b)   The denominator is an irreducible quadratic, so partial fractions can't get us any further. To integrate a function whose denominator is quadratic, we split the numerator up so that one piece can be evaluated with a \(u\)-substitution, and the other piece looks like arctangent.</p>
+<div class="displaymath">
+\begin{align*}
+\int\frac{(x-1)\dee{x}}{x^2+4x+5}
+&amp;=\int\frac{x+2-3}{x^2+4x+5}\dee{x}\\
+&amp;=\frac{1}{2}\int\frac{2x+4}{x^2+4x+5}\dee{x}
+-\int\frac{3}{x^2+4x+5}\dee{x}\\
+&amp;=\frac{1}{2}\int\frac{2x+4}{x^2+4x+5}\dee{x}-3\int\frac{1}{(x+2)^2+1}\dee{x}\\
+&amp;=\frac{1}{2} \log [x^2+4x+5] -3\arctan(x+2)+C
+\end{align*}
+</div>
+<p data-braille="continuation">For the last step, you can guess the antiderivative, or use the substitutions \(u_1=x^2+4x+5\) and \(u_2=x+2\text{,}\) respectively, for the two integrals.</p>
+<p id="p-8274">(c) We use partial fractions.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{x^2-4x+3}
+&amp;=\frac{1}{(x-3)(x-1)}
+=\frac{a}{x-3}+\frac{b}{x-1}\\
+1&amp;=a(x-1)+b(x-3)
+\end{align*}
+</div>
+<p data-braille="continuation">Setting \(x=3\) gives \(\textcolor{red}{a=\frac{1}{2}}\text{.}\) Setting \(x=1\) gives \(\textcolor{red}{b=-\frac{1}{2}}\text{.}\)  So,</p>
+<div class="displaymath">
+\begin{align*}
+\int\frac{\dee{x}}{x^2-4x+3}
+\amp=\int\Big(\frac{\textcolor{red}{1/2}}{x-3}\textcolor{red}{-}\frac{\textcolor{red}{1/2}}{x-1}\Big)\,\dee{x}\\
+\amp=\frac{1}{2}\log|x-3|-\frac{1}{2}\log|x-1|+C
+\end{align*}
+</div>
+<p id="p-8275">(d) Substitute \(y=x^3\text{,}\) \(\dee{y}=3x^2\,\dee{x}\text{.}\)</p>
+<div class="displaymath">
+\begin{gather*}
+\int\frac{x^2\,\dee{x}}{1+x^6}= \frac{1}{3} \int \frac{\dee{y}}{1+y^2}
+= \frac{1}{3}\arctan y+C
+=\frac{1}{3}\arctan x^3 +C
+\end{gather*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1071"><h6 class="heading">
+<span class="codenumber">17<span class="period">.</span></span><span class="space"> </span><span class="title">2013A.</span>
+</h6>
+<p id="p-8276">Evaluate the following integrals.</p>
+<ol class="lower-alpha">
+<li id="li-3149">\(\displaystyle\int_0^1\arctan  x\ \dee{x}\text{.}\)</li>
+<li id="li-3150">\(\displaystyle\int\frac{2x-1}{x^2-2x+5}\ \dee{x}\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-989" id="hint-989"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-989"><div class="hint solution-like"><p id="p-8277">For part (b), complete the square in the denominator. You can save some work by first comparing the derivative of the denominator with the numerator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1071" id="answer-1071"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1071"><div class="answer solution-like"><p id="p-8278">(a) \(\displaystyle\frac{\pi}{4}-\frac{1}{2}\log 2\) <p id="p-8279"></p> (b) \(\displaystyle\log |x^2-2x+5| +\frac{1}{2}\arctan \frac{x-1}{2} +C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1071" id="solution-1071"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1071"><div class="solution solution-like">
+<p id="p-8280">(a) Integrate by parts with \(u=\arctan x\text{,}\) \(\dee{v}=\dee{x}\text{,}\) \(\dee{u}=\frac{\dee{x}}{1+x^2}\) and \(v=x\text{.}\) This gives</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^1\arctan  x\ \dee{x}
+&amp;= \big[x\arctan x\big]_0^1-\int_0^1 \frac{x}{1+x^2} \dee{x}\\
+\amp=\arctan 1-\Big[\frac{1}{2}\log(1+x^2)\Big]_0^1\\
+\amp=\frac{\pi}{4}-\frac{1}{2}\log 2
+\end{align*}
+</div>
+<p id="p-8281">(b) Note that the derivative of the denominator is \(2x-2\text{,}\) which differs from the numerator only by \(1\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int\frac{2x-1}{x^2-2x+5}\ \dee{x}
+&amp;=\int\frac{2x-2}{x^2-2x+5}\ \dee{x}+\int\frac{1}{x^2-2x+5}\ \dee{x}\\
+&amp;=\int\frac{2x-2}{x^2-2x+5}\ \dee{x}+\int\frac{1}{(x-1)^2+4}\ \dee{x}\\
+&amp;=\log |x^2-2x+5| +\frac{1}{2}\arctan \frac{x-1}{2} +C
+\end{align*}
+</div>
+<p data-braille="continuation">In the last step, you can guess the antiderivative, or use the substitutions \(u_1=x^2-2x+5\) and \(u_2=(x-1)/2\text{,}\) respectively.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1072"><h6 class="heading">
+<span class="codenumber">18<span class="period">.</span></span><span class="space"> </span><span class="title">2014A.</span>
+</h6>
+<ol id="p-8282" class="lower-alpha">
+<li id="li-3151">Evaluate \({\displaystyle \int\frac{x^2}{(x^3 + 1)^{101}}\,\dee{x}}\text{.}\)</li>
+<li id="li-3152">Evaluate \(\displaystyle\int \cos^3\!x\ \sin^4\!x\ \dee{x}\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-990" id="hint-990"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-990"><div class="hint solution-like"><p id="p-8283">For part (a), the numerator is the derivative of a function that appears in the denominator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1072" id="answer-1072"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1072"><div class="answer solution-like">
+<p id="p-8284">(a) \(\displaystyle-\frac{1}{300(x^3+1)^{100}} + C\)</p>
+<p id="p-8285">(b) \(\displaystyle\frac{\sin^5\!x}{5}-\frac{\sin^7\!x}{7}+C\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1072" id="solution-1072"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1072"><div class="solution solution-like">
+<p id="p-8286">(a) Substituting \(u=x^3+1\text{,}\) \(\dee{u}=3x^2\,\dee{x}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int\frac{x^2}{(x^3 + 1)^{101}}\dee{x}
+\amp=\int\frac{1}{u^{101}}\cdot \frac{\dee{u}}{3}
+=\frac{u^{-100}}{-100}\cdot\frac{1}{3}+C\\
+\amp=-\frac{1}{300(x^3+1)^{100}} + C
+\end{align*}
+</div>
+<p id="p-8287">(b) Substituting \(u=\sin x\text{,}\)  \(\dee{u}=\cos x\ \dee{x}\text{,}\) \(\cos^2 x = 1-\sin^2 x = 1-u^2\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int \cos^3\!x\ \sin^4\!x\ \dee{x}
+&amp;=\int \cos^2\!x\ \sin^4\!x\ \cos x\ \dee{x}
+=\int (1-u^2) u^4\ \dee{u}\\
+&amp;=\int (u^4-u^6)\ \dee{u}
+=\frac{u^5}{5}-\frac{u^7}{7}+C\\
+&amp;=\frac{\sin^5\!x}{5}-\frac{\sin^7\!x}{7}+C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1073"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-8288">Evaluate \(\displaystyle\int_{\pi/2}^\pi \frac{\cos x}{\sqrt{\sin x}}\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-991" id="hint-991"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-991"><div class="hint solution-like"><p id="p-8289">The integral is improper.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1073" id="answer-1073"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1073"><div class="answer solution-like"><p id="p-8290">-2</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1073" id="solution-1073"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1073"><div class="solution solution-like">
+<p id="p-8291">First, we note that the integral is improper, because \(\sin\pi=0\text{.}\) So, we'll have to use a limit.</p>
+<p id="p-8292">Second, we need to antidifferentiate. The substitution \(u=\sin x\text{,}\) \(\dee{u}=\cos x\dee{x}\) fits just right.</p>
+<div class="displaymath">
+\begin{align*}
+\int_{\pi/2}^\pi \frac{\cos x}{\sqrt{\sin x}}\dee{x}&amp;=\lim_{b \to \pi^-}\int_{\pi/2}^b \frac{\cos x}{\sqrt{\sin x}}\dee{x} =
+\lim_{b \to \pi^-}\int_{1}^{\sin b} \frac{1}{\sqrt{u}}\dee{u}\\
+&amp;=\lim_{b \to \pi^-}\Big[2\sqrt{u}\Big]_{1}^{\sin b}  = 2\sqrt{0} - 2\sqrt{1}=-2
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1074"><h6 class="heading">
+<span class="codenumber">20<span class="period">.</span></span><span class="space"> </span><span class="title">M105 2015A.</span>
+</h6>
+<p id="p-8293">Evaluate the following integrals.</p>
+<ol class="lower-alpha">
+<li id="li-3153">\(\displaystyle \displaystyle\int \frac{e^x}{(e^x+1)(e^x-3)}\, \dee{x}\)</li>
+<li id="li-3154">\(\displaystyle \displaystyle\int_2^4 \frac{x^2-4x+4}{\sqrt{12+4x-x^2}}\, \dee{x}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-992" id="hint-992"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-992"><div class="hint solution-like"><p id="p-8294">For part (a), can you convert this into a partial fractions integral? For part (b), start by completing the square inside the square root.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1074" id="answer-1074"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1074"><div class="answer solution-like"><p id="p-8295">(a) \(\displaystyle-\frac{1}{4}\log|e^x+1| +\frac{1}{4}\log|e^x-3| + C\) <p id="p-8296"></p> (b) \(\displaystyle\frac{4\pi}{3}-2\sqrt{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1074" id="solution-1074"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1074"><div class="solution solution-like">
+<p id="p-8297">(a) If the integrand had \(x\)'s instead of \(e^x\)'s it would be a rational function, ripe for the application of partial fractions. So let's start by making the substitution \(u=e^x\text{,}\) \(\dee{u}=e^x\,\dee{x}\text{:}\)</p>
+<div class="displaymath">
+\begin{gather*}
+\int \frac{e^x}{(e^x+1)(e^x-3)} \dee{x}
+= \int \frac{\dee{u}}{(u+1)(u-3)}
+\end{gather*}
+</div>
+<p data-braille="continuation">Now, we follow the partial fractions protocol, starting with expressing</p>
+<div class="displaymath">
+\begin{gather*}
+\frac{1}{(u+1)(u-3)} = \frac{A}{u+1} + \frac{B}{u-3}
+\end{gather*}
+</div>
+<p data-braille="continuation">To find \(A\) and \(B\text{,}\) the sneaky way, we cross multiply by the denominator</p>
+<div class="displaymath">
+\begin{gather*}
+1 = A(u-3) + B(u+1)
+\end{gather*}
+</div>
+<p data-braille="continuation">and find \(A\) and \(B\) by evaluating at \(u=-1\) and \(u=3\text{,}\) respectively.</p>
+<div class="displaymath">
+\begin{align*}
+1 = A(-1-3) + B(-1+1)  &amp;\iff\color{red}{ A=-\frac{1}{4}}\\
+1 = A(3-3) + B(3+1)  &amp;\iff \color{red}{B=\frac{1}{4}}
+\end{align*}
+</div>
+<p data-braille="continuation">Finally, we can do the integral:</p>
+<div class="displaymath">
+\begin{align*}
+\int \frac{e^x}{(e^x+1)(e^x-3)} \dee{x}
+&amp;= \int \frac{\dee{u}}{(u+1)(u-3)}
+= \int \Big(\frac{\textcolor{red}{-1/4}}{u+1} + \frac{\textcolor{red}{1/4}}{u-3}\Big)\dee{u}\\
+&amp;=-\frac{1}{4}\log|u+1| +\frac{1}{4}\log|u-3| + C\\
+&amp;=-\frac{1}{4}\log|e^x+1| +\frac{1}{4}\log|e^x-3| + C
+\end{align*}
+</div>
+<p id="p-8298">(b)  The argument of the square root is</p>
+<div class="displaymath">
+\begin{gather*}
+12+4x-x^2
+=12-(x-2)^2 +4
+=16-(x-2)^2
+\end{gather*}
+</div>
+<p data-braille="continuation">Hmmm. The numerator is \(x^2-4x+4=(x-2)^2\text{.}\) So let's make the integral look somewhat simpler by substituting \(u=x-2\text{,}\) \(\dee{u}=\dee{x}\text{.}\) When \(x=2\) we have \(u=0\text{,}\) and when \(x=4\) we have \(u=2\text{,}\) so:</p>
+<div class="displaymath">
+\begin{gather*}
+\int_{x=2}^{x=4} \frac{x^2-4x+4}{\sqrt{12+4x-x^2}} \dee{x}
+=\int_{u=0}^{u=2} \frac{u^2}{\sqrt{16-u^2}} \dee{u}
+\end{gather*}
+</div>
+<p data-braille="continuation">This is perfect for the trig substitution \(u=4\sin\theta\text{,}\) \(\dee{u} = 4\cos(\theta)\,\dee{\theta}\text{.}\) When \(u=0\) we have \(4\sin\theta = 0\) and hence \(\theta=0\text{.}\) When \(u=2\) we have \(4\sin\theta = 2\) and hence \(\theta=\frac{\pi}{6}\text{.}\) So</p>
+<div class="displaymath">
+\begin{align*}
+\int_{u=0}^{u=2} \frac{u^2}{\sqrt{16-u^2}} \dee{u}
+&amp;=\int_{\theta=0}^{\theta=\pi/6}
+\frac{16\sin^2\theta}{\sqrt{16-16\sin^2\theta}}
+4\cos\theta\dee{\theta}\\
+&amp;=16\int_{0}^{\pi/6} \sin^2\theta\ \dee{\theta}\\
+&amp;=8\int_{0}^{\pi/6} \big(1-\cos(2\theta)\big)\ \dee{\theta}\\
+&amp;=8 \bigg[\theta-\frac{1}{2}\sin(2\theta)\bigg]_{0}^{\pi/6}
+=8 \bigg[\frac{\pi}{6}-\frac{1}{2}\cdot \frac{\sqrt{3}}{2} \bigg]\\
+&amp; = \frac{4\pi}{3}-2\sqrt{3}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1075"><h6 class="heading">
+<span class="codenumber">21<span class="period">.</span></span><span class="space"> </span><span class="title">M121 1999A.</span>
+</h6>
+<p id="p-8299">Evaluate these integrals.</p>
+<ol id="p-8300" class="lower-alpha">
+<li id="li-3155">\(\displaystyle \displaystyle\int\frac{\sin^3x}{\cos^3x} \ \dee{x}\)</li>
+<li id="li-3156">\(\displaystyle \displaystyle\int_{-2}^{2}\frac{x^4}{x^{10}+16}\ \dee{x}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-993" id="hint-993"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-993"><div class="hint solution-like"><p id="p-8301">For part (b), the numerator is the derivative of a function that is embedded in the denominator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1075" id="answer-1075"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1075"><div class="answer solution-like">
+<p id="p-8302">(a) \(\displaystyle\frac{1}{2}\sec^2 x+\log|\cos x|+C\)</p>
+<p id="p-8303">(b) \(\displaystyle \frac{1}{10}\arctan 8\approx 0.1446\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1075" id="solution-1075"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1075"><div class="solution solution-like">
+<p id="p-8304">(a) Substituting \(y=\cos x\text{,}\) \(\dee{y}=-\sin x\,\dee{x}\text{,}\) \(\sin^2 x = 1-\cos^2x=1-y^2\)</p>
+<div class="displaymath">
+\begin{align*}
+\int \frac{\sin^3x}{\cos^3x}\ \dee{x}
+&amp;=\int \frac{\sin^2 x}{\cos^3 x}\ \sin x\,\dee{x}
+=\int \frac{1-y^2}{y^3}\ (-\dee{y})\\
+\amp=-\int \big( y^{-3}-y^{-1}\big)\ \dee{y}
+=-\frac{y^{-2}}{-2}+\log|y|+C\\
+&amp;=\frac{1}{2}\sec^2 x+\log|\cos x|+C
+\end{align*}
+</div>
+<p id="p-8305">(b) The integrand is an even function, and the limits of integration are symmetric. So, we can slightly simplify the integral by replacing the lower limit with 0, and doubling the integral.</p>
+<p id="p-8306">We'd rather not use partial fractions here, because it would be pretty complicated. Instead, notice that the numerator is only off by a constant from the derivative of \(x^5\text{.}\) Substituting \(x^5=4y\text{,}\) \(5x^4\,\dee{x}=4\,\dee{y}\text{,}\) and using that \(x=2\implies 2^5=4y\implies y=8\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int_{-2}^{2}\frac{x^4}{x^{10}+16}\ \dee{x}
+&amp;=2\int_0^{2}\frac{x^4}{x^{10}+16}\ \dee{x}
+=2\cdot\frac{4}{5}\int_0^{8}\frac{1}{16y^2+16}\ \dee{y}\\
+\amp=\frac{1}{10}\int_0^{8}\frac{1}{y^2+1}\ \dee{y}\\
+&amp;= \frac{1}{10}\arctan 8\approx 0.1446
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1076"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<p id="p-8307">Evaluate \(\displaystyle\int x\sqrt{x-1}\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-994" id="hint-994"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-994"><div class="hint solution-like"><p id="p-8308">Try a substitution.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1076" id="answer-1076"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1076"><div class="answer solution-like"><p id="p-8309">\(\displaystyle\frac{2}{5}(x-1)^{5/2} + \frac{2}{3}(x-1)^{3/2}+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1076" id="solution-1076"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1076"><div class="solution solution-like"><ul id="p-8310" class="disc">
+<li id="li-3157">Solution 1: Let's use the substitution \(u=x-1\text{,}\) \(\dee{u}=\dee{x}\text{.}\)<div class="displaymath">
+\begin{align*}
+\int x\sqrt{x-1}\dee{x}&amp;=\int(u+1)\sqrt{u}\dee{u}\\
+&amp;=\int \left(u^{3/2}+u^{1/2}\right)\dee{u}\\
+&amp;=\frac{2}{5}u^{5/2} + \frac{2}{3}u^{3/2}+C\\
+&amp;=\frac{2}{5}(x-1)^{5/2} + \frac{2}{3}(x-1)^{3/2}+C
+\end{align*}
+</div>
+</li>
+<li id="li-3158">
+<p id="p-8311">Solution 2: We have an integrand with \(x\) multiplied by something integrable. So, if we use integration by parts with \(u=x\) and \(\dee{v} = \sqrt{x-1}\dee{x}\text{,}\) then \(\dee{u}=\dee{x}\) (that is, the \(x\) goes away) and \(v = \frac{2}{3}(x-1)^{3/2}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int x\sqrt{x-1}\dee{x}&amp;=\frac{2}{3}x\sqrt{x-1}^3 - \frac{2}{3}\int(x-1)^{3/2}\dee{x}\\
+&amp;= \frac{2}{3}x\sqrt{x-1}^3 - \frac{2}{3}\left(\frac{2}{5}(x-1)^{5/2}\right)+C\\
+&amp;=\frac{2}{3}\sqrt{x-1}\left(x(x-1)-\frac{2}{5}(x-1)^2\right)+C\\
+&amp;=\frac{2}{15}\sqrt{x-1}\cdot(3x^2-x-2)+C\\
+&amp;=\frac{2}{15}\sqrt{x-1}\cdot(3(x^2-2x+1)+5x-5)+C\\
+&amp;=\frac{2}{15}\sqrt{x-1}\cdot(3(x-1)^2+5(x-1))+C\\
+&amp;=\frac{2}{15}\cdot 3\sqrt{x-1}^5 +\frac{2}{15}\cdot 5\sqrt{x-1}^3+C\\
+&amp;=\frac{2}{5}\sqrt{x-1}^5 +\frac{2}{3}\sqrt{x-1}^3+C
+\end{align*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1077"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-8312">Evaluate \(\displaystyle\int \frac{\sqrt{x^2-2}}{x^2}\dee{x}\text{.}\)</p>
+<p id="p-8313">You may use that  \(\int \sec x\dee{x} = \log|\sec x+\tan x| +C\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-995" id="hint-995"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-995"><div class="hint solution-like"><p id="p-8314">Note the quadratic function under the square root: you can solve this with trigonometric substitution, as in Section <a href="sec_trigsub.html" class="internal" title="Section 6.9: Trigonometric Substitution">6.9</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1077" id="answer-1077"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1077"><div class="answer solution-like"><p id="p-8315">\(\log \left| x+{\sqrt{x^2-2}}
+\right|-\dfrac{\sqrt{x^2-2}}{x}+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1077" id="solution-1077"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1077"><div class="solution solution-like">
+<div class="displaymath" id="p-8316">
+\begin{equation*}
+\int \frac{\sqrt{x^2-2}}{x^2}\dee{x}
+\end{equation*}
+</div>
+<p id="p-8317">We notice that there is a quadratic function under the square root. If that equation were a perfect square, we could get rid of the square root: so we'll mould it into a perfect square using a trig substitution.</p>
+<p id="p-8318">Our candidates will use one of the following identities:</p>
+<div class="displaymath">
+\begin{equation*}
+1-\sin^2\theta=\cos^2\theta \hspace{1cm} \tan^2\theta+1=\sec^2\theta \hspace{1cm} \sec^2\theta-1=\tan^2\theta
+\end{equation*}
+</div>
+<p id="p-8319">We'll be substituting \(x=\)(something), so we notice that \(x^2-2\) has the general form of (function)\(-\)(constant), as does \(\sec^2\theta-1\text{.}\) In order to get the constant right, we multiply through by two:</p>
+<div class="displaymath">
+\begin{equation*}
+2\sec^2\theta-2=2\tan^2\theta
+\end{equation*}
+</div>
+<p id="p-8320">or:</p>
+<div class="displaymath">
+\begin{equation*}
+(\sqrt{2}\sec \theta)^2-2=2\tan^2\theta
+\end{equation*}
+</div>
+<p id="p-8321">so we decide to use the substitution</p>
+<div class="displaymath">
+\begin{equation*}
+x=\sqrt{2}\sec\theta\hspace{1cm}\dee{x}=\sqrt{2}\sec\theta\tan\theta \dee{\theta}
+\end{equation*}
+</div>
+<p id="p-8322">Now that we've chosen the substitution, we evaluate the integral.</p>
+<div class="displaymath" id="p-8323">
+\begin{align*}
+\int\frac{\sqrt{x^2-2}}{x^2}\dee{x}&amp;=\int\frac{\sqrt{2\sec^2\theta-2}}{2\sec^2\theta}\sqrt{2}\sec\theta\tan\theta \dee{\theta}\\
+&amp;=\int
+\frac{\sqrt{2\tan^2\theta}}{2\sec^2\theta}\sqrt{2}\sec\theta\tan\theta
+\dee{\theta}\\
+&amp;=\int
+\frac{\sqrt{2}\tan\theta}{2\sec^2\theta}\sqrt{2}\sec\theta\tan\theta
+\dee{\theta}\\
+&amp;=\int
+\frac{\tan^2\theta}{\sec\theta}
+\dee{\theta}\\
+&amp;=
+\int \frac{\sec^2\theta-1}{\sec\theta}\dee{\theta}\\
+&amp;=\int \big(\sec\theta-\cos\theta\big)\, \dee{\theta}\\
+&amp;=\log|\sec\theta + \tan\theta|-\sin\theta +C
+\end{align*}
+</div>
+<p data-braille="continuation">Now we need everything back in terms of \(x\text{.}\) We need a triangle. Since \(x=\sqrt{2}\sec\theta\text{,}\) that means if we label an angle \(\theta\text{,}\) its secant (hypotenuse over adjacent side) is \(\dfrac{x}{\sqrt{2}}\text{.}\) By Pythagoras, the opposite side is \(\sqrt{x^2-2}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-833.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-8324">So \(\tan \theta = \frac{\mbox{opp}}{\mbox{adj}}=\dfrac{\sqrt{x^2-2}}{\sqrt{2}}\text{,}\) and \(\sin\theta = \frac{\mbox{opp}}{\mbox{hyp}}=\dfrac{\sqrt{x^2-2}}{x}\text{.}\) Then the value of the integral is:</p>
+<div class="displaymath" id="p-8325">
+\begin{align*}
+\amp\log|\sec\theta + \tan\theta|-\sin\theta +C
+={ \log \left|
+\frac{x}{\sqrt{2}}+\frac{\sqrt{x^2-2}}{\sqrt{2}}
+\right|-\frac{\sqrt{x^2-2}}{x}+C}\\
+&amp;\hskip0.5in={ \log \left| x+{\sqrt{x^2-2}}
+\right|-\log\sqrt{2}-\frac{\sqrt{x^2-2}}{x}+C}\\
+&amp;\hskip0.5in= \log \left| x+{\sqrt{x^2-2}}
+\right|-\frac{\sqrt{x^2-2}}{x}+C
+\end{align*}
+</div>
+<p id="p-8326">Note the simplification in the last step is due to our convention that \(C\) is an arbitrary constant. So, \(C-\log\sqrt{2}\) can be re-written as simply \(C\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1078"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<p id="p-8327">Evaluate \(\displaystyle\int_0^{\pi/4} \sec^4x\tan^5x\,\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-996" id="hint-996"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-996"><div class="hint solution-like"><p id="p-8328">Try a \(u\)-substitution, as in Section <a href="sec_trigint.html#sec_tansec" class="internal" title="Subsection 6.8.2: Integrating \(\int \tan^m x\sec^n x\dee{x}\)">6.8.2</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1078" id="answer-1078"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1078"><div class="answer solution-like"><p id="p-8329">\(\dfrac{7}{24}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1078" id="solution-1078"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1078"><div class="solution solution-like">
+<p id="p-8330">This is the product of secants and tangents, as in Section <a href="sec_trigint.html#sec_tansec" class="internal" title="Subsection 6.8.2: Integrating \(\int \tan^m x\sec^n x\dee{x}\)">6.8.2</a>. If \(u=\tan x\text{,}\) then \(\dee{u}=\sec^2x\dee{x}\text{.}\) We can get the remaining two secants to turn into tangents with the identity \(\sec^2x=1+\tan^2x\text{,}\) so we'll use this substitution.</p>
+<div class="displaymath" id="p-8331">
+\begin{align*}
+\int_{0}^{\pi/4} \sec^4x\tan^5x\dee{x}&amp;=
+\int_{0}^{\pi/4} \sec^2x\tan^5x\sec^2x\dee{x}\\
+&amp;=
+\int_{0}^{\pi/4} (1+\tan^2x)\tan^5x\underbrace{\sec^2x\dee{x}}_{\dee{u}}\\
+&amp;=
+\int_{\tan(0)}^{\tan(\pi/4)} (1+u^2)u^5\dee{u}\\
+&amp;=
+\int_{0}^{1} (u^5+u^7)\dee{u}\\
+&amp;=
+\left[\frac{1}{6}u^6+\frac{1}{8}u^8\right]_{0}^{1}\\
+&amp;=\frac{1}{6}+\frac{1}{8}-0=\frac{7}{24}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1079"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-8332">Evaluate \(\displaystyle\int \frac{3x^2+4x+6}{(x+1)^3} \, \dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-997" id="hint-997"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-997"><div class="hint solution-like"><p id="p-8333">What's the usual trick for evaluating a rational function (quotient of polynomials)?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1079" id="answer-1079"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1079"><div class="answer solution-like"><p id="p-8334">\(3\log|x+1|+\dfrac{2}{x+1}-\dfrac{5}{2(x+1)^2}+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1079" id="solution-1079"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1079"><div class="solution solution-like">
+<p id="p-8335">We can use partial fraction decomposition to break this into chunks that we can deal with. The denominator has a repeated linear factor, so it can be decomposed as the sum of constants divided by powers of that factor.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{3x^2+4x+6}{(x+1)^3} &amp;=\frac{A}{x+1}+\frac{B}{(x+1)^2}+\frac{C}{(x+1)^3}\\
+&amp;=\frac{A(x+1)^2+B(x+1)+C}{(x+1)^3}\\
+\Rightarrow \quad
+3x^2+4x+6&amp;=A(x+1)^2+B(x+1)+C\\
+&amp;=Ax^2+(2A+B)x+(A+B+C)\\
+\end{align*}
+<p class="intertext">So, by matching coefficients:</p>
+\begin{align*}
+&amp;A=3, 2A+B=4,\mbox{ and } A+B+C=6\\
+&amp;\color{red}{A=3,\quad B=-2,\quad C=5}\\
+\end{align*}
+<p class="intertext">Therefore:</p>
+\begin{align*}
+\frac{3x^2+4x+6}{(x+1)^3} &amp;= \frac{\textcolor{red}{3}}{x+1}+\frac{\textcolor{red}{-2}}{(x+1)^2}+\frac{\textcolor{red}{5}}{(x+1)^3}\\
+\end{align*}
+<p class="intertext">Now, the integration is easy, with a substitution of \(u=x+1\) and \(\dee{u}=\dee{x}\text{:}\)</p>
+\begin{align*}
+\int\frac{3x^2+4x+6}{(x+1)^3} \dee{x}&amp;= \int\left(\frac{3}{x+1}+\frac{-2}{(x+1)^2}+\frac{5}{(x+1)^3}\right)\dee{x}\\
+&amp;=\int \left( 3u^{-1}-2u^{-2}+5u^{-3}\right)\dee{u}\\
+&amp;=3\log|u|+2u^{-1}-\frac{5}{2} u^{-2}+C\\
+&amp;=3\log|x+1|+\frac{2}{x+1}-\frac{5}{2(x+1)^2}+C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1080"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<p id="p-8336">Evaluate \(\displaystyle\int\frac{1}{x^2+x+1}\,\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-998" id="hint-998"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-998"><div class="hint solution-like"><p id="p-8337">If the denominator were \(x^2+1\text{,}\) the antiderivative would be arctangent.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1080" id="answer-1080"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1080"><div class="answer solution-like"><p id="p-8338">\(\dfrac{2}{\sqrt3}\arctan\left(\dfrac{2}{\sqrt3}x+\dfrac{1}{\sqrt3}\right) +C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1080" id="solution-1080"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1080"><div class="solution solution-like">
+<p id="p-8339">If the denominator were \(x^2+1\text{,}\) the antiderivative would be arctangent. So, by completing the square, let's aim for the fraction to look like \(\dfrac{1}{u^2+1}\text{,}\) for some \(u\text{.}\) This is a good strategy for integrating an irreducible quadratic under a constant.</p>
+<div class="displaymath" id="p-8340">
+\begin{align*}
+\\
+\end{align*}
+<p class="intertext">First: complete the square</p>
+\begin{align*}
+\int\frac{1}{x^2+x+1}\dee{x}&amp;=
+\int\frac{1}{x^2+x+\frac{1}{4}+\frac{3}{4}}\dee{x}
+=
+\int\frac{1}{\left(x+\frac{1}{2}\right)^2+\frac{3}{4}}\dee{x}\\
+\end{align*}
+<p class="intertext">Second: get the denominator in the form \(u^2+1\text{.}\) To do this, we need to fix the constant</p>
+\begin{align*}
+&amp;=\int\left(\frac{1}{\left(x+\frac{1}{2}\right)^2+\frac{3}{4}}\right)\left(\frac{\frac{4}{3}}{\frac{4}{3}}\right)\dee{x}\\
+&amp;=\frac{4}{3}\int\frac{1}{\frac{4}{3}\cdot\left(x+\frac{1}{2}\right)^2+1}\dee{x}\\
+\end{align*}
+<p class="intertext">Now a quick wiggle to make that first part of the denominator into something squared again:</p>
+\begin{align*}
+&amp;=\frac{4}{3}\int\frac{1}{\left(\frac{2}{\sqrt{3}}x+\frac{1}{\sqrt{3}}\right)^2+1}\dee{x}\\
+\end{align*}
+<p class="intertext">Now we see that \(u=\dfrac{2}{\sqrt{3}}x+\dfrac{1}{\sqrt{3}}\text{,}\) \(\dee{u}=\dfrac{2}{\sqrt3}\dee{x}\) will do the job</p>
+\begin{align*}
+&amp;=\frac{4}{3}\int\frac{1}{u^2+1}\cdot\frac{\sqrt{3}}{2}\dee{u}
+=\frac{2}{\sqrt3}\int\frac{1}{u^2+1}\dee{u}\\
+&amp;=\frac{2}{\sqrt3}\arctan u +C\\
+&amp;=\frac{2}{\sqrt3}\arctan\left(\frac{2}{\sqrt3}x+\frac{1}{\sqrt3}\right) +C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1081"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<p id="p-8341">Evaluate \(\displaystyle\int \sin x \cos x \tan x\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-999" id="hint-999"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-999"><div class="hint solution-like"><p id="p-8342">Simplify first.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1081" id="answer-1081"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1081"><div class="answer solution-like"><p id="p-8343">\(\displaystyle\frac12\left(x -\sin x \cos x \right)+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1081" id="solution-1081"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1081"><div class="solution solution-like">
+<p id="p-8344">Since \(\tan x =\frac{\sin x}{\cos x}\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int \sin x \cos x \tan x\dee{x}&amp;=\int \sin^2 x\dee{x} = \int \frac{1}{2}\big(1-\cos(2x) \big)\dee{x}\\
+&amp;=\frac12\left(x - \frac{1}{2}\sin(2x) \right)+C\\
+&amp;=\frac12\left(x -\sin x \cos x \right)+C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1082"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<p id="p-8345">Evaluate \(\displaystyle\int \frac{1}{x^3+1}\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1000" id="hint-1000"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1000"><div class="hint solution-like"><p id="p-8346">\(x^3+1 = (x+1)(x^2-x+1)\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1082" id="answer-1082"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1082"><div class="answer solution-like"><p id="p-8347">\(\displaystyle\frac{1}{3}\log|x+1| - \frac{1}{6}\log|x^2+x+1| +
+\frac{1}{\sqrt3}\arctan\left(\frac{2x-1}{\sqrt3}\right)+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1082" id="solution-1082"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1082"><div class="solution solution-like">
+<p id="p-8348">We have the integral of a rational function with no obvious substitution, so we use partial fractions. That means we need to factor the denominator. We see that \(x=-1\) is a root of the denominator, so \(x+1\) is a factor. You might be able to figure out the rest of the factorization by inspection, or from having seen this common expression before; alternately, we can use long division.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-834.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-8349">Note \(x^2-x+1\) is an irreducible quadratic.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{x^3+1} &amp;= \frac{1}{(x+1)(x^2-x+1)} = \frac{A}{x+1} + \frac{Bx+C}{x^2-x+1}\\
+1&amp;=A(x^2-x+1)+(Bx+C)(x+1) \tag{$*$}\\
+\end{align*}
+<p class="intertext">When \(x=-1\text{,}\) we see \(1=3A\text{,}\) so \(\textcolor{red}{\frac{1}{3}=A}\text{.}\) We plug this into (\(*\)).</p>
+\begin{align*}
+1&amp;=\textcolor{red}{\frac{1}{3}}(x^2-x+1)+(Bx+C)(x+1)\\
+-\frac{1}{3}x^2+\frac{1}{3}x+\frac{2}{3}&amp;=Bx^2+(B+C)x+C\\
+\end{align*}
+<p class="intertext">Matching up coefficients of corresponding power of \(x\text{,}\) we see \(\textcolor{red}{B = -\frac{1}{3}}\) and \(\textcolor{red}{C = \frac{2}{3}}\text{.}\)</p>
+\begin{align*}
+\int \frac{1}{x^3+1}\dee{x}&amp;=\int \left(\frac{\textcolor{red}{1/3}}{x+1} \textcolor{red}{-} \frac{\textcolor{red}{\frac{1}{3}}x-\textcolor{red}{\frac{2}{3}}}{x^2-x+1}\right)\dee{x}\\
+\end{align*}
+<p class="intertext">To integrate the second fraction, we break it up into two pieces: one we can integrate using the substitution \(u=x^2-x+1\text{,}\) the other will look like the derivative of arctangent.</p>
+\begin{align*}
+&amp;=\frac{1}{3}\log|x+1| -\int\frac{\frac{1}{3}x-\frac{1}{6}-\frac{1}{2}}{x^2-x+1}\dee{x}\\
+&amp;=\frac{1}{3}\log|x+1| - \frac{1}{6}\int\frac{2x-1}{x^2-x+1}\dee{x} + \frac{1}{2}\int \frac{1}{(x-\frac{1}{2})^2+\frac{3}{4}}\dee{x}\\
+&amp;=\frac{1}{3}\log|x+1| - \frac{1}{6}\log|x^2-x+1| +
+\frac{1}{2}\int\frac{1}{\frac{3}{4}\left(\left(\frac{2x-1}{\sqrt{3}}\right)^2+1\right)} \dee{x}\\
+&amp;=\frac{1}{3}\log|x+1| - \frac{1}{6}\log|x^2-x+1| +
+\frac{2}{3}\int\frac{1}{\left(\frac{2x-1}{\sqrt{3}}\right)^2+1} \dee{x}\\
+\end{align*}
+<p class="intertext">Let \(u= \frac{2x-1}{\sqrt3}\text{,}\) \(\dee{u} = \frac{2}{\sqrt 3}\dee{x}\text{.}\)</p>
+\begin{align*}
+&amp;=\frac{1}{3}\log|x+1| - \frac{1}{6}\log|x^2-x+1| +
+\frac{1}{\sqrt3}\int\frac{1}{u^2+1} \dee{x}\\
+&amp;=\frac{1}{3}\log|x+1| - \frac{1}{6}\log|x^2-x+1| +
+\frac{1}{\sqrt3}\arctan\left(\frac{2x-1}{\sqrt3}\right)+C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1083"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<p id="p-8350">Evaluate \(\displaystyle\int (3x)^2\arcsin x \dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1001" id="hint-1001"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1001"><div class="hint solution-like"><p id="p-8351">You have the product of two quite dissimilar functions in the integrand—try integration by parts.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1083" id="answer-1083"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1083"><div class="answer solution-like"><p id="p-8352">\(3x^3\arcsin x + 3\sqrt{1-x^2}-(1-x^2)^{3/2} + C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1083" id="solution-1083"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1083"><div class="solution solution-like">
+<p id="p-8353">By process of elimination, we decide to use  integration by parts. We won't get anything better by antidifferentiating arcsine, so let's plan on differentiating it:</p>
+<div class="displaymath">
+\begin{align*}
+u&amp;=\arcsin x \qquad &amp;\dee{v} &amp;= (3x)^2\dee{x}\\
+\dee{u}&amp;=\dfrac{1}{\sqrt{1-x^2}}\dee{x} \qquad &amp;v&amp;=3x^3
+\end{align*}
+</div>
+<div class="displaymath">
+\begin{align*}
+\int (3x)^2\arcsin x \dee{x}&amp;=
+\underbrace{\arcsin x}_{u}\cdot\underbrace{3x^3}_{v}-\int
+\underbrace{3x^3}_{v}\cdot
+\underbrace{\frac{1}{\sqrt{1-x^2}}\dee{x}}_{\dee{u}}\\
+&amp;=3x^3\arcsin x -\int \frac{3x^3}{\sqrt{1-x^2}}\dee{x}
+\end{align*}
+</div>
+<p data-braille="continuation">So: we've gotten rid of the ugly pairing of arcsine with a polynomial, but now we're in another pickle. From here, two options present themselves. We could use the substitution \(u=1-x^2\text{,}\) or we could use a trig substitution.</p>
+<ul class="disc">
+<li id="li-3159">Option 1: Let \(u=1-x^2\text{.}\) Then \(-\frac{1}{2}\dee{u}=\dee{x}\text{,}\) and \(x^2 = 1-u\text{.}\)<div class="displaymath">
+\begin{align*}
+\int (3x)^2\arcsin x \dee{x}&amp;=
+3x^3\arcsin x -\int \frac{3x^3}{\sqrt{1-x^2}}\dee{x}\\
+&amp;=3x^3 \arcsin x - 3\int\frac{x^2}{\sqrt{1-x^2}}\cdot x\dee{x}\\
+&amp;=3x^3 \arcsin x + \frac{3}{2}\int\frac{1-u}{\sqrt{u}}\dee{u}\\
+&amp;=3x^3 \arcsin x + \frac{3}{2}\int\left(u^{-1/2} - u^{1/2}\right)\dee{u}\\
+&amp;=3x^3 \arcsin x + \frac{3}{2}\left(2u^{1/2} - \frac{2}{3}u^{3/2}\right)+C\\
+&amp;=3x^3 \arcsin x + 3\sqrt{1-x^2} - \sqrt{1-x^2}^3+C
+\end{align*}
+</div>
+</li>
+<li id="li-3160">
+<p id="p-8354">Option 2: If we let \(x=\sin\theta\text{,}\) then \(\sqrt{1-x^2}=\sqrt{\cos^2\theta}=\cos\theta\text{.}\) So let's use the substitution \(x=\sin\theta\text{,}\) \(\dee{x}=\cos\theta \dee{\theta}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int (3x)^2\arcsin x \dee{x}&amp;=
+3x^3\arcsin x -\int \frac{3x^3}{\sqrt{1-x^2}}\dee{x}\\
+&amp;=3x^3\arcsin x - \int \frac{3\sin^3\theta}{\sqrt{1-\sin^2\theta}}\cos\theta \dee{\theta}\\
+&amp;=
+3x^3\arcsin x - \int {3\sin^3\theta \dee{\theta}}
+\end{align*}
+</div>
+<p data-braille="continuation">And now: a substitution from Section <a href="sec_trigint.html#sec_sincos" class="internal" title="Subsection 6.8.1: Integrating \(\int \sin^m x\cos^n x\dee{x}\)">6.8.1</a>, \(u=\cos x\) and \(\dee{u}=-\sin x \dee{x}\)</p>
+<div class="displaymath">
+\begin{align*}
+\amp 3x^3\arcsin x - \int {3\sin^3\theta \dee{\theta}}=3x^3\arcsin x - 3\int\sin^2\theta \sin\theta \dee{\theta}\\
+&amp;\hskip0.5in=3x^3\arcsin x - 3\int(1-\cos^2\theta) \sin\theta \dee{\theta}\\
+&amp;\hskip0.5in=3x^3\arcsin x + 3\int(1-u^2)\dee{u}\\
+&amp;\hskip0.5in=3x^3\arcsin x + 3 \left(u-\frac{1}{3}u^3\right) + C\\
+&amp;\hskip0.5in=3x^3\arcsin x + 3u-u^3 + C\\
+&amp;\hskip0.5in=3x^3\arcsin x + 3\cos\theta-\cos^3\theta + C
+\end{align*}
+</div>
+<p data-braille="continuation">Recall \(x=\sin\theta\text{;}\) so we draw a triangle with angle \(\theta\text{,}\) opposite side \(x\text{,}\) hypotenuse 1. Then by Pythagoras, adjacent side is \(\sqrt{1-x^2}\text{,}\) so \(\cos\theta = \sqrt{1-x^2}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\amp\int (3x)^2\arcsin x \dee{x}\\
+&amp;\hskip0.5in=3x^3\arcsin x + 3\sqrt{1-x^2}-(1-x^2)^{3/2} + C
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:36%;margin-right:36%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-835.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+</ul>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-154">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-245"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1084"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<p id="p-8355">Evaluate \(\displaystyle\int_0^{\pi/2}\sqrt{\cos t+1}\ \dee{t}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1002" id="hint-1002"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1002"><div class="hint solution-like"><p id="p-8356">Use the identity \(\cos(2x) = 2\cos^2x -1\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1084" id="answer-1084"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1084"><div class="answer solution-like"><p id="p-8357">2</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1084" id="solution-1084"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1084"><div class="solution solution-like">
+<p id="p-8358">We would like to not have that square root there. Luckily, there's a way of turning cosine into cosine squared: the identity \(\cos(2x) = 2\cos^2x -1\text{.}\) If we take \(2x=t\text{,}\) then \(\cos t = 2\cos^2(t/2)-1\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^{\pi/2}\sqrt{\cos t+1}\ \dee{t}&amp;=\int_0^{\pi/2}\sqrt{2\cos^2 (t/2)}\dee{t} =
+\sqrt{2}\int_0^{\pi/2} |\cos (t/2)|\dee{t}\\
+\end{align*}
+<p class="intertext">Over the interval \([0,\frac{\pi}{2}]\text{,}\) \(\cos (t/2)  \gt 0\text{,}\) so we can drop the absolute values.</p>
+\begin{align*}
+&amp;= \sqrt{2}\int_0^{\pi/2} \cos (t/2)\dee{t} = \sqrt{2}\left[2\sin\left(\frac{t}{2}\right)\right]_0^{\pi/2}\\
+&amp;=2\sqrt{2}\sin\left(\frac{\pi}{4}\right) = {2}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1085"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<p id="p-8359">Evaluate \(\displaystyle\int_1^e \frac{\log\sqrt{x}}{{x}}\,\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1003" id="hint-1003"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1003"><div class="hint solution-like"><p id="p-8360">Using logarithm rules can make the integrand simpler.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1085" id="answer-1085"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1085"><div class="answer solution-like"><p id="p-8361">\(\dfrac{1}{4}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1085" id="solution-1085"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1085"><div class="solution solution-like"><ul id="p-8362" class="disc">
+<li id="li-3161">
+<p id="p-8363">Solution 1: Using logarithm rules, \(\log\sqrt{x} = \log\left(x^{1/2}\right)=\frac{1}{2}\log x\text{,}\) so we can simplify:</p>
+<div class="displaymath">
+\begin{equation*}
+\int_1^e \frac{\log\sqrt{x}}{{x}}\dee{x} =\int_1^e \frac{\log{x}}{{2x}}\dee{x}
+\end{equation*}
+</div>
+<p data-braille="continuation">We use the substitution \(u=\log x\text{,}\) \(\dee{u}=\frac{1}{x}\dee{x}\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int_1^e \frac{\log{x}}{{2x}}\dee{x}&amp;=\frac{1}{2}\int_1^e \underbrace{\log(x)}_{u}\cdot\underbrace{\frac{1}{x}\,\dee{x}}_{\dee{u}}\\
+&amp;=\frac{1}{2}\int_{\log(1)}^{\log(e)}u\,\dee{u}\\
+&amp;=\frac{1}{2}\int_{0}^{1}u\,\dee{u}\\
+&amp;=\frac{1}{2}\left[ \frac{1}{2}u^2\right]_0^1\\
+&amp;=\frac{1}{2}\left[\frac{1}{2}-0\right]=\dfrac{1}{4}
+\end{align*}
+</div>
+</li>
+<li id="li-3162">
+<p id="p-8364">Solution 2: We use the substitution \(u=\log\sqrt{x}\text{.}\) Then \(\dfrac{\dee{u}}{\dee{x}}=\dfrac{1}{\sqrt{x}}\cdot\dfrac{1}{2\sqrt{x}}=\dfrac{1}{2x}\text{,}\) hence \(2\dee{u}=\dfrac{1}{x}\dee{x}\text{.}\) This fits our integral nicely!</p>
+<div class="displaymath">
+\begin{align*}
+\int_1^e\frac{\log\sqrt{x}}{x}\dee{x} &amp;=
+\int_{\log\sqrt{1}}^{\log\sqrt{e}}u\cdot 2\dee{u}\\
+&amp;=\Big[u^2\Big]_{0}^{1/2}\\
+&amp;=\left(\frac{1}{2}\right)^2-0^2=\frac{1}{4}
+\end{align*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1086"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<p id="p-8365">Evaluate \(\displaystyle\int_{0.1}^{0.2} \frac{\tan x}{\log(\cos x)}\,  \dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1004" id="hint-1004"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1004"><div class="hint solution-like"><p id="p-8366">What is the derivative of the function in the denominator? How could that be useful to you?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1086" id="answer-1086"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1086"><div class="answer solution-like"><p id="p-8367">\(\log\left(\dfrac{\log(\cos(0.1))}{\log(\cos(0.2))}\right)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1086" id="solution-1086"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1086"><div class="solution solution-like">
+<div class="displaymath" id="p-8368">
+\begin{equation*}
+\int_{0.1}^{0.2} \frac{\tan x}{\log(\cos x)}  \dee{x}
+\end{equation*}
+</div>
+<p id="p-8369">It might not be immediately obvious how to proceed on this one, so this is another example of an integral where you should not be discouraged by finding methods that don't work. One thing that's worked for us in the past is to use a \(u\)-substitution with the denominator. With that in mind, let's find the derivative of the denominator.</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{}{x}\left\{\log(\cos x)\right\}= \frac{1}{\cos x}\cdot (-\sin x) = \frac{-\sin x}{\cos x} = -\tan x
+\end{equation*}
+</div>
+<p id="p-8370">So, if we let \(u=\log(\cos x\)), we see \(-\dee{u}=\tan x \dee{x}\text{,}\) which will work for a substitution.</p>
+<div class="displaymath" id="p-8371">
+\begin{align*}
+\int_{0.1}^{0.2} \frac{\tan x}{\log(\cos x)}  \dee{x}&amp;=
+\int_{\log(\cos(0.1))}^{\log(\cos(0.2))} \frac{-\dee{u}}{u}\\
+&amp;=\Big[-\log|u|\Big]_{\log(\cos(0.1))}^{\log(\cos(0.2))}\\
+&amp;=
+-\log|\log(\cos 0.2)|+\log|\log(\cos 0.1)|\\
+&amp;={\log\left|\frac{\log(\cos(0.1))}{\log(\cos(0.2))}\right|}\\
+&amp;=
+\log\left(\frac{\log(\cos(0.1))}{\log(\cos(0.2))}\right)
+\end{align*}
+</div>
+<p id="p-8372">Things to notice: the integrand is only defined when \(\log(\cos x)\) exists AND is nonzero. So, for instance, it is not defined when \(x=0\text{,}\) because then \(\log\cos x = \log1=0\text{,}\) and we can't divide by zero.</p>
+<p id="p-8373">In the final simplification, since \(0.1\) and \(0.2\) are between 0 and \(\pi/2\text{,}\) the cosine term is positive but less than one, so \(\log(\cos 0.1)\) and \(\log(\cos 0.2)\) are both negative; then their quotient is positive, so we can drop the absolute value signs.</p>
+<p id="p-8374">Using the base change formula, we can also write the final answer as \(\log\left(\log_{\cos (0.2)}\cos(0.1)\right)\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1087"><h6 class="heading">
+<span class="codenumber">33<span class="period">.</span></span><span class="space"> </span><span class="title">M105 2012A.</span>
+</h6>
+<p id="p-8375">Evaluate these integrals.</p>
+<ol id="p-8376" class="lower-alpha">
+<li id="li-3163">\(\displaystyle \displaystyle\int\sin(\log x) \ \dee{x}\)</li>
+<li id="li-3164">\(\displaystyle \displaystyle\int_0^1\frac{1}{x^2-5x+6}\ \dee{x}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1005" id="hint-1005"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1005"><div class="hint solution-like"><p id="p-8377">For part (a), the substitution \(u=\log x\) gives an integral that you have seen before.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1087" id="answer-1087"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1087"><div class="answer solution-like">
+<p id="p-8378">(a) \(\displaystyle \frac{1}{2} x \big[\sin(\log x) -\cos(\log x)\big]+C \)</p>
+<p id="p-8379">(b) \(2\log 2 - \log 3 = \log\frac{4}{3}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1087" id="solution-1087"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1087"><div class="solution solution-like">
+<p id="p-8380">(a) Without any other ideas, we see we have a compound function—a function of a function. We often find it useful to substitute for the “inside” function. So, we substitute \(u=\log x\text{,}\) \(\dee{u}=\frac{1}{x}\,\dee{x}\text{.}\) Then \(\dee{x} = x\,\dee{u}= e^u\,\dee{u}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int\sin(\log x) \ \dee{x}
+&amp;=\int\sin(u)\ e^u\ \dee{u}
+\end{align*}
+</div>
+<p data-braille="continuation">We have already seen, in Example <a class="xref" data-knowl="./knowl/eg_PRTSexsinx.html" title="Example 6.7.11: \(\int_a^b e^x\sin x\dee{x}\) and \(\int_a^b e^x\cos x\dee{x}\)">6.7.11</a>, that</p>
+<div class="displaymath">
+\begin{equation*}
+\int\sin(u)\ e^u\ \dee{u}
+=\frac{1}{2}e^u\big(\sin u -\cos u\big)+C
+\end{equation*}
+</div>
+<p data-braille="continuation">So,</p>
+<div class="displaymath">
+\begin{equation*}
+\int\sin(\log x)\ \dee{x} =\frac{1}{2} x \big[\sin(\log x) -\cos(\log x)\big]+C
+\end{equation*}
+</div>
+<p id="p-8381">(b) The integrand is of the form \(N(x)/D(x)\) with \(N(x)\) of lower degree than \(D(x)\text{.}\) So we factor \(D(x)=(x-2)(x-3)\) and look for a partial fractions decomposition:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{(x-2)(x-3)} = \frac{A}{x-2} + \frac{B}{x-3}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Multiplying through by the denominator yields</p>
+<div class="displaymath">
+\begin{align*}
+1 &amp;= A(x-3) + B(x-2)
+\end{align*}
+</div>
+<p data-braille="continuation">Setting \(x=2\) we find:</p>
+<div class="displaymath">
+\begin{gather*}
+1 = A(2-3) + 0 \implies\color{red}{  A = -1}
+\end{gather*}
+</div>
+<p data-braille="continuation">Setting \(x=3\) we find:</p>
+<div class="displaymath">
+\begin{gather*}
+1 = 0 + B(3-2) \implies \color{red}{ B = 1}
+\end{gather*}
+</div>
+<p data-braille="continuation">So we have found that \(A=-1\) and \(B=1\text{.}\) Therefore</p>
+<div class="displaymath">
+\begin{align*}
+\int\frac{1}{(x-2)(x-3)}\ \dee{x}
+&amp;= \int \bigg( \frac{1}{x-3} - \frac{1}{x-2} \bigg) \,\dee{x}\\
+&amp;=  \log |x-3| -  \log|x-2| + C
+\end{align*}
+</div>
+<p data-braille="continuation">and the definite integral</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^1\frac{1}{(x-2)(x-3)}\ \dee{x}
+&amp; =  \Big[\log |x-3| -  \log|x-2|\Big]_0^1\\
+&amp; =  \big[\log 2 -  \log 1\big]-\big[\log 3 - \log 2\big]\\
+&amp; = 2\log 2 -\log 3 = \log\frac{4}{3}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1088"><h6 class="heading">
+<span class="codenumber">34<span class="period">.</span></span><span class="space"> </span><span class="title">M121 2012A.</span>
+</h6>
+<p id="p-8382">Evaluate (with justification).</p>
+<ol id="p-8383" class="lower-alpha">
+<li id="li-3165">\(\displaystyle \displaystyle\int_0^3(x+1)\sqrt{9-x^2} \ \dee{x}\)</li>
+<li id="li-3166">\(\displaystyle \displaystyle\int\frac{4x+8}{(x-2)(x^2+4)}\ \dee{x}\)</li>
+<li id="li-3167">\(\displaystyle \displaystyle\int_{-\infty}^{+\infty} \frac{1}{e^x+e^{-x}}\ \dee{x}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1006" id="hint-1006"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1006"><div class="hint solution-like"><p id="p-8384">For part (a), split the integral in two. One part may be evaluated by interpreting it geometrically, without doing any integration at all. For part (c), multiply both the numerator and denominator by \(e^x\) and then make a substitution.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1088" id="answer-1088"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1088"><div class="answer solution-like">
+<p id="p-8385">(a) \(\displaystyle\frac{9}{4}\pi + 9\)</p>
+<p id="p-8386">(b) \(\displaystyle2 \log |x-2| -  \log (x^2 + 4) + C\) <p id="p-8387"></p> (c) \(\displaystyle\frac{\pi}{2}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1088" id="solution-1088"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1088"><div class="solution solution-like">
+<p id="p-8388">(a) If we expand the integrand, one part of it is quite familiar—a portion of a circle. So, we split the specified integral in two.</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^3(x+1)\sqrt{9-x^2} \ \dee{x}
+= \int_0^3\sqrt{9-x^2} \ \dee{x}
++\int_0^3x\sqrt{9-x^2} \ \dee{x}
+\end{equation*}
+</div>
+<p data-braille="continuation">The first piece represents the area above the \(x\)-axis and below the curve \(y=\sqrt{9-x^2}\text{,}\) i.e. \(x^2+y^2=9\text{,}\) with \(0\le x\le 3\text{.}\) That's the area of one quadrant of a disk of radius \(3\text{.}\) So</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^3\sqrt{9-x^2} \ \dee{x}
+=\frac{1}{4}(\pi \cdot 3^2) = \frac{9}{4}\pi
+\end{equation*}
+</div>
+<p data-braille="continuation">For the second part, we substitute \(u=9-x^2\text{,}\) \(\dee{u}= -2x\,\dee{x}\text{.}\) Note \(u(0)=9\) and \(u(3)=0\text{.}\) So,</p>
+<div class="displaymath">
+\begin{gather*}
+\int_0^3x\sqrt{9-x^2} \ \dee{x}
+= \int_9^0\sqrt{u} \ \frac{\dee{u}}{-2}
+=-\frac{1}{2}\left[\frac{u^{3/2}}{3/2}\right]_9^0
+=-\frac{1}{2}\left[-\frac{27}{3/2}\right]
+=9
+\end{gather*}
+</div>
+<p data-braille="continuation">All together,</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^3(x+1)\sqrt{9-x^2} \ \dee{x} = \frac{9}{4}\pi + 9
+\end{equation*}
+</div>
+<p id="p-8389">(b) The integrand is of the form \(N(x)/D(x)\) with \(D(x)\) already factored and \(N(x)\) of lower degree. We immediately look for a partial fractions decomposition:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{4x+8}{(x-2)(x^2+4)} = \frac{A}{x-2} + \frac{Bx+C}{x^2+4}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Multiplying through by the denominator yields</p>
+<div class="displaymath">
+\begin{equation*}
+4x+8 = A(x^2+4) + (Bx+C)(x-2)
+\tag{$*$}
+\end{equation*}
+</div>
+<p data-braille="continuation">Setting \(x=2\) we find:</p>
+<div class="displaymath">
+\begin{gather*}
+8 +8 = A(4 + 4) + 0 \implies 16 =8A  \implies\color{red}{ A = 2}
+\end{gather*}
+</div>
+<p data-braille="continuation">Substituting \(A=2\) in \((*)\) gives</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+&amp;&amp;4x+8 &amp;= A(x^2+4) + (Bx+C)(x-2)\\
+&amp;\implies &amp;  -2x^2+4 x &amp;=(x-2)(Bx + C)\\
+&amp;\implies\qquad &amp;  (-2x)(x-2)&amp;=(Bx + C)(x-2)\\
+&amp; \implies&amp; \color{red}{B}&amp; \color{red}{=-2,C=0}
+\end{alignat*}
+</div>
+<p data-braille="continuation">So we have found that \(A=2\text{,}\) \(B=-2\text{,}\) and \(C=0\text{.}\) Therefore</p>
+<div class="displaymath">
+\begin{align*}
+\int\frac{4x+8}{(x-2)(x^2+4)}\ \dee{x} &amp;= \int \bigg( \frac{\textcolor{red}2}{x-2} \textcolor{red}- \frac{\textcolor{red}2x}{x^2+4} \bigg) \,\dee{x}\\
+&amp;=  2 \log |x-2| -  \log (x^2 + 4) + C
+\end{align*}
+</div>
+<p data-braille="continuation">Here the second integral was found just by guessing an antiderivative. Alternatively, one could use the substitution \(u=x^2+4\text{,}\) \(\dee{u}=2x\,\dee{x}\text{.}\)</p>
+<p id="p-8390">(c) The given integral is improper, but only because of its infinite limits of integration. (The integrand is continuous for all real numbers.) So, we'll have to take two limits. Before we do that, though, let's find the antiderivative. We would like to use the substitution \(u=e^x\text{,}\) \(\dee{u}=e^x\dee{x}\text{.}\) That is, \(\frac{1}{u}\dee{u} = \dee{x}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int \frac{1}{e^x+e^{-x}}\dee{x}&amp;=\int \frac{1}{u(u+\frac{1}{u})}\dee{u} = \int\frac{1}{u^2+1} = \arctan u+C\\
+&amp;=\arctan(e^x)+C
+\end{align*}
+</div>
+<p data-braille="continuation">Now we can deal with the limits of integration.</p>
+<div class="displaymath">
+\begin{align*}
+\amp\int _{ -\infty}^\infty\frac{1}{e^x+e^{-x}}\dee{x}=
+\int _{ -\infty}^0\frac{1}{e^x+e^{-x}}\dee{x}+
+\int _{ 0}^\infty\frac{1}{e^x+e^{-x}}\dee{x}\\
+\amp\hskip0.25in=
+\lim_{a \to -\infty}\left[\int_{a}^0\frac{1}{e^x+e^{-x}}\dee{x}\right]+
+\lim_{b \to \infty}\left[\int_{ 0}^b\frac{1}{e^x+e^{-x}}\dee{x}\right]\\
+&amp;\hskip0.25in
+=\lim_{a \to -\infty}\big[\arctan(e^x)\big]_a^0+
+\lim_{b \to \infty}\big[\arctan(e^x)\big]_0^b\\
+&amp;\hskip0.25in=
+\lim_{a \to -\infty}\big[\arctan(e^0)-\arctan(e^a)\big]+
+\lim_{b \to \infty}\big[\arctan(e^b)-\arctan(e^0)\big]\\
+&amp;\hskip0.25in=
+\lim_{a \to -\infty}\big[-\arctan(e^a)\big]+
+\lim_{b \to \infty}\big[\arctan(e^b)\big]\\
+&amp;\hskip0.25in=-\arctan(0)+\frac{\pi}{2} = \frac{\pi}{2}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1089"><h6 class="heading"><span class="codenumber">35<span class="period">.</span></span></h6>
+<p id="p-8391">Evaluate \(\displaystyle\int \sqrt{\frac{x}{1-x}}\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1007" id="hint-1007"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1007"><div class="hint solution-like"><p id="p-8392">Let \(u=\sqrt{1-x}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1089" id="answer-1089"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1089"><div class="answer solution-like"><p id="p-8393">\(-\arcsin (\sqrt{1-x})-\sqrt{1-x}\sqrt{x}+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1089" id="solution-1089"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1089"><div class="solution solution-like">
+<p id="p-8394">It's not immediately clear where to start, but a common method we've seen is to use the denominator in a \(u\)-substitution, especially when square roots are involved.</p>
+<p id="p-8395">Let \(u = \sqrt{1-x}\text{,}\) \(\dee{u} = -\frac{1}{2\sqrt{1-x}}\dee{x}\text{.}\) Then \(u^2=1-x\text{,}\) so \(x = 1-u^2\text{.}\)</p>
+<div class="displaymath" id="p-8396">
+\begin{align*}
+\int \sqrt{\frac{x}{1-x}}\dee{x}&amp;=2\int \frac{\sqrt{x}}{2\sqrt{1-x}}\dee{x} =- 2\int\sqrt{1-u^2}\dee{u}\\
+\end{align*}
+<p class="intertext">Now we're back in familiar territory. Let \(u=\sin \theta\text{,}\) \(\dee{u}=\cos \theta\dee{\theta}\text{.}\)</p>
+\begin{align*}
+&amp;=-2\int\sqrt{1-\sin^2 \theta }\cos\theta\dee{\theta}\\
+&amp;=-2\int\cos^2\theta\dee{\theta}\\
+&amp;=-\int \big(1+\cos(2\theta)\big)\dee{\theta}\\
+&amp;=-\theta - \frac{1}{2}\sin(2\theta)+C\\
+&amp;=-\theta - \sin\theta\cos\theta+C\\
+&amp;=-\arcsin u - u\sqrt{1-u^2}+C \tag{$*$}\\
+&amp;=-\arcsin (\sqrt{1-x})-\sqrt{1-x}\sqrt{x}+C
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-836.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-8397">In (\(*\)), to convert from \(\theta\) to \(u\text{,}\) our substitution \(u=\sin\theta\) tells us \(\theta = \arcsin u\text{.}\) To find \(\cos \theta\text{,}\) we can either trace our work backwards to see that we already simplified \(\sqrt{1-u^2}\) into \(\cos\theta\text{,}\) or we can draw a right triangle with angle \(\theta\) and \(\sin \theta=u\text{,}\) then use the Pythagorean theorem to find the length of the adjacent side of the triangle and \(\cos\theta\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1090"><h6 class="heading"><span class="codenumber">36<span class="period">.</span></span></h6>
+<p id="p-8398">Evaluate \(\displaystyle\int_0^1e^{2x}e^{e^x}\,\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1008" id="hint-1008"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1008"><div class="hint solution-like"><p id="p-8399">Use the substitution \(u=e^x\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1090" id="answer-1090"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1090"><div class="answer solution-like"><p id="p-8400">\(e^e(e-1)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1090" id="solution-1090"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1090"><div class="solution solution-like">
+<p id="p-8401">Let's use the substitution \(u=e^x\text{.}\) There are a few reasons to think this is a good choice. It's an “inside function,” in that if we let \(f(x)=e^x\text{,}\) then \(f(e^x)=e^{e^x}\text{,}\) which is a piece of our integrand. Also its derivative, \(e^x\text{,}\) is multiplied by the rest of the integrand, since \(e^{2x}=e^x\cdot e^x\text{.}\)</p>
+<p id="p-8402">Let \(u=e^x\text{,}\) \(\dee{u} = e^x\dee{x}\text{.}\) When \(x=0\text{,}\) \(u=1\text{,}\) and when \(x=1\text{,}\) \(u=e\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\displaystyle\int_0^1e^{2x}e^{e^x}\dee{x} &amp;= \int_0^1e^{x}e^{e^x}e^x\dee{x} =\int_1^e ue^u\dee{u}\\
+\end{align*}
+<p class="intertext">This is more familiar. We use integration by parts with \(\dee{v} = e^u\dee{u}\text{,}\) \(v=e^u\text{.}\) Conveniently, the “\(u\)” we brought in with the substitution is what we want to use for the “\(u\)” in integration by parts, so we don't have to change the names of our variables.</p>
+\begin{align*}
+&amp;=\big[ue^u\big]_1^e - \int_1^e e^u\dee{u}\\
+&amp;=e\cdot e^e-e-e^e+e=e^e(e-1)
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1091"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<p id="p-8403">Evaluate \(\displaystyle\int\frac{xe^x}{(x+1)^2}\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1009" id="hint-1009"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1009"><div class="hint solution-like"><p id="p-8404">Use integration by parts. If you choose your parts well, the resulting integration will be very simple.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1091" id="answer-1091"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1091"><div class="answer solution-like"><p id="p-8405">\(\displaystyle\frac{e^x}{x+1}+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1091" id="solution-1091"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1091"><div class="solution solution-like">
+<p id="p-8406">The substitution \(u=x+1\) looks promising at first, but doesn't result in something easily integrable. We can't use partial fractions because our integration isn't rational. This doesn't look like something from the trig-substitution family.  So, let's think about integration by parts. There's a lot of different ways we could break up the integrand into two parts. For example, we could view it as \(\Big(\frac{x}{(x+1)^2}\Big)\Big(e^x\Big)\text{,}\) or we could view it as \(\Big(\frac{x}{x+1}\Big)\Big(\frac{e^x}{x+1}\Big)\text{.}\) After some trial and error, we settle on \(u=xe^x\) and \(\dee{v}=(x+1)^{-2}\dee{x}\text{.}\) Then \(\dee{u}=e^x(x+1)\) and \(v=\frac{-1}{x+1}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int\frac{xe^x}{(x+1)^2}\dee{x}&amp;=-\frac{xe^x}{x+1} +\int \frac{e^x(x+1)}{x+1}\dee{x}\\
+&amp;=-\frac{xe^x}{x+1} +\int e^x\dee{x}\\
+&amp;=-\frac{xe^x}{x+1}+e^x+C\\
+&amp;= \frac{e^x}{x+1}+C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1092"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<p id="p-8407">Evaluate \(\displaystyle\int \frac{x\sin x}{\cos^2 x}\,\dee{x}\text{.}\)</p>
+<p id="p-8408">You may use that  \(\int \sec x\dee{x} = \log|\sec x+\tan x| +C\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1010" id="hint-1010"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1010"><div class="hint solution-like"><p id="p-8409">\(\frac{\sin x}{\cos^2 x} = \tan x \sec x\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1092" id="answer-1092"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1092"><div class="answer solution-like"><p id="p-8410">\(\displaystyle x\sec x - \log|\sec x + \tan x|+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1092" id="solution-1092"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1092"><div class="solution solution-like">
+<p id="p-8411">It would be nice to use integration by parts with \(u=x\text{,}\) because then we would integrate \(\int v\dee{u}\text{,}\) and \(\dee{u} = \dee{x}\text{.}\) That is, the \(x\) would go away, and we'd be left with a pure trig integral. If we use \(u=x\text{,}\) then \(\dee{v} = \frac{\sin x}{\cos^2 x}\text{.}\) We need to find \(v\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+v&amp;=\int \frac{\sin x}{\cos^2 x}\dee{x} = \int \tan x \sec x\dee{x} = \sec x\\
+\end{align*}
+<p class="intertext">Now we use integration by parts.</p>
+\begin{align*}
+\int \frac{x\sin x}{\cos^2 x}\dee{x}&amp;=x\sec x - \int \sec x \dee{x}= x\sec x - \log|\sec x + \tan x|+C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1093"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<p id="p-8412">Evaluate \(\displaystyle\int x(x+a)^n\dee{x}\text{,}\) where \(a\) and \(n\) are constants.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1011" id="hint-1011"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1011"><div class="hint solution-like"><p id="p-8413">The cases \(n=-1\) and \(n=-2\) are different from all other values of \(n\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1093" id="answer-1093"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1093"><div class="answer solution-like"><p id="p-8414">\(\displaystyle\int x(x+a)^n\dee{x}=\begin{cases}
+\frac{(x+a)^{(n+2)}}{n+2}-a\frac{(x+a)^{n+1}}{n+1}+C&amp;\text{ if } n \neq -1,-2\\
+(x+a)-a\log|x+a|+C &amp; \text{ if } n=-1\\
+\log|x+a| + \frac{a}{x+a}+C&amp; \text{ if } n=-2
+\end{cases}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1093" id="solution-1093"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1093"><div class="solution solution-like">
+<p id="p-8415">If the unknown exponent gives you the jitters,  think about what this looks like in easier cases. If \(n\) is a whole number, the integrand is a polynomial. Not so scary, right? However, it's a little complicated to expand. (You can do it using the very handy binomial theorem.) Let's think of an easier way.</p>
+<p id="p-8416">If we had simply the variable \(x\) raised to the power \(n\text{,}\) rather than the binomial \(x+a\text{,}\) that might be nicer. So, let's use the substitution \(u=x+a\text{,}\) \(\dee{u}=\dee{x}\text{.}\) Note \(x=u-a\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int x(x+a)^n\dee{x}&amp;=\int (u-a)u^n\dee{x} = \int \big(u^{n+1}-au^n\big)\dee{u}\\
+\end{align*}
+<p class="intertext">Now, if \(n\neq -1\) and \(n \neq -2\text{,}\) we can just use the power rule:</p>
+\begin{align*}
+&amp;=\frac{u^{(n+2)}}{n+2}-a\frac{u^{n+1}}{n+1}+C\\
+&amp;=\frac{(x+a)^{(n+2)}}{n+2}-a\frac{(x+a)^{n+1}}{n+1}+C\\
+\end{align*}
+<p class="intertext">If \(n=-1\text{,}\) then</p>
+\begin{align*}
+\int x(x+a)^n\dee{x}&amp;=\int \big(u^{n+1}-au^n\big)\dee{u} =\int \left(1 - \frac{a}{u}\right)\dee{u}\\
+&amp;= u - a\log|u|+C = (x+a)-a\log|x+a|+C\\
+\end{align*}
+<p class="intertext">If \(n=-2\text{,}\) then</p>
+\begin{align*}
+\int x(x+a)^n\dee{x}&amp;=\int \big(u^{n+1}-au^n\big)\dee{u}=\int\left( \frac{1}{u} - au^{-2}\right)\dee{u}\\
+&amp; = \log|u| + \frac{a}{u}+C= \log|x+a| + \frac{a}{x+a}+C\\
+\end{align*}
+<p class="intertext">All together,</p>
+\begin{align*}
+\int x(x+a)^n\dee{x}&amp;=\begin{cases}
+\frac{(x+a)^{(n+2)}}{n+2}-a\frac{(x+a)^{n+1}}{n+1}+C&amp;\text{ if } n \neq -1,-2\\
+(x+a)-a\log|a+x|+C &amp; \text{ if } n=-1\\
+\log|x+a| +\frac{a}{x+a}+C&amp; \text{ if } n=-2
+\end{cases}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1094"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<p id="p-8417">Evaluate \(\displaystyle\int\arctan (x^2)\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1012" id="hint-1012"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1012"><div class="hint solution-like"><p id="p-8418">\(x^4+1 = (x^2+\sqrt2x+1)(x^2-\sqrt2x+1)\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1094" id="answer-1094"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1094"><div class="answer solution-like"><div class="displaymath" id="p-8419">
+\begin{align*}
+\amp x\arctan(x^2) -
+\frac{1}{\sqrt 2}\Bigg( \frac{1}{2}\log\left|\tfrac{x^2-\sqrt2x+1}{ x^2+\sqrt2x+1}\right|
++\arctan\left(\sqrt{2}x+1\right)\\
+\amp\hskip3.0in + \arctan\left(\sqrt{2}x-1\right)\Bigg)+C
+\end{align*}
+</div></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1094" id="solution-1094"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1094"><div class="solution solution-like">
+<p id="p-8420">We've seen how to antidifferentiate \(\arctan x\text{:}\) integration by parts. Let's hope the same thing will work here.</p>
+<p id="p-8421"><em class="alert">Step 1: integration by parts.</em></p>
+<p id="p-8422">Let \(u=\arctan(x^2)\) and \(\dee{v} = \dee{x}\text{.}\) Then \(\dee{u} = \frac{2x}{x^4+1}\dee{u}\) and \(v=x\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int\arctan (x^2)\dee{x}&amp;=x\arctan(x^2) - \int \frac{2x^2}{x^4+1}\dee{x}
+\end{align*}
+</div>
+<p data-braille="continuation">Now we have a rational function. There's no obvious substitution, but we can use partial fractions. The degree of the numerator is strictly less than the degree of the denominator, so we don't need to long divide first. We do, however, need to factor the denominator. It's a common function, so you might already know the factorization, or you might be able to guess it. Below, we show another way to find the factorization, similar to the method of partial fractions.</p>
+<p id="p-8423"><em class="alert">Step 2: factor \(\mathbf{x^4+1}\)</em>. For any real \(x\text{,}\) note \(x^4+1  \gt 0\text{.}\) Since it has no roots, it has no linear factors. That means it factors as the product of two irreducible quadratics. That is,</p>
+<div class="displaymath">
+\begin{align*}
+x^4+1&amp;=(ax^2+bx+c)(dx^2+ex+f)\\
+\end{align*}
+<p class="intertext">Since the coefficient of \(x^4\) on the left-hand is 1, we may assume \(a=d=1\text{.}\)</p>
+\begin{align*}
+x^4+1&amp;=(x^2+bx+c)(x^2+ex+f)\\
+\end{align*}
+<p class="intertext">Since the constant term is 1, \(cf=1\text{.}\) That is, \(f = \frac{1}{c}\text{.}\)</p>
+\begin{align*}
+x^4+1&amp;=(x^2+bx+c)(x^2+ex+1/c)\\
+&amp;=x^4 + \underbrace{\vphantom{\bigg(}(b+e)}_{(1)}x^3+\underbrace{\left(\frac{1}{c}+be+c\right)}_{(3)}x^2+\underbrace{\left(\frac{b}{c}+ec\right)}_{(2)}x+1
+\end{align*}
+</div>
+<ol class="decimal">
+<li id="li-3168">The coefficient of \(x^3\) tells us \(e=-b\text{.}\)</li>
+<li id="li-3169">Then the coefficient of \(x\) tells us \(0=\frac{b}{c}+ec = \frac{b}{c}-bc\text{.}\) So, \(c = \frac{1}{c}\text{,}\) hence \(c=\pm 1\text{.}\)</li>
+<li id="li-3170">Finally, the coefficient of \(x^2\) tells us \(0=\frac{1}{c}+be + c = \frac{1}{c}-b^2+c\text{.}\) Since \(-b^2\) is negative (or zero), \(\frac{1}{c}+c\) is positive, so \(c=1\text{.}\) That is, \(0=1-b^2+1\text{.}\) So, \(b = \sqrt{2}\text{.}\)</li>
+</ol>
+<p data-braille="continuation">All together,</p>
+<div class="displaymath">
+\begin{equation*}
+x^4+1 = (x^2+\sqrt{2}x+1)(x^2-\sqrt{2}x+1)
+\end{equation*}
+</div>
+<p id="p-8424"><em class="alert">Step 3: partial fraction decomposition.</em></p>
+<p id="p-8425">Now that we have the denominator factored into irreducible quadratics, we can find the partial fraction decomposition of the integrand.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{2x^2}{x^4+1}&amp;=\frac{Ax+B}{x^2+\sqrt2x+1} + \frac{Cx+D}{x^2-\sqrt2x+1}\\
+2x^2&amp;=(Ax+B)(x^2-\sqrt2x+1)+(Cx+D)(x^2+\sqrt2x+1)\\
+&amp;
+= (A+C)x^3+(B+D-\sqrt{2}A+\sqrt2C)x^2\\
+\amp\hskip1in+(A+C-\sqrt2B+\sqrt2D)x+(B+D)\\
+\end{align*}
+<p class="intertext">From the coefficient of \(x^3\text{,}\) we see \(C=-A\text{.}\)</p>
+\begin{align*}
+2x^2&amp;= (B+D-2\sqrt{2}A)x^2+(-\sqrt2B+\sqrt2D)x+(B+D)\\
+\end{align*}
+<p class="intertext">From the constant term, we see \(D=-B\text{.}\)</p>
+\begin{align*}
+2x^2&amp;= (-2\sqrt{2}A)x^2+(-2\sqrt2B)x
+\end{align*}
+</div>
+<p data-braille="continuation">From the coefficient of \(x^2\text{,}\) we see \(-2\sqrt{2}A=2\text{,}\) so \(\textcolor{red}{A=-1/\sqrt{2}}\text{.}\) Since \(C=-A\text{,}\) then  \(\textcolor{red}{C = 1/\sqrt2}\text{.}\)</p>
+<p id="p-8426">From the coefficient of \(x\text{,}\) we see  \(\textcolor{red}{B=0}\text{.}\) Since \(D=-B\text{,}\) also \(\textcolor{red}{D=0}\text{.}\)</p>
+<p id="p-8427"><em class="alert">Step 4: integration.</em></p>
+<div class="displaymath">
+\begin{align*}
+\int&amp;\frac{2x^2}{x^4+1}\dee{x}
+=\int\left(\frac{(\textcolor{red}{-1/\sqrt2}) x }{x^2+\sqrt2x+1}+\frac{(\textcolor{red}{1/\sqrt2})x}{x^2-\sqrt2x+1}\right)\dee{x}\\
+&amp;=\frac{1}{\sqrt 2}\int\left(\frac{- x }{x^2+\sqrt2x+1}+\frac{x}{x^2-\sqrt2x+1}\right)\dee{x}\\
+\end{align*}
+<p class="intertext">To integrate, we want to break the fractions into two pieces each: one we can integrate with a substitution \(u=x^2\pm\sqrt2x+1\) , \(\dee{u} =\big( 2x\pm \sqrt{2}\big)\dee{x}\) (shown in blue), and one that looks like the derivative of arctangent (shown in red).</p>
+\begin{align*}
+&amp;=\frac{1}{\sqrt 2}\int\left(\frac{\textcolor{blue}{- x -\frac{\sqrt 2}{2}} +\textcolor{red}{\frac{\sqrt2}{2}}}{x^2+\sqrt2x+1}+\frac{\textcolor{blue}{x-\frac{\sqrt2}{2}}+\textcolor{red}{\frac{\sqrt2}{2}}}{x^2-\sqrt2x+1}\right)\dee{x}\\
+&amp;=\frac{1}{\sqrt 2}
+\int\bigg(\textcolor{blue}{\frac{-\frac{1}{2}(2 x +{\sqrt 2})}{x^2+\sqrt2x+1}} 
++\textcolor{red}{\frac{\frac{\sqrt2}{2}}{x^2+\sqrt2x+1}}\\
+\amp\hskip1in
++\textcolor{blue}{\frac{\frac{1}{2}(2x-\sqrt2)}{x^2-\sqrt2x+1}}+\textcolor{red}{\frac{\frac{\sqrt2}{2}}{x^2-\sqrt2x+1}}\bigg)\dee{x}\\
+&amp;=\frac{1}{\sqrt 2}\Bigg(\textcolor{blue}{ -\frac{1}{2}\log\left| x^2+\sqrt2x+1\right|}
++\textcolor{red}{\int\frac{\frac{\sqrt2}{2}}{x^2+\sqrt2x+1}\dee{x}}\\
+&amp;\qquad+
+\textcolor{blue}{\frac{1}{2}\log|x^2-\sqrt2x+1|} +\textcolor{red}{ \int \frac{\frac{\sqrt2}{2}}{x^2-\sqrt2x+1}\dee{x}}
+\Bigg)\\
+\end{align*}
+<p class="intertext">We use logarithm rules to compress our work. In order to evaluate the remaining integrals, we complete the squares of the denominators.</p>
+\begin{align*}
+&amp;=\frac{1}{\sqrt 2}\Bigg(\textcolor{blue}{ \frac{1}{2}\log\left|\tfrac{x^2-\sqrt2x+1}{ x^2+\sqrt2x+1}\right|}
++\textcolor{red}{\int\frac{\frac{\sqrt2}{2}}{\left(x+\frac{1}{\sqrt2}\right)^2+\frac{1}{2}}\dee{x}}\\
+\amp\hskip1in
++ \textcolor{red}{\int \frac{\frac{\sqrt2}{2}}{\left(x-\frac{1}{\sqrt2}\right)^2+\frac{1}{2}}\dee{x}}
+\Bigg)\\
+&amp;=\frac{1}{\sqrt 2}\Bigg( \textcolor{blue}{\frac{1}{2}\log\left|\tfrac{x^2-\sqrt2x+1}{ x^2+\sqrt2x+1}\right|}
++\textcolor{red}{\int\frac{{\sqrt2}}{\left(\sqrt{2}x+1\right)^2+1}\dee{x}}\\
+\amp\hskip1in+
+\textcolor{red}{ \int \frac{{\sqrt2}}{\left(\sqrt{2}x-1\right)^2+1}\dee{x}}
+\Bigg)\\
+\end{align*}
+<p class="intertext">Now, we can either guess the antiderivatives of the remaining integrals, or use the substitutions \(u=(\sqrt{2}x\pm1)\text{.}\)</p>
+\begin{align*}
+&amp;=\frac{1}{\sqrt 2}\Bigg( \textcolor{blue}{\frac{1}{2}\log\left|\tfrac{x^2-\sqrt2x+1}{ x^2+\sqrt2x+1}\right|}
++\textcolor{red}{\arctan\left(\sqrt{2}x\!+\!1\right)}+\textcolor{red}{ \arctan\left(\sqrt{2}x\!-\!1\right)}
+\Bigg)\!+\!C
+\end{align*}
+</div>
+<p id="p-8428"><em class="alert">Step 5: finishing touches.</em></p>
+<p id="p-8429">Finally, we can put our work together. (Remember way back in Step 1, we used integration by parts.)</p>
+<div class="displaymath">
+\begin{align*}
+\int&amp; \arctan(x^2)\dee{x} = x\arctan(x^2) - \int \frac{2x^2}{x^4-1}\dee{x}\\
+&amp;= x\arctan(x^2) -
+\frac{1}{\sqrt 2}\Bigg( \frac{1}{2}\log\left|\tfrac{x^2-\sqrt2x+1}{ x^2+\sqrt2x+1}\right|\\
+\amp\hskip1.5in
++\arctan\left(\sqrt{2}x+1\right)+ \arctan\left(\sqrt{2}x-1\right)
+\Bigg)+C
+\end{align*}
+</div>
+<p id="p-8430">Remark: although this integral calculation was longer than average, it didn't use any new ideas (except for the factoring of \(x^4+1\) mentioned in the hint). It's good exercise to apply familiar techniques in challenging situations, to deepen your mastery.</p>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T15:14:47-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Natural Logarithm</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_chain_rule.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_deriv.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-26.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_chain_rule.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_deriv.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-26.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs" class="active">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_diff_logs"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.10</span> <span class="title">The Natural Logarithm</span>
+</h2>
+<section class="introduction" id="introduction-58"><p id="p-2110">The chain rule opens the way to understanding derivatives of more complicated function. Not only compositions of known functions as we have seen the examples of the previous section, but also functions which are defined implicitly.</p>
+<p id="p-2111">Consider the logarithm base \(e\) — \(\log_e(x)\) is the power that \(e\) must be raised to to give \(x\text{.}\)  That is, \(\log_e(x)\) is defined by</p>
+<div class="displaymath">
+\begin{align*}
+e^{\log_e x} &amp;= x
+\end{align*}
+</div>
+<p data-braille="continuation">i.e. — it is the inverse of the exponential function with base \(e\text{.}\)  Since this choice of base works so cleanly and easily with respect to differentiation, this base turns out to be (arguably) the most natural choice for the base of the logarithm. And as we saw in our whirlwind review of logarithms in Section <a href="sec_exp_func.html" class="internal" title="Section 3.7: Derivatives of Exponential Functions">3.7</a>, it is easy to use logarithms of one base to compute logarithms with another base:</p>
+<div class="displaymath">
+\begin{align*}
+\log_q x &amp;= \frac{\log_e x}{\log_e q}
+\end{align*}
+</div>
+<p data-braille="continuation">So we are (relatively) free to choose a base which is convenient for our purposes.</p>
+<p id="p-2112">The logarithm with base \(e\text{,}\) is called the “natural logarithm”. The “naturalness” of logarithms base \(e\) is exactly that this choice of base works very nicely in calculus (and so wider mathematics) in ways that other bases do not <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-84" id="fn-84"><sup> 1 </sup></a> . There are several different “standard” notations for the logarithm base \(e\text{;}\)</p>
+<div class="displaymath">
+\begin{gather*}
+\log_e x = \log x = \ln x.
+\end{gather*}
+</div>
+<p data-braille="continuation">We recommend that you be able to recognise all of these.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-84"><div class="fn">The interested reader should head to Wikipedia and look up the natural logarithm.</div></div>
+<p id="p-2113">In this text we will write the natural logarithm as “\(\log\)” with no base. The reason for this choice is that base \(e\) is the standard choice of base for logarithms in mathematics <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-85" id="fn-85"><sup> 2 </sup></a></p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-85"><div class="fn">In other disciplines other bases are natural; in computer science, since numbers are stored in binary it makes sense to use the binary logarithm — i.e. base 2. While in some sciences and finance, it makes sense to use the decimal logarithm — i.e. base 10.</div></div>
+<p id="p-2114">The natural logarithm inherits many properties of general logarithms <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-86" id="fn-86"><sup> 3 </sup></a> . So, for all \(x,y \gt 0\) the following hold:</p>
+<ul class="disc">
+<li id="li-534">\(e^{\log x}=x\text{,}\)</li>
+<li id="li-535">for any real number \(X\text{,}\) \(\log \big(e^X\big)=X\text{,}\)</li>
+<li id="li-536">for any \(a \gt 1\text{,}\) \(\log_a x=\tfrac{\log x}{\log a}\) and \(\log
+x=\tfrac{\log_a x}{\log_a e}\)</li>
+<li id="li-537">\(\log 1=0\text{,}\) \(\log e=1\)</li>
+<li id="li-538">\(\displaystyle \log(xy)=\log x+\log y\)</li>
+<li id="li-539">\(\log\big(\tfrac{x}{y}\big)=\log x-\log y\text{,}\) \(\log\big(\tfrac{1}{y}\big)=-\log y\)</li>
+<li id="li-540">\(\displaystyle \log(x^X)=X\log x\)</li>
+<li id="li-541">\(\lim\limits_{x\rightarrow\infty}\log x=\infty\text{,}\) \(\lim\limits_{x\rightarrow0}\log x=-\infty\)</li>
+</ul>
+<p data-braille="continuation">And finally we should remember that \(\log x\) has domain (i.e. is defined for) \(x  \gt  0\) and range (i.e. takes all values in) \(-\infty  \lt x  \lt \infty\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-86"><div class="fn">Again take a quick look at the whirlwind review of logarithms in Section <a href="sec_exp_func.html" class="internal" title="Section 3.7: Derivatives of Exponential Functions">3.7</a>.</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/logGraph.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2115">To compute the derivative of \(\log x\) we could attempt to start with the limit definition of the derivative</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\log x &amp;= \lim_{h \to 0} \frac{\log(x+h) - \log(x)}{h}\\
+&amp;= \lim_{h\to 0} \frac{\log( (x+h)/x )}{h}\\
+&amp;= \text{um\dots}
+\end{align*}
+</div>
+<p data-braille="continuation">This doesn't look good. But all is not lost — we have the chain rule, and we know that the logarithm satisfies the equation:</p>
+<div class="displaymath">
+\begin{align*}
+x &amp;= e^{\log x}
+\end{align*}
+</div>
+<p data-braille="continuation">Since both sides of the equation are the same function, both sides of the equation have the same derivative. i.e. we are using <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-87" id="fn-87"><sup> 4 </sup></a></p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-87"><div class="fn">Notice that just because the derivatives are the same, doesn't mean the original functions are the same. Both \(f(x)=x^2\) and \(g(x)=x^2+3\) have derivative \(f'(x)=g'(x)=2x\text{,}\) but \(f(x)
+\neq g(x)\text{.}\)</div></div>
+<div class="displaymath" id="p-2116">
+\begin{gather*}
+\text{ if } f(x)=g(x) \text{ for all $x$, then } f'(x) = g'(x)
+\end{gather*}
+</div>
+<p data-braille="continuation">So now differentiate both sides:</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x} x &amp;= \diff{}{x} e^{\log x}\\
+\end{align*}
+<p class="intertext">The left-hand side is easy, and the right-hand side we can process using the chain rule with \(f(u)=e^u\) and \(u=\log x\text{.}\)</p>
+\begin{align*}
+1 &amp;= \diff{f}{u} \cdot \diff{u}{x}\\
+&amp;= e^u \cdot
+\underbrace{\diff{}{x} \log x }_\text{what we want to compute}\\
+\\
+\end{align*}
+<p class="intertext">Recall that \(e^u = e^{\log x} = x\text{,}\) so</p>
+\begin{align*}
+1 &amp;= x \cdot
+\underbrace{\diff{}{x} \log x }_\text{now what?}\\
+\end{align*}
+<p class="intertext">We can now just rearrange this equation to make the thing we want the subject:</p>
+\begin{align*}
+\diff{}{x} \log x &amp;= \frac{1}{x}
+\end{align*}
+</div>
+<p id="p-2117">Thus we have proved:</p>
+<article class="theorem theorem-like" id="thm_diff_log"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.10.1</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-2118">
+\begin{align*}
+\diff{}{x} \log x &amp;= \frac{1}{x}
+\end{align*}
+</div>
+<p data-braille="continuation">where \(\log x\) is the logarithm base \(e\text{.}\)</p></article><article class="example example-like" id="example-87"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-87"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.10.2</span><span class="period">.</span><span class="space"> </span><span class="title">The derivative of \(\log 3x\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-87"><article class="example example-like"><p id="p-2119">Let \(f(x) = \log 3x\text{.}\) Find \(f'(x)\text{.}\)</p>
+<p id="p-2120">There are two ways to approach this — we can simplify then differentiate, or differentiate and then simplify. Neither is difficult.</p>
+<ul class="disc">
+<li id="li-542">Simplify and then differentiate:<div class="displaymath">
+\begin{align*}
+f(x) &amp;= \log 3x &amp; \text{log of a product}\\
+&amp;= \log 3 + \log x\\
+f'(x) &amp;= \diff{}{x} \log 3 + \diff{}{x} \log x\\
+&amp;= \frac{1}{x}.
+\end{align*}
+</div>
+</li>
+<li id="li-543">Differentiation and then simplify:<div class="displaymath">
+\begin{align*}
+f'(x) &amp;= \diff{}{x} \log(3x) &amp; \text{chain rule}\\
+&amp;= \frac{1}{3x} \cdot 3\\
+&amp;= \frac{1}{x}
+\end{align*}
+</div>
+</li>
+</ul></article></div>
+<article class="example example-like" id="example-88"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-88"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.10.3</span><span class="period">.</span><span class="space"> </span><span class="title">The derivative of \(\log cx\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-88"><article class="example example-like"><p id="p-2121">Notice we can extend the previous example for any non-zero constant — not just 3. Let \(c\) be a non-zero constant, then</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x} \log cx &amp;= \diff{}{x}\left(\log c + \log x \right)\\
+&amp;= \frac{1}{x}
+\end{align*}
+</div></article></div>
+<article class="example example-like" id="eg_diff_log_abs_x"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_diff_log_abs_x"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.10.4</span><span class="period">.</span><span class="space"> </span><span class="title">The derivative of \(\log|x|\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_diff_log_abs_x"><article class="example example-like"><p id="p-2122">We can push this further still. Let \(g(x) = \log | x |\text{,}\) then <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-88" id="fn-88"><sup> 5 </sup></a></p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-88"><div class="fn">It's probably a good moment to go back and look at Example <a class="xref" data-knowl="./knowl/eg_diff_abs.html" title="Example 3.2.10: \(\diff{}{x} \left\{ |x| \right\}\)">3.2.10</a>.</div></div>
+<ul id="p-2123" class="disc">
+<li id="li-544">If \(x \gt 0\text{,}\) \(|x|= x\) and so<div class="displaymath">
+\begin{align*}
+g'(x) &amp;= \diff{}{x} \log x = \frac{1}{x}
+\end{align*}
+</div>
+</li>
+<li id="li-545">If \(x \lt 0\) then \(|x|= -x =-1\cdot x\) and so<div class="displaymath">
+\begin{align*}
+g'(x) &amp;= \diff{}{x} \log(-1 \cdot x) = \frac{1}{x} 
+\end{align*}
+</div>by the previous example.</li>
+<li id="li-546">Since \(\log 0\) is undefined, \(g'(0)\) does not exist.</li>
+</ul>
+<p data-braille="continuation">Putting this together gives:</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x} \log | x | &amp;= \frac{1}{x}
+\end{align*}
+</div></article></div>
+<p id="p-2124">We can extend Theorem <a class="xref" data-knowl="./knowl/thm_diff_log.html" title="Theorem 3.10.1">3.10.1</a> to compute the derivative of logarithms of other bases in a straightforward way. Since for any positive \(a
+\neq 1\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\log_a x &amp;= \frac{\log x}{\log a} = \frac{1}{\log a} \cdot \log x &amp;
+\text{since $a$ is a constant}\\
+\diff{}{x} \log_a x &amp;= \frac{1}{\log a} \cdot \frac{1}{x}
+\end{align*}
+</div></section><section class="subsection" id="subsection-33"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.10.1</span> <span class="title">Back to \(\mathbf{\diff{}{x} a^x}\)</span>
+</h3>
+<p id="p-2125">We can also now finally get around to computing the derivative of \(a^x\) (which we started to do back in Section <a href="sec_exp_func.html" class="internal" title="Section 3.7: Derivatives of Exponential Functions">3.7</a>).</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= a^x &amp; \text{take log of both sides}\\
+\log f(x) &amp;= x \log a &amp; \text{exponentiate both sides base $e$}\\
+f(x) &amp;= e^{x \log a} &amp; \text{chain rule}\\
+f'(x) &amp;= e^{x \log a} \cdot \log a\\
+&amp;= a^x \cdot \log a
+\end{align*}
+</div>
+<p data-braille="continuation">Notice that we could have also done the following:</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= a^x &amp; \text{take log of both sides}\\
+\log f(x) &amp;= x \log a &amp; \text{differentiate both sides}\\
+\diff{}{x} \left( \log f(x) \right) &amp;=
+\log a\\
+\end{align*}
+<p class="intertext">We then process the left-hand side using the chain rule</p>
+\begin{align*}
+f'(x) \cdot \frac{1}{f(x)} &amp;= \log a\\
+f'(x) &amp;= f(x) \cdot \log a = a^x \cdot \log a
+\end{align*}
+</div>
+<p data-braille="continuation">We will see \(\diff{}{x} \log f(x)\) more below in the subsection on “logarithmic differentiation”.</p>
+<p id="p-2126">To summarise the results above:</p>
+<article class="corollary theorem-like" id="corollary-5"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">3.10.5</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-2127">
+\begin{align*}
+\diff{}{x} a^x &amp;= \log a \cdot a^x &amp; \text{for any $a \gt 0$}\\
+\diff{}{x} \log_a x &amp;= \frac{1}{x \cdot \log a} &amp; \text{for any $a \gt 0, a \neq 1$}
+\end{align*}
+</div>
+<p data-braille="continuation">where \(\log x\) is the natural logarithm.</p></article><p id="p-2128">Recall that we need the caveat \(a \neq 1\) because the logarithm base 1 is not well defined. This is because \(1^x = 1\) for any \(x\text{.}\) We do not need a similar caveat for the derivative of the exponential because we know (recall Example <a class="xref" data-knowl="./knowl/eg_log_est.html" title="Example 3.7.1: Estimates of \(C(a)\)">3.7.1</a>)</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x} 1^x &amp;= \diff{}{x} 1= 0 &amp;\text{while the above corollary tells us}\\
+&amp;= \log 1 \cdot 1^x = 0 \cdot 1 = 0.
+\end{align*}
+</div></section><section class="subsection" id="subsection-34"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.10.2</span> <span class="title">Logarithmic Differentiation</span>
+</h3>
+<p id="p-2129">We want to go back to some previous slightly messy examples (Examples <a class="xref" data-knowl="./knowl/eg_DIFFsimpleToolsA.html" title="Example 3.6.6: Extending the product rule to more than two factors">3.6.6</a>  and <a class="xref" data-knowl="./knowl/eg_DIFFsimpleToolsNB.html" title="Example 3.6.18: Optional messy example">3.6.18</a>) and now show you how they can be done more easily.</p>
+<article class="example example-like" id="example-90"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-90"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.10.6</span><span class="period">.</span><span class="space"> </span><span class="title">Derivative of a triple product.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-90"><article class="example example-like"><p id="p-2130">Consider again the derivative of the product of 3 functions:</p>
+<div class="displaymath">
+\begin{align*}
+P(x) &amp;= F(x) \cdot G(x) \cdot H(x)
+\end{align*}
+</div>
+<p data-braille="continuation">Start by taking the logarithm of both sides:</p>
+<div class="displaymath">
+\begin{align*}
+\log P(x) &amp;= \log \left( F(x) \cdot G(x) \cdot H(x)  \right)\\
+&amp;= \log F(x) + \log G(x) + \log H(x)\\
+\end{align*}
+<p class="intertext">Notice that the product of functions on the right-hand side has become a sum of functions. Differentiating sums is much easier than differentiating products. So when we differentiate we have</p>
+\begin{align*}
+\diff{}{x}\log P(x)  &amp;= \diff{}{x}\log F(x) + \diff{}{x}\log G(x) + \diff{}{x}\log H(x)\\
+\end{align*}
+<p class="intertext">A quick application of the chain rule shows that \(\diff{}{x}\log
+f(x) = f'(x) / f(x)\text{:}\)</p>
+\begin{align*}
+\frac{P'(x)}{P(x)} &amp;= \frac{F'(x)}{F(x)}+\frac{G'(x)}{G(x)}+\frac{H'(x)}{H(x)}\\
+\end{align*}
+<p class="intertext">Multiply through by \(P(x)=F(x)G(x)H(x)\text{:}\)</p>
+\begin{align*}
+P'(x) &amp;=
+\left(\frac{F'(x)}{F(x)}+\frac{G'(x)}{G(x)}+\frac{H'(x)}{H(x)}\right)\cdot
+F(x)G(x)H(x)\\
+&amp;= F'(x)G(x)H(x) + F(x)G'(x)H(x) + F(x)G(x)H'(x)
+\end{align*}
+</div>
+<p data-braille="continuation">which is what found in Example <a class="xref" data-knowl="./knowl/eg_DIFFsimpleToolsA.html" title="Example 3.6.6: Extending the product rule to more than two factors">3.6.6</a> by repeated application of the product rule. The above generalises quite easily to more than 3 functions.</p></article></div>
+<p id="p-2131">This same trick of “take a logarithm and then differentiate” — or logarithmic differentiation — will work any time you have a product (or ratio) of functions.</p>
+<article class="example example-like" id="example-91"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-91"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.10.7</span><span class="period">.</span><span class="space"> </span><span class="title">Derivative of a messy product.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-91"><article class="example example-like"><p id="p-2132">Lets use logarithmic differentiation on the function from Example <a class="xref" data-knowl="./knowl/eg_DIFFsimpleToolsNB.html" title="Example 3.6.18: Optional messy example">3.6.18</a>:</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;=\frac{(\sqrt{x}-1)(2-x)(1-x^2)}{\sqrt{x}(3+2x)}
+\end{align*}
+</div>
+<p data-braille="continuation">Beware however, that we may only take the logarithm of positive numbers, and this \(f(x)\) is often negative. For example, if \(1 \lt x \lt 2 \text{,}\) the factor \((1-x^2)\) in the definition of \(f(x)\) is negative while all of the other factors are positive, so that \(f(x)\lt 0 \text{.}\) None–the–less, we can use logarithmic differentiation to find \(f'(x)\text{,}\)  by exploiting the observation that \(\diff{}{x}\log|f(x)|=\frac{f'(x)}{f(x)}\text{.}\) (To see this, use the chain rule and Example <a class="xref" data-knowl="./knowl/eg_diff_log_abs_x.html" title="Example 3.10.4: The derivative of \(\log|x|\)">3.10.4</a>.) So we take the logarithm of \(|f(x)|\) and expand.</p>
+<div class="displaymath">
+\begin{align*}
+\log |f(x)| &amp; = \log \frac{|\sqrt{x}-1|\,|2-x|\,|1-x^2|}{\sqrt{x}|3+2x|}\\
+&amp; = \log|\sqrt{x}\!-\!1| + \log|2\!-\!x| + \log|1\!-\!x^2| -
+\underbrace{\log(\sqrt{x})}_{=\frac{1}{2}\log x} - \log|3\!+\!2x|
+\end{align*}
+</div>
+<p data-braille="continuation">Now we can essentially just differentiate term-by-term:</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\log |f(x)| &amp;= \diff{}{x} \Big(
+\log|\sqrt{x}-1| + \log|2-x| + \log|1-x^2| \\
+\amp\hskip2in- \frac{1}{2}\log|x| - \log|3+2x|
+\Big)\\
+\frac{f'(x)}{f(x)} &amp;= \frac{1/(2\sqrt{x})}{\sqrt{x}-1}
++ \frac{-1}{2-x} + \frac{-2x}{1-x^2} - \frac{1}{2x} - \frac{2}{3+2x}\\
+f'(x) &amp;= f(x) \cdot \left( \frac{1}{2 \sqrt{x} (\sqrt{x}\!-\!1)}
+- \frac{1}{2\!-\!x} - \frac{2x}{1\!-\!x^2} - \frac{1}{2x} - \frac{2}{3\!+\!2x}
+\right)\\
+&amp;= \frac{(\sqrt{x}-1)(2-x)(1-x^2)}{\sqrt{x}(3+2x)}
+\cdot \\
+\amp\hskip0.5in\left( \frac{1}{2 \sqrt{x} (\sqrt{x}-1)}
+- \frac{1}{2-x} - \frac{2x}{1-x^2} - \frac{1}{2x} - \frac{2}{3+2x}
+\right)
+\end{align*}
+</div>
+<p data-braille="continuation">just as we found previously.</p></article></div></section><section class="exercises" id="exercises-15"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.10.3</span> <span class="title">Exercises</span>
+</h3>
+<section class="introduction" id="introduction-59"><p id="p-2133">Reminder: in these notes, we use \(\log x\) to mean \(\log_e x\text{,}\) which is also commonly written elsewhere as \(\ln x\text{.}\)</p></section><div class="exercisegroup" id="exercisegroup-37">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-60"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-293"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-2134">The volume in decibels (dB) of a sound is given by the formula:</p>
+<div class="displaymath">
+\begin{equation*}
+V(P)=10\log_{10}\left(\frac{P}{S}\right)
+\end{equation*}
+</div>
+<p id="p-2135">where \(P\) is the intensity of the sound  and \(S\) is the intensity of a standard baseline sound. (That is: \(S\) is some constant.)</p>
+<p id="p-2136">How much noise will ten speakers make, if each speaker produces 3dB of noise? What about one hundred speakers?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-242" id="hint-242"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-242"><div class="hint solution-like"><p id="p-2137">Each speaker produces 3dB of noise, so if \(P\) is the power of one speaker, \(3=V(P)=10\log_{10}\left(\frac{P}{S}\right)\text{.}\) Use this to find \(V(10P)\) and \(V(100P)\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-293" id="answer-293"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-293"><div class="answer solution-like"><p id="p-2138">Ten speakers: 13 dB. One hundred speakers: 23 dB.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-293" id="solution-293"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-293"><div class="solution solution-like">
+<p id="p-2139">We are given that one speaker produces 3dB. So if \(P\) is the power of one speaker,</p>
+<div class="displaymath">
+\begin{align*}
+3=V(P)&amp;=10\log_{10}\left(\frac{P}{S}\right).\\
+\end{align*}
+<p class="intertext">So, for ten speakers:</p>
+\begin{align*}
+V(10P)&amp;=10\log_{10}\left(\frac{10P}{S}\right)=10\log_{10}\left(\frac{P}{S}\right)+10\log_{10}\left(10\right)\\
+&amp;=3+10(1)=13 \mathrm{dB}\\
+\end{align*}
+<p class="intertext">and for one hundred speakers:</p>
+\begin{align*}
+V(100P)&amp;=10\log_{10}\left(\frac{100P}{S}\right)=10\log_{10}\left(\frac{P}{S}\right)+10\log_{10}\left(100\right)\\
+&amp;=3+10(2)=23 \mathrm{dB}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-294"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-2140">An investment of $1000 with an interest rate of 5% per year grows to</p>
+<div class="displaymath">
+\begin{equation*}
+A(t)=1000e^{t/20}
+\end{equation*}
+</div>
+<p id="p-2141">dollars after \(t\) years. When will the investment double?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-243" id="hint-243"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-243"><div class="hint solution-like"><p id="p-2142">The question asks you when \(A(t)=2000\text{.}\) So, solve \(2000=1000e^{t/20}\) for \(t\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-294" id="answer-294"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-294"><div class="answer solution-like"><p id="p-2143">\(20\log2 \approx 14\) years</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-294" id="solution-294"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-294"><div class="solution solution-like">
+<p id="p-2144">The investment doubles when it hits $2000. So, we find the value of  \(t\) that gives \(A(t)=2000\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+2000&amp;=A(t)\\
+2000&amp;=1000e^{t/20}\\
+2&amp;=e^{t/20}\\
+\log 2 &amp;=\frac{t}{20}\\
+20\log2&amp;=t
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-295"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-2145">Which of the following expressions, if any, is equivalent to \(\log\left(\cos^2 x\right)\text{?}\)</p>
+<div class="displaymath">
+\begin{align*}
+\amp(\mbox{a})\quad 2\log(\cos x)\amp
+\amp(\mbox{b})\quad 2\log|\cos x |\amp
+\amp(\mbox{c})\quad \log^2(\cos x) \\
+\amp(\mbox{d})\quad \log(\cos x^2))
+\end{align*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-244" id="hint-244"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-244"><div class="hint solution-like"><p id="p-2146">What happens when \(\cos x\) is a negative number?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-295" id="answer-295"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-295"><div class="answer solution-like"><p id="p-2147">(b)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-295" id="solution-295"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-295"><div class="solution solution-like">
+<p id="p-2148">From our logarithm rules, we know that when \(y\) is <em class="emphasis">positive</em>, \(\log (y^2)=2\log y\text{.}\) However, the expression \(\cos x\) does not always take on positive values, so (a) is not correct. (For instance, when \(x=\pi\text{,}\) \(\log(\cos^2 x)=\log(\cos^2\pi)=\log\left((-1)^2\right) = \log(1)=0\text{,}\) while \(2\log (\cos \pi)=2\log(-1)\text{,}\) which does not exist.)</p>
+<p id="p-2149">Because \(\cos^2 x\) is never negative, we notice that \(\cos^2 x = |\cos x|^2\text{.}\) When \(\cos x\) is nonzero, \(|\cos x|\) is positive, so our logarithm rules tell us \(\log\left(|\cos x|^2\right) =2\log|\cos x |\text{.}\) When \(\cos x\) is exactly zero, then both \(\log(\cos^2x)\) and \(2\log|\cos x|\) do not exist. So, \(\log(\cos^2x) = 2\log|\cos x|\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-38">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-61"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-296"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-2150">Differentiate \(f(x)=\log(10x)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-245" id="hint-245"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-245"><div class="hint solution-like"><p id="p-2151">There are two easy ways: use the chain rule, or simplify first.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-296" id="answer-296"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-296"><div class="answer solution-like"><p id="p-2152">\(f'(x)=\dfrac{1}{x}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-296" id="solution-296"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-296"><div class="solution solution-like"><ul id="p-2153" class="disc">
+<li id="li-547">Solution 1: Using the chain rule, \(\ds\diff{}{x}\left\{\log(10x)\right\}=\dfrac{1}{10x}\cdot 10=\frac{1}{x}\text{.}\)</li>
+<li id="li-548">Solution 2: Simplifying, \(\ds\diff{}{x}\left\{\log(10x)\right\}=\ds\diff{}{x}\left\{\log(10)+\log x\right\} = 0+\frac{1}{x}=\frac{1}{x}\text{.}\)</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-297"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-2154">Differentiate \(f(x)=\log(x^2)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-246" id="hint-246"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-246"><div class="hint solution-like"><p id="p-2155">There are two easy ways: use the chain rule, or simplify first.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-297" id="answer-297"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-297"><div class="answer solution-like"><p id="p-2156">\(f'(x)=\dfrac{2}{x}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-297" id="solution-297"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-297"><div class="solution solution-like"><ul id="p-2157" class="disc">
+<li id="li-549">Solution 1: Using the chain rule, \(\ds\diff{}{x}\left\{\log(x^2)\right\}=\frac{1}{x^2}\cdot 2x = \frac{2}{x}\text{.}\)</li>
+<li id="li-550">Solution 2: Simplifying, \(\ds\diff{}{x}\left\{\log(x^2)\right\}= \ds\diff{}{x}\left\{2\log(x)\right\}=   \frac{2}{x}\text{.}\)</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-298"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-2158">Differentiate \(f(x)=\log(x^2+x)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-247" id="hint-247"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-247"><div class="hint solution-like"><p id="p-2159">Don't be fooled by a common mistake: \(\log(x^2+x)\) is <em class="emphasis">not</em> the same as \(\log(x^2)+\log x\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-298" id="answer-298"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-298"><div class="answer solution-like"><p id="p-2160">\(f'(x)=\dfrac{2x+1}{x^2+x}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-298" id="solution-298"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-298"><div class="solution solution-like"><p id="p-2161">Don't be fooled by a common mistake: \(\log(x^2+x)\) is <em class="emphasis">not</em> the same as \(\log(x^2)+\log x\text{.}\) We differentiate using the chain rule: \(\ds\diff{}{x}\left\{\log(x^2+x)\right\}=\dfrac{1}{x^2+x}\cdot(2x+1) = \dfrac{2x+1}{x^2+x}\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-299"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-2162">Differentiate \(f(x)=\log_{10}x\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-248" id="hint-248"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-248"><div class="hint solution-like"><p id="p-2163">Use the base-change formula to convert this to natural logarithm (base \(e\)).</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-299" id="answer-299"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-299"><div class="answer solution-like"><p id="p-2164">\(f'(x) = \dfrac{1}{x\log10}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-299" id="solution-299"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-299"><div class="solution solution-like">
+<p id="p-2165">We know the derivative of the natural logarithm (base \(e\)), so we use the base-change formula:</p>
+<div class="displaymath">
+\begin{align*}
+f(x)=\log_{10}x&amp;=\frac{\log x}{\log 10}\\
+\end{align*}
+<p class="intertext">Since \(\log 10\) is a constant:</p>
+\begin{align*}
+f'(x)&amp;=\frac{1}{x\log 10}.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-300"><h6 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">1997A.</span>
+</h6>
+<p id="p-2166">Find the derivative of \(y=\dfrac{\log x}{x^3}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-300" id="answer-300"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-300"><div class="answer solution-like"><p id="p-2167">\(y'=\dfrac{1-3\log x}{x^4}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-300" id="solution-300"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-300"><div class="solution solution-like"><ul id="p-2168" class="disc">
+<li id="li-551">Solution 1: Using the quotient rule,<div class="displaymath">
+\begin{equation*}
+y'=\frac{x^3\frac{1}{x}-(\log x)\cdot 3x^2}{x^6}=
+\frac{x^2-3x^2\log x}{x^6}=\frac{1-3\log x}{x^4}.
+\end{equation*}
+</div>
+</li>
+<li id="li-552">Solution 2: Using the product rule with \(y=\log x \cdot x^{-3}\text{,}\)<div class="displaymath">
+\begin{equation*}
+y'=\frac{1}{x}x^{-3}+\log x \cdot(-3)x^{-4}=x^{-4}(1-3\log x)
+\end{equation*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-301"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-2169">Evaluate \(\ds\diff{}{\theta} \log(\sec \theta)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-249" id="hint-249"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-249"><div class="hint solution-like"><p id="p-2170">Use the chain rule.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-301" id="answer-301"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-301"><div class="answer solution-like"><p id="p-2171">\(\ds\diff{}{\theta} \log(\sec \theta) = \tan \theta\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-301" id="solution-301"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-301"><div class="solution solution-like">
+<p id="p-2172">Using the chain rule,</p>
+<div class="displaymath">
+\begin{align*}
+\ds\diff{}{\theta} \log(\sec \theta)&amp;=\frac{1}{\sec \theta}\cdot (\sec \theta \cdot \tan \theta)\\
+&amp;=\tan\theta
+\end{align*}
+</div>
+<p data-braille="continuation">Remark: the domain of the function \(\log(\sec \theta)\) is those values of \(\theta\) for which \(\sec\theta\) is positive: so, the intervals \(\left(\left(2n-\frac{1}{2}\right)\pi,\left(2n+\frac{1}{2}\right)\pi\right)\) where \(n\) is any integer. Certainly the tangent function has a larger domain than this, but outside the domain of \(\log(\sec \theta)\text{,}\) \(\tan \theta\) is not the derivative of \(\log(\sec \theta)\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-302"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-2173">Differentiate the function \(f(x)=e^{\cos\left(\log x\right)}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-250" id="hint-250"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-250"><div class="hint solution-like"><p id="p-2174">Use the chain rule twice.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-302" id="answer-302"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-302"><div class="answer solution-like"><p id="p-2175">\(f'(x)=\dfrac{-e^{\cos(\log x)}\sin(\log x)}{x}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-302" id="solution-302"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-302"><div class="solution solution-like">
+<p id="p-2176">Let's start in with the chain rule.</p>
+<div class="displaymath">
+\begin{align*}
+f'(x)
+&amp;= e^{\textcolor{red}{\cos\left(\log x\right)}} \cdot \diff{}{x} \left\{ \textcolor{red}{\cos\left( \log x
+\right)}\right\}\\
+\end{align*}
+<p class="intertext">We'll need the chain rule again:</p>
+\begin{align*}
+&amp;= e^{\cos\left(\log x\right)} (-\sin(\textcolor{orange}{\log x})) \cdot \diff{}{x}\{\textcolor{orange}{ \log x} \}\\
+&amp;= e^{\cos\left(\log x\right)} (-\sin(\log x)) \cdot \frac{1}{x}\\
+&amp;=\frac{-e^{\cos(\log x)}\sin(\log x)}{x}
+\end{align*}
+</div>
+<p data-braille="continuation">Remark: Although we have a logarithm in the exponent, we can't cancel. The expression \(e^{\cos (\log x)}\) is <em class="emphasis">not</em> the same as the expression \(x^{\cos x}\text{,}\) or \(\cos x\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-303"><h6 class="heading">
+<span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">1996D.</span>
+</h6>
+<p id="p-2177">Evaluate the derivative. You do not need to simplify your answer.</p>
+<div class="displaymath">
+\begin{equation*}
+y=\log(x^2+\sqrt{x^4+1})
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-251" id="hint-251"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-251"><div class="hint solution-like"><p id="p-2178">You'll need to use the chain rule twice.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-303" id="answer-303"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-303"><div class="answer solution-like"><p id="p-2179">\(y'=\dfrac{2x+\frac{4x^3}{2\sqrt{x^4+1}}}{x^2+\sqrt{x^4+1}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-303" id="solution-303"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-303"><div class="solution solution-like"><div class="displaymath" id="p-2180">
+\begin{align*}
+y&amp;=\log(x^2+\sqrt{x^4+1})\\
+\end{align*}
+<p class="intertext">So, we'll need the chain rule:</p>
+\begin{align*}
+y'&amp;=\frac{\diff{}{x}\left\{\textcolor{red}{x^2+\sqrt{x^4+1}}\right\}}{\textcolor{red}{x^2+\sqrt{x^4+1}}}\\
+&amp;=\frac{2x+\diff{}{x}\left\{\sqrt{x^4+1}\right\}}{x^2+\sqrt{x^4+1}}\\
+\end{align*}
+<p class="intertext">We need the chain rule again:</p>
+\begin{align*}
+&amp;=\frac{2x+\frac{\diff{}{x}\left\{\textcolor{red}{x^4+1}\right\}}{2\sqrt{\textcolor{red}{x^4+1}}}}{x^2+\sqrt{x^4+1}}\\
+&amp;=\frac{2x+\frac{4x^3}{2\sqrt{x^4+1}}}{x^2+\sqrt{x^4+1}}.
+\end{align*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-304"><h6 class="heading">
+<span class="codenumber">12<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-2181">Differentiate \(\sqrt{-\log(\cos x)}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-252" id="hint-252"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-252"><div class="hint solution-like"><p id="p-2182">Use the chain rule.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-304" id="answer-304"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-304"><div class="answer solution-like"><p id="p-2183">\(\dfrac{\tan x}{2\sqrt{-\log(\cos x)}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-304" id="solution-304"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-304"><div class="solution solution-like">
+<p id="p-2184">This requires us to apply the chain rule twice.</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x} \left\{ \sqrt{-\log(\cos x)} \right\}
+&amp;= \frac{1}{2\sqrt{\textcolor{red}{-\log(\cos x)}}} \cdot \diff{}{x} \left\{ \textcolor{red}{-\log\left(\cos x\right)} \right\}\\
+&amp;= -\frac{1}{2\sqrt{-\log(\cos x)}} \cdot \frac{1}{\textcolor{orange}{\cos x}} \diff{}{x} \left\{\textcolor{orange}{\cos x} \right\}\\
+&amp;= -\frac{1}{2\sqrt{-\log(\cos x)}} \cdot \frac{1}{\cos x} \cdot \left(-\sin x\right)\\
+&amp;=\frac{\tan x}{2\sqrt{-\log(\cos x)}}
+\end{align*}
+</div>
+<p data-braille="continuation">Remark: it looks strange to see a negative sign in the argument of a square root. Since the cosine function always gives values that are at  most 1, \(\log(\cos x)\) is always negative or zero over its domain. So, \(\sqrt{\log(\cos x)}\) is only defined for the points where \(\cos x=1\) (and so \(\log(\cos x) = 0\)--this isn't a very interesting function! In contrast, \(-\log(\cos x)\) is always positive or zero over its domain--and therefore we can always take its square root.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-305"><h6 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">1999H.</span>
+</h6>
+<p id="p-2185">Calculate and simplify the derivative of \(\log\big(x+\sqrt{x^2+4}\big)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-253" id="hint-253"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-253"><div class="hint solution-like"><p id="p-2186">Use the chain rule to differentiate. It won't simplify to something particularly nice.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-305" id="answer-305"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-305"><div class="answer solution-like"><p id="p-2187">\(\dfrac{\sqrt{x^2+4}+x}{x\sqrt{x^2+4}+x^2+4}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-305" id="solution-305"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-305"><div class="solution solution-like">
+<p id="p-2188">Using the chain rule,</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\left\{\log\big(x+\sqrt{x^2+4}\big)\right\}
+&amp;=\frac{1}{\textcolor{red}{x+\sqrt{x^2+4}}} \cdot \diff{}{x}\left\{\textcolor{red}{x+\sqrt{x^2+4}}\right\}\\
+&amp;=\frac{1}{x+\sqrt{x^2+4}}\cdot\left(1+\frac{2x}{2\sqrt{x^2+4}}\right)\\
+&amp;=\frac{1+\frac{x}{\sqrt{x^2+4}}}{x+\sqrt{x^2+4}}\cdot \frac{\sqrt{x^2+4}}{\sqrt{x^2+4}}\\
+&amp;=\frac{\sqrt{x^2+4}+x}{x\sqrt{x^2+4}+x^2+4} .
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-306"><h6 class="heading">
+<span class="codenumber">14<span class="period">.</span></span><span class="space"> </span><span class="title">1998H.</span>
+</h6>
+<p id="p-2189">Evaluate the derivative of  \(g(x)=\log (e^{x^2}+\sqrt{1+x^4})\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-254" id="hint-254"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-254"><div class="hint solution-like"><p id="p-2190">You can differentiate this by using the chain rule several times.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-306" id="answer-306"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-306"><div class="answer solution-like"><p id="p-2191">\(g'(x)=\dfrac{2xe^{x^2}\sqrt{1+x^4}+2x^3}{e^{x^2}\sqrt{1+x^4}+1+x^4}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-306" id="solution-306"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-306"><div class="solution solution-like">
+<p id="p-2192">Using the chain rule,</p>
+<div class="displaymath">
+\begin{align*}
+g'(x)&amp;=\frac{\diff{}{x}\{e^{x^2}+\sqrt{1+x^4}\}}{e^{x^2}+\sqrt{1+x^4}}\\
+&amp;=\frac{2xe^{x^2}+\frac{4x^3}{2\sqrt{1+x^4}}}{e^{x^2}+\sqrt{1+x^4}}\left(\frac{\sqrt{1+x^4}}{\sqrt{1+x^4}}\right)\\
+&amp;=\frac{2xe^{x^2}\sqrt{1+x^4}+2x^3}{e^{x^2}\sqrt{1+x^4}+1+x^4}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-307"><h6 class="heading">
+<span class="codenumber">15<span class="period">.</span></span><span class="space"> </span><span class="title">1997D.</span>
+</h6>
+<p id="p-2193">Evaluate the derivative of the following function at \(x=1\text{:}\) \(g(x)=\log\Big(\dfrac{2x-1}{2x+1}\Big)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-255" id="hint-255"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-255"><div class="hint solution-like"><p id="p-2194">Using logarithm rules before you differentiate will make this easier.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-307" id="answer-307"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-307"><div class="answer solution-like"><p id="p-2195">\(\dfrac{4}{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-307" id="solution-307"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-307"><div class="solution solution-like">
+<p id="p-2196">Using logarithm rules makes this an easier problem:</p>
+<div class="displaymath">
+\begin{align*}
+g(x) &amp;= \log(2x-1) -\log(2x+1)\\
+\mbox{So, }\;\;
+g'(x) &amp;= \dfrac{2}{2x-1} -\dfrac{2}{2x+1}\\
+\mbox{and }\;\;
+g'(1) &amp;= \dfrac{2}{1} -\dfrac{2}{3}=\dfrac{4}{3}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-308"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-2197">Evaluate the derivative of the function \(f(x) = \log\left(\sqrt{\dfrac{(x^2+5)^3}{x^4+10}}\right)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-256" id="hint-256"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-256"><div class="hint solution-like"><p id="p-2198">Using logarithm rules before you differentiate will make this easier.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-308" id="answer-308"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-308"><div class="answer solution-like"><p id="p-2199">\(f'(x)=\dfrac{3x}{x^2+5}-\dfrac{2x^3}{x^4+10}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-308" id="solution-308"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-308"><div class="solution solution-like">
+<p id="p-2200">We begin by simplifying:</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= \log\left(\sqrt{\dfrac{(x^2+5)^3}{x^4+10}}\right)\\
+&amp;=\log\left(\left({\dfrac{(x^2+5)^3}{x^4+10}}\right)^{1/2}\right)\\
+&amp;=\frac{1}{2}\log\left(\dfrac{(x^2+5)^3}{x^4+10}\right)\\
+&amp;=\frac{1}{2}\left[\log\left({(x^2+5)^3}\right)-\log({x^4+10})\right]\\
+&amp;=\frac{1}{2}\left[3\log\left({(x^2+5)}\right)-\log({x^4+10})\right]\\
+\end{align*}
+<p class="intertext">Now, we differentiate using the chain rule:</p>
+\begin{align*}
+f'(x)&amp;=\frac{1}{2}\left[ 3\frac{2x}{x^2+5}-\frac{4x^3}{x^4+10} \right]\\
+&amp;=\frac{3x}{x^2+5}-\frac{2x^3}{x^4+10}
+\end{align*}
+</div>
+<p data-braille="continuation">Remark: it is a common mistake to write \(\log(x^2+4)\) as \(\log(x^2)+\log(4)\text{.}\) These expressions are not equivalent!</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-309"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-2201">Evaluate \(f'(2)\) if \(f(x) = \log\big(g\big(xh(x)\big)\big)\text{,}\) \(h(2) = 2\text{,}\) \(h'(2) = 3\text{,}\) \(g(4) = 3\text{,}\) \(g'(4) = 5\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-257" id="hint-257"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-257"><div class="hint solution-like"><p id="p-2202">First, differentiate using the chain rule and any other necessary rules. Then, plug in \(x=2\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-309" id="answer-309"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-309"><div class="answer solution-like"><p id="p-2203">\(\dfrac{40}{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-309" id="solution-309"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-309"><div class="solution solution-like">
+<p id="p-2204">We use the chain rule twice, followed by the product rule:</p>
+<div class="displaymath">
+\begin{align*}
+f'(x) &amp;=
+\frac{1}{\textcolor{red}{g(xh(x))}}\cdot\diff{}{x}\{\textcolor{red}{g(xh(x))}\}\\
+&amp;=\frac{1}{g(xh(x))}\cdot g'(\textcolor{orange}{xh(x)})\cdot\diff{}{x}\{\textcolor{orange}{xh(x)}\}\\
+&amp;=\dfrac{1}{g\big(xh(x)\big)}\cdot g'\big(xh(x)\big)\cdot\big[h(x)+xh'(x)\big]\\
+\end{align*}
+<p class="intertext">In particular, when \(x=2\text{:}\)</p>
+\begin{align*}
+f'(2) &amp;= \dfrac{1}{g\big(2h(2)\big)}\cdot g'\big(2h(2)\big)\cdot \big[h(2)+2h'(2)\big]\\
+&amp;= \dfrac{g'(4)}{g(4)}\big[2+2\times 3\big]
+= \dfrac{5}{3}\big[2+2\times 3\big]\\
+&amp;=\dfrac{40}{3}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-310"><h6 class="heading">
+<span class="codenumber">18<span class="period">.</span></span><span class="space"> </span><span class="title">2010H.</span>
+</h6>
+<p id="p-2205">Differentiate the function</p>
+<div class="displaymath">
+\begin{equation*}
+g(x)=\pi^x+x^\pi.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-258" id="hint-258"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-258"><div class="hint solution-like"><p id="p-2206">In the text, you are given the derivative \(\ds\diff{}{x} a^x\text{,}\) where \(a\) is a constant.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-310" id="answer-310"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-310"><div class="answer solution-like"><p id="p-2207">\(g'(x)=\pi^x\log \pi+\pi x^{\pi -1}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-310" id="solution-310"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-310"><div class="solution solution-like">
+<p id="p-2208">In the text, we saw that \(\ds\diff{}{x}\left\{a^x\right\}=a^x\log a\) for any constant \(a\text{.}\) So, \(\ds\diff{}{x}\left\{\pi^x\right\}=\pi^x\log \pi\text{.}\)</p>
+<p id="p-2209">By the power rule, \(\ds\diff{}{x}\left\{x^{\pi}\right\}=\pi x^{\pi-1}\text{.}\)</p>
+<p id="p-2210">Therefore, \(g'(x)=\pi^x\log \pi+\pi x^{\pi-1}\text{.}\)</p>
+<p id="p-2211">Remark: we had to use two different rules for the two different terms in \(g(x)\text{.}\) Although the functions \(\pi^x\) and \(x^\pi\) look superficially the same, they behave differently, as do their derivatives. A function of the form \((\mbox{constant})^{x}\) is an exponential function and <em class="emphasis">not eligible for the power rule</em>, while a function of the form \(x^{\mbox{constant}}\) is exactly the class of function the power rule applies to.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s2_10xtox"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-2212">Differentiate \(f(x)=x^x\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-259" id="hint-259"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-259"><div class="hint solution-like"><p id="p-2213">You'll need to use logarithmic differentiation. Set \(g(x)=\log(f(x))\text{,}\) and find \(g'(x)\text{.}\) Then, use that to find \(f'(x)\text{.}\) This is the method used in the text to find \(\ds\diff{}{x} a^x\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-311" id="answer-311"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-311"><div class="answer solution-like"><p id="p-2214">\(f'(x) = x^x(\log x + 1)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-311" id="solution-311"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-311"><div class="solution solution-like">
+<p id="p-2215">We have the power rule to tell us the derivative of functions of the form \(x^n\text{,}\) where \(n\) is a constant. However, here our exponent is not a constant. Similarly, in this section we learned the derivative of functions of the form \(a^x\text{,}\) where \(a\) is a constant, but again, our base is not a constant! Although the result \(\ds\diff{}{x} a^x=a^x\log a\) is not what we need, the <em class="emphasis">method</em> used to differentiate \(a^x\) will tell us the derivative of \(x^x\text{.}\)</p>
+<p id="p-2216">We'll set \(g(x)=\log(x^x)\text{,}\) because now we can use logarithm rules to simplify:</p>
+<div class="displaymath">
+\begin{align*}
+g(x)=\log(f(x))&amp;=x\log x\\
+\end{align*}
+<p class="intertext">Now, we can  use the product rule to differentiate the right side, and the chain rule to differentiate \(\log(f(x))\text{:}\)</p>
+\begin{align*}
+g'(x)=\frac{f'(x)}{f(x)}&amp;=\log x +x\frac{1}{x}=\log x +1\\
+\end{align*}
+<p class="intertext">Finally, we solve for \(f'(x)\text{:}\)</p>
+\begin{align*}
+f'(x)&amp;=f(x)(\log x + 1) = x^x(\log x + 1)
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-312"><h6 class="heading">
+<span class="codenumber">20<span class="period">.</span></span><span class="space"> </span><span class="title">2011H.</span>
+</h6>
+<p id="p-2217">Find \(f'(x)\) if \(f(x) = x^x+\log_{10}x\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-260" id="hint-260"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-260"><div class="hint solution-like"><p id="p-2218">Use Question <a class="xref" data-knowl="./knowl/s2_10xtox.html" title="Exercise 3.10.3.19">3.10.3.19</a> and the base-change formula, \(\log_b(a)=\dfrac{\log a}{\log b}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-312" id="answer-312"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-312"><div class="answer solution-like"><p id="p-2219">\(x^x(\log x+1)+\dfrac{1}{x\log 10}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-312" id="solution-312"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-312"><div class="solution solution-like">
+<p id="p-2220">In Question <a class="xref" data-knowl="./knowl/s2_10xtox.html" title="Exercise 3.10.3.19">3.10.3.19</a>, we saw \(\ds\diff{}{x}\left\{x^x\right\}=x^x(\log x+1)\text{.}\) Using the base-change formula, \(\log_{10}(x)=\dfrac{\log x}{\log 10}\text{.}\) Since \(\log_{10}\) is a constant,</p>
+<div class="displaymath">
+\begin{align*}
+f'(x)&amp;=\diff{}{x}\left\{x^x+\frac{\log x}{\log 10}\right\}\\
+&amp;=x^x(\log x+1)+\frac{1}{x\log 10}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-313"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<p id="p-2221">Differentiate \(f(x) = \sqrt[4]{\dfrac{(x^4+12)(x^4-x^2+2)}{x^3}}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-261" id="hint-261"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-261"><div class="hint solution-like"><p id="p-2222">To make this easier, use logarithmic differentiation. Set \(g(x)=\log(f(x))\text{,}\) and find \(g'(x)\text{.}\) Then, use that to find \(f'(x)\text{.}\) This is the method used in the text to find \(\ds\diff{}{x} a^x\text{,}\) and again in Question <a class="xref" data-knowl="./knowl/s2_10xtox.html" title="Exercise 3.10.3.19">3.10.3.19</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-313" id="answer-313"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-313"><div class="answer solution-like"><p id="p-2223">\(f'(x)=\dfrac{1}{4}\left(
+{\sqrt[4]{\dfrac{(x^4\!+\!12)(x^4\!-\!x^2\!+\!2)}{x^3}}}\right)
+\left(\dfrac{4x^3}{x^4\!+\!12}+\dfrac{4x^3-2x}{x^4\!-\!x^2\!+\!2}-\dfrac{3}{x}\right)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-313" id="solution-313"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-313"><div class="solution solution-like">
+<p id="p-2224">Rather than set in with a terrible chain rule problem, we'll use logarithmic differentiation. Instead of differentiating \(f(x)\text{,}\) we differentiate a new function \(\log(f(x))\text{,}\) after simplifying.</p>
+<div class="displaymath">
+\begin{align*}
+\log(f(x))&amp;=\log\sqrt[4]{\dfrac{(x^4+12)(x^4-x^2+2)}{x^3}}\\
+&amp;=\frac{1}{4}\log\left(\frac{(x^4+12)(x^4-x^2+2)}{x^3}\right)\\
+&amp;=\frac{1}{4}\left(\log(x^4+12)+\log(x^4-x^2+2)-3\log x\right)\\
+\end{align*}
+<p class="intertext">Now that we've simplified, we can efficiently differentiate both sides. It is important to remember that we aren't differentiating \(f(x)\) directly--we're differentiating \(\log(f(x))\text{.}\)</p>
+\begin{align*}
+\frac{f'(x)}{f(x)}&amp;=\frac{1}{4}\left(\frac{4x^3}{x^4+12}+\frac{4x^3-2x}{x^4-x^2+2}-\frac{3}{x}\right)
+\end{align*}
+</div>
+<p data-braille="continuation">Our final step is to solve for \(f'(x)\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\amp f'(x)=f(x)\frac{1}{4}\left(\frac{4x^3}{x^4+12}+\frac{4x^3-2x}{x^4-x^2+2}-\frac{3}{x}\right)\\
+&amp;\hskip0.25in=\frac{1}{4}\left(
+{\sqrt[4]{\dfrac{(x^4+12)(x^4-x^2+2)}{x^3}}}\right)\left(\frac{4x^3}{x^4+12}+\frac{4x^3-2x}{x^4-x^2+2}-\frac{3}{x}\right)
+\end{align*}
+</div>
+<p data-braille="continuation">It was possible to differentiate this function without logarithms, but the logarithms make it more efficient.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-314"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<p id="p-2225">Differentiate \(f(x)=(x+1)(x^2+1)^2(x^3+1)^3(x^4+1)^4(x^5+1)^5\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-262" id="hint-262"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-262"><div class="hint solution-like"><p id="p-2226">To make this easier, use logarithmic differentiation. Set \(g(x)=\log(f(x))\text{,}\) and find \(g'(x)\text{.}\) Then, use that to find \(f'(x)\text{.}\) This is the method used in the text to find \(\ds\diff{}{x} a^x\text{,}\) and again in Question <a class="xref" data-knowl="./knowl/s2_10xtox.html" title="Exercise 3.10.3.19">3.10.3.19</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-314" id="answer-314"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-314"><div class="answer solution-like"><div class="displaymath" id="p-2227">
+\begin{align*}
+f'(x)\amp=(x+1)(x^2+1)^2(x^3+1)^3(x^4+1)^4(x^5+1)^5\\
+\amp\hskip1.2in\left[\frac{1}{x+1}+\frac{4x}{x^2+1}
++\frac{9x^2}{x^3+1}+\frac{16x^3}{x^4+1}+\frac{25x^4}{x^5+1}\right]
+\end{align*}
+</div></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-314" id="solution-314"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-314"><div class="solution solution-like">
+<p id="p-2228">It's possible to do this using the product rule a number of times, but it's easier to use logarithmic differentiation. Set</p>
+<div class="displaymath">
+\begin{align*}
+g(x)=\log(f(x))&amp;=\log\left[(x+1)(x^2+1)^2(x^3+1)^3(x^4+1)^4(x^5+1)^5\right]\\
+\end{align*}
+<p class="intertext">Now we can use logarithm rules to change \(g(x)\) into a form that is friendlier to differentiate:</p>
+\begin{align*}
+&amp;=\log(x+1)+\log(x^2+1)^2+\log(x^3+1)^3+\log(x^4+1)^4\\
+\amp\hskip2in+\log(x^5+1)^5\\
+&amp;=\log(x+1)+2\log(x^2+1)+3\log(x^3+1)+4\log(x^4+1)\\
+\amp\hskip2in+5\log(x^5+1)\\
+\end{align*}
+<p class="intertext">Now, we differentiate \(g(x)\) using the chain rule:</p>
+\begin{align*}
+g'(x)=\frac{f'(x)}{f(x)}&amp;=\frac{1}{x+1}+\frac{4x}{x^2+1}
++\frac{9x^2}{x^3+1}+\frac{16x^3}{x^4+1}+\frac{25x^4}{x^5+1}
+\end{align*}
+</div>
+<p data-braille="continuation">Finally, we solve for \(f'(x)\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+f'(x)&amp;=f(x)\left[\frac{1}{x+1}+\frac{4x}{x^2+1}
++\frac{9x^2}{x^3+1}+\frac{16x^3}{x^4+1}+\frac{25x^4}{x^5+1}\right]\\
+&amp;=(x+1)(x^2+1)^2(x^3+1)^3(x^4+1)^4(x^5+1)^5\\
+&amp;\;\;\;\;\;\; \cdot\left[\frac{1}{x+1}+\frac{4x}{x^2+1}
++\frac{9x^2}{x^3+1}+\frac{16x^3}{x^4+1}+\frac{25x^4}{x^5+1}\right]
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-315"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-2229">Differentiate \(f(x) = \left(\dfrac{5x^2+10x+15}{3x^4+4x^3+5}\right)\left(\dfrac{1}{10(x+1)}\right)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-263" id="hint-263"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-263"><div class="hint solution-like"><p id="p-2230">It's not going to come out nicely, but there's a better way than blindly applying quotient and product rules, or expanding giant polynomials.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-315" id="answer-315"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-315"><div class="answer solution-like"><p id="p-2231">\(\left(\dfrac{x^2+2x+3}{3x^4+4x^3+5}\right)\left(\dfrac{1}{x^2+2x+3}-\dfrac{6x^2}{3x^4+4x^3+5}-\dfrac{1}{2(x+1)^2}\right)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-315" id="solution-315"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-315"><div class="solution solution-like">
+<p id="p-2232">We could do this with quotient and product rules, but it would be pretty painful. Insteady, let's use a logarithm.</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= \left(\dfrac{5x^2+10x+15}{3x^4+4x^3+5}\right)\left(\dfrac{1}{10(x+1)}\right)\\
+\amp= \left(\dfrac{x^2+2x+3}{3x^4+4x^3+5}\right)\left(\dfrac{1}{2(x+1)}\right)\\
+\log(f(x)) &amp;= \log\left[\left(\dfrac{x^2+2x+3}{3x^4+4x^3+5}\right)\left(\dfrac{1}{2(x+1)}\right)\right]\\
+&amp;=\log\left(\dfrac{x^2+2x+3}{3x^4+4x^3+5}\right)
++
+\log\left(\dfrac{1}{2(x+1)}\right)\\
+&amp;=\log\left({x^2\!+\!2x\!+\!3}\right)-
+\log\left({3x^4\!+\!4x^3\!+\!5}\right)
+-\log(x\!+\!1)-\log(2)
+\end{align*}
+</div>
+<p data-braille="continuation">Now we have a function that we can differentiate more cleanly than our original function.</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\left\{\log(f(x))\right\}&amp;=\diff{}{x}\Big\{
+\log\left({x^2+2x+3}\right)-
+\log\left({3x^4+4x^3+5}\right)\\
+\amp\hskip1.5in-
+\log\left({x+1}\right)-
+\log\left({2}\right)
+\Big\}\\
+\frac{f'(x)}{f(x)}&amp;=\frac{2x+2}{x^2+2x+3}-\frac{12x^3+12x^2}{3x^4+4x^3+5}-\frac{1}{x+1}\\
+&amp;=\frac{2(x+1)}{x^2+2x+3}-\frac{12x^2(x+1)}{3x^4+4x^3+5}-\frac{1}{x+1}
+\end{align*}
+</div>
+<p data-braille="continuation">Finally, we solve for \(f(x)\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\amp f'(x)=f(x)\left(\frac{2(x+1)}{x^2+2x+3}-\frac{12x^2(x+1)}{3x^4+4x^3+5}-\frac{1}{x+1}\right)\\
+&amp;= \left(\dfrac{x^2+2x+3}{3x^4\!+\!4x^3\!+\!5}\right)\!\left(\dfrac{1}{2(x\!+\!1)}\right)\!
+\left(\frac{2(x+1)}{x^2\!+\!2x\!+\!3}-\frac{12x^2(x+1)}{3x^4\!+\!4x^3\!+\!5}
+-\frac{1}{x\!+\!1}\right)\\
+&amp;= \left(\dfrac{x^2+2x+3}{3x^4+4x^3+5}\right)\left(\frac{1}{x^2+2x+3}-\frac{6x^2}{3x^4+4x^3+5}-\frac{1}{2(x+1)^2}\right)
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s2_10xtox2"><h6 class="heading">
+<span class="codenumber">24<span class="period">.</span></span><span class="space"> </span><span class="title">2007H.</span>
+</h6>
+<p id="p-2233">Let \(f(x) = (\cos x)^{\sin x}\text{,}\) with domain \(0 \lt x \lt \tfrac{\pi}{2}\text{.}\) Find \(f'(x)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-264" id="hint-264"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-264"><div class="hint solution-like"><p id="p-2234">You'll need to use logarithmic differentiation. Set \(g(x)=\log(f(x))\text{,}\) and find \(g'(x)\text{.}\) Then, use that to find \(f'(x)\text{.}\) This is the method used in the text to find \(\ds\diff{}{x} a^x\text{,}\) and again in Question <a class="xref" data-knowl="./knowl/s2_10xtox.html" title="Exercise 3.10.3.19">3.10.3.19</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-316" id="answer-316"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-316"><div class="answer solution-like"><p id="p-2235">\(f'(x)=(\cos x)^{\sin x}\left[(\cos x) \log (\cos x) - \sin x \tan x\right]\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-316" id="solution-316"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-316"><div class="solution solution-like">
+<p id="p-2236">Since \(f(x)\) has the form of a function raised to a functional power, we will use logarithmic differentiation.</p>
+<div class="displaymath">
+\begin{align*}
+\log(f(x))&amp;=\log\left( (\cos x)^{\sin x}\right)=\sin x \cdot \log (\cos x)\\
+\end{align*}
+<p class="intertext">Logarithm rules allowed us to simplify. Now, we differentiate both sides of this equation:</p>
+\begin{align*}
+\frac{f'(x)}{f(x)}&amp;=(\cos x ) \log(\cos x)+ \sin x \cdot \frac{-\sin x}{\cos x}\\
+&amp;=(\cos x) \log (\cos x) - \sin x \tan x\\
+\end{align*}
+<p class="intertext">Finally, we solve for \(f'(x)\text{:}\)</p>
+\begin{align*}
+f'(x)&amp;=f(x)\left[(\cos x) \log (\cos x) - \sin x \tan x\right]\\
+&amp;= (\cos x)^{\sin x}\left[(\cos x) \log (\cos x) - \sin x \tan x\right]
+\end{align*}
+</div>
+<p id="p-2237">Remark: negative numbers behave in a complicated manner when they are the base of an exponential expression. For example, the expression \((-1)^x\) is defined when \(x\) is the reciprocal of an odd number (like \(x=\frac{1}{5}\) or \(x=\frac{1}{7}\)), but not when  \(x\) is the reciprocal of an even number (like \(x=\frac{1}{2}\)). Since the domain of \(f(x)\) was restricted to \((0,\tfrac{\pi}{2})\text{,}\) \(\cos x\) is always positive, and we avoid these complications.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s2_10xtox3"><h6 class="heading">
+<span class="codenumber">25<span class="period">.</span></span><span class="space"> </span><span class="title">2006H.</span>
+</h6>
+<p id="p-2238">Find the derivative of \((\tan(x))^x\text{,}\) when \(x\) is in the interval \((0,\pi/2)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-265" id="hint-265"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-265"><div class="hint solution-like"><p id="p-2239">You'll need to use logarithmic differentiation. Set \(g(x)=\log(f(x))\text{,}\) and find \(g'(x)\text{.}\) Then, use that to find \(f'(x)\text{.}\) This is the method used in the text to find \(\ds\diff{}{x} a^x\text{,}\) and again in Question <a class="xref" data-knowl="./knowl/s2_10xtox.html" title="Exercise 3.10.3.19">3.10.3.19</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-317" id="answer-317"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-317"><div class="answer solution-like"><p id="p-2240">\({\ds\diff{}{x}\left\{(\tan x)^x\right\}}={(\tan x)^x}\left(\log(\tan x) + \dfrac{x}{\sin x \cos x}\right)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-317" id="solution-317"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-317"><div class="solution solution-like">
+<p id="p-2241">Since \(f(x)\) has the form of a function raised to a functional power, we will use logarithmic differentiation. We take the logarithm of the function, and make use of logarithm rules:</p>
+<div class="displaymath">
+\begin{align*}
+\log\left((\tan x)^x\right)&amp;=x\log(\tan x)\\
+\end{align*}
+<p class="intertext">Now, we can differentiate:</p>
+\begin{align*}
+\frac{\diff{}{x}\left\{(\tan x)^x\right\}}{(\tan x)^x}&amp;=\log(\tan x) + x\cdot\frac{\sec^2 x}{\tan x}\\
+&amp;=\log(\tan x) + \frac{x}{\sin x \cos x}\\
+\end{align*}
+<p class="intertext">Finally, we solve for the derivative we want, \(\ds\diff{}{x}\{(\tan x)^x\}\text{:}\)</p>
+\begin{align*}
+{\diff{}{x}\left\{(\tan x)^x\right\}}&amp;={(\tan x)^x}\left(\log(\tan x) + \frac{x}{\sin x \cos x}\right)
+\end{align*}
+</div>
+<p id="p-2242">Remark: the restricted domain \((0,\pi/2)\) ensures that \(\tan x\) is a positive number, so we avoid the problems that arise by raising a negative number to a variety of powers.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s2_10xtox4"><h6 class="heading">
+<span class="codenumber">26<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-2243">Find \(f'(x)\) if \(f(x)= (x^2+1)^{(x^2+1)}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-266" id="hint-266"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-266"><div class="hint solution-like"><p id="p-2244">You'll need to use logarithmic differentiation. Set \(g(x)=\log(f(x))\text{,}\) and find \(g'(x)\text{.}\) Then, use that to find \(f'(x)\text{.}\) This is the method used in the text to find \(\ds\diff{}{x} a^x\text{,}\) and again in Question <a class="xref" data-knowl="./knowl/s2_10xtox.html" title="Exercise 3.10.3.19">3.10.3.19</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-318" id="answer-318"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-318"><div class="answer solution-like"><p id="p-2245">\(2x(x^2+1)^{x^2+1} (1+\log(x^2+1))\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-318" id="solution-318"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-318"><div class="solution solution-like">
+<p id="p-2246">We use logarithmic differentiation.</p>
+<div class="displaymath">
+\begin{align*}
+\log f(x) &amp;= \log(x^2+1) \cdot (x^2+1)\\
+\end{align*}
+<p class="intertext">We differentiate both sides to obtain:</p>
+\begin{align*}
+\dfrac{f'(x)}{f(x)} &amp;= \diff{}{x} \left\{ \log(x^2+1) \cdot (x^2+1) \right\}\\
+&amp;= \frac{2x}{x^2+1}(x^2+1)+2x\log(x^2+1)\\
+&amp;=2x(1+\log(x^2+1))\\
+\end{align*}
+<p class="intertext">Now, we solve for \(f'(x)\text{:}\)</p>
+\begin{align*}
+f'(x) &amp;= f(x) \cdot 2x(1+\log(x^2+1))\\
+&amp;= (x^2+1)^{x^2+1} \cdot  2x(1+\log(x^2+1))
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s2_10xtox5"><h6 class="heading">
+<span class="codenumber">27<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-2247">Differentiate \(f(x)= (x^2+1)^{\sin(x)}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-267" id="hint-267"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-267"><div class="hint solution-like"><p id="p-2248">You'll need to use logarithmic differentiation. Differentiate \(\log(f(x))\text{,}\) then solve for \(f'(x)\text{.}\) This is the method used in the text to find \(\ds\diff{}{x} a^x\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-319" id="answer-319"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-319"><div class="answer solution-like"><p id="p-2249">\(f'(x)= (x^2+1)^{\sin(x)} \cdot \left( \cos x \cdot \log(x^2+1) + \frac{2x\sin x}{x^2+1}
+\right)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-319" id="solution-319"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-319"><div class="solution solution-like">
+<p id="p-2250">We use logarithmic differentiation: we modify our function to consider</p>
+<div class="displaymath">
+\begin{align*}
+\log f(x) &amp;= \log(x^2+1) \cdot \sin x\\
+\end{align*}
+<p class="intertext">We differentiate using the product and chain rules:</p>
+\begin{align*}
+\dfrac{f'(x)}{f(x)} &amp;= \diff{}{x} \left\{ \log(x^2+1) \cdot \sin x \right\}
+= \cos x \cdot \log(x^2+1) + \frac{2x\sin x}{x^2+1}\\
+\end{align*}
+<p class="intertext">Finally, we solve for \(f'(x)\)</p>
+\begin{align*}
+f'(x) &amp;= f(x) \cdot \left( \cos x \cdot \log(x^2+1) + \frac{2x\sin x}{x^2+1}
+\right)\\
+&amp;= (x^2+1)^{\sin(x)} \cdot \left( \cos x \cdot \log(x^2+1) + \frac{2x\sin x}{x^2+1}
+\right)
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s2_10xtox6"><h6 class="heading">
+<span class="codenumber">28<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-2251">Let \(f(x)= x^{\cos^3(x)}\text{,}\) with domain \((0,\infty)\text{.}\) Find \(f'(x)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-268" id="hint-268"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-268"><div class="hint solution-like"><p id="p-2252">You'll need to use logarithmic differentiation. Differentiate \(\log(f(x))\text{,}\) then solve for \(f'(x)\text{.}\) This is the method used in the text to find \(\ds\diff{}{x} a^x\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-320" id="answer-320"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-320"><div class="answer solution-like"><p id="p-2253">\(x^{\cos^3(x)} \cdot \left( -3\cos^2(x)\sin(x) \log(x) + \dfrac{\cos^3(x)}{x} \right)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-320" id="solution-320"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-320"><div class="solution solution-like">
+<p id="p-2254">We use logarithmic differentiation; so we modify our function to consider</p>
+<div class="displaymath">
+\begin{align*}
+\log f(x) &amp;= \log(x) \cdot \cos^3(x)\\
+\end{align*}
+<p class="intertext">Differentiating, we find:</p>
+\begin{align*}
+\dfrac{f'(x)}{f(x)} &amp;= \diff{}{x} \left\{ \log(x) \cdot \cos^3(x) \right\}\\
+\amp= 3\cos^2(x)\cdot (-\sin(x)) \cdot \log(x) + \frac{\cos^3(x)}{x}\\
+\end{align*}
+<p class="intertext">Finally, we solve for \(f'(x)\text{:}\)</p>
+\begin{align*}
+f'(x) &amp;= f(x) \cdot \left(  -3\cos^2(x)\sin(x)  \log(x) + \frac{\cos^3(x)}{x}
+\right)\\
+&amp;= x^{\cos^3(x)} \cdot \left( -3\cos^2(x)\sin(x) \log(x) + \frac{\cos^3(x)}{x}
+\right)
+\end{align*}
+</div>
+<p id="p-2255">Remark: negative numbers behave in a complicated manner when they are the base of an exponential expression. For example, the expression \((-1)^x\) is defined when \(x\) is the reciprocal of an odd number (like \(x=\frac{1}{5}\) or \(x=\frac{1}{7}\)), but not when  \(x\) is the reciprocal of an even number (like \(x=\frac{1}{2}\)). Since the domain of \(f(x)\) was restricted so that \(x\) is always positive, we avoid these complications.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s2_10xtox7"><h6 class="heading">
+<span class="codenumber">29<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-2256">Differentiate \(f(x)= (3+\sin(x))^{x^2-3}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-269" id="hint-269"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-269"><div class="hint solution-like"><p id="p-2257">You'll need to use logarithmic differentiation. Differentiate \(\log(f(x))\text{,}\) then solve for \(f'(x)\text{.}\) This is the method used in the text to find \(\ds\diff{}{x} a^x\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-321" id="answer-321"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-321"><div class="answer solution-like"><p id="p-2258">\((3+\sin(x))^{x^2-3}\cdot \left[ 2x\log(3+\sin(x)) + \dfrac{(x^2-3)\cos(x)}{3+\sin(x)}\right]\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-321" id="solution-321"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-321"><div class="solution solution-like">
+<p id="p-2259">We use logarithmic differentiation. So, we modify our function and consider</p>
+<div class="displaymath">
+\begin{align*}
+\log f(x) &amp;= (x^2-3)\cdot \log(3+\sin(x))\,.\\
+\end{align*}
+<p class="intertext">We differentiate:</p>
+\begin{align*}
+\frac{f'(x)}{f(x)} &amp;=  \diff{}{x} \left\{(x^2-3)\cdot \log(3+\sin(x)) \right\}\\
+&amp;=2x\log(3+\sin(x)) + (x^2-3)\frac{\cos(x)}{3+\sin(x)}\\
+\end{align*}
+<p class="intertext">Finally, we solve for \(f'(x)\text{:}\)</p>
+\begin{align*}
+f'(x)&amp;= f(x)\cdot
+\left[ 2x\log(3+\sin(x)) + \frac{(x^2-3)\cos(x)}{3+\sin(x)}\right]\\
+&amp;= (3+\sin(x))^{x^2-3}\cdot
+\left[ 2x\log(3+\sin(x)) + \frac{(x^2-3)\cos(x)}{3+\sin(x)}\right]
+\end{align*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-39">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-62"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-322"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<p id="p-2260">Let \(f(x)\) and \(g(x)\) be differentiable functions, with \(f(x) \gt 0\text{.}\) Evaluate \(\ds\diff{}{x}\left\{[f(x)]^{g(x)}\right\}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-270" id="hint-270"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-270"><div class="hint solution-like"><p id="p-2261">Evaluate \(\ds\diff{}{x}\left\{\log\left(\left[f(x)\right]^{g(x)}\right)\right\}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-322" id="answer-322"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-322"><div class="answer solution-like"><p id="p-2262">\(\ds\diff{}{x}\left\{[f(x)]^{g(x)}\right\}=\left[f(x)\right]^{g(x)}\left[
+g'(x)\log(f(x))+ \dfrac{g(x)f'(x)}{f(x)}
+\right]\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-322" id="solution-322"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-322"><div class="solution solution-like">
+<p id="p-2263">We will use logarithmic differentiation. First, we take the logarithm of our function, so we can use logarithm rules.</p>
+<div class="displaymath">
+\begin{align*}
+\log\left([f(x)]^{g(x)}\right)&amp;=g(x)\log(f(x))\\
+\end{align*}
+<p class="intertext">Now, we differentiate. On the left side we use the chain rule, and on the right side we use product and chain rules.</p>
+\begin{align*}
+\ds\diff{}{x}\left\{\log\left([f(x)]^{g(x)}\right)\right\}&amp;=\ds\diff{}{x}\left\{g(x)\log(f(x))\right\}\\
+\frac{\diff{}{x}\{[f(x)]^{g(x)}\}}{[f(x)]^{g(x)}}&amp;=
+g'(x)\log(f(x))+g(x)\cdot\frac{f'(x)}{f(x)}\\
+\end{align*}
+<p class="intertext">Finally, we solve for the derivative of our original function.</p>
+\begin{align*}
+{\diff{}{x}\{[f(x)]^{g(x)}\}}&amp;={[f(x)]^{g(x)}}\left(
+g'(x)\log(f(x))+g(x)\cdot\frac{f'(x)}{f(x)}\right)
+\end{align*}
+</div>
+<p id="p-2264">Remark: in this section, we have differentiated problems of this type several times--for example, Questions <a class="xref" data-knowl="./knowl/s2_10xtox2.html" title="Exercise 3.10.3.24: 2007H">3.10.3.24</a></p>
+<p id="p-2265">through <a class="xref" data-knowl="./knowl/s2_10xtox7.html" title="Exercise 3.10.3.29: 2015Q">3.10.3.29</a>.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-323"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<p id="p-2266">Let \(f(x)\) be a function whose range includes only positive numbers. Show that the curves \(y=f(x)\) and \(y=\log(f(x))\) have horizontal tangent lines at the same values of \(x\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-271" id="hint-271"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-271"><div class="hint solution-like"><p id="p-2267">Differentiate \(y=\log(f(x))\text{.}\) When is the derivative equal to zero?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-323" id="answer-323"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-323"><div class="answer solution-like">
+<p id="p-2268">Let \(g(x):=\log(f(x))\text{.}\) Notice \(g'(x)=\frac{f'(x)}{f(x)}\text{.}\)</p>
+<p id="p-2269">In order to show that the two curves have horizontal tangent lines at the same values of \(x\text{,}\) we will show two things: first, that if \(f(x)\) has a horizontal tangent line at some value of \(x\text{,}\) then also \(g(x)\) has a horizontal tangent line at that value of \(x\text{.}\) Second, we will show that if \(g(x)\) has a horizontal tangent line at some value of \(x\text{,}\) then also \(f(x)\) has a horizontal tangent line at that value of \(x\text{.}\)</p>
+<p id="p-2270">Suppose \(f(x)\) has a horizontal tangent line where \(x=x_0\) for some point \(x_0\text{.}\) This means \(f'(x_0)=0\text{.}\) Then \(g'(x_0)=\frac{f'(x_0)}{f(x_0)}\text{.}\) Since \(f(x_0) \neq 0\text{,}\) \(\frac{f'(x_0)}{f(x_0)}=\frac{0}{f(x_0)}=0\text{,}\) so \(g(x)\) also has a horizontal tangent line when \(x=x_0\text{.}\) This shows that whenever \(f\) has a horizontal tangent line, \(g\) has one too.</p>
+<p id="p-2271">Now suppose \(g(x)\) has a horizontal tangent line where \(x=x_0\) for some point \(x_0\text{.}\) This means \(g'(x_0)=0\text{.}\) Then \(g'(x_0)=\frac{f'(x_0)}{f(x_0)}=0\text{,}\) so \(f'(x_0)\) exists and is equal to zero. Therefore, \(f(x)\) also has a horizontal tangent line when \(x=x_0\text{.}\) This shows that whenever \(g\) has a horizontal tangent line, \(f\) has one too.</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-323" id="solution-323"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-323"><div class="solution solution-like">
+<p id="p-2272">Let \(g(x):=\log(f(x))\text{.}\) Notice \(g'(x)=\frac{f'(x)}{f(x)}\text{.}\)</p>
+<p id="p-2273">In order to show that the two curves have horizontal tangent lines at the same values of \(x\text{,}\) we will show two things: first, that if \(f(x)\) has a horizontal tangent line at some value of \(x\text{,}\) then also \(g(x)\) has a horizontal tangent line at that value of \(x\text{.}\) Second, we will show that if \(g(x)\) has a horizontal tangent line at some value of \(x\text{,}\) then also \(f(x)\) has a horizontal tangent line at that value of \(x\text{.}\)</p>
+<p id="p-2274">Suppose \(f(x)\) has a horizontal tangent line where \(x=x_0\) for some point \(x_0\text{.}\) This means \(f'(x_0)=0\text{.}\) Then \(g'(x_0)=\frac{f'(x_0)}{f(x_0)}\text{.}\) Since \(f(x_0) \neq 0\text{,}\) \(\frac{f'(x_0)}{f(x_0)}=\frac{0}{f(x_0)}=0\text{,}\) so \(g(x)\) also has a horizontal tangent line when \(x=x_0\text{.}\) This shows that whenever \(f\) has a horizontal tangent line, \(g\) has one too.</p>
+<p id="p-2275">Now suppose \(g(x)\) has a horizontal tangent line where \(x=x_0\) for some point \(x_0\text{.}\) This means \(g'(x_0)=0\text{.}\) Then \(g'(x_0)=\frac{f'(x_0)}{f(x_0)}=0\text{,}\) so \(f'(x_0)\) exists and is equal to zero. Therefore, \(f(x)\) also has a horizontal tangent line when \(x=x_0\text{.}\) This shows that whenever \(g\) has a horizontal tangent line, \(f\) has one too.</p>
+<p id="p-2276">Remark: if we were not told that \(f(x)\) gives only positive numbers, it would not necessarily be true that \(f(x)\) and \(\log(f(x))\) have horizontal tangent lines at the same values of \(x\text{.}\) If \(f(x)\) had a horizontal tangent line at an \(x\)-value where \(f(x)\) were negative, then \(\log(f(x))\) would not exist there, let alone have a horizontal tangent line.</p>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

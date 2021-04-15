@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:40:37-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<ul class="disc">
+<li>Let \(k \gt 0\) and assume we have proved<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f(x) - T_k(x) &amp;= \frac{1}{(k+1)!} f^{(k+1)}(c) \cdot (x-a)^{k+1}
+\end{align*}
+</div>for some \(c\) between \(a\) and \(x\text{.}\)</li>
+<li>Now set<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+F(x) &amp;= f(x) - T_{k+1}(x) &amp; G(x) &amp;= (x-a)^{k+1}\\
+\end{align*}
+<p class="intertext">and notice that, since \(T_{k+1}(a)=f(a)\text{,}\)</p>
+\begin{align*}
+F(a) &amp;= f(a)-T_{k+1}(a)=0 &amp; G(a) &amp;= 0 &amp; G'(x) &amp;= (k+1)(x-a)^k
+\end{align*}
+</div>and apply the generalised MVT with \(b=x\text{:}\) hence there exists a \(q\) between \(a\) and \(x\) so that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{F(x)-F(a)}{G(x)-G(a)} &amp;= \frac{F'(q)}{G'(q)} &amp;\text{which becomes}\\
+\frac{F(x)}{(x-a)^{k+1}} &amp;= \frac{F'(q)}{(k+1)(q-a)^k} &amp; \text{rearrange}\\
+F(x) &amp;= \frac{(x-a)^{k+1}}{(k+1)(q-a)^k} \cdot F'(q)
+\end{align*}
+</div>
+</li>
+<li>We now examine \(F'(q)\text{.}\) First carefully differentiate \(F(x)\text{:}\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+F'(x) &amp;= \diff{}{x} \bigg[f(x) - \bigg( f(a) + f'(a)(x-a) + \frac{1}{2}
+f''(a)(x-a)^2 + \cdots \\
+\amp\hskip2.5in+ \frac{1}{k!}f^{(k)}(x-a)^k \bigg)  \bigg]\\
+&amp;= f'(x) - \bigg( f'(a) + \frac{2}{2} f''(a)(x-a) + \frac{3}{3!} f'''(a)(x-a)^2 +
+\cdots \\
+\amp\hskip2.5in+ \frac{k}{k!}f^{(k)}(a) (x-a)^{k-1} \bigg)\\
+&amp;= f'(x) - \bigg( f'(a) + f''(a)(x-a) + \frac{1}{2} f'''(a)(x-a)^2 +\cdots \\
+\amp\hskip2.5in+ \frac{1}{(k-1)!}f^{(k)}(a)(x-a)^{k-1} \bigg)
+\end{align*}
+</div>Now notice that if we set \(f'(x) = g(x)\) then this becomes<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+F'(x) &amp;= g(x) - \bigg( g(a) + g'(a)(x-a) + \frac{1}{2} g''(a)(x-a)^2 +
+\cdots \\
+\amp\hskip2.5in+ \frac{1}{(k-1)!}g^{(k-1)}(a)(x-a)^{k-1} \bigg)
+\end{align*}
+</div>So \(F'(x)\) is then exactly the remainder formula but for a degree \(k-1\) approximation to the function \(g(x) = f'(x)\text{.}\)</li>
+<li>Hence the function \(F'(q)\) is the remainder when we approximate \(f'(q)\) with a degree \(k-1\) Taylor polynomial. The remainder formula, equation <a class="xref" data-knowl="./knowl/eq_taylorErrorN.html" title="Equation 4.4.33">4.4.33</a>, then tells us that there is a number \(c\) between \(a\) and \(q\) so that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+F'(q) &amp;= g(q) - \bigg( g(a) + g'(a)(q-a) + \frac{1}{2} g''(a)(q-a)^2 + \cdots \\
+\amp\hskip2.5in + \frac{1}{(k-1)!}g^{(k-1)}(a)(q-a)^{k-1} \bigg)\\
+&amp;= \frac{1}{k!} g^{(k)}(c) (q-a)^k = \frac{1}{k!} f^{(k+1)}(c)(q-a)^k
+\end{align*}
+</div>Notice that here we have assumed that \(f^{(k+1)}(x)\) exists.</li>
+<li>Now substitute this back into our equation above<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+F(x) &amp;= \frac{(x-a)^{k+1}}{(k+1)(q-a)^k} \cdot F'(q)\\
+&amp;= \frac{(x-a)^{k+1}}{(k+1)(q-a)^k} \cdot \frac{1}{k!} f^{(k+1)}(c)(q-a)^k\\
+&amp;= \frac{1}{(k+1)k!} \cdot f^{(k+1)}(c) \cdot
+\frac{(x-a)^{k+1}(q-a)^k}{(q-a)^k}\\
+&amp;= \frac{1}{(k+1)!} \cdot f^{(k+1)}(c) \cdot(x-a)^{k+1}
+\end{align*}
+</div>as required.</li>
+</ul>
+<span class="incontext"><a href="sec_DIFFTaylor.html#p-3617">in-context</a></span>
+</body>
+</html>

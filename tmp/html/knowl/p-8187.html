@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:06:27-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>We start by completing the square on the denominator.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+3x^2+4x+1 &amp;= 3\left(x^2+\frac{4}{3}x+\frac{1}{3}\right)\\
+&amp;=3\left(x^2+2\cdot\frac{2}{3}x+\frac{4}{9}-\frac{4}{9}+\frac{1}{3}\right)\\
+&amp;=3\left(\left(x+\frac{2}{3}\right)^2-\frac{4}{9}+\frac{3}{9}\right)\\
+&amp;=3\left(\left(x+\frac{2}{3}\right)^2-\frac{1}{9}\right)\\
+&amp;=3\left(x+\frac{2}{3}\right)^2-\frac{1}{3}\\
+\end{align*}
+<p class="intertext">This has the form of a function minus a constant, which matches the trigonometric identity \(\sec^2\theta - 1 = \tan^2\theta\text{.}\) Multiplying through by \(\frac{1}{3}\text{,}\) we see we can use the identity \(\frac{1}{3}\sec^2\theta - \frac{1}{3} = \frac{1}{3}\tan^2\theta\text{.}\) So, to get the substitution right, we want to choose a substitution that makes the following true:</p>
+\begin{align*}
+3\left(x+\frac{2}{3}\right)^2-\frac{1}{3}&amp;=\frac{1}{3}\sec^2\theta-\frac{1}{3}\\
+3\left(x+\frac{2}{3}\right)^2&amp;=\frac{1}{3}\sec^2\theta\\
+9\left(x+\frac{2}{3}\right)^2&amp;=\sec^2\theta\\
+\color{red}{3x+2}&amp;=\color{blue}{\sec\theta}\\
+\end{align*}
+<p class="intertext">And, accordingly:</p>
+\begin{align*}
+\color{red}{3\dee{x}}&amp;=\color{blue}{\sec\theta\tan\theta \dee{\theta}}
+\end{align*}
+</div>
+<p data-braille="continuation">Now, let's  simplify a little and use this substitution on our integral:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\amp\int\dfrac{-2}{3x^2+4x+1}\dee{x}
+=\int\dfrac{-2}{3\left(x+\frac{2}{3}\right)^2-\frac{1}{3}}\dee{x}\\
+&amp;\hskip0.5in=\int\dfrac{-2}{9\left(x+\frac{2}{3}\right)^2-1}3\dee{x}\\
+&amp;\hskip0.5in=\int\dfrac{-2}{\left({\color{red}{3x+2}}\right)^2-1}\textcolor{red}{3\dee{x}}\\
+&amp;\hskip0.5in=\int\dfrac{-2}{\left({\color{blue}{\sec\theta}}\right)^2-1}\color{blue}{\sec\theta\tan\theta \dee{\theta}}\\
+&amp;\hskip0.5in=\int\dfrac{-2}{\tan^2\theta}\sec\theta\tan\theta \dee{\theta}\\
+&amp;=\hskip0.5in\int -2\dfrac{\sec\theta}{\tan\theta}\dee{\theta}\\
+&amp;\hskip0.5in=\int -2\dfrac{1}{\cos\theta}\cdot\dfrac{\cos\theta}{\sin\theta} \dee{\theta}\\
+&amp;\hskip0.5in=\int -2\dfrac{1}{\sin\theta} \dee{\theta}\\
+&amp;\hskip0.5in=\int -2\csc\theta \dee{\theta}\\
+\end{align*}
+<p class="intertext">Using the result of Example <a class="xref" data-knowl="./knowl/eg_TRGINToptc.html" title="Example 6.8.21: \(\int \csc x\dee{x}\) — by the \(u=\tan\frac{x}{2}\) substitution">6.8.21</a>, or a table of integrals:</p>
+\begin{align*}
+&amp;=2\log\left|\csc\theta+\cot\theta \right|+C
+\end{align*}
+</div>
+<p data-braille="continuation">Our final task is to translate this back from \(\theta\) to \(x\text{.}\) Recall we used the substitution \(3x+2=\sec\theta\text{.}\) Using this information, and \(\sec\theta = \dfrac{\mathrm{hypotenuse}}{\mathrm{adjacent}}\text{,}\) we can fill in two sides of a right triangle with angle \(\theta\text{.}\) The Pythagorean theorem tells us the third side (opposite to \(\theta\)) has measure \(\sqrt{(3x+2)^2-1}=\sqrt{9x^2-12x+3}\text{.}\)</p>
+<span class="incontext"><a href="section-51.html#p-8187">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:20:48-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">15.4.3.34.1</span><span class="period">.</span>
+</h6>
+<p>Considering that there are ten line segments in \(C\text{,}\) it is probably not very efficient to use direct evaluation. Two other possible methods come to mind. If \(\vF\) is conservative, we can use \(\vF\)'s potential. Even if \(\vF\) is not conservative, it may be possible to efficiently use Stokes' (or Green's) theorem. So let's compute</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk\\
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+\tfrac{\partial }{\partial z}\\
+y &amp; 2x-10 &amp; 0
+\end{matrix}
+\right]
+=\hk
+\end{align*}
+</div>
+<p data-braille="continuation">As \(\vnabla\times\vF\ne\vZero\text{,}\) the vector field \(\vF\) is not conservative. As \(\vnabla\times\vF\ne\vZero\) is very simple, it looks like Stokes' theorem could provide an efficient way to compute the integral. The left figure below contains a sketch of \(C\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
+<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><img src="pfigs/OE06D_2.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><img src="pfigs/OE06D_2b.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>The curve \(C\) is not closed, and so is not the boundary of a surface, so we cannot apply Stokes' theorem directly. But we can easily come up with a surface whose boundary contains \(C\text{.}\) Let \(R\) be the shaded region in the figure on the right above. The boundary \(\partial R\) of \(R\) consists of two parts — \(C\) and the line segment \(L\text{.}\) The normal of \(R\) for \(-\hk\) (since \(\partial R\) is oriented clockwise). So Stokes' theorem gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_C \vF \cdot\dee{\vr} + \int_L \vF \cdot\dee{\vr}
+&amp;= \dblInt_R  \vnabla\times\vF \cdot(-\hk)\ \dee{S}
+= \dblInt_R  (\hk) \cdot(-\hk)\ \dee{S}\\
+&amp;= -\text{Area}(R)
+\end{align*}
+</div>
+<p data-braille="continuation">\(R\) is the union of \(5\) triangles, each of height \(1\) and base \(1\text{.}\) So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\text{Area}(R) = 5\times \frac{1}{2}\times 1\times 1
+=\frac{5}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">If we denote by \(-L\) the line segment from \((0,0)\) to \((5,5)\text{,}\) we can parametrize \(-L\) by \(\vr(t) = t(5,5)\text{,}\) \(0\le t\le 1\) and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_{-L} \vF \cdot\dee{\vr}
+&amp;=\int_0^1 \overbrace{\big(5t\,\hi + (10t-10)\,\hj\big)}^{\vF(\vr(t))}
+\cdot\overbrace{(5\,\hi+5\,\hj)}^{\vr'(t)}\ \dee{t}
+=\int_0^1 5\big(15t-10\big) \dee{t}\\
+&amp;=25\left(\frac{3}{2}-2\right)
+=-\frac{25}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">All together</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_C \vF \cdot\dee{\vr}
+&amp;= -\text{Area}(R) - \int_L \vF \cdot\dee{\vr}
+= -\text{Area}(R) + \int_{-L} \vF \cdot\dee{\vr}
+=-\frac{5}{2}-\frac{25}{2}\\
+&amp;=-15
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec_StokesThm.html#solution-2400">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:49:38-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<ul class="disc">
+<li>To find our upper and lower bounds we make use of the fact that \(e^x\) is an  increasing function. We know this because the derivative \(\diff{}{x}e^x=e^x\)  is always  positive. Consequently, the smallest and largest values of \(e^x\) on the interval  \(a\le x\le b\) are \(e^a\) and \(e^b\text{,}\) respectively.</li>
+<li>
+<p>In particular, for \(0\le x\le \frac{1}{n}\text{,}\) \(e^x\) takes values only between \(e^0\) and \(e^{\frac{1}{n}}\text{.}\)  As a result,  the first strip</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\big\{\ (x,y)\ \big|\ 0\le x\le \frac{1}{n},\ 0\le y\le e^x\ \big\}
+\end{gather*}
+</div>
+<ul class="circle">
+<li>contains the rectangle of \(0\le x\le \frac{1}{n}\text{,}\) \(0\le y\le e^0\)  (the lighter rectangle in the figure on the left below) and</li>
+<li>is contained in the rectangle \(0\le x\le \frac{1}{n}\text{,}\) \(0\le y\le  e^{\frac{1}{n}}\)  (the largest rectangle in the figure on the left below).</li>
+</ul>
+<p data-braille="continuation">Hence</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\frac{1}{n}e^{0}
+\le {\rm Area}
+\big\{\ (x,y)\ \big|\ 0\le x\le \frac{1}{n},\ 0\le y\le e^x\ \big\}
+\le \frac{1}{n}e^{\frac{1}{n}}
+\end{gather*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:8.5%;margin-right:8.5%;">
+<div class="sbspanel" style="width:39.7590361445783%;justify-content:center;"><img src="text/figs/earea3.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:39.7590361445783%;justify-content:center;"><img src="text/figs/earea6.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+</li>
+<li>
+<p>Similarly, for the second, third, …, last strips,  as in the figure on the right above,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{1}{n}e^{\frac{1}{n}}
+&amp;\le {\rm Area}\big\{\ (x,y)\ \big|\
+\frac{1}{n}\le x\le \frac{2}{n},\ 0\le y\le e^x\ \big\}
+\ \ \ \le \frac{1}{n}e^{\frac{2}{n}}\\
+\frac{1}{n}e^{\frac{2}{n}}
+&amp;\le {\rm Area}\big\{\ (x,y)\ \big|\
+\frac{2}{n}\le x\le \frac{3}{n},\ 0\le y\le e^x\ \big\}
+\ \ \ \le \frac{1}{n}e^{\frac{3}{n}}\\
+&amp; \vdots\\
+\frac{1}{n}e^{\frac{(n-1)}{n}}
+&amp;\le {\rm Area}\big\{\ (x,y)\ \big|\
+\frac{(n-1)}{n}\le x\le \frac{n}{n},\ 0\le y\le e^x\ \big\}
+\le\frac{1}{n}e^{\frac{n}{n}}
+\end{align*}
+</div>
+</li>
+<li>
+<p>Adding these \(n\) inequalities together gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\frac{1}{n}\left(1+e^{\frac{1}{n}}+\cdots+e^{\frac{(n-1)}{n}}\right)\\
+&amp;\le {\rm Area}\big\{\ (x,y)\ \big|\ 0\le x\le 1,\ 0\le y\le e^x\ \big\}\\
+&amp;\le \frac{1}{n}\left(e^{\frac{1}{n}}+e^{\frac{2}{n}}+\cdots+
+e^{\frac{n}{n}}\right)
+\end{align*}
+</div>
+</li>
+<li>We can then recycle equation <a class="xref" data-knowl="./knowl/eq_INTgeomsum.html" title="Equation 6.1.3: Geometric sum">6.1.3</a> with \(r=e^{\frac1n}\text{,}\) so  that \(r^n=\left(e^{\frac{1}{n}}\right)^n=e\text{.}\) Thus we have<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\frac{1}{n}\frac{e-1}{e^{\frac{1}{n}}-1}
+\le {\rm Area}\big\{\ (x,y)\ \big|\ 0\le x\le 1,\ 0\le y\le e^x\ \big\}
+\le \frac{1}{n}e^{\frac{1}{n}}\frac{e-1}{e^{\frac{1}{n}}-1}
+\end{gather*}
+</div>where we have used the fact that the upper bound is a simple multiple of the  lower bound:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\left(e^{\frac{1}{n}}+e^{\frac{2}{n}}+\cdots+
+e^{\frac{n}{n}}\right)
+&amp;= e^{\frac{1}{n}}\left(1+e^{\frac{1}{n}}+\cdots
++e^{\frac{(n-1)}{n}}\right).
+\end{align*}
+</div>
+</li>
+<li>
+<p>We now apply the squeeze theorem to the above inequalities. In particular, the  limits of the lower and upper bounds are</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{n\rightarrow\infty}\frac{1}{n}\frac{e-1}{e^{\frac{1}{n}}-1}
+&amp;=(e-1)\lim_{X=\frac{1}{n}\rightarrow 0}\frac{X}{e^X-1}
+=e-1
+\end{align*}
+</div>
+<p data-braille="continuation">(by l'Hôpital's rule) and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{n\rightarrow\infty}\frac{1}{n}e^{\frac{1}{n}}\frac{e-1}{e^{\frac{1}{n}}-1}
+&amp;=(e-1)\lim_{X=\frac{1}{n}\rightarrow 0}\cdot \frac{Xe^X}{e^X-1}\\
+&amp;=(e-1)\lim_{X\to 0}e^X \cdot \lim_{X=\to 0}\frac{X}{e^X-1}\\
+&amp;=(e-1) \cdot 1 \cdot 1
+\end{align*}
+</div>
+<p data-braille="continuation">Thus, since the exact area is trapped between the lower and upper bounds, the squeeze  theorem then implies that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Exact area} &amp;= e-1.
+\end{align*}
+</div>
+</li>
+</ul>
+<span class="incontext"><a href="sec_intdef.html#p-5327">in-context</a></span>
+</body>
+</html>

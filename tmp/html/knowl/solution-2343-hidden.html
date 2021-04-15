@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:17:46-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Set</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vF=\frac{-y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj
+\end{equation*}
+</div>
+<p>(a) Green's theorem must be applied to a curve that is closed, so that it is the boundary of a region in \(\bbbr^2\text{.}\) The given curve \(C\) is not closed. But it is  part of the boundary of</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+R = \Set{(x,y)}{-2\le x\le 2,\ \tfrac{x^2}{4}+1\le y\le 2}
+\end{equation*}
+</div>
+<p data-braille="continuation">Here is a sketch of \(R\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE15A_3.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>The boundary of \(R\) consists of two parts — \(C\) on the bottom and the line segment \(L\) from \((2,2)\) to \((-2,2)\) on the top. Note that \(\vF\) is well-defined on all of \(R\) and that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\pdiff{}{x} \vF_2 -
+\pdiff{}{y} \vF_1
+&amp;=\pdiff{}{x} \frac{x}{x^2+y^2} +
+\pdiff{}{y} \frac{y}{x^2+y^2}\\
+&amp;=\frac{(x^2+y^2) - x(2x)}{{(x^2+y^2)}^2}
++\frac{(x^2+y^2) - y(2y)}{{(x^2+y^2)}^2}\\
+&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">on all of \(R\text{.}\) So, by Green's theorem (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>),</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_C \frac{-y}{x^2+y^2}\dee{x} + \frac{x}{x^2+y^2}\dee{y}
+&amp;=\dblInt_R \Big(\pdiff{}{x} \vF_2 -
+\pdiff{}{y} \vF_1 \Big)\dee{x}\dee{y}
+- \int_L\vF\cdot\dee{\vr}\\
+&amp;=\int_{-L}\vF\cdot\dee{\vr}
+=\int_{-2}^2 \vF_1\,\dee{x}\\
+&amp;
+=-\int_{-2}^2\frac{2}{x^2+4} \,\dee{x}\quad\text{since $y=2$ on $L$}\\
+&amp;=-\int_{-1}^1\frac{4}{4u^2+4} \,\dee{x}
+\quad\text{with } x=2u, \dee{x}=2\dee{u}\\
+&amp;=-\arctan u\Big|_{-1}^1 =-\frac{\pi}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">In the second line, we used the notation \(-L\) for the line segment from \((-2,2)\) to \((2,2)\text{.}\)</p>
+<p>(b) This question looks a lot like that of part (a). But there is a critical difference. Again \(C\) is not closed and again it is part of the boundary of a simple region in the \(xy\)-plane, namely</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+R = \Set{(x,y)}{-2\le x\le 2,\ x^2-2\le y\le 2}
+\end{equation*}
+</div>
+<p data-braille="continuation">This \(R\) is sketched below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:24%;margin-right:24%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE15A_3b1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>We <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">cannot</em> continue as in part (a), using this \(R\text{,}\) because \(\pdiff{}{x} \vF_2 -
+\pdiff{}{y} \vF_1 \) is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">not</em> zero througout \(R\text{.}\) In fact, it is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">not</em> even defined throughout \(R\) — it is not defined at \((0,0)\text{,}\) which is a point of \(R\text{.}\) We can work around this obstruction by</p>
+<ul class="disc">
+<li>choosing a number \(\rho \gt 0\) that is small enough that the circle \(C_\rho\) parametrized by<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vr(\theta) = \rho\cos\theta\,\hi +\rho\sin\theta\,\hj\qquad
+0\le \theta \le 2\pi
+\end{equation*}
+</div>is completely contained inside \(R\) (ror example, \(\rho=1\) is fine)</li>
+<li>and then removing from \(R\) the interior of \(C_\rho\text{.}\)</li>
+</ul>
+<p data-braille="continuation">This produces the “deformed washer”</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+W = \Set{(x,y)}{-2\le x\le 2,\ x^2-2\le y\le 2,\ x^2+y^2\ge\rho^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">that is sketched below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:24%;margin-right:24%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE15A_3b2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>The boundary of \(W\) consists the three parts — the curve of interest \(C\) on the bottom, the line segment \(L\) from \((2,2)\) to \((-2,2)\) on the top, and the circle \(-C_\rho\) (that is \(C_\rho\) but oriented clockwise, rather than counter-clockwise) around the hole in the middle. Now \(\pdiff{}{x} \vF_2 -
+\pdiff{}{y} \vF_1 \) is well-defined and zero throughout \(W\text{.}\) So, by Green's theorem (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>),</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\int_C \frac{-y}{x^2+y^2}\dee{x} + \frac{x}{x^2+y^2}\dee{y}\\
+&amp;\hskip0.5in=\dblInt_W \Big(\pdiff{}{x} \vF_2 -
+\pdiff{}{y} \vF_1 \Big)\dee{x}\dee{y}
+- \int_L\vF\cdot\dee{\vr}- \int_{-C_\rho}\vF\cdot\dee{\vr}\\
+&amp;\hskip0.5in=\int_{-L}\vF\cdot\dee{\vr}
++ \int_{C_\rho}\vF\cdot\dee{\vr}
+\end{align*}
+</div>
+<p data-braille="continuation">We have already found, in part (a), that \(\int_{-L}\vF\cdot\dee{\vr}=-\frac{\pi}{2}\text{.}\) So it remains only to use</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vr(\theta) &amp;= \rho\cos\theta\,\hi +\rho\sin\theta\,\hj\\
+\vr'(\theta) &amp;= -\rho\sin\theta\,\hi +\rho\cos\theta\,\hj
+\end{align*}
+</div>
+<p data-braille="continuation">to evaluate</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_{C_\rho}\vF\cdot\dee{\vr}
+&amp;=\int_0^{2\pi} \vF\big(\vr(\theta)\big)\cdot\vr'(\theta)\,\dee{\theta}\\
+&amp;= \int_0^{2\pi} \Big(\overbrace{-\frac{1}{\rho}\sin\theta\,\hi+\frac{1}{\rho}\cos\theta\,\hj}^
+{\vF(\vr(\theta))}\Big)
+\cdot\big(\overbrace{-\rho\sin\theta\,\hi +\rho\cos\theta\,\hj}^
+{\vr'(\theta)}\big)\,\dee{\theta}\\
+&amp;=\int_0^{2\pi}\dee{\theta}\\
+&amp;=2\pi
+\end{align*}
+</div>
+<p data-braille="continuation">All together</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\int_C \frac{-y}{x^2+y^2}\dee{x} + \frac{x}{x^2+y^2}\dee{y}
+=\int_{-L}\vF\cdot\dee{\vr}
++ \int_{C_\rho}\vF\cdot\dee{\vr}
+=-\frac{\pi}{2} +2\pi
+=\frac{3\pi}{2}
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">(c) No, \(\vF\) is not conservative. We found, in parts (a) and (b), two different values for the integrals along two paths, both of which start at \((-2,2)\) and end at \((2,2)\text{.}\) So \(\vF\) does not have the “path independence” property of Theorem <a class="xref" data-knowl="./knowl/thm_pathIndepConserv.html" title="Theorem 13.4.7">13.4.7</a>.c and cannot be conservative.</p>
+</div></body>
+</html>

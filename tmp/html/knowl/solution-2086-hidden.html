@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:02:04-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p xmlns:svg="http://www.w3.org/2000/svg">Equation <a class="xref" data-knowl="./knowl/eqn_normalForce.html" title="Equation 12.7.2: Normal Force">12.7.2</a> tells us the normal force exerted by the track is \(W\hN\text{,}\) where \(W=m\kappa|\vv|^2+mg\hj\cdot\hN\text{.}\) So, we need to find \(\kappa\) and \(\hj \cdot \hN\) at the point \(\theta=\frac{13\pi}{3}\text{.}\)</p>
+<p>Note that \(\theta\) is the parameter used to describe the track, but it is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">not</em> time. So \(|\vv(\theta)|=\left|\diff{\vr}{\theta} \right|\) is not the same as \(|\vv|=\left|\diff{\vr}{t} \right|\text{,}\) the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">speed</em> of the bead.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vr(\theta)&amp;=(\sin \theta , \sin \theta - \theta)\\
+\vv(\theta)&amp;=(\cos \theta, \cos \theta -1)\\
+|\vv(\theta)|=\diff{s}{\theta}&amp;=\sqrt{2\cos^2\theta-2\cos \theta+1}\\
+\va(\theta)&amp;=(-\sin \theta, -\sin \theta)\\
+|\vv \times \va|&amp;=|\sin \theta|\\
+\ka(\theta)&amp;=\frac{|\vv\times\va|}{\left(\diff{s}{\theta}\right)^3}=\frac{|\sin \theta|}{(2\cos^2\theta-2\cos \theta+1)^{3/2}}\\
+\ddiff{2}{s}{\theta}&amp;=\frac{\sin \theta (1-2\cos \theta)}{\sqrt{2\cos^2\theta-2\cos \theta+1}}
+\end{align*}
+</div>
+<p data-braille="continuation">Equation <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a> part (c) gives us the relation \(\va(\theta)=\ddiff{2}{s}{\theta}\hT+\kappa\left(\diff{s}{\theta}\right)^2\hN\text{.}\) We use this to find \(\hj\cdot\hN\) at \(\theta=13\pi/3\) without differentiating (actually, without even finding) \(\hT\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\va(13\pi/3)&amp;=\left(-\sqrt{3}/2,-\sqrt{3}/2\right)\\
+\ddiff{2}{s}{\theta}(13\pi/3)&amp;=0\\
+\ka(13\pi/3)&amp;=\sqrt{6}\\
+\diff{s}{\theta}(13\pi/3)&amp;=1/\sqrt{2}\\
+\va(\theta)\cdot\hj&amp;=\left(\ddiff{2}{s}{\theta}\hT+\kappa\left(\diff{s}{\theta}\right)^2\hN\right)\cdot\hj\\
+-\frac{\sqrt 3}{2}&amp;=0+\sqrt{6}(1/2)\hN\cdot\hj\\
+\hN\cdot\hj&amp;=-\frac{1}{\sqrt2}
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Now we can find the speed \(|\vv|\) of the bead when \(|W|=100\) and it breaks off the track.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+W&amp;=m\ka|\vv|^2+mg\hj\cdot\hN\\
+\pm 100 &amp;=\left(\frac{1}{9.8} \right)\sqrt{6}|\vv|^2+\frac{9.8}{9.8}\left(-\frac{1}{\sqrt 2} \right)\\
+|\vv|&amp;=\sqrt{\frac{9.8}{\sqrt6}\left(100+\frac{1}{\sqrt 2} \right)} \approx20  \mathrm{m}/\mathrm{s} \approx 72  \mathrm{kph}
+\end{align*}
+</div>
+<p data-braille="continuation">(Because \(|\vv| \gt 0\text{,}\) the equation above has no solution for \(W=-100\text{.}\))</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Quite fast! 100 N is a lot of force for such a light object.</p>
+</div></body>
+</html>

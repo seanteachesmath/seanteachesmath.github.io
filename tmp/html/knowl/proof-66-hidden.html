@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:14:01-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">The first formula is exactly the divergence theorem and was proven in Theorem <a class="xref" data-knowl="./knowl/thm_divThm.html" title="Theorem 15.2.2: Divergence Theorem">15.2.2</a>.</p>
+<p>To prove the second formula, set \(\vF=f\va\text{,}\) where \(\va\) is any constant vector, and apply the divergence theorem.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_{\partial V} f\va\cdot\hn\,\dee{S}
+&amp;=\tripInt_V\vnabla\cdot(f\va)\ \dee{V}\\
+&amp;=\tripInt_V\big[(\vnabla f)\cdot\va
++f\underbrace{\vnabla\cdot\va}_{=0}\big]\ \dee{V}\\
+&amp;=\tripInt_V(\vnabla f)\cdot\va\ \dee{V}
+\end{align*}
+</div>
+<p data-braille="continuation">To get the second line, we used the vector identity Theorem <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>.c. To get the third line, we just used that \(\va\) is a constant, so that all of its derivatives are zero. Rewrite</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\tripInt_V(\vnabla f)\cdot\va\ \dee{V}
+=\tripInt_V\va\cdot(\vnabla f)\ \dee{V}
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(\va\) is a constant, we can factor it out of both integrals, so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\va\cdot\dblInt_{\partial V} f\hn\,\dee{S}
+=\va\cdot\tripInt_V\vnabla f\ \dee{V}\\
+\implies &amp;\va\cdot\bigg\{\dblInt_{\partial V} f\hn\,\dee{S}
+-\tripInt_V\vnabla f\ \dee{V}\bigg\}=0
+\end{align*}
+</div>
+<p data-braille="continuation">In particular, choosing \(\va=\hi\text{,}\) \(\hj\) and \(\hk\text{,}\) we see that all three components of the vector \(\dblInt_{\partial V} f\hn\,\dee{S}
+-\tripInt_V\vnabla f\ \dee{V}\) are zero. So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\dblInt_{\partial V} f\hn\,\dee{S}
+-\tripInt_V\vnabla f\ \dee{V}=0
+\end{equation*}
+</div>
+<p data-braille="continuation">which is what we wanted show.</p>
+<p>To prove the third formula, apply the divergence theorem, but with \(\vF\) replaced by \(\va\times\vF\text{,}\) where \(\va\) is any constant vector.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\dblInt_{\partial V} (\va\times\vF)\cdot\hn\ \dee{S}
+=\tripInt_V\vnabla\cdot(\va\times\vF)\ \dee{V}\\
+&amp;\hskip0.5in=\tripInt_V\big[\vF\cdot\underbrace{(\vnabla \times \va)}_{=\vZero}
+-\va\cdot(\vnabla\times\vF)\big]\ \dee{V}\\
+&amp;\hskip0.5in=-\tripInt_V\va\cdot(\vnabla \times\vF)\ \dee{V}
+=-\va\cdot\tripInt_V\vnabla \times\vF\ \dee{V}
+\end{align*}
+</div>
+<p data-braille="continuation">To get the second line, we used the vector identity Theorem <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>.d. To get the third line, we again used that \(\va\) is a constant, so that all of its derivatives are zero. For all vectors \((\va\times\vb)\cdot\vc=\va\cdot(\vb\times\vc)\) (in case you don't remember this, it was Lemma <a class="xref" data-knowl="./knowl/lem_tripProd.html" title="Lemma 9.2.27">9.2.27</a>.a) so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+(\va\times\vF)\cdot\hn
+=\va\cdot(\vF\times\hn)
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\va\cdot\dblInt_{\partial V} \vF\times\vn\ \dee{S}
+=-\va\cdot\tripInt_V\vnabla \times\vF\ \dee{V}\\
+\implies &amp;\va\cdot\bigg\{\dblInt_{\partial V} \vF\times\vn\ \dee{S}
++\tripInt_V\vnabla\times\vF\ \dee{V}\bigg\}=0
+\end{align*}
+</div>
+<p data-braille="continuation">In particular, choosing \(\va=\hi\text{,}\) \(\hj\) and \(\hk\text{,}\) we see that all three components of the vector \(\dblInt_{\partial V} \vF\times\vn\ \dee{S}
++\tripInt_V\vnabla\times\vF\ \dee{V}\) are zero. So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\tripInt_V\vnabla\times\vF\ \dee{V}
+=-\dblInt_{\partial V} \vF\times\vn\ \dee{S}
+=\dblInt_{\partial V} \hn\times\vF\ \dee{S}
+\end{equation*}
+</div>
+<p data-braille="continuation">which is what we wanted show.</p></article></body>
+</html>

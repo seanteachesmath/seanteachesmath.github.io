@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:58:18-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<ul class="disc">
+<li>Solution 1: This question looks like a substitution, since we have an “inside function.” So, let's see where that leads: let \(u=\log x\text{.}\) Then \(\dee{u}=\dfrac{1}{x}\dee{x}\text{.}\) We don't see this right away in our function, but we can bring it into the function by multiplying and dividing by \(x\text{,}\) and noting from our substitution that \(e^u=x\text{.}\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int \sin(\log x)\dee{x}&amp;=\int \frac{x\sin(\log x)}{x}\dee{x}\\
+&amp;=\int e^u \sin u \dee{u}\\
+\end{align*}
+<p class="intertext">Using the result of Example <a class="xref" data-knowl="./knowl/eg_PRTSexsinx.html" title="Example 6.7.11: \(\int_a^b e^x\sin x\dee{x}\) and \(\int_a^b e^x\cos x\dee{x}\)">6.7.11</a>:</p>
+\begin{align*}
+&amp;=\frac{1}{2}e^u\left(\sin u - \cos u\right)+C\\
+&amp;=\frac{1}{2}e^{\log x}\left(\sin(\log x) - \cos (\log x)\right)+C\\
+&amp;=\frac{1}{2}x \left(\sin(\log x) - \cos (\log x)\right)+C
+\end{align*}
+</div>
+</li>
+<li>
+<p>Solution 2: It's not clear how to antidifferentiate the integrand, but we can certainly differentiate it. So, keeping in mind the method of Example <a class="xref" data-knowl="./knowl/eg_PRTSexsinx.html" title="Example 6.7.11: \(\int_a^b e^x\sin x\dee{x}\) and \(\int_a^b e^x\cos x\dee{x}\)">6.7.11</a> in the text, we take \(u=\sin(\log x)\) and \(\dee{v}=\dee{x}\text{,}\) so \(\dee{u}=\frac{1}{x}\cos(\log x)\dee{x}\) and \(v=x\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int \sin(\log x)\dee{x}&amp;= \underbrace{x\sin(\log x)}_{uv}  - \int \underbrace{
+\cos(\log x)\dee{x}
+}_{v\dee{u}}\\
+\end{align*}
+<p class="intertext">Continuing on, we again use integration by parts, with \(u=\cos(\log x)\text{,}\) \(\dee{v}=\dee{x}\text{,}\) \(\dee{u}=-\frac{1}{x}\sin(\log x)\dee{x}\text{,}\) and \(v=x\text{.}\)</p>
+\begin{align*}
+&amp;=x\sin(\log x) - \bigg[\underbrace{x\cos(\log x)}_{uv}
++
+\int\underbrace{\sin(\log x)}_{-v\dee{u}}\dee{x}
+\bigg]\\
+\end{align*}
+<p class="intertext">That is, we have</p>
+\begin{align*}
+\int \sin(\log x)\dee{x}&amp;=x\left[\sin(\log x) - \cos(\log x)\right]
+-
+\int \sin(\log x)\dee{x}+C\\
+\end{align*}
+<p class="intertext">Adding \(\quad \int \sin(\log x)\dee{x}\) to both sides,</p>
+\begin{align*}
+2\int \sin(\log x)\dee{x}&amp;=x\left[\sin(\log x) - \cos(\log x)\right]+C\\
+\int \sin(\log x)\dee{x}&amp;=\frac{x}{2}\left[\sin(\log x) - \cos(\log x)\right]+C
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Remark: remember that \(C\) is a stand-in for “we can add any real constant”. Since \(C\) can be any number in \((-\infty,\infty)\text{,}\) also \(\frac{C}{2}\) can be any number in \((-\infty,\infty)\text{.}\) So, rather than write \(\frac{C}{2}\) in the last line, we re-named \(\frac{C}{2}\) to \(C\text{.}\)</p>
+</li>
+</ul>
+<span class="incontext"><a href="sec_intbyparts.html#p-6859">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T15:11:49-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Continuity</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-11.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_limits.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_opt_formal_limit.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-11.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_limits.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_opt_formal_limit.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12" class="active">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-12"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">Continuity</span>
+</h2>
+<section class="subsection" id="subsection-7"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.1</span> <span class="title">Continuity</span>
+</h3>
+<p id="p-850">We have seen that computing the limits some functions — polynomials and  rational functions — is very easy because</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} f(x) &amp;= f(a).
+\end{align*}
+</div>
+<p data-braille="continuation">That is, the the limit as \(x\) approaches \(a\) is just \(f(a)\text{.}\) Roughly speaking,  the reason we can compute the limit this way is that these functions do not  have any abrupt jumps near \(a\text{.}\)</p>
+<p id="p-851">Many other functions have this property, \(\sin(x)\) for example. A function  with this property is called “continuous” and there is a precise mathematical definition  for it. If you do not recall interval notation, then now is a good time to take a quick  look back at Definition <a class="xref" data-knowl="./knowl/def_intervals.html" title="Definition 1.3.5: Open and closed intervals of \(\mathbb{R}\)">1.3.5</a>.</p>
+<article class="definition definition-like" id="definition-19"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="period">.</span>
+</h6>
+<p id="p-852">A function \(f(x)\) is continuous at \(a\) if</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} f(x) &amp;= f(a)
+\end{align*}
+</div>
+<p data-braille="continuation">If a function is not continuous at \(a\) then it is said to be discontinuous at \(a\text{.}\)</p>
+<p id="p-853">When we write that \(f\) is continuous without specifying a point, then typically  this means that \(f\) is continuous at \(a\) for all \(a \in \mathbb{R}\text{.}\)</p>
+<p id="p-854">When we write that \(f(x)\) is continuous on the open interval \((a,b)\) then the function is  continuous at every point \(c\) satisfying \(a \lt c \lt b\text{.}\)</p></article><p id="p-855">So if a function is continuous at \(x=a\) we immediately know that</p>
+<ul class="disc">
+<li id="li-268">\(f(a)\) exists</li>
+<li id="li-269">\(\ds \lim_{x \to a^-}\) exists and is equal to \(f(a)\text{,}\) and</li>
+<li id="li-270">\(\ds \lim_{x \to a^+}\) exists and is equal to \(f(a)\text{.}\)</li>
+</ul></section><section class="subsection" id="subsection-8"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.2</span> <span class="title">Quick Aside — One-sided Continuity</span>
+</h3>
+<p id="p-856">Notice in the above definition of continuity on an interval \((a,b)\) we have carefully  avoided saying anything about whether or not the function is continuous at the endpoints  of the interval — i.e. is \(f(x)\) continuous at \(x=a\) or \(x=b\text{.}\) This is because talking  of continuity at the endpoints of an interval can be a little delicate.</p>
+<p id="p-857">In many situations we will be given a function \(f(x)\) defined on a closed interval  \([a,b]\text{.}\) For example, we might have:</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= \frac{x+1}{x+2} &amp; \text{for } x \in [0,1].
+\end{align*}
+</div>
+<p data-braille="continuation">For any \(0 \leq x \leq 1\) we know the value of \(f(x)\text{.}\) However for \(x \lt 0\) or \(x \gt 1\) we  know nothing about the function — indeed it has not been defined.</p>
+<p id="p-858">So now, consider what it means for \(f(x)\) to be continuous at \(x=0\text{.}\) We need to have</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x\to 0} f(x) &amp;= f(0),
+\end{align*}
+</div>
+<p data-braille="continuation">however this implies that the one-sided limits</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x\to 0^+} f(x) &amp;= f(0) &amp; \text{and}&amp;&amp; \lim_{x\to 0^-} f(x) &amp;= f(0)
+\end{align*}
+</div>
+<p data-braille="continuation">Now the first of these one-sided limits involves examining the behaviour of \(f(x)\) for  \(x \gt 0\text{.}\) Since this involves looking at points for which \(f(x)\) is defined, this is  something we can do. On the other hand the second one-sided limit requires us to  understand the behaviour of \(f(x)\) for \(x \lt 0\text{.}\) This we cannot do because the function  hasn't been defined for \(x \lt 0\text{.}\)</p>
+<p id="p-859">One way around this problem is to generalise the idea of continuity to one-sided  continuity, just as we generalised limits to get one-sided limits.</p>
+<article class="definition definition-like" id="definition-20"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span>
+</h6>
+<p id="p-860">A function \(f(x)\) is continuous from the right at \(a\) if</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x\to a^+} f(x) &amp;= f(a).
+\end{align*}
+</div>
+<p data-braille="continuation">Similarly a function \(f(x)\) is continuous from the left at \(a\) if</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x\to a^-} f(x) &amp;= f(a)
+\end{align*}
+</div></article><p id="p-861">Using the definition of one-sided continuity we can now define what it means for a  function to be continuous on a closed interval.</p>
+<article class="definition definition-like" id="definition-21"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span>
+</h6>
+<p id="p-862">A function \(f(x)\) is continuous on the closed interval \([a,b]\) when</p>
+<ul class="disc">
+<li id="li-271">\(f(x)\) is continuous on \((a,b)\text{,}\)</li>
+<li id="li-272">\(f(x)\) is continuous from the right at \(a\text{,}\) and</li>
+<li id="li-273">\(f(x)\) is continuous from the left at \(b\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Note that the last two condition are equivalent to</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x\to a^+} f(x) &amp;= f(a) &amp; \text{ and }&amp;&amp;  \lim_{x\to b^-} f(x) &amp;= f(b).
+\end{align*}
+</div></article></section><section class="subsection" id="subsection-9"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.6.3</span> <span class="title">Back to the Main Text</span>
+</h3>
+<p id="p-863">We already know from our work above that polynomials are continuous, and that  rational functions are continuous at all points in their domains — i.e. where  their denominators are non-zero. As we did for  limits, we will see that continuity interacts “nicely” with arithmetic. This  will allow us to construct complicated continuous functions from simpler  continuous building blocks (like polynomials).</p>
+<p id="p-864">But first, a few examples…</p>
+<article class="example example-like" id="example-37"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-37"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Simple continuous and discontinuous functions.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-37"><article class="example example-like"><p id="p-865">Consider the functions drawn below</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/lim6.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-866">These are</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= \begin{cases} x&amp;x \lt 1  \\
+x+2 &amp; x\geq 1 \end{cases}\\
+g(x) &amp;= \begin{cases} 1/x^2&amp; x\neq0  \\
+0 &amp; x=0\end{cases}\\
+h(x) &amp;= \begin{cases}\frac{x^3-x^2}{x-1} &amp; x\neq 1 \\
+0 &amp; x=1 \end{cases}
+\end{align*}
+</div>
+<p data-braille="continuation">Determine where they are continuous and discontinuous:</p>
+<ul class="disc">
+<li id="li-274">
+<p id="p-867">When \(x \lt 1\) then \(f(x)\) is a straight line (and so a polynomial) and so it is  continuous at every point \(x \lt 1\text{.}\) Similarly when \(x \gt 1\) the function is a  straight line and so it is continuous at every point \(x \gt 1\text{.}\) The only point which  might be a discontinuity is at \(x=1\text{.}\) We see that the one sided limits are  different. Hence the limit at \(x=1\) does not exist and so the function is  discontinuous at \(x=1\text{.}\)</p>
+<p id="p-868">But note that that \(f(x)\) is continuous from one side — which?</p>
+</li>
+<li id="li-275">The middle case is much like the previous one. When \(x \neq 0\) the \(g(x)\)  is a rational function and so is continuous everywhere on its domain (which is  all reals except \(x=0\)). Thus the only point where \(g(x)\) might be discontinuous is at  \(x=0\text{.}\) We see that neither of the one-sided limits exist at \(x=0\text{,}\) so the limit  does not exist at \(x=0\text{.}\) Hence the function is discontinuous at \(x=0\text{.}\)</li>
+<li id="li-276">
+<p id="p-869">We have seen the function \(h(x)\) before. By the same reasoning as  above, we know it is continuous except at \(x=1\) which we must check separately.</p>
+<p id="p-870">By definition of \(h(x)\text{,}\) \(h(1) = 0\text{.}\) We must compare this to the limit as \(x  \to 1\text{.}\) We did this before.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{x^3-x^2}{x-1} &amp;= \frac{x^2(x-1)}{x-1} = x^2
+\end{align*}
+</div>
+<p data-braille="continuation">So \(\lim_{x  \to 1} \frac{x^3-x^2}{x-1} = \lim_{x  \to 1} x^2 = 1\neq h(1)\text{.}\) Hence \(h\)  is discontinuous at \(x=1\text{.}\)</p>
+</li>
+</ul></article></div>
+<p id="p-871">This example illustrates different sorts of discontinuities:</p>
+<ul class="disc">
+<li id="li-277">The function \(f(x)\) has a “jump discontinuity” because the function  “jumps” from one finite value on the left to another value on the right.</li>
+<li id="li-278">The second function, \(g(x)\text{,}\) has an “infinite discontinuity” since  \(\lim f(x) =+\infty\text{.}\)</li>
+<li id="li-279">The third function, \(h(x)\text{,}\) has a “removable discontinuity” because we  could make the function continuous at that point by redefining the function at  that point. i.e. setting \(h(1)=1\text{.}\) That is<div class="displaymath">
+\begin{align*}
+\text{new function }h(x) &amp;= \begin{cases}
+\frac{x^3-x^2}{x-1} &amp; x\neq 1\\
+1 &amp; x=1
+\end{cases}
+\end{align*}
+</div>
+</li>
+</ul>
+<p id="p-872">Showing a function is continuous can be a pain, but just as the limit laws help  us compute complicated limits in terms of simpler limits, we can use them to  show that complicated functions are continuous by breaking them into simpler  pieces.</p>
+<article class="theorem theorem-like" id="thm_arith_cont"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Arithmetic of continuity.</span>
+</h6>
+<p id="p-873">Let \(a,c \in \mathbb{R}\) and let \(f(x)\) and \(g(x)\) be functions that are  continuous at \(a\text{.}\) Then the following functions are also continuous at \(x=a\text{:}\)</p>
+<ul class="disc">
+<li id="li-280">\(f(x) + g(x)\) and \(f(x) - g(x)\text{,}\)</li>
+<li id="li-281">\(c f(x)\) and \(f(x) g(x)\text{,}\) and</li>
+<li id="li-282">\(\frac{f(x)}{g(x)}\) provided \(g(a) \neq 0\text{.}\)</li>
+</ul></article><p id="p-874">Above we stated that polynomials and rational functions are  continuous (being careful about domains of rational functions —  we must avoid the denominators being zero) without making it a formal  statement. This is easily fixed…</p>
+<article class="lemma theorem-like" id="lemma-1"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">2.6.6</span><span class="period">.</span>
+</h6>
+<p id="p-875">Let \(c \in \mathbb{R}\text{.}\) The functions</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= x &amp; g(x) &amp;= c
+\end{align*}
+</div>
+<p data-braille="continuation">are continuous everywhere on the real line</p></article><p id="p-876">This isn't quite the result we wanted (that's a couple of lines below) but it  is a small result that we can combine with the arithmetic of limits to get the  result we want. Such small helpful results are called “lemmas” and they will  arise more as we go along.</p>
+<p id="p-877">Now since we can obtain any polynomial and any rational function by carefully  adding, subtracting, multiplying and dividing the functions \(f(x)=x\) and  \(g(x)=c\text{,}\) the above lemma combines with the “arithmetic of continuity”  theorem to give us the result we want:</p>
+<article class="theorem theorem-like" id="theorem-13"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.6.7</span><span class="period">.</span><span class="space"> </span><span class="title">Continuity of polynomials and rational functions.</span>
+</h6>
+<p id="p-878">Every polynomial is continuous everywhere. Similarly every rational  function is continuous except where its denominator is zero (i.e. on all its  domain).</p></article><p id="p-879">With some more work this result can be extended to wider families of functions:</p>
+<article class="theorem theorem-like" id="theorem-14"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.6.8</span><span class="period">.</span>
+</h6>
+<p id="p-880">The following functions are continuous everywhere in their domains</p>
+<ul class="disc">
+<li id="li-283">polynomials, rational functions</li>
+<li id="li-284">roots and powers</li>
+<li id="li-285">trig functions and their inverses</li>
+<li id="li-286">exponential and the logarithm</li>
+</ul></article><p id="p-881">We haven't encountered inverse trigonometric functions, nor exponential  functions or logarithms, but we will see them in the next chapter. For the  moment, just file the information away.</p>
+<p id="p-882">Using a combination of the above results you can show that many complicated  functions are continuous except at a few points (usually where a denominator is  equal to zero).</p>
+<article class="example example-like" id="example-38"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-38"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.9</span><span class="period">.</span><span class="space"> </span><span class="title">Continuity of \(\frac{\sin(x)}{2+\cos(x)}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-38"><article class="example example-like"><p id="p-883">Where is the function \(f(x) = \frac{\sin(x)}{2+\cos(x)}\) continuous?</p>
+<p id="p-884">We just break things down into pieces and then put them back together keeping  track of where things might go wrong.</p>
+<ul class="disc">
+<li id="li-287">The function is a ratio of two pieces — so check if the numerator is  continuous, the denominator is continuous, and if the denominator might be zero.</li>
+<li id="li-288">The numerator is \(\sin(x)\) which is “continuous on its domain”  according to one of the above theorems. Its domain is all real  numbers <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-42" id="fn-42"><sup> 1 </sup></a>, so it is  continuous everywhere. No problems here.</li>
+<li id="li-289">The denominator is the sum of \(2\) and \(\cos(x)\text{.}\) Since \(2\) is a constant  it is continuous everywhere. Similarly (we just checked things for the  previous point) we know that \(\cos(x)\) is continuous everywhere. Hence the  denominator is continuous.</li>
+<li id="li-290">So we just need to check if the denominator is zero. One of the facts  that we should know <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-43" id="fn-43"><sup> 2 </sup></a> is that<div class="displaymath">
+\begin{gather*}
+-1 \leq \cos(x) \leq 1\\
+\end{gather*}
+<p class="intertext">and so by adding 2 we get</p>
+\begin{gather*}
+1 \leq 2+\cos(x) \leq 3
+\end{gather*}
+</div>Thus no matter what value of \(x\text{,}\) \(2+\cos(x) \geq 1\) and so cannot be zero.</li>
+<li id="li-291">So the numerator is continuous, the denominator is continuous and  nowhere zero, so the function is continuous everywhere.</li>
+</ul>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-42"><div class="fn">Remember that \(\sin\) and \(\cos\) are defined on all real numbers, so  \(\tan(x) = \sin(x)/\cos(x)\) is continuous everywhere except where \(\cos(x)=0\text{.}\) This  happens when \(x = \frac{\pi}{2}+n\pi\) for any integer \(n\text{.}\) If you cannot remember where  \(\tan(x)\) “blows up” or \(\sin(x)=0\) or \(\cos(x)=0\) then you should definitely revise  trigonometric functions. Come to think of it — just revise them anyway.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-43"><div class="fn">If you do not know this fact then you should  revise trigonometric functions. See the previous footnote.</div></div>
+<p id="p-885">If the function were changed to \(\ds \frac{\sin(x)}{x^2-5x+6}\) much of the same  reasoning can be used. Being a little terse we could answer with:</p>
+<ul class="disc">
+<li id="li-292">Numerator and denominator are continuous.</li>
+<li id="li-293">Since \(x^2-5x+6=(x-2)(x-3)\) the denominator is zero when \(x=2,3\text{.}\)</li>
+<li id="li-294">So the function is continuous everywhere except possibly  at \(x=2,3\text{.}\) In order to verify that the function really is discontinuous at  those points, it suffices to verify that the numerator is non-zero at \(x=2,3\text{.}\)  Indeed we know that \(\sin(x)\) is zero only when \(x = n\pi\) (for any integer  \(n\)). Hence \(\sin(2),\sin(3) \neq 0\text{.}\) Thus the numerator is non-zero, while the  denominator is zero and hence \(x=2,3\) really are points of discontinuity.</li>
+</ul>
+<p data-braille="continuation">Note that this example raises a subtle point about checking continuity when  numerator and denominator are <em class="emphasis">simultaneously</em> zero. There are quite a  few possible outcomes in this case and we need more sophisticated tools to  adequately analyse the behaviour of functions near such points. We will return  to this question later in the text after we have developed Taylor expansions (see  Section <a href="sec_DIFFTaylor.html" class="internal" title="Section 4.4: Taylor Polynomials">4.4</a>).</p></article></div>
+<p id="p-886">So we know what happens when we add subtract multiply and divide, what about  when we compose functions? Well - limits and compositions work nicely when  things are continuous.</p>
+<article class="theorem theorem-like" id="thm_comp_cont"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.6.10</span><span class="period">.</span><span class="space"> </span><span class="title">Compositions and continuity.</span>
+</h6>
+<p id="p-887">If \(f\) is continuous at \(b\) and \(\ds \lim_{x \to a} g(x) = b\) then  \(\ds \lim_{x\to a} f(g(x)) = f(b)\text{.}\) I.e.</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} f\left( g(x) \right) &amp;= f\left( \lim_{x \to a} g(x) \right)
+\end{align*}
+</div>
+<p data-braille="continuation">Hence if \(g\) is continuous at \(a\) and \(f\) is continuous at \(g(a)\) then the  composite function \((f \circ g)(x) = f(g(x))\) is continuous at \(a\text{.}\)</p></article><p id="p-888">So when we compose two continuous functions we get a new continuous function.</p>
+<p id="p-889">We can put this to use</p>
+<article class="example example-like" id="example-39"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-39"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.11</span><span class="period">.</span><span class="space"> </span><span class="title">Continuity of composed functions.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-39"><article class="example example-like"><p id="p-890">Where are the following functions continuous?</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= \sin\left( x^2 +\cos(x) \right)\\
+g(x) &amp;= \sqrt{\sin(x)}
+\end{align*}
+</div>
+<p id="p-891">Our first step should be to break the functions down into pieces and study  them. When we put them back together we should be careful of dividing by zero,  or falling outside the domain.</p>
+<ul class="disc">
+<li id="li-295">The function \(f(x)\) is the composition of \(\sin(x)\) with \(x^2+\cos(x)\text{.}\)</li>
+<li id="li-296">These pieces, \(\sin(x), x^2, \cos(x)\) are continuous everywhere.</li>
+<li id="li-297">So the sum \(x^2+\cos(x)\) is continuous everywhere</li>
+<li id="li-298">And hence the composition of \(\sin(x)\) and \(x^2+\cos(x)\) is continuous  everywhere.</li>
+</ul>
+<p data-braille="continuation">The second function is a little trickier.</p>
+<ul class="disc">
+<li id="li-299">The function \(g(x)\) is the composition of \(\sqrt{x}\) with \(\sin(x)\text{.}\)</li>
+<li id="li-300">\(\sqrt{x}\) is continuous on its domain \(x \geq 0\text{.}\)</li>
+<li id="li-301">\(\sin(x)\) is continuous everywhere, but it is negative in many places.</li>
+<li id="li-302">In order for \(g(x)\) to be defined and continuous we must restrict \(x\) so that  \(\sin(x) \geq 0\text{.}\)</li>
+<li id="li-303">
+<p id="p-892">Recall the graph of \(\sin(x)\text{:}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/sinx.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-893">Hence \(\sin(x)\geq 0\) when \(x\in[0,\pi]\) or \(x\in [2\pi,3\pi]\) or \(x\in[-2\pi,-\pi]\)  or…. To be more precise \(\sin(x)\) is positive when \(x \in [2n\pi,(2n+1)\pi]\) for any  integer \(n\text{.}\)</p>
+</li>
+<li id="li-304">Hence \(g(x)\) is continuous when \(x \in [2n\pi,(2n+1)\pi]\) for any  integer \(n\text{.}\)</li>
+</ul></article></div>
+<p id="p-894">Continuous functions are very nice (mathematically speaking). Functions  from the “real world” tend to be continuous (though not always). The key  aspect that  makes them nice is the fact that they don't jump about.</p>
+<p id="p-895">The absence of such jumps leads to the following theorem which, while it can be  quite confusing on first glance, actually says something very natural —  obvious even. It says, roughly speaking, that, as you draw the graph \(y=f(x)\) starting at  \(x=a\) and ending at \(x=b\text{,}\) \(y\) changes continuously from \(y=f(a)\) to \(y=f(b)\text{,}\) with no  jumps, and consequently \(y\) must take every value between \(f(a)\) and \(f(b)\) at least once.  We'll start by just giving the precise statement and then we'll explain it in detail.</p>
+<article class="theorem theorem-like" id="thm_ivt"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.6.12</span><span class="period">.</span><span class="space"> </span><span class="title">Intermediate value theorem (IVT).</span>
+</h6>
+<p id="p-896">Let \(a \lt b\) and let \(f\) be a function that is continuous at all points \(a\leq x  \leq b\text{.}\) If \(Y\) is any number between \(f(a)\) and \(f(b)\) then there exists some  number \(c \in [a,b]\) so that \(f(c) = Y\text{.}\)</p></article><p id="p-897">Like the \(\epsilon-\delta\) definition of limits <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-44" id="fn-44"><sup> 3 </sup></a>, we should  break this  theorem down into pieces. Before we do that, keep the following pictures in mind.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-44"><div class="fn">The interested student is  invited to take a look at the optional Section <a href="sec_opt_formal_limit.html" class="internal" title="Section 2.7: (Optional) — Making the Informal a Little More Formal">2.7</a>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/IVT.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-898">Now the break-down</p>
+<ul class="disc">
+<li id="li-305">
+<em class="alert">Let \(a \lt b\) and let \(f\) be a function that is continuous at all  points \(a\leq x \leq b\text{.}\)</em> — This is setting the scene. We have \(a,b\) with  \(a \lt b\) (we can safely assume these to be real numbers). Our function must  be continuous at all points between \(a\) and \(b\text{.}\)</li>
+<li id="li-306">
+<em class="alert">if \(Y\) is any number between \(f(a)\) and \(f(b)\)</em> — Now we need  another number \(Y\) and the only restriction on it is that it lies between  \(f(a)\) and \(f(b)\text{.}\) That is, if \(f(a)\leq f(b)\) then \(f(a) \leq Y \leq f(b)\text{.}\) Or  if \(f(a) \geq f(b)\) then \(f(a) \geq Y \geq f(b)\text{.}\) So notice that \(Y\) could be  equal to \(f(a)\) or \(f(b)\) — if we wanted to avoid that possibility, then we  would normally explicitly say \(Y \neq f(a), f(b)\) or we would write that \(Y\)  is <em class="emphasis">strictly</em> between \(f(a)\) and \(f(b)\text{.}\)</li>
+<li id="li-307">
+<em class="alert">there exists some number \(c \in [a,b]\) so that \(f(c) = Y\)</em> — so  if we satisfy all of the above conditions, then there has to be some real  number \(c\) lying between \(a\) and \(b\) so that when we evaluate \(f(c)\) it is \(Y\text{.}\)</li>
+</ul>
+<p data-braille="continuation">So that breaks down the proof statement by statement, but what does it actually  mean?</p>
+<ul class="disc">
+<li id="li-308">Draw any continuous function you like between \(a\) and \(b\) — it must be continuous.</li>
+<li id="li-309">The function takes the value \(f(a)\) at \(x=a\) and \(f(b)\) at \(x=b\) — see  the left-hand figure above.</li>
+<li id="li-310">Now we can pick any \(Y\) that lies between \(f(a)\) and \(f(b)\) — see the  middle figure above. The IVT <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-45" id="fn-45"><sup> 4 </sup></a> tells us that  there must be some \(x\)-value that when plugged into the function gives us \(Y\text{.}\)  That is, there is some \(c\) between \(a\) and \(b\) so that \(f(c) = Y\text{.}\) We can also interpret  this graphically; the IVT tells us that the horizontal straight line \(y=Y\) must intersect  the graph \(y=f(x)\) at some point \((c,Y)\) with \(a\le c\le b\text{.}\)</li>
+<li id="li-311">Notice that the IVT does not tell us how many such \(c\)-values there are,  just that there is at least one of them. See the right-hand figure above. For  that particular choice of \(Y\) there are three different \(c\) values so that  \(f(c_1) = f(c_2) = f(c_3) = Y\text{.}\)</li>
+</ul>
+<p data-braille="continuation">This theorem says that if \(f(x)\) is a continuous function on all of the  interval \(a \leq x \leq b\) then as \(x\) moves from \(a\) to \(b\text{,}\) \(f(x)\) takes every value between \(f(a)\) and \(f(b)\) at least once. To put this slightly  differently, if \(f\) were to avoid a value between \(f(a)\) and \(f(b)\) then \(f\)  cannot be continuous on \([a,b]\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-45"><div class="fn">Often with big important useful theorems  like this one, writing out the full name again and again becomes tedious, so we  abbreviate it. Such abbreviations are okay provided the reader knows this is  what you are doing, so the first time you use an abbreviation you should let  the reader know. Much like we are doing here in this footnote.</div></div>
+<p id="p-899">It is not hard to convince yourself that the continuity of \(f\) is crucial to  the IVT. Without it one can quickly construct examples of functions that  contradict the theorem. See the figure below for a few non-continuous examples:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/IVT2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-900">In the left-hand example we see that a discontinuous function can “jump” over  the \(Y\)-value we have chosen, so there is no \(x\)-value that makes \(f(x)=Y\text{.}\) The  right-hand example demonstrates why we need to be be careful with the ends of  the interval. In particular, a function must be continuous over the whole  interval \([a,b]\) <em class="emphasis">including</em> the end-points of the interval. If we only  required the function to be continuous on \((a,b)\) (so strictly between \(a\) and  \(b\)) then the function could “jump” over the \(Y\)-value at \(a\) or \(b\text{.}\)</p>
+<p id="p-901">If you are still confused then here is a “real-world” example</p>
+<article class="example example-like" id="example-40"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-40"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.13</span><span class="period">.</span><span class="space"> </span><span class="title">The IVT in the “real world”.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-40"><article class="example example-like"><p id="p-902">You are climbing the Grouse-grind <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-46" id="fn-46"><sup> 5 </sup></a> with a friend — call him Bob. Bob was eager and started at 9am. Bob,  while very eager, is also very clumsy; he sprained his ankle somewhere  along the path and has stopped moving at 9:21am and is just sitting <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-47" id="fn-47"><sup> 6 </sup></a> enjoying the  view. You get there late and start climbing at 10am and being quite fit you get to the  top at 11am. The IVT implies that at some time between 10am and 11am you  meet up with Bob.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-46"><div class="fn">If you don't know it then google it.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-47"><div class="fn">Hopefully he remembered to carry something warm.</div></div>
+<p id="p-903">You can translate this situation into the form of the IVT as follows. Let \(t\)  be time and let \(a = \) 10am and \(b=\) 11am. Let \(g(t)\) be your distance along the trail. Hence <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-48" id="fn-48"><sup> 7 </sup></a> \(g(a) = 0\) and  \(g(b) = 2.9km\text{.}\) Since you are a mortal, your position along the trail is a  continuous function — no helicopters or teleportation or… We have no idea  where Bob is sitting, except that he is somewhere between \(g(a)\) and  \(g(b)\text{,}\) call this point \(Y\text{.}\) The IVT guarantees that there is some time \(c\)  between \(a\) and \(b\) (so between 10am and 11am) with \(g(c) = Y\) (and your  position will be the same as Bob's).</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-48"><div class="fn">It's amazing what facts you can find on Wikipedia.</div></div></article></div>
+<p id="p-904">Aside from finding Bob sitting by the side of the trail, one of the most  important applications of the IVT is determining where a function is zero. For  quadratics we know (or should know) that</p>
+<div class="displaymath">
+\begin{align*}
+ax^2+bx+c &amp;= 0 &amp; \text{ when } x &amp;= \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+\end{align*}
+</div>
+<p data-braille="continuation">While the Babylonians could (mostly, but not quite) do the above, the corresponding  formula for solving a cubic is uglier and that for a quartic is uglier still. One of  the most famous results in mathematics demonstrates that no such  formula exists for quintics or higher degree polynomials <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-49" id="fn-49"><sup> 8 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-49"><div class="fn">The similar  (but uglier) formula for solving cubics took until the 15th century and the  work of del Ferro and Cardano (and Cardano's student Ferrari). A similar (but  even uglier) formula for quartics was also found by Ferrari. The extremely  famous  Abel-Ruffini Theorem (nearly by Ruffini in the late 18th century and  completely by Abel in early 19th century) demonstrates  that a similar formula  for the zeros of a quintic does not exist. Note that the theorem does  <em class="emphasis">not</em> say that quintics do not have zeros; rather it says that the zeros  cannot in general be expressed using a finite combination of addition,  multiplication, division, powers and roots. The interested student should also  look up Évariste Galois and his contributions to this area.</div></div>
+<p id="p-905">So even for polynomials we cannot, in general, write down explicit  formulae for their zeros and have to make do with numerical approximations —  i.e. write down the root as a decimal expansion to whatever precision we desire.  For more complicated functions we have no choice — there is no reason that the  zeros should be expressible as nice neat little formulas. At the same time,  finding the zeros of a function:</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= 0
+\end{align*}
+</div>
+<p data-braille="continuation">or solving equations of the form <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-50" id="fn-50"><sup> 9 </sup></a></p>
+<div class="displaymath">
+\begin{align*}
+g(x) &amp;= h(x)
+\end{align*}
+</div>
+<p data-braille="continuation">can be a crucial step in many mathematical proofs and applications.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-50"><div class="fn">In fact both of these are the same because we  can write \(f(x)=g(x)-h(x)\) and then the zeros of \(f(x)\) are exactly when \(g(x)=h(x)\text{.}\)</div></div>
+<p id="p-906">For this reason there is a considerable body of mathematics which focuses just  on finding the zeros of functions. The IVT provides a very simple way to  “locate” the zeros of a function. In particular, if we know a continuous  function is  negative at a point \(x=a\) and positive at another point \(x=b\text{,}\) then  there must (by the IVT) be a point \(x=c\) between \(a\) and \(b\) where \(f(c)=0\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/IVT3.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-907">Consider the leftmost of the above figures. It depicts a continuous function  that is negative at \(x=a\) and positive at \(x=b\text{.}\) So choose \(Y=0\) and apply the  IVT — there must be some \(c\) with \(a \leq c \leq b\) so that \(f(c) = Y = 0\text{.}\)  While this doesn't tell us \(c\) exactly, it does give us bounds on the possible positions  of at least one zero — there must be at least one c obeying \(a \le c \le b\text{.}\)</p>
+<p id="p-908">See middle figure. To get better bounds we could test a point half-way between  \(a\) and \(b\text{.}\) So set \(a' = \frac{a+b}{2}\text{.}\) In this example we see that \(f(a')\)  is  negative. Applying the IVT again tells us there is some \(c\) between \(a'\) and  \(b\)  so that \(f(c) = 0\text{.}\) Again — we don't have \(c\) exactly, but we have halved the  range of values it could take.</p>
+<p id="p-909">Look at the rightmost figure and do it again — test the point half-way between  \(a'\) and \(b\text{.}\) In this example we see that \(f(b')\) is positive. Applying the IVT  tells us that there is some \(c\) between \(a'\) and \(b'\) so that \(f(c) = 0\text{.}\) This  new range is a quarter of the length of the original. If we keep doing this  process the range will halve each time until we know that the zero is inside  some tiny range of possible values. This process is called the bisection method.</p>
+<p id="p-910">Consider the following zero-finding example</p>
+<article class="example example-like" id="example-41"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-41"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.14</span><span class="period">.</span><span class="space"> </span><span class="title">Show that \(f(x)=x-1+\sin(\pi x/2)\) has a zero.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-41"><article class="example example-like"><p id="p-911">Show that the function \(f(x) = x-1+\sin(\pi x/2)\) has a zero  in \(0 \leq x \leq 1\text{.}\)</p>
+<p id="p-912">This question has been set up nicely to lead us towards using the IVT;  we are  already given a nice interval on which to look. In general we might have to  test a few points and experiment a bit with a calculator before we can  start narrowing down a range.</p>
+<p id="p-913">Let us start by testing the endpoints of the interval we are given</p>
+<div class="displaymath">
+\begin{align*}
+f(0) &amp;= 0 - 1 + \sin(0) = -1  \lt  0\\
+f(1) &amp;= 1-1+\sin(\pi/2) = 1  \gt  0
+\end{align*}
+</div>
+<p data-braille="continuation">So we know a point where \(f\) is positive and one where it is negative. So by  the IVT there is a point in between where it is zero.</p>
+<p id="p-914"><em class="emphasis">BUT</em> in order to apply the IVT we have to show that the function is  continuous, and we cannot simply write</p>
+<blockquote class="blockquote" id="blockquote-16"><p id="p-915">it is continuous</p></blockquote>
+<p id="p-916">We need to explain to the reader <em class="emphasis">why</em> it is continuous. That is — we  have to prove it.</p>
+<p id="p-917">So to write up our answer we can put something like the following —  keeping in mind we need to tell the reader what we are doing so they can follow along easily.</p>
+<ul class="disc">
+<li id="li-312">We will use the IVT to prove that there is a zero in \([0,1]\text{.}\)</li>
+<li id="li-313">
+<p id="p-918">First we must show that the function is continuous.</p>
+<ul class="circle">
+<li id="li-314">Since \(x-1\) is a polynomial it is continuous everywhere.</li>
+<li id="li-315">The function \(\sin(\pi x/2)\) is a trigonometric function and is also  continuous everywhere.</li>
+<li id="li-316">The sum of two continuous functions is also continuous, so \(f(x)\) is  continuous everywhere.</li>
+</ul>
+</li>
+<li id="li-317">Let \(a=0, b=1\text{,}\) then<div class="displaymath">
+\begin{align*}
+f(0) &amp;= 0 - 1 + \sin(0) = -1  \lt  0\\
+f(1) &amp;= 1-1+\sin(\pi/2) = 1  \gt  0
+\end{align*}
+</div>
+</li>
+<li id="li-318">The function is negative at \(x=0\) and positive at \(x=1\text{.}\) Since the  function is continuous we know there is a point \(c \in [0,1]\) so that \(f(c) =  0\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Notice that though we have not used full sentences in our explanation here, we  are still using words. Your mathematics, unless it is very straight-forward  computation, should contain words as well as symbols.</p>
+<p id="p-919">The zero of this function is actually located at about \(x=0.4053883559\text{.}\)</p></article></div>
+<p id="p-920">The bisection method is really just the idea that we can keep repeating the above  reasoning (with a calculator handy). Each iteration will tell us the location of the zero  more precisely. The following example illustrates this.</p>
+<article class="example example-like" id="eg_bisection"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_bisection"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.6.15</span><span class="period">.</span><span class="space"> </span><span class="title">Using the bisection method.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_bisection"><article class="example example-like"><p id="p-921">Use the bisection method to find a zero of</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= x-1+\sin(\pi x/2)
+\end{align*}
+</div>
+<p data-braille="continuation">that lies between \(0\) and \(1\text{.}\)</p>
+<p id="p-922">So we start with the two points we worked out above:</p>
+<ul class="disc">
+<li id="li-319">\(a=0, b=1\) and<div class="displaymath">
+\begin{align*}
+f(0) &amp;= -1\\
+f(1) &amp;= 1
+\end{align*}
+</div>
+</li>
+<li id="li-320">Test the point in the middle \(x = \frac{0+1}{2} = 0.5\)<div class="displaymath">
+\begin{align*}
+f(0.5) &amp;= 0.2071067813  \gt  0
+\end{align*}
+</div>
+</li>
+<li id="li-321">So our new interval will be \([0,0.5]\) since the function is negative at  \(x=0\) and positive at \(x=0.5\)</li>
+</ul>
+<p data-braille="continuation">Repeat</p>
+<ul class="disc">
+<li id="li-322">\(a=0, b=0.5\) where \(f(0) \lt 0\) and \(f(0.5) \gt 0\text{.}\)</li>
+<li id="li-323">Test the point in the middle \(x = \frac{0+0.5}{2} = 0.25\)<div class="displaymath">
+\begin{align*}
+f(0.25) &amp;= -0.3673165675  \lt  0
+\end{align*}
+</div>
+</li>
+<li id="li-324">So our new interval will be \([0.25,0.5]\) since the function is negative  at \(x=0.25\) and positive at \(x=0.5\)</li>
+</ul>
+<p data-braille="continuation">Repeat</p>
+<ul class="disc">
+<li id="li-325">\(a=0.25, b=0.5\) where \(f(0.25) \lt 0\) and \(f(0.5) \gt 0\text{.}\)</li>
+<li id="li-326">Test the point in the middle \(x = \frac{0.25+0.5}{2} = 0.375\)<div class="displaymath">
+\begin{align*}
+f(0.375) &amp;= -0.0694297669  \lt  0
+\end{align*}
+</div>
+</li>
+<li id="li-327">So our new interval will be \([0.375,0.5]\) since the function is negative  at \(x=0.375\) and positive at \(x=0.5\)</li>
+</ul>
+<p data-braille="continuation">Below is an illustration of what we have observed so far together with a plot of the  actual function.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/ivt_eg.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-923">And one final iteration:</p>
+<ul class="disc">
+<li id="li-328">\(a=0.375, b=0.5\) where \(f(0.375) \lt 0\) and \(f(0.5) \gt 0\text{.}\)</li>
+<li id="li-329">Test the point in the middle \(x = \frac{0.375+0.5}{2} = 0.4375\)<div class="displaymath">
+\begin{align*}
+f(0.4375) &amp;= 0.0718932843 \gt 0
+\end{align*}
+</div>
+</li>
+<li id="li-330">So our new interval will be \([0.375,0.4375]\) since the function is  negative at \(x=0.375\) and positive at \(x=0.4375\)</li>
+</ul>
+<p data-braille="continuation">So without much work we know the location of a zero inside a range of length  \(0.0625 = 2^{-4}\text{.}\) Each iteration will halve the length of the range and we  keep going until we reach the precision we need, though it is much easier to  program a computer to do it.</p></article></div></section><section class="exercises" id="exercises-6"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.6.4</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-12">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-21"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-107"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-924">Give an example of a function (you can write a formula, or sketch a graph) that has infinitely many infinite discontinuities.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-89" id="hint-89"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-89"><div class="hint solution-like"><p id="p-925">Try a repeating pattern.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-107" id="answer-107"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-107"><div class="answer solution-like"><p id="p-926">Many answers are possible; the tangent function behaves like this.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-107" id="solution-107"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-107"><div class="solution solution-like"><p id="p-927">Many answers are possible; the tangent function behaves like this.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-108"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-928">When I was born, I was less than one meter tall. Now, I am more than one meter tall. What is the conclusion of the Intermediate Value Theorem about my height?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-90" id="hint-90"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-90"><div class="hint solution-like"><p id="p-929">\(f\) is my height.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-108" id="answer-108"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-108"><div class="answer solution-like"><p id="p-930">At some time between my birth and now, I was exactly one meter tall.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-108" id="solution-108"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-108"><div class="solution solution-like">
+<p id="p-931">If we let \(f\) be my height, the time of my birth is \(a\text{,}\) and now is \(b\text{,}\) then we know that \(f(a) \leq 1 \leq f(b)\text{.}\) It is reasonable to assume that my height is a continuous function. So by the IVT, there is some value \(c\) between \(a\) and \(b\) where \(f(c)=1\text{.}\) That is, there is some time (we called it \(c\)) between my birth and today when I was exactly one meter tall.</p>
+<p id="p-932">Notice the IVT does not say precisely what day I was one meter tall; it only guarantees that such a day occurred between my birth and today.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-109"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-933">Give an example (by sketch or formula) of a function \(f(x)\text{,}\) defined on the interval \([0,2]\text{,}\) with \(f(0)=0\text{,}\) \(f(2)=2\text{,}\) and \(f(x)\) never equal to 1. Why does this not contradict the Intermediate Value Theorem?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-91" id="hint-91"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-91"><div class="hint solution-like"><p id="p-934">The intermediate value theorem only works for a certain kind of function.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-109" id="answer-109"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-109"><div class="answer solution-like">
+<p id="p-935">One example is \(f(x) = \left\{  \begin{array}{ll}
+0&amp;\mbox{when }0 \leq x \leq 1\\
+2&amp;\mbox{when }1 \lt x \leq 2
+\end{array}\right.\text{.}\) The IVT only guarantees \(f(c)=1\) for some \(c\) in \([0,2]\) when \(f\) is <em class="emphasis">continuous</em> over \([0,2]\text{.}\) If \(f\) is not continuous, the IVT says nothing.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-91.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-109" id="solution-109"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-109"><div class="solution solution-like">
+<p id="p-936">One example is \(f(x) = \left\{  \begin{array}{ll}
+0&amp;\mbox{when }0 \leq x \leq 1\\
+2&amp;\mbox{when }1 \lt x \leq 2
+\end{array}\right.\text{.}\) The IVT only guarantees \(f(c)=1\) for some \(c\) in \([0,2]\) when \(f\) is <em class="emphasis">continuous</em> over \([0,2]\text{.}\) If \(f\) is not continuous, the IVT says nothing.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-92.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-110"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-937">Is the following a valid statement?</p>
+<blockquote class="blockquote" id="blockquote-17"><p id="p-938">Suppose \(f\) is a continuous function over \([10,20]\text{,}\) \(f(10)=13\text{,}\) and \(f(20)=-13\text{.}\) Then \(f\) has a zero between \(x=10\) and \(x=20\text{.}\)</p></blockquote>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-110" id="answer-110"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-110"><div class="answer solution-like"><p id="p-939">Yes</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-110" id="solution-110"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-110"><div class="solution solution-like"><p id="p-940">Yes. This is a straightforward application of IVT.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-111"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-941">Is the following a valid statement?</p>
+<blockquote class="blockquote" id="blockquote-18"><p id="p-942">Suppose \(f\) is a continuous function over \([10,20]\text{,}\) \(f(10)=13\text{,}\) and \(f(20)=-13\text{.}\) Then \(f(15)=0\text{.}\)</p></blockquote>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-111" id="answer-111"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-111"><div class="answer solution-like"><p id="p-943">No</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-111" id="solution-111"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-111"><div class="solution solution-like"><p id="p-944">No. IVT says that \(f(x)=0\) for some \(x\) between \(10\) and \(20\text{,}\) but it doesn't have to be <em class="emphasis">exactly half way</em> between.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-112"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-945">Is the following a valid statement?</p>
+<blockquote class="blockquote" id="blockquote-19"><p id="p-946">Suppose \(f\) is a function over \([10,20]\text{,}\) \(f(10)=13\text{,}\) and \(f(20)=-13\text{,}\) and \(f\) takes on every value between \(-13\) and \(13\text{.}\) Then \(f\) is continuous.</p></blockquote>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-112" id="answer-112"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-112"><div class="answer solution-like"><p id="p-947">No</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-112" id="solution-112"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-112"><div class="solution solution-like">
+<p id="p-948">No. IVT says nothing about functions that are not guaranteed to be continuous at the outset. It's quite easy to construct a function that is as described, but not continuous. For example, the function pictured below, whose equation format is somewhat less enlightening than its graph: \(f(x)=\left\{\begin{array}{ll}
+-\frac{26}{5}x+65,&amp;10 \leq x  \lt  15\\
+-\frac{26}{5}x+91,&amp;15 \leq x \leq 20
+\end{array}\right.\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-93.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-113"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-949">Suppose \(f(t)\) is continuous at \(t=5\text{.}\) True or false: \(t=5\) is in the domain of \(f(t)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-92" id="hint-92"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-92"><div class="hint solution-like"><p id="p-950">Compare what is given to you to the definition of continuity.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-113" id="answer-113"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-113"><div class="answer solution-like"><p id="p-951">True.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-113" id="solution-113"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-113"><div class="solution solution-like"><p id="p-952">True. Since \(f(t)\) is continuous at \(t=5\text{,}\) that means \(\ds\lim_{t \to 5} f(t)=f(5)\text{.}\) For that to be true, \(f(5)\) must exist — that is, 5 is in the domain of \(f(x)\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-114"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-953">Suppose \(\ds\lim_{t \rightarrow 5}f(t)=17\text{,}\) and suppose \(f(t)\) is continuous at \(t=5\text{.}\) True or false: \(f(5)=17\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-93" id="hint-93"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-93"><div class="hint solution-like"><p id="p-954">Compare what is given to you to the definition of continuity.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-114" id="answer-114"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-114"><div class="answer solution-like"><p id="p-955">True.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-114" id="solution-114"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-114"><div class="solution solution-like"><p id="p-956">True. Using the definition of continuity, \(\ds\lim_{t \to 5} f(t)=f(5)=17\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-115"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-957">Suppose  \(\ds\lim_{t \rightarrow 5}f(t)=17\text{.}\) True or false: \(f(5)=17\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-94" id="hint-94"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-94"><div class="hint solution-like"><p id="p-958">What if the function is discontinuous?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-115" id="answer-115"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-115"><div class="answer solution-like"><p id="p-959">In general, false.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-115" id="solution-115"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-115"><div class="solution solution-like">
+<p id="p-960">In general, false. If \(f(t)\) is continuous at \(t=5\text{,}\) then \(f(5)=17\text{;}\) if \(f(t)\) is discontinuous at \(t=5\text{,}\) then \(f(5)\) either does not exist, or is a number other than 17.</p>
+<p id="p-961">An example of a function with \(\ds\lim_{t \to 5}f(t)=17 \neq f(5)\) is \(f(t)=\left\{
+\begin{array}{lcr}
+17&amp;,&amp;t \neq 5\\
+0&amp;,&amp;t=5
+\end{array}
+\right.\text{,}\) shown below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-94.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-116"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-962">Suppose \(f(x)\) and \(g(x)\) are continuous at \(x=0\text{,}\) and let \(h(x)=\dfrac{xf(x)}{g^2(x)+1}\text{.}\) What is \(\ds\lim_{x \to 0^+} h(x)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-95" id="hint-95"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-95"><div class="hint solution-like"><p id="p-963">What is \(h(0)\text{?}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-116" id="answer-116"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-116"><div class="answer solution-like"><p id="p-964">\(\ds\lim_{x \to 0^+} h(x)=0\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-116" id="solution-116"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-116"><div class="solution solution-like">
+<p id="p-965">Since \(f(x)\) and \(g(x)\) are continuous at zero, and since \(g^2(x)+1\) must be nonzero, then \(h(x)\) is continuous at 0 as well. According to the definition of continuity, then \(\ds\lim_{x \to 0}h(x)\) exists and is equal to \(h(0)=\frac{0f(0)}{g^2(0)+1}=0\text{.}\)</p>
+<p id="p-966">Since the limit \(\ds\lim_{x \to 0}h(x)\) exists and is equal to zero, also the one-sided limit \(\ds\lim_{x \to 0^+}h(x)\) exists and is equal to zero.</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-13">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-22"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-117"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-967">Find a constant \(k\) so that the function</p>
+<div class="displaymath">
+\begin{equation*}
+a(x)=\left\{\begin{array}{ll}
+x\sin\left(\frac{1}{x}\right)&amp;\mbox{when } x \neq 0\\
+k&amp;\mbox{when }x=0
+\end{array}\right.
+\end{equation*}
+</div>
+<p id="p-968">is continuous at \(x=0\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-96" id="hint-96"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-96"><div class="hint solution-like"><p id="p-969">Use the definition of continuity.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-117" id="answer-117"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-117"><div class="answer solution-like"><p id="p-970">\(k=0\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-117" id="solution-117"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-117"><div class="solution solution-like">
+<p id="p-971">Using the definition of continuity, we need \(k=\displaystyle\lim_{x \rightarrow 0} f(x)\text{.}\) Since the limit is blind to what actually happens to \(f(x)\) at \(x=0\text{,}\) this is equivalent to \(k=\displaystyle\lim_{x \rightarrow 0} x\sin\left(\frac{1}{x}\right)\text{.}\) So if we find the limit, we solve the problem.</p>
+<p id="p-972">As \(x\) gets small, \(\sin\left(\frac{1}{x}\right)\) goes a little crazy (see example <a class="xref" data-knowl="./knowl/eg_sinpix.html" title="Example 2.3.5: A bad example">2.3.5</a>), so let's get rid of it by using the Squeeze Theorem. We can bound the function above and below, but we should be a little careful about whether we're going from the left or the right. The reason we need to worry about direction is illustrated with the following observation:</p>
+<p id="p-973">If \(a\le b\) and \(x \gt 0\text{,}\) then \(xa\le xb\text{.}\) (For example, plug in \(x=1\text{,}\) \(a=2\text{,}\) \(b=3\text{.}\)) But if \(a\le b\) and \(x \lt 0\text{,}\) then \(xa \ge xb\text{.}\) (For example, plug in \(x=-1\text{,}\) \(a=2\text{,}\) \(b=3\text{.}\)) So first, let's find \(\lim\limits_{x\rightarrow 0^-}\sin\left(\frac{1}{x}\right)\text{.}\) When \(x \lt 0\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+1 \ge &amp;\sin\left(\frac{1}{x}\right) \ge -1\\
+\mbox{so: }\qquad
+x({\textcolor{red}{1}}) \le x\,&amp;{\textcolor{red}{\sin\left(\frac{1}{x}\right) }}\le x({\textcolor{red}{-1}})
+\end{align*}
+</div>
+<p data-braille="continuation">and \(\displaystyle\lim_{x \rightarrow 0^-} x = \displaystyle\lim_{x \rightarrow 0^-} -x = 0\text{,}\) so by the Squeeze Theorem, also \(\displaystyle\lim_{x \rightarrow 0^-} x\sin\left(\frac{1}{x}\right)=0\text{.}\)</p>
+<p id="p-974">Now, let's find \(\displaystyle\lim_{x \rightarrow 0^+} x\sin\left(\frac{1}{x}\right)\text{.}\) When \(x \gt 0\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+-1 \le &amp;\sin\left(\frac{1}{x}\right) \le 1\\
+\mbox{so: }\qquad
+x({\textcolor{red}{-1}}) \leq x&amp;{\textcolor{red}{\sin\left(\frac{1}{x}\right)}}\leq x({\textcolor{red}{1}})
+\end{align*}
+</div>
+<p data-braille="continuation">and \(\displaystyle\lim_{x \rightarrow 0^+} x = \displaystyle\lim_{x \rightarrow 0^+} -x = 0\text{,}\) so by the Squeeze Theorem, also \(\displaystyle\lim_{x \rightarrow 0^+} x\sin\left(\frac{1}{x}\right)=0\text{.}\)</p>
+<p id="p-975">Since the limits from the left and right agree, we conclude \(\displaystyle\lim_{x \rightarrow 0} x\sin\left(\frac{1}{x}\right)=0\text{,}\) so when \(k=0\text{,}\) the function is continuous at \(x=0\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-118"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-976">Use the Intermediate Value Theorem to show that the function \(f(x)=x^3+x^2+x+1\) takes on the value 12345 at least once in its domain.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-97" id="hint-97"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-97"><div class="hint solution-like"><p id="p-977">If this is your password, you might want to change it.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-118" id="answer-118"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-118"><div class="answer solution-like"><p id="p-978">Since \(f\) is a polynomial, it is continuous over all real numbers. \(f(0)=1 \lt 12345\) and \(f(12345)=12345^3+12345^2+12345+1 \gt 12345\) (since all terms are positive). So by the IVT, \(f(c)=12345\) for some \(c\) between \(0\) and \(12345\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-118" id="solution-118"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-118"><div class="solution solution-like"><p id="p-979">Since \(f\) is a polynomial, it is continuous over all real numbers. \(f(0)=1 \lt 12345\) and \(f(12345)=12345^3+12345^2+12345+1 \gt 12345\) (since all terms are positive). So by the IVT, \(f(c)=12345\) for some \(c\) between \(0\) and \(12345\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-119"><h6 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-980">Describe all points for which the function is continuous: \(f(x)=\dfrac{1}{x^2-1}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-98" id="hint-98"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-98"><div class="hint solution-like"><p id="p-981">Find the domain: when is the denominator zero?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-119" id="answer-119"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-119"><div class="answer solution-like"><p id="p-982">\((-\infty, -1)\cup (-1,1) \cup (1,+\infty)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-119" id="solution-119"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-119"><div class="solution solution-like"><p id="p-983">\(f(x)\) is a rational function and so is continuous except when its denominator is zero. That is, except when \(x=1\) and \(x=-1\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-120"><h6 class="heading">
+<span class="codenumber">14<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-984">Describe all points for which this function is continuous: \(f(x)=\dfrac{1}{\sqrt{x^2-1}}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-99" id="hint-99"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-99"><div class="hint solution-like"><p id="p-985">When is the denominator zero? When is the argument of the square root negative?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-120" id="answer-120"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-120"><div class="answer solution-like"><p id="p-986">\((-\infty, -1)\cup (1,+\infty)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-120" id="solution-120"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-120"><div class="solution solution-like"><p id="p-987">The function is continuous when \(x^2-1 \gt  0\text{,}\) i.e. \((x-1)(x+1) \gt  0\text{,}\) which yields the intervals \((-\infty, -1)\cup (1,+\infty)\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-121"><h6 class="heading">
+<span class="codenumber">15<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-988">Describe all points for which this function is continuous: \(\dfrac{1}{\sqrt{1+\cos(x)}}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-100" id="hint-100"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-100"><div class="hint solution-like"><p id="p-989">When is the denominator zero? When is the argument of the square root negative?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-121" id="answer-121"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-121"><div class="answer solution-like"><p id="p-990">The function is continuous <em class="emphasis">except</em> at \(x=\pm \pi, \pm 3\pi, \pm 5\pi, \cdots \text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-121" id="solution-121"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-121"><div class="solution solution-like">
+<p id="p-991">The function \(1/\sqrt{x}\) is continuous on \((0,+\infty)\) and the function  \(\cos(x) +
+1\) is  continuous everywhere.</p>
+<p id="p-992">So \(1/\sqrt{\cos(x) + 1 }\) is continuous except when \(\cos x=-1\text{.}\) This happens when \(x\) is an odd multiple of \(\pi\text{.}\) Hence the function is continuous except at \(x=\pm \pi, \pm 3\pi, \pm 5\pi, \cdots\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-122"><h6 class="heading">
+<span class="codenumber">16<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-993">Describe all points for which this function is continuous: \(f(x)=\dfrac{1}{\sin x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-101" id="hint-101"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-101"><div class="hint solution-like"><p id="p-994">There are infinitely many points where it is <em class="emphasis">not</em> continuous.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-122" id="answer-122"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-122"><div class="answer solution-like"><p id="p-995">\(x \neq n\pi,\) where \(n\) is any integer</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-122" id="solution-122"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-122"><div class="solution solution-like"><p id="p-996">The function is continuous when \(\sin(x)\neq 0\text{.}\) That is, when \(x\) is not an integer multiple of \(\pi\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-123"><h6 class="heading">
+<span class="codenumber">17<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-997">Find all values of \(c\) such that the following function is continuous at \(x=c\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\left\{\begin{array}{ccc}
+8-cx &amp; \text{if} &amp; x\le c\\
+x^2 &amp;  \text{if} &amp; x \gt  c
+\end{array}\right.
+\end{equation*}
+</div>
+<p id="p-998">Use the definition of continuity to justify your answer.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-102" id="hint-102"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-102"><div class="hint solution-like"><p id="p-999">\(x=c\) is the important point.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-123" id="answer-123"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-123"><div class="answer solution-like"><p id="p-1000">\(\pm 2\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-123" id="solution-123"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-123"><div class="solution solution-like">
+<p id="p-1001">The function is continuous for \(x\ne c\) since each of those two branches are polynomials. So, the only question is whether the function is continuous at \(x=c\text{;}\) for this we need</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\to c^-}f(x)=f(c)=\lim_{x\to c+}f(x).
+\end{equation*}
+</div>
+<p data-braille="continuation">We compute</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\to c^-}f(x)=\lim_{x\to c^-}8-cx = 8-c^2;
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f(c)=8-c\cdot c= 8-c^2\text{ and}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\to c^+}f(x)=\lim_{x\to c^+}x^2=c^2.
+\end{equation*}
+</div>
+<p data-braille="continuation">So, we need \(8-c^2=c^2\text{,}\) which yields \(c^2=4\text{,}\) i.e. \(c=-2\) or \(c=2\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-124"><h6 class="heading">
+<span class="codenumber">18<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-1002">Find all values of \(c\) such that the following function is continuous everywhere:</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= \begin{cases}
+x^2+c &amp; x\geq 0\\
+\cos cx &amp; x \lt  0
+\end{cases}
+\end{align*}
+</div>
+<p data-braille="continuation">Use the definition of continuity to justify your answer.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-103" id="hint-103"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-103"><div class="hint solution-like"><p id="p-1003">The important place is \(x=0\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-124" id="answer-124"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-124"><div class="answer solution-like"><p id="p-1004">\(c=1\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-124" id="solution-124"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-124"><div class="solution solution-like">
+<p id="p-1005">The function is continuous for \(x \ne 0\) since \(x^2+c\) and \(\cos cx\) are continuous everywhere. It remains to check continuity at \(x=0\text{.}\) To do this we must check that the following three are equal.</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 0^+} f(x) &amp;= \lim_{x\to 0^+} x^2+c = c\\
+f(0) &amp;= c\\
+\lim_{x \to 0^-} f(x) &amp;= \lim_{x\to 0^-} \cos cx = \cos 0 = 1
+\end{align*}
+</div>
+<p data-braille="continuation">Hence when \(c=1\) we have the limits agree.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-125"><h6 class="heading">
+<span class="codenumber">19<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-1006">Find all values of \(c\) such that the following function is continuous:</p>
+<div class="displaymath">
+\begin{equation*}
+f(x) = \begin{cases}
+x^2-4 &amp; \text{if } x \lt  c\\
+3x &amp;  \text{if } x \ge c\,.
+\end{cases} 
+\end{equation*}
+</div>
+<p id="p-1007">Use the definition of continuity to justify your answer.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-104" id="hint-104"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-104"><div class="hint solution-like"><p id="p-1008">The important point is \(x=c\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-125" id="answer-125"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-125"><div class="answer solution-like"><p id="p-1009">\(-1\text{,}\) \(4\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-125" id="solution-125"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-125"><div class="solution solution-like">
+<p id="p-1010">The function is continuous for \(x\ne c\) since each of those two branches are defined by polynomials.  Thus, the only question is whether the function is continuous at \(x=c\text{.}\) Furthermore,</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\to c^-}f(x) = c^2-4 
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\to c^+}f(x) = f(c) = 3c\,.
+\end{equation*}
+</div>
+<p data-braille="continuation">For continunity we need both limits and the value to agree, so \(f\) is continuous if and only if \(c^2-4 = 3c\text{,}\) that is if and only if</p>
+<div class="displaymath">
+\begin{equation*}
+c^2-3c-4 = 0\,.
+\end{equation*}
+</div>
+<p data-braille="continuation">Factoring this as \((c-4)(c+1) = 0\) yields \(c=-1\) or \(c=+4\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-126"><h6 class="heading">
+<span class="codenumber">20<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-1011">Find all values of \(c\) such that the following function is continuous:</p>
+<div class="displaymath">
+\begin{equation*}
+f(x)=\left\{\begin{array}{ccc}
+6-cx &amp; \text{if} &amp; x\le 2c\\
+x^2 &amp;  \text{if} &amp; x \gt  2c
+\end{array}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">Use the definition of continuity to justify your answer.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-105" id="hint-105"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-105"><div class="hint solution-like"><p id="p-1012">The important point is \(x=2c\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-126" id="answer-126"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-126"><div class="answer solution-like"><p id="p-1013">\(c=1\text{,}\) \(c=-1\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-126" id="solution-126"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-126"><div class="solution solution-like">
+<p id="p-1014">The function is continuous for \(x\ne c\) since each of those two branches are polynomials. So, the only question is whether the function is continuous at \(x=c\text{;}\) for this we need</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\to 2c^-}f(x)=f(2c)=\lim_{x\to 2c+}f(x).
+\end{equation*}
+</div>
+<p data-braille="continuation">We compute</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\to 2c^-}f(x)=\lim_{x\to 2c^-}6-cx = 6-2c^2;
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+f(2c)=6-c\cdot 2c= 6-2c^2\text{ and}
+\end{equation*}
+</div>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\to 2c^+}f(x)=\lim_{x\to 2c^+}x^2=4c^2.
+\end{equation*}
+</div>
+<p data-braille="continuation">So, we need \(6-2c^2=4c^2\text{,}\) which yields \(c^2=1\text{,}\) i.e. \(c=-1\) or \(c=1\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-14">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-23"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-127"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<p id="p-1015">Show that there exists at least one real number \(x\) satisfying \(\sin x = x-1\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-106" id="hint-106"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-106"><div class="hint solution-like"><p id="p-1016">Consider the function \(f(x)=\sin x - x +1\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-127" id="answer-127"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-127"><div class="answer solution-like">
+<p id="p-1017">This isn't the kind of equality that we can just solve; we'll need a trick, and that trick is the IVT. The general idea is to show that \(\sin x\) is somewhere bigger, and somewhere smaller, than \(x-1\text{.}\) However, since the IVT can only show us that a function is equal to a constant, we need to slightly adjust our language. Showing \(\sin x = x-1\) is equivalent to showing \(\sin x - x + 1 = 0\text{,}\) so let \(f(x)=\sin x - x +1\text{,}\) and let's show that it has a real root.</p>
+<p id="p-1018">First, we need to note that \(f(x)\) is continuous (otherwise we can't use the IVT). Now, we need to find a value of \(x\) for which it is positive, and for which it's negative. By checking a few values, we find \(f(0)\) is positive, and \(f(100)\) is negative.  So, by the IVT, there exists a value of \(x\) (between \(0\) and \(100\)) for which \(f(x)=0\text{.}\) Therefore, there exists a value of \(x\) for which \(\sin x = x-1\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-127" id="solution-127"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-127"><div class="solution solution-like">
+<p id="p-1019">This isn't the kind of equality that we can just solve; we'll need a trick, and that trick is the IVT. The general idea is to show that \(\sin x\) is somewhere bigger, and somewhere smaller, than \(x-1\text{.}\) However, since the IVT can only show us that a function is equal to a constant, we need to slightly adjust our language. Showing \(\sin x = x-1\) is equivalent to showing \(\sin x - x + 1 = 0\text{,}\) so let \(f(x)=\sin x - x +1\text{,}\) and let's show that it has a real root.</p>
+<p id="p-1020">First, we need to note that \(f(x)\) is continuous (otherwise we can't use the IVT). Now, we need to find a value of \(x\) for which it is positive, and for which it's negative. By checking a few values, we find \(f(0)\) is positive, and \(f(100)\) is negative.  So, by the IVT, there exists a value of \(x\) (between \(0\) and \(100\)) for which \(f(x)=0\text{.}\) Therefore, there exists a value of \(x\) for which \(\sin x = x-1\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-128"><h6 class="heading">
+<span class="codenumber">22<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-1021">Show that there exists at least one real number \(c\) such that \(3^c=c^2\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-107" id="hint-107"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-107"><div class="hint solution-like"><p id="p-1022">Consider the function \(f(x)=3^x-x^2\text{,}\) and how it relates to the problem and the IVT.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-128" id="answer-128"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-128"><div class="answer solution-like">
+<p id="p-1023">We let \(f(x)=3^x-x^2\text{.}\) Then \(f(x)\) is a continuous function, since both \(3^x\) and \(x^2\) are continuous for all real numbers.</p>
+<p id="p-1024">We want a value \(a\) such that \(f(a) \gt 0\text{.}\) We see that \(a=0\) works since</p>
+<div class="displaymath">
+\begin{equation*}
+f(0)=3^0-0=1 \gt 0.
+\end{equation*}
+</div>
+<p id="p-1025">We want a value \(b\) such that \(f(b) \lt 0\text{.}\) We see that \(b=-1\) works since</p>
+<div class="displaymath">
+\begin{equation*}
+f(-1)=\frac{1}{3}-1 \lt 0.
+\end{equation*}
+</div>
+<p id="p-1026">So, because \(f(x)\) is continuous on \((-\infty, \infty)\) and \(f(0) \gt 0\) while \(f(-1) \lt 0\text{,}\) then the Intermediate Value Theorem guarantees the existence of a real number \(c\in (-1,0)\) such that \(f(c)=0\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-128" id="solution-128"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-128"><div class="solution solution-like">
+<p id="p-1027">We let \(f(x)=3^x-x^2\text{.}\) Then \(f(x)\) is a continuous function, since both \(3^x\) and \(x^2\) are continuous for all real numbers.</p>
+<p id="p-1028">We find a value \(a\) such that \(f(a) \gt 0\text{.}\) We observe immediately that \(a=0\) works since</p>
+<div class="displaymath">
+\begin{equation*}
+f(0)=3^0-0=1 \gt 0.
+\end{equation*}
+</div>
+<p id="p-1029">We find a value \(b\) such that \(f(b) \lt 0\text{.}\) We see that \(b=-1\) works since</p>
+<div class="displaymath">
+\begin{equation*}
+f(-1)=\frac{1}{3}-1 \lt 0.
+\end{equation*}
+</div>
+<p id="p-1030">So, because \(f(x)\) is continuous on \((-\infty, \infty)\) and \(f(0) \gt 0\) while \(f(-1) \lt 0\text{,}\) then the Intermediate Value Theorem guarantees the existence of a real number \(c\) in the interval \((-1,0)\) such that \(f(c)=0\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-129"><h6 class="heading">
+<span class="codenumber">23<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-1031">Show that there exists at least one real number \(c\) such that \(2\tan(c)=c+1\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-108" id="hint-108"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-108"><div class="hint solution-like"><p id="p-1032">Consider the function \(2\tan x - x - 1\) and its roots.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-129" id="answer-129"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-129"><div class="answer solution-like">
+<p id="p-1033">We let \(f(x)=2\tan(x)-x-1\text{.}\) Then \(f(x)\) is a continuous function on the interval \((-\pi/2, \pi/2)\) since \(\tan(x)=\sin(x)/\cos(x)\) is continuous on this interval, while \(x+1\) is a polynomial and therefore continuous for all real numbers.</p>
+<p id="p-1034">We find a value \(a\in (-\pi/2,\pi/2)\) such that \(f(a) \lt 0\text{.}\) We observe immediately that \(a=0\) works since</p>
+<div class="displaymath">
+\begin{equation*}
+f(0)=2\tan(0)-0-1=0-1=-1 \lt 0.
+\end{equation*}
+</div>
+<p id="p-1035">We find a value \(b\in (-\pi/2, \pi/2)\) such that \(f(b) \gt 0\text{.}\) We see that \(b=\pi/4\) works since</p>
+<div class="displaymath">
+\begin{align*}
+f(\pi/4)\amp=2\tan(\pi/4) -\pi/4 - 1=2-\pi/4 - 1=1-\pi/4\\
+\amp=(4-\pi)/4 \gt 0
+\end{align*}
+</div>
+<p data-braille="continuation">because \(3 \lt \pi \lt 4\text{.}\)</p>
+<p id="p-1036">So, because \(f(x)\) is continuous on \([0,\pi/4]\) and \(f(0) \lt 0\) while \(f(\pi/4) \gt 0\text{,}\) then the Intermediate Value Theorem guarantees the existence of a real number \(c\in (0,\pi/4)\) such that \(f(c)=0\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-129" id="solution-129"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-129"><div class="solution solution-like">
+<p id="p-1037">We let \(f(x)=2\tan(x)-x-1\text{.}\) Then \(f(x)\) is a continuous function on the interval \((-\pi/2, \pi/2)\) since \(\tan(x)=\sin(x)/\cos(x)\) is continuous on this interval, while \(x+1\) is a polynomial and therefore continuous for all real numbers.</p>
+<p id="p-1038">We find a value \(a\in (-\pi/2,\pi/2)\) such that \(f(a) \lt 0\text{.}\) We observe immediately that \(a=0\) works since</p>
+<div class="displaymath">
+\begin{equation*}
+f(0)=2\tan(0)-0-1=0-1=-1 \lt 0.
+\end{equation*}
+</div>
+<p id="p-1039">We find a value \(b\in (-\pi/2, \pi/2)\) such that \(f(b) \gt 0\text{.}\) We see that \(b=\pi/4\) works since</p>
+<div class="displaymath">
+\begin{align*}
+f(\pi/4)\amp=2\tan(\pi/4) -\pi/4 - 1=2-\pi/4 - 1=1-\pi/4\\
+\amp=(4-\pi)/4 \gt 0
+\end{align*}
+</div>
+<p data-braille="continuation">because \(3 \lt \pi \lt 4\text{.}\)</p>
+<p id="p-1040">So, because \(f(x)\) is continuous on \([0,\pi/4]\) and \(f(0) \lt 0\) while \(f(\pi/4) \gt 0\text{,}\) then the Intermediate Value Theorem guarantees the existence of a real number \(c\in (0,\pi/4)\) such that \(f(c)=0\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-130"><h6 class="heading">
+<span class="codenumber">24<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-1041">Show that there exists at least one real number c such that \(\sqrt{\cos(\pi c)} = \sin(2 \pi c) + \frac{1}{2}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-109" id="hint-109"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-109"><div class="hint solution-like"><p id="p-1042">Consider the function \(f(x) = \sqrt{\cos(\pi x)} - \sin(2\pi x) -1/2\text{,}\) and be careful about where it is continuous.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-130" id="answer-130"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-130"><div class="answer solution-like">
+<p id="p-1043">Let \(f(x) = \sqrt{\cos(\pi x)} - \sin(2\pi x) -1/2\text{.}\) This function is continuous provided \(\cos(\pi x)\geq 0\text{.}\) This is  true for \(0 \leq x
+\leq \frac{1}{2}\text{.}\)</p>
+<p id="p-1044">Now \(f\) takes positive values on \([0,1/2]\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+f(0) &amp;= \sqrt{\cos(0)} - \sin(0) -1/2 = \sqrt{1} -1/2 = 1/2.
+\end{align*}
+</div>
+<p data-braille="continuation">And \(f\) takes negative values on \([0,1/2]\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+f(1/2) &amp;= \sqrt{\cos(\pi/2)}-\sin(\pi)-1/2 = 0-0-1/2 = -1/2
+\end{align*}
+</div>
+<p data-braille="continuation">(Notice that \(f(1/3)=(\sqrt{2}-\sqrt{3})/2-1/2\) also works)</p>
+<p id="p-1045">So, because \(f(x)\) is continuous on \([0,1/2)\) and \(f(0) \gt 0\) while \(f(1/2) \lt 0\text{,}\) then the  Intermediate Value Theorem guarantees the existence of a real number \(c\in (0,1/2)\) such that \(f(c)=0\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-130" id="solution-130"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-130"><div class="solution solution-like">
+<p id="p-1046">Let \(f(x) = \sqrt{\cos(\pi x)} - \sin(2\pi x) -1/2\text{.}\) This function is continuous provided \(\cos(\pi x)\geq 0\text{.}\) This is  true for \(0 \leq x
+\leq \frac{1}{2}\text{.}\)</p>
+<p id="p-1047">Now \(f\) takes positive values on \([0,1/2]\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+f(0) &amp;= \sqrt{\cos(0)} - \sin(0) -1/2 = \sqrt{1} -1/2 = 1/2.
+\end{align*}
+</div>
+<p data-braille="continuation">And \(f\) takes negative values on \([0,1/2]\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+f(1/2) &amp;= \sqrt{\cos(\pi/2)}-\sin(\pi)-1/2 = 0-0-1/2 = -1/2
+\end{align*}
+</div>
+<p data-braille="continuation">(Notice that \(f(1/3)=(\sqrt{2}-\sqrt{3})/2-1/2\) also works)</p>
+<p id="p-1048">So, because \(f(x)\) is continuous on \([0,1/2)\) and \(f(0) \gt 0\) while \(f(1/2) \lt 0\text{,}\) then the  Intermediate Value Theorem guarantees the existence of a real number \(c\in (0,1/2)\) such that \(f(c)=0\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-131"><h6 class="heading">
+<span class="codenumber">25<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-1049">Show that there exists at least one real number \(c\) such that \(\dfrac{1}{(\cos\pi c)^2} = c+\dfrac{3}{2}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-110" id="hint-110"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-110"><div class="hint solution-like"><p id="p-1050">Consider the function \(f(x)=1/\cos^2(\pi x)-x-\frac{3}{2}\text{,}\) paying attention to where it is continuous.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-131" id="answer-131"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-131"><div class="answer solution-like">
+<p id="p-1051">We let \(f(x)=\dfrac{1}{\cos^2(\pi x)}-x-\dfrac{3}{2}\text{.}\) Then \(f(x)\) is a continuous function on the interval \((-1/2, 1/2)\) since \(\cos x\) is continuous everywhere and non-zero on that interval.</p>
+<p id="p-1052">The function \(f\) takes negative values.  For example, when \(x=0\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+f(0) &amp;= \frac{1}{\cos^2(0)} - 0 - \frac{3}{2} = 1-\frac{3}{2} = -\frac{1}{2}  \lt 0.
+\end{align*}
+</div>
+<p data-braille="continuation">It also takes positive values, for instance when \(x=1/4\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+f(1/4) &amp;= \frac{1}{(\cos \pi/4)^2} - \frac{1}{4} - \frac{3}{2}\\
+&amp;= \frac{1}{1/2} - \frac{1+6}{4}\\
+&amp;= 2 - 7/4 = 1/4  \gt 0.
+\end{align*}
+</div>
+<p id="p-1053">By the IVT there is \(c\text{,}\) \(0 \lt c \lt 1/3\) such that \(f(c)=0\text{,}\) in which case</p>
+<div class="displaymath">
+\begin{gather*}
+\dfrac{1}{(\cos\pi c)^2} = c+\dfrac{3}{2}.
+\end{gather*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-131" id="solution-131"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-131"><div class="solution solution-like">
+<p id="p-1054">We let \(f(x)=\dfrac{1}{\cos^2(\pi x)}-x-\dfrac{3}{2}\text{.}\) Then \(f(x)\) is a continuous function on the interval \((-1/2, 1/2)\) since \(\cos x\) is continuous everywhere and non-zero on that interval.</p>
+<p id="p-1055">The function \(f\) takes negative values.  For example, when \(x=0\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+f(0) &amp;= \frac{1}{\cos^2(0)} - 0 - \frac{3}{2} = 1-\frac{3}{2} = -\frac{1}{2}  \lt 0.
+\end{align*}
+</div>
+<p data-braille="continuation">It also takes positive values, for instance when \(x=1/4\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+f(1/4) &amp;= \frac{1}{(\cos \pi/4)^2} - \frac{1}{4} - \frac{3}{2}\\
+&amp;= \frac{1}{1/2} - \frac{1+6}{4}\\
+&amp;= 2 - 7/4 = 1/4  \gt 0.
+\end{align*}
+</div>
+<p id="p-1056">By the IVT there is \(c\text{,}\) \(0 \lt c \lt 1/3\) such that \(f(c)=0\text{,}\) in which case</p>
+<div class="displaymath">
+\begin{gather*}
+\dfrac{1}{(\cos\pi c)^2} = c+\dfrac{3}{2}.
+\end{gather*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-132"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<p id="p-1057">Use the intermediate value theorem to find an interval of length one containing a root of \(f(x)=x^7-15x^6+9x^2-18x+15\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-111" id="hint-111"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-111"><div class="hint solution-like"><p id="p-1058">We want \(f(x)\) to be 0; 0 is between a positive number and a negative number. Try evaluating \(f(x)\) for some integer values of \(x\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-132" id="answer-132"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-132"><div class="answer solution-like"><p id="p-1059">\([0,1]\) is the easiest answer to find. Also acceptable are \([-2,-1]\) and \([14,15]\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-132" id="solution-132"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-132"><div class="solution solution-like">
+<p id="p-1060">\(f(x)\) is a polynomial, so it's continuous everywhere. If we can find values \(a\) and \(b\) so that \(f(a) \gt 0\) and \(f(b) \lt 0\text{,}\) then by the IVT, there will exist some \(c\) in \((a,b)\) where \(f(c)=0\text{;}\) that is, there is a root in the interval \([a,b]\text{.}\) Let's start plugging in easy values of \(x\text{.}\)</p>
+<p id="p-1061">\(f(0)=15\text{,}\) and \(f(1)=1-15+9-18+15=-8\text{.}\) Since 0 is between \(f(0)\) and \(f(1)\text{,}\) and since \(f\) is continuous, by IVT there must be some \(x\) in \([0,1]\) for which \(f(x)=0\text{:}\) that is, there is some root in \([0,1]\text{.}\)</p>
+<p id="p-1062">That was the easiest interval to find. If you keep playing around, you find two more. \(f(-1)=26\) (positive) and \(f(-2)=-1001\) (negative), so there is a root in \([-2,-1]\text{.}\)</p>
+<p id="p-1063">The arithmetic is nasty, but there is also a root in \([14,15]\text{.}\)</p>
+<p id="p-1064">This is an important trick. For high-degree polynomials, it is often impossible to get the exact values of the roots. Using the IVT, we can at least give a range where a root must be.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-133"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<p id="p-1065">Use the intermediate value theorem to give a decimal approximation of \(\sqrt[3]{7}\) that is correct to at least two decimal places. You may use a calculator, but only to add, subtract, multiply, and divide.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-112" id="hint-112"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-112"><div class="hint solution-like"><p id="p-1066">\(\sqrt[3]{7}\) is the value where \(x^3=7\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-133" id="answer-133"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-133"><div class="answer solution-like"><p id="p-1067">1.91</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-133" id="solution-133"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-133"><div class="solution solution-like">
+<p id="p-1068">Let \(f(x)=x^3\text{.}\) Since \(f\) is a polynomial, it is continuous everywhere. If \(f(a) \lt 7 \lt f(b)\text{,}\) then \(\sqrt[3]{7}\) is somewhere between \(a\) and \(b\text{.}\) If we can find \(a\) and \(b\) that satisfy these inequalities, and are very close together, that will give us a good approximation for \(\sqrt[3]{7}\text{.}\)</p>
+<ul id="p-1069" class="disc">
+<li id="li-331">Let's start with integers. \(1^3 \lt 7 \lt 2^3\text{,}\) so \(\sqrt[3]{7}\) is in the interval \((1,2)\text{.}\)</li>
+<li id="li-332">Let's narrow this down, say by testing \(f(1.5)\text{.}\) \((1.5)^3 = 3.375 \lt 7\text{,}\) so \(\sqrt[3]{7}\) is in the interval \((1.5,2)\text{.}\)</li>
+<li id="li-333">Let's narrow further, say by testing \(f(1.75)\text{.}\) \((1.75)^3\approx 5.34 \lt 7\text{,}\) so \(\sqrt[3]{7}\) is in the interval \((1.75,2)\text{.}\)</li>
+<li id="li-334">Testing various points, we find \(f(1.9) \lt 7 \lt f(2)\text{,}\) so \(\sqrt[3]{7}\) is between \(1.9\) and \(2\text{.}\)</li>
+<li id="li-335">By testing more, we find \(f(1.91) \lt 7 \lt f(1.92)\text{,}\) so \(\sqrt[3]{7}\) is in \((1.91,1.92)\text{.}\)</li>
+<li id="li-336">In order to get an approximation for \(\sqrt[3]{7}\) that is rounded to two decimal places, we have to know whether \(\sqrt[3]{7}\) is greater or less than \(1.915\text{;}\) indeed \(f(1.915) \approx 7.02 \gt 7\text{,}\) so \(\sqrt[3]{7} \lt 1.915\text{;}\) then rounded to two decimal places, \(\sqrt[3]{7}\approx 1.91\text{.}\)</li>
+</ul>
+<p data-braille="continuation">If this seems like the obvious way to approximate \(\sqrt[3]{7}\text{,}\) that's good. The IVT is a formal statement of a very intuitive principle.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-134"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<p id="p-1070">Suppose \(f(x)\) and \(g(x)\) are functions that are continuous over the interval \([a,b]\text{,}\) with \(f(a) \leq g(a)\) and \(g(b)\leq f(b)\text{.}\) Show that there exists some \(c \in [a,b]\) with \(f(c)=g(c)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-113" id="hint-113"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-113"><div class="hint solution-like"><p id="p-1071">You need to consider separately the cases where \(f(a)  \lt  g(a)\) and \(f(a)=g(a)\text{.}\) Let \(h(x)=f(x)-g(x)\text{.}\) What is \(h(c)\text{?}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-134" id="answer-134"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-134"><div class="answer solution-like"><ul id="p-1072" class="disc">
+<li id="li-337">If \(f(a)=g(a)\text{,}\) or \(f(b)=g(b)\text{,}\) then we simply take \(c=a\) or \(c=b\text{.}\)</li>
+<li id="li-338">Suppose \(f(a) \neq g(a)\) and \(f(b) \neq g(b)\text{.}\) Then \(f(a) \lt g(a)\) and \(g(b) \lt f(b)\text{,}\) so if we define \(h(x)=f(x)-g(x)\text{,}\) then \(h(a) \lt 0\) and \(h(b) \gt 0\text{.}\) Since \(h\) is the difference of two functions that are continuous over \([a,b]\text{,}\) also \(h\) is continuous over \([a,b]\text{.}\) So, by the Intermediate Value Theorem, there exists some \(c \in (a,b)\) with \(h(c)=0\text{;}\) that is, \(f(c)=g(c)\text{.}\)</li>
+</ul></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-134" id="solution-134"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-134"><div class="solution solution-like"><ul id="p-1073" class="disc">
+<li id="li-339">If \(f(a)=g(a)\text{,}\) or \(f(b)=g(b)\text{,}\) then we simply take \(c=a\) or \(c=b\text{.}\)</li>
+<li id="li-340">Suppose \(f(a) \neq g(a)\) and \(f(b) \neq g(b)\text{.}\) Then \(f(a) \lt g(a)\) and \(g(b) \lt f(b)\text{,}\) so if we define \(h(x)=f(x)-g(x)\text{,}\) then \(h(a) \lt 0\) and \(h(b) \gt 0\text{.}\) Since \(h\) is the difference of two functions that are continuous over \([a,b]\text{,}\) also \(h\) is continuous over \([a,b]\text{.}\) So, by the Intermediate Value Theorem, there exists some \(c \in (a,b)\) with \(h(c)=0\text{;}\) that is, \(f(c)=g(c)\text{.}\)</li>
+</ul></div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>
