@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:51:41-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.1.8.46.1</span><span class="period">.</span>
+</h6>
+<ol class="lower-alpha">
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">The difference between our upper and lower bounds is the difference in areas between the larger set of rectangles and the smaller set of rectangles. Drawing them on a single picture makes this a little clearer.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-581.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Each of the rectangles has width \(\frac{b-a}{n}\text{,}\) since we took a segment of the \(x\)-axis with length \(b-a\) and chopped it into \(n\) pieces. We could calculate the height of each rectangle, but it would be a little complicated, since it differs for each of them. An easier method is to notice that the area we want to calculate can be imagined as a single rectangle:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:7.5%;margin-right:7.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-582.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>The rectangle has base \(\frac{b-a}{n}\text{.}\) Its highest coordinate is \(f(a)\text{,}\) and its lowest is \(f(b)\text{,}\) so its height is \(f(b)-f(a)\text{.}\) Therefore, the difference in area between our lower bound and our upper bound is:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left[f(b)-f(a)\right]\cdot\frac{b-a}{n}
+\end{equation*}
+</div>
+</li>
+<li>
+<p>We want to give a range with length at most 0.01, and guarantee that the area under the curve \(y=f(x)\) is inside that range. In the previous part, we figured out that when we use \(n\) rectangles, the length of our range is \(\left[f(b)-f(a)\right]\cdot\frac{b-a}{n}\text{.}\) So, all we have to do is set this to be less than or equal to 0.01, and solve for \(n\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\left[f(b)-f(a)\right]\cdot\frac{b-a}{n}&amp;\leq 0.01\\
+100\left[f(b)-f(a)\right]\cdot(b-a)&amp;\leq n
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">We can choose \(n\) to be an integer that is greater than or equal to \(100\left[f(b)-f(a)\right]\cdot(b-a)\text{.}\) Using that many rectangles, we find an upper and lower bound for the area under the curve. If we choose any number between our upper and lower bound as an approximation for the area under the curve, our error is no more than 0.01.</p>
+</li>
+</ol>
+<p xmlns:svg="http://www.w3.org/2000/svg">Remark: this question depends on the fact that \(f\) is decreasing and positive from \(a\) to \(b\text{.}\) In general, bounding errors on approximations like this is not so straightforward.</p>
+</div>
+<span class="incontext"><a href="sec_intdef.html#solution-741">in-context</a></span>
+</body>
+</html>

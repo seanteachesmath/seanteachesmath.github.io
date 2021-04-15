@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:19:50-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>We first develop some intuition. For very large \(k\text{,}\) \(k^4\) dominates \(1\) so that the numerator  \(\root{3}\of{k^4+1}
+\approx  \root{3}\of{k^4} = k^{4/3}\text{,}\) and \(k^5\) dominates 9 so that the denominator \(\sqrt{k^5+9}
+\approx \sqrt{k^5} = k^{5/2}\) and the summand</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\frac{ \root{3}\of{k^4+1} }{\sqrt{k^5+9}}
+\approx \frac{k^{4/3}}{k^{5/2}}
+=\frac{1}{k^{7/6}}
+\end{gather*}
+</div>
+<p data-braille="continuation">The series \(\displaystyle \sum_{n=1}^{\infty} \frac{1}{k^{7/6}}\) converges by the \(p\)-test with \(p=\frac{7}{6} \gt 1\text{,}\) so we expect the given series to converge too.</p>
+<p>To verify that  our intuition is correct, we apply the limit comparison test with</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+a_k= \frac{ \root{3}\of{k^4+1} }{\sqrt{k^5+9}}
+\quad\text{and}\quad
+b_k= \frac{1}{k^{7/6}}=\frac{k^{4/3}}{k^{5/2}}
+\end{gather*}
+</div>
+<p data-braille="continuation">which is valid since</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{k\rightarrow\infty} \frac{a_k}{b_k}
+=\lim_{k\rightarrow\infty}\frac{ \root{3}\of{k^4+1}/k^{4/3}}
+{\sqrt{k^5+9}/k^{5/2}}
+=\lim_{k\rightarrow\infty}\frac{ \root{3}\of{1+1/k^4} }{\sqrt{1+9/k^5}}
+=1
+\end{equation*}
+</div>
+<p data-braille="continuation">exists. Since the series \(\sum\limits_{k=1}^\infty b_k\) is a convergent \(p\)-series (with ratio \(p=\frac{7}{6} \gt 1\)), the given series converges.</p>
+<p>Note: to apply the direct comparison test with our chosen comparison series, we would need to show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{\sqrt[3]{k^4+1}}{\sqrt{k^5+9}} \leq \frac{1}{k^{7/6}}
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">for all \(k\) sufficiently large. However, this is not true: the opposite inequality holds when \(k\) is large.</p>
+</div></body>
+</html>

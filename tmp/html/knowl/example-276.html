@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:58:43-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.8.18</span><span class="period">.</span><span class="space"> </span><span class="title">\(\int \tan^7 x\).</span>
+</h6>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="alert">Solution:</em> We follow the same steps</p>
+<ul class="disc">
+<li>Pull out a factor of \(\tan^2x\) to create a factor of \(\sec^2x\text{:}\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\tan^7x &amp;= \tan^5x \cdot \tan^2x\\
+&amp;= \tan^5x \cdot \big[ \sec^2x - 1\big]\\
+&amp;= \tan^5x \sec^2x - \tan^5x \qquad \text{do it again}\\
+&amp;= \tan^5x \sec^2x - \tan^3x \cdot \big[ \sec^2x - 1\big]\\
+&amp;= \tan^5x \sec^2x - \tan^3x \sec^2x + \tan^3x \qquad\text{and again}\\
+&amp;= \tan^5x \sec^2x - \tan^3x \sec^2x + \tan x \big[ \sec^2x - 1\big]\\
+&amp;= \tan^5x \sec^2x - \tan^3x \sec^2x + \tan x \sec^2x - \tan x
+\end{align*}
+</div>
+</li>
+<li>Now we can substitute \(u=\tan x\) and \(\dee{u}=\sec^2x \dee{x}\) and also use the  result from Example <a class="xref" data-knowl="./knowl/eg_TRGINTg.html" title="Example 6.8.11: \(\int \tan x\dee{x}\)">6.8.11</a> to take care of the last term:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int \tan^7x\dee{x}
+&amp;= \int \big[\tan^5x \sec^2x - \tan^3x \sec^2x + \tan x \sec^2x\big] \dee{x}\\
+&amp;\hskip2in- \int \tan x \dee{x}\\
+\end{align*}
+<p class="intertext">Now factor out the common \(\sec^2x\) term and integrate \(\tan x\) via Example <a class="xref" data-knowl="./knowl/eg_TRGINTg.html" title="Example 6.8.11: \(\int \tan x\dee{x}\)">6.8.11</a></p>
+\begin{align*}
+&amp;= \int \big[ \tan^5x - \tan^3x +\tan x\big]\sec x\dee{x} - \log|\sec x| +C\\
+&amp;= \int \big[ u^5 - u^3 + u \big]\dee{u} - \log|\sec x| +C\\
+&amp;= \frac{u^6}{6} - \frac{u^4}{4} + \frac{u^2}{2} - \log|\sec x| +C\\
+&amp;= \frac{1}{6}\tan^6x - \frac{1}{4}\tan^4x +\frac{1}{2}\tan^2x - \log|\sec x| +
+C
+\end{align*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">This example suggests that for integer \(k\geq 0\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int \tan^{2k+1}x \dee{x}
+&amp;= \frac{1}{2k}\tan^{2k}(x) - \frac{1}{2k-2}\tan^{2k-2}x + \cdots\\
+&amp;\hskip0.25in  - (-1)^k \frac{1}{2} \tan^2 x + (-1)^k \log|\sec x| +C
+\end{align*}
+</div></article><span class="incontext"><a href="sec_trigint.html#example-276">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:49:31-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p xmlns:svg="http://www.w3.org/2000/svg">We wish to compute the area of \(\big\{\ (x,y)\ \big|\ 0\le y\le e^x\text{,}\) \(0\le x\le  1\ \big\}\text{.}\) We know, from our experience with \(e^x\) in differential calculus,  that the curve \(y=e^x\) is not easily written in terms of other simpler  functions, so it is very unlikely that we would be able to write the area as  a combination of simpler geometric objects such as triangles, rectangles or  circles.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">So rather than trying to write down the area exactly, our strategy is to  approximate the area and then make our approximation more and more precise <a class="fn-knowl original" data-knowl="./knowl/fn-171-hidden.html" title="Footnote 6.1.1"><sup> 1 </sup></a>. We choose <a class="fn-knowl original" data-knowl="./knowl/fn-172-hidden.html" title="Footnote 6.1.2"><sup> 2 </sup></a> to approximate the area as a union of a  large number of tall thin (vertical) rectangles. As we take more and more  rectangles we get better and better approximations. Taking the limit as the  number of rectangles goes to infinity gives the exact area <a class="fn-knowl original" data-knowl="./knowl/fn-173-hidden.html" title="Footnote 6.1.3"><sup> 3 </sup></a>.</p>
+<p>As a warm up exercise, we'll now just use four rectangles. In Example  <a class="xref" data-knowl="./knowl/eg_INTexpareaB.html" title="Example 6.1.2: Computing an area exactly">6.1.2</a>, below, we'll consider an arbitrary number of rectangles  and then take the limit as the number of rectangles goes to infinity. So</p>
+<ul class="disc">
+<li>subdivide the interval \(0\le x\le 1\) into \(4\) equal subintervals each of width \(\frac{1}{4}\text{,}\) and</li>
+<li>subdivide the area of interest into four corresponding  vertical strips, as in the figure below.</li>
+</ul>
+<p data-braille="continuation">The area we want is exactly the sum of the areas of all four strips.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/earea1four.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Each of these strips is almost, but not quite, a rectangle. While the bottom and  sides are fine (the sides are at right-angles to the base), the top of the strip  is not horizontal. This is where we must start to approximate. We can replace  each strip by a rectangle by just levelling off the top. But now we have to make  a choice — at what height do we level off the top?</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Consider, for example, the leftmost strip. On this strip, \(x\) runs from \(0\) to  \(\frac{1}{4}\text{.}\) As \(x\) runs from \(0\) to \(\frac{1}{4}\text{,}\) the height \(y\)  runs from \(e^0\) to \(e^{\frac{1}{4}}\text{.}\) It would be reasonable to choose the  height of the approximating rectangle to be somewhere between \(e^0\) and \(e^{\frac{1}{4}}\text{.}\) Which</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/earea3four.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">height should we choose? Well, actually it doesn't matter. When we eventually  take the limit of infinitely many approximating rectangles all of those  different choices give exactly the same final answer. We'll say more about this  later.</p>
+<p>In this example we'll do two sample computations.</p>
+<ul class="disc"><li>
+<p>For the first computation we approximate each slice by a rectangle whose height is the height of the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">left</em> hand side of the slice.</p>
+<ul class="circle">
+<li>On the first slice, \(x\) runs from \(0\) to \(\frac{1}{4}\text{,}\)  and the height \(y\) runs from \(e^0\text{,}\) on the left hand side, to  \(e^{\frac{1}{4}}\text{,}\) on the right hand side.</li>
+<li>So we approximate the first slice by the rectangle of height \(e^0\) and width \(\frac{1}{4}\text{,}\) and hence of area \(\frac{1}{4}\,e^0  =\frac{1}{4}\text{.}\)</li>
+<li>On the second slice, \(x\) runs from \(\frac{1}{4}\) to  \(\frac{1}{2}\text{,}\) and the height \(y\) runs from \(e^{\frac{1}{4}}\) and  \(e^{\frac{1}{2}}\text{.}\)</li>
+<li>So we approximate the second slice by the rectangle of height \(e^{\frac{1}{4}}\) and width \(\frac{1}{4}\text{,}\) and hence of area  \(\frac{1}{4}\,e^{\frac{1}{4}}\text{.}\)</li>
+<li>And so on.</li>
+<li>All together, we approximate the area of interest by the sum of the areas of the four approximating rectangles, which is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\big[1+ e^{\frac{1}{4}} + e^{\frac{1}{2}} +e^{\frac{3}{4}}\big]\frac{1}{4}  =1.5124
+\end{gather*}
+</div>
+</li>
+<li>This particular approximation is called the “left Riemann sum approximation to \(\int_0^1 e^x\dee{x}\) with \(4\) subintervals”. We'll explain this  terminology later.</li>
+<li>This particular approximation represents the shaded area  in the figure on the left below. Note that, because \(e^x\) <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">increases</em> as  \(x\) increases, this approximation is definitely smaller than the true area.</li>
+</ul>
+</li></ul>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:8.5%;margin-right:8.5%;">
+<div class="sbspanel" style="width:39.7590361445783%;justify-content:center;"><img src="text/figs/earea4.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:39.7590361445783%;justify-content:center;"><img src="text/figs/earea4right.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<ul class="disc"><li>
+<p>For the second computation we approximate each slice by a rectangle whose height is the height of the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">right</em> hand side of the slice.</p>
+<ul class="circle">
+<li>On the first slice, \(x\) runs from \(0\) to \(\frac{1}{4}\text{,}\)  and the height \(y\) runs from \(e^0\text{,}\) on the left hand side, to  \(e^{\frac{1}{4}}\text{,}\) on the right hand side.</li>
+<li>So we approximate the first slice by the rectangle of height \(e^{\frac{1}{4}}\) and width \(\frac{1}{4}\text{,}\) and hence of area  \(\frac{1}{4}\,e^{\frac{1}{4}}\text{.}\)</li>
+<li>On the second slice, \(x\) runs from \(\frac{1}{4}\) to  \(\frac{1}{2}\text{,}\) and the height \(y\) runs from \(e^{\frac{1}{4}}\) and \(e^{\frac{1}{2}}\text{.}\)</li>
+<li>So we approximate the second slice by the rectangle of height \(e^{\frac{1}{2}}\) and width \(\frac{1}{4}\text{,}\) and hence of area  \(\frac{1}{4}\,e^{\frac{1}{2}}\text{.}\)</li>
+<li>And so on.</li>
+<li>All together, we approximate the area of interest by the sum of the areas of the four approximating rectangles, which is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\big[e^{\frac{1}{4}} + e^{\frac{1}{2}} +e^{\frac{3}{4}}+e^1\big]\frac{1}{4} =1.9420
+\end{gather*}
+</div>
+</li>
+<li>This particular approximation is called the “right Riemann sum approximation to \(\int_0^1 e^x\dee{x}\) with \(4\) subintervals”.</li>
+<li>This particular approximation represents the shaded area in the figure on  the right above. Note that, because \(e^x\) <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">increases</em> as \(x\) increases,  this approximation is definitely larger than the true area.</li>
+</ul>
+</li></ul></article></body>
+</html>

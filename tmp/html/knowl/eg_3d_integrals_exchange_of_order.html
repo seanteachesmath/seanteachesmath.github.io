@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:52:35-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.5.3</span><span class="period">.</span>
+</h6>
+<p>As was said in the last example, in practice, often the hardest parts of dealing with a triple integral concern the limits of integration. In this example, we'll again concentrate on exactly that. This time, we will consider the integral</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+I=\int_0^2\dee{y}\int_0^{2-y}\dee{z}\int_0^{\frac{2-y}{2}}\dee{x}\ f(x,y,z)
+\end{equation*}
+</div>
+<p data-braille="continuation">and we will re-express \(I\) with the outside integral being over \(z\text{.}\) We will figure out the limits of integration for both the order \(\int\dee{z}\int\dee{x}\int\dee{y}\ f(x,y,z)\) and for the order \(\int\dee{z}\int\dee{y}\int\dee{x}\ f(x,y,z)\text{.}\)</p>
+<p>Our first task is to get a good idea as to what the domain of integration looks like. We start by reading off of the given integral that</p>
+<ul class="disc">
+<li>the outside integral says that \(y\) runs from \(0\) to \(2\text{,}\) and</li>
+<li>the middle integral says that, for each fixed \(y\) in that range, \(z\) runs from \(0\) to \(2-y\) and</li>
+<li>the inside integral says that, for each fixed \((y,z)\) as above, \(x\) runs from \(0\) to \(\frac{2-y}{2}\text{.}\)</li>
+</ul>
+<p data-braille="continuation">So the domain of integration is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+V=\Set{(x,y,z)}{ 0\le y\le 2,\
+0\le z\le 2-y,\
+0\le x\le \tfrac{2-y}{2}}
+\tag{$*$}
+\end{equation*}
+</div>
+<p data-braille="continuation">We'll sketch \(V\) shortly. Because it is generally easier to make 2d sketches than it is to make 3d sketches, we'll first make a 2d sketch of the part of \(V\) that lies in the vertical plane \(y=Y\text{.}\) Here \(Y\) is any constant between \(0\) and \(2\text{.}\) Looking at the definition of \(V\text{,}\) we see that the point \((x,Y,z)\) lies in \(V\) if and only if</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+0\le z\le 2-Y\qquad   0\le x\le \frac{2-Y}{2}
+\end{gather*}
+</div>
+<p data-braille="continuation">Here, on the left, is a (2d) sketch of all \((x,z)\)'s that obey those inequalities, and, on the right, is a (3d) sketch of all \((x,Y,z)\)'s that obey those inequalities.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:center;"><img src="figs/xchange2.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:center;"><img src="figs/xchange5.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">So our solid \(V\) consists of a bunch of vertical rectangles stacked sideways along the \(y\)-axis. The rectangle in the plane \(y=Y\) has side lengths \(\frac{2-Y}{2}\) and \(2-Y\text{.}\) As we move from the plane \(y=Y=0\text{,}\) i.e. the \(xz\)-plane, to the plane \(y=Y=2\text{,}\) the rectangle decreases in size linearly from a one by two rectangle, when \(Y=0\text{,}\) to a zero by zero rectangle, i.e. a point, when \(Y=2\text{.}\) Here is a sketch of \(V\) together with a typical \(y=Y\) rectangle.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/xchange4.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>To re-express the given integral with the outside integral being with respect to \(z\text{,}\) we have to slice up \(V\) into horizontal plates by inserting planes of constant \(z\text{.}\) So we have to figure out what the part of \(V\) that lies in the horizontal plane \(z=Z\) looks like. From the figure above, we see that, in \(V\text{,}\) the smallest value of \(z\) is \(0\) and the biggest value of \(z\) is \(2\text{.}\) So \(Z\) is any constant between \(0\) and \(2\text{.}\) Again looking at the definition of \(V\) in \((*)\) above, we see that the point \((x,y,Z)\) lies in \(V\) if and only if</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+y\ge 0\qquad y\le 2\qquad
+y\le 2-Z\qquad
+x\ge 0\qquad
+2x+y\le 2
+\end{gather*}
+</div>
+<p data-braille="continuation">Here, on the top, is a (2d) sketch showing the top view of all \((x,y)\)'s that obey those inequalities, and, on the bottom, is a (3d) sketch of all \((x,y,Z)\)'s that obey those inequalities.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/xchange3.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/xchange6.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">To express \(I\) as an integral with the order of integration \(\int\dee{z}\int\dee{y}\int\dee{x}\ f(x,y,z)\text{,}\) we subdivide the plate at height \(z\) into vertical strips as in the figure</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/xchange3v.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>Since</p>
+<ul class="disc">
+<li>\(y\) is essentially constant on each strip with the leftmost strip having \(y=0\) and the rightmost strip having \(y=2-z\) and</li>
+<li>for each fixed \(y\) in that range, \(x\) runs from \(0\) to \(\tfrac{2-y}{2}\)</li>
+</ul>
+<p data-braille="continuation">we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+I=\int_0^2\dee{z}\int_0^{2-z}\dee{y}\int_0^{\frac{2-y}{2}}\dee{x}\ f(x,y,z)
+\end{equation*}
+</div>
+<p data-braille="continuation">Alternatively, to express \(I\) as an integral with the order of integration \(\int\dee{z}\int\dee{x}\int\dee{y}\ f(x,y,z)\text{,}\) we subdivide the plate at height \(z\) into horizontal strips as in the figure</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/xchange3h.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>Since</p>
+<ul class="disc">
+<li>\(x\) is essentially constant on each strip with the first strip having \(x=0\) and the last strip having \(x=1\) and</li>
+<li>for each fixed \(x\) between \(0\) and \(z/2\text{,}\) \(y\) runs from \(0\) to \(2-z\) and</li>
+<li>for each fixed \(x\) between \(z/2\) and \(1\text{,}\) \(y\) runs from \(0\) to \(2-2x\)</li>
+</ul>
+<p data-braille="continuation">we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+I=\int_0^2\dee{z}\int_0^{z/2}\dee{x}\int_0^{2-z}\dee{y}\ f(x,y,z)
++\int_0^2\dee{z}\int_{z/2}^{1}\dee{x}\int_0^{2-2x}\dee{y}\ f(x,y,z)
+\end{equation*}
+</div></article><span class="incontext"><a href="sec_3d_integrals.html#eg_3d_integrals_exchange_of_order">in-context</a></span>
+</body>
+</html>

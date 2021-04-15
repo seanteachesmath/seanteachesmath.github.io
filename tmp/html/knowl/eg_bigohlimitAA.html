@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:29:17-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.6.28</span><span class="period">.</span><span class="space"> </span><span class="title">Example 8.6.18 revisited.</span>
+</h6>
+<p>In this example, we'll return to the limit</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{x\rightarrow 0}\frac{\sin x}{x}
+\end{equation*}
+</div>
+<p data-braille="continuation">of Example <a class="xref" data-knowl="./knowl/eg_TaylorlimitA.html" title="Example 8.6.18: A simple limit from a Taylor expansion">8.6.18</a> and treat it more carefully. By Example <a class="xref" data-knowl="./knowl/eg_bigohsincos.html" title="Example 8.6.21: Sine and the big O">8.6.21</a>,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sin x = x-\frac{1}{3!}x^3+O(|x|^5)
+\end{equation*}
+</div>
+<p data-braille="continuation">That is, for small \(x\text{,}\) \(\sin x\) is the same as \(x-\frac{1}{3!}x^3\text{,}\)  up to an error that is bounded by some constant times \(|x|^5\text{.}\) So, dividing by \(x\text{,}\) \(\frac{\sin x}{x}\) is the same as  \(1-\frac{1}{3!}x^2\text{,}\) up to an error that is bounded by some  constant times \(x^4\) — see Remark <a class="xref" data-knowl="./knowl/rem_bigohppties.html" title="Remark 8.6.27">8.6.27</a>(b). That is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{\sin x}{x}=1-\frac{1}{3!}x^2+O(x^4)
+\end{equation*}
+</div>
+<p data-braille="continuation">But any function that is bounded by some constant times \(x^4\) (for all \(x\) smaller than some constant \(D \gt 0\)) necessarily tends to \(0\) as \(x\rightarrow 0\) — see Remark <a class="xref" data-knowl="./knowl/rem_bigohppties.html" title="Remark 8.6.27">8.6.27</a>(a). . Thus</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{x\rightarrow 0}\frac{\sin x}{x}
+=\lim_{x\rightarrow 0}\Big[1-\frac{1}{3!}x^2+O(x^4)\Big]
+=\lim_{x\rightarrow 0}\Big[1-\frac{1}{3!}x^2\Big]
+=1
+\end{equation*}
+</div>
+<p>Reviewing the above computation, we see that we did a little more work than we had to. It wasn't necessary to keep track of the \(-\frac{1}{3!}x^3\) contribution to \(\sin x\) so carefully. We could have just said that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sin x = x+O(|x|^3)
+\end{equation*}
+</div>
+<p data-braille="continuation">so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{x\rightarrow 0}\frac{\sin x}{x}
+=\lim_{x\rightarrow 0}\frac{x+O(|x|^3)}{x}
+=\lim_{x\rightarrow 0}\big[1+O(x^2)\big]
+=1
+\end{equation*}
+</div>
+<p data-braille="continuation">We'll spend a little time in the later, more complicated, examples learning how to choose the number of terms we keep in our Taylor expansions so as to make our computations as efficient as possible.</p></article><span class="incontext"><a href="section-61.html#eg_bigohlimitAA">in-context</a></span>
+</body>
+</html>

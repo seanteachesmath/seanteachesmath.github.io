@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:49:54-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p xmlns:svg="http://www.w3.org/2000/svg">Suppose that a particle is moving along the \(x\)-axis and suppose that at time \(t\) its velocity is \(v(t)\) (with \(v(t) \gt 0\)  indicating rightward motion and \(v(t) \lt 0\) indicating leftward motion).  What is the change in its \(x\)-coordinate between time \(a\) and time \(b \gt a\text{?}\)</p>
+<p>We'll work this out using a procedure similar to our definition of the integral. First pick a natural number \(n\) and divide the time interval from \(a\) to \(b\) into \(n\) equal subintervals, each of width \(\frac{b-a}{n}\text{.}\) We are  working our way  towards a Riemann sum (as we have done several times above) and so we will  eventually  take the limit \(n\rightarrow\infty\text{.}\)</p>
+<ul class="disc">
+<li>The first time interval runs from \(a\) to \(a+\frac{b-a}{n}\text{.}\) If we think of  \(n\) as  some large number, the width of this interval, \(\frac{b-a}{n}\) is very small and  over  this time interval, the velocity does not change very much. Hence we can  approximate the  velocity over the first subinterval as being essentially constant at its value  at the  start of the time interval — \(v(a)\text{.}\) Over the subinterval the \(x\)-coordinate  changes by  velocity times time, namely \(v(a) \cdot \frac{b-a}{n}\text{.}\)</li>
+<li>Similarly, the second  interval runs from time \(a+\frac{b-a}{n}\)  to time \(a+2\frac{b-a}{n}\text{.}\) Again, we can assume that the velocity does not  change  very much and so we can approximate the velocity as being essentially constant  at its  value at the start of the subinterval — namely  \(v\left(a+\frac{b-a}{n}\right)\text{.}\) So  during the second subinterval the particle's  \(x\)-coordinate changes by approximately \(v\left(a+\frac{b-a}{n}\right)   \frac{b-a}{n}\text{.}\)</li>
+<li>In general, time subinterval number \(i\) runs from \(a+(i-1)\frac{b-a}{n}\)  to \(a+i\frac{b-a}{n}\) and during this subinterval the particle's \(x\)-coordinate changes, essentially, by<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+,
+v\left(a+(i-1)\frac{b-a}{n}\right)  \frac{b-a}{n}.
+\end{gather*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">So the net change in \(x\)-coordinate from time \(a\) to time \(b\) is approximately</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;v(a)\,\frac{b-a}{n} + v\Big(a+\frac{b-a}{n}\Big)\,\frac{b-a}{n} +\cdots
++v\Big(a+(i-1)\frac{b-a}{n}\Big)\,\frac{b-a}{n} + \cdots\\
+&amp;
++v\Big(a+(n-1)\frac{b-a}{n}\Big)\,\frac{b-a}{n}\\
+&amp;= \sum_{i=1}^n v\Big(a+(i-1)\frac{b-a}{n}\Big)\,\frac{b-a}{n}
+\end{align*}
+</div>
+<p data-braille="continuation">This exactly the left Riemann sum approximation to the integral of \(v\) from \(a\) to \(b\) with \(n\) subintervals. The limit as \(n\rightarrow\infty\) is exactly the definite integral \(\int_a^b v(t)\dee{t}\text{.}\) Following tradition, we have called the (dummy) integration variable \(t\) rather than \(x\) to remind us that it is time that is running from \(a\) to \(b\text{.}\)</p>
+<p>The conclusion of the above discussion is that if a particle is moving  along the \(x\)-axis and its \(x\)-coordinate and velocity at time \(t\) are \(x(t)\) and \(v(t)\text{,}\) respectively, then, for all \(b \gt a\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+x(b)  - x(a) = \int_a^b v(t)\dee{t}.
+\end{gather*}
+</div></article></body>
+</html>

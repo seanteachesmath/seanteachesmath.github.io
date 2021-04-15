@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:10:50-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p xmlns:svg="http://www.w3.org/2000/svg">Prove that the centroid of any triangle is located at the point of intersection of the medians. A median of a triangle is a line segment joining a vertex to the midpoint of the opposite side.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/medianA.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg"><em class="alert">Solution:</em> Choose a coordinate system so that the vertices of the triangle are located at \((a,0)\text{,}\) \((0,b)\) and \((c,0)\text{.}\) (In the figure below, \(a\) is negative.)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/median.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">The line joining \((a,0)\) and \((0,b)\) has equation \(bx+ay=ab\text{.}\) (Check that \((a,0)\) and \((0,b)\) both really are on this line.) The line joining \((c,0)\) and \((0,b)\) has equation \(bx+cy=bc\text{.}\) (Check that \((c,0)\) and \((0,b)\) both really are on this line.) Hence for each fixed \(y\) between \(0\) and \(b\text{,}\) \(x\) runs from  \(a-\frac{a}{b}y\) to \(c-\frac{c}{b}y\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">We'll use horizontal strips to compute \(\bar x\) and \(\bar y\text{.}\) We could just apply equation (<a class="xref" data-knowl="./knowl/eq_TRQcentroidy.html" title="Equation 7.3.6: Centroid of object with constant density">7.3.6</a>) with \(c=0\text{,}\) \(d=b\text{,}\) \(R(y)= \frac{c}{b}(b-y)\) (which is gotten by solving \(bx+cy=bc\) for \(x\)) and \(L(y)= \frac{a}{b}(b-y)\) (which is gotten by solving \(bx+ay=ab\) for \(x\)).</p>
+<p>But rather than memorizing or looking up those formulae, we'll derive them for this example. So consider a thin strip at height \(y\) as illustrated in the figure above.</p>
+<ul class="disc">
+<li>The strip has length<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\ell(y)=\Big[\frac{c}{b}(b-y)-\frac{a}{b}(b-y)\Big]=\frac{c-a}{b}(b-y)
+\end{equation*}
+</div>
+</li>
+<li>The strip has width \(\dee{y}\text{.}\)</li>
+<li>On this strip, \(y\) has average value \(y\text{.}\)</li>
+<li>On this strip, \(x\) has average value \(\frac{1}{2}\big[\frac{a}{b}(b-y)+\frac{c}{b}(b-y)\big]=\frac{a+c}{2b}(b-y)\text{.}\)</li>
+</ul>
+<p data-braille="continuation">As the area of the triangle is \(A=\half (c-a)b\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\bar y&amp;=\frac{1}{A}\int_0^b y\ \ell(y)\dee{y}
+=\frac{2}{(c-a)b}\int_0^b y\frac{c-a}{b}(b-y)\dee{y}\\
+&amp;=\frac{2}{b^2}\int_0^b (by-y^2)\dee{y}
+=\frac{2}{b^2}\Big(b\frac{b^2}{2}-\frac{b^3}{3}\Big)\\
+&amp;=\frac{2}{b^2}\frac{b^3}{6}=\frac{b}{3}\\
+\bar x&amp;=\frac{1}{A}\int_0^b \frac{a+c}{2b}(b-y)\ \ell(y)\dee{y}\\
+\amp=\frac{2}{(c-a)b}\int_0^b \frac{a+c}{2b}(b-y)\frac{c-a}{b}(b-y)\dee{y}\\
+&amp; =\frac{a+c}{b^3}\int_0^b (y-b)^2\dee{y}\\
+&amp;=\frac{a+c}{b^3}\Big[\frac{1}{3}(y-b)^3\Big]_0^b
+=\frac{a+c}{b^3}\ \frac{b^3}{3}
+=\frac{a+c}{3}
+\end{align*}
+</div>
+<p data-braille="continuation">We have found that the centroid of the triangle is at \((\bar x,\bar y)=\big(\frac{a+c}{3},\frac{b}{3}\big)\text{.}\) We shall now show that this point lies on all three medians.</p>
+<ul class="disc">
+<li>One vertex is at \((a,0)\text{.}\) The opposite side runs from \((0,b)\) and \((c,0)\) and so has midpoint \(\half(c,b)\text{.}\) The line from \((a,0)\) to \(\half(c,b)\) has slope \(\frac{b/2}{c/2-a}=\frac{b}{c-2a}\)  and so has equation \(y=\frac{b}{c-2a}(x-a)\text{.}\) As  \(\frac{b}{c-2a}(\bar x-a) =\frac{b}{c-2a}\big(\frac{a+c}{3}-a\big) =\frac{1}{3}\frac{b}{c-2a}(c+a-3a) =\frac{b}{3} =\bar y\text{,}\) the centroid does indeed lie on this median. In this computation we have implicitly assumed that \(c\ne 2a\) so that the denominator \(c-2a\ne 0\text{.}\) In the event that \(c=2a\text{,}\) the median runs from \((a,0)\) to \(\big(a,\frac{b}{2}\big)\) and so has equation \(x=a\text{.}\) When \(c=2a\) we also have \(\bar x=\frac{a+c}{3}=a\text{,}\) so that the centroid still lies on the median.</li>
+<li>Another vertex is at \((c,0)\text{.}\) The opposite side runs from \((a,0)\) and \((0,b)\) and so has midpoint \(\half(a,b)\text{.}\) The line from \((c,0)\) to \(\half(a,b)\) has slope \(\frac{b/2}{a/2-c}=\frac{b}{a-2c}\)  and so has equation \(y=\frac{b}{a-2c}(x-c)\text{.}\) As  \(\frac{b}{a-2c}(\bar x-c) =\frac{b}{a-2c}\big(\frac{a+c}{3}-c\big) =\frac{1}{3}\frac{b}{a-2c}(a+c-3c) =\frac{b}{3} =\bar y\text{,}\) the centroid does indeed lie on this median. In this computation we have implicitly assumed that \(a\ne 2c\) so that the denominator \(a-2c\ne 0\text{.}\) In the event that \(a=2c\text{,}\) the median runs from \((c,0)\) to \(\big(c,\frac{b}{2}\big)\) and so has equation \(x=c\text{.}\) When \(a=2c\) we also have \(\bar x=\frac{a+c}{3}=c\text{,}\) so that the centroid still lies on the median.</li>
+<li>The third vertex is at \((0,b)\text{.}\) The opposite side runs from \((a,0)\) and \((c,0)\) and so has midpoint \(\big(\frac{a+c}{2},0\big)\text{.}\)  The line from \((0,b)\) to \(\big(\frac{a+c}{2},0\big)\) has slope  \(\frac{-b}{(a+c)/2}=-\frac{2b}{a+c}\)  and so has equation \(y=b-\frac{2b}{a+c}x\text{.}\) As  \(b-\frac{2b}{a+c}\bar x =b-\frac{2b}{a+c}\frac{a+c}{3} =\frac{b}{3} =\bar y\text{,}\) the centroid does indeed lie on this median. This time, we have implicitly assumed that \(a+c\ne 0\text{.}\) In the event that \(a+c=0\text{,}\) the median runs from \((0,b)\) to \((0,0)\) and so has equation \(x=0\text{.}\) When \(a+c=0\) we also have \(\bar x=\frac{a+c}{3}=0\text{,}\) so that the centroid still lies on the median.</li>
+</ul></article></body>
+</html>

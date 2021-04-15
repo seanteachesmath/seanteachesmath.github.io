@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:41:59-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>The percentage error in the measured value \(P(x_1+\De x_1\,,\,x_2+\De x_2\,,\,x_3+\De x_3)\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+100\ \left|\frac{P(x_1+\De x_1\,,\,x_2+\De x_2\,,\,x_3+\De x_3)-P(x_1,x_2,x_3)}
+{P(x_1,x_2,x_3)}\right|
+\end{equation*}
+</div>
+<p data-braille="continuation">We can get a much simpler approximate expression for this percentage error, which is good enough for virtually all applications, by applying</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+P(x_1+\De &amp;x_1\,,\,x_2+\De x_2\,,\,x_3+\De x_3)\\
+&amp;\approx P(x_1,x_2,x_3) +P_{x_1}(x_1,x_2,x_3)\,\De x_1
++P_{x_2}(x_1,x_2,x_3)\,\De x_2\\
+&amp;\hskip1in+P_{x_3}(x_1,x_2,x_3)\,\De x_3
+\end{align*}
+</div>
+<p data-braille="continuation">The three partial derivatives are</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{4}
+P_{x_1}(x_1,x_2,x_3)&amp;=\pdiff{}{x_1}\big[x_1x_2x_3\big]
+&amp;=x_2x_3\cr
+P_{x_2}(x_1,x_2,x_3)&amp;=\pdiff{}{x_2}\big[x_1x_2x_3\big]
+&amp;=x_1x_3\cr
+P_{x_3}(x_1,x_2,x_3)&amp;=\pdiff{}{x_3}\big[x_1x_2x_3\big]
+&amp;=x_1x_2
+\end{alignat*}
+</div>
+<p data-braille="continuation">So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;P(x_1+\De x_1\,,\,x_2+\De x_2\,,\,x_3+\De x_3)\\
+&amp;\hskip1in\approx P(x_1,x_2,x_3) +x_2x_3\,\De x_1+x_1x_3\,\De x_2+x_1x_2\,\De x_3
+\end{align*}
+</div>
+<p data-braille="continuation">and the (approximate) percentage error in \(P\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;100\ \left|
+\frac{P(x_1+\De x_1,x_2+\De x_2,x_3+\De x_3)-P(x_1,x_2,x_3)}{P(x_1,x_2,x_3)}
+\right|\\
+&amp;\hskip0.5in
+\approx
+100\ \left|
+\frac{x_2x_3\De x_1+x_1x_3\De x_2+x_1x_2\De x_3}{P(x_1,x_2,x_3)}
+\right|\\
+&amp;\hskip0.5in
+=100\  \left|\frac{x_2x_3\De x_1+x_1x_3\De x_2+x_1x_2\De x_3}{x_1x_2x_3}\right|\\
+&amp;\hskip0.5in=\left|100\frac{\De x_1}{x_1}+100\frac{\De x_2}{x_2}
++100\frac{\De x_3}{x_3}\right|\\
+&amp;\hskip0.5in\le \veps_1+\veps_2+\veps_3
+\end{align*}
+</div>
+<p data-braille="continuation">More generally, if we take a product of \(n\text{,}\) rather than three,  variables the percentage error in the product becomes at most (approximately) \(\
+\smsum\limits_{i=1}^n\veps_i.
+\ \) This is the basis of the experimentalist's rule of thumb that when you take products, percentage errors add.</p>
+<span class="incontext"><a href="sec_lin_approx.html#p-12973">in-context</a></span>
+</body>
+</html>

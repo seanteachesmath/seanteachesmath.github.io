@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:51:34-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p xmlns:svg="http://www.w3.org/2000/svg">We sketched the cardiod (with \(a=1\)) in Example <a class="xref" data-knowl="./knowl/eg_cardioid.html" title="Example 11.2.3: The Cardioid">11.2.3</a>.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:32.5%;margin-right:32.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/cardioidIZ.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>As we said above, the formula for \(I_\cA\) in Definition <a class="xref" data-knowl="./knowl/def_moment_of_inertia.html" title="Definition 11.3.13: Moment of Inertia">11.3.13</a> is valid even when the axis of rotation is not contained in the \(xy\)-plane. We just have to be sure that our \(D(x,y)\) really is the distance from \((x,y)\) to the axis of rotation. In this example the axis of rotation is the \(z\)-axis so that \(D(x,y)=\sqrt{x^2+y^2}\) and that the moment of inertia is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+I_\cA = \dblInt_\cR (x^2+y^2)\ \dee{x}\dee{y}
+\end{equation*}
+</div>
+<p data-braille="continuation">Switching to polar coordinates, using \(\dee{x}\dee{y}=r\,\dee{r}\dee{\theta}\) and \(x^2+y^2=r^2\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+I_\cA &amp;= \int_0^{2\pi}\dee{\theta}\int_0^{a(1+\cos\theta)}\dee{r}\ r\times r^2
+= \int_0^{2\pi}\dee{\theta}\ \int_0^{a(1+\cos\theta)}\dee{r}\ r^3\\
+&amp;=\frac{a^4}{4}\int_0^{2\pi}\dee{\theta}\
+\big(1+\cos\theta\big)^4\\
+&amp;=\frac{a^4}{4}\int_0^{2\pi}\dee{\theta}\
+\big(1+4\cos\theta+6\cos^2\theta+4\cos^3\theta+\cos^4\theta\big)
+\end{align*}
+</div>
+<p data-braille="continuation">Now</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_0^{2\pi}\dee{\theta}\ \cos\theta
+&amp;= \sin\theta\Big|_0^{2\pi}
+=0\\
+\int_0^{2\pi}\dee{\theta}\ \cos^2\theta
+&amp;= \int_0^{2\pi}\dee{\theta}\ \frac{1+\cos(2\theta)}{2}
+= \frac{1}{2}\left[\theta+\frac{\sin(2\theta)}{2}\right]_0^{2\pi}
+=\pi\\
+\int_0^{2\pi}\dee{\theta}\ \cos^3\theta
+&amp;= \int_0^{2\pi}\dee{\theta}\ \cos\theta\big[1-\sin^2\theta\big]
+\eqover{u=\sin\theta} \int_0^0\dee{u}\ (1-u^2)
+=0
+\end{align*}
+</div>
+<p data-braille="continuation">To integrate \(\cos^4\theta\text{,}\) we use the double angle formula</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\cos^2\theta &amp;=\frac{\cos(2\theta)+1}{2}\\
+\implies \cos^4\theta &amp;= \frac{\big(\cos(2\theta)+1\big)^2}{4}
+=\frac{\cos^2(2\theta)+2\cos(2\theta)+1}{4}\\
+&amp;=\frac{\frac{\cos(4\theta)+1}{2}+2\cos(2\theta)+1}{4}\\
+&amp;=\frac{3}{8} +\frac{1}{2}\cos(2\theta) +\frac{1}{8}\cos(4\theta)
+\end{align*}
+</div>
+<p data-braille="continuation">to give</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_0^{2\pi}\dee{\theta}\ \cos^4\theta
+&amp;=\int_0^{2\pi}\dee{\theta}\ \left[\frac{3}{8}
++\frac{1}{2}\cos(2\theta) +\frac{1}{8}\cos(4\theta)\right]\\
+&amp;=\frac{3}{8} \times 2\pi +\frac{1}{2}\times 0 +\frac{1}{8}\times 0
+=\frac{3}{4}\pi
+\end{align*}
+</div>
+<p data-braille="continuation">All together</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+I_\cA&amp;= \frac{a^4}{4}\left[2\pi + 4\times 0 +6\times\pi+4\times 0
++\frac{3}{4}\pi\right]\\
+&amp;=\frac{35}{16}\pi a^4
+\end{align*}
+</div>
+</div></body>
+</html>

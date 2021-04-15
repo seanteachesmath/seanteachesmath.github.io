@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:41:34-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Since \(T_3(x)\) is the third-degree Taylor polynomial for \(f(x)\) about \(x=a\text{,}\) we know the following things to be true:</p>
+<ul class="disc">
+<li>\(\displaystyle f(a)=T_3(a)\)</li>
+<li>\(\displaystyle f'(a)=T'_3(a)\)</li>
+<li>\(\displaystyle f''(a)=T''_3(a)\)</li>
+<li>\(\displaystyle f'''(a)=T'''_3(a)\)</li>
+</ul>
+<p data-braille="continuation">But, some of these don't look super useful. For instance, if we try to use the first bullet, we get this equation:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+a^3\left[2\log a - \frac{11}{3}\right]=-\frac{2}{3}\sqrt{e^3}+3ea-6\sqrt{e}a^2+a^3
+\end{equation*}
+</div>
+<p>Solving this would be terrible. Instead, let's think about how the equations look when we move further down the list. Since \(T_3(x)\) is a cubic equation, \(T_3'''(x)\) is a constant (and so \(T_3'''(a)\) does not depend on \(a\)). That sounds like it's probably the simplest option. Let's start differentiating. We'll need to know both \(\textcolor{blue}{f'''(a)}\) and \(\textcolor{red}{T_3'''(a)}\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f(x)&amp;=x^3\left[2\log x - \frac{11}{3}\right]\\
+f'(x)&amp;=x^3\left[\frac{2}{x}\right]+3x^2\left[2\log x - \frac{11}{3}\right]=6x^2\log x -9x^2\\
+f''(x)&amp;=6x^2\cdot\frac{1}{x}+12x\log x - 18x=12x\log x - 12 x\\
+f'''(x)&amp;=12x\cdot\frac{1}{x}+12\log x - 12  = 12\log x\\
+\color{blue}{f'''(a)}&amp;\color{blue}{=12\log a}\\
+\end{align*}
+<p class="intertext">Now, let's move to the Taylor polynomial. Remember that \(e\) is a constant.</p>
+\begin{align*}
+T_3(x)&amp;=-\frac{2}{3}\sqrt{e^3}+3ex-6\sqrt{e}x^2+x^3\\
+T_3'(x)&amp;=3e-12\sqrt{e}x+3x^2\\
+T_3''(x)&amp;=-12\sqrt{e}+6x\\
+T_3'''(x)&amp;=6\\
+\color{red}{T_3'''(a)}&amp;\color{red}{=6}\\
+\end{align*}
+<p class="intertext">The final bullet point gives us the equation:</p>
+\begin{align*}
+\color{blue}{f'''(a)}&amp;=\color{red}{T_3'''(a)}\\
+\color{blue}{12\log a} &amp;= \color{red}{6}\\
+\log a &amp;= \frac{1}{2}\\
+a&amp;=e^{\tfrac{1}{2}}
+\end{align*}
+</div>
+<p data-braille="continuation">So, \(a=\sqrt{e}\text{.}\)</p>
+</div></body>
+</html>

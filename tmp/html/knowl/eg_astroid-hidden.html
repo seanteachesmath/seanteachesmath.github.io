@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:56:43-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>In this example, we find the perimeter of the astroid<a class="fn-knowl original" data-knowl="./knowl/fn-540-hidden.html" title="Footnote 12.1.4"><sup> 4 </sup></a></p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x^{2/3}+y^{2/3} = a^{2/3}
+\end{equation*}
+</div>
+<p data-braille="continuation">A geometric construction of this curve, as well as a derivation of its equation is given in the optional section <a href="sec_astroid.html" class="internal" title="Section 12.11: Optional — The Astroid">12.11</a> later.  We'll start by finding a convenient parametrization.</p>
+<ul class="disc">
+<li>To do so, notice that \(x^{2/3}+y^{2/3} = a^{2/3}\) looks somewhat like the equation of the circle \(x^2+y^2=a^2\text{.}\)</li>
+<li>The standard parametrization of the circle, namely \(x=a\cos t\text{,}\) \(y=a \sin t\) works because of the elementary trig identity \(\cos^2t+\sin^2t=1\text{.}\)</li>
+<li>If we can arrange that \(x(t)^{2/3} = a^{2/3}\cos^2 t\) and \(y(t)^{2/3}=a^{2/3}\sin^2 t\text{,}\) then the same elementary trig identity will give \(x(t)^{2/3}+y(t)^{2/3} = a^{2/3}\text{,}\) as desired.</li>
+<li>But of course its easy to arrange that: just solve  \(x(t)^{2/3} = a^{2/3}\cos^2 t\) for \(x(t)\text{,}\) namely \(x(t) = a\cos^3t\text{,}\) and solve \(y(t)^{2/3}=a^{2/3}\sin^2 t\) for \(y(t)\text{,}\) namely \(y(t)=a\sin^3 t\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Our parametrization is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vr(t) = a\cos^3t\,\hi + a\sin^3 t\,\hj
+\end{equation*}
+</div>
+<p data-braille="continuation">By Lemma <a class="xref" data-knowl="./knowl/lem_CVtanArclen.html" title="Lemma 9.6.12">9.6.12</a></p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vr(t) &amp;= a\cos^3t\,\hi + a\sin^3 t\,\hj\\
+\vr'(t) &amp;= -3a\sin t\cos^2t\,\hi + 3a\sin^2 t\cos t\,\hj\\
+\diff{s}{t}(t)&amp;=\big|\vr'(t)\big|
+= \sqrt{9a^2\sin^2t\cos^4t + 9a^2\sin^4t\cos^2t}\\
+&amp; = 3a \sqrt{\sin^2t\cos^2t(\cos^2t+\sin^2t)}\\
+&amp;=3a\big|\sin t\cos t\big|\\
+\hat\vT(t) &amp;= \frac{\vr'(t)}{|\vr'(t))|}
+=  \frac{\sin t\cos t}{|\sin t\cos t|}\ \big(-\cos t\,\hi+\sin t\,\hj\big)\\
+&amp;=  \sgn\!\big(\!\sin t\cos t\big)\ \big(-\cos t\,\hi+\sin t\,\hj\big)
+\end{align*}
+</div>
+<p data-braille="continuation">Here \(\sgn\!\big(\!\sin t\cos t\big)\) means “the sign of \(\sin t\cos t\)”, i.e \(+1\) when \(\sin t\cos t \gt 0\) and \(-1\) when \(\sin t\cos t \lt 0\text{.}\) So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\hat\vT(t)\\
+&amp;=\left.\begin{cases}1&amp;\text{if } \sin t \gt 0,\ \cos t \gt 0
+\text{ or } \sin t \lt 0,\ \cos t \lt 0\\
+-1&amp;\text{if } \sin t \gt 0,\ \cos t \lt 0
+\text{ or } \sin t \lt 0,\ \cos t \gt 0
+\end{cases}\right\}\big(-\cos t\,\hi+\sin t\,\hj\big)\\
+&amp;=\left.\begin{cases}1&amp;\text{if } 0 \lt  t \lt \frac{\pi}{2}
+\text{ or }  \pi \lt  t \lt \frac{3\pi}{2}\\
+-1&amp;\text{if }  \frac{\pi}{2} \lt t \lt \pi
+\text{ or }  \frac{3\pi}{2} \lt t \lt 2\pi
+\end{cases}\right\}\big(-\cos t\,\hi+\sin t\,\hj\big)
+\end{align*}
+</div>
+<p>Before we go on to sketch the astroid and compute its perimeter, we can make a few observations that will simplify our lives.</p>
+<ul class="disc">
+<li>
+<p>The signs of both components of \(\vr(t)\) are the same as the signs of the components of \(\cos t\,\hi +\sin t\,\hj\text{;}\) and the signs of both components of \(\vr'(t)\) are the same as the signs of the components of \(-\sin t\,\hi +\cos t\,\hj\text{.}\) Consequently the astroid looks somewhat like a circle in that</p>
+<ul class="circle">
+<li>when \(0\le t\le \frac{\pi}{2}\text{,}\) \(\vr(t)\) lies in the first quadrant and moves upward and to the left as \(t\) increases and</li>
+<li>when \(\frac{\pi}{2}\le t\le \pi\text{,}\) \(\vr(t)\) lies in the second quadrant and moves downward and to the left as \(t\) increases and</li>
+<li>when \(\pi\le t\le \frac{3\pi}{2}\text{,}\) \(\vr(t)\) lies in the third quadrant and moves downward and to the right as \(t\) increases and</li>
+<li>when \(\frac{3\pi}{2}\le t\le 2\pi\text{,}\) \(\vr(t)\) lies in the fourth quadrant and moves upward and to the right as \(t\) increases and</li>
+<li>\(\vr(2\pi)=\vr(0)\) so that the astroid is a closed curve that circumnavigates the origin exactly once as \(t\) runs from \(0\) to \(2\pi\text{.}\)</li>
+</ul>
+</li>
+<li>
+<p>Something weird happens at those values of \(t\) where \(\sin t\cos t\) changes sign<a class="fn-knowl original" data-knowl="./knowl/fn-541-hidden.html" title="Footnote 12.1.5"><sup> 5 </sup></a>, i.e. at \(t=0\text{,}\) \(\frac{\pi}{2}\text{,}\) \(\pi\text{,}\) \(\frac{3\pi}{2}\text{,}\) etc. Namely \(\hat T(t)\) flips. To be precise</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{t\rightarrow 0-}\hat T(t) 
+&amp;= \lim_{t\rightarrow 0-} \sgn\!\big(\!\sin t\cos t\big)\ 
+\lim_{t\rightarrow 0-} \big(-\cos t\,\hi+\sin t\,\hj\big)
+=\hi \\
+\lim_{t\rightarrow 0+}\hat T(t) 
+&amp;= \lim_{t\rightarrow 0+}\sgn\!\big(\!\sin t\cos t\big)\ 
+\lim_{t\rightarrow 0+}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=-\hi
+\end{align*}
+</div>
+<p data-braille="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{t\rightarrow \pi/2-}\hat T(t) 
+&amp;= \lim_{t\rightarrow \pi/2-}\sgn\!\big(\!\sin t\cos t\big)\ 
+\lim_{t\rightarrow \pi/2-}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=\hj \\
+\lim_{t\rightarrow \pi/2+}\hat T(t) 
+&amp;= \lim_{t\rightarrow \pi/2+}\sgn\!\big(\!\sin t\cos t\big)\ 
+\lim_{t\rightarrow \pi/2+}\big(-\cos t\,\hi+\sin t\,\hj\big)
+=-\hj
+\end{align*}
+</div>
+<p data-braille="continuation">and so on. This signals cusps in the curve at \(t=0\text{,}\) i.e. at \(\vr(0) = a\hi\text{,}\) and at \(t=\frac{\pi}{2}\text{,}\) i.e. at \(\vr(\frac{\pi}{2}) = a\hj\text{,}\) and so on. So while the astroid looks somewhat like a circle, it has cusps at \(\pm a\hi\) and \(\pm a\hj\text{.}\) Here is the sketch.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/astroid4.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li>The astroid is invariant under reflections in the \(x\)-axis and in the \(y\)-axis. That is, \(x^{2/3}+y^{2/3} = a^{2/3}\) is invariant under \(x\rightarrow -x\) and also under \(y\rightarrow -y\text{.}\) So to find the whole perimeter, it suffices to find the arc length of the part of the astroid in the first quadrant, and then multiply by \(4\text{.}\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{perimeter}
+&amp;=4\int_0^{\pi/2}\diff{s}{t}\ \dee{t}
+= 4\int_0^{\pi/2}3a\sin t\cos t\ \dee{t}\\
+&amp; = 6a\int_0^{\pi/2}\sin(2t)\ \dee{t}
+=6a\Big[-\frac{\cos(2t)}{2}\Big]_0^{\pi/2}\\
+&amp;=6a
+\end{align*}
+</div>
+</li>
+</ul></article></body>
+</html>

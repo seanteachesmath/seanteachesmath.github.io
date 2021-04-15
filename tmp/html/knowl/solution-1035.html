@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:05:19-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.12.4.8.1</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">First, let's identify all “sources of impropriety.” The integrand has a singularity when \(4x^2-x=0\text{,}\) that is, when \(x(4x-1)=0\text{,}\) so at \(x=0\) and \(x=\frac{1}{4}\text{.}\) Neither of these are in our domain of integration, so the only “source of impropriety” is the unbounded domain of integration.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">We could antidifferentiate this function (it looks like a nice candidate for a trig substitution), but is seems easier to use a comparison. For large values of \(x\text{,}\) the term \(x^2\) will be much larger than \(x\text{,}\) so we might guess that our integral behaves similarly to \(\int_1^\infty \frac{1}{\sqrt{4x^2}} \dee{x}=\int_1^\infty \frac{1}{2x} \dee{x}\text{.}\)</p>
+<p>For all \(x\ge 1\text{,}\) \(\sqrt{4x^2-x}\le\sqrt{4x^2}=2x\text{.}\) So, \(\frac{1}{\sqrt{4x^2-x}} \geq \frac{1}{2x}\text{.}\) Note \(\int_1^\infty \frac{1}{2x} \dee{x}\) diverges:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\lim_{t\rightarrow\infty}\int_1^t\frac{1}{2x}\,\dee{x}
+=\lim_{t\rightarrow\infty}\left(\frac{1}{2} \big[\log x\big]_1^t\right)
+=\lim_{t\rightarrow\infty}\frac{1}{2} \log t
+=\infty
+\end{gather*}
+</div>
+<p data-braille="continuation">So:</p>
+<ul class="disc">
+<li>\(\frac{1}{2x}\) and \(\frac{1}{\sqrt{4x^2-x}}\) are defined and continuous for all \(x \geq 1\text{,}\)</li>
+<li>\(\frac{1}{2x} \geq 0\) for all \(x \geq 1\text{,}\)</li>
+<li>\(\frac{1}{\sqrt{4x^2-x}} \ge\frac{1}{\sqrt{4x^2}} = \frac{1}{2x} \) for all \(x \ge 1\text{,}\) and</li>
+<li>\(\int_1^\infty \frac{1}{2x} \dee{x}\) diverges.</li>
+</ul>
+<p data-braille="continuation">By the comparison test, Theorem <a class="xref" data-knowl="./knowl/thm_IMPcomparison.html" title="Theorem 6.12.17: Comparison">6.12.17</a> in the text, the integral does not converge.</p>
+</div>
+<span class="incontext"><a href="sec_improp_int.html#solution-1035">in-context</a></span>
+</body>
+</html>

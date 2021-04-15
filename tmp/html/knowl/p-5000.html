@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:48:00-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>We can justify this generalisation of l'Hôpital's rule with some careful manipulations. Since the derivatives \(f',g'\) exist in some interval around \(a\text{,}\) we know that \(f,g\) are continuous in some interval around \(a\text{;}\) let \(x,t\) be points inside that interval. Now rewrite <a class="fn-knowl original" data-knowl="./knowl/fn-168-hidden.html" title="Footnote 4.7.4"><sup> 4 </sup></a></p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{f(x)}{g(x)}
+&amp;= \frac{f(x)}{g(x)}
++\underbrace{\left( \frac{f(t)}{g(x)} - \frac{f(t)}{g(x)}\right)}_{=0}
++ \underbrace{\left(\frac{f(x)-f(t)}{g(x)-g(t)}
+- \frac{f(x)-f(t)}{g(x)-g(t)}\right)}_{=0}\\
+&amp;= \underbrace{\frac{f(x)-f(t)}{g(x)-g(t)}}_\text{ready for GMVT}
++ \frac{f(t)}{g(x)}
++ \underbrace{\left(
+\frac{f(x)}{g(x)} - \frac{f(t)}{g(x)} - \frac{f(x)-f(t)}{g(x)-g(t)}
+\right)}_\text{we can clean it up}\\
+&amp;= \frac{f(x)-f(t)}{g(x)-g(t)}
++ \frac{f(t)}{g(x)}
++ \left(
+\frac{f(x)-f(t)}{g(x)} - \frac{f(x)-f(t)}{g(x)-g(t)}
+\right)\\
+&amp;= \frac{f(x)-f(t)}{g(x)-g(t)}
++ \frac{f(t)}{g(x)}
++ \left(
+\frac{1}{g(x)} - \frac{1}{g(x)-g(t)}
+\right)\cdot (f(x)-f(t))\\
+&amp;= \frac{f(x)-f(t)}{g(x)-g(t)}
++ \frac{f(t)}{g(x)}
++ \left(
+\frac{g(x)-g(t) - g(x)}{g(x)(g(x)-g(t))}
+\right)\cdot (f(x)-f(t))\\
+&amp;= \underbrace{\frac{f(x)-f(t)}{g(x)-g(t)}}_\text{ready for GMVT}
++ \frac{f(t)}{g(x)}
+- \frac{g(t)}{g(x)}\cdot \underbrace{\frac{f(x)-f(t)}{g(x)-g(t)}}_\text{ready for GMVT}
+\end{align*}
+</div>
+<p data-braille="continuation">Oof! Now the generalised mean-value theorem (Theorem <a class="xref" data-knowl="./knowl/thm_GMVT.html" title="Theorem 4.4.38: Generalised Mean-Value Theorem">4.4.38</a>) tells us there is a \(c\) between \(x\) and \(t\) so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{f(x)-f(t)}{g(x)-g(t)} &amp;= \frac{f'(c)}{g'(c)}
+\end{align*}
+</div>
+<p data-braille="continuation">Now substitute this into the large expression we derived above:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{f(x)}{g(x)}
+&amp;= \frac{f'(c)}{g'(c)} + \frac{1}{g(x)}\left(f(t) - \frac{f'(c)}{g'(c)}\cdot g(t)
+\right)
+\end{align*}
+</div>
+<p data-braille="continuation">At first glance this does not appear so useful, however if we fix \(t\) and take the limit as \(x \rightarrow a\text{,}\) then it becomes</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{x\to a}\frac{f(x)}{g(x)}
+&amp;= \lim_{x\to a} \frac{f'(c)}{g'(c)}
++ \lim_{x\to a} \frac{1}{g(x)}\left(f(t) - \frac{f'(c)}{g'(c)}\cdot g(t) \right)\\
+\end{align*}
+<p class="intertext">Since \(g(x) \to \infty\) as \(x \to a\text{,}\) this last term goes to zero</p>
+\begin{align*}
+&amp;= \lim_{x\to a} \frac{f'(c)}{g'(c)}
++ 0
+\end{align*}
+</div>
+<p data-braille="continuation">Now take the limit as \(t\to a\text{.}\) The left-hand side is unchanged since it is independent of \(t\text{.}\) The right-hand side, however, does change; the number \(c\) is trapped between \(x\) and \(t\text{.}\) Since we have already taken the limit \(x\to a\text{,}\) so when we take the limit \(t \to a\text{,}\) we are effectively taking the limit \(c \to a\text{.}\) Hence</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{x\to a}\frac{f(x)}{g(x)}
+&amp;= \lim_{c\to a} \frac{f'(c)}{g'(c)}
+\end{align*}
+</div>
+<p data-braille="continuation">which is the desired result.</p>
+<span class="incontext"><a href="section-37.html#p-5000">in-context</a></span>
+</body>
+</html>

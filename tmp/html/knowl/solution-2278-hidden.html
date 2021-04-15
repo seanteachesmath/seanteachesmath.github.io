@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:14:27-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>(a) Let's use spherical coordinates. As \(S\) is the sphere of radius \(a\) centred on the origin,  we can parametrize it by</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vr(\theta,\varphi)
+&amp;=a\sin\varphi\cos\theta\,\hi
++a\sin\varphi\sin\theta\,\hj
++ a\cos\varphi\,\hk\\
+\pdiff{\vr}{\theta}
+&amp;=-a\sin\varphi\sin\theta\,\hi
++a\sin\varphi\cos\theta\,\hj\\
+\pdiff{\vr}{\varphi}
+&amp;= \phantom{-}a\cos\varphi\cos\theta\,\hi
++a\cos\varphi\sin\theta\,\hj
+-a\sin\varphi\,\hk\\
+\hn\,\dee{S}
+&amp;=\pm\pdiff{\vr}{\theta}
+\times \pdiff{\vr}{\varphi}
+\ \dee{\theta}\, d\varphi\\
+&amp;=\det\left[\begin{matrix}   \hi &amp;\hj &amp;\hk\\
+-a\sin\varphi\sin\theta &amp; a\sin\varphi\cos\theta &amp; 0\\
+a\cos\varphi\cos\theta &amp; a\cos\varphi\sin\theta &amp; -a\sin\varphi
+\end{matrix}\right]  \dee{\theta}\, d\varphi\\
+&amp;=\pm\Big(-a^2\sin^2\varphi\cos\theta\,\hi
+-a^2\sin^2\varphi\sin\theta\,\hj
+-a^2\sin\varphi\cos\varphi\,\hk\Big)\ \dee{\theta}\, d\varphi\\
+&amp;=\mp a^2\sin\varphi \big(\sin\varphi\cos\theta\,\hi
++\sin\varphi\sin\theta\,\hj
++\cos\varphi\,\hk\Big)\ \dee{\theta}\, d\varphi
+\end{align*}
+</div>
+<p data-braille="continuation">For the outward normal, we want the \(+\) sign, so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\hn\,\dee{S}
+&amp;= a^2\sin\varphi \big(\sin\varphi\cos\theta\,\hi
++\sin\varphi\sin\theta\,\hj
++\cos\varphi\,\hk\Big)\ \dee{\theta}\, d\varphi\\
+\vF\cdot \hn\,\dee{S} &amp;= z(\theta,\varphi)\,\hk\cdot \hn\,\dee{S}
+= a^3 \sin\varphi\cos^2\varphi\ \dee{\theta}\,d\varphi
+\end{align*}
+</div>
+<p data-braille="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_S\vF\cdot \hn\,\dee{S}
+&amp;= a^3\int_0^\pi d\varphi\int_0^{2\pi}\dee{\theta}\ \sin\varphi\,\cos^2\varphi\\
+&amp;=2\pi a^3 \int_0^\pi d\varphi \ \sin\varphi\,\cos^2\varphi
+=2\pi a^3\left[-\frac{1}{3}\cos^3\varphi\right]_0^\pi\\
+&amp;=\frac{4}{3}\pi a^3
+\end{align*}
+</div>
+<p>(b) Call the solid \(x^2+y^2+z^2\le a^2\text{,}\) \(V\text{.}\) As</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vnabla\cdot\vF
+=\pdiff{}{x}(0)
++\pdiff{}{y}(0)
++\pdiff{}{z}(z)
+=1
+\end{equation*}
+</div>
+<p data-braille="continuation">the divergence theorem gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_{\cS}\vF\cdot\hn\,\dee{S}
+&amp;=\tripInt_V\vnabla\cdot\vF\ \dee{V}
+=\tripInt_V \ \dee{V}
+=\text{Volume}(V)
+=\frac{4}{3}\pi a^3
+\end{align*}
+</div>
+</div></body>
+</html>

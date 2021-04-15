@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:06:26-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>(a), (b) The curls of \(\vF\) and \(\vG\) are</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\vnabla\times\vF
+= \det\left[\begin{matrix}
+\hi &amp;       \hj        &amp;   \hk\\
+\pdiff{}{x} &amp;   \pdiff{}{y}    &amp;  \pdiff{}{z}\\
+6x^2yz^2 &amp; 2x^3z^2 + 2y - xz &amp;  4x^3yz
+\end{matrix}\right]\\
+&amp;\hskip0.25in=(4x^3z-4x^3z+x)\,\hi-(12x^2yz-12x^2yz)\,\hj+(6x^2z^2-z-6x^2z^2)\,\hk\\
+&amp;\hskip0.25in=x\,\hi-z\,\hk\\
+&amp;\vnabla\times\vG
+=\det\left[\begin{matrix}
+\hi       &amp;   \hj       &amp;  \hk\\
+\pdiff{}{x} &amp; \pdiff{}{y} &amp;  \pdiff{}{z}\\
+yz &amp;      0      &amp; xy
+\end{matrix}\right]\\
+&amp;\hskip0.25in=x\hi-z\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">Hence the screening test for</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vnabla\times\big(\vF+\la\vG\big)=(x+\la x)\,\hi-(z+\la z)\,\hk
+\end{equation*}
+</div>
+<p data-braille="continuation">passes for \(\la=-1\text{.}\) Furthermore</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vF-\vG &amp;=(6x^2yz^2-yz)\,\hi+(2x^3z^2 + 2y - xz)\,\hj+(4x^3yz-xy)\,\hk\\
+&amp;=\vnabla\big(2x^3yz^2-xyz+y^2\big)
+\end{align*}
+</div>
+<p data-braille="continuation">The potential was found by guessing. Alternatively, we can find it by using that \(\phi(x,y,z)\) is a potential for \(\vF-\vG\) if and only if</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\pdiff{\phi}{x}(x,y,z) &amp;= 6x^2yz^2-yz\\
+\pdiff{\phi}{y}(x,y,z) &amp;= 2x^3z^2 + 2y - xz\\
+\pdiff{\phi}{z}(x,y,z) &amp;= 4x^3yz-xy
+\end{align*}
+</div>
+<p data-braille="continuation">Integrating the first of these equations gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\phi(x,y,z) = 2x^3yz^2-xyz + f(y,z)
+\end{equation*}
+</div>
+<p data-braille="continuation">Substituting this into the second equation gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+2x^3z^2-xz + \pdiff{f}{y}(y,z)
+= 2x^3z^2 + 2y - xz \qquad\hbox{or}\qquad
+\pdiff{f}{y}(y,z) = 2y
+\end{equation*}
+</div>
+<p data-braille="continuation">which integrates to</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f(y,z) = y^2+ g(z)
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally, substituting \(\phi(x,y,z) = 2x^3yz^2-xyz + y^2 + g(z)\) into the last equation gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+4x^3yz-xy + g'(z) = 4x^3yz-xy\qquad\hbox{or}\qquad
+g'(z) = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">which integrates to</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+g(z) =  K
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(K\) being an arbitrary constant. Choosing \(K=0\) gives the potential \(\phi(x,y,z) =  2x^3yz^2-xyz + y^2\) as in the guess above.</p>
+<p>(c) Any point \((x,y,z)\) on the curve must have \(z=x\) and \(y=e^{xz}=e^{x^2}\text{.}\) So we may parametrize the curve by \(\vr(x)=x\,\hi+e^{x^2}\,\hj+x\,\hk\text{,}\) \(0\le x\le 1\text{.}\) Hence</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\int_C\vF\cdot \dee{\vr}
+=\int_C(\vF-\vG)\cdot \dee{\vr}+\int_C\vG\cdot \dee{\vr}\\
+&amp;\hskip0.25in=\Big[2x^3yz^2-xyz+y^2\Big]_{(0,1,0)}^{(1,e,1)}
++\int_0^1\overbrace{[xe^{x^2}\hi + xe^{x^2}\hk]}^{\vG(\vr(x))}\cdot
+\overbrace{[\hi+2xe^{x^2}\,\hj+\hk]}^{\diff{\vr}{x}}\ \dee{x}\\
+&amp;\hskip0.25in=e+e^2-1+\int_0^1 2xe^{x^2}\ \dee{x}
+=e+e^2-1+\Big[e^{x^2}\Big]_0^1
+=e^2+2e-2
+\end{align*}
+</div>
+</div></body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:31:01-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Our limit has the indeterminate form \(1^{\infty}\text{;}\) as with l'Hôpital's rule, we can change it to a friendlier form using the natural logarithm.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f(x)&amp;=\left(1+x+x^2\right)^{2/x}\\
+\log(f(x))&amp;=\log\left[\left(1+x+x^2\right)^{2/x}\right]=\frac{2}{x}\log\left(1+x+x^2\right)
+\end{align*}
+</div>
+<p data-braille="continuation">Recall \(\log(1+y)=\displaystyle\sum_{n=1}^\infty \frac{(-1)^{n+1}y^n}{n}\text{,}\) and set \(y=x+x^2\text{.}\) The series converges when \(|y| \lt 1\text{,}\) and since we only consider values of \(x\) that are very close to 0, we can assume \(|x+x^2| \lt 1\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\log(f(x))&amp;=\frac{2}{x}\log\left(1+(x+x^2)\right)=\frac{2}{x}\sum_{n=1}^\infty\frac{(-1)^{n+1}(x+x^2)^n}{n}\\
+&amp;=\frac{2}{x}\left[(x+x^2)-\frac{(x+x^2)^2}{2}+\frac{(x+x^2)^3}{3}-\cdots\right]\\
+&amp;=2+2x-\frac{(x+x^2)^2}{2x}+\frac{(x+x^2)^3}{3x}-\cdots\\
+&amp;=2+2x-\frac{(x^2+x)(1+x)}{2}+\frac{(x^2+x)^2(1+x)}{3}-\cdots
+\end{align*}
+</div>
+<p data-braille="continuation">so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\amp\lim_{x \to 0}\log(f(x))\\
+\amp\hskip0.25in=\lim_{x \to 0}\left[2+2x-\frac{(x^2+x)(1+x)}{2}+\frac{(x^2+x)^2(1+x)}{3}-\cdots\right]\\
+&amp;\hskip0.25in=2+0+0\cdots=2
+\end{align*}
+</div>
+<p data-braille="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{x \to 0} f(x)&amp;=\lim_{x \to 0}e^{\log f(x)}=e^2
+\end{align*}
+</div>
+</div></body>
+</html>

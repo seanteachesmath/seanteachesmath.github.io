@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:05:35-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.12.4.16.1</span><span class="period">.</span>
+</h6>
+<p>The integrand is positive everywhere, so either the integral converges to some finite number or it is infinite. There are two potential “sources of impropriety” — a possible singularity at \(x=0\) and the fact that the domain of integration extends to \(\infty\text{.}\) So we split up the integral.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_0^\infty\frac{x+1}{x^{1/3}(x^2+x+1)}\,\dee{x}
+\amp= \int_0^1\frac{x+1}{x^{1/3}(x^2+x+1)}\,\dee{x}\\
+\amp\hskip0.25in  +\int_1^\infty\frac{x+1}{x^{1/3}(x^2+x+1)}\,\dee{x}
+\end{align*}
+</div>
+<p data-braille="continuation">Let's develop a hunch about whether the integral converges or diverges. When \(x\approx 0\text{,}\)  \(x^2\) and \(x\) are both a lot smaller than 1, so we guess we should compare the integrand to \(\frac{1}{x^{1/3}}\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{x+1}{x^{1/3}(x^2+x+1)} \approx \frac{1}{x^{1/3}(1)} =
+\frac{1}{x^{1/3}}
+\end{equation*}
+</div>
+<p data-braille="continuation">Note \(\int_0^1 \frac{1}{x^{1/3}} \dee{x}\) converges by Example <a class="xref" data-knowl="./knowl/eg_IMPp2.html" title="Example 6.12.9: \(\int_0^1\frac{\dee{x}}{x^p}\) with \(p \gt 0\)">6.12.9</a> (it's a \(p\)-type integral), so we guess \(\int_0^1 \frac{x+1}{x^{1/3}(x^2+x+1)} \dee{x}\) converges as well.</p>
+<p>When \(x\) is very large, \(x^2\) is much bigger than \(x\text{,}\) which is much bigger than 1, so we guess we should compare the integrand to \(\frac{1}{x^{4/3}}\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{x+1}{x^{1/3}(x^2+x+1)} \approx \frac{x}{x^{1/3}(x^2)} =
+\frac{1}{x^{4/3}}
+\end{equation*}
+</div>
+<p data-braille="continuation">Note \(\int_1^\infty \frac{1}{x^{4/3}} \dee{x}\) converges by Example <a class="xref" data-knowl="./knowl/eg_IMPp1.html" title="Example 6.12.8: \(\int_1^\infty\frac{\dee{x}}{x^p}\) with \(p \gt 0\)">6.12.8</a> (it's a \(p\)-type integral), so we guess \(\int_1^\infty \frac{x+1}{x^{1/3}(x^2+x+1)} \dee{x}\) converges as well.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Now it's time to verify our guesses with the limiting comparison test, Theorem <a class="xref" data-knowl="./knowl/thm_IMPcomparisonLim.html" title="Theorem 6.12.22: Limiting comparison">6.12.22</a>. Be careful: our “\(\approx\)” signs are not strong enough to use either the limiting comparison test or the comparison test, they are only enough to suggest a reasonable function to compare <em class="emphasis">to</em>.</p>
+<ul class="disc">
+<li>\(\frac{x+1}{x^{1/3}(x^2+x+1)}\,, \frac{1}{x^{1/3}}\,,\) and \(\frac{1}{x^{4/3}}\) are defined and continuous for all \(x  \gt  0\)</li>
+<li>\(\frac{1}{x^{1/3}}\) and \(\frac{1}{x^{4/3}}\) are positive for all \(x \gt 0\)</li>
+<li>\(\int_0^1  \frac{1}{x^{1/3}} \dee{x}\) and \(\int_1^\infty  \frac{1}{x^{4/3}} \dee{x}\) both converge</li>
+<li>\(\lim\limits_{x \to 0}\dfrac{\frac{x+1}{x^{1/3}(x^2+x+1)}}{\frac{1}{x^{1/3}}}
+=\lim\limits_{x \to 0}\dfrac{x+1}{x^2+x+1}=\dfrac{0+1}{0+0+1}=1
+\text{;}\) in particular, this limit exists.</li>
+<li>Using the limiting comparison test (Theorem <a class="xref" data-knowl="./knowl/thm_IMPcomparisonLim.html" title="Theorem 6.12.22: Limiting comparison">6.12.22</a>, together with Remark <a class="xref" data-knowl="./knowl/rmk_singularities.html" title="Remark 6.12.16">6.12.16</a> because our impropriety is due to a singularity), \(\int_0^1 \frac{x+1}{x^{1/3}(x^2+x+1)} \dee{x}\) converges.</li>
+<li>\(\lim\limits_{x \to \infty}\dfrac{\frac{x+1}{x^{1/3}(x^2+x+1)}}{\frac{1}{x^{4/3}}}
+=\lim\limits_{x \to 0}\dfrac{x(x+1)}{x^2+x+1}=1
+\text{;}\) in particular, this limit exists.</li>
+<li>Using the limiting comparison test (Theorem <a class="xref" data-knowl="./knowl/thm_IMPcomparisonLim.html" title="Theorem 6.12.22: Limiting comparison">6.12.22</a>), \(\int_1^\infty \frac{x+1}{x^{1/3}(x^2+x+1)} \dee{x}\) converges.</li>
+</ul>
+<p xmlns:svg="http://www.w3.org/2000/svg">We conclude \(\displaystyle\int_0^\infty \frac{x+1}{x^{1/3}(x^2+x+1)} \dee{x}\) converges.</p>
+</div>
+<span class="incontext"><a href="sec_improp_int.html#solution-1043">in-context</a></span>
+</body>
+</html>

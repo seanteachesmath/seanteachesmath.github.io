@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:42:39-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.4.11.8.12.1</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">We will approximate \(f(x)=x^{\tfrac{1}{7}}\) using a Taylor polynomial. Since \(3^7=2187\text{,}\) we will use \(x=2187\) as our centre.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">We need to figure out which degree Taylor polynomial will result in a  small-enough error.</p>
+<p>If we use the \(n\)th Taylor polynomial, our error will be</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\left|f(2200)-T_n(2200)\right|&amp;=\left|\frac{f^{(n+1)}(c)}{(n+1)!}(2200-2187)^{n+1}\right|\\
+&amp;=\left|f^{(n+1)}(c)\right|\cdot\frac{13^{n+1}}{(n+1)!}\\
+\end{align*}
+<p class="intertext">for some \(c\) in \((2187,2200)\text{.}\) In order for this to be less than 0.001, we need</p>
+\begin{align*}
+\left|f^{(n+1)}(c)\right|\cdot\frac{13^{n+1}}{(n+1)!}&amp; \lt 0.001\\
+\left|f^{(n+1)}(c)\right|&amp; \lt \frac{ (n+1)!}{1000\cdot13^{n+1}}
+\end{align*}
+</div>
+<p data-braille="continuation">It's a tricky thing to figure out which \(n\) makes this true. Let's make a table. We won't show all the work of filling it in, but the work is standard.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c|c}
+n &amp; \dfrac{(n+1)!}{1000\cdot 13^{n+1}}&amp;\left|f^{(n+1)}(c)\right|
+&amp;\dfrac{ (n+1)!}{1000\cdot13^{n+1}}
+\\
+\;\;&amp;\;\;&amp;\;\;\\
+\hline
+\;\;&amp;\;\;&amp;\;\;\\
+0&amp;\dfrac{1}{1000\cdot 13}&amp;|f'(c)|=\dfrac{1}{7c^{6/7}} \lt \dfrac{1}{7\cdot 3^6}
+&amp; \dfrac{1}{1000\cdot13^1}
+\\
+\;\;&amp;\;\;&amp;\;\;\\
+\hline
+\;\;&amp;\;\;&amp;\;\;\\
+1&amp;\dfrac{2}{1000\cdot 13^2}&amp;|f''(c)|=\dfrac{6}{7^2\cdot c^{\tfrac{13}{7}}} \lt \dfrac{6}{7^2\cdot 3^{13}}&amp; \dfrac{ (2)!}{1000\cdot13^{2}}
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">Since</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{7^2\cdot 3^{13}}{3}= 26,040,609&gt;169,000=1000\cdot 13^2
+\end{equation*}
+</div>
+<p data-braille="continuation">we have \(\left|f^{(n+1)}(c)\right| \lt \frac{ (n+1)!}{1000\cdot13^{n+1}}\) when \(n=1\text{.}\)</p>
+<p>That is: if we use the first-degree Taylor polynomial, then for some \(c\) between \(2187\) and \(2200\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+|f(2200)-T_1(2200)|&amp;=\left|f''(c)\right|\cdot\frac{13^2}{2!}\\
+&amp;=\frac{6}{7^2\cdot c^{\tfrac{13}{7}}}\cdot\frac{13^2}{2}\\
+&amp; \lt \dfrac{6}{7^2\cdot 3^{13}}\cdot\dfrac{13^2}{2}\\
+&amp;=\dfrac{3\cdot 13^2}{7^2 \cdot 3^{13}}\approx 0.0000065
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">So, actually, the linear Taylor polynomial (or any higher-degree Taylor polynomial) will result in an approximation that is much more accurate than required. (We don't know, however, that the constant approximation will be accurate enough--so we'd better stick with \(n \geq 1\text{.}\))</p>
+<p>Now that we know we can take the first-degree Taylor polynomial, let's compute \(T_1(x)\text{.}\) Recall we are taking the Taylor polynomial for \(f(x)=x^{\tfrac{1}{7}}\) about \(x=2187\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f(2187)&amp;=2187^{\tfrac{1}{7}}=3\\
+f'(x)&amp;=\frac{1}{7}x^{-\tfrac{6}{7}}\\
+f'(2187)&amp;=\frac{1}{7\sqrt[7]{2187}^6}=\frac{1}{7\cdot3^6}\\
+T_1(x)&amp;=f(2187)+f'(2187)(x-2187)\\
+&amp;=3+\frac{x-2187}{7\cdot3^6}\\
+T_1(2200)&amp;=3+\frac{2200-2187}{7\cdot3^6}\\
+&amp;=3+\frac{13}{7\cdot 3^6}\\
+&amp;\approx 3.00255
+\end{align*}
+</div>
+<p data-braille="continuation">We conclude \(\sqrt[7]{2200}\approx 3.00255\text{.}\)</p>
+</div>
+<span class="incontext"><a href="sec_DIFFTaylor.html#solution-551">in-context</a></span>
+</body>
+</html>

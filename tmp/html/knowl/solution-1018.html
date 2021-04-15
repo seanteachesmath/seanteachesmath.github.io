@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:04:14-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.11.6.24.1</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Set \(a=0\) and \(b=8\text{.}\) Since we have information about \(s(x)\) when \(x\) is 0, 2, 4, 6, and 8, we set  \(\De x=\frac{b-a}{n}=2\text{,}\) so \(n=4\text{.}\) (Recall with the trapezoid rule and Simpson's rule, \(n=4\) intervals actually uses the value of the function at 5 points.)</p>
+<p>We could perform the trapezoidal approximations with fewer intervals, for example \(n=2\text{,}\) but this would involve ignoring some of the points we're given. Since the question asks for the best estimation we can give, we use \(n=4\) intervals and no fewer.</p>
+<ol class="lower-alpha">
+<li><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+T_4&amp;={\De x}\left[\frac{1}{2}s(0)+s(2)+s(4)+s(6)+\frac{1}{2}s(8)\right]\\
+&amp;=2\left[\frac{1.00664}{2}+1.00543+ 1.00435+1.00331+ \frac{1.00233}{2}\right]\\
+&amp;=8.03515\\
+S_4&amp;=\frac{\De x}{3}\big[s(0)+4s(2)+2s(4)+4s(6)+s(8)\big]\\
+&amp;=\frac{2}{3}\big[1.00664+4\times 1.00543+2\times 1.00435+4\times1.00331\\
+&amp;\hskip3in + 1.00233\big]\\
+&amp;\approx 8.03509
+\end{align*}
+</div></li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">The information \(\big|s^{(k)}(x)\big|\le \dfrac{k}{1000}\text{,}\) with \(k=2\text{,}\) tells us \(|s''(x)|\leq \frac{2}{1000}\) for all \(x\) in the interval \([0,8]\text{.}\) So, we take \(K_2\) (also called \(M\) in your text) to be \(\frac{2}{1000}\text{.}\)</p>
+<p>Then the absolute error associated with our trapezoid rule approximation is at most</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\bigg|\int_a^b f(x)\ dx -T_n\bigg|&amp;\le \frac{K_2(b-a)^3}{12n^2}
+\le \frac{2}{1000}\cdot\frac{8^3}{12(4)^2}
+\le 0.00533
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">For \(k=4\text{,}\) we see \(|s^{(4)}(x)|\leq \frac{4}{1000}\) for all \(x\) in the interval \([0,8]\text{.}\) So, we take \(K_4\) (also called \(L\) in your text) to be \(\frac{4}{1000}\text{.}\)</p>
+<p>Then the absolute error associated with our Simpson's rule approximation is at most</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\bigg|\int_a^b f(x)\ dx -S_n\bigg|&amp;\le \frac{K_4(b-a)^5}{180n^4}
+\le \frac{4}{1000}\cdot\frac{8^5}{180(4)^4}
+\le0.00284
+\end{align*}
+</div>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="sec_numeric_int.html#solution-1018">in-context</a></span>
+</body>
+</html>

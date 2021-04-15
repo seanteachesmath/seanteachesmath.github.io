@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:49:38-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>To get the exact area <a class="fn-knowl original" data-knowl="./knowl/fn-175-hidden.html" title="Footnote 6.1.5"><sup> 5 </sup></a> all we need to  do is make the approximation better and better by taking the limit \(n\rightarrow  \infty\text{.}\) The limit will look more familiar if we rename \(\frac{1}{n}\) to  \(X\text{.}\) As \(n\) tends to infinity, \(X\) tends to \(0\text{,}\) so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Area}&amp;=\lim_{n\rightarrow\infty} \frac{1}{n}\ \frac{e-1}{e^{1/n}-1}\\
+&amp;=(e-1)\lim_{n\rightarrow\infty} \frac{1/n}{e^{1/n}-1}\\
+&amp;=(e-1)\lim_{X\rightarrow 0} \frac{X}{e^X-1}
+&amp;\text{(with $X=\frac{1}{n}$)}
+\end{align*}
+</div>
+<p data-braille="continuation">Examining this limit we see that both numerator and denominator tend to zero as \(X\to 0\text{,}\)  and so we cannot evaluate this limit by computing the limits of the numerator and  denominator separately and then dividing the results. Despite this, the limit is not too  hard to evaluate; here we give two ways:</p>
+<ul class="disc">
+<li>Perhaps the easiest way to compute the limit is by using  l'Hôpital's rule <a class="fn-knowl original" data-knowl="./knowl/fn-176-hidden.html" title="Footnote 6.1.6"><sup> 6 </sup></a>. Since both numerator and denominator go to zero, this is a \(\frac00\) indeterminate  form. Thus<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{X\rightarrow 0} \frac{X}{e^X-1}
+&amp;=\lim_{X\rightarrow 0} \frac{\diff{}{X}X}{\diff{}{X}(e^X-1)}
+=\lim_{X\rightarrow 0} \frac{1}{e^X}=1
+\end{align*}
+</div>
+</li>
+<li>Another way <a class="fn-knowl original" data-knowl="./knowl/fn-177-hidden.html" title="Footnote 6.1.7"><sup> 7 </sup></a> to evaluate the same limit is to observe that it can be massaged  into the form of the limit definition of the derivative. First notice that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{X\rightarrow 0} \frac{X}{e^X-1}
+&amp;= \left[\lim_{X\rightarrow 0} \frac{e^X-1}{X} \right]^{-1}
+\end{align*}
+</div>provided this second limit exists and is nonzero <a class="fn-knowl original" data-knowl="./knowl/fn-178-hidden.html" title="Footnote 6.1.8"><sup> 8 </sup></a>. This second limit should look a little  familiar:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{X\rightarrow 0} \frac{e^X-1}{X}
+&amp;= \lim_{X\rightarrow 0} \frac{e^X-e^0}{X-0}
+\end{align*}
+</div>which is just the definition of the derivative of \(e^x\) at \(x=0\text{.}\) Hence we have<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{X\rightarrow 0} \frac{X}{e^X-1}
+&amp;=\left[\lim_{X\rightarrow 0}\, \frac{e^X-e^0}{X-0} \right]^{-1}\\
+&amp;=\left[\diff{}{X}e^X\Big|_{X=0} \right]^{-1}\\
+&amp;=\left[e^X\big|_{X=0}\right]^{-1}\\
+&amp;=1
+\end{align*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">So, after this short aside into limits, we may now conclude that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Area} &amp;=(e-1)\lim_{X\rightarrow 0} \frac{X}{e^X-1}\\
+&amp;=e-1
+\end{align*}
+</div>
+<span class="incontext"><a href="sec_intdef.html#p-5324">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:48:48-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Volume of a cone.</span>
+</h6>
+<p>We know (especially if one has revised the material in the appendix and  Appendix <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[cross-reference to target(s) "apendix_volume" missing]</code> in particular) that the volume of a right-circular cone is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V &amp;= \frac{\pi}{3} r^2h
+\end{align*}
+</div>
+<p data-braille="continuation">where \(h\) is the height of the cone and \(r\) is the radius of its base. Now, the  derivation of this formula given in Appendix <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[cross-reference to target(s) "apendix_volume" missing]</code> is not too  simple. We present an alternate proof here that uses antiderivatives.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/cones.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Consider cutting off a portion of the cone so that its new height is \(x\)  (rather than \(h\)). Call the volume of the resulting smaller cone \(V(x)\text{.}\) We are  going to determine \(V(x)\) for all \(x\ge 0\text{,}\) including \(x=h\text{,}\) by first evaluating  \(V'(x)\) and \(V(0)\) (which is obviously \(0\)).</p>
+<p>Call the radius of the base of the new smaller cone \(y\) (rather than \(r\)). By  similar triangles we know that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{r}{h} &amp;= \frac{y}{x}.
+\end{align*}
+</div>
+<p data-braille="continuation">Now keep \(x\) and \(y\) fixed and consider cutting off a little more of the cone so  its height is \(X\text{.}\) When we do so, the radius of the base changes from \(y\) to  \(Y\) and again by similar triangles we know that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{Y}{X} &amp;= \frac{y}{x} = \frac{r}{h}
+\end{align*}
+</div>
+<p data-braille="continuation">The change in volume is then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+V(x) - V(X)
+\end{gather*}
+</div>
+<p data-braille="continuation">Of course if we knew the formula for the volume of a cone, then we could compute  the above exactly. However, even without knowing the volume of a cone, it is  easy to derive upper and lower bounds on this quantity. The piece removed  has bottom radius \(y\) and top radius \(Y\text{.}\) Hence its volume is bounded above  and below by the cylinders of height \(x-X\) and with radius \(y\) and \(Y\)  respectively. Hence</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\pi Y^2 (x-X) &amp; \leq V(x)-V(X) \leq \pi y^2 (x-X)
+\end{align*}
+</div>
+<p data-braille="continuation">since the volume of a cylinder is just the area of its base times its height. Now massage  this expression a little</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\pi Y^2 &amp; \leq \frac{V(x)-V(X)}{x-X} \leq \pi y^2
+\end{align*}
+</div>
+<p data-braille="continuation">The middle term now looks like a derivative; all we need to do is take the limit  as \(X \to x\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{X\to x} \pi Y^2 &amp; \leq \lim_{X\to x} \frac{V(x)-V(X)}{x-X} \leq
+\lim_{X\to x} \pi y^2
+\end{align*}
+</div>
+<p data-braille="continuation">The rightmost term is independent of \(X\) and so is just \(\pi y^2\text{.}\) In the  leftmost term, as \(X \to x\text{,}\) we must have that \(Y \to y\text{.}\) Hence the leftmost  term is just \(\pi y^2\text{.}\) Then by the squeeze theorem (Theorem <a class="xref" data-knowl="./knowl/thm_squeeze.html" title="Theorem 2.4.18: Squeeze theorem (or sandwich theorem or pinch theorem)">2.4.18</a>)  we know that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\diff{V}{x} = \lim_{X\to x} \frac{V(x)-V(X)}{x-X} &amp;= \pi y^2.
+\end{align*}
+</div>
+<p data-braille="continuation">But we know that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+y &amp;= \frac{r}{h} \cdot x
+\end{align*}
+</div>
+<p data-braille="continuation">so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\diff{V}{x} &amp;= \pi \left( \frac{r}{h} \right)^2 x^2
+\end{align*}
+</div>
+<p data-braille="continuation">Now we can antidifferentiate to get back to \(V\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V(x) &amp;= \frac{\pi}{3} \left( \frac{r}{h} \right)^2 x^3 + c
+\end{align*}
+</div>
+<p data-braille="continuation">To determine \(c\) notice that when \(x=0\) the volume of the cone is just zero and  so \(c=0\text{.}\) Thus</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V(x) &amp;= \frac{\pi}{3} \left( \frac{r}{h} \right)^2 x^3
+\end{align*}
+</div>
+<p data-braille="continuation">and so when \(x=h\) we are left with</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V(h) &amp;= \frac{\pi}{3} \left( \frac{r}{h} \right)^2 h^3 = \frac{\pi}{3} r^2 h
+\end{align*}
+</div>
+<p data-braille="continuation">as required.</p></article><span class="incontext"><a href="sec_antidiff.html#eg_vol_cone">in-context</a></span>
+</body>
+</html>

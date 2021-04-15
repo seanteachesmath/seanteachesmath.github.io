@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:59:18-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Integrating even powers of tangent is surprisingly different from integrating odd powers of tangent. For even powers, we use the identity \(\tan^2x  = \sec^2 x -1\text{,}\) then use the substitution \(u=\tan x\text{,}\) \(\dee{u}=\sec^2 x\dee{x}\) on (perhaps only a part of) the resulting integral.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_0^{\pi/6} \tan^6 x \dee{x}&amp;=\int_0^{\pi/6} \tan^4 x(\sec^2 x -1) \dee{x}\\
+&amp;=\int_0^{\pi/6} \bigg(\underbrace{\tan^4 x \sec^2 x}_{u^4\dee{u}} - \tan^4 x\bigg)\dee{x}\\
+&amp;=\int_0^{\pi/6} \bigg(\tan^4 x \sec^2 x - \tan^2 x(\sec^2 x-1)\bigg)\dee{x}\\
+&amp;=\int_0^{\pi/6}\bigg( \tan^4 x \sec^2 x - \underbrace{\tan^2 x\sec^2 x}_{u^2\dee{u}}+\tan^2 x\bigg)\dee{x}\\
+&amp;=\int_0^{\pi/6}\!\bigg(\!\tan^4 x \sec^2 x - \tan^2 x\sec^2 x+(\underbrace{\sec^2x}_{\dee{u}}-1)\bigg)\dee{x}\\
+&amp;=\int_0^{\pi/6}\left( \tan^4 x  - \tan^2 x+1\right)\sec^2 x\dee{x} - \int_0^{\pi/6} 1\dee{x}\\
+\end{align*}
+<p class="intertext">Note \(\tan(0)=0\text{,}\) and \(\tan(\pi/6)=1/\sqrt{3}\text{.}\)</p>
+\begin{align*}
+&amp;=\int_0^{1/\sqrt{3}}(u^4-u^2+1)\dee{u} - \big[ x\big]_0^{\pi/6}\\
+&amp;=\left[\frac{1}{5}u^5 - \frac{1}{3}u^3+u\right]_0^{1/\sqrt{3}} - \frac{\pi}{6}\\
+&amp;=\frac{1}{5\sqrt{3}^5} - \frac{1}{3\sqrt{3}^3}+\frac{1}{\sqrt{3}}-\frac{\pi}{6}\\
+&amp;=\dfrac{41}{45\sqrt{3}} - \dfrac{\pi}{6}
+\end{align*}
+</div>
+</div></body>
+</html>

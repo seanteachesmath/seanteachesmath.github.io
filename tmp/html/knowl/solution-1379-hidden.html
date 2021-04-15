@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:28:51-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>As we saw in in Example <a class="xref" data-knowl="./knowl/eg_SRpsrepD.html" title="Example 8.5.21: \(\arctan x\)">8.5.21</a>,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\arctan x = \sum_{n=0}^\infty (-1)^n\frac{x^{2n+1}}{2n+1}
+\end{equation*}
+</div>
+<p>which is an alternating series when \(x\) is nonzero. If we use its partial sum \(S_N\) to approximate \(\arctan x\text{,}\) the absolute error involved is no more than</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{|x|^{2(N+1)+1}}{N(n+1)+1} =\frac{|x|^{2N+3}}{2N+3}
+\end{equation*}
+</div>
+<p>We want this error to be at most \(10^{-6}\) whenever \(-\frac14 \lt  x  \lt \frac14\text{.}\) For this range of \(x\) values, \(\dfrac{|x|^{2N+3}}{2N+3} \lt \dfrac{1}{(2N+3)4^{2N+3}}\text{,}\) so we want \(N\) that satisfies the  inequality:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{(2N+3)4^{2N+3}}\le \frac{1}{10^5}
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">A quick check with a calculator shows that \(N=2\) suffices.</p>
+<p>So, the partial sum</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{n=0}^2 (-1)^n\frac{x^{2n+1}}{2n+1}=x-\frac{x^3}{3}+\frac{x^5}{5}
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">approximates \(\arctan x\) to within an error of \(\dfrac{x^7}{7}\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">When \(x\) is between \(-\frac14\) and \(\frac14\text{,}\) that error is at most \(\dfrac{1}{7\cdot 4^7}=\dfrac{1}{114688} \lt \dfrac{1}{100000}=10^{-5}\text{,}\) as desired. (When \(x=0\text{,}\) our approximation is 0, the exact value of \(\arctan 0\text{.}\))</p>
+</div></body>
+</html>

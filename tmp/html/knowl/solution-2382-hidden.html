@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:19:59-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>Let's try Stokes' theorem with</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vF = \left(z+\frac{1}{1+z}\right)\hi
++xz\,\hj
++\left(3xy-\frac{x}{(z+1)^2}\right)\hk
+\end{equation*}
+</div>
+<p data-braille="continuation">The curl of \(\vF\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk\\
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+\tfrac{\partial }{\partial z}\\
+z+\frac{1}{1+z} &amp; xz &amp; 3xy-\frac{x}{(z+1)^2}
+\end{matrix}
+\right]\\
+&amp;=(3x-x)\hi
+-\left(3y-\frac{1}{(z+1)^2}-1+\frac{1}{(1+z)^2}\right)\hj +z\,\hk\\
+&amp;=2x\,\hi +(1-3y)\,\hj+z\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">Write</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+S=\Set{(x,y,z)}{z=f(x,y)=1-x^2y,\ x^2+y^2\le 1}
+\end{equation*}
+</div>
+<p data-braille="continuation">For \(S\text{,}\) with the upward pointing normal, by (<a class="xref" data-knowl="./knowl/eq_SUdSgraph.html" title="Equation 14.3.2">14.3.2</a>),</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\hn\,\dee{S} &amp;=\big(-f_x\,,\,-f_y\,,\, 1\big)\dee{x}\dee{y}\\
+&amp;=\big(2xy\,,\,x^2\,,\, 1\big)\dee{x}\dee{y}
+\end{align*}
+</div>
+<p data-braille="continuation">so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vnabla\times\vF\cdot\hn\,\dee{S}
+&amp;=\big\{4x^2y + (x^2-3x^2y) +\overbrace{(1-x^2y)}^{z}\big\}\,\dee{x}\dee{y}
+\end{align*}
+</div>
+<p data-braille="continuation">and, by Stokes' theorem,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_C \vF\cdot\dee{\vr}
+&amp;=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}\\
+&amp;=\dblInt_{x^2+y^2\le 1}
+\big\{4x^2y + x^2-3x^2y + 1-x^2y\big\}\,\dee{x}\dee{y}
+\end{align*}
+</div>
+<p data-braille="continuation">So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_C \vF\cdot\dee{\vr}
+&amp;=\dblInt_{x^2+y^2\le 1}
+\big\{x^2+ 1\big\}\,\dee{x}\dee{y}
+=\pi + \dblInt_{x^2+y^2\le 1} x^2\,\dee{x}\dee{y}
+\end{align*}
+</div>
+<p data-braille="continuation">To evaluate the final remaining integral, let's switch to polar coordinates.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_{x^2+y^2\le 1} x^2\,\dee{x}\dee{y}
+&amp;=\int_0^1\dee{r}\ r\int_0^{2\pi}\dee{\theta}\  \big(r\cos\theta)^2\\
+&amp;=\int_0^1 \dee{r}\ r^3\int_0^{2\pi}\dee{\theta}\ \cos^2\theta
+\end{align*}
+</div>
+<p data-braille="continuation">Since</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_0^{2\pi}\cos^2\theta\ \dee{\theta}
+&amp;=\int_0^{2\pi}\frac{1+\cos(2\theta)}{2}\ \dee{\theta}
+=\left[\frac{\theta}{2}+\frac{\sin(2\theta)}{4}\right]_0^{2\pi}
+=\pi
+\end{align*}
+</div>
+<p data-braille="continuation">we finally have \(\int_0^1 \dee{r}\ r^3\int_0^{2\pi}\dee{\theta}\ \cos^2\theta=\frac{\pi}{4}\) and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\int_C \vF\cdot\dee{\vr}
+=\pi+\frac{\pi}{4}
+=\frac{5\pi}{4}
+\end{equation*}
+</div>
+<p data-braille="continuation">For an efficient, sneaky, way to evaluate \(\int_0^{2\pi} \cos^2\theta\,\dee{\theta}\text{,}\) see Example <a class="xref" data-knowl="./knowl/eg_workIntegralB.html" title="Example 13.4.4">13.4.4</a>.</p>
+</div></body>
+</html>

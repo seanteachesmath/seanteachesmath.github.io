@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:04:24-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Optional — Field Lines</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_vfDefs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_vector_fields.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_conservativeFields.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_vfDefs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_vector_fields.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_conservativeFields.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines" class="active">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_fieldLines"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">13.2</span> <span class="title">Optional — Field Lines</span>
+</h2>
+<section class="introduction" id="introduction-417"><p id="p-16301">Suppose that we drop a tiny stick into a river<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-583" id="fn-583"><sup> 1 </sup></a> with the velocity field of the flowing water being \(\vv(x,y)\text{.}\) We are assuming, for simplicity, that the velocity field does not depend<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-584" id="fn-584"><sup> 2 </sup></a> on time \(t\text{.}\) The stick will move along with the water<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-585" id="fn-585"><sup> 3 </sup></a>. When the stick is at \(\vr\text{,}\) its velocity will be the same as the velocity of the water at \(\vr\text{,}\) which is \(\vv(\vr)\text{.}\) Thus if the stick is at \(\vr(t)\) at time \(t\text{,}\) we will have</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{\vr}{t} = \vv\big(\vr(t)\big)
+\end{equation*}
+</div>
+<p data-braille="continuation">The stick will trace out a path, parametrized by \(\vr(t)\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-583"><div class="fn">Think Poohsticks.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-584"><div class="fn">This is not such an unreasonable assumption. The flow often changes on a larger time scale.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-585"><div class="fn">This is also not an unreasonable approximation.</div></div>
+<article class="definition definition-like" id="def_fieldLine"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">13.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-16302">A path that is parametrized by a function \(\vr(t)\) that obeys</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{\vr}{t} = \vv\big(\vr(t)\big)
+\end{equation*}
+</div>
+<p data-braille="continuation">is called a</p>
+<ul class="disc">
+<li id="li-6726">field line or integral curve (for general vector fields) or a</li>
+<li id="li-6727">stream line or flow line (when the vector field \(\vv\) is being thought of as a velocity field) or a</li>
+<li id="li-6728">line of force (when the vector field \(\vv\) is being thought of as a force field)</li>
+</ul>
+<p data-braille="continuation">of the vector field \(\vv\text{.}\)</p></article><article class="example example-like" id="eg_flowSketchVortex"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_flowSketchVortex"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Flow Line Sketch for the Vortex of Example 13.1.4.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_flowSketchVortex"><article class="example example-like"><p id="p-16303">Consider the vortex vector field, \(\vv(x,y) = \Om\big(-y\hi +x\hj\big)\) of Example <a class="xref" data-knowl="./knowl/eg_Vortex.html" title="Example 13.1.4: The Vortex">13.1.4</a>. Once we sketched the vector field, as in Figure <a class="xref" data-knowl="./knowl/fig_vortexField.html" title="Figure 13.1.6">13.1.6</a>, or even made the “skeleton sketch” of Figure <a class="xref" data-knowl="./knowl/fig_vortexCrude.html" title="Figure 13.1.5">13.1.5</a>, we can get rough idea of what the stream lines look like just by following the arrows. For example, suppose that we start a stream line (i.e. drop the stick into the stream) on the positive \(x\)-axis. Looking at Figure <a class="xref" data-knowl="./knowl/fig_vortexCrude.html" title="Figure 13.1.5">13.1.5</a>, which is repeated here,</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/phaseVortex2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-16304">the stick</p>
+<ul class="disc">
+<li id="li-6729">starts by moving in the \(+y\) direction, i.e. straight upward.</li>
+<li id="li-6730">As it moves farther into the first quadrant it develops a larger and larger negative \(x\)-component of velocity. So it also moves leftwards toward the \(y\)-axis.</li>
+<li id="li-6731">Eventually it crosses the positive \(y\)-axis moving in the \(-x\) direction, i.e. to the left.</li>
+<li id="li-6732">As it moves farther into the second quadrant it develops a larger and larger negative \(y\)-component of velocity. So it also moves downwards toward the \(x\)-axis.</li>
+<li id="li-6733">Eventually it crosses the negative \(x\)-axis moving in the \(-y\) direction, i.e. straight downward.</li>
+<li id="li-6734">As it moves farther into the third quadrant it develops a larger and larger positive \(x\)-component of velocity. So it also moves rightward towards the \(y\)-axis.</li>
+<li id="li-6735">Eventually it crosses the negative \(y\)-axis moving in the \(+x\) direction, i.e. to the right.</li>
+<li id="li-6736">As it moves farther into the fourth quadrant it develops a larger and larger positive \(y\)-component of velocity. So it also moves upwards toward the \(x\)-axis.</li>
+</ul>
+<p data-braille="continuation">With this type of analysis we cannot tell if the streamline, which is the red line in the figure above, will return to the \(x\)-axis</p>
+<ul class="disc">
+<li id="li-6737">exactly at its starting point, forming a closed curve, or</li>
+<li id="li-6738">inside its starting point, spiralling inwards, or</li>
+<li id="li-6739">outside its starting point, spiralling outwards.</li>
+</ul></article></div>
+<p id="p-16305">While the above procedure is a good way to get a qualitative feel for trajectories, we can develop more precise, detailed descriptions of field lines by working analytically. As we saw above, thinking of \(\vr(t)\) as the position at time \(t\) of a stick dropped into water whose velocity at \((x,y)\) is \(\vv(x,y)\text{,}\) the velocity of the stick at time \(t\) will be the same as the velocity of the  water at \(\vr(t)\text{,}\) which is \(\vv\big(\vr(t)\big)\text{.}\) Thus \(\vr(t)\) will obey the system of first order differential equations</p>
+<article class="fact theorem-like" id="eq_VFstreamLineA"><h6 class="heading">
+<span class="type">Equation</span><span class="space"> </span><span class="codenumber">13.2.3</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-16306">
+\begin{equation*}
+\diff{\vr}{t}(t) = \vv\big(\vr(t)\big)
+\end{equation*}
+</div></article><p id="p-16307">Notice that if we reparametrize \(\vr(t)\text{,}\) say to \(\vR(u) = \vr\big(t(u)\big)\text{,}\) then \(\vR'(u) =   \vr'\big(t(u)\big)\ t'(u)\) is parallel to (though not necessarily equal to) \(\vr'\big(t(u)\big)= \vv\big(\vr\big((t(u)\big)\big)
+=\vv\big(\vR(u)\big)\text{.}\) So if we only care about the curve traced out by the stick, and not about <em class="emphasis">when</em> the stick is at each point of the path, then it suffices to impose the weaker condition<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-586" id="fn-586"><sup> 4 </sup></a> that, when the stick is at \(\vr(t)\text{,}\) its velocity \(\vr'(t)\) is parallel to (though not necessarily equal to) \(\vv\big(\vr(t)\big)\text{.}\) In three dimensions, \(\vr'(t)\) is parallel to \(\vv\big(\vr(t)\big)\) when the cross product is zero:</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-586"><div class="fn">We'll have a more careful discussion of this in the optional §<a href="sec_fieldLines.html#sec_fieldLinePara" class="internal" title="Subsection 13.2.1: More about \(\vr'(t)\times\vv\big(\vr(t)\big)=\vZero\)">13.2.1</a>.</div></div>
+<article class="fact theorem-like" id="eq_VFstreamLineBB"><h6 class="heading">
+<span class="type">Equation</span><span class="space"> </span><span class="codenumber">13.2.4</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-16308">
+\begin{equation*}
+\vr'(t)\times\vv\big(\vr(t)\big)=\vZero
+\end{equation*}
+</div></article><p id="p-16309">In two dimensions we can still use the cross product by the simple expedient of thinking of \(\vr'(t)\) and \(\vv\big(\vr(t)\big)\) as three component vectors whose third components are zero.</p>
+<p id="p-16310">A more convenient way to implement the weaker “just parallel” condition, involves reparametrizing our streamline. Suppose that we are in two dimensions with \(\vr'(t)=\big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\big)\) and \(\vv(\vr)=\big(v_1(\vr)\,,\,v_2(\vr)\big)\)  and fix some \(t_0\text{.}\) If \(\diff{x}{t}(t_0)\) is nonzero<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-587" id="fn-587"><sup> 5 </sup></a>, we can reparametrize the curve (at least near \(\vr(t_0)\)) so as to use \(x\text{,}\) rather than \(t\) as the parameter. To do so, we</p>
+<ul class="disc">
+<li id="li-6740">solve \(x=x(t)\) for \(t\) as a function of \(x\text{.}\) Call the solution \(T(x)\text{.}\) Then</li>
+<li id="li-6741">the point on the curve which has \(x\)-coordinate \(x\) is \(\vR(x)=\big(X(x)\,,\,Y(x)\big)\) with \(X(x)=x\) and \(Y(x) = y\big(T(x)\big)\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Then the condition that \(\vR'(x)=\big(1,Y'(x)\big)\) is parallel to \(\vv\big(\vR(x)\big)\) says that \(\vR'(x)\) is a scalar multiple of \(\vv\big(\vR(x)\big)\) so that there is a nonzero number \(c(x)\) so that \(\vR'(x)=c(x) \vv\big(\vR(x)\big)\text{.}\) That is</p>
+<div class="displaymath">
+\begin{equation*}
+\big(1,Y'(x)\big)
+=\big( c(x)v_1\big(x,Y(x)\big)\,,\, c(x)v_2\big(x,Y(x)\big)  \big)
+\end{equation*}
+</div>
+<p data-braille="continuation">or equivalently</p>
+<div class="displaymath">
+\begin{equation*}
+Y'(x)=\frac{Y'(x)}{1}
+=\frac{c(x)\,v_2\big(x,Y(x)\big)}{c(x)\,v_1\big(x,Y(x)\big)\big)}
+=\frac{v_2\big(x,Y(x)\big)}{v_1\big(x,Y(x)\big)}
+\end{equation*}
+</div>
+<p data-braille="continuation">This is exactly the statement that \(y=Y(x)\) is a solution of the differential equation</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{y}{x}(x) = \frac{v_2\big(x,y\big)}{v_1\big(x,y\big)}
+\end{equation*}
+</div>
+<p data-braille="continuation">It is conventional to pretend<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-588" id="fn-588"><sup> 6 </sup></a> that \(\diff{y}{x}\) is the ratio of \(\dee{y}\) and \(\dee{x}\) and rewrite the differential equation<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-589" id="fn-589"><sup> 7 </sup></a> as</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\dee{x}}{v_1(x,y)}=\frac{\dee{y}}{v_2(x,y)}
+\end{equation*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-587"><div class="fn">If \(\diff{x}{t}(t_0)=0\text{,}\) but \(\diff{y}{t}(t_0)\ne 0\text{,}\) we should use \(y\) rather than \(x\) as the parameter. If \(\diff{x}{t}(t_0)=\diff{y}{t}(t_0)=0\text{,}\) then \(\vr(t)=\vr(t_0)\) for all \(t\) and the streamline doesn't move. It is just a single point.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-588"><div class="fn">Of course \(\diff{y}{x}\) is not the ratio of \(\dee{y}\) and \(\dee{x}\text{.}\) However pretending that it is provides a simple way to remember the technique that is used to solve the equation. You may have used this mnemonic device before when you learned how to solve separable differential equations. Section 2.4 of the CLP-2 text contains a treatment of separable differential equations, including a justification for the mnemonic device.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-589"><div class="fn">Here is another nonrigorous, but intuitive way to come up with this equation. Suppose that our stick is at \((x,y)\) and has velocity \(\big(\diff{x} {t}(t)\,,\,\diff{y}{t}(t)\big)\text{.}\) In a tiny time interval \(\dee{t}\) the stick moves by \(\big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\big)\dee{t}
+=(\dee{x},\dee{y})\text{,}\) which is parallel to  \(\big(v_1(x,y)\,,\,v_2(x,y)\big)\) if \(\frac{\dee{x}}{v_1(x,y)}=\frac{\dee{y}}{v_2(x,y)}\text{.}\)</div></div>
+<p id="p-16311">Here is a summary of the discussion we have just completed. It extends to three dimensions in an obvious way.</p>
+<article class="fact theorem-like" id="eq_VFstreamLineB"><h6 class="heading">
+<span class="type">Equation</span><span class="space"> </span><span class="codenumber">13.2.5</span><span class="period">.</span>
+</h6>
+<p id="p-16312">Use the symbol \(\parallel\) to stand for “is parallel to”.</p>
+<p id="p-16313">In two dimensions</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\Big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\Big) \parallel
+\big(v_1(\vr(t))\,,\,v_2(\vr(t)\big)\\
+&amp;\hskip0.5in\iff
+\Big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\,,\,0\Big)\times
+\big(v_1(\vr(t))\,,\,v_2(\vr(t))\,,\,0\big) = \vZero\\
+&amp;\hskip0.5in\iff \frac{dx}{v_1(x,y)}=\frac{dy}{v_2(x,y)}
+\end{align*}
+</div>
+<p data-braille="continuation">and in three dimensions</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\Big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\,,\,\diff{z}{t}(t)\Big) \parallel
+\big(v_1(\vr(t))\,,\,v_2(\vr(t))\,,\,v_3(\vr(t))\big)\\
+&amp;\hskip0.5in\iff
+\Big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\,,\,\diff{z}{t}(t)\Big)\times
+\big(v_1(\vr(t))\,,\,v_2(\vr(t))\,,\,v_3(\vr(t))\big) = \vZero\\
+&amp;\hskip0.5in\iff \frac{dx}{v_1(x,y,z)}=\frac{dy}{v_2(x,y,z)}=\frac{dz}{v_3(x,y,z)}
+\end{align*}
+</div></article><p id="p-16314">Let us apply this to two examples, in which the stream lines of the vortex field of Example <a class="xref" data-knowl="./knowl/eg_Vortex.html" title="Example 13.1.4: The Vortex">13.1.4</a> are found by two different methods.</p>
+<article class="example example-like" id="eg_vortexStreamParallel"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_vortexStreamParallel"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Stream lines for the vortex field using \(\vr'(t)
+\!\parallel\!\vv(\vr(t))\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_vortexStreamParallel"><article class="example example-like"><p id="p-16315">In this example we will find the stream lines for the vortex field, \(\vv(x,y) = \Om\big(-y\hi +x\hj\big)\) of Example <a class="xref" data-knowl="./knowl/eg_Vortex.html" title="Example 13.1.4: The Vortex">13.1.4</a>, by using the requirement that, on a stream line, the velocity vector \(\vr'(t)\) must be parallel to \(\vv\big(\vr(t)\big)\text{.}\) By <a class="xref" data-knowl="./knowl/eq_VFstreamLineB.html" title="Equation 13.2.5">13.2.5</a> one way to express this requirement mathematically is</p>
+<div class="displaymath">
+\begin{gather*}
+\frac{dx}{-\Om y} = \frac{dy}{\Om x}
+\end{gather*}
+</div>
+<p data-braille="continuation">This is a simple separable differential equation. We can solve it by cross multiplying and integrating both sides. (Recall that \(\Om\) is a constant.)</p>
+<div class="displaymath">
+\begin{align*}
+\Om x\,\dee{x} = -\Om y\,\dee{y}
+&amp;\iff \Om \int x\,\dee{x} = -\Om \int y\,\dee{y}\\
+&amp;\iff \half \Om x^2 =-\half \Om y^2 +C'\\
+&amp;\iff x^2+y^2 = C
+\end{align*}
+</div>
+<p data-braille="continuation">where \(C'\) and \(C=\frac{2}{\Om}C'\) are just arbitrary constants. So the stream lines of the vortex field are exactly circles centred on the origin.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/phaseVortex3.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-16316">We can come to exactly the same conclusion by using the cross product formulation of <a class="xref" data-knowl="./knowl/eq_VFstreamLineBB.html" title="Equation 13.2.4">13.2.4</a>.</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\Big(\diff{x}{t}(t)\,,\,\diff{y}{t}(t)\,,\,0\Big)\times
+\big(v_1(\vr(t))\,,\,v_2(\vr(t))\,,\,0\big) = \vZero\\
+&amp;\hskip0.5in\iff \Big(\diff{x}{t}(t)\,\hi+\diff{y}{t}(t)\,\hj\Big)\times
+\big(-\Om y(t)\,\hi+\Om x(t)\,\hj\big) = \vZero\\
+&amp;\hskip0.5in\iff \Big(\Om x(t)\diff{x}{t}(t)
++\Om y(t)\diff{y}{t}(t)\Big)\hk=\vZero\\
+&amp;\hskip0.5in\iff \Om x(t)\diff{x}{t}(t)
++\Om y(t)\diff{y}{t}(t)=0\\
+&amp;\hskip0.5in\iff \diff{\ }{t}\Big(\half \Om x(t)^2+\half\Om y(t)^2\Big)=0\\
+&amp;\hskip0.5in\qquad\text{(Go ahead and evaluate the derivative.)}\\
+&amp;\hskip0.5in\iff \half\Om\big(x(t)^2+y(t)^2\big) = C'\\
+&amp;\hskip0.5in\iff x(t)^2+y(t)^2=C
+\end{align*}
+</div></article></div>
+<article class="example example-like" id="eg_vortexStreamEqual"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_vortexStreamEqual"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Stream lines for the vortex field using \(\vr'(t)\!=\!\vv(\vr(t))\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_vortexStreamEqual"><article class="example example-like"><p id="p-16317">This time we will find the stream lines for the vortex field, \(\vv(x,y) = \Om\big(-y\hi +x\hj\big)\) of Example <a class="xref" data-knowl="./knowl/eg_Vortex.html" title="Example 13.1.4: The Vortex">13.1.4</a>, by using <a class="xref" data-knowl="./knowl/eq_VFstreamLineA.html" title="Equation 13.2.3">13.2.3</a>, which is</p>
+<div class="displaymath">
+\begin{align*}
+\diff{x}{t} &amp;= -\Om y\\
+\diff{y}{t} &amp;= \Om x
+\end{align*}
+</div>
+<p data-braille="continuation">We can convert this system of first order linear ordinary differential equations into a single second order linear constant coefficient differential equation<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-590" id="fn-590"><sup> 8 </sup></a>, by differentiating the first equation, to get \(\difftwo{x}{t} = -\Om\diff{y}{t}\text{,}\) and then substituting in the second equation to get</p>
+<div class="displaymath">
+\begin{equation*}
+\difftwo{x}{t} + \Om^2 x = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">This equation is a special case of the ordinary differential equation treated in Example <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eg_RLC" missing]</code> of the Appendix <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "ap_ODE" missing]</code>, entitled “Review of Linear Ordinary Differential Equations”.  In fact it is exactly <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn_ODERyh" missing]</code> with \(R=0\text{,}\) \(L=C=\frac{1}{\Om}\text{.}\) So the general solution is <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "eqn_RLCampPhase" missing]</code> with \(\rho=0\) and \(\nu=\Om\text{,}\) which is</p>
+<div class="displaymath">
+\begin{equation*}
+x(t) = A\cos(\Om t-\theta)
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(A\) and \(\theta\) being arbitrary constants<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-591" id="fn-591"><sup> 9 </sup></a>. Then</p>
+<div class="displaymath">
+\begin{equation*}
+y(t) = -\frac{1}{\Om}\diff{x}{t} =A\sin(\Om t-\theta)
+\end{equation*}
+</div>
+<p data-braille="continuation">giving us the familiar circular stream lines.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-590"><div class="fn">In Example <a class="xref" data-knowl="./knowl/eg_Pendulum.html" title="Example 13.1.7: The Undamped Nonlinear Pendulum">13.1.7</a> we converted a second order ordinary differential equation into a system of first order ordinary differential equations. We are now just reversing the procedure we used there.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-591"><div class="fn">Even if you don't know how \(x(t) = A\cos(\Om t-\theta)\) was arrived at, you should be able to easily verify that it really does obey \(x''+\Om^2 x=0\text{.}\)</div></div></article></div></section><section class="subsection" id="sec_fieldLinePara"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">13.2.1</span> <span class="title">More about \(\vr'(t)\times\vv\big(\vr(t)\big)=\vZero\)</span>
+</h3>
+<p id="p-16318">Here is a lemma that gives a more precise version of “if we only care about the curve traced out by the stick, and not about when the stick is at each point of the path, then it suffices to impose the weaker condition \(\vr'(t)\times\vv\big(\vr(t)\big)=\vZero\)”.</p>
+<article class="lemma theorem-like" id="lem_fieldLinePara"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">13.2.8</span><span class="period">.</span>
+</h6>
+<p id="p-16319">Lat \(a \lt b\) and let \(\vv(\vr)\) be a vector field. Assume that, for all \(a \lt u \lt b\text{,}\)  \(\vR(u)\) is defined, both \(\vR'(u)\) and \(\vv\big(\vR(u)\big)\) are continuous and  nonzero and</p>
+<div class="displaymath">
+\begin{equation*}
+\vR'(u)\times\vv\big(\vR(u)\big)=\vZero
+\end{equation*}
+</div>
+<p data-braille="continuation">Then \(\Set{\vR(u)}{a \lt u \lt b}\) is contained in a field line.</p></article><article class="hiddenproof" id="proof-52"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-52"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-52"><article class="hiddenproof"><p id="p-16320">As \(\vR'(u)\times\vv\big(\vR(u)\big)=\vZero\) and  both \(\vR'(u)\) and \(\vv\big(\vR(u)\big)\) are nonzero,  there is an \(a(u)\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\vR'(u) = a(u)\,\vv\big(\vR(u)\big)
+\end{equation*}
+</div>
+<p data-braille="continuation">This \(a(u)=\frac{\vR'(u)\cdot\vv(\vR(u))}{\vv(\vR(u))\cdot\vv(\vR(u))}\) is necessarily nonzero and continuous. Since \(a(u)\) is nonzero and continuous, it never changes sign. That is, either \(a(u) \gt 0\) for all  \(u\text{,}\) or \(a(u) \lt 0\) for all \(u\text{.}\) Let \(T(u)\) be an antiderivative of \(a(u)\text{.}\) Then \(T(u)\) is strictly monotone (and continuous) and hence is invertible. That is, there is a continuous function \(U(t)\) that obeys \(U\big(T(u)\big)=u\) for all \(a \lt u \lt b\) and \(T\big(U(t)\big)=t\) for all \(t\) in the range of \(U\text{.}\) Differentiating \(T\big(U(t)\big)=t\) gives \(T'\big(U(t)\big)\,U'(t)=1\) and hence \(U'(t) = \frac{1}{T'(U(t))}\text{.}\) Set \(\vr(t) = \vR\big(U(t)\big)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\vr'(t) &amp;= \vR'\big(U(t)\big) U'(t)
+= a\big(U(t)\big)\,\vv\big(\vR\big(U(t)\big)\big)
+\frac{1}{T'\big(U(t)\big)}\\
+&amp;        = a\big(U(t)\big)\,\vv\big(\vr(t)\big)
+\frac{1}{a\big(U(t)\big)}\\
+&amp;=\vv\big(\vr(t)\big)
+\end{align*}
+</div>
+<p data-braille="continuation">So \(\vr(t)\) is a field line and \(\vR(u) = \vr(T(u))\) is a reparametrization of \(\vr(t)\text{.}\)</p></article></div>
+<p id="p-16321">Here are a couple of examples that show that bad things can happen if we drop the requirement that \(\vv(\vR(u))\) is nonzero.</p>
+<article class="example example-like" id="ex_badStreamA"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_badStreamA"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.2.9</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_badStreamA"><article class="example example-like"><p id="p-16322">Let the vector field \(\vv(x,y)\) be identically zero. Then any field line \(\big(x(t)\,,\,y(t)\big)\) must obey</p>
+<div class="displaymath">
+\begin{gather*}
+x'(t)=0\qquad y'(t)=0
+\end{gather*}
+</div>
+<p data-braille="continuation">which forces both \(x(t)\) and \(y(t)\) to be constants. So each field line is just a single point. On the other hand every nonconstant \(\vR(u)\) obeys \(\vR'(u)\times\vv\big(\vR(u)\big)=\vZero\) but is not contained in a field line. (As \(\vR(u)\) is not constant, it covers more than one point, while each field line is just a single point.)</p></article></div>
+<p id="p-16323">Now here is a more interesting example.</p>
+<article class="example example-like" id="ex_badStreamB"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_badStreamB"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">13.2.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_badStreamB"><article class="example example-like"><p id="p-16324">Consider the vector field \(\vv(x,y)=x\,\hi\text{.}\) This vector field takes the value \(\vZero\) at each point on the \(y\)-axis, is a positive multiple of \(\hi\) at every point of the right half-plane and is a negative multiple of \(\hi\) at every point of the left half-plane. Let's find the field lines. Any field line must obey</p>
+<div class="displaymath">
+\begin{gather*}
+\diff{x}{t}(t)=x(t)\qquad \diff{y}{t}(t)=0
+\end{gather*}
+</div>
+<p data-braille="continuation">So \(y(t)\) must be a constant. We can solve the linear ordinary differential equation \(\diff{x}{t}(t)=x(t)\) by moving the \(x(t)\) to the left hand side, and multiplying by the (integrating factor) \(e^{-t}\text{.}\) This gives</p>
+<div class="displaymath">
+\begin{equation*}
+e^{-t}\diff{x}{t}(t)-e^{-t} x(t)=0
+\end{equation*}
+</div>
+<p data-braille="continuation">By the product rule, this is the same as</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{}{t}\big(e^{-t}x(t)\big)=0
+\end{equation*}
+</div>
+<p data-braille="continuation">which forces \(e^{-t}x(t)\) to be a constant. So our field lines are \(\big(Ce^t\,,\,D\big)\text{,}\) with \(C\) and \(D\) being arbitrary constants. Note that</p>
+<ul class="disc">
+<li id="li-6742">if \(C=0\text{,}\) the field line is just the single point \((0,D)\) on the \(y\)-axis. It is illustrated by the black dot in the figure below.</li>
+<li id="li-6743">If \(C \gt 0\text{,}\) then as \(t\) runs from \(-\infty\) to \(+\infty\text{,}\) the field line covers the horizontal half-line<div class="displaymath">
+\begin{equation*}
+\Set{(x,D)}{x \gt 0}
+\end{equation*}
+</div>in the right half-plane. It is illustrated by the red line in the figure below.</li>
+<li id="li-6744">If \(C \lt 0\text{,}\) then as \(t\) runs from \(-\infty\) to \(+\infty\text{,}\) the field line covers the horizontal half-line<div class="displaymath">
+\begin{equation*}
+\Set{(x,D)}{x \lt 0}
+\end{equation*}
+</div>in the left half-plane. It is illustrated by the blue line in the figure below  (with a different value of \(D\) than for the red line).</li>
+</ul>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/horizontalField.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-16325">On the other hand, fix any constant \(D\) and set \(\vR(u) = u\hi +D\hj\text{.}\) Then</p>
+<div class="displaymath">
+\begin{equation*}
+\vR'(u)\times\vv\big(\vR(u)\big)
+=\hi\times\big(u\hi)
+=\vZero
+\end{equation*}
+</div>
+<p data-braille="continuation">But as \(u\) runs from \(-\infty\) to \(+\infty\text{,}\) \(\vR(u)\) runs over the full line \(\Set{(x,D)}{-\infty \lt x \lt \infty}\text{.}\) It is not contained in any single field line and, in fact, completely covers three different field lines.</p></article></div></section><section class="exercises" id="exercises-100"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">13.2.2</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-278">
+<div class="introduction" id="introduction-418"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-2038"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-16326">Suppose that the vector field \(\vv(x,y)\) sketched below represents the velocity of moving water at the point \((x,y)\) in the first quadrant of the \(xy\)-plane.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/duckyField.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-16327">Sketch the path followed by a rubber ducky dropped in at the point</p>
+<ol class="lower-alpha">
+<li id="li-6745">\(\displaystyle (0,2)\)</li>
+<li id="li-6746">\(\displaystyle (1,0)\)</li>
+<li id="li-6747">\(\displaystyle (1,2)\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2038" id="answer-2038"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2038"><div class="answer solution-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/duckyField2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2115" id="solution-2115"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2115"><div class="solution solution-like">
+<p id="p-16328">(a) At every point of the positive \(y\)-axis, the velocity vector \(\vv(0,y)\) points straight down. So a rubber ducky placed in the water at \((0,2)\) just floats straight down the positive \(y\)-axis towards the origin.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/duckyField2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-16329">(b) At every point of the positive \(x\)-axis, the velocity vector \(\vv(x,0)\) points straight to the right. So a rubber ducky placed in the water at \((1,0)\) just floats rightward along the positive \(x\)-axis.</p>
+<p id="p-16330">(c) At every point of the first quadrant away from the axes, the velocity vector \(\vv(x,y)\) points downwards and towards the right. So a rubber ducky placed in the water at \((1,2)\) always floats down and to the right. The closer the ducky gets to the \(x\)--axis the more rightward its motion becomes.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2039"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-16331">Find a vector field \(\vv(x,y)\) for which</p>
+<div class="displaymath">
+\begin{align*}
+x(t) &amp;= e^{-t}\cos t\\
+y(t) &amp;= e^{-t}\sin t
+\end{align*}
+</div>
+<p data-braille="continuation">is a field line.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1620" id="hint-1620"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1620"><div class="hint solution-like"><p id="p-16332">Express \(x'(t)\) and \(y'(t)\) purely in terms of \(x(t)\) and \(y(t)\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2039" id="answer-2039"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2039"><div class="answer solution-like"><p id="p-16333">\(\vv(x,y) = (-x-y\,,\,x-y)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2116" id="solution-2116"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2116"><div class="solution solution-like">
+<p id="p-16334">The derivatives</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+x'(t) &amp;= -e^{-t}\cos t - e^{-t}\sin t &amp;&amp;= -x(t)-y(t)\\
+y'(t) &amp;= -e^{-t}\sin t + e^{-t}\cos t &amp;&amp;= -y(t)+x(t)
+\end{alignat*}
+</div>
+<p data-braille="continuation">So \(\big(x(t),y(t)\big)\) is a solution of the system of differential equations</p>
+<div class="displaymath">
+\begin{align*}
+\diff{x}{t} &amp;= v_1(x,y) = -x-y\\
+\diff{y}{t} &amp;= v_2(x,y) = \phantom{-}x-y
+\end{align*}
+</div>
+<p data-braille="continuation">So the vector field is \(\vv(x,y) = \big(v_1(x,y)\,,\,v_2(x,y)\big)
+= (-x-y\,,\,x-y)\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-279">
+<div class="introduction" id="introduction-419"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-2040"><h6 class="heading">
+<span class="codenumber">3<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2010A.</span>
+</h6>
+<p id="p-16335">Consider the function \(f(x,y) = xy\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-6748">Explicitly determine the field lines (flow lines) of \(\vF(x,y) = \vnabla f\text{.}\)</li>
+<li id="li-6749">Sketch the field lines of \(\vF\) and the level curves of \(f\) in the same diagram.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1621" id="hint-1621"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1621"><div class="hint solution-like"><p id="p-16336">Review §<a href="sec_fieldLines.html" class="internal" title="Section 13.2: Optional — Field Lines">13.2</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2040" id="answer-2040"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2040"><div class="answer solution-like">
+<p id="p-16337">(a) \(\frac{x^2}{2} =\frac{y^2}{2} +C\)</p>
+<p id="p-16338">(b)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:29.5%;margin-right:29.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE10A_1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2117" id="solution-2117"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2117"><div class="solution solution-like">
+<p id="p-16339">(a) The field lines of \(\vF(x,y) = \vnabla f
+=y\,\hi + x\,\hj\) obey</p>
+<div class="displaymath">
+\begin{gather*}
+\frac{\dee{x}}{y} = \frac{\dee{y}}{x}
+\iff x\,\dee{x} = y\,\dee{y}
+\iff \frac{x^2}{2} =\frac{y^2}{2} +C
+\end{gather*}
+</div>
+<p data-braille="continuation">for any constant \(C\text{.}\)</p>
+<p id="p-16340">(b) The sign data</p>
+<div class="displaymath">
+\begin{align*}
+\hi\cdot\vF(x,y) = y
+\left.\begin{cases}
+\gt 0 &amp;\text{if } y \gt 0 \\
+=0 &amp;\text{if } y=0 \\
+\lt 0 &amp;\text{if } y \lt 0
+\end{cases}\right\}\\
+\hj\cdot\vF(x,y) = x
+\left.\begin{cases}
+\gt 0 &amp;\text{if } x \gt 0 \\
+=0 &amp;\text{if } x=0 \\
+\lt 0 &amp;\text{if } x \lt 0
+\end{cases}\right\}
+\end{align*}
+</div>
+<p data-braille="continuation">is visually displayed in the figure on the left below. The arrows in the figure on the left gives us the direction of motion along the field lines \(\frac{x^2}{2} =\frac{y^2}{2} +C\) (in red) in the figure on the right below. Some equipotential curves \(xy=C\) are also sketched (in blue) in the figure on the right below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:4.5%;margin-right:4.5%;">
+<div class="sbspanel" style="width:45.0549450549451%;justify-content:center;"><img src="pfigs/OE10A_1Sign.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:45.0549450549451%;justify-content:center;"><img src="pfigs/OE10A_1.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2041"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2003A.</span>
+</h6>
+<p id="p-16341">Find the field line of the vector field \(\vF= 2y\,\hi+ \frac{x}{y^2}\,\hj+e^y\hk\) that passes through \((1,1,e)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2041" id="answer-2041"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2041"><div class="answer solution-like"><p id="p-16342">\(x=y^2\text{,}\) \(z=e^y\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2118" id="solution-2118"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2118"><div class="solution solution-like">
+<p id="p-16343">The field lines obey</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\dee{x}}{2y}=\frac{\dee{y}}{x/y^2}=\frac{\dee{z}}{e^y}
+\qquad\text{ if } x,y\ne 0
+\end{equation*}
+</div>
+<p data-braille="continuation">In particular</p>
+<div class="displaymath">
+\begin{gather*}
+\frac{\dee{x}}{2y}=\frac{y^2\,\dee{y}}{x}
+\implies
+x\,\dee{x}=2y^3\,\dee{y}
+\implies
+\frac{1}{2}x^2=\frac{1}{2}y^4+C
+\end{gather*}
+</div>
+<p data-braille="continuation">Since \(y=1\) when \(x=1\text{,}\) \(C=0\text{.}\) So \(x=y^2\) and</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\dee{y}}{x/y^2}=\frac{\dee{z}}{e^y}
+\implies
+e^ydy=dz
+\implies
+z=e^y+D
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(z=e\) when \(y=1\text{,}\) \(D=0\text{.}\) So the field line is</p>
+<div class="displaymath">
+\begin{equation*}
+x=y^2 \qquad z=e^y
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2042"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2001A.</span>
+</h6>
+<p id="p-16344">Find and sketch the field lines of the vector field \(\vF= x\,\hi+ 3y\,\hj\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2042" id="answer-2042"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2042"><div class="answer solution-like">
+<p id="p-16345">The field lines are \(y=C'x^3\) with \(C'\) a nonzero constant, as well as \(x=0\) and \(y=0\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/fline.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2119" id="solution-2119"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2119"><div class="solution solution-like">
+<p id="p-16346">The field lines obey</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{\dee{x}}{x}=\frac{\dee{y}}{3y}\qquad\text{ if } x,y\ne 0\\
+&amp;\implies 3\ln |x|=\ln |y|+C\\
+&amp;\implies |x|^3=e^C|y|\\
+&amp;\implies y=\pm e^{-C}x^3\\
+&amp;\implies y=C'x^3
+\end{align*}
+</div>
+<p data-braille="continuation">with \(C'\) a nonzero constant. \(x=0\) and \(y=0\) are also field lines, since on the \(y\)-axis \(\vF\parallel\hj\) and on the \(x\)-axis \(\vF\parallel\hi\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/fline.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

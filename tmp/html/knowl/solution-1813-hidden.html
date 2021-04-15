@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:48:06-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>For practice, we'll do this problem twice — once using vertical strips and once using horizontal strips. We'll start by sketching \(\cR\text{.}\) First note that, since \(y\ge\frac{x^2}{4\nu}\) and \(x\ge \frac{2y^2}{\nu}\text{,}\) both \(x\) and \(y\) are positive throughout \(\cR\text{.}\) The two curves intersect at points \((x,y)\) that satisfy both</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+x = \frac{2y^2}{\nu}\text{ and }y=\frac{x^2}{4\nu}
+&amp;\implies\quad x  = \frac{2y^2}{\nu} = \frac{2}{\nu}\left(\frac{x^2}{4\nu}\right)^2
+= \frac{x^4}{8\nu^3}\\
+&amp;\iff\quad \left(\frac{x^3}{8\nu^3}-1\right)x=0
+\end{align*}
+</div>
+<p data-braille="continuation">This equation has only two real<a class="fn-knowl original" data-knowl="./knowl/fn-490-hidden.html" title="Footnote 11.1.4"><sup> 4 </sup></a> solutions — \(x=0\) and \(x=2\nu\text{.}\) So the upward opening parabola \(y = \frac{x^2}{4\nu}\) and the rightward opening parabola \(x=\frac{2y^2}{\nu}\)  intersect at \((0,0)\) and \((2\nu,\nu)\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/dblIntAa.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Solution using vertical strips.</em>\(\ \ \ \) We'll now set up a double integral for the mass using vertical strips and using the abbreviated argument of the end of the last section (on volumes).  Note, from the figure above, that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\cR=\bigg\{(x,y)\ \bigg|\ 0=a\le x\le b=2\nu,\
+\frac{x^2}{4\nu}= B(x)\le y\le T(x) = \sqrt{\frac{\nu x}{2}}\ \bigg\}
+\end{equation*}
+</div>
+<ul class="disc">
+<li>Slice \(\cR\) into long “infinitesimally” thin vertical strips of width \(\dee{x}\text{.}\)</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">Subdivide each strip into “infinitesimal” rectangles each of height \(\dee{y}\) and of width \(\dee{x}\text{.}\) See the figure below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/dblIntAb.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li>The mass of the rectangle centred on \((x,y)\) is essentially \(f(x,y)\,\dee{x}\,\dee{y}=xy\,\dee{x}\,\dee{y}\text{.}\)</li>
+<li>So the mass of the strip centred on \(x\) is essentially \(\ \dee{x}\, \int_{B(x)}^{T(x)}\dee{y}\ f(x,y) \) (the integral over \(y\) adds up the masses of all of the different rectangles     on the single vertical strip in question) and</li>
+<li>
+<p>we conclude that the</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Mass}(\cR)
+&amp;=\int_a^b \dee{x}\int_{B(x)}^{T(x)} \dee{y}\ f(x,y)
+=\int_0^{2\nu} \dee{x}\int_{x^2/(4\nu)}^{\sqrt{\nu x/2}} \dee{y}\ xy
+\end{align*}
+</div>
+<p data-braille="continuation">Here the integral over \(x\) adds up the masses of all of the different strips.</p>
+<p>Recall that, when integrating \(y\text{,}\) \(x\) is held constant, so we may factor the constant \(x\) out of the inner \(y\) integral.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_{x^2/(4\nu)}^{\sqrt{\nu x/2}} \dee{y}\ xy
+&amp;= x\int_{x^2/(4\nu)}^{\sqrt{\nu x/2}} \dee{y}\ y\\
+&amp;= x\left[\frac{y^2}{2}\right]_{x^2/(4\nu)}^{\sqrt{\nu x/2}}\\
+&amp;=\frac{\nu x^2}{4}-\frac{x^5}{32\nu^2}
+\end{align*}
+</div>
+<p data-braille="continuation">and the</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Mass}(\cR)
+&amp;=\int_0^{2\nu} \dee{x}\
+\left[\frac{\nu x^2}{4}-\frac{x^5}{32\nu^2}\right]\\
+&amp;= \frac{\nu (2\nu)^3}{3\times 4}-\frac{(2\nu)^6}{6\times 32\nu^2}
+=\frac{\nu^4}{3}
+\end{align*}
+</div>
+</li>
+</ul>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Solution using horizontal strips.</em>\(\ \ \ \) We'll now set up a double integral for the mass using horizontal strips, again using the abbreviated argument of the end of the last section (on volumes).  Note, from the figure at the beginning of this example, that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\cR=\bigg\{(x,y)\ \bigg|\ 0=c\le y\le d=\nu,\
+\frac{2 y^2}{\nu} = L(y)\le x\le R(y) = \sqrt{4\nu y} \ \bigg\}
+\end{equation*}
+</div>
+<ul class="disc">
+<li>Slice \(\cR\) into long “infinitesimally” thin horizontal strips of width \(\dee{y}\text{.}\)</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">Subdivide each strip into “infinitesimal” rectangles each of height \(\dee{y}\) and of width \(\dee{x}\text{.}\) See the figure below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/dblIntAc.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li>The mass of the rectangle centred on \((x,y)\) is essentially \(f(x,y)\,\dee{x}\,\dee{y}=xy\,\dee{x}\,\dee{y}\text{.}\)</li>
+<li>So the mass of the strip centred on \(y\) is essentially \(\ \dee{y}\, \int_{L(y)}^{R(y)}\dee{x}\ f(x,y) \) (the integral over \(x\) adds up the masses of all of the different rectangles     on the single horizontal strip in question) and</li>
+<li>we conclude that the<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Mass}(\cR)
+&amp;=\int_c^d \dee{y}\int_{L(y)}^{R(y)} \dee{x}\ f(x,y)
+=\int_0^{\nu} \dee{y}\int_{2y^2/\nu}^{\sqrt{4\nu y}} \dee{x}\ xy
+\end{align*}
+</div>Here the integral over \(y\) adds up the masses of all of the different strips. Recalling that, when integrating \(x\text{,}\) \(y\) is held constant<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Mass}(\cR)
+&amp;=\int_0^{\nu} \dee{y}\  y\left[
+\int_{2y^2/\nu}^{\sqrt{4\nu y}} \dee{x}\ x\right]\\
+&amp;=\int_0^{\nu} \dee{y}\  y\left[\frac{x^2}{2}\right]
+_{2y^2/\nu}^{\sqrt{4\nu y}}\\
+&amp;=\int_0^{\nu} \dee{y}\
+\left[2\nu y^2-\frac{2y^5}{\nu^2}\right]\\
+&amp;= \frac{2\nu (\nu)^3}{3}-\frac{2\nu^6}{6\nu^2}
+=\frac{\nu^4}{3}
+\end{align*}
+</div>
+</li>
+</ul>
+</div></body>
+</html>

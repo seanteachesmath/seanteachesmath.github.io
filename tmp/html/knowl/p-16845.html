@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:08:13-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>between the rod and vertical. The forces acting on the mass are</p>
+<ul class="disc">
+<li>gravity, which has magnitude \(mg\) and direction \((0,-1)\text{,}\)</li>
+<li>tension in the rod, whose magnitude, \(\tau\text{,}\) automatically adjusts itself so that the distance between the mass and the hinge is fixed at \(\ell\) and whose direction, \((-\sin\theta,\cos\theta)\text{,}\) is always parallel to the rod and</li>
+<li>possibly some frictional forces, like friction in the hinge and air resistance. We shall assume that the total frictional force has magnitude proportional to the speed<a class="fn-knowl original" data-knowl="./knowl/fn-605-hidden.html" title="Footnote 13.5.1"><sup> 1 </sup></a> of the mass and has direction opposite to the direction of motion of the mass.</li>
+</ul>
+<p data-braille="continuation">If we use a coordinate system centered on the hinge, the \((x,y)\) coordinates of the mass at time \(t\) are \(\ell\big(\sin\theta(t),-\cos\theta(t)\big)\text{.}\) Hence its  velocity vector is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vv(t)
+= \diff{\ }{t}\big[\ell\big(\sin\theta(t),-\cos\theta(t)\big) \big]
+= \ell\big(\cos\theta(t),\sin\theta(t)\big)\diff{\theta}{t}(t)
+\end{equation*}
+</div>
+<p data-braille="continuation">and the  total frictional force is \(-\be \ell(\cos\theta,\sin\theta)\diff{\theta}{t}\text{,}\) for some constant \(\be\text{.}\) The acceleration vector of the mass is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\va(t)=\diff{\ }{t}\vv(t)
+=\ell(\cos\theta,\sin\theta)\difftwo{\theta}{t}
++\ell(-\sin\theta,\cos\theta)\Big(\diff{\theta}{t}\Big)^2
+\end{equation*}
+</div>
+<p data-braille="continuation">so that Newton's law of motion, \(\vF=m\va\text{,}\)  now tells us</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+m\va(t) &amp;= m\ell(\cos\theta,\sin\theta)\difftwo{\theta}{t}
++m\ell(-\sin\theta,\cos\theta)\Big(\diff{\theta}{t}\Big)^2\\
+&amp;=\vF=mg(0,-1)+\tau (-\sin\theta,\cos\theta)
+-\be \ell(\cos\theta,\sin\theta)\diff{\theta}{t}
+\end{align*}
+</div>
+<p data-braille="continuation">To eliminate the (unknown) coefficient \(\tau\) we dot this equation with \((\cos\theta,\sin\theta)\text{,}\) which extracts the component parallel to the direction of motion of the mass. Dotting with \((\cos\theta,\sin\theta)\) gives \(\
+m\ell\difftwo{\theta}{t}=-mg\sin\theta-\be \ell\diff{\theta}{t}
+\ \) or</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\difftwo{\theta}{t}+\frac{\be}{m}\diff{\theta}{t}
++\frac{g}{\ell}\sin\theta=0
+\end{equation*}
+</div>
+<p data-braille="continuation">which is the equation of motion of the (nonlinear) pendulum. In general, it can be hard to analyse nonlinear differential equations. But if the amplitude of oscillation is small enough that we may approximate \(\sin\theta\) by \(\theta\) we get the equation of motion of the linear pendulum<a class="fn-knowl original" data-knowl="./knowl/fn-606-hidden.html" title="Footnote 13.5.2"><sup> 2 </sup></a> which is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\difftwo{\theta}{t}+\frac{\be}{m}\diff{\theta}{t}
++\frac{g}{\ell}\theta=0
+\end{gather*}
+</div>
+<p data-braille="continuation">These equations may be reformulated as systems of first order ordinary differential equation, that is as equations for the flow lines of a vector field, by the simple expedient of defining (as we did in Example <a class="xref" data-knowl="./knowl/eg_Pendulum.html" title="Example 13.1.7: The Undamped Nonlinear Pendulum">13.1.7</a>)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x(t)=\theta(t)\qquad y(t)=\theta'(t)
+\end{equation*}
+</div>
+<p data-braille="continuation">Then, for the full, nonlinear, equation \(\difftwo{\theta}{t}+\frac{\be}{m}\diff{\theta}{t}
++\frac{g}{\ell}\sin\theta=0\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{4}
+x'(t)&amp;=&amp;\theta'(t)&amp;=y(t)\cr
+y'(t)&amp;=&amp;\ \theta''(t)&amp;=-\frac{g}{\ell}\sin x(t)-\frac{\be}{m} y(t)
+\end{alignat*}
+</div>
+<p data-braille="continuation">The solutions of this first order system of ordinary differential equations are flow lines for the vector field</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vV\big((x,y)\big)=\Big(y\,,\,-\frac{g}{\ell}\sin x-\frac{\be}{m} y\Big)
+\end{equation*}
+</div>
+<p data-braille="continuation">When \(\be=0\text{,}\) this is exactly the vector field of Example <a class="xref" data-knowl="./knowl/eg_Pendulum.html" title="Example 13.1.7: The Undamped Nonlinear Pendulum">13.1.7</a>.</p>
+<span class="incontext"><a href="sec_Pendulum.html#p-16845">in-context</a></span>
+</body>
+</html>

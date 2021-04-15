@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:18:56-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p xmlns:svg="http://www.w3.org/2000/svg"><em class="emphasis">Direct Computation:</em></p>
+<p>In this first computation, we parametrize the curve \(C\) and compute \(\oint_C\vF\cdot \dee{\vr}\) directly. The plane \(z=y\) passes through the origin, which is the centre of the sphere \(x^2+y^2+z^2=4\text{.}\) So \(C\) is a circle which, like the sphere, has radius \(2\) and centre \((0,0,0)\text{.}\) We use a parametrization of the form</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vr(t)=\vc+\rho\cos t\,\hi'+ \rho\sin t\,\hj'
+\qquad 0\le t\le 2\pi
+\end{equation*}
+</div>
+<p data-braille="continuation">where</p>
+<ul class="disc">
+<li>\(\vc=(0,0,0)\) is the centre of \(C\text{,}\)</li>
+<li>\(\rho=2\) is the radius of \(C\) and</li>
+<li>
+<p>\(\hi'\) and \(\hj'\) are two vectors that</p>
+<ol class="lower-alpha">
+<li>are unit vectors,</li>
+<li>are parallel to the plane \(z=y\) and</li>
+<li>are mutually perpendicular.</li>
+</ol>
+</li>
+</ul>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:31%;margin-right:31%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/circle4a.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>The trickiest part is finding suitable vectors \(\hi'\) and \(\hj'\text{:}\)</p>
+<ul class="disc">
+<li>The point \((2,0,0)\) satisfies both  \(x^2+y^2+z^2=4\) and \(z=y\) and so is on \(C\text{.}\) We may choose \(\hi'\) to be the unit vector in the direction from the centre \((0,0,0)\) of the circle towards \((2,0,0)\text{.}\) Namely \(\hi'=(1,0,0)\text{.}\)</li>
+<li>Since the plane of the circle is \(z-y=0\text{,}\) the vector \(\vnabla(z-y)=(0,-1,1)\) is perpendicular to the plane of \(C\text{.}\) So  \(\hk'=\frac{1}{\sqrt{2}}(0,-1,1)\) is a unit vector normal to \(z=y\text{.}\) Then \(\hj'=\hk'\times\hi'=\frac{1}{\sqrt{2}}(0,-1,1)\times(1,0,0)
+=\frac{1}{\sqrt{2}}(0,1,1)\) is a unit vector that is perpendicular to \(\hi'\) and \(\hk'\text{.}\) Since \(\hj'\) is perpendicular to \(\hk'\text{,}\) it is parallel to \(z=y\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Substituting in \(\vc=(0,0,0)\text{,}\) \(\rho=2\text{,}\) \(\hi'=(1,0,0)\) and \(\hj'=\frac{1}{\sqrt{2}}(0,1,1)\) gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\vr(t)=2\cos t\,(1,0,0)+ 2\sin t\,\frac{1}{\sqrt{2}}(0,1,1)
+=2\Big(\cos t, \frac{\sin t}{\sqrt{2}},\frac{\sin t}{\sqrt{2}}\Big)\\
+&amp;0\le t\le 2\pi
+\end{align*}
+</div>
+<p data-braille="continuation">To check that this parametrization is correct, note that \(x=2\cos t\text{,}\) \(y=\sqrt{2}\sin t\text{,}\) \(z=\sqrt{2}\sin t\) satisfies both \(x^2+y^2+z^2=4\) and \(z=y\text{.}\)</p>
+<p>At \(t=0\text{,}\) \(\vr(0)=(2,0,0)\text{.}\) As \(t\) increases, \(z(t)=\sqrt{2}\sin t\) increases and \(\vr(t)\) moves upwards towards \(\vr\big(\frac{\pi}{2}\big)=(0,\sqrt{2},\sqrt{2})\text{.}\) This is the desired counterclockwise direction (when viewed from above). Now that we have a parametrization, we can set up the integral.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vr(t)&amp;=\big(2\cos t, \sqrt{2}\sin t,\sqrt{2}\sin t\big)\cr
+\vr\,'(t)&amp;=\big(-2\sin t,\sqrt{2}\cos t,\sqrt{2}\cos t\big)\cr
+\vF\big(\vr(t)\big)&amp;=\big(z(t)-y(t),-x(t)-z(t),-x(t)-y(t)\big)\cr
+&amp;=\big(\sqrt{2}\sin t-\sqrt{2}\sin t,
+-2\cos t-\sqrt{2}\sin t,-2\cos t-\sqrt{2}\sin t\big)\cr
+&amp;=-\big(0, 2\cos t+\sqrt{2}\sin t,2\cos t+\sqrt{2}\sin t\big)\cr
+\vF\big(\vr(t)\big)\cdot \vr\,'(t)
+&amp;=-\big[4\sqrt{2}\cos^2 t+4\cos t\sin t\big]\\
+&amp;=-\big[2\sqrt{2}\cos(2t)+2\sqrt{2}+2\sin(2t)\big]
+\end{align*}
+</div>
+<p data-braille="continuation">by the double angle formulae \(\sin(2t)=2\sin t\,\cos t\) and \(\cos(2t) = 2\cos^2t-1\text{.}\) So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\oint_C\vF\cdot \dee{\vr}
+&amp;=\int_0^{2\pi}\vF\big(\vr(t)\big)\cdot \vr\,'(t)\ \dee{t}\\
+&amp;=\int_0^{2\pi}-\big[2\sqrt{2}\cos(2t)+2\sqrt{2}+2\sin(2t)\big]\ \dee{t}\\
+&amp;=-\Big[\sqrt{2}\sin(2t)+2\sqrt{2}t-\cos(2t)\Big]_0^{2\pi}\\
+&amp;=-4\sqrt{2}\pi
+\end{align*}
+</div>
+<p data-braille="continuation">Oof! Let's do it an easier way.</p>
+</div></body>
+</html>

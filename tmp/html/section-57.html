@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T15:37:02-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Series</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-56.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_seq_ser.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-58.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-56.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_seq_ser.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-58.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57" class="active">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-57"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">8.2</span> <span class="title">Series</span>
+</h2>
+<section class="introduction" id="introduction-275"></section><section class="subsection" id="subsection-114"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">8.2.1</span> <span class="title">Series</span>
+</h3>
+<p id="p-9801">A series is a sum</p>
+<div class="displaymath">
+\begin{gather*}
+a_1+a_2+a_3+\cdots+a_n+\cdots
+\end{gather*}
+</div>
+<p data-braille="continuation">of infinitely many terms. In summation notation, it is written</p>
+<div class="displaymath">
+\begin{gather*}
+\sum_{n=1}^\infty a_n
+\end{gather*}
+</div>
+<p data-braille="continuation">You already have a lot of experience with series, though you might  not realise it. When you write a number using its decimal expansion  you are really expressing it as a series. Perhaps the simplest example  of this is the decimal expansion of \(\frac{1}{3}\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{3} &amp;= 0.3333\cdots
+\end{align*}
+</div>
+<p data-braille="continuation">Recall that the expansion written in this way actually means</p>
+<div class="displaymath">
+\begin{align*}
+0.333333\cdots &amp;= \frac{3}{10}+\frac{3}{100}+\frac{3}{1000}+\frac{3}{10000}+\cdots =\sum_{n=1}^\infty\frac{3}{10^n}
+\end{align*}
+</div>
+<p data-braille="continuation">The summation index \(n\) is of course a dummy index. You can use any symbol you like (within reason) for the summation index.</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty\frac{3}{10^n}
+=\sum_{i=1}^\infty\frac{3}{10^i}
+=\sum_{j=1}^\infty\frac{3}{10^j}
+=\sum_{\ell=1}^\infty\frac{3}{10^\ell}
+\end{equation*}
+</div>
+<p data-braille="continuation">A series can be expressed using summation notation in many different ways. For example the following expressions all represent the same series:</p>
+<div class="displaymath">
+\begin{align*}
+\sum_{n=1}^\infty\frac{3}{10^n}
+&amp;= \overbrace{\frac{3}{10}}^{n=1}
++\overbrace{\frac{3}{100}}^{n=2}
++\overbrace{\frac{3}{1000}}^{n=3}+\cdots\\
+\sum_{j=2}^\infty\frac{3}{10^{j-1}}
+&amp;= \overbrace{\frac{3}{10}}^{j=2}
++\overbrace{\frac{3}{100}}^{j=3}
++\overbrace{\frac{3}{1000}}^{j=4}+\cdots\\
+\sum_{\ell=0}^\infty\frac{3}{10^{\ell+1}}
+&amp;= \overbrace{\frac{3}{10}}^{\ell=0}
++\overbrace{\frac{3}{100}}^{\ell=1}
++\overbrace{\frac{3}{1000}}^{\ell=3}+\cdots\\
+\frac{3}{10}+\sum_{n=2}^\infty\frac{3}{10^n}
+&amp;= \frac{3}{10}
++\overbrace{\frac{3}{100}}^{n=2}
++\overbrace{\frac{3}{1000}}^{n=3}+\cdots
+\end{align*}
+</div>
+<p data-braille="continuation">We can get from  the first line to the second line by substituting \(n=j-1\) —  don't forget to also change the limits of summation (so that \(n=1\) becomes  \(j-1=1\) which is rewritten as \(j=2\)).  To get from the first line to the  third line, substitute \(n=\ell+1\) everywhere, including in the limits of summation (so that \(n=1\) becomes \(\ell+1=1\)  which is rewritten as \(\ell=0\)).</p>
+<p id="p-9802">Whenever you are in doubt as to what series a summation notation expression represents, it is a good habit to write out the first few terms, just as  we did above.</p>
+<p id="p-9803">Of course, at this point, it is not clear whether the sum of infinitely  many terms adds up to a finite number or not. In order to make sense  of this we will recast the problem in terms of the convergence of  sequences (hence the discussion of the previous section). Before we  proceed more formally let us illustrate the basic idea with a few  simple examples.</p>
+<article class="example example-like" id="eg_SRprelimSumA"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_SRprelimSumA"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">\(\ds \sum_{n=1}^\infty\frac{3}{10^n}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_SRprelimSumA"><article class="example example-like"><p id="p-9804">As we have just seen above the series \(\sum_{n=1}^\infty\frac{3}{10^n}\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty\frac{3}{10^n}
+= \overbrace{\frac{3}{10}}^{n=1}
++\overbrace{\frac{3}{100}}^{n=2}
++\overbrace{\frac{3}{1000}}^{n=3}+\cdots
+\end{equation*}
+</div>
+<p data-braille="continuation">Notice that the \(n^{\mathrm th}\) term in that sum is</p>
+<div class="displaymath">
+\begin{equation*}
+3\times 10^{-n} = 0.\!\!\overbrace{00\cdots 0}^{n-1\ \mathrm{zeroes}}\!3
+\end{equation*}
+</div>
+<p data-braille="continuation">So the sum of the first \(5\text{,}\) \(10\text{,}\) \(15\) and \(20\) terms in that series are</p>
+<div class="displaymath">
+\begin{align*}
+\sum_{n=1}^5\frac{3}{10^n} &amp;= 0.33333 &amp;
+\sum_{n=1}^{10}\frac{3}{10^n} &amp;= 0.3333333333\\
+\sum_{n=1}^{15}\frac{3}{10^n} &amp;= 0.333333333333333 &amp;
+\sum_{n=1}^{20}\frac{3}{10^n} &amp;= 0.33333333333333333333
+\end{align*}
+</div>
+<p data-braille="continuation">It sure looks like that, as we add more and more terms, we get closer and closer to \(0.\dot 3=\frac{1}{3}\text{.}\) So it is very reasonable <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-319" id="fn-319"><sup> 1 </sup></a> to define \(\sum_{n=1}^\infty\frac{3}{10^n}\) to be \(\frac{1}{3}\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-319"><div class="fn">Of course we are free to define  the series to be whatever we want. The hard part is  defining it to be something that makes sense and doesn't lead to contradictions. We'll get to a more systematic definition shortly.</div></div></article></div>
+<article class="example example-like" id="eg_SRprelimSumB"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_SRprelimSumB"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">\(\ds \sum_{n=1}^\infty 1\) and \(\sum_{n=1}^\infty (-1)^n\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_SRprelimSumB"><article class="example example-like"><p id="p-9805">Every term in the series \(\sum_{n=1}^\infty 1\) is exactly \(1\text{.}\) So the sum of the first \(N\) terms is exactly \(N\text{.}\) As we  add more and more terms this grows unboundedly. So it is very reasonable to say that the series  \(\sum_{n=1}^\infty 1\)  diverges.</p>
+<p id="p-9806">The series</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty (-1)^n
+=\overbrace{(-1)}^{n=1}
++\overbrace{1}^{n=2}
++\overbrace{(-1)}^{n=3}
++\overbrace{1}^{n=4}
++\overbrace{(-1)}^{n=5}+\cdots
+\end{equation*}
+</div>
+<p data-braille="continuation">So the sum of the first \(N\) terms is \(0\) if \(N\) is even and \(-1\) if \(N\) is odd. As we add more and more terms from the  series, the sum alternates between \(0\) and \(-1\) for ever and ever. So the sum of all infinitely many terms does not make  any sense and it is again reasonable to say that the series  \(\sum_{n=1}^\infty(-1)^n\) diverges.</p></article></div>
+<p id="p-9807">In the above examples we have tried to understand the series by examining  the sum of the first few terms and then extrapolating as  we add in more and more terms. That is, we tried to sneak up on the  infinite sum by looking at the limit of (partial) sums of the first few terms. This approach can be made into a more formal rigorous definition.  More precisely, to define what is meant by the infinite sum  \(\sum_{n=1}^\infty a_n\text{,}\) we approximate it by the sum of its first  \(N\) terms and then take the limit as \(N\) tends to infinity.</p>
+<article class="definition definition-like" id="def_SRseries"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">8.2.3</span><span class="period">.</span>
+</h6>
+<p id="p-9808">The \(N^{\rm th}\) partial sum of the series \(\sum_{n=1}^\infty a_n\) is the sum of its first \(N\) terms</p>
+<div class="displaymath">
+\begin{gather*}
+S_N=\sum_{n=1}^N a_n.
+\end{gather*}
+</div>
+<p data-braille="continuation">The partial sums form a sequence \(\big\{S_N\big\}_{N=1}^\infty\text{.}\)  If this sequence of partial sums converges \(S_N \to S\) as  \(N\rightarrow\infty\)  then we say that the series \(\sum_{n=1}^\infty a_n\)  converges to \(S\) and we write</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty a_n=S
+\end{equation*}
+</div>
+<p data-braille="continuation">If the sequence of partial sums diverges, we say that the series diverges.</p></article><article class="example example-like" id="eg_SRgeom"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_SRgeom"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Geometric Series.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_SRgeom"><article class="example example-like"><p id="p-9809">Let \(a\) and \(r\) be any two fixed real numbers with \(a\ne 0\text{.}\) The series</p>
+<div class="displaymath">
+\begin{equation*}
+a + ar + ar^2 + \cdots + ar^n + \cdots = \sum_{n=0}^\infty ar^n
+\end{equation*}
+</div>
+<p data-braille="continuation">is called the geometric series with first term \(a\) and ratio \(r\text{.}\)</p>
+<p id="p-9810">Notice that we have chosen to start the summation index at \(n=0\text{.}\)  That's fine. The first <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-320" id="fn-320"><sup> 2 </sup></a> term is the \(n=0\) term, which is \(ar^0=a\text{.}\) The  second term is the \(n=1\) term, which is \(ar^1=ar\text{.}\) And so on.  We could have also written the series \(\sum_{n=1}^\infty ar^{n-1}\text{.}\) That's exactly the same series — the first term is  \(ar^{n-1}\big|_{n=1}=ar^{1-1}=a\text{,}\) the second term is \(ar^{n-1}\big|_{n=2}=ar^{2-1}=ar\text{,}\) and so on <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-321" id="fn-321"><sup> 3 </sup></a>. Regardless of  how we write the geometric series, \(a\) is the first term and \(r\) is the  ratio between successive terms.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-320"><div class="fn">It is actually quite common in computer  science to think of \(0\) as the first integer. In that context, the set of natural numbers is defined to contain \(0\text{:}\)<div class="displaymath">
+\begin{equation*}
+\mathbb{N} = \left\{0,1,2,\cdots \right\}
+\end{equation*}
+</div>while the notation<div class="displaymath">
+\begin{align*}
+\mathbb{Z}^+ &amp;= \left\{1,2,3,\cdots \right\}
+\end{align*}
+</div>is used to denote the (strictly) positive integers. Remember that in  this text, as is more standard in mathematics, we  define the set of natural numbers to be the set of (strictly)  positive integers.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-321"><div class="fn">This  reminds the authors of the paradox of Hilbert's hotel. The hotel  with an infinite number of rooms is completely full, but can always  accommodate one more guest. The interested reader should use their  favourite search engine to find more information on this.</div></div>
+<p id="p-9811">Geometric series have the extremely useful property that there is a very simple formula for their partial sums. Denote the partial sum by</p>
+<div class="displaymath">
+\begin{align*}
+S_N &amp;= \sum_{n=0}^Nar^n = a + ar + ar^2 + \cdots + ar^N.\\
+\end{align*}
+<p class="intertext">The secret to evaluating this sum is to see what happens when we multiply it \(r\text{:}\)</p>
+\begin{align*}
+rS_N &amp;= r\big(a + ar + ar^2 + \cdots + ar^N\big)\\
+&amp; = ar + ar^2 + ar^3 + \cdots + ar^{N+1}
+\end{align*}
+</div>
+<p data-braille="continuation">Notice that this is almost the same <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-322" id="fn-322"><sup> 4 </sup></a> as \(S_N\text{.}\) The only differences are that the first term, \(a\text{,}\) is missing and one additional term, \(ar^{N+1}\text{,}\) has been tacked  on the end. So</p>
+<div class="displaymath">
+\begin{align*}
+S_N &amp;= a + ar + ar^2 + \cdots + ar^N\\
+r S_N &amp;= \phantom{ar +} ar + ar^2 + \cdots + ar^N + ar^{N+1}\\
+\end{align*}
+<p class="intertext">Hence taking the difference of these expressions cancels almost all the terms:</p>
+\begin{align*}
+(1-r) S_N &amp;= a - ar ^{N+1}  = a (1-r^{N+1})\\
+\end{align*}
+<p class="intertext">Provided \(r\neq 1\) we can divide both side by \(1-r\) to isolate \(S_N\text{:}\)</p>
+\begin{align*}
+S_N &amp;= a \cdot \frac{1-r^{N+1}}{1-r}.
+\end{align*}
+</div>
+<p data-braille="continuation">On the other hand, if \(r=1\text{,}\) then</p>
+<div class="displaymath">
+\begin{align*}
+S_N &amp;= \underbrace{a + a +\cdots + a}_{N+1 \text{ terms}} = a (N+1)
+\end{align*}
+</div>
+<p data-braille="continuation">So in summary:</p>
+<div class="displaymath">
+\begin{equation*}
+S_N = \begin{cases}
+a\frac{1-r^{N+1}}{1-r} &amp; \text{if $r\ne 1$} \\
+a(N+1) &amp; \text{if $r=1$}
+\end{cases}
+\end{equation*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-322"><div class="fn">One can find similar properties  of other special series, that allow us, with some work,  to cancel many terms in the partial sums. We will shortly see  a good example of this. The interested reader should look up  “creative telescoping” to see how this idea might be used more generally, though it is somewhat beyond this course.</div></div>
+<p id="p-9812">Now that we have this expression we can determine whether or not the  series converges. If \(|r| \lt 1\text{,}\) then \(r^{N+1}\)  tends to zero as \(N\rightarrow\infty\text{,}\) so that \(S_N\)  converges to \(\frac{a}{1-r}\) as \(N\rightarrow\infty\) and</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=0}^\infty ar^n = \frac{a}{1-r}
+\text{provided $|r| \lt 1$}.
+\end{equation*}
+</div>
+<p data-braille="continuation">On the other hand if \(|r|\ge 1\text{,}\) \(S_N\) diverges. To understand this divergence, consider the following 4 cases:</p>
+<ul class="disc">
+<li id="li-3735">If \(r \gt 1\text{,}\) then \(r^N\) grows to \(\infty\) as \(N\rightarrow\infty\text{.}\)</li>
+<li id="li-3736">If \(r \lt -1\text{,}\) then the magnitude of \(r^N\) grows to \(\infty\text{,}\) and the sign of \(r^N\) oscillates between \(+\) and \(-\text{,}\)  as \(N\rightarrow\infty\text{.}\)</li>
+<li id="li-3737">If \(r=+1\text{,}\) then \(N+1\) grows to \(\infty\) as \(N\rightarrow\infty\text{.}\)</li>
+<li id="li-3738">If \(r=-1\text{,}\) then \(r^N\) just oscillates between \(+1\) and \(-1\) as \(N\rightarrow\infty\text{.}\)</li>
+</ul>
+<p data-braille="continuation">In each case the sequence of partial sums does not converge and so the series does not converge.</p></article></div>
+<p id="p-9813">We should summarise the results in the previous example in a lemma.</p>
+<article class="lemma theorem-like" id="lem_geomsum"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">8.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Geometric series.</span>
+</h6>
+<p id="p-9814">Let \(a\) and \(r\) be real numbers and let \(N \geq 0\) be an integer then</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=0}^N ar^n = \begin{cases}
+a\dfrac{1-r^{N+1}}{1-r} &amp; \text{if $r\ne 1$} \\
+a(N+1) &amp; \text{if $r=1$}
+\end{cases}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Further, if \(|r|\lt1 \) then</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=0}^\infty ar^n = \dfrac{a}{1-r}.
+\end{equation*}
+</div></article><p id="p-9815">Now that we know how to handle geometric series let's return to Example <a class="xref" data-knowl="./knowl/eg_SRprelimSumA.html" title="Example 8.2.1: \(\ds \sum_{n=1}^\infty\frac{3}{10^n}\)">8.2.1</a>.</p>
+<article class="example example-like" id="eg_SRgeomB"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_SRgeomB"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Decimal Expansions.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_SRgeomB"><article class="example example-like"><p id="p-9816">The decimal expansion</p>
+<div class="displaymath">
+\begin{equation*}
+0.3333\cdots
+=\frac{3}{10}+\frac{3}{100}+\frac{3}{1000}+\frac{3}{10000}+\cdots
+=\sum_{n=1}^\infty\frac{3}{10^n}
+\end{equation*}
+</div>
+<p data-braille="continuation">is a geometric series with the first term \(a=\frac{3}{10}\) and the ratio \(r=\frac{1}{10}\text{.}\) So, by Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a>,</p>
+<div class="displaymath">
+\begin{equation*}
+0.3333\cdots
+=\sum_{n=1}^\infty\frac{3}{10^n}
+=\frac{\frac{3}{10}}{1-\frac{1}{10}}
+=\frac{\frac{3}{10}}{\frac{9}{10}}
+=\frac{1}{3}
+\end{equation*}
+</div>
+<p data-braille="continuation">just as we would have expected.</p>
+<p id="p-9817">We can push this idea further. Consider the repeating decimal expansion:</p>
+<div class="displaymath">
+\begin{equation*}
+0.16161616\cdots
+=\frac{16}{100}+\frac{16}{10000}+\frac{16}{1000000}+\cdots
+\end{equation*}
+</div>
+<p data-braille="continuation">This is another geometric series with the first term \(a=\frac{16}{100}\)  and the ratio \(r=\frac{1}{100}\text{.}\) So, by Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a>,</p>
+<div class="displaymath">
+\begin{equation*}
+0.16161616\cdots
+=\sum_{n=1}^\infty\frac{16}{100^n}
+=\frac{\frac{16}{100}}{1-\frac{1}{100}}
+=\frac{\frac{16}{100}}{\frac{99}{100}}
+=\frac{16}{99}
+\end{equation*}
+</div>
+<p data-braille="continuation">again, as expected. In this way any periodic decimal expansion converges to a ratio of two integers — that is, to a rational number <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-323" id="fn-323"><sup> 5 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-323"><div class="fn">We  have included a (more) formal proof of this fact in the optional §<a href="sec_RatIrr.html" class="internal" title="Section 8.7: Optional — Rational and irrational numbers">8.7</a>  at the end of this chapter. Proving that a repeating decimal expansion  gives a rational number isn't too hard. Proving the converse — that  every rational number has a repeating decimal expansion is a  little trickier, but we also do that in the same optional section.</div></div>
+<p id="p-9818">Here is another more complicated example.</p>
+<div class="displaymath">
+\begin{align*}
+0.1234343434\cdots
+&amp;=\frac{12}{100}+\frac{34}{10000}+\frac{34}{1000000}+\cdots\\
+&amp;=\frac{12}{100}+\sum_{n=2}^\infty\frac{34}{100^n}\\
+\end{align*}
+<p class="intertext">Now apply Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> with \(a=\frac{34}{100^2}\)  and \(r=\frac{1}{100}\)</p>
+\begin{align*}
+&amp;=\frac{12}{100}+\frac{34}{10000}\frac{1}{1-\frac{1}{100}}\\
+&amp;=\frac{12}{100}+\frac{34}{10000}\frac{100}{99}\\
+&amp;=\frac{1222}{9900}
+\end{align*}
+</div></article></div>
+<p id="p-9819">Typically, it is quite difficult to write down a neat closed form  expression for the partial sums of a series.  Geometric series are very notable exceptions to this. Another  family of series for which we can write down partial sums  is called “telescoping series”. These series have the desirable  property that many of the terms in the sum cancel  each other out rendering the partial sums quite simple.</p>
+<article class="example example-like" id="eg_SRtelecope"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_SRtelecope"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Telescoping Series.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_SRtelecope"><article class="example example-like"><p id="p-9820">In this example, we are going to study the series  \(\sum_{n=1}^\infty\frac{1}{n(n+1)}\text{.}\) This is a rather artificial series <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-324" id="fn-324"><sup> 6 </sup></a> that has been rigged to illustrate a phenomenon call  “telescoping”. Notice that the \(n^{\rm th}\) term can be rewritten as</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{n(n+1)}= \frac{1}{n}-\frac{1}{n+1}\\
+\end{align*}
+<p class="intertext">and so we have</p>
+\begin{align*}
+a_n &amp;= b_n - b_{n+1} &amp; \text{where } b_n &amp;= \frac{1}{n}.
+\end{align*}
+</div>
+<p data-braille="continuation">Because of this we get big cancellations when we add terms together. This allows us to get a simple formula for the partial sums of this series.</p>
+<div class="displaymath">
+\begin{align*}
+S_N&amp;= \frac{1}{1\cdot 2} + \frac{1}{2\cdot 3} + \frac{1}{3\cdot 4} +
+\cdots + \frac{1}{N\cdot (N+1)}\\
+&amp;= \Big(\frac{1}{1}-\frac{1}{2}\Big)
++ \Big(\frac{1}{2}-\frac{1}{3}\Big)
++ \Big(\frac{1}{3}-\frac{1}{4}\Big) +
+\cdots + \Big(\frac{1}{N}-\frac{1}{N+1}\Big)
+\end{align*}
+</div>
+<p data-braille="continuation">The second term of each bracket exactly cancels the first term of the following bracket. So the sum “telescopes” leaving just</p>
+<div class="displaymath">
+\begin{equation*}
+S_N  = 1-\frac{1}{N+1}
+\end{equation*}
+</div>
+<p data-braille="continuation">and we can now easily compute</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty\frac{1}{n(n+1)}
+=\lim_{N\rightarrow\infty} S_N
+=\lim_{N\rightarrow\infty}\Big( 1-\frac{1}{N+1}\Big)
+=1
+\end{equation*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-324"><div class="fn">Well… this sort of series does  show up when you start to look at the Maclaurin polynomial of functions like \((1-x)\log(1-x)\text{.}\) So it is not <em class="emphasis">totally</em> artificial. At any rate,  it illustrates the basic idea of telescoping very nicely, and the  idea of “creative telescoping” turns out to be extremely useful in the  study of series — though it is well beyond the scope of this course.</div></div></article></div>
+<p id="p-9821">More generally, if we can write</p>
+<div class="displaymath">
+\begin{align*}
+a_n &amp;= b_n - b_{n+1}\\
+\end{align*}
+<p class="intertext">for some other known sequence \(b_n\text{,}\) then the series telescopes  and we can compute partial sums using</p>
+\begin{align*}
+\sum_{n=1}^N a_n
+&amp;=
+\sum_{n=1}^N (b_n - b_{n+1})\\
+&amp;=
+\sum_{n=1}^N b_n - \sum_{n=1}^N b_{n+1}\\
+&amp;= b_1 - b_{N+1}.\\
+\end{align*}
+<p class="intertext">and hence</p>
+\begin{align*}
+\sum_{n=1}^\infty a_n
+&amp;= b_1 - \lim_{N\to\infty} b_{N+1}
+\end{align*}
+</div>
+<p data-braille="continuation">provided this limit exists.Often \(\lim\limits_{N\to\infty} b_{N+1}=0\) and then \(\sum\limits_{n=1}^\infty a_n =b_1\text{.}\) But this does not always happen. Here is an example.</p>
+<article class="example example-like" id="eg_SRtelecopeB"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_SRtelecopeB"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">A Divergent Telescoping Series.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_SRtelecopeB"><article class="example example-like"><p id="p-9822">In this example, we are going to study the series  \(\sum\limits_{n=1}^\infty\log\big(1+\frac{1}{n}\big)\text{.}\)  Let's start by just writing out the first few terms.</p>
+<div class="displaymath">
+\begin{alignat*}{1}
+\sum_{n=1}^\infty\log\Big(1+\frac{1}{n}\Big)
+&amp;=\overbrace{\log\Big(1+\frac{1}{1}\Big)}^{n=1}
++\overbrace{\log\Big(1+\frac{1}{2}\Big)}^{n=2}
++\overbrace{\log\Big(1+\frac{1}{3}\Big)}^{n=3}\\
+\amp\hskip1in
++\overbrace{\log\Big(1+\frac{1}{4}\Big)}^{n=4} +\cdots\\
+&amp;=\log(2)+\log\Big(\frac{3}{2}\Big) +\log\Big(\frac{4}{3}\Big)\\
+\amp\hskip1in  +\log\Big(\frac{5}{4}\Big) + \cdots
+\end{alignat*}
+</div>
+<p data-braille="continuation">This is pretty suggestive since</p>
+<div class="displaymath">
+\begin{gather*}
+\log(2)+\log\Big(\frac{3}{2}\Big) +\log\Big(\frac{4}{3}\Big)
++\log\Big(\frac{5}{4}\Big)
+=\log\Big(2\times\frac{3}{2}\times\frac{4}{3}\times \frac{5}{4}\Big)
+=\log(5)
+\end{gather*}
+</div>
+<p data-braille="continuation">So let's try using this idea to compute the partial sum \(S_N\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+S_N&amp;=\sum_{n=1}^N\log\Big(1+\frac{1}{n}\Big)\\
+&amp;=\overbrace{\log\Big(1+\frac{1}{1}\Big)}^{n=1}
++\overbrace{\log\Big(1+\frac{1}{2}\Big)}^{n=2}
++\overbrace{\log\Big(1+\frac{1}{3}\Big)}^{n=3} + \cdots\\
+\amp\hskip1in +\overbrace{\log\Big(1+\frac{1}{N-1}\Big)}^{n=N-1}
++\overbrace{\log\Big(1+\frac{1}{N}\Big)}^{n=N}\\
+&amp;=\log(2) + \log\Big(\frac{3}{2}\Big)  +\log\Big(\frac{4}{3}\Big)
++\cdots+ \log\Big(\frac{N}{N-1}\Big) + \log\Big(\frac{N+1}{N}\Big)\\
+&amp;=\log\Big(2\times\frac{3}{2}\times\frac{4}{3}\times \cdots
+\times \frac{N}{N-1}\times \frac{N+1}{N}\Big)\\
+&amp;=\log(N+1)
+\end{align*}
+</div>
+<p data-braille="continuation">Uh oh!</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{N\rightarrow\infty} S_N
+=\lim_{N\rightarrow\infty}\log(N+1)
+=+\infty
+\end{gather*}
+</div>
+<p data-braille="continuation">This telescoping series diverges! There is an important lesson here. Telescoping series <em class="emphasis">can diverge</em>. They do not always converge to \(b_1\text{.}\)</p></article></div>
+<p id="p-9823">As was the case for limits, differentiation and antidifferentiation,  we can compute more complicated series in  terms of simpler ones by understanding how series interact  with the usual operations of arithmetic. It is, perhaps,  not so surprising that there are simple rules for addition and subtraction  of series and for multiplication of a series by a constant. Unfortunately  there are no simple general rules for computing products or ratios of series.</p>
+<article class="theorem theorem-like" id="thm_SRseriesarith"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">8.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">Arithmetic of series.</span>
+</h6>
+<p id="p-9824">Let \(A\text{,}\) \(B\) and \(C\) be real numbers and let the two series \(\sum_{n=1}^\infty a_n\) and  \(\sum_{n=1}^\infty b_n\) converge to \(S\) and \(T\) respectively. That is, assume that</p>
+<div class="displaymath">
+\begin{align*}
+\sum_{n=1}^\infty a_n&amp;=S &amp; \sum_{n=1}^\infty b_n &amp;=T
+\end{align*}
+</div>
+<p data-braille="continuation">Then the following hold.</p>
+<ol class="lower-alpha">
+<li id="li-3739">\(\ds \sum_{n=1}^\infty \big[a_n+b_n\big] = S+T\qquad\)and  \(\qquad\ds \sum_{n=1}^\infty \big[a_n-b_n\big] = S-T\)</li>
+<li id="li-3740">\(\ds \sum_{n=1}^\infty C a_n = C S\text{.}\)</li>
+</ol></article><article class="example example-like" id="eg_SRseriesarith"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_SRseriesarith"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">\(\sum_{n=1}^\infty\Big( \frac{1}{7^n}+\frac{2}{n(n+1)}\Big)\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_SRseriesarith"><article class="example example-like"><p id="p-9825">As a simple example of how we use the arithmetic of series Theorem <a class="xref" data-knowl="./knowl/thm_SRseriesarith.html" title="Theorem 8.2.9: Arithmetic of series">8.2.9</a>, consider</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty\Big[\frac{1}{7^n}+\frac{2}{n(n+1)}\Big]
+\end{equation*}
+</div>
+<p data-braille="continuation">We recognize that we know how to compute parts of this sum. We know that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty\frac{1}{7^n}=\frac{\frac{1}{7}}{1-\frac{1}{7}}
+=\frac{1}{6}
+\end{equation*}
+</div>
+<p data-braille="continuation">because it is a geometric series (Example <a class="xref" data-knowl="./knowl/eg_SRgeom.html" title="Example 8.2.4: Geometric Series">8.2.4</a> and Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a>) with first term \(a=\frac{1}{7}\) and ratio \(r=\frac{1}{7}\text{.}\) And we know that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty\frac{1}{n(n+1)} =1
+\end{equation*}
+</div>
+<p data-braille="continuation">by Example <a class="xref" data-knowl="./knowl/eg_SRtelecope.html" title="Example 8.2.7: Telescoping Series">8.2.7</a>. We can now use Theorem <a class="xref" data-knowl="./knowl/thm_SRseriesarith.html" title="Theorem 8.2.9: Arithmetic of series">8.2.9</a> to build the specified “complicated” series out of these two “simple” pieces.</p>
+<div class="displaymath">
+\begin{align*}
+\sum_{n=1}^\infty\Big[\frac{1}{7^n}+\frac{2}{n(n+1)}\Big]
+&amp;=\sum_{n=1}^\infty \frac{1}{7^n}
++\sum_{n=1}^\infty\frac{2}{n(n+1)}
+&amp; \text{by Theorem }\knowl{./knowl/thm_SRseriesarith.html}{\text{8.2.9}}\text{(a)}\\
+&amp;= \sum_{n=1}^\infty\frac{1}{7^n}
++2 \sum_{n=1}^\infty \frac{1}{n(n+1)}
+&amp; \text{by Theorem }\knowl{./knowl/thm_SRseriesarith.html}{\text{8.2.9}}\text{(b)}\\
+&amp;=\frac{1}{6}+2\cdot 1 =\frac{13}{6}
+\end{align*}
+</div></article></div></section><section class="exercises" id="exercises-63"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">8.2.2</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-170">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-276"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1252"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-9826">Write out the first five partial sums corresponding to the series \(\displaystyle\sum_{n=1}^{\infty} \frac{1}{n}\text{.}\)</p>
+<p id="p-9827">You don't need to simplify the terms.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1170" id="hint-1170"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1170"><div class="hint solution-like"><p id="p-9828">\(S_N\) is the sum of the terms corresponding to \(n=1\) through \(n=N\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1252" id="answer-1252"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1252"><div class="answer solution-like"><div class="displaymath" id="p-9829">
+\begin{equation*}
+\begin{array}{l|l}
+\mathbf{N}&amp;\mathbf{S_N}\\
+\hline
+1 &amp; 1\\
+2 &amp; 1+\frac12\\
+3 &amp; 1+\frac12 + \frac13\\
+4 &amp; 1+\frac12 + \frac13+\frac14\\
+5 &amp; 1+\frac12 + \frac13+\frac14+\frac15\\
+\end{array}
+\end{equation*}
+</div></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1252" id="solution-1252"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1252"><div class="solution solution-like">
+<p id="p-9830">The \(N\)th term of the sequence of partial sums, \(S_N\text{,}\) is the sum of the first \(N\) terms of the series \(\displaystyle\sum_{n=1}^{\infty} \frac{1}{n}\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{l|l}
+\mathbf{N}&amp;\mathbf{S_N}\\
+\hline
+1 &amp; 1\\
+2 &amp; 1+\frac12\\
+3 &amp; 1+\frac12 + \frac13\\
+4 &amp; 1+\frac12 + \frac13+\frac14\\
+5 &amp; 1+\frac12 + \frac13+\frac14+\frac15\\
+\end{array}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s3_2_cookies"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-9831">Every student who comes to class brings their instructor cookies, and leaves them on the instructor's desk. Let \(C_k\) be the total number of cookies on the instructor's desk after the \(k\)th student comes.</p>
+<p id="p-9832">If \(C_{11}=20\text{,}\) and \(C_{10}=17\text{,}\) how many cookies did the 11th student bring to class?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1171" id="hint-1171"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1171"><div class="hint solution-like"><p id="p-9833">Note \(C_k\) is the cumulative number of cookies.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1253" id="answer-1253"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1253"><div class="answer solution-like"><p id="p-9834">3</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1253" id="solution-1253"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1253"><div class="solution solution-like">
+<p id="p-9835">If there were a total of 17 cookies before Student 11 came, and 20 cookies after, then Student 11 brought 3 cookies.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-987.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s3_2_partsums"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-9836">Suppose the sequence of partial sums of the series \(\displaystyle\sum_{n=1}^\infty a_n\) is \(\{S_N\} = \left\{\dfrac{N}{N+1}\right\}\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-3741">What is \(\{a_n\}\text{?}\)</li>
+<li id="li-3742">What is \(\lim\limits_{n \to \infty} a_n \text{?}\)</li>
+<li id="li-3743">Evaluate \(\displaystyle\sum_{n=1}^\infty a_n\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1172" id="hint-1172"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1172"><div class="hint solution-like"><p id="p-9837">How is (a) related to Question <a class="xref" data-knowl="./knowl/prob_s3_2_cookies.html" title="Exercise 8.2.2.2">2</a>?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1254" id="answer-1254"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1254"><div class="answer solution-like"><p id="p-9838">(a) \(\displaystyle a_n = \begin{cases}
+\frac12 &amp;\mbox{ if } n=1\\
+\dfrac{1}{n(n+1)} &amp;\mbox{ else }\\
+\end{cases}\qquad\) (b) \(0\qquad\) (c) 1</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1254" id="solution-1254"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1254"><div class="solution solution-like"><ol id="p-9839" class="lower-alpha">
+<li id="li-3744">We find \(\{a_n\}\) from \(\{S_N\}\) using the same logic as Question <a class="xref" data-knowl="./knowl/prob_s3_2_cookies.html" title="Exercise 8.2.2.2">2</a>. \(S_N\) is the sum of the first \(N\) terms of \(\{a_n\}\text{,}\) and \(S_{N-1}\) is the sum of all the same terms <em class="emphasis">except</em> \(a_N\text{.}\) So, \(a_N = S_N-S_{N-1}\) when \(N \geq 2\text{.}\) Written another way:<div class="displaymath">
+\begin{align*}
+\color{blue}{S_N}&amp;\color{blue}{=a_1+a_2+a_3+\cdots+a_{N-2}+a_{N-1}+a_N}\\
+\color{red}{S_{N-1}}&amp;\color{red}{=a_1+a_2+a_3+\cdots+a_{N-2}+a_{N-1}}\\
+\\
+\end{align*}
+<p class="intertext">So,</p>
+\begin{align*}
+\color{blue}{S_N}
+-\color{red}{S_{N-1}}
+&amp;=\color{blue}{\Big[a_1+a_2+a_3+\cdots+a_{N-2}+a_{N-1}+a_N\Big]}\\
+&amp;- \color{red}{\Big[a_1+a_2+a_3+\cdots+a_{N-2}+a_{N-1} \Big]}\\
+&amp;=\color{blue}{a_N}\\
+\end{align*}
+<p class="intertext">So, we calculate</p>
+\begin{align*}
+a_N&amp;=S_N-S_{N-1}=\left(\dfrac{N}{N+1}\right)-\left(\dfrac{N-1}{N-1+1}\right)\\
+&amp;=\frac{N^2}{N(N+1)}-\frac{N^2-1}{N(N+1)}\\
+&amp;=\frac{1}{N(N+1)}\\
+\end{align*}
+<p class="intertext">Therefore,</p>
+\begin{align*}
+a_n&amp;=\frac{1}{n(n+1)}
+\end{align*}
+</div>Remark: the formula given for \(S_N\) has \(S_0=0\text{,}\) which makes sense: the sum of no terms at all should be 0. However, it is common for a sequence of partial sums to start at \(N=1\text{.}\) (This fits our definition of a partial sum--we don't really define the “sum of no terms.”) In this case, \(a_1\) must be calculated separately from the other terms of \(\{a_n\}\text{.}\) To find \(a_1\text{,}\) we simply set \(a_1=S_1\text{,}\) which (to reiterate) might not be the same as \(S_1-S_0\text{.}\)</li>
+<li id="li-3745">
+<div class="displaymath" id="p-9840">
+\begin{equation*}
+\lim\limits_{n \to \infty} a_n =\lim\limits_{n \to \infty} \dfrac{1}{n(n+1)}=0.
+\end{equation*}
+</div>
+<p id="p-9841">That is, the terms we're adding up are getting very, very small as we go along.</p>
+</li>
+<li id="li-3746">By Definition <a class="xref" data-knowl="./knowl/def_SRseries.html" title="Definition 8.2.3">8.2.3</a>,<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty a_n = \lim_{N \to \infty}S_N = \lim_{N \to \infty}\dfrac{N}{N+1}=1
+\end{equation*}
+</div>That is, as we add more and more terms of our series, our cumulative sum gets very, very close to 1.</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1255"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-9842">Suppose the sequence of partial sums of the series \(\displaystyle\sum_{n=1}^\infty a_n\) is \(\{S_N\} = \left\{(-1)^N+\dfrac{1}{N}\right\}\text{.}\)</p>
+<p id="p-9843">What is \(\{a_n\}\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1173" id="hint-1173"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1173"><div class="hint solution-like"><p id="p-9844">You'll have to calculate \(a_1\) separately from the other terms.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1255" id="answer-1255"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1255"><div class="answer solution-like"><p id="p-9845">\(a_n=\begin{cases}
+0 &amp; \mbox{ if } n=1\\
+2(-1)^{n}  -\frac{1}{n(n-1)} &amp;\mbox{ else}
+\end{cases}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1255" id="solution-1255"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1255"><div class="solution solution-like">
+<p id="p-9846">As in Question <a class="xref" data-knowl="./knowl/prob_s3_2_partsums.html" title="Exercise 8.2.2.3">3</a>,</p>
+<div class="displaymath">
+\begin{align*}
+a_N&amp;=S_N-S_{N-1}=\left[(-1)^N+\dfrac{1}{N}\right]-\left[(-1)^{N-1}+\dfrac{1}{N-1}\right]\\
+&amp;=(-1)^N-(-1)^{N-1} + \frac{1}{N}-\frac{1}{N-1}\\
+&amp;=(-1)^N+(-1)^{N} + \frac{N-1}{N(N-1)}-\frac{N}{N(N-1)}\\
+&amp;=2(-1)^{N}  -\frac{1}{N(N-1)}\\
+\end{align*}
+<p class="intertext">Note, however, that \(a_N\) is only the same as \(S_N-S_{N-1}\) when \(N \geq 2\text{:}\) otherwise, we're trying to calculate \(S_1-S_0\text{,}\) but \(S_0\) is not defined. So, we find \(a_1\) separately:</p>
+\begin{align*}
+a_1&amp;=S_1=(-1)^1+\frac{1}{1}=0\\
+\end{align*}
+<p class="intertext">All together:</p>
+\begin{align*}
+a_n&amp;=\begin{cases}
+0 &amp; \mbox{ if } n=1\\
+2(-1)^{n}  -\frac{1}{n(n-1)} &amp;\mbox{ else}
+\end{cases}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1256"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-9847">Let \(f(N)\) be a formula for the \(N\)th partial sum of \(\displaystyle\sum_{n=1}^\infty a_n\text{.}\) (That is, \(f(N)=S_N\text{.}\)) If \(f'(N) \lt 0\) for all \(N  \gt  1\text{,}\) what does that say about \(a_n\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1174" id="hint-1174"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1174"><div class="hint solution-like"><p id="p-9848">When does adding a number decrease the total sum?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1256" id="answer-1256"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1256"><div class="answer solution-like"><p id="p-9849">\(a_n  \lt  0\) for all \(n \geq 2\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1256" id="solution-1256"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1256"><div class="solution solution-like"><p id="p-9850">If \(f'(N) \lt 0\text{,}\) that means \(f(N)\) is decreasing. So, adding more terms makes for a smaller sum. That means the terms we're adding are negative. That is, \(a_n  \lt  0\) for all \(n \geq 2\text{.}\)</p></div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-171">
+<div class="introduction" id="introduction-277"><p id="p-9851">Questions <a class="xref" data-knowl="./knowl/prob_s3_2_pic1.html" title="Exercise 8.2.2.6">6</a> through <a class="xref" data-knowl="./knowl/prob_s3_2_pic3.html" title="Exercise 8.2.2.8">8</a> invite you to explore geometric sums in a geometric way. This is complementary to than the algebraic method discussed in the text.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="prob_s3_2_pic1"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-9852">Suppose the triangle outlined in red in the picture below has area one.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-988.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<ol id="p-9853" class="lower-alpha">
+<li id="li-3747">Express the combined area of the black triangles as a series, assuming the pattern continues forever.</li>
+<li id="li-3748">Evaluate the series using the picture (<em class="emphasis">not</em> the formula from your book).</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1175" id="hint-1175"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1175"><div class="hint solution-like"><p id="p-9854">For (b), imagine cutting up the triangle into its black and white parts, then sharing it equally among a certain number of friends. What is the easiest number of friends to share with, making sure each has the same area in their pile?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1257" id="answer-1257"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1257"><div class="answer solution-like"><p id="p-9855">(a) \(\displaystyle\sum_{n=1}^\infty \frac{2}{4^n}\)  (b) \(\dfrac23\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1257" id="solution-1257"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1257"><div class="solution solution-like">
+<p id="p-9856">(a) To generate the pattern, we repeat the following steps:</p>
+<ul class="disc">
+<li id="li-3749">divide the top triangle into four triangles of equal area,</li>
+<li id="li-3750">colour the bottom two of them black, and</li>
+<li id="li-3751">leave the middle one white.</li>
+</ul>
+<p data-braille="continuation">Every time we repeat this sequence, we divide up a triangle with an area one-quarter the size of our previous triangle, and take two of the four resulting pieces. So, our area should end up as a geometric sum with common ratio \(r=\dfrac14\text{,}\) and coefficient \(a=2\text{.}\) This is shown more explicitly below.</p>
+<p id="p-9857">Since the entire triangle (outlined in red) has area 1, the four smaller triangles below each have area \(\dfrac14\text{.}\) The two black triangles will be added to our total black area; the blue triangle will be subdivided.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-989.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-9858">The blue triangle had area \(\dfrac{1}{4}\text{,}\) so each of the small black triangles below has area \(\left(\dfrac14\right)\left(\dfrac14\right)=\dfrac{1}{4^2}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-990.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-9859">Each time we make another subdivision, we add two black triangles, each with \(\dfrac{1}{4}\) the area of the previous black triangles. So, our total black area is:</p>
+<div class="displaymath">
+\begin{equation*}
+2\left(\frac14\right)+2\left(\frac{1}{4^2}\right)+2\left(\frac{1}{4^3}\right)+2\left(\frac{1}{4^4}\right)+\cdots = \sum_{n=1}^\infty \frac{2}{4^n}
+\end{equation*}
+</div>
+<p id="p-9860">(b) To evalutate the series,  we imagine gathering up all our little triangles and sorting them into three identical piles: the bottom three triangles go in three different piles, the three triangles directly above them go in three different piles, etc. (In the picture below, different colours correspond to different piles.)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-991.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-9861">Since the piles all have equal area, each pile has a total area of \(\dfrac 13\text{.}\) The  black area shaded in the problem corresponds to <em class="emphasis">two</em> piles (red and blue above), so</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty \frac{2}{4^n}=\frac23
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s3_2_pic2"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-9862">Suppose the square outlined in red in the picture below has area one.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-992.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<ol id="p-9863" class="lower-alpha">
+<li id="li-3752">Express the combined area of the black square as a series, assuming the pattern continues forever.</li>
+<li id="li-3753">Evaluate the series using the picture (<em class="emphasis">not</em> the formula from your book).</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1176" id="hint-1176"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1176"><div class="hint solution-like"><p id="p-9864">Compare to Question <a class="xref" data-knowl="./knowl/prob_s3_2_pic1.html" title="Exercise 8.2.2.6">6</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1258" id="answer-1258"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1258"><div class="answer solution-like"><p id="p-9865">(a) \(\displaystyle\sum_{n=1}^\infty \frac{1}{9^n}\qquad\)  (b) \(\dfrac{1}{8}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1258" id="solution-1258"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1258"><div class="solution solution-like">
+<p id="p-9866">(a) The pattern can be described as follows: divide the innermost square into 9 equal parts (a \(3\times 3\) grid), choose one square to be black, and another square to subdivide.</p>
+<p id="p-9867">The area of the red (outermost) square is 1, so the area of the largest black square is \(\dfrac19\text{.}\) The area of the central, blue square below is also \(\dfrac19\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-993.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-9868">When we subdivide the blue square, the subdivisions each have one-ninth its area, or \(\dfrac{1}{9^2}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-994.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-9869">We continue taking squares that are one-ninth the area of the previous square. So, our total black area is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{9}+\frac{1}{9^2}+\frac{1}{9^3}+\cdots = \sum_{n=1}^\infty \frac{1}{9^n}
+\end{equation*}
+</div>
+<p id="p-9870">(b) If we cut up this square along the marks, we can easily share it equally among 8 friends: there are eight squares of area \(\dfrac19\) along the outer ring, eight squares of area \(\dfrac1{9^2}\) along the next ring in, and so on.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-995.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-9871">Since the eight friends all get the same total area, the area each friend gets is \(\dfrac{1}{8}\text{.}\) The area shaded in black in the question corresponds to the pile given to one friend. So,</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty \frac{1}{9^n}=\frac18
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s3_2_pic3"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-9872">In the style of Questions <a class="xref" data-knowl="./knowl/prob_s3_2_pic1.html" title="Exercise 8.2.2.6">6</a> and <a class="xref" data-knowl="./knowl/prob_s3_2_pic2.html" title="Exercise 8.2.2.7">7</a>, draw a picture that represents \(\displaystyle\sum_{n=1}^{\infty}\frac{1}{3^n}\) as an area.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1177" id="hint-1177"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1177"><div class="hint solution-like"><p id="p-9873">Iteratively divide a shape into thirds.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1259" id="answer-1259"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1259"><div class="answer solution-like">
+<p id="p-9874">Two possible pictures:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-996.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-997.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1259" id="solution-1259"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1259"><div class="solution solution-like">
+<p id="p-9875">If we start with a shape of area 1, and iteratively divide it into thirds, taking one of the three newly created pieces each time, then the area we take will be equal to the desired series, \(\displaystyle\sum_{n=1}^\infty \frac{1}{3^n}\text{.}\)</p>
+<p id="p-9876">One way to do this is to start with a rectangle, make three vertical strips, then keep the left strip and subdivide the middle strip.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-998.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-999.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-9877">We see that the total area we take approaches one-half the total area of the figure, so \(\displaystyle\sum_{n=1}^\infty \frac{1}{3^n} = \frac12\text{.}\)</p>
+<p id="p-9878">Alternately, instead of always taking vertical strips, we could alternate vertical and horizontal slices.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1000.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1001.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-9879">In this setup, we notice that our strips come in pairs: two large vertical strips, two smaller horizontal strips, two smaller vertical strips, etc. We shaed exactly one of each, so the shaded area is one-half the total area: \(\displaystyle\sum_{n=1}^\infty \frac{1}{3^n} = \frac12\text{.}\)</p>
+<p id="p-9880">Other solutions are possible, as well.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1260"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-9881">Evaluate \(\displaystyle\sum_{n=0}^{100}\frac{1}{5^n}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1178" id="hint-1178"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1178"><div class="hint solution-like"><p id="p-9882">Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> tells us \(\displaystyle\sum_{n=0}^N ar^n = a\dfrac{1-r^{N+1}}{1-r}\text{,}\) for \(r \neq 1\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1260" id="answer-1260"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1260"><div class="answer solution-like"><p id="p-9883">\(\dfrac{5^{101}-1}{4\cdot 5^{100}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1260" id="solution-1260"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1260"><div class="solution solution-like">
+<p id="p-9884">Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> tells us \(\displaystyle\sum_{n=0}^N ar^n = a\dfrac{1-r^{N+1}}{1-r}\text{,}\) for \(r \neq 1\text{.}\) Our geometric sum has \(a=1\text{,}\) \(r=\frac{1}{5}\text{,}\) and \(N=100\text{.}\) So:</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\sum_{n=0}^{100}\frac{1}{5^n} =
+\frac{1-\frac{1}{5^{101}}}{1-\frac{1}{5}} = \dfrac{5^{101}-1}{4\cdot 5^{100}}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s3_2_cookies2"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-9885">Every student who comes to class brings their instructor cookies, and leaves them on the instructor's desk. Let \(C_k\) be the total number of cookies on the instructor's desk after the \(k\)th student comes.</p>
+<p id="p-9886">If \(C_{20}=53\text{,}\) and \(C_{10}=17\text{,}\) what does \(C_{20}-C_{10}=36\) represent?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1179" id="hint-1179"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1179"><div class="hint solution-like"><p id="p-9887">Note \(C_k\) is the cumulative number of cookies.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1261" id="answer-1261"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1261"><div class="answer solution-like"><p id="p-9888">All together, there were 36 cookies brought by Student 11 through Student 20.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1261" id="solution-1261"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1261"><div class="solution solution-like">
+<p id="p-9889">After twenty students have brought their cookies, the pile numbers 53 cookies. 17 of these cookies were brought by students one through ten. So, the remainder (\(53-17=36\)) is the number of cookies brought by students 11, 12, 13, 14, 15, 16, 17, 18, 19, and 20, together.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1002.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1262"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-9890">Evaluate \(\displaystyle\sum_{n=50}^{100}\frac{1}{5^n}\text{.}\) (Note the starting index.)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1180" id="hint-1180"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1180"><div class="hint solution-like"><p id="p-9891">To adjust the starting index, either factor out the first term in the series, or subtract two series. For the subtraction option, consider Question <a class="xref" data-knowl="./knowl/prob_s3_2_cookies2.html" title="Exercise 8.2.2.10">10</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1262" id="answer-1262"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1262"><div class="answer solution-like"><p id="p-9892">\(\dfrac{5^{51}-1}{4\cdot 5^{100}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1262" id="solution-1262"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1262"><div class="solution solution-like"><ul id="p-9893" class="disc">
+<li id="li-3754">Solution 1: Using the ideas of Question <a class="xref" data-knowl="./knowl/prob_s3_2_cookies2.html" title="Exercise 8.2.2.10">10</a>, we see:<div class="displaymath">
+\begin{align*}
+\sum_{n={50}}^{100} \frac{1}{5^n}&amp;=\sum_{n=0}^{100}\frac{1}{5^n}-\sum_{n=0}^{49}\frac{1}{5^n}\\
+\end{align*}
+<p class="intertext">That is, we want start with the sum of all the terms up to \(\dfrac{1}{5^{100}}\text{,}\) and then subtract off the ones we actually don't want, which is everything up to \(\dfrac{1}{5^{49}}\text{.}\) Now, both series are in a form appropriate for Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a>.</p>
+\begin{align*}
+\sum_{n=0}^{100}\frac{1}{5^n}-\sum_{n=0}^{49}\frac{1}{5^n}&amp;=\frac{1-\frac{1}{5^{101}}}{1-\frac15}-\frac{1-\frac{1}{5^{50}}}{1-\frac15}\\
+&amp;=\frac{5^{101}-1}{4\cdot 5^{100}}-\frac{5^{50}-1}{4\cdot 5^{49}}\left(\frac{5^{51}}{5^{51}}\right)\\
+&amp;=\frac{5^{101}-1}{4\cdot 5^{100}}-\frac{5^{101}-5^{51}}{4\cdot 5^{100}}\\
+&amp;=\frac{5^{51}-1}{4\cdot 5^{100}}
+\end{align*}
+</div>
+</li>
+<li id="li-3755">Solution 2: If we write out the first few terms of our series, we see we can factor out a constant to change the starting index.<div class="displaymath">
+\begin{align*}
+\sum_{n={50}}^{100} \frac{1}{5^n}&amp;= \frac{1}{5^{50}}+
+\frac{1}{5^{51}}+\frac{1}{5^{52}}+\frac{1}{5^{53}}+\cdots +\frac{1}{5^{100}}\\
+&amp;=\frac{1}{5^{50}}\left(\frac{1}{5^0}+\frac{1}{5^1}+\frac{1}{5^2}+\frac{1}{5^3}+\cdots +\frac{1}{5^{50}}\right)\\
+&amp;=\sum_{n=0}^{50}\frac{1}{5^{50}}\cdot\frac{1}{5^n}\\
+\end{align*}
+<p class="intertext">Now, our sum is in the form of Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> with \(a=\dfrac{1}{5^{50}},\) \(r=\dfrac15\text{,}\) and \(N=50\text{.}\)</p>
+\begin{align*}
+\sum_{n=0}^{50}\frac{1}{5^{50}}\cdot\frac{1}{5^n}&amp;=\frac{1}{5^{50}}\cdot\frac{1-\frac{1}{5^{51}}}{1-\frac15}=\frac{1-\frac{1}{5^{51}}}{4\cdot 5^{49}}\left(\frac{5^{51}}{5^{51}}\right)\\
+&amp;=\frac{5^{51}-1}{4\cdot 5^{100}}
+\end{align*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1263"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<ol id="p-9894" class="lower-alpha">
+<li id="li-3756">Starting on day \(d=1\text{,}\) every day you give your friend $\(\frac{1}{d+1}\text{,}\) and they give $\(\frac{1}{d}\) back to you.  After a long time, how much money have you gained by this arrangement?</li>
+<li id="li-3757">Evaluate \(\displaystyle\sum_{d=1}^\infty \left(\frac{1}{d}-\frac{1}{(d+1)}\right)\text{.}\)</li>
+<li id="li-3758">Starting on day \(d=1\text{,}\) every day your friend gives you $\((d+1)\text{,}\) and they take $\((d+2)\) from you.  After a long time, how much money have you gained by this arrangement?</li>
+<li id="li-3759">Evaluate \(\displaystyle\sum_{d=1}^\infty \left((d+1)-(d+2)\right)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1181" id="hint-1181"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1181"><div class="hint solution-like"><p id="p-9895">Express your gains in (a) and (c) as series.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1263" id="answer-1263"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1263"><div class="answer solution-like">
+<p id="p-9896">(a) As time passes, your gains increase, approaching $1.\(\qquad\) (b) 1</p>
+<p id="p-9897">(c) As time passes, you <em class="emphasis">lose</em> more and more money, without bound.\(\qquad\) (d) \(-\infty\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1263" id="solution-1263"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1263"><div class="solution solution-like">
+<p id="p-9898">(a) The table below is a record of our account, with black entries representing the money your friend gives you, and red entries representing the money you give them (which is why the red entries are negative).</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c||c|c||c}
+\mathbf{d}&amp;\color{red}{\mathbf{-\frac{1}{d+1}}}&amp;\mathbf{\frac1d}&amp;\text{}\\
+\hline
+1 &amp; \color{red}{-\frac{1}{2}} &amp; 1 &amp; \frac{1}{2}\\
+2&amp;\color{red}{-\frac{1}{3}} &amp; \frac{1}{2}&amp;\frac{2}{3}\\
+3&amp;\color{red}{-\frac{1}{4}} &amp; \frac{1}{3}&amp;\frac{3}{4}\\
+4&amp;\color{red}{-\frac{1}{5}} &amp; \frac{1}{4}&amp;\frac{4}{5}\\
+5&amp;\color{red}{-\frac{1}{6}} &amp; \frac{1}{5}&amp;\frac{5}{6}\\
+6&amp;\color{red}{-\frac{1}{7}} &amp; \frac{1}{6}&amp;\frac{6}{7}
+\end{array}
+\end{equation*}
+</div>
+<p id="p-9899">After the exchange of day \(n\text{,}\) the amount you're left with is \(\left(1-\frac{1}{n+1}\right)\text{.}\) We see this by the cancellation in the table: the $\(\frac12\) you gave your friend on day 1 was returned on day 2; the  $\(\frac13\) you gave your friend on day 2 was returned on day 3, etc.</p>
+<p id="p-9900">So, after a long time, you'll have gained close to (but always slightly less than) one dollar.</p>
+<p id="p-9901">(b) The series \(\displaystyle\sum_{d=1}^\infty \left(\frac{1}{d}-\frac{1}{(d+1)}\right)\) describes the scenario in (a), so by our reasoning there,</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\sum_{d=1}^\infty \left(\frac{1}{d}-\frac{1}{(d+1)}\right) = \lim_{n \to \infty}\left(1-\frac{1}{n+1}\right)=1
+\end{equation*}
+</div>
+<p id="p-9902">(c) Again, let's set up an account book.</p>
+<div class="displaymath" id="p-9903">
+\begin{equation*}
+\begin{array}{c||c|c||c}
+\mathbf{d}&amp;\mathbf{d+1}&amp;\color{red}{\mathbf{-(d+2)}}&amp;\text{}\\
+\hline
+1 &amp; 2&amp; \color{red}{ -3} &amp; -1\\
+2 &amp; 3&amp; \color{red}{ -4} &amp; -2\\
+3 &amp; 4&amp; \color{red}{ -5} &amp; -3\\
+4 &amp; 5&amp; \color{red}{ -6} &amp; -4\\
+5 &amp; 6&amp; \color{red}{ -7} &amp; -5\\
+6 &amp; 7&amp; \color{red}{ -8} &amp; -6\\
+\end{array}
+\end{equation*}
+</div>
+<p id="p-9904">By day \(d\text{,}\) you've <em class="emphasis">lost</em> $ \(d\) to your so-called friend. As time goes on, you lose more and more.</p>
+<p id="p-9905">(d) The series \(\displaystyle\sum_{d=1}^\infty ((d+1)-(d+2))\) exactly describes the scenario in part (c), so it diverges to \(-\infty\text{.}\) You can also see this by writing \(\displaystyle\sum_{d=1}^\infty ((d+1)-(d+2)) =\sum_{d=1}^\infty (-1)=-1-1-1-1-1-\cdots\text{.}\)</p>
+<p id="p-9906">Be careful to avoid a common mistake with telescoping series: if we look back at our account book, we see that every negative term will cancel with a positive term, with the initial \(+2\) as the only term that never cancels. Your friend takes $3, which they return the next day; then they take $4, which they return the next day; then they take $5, which they return the next day, and so on. It's extremely tempting to say that the series adds up to $2, since every other term cancels out eventually. This is where we lean on Definition <a class="xref" data-knowl="./knowl/def_SRseries.html" title="Definition 8.2.3">8.2.3</a>: we evaluate the <em class="emphasis">partial sums</em>, which always leave your friend's last withdrawal unreturned. This definition makes sense: saying “I gained two bucks from this exchange” doesn't really capture the reality of your increasing debt.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1264"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-9907">Suppose \(\displaystyle\sum_{n=1}^\infty a_n = A\text{,}\) \(\displaystyle\sum_{n=1}^\infty b_n = B\text{,}\)  and \(\displaystyle\sum_{n=1}^\infty c_n = C\text{.}\)</p>
+<p id="p-9908">Evaluate \(\displaystyle\sum_{n=1}^\infty\left( a_n+b_n+c_{n+1}\right)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1182" id="hint-1182"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1182"><div class="hint solution-like"><p id="p-9909">To find the difference between \(\displaystyle\sum_{n=1}^\infty c_n\) and \(\displaystyle\sum_{n=1}^\infty c_{n+1}\text{,}\) try writing out the first few terms.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1264" id="answer-1264"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1264"><div class="answer solution-like"><p id="p-9910">\(A+B+C-c_1\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1264" id="solution-1264"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1264"><div class="solution solution-like">
+<p id="p-9911">Using arithmetic of series, Theorem <a class="xref" data-knowl="./knowl/thm_SRseriesarith.html" title="Theorem 8.2.9: Arithmetic of series">8.2.9</a>, we see</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{n=1}^\infty\left( a_n+b_n+c_{n+1}\right) = A+B+\sum_{n=1}^\infty c_{n+1}
+\end{equation*}
+</div>
+<p id="p-9912">The question remaining is what do to with the last series. If we write out the terms, we see the difference between \(\displaystyle\sum_{n=1}^\infty c_n\) and \(\displaystyle\sum_{n=1}^\infty c_{n+1}\) is simply that the latter is missing \(c_1\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\sum_{n=1}^\infty c_{n+1}&amp;=c_2+c_3+c_4+c_5+\cdots\\
+&amp;=\textcolor{red}{-c_1+c_1}+c_2+c_3+c_4+c_5+\cdots\\
+&amp;=\textcolor{red}{-c_1}+\sum_{n=1}^\infty c_{n}\\
+\end{align*}
+<p class="intertext">So,</p>
+\begin{align*}
+\sum_{n=1}^\infty\left( a_n+b_n+c_{n+1}\right)&amp;=A+B+C-\textcolor{red}{c_1}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1265"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-9913">Suppose \(\displaystyle\sum_{n=1}^\infty a_n = A\text{,}\) \(\displaystyle\sum_{n=1}^\infty b_n = B \neq 0\text{,}\) and \(\displaystyle\sum_{n=1}^\infty c_n = C\text{.}\)</p>
+<p id="p-9914">True or false: \(\displaystyle\sum_{n=1}^\infty\left(\dfrac{ a_n}{b_n}+c_{n}\right) = \frac{A}{B}+C\).</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1183" id="hint-1183"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1183"><div class="hint solution-like"><p id="p-9915">You might want to first consider a simpler true or false: \(\displaystyle\sum_{n=1}^\infty \dfrac{ a_n}{b_n} \stackrel{?}{=} \dfrac{A}{B}\).</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1265" id="answer-1265"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1265"><div class="answer solution-like"><p id="p-9916">in general, false</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1265" id="solution-1265"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1265"><div class="solution solution-like">
+<p id="p-9917">Theorem <a class="xref" data-knowl="./knowl/thm_SRseriesarith.html" title="Theorem 8.2.9: Arithmetic of series">8.2.9</a>, arithmetic of series, doesn't mention division, because in general it doesn't work the way the question suggests. For example, let \(\{a_n\}=\{b_n\} = \frac{1}{2^n}\text{.}\) Then:</p>
+<ul class="disc">
+<li id="li-3760">\(\sum_{n=0}^{\infty} a_n = \sum_{n=0}^\infty b_n = \frac{1}{1-\frac12}=2\text{,}\) while</li>
+<li id="li-3761">\(\sum_{n=0}^{\infty}\dfrac{a_n}{b_n} = \sum_{n=0}^{\infty}1 =\infty \text{.}\)</li>
+</ul>
+<p data-braille="continuation">For the  statement in the question, we can take \(\{a_n\}=\{b_n\} = \frac{1}{2^n}\text{,}\) \(A=B=2\text{,}\) \(\{c_n\}=\{0,0,0,\ldots\}\text{,}\) and \(C=0\text{.}\) We see the statement is false in this case.</p>
+<p id="p-9918">So, in general, the statement given is false.</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-172">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-278"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1266"><h6 class="heading">
+<span class="codenumber">15<span class="period">.</span></span><span class="space"> </span><span class="title">2016Q5.</span>
+</h6>
+<p id="p-9919">To what value does the series \(\displaystyle 1 + \frac{1}{3} + \frac{1}{9} + \frac{1}{27}+ \frac{1}{81}+ \frac{1}{243} + \cdots\) converge?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1184" id="hint-1184"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1184"><div class="hint solution-like"><p id="p-9920">What kind of a series is this?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1266" id="answer-1266"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1266"><div class="answer solution-like"><p id="p-9921">\(\dfrac{3}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1266" id="solution-1266"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1266"><div class="solution solution-like">
+<p id="p-9922">We recognize that this is a geometric series:</p>
+<div class="displaymath">
+\begin{align*}
+\amp 1 + \frac{1}{3} + \frac{1}{9} + \frac{1}{27}+ \frac{1}{81}+ \frac{1}{243} + \cdots\\
+\amp\hskip1in=\frac{1}{3^0}+\frac{1}{3^1}+\frac{1}{3^2}+\frac{1}{3^3}+\frac{1}{3^4}+\frac{1}{3^5}+\cdot\\
+&amp;\hskip1in=\sum_{n=0}^\infty \frac{1}{3^n}\\
+\end{align*}
+<p class="intertext">Using Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> with \(r=\dfrac13\) and \(a=1\text{,}\)</p>
+\begin{align*}
+&amp;=\frac{1}{1-\frac13}=\frac{3}{2}.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1267"><h6 class="heading">
+<span class="codenumber">16<span class="period">.</span></span><span class="space"> </span><span class="title">M105 2015A.</span>
+</h6>
+<p id="p-9923">Evaluate \(\displaystyle \sum_{k=7}^{\infty} \frac{1}{8^k}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1185" id="hint-1185"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1185"><div class="hint solution-like"><p id="p-9924">This is a special kind of series, that you should recognize.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1267" id="answer-1267"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1267"><div class="answer solution-like"><p id="p-9925">\(\dfrac{1}{7\times 8^6}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1267" id="solution-1267"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1267"><div class="solution solution-like">
+<p id="p-9926">This is a geometric series, with ratio \(r=\dfrac18\text{.}\) However, it doesn't start at \(k=0\text{,}\) which is what we're used to.</p>
+<ul class="disc">
+<li id="li-3762">Solution 1: We write out the first few terms of the series to figure out a convenient constant to factor out.<div class="displaymath">
+\begin{align*}
+\sum_{k=7}^{\infty} \frac{1}{8^k}&amp;=\frac{1}{8^7}+\frac{1}{8^8}+\frac{1}{8^9}+\cdots\\
+&amp;=\frac{1}{8^7}\left(\frac{1}{8^0}+\frac{1}{8^1}+\frac{1}{8^2}+\cdots\right)\\
+&amp;=\sum_{k=0}^\infty \frac{1}{8^7}\cdot \frac{1}{8^n}\\
+\end{align*}
+<p class="intertext">We now evaluate the series using Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a>  with \(r=\dfrac18\text{,}\) \(a=\dfrac{1}{8^7}\text{.}\)</p>
+\begin{align*}
+&amp;=\frac{1}{8^7}\cdot\dfrac{1}{1-\frac18} = \dfrac{1}{7\times 8^6}
+\end{align*}
+</div>
+</li>
+<li id="li-3763">Solution 2: Using the idea of Question <a class="xref" data-knowl="./knowl/prob_s3_2_cookies2.html" title="Exercise 8.2.2.10">10</a>, we express the series we're interested in as the difference of two series that we can easily evaluate.<div class="displaymath">
+\begin{align*}
+\sum_{k=7}^{\infty} \frac{1}{8^k}&amp;= \sum_{k=0}^{\infty} \frac{1}{8^k}- \sum_{k=0}^{6} \frac{1}{8^k}\\
+\end{align*}
+<p class="intertext">Using Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a>,</p>
+\begin{align*}
+&amp;=\frac{1}{1-\frac18}-\frac{1-\frac{1}{8^7}}{1-\frac18}\\
+&amp;=\frac{1}{7\times 8^6}
+\end{align*}
+</div>
+</li>
+</ul>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1268"><h6 class="heading">
+<span class="codenumber">17<span class="period">.</span></span><span class="space"> </span><span class="title">2016Q5.</span>
+</h6>
+<p id="p-9927">Show that the series \(\displaystyle \sum_{k=1}^{\infty} \bigg( \frac{6}{k^2} - \frac{6}{(k+1)^2} \bigg)\) converges and find its limit.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1186" id="hint-1186"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1186"><div class="hint solution-like"><p id="p-9928">When you see \(\displaystyle\sum_k \Big(\cdots \textcolor{red}{k}\cdots \ \ -\ \ \cdots \textcolor{red}{k+1}\cdots\Big)\text{,}\) you should  think “telescoping series.”</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1268" id="answer-1268"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1268"><div class="answer solution-like"><p id="p-9929">\(6\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1268" id="solution-1268"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1268"><div class="solution solution-like">
+<p id="p-9930">We recognize this as a telescoping series.</p>
+<div class="displaymath" id="p-9931">
+\begin{equation*}
+\begin{array}{c||cc||r}
+\mathbf{k}&amp;\mathbf{\frac{6}{k^2}}&amp;\mathbf{-\frac{6}{(k+1)^2}}&amp;\mathbf{s_k}\\
+\hline
+1&amp;6&amp;\color{red}{-\frac{6}{4}}&amp;6-\color{red}{\frac64}\\
+2&amp;\color{red}{\frac{6}{4}}&amp;\color{orange}{-\frac{6}{9}}&amp;6-\color{orange}{\frac69}\\
+3&amp;\color{orange}{\frac{6}{9}}&amp;\color{green}{-\frac{6}{16}}&amp;6-\color{green}{\frac{6}{16}}\\
+4&amp;\color{green}{\frac{6}{16}}&amp;\color{blue}{-\frac{6}{25}}&amp;6-\color{blue}{\frac{6}{25}}\\
+5&amp;\color{blue}{\frac{6}{25}}&amp;\color{purple}{-\frac{6}{36}}&amp;6-\color{purple}{\frac{6}{36}}\\
+6&amp;\color{purple}{\frac{6}{36}}&amp;-\frac{6}{47}&amp;6-\frac{6}{47}\\
+\vdots&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-9932">When we compute  the \(n^{\rm th}\) partial sum, i.e. the sum of of the first \(n\) terms, successive terms cancel and only the first half of the first term, \(\Big( \frac{6}{k^2} - \frac{6}{(k+1)^2} \Big)\Big|_{k=1}\text{,}\) and the second half of the \(n^{\rm th}\) term, \(\Big( \frac{6}{k^2} - \frac{6}{(k+1)^2} \Big)\Big|_{k=n}\text{,}\) survive. That is:</p>
+<div class="displaymath">
+\begin{gather*}
+s_n = \sum_{k=1}^{n} \bigg( \frac{6}{k^2} - \frac{6}{(k+1)^2} \bigg)
+= \frac6{1^2} - \frac{6}{(n+1)^2}
+\end{gather*}
+</div>
+<p data-braille="continuation">Therefore, we can see directly that the sequence of partial sums \(\{ s_n \}\) is convergent:</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{n\to\infty} s_n = \lim_{n\to\infty}  \bigg( 6- \frac{6}{(n+1)^2} \bigg) = 6
+\end{gather*}
+</div>
+<p data-braille="continuation">By Definition <a class="xref" data-knowl="./knowl/def_SRseries.html" title="Definition 8.2.3">8.2.3</a> the series is also convergent, with limit \(6\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1269"><h6 class="heading">
+<span class="codenumber">18<span class="period">.</span></span><span class="space"> </span><span class="title">2016A.</span>
+</h6>
+<p id="p-9933">Find the sum of the convergent series \(\displaystyle\sum\limits_{n=3}^\infty \bigg( \!\cos\Big( \frac \pi n \Big) - \cos\Big( \frac \pi{n+1} \Big) \bigg)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1187" id="hint-1187"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1187"><div class="hint solution-like"><p id="p-9934">When you see \(\displaystyle\sum_n \Big(\cdots \textcolor{red}{n}\cdots \ \ -\ \ \cdots \textcolor{red}{n+1}\cdots\Big)\text{,}\) you should immediately think “telescoping series”. But be careful not to jump to conclusions — evaluate the \(n^{\rm th}\) partial sum explicitly.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1269" id="answer-1269"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1269"><div class="answer solution-like"><p id="p-9935">\(\displaystyle\cos\left( \frac \pi 3 \right) - \cos(0) = -\frac{1}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1269" id="solution-1269"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1269"><div class="solution solution-like">
+<p id="p-9936">We recognize that this is a telescoping series, and set up a table to find the sequence of partial sums.</p>
+<div class="displaymath" id="p-9937">
+\begin{equation*}
+\begin{array}{c||cc||r}
+\mathbf{n}&amp;\mathbf{\cos\left(\frac{\pi}{n}\right)}&amp;\mathbf{-\cos\left(\frac{\pi}{n+1}\right)}&amp;\mathbf{s_n}\\
+\hline
+3&amp;\cos\left(\frac{\pi}{3} \right)&amp;\color{red}{-\cos\left(\frac{\pi}{4}\right)}&amp;\frac12-\color{red}{\cos\left(\frac{\pi}{4}\right)}\\
+4&amp;\color{red}{\cos\left(\frac{\pi}{4}\right)}&amp;\color{orange}{-\cos\left(\frac{\pi}{5}\right)}&amp;\frac12-\color{orange}{\cos\left(\frac{\pi}{5}\right)}\\
+5&amp;\color{orange}{\cos\left(\frac{\pi}{5}\right)}&amp;\color{green}{-\cos\left(\frac{\pi}{6}\right)}&amp;\frac12-\color{green}{\cos\left(\frac{\pi}{6}\right)}\\
+6&amp;\color{green}{\cos\left(\frac{\pi}{6}\right)}&amp;\color{blue}{-\cos\left(\frac{\pi}{7}\right)}&amp;\frac12-\color{blue}{\cos\left(\frac{\pi}{7}\right)}\\
+7&amp;\color{blue}{\cos\left(\frac{\pi}{7}\right)}&amp;\color{purple}{-\cos\left(\frac{\pi}{8}\right)}&amp;\frac12-\color{purple}{\cos\left(\frac{\pi}{8}\right)}\\
+8&amp;\color{purple}{\cos\left(\frac{\pi}{8}\right)}&amp;-\cos\left(\frac{\pi}{9}\right)&amp;\frac12-\cos\left(\frac{\pi}{9}\right)\\
+\vdots&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-9938">The \(N\)th partial sum sees every term cancel except the first part of the first term (\(\tfrac12\)) and the second part of the last term (\(-\cos(\tfrac{\pi}{n+1})\)).</p>
+<div class="displaymath">
+\begin{align*}
+\hskip-8mm
+s_N &amp;= \sum_{n=3}^N \bigg( \!\cos\Big( \frac \pi n \Big) - \cos\Big( \frac \pi{n+1} \Big) \bigg)\\
+&amp;=\cos\Big( \frac \pi 3 \Big)  - \cos\Big( \frac \pi{N+1} \Big)\\
+&amp;=\frac12  - \cos\Big( \frac \pi{N+1} \Big).\\
+\end{align*}
+<p class="intertext">As \(N\to\infty\text{,}\) the argument \(\frac{\pi}{N+1}\) converges to \(0\text{,}\) and \(\cos x\) is continuous at \(x=0\text{.}\) By Definition <a class="xref" data-knowl="./knowl/def_SRseries.html" title="Definition 8.2.3">8.2.3</a>, the value of the series is</p>
+\begin{align*}
+\lim_{N\to\infty} s_N &amp;= \lim_{N\to\infty}\left[\frac12  - \cos\Big( \frac \pi{N+1} \Big) \bigg) \right]\\
+&amp;=
+\frac12 - \cos(0) = -\frac{1}{2}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1270"><h6 class="heading">
+<span class="codenumber">19<span class="period">.</span></span><span class="space"> </span><span class="title">2016Q5.</span>
+</h6>
+<p id="p-9939">The \(n^{\rm th}\) partial sum of a series  \(\displaystyle \sum_{n=1}^{\infty}a_n \) is known to have the formula \(\displaystyle s_n = \frac{1+3n}{5+4n}\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-3764">(a) Find an expression for \(a_n\text{,}\) valid for \(n\ge2\text{.}\)</li>
+<li id="li-3765">(b) Show that the series \(\displaystyle \sum_{n=1}^{\infty}a_n \) converges and find its value.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1188" id="hint-1188"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1188"><div class="hint solution-like"><p id="p-9940">Review Definition  <a class="xref" data-knowl="./knowl/def_SRseries.html" title="Definition 8.2.3">8.2.3</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1270" id="answer-1270"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1270"><div class="answer solution-like"><p id="p-9941">(a) \(\displaystyle a_n= \frac{11}{16n^2 + 24n +5}\qquad\) (b) \(\dfrac{3}{4}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1270" id="solution-1270"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1270"><div class="solution solution-like">
+<p id="p-9942">(a) As in Question <a class="xref" data-knowl="./knowl/prob_s3_2_cookies.html" title="Exercise 8.2.2.2">2</a>, since</p>
+<div class="displaymath">
+\begin{align*}
+s_{n-1}&amp; = a_1+a_2+ \cdots + a_{n-1}\\
+s_{n}&amp; = a_1+a_2+ \cdots + a_{n-1} +a_n
+\end{align*}
+</div>
+<p data-braille="continuation">we can find \(a_n\) by subtracting:</p>
+<div class="displaymath">
+\begin{align*}
+a_n &amp;= s_n - s_{n-1}\\
+&amp;=\frac{1 + 3n}{5+4n} - \frac{1 + 3(n-1)}{5+4(n-1)}
+= \frac{3n+1}{4n+5} - \frac{3n - 2}{4n+1}\\
+&amp;=  \frac{(3n+1)(4n+1) - (3n - 2) (4n+5)}{(4n+1)(4n+5)}\\
+&amp;= \frac{11}{16n^2 + 24n +5}
+\end{align*}
+</div>
+<p id="p-9943">(b) Using Definition <a class="xref" data-knowl="./knowl/def_SRseries.html" title="Definition 8.2.3">8.2.3</a>,</p>
+<div class="displaymath">
+\begin{align*}
+\sum_{n=1}^\infty a_n&amp;= \lim_{n \to \infty}  s_n
+= \lim_{n \to \infty} \frac{1 + 3n}{5+4n}
+= \lim_{n \to \infty} \frac{1/n + 3}{5/n+4}
+= \frac{0+3}{0+4}
+= \frac{3}{4}
+\end{align*}
+</div>
+<p data-braille="continuation">The series converges to \(\dfrac{3}{4}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1271"><h6 class="heading">
+<span class="codenumber">20<span class="period">.</span></span><span class="space"> </span><span class="title">2013A.</span>
+</h6>
+<p id="p-9944">Find the sum of the series \(\displaystyle\sum\limits_{n=2}^\infty \frac{3\cdot 4^{n+1}}{8\cdot 5^n}\text{.}\) Simplify your answer completely.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1189" id="hint-1189"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1189"><div class="hint solution-like"><p id="p-9945">This is a special case of a general series whose sum we know.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1271" id="answer-1271"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1271"><div class="answer solution-like"><p id="p-9946">\(\dfrac{24}{5}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1271" id="solution-1271"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1271"><div class="solution solution-like">
+<p id="p-9947">What we have is a geometric series, but we need to get it into the proper form before we can evaluate it.</p>
+<div class="displaymath">
+\begin{align*}
+\sum_{n=2}^\infty \frac{3\cdot 4^{n+1}}{8\cdot 5^n}
+&amp;=
+\sum_{n=2}^\infty \frac{3\cdot4\cdot  4^{n}}{8\cdot 5^n}=
+\frac{3}{2}\sum_{n=2}^\infty \Big(\frac{4}{5}\Big)^n
+\end{align*}
+</div>
+<ul class="disc">
+<li id="li-3766">Solution 1: If we factor our  \(\left(\frac45\right)^2\text{,}\) we can change our index to something more convenient.<div class="displaymath">
+\begin{align*}
+\frac{3}{2}\sum_{n=2}^\infty \left(\frac{4}{5}\right)^n&amp;=
+\frac{3}{2}\sum_{n=2}^\infty \left(\frac{4}{5}\right)^2\left(\frac45\right)^{n-2}\\
+&amp;=\frac{3}{2}\sum_{n=0}^\infty \left(\frac{4}{5}\right)^2\left(\frac45\right)^{n}\\
+\end{align*}
+<p class="intertext">We use Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> with \(r=\dfrac45\text{.}\)</p>
+\begin{align*}
+&amp;=\frac{3}{2}\left(\frac{4}{5}\right)^2\cdot\frac{1}{1-\frac45}=\frac{24}{5}
+\end{align*}
+</div>
+</li>
+<li id="li-3767">Solution 2: Using the idea of Question <a class="xref" data-knowl="./knowl/prob_s3_2_cookies2.html" title="Exercise 8.2.2.10">10</a>, we view our series as a more convenient series, minus a few initial terms.<div class="displaymath">
+\begin{align*}
+\frac{3}{2}\sum_{n=2}^\infty \left(\frac{4}{5}\right)^n&amp;=
+\frac{3}{2}\left(\left[\sum_{n=0}^\infty \left(\frac{4}{5}\right)^n\right] - \left(\frac{4}{5}\right)^1- \left(\frac{4}{5}\right)^0\right)\\
+&amp;=
+\frac{3}{2}\left(\sum_{n=0}^\infty \left(\frac{4}{5}\right)^n - \frac{9}{5}\right)\\
+\end{align*}
+<p class="intertext">We use Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> with \(r=\dfrac45\text{.}\)</p>
+\begin{align*}
+&amp;=\frac{3}{2}\left(\frac{1}{1-\frac45} - \frac{9}{5}\right)=\frac{24}{5}
+\end{align*}
+</div>
+</li>
+</ul>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1272"><h6 class="heading">
+<span class="codenumber">21<span class="period">.</span></span><span class="space"> </span><span class="title">2016Q5.</span>
+</h6>
+<p id="p-9948">Relate the number \(0.2\bar{3} = 0.233333\ldots\) to the sum of a geometric series, and use that to represent it as a rational number (a fraction or combination of fractions, with no decimals).</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1190" id="hint-1190"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1190"><div class="hint solution-like"><p id="p-9949">Review Example  <a class="xref" data-knowl="./knowl/eg_SRgeomB.html" title="Example 8.2.6: Decimal Expansions">8.2.6</a>. To write the number as a geometric series, the first few terms might not fit the pattern of the rest of the terms.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1272" id="answer-1272"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1272"><div class="answer solution-like"><p id="p-9950">\(\dfrac{7}{30}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1272" id="solution-1272"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1272"><div class="solution solution-like">
+<p id="p-9951">The number is:</p>
+<div class="displaymath">
+\begin{align*}
+\amp 0.2 + \frac{3}{100} + \frac{3}{1000} + \frac{3}{10000} + \cdots
+=\frac{1}{5}+\frac{3}{10^2}+\frac{3}{10^3}+\frac{3}{10^4}+\cdots\\
+&amp;\hskip1in=\frac{1}{5}+\frac{3}{10^2}\left(\frac{1}{10^0}+\frac{1}{10^1}+\frac{1}{10^2}+\cdots\right)\\
+&amp;\hskip1in =\frac15 + \frac{3}{10^2}\sum_{n=0}^{\infty} \frac{1}{10^{n}}\\
+\end{align*}
+<p class="intertext">We use Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> with \(r=\dfrac{1}{10}\text{.}\)</p>
+\begin{align*}
+&amp;=\frac{1}{5}+\frac{3}{10^2}\cdot\frac{1}{1-\frac{1}{10}}\\
+&amp;=\frac15+\frac{1}{30} = \frac{7}{30}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1273"><h6 class="heading">
+<span class="codenumber">22<span class="period">.</span></span><span class="space"> </span><span class="title">2012A.</span>
+</h6>
+<p id="p-9952">Express \(2.656565\ldots\) as a rational number, i.e. in the form \(p/q\) where \(p\) and \(q\) are integers.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1191" id="hint-1191"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1191"><div class="hint solution-like"><p id="p-9953">Start by writing it as a geometric series.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1273" id="answer-1273"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1273"><div class="answer solution-like"><p id="p-9954">\(\dfrac{263}{99}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1273" id="solution-1273"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1273"><div class="solution solution-like">
+<p id="p-9955">The number is:</p>
+<div class="displaymath">
+\begin{align*}
+2+\frac{65}{100}+\frac{65}{10000}+\frac{65}{1000000}+\cdots&amp;=
+2 + \frac{65}{100} + \frac{65}{100^2} + \frac{65}{100^3} + \cdots\\
+&amp;= 2 + \frac{65}{100}\sum\limits_{n=0}^{\infty} \frac{1}{100^n}\\
+\end{align*}
+<p class="intertext">We use Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> with \(r=\dfrac{1}{100}\text{.}\)</p>
+\begin{align*}
+&amp;= 2 + \frac{65}{100}\cdot\frac{1}{1-\frac{1}{100}}\\
+&amp;=2+\frac{65}{99} = \frac{263}{99}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1274"><h6 class="heading">
+<span class="codenumber">23<span class="period">.</span></span><span class="space"> </span><span class="title">2016A.</span>
+</h6>
+<p id="p-9956">Express the decimal \(0.\overline{321}=0.321321321\ldots\) as a fraction.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1192" id="hint-1192"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1192"><div class="hint solution-like"><p id="p-9957">Review Example  <a class="xref" data-knowl="./knowl/eg_SRgeomB.html" title="Example 8.2.6: Decimal Expansions">8.2.6</a>. Since the pattern repeats every three decimals, your common ratio \(r\) will be \(\dfrac{1}{10^3}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1274" id="answer-1274"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1274"><div class="answer solution-like"><p id="p-9958">\(\dfrac{321}{999}= \dfrac{107}{333}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1274" id="solution-1274"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1274"><div class="solution solution-like">
+<p id="p-9959">The number is:</p>
+<div class="displaymath">
+\begin{align*}
+0.\overline{321}&amp;=0.321321321\ldots\\
+&amp;= \frac{321}{1000} + \frac{321}{10^6} + \frac{321}{10^9} + \cdots\\
+&amp;= \frac{321}{1000} \left(\left(\frac{1}{10^3}\right)^0+ \left(\frac{1}{10^3}\right)^1 + \left(\frac{1}{10^3}\right)^2 + \cdots \right)\\
+&amp;= \frac{321}{1000} \sum_{n=0}^{\infty} \left(\frac{1}{10^3}\right)^n\\
+\end{align*}
+<p class="intertext">We use Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> with \(r=\dfrac{1}{10^3}\text{.}\)</p>
+\begin{align*}
+&amp;=\frac{321}{1000} \cdot\frac{1}{1-\frac{1}{10^3}}=\frac{321}{999}=\frac{107}{333}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1275"><h6 class="heading">
+<span class="codenumber">24<span class="period">.</span></span><span class="space"> </span><span class="title">2015A.</span>
+</h6>
+<p id="p-9960">Find the <em class="emphasis">value</em> of the convergent series</p>
+<div class="displaymath">
+\begin{gather*}
+\sum_{n=2}^\infty \bigg( \frac{2^{n+1}}{3^n} + \frac1{2n-1} - \frac1{2n+1} \bigg)
+\end{gather*}
+</div>
+<p data-braille="continuation">Simplify your answer completely.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1193" id="hint-1193"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1193"><div class="hint solution-like"><p id="p-9961">Split the series into two parts.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1275" id="answer-1275"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1275"><div class="answer solution-like"><p id="p-9962">\(3\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1275" id="solution-1275"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1275"><div class="solution solution-like">
+<p id="p-9963">We split the sum into two parts.</p>
+<div class="displaymath" id="p-9964">
+\begin{align*}
+\amp\sum_{n=2}^\infty \bigg( \frac{2^{n+1}}{3^n} + \frac1{2n-1} - \frac1{2n+1} \bigg)\\
+&amp;\hskip1in=
+\color{blue}{ \sum_{n=2}^\infty \frac{2^{n+1}}{3^n}} \quad
+\textcolor{black}{+}\quad
+\color{red}{ \sum_{n=2}^\infty \bigg(  \frac1{2n-1} - \frac1{2n+1} \bigg) }
+\end{align*}
+</div>
+<p id="p-9965">The first part is a geometric series.</p>
+<div class="displaymath">
+\begin{align*}
+\color{blue}{ \sum_{n=2}^\infty \frac{2^{n+1}}{3^n} } &amp;=
+\sum_{n=0}^\infty \frac{2^{n+3}}{3^{n+2}} =
+\sum_{n=0}^\infty \frac{2^3}{3^2}\cdot\left( \frac{2}{3}\right)^n\\
+\end{align*}
+<p class="intertext">We use Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> with \(r=\dfrac{2}{3}\) and \(a=\dfrac{8}{9}\text{.}\)</p>
+\begin{align*}
+&amp;=\frac{8}{9}\cdot\frac{1}{1-\frac23}=\color{blue}{\frac{8}{3}}
+\end{align*}
+</div>
+<p id="p-9966">The second part is a telescoping series. Let's make a table to see how it cancels.</p>
+<div class="displaymath" id="p-9967">
+\begin{equation*}
+\begin{array}{c||cc||r}
+\mathbf{n}&amp;\mathbf{\frac{1}{2n-1}}&amp;\mathbf{-\frac{1}{2n+1}}&amp;\mathbf{s_n}\\
+\hline
+2&amp;\frac{1}{3}&amp;\color{red}{-\frac{1}{5}} &amp;\frac{1}{3}-\color{red}{\frac{1}{5}}\\
+3&amp;\color{red}{\frac{1}{5}} &amp;\color{orange}{-\frac{1}{7}}&amp;\frac{1}{3}-\color{orange}{\frac{1}{7}}\\
+4&amp;\color{orange}{\frac{1}{7}} &amp;\color{green}{-\frac{1}{9}}&amp;\frac{1}{3}-\color{green}{\frac{1}{9}}\\
+5&amp;\color{green}{\frac{1}{9}} &amp;\color{blue}{-\frac{1}{11}}&amp;\frac{1}{3}-\color{blue}{\frac{1}{11}}\\
+6&amp;\color{blue}{\frac{1}{11}} &amp;\color{purple}{-\frac{1}{13}}&amp;\frac{1}{3}-\color{purple}{\frac{1}{13}}\\
+7&amp;\color{purple}{\frac{1}{13}} &amp;\color{black}{-\frac{1}{15}}&amp;\frac{1}{3}-\color{black}{\frac{1}{15}}\\
+\vdots&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-9968">After adding terms \(n=2\) through \(n=N\text{,}\) the partial sum is</p>
+<div class="displaymath" id="p-9969">
+\begin{align*}
+s_N&amp;=\frac{1}{3}-\frac{1}{2N+1}\\
+\end{align*}
+<p class="intertext">because all the terms except the first part of the \(n=2\) term, and the last part of the \(n=N\) term, cancel. Then:</p>
+\begin{align*}
+\color{red}{\sum_{n=2}^\infty \bigg(\frac1{2n-1} - \frac1{2n+1}\bigg)}
+&amp;=\lim_{N \to \infty}s_N = \lim_{N \to \infty}\frac{1}{3}-\frac{1}{2N+1}\\
+&amp;=\color{red}{\frac{1}{3}}
+\end{align*}
+</div>
+<p data-braille="continuation">All together,</p>
+<div class="displaymath">
+\begin{align*}
+\amp\sum_{n=2}^\infty \bigg( \frac{2^{n+1}}{3^n} + \frac1{2n-1} - \frac1{2n+1} \bigg)\\
+&amp;\hskip1in=
+\color{blue}{ \sum_{n=2}^\infty \frac{2^{n+1}}{3^n} } \quad
+\textcolor{black}{+} \quad
+\color{red}{ \sum_{n=2}^\infty \bigg(  \frac1{2n-1} - \frac1{2n+1} \bigg) }\\
+&amp;\hskip1in=\textcolor{blue}{\frac83}+\textcolor{red}{\frac13}=3
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1276"><h6 class="heading">
+<span class="codenumber">25<span class="period">.</span></span><span class="space"> </span><span class="title">M105 2014A.</span>
+</h6>
+<p id="p-9970">Evaluate</p>
+<div class="displaymath">
+\begin{gather*}
+\sum_{n=1}^\infty\bigg[{\Big(\frac{1}{3}\Big)}^n  + {\Big(-\frac{2}{5}\Big)}^{n-1}\bigg]
+\end{gather*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1194" id="hint-1194"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1194"><div class="hint solution-like"><p id="p-9971">Split the series into two parts.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1276" id="answer-1276"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1276"><div class="answer solution-like"><p id="p-9972">\(\dfrac{1}{2}+\dfrac{5}{7}
+=\dfrac{17}{14}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1276" id="solution-1276"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1276"><div class="solution solution-like">
+<p id="p-9973">We split the sum into two parts.</p>
+<div class="displaymath">
+\begin{align*}
+\sum_{n=1}^\infty\bigg[{\Big(\frac{1}{3}\Big)}^n  + {\Big(-\frac{2}{5}\Big)}^{n-1}\bigg]
+&amp;= \sum_{n=1}^\infty {\Big(\frac{1}{3}\Big)}^n + \sum_{n=1}^\infty {\Big(-\frac{2}{5}\Big)}^{n-1}\\
+\end{align*}
+<p class="intertext">Both are geometric series.</p>
+\begin{align*}
+&amp;= \sum_{n=0}^\infty {\Big(\frac{1}{3}\Big)}^{n+1}  + \sum_{n=0}^\infty {\Big(-\frac{2}{5}\Big)}^{n}\\
+&amp;= \frac{1}{3}\sum_{n=0}^\infty {\Big(\frac{1}{3}\Big)}^{n}
++ \sum_{n=0}^\infty {\Big(-\frac{2}{5}\Big)}^{n}\\
+\end{align*}
+<p class="intertext">We use Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> with \(a_1=\dfrac{1}{3}\) and \(r_1=\dfrac{1}{3}\text{,}\) then with \(a_2=1\) and \(r_2=-\dfrac{2}{5}\text{.}\)</p>
+\begin{align*}
+&amp;=\frac{1}{3}\cdot\frac{1}{1-\frac13}+\frac{1}{1+\frac25}\\
+&amp;=\frac{1}{2}+\frac{5}{7}=\frac{17}{14}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1277"><h6 class="heading">
+<span class="codenumber">26<span class="period">.</span></span><span class="space"> </span><span class="title">2014D.</span>
+</h6>
+<p id="p-9974">Find the sum of the series \(\displaystyle\sum_{n=0}^\infty\frac{1+3^{n+1}}{4^n}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1195" id="hint-1195"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1195"><div class="hint solution-like"><p id="p-9975">Split the series into two parts.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1277" id="answer-1277"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1277"><div class="answer solution-like"><p id="p-9976">\(\dfrac{40}{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1277" id="solution-1277"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1277"><div class="solution solution-like">
+<p id="p-9977">We split the sum into two parts.</p>
+<div class="displaymath">
+\begin{align*}
+\sum_{n=0}^\infty\frac{1+3^{n+1}}{4^n}
+&amp;= \sum_{n=0}^\infty \frac{1}{4^n} + \sum_{n=0}^\infty \frac{3^{n+1}}{4^n}\\
+&amp;= \sum_{n=0}^\infty \frac{1}{4^n} +3 \sum_{n=0}^\infty\left( \frac{3}{4}\right)^n\\
+\end{align*}
+<p class="intertext">Using Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a>,</p>
+\begin{align*}
+&amp;=\frac{1}{1-\frac14}+\frac{3}{1-\frac{3}{4}}\\
+&amp;=\frac{4}{3}+12=\frac{40}{3}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1278"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<p id="p-9978">Evaluate \(\displaystyle\sum_{n=5}^\infty \log\left(\frac{n-3}{n}\right)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1196" id="hint-1196"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1196"><div class="hint solution-like"><p id="p-9979">Use logarithm rules to turn this into a more obvious telescoping series.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1278" id="answer-1278"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1278"><div class="answer solution-like"><p id="p-9980">The series diverges to \(-\infty\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1278" id="solution-1278"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1278"><div class="solution solution-like">
+<p id="p-9981">Using logarithm rules, we see</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\sum_{n=5}^\infty \log\left(\frac{n-3}{n}\right)=
+\displaystyle\sum_{n=5}^\infty \big[\log(n-3)-\log n\big]
+\end{equation*}
+</div>
+<p id="p-9982">which looks like a telescoping series. Let's make a table to figure out the partial sums.</p>
+<div class="displaymath" id="p-9983">
+\begin{equation*}
+\begin{array}{c||cc||c}
+\mathbf{n}&amp;\mathbf{\log(n\!-\!3)}\!\!&amp;\mathbf{-\log n}&amp;\mathbf{s_n}\\
+\hline
+5&amp;\log 2&amp;\color{red}{-\log 5}&amp;\log 2 - \color{red}{\log 5}\\
+6&amp;\log 3&amp;\color{green}{-\log 6}&amp;\log 2 +\log 3- \color{red}{\log 5}\color{green}{-\log 6}\\
+7&amp;\log 4&amp;\color{purple}{-\log 7}&amp;\log 2 +\log 3+\log 4- \color{red}{\log 5}\color{green}{-\log 6}
+\color{purple}{-\log 7}\\
+8&amp;\color{red}{\log 5} &amp;\color{blue}{-\log 8} &amp;\log 2 +\log 3+\log 4 \color{green}{-\log 6}
+\color{purple}{-\log 7}\color{blue}{-\log 8}\\
+9&amp;\color{green}{\log 6}&amp;\color{orange}{-\log 9}&amp;\log 2 +\log 3+\log 4
+\color{purple}{-\log 7}\color{blue}{-\log 8}\color{orange}{-\log 9}\\
+10&amp;\color{purple}{\log 7}&amp;\color{brown}{-\log 10}&amp;\log 2 +\log 3+\log 4
+\color{blue}{-\log 8}\color{orange}{-\log 9}\color{brown}{-\log 10}\\
+11&amp;\color{blue}{\log 8}&amp;\color{yellow}{-\log 11}&amp;\log 2 +\log 3+\log 4
+\color{orange}{-\log 9}\color{brown}{-\log 10}\color{yellow}{-\log 11}\\
+\vdots&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-9984">There is a “lag” before the terms cancel, which is why they “build up” more than we saw in past examples. Still, we can clearly see the \(N\)th partial sum:</p>
+<div class="displaymath">
+\begin{align*}
+\amp\sum_{n=5}^N \Big(\log(n-3)-\log(n)\Big)\\
+&amp;\hskip0.5in=\log 2+\log 3 + \log 4 - \log(N-2)-\log(N-1)-\log(N)\\
+&amp;\hskip0.5in=\log \left(\frac{24}{N(N-1)(N-2)}\right)\\
+\end{align*}
+<p class="intertext">when \(N \geq 7\text{.}\) So,</p>
+\begin{align*}
+\sum_{n=5}^\infty \Big(\log(n-3)-\log(n)\Big)&amp;=
+\lim_{N \to \infty}s_N\\
+&amp;=\lim_{N \to \infty}\log \left(\frac{24}{N(N-1)(N-2)}\right)\\
+&amp;=-\infty
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1279"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<p id="p-9985">Evaluate \(\displaystyle\sum_{n=2}^\infty \left(\frac{2}{n}-\frac{1}{n+1}-\frac{1}{n-1} \right)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1197" id="hint-1197"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1197"><div class="hint solution-like"><p id="p-9986">This is a telescoping series.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1279" id="answer-1279"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1279"><div class="answer solution-like"><p id="p-9987">\(-\dfrac12\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1279" id="solution-1279"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1279"><div class="solution solution-like">
+<p id="p-9988">This is a telescoping series. Let's investigate it in the usual way. We leave the fractions in the middle of the table unsimplified, to make the pattern of cancellation clearer, since terms with the same denominator cancel.</p>
+<div class="displaymath" id="p-9989">
+\begin{equation*}
+\begin{array}{c||ccc||c}
+\mathbf{n}&amp;\mathbf{\dfrac2n}&amp;\mathbf{-\dfrac{1}{n+1}}&amp;\mathbf{-\dfrac{1}{n-1}}&amp;\mathbf{s_n}\\
+\hline
+2&amp;\dfrac{2}{2}&amp;\textcolor{red}{-\dfrac{1}{3}}&amp;-\dfrac{1}{1}
+&amp;\textcolor{red}{-\dfrac{1}{3}}
+\\
+3&amp;\textcolor{red}{\dfrac{2}{3}}&amp;\textcolor{blue}{-\dfrac{1}{4}}
+&amp;-\dfrac{1}{2}&amp;\textcolor{red}{\dfrac13}\textcolor{blue}{-\dfrac14}-\dfrac12
+\\
+4&amp;\textcolor{blue}{\dfrac{2}{4}}&amp;\textcolor{orange}{-\dfrac{1}{5}}
+&amp;\textcolor{red}{-\dfrac{1}{3}}&amp;\textcolor{blue}{\dfrac14}\textcolor{orange}{-\dfrac15}-\dfrac12
+\\
+5&amp;\textcolor{orange}{\dfrac{2}{5}}&amp;\textcolor{purple}{-\dfrac{1}{6}} &amp;\textcolor{blue}{-\dfrac{1}{4}}&amp;
+\textcolor{orange}{\dfrac15}\textcolor{purple}{-\dfrac16}-\dfrac12\\
+6&amp;\textcolor{purple}{\dfrac{2}{6}}&amp;\textcolor{green}{-\dfrac{1}{7}}&amp;\textcolor{orange}{-\dfrac{1}{5}}&amp;
+\textcolor{purple}{\dfrac16}\textcolor{green}{-\dfrac17}-\dfrac12
+\\
+7&amp;\textcolor{green}{\dfrac{2}{7}} &amp;\textcolor{brown}{-\dfrac{1}{8}}&amp;\textcolor{purple}{-\dfrac{1}{6}} &amp;
+\textcolor{green}{\dfrac17}\textcolor{brown}{-\dfrac18}-\dfrac12
+\\
+8&amp;\textcolor{brown}{\dfrac{2}{8}} &amp;-\dfrac{1}{9} &amp;\textcolor{green}{-\dfrac{1}{7}} &amp;
+\textcolor{brown}{\dfrac{1}{8}}-\dfrac{1}{9}-\dfrac12\\
+\vdots&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-9990">In general, there are three terms with the same denominator, and these cancel out to zero, but it takes a while to gather all three. So, some are left over in the partial sum.</p>
+<div class="displaymath" id="p-9991">
+\begin{align*}
+s_N=\sum_{n=2}^N \left(\frac{2}{n}-\frac{1}{n+1}-\frac{1}{n-1} \right)&amp;=
+\frac{1}{N}-\frac{1}{N+1}-\frac{1}{2}\\
+\end{align*}
+<p class="intertext">Therefore,</p>
+\begin{align*}
+\sum_{n=2}^\infty \left(\frac{2}{n}-\frac{1}{n+1}-\frac{1}{n-1} \right)&amp;=\lim_{N \to \infty}s_N\\
+&amp;=\lim_{N \to \infty} \left[\frac{1}{N}-\frac{1}{N+1}-\frac{1}{2}\right]\\
+&amp;=-\frac{1}{2}
+\end{align*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-173">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-279"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1280"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<p id="p-9992">An infinitely long, flat cliff has stones hanging off it, attached to thin wire of negligible mass. Starting at position \(x=1\text{,}\) every metre (at position \(x\text{,}\) where \(x\) is some whole number) the stone has mass \(\dfrac{1}{4^x}\) kg and is hanging \(2^x\) metres  below the top of the cliff.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1003.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1198" id="hint-1198"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1198"><div class="hint solution-like"><p id="p-9993">The stone at position \(x\) has mass \(\dfrac{1}{4^x}\) kg, and we have to pull it a distance of \(2^x\) metres. From this, you can find the work involved in pulling up a single stone. Then, add up the work involved in pulling up all the stones.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1280" id="answer-1280"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1280"><div class="answer solution-like"><p id="p-9994">9.8 J</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1280" id="solution-1280"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1280"><div class="solution solution-like">
+<p id="p-9995">The stone at position \(x\) has mass \(\dfrac{1}{4^x}\) kg, and we have to pull it a distance of \(2^x\) metres, so the work involved in moving that one stone is</p>
+<div class="displaymath">
+\begin{equation*}
+\left(\frac{1}{4^x}\text{ kg}\right)\left(2^x\text{ m}\right)\left(9.8 \frac{\text{m}}{\text{sec}^2}\right) = \frac{9.8}{2^x}\text{ J}
+\end{equation*}
+</div>
+<p id="p-9996">Therefore, the work to move <em class="emphasis">all</em> the stones is:</p>
+<div class="displaymath">
+\begin{align*}
+\sum_{x=1}^{\infty}\frac{9.8}{2^x}&amp;
+=\sum_{x=0}^{\infty}\frac{9.8}{2^{x+1}}\\
+&amp;=\sum_{x=0}^{\infty}\frac{9.8}{2}\cdot\frac{1}{2^{x}}
+=\frac{9.8}{2}\cdot\frac{1}{1-\frac12}=9.8 \text{ J}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1281"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<p id="p-9997">Find the combined volume of an infinite collection of spheres, where for each whole number \(n=1,\,2,\,3,\,\ldots\) there is exactly one sphere of radius \(\dfrac{1}{\pi^n}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1199" id="hint-1199"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1199"><div class="hint solution-like"><p id="p-9998">The volume of a sphere of radius \(r\) is \(\dfrac{4}{3}\pi r^3\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1281" id="answer-1281"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1281"><div class="answer solution-like"><p id="p-9999">\(\dfrac{4\pi}{3\left(\pi^3-1\right)}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1281" id="solution-1281"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1281"><div class="solution solution-like">
+<p id="p-10000">The volume of a sphere of radius \(\dfrac{1}{\pi^n}\) is</p>
+<div class="displaymath">
+\begin{align*}
+v_n&amp;=\dfrac{4}{3}\pi \left(\dfrac{1}{\pi^n}\right)^3=\frac{4\pi}{3}\left(\frac{1}{\pi^3}\right)^{n}\\
+\end{align*}
+<p class="intertext">So, the volume of all the spheres together is:</p>
+\begin{align*}
+\sum_{n=1}^\infty v_n&amp;=\sum_{n=1}^\infty \frac{4\pi}{3}\left(\frac{1}{\pi^3}\right)^{n}\\
+&amp;=\sum_{n=0}^\infty \frac{4\pi}{3}\left(\frac{1}{\pi^3}\right)^{n+1}\\
+&amp;=\sum_{n=0}^\infty \frac{4}{3\pi^2}\left(\frac{1}{\pi^3}\right)^{n}\\
+\end{align*}
+<p class="intertext">We use Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> with \(a= \dfrac{4}{3\pi^2}\) and \(r=\dfrac{1}{\pi^3}\text{.}\)</p>
+\begin{align*}
+&amp;= \dfrac{4}{3\pi^2}\cdot\frac{1}{1-\frac{1}{\pi^3}} = \frac{4\pi}{3\left(\pi^3-1\right)}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1282"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<p id="p-10001">Evaluate \(\displaystyle\sum_{n=3}^\infty \left(\frac{\sin^2 n}{2^n}+\frac{\cos^2(n+1)}{2^{n+1}} \right)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1200" id="hint-1200"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1200"><div class="hint solution-like">
+<p id="p-10002">Use the properties of a telescoping series to simplify the terms.</p>
+<p id="p-10003">Recall \(\sin^2\theta+\cos^2\theta=1\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1282" id="answer-1282"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1282"><div class="answer solution-like"><p id="p-10004">\(\displaystyle \frac{\sin^23}{8}+32\approx 32.0025\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1282" id="solution-1282"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1282"><div class="solution solution-like">
+<p id="p-10005">Let's make a table. Keep in mind \(\cos^2\theta+\sin^2\theta=1\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c||cc||c}
+\mathbf{n}&amp;\mathbf{\dfrac{\sin^2n}{2^n}}&amp;\mathbf{\dfrac{\cos^2(n+1)}{2^{n+1}}}&amp;\mathbf{s_n}\\
+\hline
+3&amp;\dfrac{\sin^23}{2^3}&amp;\textcolor{red}{\dfrac{\cos^24}{2^4}} &amp;
+\dfrac{\sin^23}{2^3}+\textcolor{red}{\dfrac{\cos^24}{2^4}} \\
+4&amp;\textcolor{red}{\dfrac{\sin^24}{2^4}} &amp;\textcolor{green}{\dfrac{\cos^25}{2^5}} &amp;
+\dfrac{\sin^23}{2^3}+\textcolor{red}{\dfrac{1}{2^4}}+\textcolor{green}{\dfrac{\cos^25}{2^5}} \\
+5&amp;\textcolor{green}{\dfrac{\sin^25}{2^5}} &amp;\textcolor{blue}{\dfrac{\cos^26}{2^6}} &amp;
+\dfrac{\sin^23}{2^3}+\textcolor{red}{\dfrac{1}{2^4}}+\textcolor{green}{\dfrac{1}{2^5}}+\textcolor{blue}{\dfrac{\cos^26}{2^6}} \\
+6&amp;\textcolor{blue}{\dfrac{\sin^26}{2^6}} &amp;\textcolor{orange}{\dfrac{\cos^27}{2^7}} &amp;
+\dfrac{\sin^23}{2^3}+\textcolor{red}{\dfrac{1}{2^4}}+\textcolor{green}{\dfrac{1}{2^5}}
++\textcolor{blue}{\dfrac{1}{2^6}}+\textcolor{orange}{\dfrac{\cos^27}{2^7}}\\
+7&amp;\textcolor{orange}{\dfrac{\sin^27}{2^7}} &amp;\textcolor{brown}{\dfrac{\cos^28}{2^8}} &amp;
+\dfrac{\sin^23}{2^3}+ \textcolor{red}{\dfrac{1}{2^4}} + \textcolor{green}{\dfrac{1}{2^5}}+
+\textcolor{blue}{\dfrac{1}{2^6}}+ \textcolor{orange}{\dfrac{1}{2^7}}+\textcolor{brown}{\dfrac{\cos^28}{2^8}}\\
+\vdots&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p id="p-10006">This gives us an equation for the partial sum \(s_N\text{,}\) when \(N \geq 4\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+s_N&amp;=\sum_{n=3}^N\left(\frac{\sin^2 n}{2^n}+\frac{\cos^2(n+1)}{2^{n+1}} \right)\\
+&amp;=\frac{\sin^23}{2^3} +\left( \sum_{n=4}^{N}\frac{1}{2^n} \right)+\frac{\cos^2(N+1)}{2^{N+1}}\\
+\end{align*}
+<p class="intertext">Using Definition <a class="xref" data-knowl="./knowl/def_SRseries.html" title="Definition 8.2.3">8.2.3</a>, our series evaluates to:</p>
+\begin{align*}
+\lim_{N \to \infty}s_N
+&amp;=\lim_{N \to \infty}\left[\frac{\sin^23}{2^3} +\left( \sum_{n=4}^{N}\frac{1}{2^n} \right)+\frac{\cos^2(N+1)}{2^{N+1}}\right]\\
+&amp;=\frac{\sin^23}{8}+\left[\lim_{N \to \infty}\frac{\cos^2(N+1)}{2^{N+1}}\right] +\sum_{n=4}^\infty \frac{1}{2^n}\\
+\end{align*}
+<p class="intertext">We evaluate the limit using the squeeze theorem; the series is geometric.</p>
+\begin{align*}
+&amp;=\frac{\sin^23}{8}+0+\sum_{n=0}^\infty \frac{1}{2^{n+4}}\\
+&amp;=\frac{\sin^23}{8}+\frac{1}{2^4}\sum_{n=0}^\infty \frac{1}{2^{n}}\\
+\end{align*}
+<p class="intertext">Using Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a>,</p>
+\begin{align*}
+&amp;=\frac{\sin^23}{8}+\frac{1}{2^4} \frac{1}{1-\frac12}\\
+&amp;=\frac{\sin^23}{8}+\frac{1}{8} \approx 0.1275
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1283"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<p id="p-10007">Suppose a series \(\displaystyle\sum_{n=1}^\infty a_n\) has sequence of partial sums \(\{S_N\}\text{,}\) and the series \(\displaystyle\sum_{N=1}^\infty S_N\) has sequence of partial sums \(\{\mathscr S_M \}=\left\{ \displaystyle\sum_{N=1}^M S_N\right\}\text{.}\)</p>
+<p id="p-10008">If \(\mathscr S_M = \dfrac{M+1}{M}\text{,}\) what is \(a_n\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1201" id="hint-1201"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1201"><div class="hint solution-like"><p id="p-10009">Review Question <a class="xref" data-knowl="./knowl/prob_s3_2_partsums.html" title="Exercise 8.2.2.3">3</a> for using the sequence of partial sums.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1283" id="answer-1283"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1283"><div class="answer solution-like"><p id="p-10010">\(\displaystyle a_n =\begin{cases}
+\frac{2}{n(n-1)(n-2)} &amp;\text{ if }n \ge 3,\\
+-\frac52 &amp;\text{ if }n=2,\\
+2 &amp;\text{ if }n=1
+\end{cases}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1283" id="solution-1283"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1283"><div class="solution solution-like">
+<p id="p-10011">Since \(\{\mathscr S_M\}\) is the sequence of partial sums of \(\displaystyle\sum_{N=1}^\infty S_N\text{,}\) we can find \(\{S_N\}\) from \(\{\mathscr S_M\}\) as in Question <a class="xref" data-knowl="./knowl/prob_s3_2_partsums.html" title="Exercise 8.2.2.3">3</a>:</p>
+<div class="displaymath">
+\begin{align*}
+S_N&amp;=\mathscr S_{N}-\mathscr S_{N-1}=\frac{N+1}{N} - \frac{N}{N-1}=-\frac{1}{N(N-1)}
+&amp;\text{if }N \geq 2,\\
+S_1&amp;=\mathscr S_1 = 2\\
+\end{align*}
+<p class="intertext">Similarly, we find \(\{a_n\}\) from \(\{S_N\}\text{.}\) Do be careful: \(S_N\) only follows the formula we found above when \(N \geq 2\text{.}\) In the next line, we use an expression containing \(S_{n-1}\text{;}\) in order for the subscript to be at least two (so the formula fits), we need \(n \geq 3\text{.}\)</p>
+\begin{align*}
+a_n&amp;=S_n-S_{n-1}=-\frac{1}{n(n-1)}-\frac{-1}{(n-1)(n-2)}\\
+&amp;=\frac{2}{n(n-1)(n-2)} &amp;\text{if }n \ge 3,\\
+a_2&amp;=S_2-S_1=-\frac{1}{2(2-1)} - 2=-\frac52,\\
+a_1&amp;=S_1=2\\
+\end{align*}
+<p class="intertext">All together,</p>
+\begin{align*}
+a_n &amp;=\begin{cases}
+\frac{2}{n(n-1)(n-2)} &amp;\text{ if }n \ge 3,\\
+-\frac52 &amp;\text{ if }n=2,\\
+2 &amp;\text{ if }n=1
+\end{cases}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1284"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<p id="p-10012">Create a bullseye using the following method:</p>
+<p id="p-10013">Starting with a red circle of area 1, divide the radius into thirds, creating two rings and a circle. Colour the middle ring blue.</p>
+<p id="p-10014">Continue the pattern with the inside circle: divide its radius into thirds, and colour the middle ring blue.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1004.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1005.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-10015">Continue in this way indefinitely: dividing the radius of the innermost circle into thirds, creating two rings and another circle, and colouring the middle ring blue.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1006.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-10016">What is the area of the red  portion?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1202" id="hint-1202"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1202"><div class="hint solution-like"><p id="p-10017">What is the ratio of areas between the outermost (red) ring and the next (blue) ring?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1284" id="answer-1284"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1284"><div class="answer solution-like"><p id="p-10018">\(\dfrac{5}{8}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1284" id="solution-1284"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1284"><div class="solution solution-like">
+<p id="p-10019">We consider a circle of radius \(R\text{,}\) with an “inner ring” from \(\frac{R}{3}\) to \(\frac{2R}{3}\) and an “outer ring” from \(\frac{2R}{3}\) to \(R\text{.}\)</p>
+<p id="p-10020">The area of the outer ring is:</p>
+<div class="displaymath">
+\begin{equation*}
+\pi R^2 - \pi \left(\frac{2R}{3}\right)^2=\frac{5}{9}\pi R^2
+\end{equation*}
+</div>
+<p id="p-10021">The area of the inner ring is:</p>
+<div class="displaymath">
+\begin{equation*}
+\pi \left(\frac{2R}{3}\right)^2 - \pi \left(\frac{R}{3}\right)^2=\frac{3}{9}\pi R^2
+\end{equation*}
+</div>
+<p id="p-10022">So, the ratio of the inner ring's area to the outer ring's area is \(\frac{3}{5}\text{.}\)</p>
+<p id="p-10023">In our bullseye diagram,  if we pair up any red ring with the blue ring just inside it, the blue ring has \(\frac{3}{5}\) the area of the red ring. So, the blue portion of the bullseye has \(\frac{3}{5}\) the area of the red portion.</p>
+<p id="p-10024">Since the circle has area 1, if we let the red portion have area \(A\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+1=A+\frac{3}{5}A=\frac{8}{5}A
+\end{equation*}
+</div>
+<p id="p-10025">So, the red portion has area \(\frac{5}{8}\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:07:15-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\int \frac{\sqrt{x^2-2}}{x^2}\dee{x}
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">We notice that there is a quadratic function under the square root. If that equation were a perfect square, we could get rid of the square root: so we'll mould it into a perfect square using a trig substitution.</p>
+<p>Our candidates will use one of the following identities:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+1-\sin^2\theta=\cos^2\theta \hspace{1cm} \tan^2\theta+1=\sec^2\theta \hspace{1cm} \sec^2\theta-1=\tan^2\theta
+\end{equation*}
+</div>
+<p>We'll be substituting \(x=\)(something), so we notice that \(x^2-2\) has the general form of (function)\(-\)(constant), as does \(\sec^2\theta-1\text{.}\) In order to get the constant right, we multiply through by two:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+2\sec^2\theta-2=2\tan^2\theta
+\end{equation*}
+</div>
+<p>or:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+(\sqrt{2}\sec \theta)^2-2=2\tan^2\theta
+\end{equation*}
+</div>
+<p>so we decide to use the substitution</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x=\sqrt{2}\sec\theta\hspace{1cm}\dee{x}=\sqrt{2}\sec\theta\tan\theta \dee{\theta}
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Now that we've chosen the substitution, we evaluate the integral.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int\frac{\sqrt{x^2-2}}{x^2}\dee{x}&amp;=\int\frac{\sqrt{2\sec^2\theta-2}}{2\sec^2\theta}\sqrt{2}\sec\theta\tan\theta \dee{\theta}\\
+&amp;=\int
+\frac{\sqrt{2\tan^2\theta}}{2\sec^2\theta}\sqrt{2}\sec\theta\tan\theta
+\dee{\theta}\\
+&amp;=\int
+\frac{\sqrt{2}\tan\theta}{2\sec^2\theta}\sqrt{2}\sec\theta\tan\theta
+\dee{\theta}\\
+&amp;=\int
+\frac{\tan^2\theta}{\sec\theta}
+\dee{\theta}\\
+&amp;=
+\int \frac{\sec^2\theta-1}{\sec\theta}\dee{\theta}\\
+&amp;=\int \big(\sec\theta-\cos\theta\big)\, \dee{\theta}\\
+&amp;=\log|\sec\theta + \tan\theta|-\sin\theta +C
+\end{align*}
+</div>
+<p data-braille="continuation">Now we need everything back in terms of \(x\text{.}\) We need a triangle. Since \(x=\sqrt{2}\sec\theta\text{,}\) that means if we label an angle \(\theta\text{,}\) its secant (hypotenuse over adjacent side) is \(\dfrac{x}{\sqrt{2}}\text{.}\) By Pythagoras, the opposite side is \(\sqrt{x^2-2}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-833.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">So \(\tan \theta = \frac{\mbox{opp}}{\mbox{adj}}=\dfrac{\sqrt{x^2-2}}{\sqrt{2}}\text{,}\) and \(\sin\theta = \frac{\mbox{opp}}{\mbox{hyp}}=\dfrac{\sqrt{x^2-2}}{x}\text{.}\) Then the value of the integral is:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\amp\log|\sec\theta + \tan\theta|-\sin\theta +C
+={ \log \left|
+\frac{x}{\sqrt{2}}+\frac{\sqrt{x^2-2}}{\sqrt{2}}
+\right|-\frac{\sqrt{x^2-2}}{x}+C}\\
+&amp;\hskip0.5in={ \log \left| x+{\sqrt{x^2-2}}
+\right|-\log\sqrt{2}-\frac{\sqrt{x^2-2}}{x}+C}\\
+&amp;\hskip0.5in= \log \left| x+{\sqrt{x^2-2}}
+\right|-\frac{\sqrt{x^2-2}}{x}+C
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Note the simplification in the last step is due to our convention that \(C\) is an arbitrary constant. So, \(C-\log\sqrt{2}\) can be re-written as simply \(C\text{.}\)</p>
+</div></body>
+</html>

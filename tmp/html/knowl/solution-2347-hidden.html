@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:18:03-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>(a) The given integral is of the form \(\int_C F_1(x,y)\,\dee{x}+F_2(x,y)\,\dee{y}\) with</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+F_1(x,y) = \sqrt{1+x^3}\qquad
+F_2(x,y) = 2xy^2 + y^2\qquad
+\frac{\partial F_2}{\partial x} - \frac{\partial F_1}{\partial y} = 2y^2
+\end{equation*}
+</div>
+<p data-braille="continuation">As \(C\) is \(\partial R\) with</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+R = \Set{(x,y)}{ x^2+y^2\le 1}
+\end{equation*}
+</div>
+<p data-braille="continuation">Green's theorem (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>) gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y}
+&amp; = \int_C F_1(x,y)\,\dee{x}+F_2(x,y)\,\dee{y}\\
+&amp;  = \dblInt_R \Big(\frac{\partial F_2}{\partial x}
+- \frac{\partial F_1}{\partial y}\Big)\ \dee{x}\dee{y}\\
+&amp;= 2 \dblInt_R y^2\ \dee{x}\dee{y}
+\end{align*}
+</div>
+<p data-braille="continuation">Switching to polar coordinates</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y}
+&amp;= 2\int_0^{2\pi}\dee{\theta} \int_0^1\dee{r}\
+r\big(r\sin\theta\big)^2\\
+&amp;= 2\left[\int_0^{2\pi}\dee{\theta}\ \sin^2\theta\right]
+\left[\int_0^1\dee{r}\ r^3\right]\\
+&amp;=2\ \pi\ \frac{1}{4}
+=\frac{\pi}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">To do the \(\theta\) integral, we have used</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\int_0^{2\pi} \sin^2 \theta\ \dee{\theta}
+=\int_0^{2\pi} \Big(\frac{1-\cos(2\theta)}{2}\Big)\,\dee{\theta}
+=\Big[\frac{\theta-\sin(2\theta)/2}{2} \Big]_0^{2\pi}
+= \pi
+\end{gather*}
+</div>
+<p data-braille="continuation">For an efficient, sneaky, way to evaluate \(\int_0^{2\pi} \sin^2 \theta\ \dee{\theta}\text{,}\) see Example <a class="xref" data-knowl="./knowl/eg_workIntegralB.html" title="Example 13.4.4">13.4.4</a>.</p>
+<p>(b) It is again natural to use Green's theorem. But Green's theorem must be applied to a curve that is closed, so that it is the boundary of a region in \(\bbbr^2\text{.}\) The given curve \(C\) is not closed. But it is  part of the boundary of</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+R = \Set{(x,y)}{x^2+y^2\le 1,\ x\ge 0}
+\end{equation*}
+</div>
+<p data-braille="continuation">Here is a sketch of \(R\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE17D_7.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>The boundary of \(R\) consists of two parts — \(C\) on the right and the line segment \(L\) from \((0,1)\) to \((0,-1)\) on the left. Note that \(\vF=F_1\,\hi +F_2\,\hj\) is well-defined on all of \(R\) and that we still have, from part (a),</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{\partial F_2}{\partial x}  -
+\frac{\partial F_1}{\partial y}
+&amp;=2y^2
+\end{align*}
+</div>
+<p data-braille="continuation">on all of \(R\text{.}\) So, by Green's theorem (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>),</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_C \sqrt{1+x^3}\,\dee{x} +\big(2xy^2 + y^2\big)\,\dee{y}
+&amp;=\dblInt_R \Big(\frac{\partial F_2}{\partial x} -
+\frac{\partial F_2}{\partial y} \Big)\dee{x}\dee{y}
+- \int_L\vF\cdot\dee{\vr}\\
+&amp;=\dblInt_{\Atop{x^2+y^2\le 1}{x\ge 0}} 2y^2\  \dee{x}\dee{y}
++ \int_{-L} F_2\,\dee{y}\\
+&amp;=\dblInt_{x^2+y^2\le 1} y^2\  \dee{x}\dee{y}
++ \int_{-1}^1 y^2\,\dee{y}\\
+&amp;\hskip0.25in\text{by symmetry for the first integral and}\\
+&amp;\hskip0.25in\text{since $x=0$ and $\dee{x}=0$ in the}\\
+&amp;\hskip0.25in\text{second integral}\\
+&amp;=\frac{\pi}{4} + \frac{2}{3}
+\end{align*}
+</div>
+<p data-braille="continuation">In the second line, we used the notation \(-L\) for the line segment from \((0,-1)\) to \((0,1)\text{.}\)</p>
+</div></body>
+</html>

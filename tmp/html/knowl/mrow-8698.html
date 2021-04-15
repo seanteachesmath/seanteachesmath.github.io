@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:12:19-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+N&amp;=\int_{-3}^3 u^2\sqrt{9-u^2}\,\dee{u}+
+8\int_{-3}^3 u\sqrt{9-u^2}\,\dee{u}+
+15\int_{-3}^3 \sqrt{9-u^2}\,\dee{u}\\
+\end{align*}
+<p class="intertext">The first integrand is even, with a symmetric interval of integration, so we can simplify its limits of integration a little bit. The middle integrand is odd, so its integral over the symmetric interval \([-3,3]\) is zero. The last integral is the area of half a circle of radius 3.</p>
+\begin{align*}
+N&amp;=2\int_{0}^3 u^2\sqrt{9-u^2}\,\dee{u}+0+15\cdot\pi\cdot3^2\\
+&amp;=\frac{135}{2}\pi+2\int_{0}^3 u^2\sqrt{9-u^2}\,\dee{u}\\
+\end{align*}
+<p class="intertext">The remaining integral has a quadratic function underneath a square root with no obvious substitution, so we use a trigonometric substitution. Let \(u=3\sin\theta\text{,}\) \(\dee{u}=3\cos\theta\,\dee{\theta}\text{.}\) Note \(3\sin(0)=0\) and \(3\sin(\pi/2)=3\text{,}\) so the limits of integration become 0 and \(\frac{\pi}{2}\text{.}\)</p>
+\begin{align*}
+N&amp;=\frac{135}{2}\pi+2\int_{0}^{\pi/2} \big(3\sin\theta\big)^2\sqrt{9-\big(3\sin\theta\big)^2}\cdot 3\cos\theta\,\dee{\theta}\\
+&amp;=\frac{135}{2}\pi+2\int_{0}^{\pi/2} 9\sin^2\theta \cdot \sqrt{9-9\sin^2\theta}\cdot 3\cos\theta\,\dee{\theta}\\
+&amp;=\frac{135}{2}\pi+54\int_{0}^{\pi/2} \sin^2\theta \cdot \sqrt{9\cos^2\theta}\cdot \cos\theta\,\dee{\theta}\\
+&amp;=\frac{135}{2}\pi+54\int_{0}^{\pi/2} \sin^2\theta \cdot 3\cos \theta\cdot \cos\theta\,\dee{\theta}\\
+&amp;=\frac{135}{2}\pi+162\int_{0}^{\pi/2} \sin^2\theta \cdot \cos^2 \theta\,\dee{\theta}\\
+\end{align*}
+<p class="intertext">Using the identity \(\sin(2\theta)=2\sin\theta\cos\theta\text{,}\) we see \(\sin^2\theta\cos^2\theta =\big(\sin\theta\cos\theta\big)^2 = \frac{1}{4}\sin^2(2\theta)\)</p>
+\begin{align*}
+N&amp;=\frac{135}{2}\pi+162\int_{0}^{\pi/2}  \frac{1}{4}\sin^2(2\theta)\,\dee{\theta}\\
+\end{align*}
+<p class="intertext">Now, we use the identity \(\sin^2 x = \frac{1}{2}(1-\cos(2x))\text{,}\) with \(x=2\theta.\)</p>
+\begin{align*}
+N&amp;=\frac{135}{2}\pi+162\int_{0}^{\pi/2}  \frac{1}{8}\big(1-\cos(4\theta)\big)\,\dee{\theta}\\
+&amp;=\frac{135}{2}\pi+\frac{81}{4}\int_{0}^{\pi/2} 1-\cos(4\theta)\,\dee{\theta}\\
+&amp;=\frac{135}{2}\pi+\frac{81}{4}\left[\theta-\frac{1}{4}\sin(4\theta)\right]_{0}^{\pi/2}\\
+&amp;=\frac{135}{2}\pi+\frac{81}{4}\left(\frac{\pi}{2}\right)\\
+&amp;=\frac{621}{8}\pi\\
+\end{align*}
+<p class="intertext">Now, using equation (\(*\)), we find \(\bar y\text{:}\)</p>
+\begin{align*}
+\bar y &amp;=\frac{N}{D} = \frac{\frac{621}{8}\pi}{\frac{45}{2}\pi} = \frac{69}{20}=3.45
+\end{align*}
+</div>
+<span class="incontext"><a href="sec_com.html#mjx-eqn-mrow-8698">in-context</a></span>
+</body>
+</html>

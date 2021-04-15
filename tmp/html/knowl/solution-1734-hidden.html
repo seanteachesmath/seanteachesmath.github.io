@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:44:58-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p xmlns:svg="http://www.w3.org/2000/svg">Denote by \(x\text{,}\) \(y\) and \(z\text{,}\) the length, width and height, respectively, of the box.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/box.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>The box has two sides of area \(xz\text{,}\) two sides of area \(yz\) and a bottom of area \(xy\text{.}\) So the total surface area of material used is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+S = 2xz + 2yz + xy
+\end{equation*}
+</div>
+<p data-braille="continuation">However the three dimensions \(x\text{,}\) \(y\) and \(z\) are not independent. The requirement that the box have volume \(V\) imposes the constraint</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+xyz = V
+\end{equation*}
+</div>
+<p data-braille="continuation">We can use this constraint to eliminate one variable. Since \(z\) is at the end of the alphabet (poor \(z\)), we eliminate \(z\) by substituting \(z=\frac{V}{xy}\text{.}\) So we have find the values of \(x\) and \(y\) that minimize the function</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+S(x,y) = \frac{2V}{y} + \frac{2V}{x} + xy
+\end{equation*}
+</div>
+<p data-braille="continuation">Let's start by finding the critical points of \(S\text{.}\) Since</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S_x(x,y) &amp;= -\frac{2V}{x^2} + y\\
+S_y(x,y) &amp;= -\frac{2V}{y^2} + x
+\end{align*}
+</div>
+<p data-braille="continuation">\((x,y)\) is a critical point if and only if</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+x^2y&amp;=2V \tag{E1}\\
+xy^2&amp;=2V \tag{E2}
+\end{align*}
+</div>
+<p data-braille="continuation">Solving (E1) for \(y\) gives \(y=\frac{2V}{x^2}\text{.}\) Substituting this into (E2) gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x\frac{4V^2}{x^4}=2V \implies
+x^3 = 2V \implies  x = \root{3}\of{2V}\quad\text{and}\quad
+y = \frac{2V}{(2V)^{2/3}} = \root{3}\of{2V}
+\end{equation*}
+</div>
+<p data-braille="continuation">As there is only one critical point, we would expect it to give the minimum<a class="fn-knowl original" data-knowl="./knowl/fn-469-hidden.html" title="Footnote 10.9.14"><sup> 14 </sup></a>. But let's use the second derivative test to verify that at least the critical point is a local minimum. The various second partial derivatives are</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S_{xx}(x,y)&amp;=\frac{4V}{x^3} &amp;
+S_{xx}\big(\root{3}\of{2V}\,,\,\root{3}\of{2V}\big)&amp;=2\\
+S_{xy}(x,y)&amp;=1&amp;
+S_{xy}\big(\root{3}\of{2V}\,,\,\root{3}\of{2V}\big)&amp;=1\\
+S_{yy}(x,y)&amp;=\frac{4V}{y^3} &amp;
+S_{yy}\big(\root{3}\of{2V}\,,\,\root{3}\of{2V}\big)&amp;=2
+\end{align*}
+</div>
+<p data-braille="continuation">So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S_{xx}\big(\root{3}\of{2V}\,,\,\root{3}\of{2V}\big)\
+S_{yy}\big(\root{3}\of{2V}\,,\,\root{3}\of{2V}\big)
+-S_{xy}\big(\root{3}\of{2V}\,,\,\root{3}\of{2V}\big)^2
+&amp;=3 \gt 0\\
+S_{xx}\big(\root{3}\of{2V}\,,\,\root{3}\of{2V}\big)&amp;=2 \gt 0
+\end{align*}
+</div>
+<p data-braille="continuation">and, by Theorem <a class="xref" data-knowl="./knowl/thm_second_deriv_test.html" title="Theorem 10.9.16: Second Derivative Test">10.9.16</a>.b, \(\big(\root{3}\of{2V}\,,\,\root{3}\of{2V}\big)\) is a local minimum and the desired dimensions are</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x=y=\root{3}\of{2V}\qquad
+z=\root{3}\of{\frac{V}{4}}
+\end{equation*}
+</div>
+<p data-braille="continuation">Note that our solution has \(x=y\text{.}\) That's a good thing — the function \(S(x,y)\) is symmetric in \(x\) and \(y\text{.}\) Because the box has no top, the symmetry does not extend to \(z\text{.}\)</p>
+</div></body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:06:43-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p xmlns:svg="http://www.w3.org/2000/svg">(a) Note \(\vF\) is defined and continuous on all of \(\mathbb R^3\text{.}\) Furthermore, \(\vF\) has continuous first-order partial derivatives on all of \(\bbbr^3\text{.}\) Using Theorem <a class="xref" data-knowl="./knowl/thm_screenConserv.html" title="Theorem 13.4.8">13.4.8</a>, \(\vF\) is conservative if and only if it has zero curl:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+0&amp;=\vnabla\times\vF
+=\vnabla\times\big(\alpha e^y\,\hi+(xe^y+\beta\cos z)\,\hj
+-\gamma y\sin z\,\hk\big)\\
+&amp;=(-\gamma\sin z+\beta\sin z)\hi+(e^y-\alpha e^y)\hk
+\end{align*}
+</div>
+<p data-braille="continuation">which is the case if and only if \(\alpha=1\text{,}\) \(\beta=\gamma\text{.}\)</p>
+<p>(b) We use Theorem <a class="xref" data-knowl="./knowl/thm_workIntegral.html" title="Theorem 13.4.2">13.4.2</a>: if \(\varphi\) is a potential for \(\vF\text{,}\) then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\int_C \vF \cdot \dee{\vr}  =  \varphi(P_1)-\varphi(P_0) 
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">where \(C\) runs from \(P_0\) to \(P_1\text{.}\) So, we find \(\varphi\text{.}\)</p>
+<p>Assume that \(\alpha=1\text{,}\) \(\beta=\gamma\text{.}\) We find a potential \(\varphi\) for \(\vF\) by antidifferentiating.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{\partial \varphi}{\partial x}(x,y,z)
+&amp;= e^y &amp; \implies \varphi(x,y,z) &amp;=xe^y+\psi_1(y,z)\\
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= xe^y+\beta\cos z  &amp; \implies \varphi(x,y,z) &amp;=xe^y+\beta y \cos z + \psi_2(x,z)\\
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= -\beta y\sin z &amp; \implies \varphi(x,y,z) &amp;=\beta y \cos z + \psi_3(x,y)
+\end{align*}
+</div>
+<p data-braille="continuation">for some functions \(\psi_1(y,z)\text{,}\) \(\psi_2(x,z)\) and \(\psi_3(x,y)\) to be determined.</p>
+<p>We'd like a single  function \(\varphi(x,y,z)\) that simultaneously obeys all three of these equations, for some \(\psi_j\)'s. An initial guess is simply the sum of all of the distinct terms, other that the \(\psi_j\)'s, that appear in the three equations above. The term \(xe^y\) appears in the \(\psi_1\) and \(\psi_2\) equations and the term \(\be y\cos z\) appears in the \(\psi_2\) and \(\psi_3\) equations. So we guess</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\varphi(x,y,z)\stackrel{?}{=} xe^y+\beta y \cos z 
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">If we let \(\psi_1(y,z)=\beta y \cos z\text{,}\) \(\psi_2(x,z)=0\text{,}\) and \(\psi_3(x,y)=xe^y\text{,}\) then we see this function \(\varphi(x,y,z)\) does indeed obey all three equations and so is a potential for \(\vF\text{.}\)</p>
+<p>The curve \(C\) runs from \(P_0=(0^2,e^0,\pi\cdot0)=(0,1,0)\) to \(P_1=(1^2,e^1,\pi\cdot 1)=(1,e,\pi)\text{.}\) Using Theorem <a class="xref" data-knowl="./knowl/thm_workIntegral.html" title="Theorem 13.4.2">13.4.2</a>:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\int_C \vF \cdot \dee{\vr}  =   \varphi(1,e,\pi)-\varphi(0,1,0) = \big(e^e-\beta e\big)-\beta =e^e-\beta(e+1)
+\end{equation*}
+</div>
+</div></body>
+</html>

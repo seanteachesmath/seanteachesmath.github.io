@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:54:10-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">11.6.4.6.1</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">(a) In cylindrical coordinates, the cone \(z=2a-\sqrt{x^2+y^2}\) is \(z=2a-r\) and the cylinder \(x^2+y^2=2ay\) is \(r^2=2ar\sin\theta\) or \(r=2a\sin\theta\text{.}\) The figures below show the parts of the cone, the cylinder and the intersection, respectively, that are in the first octant.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/domainCylinderConea.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:29%;margin-right:29%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/domainCylinderConeb.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:22.5%;margin-right:22.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/domainCylinderCone.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>The specified region is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+V=\Set{(r\cos\theta\,,\,r\sin\theta\,,\,z)}
+{0\le\theta\le\pi,\ r\le 2a\sin\theta,\ 0\le z\le 2a-r}
+\end{equation*}
+</div>
+<p data-braille="continuation">By symmetry under \(x\rightarrow -x\text{,}\) the full volume is twice the volume in the first octant.</p>
+<p>So the</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Volume}
+&amp;= 2\int_0^{{\pi\over 2}} \dee{\theta}\int_0^{2a\sin\theta}\dee{r}\ r
+\int_0^{2a -r}\dee{z}\\
+&amp;= 2\int_0^{{\pi\over 2}} \dee{\theta}\int_0^{2a\sin\theta}\dee{r}\ r(2a-r)\\
+&amp;= 2\int_0^{{\pi\over 2}} \dee{\theta}\
+\left[4a^3\sin^2\theta-\frac{8a^3}{3}\sin^3\theta\right]\\
+&amp;= 8a^3\left[\int_0^{{\pi\over 2}} \dee{\theta}\ \frac{1-\cos(2\theta)}{2}
++\frac{2}{3}\int^0_1 \dee{t}\ \big(1-t^2\big)\right]
+\quad\text{where } t=\cos\theta\\
+&amp;= 8a^3\left[\frac{\pi}{4}-\frac{2}{3}\left(1-\frac{1}{3}\right)\right]
+=a^3\big(2\pi-\frac{32}{9}\big)
+\end{align*}
+</div>
+<p data-braille="continuation">For an efficient, sneaky, way to evaluate \(\int_0^{{\pi\over 2}} \dee{\theta}\ \sin^2\theta\text{,}\) see Remark <a class="xref" data-knowl="./knowl/rem_sneaky.html" title="Remark 11.3.5">11.3.5</a>.</p>
+<p>(b) The domain of integration is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+V = \Set{(x,y,z)}{-x\le y\le \sqrt{3}x,\ 0\le z \le 1-x^2-y^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">Recall that in polar coordinates \(\frac{y}{x}=\tan\theta\text{.}\) So the boundaries of the wedge \(-x\le y\le \sqrt{3}x\text{,}\) or equivalently \(-1\le\frac{y}{x}\le\sqrt{3}\text{,}\) correspond, in polar coordinates, to \(\theta=\tan^{-1}(-1)=-\frac{\pi}{4}\) and \(\theta=\tan^{-1}\sqrt{3}=\frac{\pi}{3}\text{.}\) In cylindrical coordinates, the paraboloid \(z=1-x^2-y^2\) becomes \(z=1-r^2\text{.}\) There are \(z\)'s that obey \(0\le z\le 1-r^2\) if and only if \(r\le 1\text{.}\) So, in cylindrical coordinates,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+V = \Set{(r\cos\theta,r\sin\theta,z)}
+{-\tfrac{\pi}{4}\le \theta\le \tfrac{\pi}{3},\
+0\le r\le 1,\ 0\le z \le 1-r^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Volume}
+&amp;= \int_{-{\pi\over 4}}^{{\pi\over 3}} \dee{\theta}\int_0^1\dee{r}\ r
+\int_0^{1 -r^2}\dee{z}
+= \left(\frac{\pi}{3}+\frac{\pi}{4}\right)\int_0^1\dee{r}\ r(1-r^2)\\
+&amp;= \frac{7}{12}\pi\left(\frac{1}{2}-\frac{1}{4}\right)
+= \frac{7}{48}\pi
+\end{align*}
+</div>
+<p>(c) The region is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+V = \Set{(x,y,z)}{x^2+y^2\le z\le 2y}
+\end{equation*}
+</div>
+<p data-braille="continuation">There are \(z\)'s that obey \(x^2+y^2\le z\le 2y\) if and only if</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+x^2+y^2\le 2y
+&amp;\iff x^2+y^2-2y \le 0
+\iff x^2 + (y-1)^2 \le 1
+\end{align*}
+</div>
+<p data-braille="continuation">This disk is sketched in the figure</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/domain2bis.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>In cylindrical coordinates,</p>
+<ul class="disc">
+<li>the bottom, \(z=x^2+y^2\text{,}\) is \(z=r^2\text{,}\)</li>
+<li>the top, \(z=2y\text{,}\) is \(z=2r\sin\theta\text{,}\) and</li>
+<li>the disk \(x^2+y^2\le 2y\) is \(r^2\le 2r\sin\theta\text{,}\) or equivalently \(r\le2\sin\theta\text{,}\)</li>
+</ul>
+<p data-braille="continuation">so that, looking at the figure above,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+V = \Set{(r\cos\theta,r\sin\theta,z)}{0\le\theta\le\pi,
+\ 0\le r\le 2\sin\theta,\ r^2\le z\le 2r\sin\theta}
+\end{equation*}
+</div>
+<p data-braille="continuation">By symmetry under \(x\rightarrow -x\text{,}\) the full volume is twice the volume in the first octant so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Volume}
+&amp;= 2\int_{0}^{{\pi\over 2}} \dee{\theta}\int_0^{2\sin\theta}\dee{r}\ r\int_{r^2}^{2r\sin\theta}\dee{z}\\
+&amp;= 2\int_{0}^{{\pi\over 2}} \dee{\theta}\int_0^{2\sin\theta}\dee{r}\ r(2r\sin\theta-r^2)\\
+&amp;= 2\int_{0}^{{\pi\over 2}} \dee{\theta}\ \left(\frac{2^4}{3}-\frac{2^4}{4}\right)\sin^4\theta
+\end{align*}
+</div>
+<p data-braille="continuation">To integrate<a class="fn-knowl original" data-knowl="./knowl/fn-522-hidden.html" title="Footnote 11.6.8"><sup> 8 </sup></a> \(\sin^4\theta\text{,}\) we use the double angle formulae \(\sin^2 x= \frac{1-\cos(2x)}{2}\) and \(\cos^2 x= \frac{1+\cos(2x)}{2}\) to write</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sin^4\theta &amp;= \left[ \frac{1-\cos(2\theta)}{2} \right]^2\\
+&amp;= \frac{1}{4} - \frac{1}{2} \cos(2\theta) + \frac{1}{4}\cos^2(2\theta)\\
+&amp;= \frac{1}{4} - \frac{1}{2} \cos(2\theta) + \frac{1}{8}\left(1 + \cos(4\theta) \right)\\
+&amp;= \frac{3}{8} - \frac{1}{2} \cos(2\theta) + \frac{1}{8}\cos(4\theta)
+\end{align*}
+</div>
+<p data-braille="continuation">So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Volume}
+&amp;= 2\ \frac{2^4}{12} \left[
+\frac{3}{8}\theta - \frac{1}{4} \sin(2\theta) + \frac{1}{32}\sin(4\theta)
+\right]_0^{\pi\over 2}
+= 2\ \frac{2^4}{12}\ \frac{3}{16}\pi
+=\frac{\pi}{2}
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec_cylindrical.html#solution-1936">in-context</a></span>
+</body>
+</html>

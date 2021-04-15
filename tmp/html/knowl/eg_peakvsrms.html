@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:09:30-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Peak vs RMS voltage.</span>
+</h6>
+<p>When you plug a light bulb into a socket <a class="fn-knowl original" data-knowl="./knowl/fn-290-hidden.html" title="Footnote 7.2.3"><sup> 3 </sup></a> and turn it on, it is subjected to a voltage</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V(t) &amp;= V_0\sin(\omega t-\delta)
+\end{align*}
+</div>
+<p data-braille="continuation">where</p>
+<ul class="disc">
+<li>\(V_0=170\) volts,</li>
+<li>\(\omega=2\pi\times 60\) (which corresponds to \(60\) cycles per second <a class="fn-knowl original" data-knowl="./knowl/fn-291-hidden.html" title="Footnote 7.2.4"><sup> 4 </sup></a>) and</li>
+<li>the constant \(\delta\) is an (unimportant) phase. It just shifts the time  at which the voltage is zero</li>
+</ul>
+<p data-braille="continuation">The voltage \(V_0\) is the “peak voltage” — the maximum value the voltage takes over  time. More typically we quote the “root mean square” voltage <a class="fn-knowl original" data-knowl="./knowl/fn-292-hidden.html" title="Footnote 7.2.5"><sup> 5 </sup></a> (or RMS-voltage). In this example we explain the difference, but to  simplify the calculations, let us simplify the voltage function and just use</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V(t) &amp;= V_0 \sin(t)
+\end{align*}
+</div>
+<p>Since the voltage is a sine-function, it takes both positive and negative values. If we  take its simple average over 1 period then we get</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V_\ave &amp;= \frac{1}{2\pi-0} \int_0^{2\pi} V_0 \sin(t) \dee{t}\\
+&amp;= \frac{V_0}{2\pi}\bigg[ - \cos(t)\bigg]_0^{2\pi}\\
+&amp;= \frac{V_0}{2\pi}\left( -\cos(2\pi) + \cos 0\right) = \frac{V_0}{2\pi}(-1+1)\\
+&amp;= 0
+\end{align*}
+</div>
+<p data-braille="continuation">This is clearly not a good indication of the typical voltage.</p>
+<p>What we actually want here is a measure of how far the voltage is from zero. Now we could  do this by taking the average of \(|V(t)|\text{,}\) but this is a little harder to work with.  Instead we take the average of the square <a class="fn-knowl original" data-knowl="./knowl/fn-293-hidden.html" title="Footnote 7.2.6"><sup> 6 </sup></a> of the voltage (so it is always positive) and then take the square root at the end. That is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V_\mathrm{rms}
+&amp;= \sqrt{\frac{1}{2\pi-0} \int_0^{2\pi} V(t)^2 \dee{t}}\\
+&amp;= \sqrt{\frac{1}{2\pi} \int_0^{2\pi} V_0^2 \sin^2(t) \dee{t}}\\
+&amp;= \sqrt{\frac{V_0^2}{2\pi} \int_0^{2\pi} \sin^2(t) \dee{t}}
+\end{align*}
+</div>
+<p data-braille="continuation">This is called the “root mean square” voltage.</p>
+<p>Though we do know how to integrate sine and cosine, we don't (yet) know how to integrate their squares. A quick look at double-angle formulas <a class="fn-knowl original" data-knowl="./knowl/fn-294-hidden.html" title="Footnote 7.2.7"><sup> 7 </sup></a> gives us a way to eliminate the  square:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\cos(2\theta) =1-2\sin^2\theta \implies \sin^2\theta=\frac{1-\cos(2\theta)}{2}
+\end{gather*}
+</div>
+<p data-braille="continuation">Using this we manipulate our integrand a little more:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V_\mathrm{rms} &amp;= \sqrt{\frac{V_0^2}{2\pi} \int_0^{2\pi}  \frac{1}{2}(1-\cos(2t)) \dee{t}}\\
+&amp;= \sqrt{ \frac{V_0^2}{4\pi} \bigg[t - \frac{1}{2}\sin(2t)  \bigg]_0^{2\pi} }\\
+&amp;= \sqrt{ \frac{V_0^2}{4\pi} \left(2\pi - \frac{1}{2}\sin(4\pi) - 0 + \frac{1}{2}\sin(0) \right) }\\
+&amp;= \sqrt{ \frac{V_0^2}{4\pi} \cdot 2\pi }\\
+&amp;= \frac{V_0}{\sqrt{2}}
+\end{align*}
+</div>
+<p data-braille="continuation">So if the peak voltage is 170 volts then the RMS voltage is \(\frac{170}{\sqrt{2}}\approx  120.2\text{.}\)</p></article><span class="incontext"><a href="sec_avg.html#eg_peakvsrms">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:13:51-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>The \(e^{\cos y}\) in \(\vF\) suggests that a direct evaluation of the integral is difficult. So we'll use a little trickery to to evaluate it. Not surprisingly, considering that we have just proven the divergence theorem, the trick is to apply the divergence theorem<a class="fn-knowl original" data-knowl="./knowl/fn-659-hidden.html" title="Footnote 15.2.5"><sup> 5 </sup></a>. Since</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vnabla\cdot\vF &amp;= \frac{\partial \vF_1}{\partial x}
++\frac{\partial \vF_2}{\partial y}
++\frac{\partial \vF_3}{\partial z}\\
+&amp;=\frac{\partial }{\partial x}\big(xz^2\big)
++\frac{\partial }{\partial y}\big(x^2y-z^3\big)
++\frac{\partial }{\partial z}\big(2xy + y^2 z +e^{\cos y}\big)\\
+&amp;= z^2 + x^2 +y^2
+\end{align*}
+</div>
+<p data-braille="continuation">The divergence theorem tell us that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_S \vF\cdot\hn\,\dee{S}
+&amp;=\tripInt_V\big(x^2+y^2+z^2\big)\ \dee{V}
+\end{align*}
+</div>
+<p data-braille="continuation">Spherical coordinates are perfect for this integral. (See Appendix <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">[cross-reference to target(s) "ap_spherCoord" missing]</code>, if you need to refresh your memory.)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\tripInt_V\big(x^2+y^2+z^2\big)\ \dee{V}
+&amp;=\int_0^{2\pi}\dee{\theta}\int_0^{\frac{\pi}{2}}\dee{\varphi}
+\int_0^a \dee{\rho}\,\rho^2\sin\varphi\ \rho^2\\
+&amp;=\bigg[\int_0^{2\pi}\dee{\theta}\bigg]
+\bigg[\int_0^{\frac{\pi}{2}}\sin\varphi\,\dee{\varphi}\bigg]
+\bigg[\int_0^{a}\rho^4\,\dee{\rho}\bigg]\\
+&amp;=\big[2\pi\big]\Big[-\cos\varphi\Big]_0^{\frac{\pi}{2}}
+\left[\frac{\rho^5}{5}\right]_0^a\\
+&amp;=\frac{2\pi a^5}{5}
+\end{align*}
+</div>
+</div></body>
+</html>

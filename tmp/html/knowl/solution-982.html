@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:02:30-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.10.4.17.1</span><span class="period">.</span>
+</h6>
+<p>The integrand is a rational function with no obvious substitution, so we use the method of partial fractions.</p>
+<ul class="disc">
+<li>The numerator has smaller degree than the denominator.</li>
+<li>
+<p>We need to factor the denominator. In the absence of any clues, we look for an integer root. The constant term is 5, so the possible integer roots are \(\pm 1\) and \(\pm 5\text{.}\) Name \(f(x) = 2x^3+11x^2+6x+5\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f(-1)\neq0
+\qquad
+{\color{red}{f(-5)=0}}
+\qquad
+f(1)\neq 0
+\qquad
+f(5)\neq 0
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">So, \((x+5)\) is a factor of the denominator.</p>
+</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">We use long division to pull out the factor of \((x+5)\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-781.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">That is, our denominator is \((x+5)(2x^2+x+1)\text{.}\)</p>
+</li>
+<li>The quadratic function \(2x^2+x+1\) is irreducible: we can see this by using the quadratic equation,  and finding no real roots. So, we are ready to find our partial fraction decomposition.<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{10x^2+24x+8}{2x^3+11x^2+6x+5}&amp;=\frac{10x^2+24x+8}{(x+5)(2x^2+x+1)}\\
+&amp;=\frac{A}{x+5}+\frac{Bx+C}{2x^2+x+1}\\
+\end{align*}
+<p class="intertext">Multiply through by the original denominator.</p>
+\begin{align*}
+10x^2+24x+8&amp;=A(2x^2+x+1)+(Bx+C)(x+5)\tag{1}\\
+\end{align*}
+<p class="intertext">Set \(x=-5\text{.}\)</p>
+\begin{align*}
+10(25)-24(5)+8&amp;=A(2(25)-5+1) + (B(-5)+C)(0)\\
+\color{red}{A}&amp;\color{red}{=3}\\
+\end{align*}
+<p class="intertext">Using our value of \(A\text{,}\) we simplify Equation (1).</p>
+\begin{align*}
+10x^2+24x+8&amp;=\textcolor{red}{3}(2x^2+x+1)+(Bx+C)(x+5)\\
+4x^2+21x+5&amp;=(Bx+C)(x+5)\\
+\end{align*}
+<p class="intertext">We factor the left side. We know \((x+5)\) must be one of its factors.</p>
+\begin{align*}
+(4x+1)(x+5)&amp;=(Bx+C)(x+5)\\
+4x+1&amp;=Bx+C
+\end{align*}
+</div>So, \(\textcolor{red}{B=4}\) and \(\textcolor{red}{C=1}\text{.}\)</li>
+<li>Now we can write our integral in smaller pieces.<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_0^1 \frac{10x^2+24x+8}{2x^3+11x^2+6x+5} \dee{x}&amp;=
+\int_0^1 \left(
+\frac{3}{x+5} + \frac{4x+1}{2x^2+x+1}\right)  \dee{x}\\
+\end{align*}
+<p class="intertext">The antiderivative of the left fraction is \(3\log|x+5|\text{.}\) For the right fraction, we use the substitution \(u=2x^2+x+1\text{,}\) \(\dee{u}=(4x+1)\dee{x}\) to antidifferentiate.</p>
+\begin{align*}
+&amp;=\big[3\log|x+5| + \log|2x^2+x+1|\big]_0^1\\
+&amp;=3\log 6 + \log 4 - 3\log 5 -\log 1\\
+&amp;=\log \left(\frac{4\cdot 6^3}{5^3}\right)
+\end{align*}
+</div>
+</li>
+</ul>
+</div>
+<span class="incontext"><a href="sec_parfrac.html#solution-982">in-context</a></span>
+</body>
+</html>

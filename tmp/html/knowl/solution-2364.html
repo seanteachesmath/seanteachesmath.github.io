@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:18:58-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">15.4.7.2</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg"><em class="emphasis">Stokes' Theorem:</em></p>
+<p>To apply Stokes' theorem we need to express \(C\) as the boundary \(\partial S\) of a surface \(S\text{.}\) As</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+C=\Set{(x,y,z)}{x^2+y^2+z^2=4,\ z=y}
+\end{equation*}
+</div>
+<p data-braille="continuation">is a closed curve, this is possible. In fact there are many possible choices of \(S\) with \(\partial S=C\text{.}\) Three possible \(S\)'s (sketched below) are</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S&amp;=\Set{(x,y,z)}{x^2+y^2+z^2\le 4,\ z=y}\cr
+S'&amp;=\Set{(x,y,z)}{x^2+y^2+z^2= 4,\ z\ge y}\cr
+S''&amp;=\Set{(x,y,z)}{x^2+y^2+z^2= 4,\ z\le y}
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:35.5%;margin-right:35.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/circle4b.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">The first of these, which is part of a plane, is likely to lead to simpler computations than the last two, which are parts of a sphere. So we choose what looks like the simpler way.</p>
+<p>In preparation for application of Stokes' theorem, we compute \(\vnabla\times\vF\) and \(\hn\,\dee{S}\text{.}\) For the latter, we apply the formula \(\hn\,\dee{S}=\pm(-f_x,-f_y,1)\,\dee{x}dy\) (of Equation <a class="xref" data-knowl="./knowl/eq_SUdSgraph.html" title="Equation 14.3.2">14.3.2</a>) to the surface \(z=f(x,y)=y\text{.}\) We use the \(+\) sign to give the normal a positive \(\hk\) component.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
+\frac{\partial }{\partial x}
+&amp;\frac{\partial }{\partial y}
+&amp;\frac{\partial }{\partial z} \\
+z-y&amp;-x-z&amp;-x-y\end{matrix}\right]\\
+&amp;=\hi\big(-1-(-1)\big)-\hj\big(-1-1\big)+\hk\big(-1-(-1)\big)\\
+&amp;=2\,\hj\\
+\hn\,\dee{S}&amp;=(0,-1,1)\,\dee{x}\dee{y}\\
+\vnabla\times\vF\cdot\hn\,\dee{S}&amp;=(0,2,0)\cdot(0,-1,1)\,\dee{x}\dee{y}
+=-2\,\dee{x}\dee{y}
+\end{align*}
+</div>
+<p data-braille="continuation">The integration variables are \(x\) and \(y\) and, by definition, the domain of integration is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+R=\Set{(x,y)}{(x,y,z)\text{ is in }S\text{ for some }z}
+\end{equation*}
+</div>
+<p data-braille="continuation">To determine precisely what this domain of integration is, we observe that since \(z=y\) on \(S\text{,}\) \(x^2+y^2+z^2\le 4\) is the same as \(x^2+2y^2\le 4\) on \(S\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+S=\Set{(x,y,z)}{x^2+2y^2\le 4,\ z=y}
+\implies R=\Set{(x,y)}{x^2+2y^2\le 4}
+\end{equation*}
+</div>
+<p data-braille="continuation">So the domain of integration is an ellipse with semimajor axis \(a=2\text{,}\) semiminor axis \(b=\sqrt{2}\) and area \(\pi a b=2\sqrt{2}\pi\text{.}\) The integral is then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\oint_C\vF\cdot \dee{\vr}
+=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+=\dblInt_R (-2)\,\dee{x}\dee{y}
+=-2\ \text{Area}\,(R)
+=-4\sqrt{2}\pi
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg"><em class="emphasis">Remark (Limits of integration):</em></p>
+<p>If the integrand were more complicated, we would have to evaluate the integral over \(R\) by expressing it as an iterated integrals with the correct limits of integration. First suppose that we slice up \(R\) using thin vertical slices. On each such slice, \(x\) is essentially constant and \(y\) runs from \(-\sqrt{(4-x^2)/2}\) to \(\sqrt{(4-x^2)/2}\text{.}\)  The leftmost such slice would have \(x=-2\) and the rightmost such slice would have \(x=2\text{.}\) So the correct limits with this slicing are</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\dblInt_R f(x,y)\,\dee{x}\dee{y}
+=\int_{-2}^2\dee{x}\int_{-\sqrt{(4-x^2)/2}}^{\sqrt{(4-x^2)/2}} \dee{y}\ f(x,y)
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/limitsv.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>If, instead, we slice up \(R\) using thin horizontal slices, then, on each such slice, \(y\) is essentially constant and \(x\) runs from \(-\sqrt{4-2y^2}\) to \(\sqrt{4-2y^2}\text{.}\)  The bottom such slice would have \(y=-\sqrt{2}\) and the top such slice would have \(y=\sqrt{2}\text{.}\) So the correct limits with this slicing are</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\dblInt_R f(x,y)\,\dee{x}\dee{y}
+=\int_{-\sqrt{2}}^{\sqrt{2}}\dee{y}\int_{-\sqrt{4-2y^2}}^{\sqrt{4-2y^2}} \dee{x}\ f(x,y)
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/limitsh.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Note that the integral with limits</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:33.3333333333333%;justify-content:center;"><img src="figs/limitsr.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:55.5555555555556%;justify-content:center;"><div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\int_{-\sqrt{2}}^{\sqrt{2}}\dee{y}\int_{-2}^{2} \dee{x}\ f(x,y)
+\end{equation*}
+</div></div>
+</div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">corresponds to a slicing with \(x\) running from \(-2\) to \(2\) on {\bf every} slice. This corresponds to a rectangular domain of integration, not what we have here.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><em class="emphasis">Stokes' Theorem, Again:</em></p>
+<p>Since the integrand is just a constant (after Stoking — not the original integrand) and \(S\) is so simple (because we chose it wisely), we can evaluate the integral \(\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}\) without ever determining \(\dee{S}\) explicitly and without ever setting up any limits of integration. We already know that \(\vnabla\times\vF=2\,\hj\text{.}\) Since \(S\) is the level surface \(z-y=0\text{,}\) the gradient \(\vnabla(z-y)=-\hj+\hk\) is normal to \(S\text{.}\) So \(\hn = \frac{1}{\sqrt{2}}(-\hj+\hk)\) and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\oint_C\vF\cdot \dee{\vr}
+&amp;=\dblInt_S \vnabla\times\vF\cdot\hn\,\dee{S}
+=\dblInt_S (2\hj)\cdot \frac{1}{\sqrt{2}}(-\hj+\hk)\,\dee{S}\\
+&amp;=\dblInt_S -\sqrt{2}\,\dee{S}
+=-\sqrt{2}\ {\rm Area}\,(S)
+\end{align*}
+</div>
+<p data-braille="continuation">As \(S\) is a circle of radius \(2\text{,}\) \(\oint_C\vF\cdot \dee{\vr}=-4\sqrt{2}\pi\text{,}\) yet again.</p>
+</div>
+<span class="incontext"><a href="sec_StokesThm.html#solution-2364">in-context</a></span>
+</body>
+</html>

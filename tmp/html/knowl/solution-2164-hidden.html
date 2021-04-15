@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:07:04-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>(a) The field is conservative only if</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{\partial F_1}{\partial y}=\frac{\partial F_2}{\partial x}\qquad
+\frac{\partial F_1}{\partial z}=\frac{\partial F_3}{\partial x}\qquad
+\frac{\partial F_2}{\partial z}=\frac{\partial F_3}{\partial y}
+\end{equation*}
+</div>
+<p data-braille="continuation">That is,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{\partial }{\partial y}\left(2x\sin(\pi y)-e^z\right)
+&amp;=\frac{\partial }{\partial x}\left(ax^2\cos(\pi y)-3e^z\right)\\
+&amp;\hskip1in
+\iff \quad
+2\pi x\cos(\pi y)  =2a x\cos(\pi y)\\
+\frac{\partial }{\partial z}\left(2x\sin(\pi y)-e^z\right)
+&amp;=-\frac{\partial }{\partial x}\left(x+by\right)e^z\\
+&amp;\hskip1in
+\iff \quad-e^z =-e^z\\
+\frac{\partial }{\partial z}\left(ax^2\cos(\pi y)-3e^z\right)
+&amp;=-\frac{\partial }{\partial y}\left(x+by\right)e^z\\
+&amp;\hskip1in
+\iff \quad
+-3e^z =-be^z
+\end{align*}
+</div>
+<p data-braille="continuation">Hence only \(a=\pi,\ b=3\) works.</p>
+<p>(b) When \(a=\pi,\ b=3\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vF&amp;=\left(2x\sin(\pi y)-e^z\right)\hi
++\left(\pi x^2\cos(\pi y)-3e^z\right)\hj
+-\left(x+3y\right)e^z\hk\\
+&amp;=\vnabla\big( x^2\sin(\pi y)-xe^z-3ye^z+C\big)
+\end{align*}
+</div>
+<p data-braille="continuation">so \(\varphi(x,y,z)=x^2\sin(\pi y)-xe^z-3ye^z+C\) for any constant \(C\text{.}\) Here \(\varphi\) was guessed. Alternatively, it can be found by antidifferentiating the partial derivatives of \(\vF\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= 2x\sin(\pi y)-e^z\\
+&amp;\implies \varphi(x,y,z)=x^2\sin(\pi y)-xe^z+\psi_1(y,z)\\
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= \pi x^2\cos(\pi y)-3e^z\\
+&amp;\implies \varphi(x,y,z)=x^2\sin(\pi y)-3ye^z+\psi_2(x,z)\\
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= -(x+3y)e^z \\
+&amp;\implies \varphi(x,y,z)=-xe^z-3ye^z+\psi_3(x,y)
+\end{align*}
+</div>
+<p data-braille="continuation">Summing the distinct terms on the right hand sides of the three equations above, we guess</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\varphi(x,y,z) = x^2\sin(\pi y)-xe^z-3ye^z
+\end{equation*}
+</div>
+<p data-braille="continuation">is a potential for \(\vF\text{.}\) Setting \(\psi_1(y,z)=-3ye^z\text{,}\) \(\psi_2(x,z)=-xe^z\text{,}\) and \(\psi_3(x,y)=x^2\sin(\pi y)\) convinces us that our guess is indeed a valid potential.</p>
+<p>(c) By part (b),</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int _C\vF\cdot \dee{\vr}
+&amp;=\varphi(1,1,\ln 2)-\varphi(0,0,0)\\
+&amp;=\left(\sin\pi-e^{\ln 2}-3e^{\ln 2}\right)-\left(\sin(0)-0-0\right)\\
+&amp;=-8
+\end{align*}
+</div>
+<p>(d) Observe that \(\vG=\vF+3ye^z\,\hk\text{,}\) with \(\vF\) evaluated with \(a=\pi,\ b=3\text{.}\) Hence</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\int _C\vG\cdot \dee{\vr}=\int _C\vF\cdot \dee{\vr}
++\int _C3ye^z\,\hk\cdot \dee{\vr}
+=-8+\int _C3ye^z\,\hk\cdot \dee{\vr}
+\end{equation*}
+</div>
+<p data-braille="continuation">To evaluate the remaining integral, parametrize the curve by \(\vr(t)
+=t\hi+t\hj+\ln(1+t)\hk\) with \(0\le t\le 1\text{.}\) Then \(\vr'(t)=\hi+\hj+\frac{1}{1+t}\hk\) and \(3ye^z\hk=3t(1+t)\hk\) so that \(3ye^z\,\hk\cdot \dee{\vr}=3t\,\dee{t}\text{.}\) Subbing in</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\int _C\vG\cdot \dee{\vr}
+=-8+\int_0^13t\,\dee{t}
+=-8+\frac{3}{2}=-\frac{13}{2}
+\end{equation*}
+</div>
+</div></body>
+</html>

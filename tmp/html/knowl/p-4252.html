@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:43:53-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="alert">Solution</em> This problem is a little more abstract than the others we have examined, but we can still apply Theorem <a class="xref" data-knowl="./knowl/thm_maxMinOnR.html" title="Theorem 4.5.17">4.5.17</a>.</p>
+<ul class="disc">
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">We are given a figure in the statement of the problem and it contains all the relevant points and angles. However it will simplify things if we decide on a coordinate system. Let's assume that the point \(O\) lies on the \(x\)-axis, at coordinates \((x,0)\text{.}\) The point \(P\) then lies above the axis at \((X_P,+Y_P)\text{,}\) while \(Q\) lies below the axis at \((X_Q,-Y_Q)\text{.}\) This is drawn below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/snellB.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li>The statement of Snell's law contains terms \(\sin \theta_i\) and \(\sin
+\theta_r\text{,}\) so it is a good idea for us to see how to express these in terms of the coordinates we have just introduced:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sin \theta_i &amp;=  \frac{\text{opposite}}{\text{hypotenuse}}
+= \frac{(x-X_P)}{\sqrt{(X_P-x)^2 + Y_P^2}}\\
+\sin \theta_r &amp;=  \frac{\text{opposite}}{\text{hypotenuse}}
+= \frac{(X_Q-x)}{\sqrt{(X_Q-x)^2 + Y_Q^2}}
+\end{align*}
+</div>
+</li>
+<li>Let \(\ell_P\) denote the distance \(PO\text{,}\) and \(\ell_Q\) denote the distance \(OQ\text{.}\) Then we have<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\ell_P &amp;= \sqrt{(X_P-x)^2+Y_P^2}\\
+\ell_Q &amp;= \sqrt{(X_Q-x)^2+Y_Q^2}
+\end{align*}
+</div>If we then denote the total time taken by \(T\text{,}\) then<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+T &amp;= \frac{\ell_P}{c_a} + \frac{\ell_Q}{c_w}
+= \frac{1}{c_a}\sqrt{(X_P-x)^2+Y_P^2} + \frac{1}{c_w}\sqrt{(X_Q-x)^2+Y_Q^2}
+\end{align*}
+</div>which is written as a function of \(x\) since all the other terms are constants.</li>
+<li>Notice that as \(x \to +\infty\) or \(x\to-\infty\) the total time \(T \to
+\infty\) and so we can apply Theorem <a class="xref" data-knowl="./knowl/thm_maxMinOnR.html" title="Theorem 4.5.17">4.5.17</a>. The derivative is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\diff{T}{x} &amp;=
+\frac{1}{c_a} \frac{-2(X_P-x)}{2\sqrt{(X_P-x)^2+Y_P^2}} +
+\frac{1}{c_w} \frac{-2(X_Q-x)}{2\sqrt{(X_Q-x)^2+Y_Q^2}}
+\end{align*}
+</div>Notice that the terms inside the square-roots cannot be zero or negative since they are both sums of squares and \(Y_P,Y_Q  \gt  0\text{.}\) So there are no singular points, but there is a critical point when \(T'(x) = 0\text{,}\) namely when<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+0 &amp;= \frac{1}{c_a} \frac{X_P-x}{\sqrt{(X_P-x)^2+Y_P^2}} +
+\frac{1}{c_w} \frac{X_Q-x}{\sqrt{(X_Q-x)^2+Y_Q^2}}\\
+&amp;= \frac{-\sin\theta_i}{c_a} + \frac{\sin\theta_r}{c_w}
+\end{align*}
+</div>Rearrange this to get<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{\sin\theta_i}{c_a} &amp;= \frac{\sin\theta_r}{c_w}\\
+\end{align*}
+<p class="intertext">move sines to one side</p>
+\begin{align*}
+\frac{\sin\theta_i}{\sin \theta_r} &amp;= \frac{c_a}{c_w}
+\end{align*}
+</div>which is exactly Snell's law.</li>
+</ul>
+<span class="incontext"><a href="sec_optimise.html#p-4252">in-context</a></span>
+</body>
+</html>

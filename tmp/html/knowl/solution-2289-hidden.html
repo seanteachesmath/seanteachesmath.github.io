@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:15:01-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p xmlns:svg="http://www.w3.org/2000/svg">Set \(\vF = (x + y, x + z, y + z)\text{.}\) Then \(\vnabla\cdot\vF = 2\text{.}\) That's really simple. So let's try using the divergence theorem.</p>
+<ul class="disc">
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">Set \(S=\Set{(x,y,z)}{x^2+z^2=4,\ 0\le y\le 3}\text{.}\) We are to compute \(\dblInt_S\vF\cdot\hn\,\dee{S}\text{,}\) with \(\hn\) denoting the outward normal to \(S\text{.}\) \(S\) is <em class="emphasis">not</em> the boundary of a solid, so we cannot compute \(\dblInt_S\vF\cdot\hn\,\dee{S}\) by applying the divergence theorem directly. The figure on the left below shows the part of \(S\) that is in the first octant.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0.25%;margin-right:0.25%;">
+<div class="sbspanel" style="width:50.251256281407%;justify-content:center;"><img src="pfigs/cylinder.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:49.2462311557789%;justify-content:center;"><img src="pfigs/cylinder2.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+</li>
+<li>On the other hand \(S\text{,}\) is “almost” the boundary of<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+V = \Set{(x,y,z)}{x^2+z^2\le 4,\ 0\le y\le 3}
+\end{equation*}
+</div>The boundary, \(\partial V\) of \(V\) consists of three pieces — \(S\) and the two disks<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+D_l &amp;= \Set{(x,y,z)}{x^2+z^2\le 4,\ y=0}\\
+D_r &amp;= \Set{(x,y,z)}{x^2+z^2\le 4,\ y=3}
+\end{align*}
+</div>The figure on the right above shows the parts of \(S\text{,}\) \(V\text{,}\) \(D_l\) and \(D_r\) that are  in the first octant.</li>
+</ul>
+<p data-braille="continuation">The outward normal to \(D_r\) is \(\hj\) and the outward normal to \(D_l\) is \(-\hj\text{,}\) to the divergence theorem gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\tripInt_V \vnabla\cdot \vF\,\dee{V}
+&amp;=\dblInt_{\partial V}\vF\cdot\hn\,\dee{S}\\
+&amp;=\dblInt_{S}\vF\cdot\hn\,\dee{S}
++ \dblInt_{D_r}\vF\cdot\hj\,\dee{S}
++ \dblInt_{D_l}\vF\cdot(-\hj)\,\dee{S}
+\end{align*}
+</div>
+<p data-braille="continuation">Since \(\vnabla\cdot\vF = 2\) and \(\vF\cdot\hj = x+z\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_{S}\vF\cdot\hn\,\dee{S}
+&amp;= \tripInt_V 2\,\dee{V}
+-\dblInt_{x^2+z^2\le 4}\hskip-5pt(x+z)\,\dee{x}\dee{z}
+- \dblInt_{x^2+z^2\le 4}\hskip-5pt(-x-z)\,\dee{x}\dee{z}\\
+&amp;= \tripInt_V 2\,\dee{V}\\
+&amp;= 2\ \text{volume}(V)
+=2(\pi 2^2) 3 =24\pi
+\end{align*}
+</div>
+</div></body>
+</html>

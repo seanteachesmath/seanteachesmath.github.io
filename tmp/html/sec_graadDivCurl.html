@@ -1,0 +1,2852 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:16:30-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gradient, Divergence and Curl</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap_integral_theorems.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_integral_theorems.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_divergenceThm.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chap_integral_theorems.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_integral_theorems.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_divergenceThm.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl" class="active">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_graadDivCurl"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">15.1</span> <span class="title">Gradient, Divergence and Curl</span>
+</h2>
+<section class="introduction" id="introduction-440"><p id="p-17352">“Gradient, divergence and curl”, commonly called “grad, div and curl”, refer to a very widely used family of differential operators and related notations that we'll get to shortly. We will later see that each has a “physical” significance. But even if they were only shorthand<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-637" id="fn-637"><sup> 1 </sup></a>, they would be worth using.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-637"><div class="fn">Good shorthand is not only more brief, but also aids understanding “of the forest by hiding the trees”.</div></div>
+<p id="p-17353">For example, one of Maxwell's equations (relating the electric field \(\vE\) and the magnetic field \(\vB\)) written without the use this notation is</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\Big(\frac{\partial E_3}{\partial y} -\frac{\partial E_2}{\partial z}\Big)\hi
+-\Big(\frac{\partial E_3}{\partial x} -\frac{\partial E_1}{\partial z}\Big)\hj
++\Big(\frac{\partial E_2}{\partial x} -\frac{\partial E_1}{\partial y}\Big)\hk\\
+&amp;\hskip2.5in=-\frac{1}{c}\Big(\frac{\partial B_1}{\partial t} \hi
++\frac{\partial B_2}{\partial t} \hj
++\frac{\partial B_3}{\partial t} \hk\Big)
+\end{align*}
+</div>
+<p data-braille="continuation">The same equation written using this notation is</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\times\vE = -\frac{1}{c}\frac{\partial \vB}{\partial t}
+\end{equation*}
+</div>
+<p data-braille="continuation">The shortest way to write (and  easiest way to remember) gradient, divergence and curl uses the symbol “\(\vnabla\)” which is a differential operator like \(\frac{\partial }{\partial x}\text{.}\) It is defined by</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla = \hi\frac{\partial }{\partial x}
++\hj\frac{\partial }{\partial y}
++\hk\frac{\partial }{\partial z}
+\end{equation*}
+</div>
+<p data-braille="continuation">and is called “del” or “nabla”.  Here are the definitions.</p>
+<article class="definition definition-like" id="def_gradDivCurl"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">15.1.1</span><span class="period">.</span>
+</h6>
+<ol id="p-17354" class="lower-alpha">
+<li id="li-7119">The <dfn class="terminology">gradient</dfn> of a scalar-valued function \(f(x,y,z)\) is the vector field<div class="displaymath">
+\begin{equation*}
+\text{grad}\,f=\vnabla f
+= \frac{\partial f}{\partial x}\hi
++\frac{\partial f}{\partial y}\hj
++\frac{\partial f}{\partial z} \hk
+\end{equation*}
+</div>Note that the input, \(f\text{,}\) for the gradient is a scalar-valued function, while the output,\(\vnabla f\text{,}\) is a vector-valued function.</li>
+<li id="li-7120">The <dfn class="terminology">divergence</dfn> of a vector field \(\vF(x,y,z)\) is the scalar-valued function<div class="displaymath">
+\begin{equation*}
+\text{div}\,\vF=\vnabla\cdot\vF
+= \frac{\partial F_1}{\partial x}
++\frac{\partial F_2}{\partial y}
++\frac{\partial F_3}{\partial z}
+\end{equation*}
+</div>Note that the input, \(\vF\text{,}\) for the divergence is a vector-valued function, while the output, \(\vnabla\cdot\vF\text{,}\) is a scalar-valued function.</li>
+<li id="li-7121">The <dfn class="terminology">curl</dfn> of a vector field \(\vF(x,y,z)\) is the vector field<div class="displaymath">
+\begin{equation*}
+\text{curl}\,\vF= \vnabla\times\vF
+= \Big(\frac{\partial F_3}{\partial y} -\frac{\partial F_2}{\partial z}\Big)\hi
+-\Big(\frac{\partial F_3}{\partial x} -\frac{\partial F_1}{\partial z}\Big)\hj
++\Big(\frac{\partial F_2}{\partial x} -\frac{\partial F_1}{\partial y}\Big)\hk
+\end{equation*}
+</div>Note that the input, \(\vF\text{,}\) for the curl is a vector-valued function, and the output, \(\vnabla\times\vF\text{,}\) is a again a vector-valued function.</li>
+<li id="li-7122">The Laplacian<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-638" id="fn-638"><sup> 2 </sup></a> of a scalar-valued function \(f(x,y,z)\) is the scalar-valued function<div class="displaymath">
+\begin{equation*}
+\Delta f= \vnabla^2 f =\vnabla\cdot\vnabla f
+= \frac{\partial^2 f}{\partial x^2}
++\frac{\partial^2 f}{\partial y^2}
++\frac{\partial^2 f}{\partial z^2}
+\end{equation*}
+</div>The Laplacian of a vector field \(\vF(x,y,z)\) is the vector field<div class="displaymath">
+\begin{equation*}
+\Delta\vF= \vnabla^2\vF =\vnabla\cdot\vnabla \vF
+= \frac{\partial^2 \vF}{\partial x^2}
++\frac{\partial^2 \vF}{\partial y^2}
++\frac{\partial^2 \vF}{\partial z^2}
+\end{equation*}
+</div>Note that the Laplacian maps either a scalar-valued function to a scalar-valued function, or a vector-valued function to a vector-valued function.</li>
+</ol>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-638"><div class="fn">Pierre-Simon Laplace (1749–1827) was a French mathematician and astronomer. He is also the Laplace of Laplace's equation, the Laplace transform, and the Laplace-Bayes estimator. He was Napoleon's examiner when Napoleon attended the Ecole Militaire in Paris.</div></div></article><p id="p-17355">The gradient, divergence and Laplacian all have obvious generalizations to dimensions other than three. That is not the case for the curl. It does have a, far from obvious, generalization, which uses differential forms. Differential forms are well beyond our scope, but are introduced in the optional §<a href="sec_unified.html" class="internal" title="Section 15.7: Optional — A Generalized Stokes' Theorem">15.7</a>.</p>
+<article class="example example-like" id="eg_ITmaxwell"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_ITmaxwell"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.1.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_ITmaxwell"><article class="example example-like"><p id="p-17356">As an example of an application in which both the divergence and curl appear, we have Maxwell's equations<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-639" id="fn-639"><sup> 3 </sup></a> <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-640" id="fn-640"><sup> 4 </sup></a> <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-641" id="fn-641"><sup> 5 </sup></a>, which form the foundation of classical electromagnetism.</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot\vE &amp;= 4\pi\rho\\
+\vnabla\cdot\vB &amp;= 0\\
+\vnabla\times\vE +\frac{1}{c}\frac{\partial\vB}{\partial t}&amp;=0\\
+\vnabla\times\vB -\frac{1}{c}\frac{\partial\vB}{\partial t}&amp;=\frac{4\pi}{c}\vJ
+\end{align*}
+</div>
+<p data-braille="continuation">Here \(\vE\) is the electric field, \(\vB\) is the magnetic field, \(\rho\) is the charge density, \(\vJ\) is the current density and \(c\) is the speed of light.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-639"><div class="fn">To be picky, these are Maxwell's equations in the absence of a material medium and in Gaussian units.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-640"><div class="fn">One important consequence of Maxwell's equations is that electromagnetic radiation, like light, propagate at the speed of light.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-641"><div class="fn">James Clerk Maxwell (1831–1879) was a Scottish mathematical physicist. In a poll of prominent physicists, Maxwell was voted the third greatest physicist of all time. Only Newton and Einstein beat him.</div></div></article></div></section><section class="subsection" id="sec_vectorId"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">15.1.1</span> <span class="title">Vector Identities</span>
+</h3>
+<p id="p-17357">Two computationally extremely important properties of the derivative \(\diff{\ }{x}\) are linearity and the product rule.</p>
+<div class="displaymath">
+\begin{align*}
+\diff{\ }{x}\big(af(x)+bg(x)\big) &amp;=a\diff{f}{x}(x)+b\diff{g}{x}(x)\\
+\diff{\ }{x}\big(f(x)\,g(x)\big) &amp;=g(x)\,\diff{f}{x}(x)+f(x)\,\diff{g}{x}(x)
+\end{align*}
+</div>
+<p data-braille="continuation">Gradient, divergence and curl also have properties like these, which indeed stem (often easily) from them. First, here are the statements of a bunch of them. (A memory aid and proofs will come later.)  In fact, here are a very large number of them. Many are included just for completeness. Only a relatively small number are used a lot. They are in red.</p>
+<article class="theorem theorem-like" id="thm_gradIdentities"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Gradient Identities.</span>
+</h6>
+<ol id="p-17358" class="lower-alpha">
+<li id="li-7123">\(\displaystyle \color{red}{\vnabla(f+g)=\vnabla f+\vnabla g}\)</li>
+<li id="li-7124">\(\color{red}{\vnabla(cf)=c\,\vnabla f}\text{,}\) for any <em class="emphasis">constant</em> \(c\)</li>
+<li id="li-7125">\(\displaystyle \color{red}{\vnabla(fg)=(\vnabla f)g+ f(\vnabla g)}\)</li>
+<li id="li-7126">\(\vnabla(f/g)=\big(g\,\vnabla f-f\,\vnabla g\big)/g^2\) at points \(\vx\) where \(g(\vx)\ne 0\text{.}\)</li>
+<li id="li-7127">
+<p id="p-17359">\(\vnabla(\vF\cdot\vG)=\vF\times(\vnabla\times\vG)-
+(\vnabla\times\vF)\times\vG+(\vG\cdot\vnabla)\vF+(\vF\cdot\vnabla)\vG\)</p>
+<p id="p-17360">Here<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-642" id="fn-642"><sup> 6 </sup></a></p>
+<div class="displaymath">
+\begin{equation*}
+(\vG\cdot\vnabla)\vF
+=\vG_1\frac{\partial\vF}{\partial x}
++\vG_2\frac{\partial\vF}{\partial y}
++\vG_3\frac{\partial\vF}{\partial z}
+\end{equation*}
+</div>
+</li>
+</ol>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-642"><div class="fn">This is really the only definition that makes sense. For example \(\vG\cdot(\vnabla\vF)\) does not make sense because you can't take the gradient of a vector-valued function.</div></div></article><article class="theorem theorem-like" id="thm_divIdentities"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Divergence Identities.</span>
+</h6>
+<ol id="p-17361" class="lower-alpha">
+<li id="li-7128">\(\displaystyle \color{red}{\vnabla\cdot(\vF+\vG)=\vnabla\cdot\vF+\vnabla \cdot\vG}\)</li>
+<li id="li-7129">\(\color{red}{\vnabla\cdot(c\vF)=c\,\vnabla\cdot\vF}\text{,}\) for any <em class="emphasis">constant</em> \(c\)</li>
+<li id="li-7130">\(\displaystyle \color{red}{\vnabla\cdot(f\vF)=(\vnabla f)\cdot\vF+ f\,\vnabla\cdot\vF}\)</li>
+<li id="li-7131">\(\displaystyle \vnabla\cdot(\vF\times\vG)=(\vnabla\times\vF)\cdot\vG
+- \vF\cdot(\vnabla\times\vG)\)</li>
+</ol></article><article class="theorem theorem-like" id="thm_curlIdentities"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Curl Identities.</span>
+</h6>
+<ol id="p-17362" class="lower-alpha">
+<li id="li-7132">\(\displaystyle \color{red}{\vnabla\times(\vF+\vG)=\vnabla\times\vF+\vnabla \times\vG} \)</li>
+<li id="li-7133">\(\color{red}{\vnabla\times(c\vF)=c\,\vnabla\times\vF} \text{,}\) for any <em class="emphasis">constant</em> \(c\)</li>
+<li id="li-7134">\(\displaystyle \color{red}{\vnabla\times(f\vF)=(\vnabla f)\times\vF+f\,\vnabla\times\vF} \)</li>
+<li id="li-7135">
+<p id="p-17363">\(\vnabla\times(\vF\times\vG)
+=\vF(\vnabla\cdot\vG)-(\vnabla\cdot\vF)\vG
++(\vG\cdot\vnabla)\vF-(\vF\cdot\vnabla)\vG\)</p>
+<p id="p-17364">Here</p>
+<div class="displaymath">
+\begin{equation*}
+(\vG\cdot\vnabla)\vF
+=\vG_1\frac{\partial\vF}{\partial x}
++\vG_2\frac{\partial\vF}{\partial y}
++\vG_3\frac{\partial\vF}{\partial z}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="theorem theorem-like" id="thm_laplaceIdentities"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Laplacian Identities.</span>
+</h6>
+<ol id="p-17365" class="lower-alpha">
+<li id="li-7136">\(\displaystyle \color{red}{ \vnabla^2(f+g)=\vnabla^2 f+\vnabla^2 g }\)</li>
+<li id="li-7137">\(\color{red}{\vnabla^2(cf)=c\,\vnabla^2 f}\text{,}\) for any <em class="emphasis">constant</em> \(c\)</li>
+<li id="li-7138">\(\displaystyle \vnabla^2(fg)=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f\)</li>
+</ol></article><article class="theorem theorem-like" id="thm_degTwoIdentities"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Degree Two Identities.</span>
+</h6>
+<ol id="p-17366" class="lower-alpha">
+<li id="li-7139">\(\color{red}{\vnabla\cdot(\vnabla\times\vF)=0 \qquad}\) (divergence of curl)</li>
+<li id="li-7140">\(\color{red}{\vnabla\times(\vnabla f)=0 \qquad}\) (curl of gradient)</li>
+<li id="li-7141">\(\displaystyle \vnabla\cdot\big(f\{\vnabla g\times\vnabla h\}\big)
+=\vnabla f\cdot(\vnabla g\times\vnabla h)\)</li>
+<li id="li-7142">\(\displaystyle \vnabla\cdot(f\vnabla g-g\vnabla f)=f\,\vnabla^2g-g\,\vnabla^2f\)</li>
+<li id="li-7143">\(\vnabla\times(\vnabla\times\vF)=\vnabla(\vnabla\cdot\vF)-\vnabla^2\vF \qquad\) (curl of curl)</li>
+</ol></article><p id="p-17367"><em class="alert">Memory Aid.</em> Most of the vector identities (in fact all of them except Theorem <a class="xref" data-knowl="./knowl/thm_gradIdentities.html" title="Theorem 15.1.3: Gradient Identities">15.1.3</a>.e, Theorem <a class="xref" data-knowl="./knowl/thm_curlIdentities.html" title="Theorem 15.1.5: Curl Identities">15.1.5</a>.d and Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>) are really easy to guess. Just combine the conventional linearity and product rules with the facts that</p>
+<ul class="disc">
+<li id="li-7144">if the left hand side is a vector (scalar), then the right hand side must also be a vector (scalar) and</li>
+<li id="li-7145">the only valid products of two vectors are the dot and cross products and</li>
+<li id="li-7146">the product of a scalar with either a scalar or a vector cannot be either a dot or cross product and</li>
+<li id="li-7147">\(\vA\times\vB = - \vB\times\vA\text{.}\) (The cross product is antisymmetric.)</li>
+</ul>
+<p data-braille="continuation">For example, consider Theorem <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>.c, which says \(\vnabla\cdot(f\vF)=(\vnabla f)\cdot\vF+ f\,\vnabla\cdot\vF\text{.}\)</p>
+<ul class="disc">
+<li id="li-7148">The left hand side, \(\vnabla\cdot(f\vF)\text{,}\) is a scalar, so the right hand side must also be a scalar.</li>
+<li id="li-7149">The left hand side, \(\vnabla\cdot(f\vF)\text{,}\) is a derivative of the product of \(f\) and \(\vF\text{,}\) so, mimicking the product rule, the right hand side will be a sum of two terms, one with \(\vF\) multiplying a derivative of \(f\text{,}\) and one with \(f\) multiplying a derivative of \(\vF\text{.}\)</li>
+<li id="li-7150">The derivative acting on \(f\) must be \(\vnabla f\text{,}\) because \(\vnabla\cdot f\) and \(\vnabla\times f\) are not well-defined. To end up with a scalar, rather than a vector, we must take the dot product of \(\vnabla f\) and \(\vF\text{.}\) So that term is \((\vnabla f)\cdot\vF\text{.}\)</li>
+<li id="li-7151">The derivative acting on \(\vF\) must be either \(\vnabla\cdot\vF\) or \(\vnabla\times\vF\text{.}\) We also need to multiply by the scalar \(f\) and end up with a scalar. So the derivative must be a scalar, i.e. \(\vnabla\cdot\vF\) and that term is \(f\{\vnabla\cdot\vF\}\text{.}\)</li>
+<li id="li-7152">Our final guess is \(\vnabla\cdot(f\vF)=(\vnabla f)\cdot\vF+ f\,\vnabla\cdot\vF\text{,}\) which, thankfully, is correct.</li>
+</ul>
+<article class="hiddenproof" id="proof-60"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-60"><h6 class="heading"><span class="title">Proof of Theorems 15.1.3, 15.1.4, 15.1.5, 15.1.6 and 15.1.7.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-60"><article class="hiddenproof"><p id="p-17368">All of the proofs (except for those of Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.c,d, which we will return to later) consist of</p>
+<ul class="disc">
+<li id="li-7153">writing out the definition of the left hand side and</li>
+<li id="li-7154">writing out the definition of the right hand side and</li>
+<li id="li-7155">observing (possibly after a little manipulation) that they are the same.</li>
+</ul>
+<p data-braille="continuation">For Theorem <a class="xref" data-knowl="./knowl/thm_gradIdentities.html" title="Theorem 15.1.3: Gradient Identities">15.1.3</a>.a,b, Theorem <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>.a,b, Theorem <a class="xref" data-knowl="./knowl/thm_curlIdentities.html" title="Theorem 15.1.5: Curl Identities">15.1.5</a>.a,b and Theorem <a class="xref" data-knowl="./knowl/thm_laplaceIdentities.html" title="Theorem 15.1.6: Laplacian Identities">15.1.6</a>.a,b, the computation is trivial — one line per identity, if one uses some efficient notation. Rename the coordinates \(x,y,z\) to \(x_1,x_2,x_3\) and the standard unit basis vectors \(\hi\text{,}\) \(\hj\text{,}\) \(\hk\) to \(\hi_1\text{,}\) \(\hi_2\text{,}\) \(\hi_3\text{.}\) Then \(\vnabla = \sum_{n=1}^3\hi_n\frac{\partial\ }{\partial x_n}\) and the proof of, for example, Theorem <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>.a is</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot(\vF+\vG)
+&amp;=\sum_{n=1}^3\frac{\partial\ }{\partial x_n} \hi_n\cdot(\vF+\vG)\\
+&amp;=\sum_{n=1}^3\frac{\partial\ }{\partial x_n} \hi_n\cdot\vF
++\sum_{n=1}^3\frac{\partial\ }{\partial x_n} \hi_n\cdot\vG
+=\vnabla\cdot\vF+\vnabla \cdot\vG
+\end{align*}
+</div>
+<p id="p-17369">For Theorem <a class="xref" data-knowl="./knowl/thm_gradIdentities.html" title="Theorem 15.1.3: Gradient Identities">15.1.3</a>.c,d, Theorem <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>.c, Theorem <a class="xref" data-knowl="./knowl/thm_curlIdentities.html" title="Theorem 15.1.5: Curl Identities">15.1.5</a>.c and Theorem <a class="xref" data-knowl="./knowl/thm_laplaceIdentities.html" title="Theorem 15.1.6: Laplacian Identities">15.1.6</a>.c, the computation is easy — a few lines per identity. For example, the proof of Theorem <a class="xref" data-knowl="./knowl/thm_curlIdentities.html" title="Theorem 15.1.5: Curl Identities">15.1.5</a>.c is</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times(f\vF)
+&amp;=\sum_{n=1}^3\frac{\partial }{\partial x_n}\hi_n\times(f \vF)
+=\sum_{n=1}^3\frac{\partial }{\partial x_n}\big(f\, \{\hi_n\times\vF\}\big)\\
+&amp;=\sum_{n=1}^3\frac{\partial f}{\partial x_n}\hi_n\times\vF
++f\sum_{n=1}^3\frac{\partial }{\partial x_n}\hi_n\times\vF\\
+&amp;=(\vnabla f)\times\vF + f\,\vnabla\times\vF
+\end{align*}
+</div>
+<p data-braille="continuation">In the second line we used Theorem <a class="xref" data-knowl="./knowl/thm_DIFFalgebra.html" title="Theorem 9.6.11: Arithmetic of differentiation">9.6.11</a>.b. The similar verification of Theorems <a class="xref" data-knowl="./knowl/thm_gradIdentities.html" title="Theorem 15.1.3: Gradient Identities">15.1.3</a>.c,d, <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>.c, and <a class="xref" data-knowl="./knowl/thm_laplaceIdentities.html" title="Theorem 15.1.6: Laplacian Identities">15.1.6</a>.c are left as exercises. The latter two are parts (a) and (c) of Question 3 in Section 4.1 of the CLP-4 problembook.</p>
+<p id="p-17370">For Theorem <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>.d, the computation is also easy if one uses the fact that</p>
+<div class="displaymath">
+\begin{equation*}
+\va\cdot(\vb\times\vc)=(\va\times\vb)\cdot\vc
+\end{equation*}
+</div>
+<p data-braille="continuation">which is Lemma <a class="xref" data-knowl="./knowl/lem_tripProd.html" title="Lemma 9.2.27">9.2.27</a>.a below. The verification of Theorem <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>.d is part (b) of Question 3 in Section 4.1 of the CLP-4 problembook.</p>
+<p id="p-17371">That leaves the proofs of Theorem <a class="xref" data-knowl="./knowl/thm_gradIdentities.html" title="Theorem 15.1.3: Gradient Identities">15.1.3</a>.e, Theorem <a class="xref" data-knowl="./knowl/thm_curlIdentities.html" title="Theorem 15.1.5: Curl Identities">15.1.5</a>.d, Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.a,b,c,d,e, which we write out explicitly.</p>
+<p id="p-17372">Theorem <a class="xref" data-knowl="./knowl/thm_gradIdentities.html" title="Theorem 15.1.3: Gradient Identities">15.1.3</a>.e: First write out the left hand side as</p>
+<div class="displaymath">
+\begin{gather*}
+\vnabla(\vF\cdot\vG)
+=\sum_{n=1}^3\hi_n\frac{\partial }{\partial x_n}(\vF\cdot\vG)
+=\sum_{n=1}^3\hi_n\Big(\frac{\partial\vF}{\partial x_n}\cdot\vG\Big)
++\sum_{n=1}^3\hi_n\Big(\vF\cdot\frac{\partial\vG}{\partial x_n}\Big)
+\end{gather*}
+</div>
+<p data-braille="continuation">Then rewrite \(\va\times(\vb\times\vc)=(\vc\cdot\va)\vb-(\vb\cdot\va)\vc\text{,}\) which is Lemma <a class="xref" data-knowl="./knowl/lem_tripProd.html" title="Lemma 9.2.27">9.2.27</a>.b below, as</p>
+<div class="displaymath">
+\begin{equation*}
+(\vc\cdot\va)\vb=\va\times(\vb\times\vc)+(\vb\cdot\va)\vc
+\end{equation*}
+</div>
+<p data-braille="continuation">Applying it once with \(\vb=\hi_n\text{,}\) \(\vc=\frac{\partial\vF}{\partial x_n}\text{,}\) \(\va=\vG\) and once with \(\vb=\hi_n\text{,}\) \(\vc=\frac{\partial\vG}{\partial x_n}\text{,}\) \(\va=\vF\) gives</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla(\vF\cdot\vG)
+&amp;=\sum_{n=1}^3\bigg[
+\vG\times\Big(\hi_n\times\frac{\partial\vF}{\partial x_n}\Big)
++(\vG\cdot\hi_n)\frac{\partial\vF}{\partial x_n}\bigg]\\
+&amp;\hskip1in+\sum_{n=1}^3\bigg[
+\vF\times\Big(\hi_n\times\frac{\partial\vG}{\partial x_n}\Big)
++(\vF\cdot\hi_n)\frac{\partial\vG}{\partial x_n}\bigg]\\
+&amp;=\vG\times(\vnabla\times\vF) +(\vG\cdot\vnabla)\vF
++\vF\times(\vnabla\times\vG) +(\vF\cdot\vnabla)\vG
+\end{align*}
+</div>
+<p id="p-17373">Theorem <a class="xref" data-knowl="./knowl/thm_curlIdentities.html" title="Theorem 15.1.5: Curl Identities">15.1.5</a>.d: We use the same trick. Write out the left hand side as</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times(\vF\times\vG)
+&amp;=\sum_{n=1}^3\hi_n\times\frac{\partial }{\partial x_n}(\vF\times\vG)\\
+&amp;=\sum_{n=1}^3\hi_n\times\Big(\frac{\partial\vF}{\partial x_n}\times\vG\Big)
++\sum_{n=1}^3\hi_n\times\Big(\vF\times\frac{\partial\vG}{\partial x_n}\Big)
+\end{align*}
+</div>
+<p data-braille="continuation">Applying \(\va\times(\vb\times\vc)=(\vc\cdot\va)\vb-(\vb\cdot\va)\vc\text{,}\) which is Lemma <a class="xref" data-knowl="./knowl/lem_tripProd.html" title="Lemma 9.2.27">9.2.27</a>.b below,</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times(\vF\times\vG)&amp;=
+\sum_{n=1}^3\Big[G_n\frac{\partial \vF}{\partial x_n}
+-\frac{\partial F_n}{\partial x_n}\vG\Big]
++\sum_{n=1}^3\Big[\frac{\partial G_n}{\partial x_n}\vF
+-F_n\frac{\partial \vG}{\partial x_n}\Big]\cr
+&amp;=(\vG\cdot\vnabla)\vF -(\vnabla\cdot\vF)\vG+(\vnabla\cdot\vG)\vF
+-(\vF\cdot\vnabla)\vG
+\end{align*}
+</div>
+<p id="p-17374">Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.a: Substituting in</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times\vF
+&amp;=\Big(\frac{\partial F_3}{\partial y}
+-\frac{\partial F_2}{\partial z}\Big)\hi
+-\Big(\frac{\partial F_3}{\partial x}
+-\frac{\partial F_1}{\partial z}\Big)\hj
++\Big(\frac{\partial F_2}{\partial x}
+-\frac{\partial F_1}{\partial y}\Big)\hk\\
+\end{align*}
+<p class="intertext">gives</p>
+\begin{align*}
+\vnabla\cdot\big(\vnabla\times F\big)
+&amp;=\frac{\partial }{\partial x}\Big(\frac{\partial F_3}{\partial y}
+-\frac{\partial F_2}{\partial z}\Big)
+-\frac{\partial }{\partial y}\Big(\frac{\partial F_3}{\partial x}
+-\frac{\partial F_1}{\partial z}\Big)
++\frac{\partial }{\partial z}\Big(\frac{\partial F_2}{\partial x}
+-\frac{\partial F_1}{\partial y}\Big)\cr
+&amp;={\color{red}{\frac{\partial^2 F_3}{\partial x\partial y}}}
+-{\color{blue}{\frac{\partial^2 F_2}{\partial x\partial z}}}
+-{\color{red}{\frac{\partial^2 F_3}{\partial y\partial x}}}
++\frac{\partial^2 F_1}{\partial y\partial z}
++{\color{blue}{\frac{\partial^2 F_2}{\partial z\partial x}}}
+-\frac{\partial^2 F_1}{\partial z\partial y}\\
+&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">because the two red terms have cancelled, the two blue terms have cancelled and the two black terms have cancelled.</p>
+<p id="p-17375">Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.b: Substituting in</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla f
+&amp;=\frac{\partial f}{\partial x}\hi
++\frac{\partial f}{\partial y}\hj
++\frac{\partial f}{\partial z}\hk\cr\\
+\end{align*}
+<p class="intertext">gives</p>
+\begin{align*}
+\vnabla\times\big(\vnabla f\big)
+&amp;=\Big(\frac{\partial }{\partial y}\frac{\partial f}{\partial z}
+-\frac{\partial }{\partial z}\frac{\partial f}{\partial y}\Big)
+\hi
+-\Big(\frac{\partial }{\partial x}\frac{\partial f}{\partial z}
+-\frac{\partial }{\partial z}\frac{\partial f}{\partial x}\Big)
+\hj\\
+&amp;\hskip1in+\Big(\frac{\partial }{\partial x}\frac{\partial f}{\partial y}
+-\frac{\partial }{\partial y}\frac{\partial f}{\partial x}\Big)
+\hk\\
+&amp;=0
+\end{align*}
+</div>
+<p id="p-17376">Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.c: By Theorem <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>.c, followed by Theorem <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>.d,</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot\big[f(\vnabla g\times\vnabla h)\big]
+&amp;=\vnabla f\cdot(\vnabla g\times\vnabla h)
++f\vnabla\cdot(\vnabla g\times\vnabla h)\\
+&amp;=\vnabla f\cdot(\vnabla g\times\vnabla h)
++f\big[(\vnabla\times\vnabla g)\cdot\vnabla h-\vnabla g\cdot(\vnabla\times\vnabla h)\big]
+\end{align*}
+</div>
+<p data-braille="continuation">By Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.b, \(\vnabla\times\vnabla g=\vnabla\times\vnabla h=0\text{,}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\cdot\big[f(\vnabla g\times\vnabla f)\big]
+=\vnabla f\cdot(\vnabla g\times\vnabla h)
+\end{equation*}
+</div>
+<p id="p-17377">Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.d: By Theorem <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>.c,</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot(f\vnabla g-g\vnabla f)
+&amp;= (\vnabla f)\cdot(\vnabla g) +f\,\vnabla\cdot(\vnabla g)
+-(\vnabla g)\cdot(\vnabla f) +g\,\vnabla\cdot(\vnabla f)\\
+&amp;=f\,\vnabla^2g-g\,\vnabla^2f
+\end{align*}
+</div>
+<p id="p-17378">Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.e:</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times(\vnabla\times\vF)
+&amp;=\sum_{\ell=1}^3\hi_\ell\frac{\partial } {\partial x_\ell}
+\times\bigg(\sum_{m=1}^3 \hi_m\frac{\partial } {\partial x_m}
+\times\sum_{n=1}^3\hi_n F_n\bigg)\\
+&amp;=\sum_{\ell,m,n=1}^3\hi_\ell\times \big(\hi_m\times\hi_n\big)\
+\frac{\partial^2  F_n }
+{\partial x_\ell\partial x_m}
+\end{align*}
+</div>
+<p data-braille="continuation">Using \(\va\times(\vb\times\vc)=(\vc\cdot\va)\vb-(\vb\cdot\va)\vc\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\hi_\ell\times \big(\hi_m\times\hi_n\big)
+=(\hi_\ell\cdot\hi_n)\hi_m -(\hi_\ell\cdot\hi_m)\hi_n
+=\delta_{\ell,n}\hi_m -\delta_{\ell,m}\hi_n
+\end{equation*}
+</div>
+<p data-braille="continuation">where<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-643" id="fn-643"><sup> 7 </sup></a></p>
+<div class="displaymath">
+\begin{equation*}
+\delta_{m,n} =\begin{cases}
+1&amp; \text{if } m=n \\
+0&amp; \text{if } m\ne n
+\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times(\vnabla\times\vF)
+&amp;=\sum_{\ell,m,n=1}^3\delta_{\ell,n}\hi_m\
+\frac{\partial^2  F_n }
+{\partial x_\ell\partial x_m}
+-\sum_{\ell,m,n=1}^3\delta_{\ell,m}\hi_n\
+\frac{\partial^2  F_n }
+{\partial x_\ell\partial x_m}\\
+&amp;=\sum_{m,n=1}^3\hi_m\ \frac{\partial }{\partial x_m}
+\frac{\partial  F_n }{\partial x_n}
+-\sum_{m,n=1}^3\hi_n\  \frac{\partial^2 F_n}{\partial x_m^2}\cr
+&amp;= \vnabla(\vnabla\cdot\vF)-\vnabla^2\vF
+\end{align*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-643"><div class="fn">\(\delta_{m,n}\) is called the Kronecker delta function. It is named after the German number theorist and logician Leopold Kronecker (1823–1891). He is reputed to have said “God made the integers. All else is the work of man.”</div></div></article></div>
+<article class="lemma theorem-like" id="lem_tripProd"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">15.1.8</span><span class="period">.</span>
+</h6>
+<ol id="p-17379" class="lower-alpha">
+<li id="li-7156">\(\displaystyle \va\cdot(\vb\times\vc)=(\va\times\vb)\cdot\vc\)</li>
+<li id="li-7157">\(\displaystyle \va\times(\vb\times\vc)=(\vc\cdot\va)\vb-(\vb\cdot\va)\vc\)</li>
+</ol></article><article class="hiddenproof" id="proof-61"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-61"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-61"><article class="hiddenproof"><p id="p-17380">(a) Here are two proofs. For the first, just write out both sides</p>
+<div class="displaymath">
+\begin{align*}
+\va\cdot(\vb\times\vc)
+&amp;=(a_1,a_2,a_3)\cdot(b_2c_3-b_3c_2\,,\,b_3c_1-b_1c_3\,,\,b_1c_2-b_2c_1)\\
+&amp;=a_1b_2c_3-a_1b_3c_2+a_2b_3c_1-a_2b_1c_3+a_3b_1c_2-a_3b_2c_1\\
+(\va\times\vb)\cdot\vc
+&amp;=(a_2b_3-a_3b_2\,,\,a_3b_1-a_1b_3\,,\,a_1b_2-a_2b_1)\cdot(c_1,c_2,c_3)\\
+&amp;=a_2b_3c_1-a_3b_2c_1+a_3b_1c_2-a_1b_3c_2+a_1b_2c_3-a_2b_1c_3
+\end{align*}
+</div>
+<p data-braille="continuation">and observe that they are the same.</p>
+<p id="p-17381">For the second proof, we again write out both sides, but this time we express them in terms of determinants.</p>
+<div class="displaymath">
+\begin{align*}
+\va\cdot\vb\times\vc
+&amp;=(a_1,a_2,a_3)\cdot\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
+b_1&amp;b_2&amp;b_3 \\
+c_1&amp;c_2&amp;c_3\end{matrix}\right]\\
+&amp;=a_1\det\left[\begin{matrix}
+b_2&amp;b_3 \\
+c_2&amp;c_3\end{matrix}\right]
+-a_2\det\left[\begin{matrix}
+b_1&amp;b_3 \\
+c_1&amp;c_3\end{matrix}\right]
++a_3\det\left[\begin{matrix}
+b_1&amp;b_2 \\
+c_1&amp;c_2\end{matrix}\right]\\
+&amp;=\det\left[\begin{matrix}a_1&amp;a_2&amp;a_3 \\
+b_1&amp;b_2&amp;b_3 \\
+c_1&amp;c_2&amp;c_3\end{matrix}\right]\\
+\va\times\vb\cdot\vc
+&amp;=\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
+a_1&amp;a_2&amp;a_3  \\
+b_1&amp;b_2&amp;b_3\end{matrix}\right]\cdot(c_1,c_2,c_3)\\
+&amp;=c_1\det\left[\begin{matrix}
+a_2&amp;a_3 \\
+b_2&amp;b_3\end{matrix}\right]
+-c_2\det\left[\begin{matrix}
+a_1&amp;a_3 \\
+b_1&amp;b_3\end{matrix}\right]
++c_3\det\left[\begin{matrix}
+a_1&amp;a_2 \\
+b_1&amp;b_2\end{matrix}\right]\\
+&amp;=\det\left[\begin{matrix}c_1&amp;c_2&amp;c_3\cr a_1&amp;a_2&amp;a_3 \\
+b_1&amp;b_2&amp;b_3
+\end{matrix}\right]
+\end{align*}
+</div>
+<p data-braille="continuation">Exchanging two rows in a determinant changes the sign of the determinant. Moving the top row of a \(3\times 3\) determinant to the bottom row requires two exchanges of rows. So the two \(3\times 3\) determinants are equal.</p>
+<p id="p-17382">(b) The proof is not exceptionally difficult — just write out both sides and grind. Substituting in</p>
+<div class="displaymath">
+\begin{equation*}
+\vb\times\vc
+\ =\ (b_2c_3-b_3c_2)\hi-(b_1c_3-b_3c_1)\hj + (b_1c_2-b_2c_1)\hk
+\end{equation*}
+</div>
+<p data-braille="continuation">gives, for the left hand side,</p>
+<div class="displaymath">
+\begin{align*}
+\va\times(\vb\times\vc)
+=\phantom{-}&amp;\!\!\!\det\left[\begin{matrix}\hi&amp;\hj &amp;\hk \\
+a_1&amp;a_2&amp;a_3 \\
+b_2c_3-b_3c_2&amp;-b_1c_3+b_3c_1&amp;b_1c_2-b_2c_1
+\end{matrix}\right]\\
+=\phantom{-}&amp;\hi\big[a_2(b_1c_2-b_2c_1)-a_3(-b_1c_3+b_3c_1)\big]\\
+-&amp;\hj\big[a_1(b_1c_2-b_2c_1)-a_3(b_2c_3-b_3c_2)\big]\\
++&amp;\hk\big[a_1(-b_1c_3+b_3c_1)-a_2(b_2c_3-b_3c_2)\big]
+\end{align*}
+</div>
+<p data-braille="continuation">On the other hand, the right hand side</p>
+<div class="displaymath">
+\begin{align*}
+(\va\cdot\vc)\vb-(\va\cdot\vb)\vc
+\ =\ &amp;(a_1c_1+a_2c_2+a_3c_3)(b_1\hi+b_2\hj+b_3\hk)\\
+&amp;\hskip0.5in-(a_1b_1+a_2b_2+a_3b_3)(c_1\hi+c_2\hj+c_3\hk)\\
+=\ &amp;
+\hi\ \big[{\color{blue}{a_1b_1c_1}}
++a_2b_1c_2+a_3b_1c_3-
+{\color{blue}{a_1b_1c_1}}
+-a_2b_2c_1-a_3b_3c_1\big]\\
+{+}&amp;\hj\ \big[a_1b_2c_1
++{\color{blue}{a_2b_2c_2}}
++a_3b_2c_3-a_1b_1c_2
+-{\color{blue}{a_2b_2c_2}}
+-a_3b_3c_2\big]\\
+{+}&amp;\hk\ \big[a_1b_3c_1+a_2b_3c_2
++{\color{blue}{a_3b_3c_3}}
+-a_1b_1c_3-a_2b_2c_3
+-{\color{blue}{a_3b_3c_3}}\big]\\
+{=}\ &amp;
+\hi\ [a_2b_1c_2+a_3b_1c_3-a_2b_2c_1-a_3b_3c_1]\\
+{+}&amp;\hj\ [a_1b_2c_1+a_3b_2c_3-a_1b_1c_2-a_3b_3c_2]\\
+{+}&amp;\hk\ [a_1b_3c_1+a_2b_3c_2-a_1b_1c_3-a_2b_2c_3]
+\end{align*}
+</div>
+<p data-braille="continuation">The last formula that we had for the left hand side is the same as the last formula we had for the right hand side.</p></article></div>
+<article class="example example-like" id="eg_ITmawellB"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_ITmawellB"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Screening tests.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_ITmawellB"><article class="example example-like"><p id="p-17383">We have seen the vector identity Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.b before. It says that if a vector field \(\vF\) is of the form \(\vF = \vnabla\varphi\) for some some function \(\varphi\) (that is, if \(\vF\) is conservative), then</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\times\vF = \vnabla\times(\vnabla\varphi) = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">Conversely, we have also seen, in Theorem <a class="xref" data-knowl="./knowl/thm_screenConserv.html" title="Theorem 13.4.8">13.4.8</a>, that, if \(\vF\) is defined and has continuous first order partial derivatives on all of \(\bbbr^3\text{,}\) and if \(\vnabla\times\vF=0\text{,}\) then \(\vF\) is conservative. The vector identity Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.b is our screening test for conservativeness.</p>
+<p id="p-17384">Because its right hand side is zero, the vector identity Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.a is suggestive. It says that if a vector field \(\vF\) is of the form \(\vF = \vnabla\times\vA\) for some some vector field \(\vA\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\cdot\vF = \vnabla\cdot(\vnabla\times\vA) = 0
+\end{equation*}
+</div>
+<p data-braille="continuation">When \(\vF = \vnabla\times\vA\text{,}\) \(\vA\) is called a <em class="emphasis">vector potential</em> for \(\vF\text{.}\) We shall see in Theorem <a class="xref" data-knowl="./knowl/thm_screenVectorB.html" title="Theorem 15.1.16">15.1.16</a>, below, that, conversely, if \(\vF(\vx)\) is defined and has continuous first order partial derivatives on all of \(\bbbr^3\text{,}\) and if \(\vnabla\cdot\vF=0\text{,}\) then \(\vF\) has a vector potential<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-644" id="fn-644"><sup> 8 </sup></a>. The vector identity Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.a is indeed another screening test.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-644"><div class="fn">Does this remind you of Theorem <a class="xref" data-knowl="./knowl/thm_screenConserv.html" title="Theorem 13.4.8">13.4.8</a>? It should.</div></div>
+<p id="p-17385">As an example, consider the Maxwell's equations</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot\vB &amp;= 0\\
+\vnabla\times\vE +\frac{1}{c}\frac{\partial\vB}{\partial t}&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">that we saw in Example <a class="xref" data-knowl="./knowl/eg_ITmaxwell.html" title="Example 15.1.2">15.1.2</a>. The first equation implies that (assuming \(\vB\) is sufficiently smooth) there is a vector field \(\vA\text{,}\) called the magnetic potential, with \(\vB=\vnabla\times\vA\text{.}\) Substituting this into the second equation gives</p>
+<div class="displaymath">
+\begin{equation*}
+0= \vnabla\times\vE +\frac{1}{c}\frac{\partial\ }{\partial t}\vnabla\times\vA
+=\vnabla\times\Big(\vE+\frac{1}{c}\frac{\partial\vA }{\partial t}\Big)
+\end{equation*}
+</div>
+<p data-braille="continuation">So \(\vE+\frac{1}{c}\frac{\partial\vA }{\partial t}\) passes the screening test of Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.b and there is a function \(\varphi\) (called the electric potential)  with</p>
+<div class="displaymath">
+\begin{equation*}
+\vE+\frac{1}{c}\frac{\partial\vA }{\partial t} = -\nabla \varphi
+\end{equation*}
+</div>
+<p data-braille="continuation">We have put in the minus sign just to provide compatibility with the usual physics terminology.</p></article></div>
+<article class="example example-like" id="eg_vecIdA"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_vecIdA"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.1.10</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_vecIdA"><article class="example example-like"><p id="p-17386">Let \(\vr(x,y,z) = x\,\hi+y\,\hj+z\,\hk\) and let \(\psi(x,y,z)\) be an arbitrary function. Verify that</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\cdot\big(\vr\times\vnabla\psi\big) = 0
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2258" id="solution-2258"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2258"><div class="solution solution-like">
+<p id="p-17387">By the vector identity Theorem <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>.d,</p>
+<div class="displaymath">
+\begin{gather*}
+\vnabla\cdot\big(\vr\times\vnabla\psi\big)
+=(\vnabla\times\vr)\cdot\vnabla \psi
+-\vr\cdot\big(\vnabla\times(\vnabla\psi)\big)
+\end{gather*}
+</div>
+<p data-braille="continuation">By the vector identity Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.b, the second term is zero. Now since</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\times\vr
+= \Big(\frac{\partial z}{\partial y} -\frac{\partial y}{\partial z}\Big)\hi
+-\Big(\frac{\partial z}{\partial x} -\frac{\partial x}{\partial z}\Big)\hj
++\Big(\frac{\partial y}{\partial x} -\frac{\partial x}{\partial y}\Big)\hk
+=\vZero
+\end{equation*}
+</div>
+<p data-braille="continuation">the first term is also zero. Indeed \(\vnabla\cdot\big(\vr\times\vnabla\psi\big) = 0\) holds for any curl free \(\vr(x,y,z)\text{.}\)</p>
+</div></div>
+</div></article></div></section><section class="subsection" id="sec_vectorPotential"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">15.1.2</span> <span class="title">Vector Potentials</span>
+</h3>
+<p id="p-17388">We'll now further explore the vector potentials that were introduced in Example <a class="xref" data-knowl="./knowl/eg_ITmawellB.html" title="Example 15.1.9: Screening tests">15.1.9</a>. First, here is the formal definition.</p>
+<article class="definition definition-like" id="def_vectorPotential"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">15.1.11</span><span class="period">.</span>
+</h6>
+<p id="p-17389">The vector field \(\vA\) is said to be a <dfn class="terminology">vector potential</dfn> for the vector field \(\vB\) if</p>
+<div class="displaymath">
+\begin{equation*}
+\vB=\vnabla\times\vA
+\end{equation*}
+</div></article><p id="p-17390">As we saw in Example <a class="xref" data-knowl="./knowl/eg_ITmawellB.html" title="Example 15.1.9: Screening tests">15.1.9</a>, if a vector field \(\vB\) has a vector potential, then the vector identity Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.a implies that \(\vnabla\cdot\vB=0\text{.}\) This fact deserves to be called a theorem.</p>
+<article class="theorem theorem-like" id="thm_screenVector"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Screening test for vector potentials.</span>
+</h6>
+<p id="p-17391">If there exists a vector potential for the vector field \(\vB\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\cdot\vB=0
+\end{equation*}
+</div></article><p id="p-17392">Of course, we'll consider the converse soon. Also note that the vector potential, when it exists, is far from unique. Two vector fields \(\vA\) and \(\tilde\vA\) are both vector potentials for the same vector field if and only if</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\times\vA=\vnabla\times\tilde\vA
+\iff \vnabla\times(\vA-\tilde\vA)=\vZero
+\end{equation*}
+</div>
+<p data-braille="continuation">That is, if and only if the difference \(\vA-\tilde\vA\) passes the conservative field screening test of Theorems <a class="xref" data-knowl="./knowl/thm_screen.html" title="Theorem 13.3.9: Screening test for conservative vector fields.">13.3.9</a> and <a class="xref" data-knowl="./knowl/thm_screenConserv.html" title="Theorem 13.4.8">13.4.8</a>. In particular, if \(\vA\) is one vector potential for a vector field \(\vB\) (i.e. if \(\vB=\vnabla\times\vA\)), and if \(\psi\) is any function, then</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\times(\vA+\vnabla\psi) =\vnabla\times\vA + \vnabla\times\vnabla\psi
+=\vB
+\end{equation*}
+</div>
+<p data-braille="continuation">by the vector identity Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.b. That is, \(\vA+\vnabla\psi\) is another vector potential for \(\vB\text{.}\)</p>
+<p id="p-17393">To simplify computations, we can always choose \(\psi\) so that, for example, the third component of \(\vA+\vnabla\psi\text{,}\) namely \(\big(\vA+\vnabla\psi\big)\cdot\hk= \vA_3+\frac{\partial\psi}{\partial z}\text{,}\) is zero — just choose \(\psi = -\int \vA_3\, \dee{z}\text{.}\) We have just proven</p>
+<article class="lemma theorem-like" id="lem_A3zero"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">15.1.13</span><span class="period">.</span>
+</h6>
+<p id="p-17394">If the vector field \(\vB\) has a vector potential, then, in particular, there is a vector potential \(\vA\) for \(\vB\) with<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-645" id="fn-645"><sup> 9 </sup></a> \(\vA_3=0\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-645"><div class="fn">There is nothing special about the subscript \(3\) here. By precisely the same argument, we could come up with another vector potential whose second component is zero, and with a third vector potential whose first component is zero.</div></div></article><p id="p-17395">Here is an example which exploits this choice to simplify the computations used to find a vector potential.</p>
+<article class="example example-like" id="eg_vectorPotential"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_vectorPotential"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.1.14</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_vectorPotential"><article class="example example-like"><p id="p-17396">Let</p>
+<div class="displaymath">
+\begin{equation*}
+\vB = yz\,\hi + zx\,\hj + xy\,\hk
+\end{equation*}
+</div>
+<p data-braille="continuation">This vector field has been set up carefully to obey</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\cdot\vB = \frac{\partial }{\partial x}(yz)
++\frac{\partial }{\partial y}(zx)
++\frac{\partial }{\partial z}(xy)
+=0
+\end{equation*}
+</div>
+<p data-braille="continuation">and so passes the screening test of Theorem <a class="xref" data-knowl="./knowl/thm_screenVector.html" title="Theorem 15.1.12: Screening test for vector potentials">15.1.12</a>.</p>
+<p id="p-17397">Let's try and find a vector potential for \(\vB\text{.}\) That is, let's try and find a vector field \(\vA= A_1\,\hi + A_2\,\hj + A_3\,\hk\) that obeys \(\vnabla\times\vA = \vB\text{,}\) or equivalently,</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial A_3}{\partial y} -\frac{\partial A_2}{\partial z} &amp;= B_1 =yz\\
+-\frac{\partial A_3}{\partial x} +\frac{\partial A_1}{\partial z}&amp;=B_2=zx\\
+\frac{\partial A_2}{\partial x} -\frac{\partial A_1}{\partial y}&amp;=B_3=xy
+\end{align*}
+</div>
+<p data-braille="continuation">This system is nasty to solve because every equation contains more than one of the three unknowns, \(A_1\text{,}\) \(A_2\text{,}\) \(A_3\text{.}\) Let us take advantage of our observation above that, if any vector potential exists, then, in particular, a vector potential \(\vA\) exists that also obeys \(A_3=0\text{.}\) So let's also require that \(A_3=0\text{.}\) Then the equations above simplify to</p>
+<div class="displaymath">
+\begin{align*}
+-\frac{\partial A_2}{\partial z} &amp;=yz\\
+\frac{\partial A_1}{\partial z} &amp;=zx\\
+\frac{\partial A_2}{\partial x} -\frac{\partial A_1}{\partial y}&amp;=xy
+\end{align*}
+</div>
+<p data-braille="continuation">This system is much easier because, now that we have chosen \(A_3=0\text{,}\) the first equation contains only a single unknown, namely \(A_2\) and we can find all \(A_2\)'s that obey the first equation simply by integrating with respect to \(z\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+A_2 = -\frac{yz^2}{2} + N(x,y)
+\end{equation*}
+</div>
+<p data-braille="continuation">Note that, because \(\frac{\partial }{\partial z}\) treats \(x\) and \(y\) as constants, the constant of integration \(N\) is allowed to depend on \(x\) and \(y\text{.}\)</p>
+<p id="p-17398">Similarly, the second equation contains only a single unknown, \(A_1\text{,}\) and is easily solved by integrating with respect to \(z\text{.}\) The second equation is satisfied if and only if</p>
+<div class="displaymath">
+\begin{equation*}
+A_1 = \frac{xz^2}{2} + M(x,y)
+\end{equation*}
+</div>
+<p data-braille="continuation">for some function \(M\text{.}\)</p>
+<p id="p-17399">Finally, the third equation is also satisfied if and only if \(M(x,y)\) and \(N(x,y)\) obey</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial }{\partial x}\Big(-\frac{yz^2}{2} + N(x,y)\Big)
+-\frac{\partial }{\partial y}\Big(\frac{xz^2}{2} + M(x,y)\Big)=xy
+\end{equation*}
+</div>
+<p data-braille="continuation">which simplifies to</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial N}{\partial x}(x,y) -\frac{\partial M}{\partial y}(x,y) =xy
+\end{equation*}
+</div>
+<p data-braille="continuation">This is one linear equation in two unknowns, \(M\) and \(N\text{.}\) Typically, we can easily solve one linear equation in one unknown. So we are free to eliminate one of the unknowns by setting, for example, \(M=0\text{,}\) and then choose any \(N\) that obeys</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial N}{\partial x}(x,y) = xy
+\end{equation*}
+</div>
+<p data-braille="continuation">Integrating with respect to \(x\) gives, as one possible choice, \(N(x,y) = \frac{x^2y}{2}\text{.}\) So we have found a vector potential. Namely</p>
+<div class="displaymath">
+\begin{equation*}
+\vA = \frac{xz^2}{2} \hi +\Big(-\frac{yz^2}{2} +  \frac{x^2y}{2}\Big)\hj
+\end{equation*}
+</div>
+<p data-braille="continuation">One can, and indeed should, quickly check that \(\vnabla\times\vA=\vB\text{.}\)</p></article></div>
+<p id="p-17400">Let's do another.</p>
+<article class="example example-like" id="eg_vectorPotentialB"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_vectorPotentialB"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.1.15</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_vectorPotentialB"><article class="example example-like"><p id="p-17401">Let</p>
+<div class="displaymath">
+\begin{equation*}
+\vB = (2x)\,\hi+(2z-2x)\,\hj +(2x-2z)\,\hk
+\end{equation*}
+</div>
+<p data-braille="continuation">This vector field obeys</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\cdot\vB = \frac{\partial }{\partial x}(2x)
++\frac{\partial }{\partial y}(2z-2x)
++\frac{\partial }{\partial z}(2x-2z)
+=0
+\end{equation*}
+</div>
+<p data-braille="continuation">and so passes the screening test of Theorem <a class="xref" data-knowl="./knowl/thm_screenVector.html" title="Theorem 15.1.12: Screening test for vector potentials">15.1.12</a>. We'll now find a vector potential \(\vA= A_1\,\hi + A_2\,\hj + A_3\,\hk\) for \(\vB\text{.}\) As in the last example, we'll simplify the computations by further requiring<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-646" id="fn-646"><sup> 10 </sup></a> that \(A_3=0\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-646"><div class="fn">Of course, we could equally well pick \(A_1=0\) or \(A_2=0\text{.}\)</div></div>
+<p id="p-17402">The requirements that \(\vnabla\times\vA = \vB\) and \(A_3=0\) come down to</p>
+<div class="displaymath">
+\begin{align*}
+-\frac{\partial A_2}{\partial z} &amp;=2x\\
+\frac{\partial A_1}{\partial z} &amp;=2z-2x\\
+\frac{\partial A_2}{\partial x} -\frac{\partial A_1}{\partial y}&amp;=2x-2z
+\end{align*}
+</div>
+<p data-braille="continuation">Because \(\frac{\partial }{\partial z}\) treats \(x\) and \(y\) as constants, the first equation is satisfied if and only if there is a function \(N(x,y)\)</p>
+<div class="displaymath">
+\begin{equation*}
+A_2 = -2xz + N(x,y)
+\end{equation*}
+</div>
+<p data-braille="continuation">and second equation is satisfied if and only if there is a function \(M(x,y)\)</p>
+<div class="displaymath">
+\begin{equation*}
+A_1 = z^2-2xz + M(x,y)
+\end{equation*}
+</div>
+<p data-braille="continuation">Finally, the third equation is also satisfied if and only if \(M(x,y)\) and \(N(x,y)\) obey</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{\partial }{\partial x}\Big(-2xz + N(x,y)\Big)
+-\frac{\partial }{\partial y}\Big(z^2-2xz + M(x,y))\Big)=2x-2z\\
+&amp;\iff
+-2z+\frac{\partial N}{\partial x}(x,y) -\frac{\partial M}{\partial y}(x,y)
+=2x -2z\\
+&amp;\iff
+\phantom{-2z+\ \,}
+\frac{\partial N}{\partial x}(x,y) -\frac{\partial M}{\partial y}(x,y)
+=2x
+\end{align*}
+</div>
+<p data-braille="continuation">All of the \(z\)'s in this equation have cancelled out<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-647" id="fn-647"><sup> 11 </sup></a>, and we can choose, for example, \(M(x,y)=0\) and  \(N(x,y) = x^2\text{.}\) So we have found a vector potential. Namely</p>
+<div class="displaymath">
+\begin{equation*}
+\vA = (z^2-2xz) \hi +(x^2-2xz)\hj
+\end{equation*}
+</div>
+<p data-braille="continuation">Again it is a good idea to check that \(\vnabla\times\vA=\vB\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-647"><div class="fn">If the \(z\)'s had not cancelled out, no \(N(x,y)\) and \(M(x,y)\text{,}\) which after all are independent of \(z\text{,}\) could satisfy the equation. That would have been a sure sign of a user error.</div></div></article></div>
+<p id="p-17403">We can use exactly the strategy of the last examples to prove</p>
+<article class="theorem theorem-like" id="thm_screenVectorB"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">15.1.16</span><span class="period">.</span>
+</h6>
+<p id="p-17404">Let \(\vB\) be a vector field that is defined and has all of its first order partial derivatives continuous on all of \(\bbbr^3\text{.}\) Then there exists a vector potential for \(\vB\) if and only if it passes the screening test \(\vnabla\cdot\vB=0\text{.}\)</p></article><article class="hiddenproof" id="proof-62"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-62"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-62"><article class="hiddenproof"><p id="p-17405">We already know that the existence of a vector potential implies that \(\vnabla\cdot\vB=0\text{.}\) So we just have to assume that \(\vnabla\cdot\vB=0\) and prove that this implies the existence of a vector field \(\vA\)  that obeys \(\vnabla\times\vA = \vB\text{.}\) Hence we need to solve</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\partial A_3}{\partial y} -\frac{\partial A_2}{\partial z} &amp;= B_1(x,y,z)\\
+-\frac{\partial A_3}{\partial x} +\frac{\partial A_1}{\partial z}&amp;=B_2(x,y,z)\\
+\frac{\partial A_2}{\partial x} -\frac{\partial A_1}{\partial y}&amp;=B_3(x,y,z)
+\end{align*}
+</div>
+<p data-braille="continuation">We'll explicitly find such an \(\vA\) using exactly the strategy of Example <a class="xref" data-knowl="./knowl/eg_vectorPotential.html" title="Example 15.1.14">15.1.14</a>. In particular, we'll look for an \(\vA\) that also has \(A_3=0\text{.}\) Then the equations simplify to</p>
+<div class="displaymath">
+\begin{align*}
+-\frac{\partial A_2}{\partial z} &amp;=B_1(x,y,z)\\
+\frac{\partial A_1}{\partial z} &amp;=B_2(x,y,z)\\
+\frac{\partial A_2}{\partial x} -\frac{\partial A_1}{\partial y}&amp;=B_3(x,y,z)
+\end{align*}
+</div>
+<p data-braille="continuation">The first equation is satisfied if and only if</p>
+<div class="displaymath">
+\begin{equation*}
+A_2(x,y,z) = -\int_0^z B_1(x,y,\tilde z)\ \dee{\tilde z} +N(x,y)
+\end{equation*}
+</div>
+<p data-braille="continuation">for some function \(N(x,y)\text{.}\) And the second equation is satisfied if and only if</p>
+<div class="displaymath">
+\begin{equation*}
+A_1(x,y,z) = \int_0^z B_2(x,y,\tilde z)\ \dee{\tilde z} +M(x,y)
+\end{equation*}
+</div>
+<p data-braille="continuation">So all three equations are satisfied if and only only if we can find \(M(x,y)\) and \(N(x,y)\) that obey</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{\partial }{\partial x}\Big(
+\overbrace{-\int_0^z B_1(x,y,\tilde z)\ \dee{\tilde z} +N(x,y)}^{A_2(x,y,z)}\Big)\\
+&amp;\hskip1in
+-\frac{\partial }{\partial y}\Big(
+\overbrace{\int_0^z B_2(x,y,\tilde z)\ \dee{\tilde z} +M(x,y)}^{A_1(x,y,z)}\Big)
+=B_3(x,y,z)
+\end{align*}
+</div>
+<p data-braille="continuation">which is the case if and only if</p>
+<div class="displaymath">
+\begin{gather*}
+\frac{\partial N}{\partial x}(x,y) -\frac{\partial M}{\partial y}(x,y) =
+B_3(x,y,z)
++ \int_0^z\Big(\frac{\partial B_1}{\partial x}(x,y,\tilde z)
++ \frac{\partial B_2}{\partial y}(x,y,\tilde z)\Big)
+\ \dee{\tilde z}
+\end{gather*}
+</div>
+<p data-braille="continuation">Oof! At first sight, it looks like we have a very big problem here. No matter what \(N\) and \(M\) we pick the left hand side will depend on \(x\) and \(y\) only — not on \(z\text{.}\) But it appears like the right hand side depends on \(z\) too. Fortunately the screening test (which we have not used to this point in the proof) rides to the rescue and ensures that the right hand actually does does not depend on \(z\text{.}\) By the screening test,</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\cdot\vB
+=\frac{\partial B_1}{\partial x}
++\frac{\partial B_2}{\partial y}
++\frac{\partial B_3}{\partial z}=0
+\end{equation*}
+</div>
+<p data-braille="continuation">and we have</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\partial B_1}{\partial x}
++\frac{\partial B_2}{\partial y}
+=-\frac{\partial B_3}{\partial z}
+\end{equation*}
+</div>
+<p data-braille="continuation">so that the right hand side is</p>
+<div class="displaymath">
+\begin{align*}
+B_3(x,y,z)
++ \int_0^z\Big(-\frac{\partial B_3}{\partial z}(x,y,\tilde z) \Big)
+\ \dee{\tilde z}
+&amp;= B_3(x,y,z) +\Big[-B_3(x,y,\tilde z\Big]^{\tilde z=z}_{\tilde z=0}\\
+&amp;=B_3(x,y,0)
+\end{align*}
+</div>
+<p data-braille="continuation">by the fundamental theorem of calculus. So we just have to choose \(M\) and \(N\) to obey</p>
+<div class="displaymath">
+\begin{gather*}
+\frac{\partial N}{\partial x}(x,y) -\frac{\partial M}{\partial y}(x,y) =
+B_3(x,y,0)
+\end{gather*}
+</div>
+<p data-braille="continuation">For example, \(M=0\text{,}\) \(N(x,y) = \int _0^x B_3(\tilde x,y,0)\ \dee{\tilde x}\) work. So not only have we proven that a vector potential exists, but we have found a formula for it.</p></article></div>
+<article class="warning remark-like" id="warn_screeningC"><h6 class="heading">
+<span class="type">Warning</span><span class="space"> </span><span class="codenumber">15.1.17</span><span class="period">.</span>
+</h6>
+<p id="p-17406">Note that in Theorem <a class="xref" data-knowl="./knowl/thm_screenVectorB.html" title="Theorem 15.1.16">15.1.16</a> we are assuming that \(\vB\) passes the screening test on <em class="emphasis">all</em> of \(\bbbr^3\text{.}\) If that is not the case, for example because the vector field is not defined on all of \(\bbbr^3\text{,}\) then \(\vB\) can fail to have a vector potential. An example (the point source) is provided in Example <a class="xref" data-knowl="./knowl/eg_stokesE.html" title="Example 15.4.8">15.4.8</a>.</p></article></section><section class="subsection" id="sec_gradInterp"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">15.1.3</span> <span class="title">Interpretation of the Gradient</span>
+</h3>
+<p id="p-17407">In this section we'll develop an interpretation of the gradient \(\vnabla f(\vr_0)\text{.}\) This should just be a review of material that you have seen before.</p>
+<p id="p-17408">Suppose that you are moving through space and that your position at time \(t\) is \(\vr(t)=\big(x(t),y(t),z(t)\big)\text{.}\) As you move along, you measure, for example, the temperature. If the temperature at position \((x,y,z)\) is \(f(x,y,z)\text{,}\) then the temperature that you measure at time \(t\) is \(f\big(x(t),y(t),z(t)\big)\text{.}\) So the rate of change of temperature that you feel is</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\diff{ }{t}f\big(x(t),y(t),z(t)\big)\\
+&amp;\hskip0.3in
+=\frac{\partial f}{\partial x}\big(x(t),y(t),z(t)\big) \diff{x}{t}(t)
++\frac{\partial f}{\partial y}\big(x(t),y(t),z(t)\big) \diff{y}{t}(t)\\
+&amp;\hskip1in  +\frac{\partial f}{\partial z}\big(x(t),y(t),z(t)\big) \diff{z}{t}(t)
+\qquad \text{(by the chain rule)}\\
+&amp;\hskip0.3in=\vnabla f\big(\vr(t)\big)\cdot\vr'(t)\\
+&amp;\hskip0.3in=\big|\vnabla f\big(\vr(t)\big)\big|
+\,\big|\vr'(t)\big|\,\cos\theta
+\end{align*}
+</div>
+<p data-braille="continuation">where \(\theta\) is the angle between the gradient vector \(\vnabla f\big(\vr(t)\big)\) and the velocity vector \(\vr'(t)\text{.}\) This is the rate of change per unit time. We can get the rate of change per unit distance travelled by moving with speed one, so that \(\big|\vr'(t)\big|=1\) and then</p>
+<div class="displaymath">
+\begin{gather*}
+\diff{ }{t}f\big(\vr(t)\big)
+=\big|\vnabla f\big(\vr(t)\big)\big|\,\cos\theta
+\end{gather*}
+</div>
+<p data-braille="continuation">If, at a given moment \(t=t_0\text{,}\) you are at \(\vr(t_0)=\vr_0\text{,}\) then</p>
+<div class="displaymath">
+\begin{gather*}
+\diff{ }{t}f\big(\vr(t)\big)\Big|_{t=t_0}
+=\big|\vnabla f(\vr_0)\big|\,\cos\theta
+\end{gather*}
+</div>
+<p data-braille="continuation">Recall that \(\theta\) is the angle between our  direction of motion and the gradient vector \(\vnabla f(\vr_0)\text{.}\) So to maximize the rate of change of temperature that we feel, as we pass through \(\vr_0\text{,}\) we should choose our direction of motion to be the direction of the the gradient vector \(\vnabla f(\vr_0)\text{.}\) In conclusion</p>
+<article class="fact theorem-like" id="eq_gradInterp"><h6 class="heading">
+<span class="type">Equation</span><span class="space"> </span><span class="codenumber">15.1.18</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-17409">
+\begin{alignat*}{2}
+\vnabla f(\vr_0)
+&amp; \text{ has direction }
+&amp;&amp; \left\{
+\begin{array}{l}
+\text{direction of maximum rate of change}\\
+\text{of $f$ at $\vr_0$}
+\end{array}\right.\\
+&amp;
+\text{ has magnitude }
+&amp;&amp;
+\left\{
+\begin{array}{l}
+\text{magnitude of maximum rate of change} \\
+\text{ (per unit distance) of $f$ at $\vr_0$}
+\end{array}
+\right.
+\end{alignat*}
+</div></article></section><section class="subsection" id="sec_divInterp"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">15.1.4</span> <span class="title">Interpretation of the Divergence</span>
+</h3>
+<p id="p-17410">In this section we'll develop an interpretation of the divergence \(\vnabla\cdot\vv(\vr_0)\) of the vector field \(\vv(\vr)\) at the point \(\vr_0\text{.}\) We shall do so in two steps.</p>
+<ul class="disc">
+<li id="li-7158">First we'll express \(\vnabla\cdot\vv(\vr_0)\) in terms of flux integrals.</li>
+<li id="li-7159">Then we'll use the interpretation of flux integrals given in Lemma <a class="xref" data-knowl="./knowl/lem_fluxInterp.html" title="Lemma 14.4.1">14.4.1</a> to get an interpretation of \(\vnabla\cdot\vv(\vr_0)\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Think of \(\vv(x,y,z)\) as the velocity of a fluid at \((x,y,z)\) and fix any point \(\vr_0=(x_0,y_0,z_0)\text{.}\) Let, for any \(\veps \gt 0\text{,}\) \(S_\veps\) be the sphere</p>
+<ul class="disc">
+<li id="li-7160">centered at \(\vr_0\)</li>
+<li id="li-7161">of radius \(\veps\text{.}\)</li>
+<li id="li-7162">Denote by \(\hn(x,y,z)\) the outward normal to \(S_\veps\) at \((x,y,z)\text{.}\)</li>
+</ul>
+<p data-braille="continuation">We shall prove, in Lemma <a class="xref" data-knowl="./knowl/lem_divInterp.html" title="Lemma 15.1.20">15.1.20</a>, below, that we can write \(\vnabla\cdot\vv(\vr_0)\) as the limit</p>
+<div class="displaymath">
+\begin{gather*}
+\vnabla\cdot\vv(x_0,y_0,z_0)
+=\lim_{\veps\rightarrow 0}
+\frac{1}{\frac{4}{3}\pi\veps^3}
+\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}
+\end{gather*}
+</div>
+<p data-braille="continuation">Once we have that lemma we can use that</p>
+<ul class="disc">
+<li id="li-7163">\(\frac{4}{3}\pi\veps^3\) is the volume of the interior of the sphere \(S_\veps\) and</li>
+<li id="li-7164"><p id="p-17411">by Lemma <a class="xref" data-knowl="./knowl/lem_fluxInterp.html" title="Lemma 14.4.1">14.4.1</a>, \(\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}\) is the rate<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-648" id="fn-648"><sup> 12 </sup></a> at which fluid is exiting \(S_\veps\)</p></li>
+</ul>
+<p data-braille="continuation">to conclude that</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-648"><div class="fn">Lemma <a class="xref" data-knowl="./knowl/lem_fluxInterp.html" title="Lemma 14.4.1">14.4.1</a> is being applied with the density \(\rho\) set equal to one, so, more precisely, the rate is the number of units of volume of fluid exiting \(S_\veps\) per unit time</div></div>
+<article class="fact theorem-like" id="eq_divInterp"><h6 class="heading">
+<span class="type">Equation</span><span class="space"> </span><span class="codenumber">15.1.19</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-17412">
+\begin{align*}
+\vnabla\cdot\vv(\vr_0)
+&amp;
+=\left\{
+\begin{array}{l}
+\text{rate at which fluid is exiting an }\\
+\text{infinitesimal sphere centred }\\
+\text{at $\vr_0$, per unit time, per unit volume}
+\end{array} \right.\\
+&amp;=\text{strength of the source at $\vr_0$}
+\end{align*}
+</div></article><p id="p-17413">Here is the critical computation.</p>
+<article class="lemma theorem-like" id="lem_divInterp"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">15.1.20</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-17414">
+\begin{gather*}
+\vnabla\cdot\vv(x_0,y_0,z_0)
+=\lim_{\veps\rightarrow 0}
+\frac{1}{\frac{4}{3}\pi\veps^3}
+\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}
+\end{gather*}
+</div></article><article class="hiddenproof" id="proof-63"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-63"><h6 class="heading"><span class="title">Proof. (Optional).</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-63"><article class="hiddenproof"><p id="p-17415">Here is one proof<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-649" id="fn-649"><sup> 13 </sup></a> of Lemma <a class="xref" data-knowl="./knowl/lem_divInterp.html" title="Lemma 15.1.20">15.1.20</a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-649"><div class="fn">There is another, easier to understand, proof of this result given in §<a href="sec_StokesThm.html#sec_interpBis" class="internal" title="Subsection 15.4.1: The Interpretation of Div and Curl Revisited">15.4.1</a>. We cannot give that proof here because it uses the divergence theorem, which we will get to later in the chapter.</div></div>
+<p id="p-17416">By translating our coordinate system, it suffices to consider \(\vr_0=(x_0,y_0,z_0) = (0,0,0)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{gather*}
+S_\veps = \Set{(x,y,z)}{|(x,y,z)|=\veps}\qquad
+\hn(x,y,z) = \frac{1}{\veps}(x,y,z)
+\end{gather*}
+</div>
+<p data-braille="continuation">We expand \(\vv(x,y,z)\) in a Taylor expansion in powers of \(x\text{,}\) \(y\text{,}\) and \(z\text{,}\) to first order, with second order error term.</p>
+<div class="displaymath">
+\begin{gather*}
+\vv(x,y,z) = \vA + \vB\,x +\vC\,y +\vD\, z +\vR(x,y,z)
+\end{gather*}
+</div>
+<p data-braille="continuation">where</p>
+<div class="displaymath">
+\begin{gather*}
+\vA=\vv(0,0,0) \qquad
+\vB=\frac{\partial \vv}{\partial x}(0,0,0) \qquad
+\vC=\frac{\partial \vv}{\partial y}(0,0,0) \qquad
+\vD=\frac{\partial \vv}{\partial z}(0,0,0)
+\end{gather*}
+</div>
+<p data-braille="continuation">and the error term \(\vR(x,y,z)\) is bounded by a constant times<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-650" id="fn-650"><sup> 14 </sup></a> \(x^2+y^2+z^2\text{.}\) In particular there is a constant \(K\) so that, on \(S_\veps\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+|\vR(x,y,z)|\le K\veps^2
+\end{equation*}
+</div>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}\\
+&amp;\hskip1in= \frac{1}{\veps} \dblInt_{S_\veps}\big(
+\vA + \vB\,x +\vC\,y +\vD\, z +\vR(x,y,z)
+\big)\cdot (x,y,z)\,\dee{S}
+\end{align*}
+</div>
+<p data-braille="continuation">Multiply out the dot product so that the integrand becomes</p>
+<div class="displaymath">
+\begin{alignat*}{3}
+&amp;\phantom{+}\ \vA\cdot\hi\,x
+&amp;&amp;+\ \vA\cdot\hj\,y
+&amp;&amp;+\vA\cdot\hk\,z\\
+&amp;+\vB\cdot\hi\,x^2
+&amp;&amp;+\ \vB\cdot\hj\,xy
+&amp;&amp;+\vB\cdot\hk\,xz\\
+&amp;+\vC\cdot\hi\,xy
+&amp;&amp;+\ \vC\cdot\hj\,y^2
+&amp;&amp;+\vC\cdot\hk\,yz\\
+&amp;+\vD\cdot\hi\,xz\
+&amp;&amp;+\ \vD\cdot\hj\,yz
+&amp;&amp;+\vD\cdot\hk\,z^2\\
+&amp;+\vR(x,y,z)\cdot (x,y,z)
+\end{alignat*}
+</div>
+<p data-braille="continuation">That's a lot of terms. But most of them integrate to zero, simply because the integral of an odd function over an even domain is zero. Because \(S_\veps\) is invariant under \(x\rightarrow -x\) and under \(y\rightarrow -y\) and under \(z\rightarrow -z\) we have</p>
+<div class="displaymath">
+\begin{gather*}
+\dblInt_{S_\veps}\!\! x\,\dee{S}
+=\dblInt_{S_\veps}\!\! y\,\dee{S}
+=\dblInt_{S_\veps}\!\! z\,\dee{S}
+=\dblInt_{S_\veps}\!\! xy\,\dee{S}
+=\dblInt_{S_\veps}\!\! xz\,\dee{S}
+=\dblInt_{S_\veps}\!\! yz\,\dee{S}
+=0
+\end{gather*}
+</div>
+<p data-braille="continuation">which is a relief. We are now left with</p>
+<div class="displaymath">
+\begin{align*}
+\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}
+&amp;= \frac{1}{\veps} \dblInt_{S_\veps}\big(
+\vB\cdot\hi\,x^2 +\vC\cdot\hj\,y^2 +\vD\cdot\hk\, z^2
+\big)\,\dee{S}\\
+&amp;\hskip1in
++\frac{1}{\veps} \dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S}
+\end{align*}
+</div>
+<p data-braille="continuation">As well \(S_\veps\) is invariant<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-651" id="fn-651"><sup> 15 </sup></a> under the interchange of \(x\) and \(y\) and also under the interchange of \(x\) and \(z\text{.}\) Consequently</p>
+<div class="displaymath">
+\begin{align*}
+\dblInt_{S_\veps} x^2\,\dee{S}
+&amp;=\dblInt_{S_\veps} y^2\,\dee{S}
+=\dblInt_{S_\veps} z^2\,\dee{S}
+=\frac{1}{3}\dblInt_{S_\veps}\big[x^2+y^2+ z^2\big]\,\dee{S}\\
+&amp;=\frac{1}{3}\dblInt_{S_\veps}\veps^2\,\dee{S}
+\qquad\text{since $x^2+y^2+z^2=\veps^2$ on } S_\veps\\
+&amp;=\frac{4}{3}\pi\veps^4
+\end{align*}
+</div>
+<p data-braille="continuation">since the surface area of the sphere \(S_\veps\) is \(4\pi\veps^2\text{.}\) So far, we have</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}
+= \frac{4}{3}\pi\veps^3 \big(\vB\cdot\hi +\vC\cdot\hj +\vD\cdot\hk\big)\\
+&amp;\hskip2in+\frac{1}{\veps} \dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S}\\
+&amp;\hskip0.75in= \frac{4}{3}\pi\veps^3 \vnabla\cdot\vv(\vZero)
++\frac{1}{\veps} \dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S}\\
+&amp;\hskip2in\text{(review the definitions of } \vB, \vC, \vD)
+\end{align*}
+</div>
+<p data-braille="continuation">which implies</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\lim_{\veps\rightarrow 0}
+\frac{1}{\frac{4}{3}\pi\veps^3}
+\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}\\
+&amp;\hskip1in= \vnabla\cdot\vv(\vZero)
++\lim_{\veps\rightarrow 0}
+\frac{3}{4\pi\veps^4}
+\dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S}
+\end{align*}
+</div>
+<p data-braille="continuation">Finally, it suffices to recall that \(|\vR(x,y,z)|\le K\veps^2\) and, on \(S_\veps\text{,}\) \(|(x,y,z)|=\veps\text{,}\) so that</p>
+<div class="displaymath">
+\begin{align*}
+\frac{3}{4\pi\veps^4}\bigg|
+\dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S} \bigg|
+&amp;\le \frac{3}{4\pi\veps^4}
+\dblInt_{S_\veps}|\vR(x,y,z)|\,|(x,y,z)|\,\dee{S}\\
+&amp;\le \frac{3}{4\pi\veps^4}
+\dblInt_{S_\veps}K\veps^3\,\dee{S}
+= \frac{3}{4\pi\veps^4} \ K\veps^3\,\big(4\pi \veps^2)\\
+&amp;= 3K\veps
+\end{align*}
+</div>
+<p data-braille="continuation">converges to zero as \(\veps\rightarrow 0\text{.}\) So we are left with the desired result.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-650"><div class="fn">Terms like \(xy\text{,}\) \(xz\) and \(yz\) are not needed because, for example, \(|xy|\le \frac{1}{2}(x^2+y^2)\text{.}\) This inequality is equivalent to \(\big(|x|-|y|\big)^2\ge 0\text{.}\)</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-651"><div class="fn">Spheres have lots of symmetry!</div></div></article></div>
+<article class="example example-like" id="eg_divInterpA"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_divInterpA"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.1.21</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_divInterpA"><article class="example example-like"><p id="p-17417">Here is a sketch of the vector field \(\vv(x,y,z) = x\,\hi+y\,\hj+z\,\hk\) and a sphere centered on the origin, like \(S_\veps\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:36%;margin-right:36%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/sourceDiv.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17418">This velocity field has fluid being created and pushed out through the sphere. We have</p>
+<div class="displaymath">
+\begin{gather*}
+\vnabla\cdot\vv(\vZero) = 3
+\end{gather*}
+</div>
+<p data-braille="continuation">consistent with our interpretation <a class="xref" data-knowl="./knowl/eq_divInterp.html" title="Equation 15.1.19">15.1.19</a>.</p></article></div>
+<article class="example example-like" id="eg_divInterpB"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_divInterpB"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.1.22</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_divInterpB"><article class="example example-like"><p id="p-17419">Here is a sketch of the vector field \(\vv(x,y,z) = -y\,\hi+x\,\hj\) and a sphere centered on the origin, like \(S_\veps\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:36%;margin-right:36%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/vortexDiv.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17420">This velocity field just has fluid going around in circles. No fluid actually crosses the sphere. The divergence</p>
+<div class="displaymath">
+\begin{gather*}
+\vnabla\cdot\vv(\vZero) = 0
+\end{gather*}
+</div>
+<p data-braille="continuation">consistent with our interpretation <a class="xref" data-knowl="./knowl/eq_divInterp.html" title="Equation 15.1.19">15.1.19</a>.</p></article></div>
+<article class="example example-like" id="eg_divInterpC"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_divInterpC"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.1.23</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_divInterpC"><article class="example example-like"><p id="p-17421">Here is a sketch of the vector field \(\vv(x,y,z) = \hi\) and a sphere centered on the origin, like \(S_\veps\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/transDiv.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17422">This velocity field just has fluid moving uniformly to the right. Fluid enters the sphere from the left and leaves through the right at precisely the same rate, so that the net rate at fluid crosses the sphere is zero. The divergence</p>
+<div class="displaymath">
+\begin{gather*}
+\vnabla\cdot\vv(\vZero) = 0
+\end{gather*}
+</div>
+<p data-braille="continuation">again consistent with our interpretation <a class="xref" data-knowl="./knowl/eq_divInterp.html" title="Equation 15.1.19">15.1.19</a>.</p></article></div></section><section class="subsection" id="sec_curlInterp"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">15.1.5</span> <span class="title">Interpretation of the Curl</span>
+</h3>
+<p id="p-17423">We'll now develop the interpretation of the curl, or more precisely, of \(\vnabla\times\vv(\vr_0)\cdot\hn\) for any unit vector \(\hn\text{.}\) As we did in developing the interpretation of divergence, we'll</p>
+<ul class="disc">
+<li id="li-7165">first express \(\vnabla\times\vv(\vr_0)\cdot\hn\) as a limit of integrals, and</li>
+<li id="li-7166">then we'll interpret the integrals.</li>
+</ul>
+<p data-braille="continuation">To specify the integrals involved, let \(C_\veps\) be the circle which</p>
+<ul class="disc">
+<li id="li-7167">is centered at \(\vr_0\)</li>
+<li id="li-7168">has radius \(\veps\)</li>
+<li id="li-7169">lies in the plane through \(\vr_0\) perpendicular to \(\hn\)</li>
+<li id="li-7170">is oriented in the standard way with respect to \(\hn\text{.}\) Imagine standing on the circle with your feet on the plane through \(\vr_0\) perpendicular to \(\hn\text{,}\) with the vector from your feet to your head in the same direction as  \(\hn\) and with your left arm point towards \(\vr_0\text{.}\) Then your are facing in the positive direction for \(C_\veps\text{.}\)</li>
+</ul>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:40%;margin-right:40%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/prepaddle.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17424">We shall show in Lemma <a class="xref" data-knowl="./knowl/lem_curlInterp.html" title="Lemma 15.1.25">15.1.25</a>, below, that</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\times v(\vr_0)\cdot \hn
+=\lim_{\veps\rightarrow 0}\frac{1}{\pi\veps^2}
+\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
+\end{equation*}
+</div>
+<p data-braille="continuation">Now let's work on interpreting the right hand side, and in particular on interpreting the integral \(\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}\text{,}\) which is called the circulation of \(\vv\) around \(C_\veps\text{.}\) Place a tiny paddlewheel in the fluid with its axle running along \(\hn\) and its paddles along \(C_\veps\text{,}\) as in the figure below, except that</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/paddle.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17425">the paddlewheel is really expensive and has a lot more than just four paddles. Pretend<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-652" id="fn-652"><sup> 16 </sup></a> that you are one of the paddles.</p>
+<ul class="disc">
+<li id="li-7171">If the paddlewheel is rotating at \(\Om\) radians per unit time, then in one unit of time you sweep out an arc of a circle of radius \(\veps\) that subtends an angle \(\Om\text{.}\) That arc has length \(\Om\veps\text{.}\) So you are moving at speed \(\Om \veps\text{.}\)</li>
+<li id="li-7172">If you are at \(\vr\text{,}\) the component of the fluid velocity in your direction of motion, i.e. tangential to \(C_\veps\text{,}\) is \(\vv(\vr)\cdot\diff{\vr}{s}\text{,}\) because \(\hvt=\diff{\vr}{s}\text{,}\) with \(s\) denoting arc length along the circle, is a unit vector tangential to \(C_\veps\text{.}\)</li>
+<li id="li-7173">All paddles have to move at the same speed. So the speed of the paddles, \(\Om\veps\text{,}\) should be the average value of \(\vv(\vr)\cdot\diff{\vr}{s}\) around the circle.</li>
+</ul>
+<p data-braille="continuation">Thus the rate of rotation, \(\Om\text{,}\) of the  paddlewheel should be determined by</p>
+<div class="displaymath">
+\begin{align*}
+\Om \veps
+&amp;= \frac{\oint_{C_\veps} \vv(\vr)\cdot\diff{\vr}{s}\dee{s}}
+{\oint_{C_\veps}\dee{s}}
+= \frac{\oint_{C_\veps} \vv(\vr)\cdot\dee{\vr}}
+{2\pi\veps}
+\end{align*}
+</div>
+<p data-braille="continuation">Consequently, \(\vnabla\times v(\vr_0)\cdot \hn\) is the limit as \(\veps\) (the radius of the paddlewheel) tends to zero of</p>
+<div class="displaymath">
+\begin{gather*}
+\frac{1}{\pi\veps^2}
+\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
+=2\Om
+\end{gather*}
+</div>
+<p data-braille="continuation">That's our interpretation.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-652"><div class="fn">Method acting might help you here.</div></div>
+<article class="fact theorem-like" id="eq_curlInterp"><h6 class="heading">
+<span class="type">Equation</span><span class="space"> </span><span class="codenumber">15.1.24</span><span class="period">.</span>
+</h6>
+<p id="p-17426">If a fluid has velocity field \(\vv\) and you place an infinitesimal paddlewheel at \(\vr_0\) with its axle in direction \(\vn\text{,}\) then it rotates at \(\frac{1}{2}\vnabla\times \vv(\vr_0)\cdot \hn\) radians per unit time. In particular, to maximize the rate of rotation, orient the paddlewheel so that \(\hn\parallel\vnabla\times \vv(\vr_0)\text{.}\)</p></article><p id="p-17427">There will be some examples at the end of this section. First, we show</p>
+<article class="lemma theorem-like" id="lem_curlInterp"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">15.1.25</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-17428">
+\begin{equation*}
+\vnabla\times \vv(\vr_0)\cdot \hn
+=\lim_{\veps\rightarrow 0}\frac{1}{\pi\veps^2}
+\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-64"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-64"><h6 class="heading"><span class="title">Proof. (Optional).</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-64"><article class="hiddenproof"><p id="p-17429">Here is one proof<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-653" id="fn-653"><sup> 17 </sup></a> of Lemma <a class="xref" data-knowl="./knowl/lem_curlInterp.html" title="Lemma 15.1.25">15.1.25</a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-653"><div class="fn">There is another, easier to understand, proof of this result given in §<a href="sec_StokesThm.html#sec_interpBis" class="internal" title="Subsection 15.4.1: The Interpretation of Div and Curl Revisited">15.4.1</a>. We cannot give that proof here because it uses Stokes' theorem, which we will get to later in the chapter.</div></div>
+<p id="p-17430">Just as we did in the proof of Lemma <a class="xref" data-knowl="./knowl/lem_divInterp.html" title="Lemma 15.1.20">15.1.20</a>, we can always translate our coordinate system so that \(\vr_0=(x_0,y_0,z_0) = (0,0,0)\text{.}\) We can also rotate our coordinate system so that \(\hn=\hk\text{.}\) Because \(\vr_0=(0,0,0)\) and \(\hn=\hk\text{,}\) so that \(C_\veps\) lies in the \(xy\)-plane, we can parametrize \(C_\veps\) by</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) =\veps\cos t\,\hi +\veps\sin t\,\hj
+\end{equation*}
+</div>
+<p data-braille="continuation">Again as we did in the proof of Lemma <a class="xref" data-knowl="./knowl/lem_divInterp.html" title="Lemma 15.1.20">15.1.20</a>, expand \(\vv(x,y,z)\) in a Taylor expansion in powers of \(x\text{,}\) \(y\text{,}\) and \(z\text{,}\) to first order, with second order error term.</p>
+<div class="displaymath">
+\begin{gather*}
+\vv(x,y,z) = \vA + \vB\,x +\vC\,y +\vD\, z +\vR(x,y,z)
+\end{gather*}
+</div>
+<p data-braille="continuation">where</p>
+<div class="displaymath">
+\begin{gather*}
+\vA=\vv(0,0,0) \qquad
+\vB=\frac{\partial \vv}{\partial x}(0,0,0) \qquad
+\vC=\frac{\partial \vv}{\partial y}(0,0,0) \qquad
+\vD=\frac{\partial \vv}{\partial z}(0,0,0)
+\end{gather*}
+</div>
+<p data-braille="continuation">and the error term \(\vR(x,y,z)\) is bounded by a constant times \(x^2+y^2+z^2\text{.}\) In particular there is a constant \(K\) so that, on \(C_\veps\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+|\vR(x,y,z)|\le K\veps^2
+\end{equation*}
+</div>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}\\
+&amp;\hskip0.25in=\int_0^{2\pi} \big(\vA + \vB\,\veps\,\cos t +\vC\,\veps\,\sin t
++\vR(\vr(t))\big)
+\cdot \big(-\veps\sin t\,\hi +\veps\cos t\,\hj\big)\ \dee{t}
+\end{align*}
+</div>
+<p data-braille="continuation">Again, multiply out the dot product so that the integrand becomes</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+&amp; -\veps\vA\cdot\hi\,\sin t
+&amp;&amp;+\ \veps\vA\cdot\hj\,\cos t\\
+&amp;-\veps^2\vB\cdot\hi\,\sin t\cos t
+&amp;&amp;+\veps^2\vB\cdot\hj\,\cos^2t\\
+&amp;-\veps^2\vC\cdot\hi\,\sin^2 t
+&amp;&amp;+\ \veps^2\vC\cdot\hj\,\sin t\cos t\\
+&amp;+\vR(\vr(t))\cdot \big(-\veps\sin t\,\hi +\veps\cos t\,\hj\big)
+\end{alignat*}
+</div>
+<p data-braille="continuation">Again most of these terms integrate to zero, because</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+\int_0^{2\pi}\sin t\ \dee{t}
+&amp;=\hskip10pt\int_0^{2\pi}\cos t\ \dee{t}
+&amp;&amp;=0\\
+\int_0^{2\pi}\sin t\cos t\ \dee{t}
+&amp;= \frac{1}{2}\int_0^{2\pi}\sin(2t)\ \dee{t}
+&amp;&amp;=0
+\end{alignat*}
+</div>
+<p data-braille="continuation">and the \(\sin^2t\) and \(\cos^2 t\) terms are easily integrated using (see Example <a class="xref" data-knowl="./knowl/eg_workIntegralB.html" title="Example 13.4.4">13.4.4</a>)</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^{2\pi}\sin^2 t\ \dee{t}=\int_0^{2\pi}\cos^2 t\ \dee{t}
+=\frac{1}{2}\int_0^{2\pi}\big[\sin^2t+\cos^2 t\big]\ \dee{t}=\pi
+\end{equation*}
+</div>
+<p data-braille="continuation">So we are left with</p>
+<div class="displaymath">
+\begin{align*}
+\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
+&amp;= \pi\veps^2\vB\cdot\hj - \pi\veps^2\vC\cdot\hi
++\int_0^{2\pi} \vR(\vr(t))
+\cdot \big(-\veps\sin t\,\hi +\veps\cos t\,\hj\big)\ \dee{t}
+\end{align*}
+</div>
+<p data-braille="continuation">which implies that</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{\veps\rightarrow 0}\frac{1}{\pi\veps^2}
+\oint_{C_\veps} \vv(\vr)\cdot \dee{\vr}
+&amp;= \frac{\partial \vv_2}{\partial x}(0,0,0)
+- \frac{\partial \vv_1}{\partial y}(0,0,0)\\
+&amp;\hskip0.5in
++\lim_{\veps\rightarrow 0}\!
+\frac{1}{\pi\veps^2}
+\int_0^{2\pi}\!\!\!\! \vR(\vr(t))
+\cdot \big(-\veps\sin t\,\hi +\veps\cos t\,\hj\big)\,\dee{t}\\
+&amp;= \big(\vnabla\times\vv(0,0,0)\big)\cdot\hk\\
+&amp;\hskip0.5in   +\lim_{\veps\rightarrow 0}
+\frac{1}{\pi\veps^2}
+\int_0^{2\pi} \vR(\vr(t))
+\cdot \big(-\veps\sin t\,\hi +\veps\cos t\,\hj\big)\ \dee{t}
+\end{align*}
+</div>
+<p data-braille="continuation">Finally, it suffices to recall that \(|\vR(x,y,z)|\le K\veps^2\text{,}\) so that</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{\pi\veps^2}\bigg|
+\int_0^{2\pi} \vR(\vr(t))
+\cdot \big(-\veps\sin t\,\hi +\veps\cos t\,\hj\big)\ \dee{t} \bigg|
+&amp;\le \frac{1}{\pi\veps}
+\int_0^{2\pi}|\vR(\vr(t))|\,\dee{t}\\
+&amp;\le \frac{1}{\pi\veps}
+\int_0^{2\pi}K\veps^2\,\dee{t}\\
+&amp;= \frac{1}{\pi\veps} \ K\veps^2\,(2\pi)\\
+&amp;= 2K\veps
+\end{align*}
+</div>
+<p data-braille="continuation">converges to zero as \(\veps\rightarrow 0\text{.}\)</p></article></div>
+<p id="p-17431">Here are some examples. We will use the same vector fields as in Examples <a class="xref" data-knowl="./knowl/eg_divInterpA.html" title="Example 15.1.21">15.1.21</a>, <a class="xref" data-knowl="./knowl/eg_divInterpB.html" title="Example 15.1.22">15.1.22</a> and <a class="xref" data-knowl="./knowl/eg_divInterpC.html" title="Example 15.1.23">15.1.23</a>. In all examples, we shall orient the paddlewheel so that \(\hn=\hk\) and sketch the top view, so that the paddlewheel looks like</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:40%;margin-right:40%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/paddlewheelTop.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<article class="example example-like" id="eg_curlInterpA"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_curlInterpA"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.1.26</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_curlInterpA"><article class="example example-like"><p id="p-17432">Here is a sketch of the vector field \(\vv(x,y,z) = x\,\hi+y\,\hj+z\,\hk\) and a circle centered on the origin, like \(C_\veps\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37%;margin-right:37%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/sourceCurl.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17433">This velocity field has fluid moving parallel to the paddles, so the paddlewheel should not rotate at all. The computation</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times\vv(\vZero) =
+\det\left[\begin{matrix}
+\hi &amp; \hj &amp;\hk \\
+\frac{\partial }{\partial x} &amp;
+\frac{\partial }{\partial y} &amp;
+\frac{\partial }{\partial z} \\
+x &amp; y &amp; z
+\end{matrix}
+\right]
+=\vZero
+\implies \vnabla\times\vv(\vZero)\cdot\hk = 0
+\end{align*}
+</div>
+<p data-braille="continuation">is consistent with our interpretation <a class="xref" data-knowl="./knowl/eq_curlInterp.html" title="Equation 15.1.24">15.1.24</a>.</p></article></div>
+<article class="example example-like" id="eg_curlInterpB"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_curlInterpB"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.1.27</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_curlInterpB"><article class="example example-like"><p id="p-17434">Here is a sketch of the vector field \(\vv(x,y,z) = -y\,\hi+x\,\hj\) and a circle centered on the origin, like \(C_\veps\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:39.5%;margin-right:39.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/vortexCurl.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17435">This velocity field has fluid going around in circles, counterclockwise. So the paddlewheel should rotate counterclockwise too. That is, it should have positive angular velocity. Our interpretation <a class="xref" data-knowl="./knowl/eq_curlInterp.html" title="Equation 15.1.24">15.1.24</a> predicts an angular velocity of half</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times\vv(\vZero)\cdot\hk =
+\det\left[\begin{matrix}
+\hi &amp; \hj &amp;\hk \\
+\frac{\partial }{\partial x} &amp;
+\frac{\partial }{\partial y} &amp;
+\frac{\partial }{\partial z} \\
+-y &amp; x &amp; 0
+\end{matrix}
+\right] \cdot\hk
+=2\hk\cdot\hk
+=2
+\end{align*}
+</div>
+<p data-braille="continuation">which is indeed positive<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-654" id="fn-654"><sup> 18 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-654"><div class="fn">Even for small values of \(2\text{.}\)</div></div></article></div>
+<article class="example example-like" id="eg_curlInterpc"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_curlInterpc"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">15.1.28</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_curlInterpc"><article class="example example-like"><p id="p-17436">Here is a sketch of the vector field \(\vv(x,y,z) = \hi\) and a circle centered on the origin, like \(C_\veps\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:34%;margin-right:34%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/transCurl.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17437">The fluid pushing on the top paddle tries to make the paddlewheel rotate clockwise. The fluid pushing on the bottom paddle tries to make the paddlewheel rotate counterclockwise, at the same rate. So the paddlewheel should not rotate at all. Our interpretation <a class="xref" data-knowl="./knowl/eq_curlInterp.html" title="Equation 15.1.24">15.1.24</a> predicts an angular velocity of</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{2}\cdot\vnabla\times\vv(\vZero)\cdot\hk
+=\frac{1}{2}
+\det\left[\begin{matrix}
+\hi &amp; \hj &amp;\hk \\
+\frac{\partial }{\partial x} &amp;
+\frac{\partial }{\partial y} &amp;
+\frac{\partial }{\partial z}  \\
+1 &amp; 0 &amp; 0
+\end{matrix}
+\right] \cdot\hk
+=\vZero\cdot\hk
+=0
+\end{align*}
+</div>
+<p data-braille="continuation">as expected.</p></article></div></section><section class="exercises" id="exercises-106"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">15.1.6</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-297">
+<div class="introduction" id="introduction-441"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-2170"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2012J.</span>
+</h6>
+<p id="p-17438">Let \(\vF = P\,\hi + Q\,\hj\) be the two dimensional vector field shown below.</p>
+<ol id="p-17439" class="lower-alpha">
+<li id="li-7174">
+<p id="p-17440">Assuming that the vector field in the picture is a force field, the work done by the vector field on a particle moving from point \(A\) to \(B\) along the given path is:</p>
+<ol class="upper-alpha">
+<li id="li-7175">Positive</li>
+<li id="li-7176">Negative</li>
+<li id="li-7177">Zero</li>
+<li id="li-7178">Not enough information to determine.</li>
+</ol>
+</li>
+<li id="li-7179">
+<p id="p-17441">Which statement is the most true about the line integral \(\int_{C_2} \vF\cdot\dee{\vr}\text{:}\)</p>
+<ol class="upper-alpha">
+<li id="li-7180">\(\displaystyle \int_{C_2} \vF\cdot\dee{\vr} \gt 0\)</li>
+<li id="li-7181">\(\displaystyle \int_{C_2} \vF\cdot\dee{\vr}=0\)</li>
+<li id="li-7182">\(\displaystyle \int_{C_2} \vF\cdot\dee{\vr} \lt 0\)</li>
+<li id="li-7183">Not enough information to determine.</li>
+</ol>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:7.5%;margin-right:7.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE12J_2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17442">\(\vnabla\cdot\vF\) at the point \(N\) (in the picture) is:</p>
+<ol class="upper-alpha">
+<li id="li-7184">Positive</li>
+<li id="li-7185">Negative</li>
+<li id="li-7186">Zero</li>
+<li id="li-7187">Not enough information to determine.</li>
+</ol>
+</li>
+<li id="li-7188">
+<p id="p-17443">\(Q_x - P_y\) at the point \(Q\) is:</p>
+<ol class="upper-alpha">
+<li id="li-7189">Positive</li>
+<li id="li-7190">Negative</li>
+<li id="li-7191">Zero</li>
+<li id="li-7192">Not enough information to determine.</li>
+</ol>
+</li>
+<li id="li-7193">
+<p id="p-17444">Assuming that \(\vF = P\,\hi + Q\,\hj\text{,}\) which of the following statements is correct about \(\frac{\partial P}{\partial x}\) at the point \(D\text{?}\)</p>
+<ol class="upper-alpha">
+<li id="li-7194">\(\frac{\partial P}{\partial x}=0\)  at \(D\text{.}\)</li>
+<li id="li-7195">\(\frac{\partial P}{\partial x} \gt 0\)  at \(D\text{.}\)</li>
+<li id="li-7196">\(\frac{\partial P}{\partial x} \lt 0\)  at \(D\text{.}\)</li>
+<li id="li-7197">The sign of \(\frac{\partial P}{\partial x}\) at \(D\) can not be determined by the given information.</li>
+</ol>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2170" id="answer-2170"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2170"><div class="answer solution-like">
+<p id="p-17445">(a) A</p>
+<p id="p-17446">(b) B</p>
+<p id="p-17447">(c) C</p>
+<p id="p-17448">(d) A</p>
+<p id="p-17449">(e) B</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2259" id="solution-2259"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2259"><div class="solution solution-like">
+<p id="p-17450">(a) A. The angle between \(\vF\) and \(\dee{\vr}\) is less than \(90^\circ\) along the entire path. So \(\vF\cdot\dee{\vr} \gt 0\) along the entire path and the work is positive.</p>
+<p id="p-17451">(b) B. \(\vF\) is perpendicular to \(\dee{\vr}\) along all of \(C_2\text{.}\) So \(\int_{C_2} \vF\cdot\dee{\vr}=0\text{.}\)</p>
+<p id="p-17452">(c) C. It looks like \(P_x=Q_y=0\) at \(N\text{.}\) So \(\vnabla\cdot\vF=0\) at \(N\text{.}\)</p>
+<p id="p-17453">(d) A. At \(Q\text{,}\) the vertical component of \(\vF\) is increasing from left to right (so that \(Q_x \gt 0\)) and the horizontal component of \(\vF\)  is decreasing from bottom to top (so that \(P_y \lt 0\)). So \(Q_x - P_y \gt 0\) at \(N\text{.}\)</p>
+<p id="p-17454">(e) B. At \(D\text{,}\)  the horizontal component of \(\vF\)  is increasing from left to right, so that \(P_x \gt 0\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2171"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-17455">Does \(\vnabla\times \vF\) have to be perpendicular to \(\vF\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1713" id="hint-1713"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1713"><div class="hint solution-like"><p id="p-17456">Compute \(\vnabla\times \vF\) for some simple vector fields.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2171" id="answer-2171"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2171"><div class="answer solution-like"><p id="p-17457">No.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2260" id="solution-2260"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2260"><div class="solution solution-like">
+<p id="p-17458">No.  The vector field \(\vF(x,y,z) = \hi +y\,\hk\) has</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times \vF
+&amp;=\det\left[\begin{matrix} \hi &amp; \hj &amp; \hk\\
+\pdiff{}{x} &amp; \pdiff{}{y} &amp; \pdiff{}{z}\\
+1 &amp; 0 &amp; y
+\end{matrix}\right]\\
+&amp;=\hi
+\end{align*}
+</div>
+<p data-braille="continuation">has dot product \(1\) with \(\vF(x,y,z)\) (for all \(x\text{,}\) \(y\text{,}\) \(z\)) and so is not perpendicular to it.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2172"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-17459">Verify the vector identities</p>
+<ol class="lower-alpha">
+<li id="li-7198">\(\displaystyle \vnabla\cdot(f\vF)=f\vnabla\cdot\vF+\vF\cdot\vnabla f\)</li>
+<li id="li-7199">\(\displaystyle \vnabla\cdot(\vF\times\vG)
+=\vG\cdot(\vnabla\times\vF)-
+\vF\cdot(\vnabla\times\vG)\)</li>
+<li id="li-7200">\(\displaystyle \vnabla^2(fg)=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1714" id="hint-1714"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1714"><div class="hint solution-like"><p id="p-17460">For parts(a) and (b), write out the definitions of the left and right hand sides and observe that they are equal. Part (c) can be done easily by using other, simpler, vector identities.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2172" id="answer-2172"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2172"><div class="answer solution-like"><p id="p-17461">See solution.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2261" id="solution-2261"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2261"><div class="solution solution-like">
+<p id="p-17462">(a) By the product rule</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot(f\vF)
+&amp;=\pdiff{}{x}(fF_1)
++\pdiff{}{y}(fF_2)
++\pdiff{}{z}(fF_3)\\
+&amp;=\phantom{+}f\pdiff{F_1}{x}
++f\pdiff{F_2}{y}
++f\pdiff{F_3}{z}\\
+&amp;\phantom{=}+F_1\pdiff{f}{x}
++F_2\pdiff{f}{y}
++F_3\pdiff{f}{z}\\
+&amp;=f\,\vnabla\cdot\vF+\vF\cdot\vnabla f
+\end{align*}
+</div>
+<p id="p-17463">(b) Again by the product rule</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\vnabla\cdot(\vF\times\vG)\\
+&amp;\hskip0.25in=\pdiff{}{x}(F_2G_3-F_3G_2)
++\pdiff{}{y}(F_3G_1-F_1G_3)
++\pdiff{}{z}(F_1G_2-F_2G_1)\\
+&amp;\hskip0.25in=\phantom{+}\pdiff{F_2}{x}G_3
+-\pdiff{F_3}{x}G_2
++\pdiff{F_3}{y}G_1
+- \pdiff{F_1}{y}G_3
++\pdiff{F_1}{z}G_2
+- \pdiff{F_2}{z}G_1\\
+&amp;\hskip0.25in\phantom{=}+F_2\pdiff{G_3}{x}
+-F_3\pdiff{G_2}{x}
++F_3\pdiff{G_1}{y}
+-F_1\pdiff{G_3}{y}
++F_1\pdiff{G_2}{z}
+- F_2\pdiff{G_1}{z}\\
+&amp;\hskip0.25in=\phantom{+}
+\left(\pdiff{F_3}{y}-\pdiff{F_2}{z}\right)G_1
++\left(\pdiff{F_1}{z}-\pdiff{F_3}{x}\right)G_2
++\left(\pdiff{F_2}{x}-\pdiff{F_1}{y}\right)G_3\\
+&amp;\hskip0.25in\phantom{=}
+-F_1\left(\pdiff{G_3}{y}-\pdiff{G_2}{z}\right)
+-F_2\left(\pdiff{G_1}{z}-\pdiff{G_3}{x}\right)
+-F_3\left(\pdiff{G_2}{x}-\pdiff{G_1}{y}\right)\\
+&amp;=\vG\cdot(\vnabla\times\vF)-
+\vF\cdot(\vnabla\times\vG)
+\end{align*}
+</div>
+<p id="p-17464">(c) Recall that \(\vnabla^2(fg) = \vnabla\cdot\big[\vnabla(fg)\big]\text{.}\) First</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla(fg)
+&amp;=\hi\pdiff{}{x}(fg)
++\hj\pdiff{}{y}(fg)
++\hk\pdiff{}{z}(fg)\\
+&amp;=\phantom{+}\hi g\pdiff{f}{x}
++\hj g\pdiff{f}{y}
++\hk g\pdiff{f}{z}\\
+&amp;\phantom{=}+\hi f\frac{\partial g}{\partial x}
++\hj f\frac{\partial g}{\partial y}
++\hk f\frac{\partial g}{\partial z}\\
+&amp;=g\vnabla f+f\vnabla g
+\end{align*}
+</div>
+<p data-braille="continuation">So by part (a), twice,</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla^2(fg)
+&amp; = \vnabla\cdot\big(g\vnabla f\big)
++\vnabla\cdot\big(f\vnabla g\big)\\
+&amp;= g\big(\vnabla\cdot \vnabla f\big)
++ \big(\vnabla g\big)\cdot\big(\vnabla f\big)
++f\big(\vnabla\cdot\vnabla g\big)
++ \big(\vnabla f\big)\cdot\big(\vnabla g\big)\\
+&amp;=f\,\vnabla^2 g+2\vnabla f\cdot\vnabla g+g\,\vnabla^2 f
+\end{align*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-298">
+<div class="introduction" id="introduction-442"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-2173"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-17465">Evaluate \(\vnabla\cdot\vF\) and \(\vnabla\times\vF\) for each of the following vector fields.</p>
+<ol class="lower-alpha">
+<li id="li-7201">\(\displaystyle \vF=x\,\hi+y\,\hj+z\,\hk\)</li>
+<li id="li-7202">\(\displaystyle \vF=xy^2\hi-yz^2\hj+zx^2\hk\)</li>
+<li id="li-7203">\(\vF=\frac{x\hi+y\hj}{\sqrt{x^2+y^2}}\) (the polar basis vector \(\hat{\bf r}\) in 2d)</li>
+<li id="li-7204">\(\vF=\frac{-y\hi+x\hj}{\sqrt{x^2+y^2}}\) (the polar basis vector \(\hat{\pmb{\theta}}\) in 2d)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2173" id="answer-2173"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2173"><div class="answer solution-like">
+<p id="p-17466">(a) \(\vnabla\cdot\vF=3\text{,}\) \(\vnabla\times\vF=\vZero\)</p>
+<p id="p-17467">(b) \(\vnabla\cdot\vF=y^2-z^2+x^2\text{,}\) \(\vnabla\times\vF=2yz\,\hi-2xz\,\hj-2xy\,\hk\)</p>
+<p id="p-17468">(c) \(\vnabla\cdot\vF=\frac{1}{\sqrt{x^2+y^2}}\text{,}\) \(\vnabla\times\vF=\vZero\)</p>
+<p id="p-17469">(d) \(\vnabla\cdot\vF=0\text{,}\) \(\vnabla\times\vF=\frac{\hk}{\sqrt{x^2+y^2}}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2262" id="solution-2262"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2262"><div class="solution solution-like">
+<p id="p-17470">(a) By definition</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot(x\,\hi+y\,\hj+z\,\hk)
+&amp;=\pdiff{}{x}\big(x\big)
++\pdiff{}{y}\big(y\big)
++\pdiff{}{z}\big(z\big)
+=  3\\
+\vnabla\times(x\,\hi+y\,\hj+z\,\hk)
+&amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+\pdiff{}{x} &amp;
+\pdiff{}{y} &amp;
+\pdiff{}{z} \\
+x &amp; y &amp; z\end{matrix}\right]
+= \vZero
+\end{align*}
+</div>
+<p id="p-17471">(b) By definition</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot(xy^2\hi-yz^2\hj+zx^2\hk)
+&amp;=\pdiff{}{x}\big(xy^2\big)
++\pdiff{}{y}\big(-yz^2\big)
++\pdiff{}{z}\big(zx^2\big)\\
+&amp;=y^2-z^2+x^2\\
+\vnabla\times(xy^2\hi-yz^2\hj+zx^2\hk)
+&amp;=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+\pdiff{}{x} &amp;
+\pdiff{}{y} &amp;
+\pdiff{}{z} \\
+xy^2 &amp; -yz^2 &amp; zx^2\end{matrix}\right]\\
+&amp;= 2yz\,\hi-2xz\,\hj-2xy\,\hk
+\end{align*}
+</div>
+<p id="p-17472">(c) By definition</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\vnabla\cdot\left(\frac{x}{\sqrt{x^2+y^2}}\hi+\frac{y}{\sqrt{x^2+y^2}}\hj\right)\\
+&amp;\hskip0.5in=\pdiff{}{x}\left(\frac{x}{\sqrt{x^2+y^2}}\right)
++\pdiff{}{y}\left(\frac{y}{\sqrt{x^2+y^2}}\right)\\
+&amp;\hskip0.5in= \frac{1}{\sqrt{x^2+y^2}} - \frac{x^2}{{[x^2+y^2]}^{3/2}}
++\frac{1}{\sqrt{x^2+y^2}} - \frac{y^2}{{[x^2+y^2]}^{3/2}}\\
+&amp;\hskip0.5in=\frac{x^2+y^2\ -x^2\ +x^2+y^2\ -\ y^2}{{[x^2+y^2]}^{3/2}}\\
+&amp;\hskip0.5in=\frac{1}{\sqrt{x^2+y^2}}\\
+&amp;\vnabla\times\left(\frac{x}{\sqrt{x^2+y^2}}\hi+\frac{y}{\sqrt{x^2+y^2}}\hj\right)\\
+&amp;\hskip0.5in=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+\pdiff{}{x} &amp;
+\pdiff{}{y} &amp;
+\pdiff{}{z} \\
+\frac{x}{\sqrt{x^2+y^2}} &amp;
+\frac{y}{\sqrt{x^2+y^2}} &amp; 0\end{matrix}\right]\\
+&amp;\hskip0.5in=\left(- \frac{xy}{{[x^2+y^2]}^{3/2}}+ \frac{xy}{{[x^2+y^2]}^{3/2}}\right)\hk\\
+&amp;\hskip0.5in= \vZero
+\end{align*}
+</div>
+<p id="p-17473">(d) By definition</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\vnabla\cdot\left(-\frac{y}{\sqrt{x^2+y^2}}\hi+\frac{x}{\sqrt{x^2+y^2}}\hj\right)\\
+&amp;\hskip0.3in=\pdiff{}{x}\left(-\frac{y}{\sqrt{x^2+y^2}}\right)
++\pdiff{}{y}\left(\frac{x}{\sqrt{x^2+y^2}}\right)\\
+&amp;\hskip0.3in=  \frac{xy}{{[x^2+y^2]}^{3/2}}
+- \frac{xy}{{[x^2+y^2]}^{3/2}}\\
+&amp;\hskip0.3in=0\\
+&amp;\vnabla\times\left(-\frac{y}{\sqrt{x^2+y^2}}\hi
++\frac{x}{\sqrt{x^2+y^2}}\hj\right)\\
+&amp;\hskip0.3in=\det\left[\begin{matrix}\hi &amp; \hj &amp; \hk \\
+\pdiff{}{x} &amp;
+\pdiff{}{y} &amp;
+\pdiff{}{z} \\
+-\frac{y}{\sqrt{x^2+y^2}} &amp;
+\frac{x}{\sqrt{x^2+y^2}} &amp; 0\end{matrix}\right]\\
+&amp;\hskip0.3in=\!\left(\!\frac{1}{\sqrt{x^2+y^2}} - \frac{x^2}{{[x^2+y^2]}^{3/2}}
++\frac{1}{\sqrt{x^2+y^2}} - \frac{y^2}{{[x^2+y^2]}^{3/2}}\!\right)\!\hk\\
+&amp;\hskip0.3in= \frac{x^2+y^2\ -x^2\ +x^2+y^2\ -\ y^2}{{[x^2+y^2]}^{3/2}}\ \hk\\
+&amp;\hskip0.3in= \frac{\hk}{\sqrt{x^2+y^2}}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2174"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2015A.</span>
+</h6>
+<ol id="p-17474" class="lower-alpha">
+<li id="li-7205">Compute and simplify \(\vnabla\cdot\big(\frac{\vr}{r}\big)\) for \(\vr=(x,y,z)\) and \(r=|(x,y,z)|\text{.}\) Express your answer in terms of \(r\text{.}\)</li>
+<li id="li-7206">Compute \(\vnabla\times\big(yz\,\hi + 2xz\,\hj + e^{xy}\,\hk\big)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2174" id="answer-2174"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2174"><div class="answer solution-like">
+<p id="p-17475">(a) \(\frac{2}{r}\)</p>
+<p id="p-17476">(b) \(\big(xe^{xy}-2x\big)\,\hi+y\big(1-e^{xy}\big)\,\hj+z\,\hk\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2263" id="solution-2263"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2263"><div class="solution solution-like">
+<p id="p-17477">(a) We are to compute the divergence of \(\frac{\vr}{r}
+=\frac{x\,\hi+y\,\hj+z\,\hk}{[x^2+y^2+z^2]^{1/2}}\text{.}\) Since</p>
+<div class="displaymath">
+\begin{align*}
+\pdiff{}{x}\frac{x}{{[x^2+y^2+z^2]}^{1/2}}
+&amp;=\frac{1}{{[x^2+y^2+z^2]}^{1/2}}
+-\frac{1}{2}\frac{x(2x)}{{[x^2+y^2+z^2]}^{3/2}}\\
+&amp;=\frac{y^2+z^2}{{[x^2+y^2+z^2]}^{3/2}}\\
+\pdiff{}{y}\frac{y}{{[x^2+y^2+z^2]}^{1/2}}
+&amp;=\frac{1}{{[x^2+y^2+z^2]}^{1/2}}
+-\frac{1}{2}\frac{y(2y)}{{[x^2+y^2+z^2]}^{3/2}}\\
+&amp;=\frac{x^2+z^2}{{[x^2+y^2+z^2]}^{3/2}}\\
+\pdiff{}{z}\frac{z}{{[x^2+y^2+z^2]}^{1/2}}
+&amp;=\frac{1}{{[x^2+y^2+z^2]}^{1/2}}
+-\frac{1}{2}\frac{z(2z)}{{[x^2+y^2+z^2]}^{3/2}}\\
+&amp;=\frac{x^2+y^2}{{[x^2+y^2+z^2]}^{3/2}}
+\end{align*}
+</div>
+<p data-braille="continuation">the specified divergence is</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\left(\frac{\vr}{r}\right) &amp;= \frac{2x^2+2y^2+2z^2}{{[x^2+y^2+z^2]}^{3/2}}
+=\frac{2r^2}{r^3}
+=\frac{2}{r}
+\end{align*}
+</div>
+<p id="p-17478">(b)</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times\big(yz\,\hi + 2xz\,\hj + e^{xy}\,\hk\big)
+&amp;=\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk\\
+\pdiff{}{x}&amp;
+\pdiff{}{y}&amp;
+\pdiff{}{z}\\
+yz&amp;2xz&amp;e^{xy}\end{matrix}\right]\\
+&amp;=\big(xe^{xy}-2x\big)\,\hi-\big(ye^{xy}-y\big)\,\hj+z\,\hk
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="poisson"><h6 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2008A.</span>
+</h6>
+<p id="p-17479">In the following, we use the notation \(\vr = x\,\hi + y\,\hj + z\,\hk\text{,}\) \(r = |\vr|\text{,}\) and \(k\) is some number \(k = 0, 1, -1, 2, -2, \dots\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-7207">Find the value \(k\) for which<div class="displaymath">
+\begin{equation*}
+\vnabla (r^k) = -3\frac{\vr}{r^5}
+\end{equation*}
+</div>
+</li>
+<li id="li-7208">Find the value \(k\) for which<div class="displaymath">
+\begin{equation*}
+\vnabla  \cdot (r^k\vr) = 5r^2
+\end{equation*}
+</div>
+</li>
+<li id="li-7209">Find the value \(k\) for which<div class="displaymath">
+\begin{equation*}
+\vnabla^2 (r^k) = \frac{2}{r^4}
+\end{equation*}
+</div>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1715" id="hint-1715"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1715"><div class="hint solution-like"><p id="p-17480">(c) can be done efficiently by using (a) and (b).</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2175" id="answer-2175"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2175"><div class="answer solution-like">
+<p id="p-17481">(a) \(k=-3\)</p>
+<p id="p-17482">(b) \(k=2\)</p>
+<p id="p-17483">(c) \(k=-2\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2264" id="solution-2264"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2264"><div class="solution solution-like">
+<p id="p-17484">(a) Since \(r^k=\big(x^2+y^2+z^2\big)^{k/2}\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+\pdiff{}{x} r^k
+&amp; = 2x\ \frac{k}{2}\big(x^2+y^2+z^2\big)^{\frac{k}{2}-1}
+= k\ (\vr\cdot\hi)\ r^{k-2}\\
+\pdiff{}{y} r^k
+&amp; = 2y\ \frac{k}{2}\big(x^2+y^2+z^2\big)^{\frac{k}{2}-1}
+= k\ (\vr\cdot\hj)\ r^{k-2}\\
+\pdiff{}{z} r^k
+&amp; = 2z\ \frac{k}{2}\big(x^2+y^2+z^2\big)^{\frac{k}{2}-1}
+= k\ (\vr\cdot\hk)\ r^{k-2}
+\end{align*}
+</div>
+<p data-braille="continuation">We want \(k=-3\text{.}\)</p>
+<p id="p-17485">(b) Using the computation in part (a)</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla  \cdot (r^k\vr)
+&amp;= \pdiff{}{x} (x r^k)
++ \pdiff{}{y} (y r^k)
++ \pdiff{}{z} (z r^k)\\
+&amp;= 3r^k + x \pdiff{}{x} r^k
++ y \pdiff{}{y} r^k
++ z \pdiff{}{z} r^k\\
+&amp;= 3r^k + x \big(kx\ r^{k-2}\big)
++ y \big(ky\ r^{k-2}\big)
++ z \big(kz\ r^{k-2}\big)\\
+&amp;= \big(3+k\big)r^k
+\end{align*}
+</div>
+<p data-braille="continuation">We want \(k=2\text{.}\)</p>
+<p id="p-17486">(c) Recalling that \(\vnabla^2 = \vnabla\cdot\vnabla\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla^2 (r^k )
+&amp;=\vnabla\cdot\big(\vnabla(r^k)\big)\\
+&amp;=\vnabla\cdot(k r^{k-2}\,\vr) &amp;\text{by part (a)}\\
+&amp;=k(3+k-2)r^{k-2} &amp;\text{by part (b),  but with $k$ replaced by $k-2$}
+\end{align*}
+</div>
+<p data-braille="continuation">We want \(k=-2\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2176"><h6 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2017A.</span>
+</h6>
+<p id="p-17487">Let \(\vr\) be the vector field \(\vr = x\,\hi + y\,\hj + z\,\hk\) and let \(r\) be the function \(r = |\vr|\text{.}\) Let \(\va\) be the <em class="emphasis">constant</em> vector \(\va = a_1\,\hi + a_2\,\hj + a_3\,\hk\text{.}\) Compute and simplify the following quantities. Answers must be expressed in terms of \(\va\text{,}\) \(\vr\text{,}\) and \(r\text{.}\) There should be no \(x\)'s, \(y\)'s, or \(z\)'s in your answers.</p>
+<ol class="lower-alpha">
+<li id="li-7210">\(\displaystyle \vnabla\cdot\vr\)</li>
+<li id="li-7211">\(\displaystyle \vnabla(r^2)\)</li>
+<li id="li-7212">\(\displaystyle \vnabla\times(\vr\times\va)\)</li>
+<li id="li-7213">\(\displaystyle \vnabla\cdot\big(\vnabla(r)\big)\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2176" id="answer-2176"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2176"><div class="answer solution-like">
+<p id="p-17488">(a) \(3\)</p>
+<p id="p-17489">(b) \(2\vr\)</p>
+<p id="p-17490">(c) \(-2\va\)</p>
+<p id="p-17491">(d) \(\frac{2}{r}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2265" id="solution-2265"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2265"><div class="solution solution-like">
+<p id="p-17492">(a)</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\cdot\vr
+=\pdiff{x}{x}
++\pdiff{y}{y}
++\pdiff{z}{z}
+=3
+\end{equation*}
+</div>
+<p id="p-17493">(b)</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla(r^2)
+=\left(\hi\pdiff{}{x}
++\hj\pdiff{}{y}
++\hk\pdiff{}{z} \right)
+\big(x^2+y^2+z^2\big)
+=2x\,\hi +2y\,\hj +2\,\hk
+=2\vr
+\end{equation*}
+</div>
+<p id="p-17494">(c) Since</p>
+<div class="displaymath">
+\begin{equation*}
+\vr\times\va = \det\left[\begin{matrix}
+\hi &amp; \hj &amp; \hk \\
+x  &amp;  y  &amp; z   \\
+a_1 &amp; a_2 &amp; a_3
+\end{matrix}\right]
+=\hi\big(a_3y\!-\!a_2z\big)
++\hj\big(a_1z\!-\!a_3x\big)
++\hk\big(a_2x\!-\!a_1y\big)
+\end{equation*}
+</div>
+<p data-braille="continuation">we have</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times(\vr\times\va)
+&amp;= \det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
+\pdiff{}{x}&amp;
+\pdiff{}{y}&amp;
+\pdiff{}{z} \\
+a_3y-a_2z&amp; a_1z-a_3x &amp; a_2x-a_1y\end{matrix}\right]\\
+&amp;=-2a_1\,\hi -2a_2\,\hj -2a_3\,\hk\\
+&amp;=-2\va
+\end{align*}
+</div>
+<p id="p-17495">(d) Since</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla(r) &amp;= \left(\hi\pdiff{}{x}
++\hj\pdiff{}{y}
++\hk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{1/2}\\
+&amp;=\hi\frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
++\hj\frac{y}{\big(x^2+y^2+z^2\big)^{1/2}}
++\hk\frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
+\end{align*}
+</div>
+<p data-braille="continuation">we have</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot\big(\vnabla(r)\big)
+&amp;= \pdiff{}{x} \frac{x}{\big(x^2+y^2+z^2\big)^{1/2}}
++\pdiff{}{y} \frac{y}{\big(x^2+y^2+z^2\big)^{1/2}}\\
+&amp;\hskip1in +\pdiff{}{z} \frac{z}{\big(x^2+y^2+z^2\big)^{1/2}}\\
+&amp;=  \frac{3}{\big(x^2+y^2+z^2\big)^{1/2}}
+-\frac{1}{2}\frac{2x^2+2y^2+2z^2}{\big(x^2+y^2+z^2\big)^{3/2}}\\
+&amp; =\frac{2}{\big(x^2+y^2+z^2\big)^{1/2}}\\
+&amp; =\frac{2}{r}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2177"><h6 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2017D.</span>
+</h6>
+<p id="p-17496">Let</p>
+<div class="displaymath">
+\begin{equation*}
+\vr = x\,\hi + y\,\hj + z\,\hk,\qquad
+r = |\vr|
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-7214">Compute \(a\) where \(\vnabla\big(\frac{1}{r}\big) =- r^a\,\vr\text{.}\)</li>
+<li id="li-7215">Compute \(a\) where \(\vnabla\cdot\big(r\,\vr\big) = ar\text{.}\)</li>
+<li id="li-7216">Compute \(a\) where \(\vnabla\cdot\big(\vnabla(r^3)\big) = ar\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2177" id="answer-2177"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2177"><div class="answer solution-like">
+<p id="p-17497">(a) \(a=-3\)</p>
+<p id="p-17498">(b) \(a=4\)</p>
+<p id="p-17499">(c) \(a=12\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2266" id="solution-2266"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2266"><div class="solution solution-like">
+<p id="p-17500">(a) Since</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\vnabla\left(\frac{1}{r}\right)
+= \left(\hi\pdiff{}{x}
++\hj\pdiff{}{y}
++\hk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{-1/2}\\
+&amp;\hskip0.25in=-\hi\frac{x}{\big(x^2+y^2+z^2\big)^{3/2}}
+-\hj\frac{y}{\big(x^2+y^2+z^2\big)^{3/2}}
+-\hk\frac{z}{\big(x^2+y^2+z^2\big)^{3/2}}\\
+&amp;\hskip0.25in=-\hi\frac{x}{r^3}
+-\hj\frac{y}{r^3}
+-\hk\frac{x}{r^3}
+\end{align*}
+</div>
+<p data-braille="continuation">we have \(a=-3\text{.}\)</p>
+<p id="p-17501">(b) Since</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot\big(r\,\vr\big)
+&amp;= \pdiff{}{x} \Big[\big(x^2+y^2+z^2\big)^{1/2}x\Big]
++\pdiff{}{y}\Big[\big(x^2+y^2+z^2\big)^{1/2}y\Big]\\
+&amp;\hskip1in +\pdiff{}{z} \Big[\big(x^2+y^2+z^2\big)^{1/2}z\Big]\\
+&amp;=  3\big(x^2+y^2+z^2\big)^{1/2}
++\frac{1}{2}\frac{2x^2+2y^2+2z^2}{\big(x^2+y^2+z^2\big)^{1/2}}\\
+&amp; =4\big(x^2+y^2+z^2\big)^{1/2}\\
+&amp; =4r
+\end{align*}
+</div>
+<p data-braille="continuation">we have \(a=4\text{.}\)</p>
+<p id="p-17502">(c) Since</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\vnabla(r^3) = \left(\hi\pdiff{}{x}
++\hj\pdiff{}{y}
++\hk\pdiff{}{z} \right) \big(x^2+y^2+z^2\big)^{3/2}\\
+&amp;\hskip0.1in=\hi\,3x\big(x^2+y^2+z^2\big)^{1/2}
++\hj\,3y\big(x^2+y^2+z^2\big)^{1/2}
++\hk\,3z\big(x^2+y^2+z^2\big)^{1/2}\\
+&amp;\hskip0.1in=3r\vr
+\end{align*}
+</div>
+<p data-braille="continuation">we have</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot\big(\vnabla(r^3)\big)
+&amp;= \vnabla\cdot\big(3r\vr\big)
+= 3\,\vnabla\cdot\big(r\vr\big)
+= 3\,\big(4r\big) \qquad\text{by part (b)}\\
+&amp;=  12 r
+\end{align*}
+</div>
+<p data-braille="continuation">so that \(a=12\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2178"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-17503">Find, if possible, a vector field \(\vA\) that has \(\hk\) component \(A_3=0\) and that is a vector potential for</p>
+<ol class="lower-alpha">
+<li id="li-7217">\(\displaystyle \vF=(1+yz)\hi+(2y+zx)\hj+(3z^2+xy)\hk\)</li>
+<li id="li-7218">\(\displaystyle \vG= yz\hi+zx\hj+xy\hk\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2178" id="answer-2178"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2178"><div class="answer solution-like">
+<p id="p-17504">(a) \(\vF\) cannot have a vector potential.</p>
+<p id="p-17505">(b) Two solutions are \(\vA=\frac{1}{2}(z^2-y^2)x\hi-\frac{1}{2} yz^2\hj\) and \(\vA=\frac{1}{2} xz^2\hi+\frac{1}{2}(x^2-z^2)y\hj\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2267" id="solution-2267"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2267"><div class="solution solution-like">
+<p id="p-17506">(a) Since \(\vnabla\cdot\vF
+=\pdiff{}{x}(1+yz)+\pdiff{}{y}(2y+zx)+\pdiff{}{z}(3z^2+xy)=2+6z\ne 0\text{,}\) \(\vF\) fails the screening test and cannot have a vector potential.</p>
+<p id="p-17507">(b) The vector field \(\vA=A_1\hi+A_2\hj\) is a vector potential for \(\vG\) if and only if \(\vG=\vnabla\times\vA\text{,}\) which is the case if and only if</p>
+<div class="displaymath">
+\begin{alignat*}{3}
+-\pdiff{A_2}{z}&amp;= yz\quad &amp;
+\iff&amp;\quad&amp;
+&amp;A_2=-\frac{1}{2} yz^2+B_2(x,y)\\
+\pdiff{A_1}{z}&amp;=zx &amp;
+\iff&amp;\quad &amp;
+&amp;A_1=\phantom{-}\frac{1}{2} xz^2+B_1(x,y)\\
+\pdiff{A_2}{x}-\pdiff{A_1}{y} &amp;=xy &amp;
+\iff&amp; &amp;  &amp;
+\pdiff{B_2}{x} -\pdiff{B_1}{y}=xy
+\end{alignat*}
+</div>
+<p data-braille="continuation">There are infinitely many solutions to \(\pdiff{B_2}{x}
+-\pdiff{B_1}{y}=xy\text{.}\) In fact \(B_2\) is completely arbitrary. If one chooses \(B_2=0\text{,}\) then \(B_1=-\frac{1}{2} xy^2\) does the job. If one chooses \(B_1=0\text{,}\) then \(B_2=\frac{1}{2} x^2y\) does the job. Thus two solutions are \(\vA=\frac{1}{2}(z^2-y^2)x\hi-\frac{1}{2} yz^2\hj\) and \(\vA=\frac{1}{2} xz^2\hi+\frac{1}{2}(x^2-z^2)y\hj\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-299">
+<div class="introduction" id="introduction-443"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-2179"><h6 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2006D.</span>
+</h6>
+<p id="p-17508">Let</p>
+<div class="displaymath">
+\begin{gather*}
+\vF = \frac{-z}{x^2+z^2}\,\hi +y\,\hj +\frac{x}{x^2+z^2}\,\hk
+\end{gather*}
+</div>
+<ol id="p-17509" class="lower-alpha">
+<li id="li-7219">Determine the domain of \(\vF\text{.}\)</li>
+<li id="li-7220">Determine the curl of \(\vF\text{.}\) Simplify if possible.</li>
+<li id="li-7221">Determine the divergence of \(\vF\text{.}\) Simplify if possible.</li>
+<li id="li-7222">Is \(\vF\) conservative? Give a reason for your answer.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2179" id="answer-2179"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2179"><div class="answer solution-like">
+<p id="p-17510">(a) \(D=\Set{(x,y,z)}{x^2+z^2\ne 0}\)</p>
+<p id="p-17511">(b) \(\vnabla\times\vF=\vZero\) on \(D\)</p>
+<p id="p-17512">(c) \(\vnabla\cdot\vF=1\) on \(D\)</p>
+<p id="p-17513">(d) \(\vF\) is not conservative on the domain \(D\) of part (a).</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2268" id="solution-2268"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2268"><div class="solution solution-like">
+<p id="p-17514">(a) \(\vF\) is well-defined wherever the denominator \(x^2+z^2\) is nonzero. So the (largest possible) domain is</p>
+<div class="displaymath">
+\begin{gather*}
+D=\Set{(x,y,z)}{x^2+z^2\ne 0}
+\end{gather*}
+</div>
+<p id="p-17515">(b) As preliminary computations, let's find</p>
+<div class="displaymath">
+\begin{align*}
+\pdiff{}{z}\left(\frac{-z}{x^2+z^2}\right)
+&amp;=\frac{-1}{x^2+z^2}-\frac{2z(-z)}{{(x^2+z^2)}^2}
+=\frac{-x^2+z^2}{{(x^2+z^2)}^2}\\
+\pdiff{}{x}\left(\frac{x}{x^2+z^2}\right)
+&amp;=\frac{1}{x^2+z^2}-\frac{2x(x)}{{(x^2+z^2)}^2}
+=\frac{-x^2+z^2}{{(x^2+y^2)}^2}
+\end{align*}
+</div>
+<p data-braille="continuation">So the curl of \(\vF\) is</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk \\
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+\tfrac{\partial }{\partial z} \\
+\frac{-z}{x^2+z^2} &amp; y &amp; \frac{x}{x^2+z^2}
+\end{matrix}
+\right]
+=-\left(\frac{-x^2+z^2}{{(x^2+y^2)}^2}
+-\frac{-x^2+z^2}{{(x^2+y^2)}^2}\right)\hj\\
+&amp;=\vZero
+\end{align*}
+</div>
+<p data-braille="continuation"><em class="emphasis">on the domain of \(\vF\)</em>.</p>
+<p id="p-17516">(c) As preliminary computations, let's find</p>
+<div class="displaymath">
+\begin{align*}
+\pdiff{}{x}\left(\frac{-z}{x^2+z^2}\right)
+&amp;=-\frac{2x(-z)}{{(x^2+z^2)}^2}
+=\frac{2xz}{{(x^2+z^2)}^2}\\
+\pdiff{}{z}\left(\frac{x}{x^2+z^2}\right)
+&amp;=-\frac{2z(x)}{{(x^2+z^2)}^2}
+=\frac{-2xz}{{(x^2+y^2)}^2}
+\end{align*}
+</div>
+<p data-braille="continuation">So the divergence of \(\vF\) is</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot\vF
+&amp;=\pdiff{}{x}\left(\frac{-z}{x^2+z^2}\right)
++\pdiff{}{y}\left(y\right)
++ \pdiff{}{z}\left(\frac{x}{x^2+z^2}\right)
+=1
+\end{align*}
+</div>
+<p id="p-17517">(d) By part (b), the vector field passes the conservative field screening test \(\vnabla\times\vF=\vZero\text{.}\) But we should still be suspicious because of the similarity of \(\vF\) to the vector field of Examples <a class="xref" data-knowl="./knowl/eg_screeningCounterexample.html" title="Example 13.3.14: Optional: First look at \(-\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj\)">13.3.14</a> and <a class="xref" data-knowl="./knowl/eg_greenCC.html" title="Example 15.3.8: Example 15.3.7, again.">15.3.8</a>.</p>
+<p id="p-17518">So let's compute the line integral of \(\vF\) around the (closed) circle \(y=0\text{,}\) \(x^2+z^2=1\text{,}\) parametrized by</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) = \cos t\,\hi +\sin t\,\hk\qquad
+\vr'(t) = -\sin t\,\hi +\cos t\,\hk
+\end{equation*}
+</div>
+<p data-braille="continuation">The line integral is</p>
+<div class="displaymath">
+\begin{align*}
+\int_C \vF \cdot \dee{\vr}
+&amp;=\int_0^{2\pi}\!\!\big\{
+\overbrace{-\sin t}^{\frac{-z}{x^2+z^2}}\,\hi
++\overbrace{\cos t}^{\frac{x}{x^2+y^2}}\,\hk\big\}
+\cdot
+\big\{\overbrace{-\sin t\,\hi +\cos t\,\hk}^{\vr'(t)}\big\}\dee{t}\\
+&amp;= \int_0^{2\pi}\dee{t}
+=2\pi
+\end{align*}
+</div>
+<p data-braille="continuation">As the integral of \(\vF\) around the simple closed curve \(C\) is not zero, \(\vF\) cannot be conservative on \(D\text{.}\) See Theorem <a class="xref" data-knowl="./knowl/thm_pathIndepConserv.html" title="Theorem 13.4.7">13.4.7</a> and Examples <a class="xref" data-knowl="./knowl/eg_screeningCounterexample.html" title="Example 13.3.14: Optional: First look at \(-\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj\)">13.3.14</a> and <a class="xref" data-knowl="./knowl/eg_greenCC.html" title="Example 15.3.8: Example 15.3.7, again.">15.3.8</a>.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2180"><h6 class="heading">
+<span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2004A.</span>
+</h6>
+<p id="p-17519">A physicist studies a vector field \(\vF\) in her lab. She knows from theoretical considerations that \(\vF\) must be of the form \(\vF=\nabla\times\vG\text{,}\) for some smooth vector field \(\vG\text{.}\) Experiments also show that \(\vF\) must be of the form</p>
+<div class="displaymath">
+\begin{equation*}
+\vF(x,y,z)=(xz+xy)\hi+\alpha(yz-xy)\hj+\beta(yz+xz)\hk
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(\alpha\) and \(\beta\) are constant.</p>
+<ol class="lower-alpha">
+<li id="li-7223">Determine \(\alpha\) and \(\beta\text{.}\)</li>
+<li id="li-7224">Further experiments show that \(\vG=xyz\hi-xyz\hj+g(x,y,z)\hk\text{.}\) Find the unknown function \(g(x,y,z)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2180" id="answer-2180"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2180"><div class="answer solution-like">
+<p id="p-17520">(a) \(\alpha=\beta=-1\)</p>
+<p id="p-17521">(b)  Any function of the form \(g(x,y,z)=xyz+w(z)\) will work.</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2269" id="solution-2269"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2269"><div class="solution solution-like">
+<p id="p-17522">(a) By the vector identity of Theorem <a class="xref" data-knowl="./knowl/thm_degTwoIdentities.html" title="Theorem 15.1.7: Degree Two Identities">15.1.7</a>.a,</p>
+<div class="displaymath">
+\begin{equation*}
+\nabla\cdot \vF=\nabla\cdot \nabla\times\vG=0
+\end{equation*}
+</div>
+<p data-braille="continuation">So we must have</p>
+<div class="displaymath">
+\begin{align*}
+0&amp;=\nabla\cdot\vF=\nabla\cdot \big((xz+xy)\hi+\alpha(yz-xy)\hj+\beta(yz+xz)\hk\big)\\
+&amp;=(z+y)+\alpha(z-x)+\beta(y+x)
+\end{align*}
+</div>
+<p data-braille="continuation">This is true for all \((x,y,z)\) if and only if \(\alpha=\beta=-1\text{.}\)</p>
+<p id="p-17523">(b) Since</p>
+<div class="displaymath">
+\begin{align*}
+\nabla\times\vG&amp;=\nabla\times\big(xyz\hi-xyz\hj+g(x,y,z)\hk\big)\\
+&amp;=(g_y+xy)\,\hi-(g_x-xy)\,hj+(-yz-xz)\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">we will have that \(\nabla\times\vG=\vF\) if and only if</p>
+<div class="displaymath">
+\begin{align*}
+&amp;(g_y+xy)\,\hi-(g_x-xy)\,\hj+(-yz-xz)\,\hk\\
+&amp;\hskip1in=(xz+xy)\,\hi-(yz-xy)\,\hj-(yz+xz)\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">which is the case if and only if</p>
+<div class="displaymath">
+\begin{equation*}
+g_y=xz,\quad g_x=yz
+\end{equation*}
+</div>
+<p data-braille="continuation">The first equation, \(g_y=xz\text{,}\) is satisfied if and only if \(g=xyz+h(x,z)\text{.}\) The second equation is also satisfied if and only if \(g_x=yz+h_x(x,z)=yz\text{.}\) This is the case if and only if \(h_x(x,z)=0\text{.}\) That is, if and only if \(h\) is independent of \(x\text{.}\) Equivalently, if and only if \(h(x,z)=w(z)\) for some function \(w(z)\text{.}\) So, in fact, any function of the form \(g(x,y,z)=xyz+w(z)\) will work.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2181"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-17524">A rigid body rotates at an angular velocity of \(\Om\) rad/sec about an axis that passes through the origin and has direction \(\Ha\text{.}\) When you are standing at the head of \(\Ha\) looking towards the origin, the rotation is counterclockwise. Set \(\vOm=\Om\Ha\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-7225">Show that the velocity of the point \(\vr=(x,y,z)\) on the body is \(\vOm\times\vr\text{.}\)</li>
+<li id="li-7226">Evaluate \(\vnabla\times(\vOm\times\vr)\) and \(\vnabla\cdot(\vOm\times\vr)\text{,}\) treating \(\vOm\) as a constant.</li>
+<li id="li-7227">Find the speed of the students in a classroom located at latitude \(49^\circ\) N due to the rotation of the Earth. Ignore the motion of the Earth about the Sun, the Sun in the Galaxy and so on. The radius of the Earth is 6378 km.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1716" id="hint-1716"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1716"><div class="hint solution-like"><p id="p-17525">(a) Find the magnitude and direction of the velocity vector. Then verify that \(\vOm\times\vr\) has that magnitude and direction.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2181" id="answer-2181"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2181"><div class="answer solution-like">
+<p id="p-17526">(a) See the solution</p>
+<p id="p-17527">(b) \(\vnabla\times(\vOm\times\vr)=2\vOm\qquad \vnabla\cdot(\vOm\times\vr)=0\)</p>
+<p id="p-17528">(c) \(1095\)km/hr</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2270" id="solution-2270"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2270"><div class="solution solution-like">
+<p id="p-17529">(a) Denote by \(\theta\) the angle between \(\Ha\) and \(\vr\text{.}\) The point \(\vr\) is a distance \(\ell=|\vr|\,\sin\theta\) from the axis of rotation. So as the body rotates, the point sweeps out a circle of radius \(\ell\) centred on the axis of rotation.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/rigid.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-17530">In one second the point sweeps out an arc of this circle that subtends an angle of \(\Om\) radians. This arc is the fraction \(\frac{\Om}{2\pi}\) of a full circle and so has length \(\frac{\Om}{2\pi}2\pi \ell=\Om\ell=\Om|\vr|\,\sin\theta\text{.}\) Thus the point is moving with speed \(\Om|\vr|\,\sin\theta\text{.}\) The velocity vector of the point must have length \(\Om|\vr|\,\sin\theta\) and direction perpendicular to both \(\Ha\) and \(\vr\text{.}\) The vector \(\vOm\times\vr\) is perpendicular to both  \(\vr\) and \(\vOm=\Om\Ha\) and has length \(\
+|\vOm|\,|\vr|\,\sin\theta
+=\Om|\vr|\,\sin\theta
+\ \) as desired. So the velocity vector is either \(\vOm\times\vr\) or its negative. By the right hand rule it is \(\vOm\times\vr\text{.}\)</p>
+<p id="p-17531">(b) By vector identities</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot(\vF\times\vG)
+&amp;=\vG\cdot(\vnabla\times\vF)-\vF\cdot(\vnabla\times\vG)\\
+\vnabla\times(\vF\times\vG)
+&amp;=\vF(\vnabla\cdot\vG)-(\vnabla\cdot\vF)\vG
++(\vG\cdot\vnabla)\vF-(\vF\cdot\vnabla)\vG
+\end{align*}
+</div>
+<p data-braille="continuation">(which are Theorems <a class="xref" data-knowl="./knowl/thm_divIdentities.html" title="Theorem 15.1.4: Divergence Identities">15.1.4</a>(d) and <a class="xref" data-knowl="./knowl/thm_curlIdentities.html" title="Theorem 15.1.5: Curl Identities">15.1.5</a>(d)) and the assumption that \(\vOm\) is constant</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\times(\vOm\times\vr)
+&amp;=\vOm(\vnabla\cdot\vr)-(\vnabla\cdot\vOm)\vr
++(\vr\cdot\vnabla)\vOm-(\vOm\cdot\vnabla)\vr\\
+&amp;=\vOm(\vnabla\cdot\vr)-(\vOm\cdot\vnabla)\vr\\
+\vnabla\cdot(\vOm\times\vr)&amp;=
+\vr\cdot(\vnabla\times\vOm)-
+\vOm\cdot(\vnabla\times\vr)
+=-\vOm\cdot(\vnabla\times\vr)
+\end{align*}
+</div>
+<p data-braille="continuation">Substituting in</p>
+<div class="displaymath">
+\begin{align*}
+\vnabla\cdot\vr&amp;=\pdiff{x}{x}+
+\pdiff{y}{y}+\pdiff{z}{z}=3\\
+\vnabla\times\vr
+&amp;=\big(\pdiff{z}{y}-\pdiff{y}{z}\big)\hi+
+\big(\pdiff{x}{z}-\pdiff{z}{x}\big)\hj
++\big(\pdiff{y}{x}-\pdiff{x}{y}\big)\hk
+=\vZero\\
+(\vOm\cdot\vnabla)\vr&amp;=
+\big(\Om_1\pdiff{}{x}
++\Om_2\pdiff{}{y}
++\Om_3\pdiff{}{z}\big)
+\big(x\hi+y\hj+z\hk\big)\\
+&amp;=\Om_1\hi+\Om_2\hj+\Om_3\hk=\vOm
+\end{align*}
+</div>
+<p data-braille="continuation">gives</p>
+<div class="displaymath">
+\begin{equation*}
+\vnabla\times(\vOm\times\vr)=2\,\vOm\qquad \vnabla\cdot(\vOm\times\vr)=0
+\end{equation*}
+</div>
+<p id="p-17532">(c) The students are a distance \(6378\sin(90^\circ- 49^\circ)=
+6378\cos(49^\circ)=4184\) km from the axis of rotation. The rate of rotation is \(\Om =\frac{2\pi}{24}\) radians per hour. In each hour the students sweep out an arc of \(\frac{2\pi}{24}\) radians from a circle of radius \(4184\) km. Their speed is \(\frac{2\pi}{24}\times 4184=1095\)km/hr.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2182"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-17533">Suppose that the vector field \(\vF\) obeys \(\vnabla\cdot \vF=0\) in all of \(\bbbr^3\text{.}\) Let</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t)=tx\,\hi+ty\,\hj+tz\,\hk,\qquad 0\le t\le 1
+\end{equation*}
+</div>
+<p data-braille="continuation">be a parametrization of the line segment from the origin to \((x,y,z)\text{.}\) Define</p>
+<div class="displaymath">
+\begin{equation*}
+\vG(x,y,z)=\int_0^1 t\,\vF\big(\vr(t)\big)\times\frac{d\vr}{dt}(t)\,dt
+\end{equation*}
+</div>
+<p data-braille="continuation">Show that \(\vnabla\times \vG=\vF\) throughout \(\bbbr^3\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2182" id="answer-2182"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2182"><div class="answer solution-like"><p id="p-17534">See the solution.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2271" id="solution-2271"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2271"><div class="solution solution-like">
+<p id="p-17535">We shall show that \(\pdiff{G_3}{y}-\pdiff{G_2}{z}=F_1\text{.}\) The other components are similar. First we have</p>
+<div class="displaymath">
+\begin{align*}
+t\,\vF\big(\vr(t)\big)\times\diff{\vr}{t}(t)
+&amp;=t\,\vF\big(tx,ty,tz\big)\times\big(x\,\hi+y\,\hj+z\,\hk\big)\\
+&amp;=t\det\left[\begin{matrix}\hi  &amp; \hj &amp; \hk\\
+F_1 &amp; F_2 &amp; F_3\\
+x &amp; y &amp; z\end{matrix}\right]
+\end{align*}
+</div>
+<p data-braille="continuation">Reading off the \(\hk\) and \(\hj\) components of the determinant gives</p>
+<div class="displaymath">
+\begin{align*}
+G_3(x,y,z)&amp;=\int_0^1 t\big[F_1\big(tx,ty,tz\big)\,y-F_2\big(tx,ty,tz\big)\,x\big]\,dt\\
+G_2(x,y,z)&amp;=\int_0^1 t\big[F_3\big(tx,ty,tz\big)\,x-F_1\big(tx,ty,tz\big)\,z\big]\,dt
+\end{align*}
+</div>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{align*}
+\pdiff{G_3}{y}
+&amp;=\int_0^1 t\Big[F_1\big(tx,ty,tz\big)+
+\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)\,ty
+-\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)\,tx\Big]\,dt\\
+\pdiff{G_2}{z}&amp;=\int_0^1 t\Big[
+\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\,tx
+-\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\,tz
+-F_1\big(tx,ty,tz\big)\Big]\,dt
+\end{align*}
+</div>
+<p data-braille="continuation">so that</p>
+<div class="displaymath">
+\begin{align*}
+\pdiff{G_3}{y}-\pdiff{G_2}{z}
+&amp;=\int_0^1 \Big[2t\,F_1\big(tx,ty,tz\big)\\
+&amp;\hskip1in+t^2y\,\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)
++t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\\
+&amp;\hskip1in
+-t^2x\,\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)
+-t^2x\,\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\Big]\,dt
+\end{align*}
+</div>
+<p data-braille="continuation">Since, by hypothesis, \(\vnabla\cdot\vF=\frac{\partial F_1}{\partial x}
++\frac{\partial F_2}{\partial y}
++\frac{\partial F_3}{\partial z}=0\text{,}\) the last two terms</p>
+<div class="displaymath">
+\begin{gather*}
+-t^2x\Big\{\frac{\partial F_2}{\partial y}\big(tx,ty,tz\big)
++\frac{\partial F_3}{\partial z}\big(tx,ty,tz\big)\Big\}
+=-t^2x\Big\{-\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)\Big\}
+\end{gather*}
+</div>
+<p data-braille="continuation">so that</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\pdiff{G_3}{y}-\pdiff{G_2}{z}\\
+&amp;\hskip0.25in=\int_0^1 \Big[2tF_1\big(tx,ty,tz\big)
++t^2x\frac{\partial F_1}{\partial x}\big(tx,ty,tz\big)
++t^2y\frac{\partial F_1}{\partial y}\big(tx,ty,tz\big)\\
+&amp;\hskip3.5in
++t^2z\frac{\partial F_1}{\partial z}\big(tx,ty,tz\big)\Big]\,dt\\
+&amp;\hskip0.25in=\int_0^1 \frac{d }{dt}\Big[ t^2 F_1(tx,ty,tz)\Big]\,dt
+=\Big[ t^2 F_1(tx,ty,tz)\Big]^{t=1}_{t=0}\\
+&amp;\hskip0.25in= F_1(x,y,z)
+\end{align*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>
