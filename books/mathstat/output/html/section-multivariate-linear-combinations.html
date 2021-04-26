@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-26T14:04:07-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear combinations of random variables</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+/* support for the sfrac command in MathJax (Beveled fraction) */
+/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var MML = MathJax.ElementJax.mml,
+      TEX = MathJax.InputJax.TeX;
+  TEX.Definitions.macros.sfrac = "myBevelFraction";
+  TEX.Parse.Augment({
+    myBevelFraction: function (name) {
+      var num = this.ParseArg(name),
+          den = this.ParseArg(name);
+      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+    }
+  });
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="images/cover.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="mathstat.html"><span class="title">Mathematical Statistics I:</span> <span class="subtitle">Based on course notes developed using Freund's Mathematical Statistics</span></a></h1>
+<p class="byline">Sean M. Laverty</p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-multi-cont.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap-multi.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec-multi-cont.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap-multi.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul>
+<li><a href="front-colophon.html" data-scroll="front-colophon">Colophon</a></li>
+<li><a href="author-bio-SML.html" data-scroll="author-bio-SML">Author Biography</a></li>
+<li><a href="dedication.html" data-scroll="dedication">Dedication</a></li>
+<li><a href="acknowledgement.html" data-scroll="acknowledgement">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface">Preface</a></li>
+<li><a href="contributors.html" data-scroll="contributors">Contributors to the 0\(^\mathrm{th}\) Edition</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-counting.html" data-scroll="chap-counting"><span class="codenumber">1</span> <span class="title">Counting</span></a><ul><li><a href="section-counting.html" data-scroll="section-counting">Counting</a></li></ul>
+</li>
+<li class="link">
+<a href="chap-prob.html" data-scroll="chap-prob"><span class="codenumber">2</span> <span class="title">Probability</span></a><ul><li><a href="section-probability.html" data-scroll="section-probability">Probability</a></li></ul>
+</li>
+<li class="link">
+<a href="chap-discrete.html" data-scroll="chap-discrete"><span class="codenumber">3</span> <span class="title">Discrete Random Variables</span></a><ul>
+<li><a href="section-probability-distributions.html" data-scroll="section-probability-distributions">Probability distributions</a></li>
+<li><a href="section-discrete-expectation.html" data-scroll="section-discrete-expectation">Mathematical expectation of discrete random variables</a></li>
+<li><a href="section-special-distributions.html" data-scroll="section-special-distributions">Special probability distributions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-continuous.html" data-scroll="chap-continuous"><span class="codenumber">4</span> <span class="title">Continuous Random Variables</span></a><ul>
+<li><a href="section-probability-densities.html" data-scroll="section-probability-densities">Probability densities</a></li>
+<li><a href="section-continuous-expectation.html" data-scroll="section-continuous-expectation">Expectation of continuous random variables</a></li>
+<li><a href="section-special-densities.html" data-scroll="section-special-densities">Special probability densities</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-multi.html" data-scroll="chap-multi"><span class="codenumber">5</span> <span class="title">Multivariate Probability Distributions and Densities</span></a><ul>
+<li><a href="section-multivariate-discrete-probability.html" data-scroll="section-multivariate-discrete-probability">Multivariate discrete random variables</a></li>
+<li><a href="sec-multi-cont.html" data-scroll="sec-multi-cont">Multivariate continuous random variables</a></li>
+<li><a href="section-multivariate-linear-combinations.html" data-scroll="section-multivariate-linear-combinations" class="active">Linear combinations of random variables</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="appendix-def.html" data-scroll="appendix-def"><span class="codenumber">A</span> <span class="title">Definitions</span></a></li>
+<li class="link"><a href="appendix-thm.html" data-scroll="appendix-thm"><span class="codenumber">B</span> <span class="title">Theorems</span></a></li>
+<li class="link"><a href="appendix-ex.html" data-scroll="appendix-ex"><span class="codenumber">C</span> <span class="title">Examples</span></a></li>
+<li class="link"><a href="appendix-gfdl.html" data-scroll="appendix-gfdl"><span class="codenumber">D</span> <span class="title">GNU Free Documentation License</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1"><span class="title">Index</span></a></li>
+<li class="link"><a href="back-colophon.html" data-scroll="back-colophon"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-multivariate-linear-combinations"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.3</span> <span class="title">Linear combinations of random variables</span>
+</h2>
+<section class="introduction" id="introduction-29"><p id="p-378">Some words.</p></section><section class="subsection" id="sub-moments-linear-combinations"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">5.3.1</span> <span class="title">Moments of linear combinations of random variables</span>
+</h3>
+<section class="introduction" id="introduction-30"><p id="p-379">See section 4.7. Recommended problems: 4.7-8 (pg 158) 48, 49, 57</p></section><article class="theorem theorem-like" id="thm-4-14"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">variance.</span>
+</h6>
+<p id="p-380">If \(\displaystyle X_1, X_2, \dots, X_n\) are random variables and \(\displaystyle Y = \sum_{i=1}^n a_iX_i\) where \(\displaystyle
+a_1, a_2, \dots, a_n\) are constants, then</p>
+<div class="displaymath">
+\begin{equation*}
+E[Y] = \sum_{i=1}^n
+a_iE[X_i]
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\operatorname{var}[Y] = \sum_{i=1}^n a_i^2
+\operatorname{var}[X_i] + 2 \mathop{\sum \sum}_{i \lt j} a_i
+a_j\operatorname{cov}[X_i,X_j]\text{.}
+\end{equation*}
+</div></article><article class="corollary theorem-like" id="cor-4-3"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">variance of independent random variables.</span>
+</h6>
+<p id="p-381">If \(\displaystyle X_1, X_2, \dots, X_n\) are independent random variables and \(\displaystyle Y = \sum_{i=1}^n a_iX_i\) where \(\displaystyle a_1, a_2, \dots, a_n\) are constants, then</p>
+<div class="displaymath">
+\begin{equation*}
+\operatorname{var}[Y] = \sum_{i=1}^n
+a_i^2\operatorname{var}[X_i]
+\end{equation*}
+</div></article><article class="example example-like" id="ex-var-covar"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-var-covar"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">covariances of linear combinations.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-var-covar"><article class="example example-like"><p id="p-382">Consider three random variables \(X\text{,}\) \(Y\text{,}\) and \(Z\) with \(\mu_X = 2\text{,}\) with \(\mu_Y = -3\text{,}\) with \(\mu_Z = 4\text{;}\) with \(\sigma_X^2 = 1\text{,}\) \(\sigma_Y^2 = 5\text{,}\) \(\sigma_Z^2 =
+2\text{;}\) and \(\operatorname{cov}(X, Y) = -2\text{,}\) \(\operatorname{cov}(X, Z) =
+-1\text{,}\) and \(\operatorname{cov}(Y, Z) = 1\text{.}\)</p>
+<p id="p-383">Find \(\mu_W\) and \(\operatorname{var}(W) = \sigma_W^2\) for \(W = 3X-Y+2Z\text{.}\)</p>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-26" id="solution-26"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-26"><div class="solution solution-like">
+<p id="p-384">First, \(\mu_W = (3)\mu_X + (-1)\mu_Y + (2)\mu_Z = 17\text{.}\)</p>
+<p id="p-385">We could apply the theorem directly, but we can do this more directly with linear algebra. The idea is that we can picture the linear combination \(W = 3X-Y+2Z\) as</p>
+<div class="displaymath">
+\begin{equation*}
+W =
+\left[\begin{array}{ccc}3 \amp -1 \amp
+2\end{array}\right]\cdot\left[\begin{array}{c}X \\Y\\
+Z\end{array}\right] = (3)X + (-1)Y + (2)Z
+\end{equation*}
+</div>
+<p id="p-386">Let \(a\) be the row vector \(a = \left[\begin{array}{ccc}3 \amp -1
+\amp 2\end{array}\right]\text{,}\) its transpose be the column vector \(a^T\text{,}\) and the matrix \(\Sigma\) be defined as follows,</p>
+<div class="displaymath">
+\begin{equation*}
+\Sigma = \left[\begin{array}{ccc}
+1 \amp -2 \amp -1\\
+-2 \amp 5 \amp 1\\
+-1 \amp 1 \amp 2
+\end{array}\right]
+\end{equation*}
+</div>
+<p id="p-387">This approach can be justified by expanding the sums in <a class="xref" data-knowl="./knowl/thm-4-14.html" title="Theorem 5.3.1: variance">Theorem 5.3.1</a> with a sum of 2 random variables.</p>
+<p id="p-388">We can calculate the variance of \(W\) by \(\operatorname{var}(W)
+= a\Sigma a^T\text{.}\) Specifically,</p>
+<div class="displaymath">
+\begin{equation*}
+a \Sigma a^T = \left[\begin{array}{ccc}3 \amp -1 \amp
+2\end{array}\right]\cdot\left[\begin{array}{ccc}
+1 \amp -2 \amp -1\\
+-2 \amp 5 \amp 1\\
+-1 \amp 1 \amp 2
+\end{array}\right]\cdot\left[\begin{array}{c}3 \\-1\\
+2\end{array}\right]
+\end{equation*}
+</div>
+<p id="p-389">Notice \(Sigma\) is symmetric and that the covariances lie in order along the main diagonal and the variances off-diagonal.</p>
+<p id="p-390">Multiplying the square matrix and column vector first, we have</p>
+<div class="displaymath">
+\begin{equation*}
+a \Sigma a^T = \left[\begin{array}{ccc}3 \amp -1 \amp
+2\end{array}\right]\cdot\left[\begin{array}{c}3 \\-9\\
+0\end{array}\right]
+\end{equation*}
+</div>
+<p id="p-391">And finally, \(a \Sigma a^T = 18\text{.}\)</p>
+</div></div></article></div>
+<article class="theorem theorem-like" id="thm-4-15"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">covariance of two linear combinations.</span>
+</h6>
+<p id="p-392">If \(\displaystyle X_1, X_2, \dots, X_n\) are random variables and \(\displaystyle Y_1 = \sum_{i=1}^n a_i X_i \text{ and } Y_2 =
+\sum_{i=1}^n b_iX_i\) where \(\displaystyle a_1, a_2, \dots, a_n,
+b_1, b_2, \dots, b_n\) are constants, then</p>
+<div class="displaymath">
+\begin{equation*}
+\operatorname{cov}[Y_1,
+Y_2] = \sum_{i=1}^n a_i b_i\operatorname{var}[X_i] + \mathop{\sum
+\sum}_{i \lt j} (a_ib_j + a_jb_i)\operatorname{cov}[X_i,X_j]\text{.}
+\end{equation*}
+</div></article><article class="corollary theorem-like" id="cor-4-3b"><h6 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">5.3.5</span><span class="period">.</span>
+</h6>
+<p id="p-393">If \(\displaystyle X_1, X_2, \dots, X_n\) are independent random variables and \(\displaystyle Y_1 = \sum_{i=1}^n a_iX_i \text{ and } Y_2 =
+\sum_{i=1}^n b_iX_i\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\operatorname{cov}[Y_1, Y_2] =
+\sum_{i=1}^n a_i b_i\operatorname{var}[X_i]
+\end{equation*}
+</div></article> The same logic used in <a class="xref" data-knowl="./knowl/ex-var-covar.html" title="Example 5.3.3: covariances of linear combinations">Example 5.3.3</a> allows us to compute the covariance between two linear combinations of random variables directly also. Instead of calculating \(a\Sigma a^T\) we will calculate \(a \Sigma b^T\) where \(b\) is the vector of coefficients of the second linear combination.</section><section class="exercises" id="exercises-24"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">5.3.2</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-50"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 4.48.</span>
+</h6>
+<p id="p-394">If \(X_1\text{,}\) \(X_2\text{,}\) \(X_3\) are independent and have the means \(4, 9, 3\) and the variances \(3, 7, 5\text{,}\) find the mean and variance of  show that</p>
+<ol class="lower-alpha">
+<li id="li-54"><p id="p-395">\(Y = 2X_1 - 3X_2 + 4X_3\text{;}\)</p></li>
+<li id="li-55"><p id="p-396">\(Z = X_1 + 2X_2 -X_3\text{.}\)</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-51"><h6 class="heading">
+<span class="codenumber">2<span class="period">.</span></span><span class="space"> </span><span class="title">Problem 4.49.</span>
+</h6>
+<p id="p-397">Repeat both parts of the previous exercise after dropping the assumption of independence and using instead that \(\operatorname{cov}(X_1, X_2) = 1\text{,}\) \(\operatorname{cov}(X_2, X_3)
+= -2\text{,}\) \(\operatorname{cov}(X_1, X_3) = -3\text{.}\)</p></article></section></section></div></main>
+</div>
+</body>
+</html>
