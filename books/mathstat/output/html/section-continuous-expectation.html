@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-28T13:39:29-05:00       *-->
+<!--*       on 2021-07-15T13:10:24-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,50 +14,58 @@
 <title>Expectation of continuous random variables</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl', 'sfrac']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
 /* support for the sfrac command in MathJax (Beveled fraction) */
-/* see: https://github.com/mathjax/MathJax-docs/wiki/Beveled-fraction-like-sfrac,-nicefrac-bfrac */
-MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
-  var MML = MathJax.ElementJax.mml,
-      TEX = MathJax.InputJax.TeX;
-  TEX.Definitions.macros.sfrac = "myBevelFraction";
-  TEX.Parse.Augment({
-    myBevelFraction: function (name) {
-      var num = this.ParseArg(name),
-          den = this.ParseArg(name);
-      this.Push(MML.mfrac(num,den).With({bevelled: true}));
+  startup: {
+    ready() {
+      //
+      // Creating a simple "sfrac" package on-the-fly
+      //
+      const Configuration = MathJax._.input.tex.Configuration.Configuration;
+      const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+      
+      new CommandMap('sfrac', {
+        sfrac: 'SFrac'
+        }, {
+        SFrac(parser, name) {
+        const num = parser.ParseArg(name);
+        const den = parser.ParseArg(name);
+        const frac = parser.create('node', 'mfrac', [num, den], {bevelled: true});
+        parser.Push(frac);
+        }
+      });
+      //
+      // Create the package for the overridden macros
+      //
+      Configuration.create('sfrac', {
+        handler: {macro: ['sfrac']}
+      });
+      
+    MathJax.startup.defaultReady();
     }
-  });
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -71,7 +79,7 @@ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -167,7 +175,7 @@ f(x) = \begin{cases}x,
 \end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">Find \(E[X]\text{.}\)</p>
+<p class="continuation">Find \(E[X]\text{.}\)</p>
 <a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><div class="displaymath">
 \begin{equation*}
 \begin{aligned}[t]
@@ -244,7 +252,7 @@ f(x) =
 \mu_r'=E[(X)^r] = \int_{-\infty}^\infty x^r\cdot f(x)\,dx
 \end{equation*}
 </div>
-<p data-braille="continuation">for \(r = 0,1,2,
+<p class="continuation">for \(r = 0,1,2,
 \dots\) when \(X\) is continuous.</p></article><article class="definition definition-like" id="def-moments-about-mean-4-4-cont"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">moments about the mean (continuous).</span>
 </h6>
@@ -256,7 +264,7 @@ f(x) =
 f(x)\,dx
 \end{equation*}
 </div>
-<p data-braille="continuation">for \(\displaystyle r =
+<p class="continuation">for \(\displaystyle r =
 0,1,2, \dots\) when \(X\) is discrete.</p></article><article class="example example-like" id="ex-poly"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-poly"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">\(8^{\text{th}}\)-order polynomial density.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-poly"><article class="example example-like"><p id="p-217">Consider</p>
@@ -267,7 +275,7 @@ f(x) = \begin{cases}630x^4(1-x)^4, \amp \quad 0 \lt x \lt
 \text{otherwise}\end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">Find \(\mu\) and \(\sigma^2\text{.}\)</p>
+<p class="continuation">Find \(\mu\) and \(\sigma^2\text{.}\)</p>
 <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-5" id="hint-5"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-5"><div class="hint solution-like">
 <p id="p-218">It is recommended that you expand the term \((1-x)^4\text{.}\)  Doing that, and carefully integrating, you should find \(\mu =
 \sfrac{1}{2}\text{.}\) Additionally, by finding \(\mu_2' = E[X^2] =
@@ -278,7 +286,7 @@ f(x) = \begin{cases}630x^4(1-x)^4, \amp \quad 0 \lt x \lt
 (\mu)^2
 \end{equation*}
 </div>
-<p data-braille="continuation">to find the variance is \(\sigma^2 = \sfrac{1}{44}\text{.}\)</p>
+<p class="continuation">to find the variance is \(\sigma^2 = \sfrac{1}{44}\text{.}\)</p>
 </div></div></article></div></section><section class="exercises" id="exercises-12"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber">4.2.4</span> <span class="title">Exercises</span>
 </h3>
@@ -304,13 +312,13 @@ f(x) = \begin{cases}
 \int_{\mu-2\sigma}^{\mu+2\sigma} f(x)\,dx\text{,}
 \end{equation*}
 </div>
-<p data-braille="continuation">specifically</p>
+<p class="continuation">specifically</p>
 <div class="displaymath">
 \begin{equation*}
 \int_{-1}^{3} f(x)\,dx
 \end{equation*}
 </div>
-<p data-braille="continuation">for this particular random variable.  Alternatively (keeping in mind that integration might be messy) we could invoke Chebyshev's Theorem (below) and give a lower bound on the probability - that the desired probability is at least \(\frac{3}{4}\text{.}\)</p></section><article class="theorem theorem-like" id="thm-chebyshev"><h6 class="heading">
+<p class="continuation">for this particular random variable.  Alternatively (keeping in mind that integration might be messy) we could invoke Chebyshev's Theorem (below) and give a lower bound on the probability - that the desired probability is at least \(\frac{3}{4}\text{.}\)</p></section><article class="theorem theorem-like" id="thm-chebyshev"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Chebyshev's Theorem.</span>
 </h6>
 <p id="p-223">If \(\mu\) and \(\sigma\) are the mean and the standard deviation of a random variable \(X\text{,}\) then for any positive constant \(k\) the probability is <em class="emphasis">at least</em> \(1-\dfrac{1}{k^2}\) that \(X\) will take on a value within \(k\) standard deviations of the mean; symbolically</p>
@@ -325,26 +333,26 @@ P(|x-\mu| \lt k\sigma) \ge 1 -
 \sigma^2 = \int_{-\infty}^\infty (x-\mu)^2f(x)\,dx\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">Now, we are interested in the interval \(\mu-k\sigma \lt x \lt \mu + k\sigma\text{,}\) and rewrite the integral accordingly,</p>
+<p class="continuation">Now, we are interested in the interval \(\mu-k\sigma \lt x \lt \mu + k\sigma\text{,}\) and rewrite the integral accordingly,</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma^2 = \int_{-\infty}^{\mu-k\sigma} (x-\mu)^2f(x)\,dx + \int_{\mu+k\sigma}^{\mu+k\sigma} (x-\mu)^2f(x)\,dx + \int_{\mu+k\sigma}^\infty (x-\mu)^2f(x)\,dx
 \end{equation*}
 </div>
-<p data-braille="continuation">The integrand of the middle integral is nonnegative, so</p>
+<p class="continuation">The integrand of the middle integral is nonnegative, so</p>
 <div class="displaymath">
 \begin{equation*}
 \int_{\mu+k\sigma}^{\mu+k\sigma} (x-\mu)^2f(x)\,dx \ge 0,
 \end{equation*}
 </div>
-<p data-braille="continuation">this means</p>
+<p class="continuation">this means</p>
 <div class="displaymath">
 \begin{equation*}
 \sigma^2 \ge \int_{-\infty}^{\mu-k\sigma} (x-\mu)^2f(x)\,dx +
 \int_{\mu+k\sigma}^\infty (x-\mu)^2f(x)\,dx
 \end{equation*}
 </div>
-<p data-braille="continuation">since at most we have dropped a nonzero term from the right-hand side.</p>
+<p class="continuation">since at most we have dropped a nonzero term from the right-hand side.</p>
 <p id="p-225">Now things get a bit more tricky - we are considering the intervals \((-\infty, \mu-k\sigma]\) and \([\mu+k\sigma, \infty)\text{.}\)  This means either \(x \le \mu - k\sigma\) or \(x\ge \mu + k\sigma\text{.}\)  Alternatively  \(x - \mu \le - k\sigma\) or \(x - \mu \ge k\sigma\text{.}\)  Together these give \((x - \mu)^2 \ge (k\sigma)^2\text{.}\)  With this</p>
 <div class="displaymath">
 \begin{align*}
@@ -363,14 +371,14 @@ P(|x-\mu| \lt k\sigma) \ge 1 -
 \int_{\mu+k\sigma}^\infty f(x)\,dx\right)
 \end{equation*}
 </div>
-<p data-braille="continuation">or</p>
+<p class="continuation">or</p>
 <div class="displaymath">
 \begin{equation*}
 \dfrac{1}{k^2} \ge \left(\int_{-\infty}^{\mu-k\sigma}  f(x)\,dx +
 \int_{\mu+k\sigma}^\infty f(x)\,dx\right)\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">The integrals give \(\operatorname{P}(|x-\mu| \ge k\sigma)\) or \(1 - \operatorname{P}(|x-\mu| \lt k\sigma)\text{.}\)</p>
+<p class="continuation">The integrals give \(\operatorname{P}(|x-\mu| \ge k\sigma)\) or \(1 - \operatorname{P}(|x-\mu| \lt k\sigma)\text{.}\)</p>
 <p id="p-227">So,</p>
 <div class="displaymath">
 \begin{gather*}
@@ -404,7 +412,7 @@ P(|x-\mu| \lt k\sigma) \ge 1 -
 M_X(t) = E[e^{tX}] = \int_{-\infty}^\infty e^{tx}\cdot f(x)\,dx
 \end{equation*}
 </div>
-<p data-braille="continuation">when \(X\) is discrete.</p></article><p id="p-234">Notce that a moment-generating function \(\displaystyle M_X(t)\) itself is a function of the variable \(\displaystyle t\) not \(X\text{.}\) As it turns out, we are most interested in values of the function at or near \(t=0\text{.}\)</p>
+<p class="continuation">when \(X\) is discrete.</p></article><p id="p-234">Notce that a moment-generating function \(\displaystyle M_X(t)\) itself is a function of the variable \(\displaystyle t\) not \(X\text{.}\) As it turns out, we are most interested in values of the function at or near \(t=0\text{.}\)</p>
 <p id="p-235">Now would be a good time to review <a class="xref" data-knowl="./knowl/thm-4-9.html" title="Theorem 3.2.14: moments via differentiation">Theorem 3.2.14</a> and <a class="xref" data-knowl="./knowl/thm-4-10.html" title="Theorem 3.2.16: moment-generating function of functions of a random variable">Theorem 3.2.16</a> which apply here in the continuous case as well.</p>
 <article class="example example-like" id="ex-exp-MGF"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-exp-MGF"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.9</span><span class="period">.</span><span class="space"> </span><span class="title">moment-generating function by definition.</span>
@@ -440,7 +448,7 @@ M_X(t) = \dfrac{1}{1-t} = 1
 + t + t^2 + \dots + t^r + \dots
 \end{equation*}
 </div>
-<p data-braille="continuation">Remembering that \(\mu_r'\) is the coefficient of \(\dfrac{t^r}{r!}\text{,}\) we can rewrite the previous expansion as</p>
+<p class="continuation">Remembering that \(\mu_r'\) is the coefficient of \(\dfrac{t^r}{r!}\text{,}\) we can rewrite the previous expansion as</p>
 <div class="displaymath">
 \begin{equation*}
 M_X(t) = \dfrac{1}{1-t} = 1 + 1\Big(\dfrac{t^1}{1!}\Big) +
@@ -448,21 +456,21 @@ M_X(t) = \dfrac{1}{1-t} = 1 + 1\Big(\dfrac{t^1}{1!}\Big) +
 \dots
 \end{equation*}
 </div>
-<p data-braille="continuation">which shows that \(\mu_r' = r!\text{.}\)</p>
+<p class="continuation">which shows that \(\mu_r' = r!\text{.}\)</p>
 <p id="p-238">Once the moment-generating function has been calculated, the main challenge probably lies in the expansion of the Maclaurin series.  Recall that that the Maclaurin series for \(f(t)\) is in general given by</p>
 <div class="displaymath">
 \begin{equation*}
 f(t) = \sum_{k=0}^{\infty}\dfrac{f^{(k)}(0)(t)^k}{k!}\text{.}
 \end{equation*}
 </div>
-<p data-braille="continuation">One alternative to this requires calculating the integrals that define the necessary expectations, for example</p>
+<p class="continuation">One alternative to this requires calculating the integrals that define the necessary expectations, for example</p>
 <div class="displaymath">
 \begin{equation*}
 \mu_r' = E[X^r] = \int_{0}^\infty
 x^r e^{-x}\,dx
 \end{equation*}
 </div>
-<p data-braille="continuation">by integration by parts or tabular integration.</p>
+<p class="continuation">by integration by parts or tabular integration.</p>
 <p id="p-239">Instead, given the moment-generating function, we could apply <a class="xref" data-knowl="./knowl/thm-4-9.html" title="Theorem 3.2.14: moments via differentiation">Theorem 3.2.14</a>.</p>
 <article class="example example-like" id="ex-exp-mgf-by-diff"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-exp-mgf-by-diff"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">moments of an exponential by differentiation.</span>
@@ -500,7 +508,7 @@ f(x) =
 \text{elsewhere}\end{cases}
 \end{equation*}
 </div>
-<p data-braille="continuation">and use it to determine the values of \(\mu_1'\text{,}\) \(\mu_2'\text{,}\) and \(\sigma^2\text{.}\)</p></article></section></section></div></main>
+<p class="continuation">and use it to determine the values of \(\mu_1'\text{,}\) \(\mu_2'\text{,}\) and \(\sigma^2\text{.}\)</p></article></section></section></div></main>
 </div>
 </body>
 </html>
