@@ -1,0 +1,18 @@
+(user<-as.vector(Sys.info()["user"]))
+setwd(paste("/Users/",user,"/Dropbox/uco/fall_13/2153/unit3/test3/",sep=""))
+
+pdf("yeast.pdf", height=5, width=5)
+par(xaxs='i', yaxs='i', mai=c(0.8, 0.8, 0.2, 0.2))
+plot(function(x)exp(x)-1, xlim=c(0, 2), ylim=c(0, 7), xlab="time, t (days)", ylab="population size, p(t)", las=1, font=2, cex.lab=1.5, cex.axis=1.25)
+for (i in 0:3) abline(h=2*i, lty=3, lwd=1, col="gray")
+for (i in 0:4) abline(v=i/2, lty=3, lwd=1, col="gray")
+# points(0:5, sapply(0:5, function(x)-(x-1)*(x-5)+11), pch=19)
+# legend("topleft", c("data", "function"), pch=c(19, NA), lty=c(NA, 1))
+dev.off()
+
+pdf("/Users/seanlaverty/Dropbox/uco/fall_13/2153/lectures/days/mass.pdf", height=5, width=5)
+par(xaxs='i', yaxs='i')
+plot(function(x)-x^2+6*x+6, xlim=c(0, 5), ylim=c(0, 20), xlab="time, t (weeks)", ylab="mass, m (ounces)", las=1, font=2)
+points(0:5, sapply(0:5, function(x)-(x-1)*(x-5)+11), pch=19)
+legend("topleft", c("data", "function"), pch=c(19, NA), lty=c(NA, 1))
+dev.off()
