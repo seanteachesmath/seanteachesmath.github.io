@@ -862,23 +862,24 @@ form.</p> </li>
           <description>A pgfplots example, with a function, a parametric curve, and some points plotted.</description>
 <latex-image>
 \begin{tikzpicture}
-\begin{axis}[xmax=9,ymax=9, samples=50]
-  \addplot[blue, ultra thick] (x,x*x);
-  \addplot[red,  ultra thick] (x*x,x);
+\begin{axis}
+\addplot [
+scatter,
+only marks,
+point meta=explicit symbolic,
+scatter/classes={
+a={mark=square*,blue},
+c={mark=o,draw=black}
+},
+] table [meta=label] {
+C F label
+0 32 a
+20	68 c
+37 98.6 a
+100 212 a
+};
 \end{axis}
 \end{tikzpicture}
-          <!-->
-\begin{tikzpicture}
-\begin{axis}[width = 0.5\linewidth]
-\addplot[domain = 0.1:10,<->,smooth,thin,color = blue]{4*ln(x)/ln(10)};
-\addplot[only marks]coordinates{
-(0,2)
-(4,3)
-(2,4)
-(3,4)};
-\addplot[variable = \t,domain = 0:360,samples = 200, color = orange]({3*sin(2*t)}, {2*cos(5*t)});
-\end{axis}
-\end{tikzpicture}-->
 </latex-image>
         </image>
       </figure>
