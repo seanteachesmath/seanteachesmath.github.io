@@ -1,0 +1,311 @@
+---
+title: "line art gallery"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+library(fBasics)
+```
+
+```{r wagner, echo=FALSE, fig.align = 'center', out.width = "100%"}
+### wagner
+
+n<-1000 ## number of lines
+## define coordinates of endpoints as 4 functions of k
+x0<-function(k) -sin(3*pi*k/1000)
+y0<-function(k) -cos(0.5*pi*k/1000)
+x1<-function(k) -1/2*sin(6*pi*k/1000)
+y1<-function(k) -1/2*cos(2*pi*k/1000)
+
+par(mfrow=c(1,1))
+plot(NULL,xlim=c(-2,2),ylim=c(-1,1), axes = FALSE, xlab="", ylab="")
+
+for(k in -n:n){
+segments(x0(k),y0(k),x1(k),y1(k),lwd=.1)
+##points(x0(k),y0(k),col=2,pch=19,cex=.5)
+}
+```
+<!-- \vfill \newpage \vfill -->
+
+```{r helton, echo=FALSE, fig.align = 'center', out.width = "100%"}
+n <- 1000 ##number of lins
+## define coordinates of endpoints as 4 functions of k
+x0 <- function(k) -4*sin(2*pi*k/1000 + pi/3)^5*sin(2*pi*k/1000)
+y0 <- function(k) 4*cos(6*pi*k/1000)^2*sin(2*pi*k/1000 - pi/3)^2
+x1 <- function(k) 5*sin(2*pi*k/1000)*sin(2*pi*k/1000 + pi/3)^5
+y1 <- function(k) -2*sin(2*pi*k/1000 - pi/3)^2*cos(6*pi*k/1000)^2
+par(mfrow=c(1,1))
+plot(NULL, xlim=c(-5,5), ylim=c(-3,5), axes = FALSE, xlab="", ylab="")
+
+for(k in 1:n){ ##e.g., x0(k) evaluates the function x0(k) for the current k values 
+segments(x0(k), y0(k), x1(k), y1(k), lwd = 0.1)
+## the line below, when uncommmented, colors one set of endpoints red
+## to show how x0 and y0 vary from the graph below for each line segment
+## points(x0(k), y0(k), col = 2, pch = 19, cex =.5)
+}
+```
+<!-- \vfill \newpage \vfill -->
+
+```{r evans, echo=FALSE, fig.align = 'center', out.width = "100%"}
+## prompt 3 
+## segment art
+n <- 1000
+
+#first eqs
+u0 <- function(i) 3*cos(i)^3
+v0 <- function(i) 3*sin(i)^3*cos(i)^2
+
+
+# second eqs
+u1 <- function(i) 3*cos(i)^3*sin(i)^2
+v1 <- function(i) 3*sin(i)^3
+
+#third eqs
+u2 <- function(i) 3*cos(i)
+v2 <- function(i) 3*sin(3*i)
+
+plot(NULL, xlim=c(-5, 5), ylim=c(-5, 5), axes = FALSE, xlab="", ylab="")
+
+for(i in 1:n){##e.g., u0(i) evaluates the function u0(i) for the current i value
+  segments(u0(i), v0(i), u2(i), v2(i), lwd=.1)
+  segments(u1(i), v1(i), u2(i), v2(i), lwd=.1)
+  ## the line below, when uncommented, colors one set of endpoints red
+  ## to show how u0 and v0 vary from the graph below for each line segment
+  points(u0(i), v0(i), col=2, pch=19, cex=0.5)
+  #points(u1(i), v1(i), col=4, pch=19, cex=0.5)
+  points(u2(i), v2(i), col='green', pch=19, cex=0.5)
+  
+}
+```
+<!-- \vfill \newpage \vfill -->
+
+```{r inori, echo=FALSE, fig.align = 'center', out.width = "100%"}
+files <- F
+n <- 1000 # number of lines 
+# define coordinates of endpoints as 4 functions of k
+x0 <- function(k) 2/3*sin(2*pi*k/1000 + 0.5*pi)^5
+y0 <- function(k) 3/5*cos(2*pi*k/1000)^2
+x1 <- function(k) -2/3*sin(2*pi*k/1000)^5
+y1 <- function(k) -3/5*cos(2*pi*k/1000)^2
+
+
+par(mfrow = c(1, 1))
+plot(NULL, xlim = c(-1, 1), ylim = c(-1, 1), axes = FALSE, xlab="", ylab="")
+
+for (k in 1:n) {# e.g., x0(k) evaluates the function x0(k) for the current k value
+  segments (x0(k), y0(k), x1(k), y1(k), lwd = 0.1)
+  # the line below, when uncommented, colors one set of endpoints red
+  # to show how x0 and y0 vary from the graph below for each line segment
+  points(x0(k), y0(k), col = 2, pch = 19, cex = 0.5)
+}
+```
+<!-- \vfill \newpage \vfill -->
+
+```{r wood, echo=FALSE, fig.align = 'center', out.width = "100%"}
+n<-300 ##number of lines
+##define coordinates of endpoints as 4 functions of k
+x0<- function(k) 2*cos(3*pi*k/300)^1/2+5*sin(4*pi*k/300)
+y0<- function(k) -1/2*cos(2*pi*k/300)^1/5
+x1<- function(k) 2/15*sin(1*pi*k/300)^1/5
+y1<- function(k) -4/5*sin(5*pi*k/300)^1/2
+
+#if(files)pdf("Fortune Cookie.pdf", height=5, width=5)
+par(mfrow=c(1,1))
+plot(NULL, xlim=c(-6,6), ylim=c(-0.5,0.5), axes = FALSE, xlab="", ylab="")
+ 
+for(k in 1:n){
+	x0(k)
+	segments(x0(k), y0(k), x1(k), y1(k), lwd=0.1)
+	points(x0(k), y0(k), col="red", pch=19, cex=0.5)
+}	
+```
+<!-- \vfill \newpage \vfill -->
+
+```{r doughty, echo=FALSE, fig.align = 'center', out.width = "100%"}
+n <- 1000 ##number of lines
+x0 <- function(k) 1/2*sin(20*k) + 2*pi/16
+y0 <- function(k)6*cos(8*pi*k/1000)^3
+x1 <- function(k) 1/5*sin(2*pi*k/1000)
+y1 <- function(k)-1/6*cos(pi*k + pi/3)
+
+##x0 <- function(k) 10*cos(6*pi*k/1000 + pi/6)^2
+
+
+par(mfrow=c(1,1))
+plot(NULL, xlim=c(-2,2), ylim=c(-7,7), axes = FALSE, xlab="", ylab="")
+
+for(k in 1:n){
+segments(x0(k), y0(k), x1(k), y1(k), lwd=0.1)
+##points(x0(k), y0(k), col=2, pch=19, cex=0.5)
+}
+```
+<!-- \vfill \newpage \vfill -->
+
+```{r morgan, echo=FALSE, fig.align = 'center', out.width = "100%"}
+n <- 1000 ## number of lines
+## define coordinates of endpoints as 4 functions
+x0 <- function(k) 6/7*cos(pi*k/1000)^3
+y0 <- function(k) 1/3*sin(12*pi*k/1000 + pi/7)^14
+x1 <- function(k) 4/3*sin(pi*k/1000)^4
+y1 <- function(k) -7/3*sin(2*pi*k/1000 - pi/5)^7
+
+#if(files)pdf("roller.pdf", height=5, width=5)
+par(mfrow = c(1,1))
+plot(NULL, xlim = c(-1, 1.4), ylim = c(-2.7, 2.7), axes = FALSE, xlab="", ylab="")
+
+for(k in 1:n){ ## e.g., x0(k) evaluates the function x0(k) for the current k value
+segments(x0(k), y0(k), x1(k), y1(k), lwd=0.1)
+## the line below, when uncommented, colors one set of endpoints red
+## to show how x0 and y0 vary from the graph below for each line segment
+#points(x0(k),y0(k), col=2, pch=19, cex=0.5)
+}
+```
+<!-- \vfill \newpage \vfill -->
+
+```{r le, echo=FALSE, fig.align = 'center', out.width = "100%"}
+
+n <- 1000 
+x0 <- function(i) -2*cos(4*pi*i/1000)
+y0 <- function(i) 1/2*cos(6*pi*i/1000)^3
+x1 <- function(i) -(2/15)*sin(6*pi*i/1000)
+y1 <- function(i) 4/5*sin(2*pi*i/1000)
+
+par(mfrow=c(1,1))
+plot(NULL, xlim=c(-2, 2), ylim=c(-1, 1), axes = FALSE, xlab="", ylab="")
+for(i in 1:n){
+  segments(x0(i), y0(i), x1(i), y1(i), lwd=0.2)
+  points(x0(i), y0(i), col=7, pch=16, cex=0.5)
+  points(x1(i), y1(i), col=8, pch=16, cex=0.5)
+}
+
+```
+<!-- \vfill \newpage \vfill -->
+
+```{r ammerman, echo=FALSE, fig.align = 'center', out.width = "100%"}
+n<- 1000##number of lines
+##define coordinates of endpoints as 4 functions of k
+
+x0<- function(k)3*sin(2*pi*k/1000+pi/3)^5
+y0<- function(k)4*cos(6*pi*k/1000)^2
+x1<- function(k)4*sin(2*pi*k/1000)
+y1<-function(k)-3*cos(2*pi*k/1000-pi/3)^2
+
+
+par(mfrow=c(1,1))
+plot(NULL, xlim=c(-5,5), ylim=c(-3.5,4.5), axes = FALSE, xlab="", ylab="")
+for(k in 1:n){##e.g. x0(k) evaluates the function for the current kvalues
+	segments(x0(k), y0(k), x1(k), y1(k), lwd=0.05, col="lightcoral")
+	##the lines below, when uncommented, colors one set of endpoints red
+	##toshowx0 and y0 vary fro mthe graph below for each line segment
+	##points(x0(k), y0(k), col=2, pch=19, cex=0.5)
+}
+```
+<!-- \vfill \newpage \vfill -->
+
+```{r powell, echo=FALSE, fig.align = 'center', out.width = "100%"}
+n <- 50 ## number of lines
+
+### MAIN CURVES
+x0 <- function(k) (cos(0.5*pi*k/n) - ((k/n)^2) - (k/n)) - 2.5
+y0 <- function(k) -(sin(0.5*pi*k/n)*2 + (k/n)^2 + 3 + (k/n)*2)
+x1 <- function(k) (1 - ((1) - (2*k/n)^2))
+y1 <- function(k) (1 - (((2*k/n) - 1)^2))
+
+### FILLED IN CIRCLES
+c0 <- function(k) cos(pi*(k/n))*0.75 - 3.25
+d0 <- function(k) sin(pi*(k/n))*0.75
+c1 <- function(k) cos(pi*(k/n) + pi)*0.75 - 3.25
+d1 <- function(k) sin(pi*(k/n) + pi)*0.75
+
+### EMPTY CIRCLES
+e0 <- function(k) cos(pi*(k/n))*0.75 + 1 
+f0 <- function(k) sin(pi*(k/n))*0.75 + 1
+e1 <- function(k) cos(pi*(k/n) + 0.1*pi)*0.75 + 1
+f1 <- function(k) sin(pi*(k/n) + 0.1*pi)*0.75 + 1
+
+
+plot(NULL, xlim = c(-6, 4), ylim = c(-8, 2), las=1, xlab="", ylab="", axes=F)
+#grid(nx = 10, ny = 10)
+
+for(k in -n:n){
+#points(-x1(k), y1(k), pch = 19, col = "blue")
+#points(x0(k), y0(k), pch = 19, col = "red")
+segments(x0(k), y0(k), -x1(-k), y1(-k), lwd=0.5)
+
+segments(c0(k), d0(k), c1(k), d1(k), lwd=0.5)
+
+segments(e0(k), f0(k), e1(k), f1(k), lwd=0.5)
+segments(e0(k), -f0(k), e1(k), -f1(k), lwd=0.5)
+}
+```
+<!-- \vfill \newpage \vfill -->
+
+```{r jawaid, echo=FALSE, fig.align = 'center', out.width = "100%"}
+n <- 1000 ## number of lines
+## define coordinates of endpoints as 4 functions of k
+
+x0 <- function(k) 3*sin(3*pi*k/1000 - pi/3)^3
+y0 <- function(k) 3*cos(3*pi*k/1000 + pi/3)
+x1 <- function(k) 3*sin(3*pi*k/1000 + pi/3)
+y1 <- function(k) 3*sin(3*pi*k/1000 - pi/3)^3
+
+#x0 <- function(k) 3/2*sin(2*pi*k/1000 + pi/3)^5
+#y0 <- function(k) 1/4*cos(6*pi*k/1000)^2
+#x1 <- function(k) 1/5*sin(2*pi*k/1000)
+#y1 <- function(k) -2/3*sin(2*pi*k/1000 - pi/3)^2
+
+
+par(mfrow=c(1,1))
+plot(NULL, xlim=c(-5, 5), ylim=c(-5, 5), axes = FALSE, xlab="", ylab="")
+
+for(k in 1:n){##e.g., x0(k) evaluates the function x0(k) for the current value 
+  segments(x0(k), y0(k), x1(k), y1(k), lwd=0.1)
+  #points(x0(k), y0(k), col=2, pch=19, cex=0.5)
+}
+```
+<!-- \vfill \newpage \vfill -->
+
+```{r will, echo=FALSE, fig.align = 'center', out.width = "100%"}
+
+n <- 1850 ## number of lines
+## define coordinates of endpoints as 4 functions of k
+x0 <- function(k) fBasics::Heaviside(k, a = 1000)/(k/1000)*sin(2*pi*k/1000)^5
+y0 <- function(k) fBasics::Heaviside(k, a = 1000)/(k/1000)*cos(6/5*pi*k/1000-0.5)^2
+x1 <- function(k) fBasics::Heaviside(k, a = 1000)/(k/1000)*sin(2*pi*k/1000)
+y1 <- function(k) fBasics::Heaviside(k, a = 1000)/(k/1000)*sin(5/3*pi*k/1000 - 0.5)^2
+
+par(mfrow=c(1,1))
+plot(NULL, xlim=c(-0.75, 1), ylim=c(0, 1), axes = FALSE, xlab="", ylab="")
+for(k in 1:n){##e.g., x0(k) evaluates the function x0(k) for the current k value
+segments(x0(k), y0(k), x1(k), y1(k), lwd=0.1)
+## the line below, when uncommented, colors one set of endpoints red
+## to show how x0 and y0 vary from the graph below for each line segment
+#points(x0(k), y0(k), col=2, pch=19, cex=0.5)
+}
+```
+<!-- \vfill \newpage \vfill -->
+
+```{r wong, echo=FALSE, fig.align = 'center', out.width = "100%"}
+n <- 1000 ## number of lines
+## define coordinates of endpoints as 4 functions of k
+x0 <- function(k) 3/2*sin(2*pi*k/1000 + pi/3)^5
+y0 <- function(k) 1/4*cos(6*pi*k/1000)^2
+x1 <- function(k) 1/5*sin(2*pi*k/1000)
+y1 <- function(k) -2/3*sin(2*pi*k/1000 - pi/3)^2
+
+##my coordinates
+x0 <- function(k) 3/2*cos(2*pi*k/1000 + pi/3)^5
+y0 <- function(k) 1/4*sin(6*pi*k/1000)^2
+x1 <- function(k) 1/5*tan(2*pi*k/1000)
+y1 <- function(k) -2/3*cos(2*pi*k/1000 - pi/3)^2
+
+par(mfrow=c(1,1))
+plot(NULL, xlim=c(-2, 2), ylim=c(-1, 1), axes = FALSE, xlab="", ylab="")
+
+for(k in 1:n){##e.g., x0(k) evaluates the function x0(k) for the current k value
+  segments(x0(k), y0(k), x1(k), y1(k), lwd=0.1)
+  ## the line below, when uncommented, colors one set of endpoints red
+  ## to show how x0 and y0 vary from the graph below for each line segment
+  #points(x0(k), y0(k), col=2, pch=19, cex=0.5)
+}  
+```
