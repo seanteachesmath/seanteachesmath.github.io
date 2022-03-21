@@ -1,0 +1,1267 @@
+(ys <- sapply(xs, function(x) x^3 + 4.001*x^2 + 4.002*x + 1.101))#
+xs <- c(-0.5, -0.25, 0)#
+(ys <- sapply(xs, function(x) x^3 + 4.001*x^2 + 4.002*x + 1.101))#
+(yps <- sapply(xs, function(x) 3*x^2 + 8.002*x + 4.002))#
+t(rbind(xs, ys, yps))#
+l0 <- function(x) ((x-xi[2])*(x-xi[3]))/((xi[1]-xi[2])*(xi[1]-xi[3]))#
+l1 <- function(x) ((x-xi[1])*(x-xi[3]))/((xi[2]-xi[1])*(xi[2]-xi[3]))#
+l2 <- function(x) ((x-xi[2])*(x-xi[1]))/((xi[3]-xi[2])*(xi[3]-xi[1]))#
+xs <- c(-0.5, -0.25, 0)#
+(ys <- sapply(xs, function(x) x^3 + 4.001*x^2 + 4.002*x + 1.101))#
+(yps <- sapply(xs, function(x) 3*x^2 + 8.002*x + 4.002))#
+#
+t(rbind(xs, ys, yps))#
+L0 <- function(x) ((x-xs[2])*(x-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1 <- function(x) ((x-xs[1])*(x-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2 <- function(x) ((x-xs[2])*(x-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+L0p <- function(x) ((2*x-xs[2]-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1p <- function(x) ((2*x-xs[1]-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2p <- function(x) ((2*x-xs[2]-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+L <- function(x)exp(-1)*L0(x) + exp(0)*L1(x) + exp(1)*L2(x)#
+H <- function(x)ys[1]*h0(x) + ys[2]*h1(x) + ys[3]*h2(x) + yps[1]*hh0(x) + yps[2]*hh1(x) + yps[3]*hh2(x)#
+xs <- c(-0.5, -0.25, 0)#
+(ys <- sapply(xs, function(x) x^3 + 4.001*x^2 + 4.002*x + 1.101))#
+(yps <- sapply(xs, function(x) 3*x^2 + 8.002*x + 4.002))#
+#
+t(rbind(xs, ys, yps))#
+L0 <- function(x) ((x-xs[2])*(x-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1 <- function(x) ((x-xs[1])*(x-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2 <- function(x) ((x-xs[2])*(x-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+L0p <- function(x) ((2*x-xs[2]-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1p <- function(x) ((2*x-xs[1]-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2p <- function(x) ((2*x-xs[2]-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+h0 <- function(x) (1-2*(x-(ys[1]))*L0p(ys[1]))*(L0(x))^2#
+h1 <- function(x) (1-2*(x-(ys[2]))*L1p(ys[2]))*(L1(x))^2#
+h2 <- function(x) (1-2*(x-(ys[3]))*L2p(ys[3]))*(L2(x))^2#
+#
+hh0 <- function(x) (x-(ys[1]))*(L0(x))^2#
+hh1 <- function(x) (x-(ys[2]))*(L1(x))^2#
+hh2 <- function(x) (x-(ys[3]))*(L2(x))^2#
+L <- function(x)exp(-1)*L0(x) + exp(0)*L1(x) + exp(1)*L2(x)#
+H <- function(x)ys[1]*h0(x) + ys[2]*h1(x) + ys[3]*h2(x) + yps[1]*hh0(x) + yps[2]*hh1(x) + yps[3]*hh2(x)#
+#
+H(-1/3)#
+f <- function(x) x^3 + 4.001*x^2 + 4.002*x + 1.101)#
+f <- function(x) x^3 + 4.001*x^2 + 4.002*x + 1.101#
+plot(L, xlim=c(ys[1], ys[3]), lty=2, add=T)#
+plot(H, xlim=c(ys[1], ys[3]), lty=3, add=T)#
+xs <- c(-0.5, -0.25, 0)#
+f <- function(x) x^3 + 4.001*x^2 + 4.002*x + 1.101#
+(ys <- sapply(xs, f))#
+(yps <- sapply(xs, function(x) 3*x^2 + 8.002*x + 4.002))#
+#
+t(rbind(xs, ys, yps))#
+L0 <- function(x) ((x-xs[2])*(x-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1 <- function(x) ((x-xs[1])*(x-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2 <- function(x) ((x-xs[2])*(x-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+L0p <- function(x) ((2*x-xs[2]-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1p <- function(x) ((2*x-xs[1]-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2p <- function(x) ((2*x-xs[2]-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+h0 <- function(x) (1-2*(x-(ys[1]))*L0p(ys[1]))*(L0(x))^2#
+h1 <- function(x) (1-2*(x-(ys[2]))*L1p(ys[2]))*(L1(x))^2#
+h2 <- function(x) (1-2*(x-(ys[3]))*L2p(ys[3]))*(L2(x))^2#
+#
+hh0 <- function(x) (x-(ys[1]))*(L0(x))^2#
+hh1 <- function(x) (x-(ys[2]))*(L1(x))^2#
+hh2 <- function(x) (x-(ys[3]))*(L2(x))^2#
+L <- function(x)ys[1]*L0(x) + ys[2]*L1(x) + ys[3]*L2(x)#
+H <- function(x)ys[1]*h0(x) + ys[2]*h1(x) + ys[3]*h2(x) + yps[1]*hh0(x) + yps[2]*hh1(x) + yps[3]*hh2(x)#
+#
+H(-1/3)#
+#
+plot(f, xlim=c(ys[1], ys[3]))#
+plot(L, xlim=c(ys[1], ys[3]), lty=2, add=T)#
+plot(H, xlim=c(ys[1], ys[3]), lty=3, add=T)#
+plot(function(x)f(x)-H(x), xlim=c(ys[1], ys[3]), lty=3, add=T)#
+plot(f, xlim=c(ys[1], ys[3]))#
+plot(L, xlim=c(ys[1], ys[3]), lty=2, add=T, col=2)#
+plot(H, xlim=c(ys[1], ys[3]), lty=3, add=T, col=4)#
+ys#
+xs <- c(-0.5, -0.25, 0)#
+f <- function(x) x^3 + 4.001*x^2 + 4.002*x + 1.101#
+(ys <- sapply(xs, f))#
+(yps <- sapply(xs, function(x) 3*x^2 + 8.002*x + 4.002))#
+#
+t(rbind(xs, ys, yps))#
+L0 <- function(x) ((x-xs[2])*(x-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1 <- function(x) ((x-xs[1])*(x-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2 <- function(x) ((x-xs[2])*(x-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+L0p <- function(x) ((2*x-xs[2]-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1p <- function(x) ((2*x-xs[1]-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2p <- function(x) ((2*x-xs[2]-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+h0 <- function(x) (1-2*(x-(ys[1]))*L0p(ys[1]))*(L0(x))^2#
+h1 <- function(x) (1-2*(x-(ys[2]))*L1p(ys[2]))*(L1(x))^2#
+h2 <- function(x) (1-2*(x-(ys[3]))*L2p(ys[3]))*(L2(x))^2#
+#
+hh0 <- function(x) (x-(ys[1]))*(L0(x))^2#
+hh1 <- function(x) (x-(ys[2]))*(L1(x))^2#
+hh2 <- function(x) (x-(ys[3]))*(L2(x))^2#
+L <- function(x)ys[1]*L0(x) + ys[2]*L1(x) + ys[3]*L2(x)#
+H <- function(x)ys[1]*h0(x) + ys[2]*h1(x) + ys[3]*h2(x) + yps[1]*hh0(x) + yps[2]*hh1(x) + yps[3]*hh2(x)#
+#
+H(-1/3)#
+#
+plot(f, xlim=c(ys[1], ys[3]))#
+plot(L, xlim=c(ys[1], ys[3]), lty=2, add=T, col=2)#
+plot(H, xlim=c(ys[1], ys[3]), lty=3, add=T, col=4)#
+#
+plot(function(x)f(x)-L(x), xlim=c(ys[1], ys[3]), lty=2, add=T)#
+plot(function(x)f(x)-H(x), xlim=c(ys[1], ys[3]), lty=3, add=T)#
+xs <- c(-0.5, -0.25, 0)#
+f <- function(x) x^3 + 4.001*x^2 + 4.002*x + 1.101#
+(ys <- sapply(xs, f))#
+(yps <- sapply(xs, function(x) 3*x^2 + 8.002*x + 4.002))#
+#
+t(rbind(xs, ys, yps))#
+#
+L0 <- function(x) ((x-xs[2])*(x-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1 <- function(x) ((x-xs[1])*(x-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2 <- function(x) ((x-xs[2])*(x-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+L0p <- function(x) ((2*x-xs[2]-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1p <- function(x) ((2*x-xs[1]-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2p <- function(x) ((2*x-xs[2]-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+h0 <- function(x) (1-2*(x-(ys[1]))*L0p(ys[1]))*(L0(x))^2#
+h1 <- function(x) (1-2*(x-(ys[2]))*L1p(ys[2]))*(L1(x))^2#
+h2 <- function(x) (1-2*(x-(ys[3]))*L2p(ys[3]))*(L2(x))^2#
+#
+hh0 <- function(x) (x-(ys[1]))*(L0(x))^2#
+hh1 <- function(x) (x-(ys[2]))*(L1(x))^2#
+hh2 <- function(x) (x-(ys[3]))*(L2(x))^2#
+L <- function(x)ys[1]*L0(x) + ys[2]*L1(x) + ys[3]*L2(x)#
+H <- function(x)ys[1]*h0(x) + ys[2]*h1(x) + ys[3]*h2(x) + yps[1]*hh0(x) + yps[2]*hh1(x) + yps[3]*hh2(x)#
+#
+H(-1/3)#
+#
+plot(f, xlim=c(ys[1], ys[3]))#
+plot(L, xlim=c(ys[1], ys[3]), lty=2, add=T, col=2)#
+plot(H, xlim=c(ys[1], ys[3]), lty=3, add=T, col=4)#
+#
+plot(function(x)f(x)-L(x), xlim=c(ys[1], ys[3]), lty=2, add=T)#
+plot(function(x)f(x)-H(x), xlim=c(ys[1], ys[3]), lty=3, add=T)#
+xs <- c(-0.5, -0.25, 0)#
+f <- function(x) x^3 + 4.001*x^2 + 4.002*x + 1.101#
+(ys <- sapply(xs, f))#
+(yps <- sapply(xs, function(x) 3*x^2 + 8.002*x + 4.002))#
+#
+t(rbind(xs, ys, yps))#
+#
+L0 <- function(x) ((x-xs[2])*(x-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1 <- function(x) ((x-xs[1])*(x-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2 <- function(x) ((x-xs[2])*(x-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+L0p <- function(x) ((2*x-xs[2]-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1p <- function(x) ((2*x-xs[1]-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2p <- function(x) ((2*x-xs[2]-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+h0 <- function(x) (1-2*(x-(ys[1]))*L0p(ys[1]))*(L0(x))^2#
+h1 <- function(x) (1-2*(x-(ys[2]))*L1p(ys[2]))*(L1(x))^2#
+h2 <- function(x) (1-2*(x-(ys[3]))*L2p(ys[3]))*(L2(x))^2#
+#
+hh0 <- function(x) (x-(ys[1]))*(L0(x))^2#
+hh1 <- function(x) (x-(ys[2]))*(L1(x))^2#
+hh2 <- function(x) (x-(ys[3]))*(L2(x))^2#
+L <- function(x)ys[1]*L0(x) + ys[2]*L1(x) + ys[3]*L2(x)#
+H <- function(x)ys[1]*h0(x) + ys[2]*h1(x) + ys[3]*h2(x) + yps[1]*hh0(x) + yps[2]*hh1(x) + yps[3]*hh2(x)#
+#
+H(-1/3)#
+#
+plot(f, xlim=c(ys[1], ys[3]))#
+plot(L, xlim=c(ys[1], ys[3]), lty=2, add=T, col=2)#
+plot(H, xlim=c(ys[1], ys[3]), lty=3, add=T, col=4)#
+plot(function(x)f(x)-L(x), xlim=c(ys[1], ys[3]), lty=2, add=T)#
+plot(function(x)f(x)-L(x), xlim=c(ys[1], ys[3]), lty=2)#
+plot(L0, xlim=c(xs[1], xs[3]))#
+plot(L1, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(L2, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)#
+plot(L0p, xlim=c(xs[1], xs[3]))#
+plot(L1p, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(L2p, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)#
+plot(h0, xlim=c(xs[1], xs[3]))#
+plot(h1, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(h2, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)#
+xs <- c(-0.5, -0.25, 0)#
+f <- function(x) x^3 + 4.001*x^2 + 4.002*x + 1.101#
+(ys <- sapply(xs, f))#
+(yps <- sapply(xs, function(x) 3*x^2 + 8.002*x + 4.002))#
+#
+t(rbind(xs, ys, yps))#
+#
+L0 <- function(x) ((x-xs[2])*(x-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1 <- function(x) ((x-xs[1])*(x-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2 <- function(x) ((x-xs[2])*(x-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+L0p <- function(x) ((2*x-xs[2]-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1p <- function(x) ((2*x-xs[1]-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2p <- function(x) ((2*x-xs[2]-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+h0 <- function(x) (1-2*(x-(xs[1]))*L0p(xs[1]))*(L0(x))^2#
+h1 <- function(x) (1-2*(x-(xs[2]))*L1p(xs[2]))*(L1(x))^2#
+h2 <- function(x) (1-2*(x-(xs[3]))*L2p(xs[3]))*(L2(x))^2#
+#
+hh0 <- function(x) (x-(xs[1]))*(L0(x))^2#
+hh1 <- function(x) (x-(xs[2]))*(L1(x))^2#
+hh2 <- function(x) (x-(xs[3]))*(L2(x))^2#
+L <- function(x)ys[1]*L0(x) + ys[2]*L1(x) + ys[3]*L2(x)#
+H <- function(x)ys[1]*h0(x) + ys[2]*h1(x) + ys[3]*h2(x) + yps[1]*hh0(x) + yps[2]*hh1(x) + yps[3]*hh2(x)#
+#
+H(-1/3)#
+plot(L0p, xlim=c(xs[1], xs[3]))#
+plot(L1p, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(L2p, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)#
+#
+plot(h0, xlim=c(xs[1], xs[3]))#
+plot(h1, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(h2, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)#
+plot(f, xlim=c(xs[1], xs[3]))#
+plot(L, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(H, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)#
+#
+plot(function(x)f(x)-L(x), xlim=c(xs[1], xs[3]), lty=2)#
+plot(function(x)f(x)-H(x), xlim=c(xs[1], xs[3]), lty=3, add=T)#
+H(-1/3)#
+f(-1/3)-H(-1/3)#
+options(digits=20)#
+(ys <- sapply(xs, f))#
+(yps <- sapply(xs, function(x) 3*x^2 + 8.002*x + 4.002))#
+(ys <- round(sapply(xs, f), 8))#
+(yps <- round(sapply(xs, function(x) 3*x^2 + 8.002*x + 4.002), 8))#
+(ys <- signif(sapply(xs, f), 8))#
+(yps <- signif(sapply(xs, function(x) 3*x^2 + 8.002*x + 4.002), 8))#
+(ys <- signif(sapply(xs, f), 6))#
+(ys <- signif(sapply(xs, f), 7))#
+options(digits=20)#
+#
+xs <- c(-0.5, -0.25, 0)#
+f <- function(x) x^3 + 4.001*x^2 + 4.002*x + 1.101#
+(ys <- signif(sapply(xs, f), 7))#
+(yps <- signif(sapply(xs, function(x) 3*x^2 + 8.002*x + 4.002), 8))#
+#
+t(rbind(xs, ys, yps))#
+#
+L0 <- function(x) ((x-xs[2])*(x-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1 <- function(x) ((x-xs[1])*(x-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2 <- function(x) ((x-xs[2])*(x-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+L0p <- function(x) ((2*x-xs[2]-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1p <- function(x) ((2*x-xs[1]-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2p <- function(x) ((2*x-xs[2]-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+h0 <- function(x) (1-2*(x-(xs[1]))*L0p(xs[1]))*(L0(x))^2#
+h1 <- function(x) (1-2*(x-(xs[2]))*L1p(xs[2]))*(L1(x))^2#
+h2 <- function(x) (1-2*(x-(xs[3]))*L2p(xs[3]))*(L2(x))^2#
+#
+hh0 <- function(x) (x-(xs[1]))*(L0(x))^2#
+hh1 <- function(x) (x-(xs[2]))*(L1(x))^2#
+hh2 <- function(x) (x-(xs[3]))*(L2(x))^2#
+L <- function(x)ys[1]*L0(x) + ys[2]*L1(x) + ys[3]*L2(x)#
+H <- function(x)ys[1]*h0(x) + ys[2]*h1(x) + ys[3]*h2(x) + yps[1]*hh0(x) + yps[2]*hh1(x) + yps[3]*hh2(x)#
+#
+H(-1/3)#
+plot(L0p, xlim=c(xs[1], xs[3]))#
+plot(L1p, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(L2p, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)#
+#
+plot(h0, xlim=c(xs[1], xs[3]))#
+plot(h1, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(h2, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)#
+#
+f(-1/3)-H(-1/3)#
+#
+plot(f, xlim=c(xs[1], xs[3]))#
+plot(L, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(H, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)#
+#
+plot(function(x)f(x)-L(x), xlim=c(xs[1], xs[3]), lty=2)#
+plot(function(x)f(x)-H(x), xlim=c(xs[1], xs[3]), lty=3, add=T)#
+options(digits=20)#
+#
+xs <- c(-0.5, -0.25, 0)#
+f <- function(x) x^3 + 4.001*x^2 + 4.002*x + 1.101#
+(ys <- signif(sapply(xs, f), 7))#
+(yps <- signif(sapply(xs, function(x) 3*x^2 + 8.002*x + 4.002), 7))#
+#
+t(rbind(xs, ys, yps))#
+#
+L0 <- function(x) ((x-xs[2])*(x-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1 <- function(x) ((x-xs[1])*(x-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2 <- function(x) ((x-xs[2])*(x-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+L0p <- function(x) ((2*x-xs[2]-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1p <- function(x) ((2*x-xs[1]-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2p <- function(x) ((2*x-xs[2]-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+#
+h0 <- function(x) (1-2*(x-(xs[1]))*L0p(xs[1]))*(L0(x))^2#
+h1 <- function(x) (1-2*(x-(xs[2]))*L1p(xs[2]))*(L1(x))^2#
+h2 <- function(x) (1-2*(x-(xs[3]))*L2p(xs[3]))*(L2(x))^2#
+#
+hh0 <- function(x) (x-(xs[1]))*(L0(x))^2#
+hh1 <- function(x) (x-(xs[2]))*(L1(x))^2#
+hh2 <- function(x) (x-(xs[3]))*(L2(x))^2#
+L <- function(x)ys[1]*L0(x) + ys[2]*L1(x) + ys[3]*L2(x)#
+H <- function(x)ys[1]*h0(x) + ys[2]*h1(x) + ys[3]*h2(x) + yps[1]*hh0(x) + yps[2]*hh1(x) + yps[3]*hh2(x)#
+#
+H(-1/3)#
+plot(L0p, xlim=c(xs[1], xs[3]))#
+plot(L1p, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(L2p, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)#
+#
+plot(h0, xlim=c(xs[1], xs[3]))#
+plot(h1, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(h2, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)#
+#
+f(-1/3)-H(-1/3)#
+#
+plot(f, xlim=c(xs[1], xs[3]))#
+plot(L, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(H, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)#
+#
+plot(function(x)f(x)-L(x), xlim=c(xs[1], xs[3]), lty=2)#
+plot(function(x)f(x)-H(x), xlim=c(xs[1], xs[3]), lty=3, add=T)#
+0.1745185-0.17451852#
+#
+plot(f, xlim=c(xs[1], xs[3]))#
+plot(L, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(H, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)#
+plot(f, xlim=c(xs[1], xs[3]), log='y')#
+plot(L, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2, log='y')#
+plot(H, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4, log='y')#
+plot(f, xlim=c(xs[1], xs[3]))#
+plot(L, xlim=c(xs[1], xs[3]), lty=2, add=T, col=2)#
+plot(H, xlim=c(xs[1], xs[3]), lty=3, add=T, col=4)
+N <- 8#
+xs <- seq(-1, 1, length=N)#
+(xs <- xs[order(xs)])#
+#
+L <- function(x, j){#
+	tmp <- 1#
+ for(i in 1:N){#
+	if(i!=j)tmp <- tmp*(x-xs[i])/(xs[j] - xs[i])#
+ }#
+tmp#
+}#
+#
+files <- T#
+if(files)pdf("Li.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[1](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()#
+#
+f <- function(x)x^3*exp(-1.1*x)*sin(x)#
+#
+P <- function(x){#
+	tmp <- 0#
+	for(i in 1:N){#
+		tmp <- tmp + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}#
+#
+if(files)pdf("fP.pdf", height=5, width=10)#
+par(mfrow=c(1,2), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)))#
+plot(P, xlim=c(min(xs), max(xs)), add=T, col=2)#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col=2)#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)))#
+points(xs, 0*xs, pch=19, col=2)#
+if(files)dev.off()
+cs
+N <- 10#
+xs <- seq(-1, 1, length=N)#
+(xs <- xs[order(xs)])#
+xs#
+L <- function(x, j){#
+	tmp <- 1#
+ for(i in 1:N){#
+	if(i!=j)tmp <- tmp*(x-xs[i])/(xs[j] - xs[i])#
+ }#
+tmp#
+}#
+#
+files <- T#
+if(files)pdf("Li.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[1](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()#
+#
+f <- function(x)x^3*exp(-1.1*x)*sin(x)#
+#
+P <- function(x){#
+	tmp <- 0#
+	for(i in 1:N){#
+		tmp <- tmp + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}#
+#
+if(files)pdf("fP.pdf", height=5, width=10)#
+par(mfrow=c(1,2), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)))#
+plot(P, xlim=c(min(xs), max(xs)), add=T, col=2)#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col=2)#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)))#
+points(xs, 0*xs, pch=19, col=2)#
+if(files)dev.off()
+xs
+seq(-1, 1, length=5)
+seq(-1, 1, length=6)
+seq(-1, 1, length=7)
+seq(-1, 1, length=8)
+seq(-1, 1, length=9)
+N <- 8#
+xs <- seq(-1, 1, length=N)#
+(xs <- xs[order(xs)])#
+xs#
+L <- function(x, j){#
+	tmp <- 1#
+ for(i in 1:N){#
+	if(i!=j)tmp <- tmp*(x-xs[i])/(xs[j] - xs[i])#
+ }#
+tmp#
+}#
+#
+files <- T#
+if(files)pdf("Li.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[1](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()#
+#
+f <- function(x)x^3*exp(-1.1*x)*sin(x)#
+#
+P <- function(x){#
+	tmp <- 0#
+	for(i in 1:N){#
+		tmp <- tmp + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}#
+#
+if(files)pdf("fP.pdf", height=5, width=10)#
+par(mfrow=c(1,2), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)))#
+plot(P, xlim=c(min(xs), max(xs)), add=T, col=2)#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col=2)#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)))#
+points(xs, 0*xs, pch=19, col=2)#
+if(files)dev.off()
+N <- 8#
+xs <- seq(-1, 1, length=N)#
+(xs <- xs[order(xs)])#
+xs#
+L <- function(x, j){#
+	tmp <- 1#
+ for(i in 1:N){#
+	if(i!=j)tmp <- tmp*(x-xs[i])/(xs[j] - xs[i])#
+ }#
+tmp#
+}#
+#
+files <- T#
+if(files)pdf("Li.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()#
+#
+f <- function(x)x^3*exp(-1.1*x)*sin(x)#
+#
+P <- function(x){#
+	tmp <- 0#
+	for(i in 1:N){#
+		tmp <- tmp + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}#
+#
+if(files)pdf("fP.pdf", height=5, width=10)#
+par(mfrow=c(1,2), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)))#
+plot(P, xlim=c(min(xs), max(xs)), add=T, col=2)#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col=2)#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)))#
+points(xs, 0*xs, pch=19, col=2)#
+if(files)dev.off()
+plot(f, xlim=c(min(xs), max(xs)), xlab=expression(f(x), P(x)))
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), xlab=expression(f(x) - P(x)))
+plot(f, xlim=c(min(xs), max(xs)), ylab=expression(f(x), P(x)))
+plot(f, xlim=c(min(xs), max(xs)), ylab=expression(f(x) and P(x)))
+plot(f, xlim=c(min(xs), max(xs)), ylab=expression(f(x)  & P(x)))
+plot(f, xlim=c(min(xs), max(xs)), ylab=expression(f(x) & P(x)))
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab=expression(f(x) - P(x)))
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation")
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab=expression(f(x) - P(x)), las=1)
+par(mfrow=c(1,2), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation")#
+plot(P, xlim=c(min(xs), max(xs)), add=T, col=2)#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col=2)#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab=expression(f(x) - P(x)), las=1)#
+points(xs, 0*xs, pch=19, col=2)
+par(mfrow=c(1,2), mar=c(4.1, 4.1, 1.1, 1.1))
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1)
+plot(P, xlim=c(min(xs), max(xs)), add=T, col=2)
+points(xs, sapply(xs, f), pch=19)
+points(xs, sapply(xs, P), pch=19, col=2)
+N <- 8#
+xs <- seq(-1, 1, length=N)#
+(xs <- xs[order(xs)])#
+xs#
+L <- function(x, j){#
+	tmp <- 1#
+ for(i in 1:N){#
+	if(i!=j)tmp <- tmp*(x-xs[i])/(xs[j] - xs[i])#
+ }#
+tmp#
+}#
+#
+files <- T#
+if(files)pdf("Li.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()#
+#
+f <- function(x)x^3*exp(-1.1*x)*sin(x)#
+#
+P <- function(x){#
+	tmp <- 0#
+	for(i in 1:N){#
+		tmp <- tmp + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}#
+#
+if(files)pdf("fP.pdf", height=5, width=10)#
+par(mfrow=c(1,2), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1)#
+plot(P, xlim=c(min(xs), max(xs)), add=T, col=2)#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col=2)#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))", las=1)#
+points(xs, 0*xs, pch=19, col=2)#
+if(files)dev.off()
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))", las=1, padj=1)
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))\n", las=1, padj=1)
+N <- 8#
+xs <- seq(-1, 1, length=N)#
+(xs <- xs[order(xs)])#
+xs#
+L <- function(x, j){#
+	tmp <- 1#
+ for(i in 1:N){#
+	if(i!=j)tmp <- tmp*(x-xs[i])/(xs[j] - xs[i])#
+ }#
+tmp#
+}#
+#
+files <- T#
+if(files)pdf("Li.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()#
+#
+f <- function(x)x^3*exp(-1.1*x)*sin(x)#
+#
+P <- function(x){#
+	tmp <- 0#
+	for(i in 1:N){#
+		tmp <- tmp + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}#
+#
+if(files)pdf("fP.pdf", height=5, width=10)#
+par(mfrow=c(1,2), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1)#
+plot(P, xlim=c(min(xs), max(xs)), add=T, col=2)#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col=2)#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))\n", las=1, padj=1)#
+points(xs, 0*xs, pch=19, col=2)#
+if(files)dev.off()
+N <- 8#
+xs <- seq(-1, 1, length=N)#
+(xs <- xs[order(xs)])#
+xs#
+L <- function(x, j){#
+	tmp <- 1#
+ for(i in 1:N){#
+	if(i!=j)tmp <- tmp*(x-xs[i])/(xs[j] - xs[i])#
+ }#
+tmp#
+}#
+#
+files <- T#
+if(files)pdf("Li.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()#
+#
+f <- function(x)x^3*exp(-1.1*x)*sin(x)#
+#
+P <- function(x){#
+	tmp <- 0#
+	for(i in 1:N){#
+		tmp <- tmp + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}#
+#
+if(files)pdf("fP.pdf", height=5, width=10)#
+par(mfrow=c(1,2), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1)#
+plot(P, xlim=c(min(xs), max(xs)), add=T, col=2)#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col=2)#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))\n", las=1, padj=1)#
+points(xs, 0*xs, pch=19, col=2)#
+if(files)dev.off()
+N <- 8#
+xs <- seq(-1, 1, length=N)#
+(xs <- xs[order(xs)])#
+xs#
+L <- function(x, j){#
+	tmp <- 1#
+ for(i in 1:N){#
+	if(i!=j)tmp <- tmp*(x-xs[i])/(xs[j] - xs[i])#
+ }#
+tmp#
+}#
+#
+files <- T#
+if(files)pdf("Li.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()#
+#
+f <- function(x)x^3*exp(-1.1*x)*sin(x)#
+#
+P <- function(x){#
+	tmp <- 0#
+	for(i in 1:N){#
+		tmp <- tmp + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}#
+#
+if(files)pdf("fP.pdf", height=5, width=10)#
+par(mfrow=c(1,2), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1)#
+plot(P, xlim=c(min(xs), max(xs)), add=T, col=2)#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col=2)#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))\n", las=1, padj=1)#
+points(xs, 0*xs, pch=19, col=1)#
+if(files)dev.off()
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1, lwd=2)
+N <- 8#
+xs <- seq(-1, 1, length=N)#
+(xs <- xs[order(xs)])#
+xs#
+L <- function(x, j){#
+	tmp <- 1#
+ for(i in 1:N){#
+	if(i!=j)tmp <- tmp*(x-xs[i])/(xs[j] - xs[i])#
+ }#
+tmp#
+}#
+#
+files <- T#
+if(files)pdf("Li.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()#
+#
+f <- function(x)x^3*exp(-1.1*x)*sin(x)#
+#
+P <- function(x){#
+	tmp <- 0#
+	for(i in 1:N){#
+		tmp <- tmp + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}#
+#
+if(files)pdf("fP.pdf", height=5, width=10)#
+par(mfrow=c(1,2), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1, lwd=2)#
+plot(P, xlim=c(min(xs), max(xs)), add=T, col="gray")#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col='gray')#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))\n", las=1, padj=1)#
+points(xs, 0*xs, pch=19, col=1)#
+if(files)dev.off()
+N <- 8#
+xs <- seq(-1, 1, length=N)#
+(xs <- xs[order(xs)])#
+xs#
+L <- function(x, j){#
+	tmp <- 1#
+ for(i in 1:N){#
+	if(i!=j)tmp <- tmp*(x-xs[i])/(xs[j] - xs[i])#
+ }#
+tmp#
+}#
+#
+files <- T#
+if(files)pdf("Li.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()#
+#
+f <- function(x)x^3*exp(-1.1*x)*sin(x)#
+#
+P <- function(x){#
+	tmp <- 0#
+	for(i in 1:N){#
+		tmp <- tmp + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}#
+#
+if(files)pdf("fP.pdf", height=5, width=10)#
+par(mfrow=c(1,2), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1, lwd=2)#
+plot(P, xlim=c(min(xs), max(xs)), add=T, col="gray")#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col='gray')#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))\n", las=1)#
+points(xs, 0*xs, pch=19, col=1)#
+if(files)dev.off()
+N <- 3#
+xs <- seq(0, 1, length=N)#
+(xs <- xs[order(xs)])#
+xs#
+L <- function(x, j){#
+	tmp <- 1#
+ for(i in 1:N){#
+	if(i!=j)tmp <- tmp*(x-xs[i])/(xs[j] - xs[i])#
+ }#
+tmp#
+}#
+#
+files <- T#
+if(files)pdf("Li_.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()#
+#
+f <- function(x)exp(x)#
+#
+P <- function(x){#
+	tmp <- 0#
+	for(i in 1:N){#
+		tmp <- tmp + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}#
+#
+if(files)pdf("fP_.pdf", height=5, width=10)#
+par(mfrow=c(1,2), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1, lwd=2)#
+plot(P, xlim=c(min(xs), max(xs)), add=T, col="gray")#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col='gray')#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))\n", las=1)#
+points(xs, 0*xs, pch=19, col=1)#
+if(files)dev.off()
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1, lwd=2, log='y')
+if(files)pdf("Li_.pdf", height=5, width=10)#
+par(mfrow=c(1, 3), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()
+if(files)pdf("Li_.pdf", height=5, width=15)#
+par(mfrow=c(1, 3), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()
+N <- 8#
+xs <- seq(-1, 1, length=N)#
+(xs <- xs[order(xs)])#
+xs#
+L <- function(x, j){#
+	tmp <- 1#
+ for(i in 1:N){#
+	if(i!=j)tmp <- tmp*(x-xs[i])/(xs[j] - xs[i])#
+ }#
+tmp#
+}#
+#
+files <- F#
+if(files)pdf("Li.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)f(xs[1])*L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(f(x[0]*L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)f(ks[i])*L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(f(x[.(i-1)])*L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)f(xs[1])*L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(f(x[0]*L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)f(xs[i])*L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(f(x[.(i-1)])*L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)f(xs[1])*L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(f(x[0]*L[0](x)))#
+points(xs, sapply(xs, function(x)f(xs[1])*L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)f(xs[i])*L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(f(x[.(i-1)])*L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)f(xs[i])*L(x,i)), pch=19)#
+}
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)f(xs[1])*L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1.5, 1.5), las=1, xlab=expression(x), ylab=expression(f(x[0]*L[0](x)))#
+points(xs, sapply(xs, function(x)f(xs[1])*L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)f(xs[i])*L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1.5, 1.5), las=1, xlab=expression(x), ylab=bquote(paste(f(x[.(i-1)])*L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)f(xs[i])*L(x,i)), pch=19)#
+}
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)f(xs[1])*L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-2, 2), las=1, xlab=expression(x), ylab=expression(f(x[0]*L[0](x)))#
+points(xs, sapply(xs, function(x)f(xs[1])*L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)f(xs[i])*L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-2, 2), las=1, xlab=expression(x), ylab=bquote(paste(f(x[.(i-1)])*L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)f(xs[i])*L(x,i)), pch=19)#
+}
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)f(xs[1])*L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-2, 2), las=1, xlab=expression(x), ylab=expression(f(x[0])*L[0](x)))#
+points(xs, sapply(xs, function(x)f(xs[1])*L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)f(xs[i])*L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-2, 2), las=1, xlab=expression(x), ylab=bquote(paste(f(x[.(i-1)])*L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)f(xs[i])*L(x,i)), pch=19)#
+}
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)f(xs[1])*L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-3, 3), las=1, xlab=expression(x), ylab=expression(f(x[0])*L[0](x)))#
+points(xs, sapply(xs, function(x)f(xs[1])*L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)f(xs[i])*L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-3, 3), las=1, xlab=expression(x), ylab=bquote(paste(f(x[.(i-1)])*L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)f(xs[i])*L(x,i)), pch=19)#
+}
+Pk <- function(x, k){#
+	tmp <- list(0)#
+	for(i in 1:N){#
+		tmp[[k]] <- sum(tmp) + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}
+Pk <- function(x, k){#
+	tmp <- list(0)#
+	for(i in 1:N){#
+		tmp[[k]] <- sapply(tmp, sum) + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}
+plot(function(x)Pk(x, 1), xlim=c(0, 1))
+Pk(1,1)
+Pk(2,1)
+Pk(0,1)
+Pk(2,2)
+Pk(2,3)
+Pk(2,4)
+Pk <- function(x, k){#
+	tmp <- list(0)#
+	for(i in 1:N){#
+		tmp2 <- 0#
+		for(j in 1:i){#
+			tmp2 <- tmp2 + f(xs[i])*L(x, i)#
+		}#
+		tmp[[i]] <- tmp2#
+	}#
+	tmp#
+}
+Pk
+Pk <- function(x, k){#
+	tmp <- list(0)#
+	for(i in 1:k){#
+		tmp2 <- 0#
+		for(j in 1:i){#
+			tmp2 <- tmp2 + f(xs[i])*L(x, i)#
+		}#
+		tmp[[i]] <- tmp2#
+	}#
+	tmp#
+}
+Pk(0.5, 1)
+Pk(0.5, 2)
+Pk(0.5, 3)
+Pk(0.5, 4)
+Pk <- function(x, k){#
+	tmp <- 0#
+	for(i in 1:k){#
+		tmp2 <- 0#
+		for(j in 1:i){#
+			tmp2 <- tmp2 + f(xs[i])*L(x, i)#
+		}#
+		tmp <- tmp2#
+	}#
+	tmp#
+}
+for(i in 1:N)plot(function(x)Pk(x,i), xlim=c(min(xs), max(xs)), add=T, col="gray")
+Pk <- function(x, k){#
+	tmp <- 0#
+	for(i in 1:k){#
+			tmp <- tmp + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+for(i in 1:N){#
+	plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1, lwd=2)#
+	plot(function(x)Pk(x,i), xlim=c(min(xs), max(xs)), add=T, col="gray")#
+}
+par(mfrow=c(1,2), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1, lwd=2)#
+for(i in 1:N)plot(function(x)Pk(x,i), xlim=c(min(xs), max(xs)), add=T, col="gray")#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col='gray')#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))\n", las=1)#
+points(xs, 0*xs, pch=19, col=1)
+par(mfrow=c(1,2), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1, lwd=2)#
+#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col='gray')#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))\n", las=1)#
+points(xs, 0*xs, pch=19, col=1)
+par(mfrow=c(1,2), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1, lwd=2)#
+plot(P, xlim=c(min(xs), max(xs)), add=T, col="gray")#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col='gray')#
+#
+plot(function(x) f(x) - P(x), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))\n", las=1)#
+points(xs, 0*xs, pch=19, col=1)
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+for(i in 1:N){#
+	plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1, lwd=2)#
+	plot(function(x)Pk(x,i), xlim=c(min(xs), max(xs)), add=T, col="gray")#
+}#
+for(i in 2:N){#
+plot(function(x)f(xs[i])*L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-3, 3), las=1, xlab=expression(x), ylab=bquote(paste(f(x[.(i-1)])*L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)f(xs[i])*L(x,i)), pch=19)
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+for(i in 1:N){#
+	plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1, lwd=2)#
+	plot(P, xlim=c(min(xs), max(xs)), add=T, col="gray")#
+	plot(function(x)Pk(x,i), xlim=c(min(xs), max(xs)), add=T, col="gray")#
+#
+}
+}
+plot(f, xlim=c(min(xs), max(xs)), ylab=paste("Function and approximation, and", expression(P[.(N), .(i)](x)), sep=' '), las=1, lwd=2)
+plot(f, xlim=c(min(xs), max(xs)), ylab=paste("Function and approximation, and", expression(parse(text=P[.(N), .(i)](x))), sep=' '), las=1, lwd=2)
+plot(P, xlim=c(min(xs), max(xs)), add=T, col="gray")
+plot(function(x)Pk(x,i), xlim=c(min(xs), max(xs)), add=T, col="gray")
+plot(f, xlim=c(min(xs), max(xs)), ylab=paste("Function and approximation, and", bquote(parse(text=P[.(N), .(i)](x))), sep=' '), las=1, lwd=2)
+plot(f, xlim=c(min(xs), max(xs)), ylab=paste("Function and approximation, and", bquote(paste(P[.(N), .(i)](x))), sep=' '), las=1, lwd=2)
+plot(f, xlim=c(min(xs), max(xs)), ylab=paste(bquote("Function and approximation, and", paste(P[.(N), .(i)](x))), sep=' '), las=1, lwd=2)
+plot(f, xlim=c(min(xs), max(xs)), ylab= bquote(paste("Function and approximation, and", P[.(N), .(i)](x))), las=1, lwd=2)
+plot(f, xlim=c(min(xs), max(xs)), ylab= bquote(paste("Function and approximation, and ", P[.(N), .(i)](x))), las=1, lwd=2)
+plot(f, xlim=c(min(xs), max(xs)), ylab= bquote(paste("Function, approximation, and ", P[.(N), .(i)](x))), las=1, lwd=2)
+plot(f, xlim=c(min(xs), max(xs)), ylab= bquote(paste("Function, approximation, and ", P[c(.(N), .(i))](x))), las=1, lwd=2)
+plot(f, xlim=c(min(xs), max(xs)), ylab= bquote(paste("Function, approximation, and ", P[.(N)][,][.(i)](x))), las=1, lwd=2)
+plot(f, xlim=c(min(xs), max(xs)), ylab= bquote(paste("Function, approximation, and ", P[.(N)][","][.(i)](x))), las=1, lwd=2)
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+for(i in 1:N){#
+	plot(f, xlim=c(min(xs), max(xs)), ylab= bquote(paste("Function, approximation, and ", P[.(N)][","][.(i)](x))), las=1, lwd=2)#
+	plot(P, xlim=c(min(xs), max(xs)), add=T, col="gray")#
+	plot(function(x)Pk(x,i), xlim=c(min(xs), max(xs)), add=T, col="gray")#
+#
+}
+plot(f, xlim=c(min(xs), max(xs)), ylab= bquote(paste("Function, approximation, and ", P[.(N)][","][.(i)](x))), las=1, lwd=2, ylim=c(0, 3))
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+for(i in 1:N){#
+	plot(f, xlim=c(min(xs), max(xs)), ylab= bquote(paste("Function, approximation, and ", P[.(N)][","][.(i)](x))), las=1, lwd=2, ylim=c(0, 3))#
+	plot(P, xlim=c(min(xs), max(xs)), add=T, col="gray")#
+	plot(function(x)Pk(x,i), xlim=c(min(xs), max(xs)), add=T, col="gray")#
+#
+}
+points(xs[1:i], sapply(xs[1:i], f))
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+for(i in 1:N){#
+	plot(f, xlim=c(min(xs), max(xs)), ylab= bquote(paste("Function, approximation, and ", P[.(N)][","][.(i)](x))), las=1, lwd=2, ylim=c(0, 3))#
+	plot(P, xlim=c(min(xs), max(xs)), add=T, col="gray")#
+	plot(function(x)Pk(x,i), xlim=c(min(xs), max(xs)), add=T, col="gray")#
+	points(xs[1:i], sapply(xs[1:i], f))#
+}
+points(xs[1:i], sapply(xs[1:i], f), pch=19)
+plot(function(x)P(x,N), xlim=c(min(xs), max(xs)), add=T, col="gray")
+par(mfrow=c(1,2), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1, lwd=2)#
+plot(function(x)Pk(x,N), xlim=c(min(xs), max(xs)), add=T, col="gray")#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col='gray')#
+#
+plot(function(x) f(x) - Pk(x, N), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))\n", las=1)#
+points(xs, 0*xs, pch=19, col=1)
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+for(i in 1:N){#
+	plot(f, xlim=c(min(xs), max(xs)), ylab= bquote(paste("Function, approximation, and ", P[.(N)][","][.(i)](x))), las=1, lwd=2, ylim=c(0, 3))#
+	plot(function(x)Pk(x,i), xlim=c(min(xs), max(xs)), add=T, col="gray", lwd=2)#
+	points(xs[1:i], sapply(xs[1:i], f), pch=19)#
+}
+a <- 0#
+b <- 1#
+f <- function(x)sin(pi*x)#
+a11 <- integrate(function(x) 1 + 0*x, lower=a, upper=b)$value#
+#
+a12 <- a21 <- integrate(function(x) x, lower=a, upper=b)$value #
+#
+a13 <- a22 <- a31 <- integrate(function(x) x^2, lower=a, upper=b)$value#
+#
+a23 <- a32 <- integrate(function(x) x^3, lower=a, upper=b)$value#
+#
+a33 <- integrate(function(x) x^4, lower=a, upper=b)$value#
+(A <- matrix(c(a11, a12, a13, a21, a22, a23, a31, a32, a33 ), 3, 3, byrow=T))#
+#
+b1 <- integrate(function(x) f(x), lower=a, upper=b)$value#
+b2 <- integrate(function(x) x*f(x), lower=a, upper=b)$value#
+b3 <- integrate(function(x) x^2*f(x), lower=a, upper=b)$value#
+b <- matrix(c(b1, b2, b3), 3, 1)#
+#
+cs <- solve(A, b)#
+#
+file <- F#
+if(file)pdf("example-8-2-1.pdf", height=10, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(f, xlim=c(0, 1), ylim=c(-0.1, 1), las=1)#
+plot(function(x) cs[1] + cs[2]*x + cs[3]*x^2, xlim=c(0, 1), col=2, add=T)#
+for(i in 1:3)text(0.4, 0.4-0.1*i, bquote(a[.(i-1)]==.(round(cs[i], 4))), pos=4)#
+legend("topleft", c("Function", "Approximation"), col=c(1, 2), lwd=1, bg="white")#
+#
+plot(function(x) f(x) - (cs[1] + cs[2]*x + cs[3]*x^2), xlim=c(0, 1), ylim=c(-0.05, 0.05), col=2, ylab="Error", las=1)#
+#
+if(file)dev.off()
+(x <- 1:10)#
+(y <- runif(1, 0, 1) + runif(1, 0, 1)*x + x^2 + runif(10, -3, 3))#
+plot(x, y)#
+(D <- cbind(1, x, x^2))#
+D#
+#
+(A <- t(D)%*%D)#
+(rhs <- t(D)%*%y)#
+(as <- solve(A, rhs))#
+plot(function(x)as[1] + as[2]*x + as[3]*x^2, xlim=c(1, 11), add=T)
+sizeof <- 5#
+#
+(A <- matrix(1:sizeof^2, nrow= sizeof, ncol= sizeof))#
+(B <- matrix(1:sizeof^2, nrow= sizeof, ncol= sizeof, byrow=T))#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- -1#
+	A[i, i] <- 2#
+	A[i, i+1] <- 1#
+}#
+#
+A[1, 1] <- 0#
+A[nrow(A), nrow(A)] <- 0#
+A#
+#
+(x <- solve(A, 1:sizeof))#
+#
+A%*%x
+x <- c(0, 3, 5, 8, 13)
+y <- c(0, 225, 383, 623, 993)
+plot(y ~ x)
+lm(y ~ x)
+abline(lm(y ~ x))
+xi <- 0:2#
+f <- function(x)exp(x)#
+y <- sapply(xi, f)#
+plot(f, las=1, xlim=c(0, 2), ylim=c(0, 8))#
+points(xi,y, pch=19, col=c(1, 2, 4))#
+l0 <- function(x) ((x-xi[2])*(x-xi[3]))/((xi[1]-xi[2])*(xi[1]-xi[3]))#
+l1 <- function(x) ((x-xi[1])*(x-xi[3]))/((xi[2]-xi[1])*(xi[2]-xi[3]))#
+l2 <- function(x) ((x-xi[2])*(x-xi[1]))/((xi[3]-xi[2])*(xi[3]-xi[1]))#
+plot(l0, xlim=c(0, 2))#
+plot(l1, xlim=c(0, 2), add=T, col=2)#
+plot(l2, xlim=c(0, 2), add=T, col=4)#
+#
+points(xi, c(l0(xi[1]), l1(xi[2]), l2(xi[3])), col=c(1, 2, 4), pch=19)#
+P <- function(x) f(xi[1])*l0(x) + f(xi[2])*l1(x) + f(xi[3])*l2(x)#
+plot(xi, y, col=c(1, 2, 4), pch=19)#
+plot(f, xlim=c(0, 2), add=T)#
+plot(P, xlim=c(0, 2), add=T, col="gray")
+N <- 8#
+xs <- seq(-1, 1, length=N)#
+(xs <- xs[order(xs)])#
+xs#
+L <- function(x, j){#
+	tmp <- 1#
+ for(i in 1:N){#
+	if(i!=j)tmp <- tmp*(x-xs[i])/(xs[j] - xs[i])#
+ }#
+tmp#
+}#
+#
+files <- F#
+if(files)pdf("Li.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=expression(L[0](x)))#
+points(xs, sapply(xs, function(x)L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-1, 1), las=1, xlab=expression(x), ylab=bquote(paste(L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)L(x,i)), pch=19)#
+}#
+if(files)dev.off()#
+#
+if(files)pdf("fLi.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(function(x)f(xs[1])*L(x,1), xlim=c(min(xs), max(xs)), ylim=c(-3, 3), las=1, xlab=expression(x), ylab=expression(f(x[0])*L[0](x)))#
+points(xs, sapply(xs, function(x)f(xs[1])*L(x,1)), pch=19)#
+for(i in 2:N){#
+plot(function(x)f(xs[i])*L(x,i), xlim=c(min(xs), max(xs)), ylim=c(-3, 3), las=1, xlab=expression(x), ylab=bquote(paste(f(x[.(i-1)])*L[.(i-1)](x))))#
+points(xs, sapply(xs, function(x)f(xs[i])*L(x,i)), pch=19)#
+}#
+if(files)dev.off()#
+f <- function(x)x^3*exp(-1.1*x)*sin(x)#
+#
+Pk <- function(x, k){#
+	tmp <- 0#
+	for(i in 1:k){#
+			tmp <- tmp + f(xs[i])*L(x, i)#
+	}#
+	tmp#
+}#
+if(files)pdf("fP.pdf", height=5, width=10)#
+par(mfrow=c(1,2), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(f, xlim=c(min(xs), max(xs)), ylab="Function and approximation", las=1, lwd=2)#
+plot(function(x)Pk(x,N), xlim=c(min(xs), max(xs)), add=T, col="gray")#
+points(xs, sapply(xs, f), pch=19)#
+points(xs, sapply(xs, P), pch=19, col='gray')#
+#
+plot(function(x) f(x) - Pk(x, N), xlim=c(min(xs), max(xs)), ylab="Error (f(x) - P(x))\n", las=1)#
+points(xs, 0*xs, pch=19, col=1)#
+if(files)dev.off()#
+if(files)pdf("fPk.pdf", height=5, width=10)#
+par(mfrow=c(2, ceiling(N/2)), mar=c(4.1, 4.1, 1.1, 1.1))#
+for(i in 1:N){#
+	plot(f, xlim=c(min(xs), max(xs)), ylab= bquote(paste("Function, approximation, and ", P[.(N)][","][.(i)](x))), las=1, lwd=2, ylim=c(0, 3))#
+	plot(function(x)Pk(x,i), xlim=c(min(xs), max(xs)), add=T, col="gray", lwd=2)#
+	points(xs[1:i], sapply(xs[1:i], f), pch=19)#
+}#
+if(files)dev.off()
+rhs <- log(ys) - log(xs)
+f <- function(x) 1*x*exp(-0.1*x)#
+files <- F#
+xs <- 1:20 + runif(20)#
+ys <- sapply(xs, f)  + runif(20, min=-0.2, max=0.2)#
+#
+if(files)pdf("nonlin_ls.pdf", height=5, width=5)#
+par(mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(xs, ys, xlim=c(0, 21), ylim=c(0, 4), pch=19, las=1, ylab=expression(f(x)), xlab=expression(x), cex.lab=1.25)#
+#
+D <- cbind(1, xs)#
+rhs <- log(ys) - log(xs)#
+#
+(cs <- qr.solve(D, rhs))#
+plot(function(x) exp(cs[1])*x*exp(cs[2]*x), add=T, xlim=c(0, ceiling(max(xs))), lwd=2)#
+D <- cbind(1, xs, log(xs))#
+rhs <- log(ys)#
+#
+(cs <- qr.solve(D, rhs))#
+plot(function(x) exp(cs[1])*(x^cs[3])*exp(cs[2]*x), add=T, xlim=c(0, ceiling(max(xs))), col="gray", lwd=2)#
+legend("bottomright", c("fit (a, b)", "fit (a, b, c)"), col=c(1, "gray"), lty=1, lwd=2, bg="white")#
+if(files)dev.off()

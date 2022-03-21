@@ -1,0 +1,1522 @@
+x <- 1:10#
+y <- runif(1, 0, 1) + runif(1, 0, 1)*x + x^2 + runif(10, -3, 3)#
+(D <- cbind(1, log(X)))#
+(D <- cbind(1, log(x)))#
+plot(function(x)exp(as[1]*as[2]*x), xlim=c(1, 11), add=T)#
+plot(function(x)exp(as[1])exp(as[2]*x), xlim=c(1, 11), add=T)#
+plot(function(x)exp(as[1])*exp(as[2]*x), xlim=c(1, 11), add=T)#
+D[ , 1]#
+D[ , 2]#
+#
+for(i in 1:10) D[i,1]*5#
+D[, 1]*5#
+#
+(x <- 1:10)#
+(y <- runif(1, 0, 1) + runif(1, 0, 1)*x + x^2 + runif(10, -3, 3))#
+plot(x, y)#
+(D <- cbind(1, x, x^2))#
+(A <- t(D)%*%D)#
+(rhs <- t(D)%*%y)#
+(as <- solve(A, rhs))#
+plot(function(x)as[1] + as[2]*x + as[3]*x^2, xlim=c(1, 11), add=T)#
+#
+(D <- cbind(1, log(x)))#
+(A <- t(D)%*%D)#
+(rhs <- t(D)%*%y)#
+(as <- solve(A, rhs))#
+plot(function(x)exp(as[1])*exp(as[2]*x), xlim=c(1, 11), add=T)#
+plot(function(x)as[1] + as[2]*x + as[3]*x^2, xlim=c(1, 11), add=T)#
+(D <- cbind(1, x))#
+plot(function(x)as[1] + as[2]*x, xlim=c(1, 11), add=T)#
+(D <- cbind(1, x, x^2, x^3))#
+(as <- solve(A, rhs))#
+plot(function(x)as[1] + as[2]*x+ as[3]*x^2+ as[4]*x^3, xlim=c(1, 11), add=T)#
+t up "design matrix"#
+(D <- cbind(1, x, x^2, log10(x)))#
+(A <- t(D)%*%D)#
+(rhs <- t(D)%*%y)#
+(as <- solve(A, rhs))#
+plot(function(x)as[1] + as[2]*x+ as[3]*x^2+ as[4]*log10(x), xlim=c(1, 11), add=T)#
+lm(y ~ x)#
+(D <- cbind(1, x))#
+(A <- t(D)%*%D)#
+(rhs <- t(D)%*%y)#
+(as <- solve(A, rhs))#
+plot(function(x)as[1] + as[2]*x, xlim=c(1, 11), add=T)#
+y#
+t(D)#
+(rhs <- t(D)%*%y)#
+(x <- 1:10)#
+(y <- runif(1, 0, 1) + runif(1, 0, 1)*x + x^2 + runif(10, -3, 3))#
+plot(x, y)#
+x#
+x^2#
+#
+(x <- 1:10)#
+(y <- runif(1, 0, 1) + runif(1, 0, 1)*x + x^2 + runif(10, -3, 3))#
+plot(x, y)#
+(D <- cbind(1, x, x^2))#
+(A <- t(D)%*%D)#
+(rhs <- t(D)%*%y)#
+(as <- solve(A, rhs))#
+plot(function(x)as[1] + as[2]*x + as[3]*x^2, xlim=c(1, 11), add=T)#
+D <- cbind(1, x, x^2#
+D <- cbind(1, x, x^2)#
+D#
+(A <- t(D)%*%D)#
+(D <- cbind(1, x, x^2))
+a <- 0#
+b <- 1#
+f <- function(x)sin(pi*x)#
+a11 <- integrate(function(x) 1 + 0*x, lower=a, upper=b)$value#
+a12 <- a21 <- integrate(function(x) x, lower=a, upper=b)$value #
+#
+a13 <- a22 <- a31 <- integrate(function(x) x^2, lower=a, upper=b)$value#
+#
+a23 <- a32 <- integrate(function(x) x^3, lower=a, upper=b)$value#
+#
+a33 <- integrate(function(x) x^4, lower=a, upper=b)$value#
+(A <- matrix(c(a11, a12, a13, a21, a22, a23, a31, a32, a33 ), 3, 3, byrow=T))#
+#
+b1 <- integrate(function(x) f(x), lower=a, upper=b)$value#
+b2 <- integrate(function(x) x*f(x), lower=a, upper=b)$value#
+b3 <- integrate(function(x) x^2*f(x), lower=a, upper=b)$value#
+b <- matrix(c(b1, b2, b3), 3, 1)#
+#
+cs <- solve(A, b)#
+#
+file <- T#
+if(file)pdf("example-8-2-1.pdf", height=10, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(f, xlim=c(0, 1), ylim=c(-0.1, 1), las=1)#
+plot(function(x) cs[1] + cs[2]*x + cs[3]*x^2, xlim=c(0, 1), col=2, add=T)#
+for(i in 1:3)text(0.4, 0.4-0.1*i, bquote(a[.(i-1)]==.(round(cs[i], 4))), pos=4)#
+legend("topleft", c("Function", "Approximation"), col=c(1, 2), lwd=1)#
+#
+plot(function(x) f(x) - (cs[1] + cs[2]*x + cs[3]*x^2), xlim=c(0, 1), ylim=c(-0.05, 0.05), col=2, ylab="Error", las=1)#
+if(file)dev.off()
+a <- 0#
+b <- 1#
+f <- function(x)sin(pi*x)#
+a11 <- integrate(function(x) 1 + 0*x, lower=a, upper=b)$value#
+a12 <- a21 <- integrate(function(x) x, lower=a, upper=b)$value #
+#
+a13 <- a22 <- a31 <- integrate(function(x) x^2, lower=a, upper=b)$value#
+#
+a23 <- a32 <- integrate(function(x) x^3, lower=a, upper=b)$value#
+#
+a33 <- integrate(function(x) x^4, lower=a, upper=b)$value#
+(A <- matrix(c(a11, a12, a13, a21, a22, a23, a31, a32, a33 ), 3, 3, byrow=T))#
+#
+b1 <- integrate(function(x) f(x), lower=a, upper=b)$value#
+b2 <- integrate(function(x) x*f(x), lower=a, upper=b)$value#
+b3 <- integrate(function(x) x^2*f(x), lower=a, upper=b)$value#
+b <- matrix(c(b1, b2, b3), 3, 1)#
+#
+cs <- solve(A, b)#
+#
+file <- F#
+if(file)pdf("example-8-2-1.pdf", height=10, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 4.1, 1.1, 1.1))#
+plot(f, xlim=c(0, 1), ylim=c(-0.1, 1), las=1)#
+plot(function(x) cs[1] + cs[2]*x + cs[3]*x^2, xlim=c(0, 1), col=2, add=T)#
+for(i in 1:3)text(0.4, 0.4-0.1*i, bquote(a[.(i-1)]==.(round(cs[i], 4))), pos=4)#
+legend("topleft", c("Function", "Approximation"), col=c(1, 2), lwd=1)#
+#
+plot(function(x) f(x) - (cs[1] + cs[2]*x + cs[3]*x^2), xlim=c(0, 1), ylim=c(-0.05, 0.05), col=2, ylab="Error", las=1)#
+if(file)dev.off()
+phi1 <- function(x) 1 + 0*x
+(b1 <- integrate(function(x)x*1*1^2, lower=0, upper=2)$value/integrate(function(x)1*1^2, lower=0, upper=2)$value)
+(b1 <- integrate(function(x)x*1*1^2, lower=0, upper=2)$value/integrate(function(x)1*1^2 + 0*x, lower=0, upper=2)$value)
+(b2 <- integrate(function(x)x*1*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)1*(phi1(x))^2 , lower=0, upper=2)$value)
+(c2 <- integrate(function(x)x*1*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)1*(phi0(x))^2 , lower=0, upper=2)$value)
+w <- function(x)1/(x*(x-1))
+w <- function(x)1/(x*(x-2))
+w <- function(x)-1/(x*(x-2))
+plot(w, xlim=c(0, 2))
+w <- function(x)-1/(x*(x-2))#
+#
+phi0 <- function(x) 1 + 0*x#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=0, upper=2)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=0, upper=2)$value)#
+phi1 <- function(x) x-b1#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)w(X)*(phi0(x))^2 , lower=0, upper=2)$value)
+w <- function(x)-1/(x*(x-2))#
+#
+phi0 <- function(x) 1 + 0*x#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=0, upper=2)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=0, upper=2)$value)#
+phi1 <- function(x) x-b1#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=0, upper=2)$value)
+w <- function(x)-1/sqrt(x*(x-2))#
+#
+phi0 <- function(x) 1 + 0*x#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=0, upper=2)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=0, upper=2)$value)#
+phi1 <- function(x) x-b1#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=0, upper=2)$value)
+w <- function(x)2 + 0*x#
+#
+phi0 <- function(x) 1 + 0*x#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=0, upper=2)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=0, upper=2)$value)#
+phi1 <- function(x) x-b1#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=0, upper=2)$value)
+w <- function(x)2 + x#
+#
+phi0 <- function(x) 1 + 0*x#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=0, upper=2)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=0, upper=2)$value)#
+phi1 <- function(x) x-b1#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=0, upper=2)$value)
+w <- function(x)1 + 0*x#
+#
+phi0 <- function(x) 1 + 0*x#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=0, upper=2)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=0, upper=2)$value)#
+phi1 <- function(x) x-b1#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=0, upper=2)$value)
+w <- function(x)1 + 0*x#
+#
+phi0 <- function(x) 1 + 0*x#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=0, upper=2)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=0, upper=2)$value)#
+phi1 <- function(x) x-b1#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=0, upper=2)$value)#
+#
+phi2 <- function(x) (x-b2)*phi1(x) - c2*phi0(x)
+plot(phi0, xlim=c(0, 2))
+w <- function(x)1 + 0*x#
+#
+phi0 <- function(x) 1 + 0*x#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=0, upper=2)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=0, upper=2)$value)#
+phi1 <- function(x) x-b1#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=0, upper=2)$value)#
+#
+phi2 <- function(x) (x-b2)*phi1(x) - c2*phi0(x)#
+#
+plot(phi0, xlim=c(0, 2))#
+plot(phi1, xlim=c(0, 2), add=T)#
+plot(phi2, xlim=c(0, 2), add=T)
+plot(phi0, xlim=c(0, 2), ylim=c(0, 1))
+plot(phi1, xlim=c(0, 2), add=T)
+plot(phi2, xlim=c(0, 2), add=T)
+w <- function(x)1 + 0*x#
+#
+phi0 <- function(x) 1 + 0*x#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=0, upper=2)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=0, upper=2)$value)#
+phi1 <- function(x) x-b1#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=0, upper=2)$value)#
+#
+phi2 <- function(x) (x-b2)*phi1(x) - c2*phi0(x)#
+#
+plot(phi0, xlim=c(0, 2), ylim=c(-1, 1))#
+plot(phi1, xlim=c(0, 2), add=T)#
+plot(phi2, xlim=c(0, 2), add=T)
+(b3 <- integrate(function(x)x*w(x)*(phi2(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi2(x))^2 , lower=0, upper=2)$value)#
+#
+(c3 <- integrate(function(x)x*w(x)*(phi2(x)*phi1(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+phi2 <- function(x) (x-b3)*phi2(x) - c3*phi1(x)
+w <- function(x)1 + 0*x#
+#
+phi0 <- function(x) 1 + 0*x#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=0, upper=2)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=0, upper=2)$value)#
+phi1 <- function(x) x-b1#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=0, upper=2)$value)#
+#
+phi2 <- function(x) (x-b2)*phi1(x) - c2*phi0(x)#
+#
+plot(phi0, xlim=c(0, 2), ylim=c(-1, 1))#
+plot(phi1, xlim=c(0, 2), add=T)#
+plot(phi2, xlim=c(0, 2), add=T)#
+integrate(function(x)phi0(x)*phi1(x), lower=0, upper=2)$value#
+(b3 <- integrate(function(x)x*w(x)*(phi2(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi2(x))^2 , lower=0, upper=2)$value)#
+#
+(c3 <- integrate(function(x)x*w(x)*(phi2(x)*phi1(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+phi3 <- function(x) (x-b3)*phi2(x) - c3*phi1(x)#
+plot(phi3, xlim=c(0, 2), add=T)
+phi1
+(b2 <- integrate(x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)
+(b2 <- integrate(w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)
+w <- function(x)1 + 0*x#
+#
+phi0 <- function(x) 1 + 0*x#
+#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=0, upper=2)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=0, upper=2)$value)#
+#
+phi1 <- function(x) x-b1#
+#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=0, upper=2)$value)#
+#
+phi2 <- function(x) (x-b2)*phi1(x) - c2*phi0(x)#
+#
+plot(phi0, xlim=c(0, 2), ylim=c(-1, 1))#
+plot(phi1, xlim=c(0, 2), add=T)#
+plot(phi2, xlim=c(0, 2), add=T)#
+integrate(function(x)phi0(x)*phi1(x), lower=0, upper=2)$value#
+(b3 <- integrate(function(x)x*w(x)*(phi2(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi2(x))^2 , lower=0, upper=2)$value)#
+#
+(c3 <- integrate(function(x)x*w(x)*(phi2(x)*phi1(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+phi3 <- function(x) (x-b3)*phi2(x) - c3*phi1(x)#
+plot(phi3, xlim=c(0, 2), add=T)
+w <- function(x)1/sqrt(1-x^2)#
+#
+phi0 <- function(x) 1 + 0*x#
+#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=0, upper=2)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=0, upper=2)$value)#
+#
+phi1 <- function(x) x-b1#
+#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=0, upper=2)$value)#
+#
+phi2 <- function(x) (x-b2)*phi1(x) - c2*phi0(x)#
+#
+plot(phi0, xlim=c(0, 2), ylim=c(-1, 1))#
+plot(phi1, xlim=c(0, 2), add=T)#
+plot(phi2, xlim=c(0, 2), add=T)#
+integrate(function(x)phi0(x)*phi1(x), lower=0, upper=2)$value#
+(b3 <- integrate(function(x)x*w(x)*(phi2(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi2(x))^2 , lower=0, upper=2)$value)#
+#
+(c3 <- integrate(function(x)x*w(x)*(phi2(x)*phi1(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)#
+#
+phi3 <- function(x) (x-b3)*phi2(x) - c3*phi1(x)#
+plot(phi3, xlim=c(0, 2), add=T)
+a <- -1#
+b <- 1#
+w <- function(x)1/sqrt(1-x^2)#
+#
+phi0 <- function(x) 1 + 0*x#
+#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=a, upper=b)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=a, upper=b)$value)#
+#
+phi1 <- function(x) x-b1#
+#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=a, upper=b)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=a, upper=b)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=a, upper=b)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=a, upper=b)$value)#
+#
+phi2 <- function(x) (x-b2)*phi1(x) - c2*phi0(x)#
+#
+plot(phi0, xlim=c(0, 2), ylim=c(-1, 1))#
+plot(phi1, xlim=c(0, 2), add=T)#
+plot(phi2, xlim=c(0, 2), add=T)#
+integrate(function(x)phi0(x)*phi1(x), lower=a, upper=b)$value#
+(b3 <- integrate(function(x)x*w(x)*(phi2(x))^2, lower=a, upper=b)$value/integrate(function(x)w(x)*(phi2(x))^2 , lower=a, upper=b)$value)#
+#
+(c3 <- integrate(function(x)x*w(x)*(phi2(x)*phi1(x)), lower=a, upper=b)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=a, upper=b)$value)#
+lower=a, upper=b#
+phi3 <- function(x) (x-b3)*phi2(x) - c3*phi1(x)#
+plot(phi3, xlim=c(0, 2), add=T)
+a <- -1#
+b <- 1#
+w <- function(x)1/sqrt(1-x^2)#
+#
+phi0 <- function(x) 1 + 0*x#
+#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=a, upper=b)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=a, upper=b)$value)#
+#
+phi1 <- function(x) x-b1#
+#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=a, upper=b)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=a, upper=b)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=a, upper=b)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=a, upper=b)$value)#
+#
+phi2 <- function(x) (x-b2)*phi1(x) - c2*phi0(x)#
+#
+plot(phi0, xlim=c(0, 2), ylim=c(-1, 1))#
+plot(phi1, xlim=c(0, 2), add=T)#
+plot(phi2, xlim=c(0, 2), add=T)#
+integrate(function(x)phi0(x)*phi1(x), lower=a, upper=b)$value#
+(b3 <- integrate(function(x)x*w(x)*(phi2(x))^2, lower=a, upper=b)$value/integrate(function(x)w(x)*(phi2(x))^2 , lower=a, upper=b)$value)#
+#
+(c3 <- integrate(function(x)x*w(x)*(phi2(x)*phi1(x)), lower=a, upper=b)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=a, upper=b)$value)#
+lower=a, upper=b)#
+phi3 <- function(x) (x-b3)*phi2(x) - c3*phi1(x)#
+plot(phi3, xlim=c(0, 2), add=T)
+a <- -1#
+b <- 1#
+w <- function(x)1/sqrt(1-x^2)#
+#
+phi0 <- function(x) 1 + 0*x#
+#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=a, upper=b)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=a, upper=b)$value)#
+#
+phi1 <- function(x) x-b1#
+#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=a, upper=b)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=a, upper=b)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=a, upper=b)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=a, upper=b)$value)#
+#
+phi2 <- function(x) (x-b2)*phi1(x) - c2*phi0(x)#
+#
+plot(phi0, xlim=c(a, b), ylim=c(-1, 1))#
+plot(phi1, xlim=c(a, b), add=T)#
+plot(phi2, xlim=c(a, b), add=T)#
+integrate(function(x)phi0(x)*phi1(x), lower=a, upper=b)$value#
+(b3 <- integrate(function(x)x*w(x)*(phi2(x))^2, lower=a, upper=b)$value/integrate(function(x)w(x)*(phi2(x))^2 , lower=a, upper=b)$value)#
+#
+(c3 <- integrate(function(x)x*w(x)*(phi2(x)*phi1(x)), lower=a, upper=b)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=a, upper=b)$value)#
+#
+phi3 <- function(x) (x-b3)*phi2(x) - c3*phi1(x)#
+plot(phi3, xlim=c(0, 2), add=T)
+plot(phi3, xlim=c(a, b), add=T)
+(b4 <- integrate(function(x)x*w(x)*(phi3(x))^2, lower=a, upper=b)$value/integrate(function(x)w(x)*(phi3(x))^2 , lower=a, upper=b)$value)#
+#
+(c4 <- integrate(function(x)x*w(x)*(phi3(x)*phi2(x)), lower=a, upper=b)$value/integrate(function(x)w(x)*(phi2(x))^2 , lower=a, upper=b)$value)#
+#
+phi4 <- function(x) (x-b4)*phi3(x) - c4*phi2(x)#
+plot(phi4, xlim=c(a, b), add=T)
+a <- -1#
+b <- 1#
+w <- function(x)1/sqrt(1-x^2)#
+#
+phi0 <- function(x) 1 + 0*x#
+#
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=a, upper=b)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=a, upper=b)$value)#
+#
+phi1 <- function(x) x-b1#
+#
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=a, upper=b)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=a, upper=b)$value)#
+#
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=a, upper=b)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=a, upper=b)$value)#
+#
+phi2 <- function(x) (x-b2)*phi1(x) - c2*phi0(x)#
+#
+plot(phi0, xlim=c(a, b), ylim=c(-1, 1))#
+plot(phi1, xlim=c(a, b), add=T)#
+plot(phi2, xlim=c(a, b), add=T)#
+integrate(function(x)phi0(x)*phi1(x), lower=a, upper=b)$value#
+(b3 <- integrate(function(x)x*w(x)*(phi2(x))^2, lower=a, upper=b)$value/integrate(function(x)w(x)*(phi2(x))^2 , lower=a, upper=b)$value)#
+#
+(c3 <- integrate(function(x)x*w(x)*(phi2(x)*phi1(x)), lower=a, upper=b)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=a, upper=b)$value)#
+#
+phi3 <- function(x) (x-b3)*phi2(x) - c3*phi1(x)#
+plot(phi3, xlim=c(a, b), add=T)#
+(b4 <- integrate(function(x)x*w(x)*(phi3(x))^2, lower=a, upper=b)$value/integrate(function(x)w(x)*(phi3(x))^2 , lower=a, upper=b)$value)#
+#
+(c4 <- integrate(function(x)x*w(x)*(phi3(x)*phi2(x)), lower=a, upper=b)$value/integrate(function(x)w(x)*(phi2(x))^2 , lower=a, upper=b)$value)#
+#
+phi4 <- function(x) (x-b4)*phi3(x) - c4*phi2(x)#
+plot(phi4, xlim=c(a, b), add=T)
+f <- function(x) exp(x)
+P4 <- function(x) 1 + x + x^2/2 + x^3/6 + x^4/24
+Tt4 <- function(x) x^4 - x^2 + 1/8
+P3 <- function(x)P4(x) - 1/24*Tt4(x)
+P2 <- function(x)P3(x) - 1/6*(x^3 - 3/4*x)
+P1 <- function(x)P2(x) - 13/24*(x^2 - 1/2)
+P0 <- function(x)P1(x) - 9/8*(x)
+par(mfrow=c(1,2), mar=c(4.1,4.1,1.1,1.1))#
+plot(f, xlim=c(0, 1),ylim=c(0, 3), las=1)#
+plot(P4, col=2, add=T)#
+plot(P3, xlim=c(0, 1), col=4, add=T)#
+plot(P2, xlim=c(0, 1), col=3, add=T)#
+plot(P1, xlim=c(0, 1), col=5, add=T)#
+plot(P0, xlim=c(0, 1), col=6, add=T)
+par(mfrow=c(1,2), mar=c(4.1,4.1,1.1,1.1))
+plot(f, xlim=c(0, 1),ylim=c(0, 3), las=1)
+plot(P4, col=2, add=T)
+plot(P3, xlim=c(0, 1), col=4, add=T)
+plot(P2, xlim=c(0, 1), col=3, add=T)
+plot(P1, xlim=c(0, 1), col=5, add=T)
+plot(P0, xlim=c(0, 1), col=6, add=T)
+plot(function(x)f(x)-P4(x), col=2, ylim=c(-0.25, 0.25), las=1)
+plot(function(x)(f(x)-P3(x))/f(x), col=3, add=T)
+plot(function(x)(f(x)-P2(x))/f(x), col=4, add=T)
+plot(function(x)(f(x)-P1(x))/f(x), col=5, add=T)
+plot(function(x)(f(x)-P0(x))/f(x), col=6, add=T)
+a <- 0#
+b <- 1#
+f <- function(x)sin(pi*x)#
+a11 <- integrate(function(x) 1 + 0*x, lower=a, upper=b)$value#
+#
+a12 <- a21 <- integrate(function(x) x, lower=a, upper=b)$value #
+#
+a13 <- a22 <- a31 <- integrate(function(x) x^2, lower=a, upper=b)$value#
+#
+a23 <- a32 <- integrate(function(x) x^3, lower=a, upper=b)$value#
+#
+a33 <- integrate(function(x) x^4, lower=a, upper=b)$value#
+(A <- matrix(c(a11, a12, a13, a21, a22, a23, a31, a32, a33 ), 3, 3, byrow=T))
+(x <- 1:10)
+(y <- runif(1, 0, 1) + runif(1, 0, 1)*x + x^2 + runif(10, -3, 3))
+plot(x, y)
+D
+(A <- t(D)%*%D)
+(D <- cbind(1, x, x^2))
+t(D)
+w <- function(x)1 + 0*x
+phi0 <- function(x) 1 + 0*x
+(b1 <- integrate(function(x)x*w(x)*1^2, lower=0, upper=2)$value/integrate(function(x)w(x)*1^2 + 0*x, lower=0, upper=2)$value)
+phi1 <- function(x) x-b1
+(b2 <- integrate(function(x)x*w(x)*(phi1(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)
+(c2 <- integrate(function(x)x*w(x)*(phi1(x)*phi0(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi0(x))^2 , lower=0, upper=2)$value)
+phi2 <- function(x) (x-b2)*phi1(x) - c2*phi0(x)
+plot(phi0, xlim=c(0, 2), ylim=c(-1, 1))#
+plot(phi1, xlim=c(0, 2), add=T)#
+plot(phi2, xlim=c(0, 2), add=T)
+integrate(function(x)phi0(x)*phi1(x), lower=0, upper=2)$value
+(b3 <- integrate(function(x)x*w(x)*(phi2(x))^2, lower=0, upper=2)$value/integrate(function(x)w(x)*(phi2(x))^2 , lower=0, upper=2)$value)
+(c3 <- integrate(function(x)x*w(x)*(phi2(x)*phi1(x)), lower=0, upper=2)$value/integrate(function(x)w(x)*(phi1(x))^2 , lower=0, upper=2)$value)
+phi3 <- function(x) (x-b3)*phi2(x) - c3*phi1(x)
+plot(phi3, xlim=c(0, 2), add=T)
+integrate(function(x)x*w(x)*(phi1(x))^2, lower=a, upper=b)
+str(integrate(function(x)x*w(x)*(phi1(x))^2, lower=a, upper=b))
+ys <- as <- c(2, 3, 5)#
+xs <- c(1, 2, 3)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[2 + 1] - as[1 + 1])/hs[1 + 1]  - (as[1 + 1] - as[0 + 1])/hs[0 + 1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r
+bd
+for(j in 1:2){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}
+plot(xs, ys, pch=19)#
+for(j in 1:2){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5, 10)#
+xs <- c(1, 2, 3, 5)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[2 + 1] - as[1 + 1])/hs[1 + 1]  - (as[1 + 1] - as[0 + 1])/hs[0 + 1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+cs <- solve(A, r)#
+#
+bs <- ds <- 0*as #
+for(j in 1:3){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:3){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5, 10)#
+xs <- c(1, 2, 3, 5)#
+hs <- diff(xs)#
+n <- length(xs)
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[2 + 1] - as[1 + 1])/hs[1 + 1]  - (as[1 + 1] - as[0 + 1])/hs[0 + 1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r
+cs <- solve(A, r)
+bs <- ds <- 0*as
+bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3
+ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])
+plot(xs, ys, pch=19)
+for(j in 1:3){
+ys <- as <- c(2, 3, 5)#
+xs <- c(1, 2, 3)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[2 + 1] - as[1 + 1])/hs[1 + 1]  - (as[1 + 1] - as[0 + 1])/hs[0 + 1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+cs <- solve(A, r)#
+#
+bs <- ds <- 0*as #
+for(j in 1:2){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:2){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5, 7)#
+xs <- c(1, 2, 3, 4)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[2 + 1] - as[1 + 1])/hs[1 + 1]  - (as[1 + 1] - as[0 + 1])/hs[0 + 1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+cs <- solve(A, r)#
+#
+bs <- ds <- 0*as #
+for(j in 1:2){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:2){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5, 7)#
+xs <- c(1, 2, 3, 4)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[2 + 1] - as[1 + 1])/hs[1 + 1]  - (as[1 + 1] - as[0 + 1])/hs[0 + 1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+cs <- solve(A, r)#
+#
+bs <- ds <- 0*as #
+for(j in 1:3){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:3){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5, 7)#
+xs <- c(1, 2, 3, 4)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[2 + 1] - as[1 + 1])/hs[1 + 1]  - (as[1 + 1] - as[0 + 1])/hs[0 + 1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+cs <- solve(A, r)#
+#
+bs <- ds <- 0*as #
+for(j in 3:1){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:3){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+(cs <- solve(A, r))
+ys <- as <- c(2, 3, 5, 7)#
+xs <- c(1, 2, 3, 4)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[(i+1) + 1] - as[i + 1])/hs[i + 1]  - (as[i + 1] - as[(i-1) + 1])/hs[(i-1) + 1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:3){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:3){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5, 7)#
+xs <- c(1, 2, 3, 4)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[(i+1) + 1] - as[(i) + 1])/hs[(i) + 1]  - (as[(i) + 1] - as[(i-1) + 1])/hs[(i-1) + 1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:3){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:3){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[(i+1) + 1] - as[(i) + 1])/hs[(i) + 1]  - (as[(i) + 1] - as[(i-1) + 1])/hs[(i-1) + 1])#
+}
+ys <- as <- c(2, 3, 5, 7)#
+xs <- c(1, 2, 3, 4)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[(i+1] - as[i])/hs[i]  - (as[i] - as[(i-1)])/hs[(i-1)])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:3){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:3){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5, 7)#
+xs <- c(1, 2, 3, 4)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+}
+A
+ys <- as <- c(2, 3, 5, 7)#
+xs <- c(1, 2, 3, 4)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[i+1] - as[i])/hs[i]  - (as[i] - as[i-1])/hs[i-)])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:3){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:3){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5, 7)#
+xs <- c(1, 2, 3, 4)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[i+1] - as[i])/hs[i]  - (as[i] - as[i-1])/hs[i-1)])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:3){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:3){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5, 7)#
+xs <- c(1, 2, 3, 4)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[i+1] - as[i])/hs[i]  - (as[i] - as[i-1])/hs[i-1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:3){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:3){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5, 7, 9)#
+xs <- c(1, 2, 3, 4, 6)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[i+1] - as[i])/hs[i]  - (as[i] - as[i-1])/hs[i-1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:4){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:4){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+plot(xs, ys, pch=NA)
+plot(xs, ys, pch=NA, xlim=c(3, 5), ylim=c(6, 8))
+for(j in 1:4){
+plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)
+}
+ys <- as <- c(2, 3, 5, 7, 9)#
+xs <- c(1, 2, 3, 4, 6)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[i+1] - as[i])/hs[i]  - (as[i] - as[i-1])/hs[i-1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:4){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=NA)#
+for(j in 1:4){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5, 7, 9)#
+xs <- c(1, 2, 3, 4, 8)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[i+1] - as[i])/hs[i]  - (as[i] - as[i-1])/hs[i-1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:4){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=NA)#
+for(j in 1:4){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5, 7)#
+xs <- c(1, 2, 3, 4)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[i+1] - as[i])/hs[i]  - (as[i] - as[i-1])/hs[i-1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:3){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=NA)#
+for(j in 1:3){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+bs
+cd
+ds
+ys <- as <- c(2, 3, 5, 7, 10)#
+xs <- c(1, 2, 3, 4, 6)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[i+1] - as[i])/hs[i]  - (as[i] - as[i-1])/hs[i-1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:(n-1)){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=NA)#
+for(j in 1:(n-1)){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5, 7, 10)#
+xs <- c(1, 2, 3, 4, 6)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[i+1] - as[i])/hs[i]  - (as[i] - as[i-1])/hs[i-1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:(n-1)){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:(n-1)){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5)#
+xs <- c(1, 2, 3)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[i+1] - as[i])/hs[i]  - (as[i] - as[i-1])/hs[i-1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:(n-1)){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+plot(xs, ys, pch=19)#
+for(j in 1:(n-1)){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+rbind(as, bs, cs, ds)
+cbind(as, bs, cs, ds)
+cbind(a=as, b=bs, c=cs, d=ds)
+cbind(i=1:n, ai=as, bi=bs, ci=cs, di=ds)
+cs
+as
+cbind(i=1:n, ai=as, bi=bs, ci=as.vector(cs), di=ds)
+ys <- as <- c(2, 3, 5)#
+xs <- c(1, 2, 3)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[i+1] - as[i])/hs[i]  - (as[i] - as[i-1])/hs[i-1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:(n-1)){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+#
+cbind(i=1:n, ai=as, bi=bs, ci=as.vector(cs), di=ds)#
+#
+plot(xs, ys, pch=19)#
+for(j in 1:(n-1)){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+ys <- as <- c(2, 3, 5)#
+xs <- c(1, 2, 3)#
+hs <- diff(xs)#
+n <- length(xs)#
+A <- matrix(0, nrow=n, ncol=n)#
+r <- matrix(0, nrow=n, ncol=1)#
+for(i in 2:(nrow(A)-1)){#
+	A[i, i-1] <- hs[0 + 1]#
+	A[i, i] <- 2*(hs[0 + 1] + hs[1 + 1])#
+	A[i, i+1] <- hs[1 + 1]#
+#
+	r[i] <- 3*((as[i+1] - as[i])/hs[i]  - (as[i] - as[i-1])/hs[i-1])#
+}#
+A[1, 1] <- A[nrow(A), ncol(A)] <- 1#
+r[1] <- r[nrow(r)] <- 0#
+#
+A#
+r#
+(cs <- solve(A, r))#
+#
+bs <- ds <- 0*as #
+for(j in 1:(n-1)){#
+	bs[j] <- (as[j + 1] - as[j])/hs[j] -  hs[j]*(cs[j + 1] + 2*cs[j])/3#
+	ds[j] <- (cs[j + 1] - cs[j])/(3*hs[j])#
+}#
+cbind(i=1:n, ai=as, bi=bs, ci=as.vector(cs), di=ds)#
+plot(xs, ys, pch=19)#
+for(j in 1:(n-1)){#
+	plot(function(x) as[j] + bs[j]*(x - xs[j])^1 + cs[j]*(x - xs[j])^2 + ds[j]*(x - xs[j])^3, xlim=c(xs[j], xs[j + 1]), add=T)#
+}
+xs <- c(0, 3, 5, 8, 13)#
+h <- diff(xs)#
+#
+as <- c(0, 225, 383, 623, 993)#
+plot(xs, as)#
+(A <- matrix(c(#
+2*h[1], h[1], 0, 0, 0,#
+h[1], 2*(h[1]+h[2]), h[2], 0, 0, #
+0, h[2], 2*(h[2]+h[3]), h[3], 0,#
+0, 0, h[3], 2*(h[3]+h[4]), h[4],#
+ 0, 0, 0, h[4], 2*h[4]), byrow=T, nrow=5, ncol=5))#
+#
+(rhs <- matrix(c(#
+3*(as[2]-as[1])/h[1] - 3*(75), #
+3*(as[3]-as[2])/h[2] - 3*(as[2]-as[1])/h[1], #
+3*(as[4]-as[3])/h[3] - 3*(as[3]-as[2])/h[2], #
+3*(as[5]-as[4])/h[4] - 3*(as[4]-as[3])/h[3], #
+3*72-3*(as[5]-as[4])/h[4] #
+), nrow=5, ncol=1))#
+#
+(cs <- solve(A, rhs))#
+bs <- NULL#
+ds <- NULL#
+for(i in 4:1){#
+	bs[i] <- (as[i+1]-as[i])/h[i] - h[i]*(cs[i+1] + 2*cs[i])/3#
+	ds[i] <- (cs[i+1] -cs[i])/(3*h[i])#
+}#
+#
+(coefs <- rbind(as[1:4], bs, cs[1:4],ds))#
+h <- function(x) 75*x + 7.16191*x^2 - 10.0953*x^3 + 5.50812*x^4 - 1.5383*x^5 + 0.243041*x^6 - 0.0218757*x^7 + 0.00104059*x^8 - 0.0000202236*x^9#
+hp <- function(x) 75 + 2*7.16191*x - 3*10.0953*x^2 + 4*5.50812*x^3 - 5*1.5383*x^4 + 6*0.243041*x^5 - 7*0.0218757*x^6 + 8*0.00104059*x^7 - 9*0.0000202236*x^8#
+files <- T#
+if(files)pdf("speed1.pdf", height=5, width=5)#
+#
+par(mar=c(4.1, 4.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(h, xlim=c(0, 13), ylim=c(0, 1000), xlab="time", ylab="distance", las=1, lwd=2)#
+(mod <- lm(as ~ xs))#
+abline(mod, col=4, lty=31, lwd=2)#
+for(i in 1:4){#
+	plot(function(x) coefs[1, i] + coefs[2, i]*(x-xs[i]) + coefs[3, i]*(x-xs[i])^2+ + coefs[4, i]*(x-xs[i])^3, xlim=c(xs[i], xs[i+1]), add=T, col=2, lty=2, lwd=2)#
+}#
+legend("topleft", c("Data", "Hermite", "Spline", "Linear trend"), pch=c(19, NA, NA, NA), lty=c(NA, 1, 2, 3), col=c(1, 1, 2, 4), lwd=2)#
+points(xs, as, pch=19)#
+if(files)dev.off()#
+if(files)pdf("speed2.pdf", height=5, width=5)#
+plot(hp, xlim=c(0, 13), ylim=c(40, 120), xlab="time", ylab="ft/sec", las=1, lwd=2)#
+abline(h=coefficients(mod)['xs'], col=4, lty=3, lwd=2)#
+for(i in 1:4){#
+	plot(function(x) (coefs[2, i] + 2*coefs[3, i]*(x-xs[i]) + 3*coefs[4, i]*(x-xs[i])^2), xlim=c(xs[i], xs[i+1]), add=T, col=2, lty=2, lwd=2)#
+}#
+points(xs, c(75, 77, 80, 74, 72), pch=19)#
+dev.off()#
+#
+if(files)pdf("speed3.pdf", height=5, width=5)#
+plot(function(x)hp(x)*(3600/5280), xlim=c(0, 13), ylim=c(40, 120)*(3600/5280), xlab="time", ylab="mph", las=1, lwd=2)#
+abline(h=coefficients(mod)['xs']*(3600/5280), col=4, lty=3, lwd=2)#
+#
+for(i in 1:4){#
+	plot(function(x) ((coefs[2, i] + 2*coefs[3, i]*(x-xs[i]) + 3*coefs[4, i]*(x-xs[i])^2))*(3600/5280), xlim=c(xs[i], xs[i+1]), add=T, col=2, lty=2, lwd=2)#
+}#
+points(xs, c(75, 77, 80, 74, 72)*(3600/5280), pch=19)#
+if(files)dev.off()
+f <- function(x) exp(x)#
+P4 <- function(x) 1 + x + x^2/2 + x^3/6 + x^4/24#
+Tt4 <- function(x) x^4 - x^2 + 1/8#
+#
+P3 <- function(x)P4(x) - 1/24*Tt4(x)#
+P2 <- function(x)P3(x) - 1/6*(x^3 - 3/4*x)#
+P1 <- function(x)P2(x) - 13/24*(x^2 - 1/2) #
+P0 <- function(x)P1(x) - 9/8*(x) #
+#
+par(mfrow=c(1,2), mar=c(4.1,4.1,1.1,1.1))#
+plot(f, xlim=c(0, 1),ylim=c(0, 3), las=1)#
+plot(P4, col=2, add=T)#
+plot(P3, xlim=c(0, 1), col=4, add=T)#
+plot(P2, xlim=c(0, 1), col=3, add=T)#
+plot(P1, xlim=c(0, 1), col=5, add=T)#
+plot(P0, xlim=c(0, 1), col=6, add=T)#
+#
+plot(function(x)f(x)-P4(x), col=2, ylim=c(-0.25, 0.25), las=1)#
+plot(function(x)(f(x)-P3(x))/f(x), col=3, add=T)#
+plot(function(x)(f(x)-P2(x))/f(x), col=4, add=T)#
+plot(function(x)(f(x)-P1(x))/f(x), col=5, add=T)#
+plot(function(x)(f(x)-P0(x))/f(x), col=6, add=T)
+(x <- 1:10)#
+(y <- runif(1, 0, 1) + runif(1, 0, 1)*x + x^2 + runif(10, -3, 3))#
+plot(x, y)#
+(D <- cbind(1, x, x^2))#
+D#
+#
+(A <- t(D)%*%D)#
+(rhs <- t(D)%*%y)#
+(as <- solve(A, rhs))#
+plot(function(x)as[1] + as[2]*x + as[3]*x^2, xlim=c(1, 11), add=T)
+a <- 0#
+b <- 1.5#
+1/2*((b - a)*(seq(-1, 1, length=4)) + a + b)#
+#
+(2*seq(a, b, length=4) - a - b)/(b - a)#
+n <- 1#
+k <- 1#
+#
+cos((2*k-1)/(2*n)*pi)#
+k <- 0#
+cos((k*pi)/(n))#
+k <- 1#
+cos((k*pi)/(n))#
+n <- 2#
+#
+k <- 1#
+cos((2*k-1)/(2*n)*pi)#
+sqrt(2)/2#
+k <- 2#
+cos((2*k-1)/(2*n)*pi)#
+k <- 0#
+cos((k*pi)/(n))#
+k <- 1#
+cos((k*pi)/(n))#
+k <- 2#
+cos((k*pi)/(n))#
+#
+files <- T#
+if(files)pdf("legendre_funs.pdf", height=5, width=5)#
+par(mfrow=c(1, 1), mar=c(4.1, 5.1, 1.1, 1.1))#
+#
+plot(NULL, col="gray", lwd=0.5, xlim=c(-1.1, 1.1), ylim=c(-1.1, 1.1), las=1, xlab="", ylab="")#
+plot(function(x)x, col="gray", lwd=0.5, xlim=c(-1, 1), add=T)#
+mtext("Monomials and Legendre", 2, line=2.75, cex=1.5)#
+mtext("x", 1, line=2.75, cex=1.5)#
+for(i in 1:4)plot(function(x)x^i, col="gray", lwd=0.5, xlim=c(-1, 1), add=T)#
+#
+p1 <- function(x)x#
+plot(p1, col=1, xlim=c(-1, 1), ylim=c(-1,1), las=1, add=T)#
+text(-1, p1(-1), expression(P[1](x)), pos=1)#
+#
+p2 <- function(x)x^2-1/3#
+plot(p2, col=1, xlim=c(-1, 1), add=T)#
+text(-1, p2(-1), expression(P[2](x)), pos=3)#
+#
+p3 <- function(x)x^3-1/3*x#
+plot(p3, col=1, xlim=c(-1, 1), add=T)#
+text(-1, p3(-1), expression(P[3](x)), pos=1)#
+#
+p4 <- function(x)x^4-6/7*x^2+3/35#
+plot(p4, col=1, xlim=c(-1, 1), add=T)#
+text(-1, p4(-1), expression(P[4](x)), pos=3)#
+if(files)dev.off()#
+if(files)pdf("cheb_funs.pdf", height=5, width=5)#
+par(mfrow=c(1, 1), mar=c(4.1, 5.1, 1.1, 1.1))#
+#
+plot(NULL, col="gray", lwd=0.5, xlim=c(-1.1, 1.1), ylim=c(-1.1, 1.1), las=1, xlab="", ylab="")#
+plot(function(x)x, col="gray", lwd=0.5, xlim=c(-1, 1), add=T)#
+#
+mtext("Monomials and Chebyshev", 2, line=2.75, cex=1.5)#
+mtext("x", 1, line=2.75, cex=1.5)#
+for(i in 1:4)plot(function(x)x^i, col="gray", lwd=0.5, xlim=c(-1, 1), add=T)#
+abline(h=0, lty=3, lwd=0.5)#
+abline(v=0, lty=3, lwd=0.5)#
+#
+p1 <- function(x)x#
+plot(p1, col=1, xlim=c(-1, 1), ylim=c(-1,1), las=1, add=T)#
+text(0.75, p1(0.75), expression(T[1](x)), pos=2)#
+#
+p2 <- function(x)2*x^2-1#
+plot(p2, col=1, xlim=c(-1, 1), add=T)#
+rt <- uniroot(function(x)4*x, lower=-1, upper=1)$root#
+text(rt, p2(rt), expression(T[2](x)), pos=1)#
+#
+p3 <- function(x)4*x^3-3*x#
+plot(p3, col=1, xlim=c(-1, 1), add=T)#
+rt <- uniroot(function(x)12*x^2-3, lower=-1, upper=0)$root#
+text(rt, p3(rt), expression(T[3](x)), pos=3)#
+#
+p4 <- function(x)8*x^4-8*x^2+1#
+plot(p4, col=1, xlim=c(-1, 1), add=T)#
+rt <- uniroot(function(x)32*x^3-16*x, lower=-0.75, upper=0)$root#
+text(rt, p4(rt), expression(T[4](x)), pos=3)#
+p5 <- function(x)16*x^5-20*x^3+5*x#
+plot(p5, col=1, xlim=c(-1, 1), add=T)#
+rt <- uniroot(function(x)16*5*x^4-60*x^2+5, lower=-1, upper=-0.5)$root#
+text(rt, p5(rt), expression(T[5](x)), pos=3)#
+if(files)dev.off()#
+a <- 0#
+b <- 1#
+n <- 3#
+k <- 1#
+bx0 <- cos((2*k-1)/(2*n)*pi)#
+sqrt(3)/2#
+k <- 2#
+bx1 <- cos((2*k-1)/(2*n)*pi)#
+k <- 3#
+bx2 <- cos((2*k-1)/(2*n)*pi)#
+#
+xs <- 1/2*((b-a)*c(bx0,bx1,bx2) + a+b)#
+xs <- c(0, 0.5, 1)#
+f <- function(x)exp(x)#
+#
+ys <- sapply(xs, f)#
+if(files)pdf("cheb_pts_lagr.pdf", height=5, width=5)#
+par(mfrow=c(1, 1), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(f, las=1, ylim=c(0, 3), xlab="", ylab="")#
+mtext("f(x) and approximants", 2, line=3.5, cex=1.5)#
+mtext("x", 1, line=2.75, cex=1.5)#
+points(xs, ys, pch=19, col=2)#
+L0 <- function(x) ((x-xs[2])*(x-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1 <- function(x) ((x-xs[1])*(x-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2 <- function(x) ((x-xs[2])*(x-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+P <- function(x) f(xs[1])*L0(x) + f(xs[2])*L1(x)+ f(xs[3])*L2(x)#
+plot(P, add=T, col=2)#
+#
+xs2 <- 1/2*((b-a)*c(bx0,bx1,bx2) + a+b)#
+#
+points(xs2, f(xs2), pch=19, col=4)#
+#
+L02 <- function(x) ((x-xs2[2])*(x-xs2[3]))/((xs2[1]-xs2[2])*(xs2[1]-xs2[3]))#
+L12 <- function(x) ((x-xs2[1])*(x-xs2[3]))/((xs2[2]-xs2[1])*(xs2[2]-xs2[3]))#
+L22 <- function(x) ((x-xs2[2])*(x-xs2[1]))/((xs2[3]-xs2[2])*(xs2[3]-xs2[1]))#
+P2 <- function(x) f(xs2[1])*L02(x) + f(xs2[2])*L12(x)+ f(xs2[3])*L22(x)#
+plot(P2, add=T, col=4)#
+#
+legend("topleft", c("Function", "Equispaced points", "Equispaced Lagrange", "Chebyshev points", "Chebyshev points Lagrange"), col=c(1, 2, 2, 4, 4), pch=c(NA, 19, NA, 19, NA), lty=c(1, NA, 1, NA, 1), lwd=2, bg="white")#
+if(files)dev.off()#
+#
+if(files)pdf("cheb_pts_lagr_err.pdf", height=5, width=5)#
+par(mfrow=c(1, 1), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(function(x)f(x) - f(x), col=1, las=1, ylim=c(-0.02, 0.02), xlab="", ylab="")#
+mtext("Error", 2, line=3.5, cex=1.5)#
+mtext("x", 1, line=2.75, cex=1.5)#
+plot(function(x)f(x) - P(x), col=2, las=1, add=T)#
+points(xs, 0*xs, pch=19, col=2)#
+plot(function(x)f(x) - P2(x), col=4, add=T)#
+points(xs2, 0*xs2, pch=19, col=4)#
+#
+if(files)dev.off()#
+if(files)pdf("cheb_order_lagr.pdf", height=5, width=5)#
+par(mfrow=c(1, 1), mar=c(4.1, 5.1, 1.1, 1.1))#
+p4 <- function(x) f(0) + f(0)*(x-0) + f(0)*(x-0)^2/2 + f(0)*(x-0)^3/6 + f(0)*(x-0)^4/24#
+p3 <- function(x) f(0) + f(0)*(x-0) + f(0)*(x-0)^2/2 + f(0)*(x-0)^3/6 + f(0)*(x-0)^4/24 - 1/24*(((2*x - 0 - 1)/(1 - 0))^4-((2*x - 0 - 1)/(1 - 0))^2+1/8)#
+plot(f, xlim=c(0,1), ylim=c(0, (3)), las=1, xlab="", ylab="")#
+#
+mtext("f(x) and approximants", 2, line=3.5, cex=1.5)#
+mtext("x", 1, line=2.75, cex=1.5)#
+#
+plot(p4, xlim=c(0,1), las=1, col=2, add=T)#
+plot(p3, xlim=c(0,1), add=T, col=4)#
+#
+legend("topleft", c("Function", "Fourth order", "Third order"), col=c(1, 2, 4), lty=c(1, 1, 1), lwd=2, bg="white")#
+if(files)dev.off()#
+#
+if(files)pdf("cheb_order_lagr_err.pdf", height=5, width=5)#
+par(mfrow=c(1, 1), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(function(x)f(x) - p4(x), xlim=c(0,1), ylim=c(-0.02, 0.02), las=1, xlab="", ylab="", col=2)#
+plot(function(x)f(x) - p3(x), xlim=c(0,1), ylim=c(-0.02, 0.02), las=1, xlab="", ylab="", col=4, add=T)#
+mtext("Error", 2, line=3.5, cex=1.5)#
+mtext("x", 1, line=2.75, cex=1.5)#
+legend("topleft", c("Function - Fourth order", "Function - Third order"), col=c(2, 4), lty=c(1, 1), lwd=2, bg="white")#
+#
+if(files)dev.off()
+par(mfrow=c(1, 1), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(function(x)f(x) - p4(x), xlim=c(0,1), ylim=c(-0.02, 0.02), las=1, xlab="", ylab="", col=2)#
+plot(function(x)f(x) - p3(x), xlim=c(0,1), ylim=c(-0.02, 0.02), las=1, xlab="", ylab="", col=4, add=T)#
+mtext("Error", 2, line=3.5, cex=1.5)#
+mtext("x", 1, line=2.75, cex=1.5)#
+legend("topleft", c("Function - Fourth order", "Function - Third order"), col=c(2, 4), lty=c(1, 1), lwd=2, bg="white")
+par(mar=c(4.1, 4.1, 1.1, 1.1), yaxs='i')#
+n <- 2#
+plot(0.5*(1*cos((2*(1:n)-1)*pi/(2*n)) + 1), rep(n, n), xlim=c(0, 1), ylim=c(1, 16), pch=19, col=1, las=1, xlab="", ylab="", axes=F)#
+mtext("x", 1, line=2.5, cex=1.5)#
+mtext("Chebyshev order", 2, line=2.75, cex=1.5)#
+axis(1)#
+axis(2, 1:15, las=1)#
+abline(h=2, lty=3, col="gray")#
+#
+for(n in 3:15){#
+abline(h=n, lty=3, col="gray")#
+	points(0.5*(1*cos((2*(1:n)-1)*pi/(2*n)) + 1), rep(n, n), pch=19, col=n)#
+}#
+box()
+cols <- hcl.colors(15, palette="viridis")
+par(mar=c(4.1, 4.1, 1.1, 1.1), yaxs='i')
+n <- 2
+plot(0.5*(1*cos((2*(1:n)-1)*pi/(2*n)) + 1), rep(n, n), xlim=c(0, 1), ylim=c(1, 16), pch=19, col=cols[1], las=1, xlab="", ylab="", axes=F)
+cols <- hcl.colors(15, palette="viridis")#
+par(mar=c(4.1, 4.1, 1.1, 1.1), yaxs='i')#
+n <- 2#
+plot(0.5*(1*cos((2*(1:n)-1)*pi/(2*n)) + 1), rep(n, n), xlim=c(0, 1), ylim=c(1, 16), pch=19, col=cols[1], las=1, xlab="", ylab="", axes=F)#
+mtext("x", 1, line=2.5, cex=1.5)#
+mtext("Chebyshev order", 2, line=2.75, cex=1.5)#
+axis(1)#
+axis(2, 1:15, las=1)#
+abline(h=2, lty=3, col="gray")#
+#
+for(n in 3:15){#
+abline(h=n, lty=3, col="gray")#
+	points(0.5*(1*cos((2*(1:n)-1)*pi/(2*n)) + 1), rep(n, n), pch=19, col=cols[i])#
+}#
+box()
+points(0.5*(1*cos((2*(1:n)-1)*pi/(2*n)) + 1), rep(n, n), pch=19, col=cols[n])
+cols <- hcl.colors(15, palette="viridis")#
+par(mar=c(4.1, 4.1, 1.1, 1.1), yaxs='i')#
+n <- 2#
+plot(0.5*(1*cos((2*(1:n)-1)*pi/(2*n)) + 1), rep(n, n), xlim=c(0, 1), ylim=c(1, 16), pch=19, col=cols[1], las=1, xlab="", ylab="", axes=F)#
+mtext("x", 1, line=2.5, cex=1.5)#
+mtext("Chebyshev order", 2, line=2.75, cex=1.5)#
+axis(1)#
+axis(2, 1:15, las=1)#
+abline(h=2, lty=3, col="gray")#
+#
+for(n in 3:15){#
+abline(h=n, lty=3, col="gray")#
+	points(0.5*(1*cos((2*(1:n)-1)*pi/(2*n)) + 1), rep(n, n), pch=19, col=cols[n])#
+}#
+box()
+cols <- hcl.colors(15, palette="viridis")#
+par(mar=c(4.1, 4.1, 1.1, 1.1), yaxs='i')#
+n <- 2#
+plot(0.5*(1*cos((2*(1:n)-1)*pi/(2*n)) + 1), rep(n, n), xlim=c(0, 1), ylim=c(1, 16), pch=19, col=cols[2], las=1, xlab="", ylab="", axes=F)#
+mtext("x", 1, line=2.5, cex=1.5)#
+mtext("Chebyshev order", 2, line=2.75, cex=1.5)#
+axis(1)#
+axis(2, 1:15, las=1)#
+abline(h=2, lty=3, col="gray")#
+#
+for(n in 3:15){#
+abline(h=n, lty=3, col="gray")#
+	points(0.5*(1*cos((2*(1:n)-1)*pi/(2*n)) + 1), rep(n, n), pch=19, col=cols[n])#
+}#
+box()
+files <- T#
+if(files)pdf("cheb_zeros.pdf", height=5, width=5)#
+cols <- hcl.colors(15, palette="viridis")#
+par(mar=c(4.1, 4.1, 1.1, 1.1), yaxs='i')#
+n <- 2#
+plot(0.5*(1*cos((2*(1:n)-1)*pi/(2*n)) + 1), rep(n, n), xlim=c(0, 1), ylim=c(1, 16), pch=19, col=cols[2], las=1, xlab="", ylab="", axes=F)#
+mtext("x", 1, line=2.5, cex=1.5)#
+mtext("Chebyshev order", 2, line=2.75, cex=1.5)#
+axis(1)#
+axis(2, 1:15, las=1)#
+abline(h=2, lty=3, col="gray")#
+#
+for(n in 3:15){#
+abline(h=n, lty=3, col="gray")#
+	points(0.5*(1*cos((2*(1:n)-1)*pi/(2*n)) + 1), rep(n, n), pch=19, col=cols[n])#
+}#
+box()#
+if(files)dev.off()
+par(mfrow=c(1, 1), mar=c(4.1, 5.1, 1.1, 1.1))#
+plot(f, las=1, ylim=c(0, 3), xlab="", ylab="")#
+mtext("f(x) and approximants", 2, line=3.5, cex=1.5)#
+mtext("x", 1, line=2.75, cex=1.5)#
+points(xs, ys, pch=19, col=2)#
+L0 <- function(x) ((x-xs[2])*(x-xs[3]))/((xs[1]-xs[2])*(xs[1]-xs[3]))#
+L1 <- function(x) ((x-xs[1])*(x-xs[3]))/((xs[2]-xs[1])*(xs[2]-xs[3]))#
+L2 <- function(x) ((x-xs[2])*(x-xs[1]))/((xs[3]-xs[2])*(xs[3]-xs[1]))#
+P <- function(x) f(xs[1])*L0(x) + f(xs[2])*L1(x)+ f(xs[3])*L2(x)#
+plot(P, add=T, col=2)#
+#
+xs2 <- 1/2*((b-a)*c(bx0,bx1,bx2) + a+b)#
+#
+points(xs2, f(xs2), pch=19, col=4)#
+#
+L02 <- function(x) ((x-xs2[2])*(x-xs2[3]))/((xs2[1]-xs2[2])*(xs2[1]-xs2[3]))#
+L12 <- function(x) ((x-xs2[1])*(x-xs2[3]))/((xs2[2]-xs2[1])*(xs2[2]-xs2[3]))#
+L22 <- function(x) ((x-xs2[2])*(x-xs2[1]))/((xs2[3]-xs2[2])*(xs2[3]-xs2[1]))#
+P2 <- function(x) f(xs2[1])*L02(x) + f(xs2[2])*L12(x)+ f(xs2[3])*L22(x)#
+plot(P2, add=T, col=4)#
+#
+legend("topleft", c("Function", "Equispaced points", "Equispaced Lagrange", "Chebyshev points", "Chebyshev points Lagrange"), col=c(1, 2, 2, 4, 4), pch=c(NA, 19, NA, 19, NA), lty=c(1, NA, 1, NA, 1), lwd=2, bg="white")

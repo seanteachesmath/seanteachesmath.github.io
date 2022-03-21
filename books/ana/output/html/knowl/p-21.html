@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-01-06T11:08:14-06:00       *-->
+<!--*       on 2022-03-10T10:36:48-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,20 +13,47 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
-<h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Try a few steps of the bisection method by hand.  Define <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">a</code> and <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">b</code> and your function \(f\text{.}\)  Start by storing approximations manually, <code xmlns:svg="http://www.w3.org/2000/svg" class="code-inline tex2jax_ignore">p0, p1, ... </code>, but consider how you might streamline your scratchwork by using a loop.  After that you might wrap a function on the outside that accepts parameters, or you might practice using print statements to return information to the screen.  This might be a good place to review the script posted to D2L.</p>
-<pre class="code-display tex2jax_ignore">
-for(i in 1:5){
-  ##print(c(i,i^2)) ## unformatted
-  print(paste("For i=",i,", the value i^2=", i^2, ".", sep=''))
-}
-</pre>
-<pre class="code-display tex2jax_ignore">
-for(i in 1:5){
-  ##print(c(i, i^2)) ## unformatted
-  cat("For i=",i,", the value i^2=", i^2, ".\n",sep='')
-</pre>
-<span class="incontext"><a href="section-R-intro.html#p-21">in-context</a></span>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\mathbf{A} &amp; = 
+\begin{bmatrix}
+\cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp;
+\cdot &amp; \cdot &amp; \cdot &amp;\cdot &amp; \cdot \\
+h_0 &amp; 2(h_0+h_1) &amp; h_1 &amp; 0 &amp; \cdot &amp; \cdot &amp;
+\cdot&amp; \cdot &amp; \cdot &amp;\cdot &amp; 0\\
+\cdot &amp; \ddots &amp; \ddots &amp; \ddots &amp; \cdot &amp; \cdot
+&amp; \cdot &amp; \cdot &amp; \cdot &amp;\cdot &amp; \cdot \\
+0 &amp; \cdot &amp; \cdot &amp; 0 &amp; h_{j-1} &amp; 2(h_{j-1}+h_{j})
+&amp; h_{j} &amp; 0 &amp; \cdot &amp; \cdot &amp; 0\\
+\cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp;
+\cdot &amp; \cdot &amp; \cdot &amp;\cdot &amp; \cdot \\
+0 &amp; \cdot &amp; \cdot &amp; \cdot&amp; \cdot &amp; \cdot &amp;\cdot
+&amp; 0 &amp; h_{n-2} &amp; 2(h_{n-2}+h_{n-1}) &amp; h_{n-1}\\
+\cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp; \cdot &amp;
+\cdot &amp; \cdot &amp; \cdot &amp;\cdot &amp; \cdot \\
+\end{bmatrix}\\
+\mathbf{x} &amp; = 
+\left[\begin{array}{c}
+c_0 \\
+c_1 \\
+\vdots \\
+c_{n-1} \\
+c_n \\
+\end{array}\right]\\
+\mathbf{r} &amp; = 
+\left[\begin{array}{c}
+\cdots \\
+3\left(\dfrac{a_2-a_1}{h_1} - \dfrac{a_1-a_0}{h_0}\right) \\
+\vdots \\
+3\left(\dfrac{a_n-a_{n-1}}{h_{n-1}} -
+\dfrac{a_{n-1}-a_{n-2}}{h_{n-2}}\right) \\
+\cdots \\
+\end{array}\right]\end{aligned}
+\end{equation*}
+</div>
+<span class="incontext"><a href="interpolation-and-approximation.html#p-21">in-context</a></span>
 </body>
 </html>

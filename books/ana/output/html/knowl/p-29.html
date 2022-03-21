@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-01-06T11:08:14-06:00       *-->
+<!--*       on 2022-03-10T10:36:48-06:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,9 +13,84 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
+<body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<p>Now would be a good time to review <a href="" class="xref" data-knowl="./knowl/thm-4-2.html" title="Theorem 4.1.3: expectation of a linear function">Theorem 4.1.3</a>, <a href="" class="xref" data-knowl="./knowl/cor-4-1.html" title="Corollary 4.1.4">Corollary 4.1.4</a>, <a href="" class="xref" data-knowl="./knowl/cor-4-2.html" title="Corollary 4.1.5">Corollary 4.1.5</a>, and <a href="" class="xref" data-knowl="./knowl/thm-4-5.html" title="Theorem 4.1.7: expected value of a linear combination of random variables">Theorem 4.1.7</a>, all of which apply here as well. Recall, certain choices of \(g(x)\) in <a href="" class="xref" data-knowl="./knowl/thm-expected-value-function-random-variable-4-1-cont.html" title="Theorem 2.1.3: expected value of a function of a random variable (continuous)">Theorem 2.1.3</a> give us the mean, variance, and other special moments.</p>
-<span class="incontext"><a href="section-continuous-expectation.html#p-29">in-context</a></span>
+<p>Consider the last term</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i=1}^m\Big(P_n(x_i)\Big)^2 = \sum_{i=1}^m \left(\sum_{j=0}^n
+a_j x_i^j\right)^2
+\end{equation*}
+</div>
+<p class="continuation">in the definition of the error <span class="process-math">\(E = E_2(a_0,
+a_1, \dots, a_n)\)</span> for discrete least squares approximation. We have the following (though I do not find this particularly illuminating and instead prefer to differentiate before addressing the sums), where it might initially be helpful to remember that <span class="process-math">\(x_i^0 = 1\)</span> and <span class="process-math">\(x_i^1 = x_i\)</span> (e.g., <span class="process-math">\(a_0 x_i^0 = a_0\cdot1 =a_0\)</span> and <span class="process-math">\(a_1
+x_i^1 = a_1x_i\)</span>),</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\sum_{i=1}^m \left(\sum_{j=0}^n a_j x_i^j\right)^2 &amp; = \sum_{i=1}^m
+(a_0 + a_1x_i+ \dots + a_n x_i^n)(a_0 + a_1x_i + \dots + a_n x_i^n)\\
+&amp; = \sum_{i=1}^m \Big[a_0 (a_0 + \dots + a_n x_i^n) + \dots +
+a_jx_i^j(a_0 + \dots + a_n x_i^n) + \dots + a_n x_i^n(a_0 + \dots + a_n
+x_i^n)\Big]\\
+&amp; = \sum_{i=1}^m \sum_{j=0}^n a_jx_i^j(a_0 + a_1x_i + \dots + a_n
+x_i^n)\\
+&amp; = \sum_{j=0}^n a_j \sum_{i=1}^m x_i^j(a_0 + a_1x_i + \dots + a_n
+x_i^n)\\
+&amp; = \sum_{j=0}^n a_j \sum_{i=1}^m x_i^j \sum_{k=0}^n a_k x_i^k\\
+&amp; = \sum_{j=0}^n a_j \sum_{i=1}^m \sum_{k=0}^n a_k x_i^{j+k}\\
+% &amp; = \sum_{j=0}^n a_j \sum_{k=0}^n a_k \sum_{i=1}^m x_i^{j+k}\\
+% &amp; = \sum_{i=1}^m \sum_{j=0}^n a_jx_i^j \sum_{k=0}^n a_kx_i^k\\
+% &amp; = \sum_{i=1}^m a_0 a_0 + (a_0a_1 + a_1a_0)x_i +
+%(a_0a_2+a_1a_1+a_2a_0)x_i^2 + \dots\\
+% &amp; = \sum_{i=1}^m a_0 a_0 + (a_0a_1 + a_1a_0)x_i +
+%(a_0a_2+a_1a_1+a_2a_0)x_i^2 + \dots\\
+&amp; = \sum_{j=0}^n\sum_{k=0}^n a_ja_k\Big(\sum_{i=1}^m x_i^{j+k}\Big)
+\end{aligned}
+\end{equation*}
+</div>
+<p class="continuation">Our goal is the partial derivative of this term with respect to <span class="process-math">\(a_j\text{.}\)</span> Notice the following, where key steps are moving differentiation under the sum, applying the product rule, and rearranging the sum,</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\dfrac{\partial}{\partial a_j} \left(\sum_{i=1}^m \left(\sum_{j=0}^n a_j
+x_i^j\right)^2 \right) &amp; = \dfrac{\partial}{\partial
+a_j}\Big(\sum_{i=1}^m (a_0 + a_1x_i + \dots + a_n x_i^n)(a_0 + a_1x_i +
+\dots + a_n x_i^n)\Big)\\
+&amp; = \sum_{i=1}^m \dfrac{\partial}{\partial a_j}\Big((a_0 + a_1x_i +
+\dots + a_n x_i^n)(a_0 + a_1x_i + \dots + a_n x_i^n)\Big)\\
+&amp; = \sum_{i=1}^m \left(x_i^j(a_0 + a_1x_i + \dots + a_n x_i^n) +
+(a_0 + a_1x_i + \dots + a_n x_i^n) x_i^j\right)\\
+&amp; = \sum_{i=1}^m 2\left(x_i^j(a_0 + a_1x_i + \dots + a_n
+x_i^n)\right)\\
+&amp; = \sum_{i=1}^m 2\left(x_i^j\sum_{k=0}^n(a_kx_i^k)\right)\\
+&amp; = 2\sum_{k=0}^n a_k \sum_{i=1}^m x_i^{j+k}\\
+%&amp; = \int_a^b 2x_i^j(a_0 + a_1x_i + \dots + a_n x_i^n)\,dx_i\\
+%&amp; = 2\int_a^b x_i^j\sum_{k=0}^n a_k x_i^k\,dx_i\\
+%&amp; = 2\int_a^b \sum_{k=0}^n a_k x_i^{j+k}\,dx_i\\
+%&amp; = 2\sum_{k=0}^n a_k \int_a^b x_i^{j+k}\,dx_i
+\end{aligned}
+\end{equation*}
+</div>
+<p class="continuation">Related to this, to find the least squares polynomial approximation to <span class="process-math">\(\{(x_i, y_i)\}_{i=1}^m\)</span> by <span class="process-math">\(P_n(x)~=~\sum\limits_{k=0}^n a_k
+x^k\text{,}\)</span> we solve</p>
+<div class="displaymath process-math">
+\begin{equation*}
+D^TD\vec{a} =D^T\vec{y}
+\end{equation*}
+</div>
+<p class="continuation">for the vector of unknown coefficients <span class="process-math">\(\vec{a}\)</span> where</p>
+<div class="displaymath process-math">
+\begin{equation*}
+D =
+\left[\begin{array}{cccc} (x_1)^0 &amp; (x_1)^1 &amp; \cdots &amp;
+(x_1)^n\\
+(x_2)^0 &amp; (x_2)^1 &amp; \cdots &amp; (x_2)^n\\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots\\
+(x_m)^0 &amp; (x_m)^1 &amp; \cdots &amp; (x_m)^n
+\end{array}\right]
+\end{equation*}
+</div>
+<span class="incontext"><a href="interpolation-and-approximation.html#p-29">in-context</a></span>
 </body>
 </html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-03-10T10:36:48-06:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Numerical calculus</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="article">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-article ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="article-1.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="interpolation-and-approximation.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="article-1.html" title="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="interpolation-and-approximation.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="article-1.html" title="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="introduction.html" data-scroll="introduction" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul><li><a href="introduction.html#polynomial-form-and-evaluation-speed" data-scroll="polynomial-form-and-evaluation-speed" class="internal">Polynomial form and evaluation speed</a></li></ul>
+</li>
+<li class="link">
+<a href="root-finding-and-fixed-point-problems.html" data-scroll="root-finding-and-fixed-point-problems" class="internal"><span class="codenumber">2</span> <span class="title">Root-finding and fixed-point problems</span></a><ul><li><a href="root-finding-and-fixed-point-problems.html#fixed-point-iteration" data-scroll="fixed-point-iteration" class="internal">Fixed-point iteration</a></li></ul>
+</li>
+<li class="link">
+<a href="interpolation-and-approximation.html" data-scroll="interpolation-and-approximation" class="internal"><span class="codenumber">3</span> <span class="title">Interpolation and approximation</span></a><ul>
+<li><a href="interpolation-and-approximation.html#polynomial-interpolation" data-scroll="polynomial-interpolation" class="internal">Polynomial interpolation</a></li>
+<li><a href="interpolation-and-approximation.html#discrete-least-squares-approximation" data-scroll="discrete-least-squares-approximation" class="internal">Discrete least squares approximation</a></li>
+<li><a href="interpolation-and-approximation.html#discrete-case-8_1-pg486" data-scroll="discrete-case-8_1-pg486" class="internal">Discrete case (i.e., 8.1, pg. 486)</a></li>
+<li><a href="interpolation-and-approximation.html#continuous-case-8_2-pg495" data-scroll="continuous-case-8_2-pg495" class="internal">Continuous case (i.e., 8.2, pg. 495)</a></li>
+<li><a href="interpolation-and-approximation.html#least-squares-function-approximation" data-scroll="least-squares-function-approximation" class="internal">Least squares function approximation</a></li>
+</ul>
+</li>
+<li class="link active">
+<a href="numerical-calculus.html" data-scroll="numerical-calculus" class="internal"><span class="codenumber">4</span> <span class="title">Numerical calculus</span></a><ul>
+<li><a href="numerical-calculus.html#numerical-differentiation" data-scroll="numerical-differentiation" class="internal">Numerical differentiation</a></li>
+<li><a href="numerical-calculus.html#numerical-integration-monte-carlo" data-scroll="numerical-integration-monte-carlo" class="internal">Numerical integration (Monte Carlo)</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="numerical-calculus"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4</span> <span class="title">Numerical calculus</span>
+</h2>
+<section class="subsection" id="numerical-differentiation"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.1</span> <span class="title">Numerical differentiation</span>
+</h3>
+<p id="p-42">Consider the function <span class="process-math">\(f(x) = e^x\)</span> at a point <span class="process-math">\(x_0=1\)</span> and approximations to its derivative <span class="process-math">\(f'(x_0)~\approx~
+2.71281\text{.}\)</span> Approximations can be made by to somewhat straightforward approximations: the first-order forward difference and the second-order forward and centered differences. The error in these approximations is illustrated below, with rounding to simulate calculations by single-precision and double-precision numbers.</p>
+<figure class="figure figure-like" id="fig-diff-step8"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/4_differentiation/step_size_8.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1<span class="period">.</span></span><span class="space"> </span>Points indicate calculated <span class="process-math">\(\log_{10}\left(\text{abs. error}\right)\)</span> for first-order forward (black), second-order forward (red), and centered (gray) difference approximations. Line illustrates predicted reduction in error as step size shrinks. <dfn class="terminology">Left:</dfn> 8 digit calculation (simulated single-precision), <dfn class="terminology">Right:</dfn> 16 digit calculation (simulated double-precision)</figcaption></figure><figure class="figure figure-like" id="fig-diff-step16"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/4_differentiation/step_size_16.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2<span class="period">.</span></span><span class="space"> </span>Points indicate calculated <span class="process-math">\(\log_{10}\left(\text{abs. error}\right)\)</span> for first-order forward (black), second-order forward (red), and centered (gray) difference approximations. Line illustrates predicted reduction in error as step size shrinks. <dfn class="terminology">Left:</dfn> 8 digit calculation (simulated single-precision), <dfn class="terminology">Right:</dfn> 16 digit calculation (simulated double-precision)</figcaption></figure><figure class="figure figure-like" id="fig-diff-round8"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/4_differentiation/step_size_roundoff_8.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.3<span class="period">.</span></span><span class="space"> </span>As in Figure <a href="" class="xref" data-knowl="./knowl/fig-diff-step8.html" title="Figure 4.1">Figure 4.1</a>, but with smaller step sizes included. Note that error <em class="emphasis">increases</em> due to roundoff for both methods, but especially for the centered method as the step size is reduced below <span class="process-math">\(h = 0.01\text{.}\)</span></figcaption></figure><figure class="figure figure-like" id="fig-diff-round16"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/4_differentiation/step_size_roundoff_16.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.4<span class="period">.</span></span><span class="space"> </span>As in Figure <a href="" class="xref" data-knowl="./knowl/fig-diff-step8.html" title="Figure 4.1">Figure 4.1</a>, but with smaller step sizes included. Note that error <em class="emphasis">increases</em> due to roundoff for both methods, but especially for the centered method as the step size is reduced below <span class="process-math">\(h = 0.01\text{.}\)</span></figcaption></figure></section><section class="subsection" id="numerical-integration-monte-carlo"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.2</span> <span class="title">Numerical integration (Monte Carlo)</span>
+</h3>
+<p id="p-43"><em class="emphasis">This section may be imperfect, but reflects the main idea.</em></p>
+<p id="p-44">Though not emphasized here, the techniques that follow are most useful in higher dimensional integrals. We can integrate <span class="process-math">\(f(x) = x^2\)</span> using the Fundamental Theorem of Calculus,</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_0^2 x^2\,dx = \left.\left(\dfrac{x^3}{3}\right)\right|_0^2 =
+\dfrac{2^3}{3} - \dfrac{0^3}{3} = \dfrac{8}{3}
+\end{equation*}
+</div>
+<p class="continuation">From the Mean Value Theorem for Integrals we have that</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\hat{f} = \dfrac{1}{2-0}\int_0^2
+x^2\,dx = \dfrac{1}{2}\cdot \dfrac{8}{3} = \dfrac{4}{3}
+\end{equation*}
+</div>
+<p class="continuation">The shaded region on the left panel (Fig <a href="" class="xref" data-knowl="./knowl/fig-integration.html" title="Figure 4.5">Figure 4.5</a>) shows the area under the curve. The area on the right is the same size, but bounded by a constant function whose value is <span class="process-math">\(\hat{f}\text{.}\)</span></p>
+<figure class="figure figure-like" id="fig-integration"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/5_integration/intro.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5<span class="period">.</span></span><span class="space"> </span>Left: Traditional calculus interpretation of the area under the curve. Right: Average value of a function defined by equal area.</figcaption></figure><p id="p-45">One scheme of Monte Carlo integration uses function values at randomly chosen points to calculate areas which are then averaged. Here</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b f(x)\,dx \approx \dfrac{1}{N}\sum_{i=1}^{N}
+\underbrace{(b-a)f(x_i)}_\text{\(i\)th area} =
+(b-a)\underbrace{\dfrac{1}{N}\sum_{i=1}^{N} f(x_i)}_\text{average
+height}
+\end{equation*}
+</div>
+<p class="continuation">Fig <a href="" class="xref" data-knowl="./knowl/fig-integration-rect.html" title="Figure 4.6">Figure 4.6</a> (left panel) shows 5 of the 100 random rectangle regions. The shaded area on the right panel corresponds to the region whose height is the average of the random function values. Notice that this height very closely compares with the average value of the function, thus the areas of the regions are similar.</p>
+<figure class="figure figure-like" id="fig-integration-rect"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/5_integration/rectangles.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.6<span class="period">.</span></span><span class="space"> </span>Dashed line indicates <span class="process-math">\(\hat{f}\)</span> from traditional calculus. Left: 5 sample rectangles (shaded). Right: Average area and function height by random sampling.</figcaption></figure><p id="p-46">An alternate scheme (Fig <a href="" class="xref" data-knowl="./knowl/fig-integration-mc1.html" title="Figure 4.7">Figure 4.7</a>, left) plots points in the plane and considers the fraction of points that fall below the curve (i.e., ‘the acceptance region‘). This fraction is multiplied by the total area of the region (easier to calculate since the shape is likely square). Though this is easier to program than the notation might suggest, consider the indicator function</p>
+<div class="displaymath process-math">
+\begin{equation*}
+I(i) =
+\begin{cases}1, \quad y_i &lt; f(x_i)\\0,
+\quad\text{otherwise}\end{cases}
+\end{equation*}
+</div>
+<p class="continuation"> and take </p>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b f(x)\,dx
+\approx(f_{max}-f_{min})(b-a)\dfrac{1}{N} \sum_{i=1}^N I(i)
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="fig-integration-mc1"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/5_integration/rejection.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.7<span class="period">.</span></span><span class="space"> </span>Left: Accepted points fall below the graph of the function. Right: Comparison of rectangle method and rejection method for ten different trials of each.</figcaption></figure><figure class="figure figure-like" id="fig-integration-mc2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/5_integration/Ns.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.8<span class="period">.</span></span><span class="space"> </span>Left: Accepted points fall below the graph of the function. Right: Comparison of rectangle method and rejection method for ten different trials of each.</figcaption></figure></section></section></div></main>
+</div>
+</body>
+</html>

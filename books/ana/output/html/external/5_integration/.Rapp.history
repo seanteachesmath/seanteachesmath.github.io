@@ -1,0 +1,812 @@
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zab="", axes=F)
+if(!"scatterplot3d"%in%rownames(installed.packages())){library(scatterplot3d)}#
+files <- T#
+#
+n <- 50000#
+rs <- runif(3*n, 0, 1)#
+z <- rs[seq(3, 3*n, by=3)]*2#
+x <- 2*(rs[seq(1, 3*n, by=3)]-1/2)#
+y <- 2*(rs[seq(2, 3*n, by=3)]-1/2)#
+#
+a.z <- z[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+a.x <- x[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+a.y <- y[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+#
+a.z2 <- z[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+a.x2 <- x[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+a.y2 <- y[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+#
+if(files)pdf("ice_cream.pdf", height=5, width=5)#
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zab="", axes=F)#
+if(files)dev.off()#
+1/3*pi*1^2*1 + (4/3*pi*1^3)/2#
+#
+if(files)png("ice_cream.png")#
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zab="", axes=F)#
+if(files)dev.off()#
+1/3*pi*1^2*1 + (4/3*pi*1^3)/2
+if(!"scatterplot3d"%in%rownames(installed.packages())){library(scatterplot3d)}else{install.packages("scatterplot3d")}#
+files <- T#
+#
+n <- 50000#
+rs <- runif(3*n, 0, 1)#
+z <- rs[seq(3, 3*n, by=3)]*2#
+x <- 2*(rs[seq(1, 3*n, by=3)]-1/2)#
+y <- 2*(rs[seq(2, 3*n, by=3)]-1/2)#
+#
+a.z <- z[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+a.x <- x[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+a.y <- y[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+#
+a.z2 <- z[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+a.x2 <- x[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+a.y2 <- y[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+#
+if(files)pdf("ice_cream.pdf", height=5, width=5)#
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zab="", axes=F)#
+if(files)dev.off()#
+1/3*pi*1^2*1 + (4/3*pi*1^3)/2#
+#
+if(files)png("ice_cream.png")#
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zab="", axes=F)#
+if(files)dev.off()#
+1/3*pi*1^2*1 + (4/3*pi*1^3)/2
+if(!"scatterplot3d"%in%rownames(installed.packages())){library(scatterplot3d)}else{install.package("scatterplot3d")}
+if(!"scatterplot3d"%in%rownames(installed.packages())){library(scatterplot3d)}else{install.packages("scatterplot3d")}#
+library(scatterplot3d)#
+files <- T#
+#
+n <- 50000#
+rs <- runif(3*n, 0, 1)#
+z <- rs[seq(3, 3*n, by=3)]*2#
+x <- 2*(rs[seq(1, 3*n, by=3)]-1/2)#
+y <- 2*(rs[seq(2, 3*n, by=3)]-1/2)#
+#
+a.z <- z[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+a.x <- x[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+a.y <- y[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+#
+a.z2 <- z[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+a.x2 <- x[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+a.y2 <- y[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+#
+if(files)pdf("ice_cream.pdf", height=5, width=5)#
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zab="", axes=F)#
+if(files)dev.off()#
+1/3*pi*1^2*1 + (4/3*pi*1^3)/2#
+#
+if(files)png("ice_cream.png")#
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zab="", axes=F)#
+if(files)dev.off()#
+1/3*pi*1^2*1 + (4/3*pi*1^3)/2
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zlab="", axes=F)#
+if(files)dev.off()
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zlab="", axes=F)
+if(!"scatterplot3d"%in%rownames(installed.packages())){library(scatterplot3d)}else{install.packages("scatterplot3d")}#
+library(scatterplot3d)#
+files <- T#
+#
+n <- 50000#
+rs <- runif(3*n, 0, 1)#
+z <- rs[seq(3, 3*n, by=3)]*2#
+x <- 2*(rs[seq(1, 3*n, by=3)]-1/2)#
+y <- 2*(rs[seq(2, 3*n, by=3)]-1/2)#
+#
+a.z <- z[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+a.x <- x[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+a.y <- y[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+#
+a.z2 <- z[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+a.x2 <- x[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+a.y2 <- y[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+#
+if(files)pdf("ice_cream.pdf", height=5, width=5)#
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zlab="", axes=F)#
+if(files)dev.off()#
+1/3*pi*1^2*1 + (4/3*pi*1^3)/2#
+#
+if(files)png("ice_cream.png")#
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zlab="", axes=F)#
+if(files)dev.off()#
+1/3*pi*1^2*1 + (4/3*pi*1^3)/2
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zlab="", box=F)
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zlab="", box=F, grid=F)
+if(files)png("ice_cream.png")#
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main="Monte Cone integration", xlab="", ylab="", zlab="", box=F, grid=F)#
+if(files)dev.off()#
+1/3*pi*1^2*1 + (4/3*pi*1^3)/2
+f <- function(x) x^2#
+#
+n <- 10000#
+xs <- runif(n, 0, 1)#
+ys <- runif(n, 0, 1)#
+plot(xs, ys, xlim=c(0, 1), ylim=c(0, 1), las=1)#
+plot(f, add=T, col=2, lwd=2)#
+mtext(bquote(est==.(sum(ys < f(xs))/n)), 3, at=0.5)
+plot(xs, ys, xlim=c(0, 1), ylim=c(0, 1), las=1, pch=19, cex=0.5)
+f <- function(x) x^2#
+#
+n <- 10000#
+xs <- runif(n, 0, 1)#
+ys <- runif(n, 0, 1)#
+plot(xs, ys, xlim=c(0, 1), ylim=c(0, 1), las=1, pch=19, cex=0.5)#
+plot(f, add=T, col=2, lwd=2, pch=19, cex=0.5)#
+mtext(bquote(est==.(sum(ys < f(xs))/n)), 3, at=0.5)
+n <- 1000#
+rs <- runif(2*n, 0, 1)#
+a <- rs[seq(2, 2*n, by=2)] < rs[seq(1, 2*n, by=2)]^2#
+sum(a)#
+sum(a)/n
+n <- 1000#
+rs <- runif(2*n, 0, 1)#
+#
+est <- sin(sqrt(log(rs[seq(1, 2*n, by=2)] + rs[seq(2, 2*n, by=2)]+ 1)))[(rs[seq(1, 2*n, by=2)] - 1/2)^2 + (rs[seq(1, 2*n, by=2)] - 1/2)^2 <= 0.25]#
+#
+pi/4*sum(est)/sum(((rs[seq(1, 2*n, by=2)] - 1/2)^2 + (rs[seq(2, 2*n, by=2)] - 1/2)^2) <= 0.25)
+f <- function(x)x^2#
+#
+approx <- NULL#
+kmax <- 15#
+for(k in 3:kmax){#
+N <- 2^k#
+rns <- runif(2*N)#
+#
+fs <- sapply(rns[1:N], f)#
+plot(rns[1:N], rns[(N+1):(2*N)])#
+plot(f, add=T)#
+#
+approx <- c(approx, sum(rns[(N+1):(2*N)] < fs)/N)#
+#
+ids <- rns[(N+1):(2*N)] < fs#
+#
+points(rns[1:N][ids], rns[(N+1):(2*N)][ids], col=2)#
+}
+plot(2^(3:kmax), approx, type='b')
+if(!"scatterplot3d"%in%rownames(installed.packages())){library(scatterplot3d)}else{install.packages("scatterplot3d")}#
+library(scatterplot3d)#
+files <- T#
+#
+n <- 50000#
+rs <- runif(3*n, 0, 1)#
+z <- rs[seq(3, 3*n, by=3)]*2#
+x <- 2*(rs[seq(1, 3*n, by=3)]-1/2)#
+y <- 2*(rs[seq(2, 3*n, by=3)]-1/2)#
+#
+a.z <- z[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+a.x <- x[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+a.y <- y[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+#
+a.z2 <- z[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+a.x2 <- x[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+a.y2 <- y[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+#
+if(files)pdf("ice_cream.pdf", height=5, width=5)#
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zlab="", axes=F)#
+if(files)dev.off()#
+1/3*pi*1^2*1 + (4/3*pi*1^3)/2#
+if(files)png("ice_cream.png")#
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zlab="", box=F, grid=F)#
+if(files)dev.off()#
+1/3*pi*1^2*1 + (4/3*pi*1^3)/2#
+?scatterplot3d
+if(!"scatterplot3d"%in%rownames(installed.packages())){library(scatterplot3d)}else{install.packages("scatterplot3d")}
+library(scatterplot3d)
+scatterplot3d
+?scatterplot3d
+??scatterplot3d
+install.packages("scatterplot3d")
+if("scatterplot3d"%in%rownames(installed.packages())){library(scatterplot3d)}else{install.packages("scatterplot3d")}#
+library(scatterplot3d)#
+files <- F#
+#
+n <- 50000#
+rs <- runif(3*n, 0, 1)#
+z <- rs[seq(3, 3*n, by=3)]*2#
+x <- 2*(rs[seq(1, 3*n, by=3)]-1/2)#
+y <- 2*(rs[seq(2, 3*n, by=3)]-1/2)#
+#
+a.z <- z[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+a.x <- x[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+a.y <- y[x^2 + y^2 < z*(2-z) & (1 < z^2)]#
+#
+a.z2 <- z[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+a.x2 <- x[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+a.y2 <- y[x^2 + y^2 < z*(2-z) & (z^2 > x^2 + y^2) & z^2 < 1]#
+#
+if(files)pdf("ice_cream.pdf", height=5, width=5)#
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zlab="", axes=F)#
+if(files)dev.off()#
+1/3*pi*1^2*1 + (4/3*pi*1^3)/2#
+if(files)png("ice_cream.png")#
+cols1 <- c(sample(c("black", "white"), length(a.x), replace=T), rep("tan", length(a.x2)))#
+#
+cols2 <- c(rep("pink", length(a.x)), rep("tan", length(a.x2)))#
+#
+scatterplot3d(c(a.x, a.x2), c(a.y, a.y2), c(a.z,a.z2), color=cols2, pch=19, xlim=c(-1, 1), ylim=c(-1, 1), zlim=c(0, 2), angle=20, main=bquote(est==.(2^3*(length(a.z)+length(a.z2))/n)), xlab="", ylab="", zlab="", box=F, grid=F)#
+if(files)dev.off()#
+1/3*pi*1^2*1 + (4/3*pi*1^3)/2#
+?scatterplot3d
+f <- function(x) exp(x)#
+#
+n <- 1000#
+xs <- runif(n, 0, 1)#
+ys <- runif(n, 0, 1)*exp(1)#
+plot(xs, ys, xlim=c(0, 1), ylim=c(0, exp(1)), las=1, pch=19, cex=0.5)#
+#
+plot(f, add=T, col=2, lwd=2, pch=19, cex=0.5)#
+#
+mtext(bquote(est==.(exp(1)*sum(ys < f(xs))/n)), 3, at=0.5)
+f <- function(x)x^2#
+#
+approx <- NULL#
+kmax <- 15#
+for(k in 3:kmax){#
+N <- 2^k#
+rns <- runif(2*N)#
+#
+fs <- sapply(rns[1:N], f)#
+plot(rns[1:N], rns[(N+1):(2*N)])#
+plot(f, add=T)#
+#
+approx <- c(approx, sum(rns[(N+1):(2*N)] < fs)/N)#
+#
+ids <- rns[(N+1):(2*N)] < fs#
+#
+points(rns[1:N][ids], rns[(N+1):(2*N)][ids], col=2)#
+}#
+#
+plot(2^(3:kmax), approx, type='b')
+f <- function(x)x^2#
+#
+approx <- NULL#
+kmax <- 15#
+par(mfrow=c(3,3))#
+for(k in 3:kmax){#
+N <- 2^k#
+rns <- runif(2*N)#
+#
+fs <- sapply(rns[1:N], f)#
+plot(rns[1:N], rns[(N+1):(2*N)])#
+plot(f, add=T)#
+#
+approx <- c(approx, sum(rns[(N+1):(2*N)] < fs)/N)#
+#
+ids <- rns[(N+1):(2*N)] < fs#
+#
+points(rns[1:N][ids], rns[(N+1):(2*N)][ids], col=2)#
+}#
+#
+plot(2^(3:kmax), approx, type='b')
+f <- function(x)x^2#
+#
+approx <- NULL#
+kmax <- 15#
+par(mfrow=c(4,4))#
+for(k in 3:kmax){#
+N <- 2^k#
+rns <- runif(2*N)#
+#
+fs <- sapply(rns[1:N], f)#
+plot(rns[1:N], rns[(N+1):(2*N)])#
+plot(f, add=T)#
+#
+approx <- c(approx, sum(rns[(N+1):(2*N)] < fs)/N)#
+#
+ids <- rns[(N+1):(2*N)] < fs#
+#
+points(rns[1:N][ids], rns[(N+1):(2*N)][ids], col=2)#
+}#
+#
+plot(2^(3:kmax), approx, type='b')
+f <- function(x)x^2#
+#
+approx <- NULL#
+kmax <- 15#
+par(mfrow=c(3,4))#
+for(k in 3:kmax){#
+N <- 2^k#
+rns <- runif(2*N)#
+#
+fs <- sapply(rns[1:N], f)#
+plot(rns[1:N], rns[(N+1):(2*N)])#
+plot(f, add=T)#
+#
+approx <- c(approx, sum(rns[(N+1):(2*N)] < fs)/N)#
+#
+ids <- rns[(N+1):(2*N)] < fs#
+#
+points(rns[1:N][ids], rns[(N+1):(2*N)][ids], col=2)#
+}#
+#
+plot(2^(3:kmax), approx, type='b')
+f <- function(x)x^2#
+#
+approx <- NULL#
+kmax <- 14#
+par(mfrow=c(3,4))#
+for(k in 3:kmax){#
+N <- 2^k#
+rns <- runif(2*N)#
+#
+fs <- sapply(rns[1:N], f)#
+plot(rns[1:N], rns[(N+1):(2*N)])#
+plot(f, add=T)#
+#
+approx <- c(approx, sum(rns[(N+1):(2*N)] < fs)/N)#
+#
+ids <- rns[(N+1):(2*N)] < fs#
+#
+points(rns[1:N][ids], rns[(N+1):(2*N)][ids], col=2)#
+}#
+#
+plot(2^(3:kmax), approx, type='b')
+f <- function(x)x^2#
+#
+approx <- NULL#
+kmax <- 14#
+par(mfrow=c(3,4))#
+for(k in 4:kmax){#
+N <- 2^k#
+rns <- runif(2*N)#
+#
+fs <- sapply(rns[1:N], f)#
+plot(rns[1:N], rns[(N+1):(2*N)])#
+plot(f, add=T)#
+#
+approx <- c(approx, sum(rns[(N+1):(2*N)] < fs)/N)#
+#
+ids <- rns[(N+1):(2*N)] < fs#
+#
+points(rns[1:N][ids], rns[(N+1):(2*N)][ids], col=2)#
+}#
+#
+plot(2^(3:kmax), approx, type='b')
+f <- function(x)x^2#
+#
+approx <- NULL#
+kmax <- 14#
+par(mfrow=c(3,4))#
+for(k in 4:kmax){#
+N <- 2^k#
+rns <- runif(2*N)#
+#
+fs <- sapply(rns[1:N], f)#
+plot(rns[1:N], rns[(N+1):(2*N)])#
+plot(f, add=T)#
+#
+approx <- c(approx, sum(rns[(N+1):(2*N)] < fs)/N)#
+#
+ids <- rns[(N+1):(2*N)] < fs#
+#
+points(rns[1:N][ids], rns[(N+1):(2*N)][ids], col=2)#
+}#
+#
+plot(2^(4:kmax), approx, type='b')
+f <- function(x)x^2#
+#
+approx <- NULL#
+kmax <- 14#
+par(mfrow=c(3,4), mar=c(4.1, 4.1, 1.1, 1.1))#
+for(k in 4:kmax){#
+N <- 2^k#
+rns <- runif(2*N)#
+#
+fs <- sapply(rns[1:N], f)#
+plot(rns[1:N], rns[(N+1):(2*N)])#
+plot(f, add=T)#
+#
+approx <- c(approx, sum(rns[(N+1):(2*N)] < fs)/N)#
+#
+ids <- rns[(N+1):(2*N)] < fs#
+#
+points(rns[1:N][ids], rns[(N+1):(2*N)][ids], col=2)#
+}#
+#
+plot(2^(4:kmax), approx, type='b')
+plot(2^(4:kmax), approx, type='b', log='x')
+plot(2^(4:kmax), approx, type='b', log='x', ylim-c(0, 3))
+plot(2^(4:kmax), approx, type='b', log='x', ylim=c(0, 3))
+f <- function(x)x^2#
+#
+approx <- NULL#
+kmax <- 14#
+par(mfrow=c(3,4), mar=c(4.1, 4.1, 1.1, 1.1))#
+for(k in 4:kmax){#
+N <- 2^k#
+rns <- runif(2*N)#
+#
+fs <- sapply(rns[1:N], f)#
+plot(rns[1:N], rns[(N+1):(2*N)])#
+plot(f, add=T)#
+#
+approx <- c(approx, sum(rns[(N+1):(2*N)] < fs)/N)#
+#
+ids <- rns[(N+1):(2*N)] < fs#
+#
+points(rns[1:N][ids], rns[(N+1):(2*N)][ids], col=2)#
+}#
+#
+plot(2^(4:kmax), approx, type='b', log='x', ylim=c(0, 3), las=1)
+f <- function(x)x^2#
+#
+approx <- NULL#
+kmax <- 14#
+par(mfrow=c(3,4), mar=c(4.1, 4.1, 1.1, 1.1))#
+for(k in 4:kmax){#
+N <- 2^k#
+rns <- runif(2*N)#
+#
+fs <- sapply(rns[1:N], f)#
+ids <- rns[(N+1):(2*N)] < fs#
+plot(rns[1:N][!ids], rns[(N+1):(2*N)][!ids])#
+plot(f, add=T)#
+#
+approx <- c(approx, sum(rns[(N+1):(2*N)] < fs)/N)#
+points(rns[1:N][ids], rns[(N+1):(2*N)][ids], col=2)#
+}#
+#
+plot(2^(4:kmax), approx, type='b', log='x', ylim=c(0, 3), las=1)
+f <- function(x)x^2#
+#
+approx <- NULL#
+kmax <- 14#
+par(mfrow=c(3,4), mar=c(4.1, 4.1, 1.1, 1.1))#
+for(k in 4:kmax){#
+N <- 2^k#
+rns <- runif(2*N)#
+#
+fs <- sapply(rns[1:N], f)#
+ids <- rns[(N+1):(2*N)] < fs#
+plot(rns[1:N][!ids], rns[(N+1):(2*N)][!ids], pch=19, cex=0.5)#
+plot(f, add=T)#
+#
+approx <- c(approx, sum(rns[(N+1):(2*N)] < fs)/N)#
+points(rns[1:N][ids], rns[(N+1):(2*N)][ids], col=2, pch=19, cex=0.5)#
+}#
+#
+plot(2^(4:kmax), approx, type='b', log='x', ylim=c(0, 3), las=1, pch=19, cex=0.5)
+set.seed(1001)#
+files <- T#
+f <- function(x) x^2#
+a <- 0#
+b <- 2#
+N <- 100#
+cols <- hcl.colors(N, alpha=0.1)#
+auc <- integrate(f, lower=a, upper=b)$value#
+fhat <- auc/(b-a)#
+rx <- runif(N, a, b)#
+ry <- runif(N, f(a), f(b))#
+rfs <- sapply(rx, f)#
+idx <- order(rfs)#
+if(files)pdf("intro.pdf", height=5, width=10)#
+par(mfrow=c(1, 2), mar=c(3.1, 4.1, 1.8, 1.1), xaxs='n', yaxs='n')#
+xs <- seq(a, b, length=100)#
+plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+	mtext(bquote(paste(exact==.(signif(auc, 6)))), side=3)#
+#
+polygon(c(rev(xs), xs), c(0*xs, sapply(xs, f)), col="lightgray")#
+plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+#
+plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+		mtext(bquote(paste(hat(f)==.(signif(fhat, 6)))), side=3)#
+#
+polygon(c(a, b, b, a), c(f(a), f(a), fhat, fhat), lwd=2, col="lightgray")#
+plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+if(files)dev.off()#
+if(files)pdf("rectangles.pdf", height=5, width=10)#
+#
+par(mfrow=c(1, 2), mar=c(3.1, 4.1, 1.8, 1.1), xaxs='n', yaxs='n')#
+	plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+	for(i in sample(1:N, 5)){#
+		y <- rfs[i]#
+		polygon(c(a, b, b, a), c(0, 0, y, y), col=cols[i], lwd=2)#
+}#
+	plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+	abline(h=fhat, lwd=2, col="black", lty=3)#
+	plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+	mtext(bquote(paste(estimate==.(signif(mean(rfs)*(b-a), 6)), ', ',exact==.(signif(auc, 6)))), side=3)#
+#
+		polygon(c(a,b,b,a), c(0,0,mean(rfs),mean(rfs)), col="gray", lwd=2)#
+	plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+	abline(h=fhat, col="black", lwd=2, lty=3)#
+if(files)dev.off()#
+#
+if(files)pdf("rejection.pdf", height=5, width=5)#
+par(mfrow=c(1,1), mar=c(3.1, 4.1, 1.8, 1.1), xaxs='n', yaxs='n', bg="white")#
+#
+	plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+	approx2 <- (f(b)-f(a))*(b-a)*sum(ry < rfs)/N#
+	mtext(bquote(paste(estimate==.(signif(approx2, 6)), ', ',exact==.(signif(auc, 6)))), side=3)#
+points(rx[ry < rfs], ry[ry < rfs], col="gray", pch=19)#
+points(rx[ry >= rfs], ry[ry >= rfs], col="black", pch=19)#
+	plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+legend("topleft", c("Accept", "Reject"), pch=c(19, 19, NA), col=c("gray", "black", "black"), bg="white")#
+if(files)dev.off()#
+if(files)pdf("Ns.pdf", height=5, width=5)#
+#
+est <- NULL#
+for(m in 1:10){#
+for(N in 10^seq(1, 6, by=0.5)){#
+rx <- runif(N, a, b)#
+ry <- runif(N, f(a), f(b))#
+rfs <- sapply(rx, f)#
+est <- rbind(est, c(m, N, mean(rfs)*(b-a), (f(b)-f(a))*(b-a)*sum(ry < rfs)/N))#
+}#
+}#
+est <- as.data.frame(est)#
+names(est) <- c("i", "N", "est1", "est2")#
+#
+par(mfrow=c(1, 1), mar=c(3.1, 4.1, 1.8, 1.1), xaxs='n', yaxs='n')#
+#
+	plot(est1 ~ N, est, subset=i==1, ylim=(b-a)*c(f(a), f(b)), las=1, xlab="", ylab="", log='x', type='b', pch=19, axes=F, lwd=2)#
+	axis(1, at=10^(1:6), labels=c(expression(10^1, 10^2, 10^3, 10^4, 10^5, 10^6)))#
+	axis(2, las=1)#
+	box()#
+	mtext("Sample points", side=1, font=2, cex=1.5, line=2)#
+	mtext("Estimation", side=2, font=2, cex=1.5, line=2.5)#
+	points(est2 ~ N, est, subset=i==1, type='b', pch=19, lwd=2, col="gray")#
+	legend("topright", c("Averaging", "Accept/Reject"), pch=c(19, 19), col=c("black", "gray"), bg="white")#
+for(m in 2:10){#
+points(est1 ~ N, est, subset=i==m, type='b', pch=19, lwd=2, col="black")#
+points(est2 ~ N, est, subset=i==m, type='b', pch=19, lwd=2, col="gray")#
+}#
+if(files)dev.off()
+set.seed(1001)#
+files <- T#
+f <- function(x) x^2#
+a <- 0#
+b <- 2#
+N <- 100#
+cols <- hcl.colors(N, alpha=0.1)#
+auc <- integrate(f, lower=a, upper=b)$value#
+fhat <- auc/(b-a)#
+rx <- runif(N, a, b)#
+ry <- runif(N, f(a), f(b))#
+rfs <- sapply(rx, f)#
+idx <- order(rfs)#
+if(files)pdf("intro.pdf", height=5, width=10)#
+par(mfrow=c(1, 2), mar=c(3.1, 4.1, 1.8, 1.1), xaxs='s', yaxs='s')#
+xs <- seq(a, b, length=100)#
+plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+	mtext(bquote(paste(exact==.(signif(auc, 6)))), side=3)#
+#
+polygon(c(rev(xs), xs), c(0*xs, sapply(xs, f)), col="lightgray")#
+plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+#
+plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+		mtext(bquote(paste(hat(f)==.(signif(fhat, 6)))), side=3)#
+#
+polygon(c(a, b, b, a), c(f(a), f(a), fhat, fhat), lwd=2, col="lightgray")#
+plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+if(files)dev.off()#
+if(files)pdf("rectangles.pdf", height=5, width=10)#
+#
+par(mfrow=c(1, 2), mar=c(3.1, 4.1, 1.8, 1.1), xaxs='s', yaxs='s')#
+	plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+	for(i in sample(1:N, 5)){#
+		y <- rfs[i]#
+		polygon(c(a, b, b, a), c(0, 0, y, y), col=cols[i], lwd=2)#
+}#
+	plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+	abline(h=fhat, lwd=2, col="black", lty=3)#
+	plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+	mtext(bquote(paste(estimate==.(signif(mean(rfs)*(b-a), 6)), ', ',exact==.(signif(auc, 6)))), side=3)#
+#
+		polygon(c(a,b,b,a), c(0,0,mean(rfs),mean(rfs)), col="gray", lwd=2)#
+	plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+	abline(h=fhat, col="black", lwd=2, lty=3)#
+if(files)dev.off()#
+#
+if(files)pdf("rejection.pdf", height=5, width=5)#
+par(mfrow=c(1,1), mar=c(3.1, 4.1, 1.8, 1.1), xaxs='s', yaxs='s', bg="white")#
+#
+	plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+	approx2 <- (f(b)-f(a))*(b-a)*sum(ry < rfs)/N#
+	mtext(bquote(paste(estimate==.(signif(approx2, 6)), ', ',exact==.(signif(auc, 6)))), side=3)#
+points(rx[ry < rfs], ry[ry < rfs], col="gray", pch=19)#
+points(rx[ry >= rfs], ry[ry >= rfs], col="black", pch=19)#
+	plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+legend("topleft", c("Accept", "Reject"), pch=c(19, 19, NA), col=c("gray", "black", "black"), bg="white")#
+if(files)dev.off()#
+if(files)pdf("Ns.pdf", height=5, width=5)#
+#
+est <- NULL#
+for(m in 1:10){#
+for(N in 10^seq(1, 6, by=0.5)){#
+rx <- runif(N, a, b)#
+ry <- runif(N, f(a), f(b))#
+rfs <- sapply(rx, f)#
+est <- rbind(est, c(m, N, mean(rfs)*(b-a), (f(b)-f(a))*(b-a)*sum(ry < rfs)/N))#
+}#
+}#
+est <- as.data.frame(est)#
+names(est) <- c("i", "N", "est1", "est2")#
+#
+par(mfrow=c(1, 1), mar=c(3.1, 4.1, 1.8, 1.1), xaxs='s', yaxs='s')#
+#
+	plot(est1 ~ N, est, subset=i==1, ylim=(b-a)*c(f(a), f(b)), las=1, xlab="", ylab="", log='x', type='b', pch=19, axes=F, lwd=2)#
+	axis(1, at=10^(1:6), labels=c(expression(10^1, 10^2, 10^3, 10^4, 10^5, 10^6)))#
+	axis(2, las=1)#
+	box()#
+	mtext("Sample points", side=1, font=2, cex=1.5, line=2)#
+	mtext("Estimation", side=2, font=2, cex=1.5, line=2.5)#
+	points(est2 ~ N, est, subset=i==1, type='b', pch=19, lwd=2, col="gray")#
+	legend("topright", c("Averaging", "Accept/Reject"), pch=c(19, 19), col=c("black", "gray"), bg="white")#
+for(m in 2:10){#
+points(est1 ~ N, est, subset=i==m, type='b', pch=19, lwd=2, col="black")#
+points(est2 ~ N, est, subset=i==m, type='b', pch=19, lwd=2, col="gray")#
+}#
+if(files)dev.off()
+?par
+set.seed(1001)#
+files <- T#
+f <- function(x) x^2#
+a <- 0#
+b <- 2#
+N <- 100#
+cols <- hcl.colors(N, alpha=0.1)#
+auc <- integrate(f, lower=a, upper=b)$value#
+fhat <- auc/(b-a)#
+rx <- runif(N, a, b)#
+ry <- runif(N, f(a), f(b))#
+rfs <- sapply(rx, f)#
+idx <- order(rfs)#
+if(files)pdf("intro.pdf", height=5, width=10)#
+par(mfrow=c(1, 2), mar=c(3.1, 4.1, 1.8, 1.1), xaxs='r', yaxs='r')#
+xs <- seq(a, b, length=100)#
+plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+	mtext(bquote(paste(exact==.(signif(auc, 6)))), side=3)#
+#
+polygon(c(rev(xs), xs), c(0*xs, sapply(xs, f)), col="lightgray")#
+plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+#
+plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+		mtext(bquote(paste(hat(f)==.(signif(fhat, 6)))), side=3)#
+#
+polygon(c(a, b, b, a), c(f(a), f(a), fhat, fhat), lwd=2, col="lightgray")#
+plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+if(files)dev.off()#
+if(files)pdf("rectangles.pdf", height=5, width=10)#
+#
+par(mfrow=c(1, 2), mar=c(3.1, 4.1, 1.8, 1.1), xaxs='r', yaxs='r')#
+	plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+	for(i in sample(1:N, 5)){#
+		y <- rfs[i]#
+		polygon(c(a, b, b, a), c(0, 0, y, y), col=cols[i], lwd=2)#
+}#
+	plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+	abline(h=fhat, lwd=2, col="black", lty=3)#
+	plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+	mtext(bquote(paste(estimate==.(signif(mean(rfs)*(b-a), 6)), ', ',exact==.(signif(auc, 6)))), side=3)#
+#
+		polygon(c(a,b,b,a), c(0,0,mean(rfs),mean(rfs)), col="gray", lwd=2)#
+	plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+	abline(h=fhat, col="black", lwd=2, lty=3)#
+if(files)dev.off()#
+#
+if(files)pdf("rejection.pdf", height=5, width=5)#
+par(mfrow=c(1,1), mar=c(3.1, 4.1, 1.8, 1.1), xaxs='r', yaxs='r', bg="white")#
+#
+	plot(NULL, xlim=c(a,b), ylim=c(f(a), f(b)), las=1, xlab="", ylab="")#
+	mtext(expression(x), side=1, font=2, cex=1.0, line=2)#
+	mtext(expression(f(x)), side=2, font=2, cex=1.0, line=2)#
+	approx2 <- (f(b)-f(a))*(b-a)*sum(ry < rfs)/N#
+	mtext(bquote(paste(estimate==.(signif(approx2, 6)), ', ',exact==.(signif(auc, 6)))), side=3)#
+points(rx[ry < rfs], ry[ry < rfs], col="gray", pch=19)#
+points(rx[ry >= rfs], ry[ry >= rfs], col="black", pch=19)#
+	plot(f, xlim=c(a,b), ylim=c(f(a), f(b)), lwd=2, add=T)#
+legend("topleft", c("Accept", "Reject"), pch=c(19, 19, NA), col=c("gray", "black", "black"), bg="white")#
+if(files)dev.off()#
+if(files)pdf("Ns.pdf", height=5, width=5)#
+#
+est <- NULL#
+for(m in 1:10){#
+for(N in 10^seq(1, 6, by=0.5)){#
+rx <- runif(N, a, b)#
+ry <- runif(N, f(a), f(b))#
+rfs <- sapply(rx, f)#
+est <- rbind(est, c(m, N, mean(rfs)*(b-a), (f(b)-f(a))*(b-a)*sum(ry < rfs)/N))#
+}#
+}#
+est <- as.data.frame(est)#
+names(est) <- c("i", "N", "est1", "est2")#
+#
+par(mfrow=c(1, 1), mar=c(3.1, 4.1, 1.8, 1.1), xaxs='r', yaxs='r')#
+#
+	plot(est1 ~ N, est, subset=i==1, ylim=(b-a)*c(f(a), f(b)), las=1, xlab="", ylab="", log='x', type='b', pch=19, axes=F, lwd=2)#
+	axis(1, at=10^(1:6), labels=c(expression(10^1, 10^2, 10^3, 10^4, 10^5, 10^6)))#
+	axis(2, las=1)#
+	box()#
+	mtext("Sample points", side=1, font=2, cex=1.5, line=2)#
+	mtext("Estimation", side=2, font=2, cex=1.5, line=2.5)#
+	points(est2 ~ N, est, subset=i==1, type='b', pch=19, lwd=2, col="gray")#
+	legend("topright", c("Averaging", "Accept/Reject"), pch=c(19, 19), col=c("black", "gray"), bg="white")#
+for(m in 2:10){#
+points(est1 ~ N, est, subset=i==m, type='b', pch=19, lwd=2, col="black")#
+points(est2 ~ N, est, subset=i==m, type='b', pch=19, lwd=2, col="gray")#
+}#
+if(files)dev.off()

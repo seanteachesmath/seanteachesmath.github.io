@@ -1,0 +1,96 @@
+---
+title: 'Lagrange: 2 ways'
+subtitle: '(with a side of Hermite)'
+author: "Laverty"
+date: "10/14/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, out.width = '50%', fig.asp = 1, fig.align='center')
+```
+
+## A linear Lagrange polynomial interpolant
+
+Consider linear interpolations to \(f(x) = e^{x}\) using the points \(x_0=0\) and \(x_1=1/2\).  Here we have \begin{align*}
+L_0(x) &= \dfrac{(x-x_1)}{(x_0-x_1)} = \dfrac{x-1/2}{0-1/2} = \dfrac{x-1/2}{-1/2}\\
+L_1(x) &= \dfrac{(x-x_0)}{(x_1-x_0)} = \dfrac{x-0}{1/2-0} = \dfrac{x-0}{1/2}
+\end{align*}
+
+The polynomial is given by \[P(x) = f(0)L_0(x) + f(1/2)L_1(x) = 1\left(\dfrac{x-1/2}{-1/2}\right)+ \sqrt{e}\left(\dfrac{x-0}{1/2}\right)\] where the function values are \(f(0) = e^0 = 1\) and \(f(1/2) = e^{1/2} = \sqrt{e}\).
+```{r lagrange}
+xs <- c(0, 1/2, 1)
+f <- function(x)exp(x)
+L0 <- function(x)(x-xs[[2]])/(xs[[1]]-xs[[2]])
+L1 <- function(x)(x-xs[[1]])/(xs[[2]]-xs[[1]])
+P <- function(x)f(xs[[1]])*L0(x) + f(xs[[2]])*L1(x)     
+plot(f, xlim=c(0, 1), ylim=c(0, 3), las=1)
+plot(P, xlim=c(0, 1), add=T)
+plot(function(x)1 + x, xlim=c(0, 1), add=T, lty=3)
+```
+
+Plotted are the function (solid), Lagrange polynomial (solid), and corresponding degree Taylor polyonmial (dashed, and at \(x_0\)).
+
+## An equivalent polynomial interpolant
+
+We can also consider \(\tilde P(x) = a_0 + a_1x\) (this notation \(a_i\) where \(i\) matches the power of \(x\) may be convenient) and specify the unknowns \(a_0\text{ and }a_1\).  We have \[
+\begin{cases}
+a_0 + a_1 x_0 & = f(x_0)\\
+a_0 + a_1 x_1 & = f(x_1)
+\end{cases}\]
+The idea is that for the known points \(x_0\) and \(x_1\) we have known function values of \(y_0 = f(x_0)\) and \(y_1 = f(x_1)\), assuming that our formula allow us to express \(y\) in terms of \(x\). Or,
+\[\left(\begin{array}{cc}1 & x_0\\1 & x_1\end{array}\right)\cdot\left(\begin{array}{c}a_0\\a_1\end{array}\right) = \left(\begin{array}{c}f(x_0)\\f(x_1)\end{array}\right)
+\]
+Inverting the matrix, we can solve the system to find
+\[\left(\begin{array}{c}a_0\\a_1\end{array}\right) = \left(\begin{array}{c}1\\2(\sqrt{e}-1)\end{array}\right)
+\]
+This means \(\tilde P(x) = 1 + 2(\sqrt{e}-1)x\), which, following a bit of algebra, is exactly what we found above. Notice that \begin{align*}
+P(x) & = f(0)L_0(x) + f(1/2)L_1(x)\\
+& = 1\left(\dfrac{x-1/2}{-1/2}\right)+ \sqrt{e}\left(\dfrac{x-0}{1/2}\right)\\
+& = -2x + 1 + 2\sqrt{e}x\\
+& = 1 + 2(\sqrt{e}-1)x\\
+& = \tilde P(x)
+\end{align*}
+
+```{r lagrange2}
+plot(f, xlim=c(0, 1), ylim=c(0, 3), las=1)
+plot(function(x)1 + 2*(sqrt(exp(1))-1)*x, xlim=c(0, 1), add=T)
+plot(function(x)1 + x, xlim=c(0, 1), add=T, lty=3)
+```
+
+Plotted are the function (solid), Lagrange polynomial (solid), and corresponding degree Taylor polyonmial (dashed, and at \(x_0\)).
+
+
+
+## Hermite
+Given the work above and the fact that \(f(x) = e^x\) and \(f'(x) = e^x\) we can calculate the Hermite polynomial.
+
+For this we have, \begin{align*}
+L_0(x) &= \dfrac{x-1/2}{-1/2} = -2x+1\\
+L_0'(x) &= \dfrac{1}{-1/2} = -2\\
+L_1(x) &= \dfrac{x-0}{1/2} = 2x\\
+L_1'(x) &= \dfrac{1}{1/2} = 2
+\end{align*}
+
+Additionally we have, the 4 cubic `Hermite coefficient polynomials',\begin{alignat*}{2}
+H_0(x) &= (1-2(x-0)L_0'(0))L_0(x)^2 && = (1-2x(-2))L_0(x)^2\\
+H_1(x) &= (1-2(x-1/2)L_1'(1/2))L_1(x)^2 && = (1-2(x-1/2)(2))L_1(x)^2\\
+\hat H_0(x) &= (x-0)L_0(x)^2\\
+\hat H_1(x) &= (x-1/2)L_1(x)^2
+\end{alignat*}
+
+By the definition of the Hermite polynomial we have,
+\begin{align*}
+H(x) &= f(0)H_0(x)+f(1/2)H_1(x)+f'(0)\hat H_0(x)+f'(1/2)H_1(x)\\
+H(x) &= 1 + x + 2 (5 \sqrt{e}-8) x^2 - 4 (3 \sqrt{e}-5) x^3
+\end{align*}
+Admittedly putting this together is rather tedious - it takes a few minutes with Matheamtica (which can also help with differentiation) for the desired symbolic portions of the process. Most importantly notice that the linear Lagrange interpolant scales up to a cubic Hermite interpolant.
+
+```{r hermite}
+plot(f, xlim=c(0, 1), ylim=c(0, 3), las=1)
+plot(function(x)1 + x + 2*(5*exp(1/2)-8)*x^2 - 4*(3*exp(1/2)-5)*x^3, xlim=c(0, 1), add=T)
+plot(function(x)1 + x + x^2/2 + x^3/6, xlim=c(0, 1), add=T, lty=3)
+```
+
+Plotted are the function  (solid), Hermite polynomial (solid), and corresponding degree Taylor polyonmial (dashed, and at \(x_0\)).  An interesting challenge is to picture what the corresponding matrix representation would be for the Hermite polynomial.
+
