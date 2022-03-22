@@ -1,0 +1,139 @@
+---
+title: "Bisection and Secant Methods: To bracket or not to bracket"
+author: "Sean Laverty"
+date: "9/10/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.height=4.5, fig.width=4.5, fig.align = "center", options(scipen=1, digits=10))
+```
+
+## Introduction
+Consider the rootfinding problem with \(f(x) = 3(x+1)(x-1/2)(x-1)\) on the interval \(-1.25 \leq x \leq 2.5\).
+```{r methods, echo=F}
+par(mar=c(4.1, 4.1, 0.8, 0.8))
+
+bisect <- function(f, a, b, k){
+
+	N <- ceiling((log10(b-a) + k)/log10(2))
+  cols <- rev(hcl.colors(N, palette = "viridis", alpha=0.5))
+	fs <- sapply(seq(a, b, length=100), f)
+	ymin <- floor(min(fs))
+	ymax <- ceiling(max(fs))
+	dat <- NULL
+	plot(function(x)f(x), xlim=c(a, b), ylim=c(ymin, ymax), lwd=2, las=1)
+	abline(h=0, lty=3, lwd=2, col='gray')
+
+	for(i in 1:N){
+		p <- a + (b-a)/2
+		dat <- rbind(dat, c(i, a, p, b))
+		segments(a, ymax - (ymax - ymin)*i/(3*N), b, ymax - (ymax - ymin)*i/(3*N), lwd=2, col=cols[i])
+		points(p, ymax - (ymax - ymin)*i/(3*N), lwd=2, col=cols[i], pch=19, cex=0.5)
+
+
+		if(sign(f(a))*sign(f(p)) < 0){
+			a <- a
+			b <- p
+		}else{
+			a <- p
+			b <- b
+		}
+
+		if(abs(f(p)) < 10^(-k) || (b-a) < 10^(-k)){
+			abline(v=p, lty=2)
+			print(dat)
+			return(p)
+			break
+		}
+	}
+	print("warning")
+	print(dat)
+}
+
+newton <- function(f, fp, a, b, p0, k){
+  N <- ceiling((log10(b-a) + k)/log10(2))
+  cols <- rev(hcl.colors(N, palette = "viridis", alpha=0.5))
+
+	fs <- sapply(seq(a, b, length=100), f)
+	ymin <- floor(min(fs))
+	ymax <- ceiling(max(fs))
+	dat <- NULL
+	plot(function(x)f(x), xlim=c(a, b), ylim=c(ymin, ymax), lwd=2, las=1)
+	abline(h=0, lty=3, lwd=2, col='gray')
+	p <- p0
+	#p <- a + (b-a)/2
+	for(i in 1:N){
+		#plot(function(x)fp(p)*(x-p) + f(p), add=T, xlim=c(a, b), lwd=2, col=cols[i])
+		p1 <- p - f(p)/fp(p)
+		dat <- rbind(dat, c(i, p1))
+
+		segments(p, f(p), p1, 0,  col=cols[i])
+		segments(p1, 0, p1, f(p1),  col=cols[i], lty=3)
+
+		segments(p, ymax - (ymax - ymin)*i/(3*N), p1, ymax - (ymax - ymin)*i/(3*N), lwd=2, col=cols[i])
+		points(p1, ymax - (ymax - ymin)*i/(3*N), lwd=2, col=cols[i], pch=19, cex=0.5)
+
+		p <- p1
+		if(abs(f(p)) < 10^(-k)){
+			abline(v=p, lty=2)
+			print(dat)
+			return(p)
+			break
+		}
+	}
+	print("warning")
+}
+secant <- function(f, a, b, p0, p1, k){
+  N <- ceiling((log10(b-a) + k)/log10(2))
+  cols <- rev(hcl.colors(N, palette = "viridis", alpha=0.5))
+	fs <- sapply(seq(a, b, length=100), f)
+	ymin <- floor(min(fs))
+	ymax <- ceiling(max(fs))
+	dat <- NULL
+	plot(function(x)f(x), xlim=c(a, b), ylim=c(ymin, ymax), lwd=2, las=1)
+	abline(h=0, lty=3, lwd=2, col='gray')
+	#p0 <- a
+	#p1 <- b
+	for(i in 1:N){
+		segments(p0, f(p0), p1, f(p1), lwd=2, col=cols[i])
+		segments(p0, ymax - (ymax - ymin)*i/(3*N), p1, ymax - (ymax - ymin)*i/(3*N), lwd=2, col=cols[i])
+		p <- p1 - f(p1)/(f(p1)-f(p0))*(p1-p0)
+		points(p, ymax - (ymax - ymin)*i/(3*N), lwd=2, col=cols[i], pch=19, cex=0.5)
+		segments(p0, f(p0), p, 0, lwd=2, col=cols[i])
+
+
+		p0 <- p1
+		p1 <- p
+		dat <- rbind(dat, c(i, p0, p1))
+
+		if(abs(f(p)) < 10^(-k)){
+			abline(v=p, lty=2)
+			
+		print(dat)
+			return(p)
+			break
+		}
+	}
+		print("warning")
+}
+```
+Though the code is omitted, the results below are reported for the example problem above addressing the application of secant method and comparisons to Newton's method and the bisection method.
+
+# Bisection Method
+On the interval \(-1.25\leq x \leq 2.5\), solutions to \(3*(x+1)*(x-1/2)*(x-1)=0\) are given by the following.
+```{r bisect}
+bisect(function(x)3*(x+1)*(x-1/2)*(x-1), a=-1.25, b=2.5, k=5)
+```
+
+# Secant Method
+On the interval \(-1.25\leq x \leq 2.5\), solutions to \(3*(x+1)*(x-1/2)*(x-1)=0\) are given by the following.
+```{r secant}
+secant(function(x)3*(x+1)*(x-1/2)*(x-1), a=-1.25, b=2.5, p0=2.5, p1=2, k=5)
+```
+
+# Newton's Method
+On the interval \(-1.25\leq x \leq 2.5\), solutions to \(3*(x+1)*(x-1/2)*(x-1)=0\) are given by the following.
+```{r newton}
+newton(function(x)3*(x+1)*(x-1/2)*(x-1), function(x)3*((x+1)*(x-1/2)+(x+x-1/2+1)*(x-1)), a=-1.25, b=2.5, p0=2.5, k=5)
+```

@@ -1,0 +1,180 @@
+---
+title: "R tutorial"
+author: "MATH 4263/5373: Applied Numerical Analysis"
+date: "1/31/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width=3, fig.height=3, fig.align="center")
+```
+
+## Coding
+In either (base) R or Rstudio, you can save a `dot R' file containing just plain text code and comments. It will be best to type into a script and execute the code rather than to type commands into the console (similar to a calculator).  Working from a script helps you preserve a record of your work. When beginning programming, you should try to do a few steps by hand, in a script to try to recognize the structure of the calculation and build intuition for the process.  Then, combined with the pseudo-code and any other materials, try to streamline your work into a functioning program.
+
+The above approach works in (base) R or Rstudio.  If you are feeling fancy, you can use the RMarkdown syntax to build a report with embedded code.   To begin you would click File \> New File \> R Markdown, motivation for this approach is described below.
+
+## RMarkdown
+You can use a script and console to run and save calculations (use it like a calculator, but with better record keeping), or ultimately to write programs and script your function calls to generate output. Ultimately Markdown languages are a powerful communcation and recordkeeping tool - this document was written in RMarkdown, which allows for a combination of computation and formatted typesetting with a hybrid \LaTeX{} language.  The downside to this is the simultaneous use and debugging of two languages.
+
+## Assignment
+You are encouraged to type in commands from the pdf file below (do not copy and paste). You should probably start with a simple plain text script and not an R markdown file.
+
+## Calculator functions
+We can use R for basic calculator functionality.
+
+```{r calc}
+2+2
+sin(2)
+log(10)
+exp(1)
+5%%2 ## what might this operator '%%' do?
+6%%2
+```
+## Generating data
+
+We can make vectors with the \verb|c()| command and assign them to a variable with the assignment operator \verb|<-|.  Later we will use more advanced commands to read comma-separate files or spreadsheet output.
+
+```{r data}
+w <- 1:10
+z <- seq(0, 10, length=11)
+(z <- seq(0, 10, by=0.5)) ## what are the major differences between these lines?
+
+length(z) ## how big?
+
+rev(z) ## reverse the order of elements
+
+c(w, z) ## combine objects
+
+x <- c(1, 2, 3, 4)
+y <- 2*x
+plot(x,y)
+```
+
+## Defining and using functions
+
+We can use a \verb|function(...)| to define mathematical functions or programs.  For mathematical functions there are a variety of tools for evaluation.
+```{r functions}
+f <- function(x) sqrt(x)
+sapply(x, f)
+plot(x, sapply(x, f))
+```
+
+## Basic programming
+
+We can use for loops for automation.
+```{r loops}
+for(i in 1:5){
+  print(i^2)
+}
+```
+
+We can use for conditionals for control.
+```{r logic}
+for(i in 1:5){
+  if(i%%2 == 1){ ## note the == for equality testing
+    print(i^2)
+  }else{
+    print(i^3)
+  }
+}
+```
+
+## Putting it all together
+
+Suppose we wanted to run the following small program and store the results for later use.
+```{r programming}
+output <- NULL
+for(i in 1:5){
+  if(i%%2==1){
+       output <- c(output, f(i)) ## odd i
+  }else{
+       output <- c(output, 2*f(i)) ## even i
+  }
+}
+output
+plot(output)
+plot(output, type='l')
+```
+
+
+
+## Putting it all together (and more)
+
+Suppose we wanted to run the following small program and store the results for later use and do some work with the output.
+
+```{r functional}
+prog <- function(N){ ## function 'prog' has argument N
+output <- NULL       ## initialize storage
+for(i in 1:N){
+  if(i%%2==1){       ## sample logic
+       output <- c(output, f(i))  ## sample storage
+  }else{
+       output <- c(output, 2*f(i))
+  }
+}
+return(output)       ## return result
+}
+
+out <- prog(100)     ## execute program, store result
+head(out)
+tail(out)
+min(out)
+max(out)
+plot(out, type='l', col=2)
+```
+
+## Built-in functions
+
+R has a variety of built-in commands for our current and future needs.  We want to build these capabilities ourselves, but it is good to know about what is available.
+
+```{r uniroot} 
+g <- function(x) f(x) - 4
+
+plot(g, xlim=c(0, 20))
+abline(h=0, lty=3)
+abline(v=0, lty=3)
+
+uniroot(g, lower=0, upper = 20) ## based on bisection
+root <- uniroot(g, lower=0, upper = 20)$root
+?uniroot
+```
+
+## Challenges
+
+### Arithmetic
+
+Experiment with the commands for manipulating numerical values.  Exploring the help menu might show you related commands.
+
+```{r arithmetic}
+pi
+
+ceiling(pi)
+floor(pi)
+trunc(pi)
+
+round(pi, 5)
+signif(pi, 3)
+signif(pi - 3, 3)
+
+```
+
+How do these differ if we use \(-\pi\) rather than \(\pi\)?
+
+### Rootfinding
+
+Try a few steps of the bisection method by hand.  Define \(a\) and \(b\) and your function \(f\).  Start by storing approximations manually, \(p0, p1, \dots\), but consider how you might streamline your scratchwork by using a loop.  After that you might wrap a function on the outside that accepts parameters, or you might practice using print statements to return information to the screen.  This might be a good place to review the script posted to D2L.
+
+```{r print} 
+for(i in 1:5){
+  #print(c(i,i^2)) ## unformatted
+  print(paste("For i=",i,", the value i^2=", i^2, ".", sep=''))
+}
+```
+
+```{r cat} 
+for(i in 1:5){
+  #print(c(i, i^2)) ## unformatted
+  cat("For i=",i,", the value i^2=", i^2, ".\n",sep='')
+}
+```

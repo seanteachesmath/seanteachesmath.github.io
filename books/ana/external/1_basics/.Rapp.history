@@ -1,0 +1,3640 @@
+files <- T#
+install.packages("microbenchmark")#
+require(microbenchmark)#
+#
+f1 <- function(x) x^5 - 15*x^4 + 85*x^3 - 225*x^2 + 274*x -120#
+#
+f2 <- function(x) (x - 1)*(x - 2)*(x - 3)*(x - 4)*(x - 5)#
+#
+f3 <- function(x) -120 + x*(274 + x*(-225 + x*(85 + x*(-15 + x))))#
+x <- runif(1000)#
+start.time <- Sys.time()#
+a <- sapply(x, f1)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f2)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f3)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+(times1 <- microbenchmark( sapply(x, f1), sapply(x, f2), times=1e3))#
+#
+(times2 <- microbenchmark( sapply(x, f1), sapply(x, f3), times=1e3))#
+dat <- rbind(times1, times2)#
+if(files)pdf("polynomial_evaluation.pdf", height=5, width=5)#
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat, log='y', axes=F, ylim=c(5e5, 5e7), xlab="", ylab="")#
+mtext("Method", 1, line=3, font=2, cex=1.5)#
+mtext("Compute time", 2, line=3.5, font=2, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, las=1)#
+box()#
+if(files)dev.off()#
+installed.packages()#
+row.names(installed.packages())#
+if(!"microbenchmark"%in%row.names(installed.packages()))install.packages("microbenchmark")#
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat, log='y', axes=F, ylim=c(5e5, 5e7), xlab="", ylab="", main="Evaluation of 1000 random points")#
+mtext("Method", 1, line=3, font=2, cex=1.5)#
+mtext("Compute time", 2, line=3.5, font=2, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, las=1)#
+box()
+files <- F#
+if(!"microbenchmark"%in%row.names(installed.packages()))install.packages("microbenchmark")#
+require(microbenchmark)#
+#
+f1 <- function(x) x^5 - 15*x^4 + 85*x^3 - 225*x^2 + 274*x -120#
+#
+f2 <- function(x) (x - 1)*(x - 2)*(x - 3)*(x - 4)*(x - 5)#
+#
+f3 <- function(x) -120 + x*(274 + x*(-225 + x*(85 + x*(-15 + x))))#
+x <- runif(1000)#
+start.time <- Sys.time()#
+a <- sapply(x, f1)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f2)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f3)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+(times1 <- microbenchmark( sapply(x, f1), sapply(x, f2), times=1e3))#
+#
+(times2 <- microbenchmark( sapply(x, f1), sapply(x, f3), times=1e3))#
+dat <- rbind(times1, times2)#
+if(files)pdf("polynomial_evaluation.pdf", height=5, width=5)#
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat, log='y', axes=F, ylim=c(5e5, 5e7), xlab="", ylab="", main="Evaluation of 1000 random points")#
+mtext("Method", 1, line=3, font=2, cex=1.5)#
+mtext("Compute time", 2, line=3.5, font=2, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, las=1)#
+box()#
+if(files)dev.off()#
+str(dat)#
+min(dat$time)#
+log(min(dat$time), 10)#
+#
+10e5#
+1e5.78#
+#
+1e5#
+100000#
+dat$time2 <- dat$time/1e5#
+plot(dat[, c("expr", "time2")], log='y', axes=F, ylim=c(5e5, 5e7), xlab="", ylab="", main="Evaluation of 1000 random points")#
+axis(2, las=1)#
+max(dat$time2)#
+plot(dat[, c("expr", "time2")],  axes=F, xlab="", ylab="", main="Evaluation of 1000 random points")#
+mtext(paste("Compute time (times",(10^5), ")", sep=' '), 2, line=3.5, font=2, cex=1.5)#
+mtext(paste("Compute time (times",expression(10^5), ")", sep=' '), 2, line=3.5, font=2, cex=1.5)#
+mtext(paste("Compute time (times",bquote(10^5), ")", sep=' '), 2, line=3.5, font=2, cex=1.5)#
+mtext(bquote("Compute time (times",expression(10^5), ")", sep=' '), 2, line=3.5, font=2, cex=1.5)#
+mtext(bquote("Compute time (times",expression(10^5), ")"), 2, line=3.5, font=2, cex=1.5)#
+mtext(paste("Compute time (times",bquote(10^5), ")"), 2, line=3.5, font=2, cex=1.5)#
+mtext(paste("Compute time (times", bquote(10^5), ")"), 2, line=3.5, font=2, cex=1.5)#
+plot(dat[, c("expr", "time2")], log='y', axes=F, xlab="", ylab="", main="Evaluation of 1000 random points")#
+mtext("Method", 1, line=3, font=2, cex=1.5)#
+mtext(expression(paste("Compute time (times", 10^5 , ")"), 2, line=3.5, font=2, cex=1.5)#
+)#
+mtext(expression(paste("Compute time (times", 10^5 , ")")), 2, line=3.5, font=2, cex=1.5)#
+plot(dat[, c("expr", "time2")], log='y', axes=F, xlab="", ylab="", main="Function evaluation at 1000 random points")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times", 10^5 , ")")), 2, line=3.5, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=3.5, cex=1.5)#
+#
+plot(dat[, c("expr", "time2")], log='y', axes=F, xlab="", ylab="", main="Function evaluation at 1000 random points")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=3.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, las=1)#
+?microbenchmark#
+boxplot.microbenchmark(dat)#
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat[, c("expr", "time2")], log='y', axes=F, xlab="", ylab="", main="Function evaluation at 1000 random points")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=3.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, las=1)#
+box()#
+files <- T#
+if(!"microbenchmark"%in%row.names(installed.packages()))install.packages("microbenchmark")#
+require(microbenchmark)#
+#
+f1 <- function(x) x^5 - 15*x^4 + 85*x^3 - 225*x^2 + 274*x -120#
+#
+f2 <- function(x) (x - 1)*(x - 2)*(x - 3)*(x - 4)*(x - 5)#
+#
+f3 <- function(x) -120 + x*(274 + x*(-225 + x*(85 + x*(-15 + x))))#
+x <- runif(1000)#
+start.time <- Sys.time()#
+a <- sapply(x, f1)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f2)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f3)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+(times1 <- microbenchmark( sapply(x, f1), sapply(x, f2), times=1e3))#
+#
+(times2 <- microbenchmark( sapply(x, f1), sapply(x, f3), times=1e3))#
+dat <- rbind(times1, times2)#
+dat$time2 <- dat$time/1e5#
+#
+if(files)pdf("polynomial_evaluation.pdf", height=5, width=5)#
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat[, c("expr", "time2")], log='y', axes=F, xlab="", ylab="", main="Function evaluation at 1000 random points")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=3.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, las=1)#
+box()#
+if(files)dev.off()#
+#
+files <- T#
+if(!"microbenchmark"%in%row.names(installed.packages()))install.packages("microbenchmark")#
+require(microbenchmark)#
+#
+f1 <- function(x) x^5 - 15*x^4 + 85*x^3 - 225*x^2 + 274*x -120#
+#
+f2 <- function(x) (x - 1)*(x - 2)*(x - 3)*(x - 4)*(x - 5)#
+#
+f3 <- function(x) -120 + x*(274 + x*(-225 + x*(85 + x*(-15 + x))))#
+x <- runif(1000)#
+start.time <- Sys.time()#
+a <- sapply(x, f1)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f2)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f3)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+(times1 <- microbenchmark( sapply(x, f1), sapply(x, f2), times=1e3))#
+#
+(times2 <- microbenchmark( sapply(x, f1), sapply(x, f3), times=1e3))#
+dat <- rbind(times1, times2)#
+dat$time2 <- dat$time/1e5#
+#
+if(files)pdf("polynomial_evaluation.pdf", height=5, width=5)#
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat[, c("expr", "time2")], log='y', axes=F, xlab="", ylab="", main="Function evaluation at 1000 random points")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=3.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, las=1)#
+box()#
+if(files)dev.off()#
+files <- T#
+if(!"microbenchmark"%in%row.names(installed.packages()))install.packages("microbenchmark")#
+require(microbenchmark)#
+#
+f1 <- function(x) x^5 - 15*x^4 + 85*x^3 - 225*x^2 + 274*x -120#
+#
+f2 <- function(x) (x - 1)*(x - 2)*(x - 3)*(x - 4)*(x - 5)#
+#
+f3 <- function(x) -120 + x*(274 + x*(-225 + x*(85 + x*(-15 + x))))#
+x <- runif(1000)#
+start.time <- Sys.time()#
+a <- sapply(x, f1)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f2)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f3)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+(times1 <- microbenchmark( sapply(x, f1), sapply(x, f2), times=1e3))#
+#
+(times2 <- microbenchmark( sapply(x, f1), sapply(x, f3), times=1e3))#
+dat <- rbind(times1, times2)#
+dat$time2 <- dat$time/1e5#
+#
+if(files)pdf("polynomial_evaluation_plot.pdf", height=5, width=5)#
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat[, c("expr", "time2")], log='y', axes=F, xlab="", ylab="", main="")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=2.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, las=1)#
+box()#
+if(files)dev.off()#
+aggregate(dat$times, by=dat$expr, mean)#
+aggregate(dat$time, by=dat$expr, mean)#
+#
+aggregate(dat$time, by=list(dat$expr), mean)#
+aggregate(dat$time, by=list(dat$expr), median)#
+#
+1e5#
+10000#
+100000#
+10^6#
+aggregate(dat$time2, by=list(dat$expr), median)#
+8.9*1e5#
+8.9*10^6#
+?microbenchmark
+files <- T#
+if(!"microbenchmark"%in%row.names(installed.packages()))install.packages("microbenchmark")#
+require(microbenchmark)#
+#
+f1 <- function(x) x^5 - 15*x^4 + 85*x^3 - 225*x^2 + 274*x -120#
+#
+f2 <- function(x) (x - 1)*(x - 2)*(x - 3)*(x - 4)*(x - 5)#
+#
+f3 <- function(x) -120 + x*(274 + x*(-225 + x*(85 + x*(-15 + x))))#
+x <- runif(1000)#
+start.time <- Sys.time()#
+a <- sapply(x, f1)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f2)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f3)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+(times1 <- microbenchmark( sapply(x, f1), sapply(x, f2), times=1e3))#
+#
+(times2 <- microbenchmark( sapply(x, f1), sapply(x, f3), times=1e3))#
+dat <- rbind(times1, times2)#
+dat$time2 <- dat$time/1e5
+plot(dat[, c("expr", "time2")], log='y', axes=F, xlab="", ylab="", main="")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=2.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, las=1)#
+box()
+plot(dat[, c("expr", "time2")], ylab=c(0, 250), log='y', axes=F, xlab="", ylab="", main="")
+plot(dat[, c("expr", "time2")], ylim=c(0, 250), log='y', axes=F, xlab="", ylab="", main="")
+plot(dat[, c("expr", "time2")], ylim=c(0.00001, 250), log='y', axes=F, xlab="", ylab="", main="")
+plot(dat[, c("expr", "time2")], log='y', axes=F, xlab="", ylab="", main="")
+axis(2, las=1)
+dat[, c("expr", "time2")]
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat[, c("expr", "time")], log='y', axes=F, xlab="", ylab="", main="")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=2.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, las=1)#
+box()
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat[, c("expr", "time2")], axes=F, xlab="", ylab="", main="")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=2.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, las=1)#
+box()
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat[, c("expr", "time2")], ylim=c(0, 50), axes=F, xlab="", ylab="", main="")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=2.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, las=1)#
+box()
+dat[, c("expr", "time")]
+611/553
+1.1*550
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat[, c("expr", "time2")], log='y', axes=F, xlab="", ylab="", main="")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=2.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, las=1)#
+box()
+plot(dat[, c("expr", "time2")], ylim=c(1, 250), log='y', axes=F, xlab="", ylab="", main="")
+mtext("Method", 1, line=3, cex=1.5)
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=2.5, cex=1.5)
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)
+axis(2, c(1, 5, 20, 50, 100, 200), las=1)
+box()
+axis(2, c(1, 5, 20, 50, 100, 200, 250), las=1)
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat[, c("expr", "time2")], ylim=c(1, 250), log='y', axes=F, xlab="", ylab="", main="")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=2.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, c(1, 5, 20, 50, 100, 200, 250), las=1)#
+box()
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat[, c("expr", "time2")], ylim=c(2, 250), log='y', axes=F, xlab="", ylab="", main="")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=2.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, c(2, 5, 20, 50, 100, 200, 250), las=1)#
+box()
+if(files)pdf("polynomial_evaluation_plot.pdf", height=5, width=5)#
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat[, c("expr", "time2")], ylim=c(2, 250), log='y', axes=F, xlab="", ylab="", main="")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=2.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, c(2, 5, 20, 50, 100, 200, 250), las=1)#
+box()#
+if(files)dev.off()
+files <- T#
+if(!"microbenchmark"%in%row.names(installed.packages()))install.packages("microbenchmark")#
+require(microbenchmark)#
+#
+f1 <- function(x) x^5 - 15*x^4 + 85*x^3 - 225*x^2 + 274*x -120#
+#
+f2 <- function(x) (x - 1)*(x - 2)*(x - 3)*(x - 4)*(x - 5)#
+#
+f3 <- function(x) -120 + x*(274 + x*(-225 + x*(85 + x*(-15 + x))))#
+x <- runif(1000)#
+start.time <- Sys.time()#
+a <- sapply(x, f1)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f2)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+#
+start.time <- Sys.time()#
+a <- sapply(x, f3)#
+end.time <- Sys.time()#
+time.taken <- end.time - start.time#
+time.taken#
+(times1 <- microbenchmark( sapply(x, f1), sapply(x, f2), times=1e3))#
+#
+(times2 <- microbenchmark( sapply(x, f1), sapply(x, f3), times=1e3))#
+dat <- rbind(times1, times2)#
+dat$time2 <- dat$time/1e5#
+#
+if(files)pdf("polynomial_evaluation_plot.pdf", height=5, width=5)#
+par(mar=c(5.1, 5.1, 1.1, 1.1))#
+plot(dat[, c("expr", "time2")], ylim=c(2, 250), log='y', axes=F, xlab="", ylab="", main="")#
+mtext("Method", 1, line=3, cex=1.5)#
+mtext(expression(paste("Compute time (times ", 10^5 , ")")), 2, line=2.5, cex=1.5)#
+axis(1, 1:3, c("Normal", "Factored", "Nested"), cex=1.5)#
+axis(2, c(2, 5, 20, 50, 100, 200, 250), las=1)#
+box()#
+if(files)dev.off()
+dat
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:4){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+f <- function(x)sin(x)
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)
+abline(a=0, b=1, lty=3)
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:4){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)
+f <- function(x)sin(x)#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)
+par(mfrow=c(1, 2), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+#
+par(mfrow=c(1, 2), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==f), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==f), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+xaxs <- c(1/6, 1/4, 1/3, 1/2)
+axis(1, pi*xaxs)
+axis(1, pi*xaxs, parse(text=paste(frac(pi, 0:(length(ps)-1), sep='')))
+axis(1, pi*xaxs, parse(text=paste(frac(pi, 0:(length(ps)-1), sep=''))))
+axis(1, pi*xaxs, parse(text=paste(pi, 0:(length(ps)-1), sep=''))))
+axis(1, pi*xaxs, parse(text=paste(pi, 0:(length(ps)-1), sep='')))
+axis(1, pi*xaxs, parse(text=paste(pi, xaxs), sep='')))
+axis(1, pi*xaxs, parse(text=paste(pi, xaxs), sep=''))
+axis(1, pi*xaxs, parse(text=paste(pi, xaxs, sep=''))
+axis(1, pi*xaxs, parse(text=paste(Pi, xaxs, sep=''))
+)
+axis(1, pi*xaxs, parse(text=paste(\pi, xaxs, sep=''))
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+#
+xaxs <- c(1/6, 1/4, 1/3, 1/2)#
+#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+xaxs <- c(1/6, 1/4, 1/3, 1/2)#
+#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), log='y', las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)
+files <- T#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+#
+xaxs <- c(1/6, 1/4, 1/3, 1/2)#
+#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+ps.lab <- parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))#
+axis(1, ps, NULL, tick=T, cex.axis=0.7, padj=-1.5)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+ps.lab <- parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))#
+axis(1, ps, NULL, tick=T, cex.axis=0.7, padj=-1.5)
+axis(1, ps, labels=F, tick=T, cex.axis=0.7, padj=-1.5)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+ps.lab <- parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))#
+axis(1, ps, labels=F, tick=T, cex.axis=0.7, padj=-1.5)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+ps.lab <- parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))#
+axis(1, ps, labels=F, tick=T, cex.axis=0.7, padj=-1.5)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+axis(1, ps, labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=gray(length(ps)/length(ps)))
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+ps.lab <- parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))#
+axis(1, ps, labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=gray(length(ps)/length(ps)))#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+ps.lab <- parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))#
+axis(1, ps, labels=F, tick=T, cex.axis=0.7, padj=-1.5)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=gray(i/length(ps)))#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+ps.lab <- parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))#
+axis(1, ps, labels=F, tick=T, cex.axis=0.7, padj=-1.5)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=hcl.colors(length(ps), palette="viridis")[i])#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+ps.lab <- parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))#
+axis(1, ps, labels=F, tick=T, cex.axis=0.7, padj=-1.5)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=hcl.colors(length(ps), palette="viridis")[i])#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=hcl.colors(length(ps), palette="viridis")[i])#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=hcl.colors(length(ps), palette="viridis")[i], lwd=2)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=hcl.colors(length(ps), palette="viridis")[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=hcl.colors(length(ps), palette="viridis")[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+N <- 10#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=hcl.colors(length(ps), palette="viridis")[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+N <- 10#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i])#
+		segments(p0, f(p0), p1, f(p0), col=cols[i])#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i])#
+		segments(p0, f(p0), p1, f(p0), col=cols[i])#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=hcl.colors(length(ps), palette="viridis")[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+N <- 10#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i])#
+		segments(p0, f(p0), p1, f(p0), col=cols[i])#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i])#
+		segments(p0, f(p0), p1, f(p0), col=cols[i])#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i])#
+		segments(p0, f(p0), p1, f(p0), col=cols[i])#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i])#
+		segments(p0, f(p0), p1, f(p0), col=cols[i])#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+N <- 10#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, pi/2), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 0.5#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 1#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+(5+log10(0.5))/log10(0.6931)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:10){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+ps
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+log10(10^-5)
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+b <- 6
+1/b
+b <- 6#
+1/b#
+#
+x <- 1#
+for(i in 1:10){#
+	x <- x*(2-b*x)#
+	print(x)#
+}
+2/b
+b <- 6#
+1/b#
+#
+x <- 1/4#
+for(i in 1:10){#
+	x <- x*(2-b*x)#
+	print(x)#
+}
+signif(1/b, 50)
+signif(1/b, 10)
+options(digits=10)#
+#
+b <- 6#
+1/b#
+#
+x <- 1/4#
+for(i in 1:10){#
+	x <- x*(2-b*x)#
+	print(x)#
+}
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, tick.len=2, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)
+warnings()
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, tck=2, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, tck=-2, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, tck=-2/i, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, tck=-2/i, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, tck=-1*(1-i/N), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=-1*(1-i/N), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=-1*(1-i/(N+1)), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=-1*(1-i/(N+1)), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 1#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=-.1*(1-i/(N+1)), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 1#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-i/(N+1)), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 1#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:length(ps))axis(1, ps[i], labels=F, tick=T, cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-i/(N+1)), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 1#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-i/(N+1)), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^2), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 1#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-i/(N+1)), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^1), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 1#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-i/(N+1)), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^2), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^1), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 1#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^2), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^1), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 1#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^1), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- T#
+if(files)pdf("fixpt_trig.pdf", height=10, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^1), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 1#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^1), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, cex.axis=0.7, padj=-1.5)
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, tck=0.5, cex.axis=0.7, padj=-1.5)
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, tck=0.05, cex.axis=0.7, padj=-1.5)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, tck=0.05, cex.axis=0.7, padj=-1.5)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, tck=0.05, cex.axis=0.7, padj=-1.5, outer=T)
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, tck=0.05, cex.axis=0.7, padj=1.5)
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, tck=0.05, cex.axis=0.7, padj=2.5)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, tck=0.05, cex.axis=0.7, padj=2.5)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, tck=0.05, cex.axis=0.7)
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, tck=0.05, cex.axis=0.7, col=NA)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+axis(1, ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), tick=T, tck=0.05, cex.axis=0.7, col=NA)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+text(ps, 0*ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')))
+text(ps, 0*ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), cex=0.5)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+text(ps, 0*ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), cex=0.5)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+text(ps, 0*ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), cex=0.5, pos=3)
+text(ps, 0*ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), cex=0.5, pos=4)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+text(ps, 0*ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), cex=0.5, pos=3)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+text(ps, 0*ps, parse(text=paste("x[", 0:(length(ps)-1),"]", sep='')), cex=0.75, pos=3)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+text(ps[1:5], 0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, pos=3)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+text(ps[1:5], 0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, adj=0.1)
+text(ps[1:5], 0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, adj=0.5)
+text(ps[1:5], 0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, adj=c(0.5, 0.5))
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+text(ps[1:5], 0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, adj=c(0.5, 0.5))#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+?text
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+text(ps[1:5], 0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, adj=c(1, 1))#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+text(ps[1:5], 0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, adj=c(1, 1))
+text(ps[1:5], 0.1+0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, adj=c(1, 1))
+text(ps[1:5], 0.1+0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75)
+text(ps[1:5], 0.1+0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, adj=c(0, 1))
+text(ps[1:5], 0.1+0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, adj=c(0, 0))
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+text(ps[1:5], 0.1+0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, adj=c(0, 0))#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+text(ps[1:5], 0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, adj=c(0, 0))#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+axis(1, ps[1:5], labels=F)
+text(ps[1:5], 0*ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, adj=c(0.5, 0))
+ps[1:5]
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, adj=c(0.5, 0))
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, hadj=0.5, padj=0)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, hadj=0.5, padj=0)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, hadj=0.5, padj=1)
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, hadj=0.5, padj=-1)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.75, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.5, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+getwd()
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.35, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.25, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.25, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.25, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+?axis
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.25, hadj=0.5, padj=-1)
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.5, hadj=0.5, padj=-1)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.5, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=10, width=10)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.5, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex0.5, hadj=0.5, padj=-1)
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.5, hadj=0.5, padj=-1)
+files <- F#
+if(files)pdf("fixedpoint.pdf", height=10, width=10)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.5, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=10, width=10)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.5, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.5, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.25, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.1, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=0.1, hadj=0.5, padj=-1)
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.1, hadj=0.5, padj=-1)
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=1, hadj=0.5, padj=-1)
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=1, hadj=0.5, padj=-1)
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex=2, hadj=0.5, padj=-1)
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=2, hadj=0.5, padj=-1)
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.2, hadj=0.5, padj=-1)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.2, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.4, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.5, hadj=0.5, padj=-1)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.75, hadj=0.5, padj=-0.5)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.75, hadj=0.5, padj=-0)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.75, hadj=0.5, padj=-1.5)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.5, hadj=0.5, padj=-1.5)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.5, hadj=0.5, padj=-2)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("x[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.5, hadj=0.5, padj=-3)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("p[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.5, hadj=0.5, padj=-3)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+files <- T#
+if(files)pdf("fixedpoint.pdf", height=5, width=5)#
+f <- function(x)2^-x#
+par(mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+plot(f, xlim=c(0, 1), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==2**-x), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 0.5#
+ps <- p0#
+for(i in 1:30){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0))#
+		segments(p0, f(p0), p1, f(p0))#
+	}else{#
+		segments(p0, p0, p0, p1)#
+		segments(p0, f(p0), p1, f(p0))#
+	}#
+		p0 <- p1#
+#
+}#
+ps#
+#
+axis(1, ps[1:5], parse(text=paste("p[", 0:(length(ps)-1),"]", sep=''))[1:5], cex.axis=0.4, hadj=0.5, padj=-3)#
+#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)#
+(log10(10^-5)-log10(0.5))/log10(0.6931)
+uniroot
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=10, width=5)#
+par(mfrow=c(2, 1), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^1), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 1#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^1), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- F#
+if(files)pdf("fixpt_trig.pdf", height=5, width=10)#
+par(mfrow=c(1, 2), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^1), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 1#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^1), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+files <- T#
+if(files)pdf("fixpt_trig.pdf", height=5, width=10)#
+par(mfrow=c(1, 2), mar=c(4.1, 5.1, 1.1, 1.1), xaxs='i', yaxs='i')#
+#
+f <- function(x)sin(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==sin(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+p0 <- 1#
+ps <- p0#
+N <- 20#
+cols <- hcl.colors(N+1, palette="viridis")#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^1), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+#
+f <- function(x)cos(x)#
+#
+plot(f, xlim=c(0, pi/2), ylim=c(0, 1), las=1, lwd=2, ylab=expression(g(x)==cos(x)), xlab=expression(x), cex.lab=1.25)#
+abline(a=0, b=1, lty=3)#
+#
+p0 <- 1#
+ps <- p0#
+for(i in 1:N){#
+		p1 <- f(p0)#
+		ps <- c(ps, p1)#
+	if(i==1){#
+		segments(p0, 0, p0, f(p0), col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}else{#
+		segments(p0, p0, p0, p1, col=cols[i], lwd=2)#
+		segments(p0, f(p0), p1, f(p0), col=cols[i], lwd=2)#
+	}#
+		p0 <- p1#
+#
+}#
+for(i in 1:(N+1))axis(1, ps[i], labels=F, tick=T, tck=0.1*(1-(i/(N+1))^1), cex.axis=0.7, padj=-1.5, col.ticks=cols[i], lwd=2)#
+if(files)dev.off()#
+#
+cbind(0:(length(ps)-1), ps)
+g <- function(x) 2^-x#
+a <- 1/3#
+b <- 1#
+#
+(k <- 0.551)#
+f(a)#
+f(b)#
+#
+(p0 <- b)#
+(p1 <- g(p0))#
+#
+log10(((1-k)*10^(-4))/abs(p1-p0))/log10(k)#
+#
+log10(10^(-4)/max(p0-a, b-p0))/log10(k)
+g <- function(x) 2^-x#
+a <- 1/3#
+b <- 1#
+#
+(k <- 0.551)#
+f(a)#
+f(b)#
+#
+(p0 <- a)#
+(p1 <- g(p0))#
+#
+log10(((1-k)*10^(-4))/abs(p1-p0))/log10(k)#
+#
+log10(10^(-4)/max(p0-a, b-p0))/log10(k)
+options(digits=20)#
+#
+b <- 6#
+1/b#
+#
+x <- 1/4#
+for(i in 1:10){#
+	x <- x*(2-b*x)#
+	print(x)#
+}
+system.time(#
+print(a/b)#
+)

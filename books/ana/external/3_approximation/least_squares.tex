@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[printwatermark]{xwatermark}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+
+%\newwatermark[oddpages,color=gray!30,angle=45,scale=2,xpos=0,ypos=0]{NOT FOR REDISTRIBUTION}
+%\newwatermark[evenpages,color=gray!30,angle=-45,scale=2,xpos=0,ypos=0]{NOT FOR REDISTRIBUTION}
+
+
+\newcommand{\compactlist}{\setlength{\itemsep}{0pt} \setlength{\parskip}{0pt} \setlength{\leftskip}{-1em}}
+
+\lhead{MATH 4263/5373 -- ANA}
+\rhead{Fall 2019}
+\chead[RE]{\qquad\qquad \bf{Notes on least squares}}
+\cfoot{}
+
+\begin{document}
+\pagestyle{fancy}
+
+\section*{Discrete case (i.e., 8.1, pg. 486)}
+Consider the last term \[\sum_{i=1}^m\Big(P_n(x_i)\Big)^2 = \sum_{i=1}^m \left(\sum_{j=0}^n a_j x_i^j\right)^2\] in the definition of the error \(E = E_2(a_0, a_1, \dots, a_n)\) for discrete least squares approximation. We have the following (though I do not find this particularly illuminating and instead prefer to differentiate before addressing the sums), where it might initially be helpful to remember that \(x_i^0 = 1\)  and \(x_i^1 = x_i\) (e.g., \(a_0 x_i^0 = a_0\cdot1 =a_0\) and \(a_1 x_i^1 = a_1x_i\)), 
+\begin{align*}
+ \sum_{i=1}^m \left(\sum_{j=0}^n a_j x_i^j\right)^2 & = \sum_{i=1}^m (a_0 + a_1x_i+ \dots + a_n x_i^n)(a_0  + a_1x_i + \dots + a_n x_i^n)\\
+ & =  \sum_{i=1}^m \Big[a_0  (a_0  + \dots + a_n x_i^n) + \dots  + a_jx_i^j(a_0  + \dots + a_n x_i^n) + \dots + a_n x_i^n(a_0  + \dots + a_n x_i^n)\Big]\\
+ & =  \sum_{i=1}^m  \sum_{j=0}^n a_jx_i^j(a_0 + a_1x_i + \dots + a_n x_i^n)\\
+ & =   \sum_{j=0}^n a_j  \sum_{i=1}^m x_i^j(a_0 + a_1x_i + \dots + a_n x_i^n)\\
+ & =   \sum_{j=0}^n a_j  \sum_{i=1}^m x_i^j \sum_{k=0}^n a_k x_i^k\\
+ & =   \sum_{j=0}^n a_j  \sum_{i=1}^m \sum_{k=0}^n a_k x_i^{j+k}\\
+% & =   \sum_{j=0}^n a_j  \sum_{k=0}^n a_k  \sum_{i=1}^m x_i^{j+k}\\
+% & =  \sum_{i=1}^m  \sum_{j=0}^n a_jx_i^j \sum_{k=0}^n a_kx_i^k\\
+ % & = \sum_{i=1}^m a_0 a_0 + (a_0a_1 + a_1a_0)x_i + (a_0a_2+a_1a_1+a_2a_0)x_i^2 + \dots\\
+% & = \sum_{i=1}^m a_0 a_0 + (a_0a_1 + a_1a_0)x_i + (a_0a_2+a_1a_1+a_2a_0)x_i^2 + \dots\\
+ & = \sum_{j=0}^n\sum_{k=0}^n a_ja_k\Big(\sum_{i=1}^m x_i^{j+k}\Big)
+ \end{align*}
+Our goal is the partial derivative of this term with respect to \(a_j\). Notice the following, where key steps are moving differentiation under the sum, applying the product rule, and rearranging the sum,
+\begin{align*}
+\dfrac{\partial}{\partial a_j} \left(\sum_{i=1}^m \left(\sum_{j=0}^n a_j x_i^j\right)^2 \right) & =  \dfrac{\partial}{\partial a_j}\Big(\sum_{i=1}^m (a_0 + a_1x_i + \dots + a_n x_i^n)(a_0 + a_1x_i + \dots + a_n x_i^n)\Big)\\
+& =  \sum_{i=1}^m \dfrac{\partial}{\partial a_j}\Big((a_0 + a_1x_i + \dots + a_n x_i^n)(a_0 + a_1x_i + \dots + a_n x_i^n)\Big)\\
+& = \sum_{i=1}^m   \left(x_i^j(a_0 + a_1x_i + \dots + a_n x_i^n) + (a_0 + a_1x_i + \dots + a_n x_i^n) x_i^j\right)\\
+& = \sum_{i=1}^m   2\left(x_i^j(a_0 + a_1x_i + \dots + a_n x_i^n)\right)\\
+& = \sum_{i=1}^m   2\left(x_i^j\sum_{k=0}^n(a_kx_i^k)\right)\\
+& =   2\sum_{k=0}^n a_k \sum_{i=1}^m x_i^{j+k}\\
+%& = \int_a^b   2x_i^j(a_0 + a_1x_i + \dots + a_n x_i^n)\,dx_i\\
+%& = 2\int_a^b   x_i^j\sum_{k=0}^n a_k x_i^k\,dx_i\\
+%& = 2\int_a^b   \sum_{k=0}^n a_k x_i^{j+k}\,dx_i\\
+%& = 2\sum_{k=0}^n a_k \int_a^b  x_i^{j+k}\,dx_i
+\end{align*}
+
+\newpage
+
+\section*{Continuous case (i.e., 8.2, pg. 495)}
+Consider the last term \[\int_a^b \left(\sum_{k=0}^n a_k x^k\right)^2\] in the definition of the error \(E = E_2(a_0, a_1, \dots, a_n)\) for least squares polynomial approximation. We have,
+\begin{align*}
+\int_a^b \left(\sum_{k=0}^n a_k x^k\right)^2\,dx %& = \int_a^b \left(\sum_{k=0}^n a_k x^k\right)^2\,dx\\
+& = \int_a^b  (a_0 + a_1x + \dots + a_n x^n)(a_0 + a_1x + \dots + a_n x^n)\,dx\\
+\end{align*}
+Our goal is the partial derivative of this term with respect to \(a_j\). Notice the following, where key steps are moving differentiation under the integral, applying the product rule, and rearranging the sum,
+\begin{align*}
+\dfrac{\partial}{\partial a_j}\int_a^b \left(\sum_{k=0}^n a_k x^k\right)^2\,dx & = \dfrac{\partial}{\partial a_j} \int_a^b  (a_0 + a_1x + \dots + a_n x^n)(a_0 + a_1x + \dots + a_n x^n)\,dx\\
+& = \int_a^b  \dfrac{\partial}{\partial a_j} \Big((a_0 + a_1x + \dots + a_n x^n)(a_0 + a_1x + \dots + a_n x^n)\Big)\,dx\\
+& = \int_a^b   \left(x^j(a_0 + a_1x + \dots + a_n x^n) + (a_0 + a_1x + \dots + a_n x^n) x^j\right)\,dx\\
+& = \int_a^b   2x^j(a_0 + a_1x + \dots + a_n x^n)\,dx\\
+& = 2\int_a^b   x^j\sum_{k=0}^n a_k x^k\,dx\\
+& = 2\int_a^b   \sum_{k=0}^n a_k x^{j+k}\,dx\\
+& = 2\sum_{k=0}^n a_k \int_a^b  x^{j+k}\,dx
+\end{align*}
+\end{document}
