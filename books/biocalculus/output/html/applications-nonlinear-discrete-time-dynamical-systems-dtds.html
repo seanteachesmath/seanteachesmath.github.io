@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-01-06T11:10:16-06:00       *-->
+<!--*       on 2022-03-22T16:25:26-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,11 +9,14 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Applications: nonlinear discrete-time dynamical systems (DTDS)</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Bio-Calculus">
+<meta property="book:author" content="Sean Laverty">
 <script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -24,8 +27,8 @@
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
   },
   chtml: {
     scale: 0.88,
@@ -36,32 +39,32 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
 <p class="byline">Sean Laverty</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="special.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="special.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="applications-autonomous-differential-equations.html" title="Next">Next</a></span></div>
 </div>
@@ -69,52 +72,52 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="special.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="special.html" title="Up">Up</a><a class="next-button button toolbar-item" href="applications-autonomous-differential-equations.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide">Users guide</a></li></ul>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide" class="internal">Users guide</a></li></ul>
 </li>
 <li class="link">
-<a href="intro.html" data-scroll="intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
-<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus">What is bio-calculus?</a></li>
-<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
-<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1">Dimensions and units</a></li>
-<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs">Linear functions and their graphs</a></li>
-<li><a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms">Exponentials and logarithms</a></li>
-<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds">Introduction to discrete-time dynamical systems (DTDS)</a></li>
-<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits">Introduction to limits</a></li>
-<li><a href="continuous-functions.html" data-scroll="continuous-functions">Continuous functions</a></li>
-<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity">Limits and behaviors at infinity</a></li>
+<a href="intro.html" data-scroll="intro" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus" class="internal">What is bio-calculus?</a></li>
+<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology" class="internal">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
+<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1" class="internal">Dimensions and units</a></li>
+<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs" class="internal">Linear functions and their graphs</a></li>
+<li><a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms" class="internal">Exponentials and logarithms</a></li>
+<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds" class="internal">Introduction to discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits" class="internal">Introduction to limits</a></li>
+<li><a href="continuous-functions.html" data-scroll="continuous-functions" class="internal">Continuous functions</a></li>
+<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity" class="internal">Limits and behaviors at infinity</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="derivatives.html" data-scroll="derivatives"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
-<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change">Introduction to derivatives: Rates of change</a></li>
-<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions">Derivatives of basic functions</a></li>
-<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions">Derivatives of exponential and logarithmic functions</a></li>
-<li><a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule">Derivatives of compositions: chain rule</a></li>
-<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients">Derivatives of products and quotients</a></li>
-<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications">Second derivatives and applications</a></li>
+<a href="derivatives.html" data-scroll="derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
+<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change" class="internal">Introduction to derivatives: Rates of change</a></li>
+<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions" class="internal">Derivatives of basic functions</a></li>
+<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions" class="internal">Derivatives of exponential and logarithmic functions</a></li>
+<li><a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule" class="internal">Derivatives of compositions: chain rule</a></li>
+<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients" class="internal">Derivatives of products and quotients</a></li>
+<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications" class="internal">Second derivatives and applications</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="integration.html" data-scroll="integration"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
-<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations">Introduction to differential equations</a></li>
-<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution">More complicated integrals and integration by substitution</a></li>
-<li><a href="the-definite-integral.html" data-scroll="the-definite-integral">The definite integral</a></li>
-<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral">Applications of the definite integral</a></li>
-<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry">Applications to chemistry</a></li>
+<a href="integration.html" data-scroll="integration" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
+<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations" class="internal">Introduction to differential equations</a></li>
+<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution" class="internal">More complicated integrals and integration by substitution</a></li>
+<li><a href="the-definite-integral.html" data-scroll="the-definite-integral" class="internal">The definite integral</a></li>
+<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral" class="internal">Applications of the definite integral</a></li>
+<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry" class="internal">Applications to chemistry</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="special.html" data-scroll="special"><span class="codenumber">4</span> <span class="title">Special topics</span></a><ul>
+<a href="special.html" data-scroll="special" class="internal"><span class="codenumber">4</span> <span class="title">Special topics</span></a><ul>
 <li><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds" class="active">Applications: nonlinear discrete-time dynamical systems (DTDS)</a></li>
-<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations">Applications: autonomous differential equations</a></li>
+<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations" class="internal">Applications: autonomous differential equations</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="applications-nonlinear-discrete-time-dynamical-systems-dtds"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="applications-nonlinear-discrete-time-dynamical-systems-dtds"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Applications: nonlinear discrete-time dynamical systems (DTDS)</span>
 </h2>
 <section class="paragraphs" id="the-plan-19"><h3 class="heading"><span class="title">The Plan.</span></h3>
@@ -138,21 +141,21 @@
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.4<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><figure class="figure figure-like" id="figure-54"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/ricker_big.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.5<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure></section><section class="paragraphs" id="conclusions-1"><h5 class="heading"><span class="title">Conclusions.</span></h5>
 <p id="p-786">From your computer experiments and analysis above what conclusions can you draw about this model and its solutions?</p>
-<p id="p-787">For the DTDS \(x_{t+1} = f(x_t)\text{,}\) the equilibrium \(x_{t+1} = x_t = x^*\) is</p>
+<p id="p-787">For the DTDS <span class="process-math">\(x_{t+1} = f(x_t)\text{,}\)</span> the equilibrium <span class="process-math">\(x_{t+1} = x_t = x^*\)</span> is</p>
 <ul id="p-788" class="disc">
-<li id="li-216"><p id="p-789"><dfn class="terminology">stable</dfn> if \(-1 &lt;
-f'(x^*)&lt;1\) (or \(f\) has a small slope at \(x^*\text{,}\) \(|f'(x^*)|&lt;1\)) and</p></li>
-<li id="li-217"><p id="p-790"><dfn class="terminology">unstable</dfn> if \(f'(x^*)&lt;-1\) or \(1 &lt; f'(x^*)\) (or \(f\) has a large slope at \(x^*\text{,}\) \(|f'(x^*)|&gt;1\))</p></li>
+<li id="li-216"><p id="p-789"><dfn class="terminology">stable</dfn> if <span class="process-math">\(-1 &lt;
+f'(x^*)&lt;1\)</span> (or <span class="process-math">\(f\)</span> has a small slope at <span class="process-math">\(x^*\text{,}\)</span> <span class="process-math">\(|f'(x^*)|&lt;1\)</span>) and</p></li>
+<li id="li-217"><p id="p-790"><dfn class="terminology">unstable</dfn> if <span class="process-math">\(f'(x^*)&lt;-1\)</span> or <span class="process-math">\(1 &lt; f'(x^*)\)</span> (or <span class="process-math">\(f\)</span> has a large slope at <span class="process-math">\(x^*\text{,}\)</span> <span class="process-math">\(|f'(x^*)|&gt;1\)</span>)</p></li>
 </ul>
-<p id="p-791">The solution \(x_t\) oscillates of \(f'(x^*)&lt;0\text{.}\)</p></section><section class="paragraphs" id="big-idea"><h5 class="heading"><span class="title">Big idea!</span></h5>
-<p id="p-792">Near an equilibrium \(f\) looks like its tangent line, whose slope is given by the derivative there, \(f'(x^*)\text{.}\) Zooming in <em class="emphasis">near the equilibrium point</em>, the nonlinear model will look like one of the four cases pictured at the conclusion of the previous section with one of the basic behaviors.</p></section><section class="paragraphs" id="ricker-model"><h5 class="heading"><span class="title">Ricker Model.</span></h5>
+<p id="p-791">The solution <span class="process-math">\(x_t\)</span> oscillates of <span class="process-math">\(f'(x^*)&lt;0\text{.}\)</span></p></section><section class="paragraphs" id="big-idea"><h5 class="heading"><span class="title">Big idea!</span></h5>
+<p id="p-792">Near an equilibrium <span class="process-math">\(f\)</span> looks like its tangent line, whose slope is given by the derivative there, <span class="process-math">\(f'(x^*)\text{.}\)</span> Zooming in <em class="emphasis">near the equilibrium point</em>, the nonlinear model will look like one of the four cases pictured at the conclusion of the previous section with one of the basic behaviors.</p></section><section class="paragraphs" id="ricker-model"><h5 class="heading"><span class="title">Ricker Model.</span></h5>
 <p id="p-793">Originally published in the 1950’s, the Ricker model was used to describe change in size of fish populations from one measurement to the next. Though there are other variants presented in literature, the model is</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 N_{t+1} = rN_te^{-KNt},
 \end{equation*}
 </div>
-<p class="continuation">where the values \(r\) and \(K\) are parameters. This model has been used to</p>
+<p class="continuation">where the values <span class="process-math">\(r\)</span> and <span class="process-math">\(K\)</span> are parameters. This model has been used to</p>
 <ul id="p-794" class="disc">
 <li id="li-218"><p id="p-795">estimate growth and population parameters from data</p></li>
 <li id="li-219"><p id="p-796">predict population growth</p></li>
@@ -160,31 +163,31 @@ N_{t+1} = rN_te^{-KNt},
 </ul></section><section class="paragraphs" id="analysis-of-the-ricker-dtds"><h5 class="heading"><span class="title">Analysis of the Ricker DTDS.</span></h5>
 <p id="p-798">To get some basic information we will analyze the Ricker model by hand before moving onto computing.</p>
 <ol id="p-799" class="decimal">
-<li id="li-221"><p id="p-800">With \(r=2\) and \(K=2\text{,}\) find the equilibria \(N^*\) for the Ricker model.</p></li>
-<li id="li-222"><p id="p-801">What is \(f'(N)\) if \(f(N) = rNe^{-KN}\text{?}\)</p></li>
-<li id="li-223"><p id="p-802">What is \(f'(N^*)\text{?}\) Are equilibria stable? Should solutions oscillate?</p></li>
-<li id="li-224"><p id="p-803">Repeat the analysis if \(r=8\text{.}\)</p></li>
+<li id="li-221"><p id="p-800">With <span class="process-math">\(r=2\)</span> and <span class="process-math">\(K=2\text{,}\)</span> find the equilibria <span class="process-math">\(N^*\)</span> for the Ricker model.</p></li>
+<li id="li-222"><p id="p-801">What is <span class="process-math">\(f'(N)\)</span> if <span class="process-math">\(f(N) = rNe^{-KN}\text{?}\)</span></p></li>
+<li id="li-223"><p id="p-802">What is <span class="process-math">\(f'(N^*)\text{?}\)</span> Are equilibria stable? Should solutions oscillate?</p></li>
+<li id="li-224"><p id="p-803">Repeat the analysis if <span class="process-math">\(r=8\text{.}\)</span></p></li>
 </ol></section><section class="paragraphs" id="discrete-logistic"><h5 class="heading"><span class="title">Discrete logistic.</span></h5>
 <p id="p-804">The famous model May discusses in the paper cited above is the discrete logistic equation or the ‘logistic map,’ given by</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 x_{t+1} = rx_t(1-x_t/K),
 \end{equation*}
 </div>
-<p class="continuation">where \(r\) and \(K\) are parameters and we think of \(x_t\) as describing the size of a biological population. The algebra of the analysis simplifies if we choose \(K=1\text{.}\)</p>
+<p class="continuation">where <span class="process-math">\(r\)</span> and <span class="process-math">\(K\)</span> are parameters and we think of <span class="process-math">\(x_t\)</span> as describing the size of a biological population. The algebra of the analysis simplifies if we choose <span class="process-math">\(K=1\text{.}\)</span></p>
 <ol id="p-805" class="decimal">
-<li id="li-225"><p id="p-806">With \(r=2\) and \(K=1\text{,}\) find the equilibria \(x^*\) for the discrete logistic model.</p></li>
-<li id="li-226"><p id="p-807">What is \(f'(x)\) if \(f(x) = rx(1-x/K)\) if again \(K=1\text{?}\)</p></li>
-<li id="li-227"><p id="p-808">What is \(f'(x^*)\text{?}\) Are equilibria stable? Should solutions oscillate?</p></li>
-<li id="li-228"><p id="p-809">Repeat the analysis if \(r=4\text{.}\)</p></li>
+<li id="li-225"><p id="p-806">With <span class="process-math">\(r=2\)</span> and <span class="process-math">\(K=1\text{,}\)</span> find the equilibria <span class="process-math">\(x^*\)</span> for the discrete logistic model.</p></li>
+<li id="li-226"><p id="p-807">What is <span class="process-math">\(f'(x)\)</span> if <span class="process-math">\(f(x) = rx(1-x/K)\)</span> if again <span class="process-math">\(K=1\text{?}\)</span></p></li>
+<li id="li-227"><p id="p-808">What is <span class="process-math">\(f'(x^*)\text{?}\)</span> Are equilibria stable? Should solutions oscillate?</p></li>
+<li id="li-228"><p id="p-809">Repeat the analysis if <span class="process-math">\(r=4\text{.}\)</span></p></li>
 </ol></section><section class="paragraphs" id="note-on-modeling"><h5 class="heading"><span class="title">Note on modeling.</span></h5>
 <p id="p-810">Both of these models, and many others, are of the form</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 N_{t+1} = N_tf(N_t),
 \end{equation*}
 </div>
-<p class="continuation">where \(f(N)\) is the ‘per capita production’ as a function of the current population size. This model tells us that the new population size is a multiple of the old population size, and \(f(N)\) tells us what the multiple is. What is \(f\) for each of the models above?</p></section></section></section></section></div></main>
+<p class="continuation">where <span class="process-math">\(f(N)\)</span> is the ‘per capita production’ as a function of the current population size. This model tells us that the new population size is a multiple of the old population size, and <span class="process-math">\(f(N)\)</span> tells us what the multiple is. What is <span class="process-math">\(f\)</span> for each of the models above?</p></section></section></section></section></div></main>
 </div>
 </body>
 </html>

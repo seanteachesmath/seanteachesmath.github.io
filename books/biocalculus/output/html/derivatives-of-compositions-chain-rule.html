@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-01-06T11:10:15-06:00       *-->
+<!--*       on 2022-03-22T16:25:24-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,11 +9,14 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Derivatives of compositions: chain rule</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Bio-Calculus">
+<meta property="book:author" content="Sean Laverty">
 <script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
@@ -24,8 +27,8 @@
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
-    ignoreHtmlClass: "tex2jax_ignore",
-    processHtmlClass: "has_am",
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
   },
   chtml: {
     scale: 0.88,
@@ -36,32 +39,32 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg">miniversion=0.6</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_blue_red.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
 <p class="byline">Sean Laverty</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="derivatives-of-exponential-and-logarithmic-functions.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="derivatives.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="derivatives-of-products-and-quotients.html" title="Next">Next</a></span></div>
 </div>
@@ -69,52 +72,52 @@
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="derivatives-of-exponential-and-logarithmic-functions.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="derivatives.html" title="Up">Up</a><a class="next-button button toolbar-item" href="derivatives-of-products-and-quotients.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide">Users guide</a></li></ul>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide" class="internal">Users guide</a></li></ul>
 </li>
 <li class="link">
-<a href="intro.html" data-scroll="intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
-<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus">What is bio-calculus?</a></li>
-<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
-<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1">Dimensions and units</a></li>
-<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs">Linear functions and their graphs</a></li>
-<li><a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms">Exponentials and logarithms</a></li>
-<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds">Introduction to discrete-time dynamical systems (DTDS)</a></li>
-<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits">Introduction to limits</a></li>
-<li><a href="continuous-functions.html" data-scroll="continuous-functions">Continuous functions</a></li>
-<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity">Limits and behaviors at infinity</a></li>
+<a href="intro.html" data-scroll="intro" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus" class="internal">What is bio-calculus?</a></li>
+<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology" class="internal">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
+<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1" class="internal">Dimensions and units</a></li>
+<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs" class="internal">Linear functions and their graphs</a></li>
+<li><a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms" class="internal">Exponentials and logarithms</a></li>
+<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds" class="internal">Introduction to discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits" class="internal">Introduction to limits</a></li>
+<li><a href="continuous-functions.html" data-scroll="continuous-functions" class="internal">Continuous functions</a></li>
+<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity" class="internal">Limits and behaviors at infinity</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="derivatives.html" data-scroll="derivatives"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
-<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change">Introduction to derivatives: Rates of change</a></li>
-<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions">Derivatives of basic functions</a></li>
-<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions">Derivatives of exponential and logarithmic functions</a></li>
+<a href="derivatives.html" data-scroll="derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
+<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change" class="internal">Introduction to derivatives: Rates of change</a></li>
+<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions" class="internal">Derivatives of basic functions</a></li>
+<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions" class="internal">Derivatives of exponential and logarithmic functions</a></li>
 <li><a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule" class="active">Derivatives of compositions: chain rule</a></li>
-<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients">Derivatives of products and quotients</a></li>
-<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications">Second derivatives and applications</a></li>
+<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients" class="internal">Derivatives of products and quotients</a></li>
+<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications" class="internal">Second derivatives and applications</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="integration.html" data-scroll="integration"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
-<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations">Introduction to differential equations</a></li>
-<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution">More complicated integrals and integration by substitution</a></li>
-<li><a href="the-definite-integral.html" data-scroll="the-definite-integral">The definite integral</a></li>
-<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral">Applications of the definite integral</a></li>
-<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry">Applications to chemistry</a></li>
+<a href="integration.html" data-scroll="integration" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
+<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations" class="internal">Introduction to differential equations</a></li>
+<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution" class="internal">More complicated integrals and integration by substitution</a></li>
+<li><a href="the-definite-integral.html" data-scroll="the-definite-integral" class="internal">The definite integral</a></li>
+<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral" class="internal">Applications of the definite integral</a></li>
+<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry" class="internal">Applications to chemistry</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="special.html" data-scroll="special"><span class="codenumber">4</span> <span class="title">Special topics</span></a><ul>
-<li><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds">Applications: nonlinear discrete-time dynamical systems (DTDS)</a></li>
-<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations">Applications: autonomous differential equations</a></li>
+<a href="special.html" data-scroll="special" class="internal"><span class="codenumber">4</span> <span class="title">Special topics</span></a><ul>
+<li><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds" class="internal">Applications: nonlinear discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations" class="internal">Applications: autonomous differential equations</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="derivatives-of-compositions-chain-rule"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="derivatives-of-compositions-chain-rule"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Derivatives of compositions: chain rule</span>
 </h2>
 <section class="paragraphs" id="the-plan-11"><h3 class="heading"><span class="title">The Plan.</span></h3>
@@ -122,7 +125,7 @@
 <section class="paragraphs" id="many-derivatives"><h4 class="heading"><span class="title">Many derivatives.</span></h4>
 <p id="p-501">We now know how to find derivatives of sums of polynomial terms, exponential functions, or natural logarithms. In addition to products and quotients (next time), we can also combine functions using .</p>
 <section class="paragraphs" id="the-art-of-compositions"><h5 class="heading"><span class="title">The ‘art’ of compositions.</span></h5>
-<p id="p-502">It helps to think of a function \(h(x)=(f\circ g)(x)=f(g(x))\text{,}\) as being ‘built’ from two component functions \(f\) and \(g\) using function composition.</p>
+<p id="p-502">It helps to think of a function <span class="process-math">\(h(x)=(f\circ g)(x)=f(g(x))\text{,}\)</span> as being ‘built’ from two component functions <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> using function composition.</p>
 <figure class="table table-like" id="table-9"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.4.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="l m b0 r0 l0 t0 lines">Label</th>
@@ -135,25 +138,25 @@
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">\(h(x)\)</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(h(x)\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">\(g(x)\)</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(g(x)\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
-<td class="l m b0 r0 l0 t0 lines">\(f(g)\)</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(f(g)\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></figure><p id="p-503">The function \(F(x)=e^{-x^{2}}\) is a composition of the  function \(f(g)=e^g\) with the  function \(g(x)=-x^{2}\text{.}\)</p>
-<p id="p-504">The function \(f(z)=\ln{(z^{3}-z)}\) is the composition of which two functions?</p>
-<p id="p-505">The function \(H(y)=\displaystyle\frac{1}{1+y^{2}}\) is the composition of which two functions?</p>
-<p id="p-506">Suppose \(h(x)=(f\circ g)(x)=f(g(x))\text{,}\) where \(f\) and \(g\) are both differentiable functions. Then</p>
-<div class="displaymath">
+</table></div></figure><p id="p-503">The function <span class="process-math">\(F(x)=e^{-x^{2}}\)</span> is a composition of the  function <span class="process-math">\(f(g)=e^g\)</span> with the  function <span class="process-math">\(g(x)=-x^{2}\text{.}\)</span></p>
+<p id="p-504">The function <span class="process-math">\(f(z)=\ln{(z^{3}-z)}\)</span> is the composition of which two functions?</p>
+<p id="p-505">The function <span class="process-math">\(H(y)=\displaystyle\frac{1}{1+y^{2}}\)</span> is the composition of which two functions?</p>
+<p id="p-506">Suppose <span class="process-math">\(h(x)=(f\circ g)(x)=f(g(x))\text{,}\)</span> where <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are both differentiable functions. Then</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \boxed{h'(x)=f'(g(x))g'(x) \qquad \textrm{or} \qquad
 \displaystyle\frac{dh}{dx}=\frac{df}{dg}\frac{dg}{dx}}
@@ -166,33 +169,33 @@
 <li id="li-157"><p id="p-511">multiply the derivatives together, giving the product the appropriate name</p></li>
 <li id="li-158"><p id="p-512">put everything back in terms of the original variable</p></li>
 </ol>
-<p id="p-513">Find the derivative of \(F(x)=e^{-x^{2}}\text{.}\)</p>
-<p id="p-514">Find the derivative of \(f(z)=\ln{(z^{3}-z)}\text{.}\)</p>
-<p id="p-515">Find the derivative of \(H(y)=\displaystyle\frac{1}{1+y^{2}}\text{.}\)</p>
-<p id="p-516">Find the derivative of \(h(x)=e^{cx}\text{.}\)</p></section><section class="paragraphs" id="hint"><h5 class="heading"><span class="title">Hint.</span></h5>
+<p id="p-513">Find the derivative of <span class="process-math">\(F(x)=e^{-x^{2}}\text{.}\)</span></p>
+<p id="p-514">Find the derivative of <span class="process-math">\(f(z)=\ln{(z^{3}-z)}\text{.}\)</span></p>
+<p id="p-515">Find the derivative of <span class="process-math">\(H(y)=\displaystyle\frac{1}{1+y^{2}}\text{.}\)</span></p>
+<p id="p-516">Find the derivative of <span class="process-math">\(h(x)=e^{cx}\text{.}\)</span></p></section><section class="paragraphs" id="hint"><h5 class="heading"><span class="title">Hint.</span></h5>
 <p id="p-517">In some instances, it may be easier to use the chain rule by identifying an “outer function” and an “inner function” than it is to <dfn class="terminology">explicitly</dfn> apply the algorithm. The derivative of the composition is then the derivative of the outer function times the derivative of the inner function.</p>
-<p id="p-518">Find the derivative of \(h(t)=(17+4t+5t^{2}+3t^{3})^{2}\text{.}\)</p>
-<p id="p-519">Find the derivative of \(v(x)=e^{2x^{3}}\text{.}\)</p>
-<p id="p-520">Find the derivative of \(h(y)~=~\ln(y^{2}+2y+1)\text{.}\)</p>
-<p id="p-521">Find the derivative of \(F(x)=(2x^{2}+3x)^{4}\text{.}\)</p></section><section class="paragraphs" id="implicit-differentiation-and-related-rates"><h5 class="heading"><span class="title">Implicit differentiation and Related rates.</span></h5>
+<p id="p-518">Find the derivative of <span class="process-math">\(h(t)=(17+4t+5t^{2}+3t^{3})^{2}\text{.}\)</span></p>
+<p id="p-519">Find the derivative of <span class="process-math">\(v(x)=e^{2x^{3}}\text{.}\)</span></p>
+<p id="p-520">Find the derivative of <span class="process-math">\(h(y)~=~\ln(y^{2}+2y+1)\text{.}\)</span></p>
+<p id="p-521">Find the derivative of <span class="process-math">\(F(x)=(2x^{2}+3x)^{4}\text{.}\)</span></p></section><section class="paragraphs" id="implicit-differentiation-and-related-rates"><h5 class="heading"><span class="title">Implicit differentiation and Related rates.</span></h5>
 <p id="p-522">Even when we do not have a formula for a function, we can still study its derivatives by invoking the chain rule. Many classic problems tend to be based on geometric relationships between two variables.</p></section><section class="paragraphs" id="do-we-have-any-more-time-for-related-rates"><h5 class="heading"><span class="title">Do we have any more time for related rates?</span></h5>
 <p id="p-523">If so, let’s try a classic calculus problem. If not, check online for a supplemental handout.</p></section></section></section><section class="exercises" id="quick-practice-chain"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Quick practice</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-30"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<p id="p-524">What is the derivative of \(f(x) =
-(3x-7)^{2}\text{?}\)</p>
+<p id="p-524">What is the derivative of <span class="process-math">\(f(x) =
+(3x-7)^{2}\text{?}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-33" id="solution-33"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-33"><div class="solution solution-like"><p id="p-525">The derivative of \(f(x) = (3x-7)^{2}\) is \(f'(x) =
-2(3x-7)(3) = 6(3x-7) = 18x-42\text{.}\)</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-33" id="solution-33"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-33"><div class="solution solution-like"><p id="p-525">The derivative of <span class="process-math">\(f(x) = (3x-7)^{2}\)</span> is <span class="process-math">\(f'(x) =
+2(3x-7)(3) = 6(3x-7) = 18x-42\text{.}\)</span></p></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-31"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<p id="p-526">(This one might not be so quick practice.) Recall \(E =
-aM^b\) discussed earlier in the context of applications of exponential and logarithmic functions. This time assume that \(E\) and \(M\) change with respect to time, for example in a growing animal, and that \(a\) and \(b\) are parameters (particular numbers, but in this fashion using a letter as a placeholder so we do not have to worry about the value of the number itself). Together this all means that \(E(t) =
-aM(t)^b\text{.}\) Using the chain rule, compute the derivative \(E'(t)\text{.}\)</p>
+<p id="p-526">(This one might not be so quick practice.) Recall <span class="process-math">\(E =
+aM^b\)</span> discussed earlier in the context of applications of exponential and logarithmic functions. This time assume that <span class="process-math">\(E\)</span> and <span class="process-math">\(M\)</span> change with respect to time, for example in a growing animal, and that <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are parameters (particular numbers, but in this fashion using a letter as a placeholder so we do not have to worry about the value of the number itself). Together this all means that <span class="process-math">\(E(t) =
+aM(t)^b\text{.}\)</span> Using the chain rule, compute the derivative <span class="process-math">\(E'(t)\text{.}\)</span></p>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-34" id="solution-34"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-34"><div class="solution solution-like">
-<p id="p-527">Though we don’t know the exact formula for \(E(t)\) we can still apply the reasoning behind the chain rule. In fact,</p>
-<div class="displaymath">
+<p id="p-527">Though we don’t know the exact formula for <span class="process-math">\(E(t)\)</span> we can still apply the reasoning behind the chain rule. In fact,</p>
+<div class="displaymath process-math">
 \begin{equation*}
 E'(t) = abM(t)^{b-1}M'(t)
 \end{equation*}
