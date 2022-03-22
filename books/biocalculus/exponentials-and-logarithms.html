@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2020-11-24T08:58:54-06:00       *-->
+<!--*       on 2022-03-22T16:25:22-05:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -9,66 +9,62 @@
 <!--*                                          *-->
 <!--********************************************-->
 <html lang="en-US">
-<head>
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Exponentials and logarithms</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
-    },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
-</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Bio-Calculus">
+<meta property="book:author" content="Sean Laverty">
+<script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
-<body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{cancel}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
-\)</div>
+\)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
-<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="./images/wordcloud.png" alt="Logo image"></a><div class="title-container">
+<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
 <h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
 <p class="byline">Sean Laverty</p>
 </div>
 </div></div>
-<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="linear-functions-and-their-graphs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="intro.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="introduction-to-discrete-time-dynamical-systems-dtds.html" title="Next">Next</a></span></div>
 </div>
@@ -76,182 +72,183 @@ MathJax.Hub.Config({
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="linear-functions-and-their-graphs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="intro.html" title="Up">Up</a><a class="next-button button toolbar-item" href="introduction-to-discrete-time-dynamical-systems-dtds.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide">Users guide</a></li></ul>
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide" class="internal">Users guide</a></li></ul>
 </li>
 <li class="link">
-<a href="intro.html" data-scroll="intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
-<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus">What is bio-calculus?</a></li>
-<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
-<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1">Dimensions and units</a></li>
-<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs">Linear functions and their graphs</a></li>
+<a href="intro.html" data-scroll="intro" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus" class="internal">What is bio-calculus?</a></li>
+<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology" class="internal">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
+<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1" class="internal">Dimensions and units</a></li>
+<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs" class="internal">Linear functions and their graphs</a></li>
 <li><a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms" class="active">Exponentials and logarithms</a></li>
-<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds">Introduction to discrete-time dynamical systems (DTDS)</a></li>
-<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits">Introduction to limits</a></li>
-<li><a href="continuous-functions.html" data-scroll="continuous-functions">Continuous functions</a></li>
-<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity">Limits and behaviors at infinity</a></li>
+<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds" class="internal">Introduction to discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits" class="internal">Introduction to limits</a></li>
+<li><a href="continuous-functions.html" data-scroll="continuous-functions" class="internal">Continuous functions</a></li>
+<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity" class="internal">Limits and behaviors at infinity</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="derivatives.html" data-scroll="derivatives"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
-<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change">Introduction to derivatives: Rates of change</a></li>
-<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions">Derivatives of basic functions</a></li>
-<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions">Derivatives of exponential and logarithmic functions</a></li>
-<li><a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule">Derivatives of compositions: chain rule</a></li>
-<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients">Derivatives of products and quotients</a></li>
-<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications">Second derivatives and applications</a></li>
+<a href="derivatives.html" data-scroll="derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
+<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change" class="internal">Introduction to derivatives: Rates of change</a></li>
+<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions" class="internal">Derivatives of basic functions</a></li>
+<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions" class="internal">Derivatives of exponential and logarithmic functions</a></li>
+<li><a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule" class="internal">Derivatives of compositions: chain rule</a></li>
+<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients" class="internal">Derivatives of products and quotients</a></li>
+<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications" class="internal">Second derivatives and applications</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="integration.html" data-scroll="integration"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
-<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations">Introduction to differential equations</a></li>
-<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution">More complicated integrals and integration by substitution</a></li>
-<li><a href="the-definite-integral.html" data-scroll="the-definite-integral">The definite integral</a></li>
-<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral">Applications of the definite integral</a></li>
-<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry">Applications to chemistry</a></li>
+<a href="integration.html" data-scroll="integration" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
+<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations" class="internal">Introduction to differential equations</a></li>
+<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution" class="internal">More complicated integrals and integration by substitution</a></li>
+<li><a href="the-definite-integral.html" data-scroll="the-definite-integral" class="internal">The definite integral</a></li>
+<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral" class="internal">Applications of the definite integral</a></li>
+<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry" class="internal">Applications to chemistry</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="special.html" data-scroll="special"><span class="codenumber">4</span> <span class="title">Special topics</span></a><ul>
-<li><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds">Applications: nonlinear discrete-time dynamical systems (DTDS)</a></li>
-<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations">Applications: autonomous differential equations</a></li>
+<a href="special.html" data-scroll="special" class="internal"><span class="codenumber">4</span> <span class="title">Special topics</span></a><ul>
+<li><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds" class="internal">Applications: nonlinear discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations" class="internal">Applications: autonomous differential equations</a></li>
 </ul>
 </li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="exponentials-and-logarithms"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content">
+<section class="section" id="exponentials-and-logarithms"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">Exponentials and logarithms</span>
 </h2>
-<article class="paragraphs" id="the-plan-4"><h5 class="heading"><span class="title">The Plan.</span></h5>
+<section class="paragraphs" id="the-plan-4"><h3 class="heading"><span class="title">The Plan.</span></h3>
 <p id="p-174">Logarithmic and exponential functions, while often intimidating, appear throughout microbiology, chemistry, statistics, and mathematics. We will understand the basic computational and graphical properties of these functions and their connection to applications.</p>
-<p id="p-175">A population of size \(N\) loses a factor of approximately \(\underline{\hspace{2cm}}\) of its genetic variability each generation. Consider a population of \(N=20\) individuals that <dfn class="terminology">loses</dfn> a factor of  each generation.A population <dfn class="terminology">maintains</dfn> a factor of \(\underline{\hspace{2cm}}\) of its variability each generation. How much variability is left after 5 generations?</p>
-<p id="p-176">We have a <em class="emphasis">shortcut</em> for evaluating values like this. Above each factor has a power of \(\underline{\hspace{2cm}}\text{,}\) to simplify this calculation we can write the following:</p>
+<p id="p-175">A population of size <span class="process-math">\(N\)</span> loses a factor of approximately <span class="process-math">\(\underline{\hspace{2cm}}\)</span> of its genetic variability each generation. Consider a population of <span class="process-math">\(N=20\)</span> individuals that <dfn class="terminology">loses</dfn> a factor of  each generation.A population <dfn class="terminology">maintains</dfn> a factor of <span class="process-math">\(\underline{\hspace{2cm}}\)</span> of its variability each generation. How much variability is left after 5 generations?</p>
+<p id="p-176">We have a <em class="emphasis">shortcut</em> for evaluating values like this. Above each factor has a power of <span class="process-math">\(\underline{\hspace{2cm}}\text{,}\)</span> to simplify this calculation we can write the following:</p>
 <p id="p-177">How much variability remains after 20 generations?</p>
-<article class="theorem theorem-like" id="thm-properties-powers"><h6 class="heading">
+<article class="theorem theorem-like" id="thm-properties-powers"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of exponents.</span>
-</h6>
-<p id="p-178">Consider the following laws for for real numbers \(a\text{,}\) \(m\text{,}\) and \(n\text{.}\)</p>
+</h4>
+<p id="p-178">Consider the following laws for for real numbers <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(m\text{,}\)</span> and <span class="process-math">\(n\text{.}\)</span></p>
 <ol class="decimal">
-<li id="li-69"><p id="p-179">\(\displaystyle a^{m}\cdot a^{n} = a^{m+n}\)</p></li>
-<li id="li-70"><p id="p-180">\(\displaystyle (a^n)^m = a^{nm}\)</p></li>
-<li id="li-71"><p id="p-181">\(\displaystyle a^{-n} = \frac{1}{a^{n}}\)</p></li>
-<li id="li-72"><p id="p-182">\(\displaystyle \frac{a^n}{a^m} = a^{n-m}\)</p></li>
-<li id="li-73"><p id="p-183">\(\displaystyle a^1 = a\)</p></li>
-<li id="li-74"><p id="p-184">\(\displaystyle a^0 = 1\)</p></li>
+<li id="li-69"><p id="p-179"><span class="process-math">\(\displaystyle a^{m}\cdot a^{n} = a^{m+n}\)</span></p></li>
+<li id="li-70"><p id="p-180"><span class="process-math">\(\displaystyle (a^n)^m = a^{nm}\)</span></p></li>
+<li id="li-71"><p id="p-181"><span class="process-math">\(\displaystyle a^{-n} = \frac{1}{a^{n}}\)</span></p></li>
+<li id="li-72"><p id="p-182"><span class="process-math">\(\displaystyle \frac{a^n}{a^m} = a^{n-m}\)</span></p></li>
+<li id="li-73"><p id="p-183"><span class="process-math">\(\displaystyle a^1 = a\)</span></p></li>
+<li id="li-74"><p id="p-184"><span class="process-math">\(\displaystyle a^0 = 1\)</span></p></li>
 </ol></article><p id="p-185">Common bases in science are</p>
 <ul class="disc">
-<li id="li-75"><p id="p-186">\(10\) throughout science and nature</p></li>
-<li id="li-76"><p id="p-187">\(e\) throughout science</p></li>
-<li id="li-77"><p id="p-188">\(2\) throughout computer science</p></li>
+<li id="li-75"><p id="p-186"><span class="process-math">\(10\)</span> throughout science and nature</p></li>
+<li id="li-76"><p id="p-187"><span class="process-math">\(e\)</span> throughout science</p></li>
+<li id="li-77"><p id="p-188"><span class="process-math">\(2\)</span> throughout computer science</p></li>
 </ul>
-<p id="p-189">Though we think of exponents as ‘multiplying \(a\)’s together’ certain instance only make sense if we use the above laws. How can we multiply factors of \(2\) together \((-3)\) times?</p>
+<p id="p-189">Though we think of exponents as ‘multiplying <span class="process-math">\(a\)</span>’s together’ certain instance only make sense if we use the above laws. How can we multiply factors of <span class="process-math">\(2\)</span> together <span class="process-math">\((-3)\)</span> times?</p>
 <p id="p-190">Using the common bases above, consider the following:</p>
-<article class="paragraphs" id="the-exponential-function"><h5 class="heading"><span class="title">‘The’ exponential function.</span></h5>
-<p id="p-191">The exponential function (or sometimes exponential function to the base \(e\)) is given as</p>
-<div class="displaymath">
+<section class="paragraphs" id="the-exponential-function"><h4 class="heading"><span class="title">‘The’ exponential function.</span></h4>
+<p id="p-191">The exponential function (or sometimes exponential function to the base <span class="process-math">\(e\)</span>) is given as</p>
+<div class="displaymath process-math">
 \begin{equation*}
 f(x) = e^{x}
 \end{equation*}
 </div>
-<article class="definition definition-like" id="def-inverse-exponential-function"><h6 class="heading">
+<article class="definition definition-like" id="def-inverse-exponential-function"><h5 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">natural logarithm.</span>
-</h6>
-<p id="p-192">The exponential function \(e^{x}\) as an inverse called the <dfn class="terminology">natural logarithm</dfn> given by \(\ln(x)\text{.}\)</p></article><article class="paragraphs" id="a-few-graphs"><h5 class="heading"><span class="title">A few graphs.</span></h5>
+</h5>
+<p id="p-192">The exponential function <span class="process-math">\(e^{x}\)</span> as an inverse called the <dfn class="terminology">natural logarithm</dfn> given by <span class="process-math">\(\ln(x)\text{.}\)</span></p></article><section class="paragraphs" id="a-few-graphs"><h5 class="heading"><span class="title">A few graphs.</span></h5>
 <p id="p-193">To introduce the inverse function it is helpful to think of powers of ten. Consider</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 1,000,000 = 10^6
 \end{equation*}
 </div>
-<p data-braille="continuation">To write one million, we multiply \(6\) factors of \(10\text{.}\) We say, “\(10\) raised to the power \(6\) gives  \(1,000,000\text{,}\)” or, symbolically</p>
-<div class="displaymath">
+<p class="continuation">To write one million, we multiply <span class="process-math">\(6\)</span> factors of <span class="process-math">\(10\text{.}\)</span> We say, “<span class="process-math">\(10\)</span> raised to the power <span class="process-math">\(6\)</span> gives  <span class="process-math">\(1,000,000\text{,}\)</span>” or, symbolically</p>
+<div class="displaymath process-math">
 \begin{equation*}
 \log_{10}(1,000,000)=\underline{\hspace{1cm}}.
 \end{equation*}
-</div></article><article class="paragraphs" id="the-natural-logarithm"><h5 class="heading"><span class="title">The natural logarithm.</span></h5>
-<p id="p-194">The natural logarithm \(\ln(x)\) undoes the exponential function \(e^x\text{.}\) This means</p>
+</div></section><section class="paragraphs" id="the-natural-logarithm"><h5 class="heading"><span class="title">The natural logarithm.</span></h5>
+<p id="p-194">The natural logarithm <span class="process-math">\(\ln(x)\)</span> undoes the exponential function <span class="process-math">\(e^x\text{.}\)</span> This means</p>
 <ol id="p-195" class="decimal">
-<li id="li-78"><p id="p-196">\(\displaystyle \ln(e^x) =\)</p></li>
-<li id="li-79"><p id="p-197">\(\displaystyle e^{\ln(x)} =\)</p></li>
+<li id="li-78"><p id="p-196"><span class="process-math">\(\displaystyle \ln(e^x) =\)</span></p></li>
+<li id="li-79"><p id="p-197"><span class="process-math">\(\displaystyle e^{\ln(x)} =\)</span></p></li>
 </ol>
 <article class="theorem theorem-like" id="thm-properties-logs"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of logarithms.</span>
 </h6>
-<p id="p-198">Consider the following laws for for real numbers \(a\) and \(b\text{.}\) We state these rules for the natural logarithm.</p>
+<p id="p-198">Consider the following laws for for real numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span> We state these rules for the natural logarithm.</p>
 <ol class="decimal">
-<li id="li-80"><p id="p-199">\(\displaystyle \ln(ab) =\)</p></li>
-<li id="li-81"><p id="p-200">\(\displaystyle \ln(a^b)=\)</p></li>
-<li id="li-82"><p id="p-201">\(\displaystyle \displaystyle\ln\left(\frac{1}{a}\right)
-=\)</p></li>
-<li id="li-83"><p id="p-202">\(\displaystyle \displaystyle\ln\left(\frac{a}{b}\right)
-=\)</p></li>
-<li id="li-84"><p id="p-203">\(\displaystyle \ln(e) =\)</p></li>
-<li id="li-85"><p id="p-204">\(\displaystyle \ln(1) =\)</p></li>
-</ol></article><article class="example example-like" id="ex-doubling"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-doubling"><h6 class="heading">
+<li id="li-80"><p id="p-199"><span class="process-math">\(\displaystyle \ln(ab) =\)</span></p></li>
+<li id="li-81"><p id="p-200"><span class="process-math">\(\displaystyle \ln(a^b)=\)</span></p></li>
+<li id="li-82"><p id="p-201"><span class="process-math">\(\displaystyle \displaystyle\ln\left(\frac{1}{a}\right)
+=\)</span></p></li>
+<li id="li-83"><p id="p-202"><span class="process-math">\(\displaystyle \displaystyle\ln\left(\frac{a}{b}\right)
+=\)</span></p></li>
+<li id="li-84"><p id="p-203"><span class="process-math">\(\displaystyle \ln(e) =\)</span></p></li>
+<li id="li-85"><p id="p-204"><span class="process-math">\(\displaystyle \ln(1) =\)</span></p></li>
+</ol></article><article class="example example-like" id="ex-doubling"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-doubling"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Doubling time.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-doubling"><article class="example example-like"><p id="p-205">Consider a population that grows according to</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 p(t)=p_{0} e^{\alpha t},
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(p_{0}\) is the initial population size, and \(\alpha\) is the growth rate.</p>
+<p class="continuation">where <span class="process-math">\(p_{0}\)</span> is the initial population size, and <span class="process-math">\(\alpha\)</span> is the growth rate.</p>
 <p id="p-206">At what value will the population be twice its initial size?</p>
-<p id="p-207">Derive the doubling-time formula for \(\tau_D\text{:}\)</p></article></div>
+<p id="p-207">Derive the doubling-time formula for <span class="process-math">\(\tau_D\text{:}\)</span></p></article></div>
 <p id="p-208">Consider a chemical sample that undergoes decay according to</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 s(t)=s_{0} e^{\alpha t},
 \end{equation*}
 </div>
-<p data-braille="continuation">where \(s_{0}\) is the initial sample amount, and \(\alpha&lt;0\) is the decay rate.</p>
+<p class="continuation">where <span class="process-math">\(s_{0}\)</span> is the initial sample amount, and <span class="process-math">\(\alpha&lt;0\)</span> is the decay rate.</p>
 <p id="p-209">At what  value will the sample contain half of its initial amount?</p>
-<p id="p-210">Derive the half-life formula for \(\tau_{1/2}\text{:}\)</p>
+<p id="p-210">Derive the half-life formula for <span class="process-math">\(\tau_{1/2}\text{:}\)</span></p>
 <p id="p-211">Island biogeographers have discovered that ‘large islands support more species than smaller islands.’ A <dfn class="terminology">power law</dfn> given by</p>
-<div class="displaymath">
+<div class="displaymath process-math">
 \begin{equation*}
 S = cA^z,
 \end{equation*}
 </div>
-<p data-braille="continuation">has been used to describe the relationship, where \(S\) is the number of species, \(A\) is the area of the island, \(c\) is a baseline number of species, and \(z\) describes how quickly species accumulate. Such a relationship might look like the following:</p>
+<p class="continuation">has been used to describe the relationship, where <span class="process-math">\(S\)</span> is the number of species, <span class="process-math">\(A\)</span> is the area of the island, <span class="process-math">\(c\)</span> is a baseline number of species, and <span class="process-math">\(z\)</span> describes how quickly species accumulate. Such a relationship might look like the following:</p>
 <p id="p-212">What do you notice about the data?</p>
-<p id="p-213">The symbols \(c\) and \(z\) represent <dfn class="terminology">parameters</dfn> that are often ‘fit’ from measurements. To do so we often ‘log-transform’ the relationship above (using the log base 10, denoted \(\log()\) in the calculation below). Apply the logarithm then laws of logarithms to both sides of</p>
-<div class="displaymath">
+<p id="p-213">The symbols <span class="process-math">\(c\)</span> and <span class="process-math">\(z\)</span> represent <dfn class="terminology">parameters</dfn> that are often ‘fit’ from measurements. To do so we often ‘log-transform’ the relationship above (using the log base 10, denoted <span class="process-math">\(\log()\)</span> in the calculation below). Apply the logarithm then laws of logarithms to both sides of</p>
+<div class="displaymath process-math">
 \begin{equation*}
 S = cA^z
 \end{equation*}
 </div>
 <p id="p-214">This gives a  relationship between  and, that we can use to more easily estimate parameters.</p>
 <p id="p-215">Consider the famed mouse-elephant curve (with other organisms included) that relates energy consumption (metabolic rate) to body mass on a double-log plot.</p>
-<figure class="figure figure-like" id="figure-4"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="./images/Mouse-Elephant_curve.png" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.5.5<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-216">To generate alternative versions of the graph using only the data within the boxed region of the figure<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-2" id="fn-2"><sup> 1 </sup></a>, we use the log base 10 applied to the power law relationship</p>
-<div class="displaymath">
+<figure class="figure figure-like" id="figure-5"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/Mouse-Elephant_curve.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.5.5<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-216">To generate alternative versions of the graph using only the data within the boxed region of the figure<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-3" id="fn-3"><sup> 3 </sup></a>, we use the log base 10 applied to the power law relationship</p>
+<div class="displaymath process-math">
 \begin{equation*}
 E = aM^{b},
 \end{equation*}
 </div>
-<p data-braille="continuation">between \(E\) energy use (metabolic rate) and body mass \(M\text{.}\) The derivation is as follows:</p>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-2"><div class="fn"><p id="p-217">You might occasionally see (as below) an axis with numbers of the form \(3\text{,}\) \(10^{3}\text{,}\) \(1,000\text{.}\) The \(3\) refers to the base 10 log of the value, \(10^{3}\) refers to the actual value in scientific notation, and \(1000\) is just the normal value. Only in the first are we actually transforming the data.</p></div></div>
-<p id="p-218"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="topics/figures/mouse1.png" style="width: 100%; height: auto;" alt=""></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="topics/figures/mouse2.png" style="width: 100%; height: auto;" alt=""></div></p>
-<p id="p-219"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="topics/figures/mouse3.png" style="width: 100%; height: auto;" alt=""></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="topics/figures/mouse4.png" style="width: 100%; height: auto;" alt=""></div></p></article></article></article><section class="exercises" id="quick-practice-exp"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">1.5.1</span> <span class="title">Quick practice</span>
+<p class="continuation">between <span class="process-math">\(E\)</span> energy use (metabolic rate) and body mass <span class="process-math">\(M\text{.}\)</span> The derivation is as follows:</p>
+<p id="p-218"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/mouse1.png" class="contained"></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/mouse2.png" class="contained"></div></p>
+<p id="p-219"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/mouse3.png" class="contained"></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/mouse4.png" class="contained"></div></p></section></section></section><section class="exercises" id="quick-practice-exp"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Quick practice</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-11"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<article class="exercise exercise-like" id="exercise-11"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <p id="p-220">Give a few examples of measurements, relationships, or patterns defined by logarithmic or exponential functions.[quick-exp_log_meas]</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">Good examples of measurements, relationships, or patterns that are defined using logarithmic or exponential relationships are the pH scale, the intensity and magnitude scales for earthquakes, the decibel scale for sound, and the increasing of computer RAM (in powers of two).</div></div>
-</div></article><article class="exercise exercise-like" id="exercise-12"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-221">Simplify \(\dfrac{2^7}{2^{4}}\text{.}\)</p>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">Good examples of measurements, relationships, or patterns that are defined using logarithmic or exponential relationships are the pH scale, the intensity and magnitude scales for earthquakes, the decibel scale for sound, and the increasing of computer RAM (in powers of two).</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-12"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-221">Simplify <span class="process-math">\(\dfrac{2^7}{2^{4}}\text{.}\)</span></p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><p id="p-222">Simplifying \(\dfrac{2^7}{2^{4}}\) we find \(\dfrac{2^7}{2^{4}} = 2^{7-4} = 2^{3} = 8\text{.}\)</p></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-13"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-223">Simplify \(\ln\left(\dfrac{1}{2}\right)\text{.}\)</p>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><p id="p-222">Simplifying <span class="process-math">\(\dfrac{2^7}{2^{4}}\)</span> we find <span class="process-math">\(\dfrac{2^7}{2^{4}} = 2^{7-4} = 2^{3} = 8\text{.}\)</span></p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-13"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-223">Simplify <span class="process-math">\(\ln\left(\dfrac{1}{2}\right)\text{.}\)</span></p>
 <div class="solutions">
-<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><p id="p-224">Simplifying \(\ln\left(\dfrac{1}{2}\right)\) using a variety of rules we find \(\ln\left(\dfrac{1}{2}\right) =
-\ln\left(2^{-1}\right) = -1\ln(2) = -\ln(2)\text{.}\) The value of \(\ln(2)\approx0.6931\) is a popular one in many life science applications.</p></div></div>
-</div></article></section></section></div></main>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><p id="p-224">Simplifying <span class="process-math">\(\ln\left(\dfrac{1}{2}\right)\)</span> using a variety of rules we find <span class="process-math">\(\ln\left(\dfrac{1}{2}\right) =
+\ln\left(2^{-1}\right) = -1\ln(2) = -\ln(2)\text{.}\)</span> The value of <span class="process-math">\(\ln(2)\approx0.6931\)</span> is a popular one in many life science applications.</p></div></div>
+</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-3"><div class="fn"><p id="p-217">You might occasionally see (as below) an axis with numbers of the form <span class="process-math">\(3\text{,}\)</span> <span class="process-math">\(10^{3}\text{,}\)</span> <span class="process-math">\(1,000\text{.}\)</span> The <span class="process-math">\(3\)</span> refers to the base 10 log of the value, <span class="process-math">\(10^{3}\)</span> refers to the actual value in scientific notation, and <span class="process-math">\(1000\)</span> is just the normal value. Only in the first are we actually transforming the data.</p></div></div>
+</div></main>
 </div>
 </body>
 </html>
