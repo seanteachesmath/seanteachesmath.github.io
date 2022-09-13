@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-03-22T16:25:25-05:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -21,7 +18,6 @@
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
@@ -38,6 +34,14 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      $(document).trigger("runestone:mathjax-ready");
+      }
+    )}
+},
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
@@ -50,13 +54,14 @@
 <link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="pretext-book ignore-math has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
@@ -123,7 +128,7 @@
 <section class="paragraphs" id="the-plan-17"><h3 class="heading"><span class="title">The Plan.</span></h3>
 <p id="p-741">We look at a few applications of the definite integral.</p>
 <p id="p-742">Given that <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> are continuous and that <span class="process-math">\(f(x)\geq g(x)\)</span> on the interval from <span class="process-math">\(x=a\)</span> to <span class="process-math">\(x=b\text{,}\)</span> the area between the curves <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> from <span class="process-math">\(x=a\)</span> to <span class="process-math">\(x=b\)</span> is given by</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \int_a^b \left(f(x) -
 g(x)\right)\,dx
@@ -132,7 +137,7 @@ g(x)\right)\,dx
 <p id="p-743">‘Degree-days’ are used as a way to measure growth and development in plants and other temperature-dependent species, such as insects.</p>
 <p id="p-744">Find the area between the curves <span class="process-math">\(f(x)=x^{2}\)</span> and <span class="process-math">\(g(x)=x^{3}\)</span> between <span class="process-math">\(x=0\)</span> and <span class="process-math">\(x=1\text{.}\)</span></p>
 <p id="p-745">The average value for a function <span class="process-math">\(f(x)\)</span> on the interval from <span class="process-math">\(x=a\)</span> to <span class="process-math">\(x=b\)</span> is</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boxed{\text{average value
 of $f$} = \hat f = \hspace{2cm}\phantom{\frac{1}{b-a}\int_a^b f(x)\,
@@ -146,7 +151,7 @@ dx}}
 <li id="li-215"><p id="p-750">Repeat these two steps for the next ten years, the period from 2008 to 2018.</p></li>
 </ol>
 <p id="p-751">In 1998, the above company estimated 30 billion barrels in the reserve. Compute the definite integral that gives the total consumption over the first <span class="process-math">\(T\)</span> years since 1998,</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \int_{0}^T\,1.2e^{0.04t}\,dt,
 \end{equation*}
@@ -202,7 +207,7 @@ dx}}
 \left.\left(\dfrac{1}{2}x^{2}\right)\right|_{0}^{2} =
 \dfrac{1}{2}(2^{2}) -
 \dfrac{1}{2}(0^{2}) = 2\text{.}\)</span> The average value is given by</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \hat f =
 \dfrac{1}{2-0}\int_{0}^{2} x\,dx = \dfrac{1}{2}\left(2\right) = 1
@@ -216,7 +221,7 @@ x-x^{2}\)</span> on the interval from <span class="process-math">\(x=0\)</span> 
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-52" id="solution-52"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-52"><div class="solution solution-like">
 <p id="p-760">The value of the definite integral is <span class="process-math">\(\displaystyle\int_{0}^1 x-x^{2}\,dx = \dfrac{1}{6}\text{.}\)</span> The average value is given by</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \hat g = \dfrac{1}{1-0}\int_{0}^1 x-x^{2}\,dx =
 \dfrac{1}{1}\left(\dfrac{1}{6}\right) = \dfrac{1}{6}
