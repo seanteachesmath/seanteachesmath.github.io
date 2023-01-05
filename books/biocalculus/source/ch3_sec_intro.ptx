@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- ******************************* -->
+<section xml:id="introduction-to-differential-equations" >
+<title>Introduction to differential equations</title>
+
+
+<paragraphs xml:id="the-plan-14">
+<title>The Plan</title>
+
+<p> We introduce a new category of calculus problems called
+integrals.</p>
+
+
+<paragraphs xml:id="applications-of-derivatives-differential-equations">
+<title>Applications of derivatives: differential
+equations</title>
+
+<p>	So far we have built methods and skills that allow
+us to take derivatives of known functions. When we revisit derivatives
+at the end of the semester, we will see quite a few more applications of
+derivatives. For now switch perspective and build systematic methods
+that allow us figure out what original function that a particular
+derivative <sq>comes from.</sq>
+</p>
+
+
+<paragraphs xml:id="methods">
+<title>Methods</title>
+
+<p> To find what original function a derivative
+<sq>comes from,</sq> we might
+</p>
+
+<p><ol>
+<li> <p> guess the original function</p> </li>
+<li> <p> graph the original function (from behaviors
+encoded by the derivative)</p> </li>
+<li> <p> approximate the graph of the original function
+(Euler’s method/tangent line approximations) – skipped</p> </li>
+<li> <p> integrate to find the original function</p> </li>
+
+</ol></p>
+
+<p> A differential equation (often shortened
+<sq>DE</sq>) describes the instantaneous rate of change of a
+measurement.<!-- linebreak -->
+</p>
+
+<table>
+<title></title>
+<tabular>
+<row class="odd">
+<cell halign="left">pure-time DE</cell>
+<cell
+halign="left"><m>\displaystyle\frac{dp}{dt} = e^{-t}</m></cell>
+<cell halign="left">rate of change is
+<em>measured as a function of time</em></cell>
+</row>
+<row class="even">
+<cell halign="left">autonomous
+DE<m>{}^\dagger</m></cell>
+<cell
+halign="left"><m>\displaystyle\frac{dp}{dt} = 2p</m></cell>
+<cell halign="left">rate of change is
+<em>modeled as a function of measurement itself</em></cell>
+</row>
+</tabular>
+</table>
+
+<p> <m>{}^\dagger</m> we will return to autonomous
+DEs at the end of the chapter
+</p>
+
+<p> Velocity, the instantaneous change in position,
+of a moving person is given by the pure-time DE <me>\frac{dp}{dt} =
+1.8,</me> where position <m>p(t)</m> is the quantity being
+differentiated with respect to time. Find the <term>solution</term>
+<m>p(t)</m>, that is, find the function whose derivative is
+<m>\displaystyle\frac{dp}{dt} = 1.8</m>.
+</p>
+
+<p> Guess it: Graph it:
+</p>
+
+</paragraphs>
+
+<paragraphs xml:id="notation-for-pure-time-des">
+<title>Notation for pure-time DEs</title>
+
+<p> In general, we study a pure-time differential
+equation <m>\displaystyle \frac{dF}{dt} = f(t)</m>.
+</p>
+
+<p> Solving this pure-time DE for the unknown
+function <m>F(t)</m> involves finding the function whose derivative is
+<m>f(t)</m>. We want to <sq>undo</sq> the derivative to find
+<m>F(t)</m>, called the <em>antiderivative</em> of <m>f(t)</m>.
+</p>
+
+<definition xml:id="def-antiderivative">
+<title>antiderivative</title>
+<statement> <p>An <term>antiderivative</term> of the function
+<m>f(t)</m> is a function <m>F(t)</m> whose derivative equal to
+<m>f(t)</m>. We say, <q><m>F</m> of <m>t</m> is equal to the integral of
+<m>f</m> of <m>t</m> with respect to <m>t</m>,</q> and we write <me>F(t)
+= \int f(t)\,dt.</me>
+</p>
+</statement>
+</definition>
+
+</paragraphs>
+
+<paragraphs xml:id="warning">
+<title>Warning</title>
+
+<p> The equation <m>\displaystyle\frac{dp}{dt} =
+1.8</m> has solution <me>p(t) = \int 1.8\,dt = 1.8t+c.</me> What is
+<m>c</m>?
+</p>
+
+<definition xml:id="def-indefinite-integral">
+<title>indefinite integral</title>
+<statement>
+<p> The set of all antiderivatives of the function
+<m>f(t)</m> is called the <term>indefinite integral</term> of <m>f</m>
+and
+is written <me>\int f(t)\,dt = F(t) + c.</me></p>
+</statement>
+</definition>
+
+<p> Solve pure-time DE <me>\frac{dF}{dt} = 2</me> by
+computing the indefinite integral.
+</p>
+
+<p> Solve pure-time DE <me>\frac{dF}{dt} = 2t</me>
+by computing the indefinite integral.
+</p>
+
+<theorem xml:id="thm-power-integral">
+<statement>
+<p>Suppose that <m>f(x) = x^n</m> with
+<m>n\neq-1</m>, then <me>\boxed{\int
+x^n\,dx=\left(\frac{1}{n+1}\right)x^{n+1}+c}</me>
+</p>
+</statement>
+</theorem>
+
+<example xml:id="ex-indef-basic">
+<statement><p>Compute <m>\displaystyle \int x^{2}\,dx</m>.
+</p>
+</statement>
+</example>
+
+<example xml:id="ex-antideriv-basic">
+<statement><p> Compute the indefinite integral of
+<m>\displaystyle g(x)=x^{0.4}</m>.
+</p>
+</statement>
+</example>
+
+<example xml:id="ex-indef-basic2">
+<statement><p> 
+Compute <m>\displaystyle \int t^5\,dt</m>.
+</p>
+</statement>
+</example>
+
+<example xml:id="ex-antideriv-basic2">
+<statement>
+<p> Compute the indefinite integral of
+<m>\displaystyle f(t)=\frac{1}{t^{4}}</m>.
+</p>
+</statement>
+</example>
+
+<theorem xml:id="thm-constant-product-integral">
+<title>Constant product rule for integrals</title>
+<statement>
+<p>Suppose that <m>\displaystyle \int
+f(x)\,dx=F(x)+c</m>, then for any constant <m>a</m>, <me>\boxed{\int
+af(x)\,dx=a\int f(x)\,dx= aF(x)+c}</me>
+</p>
+</statement>
+</theorem>
+
+<p> Compute <m>\displaystyle \int 12t^5\,dt</m>.
+</p>
+
+<p> Compute <m>\displaystyle \int
+\frac{3}{t^{4}}\,dt</m>.
+</p>
+
+<p> Suppose that <m>\displaystyle \int
+f(x)\,dx=F(x)+c</m> and <m>\displaystyle \int g(x)\,dx=G(x)+c</m>, then
+<me>\boxed{\int f(x)+g(x)\,dx=\int f(x)\,dx +\int g(x)\,dx=
+F(x)+G(x)+c}</me>
+</p>
+
+<p> Compute <m>\displaystyle \int 12t^5 +
+\frac{3}{t^{4}}\,dt</m>.
+</p>
+
+<p> Consider a seed in a flower in a very tall tree.
+From an initial height of 14.7 meters, the seed pops straight into the
+air with an initial velocity of 9.8 meters per second (<m>\displaystyle
+v(0)=9.8~\frac{\text{m}}{\text{s}}</m>) and an acceleration due to
+gravity of <m>\displaystyle
+a(t)=-9.8~\frac{\text{m}}{\text{s${}^{2}$}}</m> (in the downward
+direction). Find the velocity function <m>v(t)</m> and use that to find
+its position function <m>s(t)</m> of the seed.
+</p>
+
+<p><ol>
+<li> <p> When will the seed land?</p> </li>
+<li> <p> What is the velocity of the seed when it smashes
+into the ground?</p> </li>
+
+</ol></p>
+
+</paragraphs>
+</paragraphs>
+</paragraphs>
+
+<exercises xml:id="quick-practice-des" class="unnumbered">
+<title>Quick practice</title>
+
+<exercise><statement> <p> Is <m>\dfrac{dq}{dt} = 2.1q(1-q)</m> a
+pure-time or
+autonomous differential equation?</p> </statement>
+<solution>
+<p> In <m>\dfrac{dq}{dt} = 2.1q(1-q)</m>, the unknown
+quantity that is being differentiated, <m>q = q(t)</m>, appears on the
+right-hand side, and does so in the absence of the variable <m>t</m> on
+the right-hand side, this is indicative of an autonomous equation.</p>
+</solution>
+</exercise>
+
+<exercise><statement>  <p> Compute <m>\displaystyle\int
+3x+2\,dx</m>.</p> </statement>
+<solution>
+<p> The indefinite integral <m>\displaystyle\int
+3x+2\,dx</m> evaluates to <m>\displaystyle\int 3x+2\,dx =
+\dfrac{3}{2}x^{2}+2x+c</m>.</p>
+</solution>
+</exercise>
+
+
+<exercise><statement>  <p> What quantity is obtained when a pure-time
+growth rate
+indicating a rate of change of length is integrated?</p> </statement>
+<solution>
+<p> Integrating the rate of change of length gives length
+itself as a function of time.</p>
+</solution>
+</exercise>
+
+<exercise><statement>  <p> Compute <m>\displaystyle\int 0\,dx</m>.</p>
+</statement>
+<solution>
+<p> The indefinite integral <m>\displaystyle\int 0\,dx</m>
+evaluates to <m>\displaystyle\int 0\,dx = c</m>.</p>
+</solution>
+</exercise>
+</exercises>
+</section>
+
+
+<!-- ******************************* -->

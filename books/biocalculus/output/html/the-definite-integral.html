@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-03-22T16:25:25-05:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -21,7 +18,6 @@
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
@@ -38,6 +34,14 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      $(document).trigger("runestone:mathjax-ready");
+      }
+    )}
+},
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
@@ -50,13 +54,14 @@
 <link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="pretext-book ignore-math has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
@@ -124,7 +129,7 @@
 <p id="p-702">We introduce a new type of integral problem with powerful applications.</p>
 <section class="paragraphs" id="position-from-velocity"><h4 class="heading"><span class="title">Position from velocity.</span></h4>
 <p id="p-703">Recall the formula of your velocity function</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 v(t) =
 \end{equation*}
@@ -136,7 +141,7 @@ v(t) =
 <p id="p-706">At certain times hallways and doorways are crowded and prevent you from maintaining your constant speedy pace towards class.</p>
 <figure class="figure figure-like" id="figure-41"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/graph.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.1<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-707">Consider that your velocity for a brief period of time is described by a quadratic function</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 v(t) = t^{2}
 \end{equation*}
@@ -149,7 +154,7 @@ v(t) = t^{2}
 </ul>
 <figure class="figure figure-like" id="figure-42"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/quad.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-712">Draw <span class="process-math">\(n=5\)</span> ‘left-hand’ rectangles to approximate the area under the curve. Heights can be estimated from the graph or calculated using the corresponding function value.</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 \left(\substack{\text{area}\\\text{under}\\\text{curve}}\right)
@@ -172,7 +177,7 @@ v(t) = t^{2}
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.7<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><figure class="figure figure-like" id="figure-48"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/riemann_left_40.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.8<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><figure class="figure figure-like" id="figure-49"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/riemann_right_40.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.3.9<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-715">The result of computing a definite integral is a number, representing the area under a curve (or between the curve and the horizontal axis). In particular,</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boxed{\int_a^b f(t)\,dt =
 \lim_{n\rightarrow\infty}\Big(\text{area of $n$ rectangles}\Big)}
@@ -187,7 +192,7 @@ v(t) = t^{2}
 </ul>
 <p id="p-721">For any continuous function <span class="process-math">\(f(x)\)</span> and any indefinite integral <span class="process-math">\(\displaystyle F(x) = \int
 f(x)\,dx\text{,}\)</span></p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boxed{\int_a^b f(x)\,dx = F(x)\Big|_a^b =
 F(b)-F(a)}
@@ -195,7 +200,7 @@ F(b)-F(a)}
 </div>
 <p id="p-722">The value of <span class="process-math">\(\displaystyle \int_{0}^1
 t^{2}\,dt\text{,}\)</span> which gives the area under the curve <span class="process-math">\(f(t)  = t^{2}\)</span> between <span class="process-math">\(t=0\)</span> and <span class="process-math">\(t=1\)</span> can be calculated using the Fundamental Theorem of Calculus. Since the integrand <span class="process-math">\(t^{2}\)</span> is continuous on the interval from <span class="process-math">\(t=0\)</span> to <span class="process-math">\(t=1\)</span> we find</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \int_{0}^1 t^{2}\,dt
 =\left.\left(\frac{t^{3}}{3}\right)\right|_{0}^1 =
@@ -209,7 +214,7 @@ t^{2}\,dt\text{,}\)</span> which gives the area under the curve <span class="pro
 <p id="p-726"><span class="process-math">\(\displaystyle \int_{10}^{12} 2t\,dt\)</span></p>
 <p id="p-727"><span class="process-math">\(\displaystyle \int_{1}^{2} \frac{1}{x}\,dx\)</span></p>
 <p id="p-728">Suppose <span class="process-math">\(f(x)\)</span> is continuous on the interval from <span class="process-math">\(a\)</span> to <span class="process-math">\(b\text{,}\)</span> and that <span class="process-math">\(a\le c\le b\text{.}\)</span> Then</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boxed{\displaystyle\int_a^b f(x) \, dx= \int_a^c f(x) \, dx
 +\int_c^b f(x) \, dx}
@@ -217,7 +222,7 @@ t^{2}\,dt\text{,}\)</span> which gives the area under the curve <span class="pro
 </div>
 <p class="continuation">i.e. the total change between times <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> is the change between <span class="process-math">\(a\)</span> and some intermediate time <span class="process-math">\(c\)</span> plus the change between time <span class="process-math">\(c\)</span> and the final time <span class="process-math">\(b\text{.}\)</span></p>
 <p id="p-729">Suppose our female Atlantic sturgeon continues to obey the equation</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \frac{dL}{dt} = 19.56e^{-0.074t}
 \end{equation*}

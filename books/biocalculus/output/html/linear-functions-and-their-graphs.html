@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-03-22T16:25:22-05:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -21,7 +18,6 @@
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
@@ -38,6 +34,14 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      $(document).trigger("runestone:mathjax-ready");
+      }
+    )}
+},
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
@@ -50,13 +54,14 @@
 <link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="pretext-book ignore-math has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
@@ -131,7 +136,7 @@
 </ol>
 <p class="continuation">is called a <dfn class="terminology">linear function</dfn> between the <em class="emphasis">variables</em> <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> If the formula involves only adding and subtracting constants with variables multiplied by constants, the equation describes a linear function.</p></article><p id="p-133">The slope of a linear function passing through two points <span class="process-math">\((x_{0}, y_{0})\)</span> and <span class="process-math">\((x_{1}, y_{1})\)</span> is defined as the ratio of the change in output over the change in input (“rise over run”),</p>
 <section class="paragraphs" id="notation"><h3 class="heading"><span class="title">Notation.</span></h3>
-<p id="p-134">In general, in biological applications we rarely have inputs/outputs called <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> – for example we have mass and volume. These labels, while different from what we are used to are meant to make problems more meaningful!</p></section><article class="example example-like" id="ex-temperature"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-temperature"><h3 class="heading">
+<p id="p-134">In general, in biological applications we rarely have inputs/outputs called <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> – for example we have mass and volume. These labels, while different from what we are used to are meant to make problems more meaningful!</p></section><article class="example example-like" id="ex-temperature"><a href="" data-knowl="" class="id-ref example-knowl original has-image has-tabular" data-refid="hk-ex-temperature"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
 </h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-temperature"><article class="example example-like"><p id="p-135">Here we will derive a common (and commonly mis-remembered) temperature formula.</p>
 <ul id="p-136" class="disc">
@@ -170,14 +175,14 @@
 <figure class="figure figure-like" id="figure-pgfplots-demo"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">A pgfplots example, with a function, a parametric curve, and some points plotted.</div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.4<span class="period">.</span></span><span class="space"> </span>Sample pgfplots plot</figcaption></figure></article></div>
 <p id="p-142">Notice that the definition</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 m=\frac{y_{1}-y_{0}}{x_{1}-x_{0}}
 \end{equation*}
 </div>
 <p class="continuation">gives us all we need to derive both point-slope form and slope-intercept form. Let our point be <span class="process-math">\((x_{0},
 y_{0})\)</span> and instead of <span class="process-math">\((x_{1}, y_{1})\text{,}\)</span> choose <span class="process-math">\((x, y)\)</span> to be any other point on the line.</p>
-<div class="displaymath process-math" id="p-143">
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-143">
 \begin{equation*}
 \begin{aligned}[t]
 m&amp;=\frac{y-y_{0}}{x-x_{0}}&amp;&amp;(\text{definition})\\
@@ -217,7 +222,7 @@ y&amp;=y_{0} + m(x-x_{0})&amp;&amp;(\text{flip}~\text{equation})\\\end{aligned}
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span>
 </h4>
 <p id="p-160">A <dfn class="terminology">proportional relation</dfn> is a linear relation in which the output is proportional to input. In general</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 y = f(x) = ax,
 \text{where $a$ constant.}
@@ -232,7 +237,7 @@ y = f(x) = ax,
 <ul id="p-167" class="disc">
 <li id="li-67">
 <p id="p-168">the ratio of output over inputproportional relation:</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \frac{\text{output}}{\text{input}} =
 \text{constant}
@@ -241,7 +246,7 @@ y = f(x) = ax,
 </li>
 <li id="li-68">
 <p id="p-169">the ratio of change in output over change in inputlinear function:</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \dfrac{\text{change}~\text{in}~\text{output}}{\text{change}~\text{in}~\text{input}} = \text{constant},
 \end{equation*}
@@ -262,7 +267,7 @@ y = f(x) = ax,
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like">In Question <a href="" class="xref" data-knowl="./knowl/quick-units-area.html" title="Exercise 1.3.1">Exercise 1.3.1</a> of the previous section, we talked about the relationship between radius and diameter. This <em class="emphasis">is</em> linear since <span class="process-math">\(r = \dfrac{d}{2}\text{,}\)</span> in fact this is proportional since the radius is a constant multiple <span class="process-math">\(\left(\dfrac{1}{2}\right)\)</span> of the diameter. This is a good reminder that dividing by two is the same as multiplying by one half.</div></div>
 </div></article><article class="exercise exercise-like" id="exercise-9"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <p id="p-172">(This one might not be so quick practice.) In chemistry we use the Lineweaver-Burk or ‘double-reciprocal’ plot to determine properties of a chemical reaction. We graph a surprisingly complicated looking, but still linear, relationship</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \dfrac{1}{V} =
 \dfrac{K_m}{V_{max}}\dfrac{1}{[S]} + \dfrac{1}{V_{max}}

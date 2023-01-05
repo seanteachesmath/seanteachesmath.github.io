@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="exponentials-and-logarithms">
+<title>Exponentials and logarithms</title>
+
+
+<paragraphs xml:id="the-plan-4">
+<title>The Plan</title>
+
+<p> Logarithmic and exponential functions, while often
+intimidating, appear throughout microbiology, chemistry, statistics, and
+mathematics. We will understand the basic computational and graphical
+properties of these functions and their connection to applications.
+</p>
+
+<p> A population of size <m>N</m> loses a factor of
+approximately <m>\underline{\hspace{2cm}}</m> of its genetic variability
+each generation. Consider a population of <m>N=20</m> individuals that
+<term>loses</term> a factor of  each generation.<!-- linebreak -->A
+population <term>maintains</term> a factor of
+<m>\underline{\hspace{2cm}}</m> of its variability each generation. How
+much variability is left after 5 generations?
+</p>
+
+<p> We have a <em>shortcut</em> for evaluating values like
+this. Above each factor has a power of <m>\underline{\hspace{2cm}}</m>,
+to simplify this calculation we can write the following:
+</p>
+
+<p> How much variability remains after 20 generations?
+</p>
+
+<theorem xml:id="thm-properties-powers">
+<title>Properties of exponents</title>
+<statement>
+<p>Consider the following laws for for real numbers
+<m>a</m>, <m>m</m>, and <m>n</m>.
+
+<ol>
+<li> <p> <m>a^{m}\cdot a^{n} = a^{m+n}</m></p> </li>
+<li> <p> <m>(a^n)^m = a^{nm}</m></p> </li>
+<li> <p> <m>a^{-n} = \frac{1}{a^{n}}</m></p> </li>
+<li> <p> <m>\frac{a^n}{a^m} = a^{n-m}</m></p> </li>
+<li> <p> <m>a^1 = a</m></p> </li>
+<li> <p> <m>a^0 = 1</m></p> </li>
+</ol></p>
+</statement>
+</theorem>
+
+<p> Common bases in science are
+<ul>
+<li> <p> <m>10</m> throughout science and nature</p> </li>
+<li> <p> <m>e</m> throughout science</p> </li>
+<li> <p> <m>2</m> throughout computer science</p> </li>
+</ul></p>
+
+<p> Though we think of exponents as <sq>multiplying
+<m>a</m>’s together</sq> certain instance only make sense if we use the
+above laws. How can we multiply factors of <m>2</m> together <m>(-3)</m>
+times?
+</p>
+
+<p> Using the common bases above, consider the following:
+</p>
+
+
+<paragraphs xml:id="the-exponential-function">
+<title><sq>The</sq> exponential function</title>
+
+<p>	The exponential function (or sometimes exponential
+function to the base <m>e</m>) is given as <me>f(x) = e^{x}</me>
+</p>
+
+
+<definition xml:id="def-inverse-exponential-function">
+<title>natural logarithm</title>
+<statement>
+<p> The exponential function <m>e^{x}</m> as an inverse called
+the <term>natural logarithm</term> given by <m>\ln(x)</m>.
+</p>
+</statement>
+</definition>
+
+<paragraphs xml:id="a-few-graphs">
+<title>A few graphs</title>
+
+<p> To introduce the inverse function it is helpful
+to think of powers of ten. Consider <me>1,000,000 = 10^6</me> To write
+one million, we multiply <m>6</m> factors of <m>10</m>. We say,
+<q><m>10</m> raised to the power <m>6</m> gives  <m>1,000,000</m>,</q>
+or, symbolically <me>\log_{10}(1,000,000)=\underline{\hspace{1cm}}.</me>
+</p>
+</paragraphs>
+
+<paragraphs xml:id="the-natural-logarithm">
+<title>The natural logarithm</title>
+
+<p> The natural logarithm <m>\ln(x)</m> undoes the
+exponential function <m>e^x</m>. This means
+</p>
+
+<p><ol>
+<li> <p> <m>\ln(e^x) =</m></p> </li>
+<li> <p> <m>e^{\ln(x)} =</m></p> </li>
+</ol></p>
+
+<theorem xml:id="thm-properties-logs">
+<title>Properties of logarithms</title>
+<statement>
+<p>Consider the following laws for for real numbers
+<m>a</m> and <m>b</m>. We state these rules for the natural logarithm.
+
+<ol>
+<li> <p> <m>\ln(ab) =</m></p> </li>
+<li> <p> <m>\ln(a^b)=</m></p> </li>
+<li> <p> <m>\displaystyle\ln\left(\frac{1}{a}\right)
+=</m></p> </li>
+<li> <p> <m>\displaystyle\ln\left(\frac{a}{b}\right)
+=</m></p> </li>
+<li> <p> <m>\ln(e) =</m></p> </li>
+<li> <p> <m>\ln(1) =</m></p> </li>
+</ol></p>
+</statement>
+</theorem>
+
+<example xml:id="ex-doubling">
+<title>Doubling time</title>
+<statement>
+<p>Consider a population that grows according to
+<me>p(t)=p_{0} e^{\alpha t},</me> where <m>p_{0}</m> is the initial
+population size, and <m>\alpha</m> is the growth rate.
+</p>
+
+<p> At what value will the population be twice its
+initial size?
+</p>
+
+<p> Derive the doubling-time formula for
+<m>\tau_D</m>:
+</p>
+</statement>
+</example>
+
+<p> Consider a chemical sample that undergoes decay
+according to <me>s(t)=s_{0} e^{\alpha t},</me> where <m>s_{0}</m> is the
+initial sample amount, and <m>\alpha&lt;0</m> is the decay rate.
+</p>
+
+<p> At what  value will the sample contain half of
+its initial amount?
+</p>
+
+<p> Derive the half-life formula for
+<m>\tau_{1/2}</m>:
+</p>
+
+<p> Island biogeographers have discovered that
+<sq>large islands support more species than smaller islands.</sq> A
+<term>power law</term> given by <me>S = cA^z,</me> has been used to
+describe the relationship, where <m>S</m> is the number of species,
+<m>A</m> is the area of the island, <m>c</m> is a baseline number of
+species, and <m>z</m> describes how quickly species accumulate. Such a
+relationship might look like the following:
+</p>
+
+<p> What do you notice about the data?
+</p>
+
+<p> The symbols <m>c</m> and <m>z</m> represent
+<term>parameters</term> that are often <sq>fit</sq> from measurements.
+To do so we often <sq>log-transform</sq> the relationship above (using
+the log base 10, denoted <m>\log()</m> in the calculation below). Apply
+the logarithm then laws of logarithms to both sides of <me>S = cA^z</me>
+</p>
+
+<p> This gives a  relationship between  and, that we
+can use to more easily estimate parameters.
+</p>
+
+<p> Consider the famed mouse-elephant curve (with
+other organisms included) that relates energy consumption (metabolic
+rate) to body mass on a double-log plot.
+</p>
+
+<figure>
+<image source="Mouse-Elephant_curve.png"/>
+<caption>image</caption>
+</figure>
+
+<p> To generate alternative versions of the graph
+using only the data within the boxed region of the
+figure<fn><p> You might occasionally see (as below) an axis
+with numbers of the form <m>3</m>, <m>10^{3}</m>, <m>1,000</m>. The
+<m>3</m> refers to the base 10 log of the value, <m>10^{3}</m> refers to
+the actual value in scientific notation, and <m>1000</m> is just the
+normal value. Only in the first are we actually transforming the data.
+</p></fn>, we use the log base 10 applied to the
+power law relationship <me>E = aM^{b},</me> between <m>E</m> energy use
+(metabolic rate) and body mass <m>M</m>. The derivation is as follows:
+</p>
+
+<p> <image source='topics/figures/mouse1.png'/>
+<image source='topics/figures/mouse2.png'/>
+</p>
+
+<p> <image source='topics/figures/mouse3.png'/>
+<image source='topics/figures/mouse4.png'/>
+</p>
+
+</paragraphs>
+</paragraphs>
+</paragraphs>
+
+<exercises xml:id="quick-practice-exp" class="unnumbered">
+<title>Quick practice</title>
+
+<exercise><statement><p>Give a few examples of measurements,
+relationships, or
+patterns defined by logarithmic or exponential
+functions.[quick-exp_log_meas]</p> </statement>
+<solution>Good examples of measurements, relationships, or
+patterns that are defined using logarithmic or exponential relationships
+are the pH scale, the intensity and magnitude scales for earthquakes,
+the decibel scale for sound, and the increasing of computer RAM (in
+powers of two).
+</solution>
+</exercise>
+
+<exercise><statement><p> Simplify <m>\dfrac{2^7}{2^{4}}</m>.</p>
+</statement>
+<solution>
+<p> Simplifying <m>\dfrac{2^7}{2^{4}}</m> we find
+<m>\dfrac{2^7}{2^{4}} = 2^{7-4} = 2^{3} = 8</m>.</p> </solution>
+</exercise>
+
+<exercise><statement><p> Simplify
+<m>\ln\left(\dfrac{1}{2}\right)</m>.</p></statement>
+<solution><p> Simplifying <m>\ln\left(\dfrac{1}{2}\right)</m> using a
+variety of rules we find <m>\ln\left(\dfrac{1}{2}\right) =
+\ln\left(2^{-1}\right) = -1\ln(2) = -\ln(2)</m>. The value of
+<m>\ln(2)\approx0.6931</m> is a popular one in many life science
+applications.</p></solution>
+</exercise>
+
+</exercises>
+</section>
+
+
+<!-- ******************************* -->

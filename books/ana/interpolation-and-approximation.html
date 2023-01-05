@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-03-22T10:20:14-05:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -19,7 +16,6 @@
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
@@ -36,6 +32,14 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      $(document).trigger("runestone:mathjax-ready");
+      }
+    )}
+},
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
@@ -48,13 +52,14 @@
 <link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="pretext-article ignore-math has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
@@ -107,14 +112,14 @@
 <p id="p-16">Below are <span class="process-math">\(L_k(x) = L_{7, k}(x)\)</span> for <span class="process-math">\(8\)</span> equally spaced points <span class="process-math">\(x_0 = -1, \dots, x_7 = 1\)</span> on <span class="process-math">\([-1, 1]\text{.}\)</span></p>
 <figure class="figure figure-like" id="fig-lagrange-li"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/2_interpolation/Li.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-17">Considering the function</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 f(x) =
 x^3e^{-1.1x}\sin(x)
 \end{equation*}
 </div>
 <p class="continuation">we show the approximation</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 P(x) = P_7(x) =
 \sum_{k=0}^7 f(x_k)L_k(x)
@@ -129,27 +134,27 @@ P(x) = P_7(x) =
 <p id="p-19">When computing a cubic spline with <span class="process-math">\(n+1\)</span> grid points, keep in mind that we have <span class="process-math">\(n\)</span> intervals, <span class="process-math">\(n\)</span> spline segments, and an <span class="process-math">\((n+1)\times (n+1)\)</span> matrix. For example, if the data is known at the grid points <span class="process-math">\(x_0, x_1, x_2, x_3, x_4\)</span> we have <span class="process-math">\(5\)</span> points, <span class="process-math">\(4\)</span> intervals, <span class="process-math">\(4\)</span> spline segments, and a <span class="process-math">\(5\times5\)</span> matrix. The spacings between grid points, defined <span class="process-math">\(h_j
 = x_{j+1} - x_j\text{,}\)</span> are used below.</p>
 <p id="p-20"> We can verify the conditions of the spline by definition, but ultimately the way to implement this, even for small datasets, is to use matrix algebra. Let’s use the vector <span class="process-math">\(\mathbf{r}\)</span> (as in <span class="process-math">\(\textbf{A}\textbf{x} = \textbf{r}\text{,}\)</span> rather than <span class="process-math">\(\textbf{A}\textbf{x} = \textbf{b}\)</span>) for the right-hand side to avoid likely confusion between entries of the right-hand side vector and the coefficients <span class="process-math">\(b_j\)</span> of the splines. The first and last rows of <span class="process-math">\(\mathbf{A}\)</span> and <span class="process-math">\(\mathbf{r}\)</span> depend on the choice of boundary conditions, but the interior rows are illustrated below. On the interior rows of the main diagonal, <span class="process-math">\(\mathbf{A}\)</span> has entries</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 2(h_0+h_1), 2(h_1 + h_2), \cdots, 2(h_{n-3} + h_{n-2}),
 2(h_{n-2} + h_{n-1})
 \end{equation*}
 </div>
 <p class="continuation">On the interior rows of the sub-diagonal (below main), <span class="process-math">\(\mathbf{A}\)</span> has entries</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 h_0, h_1, \cdots,
 h_{n-3}, h_{n-2}
 \end{equation*}
 </div>
 <p class="continuation">On the interior rows of the super-diagonal (above main), <span class="process-math">\(\mathbf{A}\)</span> has entries</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 h_1, h_2, \cdots, h_{n-2},
 h_{n-1}
 \end{equation*}
 </div>
-<div class="displaymath process-math" id="p-21">
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-21">
 \begin{equation*}
 \begin{aligned}
 \mathbf{A} &amp; = 
@@ -189,7 +194,7 @@ c_n \\
 \end{equation*}
 </div>
 <p id="p-22"> The interior rows of <span class="process-math">\(\mathbf{A}\)</span> are as described above, but the first row begins with <span class="process-math">\(1, 0, \dots\)</span> and the last row ends with <span class="process-math">\(\dots, 0, 1\text{.}\)</span> To satisfy the boundary condition, the first and last rows of of <span class="process-math">\(\mathbf{r}\)</span> are exactly <span class="process-math">\(0\text{.}\)</span></p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 \mathbf{A} &amp; = 
@@ -219,7 +224,7 @@ c_n \\
 \dots\)</span> and the last row ends with <span class="process-math">\(\dots, 0, h_{n-1}, 2h_{n-1}\text{.}\)</span> To satisfy the boundary condition, the first and last rows of of <span class="process-math">\(\mathbf{r}\)</span> are exactly <span class="process-math">\(3\left(\dfrac{a_1-a_0}{h_0}
 -f'(a)\right)\)</span> and <span class="process-math">\(3\left(f'(b) -
 \dfrac{a_n-a_{n-1}}{h_{n-1}}\right)\text{,}\)</span> respectively.</p>
-<div class="displaymath process-math" id="p-24">
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-24">
 \begin{equation*}
 \begin{aligned}
 \mathbf{A} &amp; = %\setcounter{MaxMatrixCols}{20}
@@ -246,7 +251,7 @@ c_n \\
 \end{equation*}
 </div>
 <p id="p-25"> Once the <span class="process-math">\(c_j\)</span>’s have been solved, the <span class="process-math">\(b_j\)</span>’s and <span class="process-math">\(d_j\)</span>’s can be specified <em class="emphasis">in reverse order</em> from <span class="process-math">\(j=n-1,n-2,\dots,0\)</span> (see Alg. 3.4 (Step 6) or Alg. 3.5 (Step 7)).</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 b_j &amp; = \dfrac{a_{j+1} - a_j}{h_j} - \dfrac{h_j(c_{j+1} +
@@ -255,7 +260,7 @@ d_j &amp; = \dfrac{c_{j+1} - c_j}{3h_j}\end{aligned}
 \end{equation*}
 </div>
 <p class="continuation">Notice that <span class="process-math">\(c_n\)</span> (from <span class="process-math">\(\mathbf{x}\)</span>) is used in the calculation of <span class="process-math">\(d_{n-1}\text{,}\)</span> but is never actually used in a spline. Regardless of the boundary condition, the calculated coefficients will appear in the spline of the form</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 S(t) = \left\{\begin{alignedat}{2}
 &amp;\phantom{a_j + b_j(x-x_j) + } \cdots \phantom{(x-x_j)^2 +
@@ -341,7 +346,7 @@ x_3=3\)</span> and <span class="process-math">\(f(x) = e^x\text{.}\)</span></p>
 <span class="type">Subsection</span> <span class="codenumber">3.3</span> <span class="title">Discrete case (i.e., 8.1, pg. 486)</span>
 </h3>
 <p id="p-29">Consider the last term</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \sum_{i=1}^m\Big(P_n(x_i)\Big)^2 = \sum_{i=1}^m \left(\sum_{j=0}^n
 a_j x_i^j\right)^2
@@ -350,7 +355,7 @@ a_j x_i^j\right)^2
 <p class="continuation">in the definition of the error <span class="process-math">\(E = E_2(a_0,
 a_1, \dots, a_n)\)</span> for discrete least squares approximation. We have the following (though I do not find this particularly illuminating and instead prefer to differentiate before addressing the sums), where it might initially be helpful to remember that <span class="process-math">\(x_i^0 = 1\)</span> and <span class="process-math">\(x_i^1 = x_i\)</span> (e.g., <span class="process-math">\(a_0 x_i^0 = a_0\cdot1 =a_0\)</span> and <span class="process-math">\(a_1
 x_i^1 = a_1x_i\)</span>),</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 \sum_{i=1}^m \left(\sum_{j=0}^n a_j x_i^j\right)^2 &amp; = \sum_{i=1}^m
@@ -375,7 +380,7 @@ x_i^n)\\
 \end{equation*}
 </div>
 <p class="continuation">Our goal is the partial derivative of this term with respect to <span class="process-math">\(a_j\text{.}\)</span> Notice the following, where key steps are moving differentiation under the sum, applying the product rule, and rearranging the sum,</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 \dfrac{\partial}{\partial a_j} \left(\sum_{i=1}^m \left(\sum_{j=0}^n a_j
@@ -399,13 +404,13 @@ x_i^n)\right)\\
 </div>
 <p class="continuation">Related to this, to find the least squares polynomial approximation to <span class="process-math">\(\{(x_i, y_i)\}_{i=1}^m\)</span> by <span class="process-math">\(P_n(x)~=~\sum\limits_{k=0}^n a_k
 x^k\text{,}\)</span> we solve</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 D^TD\vec{a} =D^T\vec{y}
 \end{equation*}
 </div>
 <p class="continuation">for the vector of unknown coefficients <span class="process-math">\(\vec{a}\)</span> where</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 D =
 \left[\begin{array}{cccc} (x_1)^0 &amp; (x_1)^1 &amp; \cdots &amp;
@@ -419,7 +424,7 @@ D =
 <span class="type">Subsection</span> <span class="codenumber">3.4</span> <span class="title">Continuous case (i.e., 8.2, pg. 495)</span>
 </h3>
 <p id="p-30">Consider the last term</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \int_a^b \left(\sum_{k=0}^n
 a_k x^k\right)^2
@@ -427,7 +432,7 @@ a_k x^k\right)^2
 </div>
 <p class="continuation">in the definition of the error <span class="process-math">\(E = E_2(a_0,
 a_1, \dots, a_n)\)</span> for least squares polynomial approximation. We have,</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 \int_a^b \left(\sum_{k=0}^n a_k x^k\right)^2\,dx %&amp; = \int_a^b
@@ -437,7 +442,7 @@ x^n)\,dx\\\end{aligned}
 \end{equation*}
 </div>
 <p class="continuation">Our goal is the partial derivative of this term with respect to <span class="process-math">\(a_j\text{.}\)</span> Notice the following, where key steps are moving differentiation under the integral, applying the product rule, and rearranging the sum,</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 \dfrac{\partial}{\partial a_j}\int_a^b \left(\sum_{k=0}^n a_k
@@ -461,7 +466,7 @@ a_1x + \dots + a_n x^n)(a_0 + a_1x + \dots + a_n x^n)\,dx\\
 <p id="p-31">The standard monomials for function approximation, shown as the familiar unlabeled gray curves in Figure <a href="" class="xref" data-knowl="./knowl/fig-legendre.html" title="Figure 3.10">Figure 3.10</a>, are <span class="process-math">\(\phi_i(x) = x^i\)</span> for <span class="process-math">\(i=0, 1, \dots,
 n\text{.}\)</span> These lack the property of orthogonality that is achieved by the Legendre polynomials, also shown Figure <a href="" class="xref" data-knowl="./knowl/fig-legendre.html" title="Figure 3.10">Figure 3.10</a>, but in black and labeled. The first few Legendre polynomials are</p>
 <figure class="figure figure-like" id="fig-legendre"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/3_approximation/legendre_funs.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.10<span class="period">.</span></span><span class="space"> </span>In gray the intuitive monomials <span class="process-math">\(\phi_i(x) = x^i\)</span> with the Legendre polynomials <span class="process-math">\(P_i(x)\)</span> in black.</figcaption></figure><div class="displaymath process-math" id="p-32">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.10<span class="period">.</span></span><span class="space"> </span>In gray the intuitive monomials <span class="process-math">\(\phi_i(x) = x^i\)</span> with the Legendre polynomials <span class="process-math">\(P_i(x)\)</span> in black.</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="" id="p-32">
 \begin{equation*}
 \begin{aligned}
 P_0(x) &amp; = 1\\
@@ -473,7 +478,7 @@ P_n(x) &amp; = (x-B_k)P_{n-1}(x)-C_kP_{x-2}(x)\end{aligned}
 \end{equation*}
 </div>
 <p id="p-33">where</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 B_k &amp; = \dfrac{\int_{-1}^1 x \cdot 1 \cdot
@@ -488,7 +493,7 @@ P_{k-2}(x)]\,dx}{\int_{-1}^1 1 \cdot
 <p id="p-34">The standard monomials for function approximation, shown as the familiar unlabeled gray curves in Figure <a href="" class="xref" data-knowl="./knowl/fig-chebyshev.html" title="Figure 3.11">Figure 3.11</a>, are <span class="process-math">\(\phi_i(x) = x^i\)</span> for <span class="process-math">\(i=0, 1, \dots,
 n\text{.}\)</span> These lack the property of orthogonality that is achieved by the Chebyshev polynomials, also shown Figure <a href="" class="xref" data-knowl="./knowl/fig-chebyshev.html" title="Figure 3.11">Figure 3.11</a>, but in black and labeled. The first few Chebyshev polynomials are</p>
 <figure class="figure figure-like" id="fig-chebyshev"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/3_approximation/cheb_funs.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.11<span class="period">.</span></span><span class="space"> </span>In gray the intuitive monomials <span class="process-math">\(\phi_i(x) = x^i\)</span> with the Chebyshev polynomials <span class="process-math">\(T_i(x)\)</span> in black.</figcaption></figure><div class="displaymath process-math" id="p-35">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.11<span class="period">.</span></span><span class="space"> </span>In gray the intuitive monomials <span class="process-math">\(\phi_i(x) = x^i\)</span> with the Chebyshev polynomials <span class="process-math">\(T_i(x)\)</span> in black.</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="" id="p-35">
 \begin{equation*}
 \begin{aligned}
 T_0(x) &amp; = 1\\
@@ -500,14 +505,14 @@ T_n(x) &amp; = 2xT_{n-1}(x) - T_{n-2}(x)\end{aligned}
 \end{equation*}
 </div>
 <p id="p-36">Since the alternate definition of the Chebyshev polynomials is <span class="process-math">\(T_n(x) = \cos(n\arccos(x))\)</span> for <span class="process-math">\(n\geq0\text{,}\)</span> it should seem reasonable that these functions are bounded in magnitude by one, as illustrated in Figure <a href="" class="xref" data-knowl="./knowl/fig-chebyshev.html" title="Figure 3.11">Figure 3.11</a>. The monic Chebyshev polynomials (not illustrated, but handy for Chebyshev economization of power series), with leading coefficient <span class="process-math">\(1\text{,}\)</span> are defined by</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-chebyshev.html">
 \begin{equation*}
 \tilde T_n(x) = \dfrac{1}{2^{n-1}}T_n(x)
 \end{equation*}
 </div>
 <p class="continuation">For these polynomials the extrema, which occur <em class="emphasis">at</em> the same points, are those of <span class="process-math">\(T_n(x)\)</span> but reduced in value by a factor of <span class="process-math">\(\dfrac{1}{2^{n-1}}\text{,}\)</span> that is, the extrema are, for <span class="process-math">\(k=0, 1,
 \dots, n\)</span></p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-chebyshev.html">
 \begin{equation*}
 \tilde T'_n(\bar x_k) = \dfrac{(-1)^k}{2^{n-1}}
 \end{equation*}
@@ -517,7 +522,7 @@ T_n(x) &amp; = 2xT_{n-1}(x) - T_{n-2}(x)\end{aligned}
 <p id="p-37">By a theorem, we have that the optimal choice of nodes for polynomial approximation by a degree <span class="process-math">\(n\)</span> polynomial is given by the zeros of of the <span class="process-math">\((n+1)^\text{st}\)</span> Chebyshev polynomial <span class="process-math">\(T_{n+1}(x)\text{.}\)</span> For example, as given in Figure <a href="" class="xref" data-knowl="./knowl/fig-cheb-pts.html" title="Figure 3.13">Figure 3.13</a>, we take the approximation of <span class="process-math">\(f(x) = e^x\)</span> on <span class="process-math">\([0, 1]\)</span> with three points. We expect to to take, <span class="process-math">\(\tilde x_0
 = 0\text{,}\)</span> <span class="process-math">\(\tilde x_1 = 0.5\text{,}\)</span> and <span class="process-math">\(\tilde x_2 = 1.0\text{,}\)</span> but achieve better performance with Chebyshev nodes <span class="process-math">\(\bar x_i\text{.}\)</span> The nodes for interpolation are given by the zeros of the Chebyshev polynomial <span class="process-math">\(T_3(x)\text{,}\)</span> which in turn are given by <span class="process-math">\(\bar x_k =
 \cos\left(\dfrac{2k-1}{2n}\pi\right)\)</span> for <span class="process-math">\(k=1, 2, 3\text{.}\)</span></p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-cheb-pts.html">
 \begin{equation*}
 \begin{aligned}
 \bar x_1 &amp;= \cos\left(\dfrac{2(1)-1}{2(3)}\cdot\pi\right) =
@@ -531,14 +536,14 @@ T_n(x) &amp; = 2xT_{n-1}(x) - T_{n-2}(x)\end{aligned}
 \end{equation*}
 </div>
 <p id="p-38">From <span class="process-math">\(\tilde x_i \in [a,b]\)</span> we can compute <span class="process-math">\(\bar x_i \in [-1, 1]\)</span> by</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 x_i = \dfrac{2\tilde x_i - a -
 b}{b-a}
 \end{equation*}
 </div>
 <p class="continuation">and in the reverse we can use</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \tilde x_i =
 \dfrac{1}{2}\left((b-a)\bar x_i + a + b\right)
@@ -582,7 +587,7 @@ x_i\)</span></th>
 <span class="type">Subsubsection</span> <span class="codenumber">3.5.4</span> <span class="title">Chebyshev economization</span>
 </h4>
 <p id="p-41">As we will soon see, the ‘best’ reduced order polynomial approximation <span class="process-math">\(P_{n-1}\)</span> to a polynomial <span class="process-math">\(P_n(x)\)</span> is given by</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/fig-cheb-order.html">
 \begin{equation*}
 P_{n-1}(x) = P_{n}(x) - a_n\tilde T_n(x)
 \end{equation*}

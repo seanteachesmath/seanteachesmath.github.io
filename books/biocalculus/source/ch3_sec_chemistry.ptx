@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<section xml:id="applications-to-chemistry">
+<title>Applications to chemistry</title>
+
+
+<paragraphs xml:id="the-plan-18">
+<title>The Plan</title>
+
+<p> We continue our work on integration by introducing an
+application to autonomous differential equations via the integrated rate
+laws - a cornerstone of chemical kinetics.
+</p>
+
+
+<paragraphs xml:id="background">
+<title>Background</title>
+<p>The <term>integrated rate laws</term> exist at the interface of
+calculus and chemistry.  By studying these equations from a calculus
+perspective, the results are much more cohesive than it might first
+appear.  Often "we" are interested in the change in concentration of a
+particular chemical species.  Here let, <me> A(t) = [A]_{t} = [A] \text{
+at time }t =\text{ concentration of species }A\text{ at time }t.</me> To be
+consistent with class notation and objectives, we will use <m>A(t)</m> 
+to refer to the concentration.
+</p>
+
+<paragraphs xml:id="zeroth-order">
+<title>Zeroth order</title> <p>Within this family, the first formula
+comes from the zeroth order reaction given by <me>\dfrac{dA}{dt} =
+-kA^0.</me> Since this contains <m>A^0 = 1</m>, the right-hand side simplifies to
+the constant <m>-k</m>.  At this point, we are looking for an unknown
+function <m>A(t)</m> whose derivative is the constant <m>-k</m>. Thinking
+about this from the perspective of differentiation, we are looking for a
+function <m>A(t)</m> whose derivative is a constant.  This means that is
+linear and that constant, <m>-k</m>, is its slope. So, <me>
+A(t) = -kt+A_{0},</me> where <m>A_{0}</m> is the <term>constant of
+integration</term> and gives the initial concentration of the reactant. </p>
+
+<!--><p>This turns out to be one of the simplest, most useful, but also most
+cleverly disguised applications of the technique of <term>integration by
+<m>u</m>-substitution</term>. Our goal is to put the <m>A</m>-like
+variables on the left and leave everything <em>else</em> on the
+right-hand side and immediately integrate with respect to time <m>t</m>.
+ This results in <me> \begin{aligned}[t] \dfrac{dA}{dt} \amp = -k A^{0}\\
+\dfrac{dA}{dt} \amp = -k\\
+\int\dfrac{dA}{dt}\,dt \amp = \int -k\, dt \end{aligned}
+</me> </p>
+-->
+<!--><p>This is somewhat abstract, but we can immediately apply
+<m>u</m>-substitution.  To do so, we have to recognize that the unknown
+function is <m> u = A(t)</m> and that <me> du = A'(t)\,dt</me>. Now,
+this isn't immediately useful, but remembering our notation <me>A'(t) =
+\dfrac{dA}{dt}</me>, so we can write, <me>du = \dfrac{dA}{dt}\,dt</me>.
+Suddenly we are finished with our process of <m>u</m>-substittution and
+can integrate.  Continuing from above <me> \begin{aligned}[t]
+\int\underbrace{\frac{1}{A}}_{\frac{1}{u}}\cdot\underbrace{\frac{dA}{
+dt}\,dt}_{du} \amp = \int -k\, dt\\ \int \frac{1}{u}\,du \amp = \int
+-k\,dt\\ \ln|u| \amp = -kt+c \end{aligned} </me> </p>-->
+
+<!--><p>Remembering above that <m>u = A(t)</m> we can return to our chemistry
+notation, that <me>\ln|A(t)| = -kt+c</me>.  What is left is to specify a
+value for <m>c</m>. Thinking of our physical situation we have that
+<m>A(0) = A_{0}</m> (again as a chemist you might be picturing the
+ quantity <m>[A]_{0}</m>, but this bracket notation is somewhat
+ unsatisfying mathematically).  This gives <me>\ln|A(0)| = \ln|A_{0}| =
+ -k(0) + c</me>, or <m>c = \ln|A_{0}|</m>. Since we expect <m>A_{0} \gt
+ 0</m>, we can neglect the absolute value bars in favor of notational
+ simplicity. This gives the <term>zeroth-order integrated rate
+ law</term>, <me> \ln(A_{0}) = -kt+A_{0}</me>. Under these assumptions
+ we expect the concentration fo chemical species <m>A</m> to decay linearly as a 
+ function of time with a slope of <m>-k</m>, beginning from an initial
+ concentration of <m>A_{0}</m>.</p>-->
+
+<!--><p>In what follows the higher order integrated rate law formulas are
+obtained with the same approach - integration.  The only thing that separates
+remaining cases from the first is the power on the concentration
+<m>A = A(t)</m> on the right-hand side of the original differential equation.
+This influences how the details of integration play out, but really
+nothing more.</p>-->
+
+</paragraphs>
+
+<paragraphs xml:id="first-order">
+<title>First order</title>
+<p>Since the differential equation is <me>\dfrac{dA}{dt} = -kA</me>, we
+can <em>guess</em> the solution by answering the question, "what
+function has a derivative that is a constant times itself?".  Since
+<me>\dfrac{d}{dt}\left(e^{-kt}\right) = -ke^{-kt}</me>, It turns
+out that multiplying by a constant we have
+<me>\dfrac{d}{dt}\left(A_{0}e^{-kt}\right) = -A_{0}ke^{-kt} =
+-k\underbrace{A_{0}e^{-kt}}_{A(t)}</me>
+</p>
+</paragraphs>
+
+<paragraphs xml:id="first-order-revisited">
+<title>First order - revisited</title>
+
+<p>Just like before, but now with a power of <m>n = 1</m> on the
+right-hand side, we have <me>\dfrac{dA}{dt} \amp = -k A</me>. Our goal
+will be to move all of the <m>A</m>-like quantities to the left-hand
+side and leave any constants on the right-hand side.  This turns out to
+give some evidence in support of a well-known technique in differential
+equations called <em>separation of variables</em>.  We proceed as
+follows, first dividing by <m>A</m> on each side, then integrating each
+side with respect to <m>t</m>,
+<me>\begin{aligned}[t] \dfrac{dA}{dt} \amp = -k A\\
+\dfrac{1}{A}\cdot\dfrac{dA}{dt} \amp = -k\\ 
+\int \dfrac{1}{A}\cdot\dfrac{dA}{dt}\,dt \amp = \int -k\, dt \end{aligned}
+</me> </p>
+
+<p>This is somewhat abstract, but we can immediately apply
+<m>u</m>-substitution.  To do so, we have to recognize that the unknown
+function is <m> u = A(t)</m> and that <me> du = A'(t)\,dt</me>. Now,
+this isn't immediately useful, but remembering our notation <me>A'(t) =
+\dfrac{dA}{dt}</me>, so we can write, <me>du = \dfrac{dA}{dt}\,dt</me>.
+Suddenly we are finished with our process of <m>u</m>-substittution and
+can integrate.  Continuing from above <me> \begin{aligned}[t]
+\int\underbrace{\frac{1}{A}}_{\frac{1}{u}}\cdot\underbrace{\frac{dA}{
+dt}\,dt}_{du} \amp = \int -k\, dt\\ \int \frac{1}{u}\,du \amp = \int
+-k\,dt\\ \ln|u| \amp = -kt+c \end{aligned} </me> </p>
+
+<p>Remembering above that <m>u = A(t)</m> we can return to our chemistry
+notation, that <me>\ln|A(t)| = -kt+c</me>.  What is left is to specify a
+value for <m>c</m>. Thinking of our physical situation we have that
+<m>A(0) = A_{0}</m> (again as a chemist you might be picturing the
+ quantity <m>[A]_{0}</m>, but this bracket notation is somewhat
+ unsatisfying mathematically).  This gives <me>\ln|A(0)| = \ln|A_{0}| =
+ -k(0) + c</me>, or <m>c = \ln|A_{0}|</m>. Since we expect <m>A_{0} \gt
+ 0</m>, we can neglect the absolute value bars in favor of notational
+ simplicity. This gives the <term>zeroth-order integrated rate
+ law</term>, <me> \ln(A(t)) = -kt+\ln(A_{0})</me>. Under these assumptions
+ we expect the concentration of chemical species <m>A</m> to decay linearly as a 
+ function of time with a slope of <m>-k</m>, beginning from an initial
+ concentration of <m>A_{0}</m>.</p>
+ 
+ <p>In this case, the plot of the natural logarithm of the observed
+ concentration will resemble a decreasing linear function.</p>
+ 
+<p>We may also be aware that a first-order reaction corresponds to
+<term>exponential decay</term>, in fact, exponentiating both sides of
+the formula above gives <me>\begin{aligned}[t]
+\ln(A(t)) \amp = -kt+\ln(A_{0})\\
+e^{\ln(A(t))} \amp = e^{-kt+\ln(A_{0})}\\
+A(t) \amp = e^{-kt}\cdot e^{\ln(A_{0})}\\
+A(t) \amp = e^{-kt}A_{0}\\
+A(t) \amp = A_{0}e^{-kt}\\
+\end{aligned}</me>
+</p>
+
+<p>Historically it was important to express data in terms of linear
+relationships, so a plot of the natural logarithm of a measurement that
+gave rise to a linear trend was a good indicator of this relationship
+and estimation of the slope <m>k</m> was relatively easy.  In contemporary times
+it is relatively easy to 'fit' nonlinear functions like exponentials, so
+it would be reasonable to plot the raw data, not its natural logarithm,
+and look the underlying exponential relationship and its parameter
+<m>k</m>.</p> </paragraphs>
+
+<paragraphs xml:id="second-order">
+<title>Second order</title>
+<p>Just like before, but now with a power of <m>2</m> on the right-hand
+side <me> \begin{aligned}[t] \dfrac{dA}{dt} \amp = -k A^{2}\\
+\dfrac{1}{A^2}\cdot\dfrac{dA}{dt} \amp = -k\\ \int
+A^{-2}\cdot\dfrac{dA}{dt}\,dt \amp = \int -k\, dt \end{aligned}
+</me> </p>
+
+<p>Again the unknown
+function is <m> u = A(t)</m> and that <me> du = A'(t)\,dt</me>. Now,
+this isn't immediately useful, but remembering our notation <me>A'(t) =
+\dfrac{dA}{dt}</me>, so we can write, <me>du = \dfrac{dA}{dt}\,dt</me>.
+Suddenly we are finished with our process of <m>u</m>-substittution and
+can integrate.  Continuing from above <me> \begin{aligned}[t]
+\int\underbrace{A^{-2}}_{u^{-2}}\cdot\underbrace{\frac{dA}{
+dt}\,dt}_{du} \amp = \int -k\, dt\\ \int u^{-2}\,du \amp = \int
+-k\,dt\\
+\left(\frac{1}{-2+1}\right)u^{-2+1} \amp = -kt+c\\
+-u^{-1}\amp = -kt+c\\
+-\frac{1}{u}\amp = -kt+c\\
+-\frac{1}{A(t)}\amp = -kt+c\\
+ \end{aligned} </me>
+ Using the initial condition, <me>-\frac{1}{A(0)} = -\frac{1}{A_{0}} =
+ -k(0) + c</me> or <m>c = -\frac{1}{A_{0}}</m>
+</p>
+<p>Solving for <m>A(t)</m> we have 
+<me> \begin{aligned}[t]
+-\frac{1}{A(t)}\amp = -kt-\frac{1}{A_{0}}\\
+\frac{1}{A(t)}\amp = kt+\frac{1}{A_{0}}\\
+A(t)\amp = \frac{1}{kt+A_{0}}\\
+ \end{aligned} </me></p>
+ 
+ <p>The plot of the reciprocal of <m>A(t)</m> is an increasing linear
+ function with a slope of <m>k \gt 0</m>.
+ </p>
+</paragraphs>
+
+<paragraphs xml:id="summary">
+<title>Summary</title>
+<p>Three very different looking formulas 
+<me> \begin{aligned}[t]
+\text{zeroth order: }\amp A(t) = -kt + A_{0}\\
+\text{first order: }\amp \ln(A(t)) = -kt + \ln(A_{0})\\
+\text{second order: }\amp \frac{1}{A(t)} = kt + \frac{1}{A_{0}}
+\end{aligned} </me>
+all result from integration of
+<me>\dfrac{dA}{dt} = -kA^n</me> for different values of <m>n</m>
+corresponding to the reaction order.  Solving each for <m>A(t)</m>
+suggests that <m>A(t)</m> evolves very differently in each case.</p>
+</paragraphs>
+</paragraphs>
+</paragraphs>
+
+<exercises xml:id="quick-practice-chemistry" class="unnumbered">
+<title>Quick practice</title>
+
+</exercises>
+
+</section>

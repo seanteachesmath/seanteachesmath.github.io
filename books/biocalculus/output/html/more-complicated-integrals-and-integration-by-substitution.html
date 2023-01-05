@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-03-22T16:25:25-05:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -21,7 +18,6 @@
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
@@ -38,6 +34,14 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      $(document).trigger("runestone:mathjax-ready");
+      }
+    )}
+},
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
@@ -50,13 +54,14 @@
 <link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="pretext-book ignore-math has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
@@ -127,13 +132,13 @@
 <section class="paragraphs" id="derivatives-of-ex-and-lnx"><h5 class="heading"><span class="title">Derivatives of <span class="process-math">\(e^x\)</span> and <span class="process-math">\(\ln(x)\)</span>.</span></h5>
 <p id="p-672">Recall from our earlier work that <span class="process-math">\(\displaystyle\frac{d}{dx}(e^x)=e^x\)</span> and <span class="process-math">\(\displaystyle\frac{d}{dx}(\ln{(x)})=\frac{1}{x}\text{.}\)</span>What consequences do these facts have when we approach this problem from integration? Our new approach is to ask ‘what (unknown) function has a derivative that matches the integrand?’ rather than to ask ‘what is the derivative of the (known) function?’ In other words, ‘where did this derivative come from?’</p></section><section class="paragraphs" id="facts-about-ex-and-lnx"><h5 class="heading"><span class="title">Facts about <span class="process-math">\(e^x\)</span> and <span class="process-math">\(\ln(x)\)</span>.</span></h5>
 <p id="p-673">Since the indefinite integral undoes the action of the derivative</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boxed{\int e^x \, dx=e^x +c}
 \end{equation*}
 </div>
 <p id="p-674">and</p>
-<div class="displaymath process-math" id="p-675">
+<div class="displaymath process-math" data-contains-math-knowls="" id="p-675">
 \begin{equation*}
 \boxed{\int \frac{1}{x} \, dx=\ln{|x|}
 +c}
@@ -145,7 +150,7 @@
 \displaystyle\frac{2}{x} +\frac{1}{4}e^x+\frac{1}{x^{4}} \, dx\text{.}\)</span></p>
 <p id="p-678">Compute <span class="process-math">\(\displaystyle\int 15e^{5x}\, dx\text{.}\)</span> Taking the derivative of what function gives us <span class="process-math">\(f(x) = 15e^{5x}\text{?}\)</span></p></section><section class="paragraphs" id="undoing-differentiation-by-the-chain-rule"><h5 class="heading"><span class="title">Undoing differentiation by the Chain Rule.</span></h5>
 <p id="p-679">Recall that the Chain Rule says that</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boxed{\displaystyle\frac{d}{dx}\Big(f\circ
 g\Big)=\frac{d}{dx}\Big(f(g(x))\Big)=\frac{df}{dg}\frac{dg}{dx}}
@@ -153,7 +158,7 @@ g\Big)=\frac{d}{dx}\Big(f(g(x))\Big)=\frac{df}{dg}\frac{dg}{dx}}
 </div>
 <p class="continuation">We can undo the chain rule using integration by a substitution process as well.</p>
 <p id="p-680">Before we begin, we need a brief definition for the <dfn class="terminology">differential</dfn> <span class="process-math">\(du\text{.}\)</span> For <span class="process-math">\(u=g(x)\text{,}\)</span> the differential is defined as</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \boxed{du = g'(x)\,dx}
 \end{equation*}
@@ -173,7 +178,7 @@ g\Big)=\frac{d}{dx}\Big(f(g(x))\Big)=\frac{df}{dg}\frac{dg}{dx}}
 <p id="p-691">Try to evaluate <span class="process-math">\(\displaystyle\int 2x^{2}e^{x^{2}}
 \, dx\text{.}\)</span></p>
 <p id="p-692">The growth of female Atlantic sturgeon (fish) in the Hudson River, New York, approximately follows the differential equation</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \displaystyle\frac{dL}{dt}=19.56e^{-0.074t}
 \end{equation*}

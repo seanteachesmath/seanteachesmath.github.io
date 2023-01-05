@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<section xml:id="linear-functions-and-their-graphs">
+<title>Linear functions and their graphs</title>
+
+
+<paragraphs xml:id="the-plan-3">
+<title>The Plan</title>
+
+<p> Linear functions are the basis for most relationships
+that we can think about.
+</p>
+</paragraphs>
+
+<definition xml:id="def-linear-function">
+<title>linear function</title>
+<statement><p> A relationship <m>f(x)</m> defined by
+<ol>
+<li> <p> <m>y=f(x)=mx+b</m>, with constants <m>m</m> and
+<m>b</m>, or</p> </li>
+<li> <p> <m>y=f(x)= y_{0} + m(x-x_{0})</m>, with constant <m>m</m>
+and a point <m>(x_{0}, y_{0})</m></p> </li>
+</ol>
+
+is called a <term>linear function</term> between the
+<em>variables</em> <m>x</m> and <m>y</m>. If the formula involves only
+adding and subtracting constants with variables multiplied by constants,
+the equation describes a linear function.
+</p>
+</statement>
+</definition>
+
+<p> The slope of a linear function passing through two
+points <m>(x_{0}, y_{0})</m> and <m>(x_{1}, y_{1})</m> is defined as the
+ratio
+of the change in output over the change in input (<q>rise over run</q>),
+</p>
+
+
+<paragraphs xml:id="notation">
+<title>Notation</title>
+
+<p>	In general, in biological applications we rarely
+have inputs/outputs called <m>x</m> and <m>y</m> – for example we have
+mass and volume. These labels, while different from what we are used to
+are meant to make problems more meaningful!
+</p>
+</paragraphs>
+
+<example xml:id="ex-temperature">
+<statement>
+<p>Here we will derive a common (and commonly
+mis-remembered) temperature formula.
+</p>
+
+<p><ul>
+<li><p><term>Recall:</term> What is the formula for
+computing the temperature in <m>{}^\circ</m>F if you know temperature in
+<m>{}^\circ</m>C?</p> </li>
+
+<li><p><term>Data:</term> Consider the following data:<!--
+linebreak -->
+</p>
+
+<table>
+<title></title>
+<tabular>
+<row header="yes">
+<cell halign="center"><m>{}^\circ</m>C</cell>
+<cell halign="center"><m>{}^\circ</m>F</cell>
+</row>
+<row class="odd">
+<cell halign="center">0</cell>
+<cell halign="center">32</cell>
+</row>
+<row class="even">
+<cell halign="center">20</cell>
+<cell halign="center">68</cell>
+</row>
+<row class="odd">
+<cell halign="center">37</cell>
+<cell halign="center">98.6</cell>
+</row>
+<row class="even">
+<cell halign="center">100</cell>
+<cell halign="center">212</cell>
+</row>
+</tabular>
+</table>
+</li>
+
+<li><p><term>Graph it:</term>  Plot the points to determine
+whether a linear function holds.</p> </li>
+
+
+<li><p><term>Slope:</term>  Identify a pair of points and
+compute the slope.</p> </li>
+
+<li><p><term>Linear functions:</term> Now write
+<m>F(C)</m>, first in point-slope form, then simplify to slope-intercept
+form.</p> </li>
+
+</ul></p>
+
+<figure xml:id="figure-pgfplots-demo">
+        <caption>Sample pgfplots plot</caption>
+        <image xml:id="pgfplots-demo">
+          <description>A pgfplots example, with a function, a parametric curve, and some points plotted.</description>
+<!--><latex-image>
+\begin{tikzpicture}
+\begin{axis}
+\addplot [
+scatter,
+only marks,
+point meta=explicit symbolic,
+scatter/classes={
+a={mark=square*,blue},
+c={mark=o,draw=black}
+},
+] table [meta=label] {
+C F label
+0 32 a
+20	68 c
+37 98.6 a
+100 212 a
+};
+\end{axis}
+\end{tikzpicture}
+</latex-image>-->
+        </image>
+      </figure>
+      
+      
+      
+</statement>
+</example>
+
+
+<p>	Notice that the definition
+<me>m=\frac{y_{1}-y_{0}}{x_{1}-x_{0}}</me> gives us all we need to
+derive both
+point-slope form and slope-intercept form. Let our point be <m>(x_{0},
+y_{0})</m> and instead of <m>(x_{1}, y_{1})</m>, choose <m>(x, y)</m> to
+be
+any other point on the line.
+</p>
+
+<p><me>\begin{aligned}[t]
+m&amp;=\frac{y-y_{0}}{x-x_{0}}&amp;&amp;(\text{definition})\\
+m(x-x_{0})&amp;= y-y_{0}&amp;&amp;(\text{multiply by denom.})\\
+y_{0} + m(x-x_{0})&amp;= y&amp;&amp;(\text{add $y_{0}$-coordinate})\\
+y&amp;=y_{0} + m(x-x_{0})&amp;&amp;(\text{flip}~\text{equation})\\\end{aligned}</me>
+</p>
+
+<p>	Once again rewrite this as slope-intercept form.
+</p>
+
+
+<paragraphs
+xml:id="how-are-point-slope-and-slope-intercept-forms-related">
+<title>How are point-slope and slope-intercept forms
+related?</title>
+</paragraphs>
+
+<example xml:id="ex-identifying-linear">
+<statement>
+<p>Which of the following are linear functions?
+<ul>
+<li> <p> <m>\displaystyle C(F) =
+\frac{5}{9}\left(F-32\right)</m></p> </li>
+<li> <p> <m>\displaystyle s(t) = -4.9t^{2}-5.0t+100</m></p> </li>
+<li> <p> <m>\displaystyle M(V) = 0.8V</m></p> </li>
+
+</ul></p>
+</statement>
+</example>
+
+
+<paragraphs xml:id="interpolation">
+<title>Interpolation</title>
+
+<p> Frequently we use linear functions to
+interpolate or predict values occurring between two known values. This
+technique is called linear interpolation, and is illustrated in the
+following example.
+</p>
+</paragraphs>
+
+<example xml:id="ex-hiv-aids">
+<statement>
+<p> Here we look at the onset of AIDS symptoms in
+the years after initial HIV infection. Four years after infection 17%
+had symptoms, and seven years after infection 33% had symptoms.
+
+
+<ol>
+<li> <p> Write the formula for a linear function that
+relates the percent of patients with AIDS symptoms to time (years
+measured since infection).</p> </li>
+<li> <p> Define and interpret the slope and intercept
+(units included).</p> </li>
+<li> <p> How many patients (what percent) have symptoms
+after five and a half years?</p> </li>
+<li> <p> Using this model, at what time would you predict
+that half of all exposed patients have AIDS symptoms? What must you do
+to answer this question?</p> </li>
+</ol></p>
+</statement>
+</example>
+
+<paragraphs
+xml:id="important-facts-about-linear-functions">
+<title>Important facts about linear
+functions</title>
+
+<p> The following work should help us reason through
+linear functions (and eventually many more).
+</p>
+
+<p><ul>
+<li> <p> Example</p> </li>
+<li> <p> Behavior</p> </li>
+<li> <p> Slope</p> </li>
+
+</ul></p>
+
+<definition xml:id="def-prop-rel">
+<statement><p> A <term>proportional relation</term> is a linear relation
+in
+which the output is proportional to input. In general <me>y = f(x) = ax,
+\text{where $a$ constant.}</me>
+</p>
+</statement>
+</definition>
+
+<p> A fundamental relation <m>M=\rho V</m>, links
+mass measured in <m>g</m> and volume measured in <m>cm^{3}</m>.
+</p>
+
+<p><ul>
+<li> <p> Is this fundamental relation a proportional
+relation?</p> </li>
+<li> <p> What are the units on each term?<!-- linebreak
+--></p> </li>
+<li> <p> What is the mass of an object with volume
+<m>V=0\,cm^{3}</m>?<!-- linebreak --></p> </li>
+
+</ul></p>
+
+<p> Is the formula for temperature conversion a
+proportional relation?
+</p>
+
+</paragraphs>
+
+<paragraphs xml:id="what-is-constant">
+<title>What is constant?</title>
+
+<p><ul>
+<li> <p> the ratio of output over input<!-- linebreak
+-->proportional relation:
+<me>\frac{\text{output}}{\text{input}} =
+\text{constant}</me><!-- linebreak --></p> </li>
+<li> <p> the ratio of change in output over change in
+input<!-- linebreak -->linear function:
+<me>\dfrac{\text{change}~\text{in}~\text{output}}{\text{change}~\text{in}~\text{input}} = \text{constant},</me>(i.e., slope is constant)</p> </li>
+
+</ul></p>
+
+</paragraphs>
+
+<exercises xml:id="quick-practice-linear" class="unnumbered">
+<title>Quick practice</title>
+
+<exercise xml:id="quick-linear-area"><statement> <p> In Question <xref
+ref="quick-units-area" /> of the previous
+section, we talked about the relationship between area and radius. Is
+that relationship linear? Why or why not?
+</p></statement>
+<solution>
+In Question <xref ref="quick-units-area" /> of the previous
+section, we talked about the relationship between area and radius, <m>A
+= \pi r^{2}</m>. This <em>is not</em> linear, since we must
+<em>square</em> the radius to get the area.
+</solution>
+</exercise>
+
+
+<exercise><statement> <p> In Question <xref ref="quick-linear-area" />
+of the previous
+section, we talked about the relationship between radius and diameter.
+Is that relationship linear? Why or why not?
+</p></statement>
+<solution>
+In Question <xref ref="quick-units-area" /> of the previous
+section, we talked about the relationship between radius and diameter.
+This <em>is</em> linear since <m>r = \dfrac{d}{2}</m>, in fact this is
+proportional since the radius is a constant multiple
+<m>\left(\dfrac{1}{2}\right)</m> of the diameter. This is a good
+reminder that dividing by two is the same as multiplying by one half.
+</solution>
+</exercise>
+
+<exercise><statement> <p> (This one might not be so quick practice.) In
+chemistry
+we use the Lineweaver-Burk or <sq>double-reciprocal</sq> plot to
+determine properties of a chemical reaction. We graph a surprisingly
+complicated looking, but still linear, relationship <me>\dfrac{1}{V} =
+\dfrac{K_m}{V_{max}}\dfrac{1}{[S]} + \dfrac{1}{V_{max}}</me> where
+<m>V</m> is the reaction rate or <sq>velocity</sq>, <m>[S]</m> is the
+substrate concentration, and <m>V_{max}</m> and <m>K_m</m> are
+<em>parameters</em> in the relationship between our original variables
+<m>V</m> and <m>[S]</m>. Solve for <m>V</m> (not the reciprocal of
+<m>V</m>) as a function of <m>[S]</m>.
+</p></statement>
+<solution>
+In solving for <m>V</m> (steps not shown), we should
+eventually come upon the formula <m>V=\dfrac{V_{max}[S]}{K_m+[S]}</m>.
+This an example of a type of function we will study in more detail later
+this semester.
+</solution>
+</exercise>
+
+<exercise><statement> <p> Roughly speaking, the phrase <sq>is
+proportional to</sq>
+means what?
+</p></statement>
+<solution>
+Roughly speaking, the phrase <sq>is proportional to</sq>
+means <sq>is a multiple of</sq>.
+</solution>
+</exercise>
+</exercises>
+</section>
+
+<!-- ******************************* -->

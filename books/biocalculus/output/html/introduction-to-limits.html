@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-03-22T16:25:22-05:00       *-->
-<!--*   A recent stable commit (2020-08-09):   *-->
-<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
 <!--*         https://pretextbook.org          *-->
 <!--*                                          *-->
@@ -21,7 +18,6 @@
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
-    useLabelIds: true,
     tagSide: "right",
     tagIndent: ".8em",
     packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
@@ -38,6 +34,14 @@
     load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
+startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      $(document).trigger("runestone:mathjax-ready");
+      }
+    )}
+},
 };
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
@@ -50,13 +54,14 @@
 <link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="pretext-book ignore-math has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
@@ -126,7 +131,7 @@
 <p id="p-267">In addition to <dfn class="terminology">eventually</dfn> allowing us to compute instantaneous rates of change (derivatives) of mathematical functions, we use limits to study and describe behavior of functions.</p>
 <section class="paragraphs" id="concept-of-a-limit"><h4 class="heading"><span class="title">Concept of a limit.</span></h4>
 <p id="p-268">For a function <span class="process-math">\(f(x)\)</span> and two numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(L\text{,}\)</span> the statement</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \lim_{x\rightarrow a} f(x) =
 L,
@@ -140,7 +145,7 @@ L,
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.2<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><figure class="figure figure-like" id="figure-13"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/graph.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.3<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-270">Consider the appropriate one–sided and two–sided limits for the following functions.</p>
 <figure class="figure figure-like" id="figure-14"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/bas_func_sgn.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.4<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><div class="displaymath process-math" id="p-271">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.4<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="" id="p-271">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0^-} \operatorname{sgn}(x)=\\
@@ -149,7 +154,7 @@ L,
 \end{equation*}
 </div>
 <figure class="figure figure-like" id="figure-15"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/bas_func_id.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.5<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><div class="displaymath process-math" id="p-272">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.5<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="" id="p-272">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0^-}x=\\
@@ -158,7 +163,7 @@ L,
 \end{equation*}
 </div>
 <figure class="figure figure-like" id="figure-16"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/bas_func_cons.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.6<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><div class="displaymath process-math" id="p-273">
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.6<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="" id="p-273">
 \begin{equation*}
 \begin{aligned}[t]
 &amp;\lim_{x\rightarrow0^-}0.64=\\
@@ -173,7 +178,7 @@ L,
 <ol class="decimal">
 <li id="li-94">
 <p id="p-275">Suppose <span class="process-math">\(f(x)=c\text{,}\)</span> where <span class="process-math">\(c\)</span> is a constant, for all <span class="process-math">\(x\text{.}\)</span> Then for any value of <span class="process-math">\(a\)</span></p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \lim_{x\to a}f(x) = \lim_{x\to a}c=c,
 \end{equation*}
@@ -182,7 +187,7 @@ L,
 </li>
 <li id="li-95">
 <p id="p-276">Suppose <span class="process-math">\(f(x)=x\)</span> for all <span class="process-math">\(x\text{.}\)</span> Then for any value of <span class="process-math">\(a\)</span></p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \lim_{x\to a}f(x)=\lim_{x\to a} x =a,
 \end{equation*}
@@ -191,7 +196,7 @@ L,
 </li>
 </ol></article><p id="p-277">Consider the appropriate one–sided and two–sided limits for the following functions.</p>
 <p id="p-278"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/bas_func_sgn.png" class="contained"></div> Limits at <span class="process-math">\(x=0\text{,}\)</span></p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0^-} \operatorname{sgn}(x)=-1\\
@@ -201,7 +206,7 @@ L,
 \end{equation*}
 </div>
 <p id="p-279">Limits at a negative value,</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow-0.5^-} \operatorname{sgn}(x)=-1\\
@@ -210,7 +215,7 @@ L,
 \end{equation*}
 </div>
 <p id="p-280">Limits at a positive value,</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0.5^-} \operatorname{sgn}(x)=1\\
@@ -220,7 +225,7 @@ L,
 </div>
 <figure class="figure figure-like" id="figure-17"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/bas_func_id.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.8<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-281">Limits at <span class="process-math">\(x=0\text{,}\)</span></p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0^-}x=0\\
@@ -229,7 +234,7 @@ L,
 \end{equation*}
 </div>
 <p id="p-282">Limits at a negative value,</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow-0.5^-}x=-0.5\\
@@ -238,7 +243,7 @@ L,
 \end{equation*}
 </div>
 <p id="p-283">Limits at a positive value,</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0.5^-}x=0.5\\
@@ -248,7 +253,7 @@ L,
 </div>
 <figure class="figure figure-like" id="figure-18"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/bas_func_cons.png" class="contained"></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.9<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-284">Limits at <span class="process-math">\(x=0\text{,}\)</span></p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0^-}0.64=0.64\\
@@ -257,7 +262,7 @@ L,
 \end{equation*}
 </div>
 <p id="p-285">Limits at a negative value,</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow-0.5^-}0.64=0.64\\
@@ -266,7 +271,7 @@ L,
 \end{equation*}
 </div>
 <p id="p-286">Limits at a positive value,</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0.5^-}0.64=0.64\\
@@ -287,7 +292,7 @@ L,
 <ol class="decimal">
 <li id="li-98">
 <p id="p-293">The limit of the sum is the sum of the limits</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \lim_{x\to a}\big[ f(x)+g(x)\big]=\lim_{x\to a} f(x) + \lim_{x\to a}
 g(x)
@@ -296,7 +301,7 @@ g(x)
 </li>
 <li id="li-99">
 <p id="p-294">The limit of the product is the product of the limits</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \lim_{x\to a}\big[ f(x)g(x)\big]=\big[\lim_{x\to a} f(x)\big]
 \cdot \big[\lim_{x\to a} g(x)\big]
@@ -305,7 +310,7 @@ g(x)
 </li>
 <li id="li-100">
 <p id="p-295">The limit of a constant times a function is the constant times the limit of the function</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \lim_{x\to a}\big[
 cf(x)\big]=c\cdot \lim_{x\to a} f(x)
@@ -315,7 +320,7 @@ cf(x)\big]=c\cdot \lim_{x\to a} f(x)
 <li id="li-101">
 <p id="p-296">Provided <span class="process-math">\(\displaystyle\lim_{x\to a} g(x) \ne
 0\text{,}\)</span> the limit of the quotient (or ratio) is the quotient (or ratio) of the limits</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \lim_{x\to a}\left(
 \frac{f(x)}{g(x)}\right)=\frac{\displaystyle\lim_{x\to a}
@@ -349,7 +354,7 @@ f(x)}{\displaystyle\lim_{x\to a} g(x)}.
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><p id="p-308"></p></div></div>
 </div></article></div>
-<article class="example example-like" id="ex-limit-DNE"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-limit-DNE"><h5 class="heading">
+<article class="example example-like" id="ex-limit-DNE"><a href="" data-knowl="" class="id-ref example-knowl original has-image has-tabular" data-refid="hk-ex-limit-DNE"><h5 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.13</span><span class="period">.</span><span class="space"> </span><span class="title">Division by zero.</span>
 </h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-limit-DNE"><article class="example example-like"><p id="p-309">When studying a function such as <span class="process-math">\(\displaystyle f(x) = \frac{1}{x}\text{,}\)</span> we must be aware that the function is <dfn class="terminology">undefined</dfn> at <span class="process-math">\(x=0\text{.}\)</span> When talking about the limits,</p>
 <figure class="figure figure-like" id="figure-19"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/graph.png" class="contained"></div>
@@ -404,7 +409,7 @@ f(x)}{\displaystyle\lim_{x\to a} g(x)}.
 <td class="c m b0 r0 l0 t0 lines"></td>
 </tr>
 </table></div></figure><p id="p-310">To finally assign values to these limits,</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0^-}\frac{1}{x}=\\
@@ -420,7 +425,7 @@ f(x)}{\displaystyle\lim_{x\to a} g(x)}.
 </div></article></div>
 <section class="paragraphs" id="square-roots"><h5 class="heading"><span class="title">Square roots.</span></h5>
 <p id="p-312">Since the input of the square root function must be positive, we talk about only the one–sided limit</p>
-<div class="displaymath process-math">
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 \lim_{x\rightarrow0^+}\sqrt{x},
 \end{equation*}
