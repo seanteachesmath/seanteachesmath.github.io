@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="ch-fractal-sec-examples" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Examples of fractals</title>
+  <introduction>
+  
+<p>There are an endless number of interesting fractals and in many cases
+a variety of mechanisms of generating a particular fractal.</p>
+
+
+  </introduction>
+  <subsection xml:id="subsec-sierpinski-triangle">
+    <title>Typical construction</title>
+<p> The Sierpinski triangle can be constructed by shading an inverted
+triangle in the middle of each white triangle.</p>
+<p>    <title></title>
+<figure xml:id="fig-320">
+	<caption>Top left: Step 0 is an upright white triangle. Top right: Step 1 contains an
+	inverted, shaded triangle in the center of what was 'Step 0'. Bottom left: Step 2
+	contains all of the triangles present in 'Step 1', but adds three
+	shaded, inverted triangles in the white space of 'Step 1'.  Bottom Right: Step 3 (and
+	onward) is more of the same.</caption>
+<sidebyside>
+	<image xml:id="image-sierpinski0" source="sierpinski0.png" width='50%'></image>
+	<image xml:id="image-sierpinski1" source="sierpinski1.png" width='50%'></image>
+</sidebyside>
+<sidebyside>
+	<image xml:id="image-sierpinski2" source="sierpinski2.png" width='50%'></image>
+	<image xml:id="image-sierpinski3" source="sierpinski3.png" width='50%'></image>
+</sidebyside>
+</figure>
+    </p>
+<p><title>Patterns</title>
+Hopefully something about the construction strikes you as interesting.
+If so, what do you notice? If not, what might make this more interesting
+to you, personally? Connections to a specific application? 
+</p>
+
+<p><title>How many triangles?</title>
+Count the numbers of each kind of triangle (black and white) at each
+step.  Does it change predictably? Organizing your results with a table
+might help.
+<table xml:id="tab-sierpinski-colors">
+<title>Colored triangles in the Sierpinski fractal.</title>
+<tabular>
+<row>
+<cell>Step</cell><cell>Number White</cell><cell>Number Black</cell><cell>Total</cell>
+</row>
+<row><cell>Step 0 </cell><cell>1</cell><cell>0</cell><cell>1</cell></row>
+<row><cell>Step 1 </cell><cell>3</cell><cell>1</cell><cell>4</cell></row>
+<row><cell>Step 2 </cell><cell>9</cell><cell>4</cell><cell>13</cell></row>
+<row><cell>Step 3 </cell><cell>27</cell><cell>13</cell><cell>40</cell></row>
+</tabular>
+</table>
+</p>
+
+<example xml:id="ex-sierpinski-triangles">
+<title>Calculating Numbers of Triangles</title>
+<introduction><p>With a bit of careful guessing, it's possible to
+explore formulas that support these patterns and that allow us to
+predict what happens as the number of steps increases (beyond our
+drawing ability).</p></introduction>
+
+<p>How can we relate the numbers of
+each type of triangle and the total to the step number? Looking at the
+white triangle numbers, you might notice that the number increases by a
+factor of three each step.  In fact, if we let <m>W_{k}</m> be
+the number of white triangles on step <m>k</m>, <me>W_{k}=3^{k}</me>. 
+If we went to Step 10, we would expect <m>W_{10} =
+3^10</m>, which is <m>59,049</m> white triangles!</p>
+
+<p>Now, at each step, we add as many new black triangles as we
+previously had white triangles.  A black triangle, once added
+is never tampered with again.  To work out a formula, let's speculate on
+how many black triangles we would encounter in Step 4.  We enter the step with the triangles illustrated in Step 3, but each 
+</p>
+</example>
+
+
+  </subsection>
+  
+    
+  <conclusion>
+    <p>
+    </p>
+  </conclusion>
+  
+  
+</section>
+
