@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear functions and their graphs</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Bio-Calculus">
+<meta property="book:author" content="Sean Laverty">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
+<p class="byline">Sean Laverty</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="dimensions-and-units-1.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-intro.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="exponentials-and-logarithms.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="users-guide.html" class="internal"><span class="title">Users guide</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="what-is-bio-calculus.html" class="internal"><span class="codenumber">1.1</span> <span class="title">What is bio-calculus?</span></a></div></li>
+<li>
+<div class="toc-item"><a href="introduction-modeling-terminology.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-modeling-terminology.html#quick-jargon" class="internal"><span class="codenumber">1.2</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="dimensions-and-units-1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Dimensions and units</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="dimensions-and-units-1.html#quick-practice-units" class="internal"><span class="codenumber">1.3</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="linear-functions-and-their-graphs.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Linear functions and their graphs</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="linear-functions-and-their-graphs.html#quick-practice-linear" class="internal"><span class="codenumber">1.4</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="exponentials-and-logarithms.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Exponentials and logarithms</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="exponentials-and-logarithms.html#quick-practice-exp" class="internal"><span class="codenumber">1.5</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Introduction to discrete-time dynamical systems (DTDS)</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-discrete-time-dynamical-systems-dtds.html#quick-practice-dtds" class="internal"><span class="codenumber">1.6</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="introduction-to-limits.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Introduction to limits</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-limits.html#quick-practice-finite-limits" class="internal"><span class="codenumber">1.7</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="continuous-functions.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Continuous functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="continuous-functions.html#quick-practice-continuity" class="internal"><span class="codenumber">1.8</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="limits-and-behaviors-at-infinity.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Limits and behaviors at infinity</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="limits-and-behaviors-at-infinity.html#quick-practice-inf-limits" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-derivatives.html" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="introduction-to-derivatives-rates-of-change.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction to derivatives: Rates of change</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-derivatives-rates-of-change.html#quick-practice-rates" class="internal"><span class="codenumber">2.1</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-basic-functions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Derivatives of basic functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-basic-functions.html#quick-practice-derivatives" class="internal"><span class="codenumber">2.2</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-exponential-and-logarithmic-functions.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Derivatives of exponential and logarithmic functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-exponential-and-logarithmic-functions.html#quick-practice-exp-deriv" class="internal"><span class="codenumber">2.3</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-compositions-chain-rule.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Derivatives of compositions: chain rule</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-compositions-chain-rule.html#quick-practice-chain" class="internal"><span class="codenumber">2.4</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-products-and-quotients.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Derivatives of products and quotients</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-products-and-quotients.html#quick-practice-product" class="internal"><span class="codenumber">2.5</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="second-derivatives-and-applications.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Second derivatives and applications</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="second-derivatives-and-applications.html#quick-practice-concavity" class="internal"><span class="codenumber">2.6</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-integration.html" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="introduction-to-differential-equations.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to differential equations</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-differential-equations.html#quick-practice-des" class="internal"><span class="codenumber">3.1</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="more-complicated-integrals-and-integration-by-substitution.html" class="internal"><span class="codenumber">3.2</span> <span class="title">More complicated integrals and integration by substitution</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="more-complicated-integrals-and-integration-by-substitution.html#quick-practice-usub" class="internal"><span class="codenumber">3.2</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="the-definite-integral.html" class="internal"><span class="codenumber">3.3</span> <span class="title">The definite integral</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="the-definite-integral.html#quick-practice-def-int" class="internal"><span class="codenumber">3.3</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="applications-of-the-definite-integral.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Applications of the definite integral</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="applications-of-the-definite-integral.html#quick-practice-def-apps" class="internal"><span class="codenumber">3.4</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="applications-to-chemistry.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Applications to chemistry</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="applications-to-chemistry.html#quick-practice-chemistry" class="internal"><span class="codenumber">3.5</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-advanced.html" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Applications: nonlinear discrete-time dynamical systems (DTDS)</span></a></div></li>
+<li><div class="toc-item"><a href="applications-autonomous-differential-equations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Applications: autonomous differential equations</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="linear-functions-and-their-graphs"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Linear functions and their graphs</span>
+</h2>
+<section class="paragraphs" id="the-plan-3"><h3 class="heading"><span class="title">The Plan.</span></h3> <div class="para" id="p-129">Linear functions are the basis for most relationships that we can think about.</div></section><article class="definition definition-like" id="def-linear-function"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">linear function.</span>
+</h3> <div class="para logical" id="p-130">
+<div class="para">A relationship <span class="process-math">\(f(x)\)</span> defined by</div>
+<ol class="decimal">
+<li id="li-47"><div class="para" id="p-131">
+<span class="process-math">\(y=f(x)=mx+b\text{,}\)</span> with constants <span class="process-math">\(m\)</span> and <span class="process-math">\(b\text{,}\)</span> or</div></li>
+<li id="li-48"><div class="para" id="p-132">
+<span class="process-math">\(y=f(x)= y_{0} + m(x-x_{0})\text{,}\)</span> with constant <span class="process-math">\(m\)</span> and a point <span class="process-math">\((x_{0}, y_{0})\)</span>
+</div></li>
+</ol>
+<div class="para">is called a <dfn class="terminology">linear function</dfn> between the <em class="emphasis">variables</em> <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span> If the formula involves only adding and subtracting constants with variables multiplied by constants, the equation describes a linear function.</div>
+</div></article><div class="para" id="p-133">The slope of a linear function passing through two points <span class="process-math">\((x_{0}, y_{0})\)</span> and <span class="process-math">\((x_{1}, y_{1})\)</span> is defined as the ratio of the change in output over the change in input (“rise over run”),</div>
+<section class="paragraphs" id="notation"><h3 class="heading"><span class="title">Notation.</span></h3> <div class="para" id="p-134">In general, in biological applications we rarely have inputs/outputs called <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> – for example we have mass and volume. These labels, while different from what we are used to are meant to make problems more meaningful!</div></section><article class="example example-like" id="ex-temperature"><a href="" data-knowl="" class="id-ref example-knowl original has-image has-tabular" data-refid="hk-ex-temperature"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.2</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-temperature"><article class="example example-like"><div class="para" id="p-135">Here we will derive a common (and commonly mis-remembered) temperature formula.</div> <div class="para logical" id="p-136"><ul class="disc">
+<li id="li-49"><div class="para" id="p-137">
+<dfn class="terminology">Recall:</dfn> What is the formula for computing the temperature in <span class="process-math">\({}^\circ\)</span>F if you know temperature in <span class="process-math">\({}^\circ\)</span>C?</div></li>
+<li id="li-50">
+<div class="para" id="p-138">
+<dfn class="terminology">Data:</dfn> Consider the following data:</div>
+<figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.4.3<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\({}^\circ\)</span>C</th>
+<th scope="col" class="c m b0 r0 l0 t0 lines">
+<span class="process-math">\({}^\circ\)</span>F</th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">0</td>
+<td class="c m b0 r0 l0 t0 lines">32</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">20</td>
+<td class="c m b0 r0 l0 t0 lines">68</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">37</td>
+<td class="c m b0 r0 l0 t0 lines">98.6</td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines">100</td>
+<td class="c m b0 r0 l0 t0 lines">212</td>
+</tr>
+</table></div></figure>
+</li>
+<li id="li-51"><div class="para" id="p-139">
+<dfn class="terminology">Graph it:</dfn>  Plot the points to determine whether a linear function holds.</div></li>
+<li id="li-52"><div class="para" id="p-140">
+<dfn class="terminology">Slope:</dfn>  Identify a pair of points and compute the slope.</div></li>
+<li id="li-53"><div class="para" id="p-141">
+<dfn class="terminology">Linear functions:</dfn> Now write <span class="process-math">\(F(C)\text{,}\)</span> first in point-slope form, then simplify to slope-intercept form.</div></li>
+</ul></div> <figure class="figure figure-like" id="figure-pgfplots-demo"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+          A pgfplots example, with a function, a parametric curve, and some points plotted.
+
+        </div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.4<span class="period">.</span></span><span class="space"> </span>Sample pgfplots plot</figcaption></figure></article></div>
+<div class="para logical" id="p-142">
+<div class="para">Notice that the definition</div>
+<div class="displaymath process-math">
+\begin{equation*}
+m=\frac{y_{1}-y_{0}}{x_{1}-x_{0}}
+\end{equation*}
+</div>
+<div class="para">gives us all we need to derive both point-slope form and slope-intercept form. Let our point be <span class="process-math">\((x_{0},
+y_{0})\)</span> and instead of <span class="process-math">\((x_{1}, y_{1})\text{,}\)</span> choose <span class="process-math">\((x, y)\)</span> to be any other point on the line.</div>
+</div>
+<div class="para logical" id="p-143"><div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}[t]
+m&amp;=\frac{y-y_{0}}{x-x_{0}}&amp;&amp;(\text{definition})\\
+m(x-x_{0})&amp;= y-y_{0}&amp;&amp;(\text{multiply by denom.})\\
+y_{0} + m(x-x_{0})&amp;= y&amp;&amp;(\text{add $y_{0}$-coordinate})\\
+y&amp;=y_{0} + m(x-x_{0})&amp;&amp;(\text{flip}~\text{equation})\\\end{aligned}
+\end{equation*}
+</div></div>
+<div class="para" id="p-144">Once again rewrite this as slope-intercept form.</div>
+<section class="paragraphs" id="how-are-point-slope-and-slope-intercept-forms-related"><h3 class="heading"><span class="title">How are point-slope and slope-intercept forms related?</span></h3></section><article class="example example-like" id="ex-identifying-linear"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-identifying-linear"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.5</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-identifying-linear"><article class="example example-like"><div class="para logical" id="p-145">
+<div class="para">Which of the following are linear functions?</div>
+<ul class="disc">
+<li id="li-54"><div class="para" id="p-146"><span class="process-math">\(\displaystyle \displaystyle C(F) =
+\frac{5}{9}\left(F-32\right)\)</span></div></li>
+<li id="li-55"><div class="para" id="p-147"><span class="process-math">\(\displaystyle \displaystyle s(t) = -4.9t^{2}-5.0t+100\)</span></div></li>
+<li id="li-56"><div class="para" id="p-148"><span class="process-math">\(\displaystyle \displaystyle M(V) = 0.8V\)</span></div></li>
+</ul>
+</div></article></div>
+<section class="paragraphs" id="interpolation"><h3 class="heading"><span class="title">Interpolation.</span></h3> <div class="para" id="p-149">Frequently we use linear functions to interpolate or predict values occurring between two known values. This technique is called linear interpolation, and is illustrated in the following example.</div></section><article class="example example-like" id="ex-hiv-aids"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-hiv-aids"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.6</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-hiv-aids"><article class="example example-like"><div class="para logical" id="p-150">
+<div class="para">Here we look at the onset of AIDS symptoms in the years after initial HIV infection. Four years after infection 17% had symptoms, and seven years after infection 33% had symptoms.</div>
+<ol class="decimal">
+<li id="li-57"><div class="para" id="p-151">Write the formula for a linear function that relates the percent of patients with AIDS symptoms to time (years measured since infection).</div></li>
+<li id="li-58"><div class="para" id="p-152">Define and interpret the slope and intercept (units included).</div></li>
+<li id="li-59"><div class="para" id="p-153">How many patients (what percent) have symptoms after five and a half years?</div></li>
+<li id="li-60"><div class="para" id="p-154">Using this model, at what time would you predict that half of all exposed patients have AIDS symptoms? What must you do to answer this question?</div></li>
+</ol>
+</div></article></div>
+<section class="paragraphs" id="important-facts-about-linear-functions"><h3 class="heading"><span class="title">Important facts about linear functions.</span></h3> <div class="para" id="p-155">The following work should help us reason through linear functions (and eventually many more).</div> <div class="para logical" id="p-156"><ul class="disc">
+<li id="li-61"><div class="para" id="p-157">Example</div></li>
+<li id="li-62"><div class="para" id="p-158">Behavior</div></li>
+<li id="li-63"><div class="para" id="p-159">Slope</div></li>
+</ul></div> <article class="definition definition-like" id="def-prop-rel"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="p-160">
+<div class="para">A <dfn class="terminology">proportional relation</dfn> is a linear relation in which the output is proportional to input. In general</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y = f(x) = ax,
+\text{where $a$ constant.}
+\end{equation*}
+</div>
+</div></article> <div class="para" id="p-161">A fundamental relation <span class="process-math">\(M=\rho V\text{,}\)</span> links mass measured in <span class="process-math">\(g\)</span> and volume measured in <span class="process-math">\(cm^{3}\text{.}\)</span>
+</div> <div class="para logical" id="p-162"><ul class="disc">
+<li id="li-64"><div class="para" id="p-163">Is this fundamental relation a proportional relation?</div></li>
+<li id="li-65"><div class="para" id="p-164">What are the units on each term?</div></li>
+<li id="li-66"><div class="para" id="p-165">What is the mass of an object with volume <span class="process-math">\(V=0\,cm^{3}\text{?}\)</span>
+</div></li>
+</ul></div> <div class="para" id="p-166">Is the formula for temperature conversion a proportional relation?</div></section><section class="paragraphs" id="what-is-constant"><h3 class="heading"><span class="title">What is constant?</span></h3> <div class="para logical" id="p-167"><ul class="disc">
+<li id="li-67"><div class="para logical" id="p-168">
+<div class="para">the ratio of output over inputproportional relation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\text{output}}{\text{input}} =
+\text{constant}
+\end{equation*}
+</div>
+</div></li>
+<li id="li-68"><div class="para logical" id="p-169">
+<div class="para">the ratio of change in output over change in inputlinear function:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dfrac{\text{change}~\text{in}~\text{output}}{\text{change}~\text{in}~\text{input}} = \text{constant},
+\end{equation*}
+</div>
+<div class="para">(i.e., slope is constant)</div>
+</div></li>
+</ul></div></section><section class="exercises" id="quick-practice-linear"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Quick practice</span>
+</h3>
+<article class="exercise exercise-like" id="quick-linear-area"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para" id="p-170">In Question <a href="" class="xref" data-knowl="./knowl/quick-units-area.html" title="Exercise 1.3.1">Exercise 1.3.1</a> of the previous section, we talked about the relationship between area and radius. Is that relationship linear? Why or why not?</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like">In Question <a href="" class="xref" data-knowl="./knowl/quick-units-area.html" title="Exercise 1.3.1">Exercise 1.3.1</a> of the previous section, we talked about the relationship between area and radius, <span class="process-math">\(A
+= \pi r^{2}\text{.}\)</span> This <em class="emphasis">is not</em> linear, since we must <em class="emphasis">square</em> the radius to get the area.</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-8"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para" id="p-171">In Question <a href="" class="xref" data-knowl="./knowl/quick-linear-area.html" title="Exercise 1.4.1">Exercise 1.4.1</a> of the previous section, we talked about the relationship between radius and diameter. Is that relationship linear? Why or why not?</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like">In Question <a href="" class="xref" data-knowl="./knowl/quick-units-area.html" title="Exercise 1.3.1">Exercise 1.3.1</a> of the previous section, we talked about the relationship between radius and diameter. This <em class="emphasis">is</em> linear since <span class="process-math">\(r = \dfrac{d}{2}\text{,}\)</span> in fact this is proportional since the radius is a constant multiple <span class="process-math">\(\left(\dfrac{1}{2}\right)\)</span> of the diameter. This is a good reminder that dividing by two is the same as multiplying by one half.</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-9"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="p-172">
+<div class="para">(This one might not be so quick practice.) In chemistry we use the Lineweaver-Burk or ‘double-reciprocal’ plot to determine properties of a chemical reaction. We graph a surprisingly complicated looking, but still linear, relationship</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dfrac{1}{V} =
+\dfrac{K_m}{V_{max}}\dfrac{1}{[S]} + \dfrac{1}{V_{max}}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(V\)</span> is the reaction rate or ‘velocity’, <span class="process-math">\([S]\)</span> is the substrate concentration, and <span class="process-math">\(V_{max}\)</span> and <span class="process-math">\(K_m\)</span> are <em class="emphasis">parameters</em> in the relationship between our original variables <span class="process-math">\(V\)</span> and <span class="process-math">\([S]\text{.}\)</span> Solve for <span class="process-math">\(V\)</span> (not the reciprocal of <span class="process-math">\(V\)</span>) as a function of <span class="process-math">\([S]\text{.}\)</span>
+</div>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like">In solving for <span class="process-math">\(V\)</span> (steps not shown), we should eventually come upon the formula <span class="process-math">\(V=\dfrac{V_{max}[S]}{K_m+[S]}\text{.}\)</span> This an example of a type of function we will study in more detail later this semester.</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-10"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para" id="p-173">Roughly speaking, the phrase ‘is proportional to’ means what?</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like">Roughly speaking, the phrase ‘is proportional to’ means ‘is a multiple of’.</div></div>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="dimensions-and-units-1.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="exponentials-and-logarithms.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+</body>
+</html>
