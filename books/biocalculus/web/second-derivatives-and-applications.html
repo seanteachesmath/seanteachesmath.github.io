@@ -14,320 +14,163 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Bio-Calculus">
 <meta property="book:author" content="Sean Laverty">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-window.MathJax = {
+<script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
     tagSide: "right",
     tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
   },
   chtml: {
-    scale: 0.98,
+    scale: 0.88,
     mtextInheritFont: true
   },
   loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
-  startup: {
+startup: {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
-      rsMathReady();
+      $(document).trigger("runestone:mathjax-ready");
       }
     )}
-  },
+},
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
-<p class="byline">Sean Laverty</p>
-</div>
-<div id="searchresultsplaceholder" style="display: none">
-<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
-</h2>
-<div id="searchempty"><span>No results.</span></div>
-<ol id="searchresults"></ol>
-</div>
-</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
-<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden avatar">
-<li data-val="You!" tabindex="-1">
-<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
-<li data-val="😺" tabindex="-1">
-<span id="the😺" class="avatarcheck"></span>😺</li>
-<li data-val="👤" tabindex="-1">
-<span id="the👤" class="avatarcheck"></span>👤</li>
-<li data-val="👽" tabindex="-1">
-<span id="the👽" class="avatarcheck"></span>👽</li>
-<li data-val="🐶" tabindex="-1">
-<span id="the🐶" class="avatarcheck"></span>🐶</li>
-<li data-val="🐼" tabindex="-1">
-<span id="the🐼" class="avatarcheck"></span>🐼</li>
-<li data-val="🌈" tabindex="-1">
-<span id="the🌈" class="avatarcheck"></span>🌈</li>
-</ol>
-</li>
-<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fontfamily">
-<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
-<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
-<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-</ol>
-</li>
-<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fonts">
-<li>Size</li>
-<li><span id="thesize">12</span></li>
-<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
-<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
-<li>Width</li>
-<li><span id="thewdth">100</span></li>
-<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
-<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
-<li>Weight</li>
-<li><span id="thewght">400</span></li>
-<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
-<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
-<li>Letter spacing</li>
-<li>
-<span id="thelspace">0</span><span class="byunits">/200</span>
-</li>
-<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
-<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
-<li>Word spacing</li>
-<li>
-<span id="thewspace">0</span><span class="byunits">/50</span>
-</li>
-<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
-<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
-<li>Line Spacing</li>
-<li>
-<span id="theheight">135</span><span class="byunits">/100</span>
-</li>
-<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
-<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
-</ol>
-</li>
-<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden atmosphere">
-<li data-val="default" tabindex="-1">
-<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
-<li data-val="pastel" tabindex="-1">
-<span id="thepastel" class="atmospherecheck"></span>pastel</li>
-<li data-val="darktwilight" tabindex="-1">
-<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
-<li data-val="dark" tabindex="-1">
-<span id="thedark" class="atmospherecheck"></span>dark</li>
-<li data-val="darkmidnight" tabindex="-1">
-<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
-</ol>
-</li>
-<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden ruler">
-<li data-val="none" tabindex="-1">
-<span id="thenone" class="rulercheck">✔️</span>none</li>
-<li data-val="underline" tabindex="-1">
-<span id="theunderline" class="rulercheck"></span>underline</li>
-<li data-val="lunderline" tabindex="-1">
-<span id="thelunderline" class="rulercheck"></span>L-underline</li>
-<li data-val="greybar" tabindex="-1">
-<span id="thegreybar" class="rulercheck"></span>grey bar</li>
-<li data-val="lightbox" tabindex="-1">
-<span id="thelightbox" class="rulercheck"></span>light box</li>
-<li data-val="sunrise" tabindex="-1">
-<span id="thesunrise" class="rulercheck"></span>sunrise</li>
-<li data-val="sunriseunderline" tabindex="-1">
-<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
-<li class="moveQ">Motion by:</li>
-<li data-val="mouse" tabindex="-1">
-<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
-<li data-val="arrow" tabindex="-1">
-<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
-<li data-val="eye" tabindex="-1">
-<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
-</ol>
-</li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="derivatives-of-products-and-quotients.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-derivatives.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="ch-integration.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
-<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
 \definecolor{fillinmathshade}{gray}{0.9}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
-<div class="ptx-page">
-<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
-<li>
-<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="users-guide.html" class="internal"><span class="title">Users guide</span></a></div></li></ul>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
+<p class="byline">Sean Laverty</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="derivatives-of-products-and-quotients.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-derivatives.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ch-integration.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="derivatives-of-products-and-quotients.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-derivatives.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ch-integration.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide" class="internal">Users guide</a></li></ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="what-is-bio-calculus.html" class="internal"><span class="codenumber">1.1</span> <span class="title">What is bio-calculus?</span></a></div></li>
-<li>
-<div class="toc-item"><a href="introduction-modeling-terminology.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="introduction-modeling-terminology.html#quick-jargon" class="internal"><span class="codenumber">1.2</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="dimensions-and-units-1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Dimensions and units</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="dimensions-and-units-1.html#quick-practice-units" class="internal"><span class="codenumber">1.3</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="linear-functions-and-their-graphs.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Linear functions and their graphs</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="linear-functions-and-their-graphs.html#quick-practice-linear" class="internal"><span class="codenumber">1.4</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="exponentials-and-logarithms.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Exponentials and logarithms</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="exponentials-and-logarithms.html#quick-practice-exp" class="internal"><span class="codenumber">1.5</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Introduction to discrete-time dynamical systems (DTDS)</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="introduction-to-discrete-time-dynamical-systems-dtds.html#quick-practice-dtds" class="internal"><span class="codenumber">1.6</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="introduction-to-limits.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Introduction to limits</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="introduction-to-limits.html#quick-practice-finite-limits" class="internal"><span class="codenumber">1.7</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="continuous-functions.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Continuous functions</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="continuous-functions.html#quick-practice-continuity" class="internal"><span class="codenumber">1.8</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="limits-and-behaviors-at-infinity.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Limits and behaviors at infinity</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="limits-and-behaviors-at-infinity.html#quick-practice-inf-limits" class="internal"><span class="codenumber">1.9.1</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
+<li class="link">
+<a href="ch-intro.html" data-scroll="ch-intro" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus" class="internal">What is bio-calculus?</a></li>
+<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology" class="internal">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
+<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1" class="internal">Dimensions and units</a></li>
+<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs" class="internal">Linear functions and their graphs</a></li>
+<li><a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms" class="internal">Exponentials and logarithms</a></li>
+<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds" class="internal">Introduction to discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits" class="internal">Introduction to limits</a></li>
+<li><a href="continuous-functions.html" data-scroll="continuous-functions" class="internal">Continuous functions</a></li>
+<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity" class="internal">Limits and behaviors at infinity</a></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-derivatives.html" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="introduction-to-derivatives-rates-of-change.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction to derivatives: Rates of change</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="introduction-to-derivatives-rates-of-change.html#quick-practice-rates" class="internal"><span class="codenumber">2.1</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="derivatives-of-basic-functions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Derivatives of basic functions</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-basic-functions.html#quick-practice-derivatives" class="internal"><span class="codenumber">2.2</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="derivatives-of-exponential-and-logarithmic-functions.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Derivatives of exponential and logarithmic functions</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-exponential-and-logarithmic-functions.html#quick-practice-exp-deriv" class="internal"><span class="codenumber">2.3</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="derivatives-of-compositions-chain-rule.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Derivatives of compositions: chain rule</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-compositions-chain-rule.html#quick-practice-chain" class="internal"><span class="codenumber">2.4</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="derivatives-of-products-and-quotients.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Derivatives of products and quotients</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-products-and-quotients.html#quick-practice-product" class="internal"><span class="codenumber">2.5</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li class="active">
-<div class="toc-item"><a href="second-derivatives-and-applications.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Second derivatives and applications</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="second-derivatives-and-applications.html#quick-practice-concavity" class="internal"><span class="codenumber">2.6</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
+<li class="link">
+<a href="ch-derivatives.html" data-scroll="ch-derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
+<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change" class="internal">Introduction to derivatives: Rates of change</a></li>
+<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions" class="internal">Derivatives of basic functions</a></li>
+<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions" class="internal">Derivatives of exponential and logarithmic functions</a></li>
+<li><a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule" class="internal">Derivatives of compositions: chain rule</a></li>
+<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients" class="internal">Derivatives of products and quotients</a></li>
+<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications" class="active">Second derivatives and applications</a></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-integration.html" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="introduction-to-differential-equations.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to differential equations</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="introduction-to-differential-equations.html#quick-practice-des" class="internal"><span class="codenumber">3.1</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="more-complicated-integrals-and-integration-by-substitution.html" class="internal"><span class="codenumber">3.2</span> <span class="title">More complicated integrals and integration by substitution</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="more-complicated-integrals-and-integration-by-substitution.html#quick-practice-usub" class="internal"><span class="codenumber">3.2</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="the-definite-integral.html" class="internal"><span class="codenumber">3.3</span> <span class="title">The definite integral</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="the-definite-integral.html#quick-practice-def-int" class="internal"><span class="codenumber">3.3</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="applications-of-the-definite-integral.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Applications of the definite integral</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="applications-of-the-definite-integral.html#quick-practice-def-apps" class="internal"><span class="codenumber">3.4</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="applications-to-chemistry.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Applications to chemistry</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="applications-to-chemistry.html#quick-practice-chemistry" class="internal"><span class="codenumber">3.5</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
+<li class="link">
+<a href="ch-integration.html" data-scroll="ch-integration" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
+<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations" class="internal">Introduction to differential equations</a></li>
+<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution" class="internal">More complicated integrals and integration by substitution</a></li>
+<li><a href="the-definite-integral.html" data-scroll="the-definite-integral" class="internal">The definite integral</a></li>
+<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral" class="internal">Applications of the definite integral</a></li>
+<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry" class="internal">Applications to chemistry</a></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-advanced.html" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Applications: nonlinear discrete-time dynamical systems (DTDS)</span></a></div></li>
-<li><div class="toc-item"><a href="applications-autonomous-differential-equations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Applications: autonomous differential equations</span></a></div></li>
+<li class="link">
+<a href="ch-advanced.html" data-scroll="ch-advanced" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a><ul>
+<li><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds" class="internal">Applications: nonlinear discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations" class="internal">Applications: autonomous differential equations</a></li>
 </ul>
 </li>
-</ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content">
 <section class="section" id="second-derivatives-and-applications"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.6</span> <span class="title">Second derivatives and applications</span>
 </h2>
-<section class="paragraphs" id="the-plan-13"><h3 class="heading"><span class="title">The Plan.</span></h3> <div class="para" id="p-553">Given our work on the mechanics of computing derivatives, we will focus on the interpretation and application of derivatives.</div> <section class="paragraphs" id="first-second-derivatives"><h4 class="heading"><span class="title">Derivatives.</span></h4> <div class="para" id="p-554">When discussing functions and derivatives, <em class="emphasis">the derivative</em> of a function refers to its first derivative. Since derivatives of functions are functions too, we can take ‘higher derivatives’ using our current methods. Perhaps the most common higher derivative is the second derivative.</div> <section class="paragraphs" id="interpretation"><h5 class="heading"><span class="title">Interpretation.</span></h5> <div class="para" id="p-555">As we have seen (and will see), the</div> <div class="para logical" id="p-556"><ul class="disc">
-<li id="li-164"><div class="para" id="p-557">describes the</div></li>
-<li id="li-165"><div class="para" id="p-558">describes the</div></li>
-</ul></div> <div class="para" id="p-559">Compute <span class="process-math">\(\displaystyle f''(x) =
-\frac{d^{2}f}{dx^{2}}\)</span> for the following functions</div> <div class="para logical" id="p-560"><ul class="disc">
-<li id="li-166"><div class="para" id="p-561"><span class="process-math">\(\displaystyle f(x)=3x+4\)</span></div></li>
-<li id="li-167"><div class="para" id="p-562"><span class="process-math">\(\displaystyle f(x)=x^{2}\)</span></div></li>
-<li id="li-168"><div class="para" id="p-563"><span class="process-math">\(\displaystyle f(x)=-x^{4}\)</span></div></li>
-</ul></div> <div class="para" id="p-564">Concavity describes the shape of a graph.</div> <div class="para logical" id="p-565"><ul class="disc">
-<li id="li-169">
-<div class="para" id="p-566">a graph of <span class="process-math">\(f(x)\)</span> is <dfn class="terminology">concave up</dfn> if it ‘bends upward,’</div>
-<div class="para logical" id="p-567"><ul class="circle">
-<li id="li-170"><div class="para" id="p-568">if its first derivative is increasing, or</div></li>
-<li id="li-171"><div class="para" id="p-569">if <span class="process-math">\(f''(x)&gt;0\)</span> (the second derivative is positive)</div></li>
-</ul></div>
+<section class="paragraphs" id="the-plan-13"><h3 class="heading"><span class="title">The Plan.</span></h3>
+<p id="p-589">Given our work on the mechanics of computing derivatives, we will focus on the interpretation and application of derivatives.</p>
+<section class="paragraphs" id="first-second-derivatives"><h4 class="heading"><span class="title">Derivatives.</span></h4>
+<p id="p-590">When discussing functions and derivatives, <em class="emphasis">the derivative</em> of a function refers to its first derivative. Since derivatives of functions are functions too, we can take ‘higher derivatives’ using our current methods. Perhaps the most common higher derivative is the second derivative.</p>
+<section class="paragraphs" id="interpretation"><h5 class="heading"><span class="title">Interpretation.</span></h5>
+<p id="p-591">As we have seen (and will see), the</p>
+<ul id="p-592" class="disc">
+<li id="li-187"><p id="p-593">describes the</p></li>
+<li id="li-188"><p id="p-594">describes the</p></li>
+</ul>
+<p id="p-595">Compute <span class="process-math">\(\displaystyle f''(x) =
+\frac{d^{2}f}{dx^{2}}\)</span> for the following functions</p>
+<ul id="p-596" class="disc">
+<li id="li-189"><p id="p-597"><span class="process-math">\(\displaystyle f(x)=3x+4\)</span></p></li>
+<li id="li-190"><p id="p-598"><span class="process-math">\(\displaystyle f(x)=x^{2}\)</span></p></li>
+<li id="li-191"><p id="p-599"><span class="process-math">\(\displaystyle f(x)=-x^{4}\)</span></p></li>
+</ul>
+<p id="p-600">Concavity describes the shape of a graph.</p>
+<ul id="p-601" class="disc">
+<li id="li-192">
+<p id="p-602">a graph of <span class="process-math">\(f(x)\)</span> is <dfn class="terminology">concave up</dfn> if it ‘bends upward,’</p>
+<ul id="p-603" class="circle">
+<li id="li-193"><p id="p-604">if its first derivative is increasing, or</p></li>
+<li id="li-194"><p id="p-605">if <span class="process-math">\(f''(x)&gt;0\)</span> (the second derivative is positive)</p></li>
+</ul>
 </li>
-<li id="li-172">
-<div class="para" id="p-570">a graph of <span class="process-math">\(f(x)\)</span> is <dfn class="terminology">concave down</dfn> if it ‘bends downward,’</div>
-<div class="para logical" id="p-571"><ul class="circle">
-<li id="li-173"><div class="para" id="p-572">if its first derivative is decreasing, or</div></li>
-<li id="li-174"><div class="para" id="p-573">if <span class="process-math">\(f''(x)&lt;0\)</span> (the second derivative is negative)</div></li>
-</ul></div>
+<li id="li-195">
+<p id="p-606">a graph of <span class="process-math">\(f(x)\)</span> is <dfn class="terminology">concave down</dfn> if it ‘bends downward,’</p>
+<ul id="p-607" class="circle">
+<li id="li-196"><p id="p-608">if its first derivative is decreasing, or</p></li>
+<li id="li-197"><p id="p-609">if <span class="process-math">\(f''(x)&lt;0\)</span> (the second derivative is negative)</p></li>
+</ul>
 </li>
-</ul></div></section> <section class="paragraphs" id="a-hint-about-quadratics"><h5 class="heading"><span class="title">A hint about quadratics.</span></h5> <div class="para" id="p-574">Consider the quadratic function <span class="process-math">\(p(x) = ax^{2} +
-bx + c\text{.}\)</span>
-</div></section> <section class="paragraphs" id="a-help-when-sketching"><h5 class="heading"><span class="title">A help when sketching.</span></h5> <div class="para" id="p-575">The second derivative helps us add more detail to the sketch of a function.</div> <div class="para" id="p-576">
-<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/graph.png" class="contained"></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/graph.png" class="contained"></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/graph.png" class="contained"></div>
-</div> <div class="para logical" id="p-577"><ul class="disc">
-<li id="li-175"><div class="para" id="p-578">function</div></li>
-<li id="li-176"><div class="para" id="p-579">derivative</div></li>
-<li id="li-177"><div class="para" id="p-580">second derivative</div></li>
-</ul></div></section> <section class="paragraphs" id="a-famous-example-from-physics"><h5 class="heading"><span class="title">A famous example from physics.</span></h5> <div class="para" id="p-581">We often use rates of change to describe movement of an object.</div> <figure class="table table-like" id="table-10"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.6.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+</ul></section><section class="paragraphs" id="a-hint-about-quadratics"><h5 class="heading"><span class="title">A hint about quadratics.</span></h5>
+<p id="p-610">Consider the quadratic function <span class="process-math">\(p(x) = ax^{2} +
+bx + c\text{.}\)</span></p></section><section class="paragraphs" id="a-help-when-sketching"><h5 class="heading"><span class="title">A help when sketching.</span></h5>
+<p id="p-611">The second derivative helps us add more detail to the sketch of a function.</p>
+<p id="p-612"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/topics/figures/graph.png" class="contained"></div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/topics/figures/graph.png" class="contained"></div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/topics/figures/graph.png" class="contained"></div></p>
+<ul id="p-613" class="disc">
+<li id="li-198"><p id="p-614">function</p></li>
+<li id="li-199"><p id="p-615">derivative</p></li>
+<li id="li-200"><p id="p-616">second derivative</p></li>
+</ul></section><section class="paragraphs" id="a-famous-example-from-physics"><h5 class="heading"><span class="title">A famous example from physics.</span></h5>
+<p id="p-617">We often use rates of change to describe movement of an object.</p>
+<figure class="table table-like" id="table-10"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.6.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="l m b0 r0 l0 t0 lines">Name</th>
 <th scope="col" class="l m b0 r0 l0 t0 lines">Interpretation</th>
@@ -356,26 +199,32 @@ object}\Big)\)</span></td>
 \frac{d}{dt}\Big(\text{position of an object}\Big)\Big)\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></figure> <div class="para logical" id="p-582">
-<div class="para">Consider a seed in a flower in a very tall tree. The seed pops straight into the air with an initial velocity of 9.8 meters per second from an initial height of 14.7 meters. The position (height in meters from ground level) is described by</div>
-<div class="displaymath process-math">
+</table></div></figure><p id="p-618">Consider a seed in a flower in a very tall tree. The seed pops straight into the air with an initial velocity of 9.8 meters per second from an initial height of 14.7 meters. The position (height in meters from ground level) is described by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 s(t) =
 -4.9t^{2}+9.8t+14.7,
 \end{equation*}
 </div>
-<div class="para">find the velocity of the seed and its acceleration.</div>
-</div> <div class="para" id="p-583">Continuing based on our work above,</div> <div class="para logical" id="p-584"><ol class="decimal">
-<li id="li-178"><div class="para" id="p-585">At what time does the seed reach its greatest height?</div></li>
-<li id="li-179"><div class="para" id="p-586">What is the greatest height?</div></li>
-<li id="li-180"><div class="para" id="p-587">How long until the seed lands?</div></li>
-</ol></div></section> <section class="paragraphs" id="critical-points-and-second-derivatives"><h5 class="heading"><span class="title">Critical points and second derivatives.</span></h5> <div class="para" id="p-588">For a function <span class="process-math">\(f(x)\text{,}\)</span> a critical point is an <span class="process-math">\(x\)</span>-value at which the derivative is zero or not defined. Here we focus on the kind of critical point where <span class="process-math">\(f'(x)=0\text{.}\)</span>At such a point the function <em class="emphasis">commonly</em> experiences a change in behavior.</div> <figure class="figure figure-like" id="figure-38"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/graph.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.2<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure> <figure class="figure figure-like" id="figure-39"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/graph.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.3<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure></section> <section class="paragraphs" id="derivatives-and-important-points"><h5 class="heading"><span class="title">Derivatives and important points.</span></h5> <div class="para" id="p-589">Derivatives encode important information about functions.</div> <div class="para logical" id="p-590"><ul class="disc">
-<li id="li-181"><div class="para" id="p-591">critical points (where <span class="process-math">\(f'(x)=0\)</span>) often indicate where a function changes behavior</div></li>
-<li id="li-182"><div class="para" id="p-592">inflection points (possible where <span class="process-math">\(f''(x)=0\)</span>) indicate where a function changes shape (concavity)</div></li>
-</ul></div></section> <section class="paragraphs" id="facts-about-derivatives"><h5 class="heading"><span class="title">Facts about derivatives.</span></h5> <div class="para" id="p-593">
-<em class="emphasis">Recall</em> the following facts about first and second derivatives.</div> <div class="para" id="p-594">Derivatives describe .</div> <figure class="table table-like" id="table-11"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.6.4<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<p class="continuation">find the velocity of the seed and its acceleration.</p>
+<p id="p-619">Continuing based on our work above,</p>
+<ol id="p-620" class="decimal">
+<li id="li-201"><p id="p-621">At what time does the seed reach its greatest height?</p></li>
+<li id="li-202"><p id="p-622">What is the greatest height?</p></li>
+<li id="li-203"><p id="p-623">How long until the seed lands?</p></li>
+</ol></section><section class="paragraphs" id="critical-points-and-second-derivatives"><h5 class="heading"><span class="title">Critical points and second derivatives.</span></h5>
+<p id="p-624">For a function <span class="process-math">\(f(x)\text{,}\)</span> a critical point is an <span class="process-math">\(x\)</span>-value at which the derivative is zero or not defined. Here we focus on the kind of critical point where <span class="process-math">\(f'(x)=0\text{.}\)</span>At such a point the function <em class="emphasis">commonly</em> experiences a change in behavior.</p>
+<figure class="figure figure-like" id="figure-38"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/graph.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.2<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><figure class="figure figure-like" id="figure-39"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/graph.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.3<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure></section><section class="paragraphs" id="derivatives-and-important-points"><h5 class="heading"><span class="title">Derivatives and important points.</span></h5>
+<p id="p-625">Derivatives encode important information about functions.</p>
+<ul id="p-626" class="disc">
+<li id="li-204"><p id="p-627">critical points (where <span class="process-math">\(f'(x)=0\)</span>) often indicate where a function changes behavior</p></li>
+<li id="li-205"><p id="p-628">inflection points (possible where <span class="process-math">\(f''(x)=0\)</span>) indicate where a function changes shape (concavity)</p></li>
+</ul></section><section class="paragraphs" id="facts-about-derivatives"><h5 class="heading"><span class="title">Facts about derivatives.</span></h5>
+<p id="p-629"><em class="emphasis">Recall</em> the following facts about first and second derivatives.</p>
+<p id="p-630">Derivatives describe .</p>
+<figure class="table table-like" id="table-11"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.6.4<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="l m b0 r0 l0 t0 lines">First derivative</th>
 <th scope="col" class="c m b0 r0 l0 t0 lines">Function</th>
@@ -388,7 +237,8 @@ s(t) =
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="c m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></figure> <div class="para" id="p-595">Second derivatives describe .</div> <figure class="table table-like" id="table-12"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.6.5<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+</table></div></figure><p id="p-631">Second derivatives describe .</p>
+<figure class="table table-like" id="table-12"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.6.5<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="l m b0 r0 l0 t0 lines">Second derivative</th>
 <th scope="col" class="c m b0 r0 l0 t0 lines">Function</th>
@@ -401,57 +251,58 @@ s(t) =
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="c m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></figure> <div class="para" id="p-596">A graph of <span class="process-math">\(f(x)\)</span> can have local optima<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-6" id="fn-6"><sup> 1 </sup></a> at a critical point <span class="process-math">\(x=c\)</span> if <span class="process-math">\(f'(c)=0\)</span> or <span class="process-math">\(f'(c)\)</span> is undefined. If the function has an optimum value, it is</div> <div class="para logical" id="p-598"><ul class="disc">
-<li id="li-183"><div class="para" id="p-599">a <dfn class="terminology">local maximum</dfn> if the derivative <em class="emphasis">switches</em>from</div></li>
-<li id="li-184"><div class="para" id="p-600">a <dfn class="terminology">local minimum</dfn> if the derivative <em class="emphasis">switches</em>from</div></li>
-</ul></div> <div class="para" id="p-601"><em class="emphasis">There is no local optimum value if the derivative does not change sign.</em></div> <div class="para" id="p-602">The <em class="emphasis">Second Derivative Test</em> outlined below helps is find local optima at critical points <span class="process-math">\(x=c\text{:}\)</span>
-</div> <div class="para logical" id="p-603"><ul class="disc">
-<li id="li-185"><div class="para" id="p-604">If <span class="process-math">\(f''(c)&lt;0\text{,}\)</span> then a local maximum value of <span class="process-math">\(f(x)\)</span>occurs at <span class="process-math">\(x=c\)</span> and the function value is <span class="process-math">\(f(c)\)</span>
-</div></li>
-<li id="li-186"><div class="para" id="p-605">If <span class="process-math">\(f''(c)&gt;0\text{,}\)</span> then a local minimum value of <span class="process-math">\(f(x)\)</span>occurs at <span class="process-math">\(x=c\)</span> and the function value is <span class="process-math">\(f(c)\)</span>
-</div></li>
-<li id="li-187"><div class="para" id="p-606">If <span class="process-math">\(f''(c)=0\text{,}\)</span> then we have to look moreclosely at the sign of the first derivative</div></li>
-</ul></div> <div class="para" id="p-607"><em class="emphasis">We have to know the locations of the critical points (from the first derivative) in order to apply the SDT!</em></div> <div class="para" id="p-608">Consider the functions <span class="process-math">\(f(x) = x^{3}\)</span> and <span class="process-math">\(g(x) = x^{4}\text{,}\)</span> their first and second derivatives, and their graphs. Find local optima for each function.</div> <div class="para" id="p-609">Mathematical functions of the form <span class="process-math">\(f(x) =
-xe^{-x}\)</span> are important in statistics and modeling (fisheries models, for example). The graph is pictured below:</div> <figure class="figure figure-like" id="figure-40"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/ricker.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.6<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure> <div class="para" id="p-610">From the graph, describe the behavior and concavity.</div> <div class="para" id="p-611">Is there a ‘maximum’ value that the function takes on? If so, where does this happen?</div> <div class="para" id="p-612">Mathematical functions of the form <span class="process-math">\(f(n) =
-n(1-n)\)</span> are used to model the growth rate of populations that can be described by logistic growth. Here the growth rate of the population is a function of the current size of the population. Find the local maximum growth rate of the population. At which size does it grow the fastest?</div> <div class="para" id="p-613">Consider <span class="process-math">\(f(x) = 4x^{3}+6x^{2}\text{,}\)</span> find critical points and use the SDT to find local optima (maxima and/or minima). Using information about increasing, decreasing, concavity, and the locations of local extrema <em class="emphasis">sketch the graph</em>.</div> <div class="para" id="p-614">A global optimum value is guaranteed to exist for a function on an interval. The global maximum is the largest value that the function achieves, the global minimum is the smallest value that the function achieves.<em class="emphasis">Global extrema occur at critical points or endpoints of the interval.</em>
-</div> <div class="para" id="p-615">The steps are as follows:</div> <div class="para logical" id="p-616"><ol class="decimal">
-<li id="li-188"><div class="para" id="p-617">Evaluate function at endpoints.</div></li>
-<li id="li-189"><div class="para" id="p-618">Find all critical points.</div></li>
-<li id="li-190"><div class="para" id="p-619">Compute the function value at critical points.</div></li>
-<li id="li-191"><div class="para" id="p-620">Largest is the global maximum, smallest is the global minimum.</div></li>
-</ol></div> <div class="para" id="p-621">Find global optima of the function <span class="process-math">\(f(x)=4x^{3}\, +\, 6x^{2}\)</span> on the interval <span class="process-math">\(-1.5~\leq~x~\leq~1\text{.}\)</span>
-</div></section> <section class="paragraphs" id="biological-and-scientific-applications"><h5 class="heading"><span class="title">Biological and scientific applications.</span></h5> <div class="para" id="p-622">In general, we might want to optimize production of a chemical, yield or harvest of a plant or animal product, reproductive output, survival, growth rate. Statistics also relies heavily on the derivative and maximization to find ‘best’ values of a statistical parameter from data.</div></section></section></section><section class="exercises" id="quick-practice-concavity"><h3 class="heading hide-type">
+</table></div></figure><p id="p-632">A graph of <span class="process-math">\(f(x)\)</span> can have local optima<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-6" id="fn-6"><sup> 1 </sup></a> at a critical point <span class="process-math">\(x=c\)</span> if <span class="process-math">\(f'(c)=0\)</span> or <span class="process-math">\(f'(c)\)</span> is undefined. If the function has an optimum value, it is</p>
+<ul id="p-634" class="disc">
+<li id="li-206"><p id="p-635">a <dfn class="terminology">local maximum</dfn> if the derivative <em class="emphasis">switches</em>from</p></li>
+<li id="li-207"><p id="p-636">a <dfn class="terminology">local minimum</dfn> if the derivative <em class="emphasis">switches</em>from</p></li>
+</ul>
+<p id="p-637"><em class="emphasis">There is no local optimum value if the derivative does not change sign.</em></p>
+<p id="p-638">The <em class="emphasis">Second Derivative Test</em> outlined below helps is find local optima at critical points <span class="process-math">\(x=c\text{:}\)</span></p>
+<ul id="p-639" class="disc">
+<li id="li-208"><p id="p-640">If <span class="process-math">\(f''(c)&lt;0\text{,}\)</span> then a local maximum value of <span class="process-math">\(f(x)\)</span>occurs at <span class="process-math">\(x=c\)</span> and the function value is <span class="process-math">\(f(c)\)</span></p></li>
+<li id="li-209"><p id="p-641">If <span class="process-math">\(f''(c)&gt;0\text{,}\)</span> then a local minimum value of <span class="process-math">\(f(x)\)</span>occurs at <span class="process-math">\(x=c\)</span> and the function value is <span class="process-math">\(f(c)\)</span></p></li>
+<li id="li-210"><p id="p-642">If <span class="process-math">\(f''(c)=0\text{,}\)</span> then we have to look moreclosely at the sign of the first derivative</p></li>
+</ul>
+<p id="p-643"><em class="emphasis">We have to know the locations of the critical points (from the first derivative) in order to apply the SDT!</em></p>
+<p id="p-644">Consider the functions <span class="process-math">\(f(x) = x^{3}\)</span> and <span class="process-math">\(g(x) = x^{4}\text{,}\)</span> their first and second derivatives, and their graphs. Find local optima for each function.</p>
+<p id="p-645">Mathematical functions of the form <span class="process-math">\(f(x) =
+xe^{-x}\)</span> are important in statistics and modeling (fisheries models, for example). The graph is pictured below:</p>
+<figure class="figure figure-like" id="figure-40"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/ricker.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.6.6<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-646">From the graph, describe the behavior and concavity.</p>
+<p id="p-647">Is there a ‘maximum’ value that the function takes on? If so, where does this happen?</p>
+<p id="p-648">Mathematical functions of the form <span class="process-math">\(f(n) =
+n(1-n)\)</span> are used to model the growth rate of populations that can be described by logistic growth. Here the growth rate of the population is a function of the current size of the population. Find the local maximum growth rate of the population. At which size does it grow the fastest?</p>
+<p id="p-649">Consider <span class="process-math">\(f(x) = 4x^{3}+6x^{2}\text{,}\)</span> find critical points and use the SDT to find local optima (maxima and/or minima). Using information about increasing, decreasing, concavity, and the locations of local extrema <em class="emphasis">sketch the graph</em>.</p>
+<p id="p-650">A global optimum value is guaranteed to exist for a function on an interval. The global maximum is the largest value that the function achieves, the global minimum is the smallest value that the function achieves.<em class="emphasis">Global extrema occur at critical points or endpoints of the interval.</em></p>
+<p id="p-651">The steps are as follows:</p>
+<ol id="p-652" class="decimal">
+<li id="li-211"><p id="p-653">Evaluate function at endpoints.</p></li>
+<li id="li-212"><p id="p-654">Find all critical points.</p></li>
+<li id="li-213"><p id="p-655">Compute the function value at critical points.</p></li>
+<li id="li-214"><p id="p-656">Largest is the global maximum, smallest is the global minimum.</p></li>
+</ol>
+<p id="p-657">Find global optima of the function <span class="process-math">\(f(x)=4x^{3}\, +\, 6x^{2}\)</span> on the interval <span class="process-math">\(-1.5~\leq~x~\leq~1\text{.}\)</span></p></section><section class="paragraphs" id="biological-and-scientific-applications"><h5 class="heading"><span class="title">Biological and scientific applications.</span></h5>
+<p id="p-658">In general, we might want to optimize production of a chemical, yield or harvest of a plant or animal product, reproductive output, survival, growth rate. Statistics also relies heavily on the derivative and maximization to find ‘best’ values of a statistical parameter from data.</p></section></section></section><section class="exercises" id="quick-practice-concavity"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Quick practice</span>
 </h3>
-<article class="exercise exercise-like" id="exercise-34"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-623">Is <span class="process-math">\(f(x) = 2x^{2}-7x+2\)</span> concave up or concave down at <span class="process-math">\(x = 2\text{?}\)</span>
-</div>
+<article class="exercise exercise-like" id="exercise-45"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-659">Is <span class="process-math">\(f(x) = 2x^{2}-7x+2\)</span> concave up or concave down at <span class="process-math">\(x = 2\text{?}\)</span></p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like"><div class="para" id="p-624">The function <span class="process-math">\(f(x) = 2x^{2}-7x+2\)</span> has derivatives <span class="process-math">\(f'(x) = 4x-7\)</span> and <span class="process-math">\(f''(x) = 4\text{.}\)</span> Notice that <span class="process-math">\(f''(x)
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like"><p id="p-660">The function <span class="process-math">\(f(x) = 2x^{2}-7x+2\)</span> has derivatives <span class="process-math">\(f'(x) = 4x-7\)</span> and <span class="process-math">\(f''(x) = 4\text{.}\)</span> Notice that <span class="process-math">\(f''(x)
 &gt;0\)</span> so <span class="process-math">\(f(x)\)</span> is concave up everywhere, including at <span class="process-math">\(x =
-2\text{?}\)</span>
-</div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-35"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-625">Does <span class="process-math">\(f(x) = 2x^{2}-7x+3\)</span> have a local minimum or maximum at its critical point?</div>
+2\text{?}\)</span></p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-46"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-661">Does <span class="process-math">\(f(x) = 2x^{2}-7x+3\)</span> have a local minimum or maximum at its critical point?</p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like"><div class="para" id="p-626">The critical point of <span class="process-math">\(f(x) = 2x^{2}-7x+3\)</span> is <span class="process-math">\(x =
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like"><p id="p-662">The critical point of <span class="process-math">\(f(x) = 2x^{2}-7x+3\)</span> is <span class="process-math">\(x =
 \dfrac{7}{4}\)</span> and the second derivative of <span class="process-math">\(f(x)\)</span> is <span class="process-math">\(f''(x) =
-4\text{.}\)</span> Since <span class="process-math">\(f\left(\dfrac{7}{4}\right)=4&gt;0\)</span> (as we just saw in the previous Question), <span class="process-math">\(f(x)\)</span> is concave up at the critical point which means the point <span class="process-math">\(\left(\dfrac{7}{4}, -\dfrac{33}{8}\right)\)</span> is a local minimum.</div></div></div>
-</div></article><article class="exercise exercise-like" id="exercise-36"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<div class="para" id="p-627">What is the name of the third derivative of position? (I have not told you this, but it should not be too hard to find.)</div>
+4\text{.}\)</span> Since <span class="process-math">\(f\left(\dfrac{7}{4}\right)=4&gt;0\)</span> (as we just saw in the previous Question), <span class="process-math">\(f(x)\)</span> is concave up at the critical point which means the point <span class="process-math">\(\left(\dfrac{7}{4}, -\dfrac{33}{8}\right)\)</span> is a local minimum.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-47"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-663">What is the name of the third derivative of position? (I have not told you this, but it should not be too hard to find.)</p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like"><div class="para" id="p-628">Jerk. Hey, watch your attitude.</div></div></div>
-</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-6"><div class="fn"><div class="para" id="p-597">optima is an alternate word for extrema, indicating optimum or extreme values that a function takes on. In general, an individual optimum value is called a local maximum or minimum.</div></div></div>
-</div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="derivatives-of-products-and-quotients.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="ch-integration.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-43" id="solution-43"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like"><p id="p-664">Jerk. Hey, watch your attitude.</p></div></div>
+</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-6"><div class="fn"><p id="p-633">optima is an alternate word for extrema, indicating optimum or extreme values that a function takes on. In general, an individual optimum value is called a local maximum or minimum.</p></div></div>
 </div></main>
-</div>
-<div class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
-<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
-<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
 </div>
 </body>
 </html>

@@ -35,8 +35,8 @@ data:<!-- linebreak -->
 </p>
 
 <figure>
-<image source="neuro_data.png"/>
-<caption>image</caption>
+<image xml:id="image-graph-neuro-data" source="neuro_data.png" width='50%'/>
+<caption>Motivating data from a muscle fiber stretch response experiment.</caption>
 </figure>
 
 <p> If this was <term>your</term> data, what
@@ -187,8 +187,8 @@ infinity.
 </p>
 
 <figure>
-<image source="big.png"/>
-<caption>image</caption>
+<image xml:id = "image-archetype-infinity-end-behaviors" source="big.png" width='50%'/>
+<caption>Comparison of a few functions that share the characteristic of approaching infinity as <m>x\to\infty</m>.</caption>
 </figure>
 
 <table>
@@ -218,8 +218,8 @@ infinity.
 </table>
 
 <figure>
-<image source="small.png"/>
-<caption>image</caption>
+<image xml:id="image-archetype-zero-end-behaviors" source="small.png" width='50%'/>
+<caption>Comparison of a few functions that share the characteristic of approaching zero as <m>x\to\infty</m>.</caption>
 </figure>
 
 <table>
@@ -259,8 +259,8 @@ exponential function, <me>f(t) = ae^{-bt}+c.</me>
 </p>
 
 <figure>
-<image source="neuro_data_bad.png"/>
-<caption>image</caption>
+<image xml:id = "image-poor-fit-to-data" source="neuro_data_bad.png" width='50%'/>
+<caption>A less than ideal fit of a mathematical function to muscle fiber stretch response data.</caption>
 </figure>
 
 <p> <term>Description:</term>
@@ -272,8 +272,8 @@ ae^{-bt^m}+c.</me>
 </p>
 
 <figure>
-<image source="neuro_data_good.png"/>
-<caption>image</caption>
+<image xml:id="image-good-fit-to-data" source="neuro_data_good.png" width='50%'/>
+<caption>A very good fit of a mathematical function to muscle fiber stretch response data.</caption>
 </figure>
 
 <p> <term>Description:</term>
@@ -392,8 +392,8 @@ functional form from earlier.<!-- linebreak -->
 </p>
 
 <figure>
-<image source="sat_3.png"/>
-<caption>image</caption>
+<image xml:id = "image-saturating-function" source="sat_3.png" width='50%'/>
+<caption>Illustration of a saturating function.</caption>
 </figure>
 
 <p> What does <m>F(x)</m> look like when <m>x</m> is
@@ -408,24 +408,46 @@ small?<!-- linebreak -->
 </paragraphs>
 </paragraphs>
 
-<subsection xml:id="quick-practice-inf-limits" class="unnumbered">
+<exercises xml:id="quick-practice-inf-limits" class="unnumbered">
 <title>Quick practice</title>
 
-<p><ol>
-<li> <p> Compute <m>\displaystyle \lim_{x\to\infty} e^{x}</m>.</p> </li>
+<exercise>
+<statement>
+<p> Compute <m>\displaystyle \lim_{x\to\infty} e^{x}</m>.</p> 
+</statement>
+<solution><p><m>\displaystyle \lim_{x\to\infty} e^{x} = \infty</m>. </p></solution>
+</exercise>
 
-<li> <p> Compute <m>\displaystyle \lim_{x\to\infty} e^{-x}</m>.</p>
-</li>
+<exercise>
+<statement>
+<p> Compute <m>\displaystyle \lim_{x\to\infty} e^{-x}</m>.</p>
+</statement>
+<solution><p> <m>\displaystyle \lim_{x\to\infty} e^{-x} = 0</m>.</p></solution>
+</exercise>
 
-<li> <p> Compute <m>\displaystyle \lim_{x\to\infty}
-\dfrac{1}{x}</m>.</p> </li>
+<exercise>
+<statement> <p> Compute <m>\displaystyle \lim_{x\to\infty}
+\dfrac{1}{x}</m>.</p>
+</statement>
+<solution><p> <m>\displaystyle \lim_{x\to\infty} \dfrac{1}{x} = 0</m>.</p></solution>
+</exercise>
 
-<li> <p> Which is bigger as <m>x\to\infty</m> <m>e^{-x}</m> or
+<exercise>
+<statement> <p> Which is bigger as <m>x\to\infty</m> <m>e^{-x}</m> or
 <m>\dfrac{1}{x}</m>? Hence, what is <m>f_\infty(x)</m> for <m>f(x) =
-e^{-x}+\dfrac{1}{x}</m>?</p> </li>
+e^{-x}+\dfrac{1}{x}</m>?</p>
+</statement>
+<solution><p> Between the terms <m>e^{-x}</m> and <m>\dfrac{1}{x}</m>,
+<m>e^{-x}</m> goes to zero faster which implies that <m>\dfrac{1}{x}</m>
+is bigger as <m>x\to\infty</m>. Hence, for <m>f(x) =
+e^{-x}+\dfrac{1}{x}</m>, the leading behavior at infinity is
+<m>f_\infty(x) = \dfrac{1}{x}</m>. This means the contribution of the
+exponential term to the graph of <m>f(x)</m> vanishes quickly and the
+graph <sq>looks like</sq> the graph of just <m>f_\infty(x) =
+\dfrac{1}{x}</m> as <m>x</m> gets large.</p></solution>
+</exercise>
 
-</ol></p>
-
+<!-->
 <p> Answers:
 </p>
 
@@ -447,9 +469,104 @@ exponential term to the graph of <m>f(x)</m> vanishes quickly and the
 graph <sq>looks like</sq> the graph of just <m>f_\infty(x) =
 \dfrac{1}{x}</m> as <m>x</m> gets large.</p> </li>
 
-</ol></p>
+</ol></p>-->
 
-</subsection>
+</exercises>
+
+<exercises xml:id="webwork-inf-limits" class="numbered">
+<title>Sample WeBWorK problems</title>
+
+<p><term>Record non-terminating decimal answers to three decimal places. Ex. <m>1/3 = 0.\overline{3}</m> should be recorded as <m>0.333</m>, but <m>3/2</m> can be recorded as <m>1.5</m>.</term></p>
+
+<exercise>
+<statement>
+<p>Choose the type of function from the dropdown list (choices are "constant", "linear", "quadratic", "cubic", or "something else") whose characteristics match those of the leading behavior.
+<ol>
+<li><p>As <m>t\to\infty</m>, the limit of <m>f(t) = \dfrac{3.4t}{1+2.4t}</m>, is <m>\lim\limits_{t\to\infty}f(t) = \underline{\qquad\qquad}</m>.</p></li>
+<li><p>As <m>t\to\infty</m>, the limit of <m>f(t) = \dfrac{3.4t^2}{1+2.4t^3}</m>, is <m>\lim\limits_{t\to\infty}f(t) = \underline{\qquad\qquad}</m>.</p></li>
+<li><p>As <m>t\to\infty</m>, the limit of <m>f(t) = \dfrac{3.4t^3}{1+2.4t^2}</m>, is <m>\lim\limits_{t\to\infty}f(t) = \underline{\qquad\qquad}</m>.</p></li>
+<li><p>As <m>t\to\infty</m>, the limit of <m>f(t) = \dfrac{3.4t^2}{1+2.4t^3}</m>, is <m>\lim\limits_{t\to\infty}f(t) = \underline{\qquad\qquad}</m>.</p></li>
+<li><p>As <m>t\to\infty</m>, the limit of<m>f(t) = \dfrac{3.4t^3}{1+2.4t^3}</m>, is <m>\lim\limits_{t\to\infty}f(t) = \underline{\qquad\qquad}</m>.</p></li>
+</ol></p>
+</statement>
+</exercise>
+
+<exercise>
+<statement>
+<p> Compute each of the following limits.
+<ol>
+<li><p>Compute the limit of <m>f(x) = {x^{4}}</m> as <m>x\to\infty</m>, or <m>\displaystyle\lim_{x\to\infty}{x^{4}} =\underline{\hspace{1.25in}}</m>.</p></li>
+<li><p>Compute the limit of <m>f(x) = {\ln\!\left(\frac{x}{5}\right)}</m> as <m>x\to\infty</m>, or <m>\displaystyle\lim_{x\to\infty}{\ln\!\left(\frac{x}{5}\right)} =\underline{\hspace{1.25in}}</m>.</p></li>
+<li><p>Compute the limit of <m>f(x) = {0.4^{x}}</m> as <m>x\to\infty</m>, or <m>\displaystyle\lim_{x\to\infty}{0.4^{x}} =\underline{\hspace{1.25in}}</m>. Hint: Write <m>f(x)</m> as an exponential function with base <m>e</m> and apply our rules for the exponential function.</p></li>
+<li><p>Compute the limit of <m>\displaystyle f(x) = {4-e^{-1x}}</m> as <m>x\to\infty</m>, or <m>\displaystyle\lim_{x\to\infty}{4-e^{-1x}} =\underline{\hspace{1.25in}}</m>.</p></li>
+<li><p>Compute the limit of <m>\displaystyle f(x) = {x^{0.3}}</m> as <m>x\to\infty</m>, or <m>\displaystyle\lim_{x\to\infty}{x^{0.3}} =\underline{\hspace{1.25in}}</m>.</p></li>
+</ol></p>
+</statement>
+</exercise>
+
+<exercise>
+<statement>
+<p>Compute each of the following limits.
+<ol>
+<li><p>Compute the limit of <m>f(x) = {2+x^{10}}</m> as <m>x\to\infty</m>, or <m>\displaystyle\lim_{x\to\infty}{2+x^{10}} =\underline{\hspace{1.25in}}</m>.</p></li>
+<li><p>Compute the limit of <m>f(x) = {x^{-4}}</m> as <m>x\to\infty</m>, or <m>\displaystyle\lim_{x\to\infty}{x^{-4}} =\underline{\hspace{1.25in}}</m>.</p></li>
+<li><p>Compute the limit of <m>f(x) = {1.7^{x}}</m> as <m>x\to\infty</m>, or <m>\displaystyle\lim_{x\to\infty}{1.7^{x}} =\underline{\hspace{1.25in}}</m>. Hint: Write <m>f(x)</m> as an exponential function with base <m>e</m> and apply our rules for the exponential function.</p></li>
+<li><p>Compute the limit of <m>\displaystyle f(x) = {1+e^{3x}}</m> as <m>x\to\infty</m>, or <m>\displaystyle\lim_{x\to\infty}{1+e^{3x}} =\underline{\hspace{1.25in}}</m>.</p></li>
+<li><p>Compute the limit of <m>\displaystyle f(x) = {x^{-0.6}}</m> as <m>x\to\infty</m>, or <m>\displaystyle\lim_{x\to\infty}{x^{-0.6}} =\underline{\hspace{1.25in}}</m>.</p></li>
+</ol></p>
+</statement>
+</exercise>
+
+<exercise>
+<statement>
+<p>
+Choose the type of function from the dropdown list (choices are "constant", "linear", "quadratic", "cubic", or "something else") whose characteristics match those of the leading behavior.
+<ol>
+<li><p>As <m>t\to\infty</m>, the leading behavior of the function <m>f(t) = \dfrac{3.4t^3}{1+2.4t^2}</m>, given by <m>f_\infty(t)</m>, looks like <m>\underline{\qquad\qquad}</m> function.</p></li>
+<li><p>Near <m>t=0</m>, the leading behavior of the function <m>f(t) = \dfrac{3.4t^2}{1+2.4t^3}</m>, given by <m>f_0(t)</m>, looks like <m>\underline{\qquad\qquad}</m> function.</p></li>
+<li><p>As <m>t\to\infty</m>, the leading behavior of the function <m>f(t) = \dfrac{3.4t^2}{1+2.4t^3}</m>, given by <m>f_\infty(t)</m>, looks like <m>\underline{\qquad\qquad}</m> function.</p></li>
+<li><p>Near <m>t=0</m>, the leading behavior of the function <m>f(t) = \dfrac{3.4t}{1+2.4t}</m>, given by <m>f_0(t)</m>, looks like <m>\underline{\qquad\qquad}</m> function.</p></li>
+<li><p>Near <m>t=0</m>, the leading behavior of the function <m>f(t) = \dfrac{3.4t^3}{1+2.4t^2}</m>, given by <m>f_0(t)</m>, looks like <m>\underline{\qquad\qquad}</m> function.</p></li>
+</ol></p>
+</statement>
+</exercise>
+
+<exercise>
+<statement>
+<p>Choose the type of function from the dropdown list (choices are "constant", "linear", "quadratic", "cubic", or "something else") whose characteristics match those of the leading behavior.
+<ol>
+<li><p>As <m>t\to\infty</m>, the limit of <m>f(t) = \dfrac{3.4t^2}{1+2.4t^3}</m>, is <m>\lim\limits_{t\to\infty}f(t) = \underline{\qquad\qquad}</m>.</p></li>
+<li><p>As <m>t\to\infty</m>, the limit of <m>f(t) = \dfrac{3.4t^3}{1+2.4t^2}</m>, is <m>\lim\limits_{t\to\infty}f(t) = \underline{\qquad\qquad}</m>.</p></li>
+<li><p>As <m>t\to\infty</m>, the limit of <m>f(t) = \dfrac{3.4t^2}{1+2.4t^3}</m>, is <m>\lim\limits_{t\to\infty}f(t) = \underline{\qquad\qquad}</m>.</p></li>
+<li><p>As <m>t\to\infty</m>, the limit of <m>f(t) = \dfrac{3.4t}{1+2.4t}</m>, is <m>\lim\limits_{t\to\infty}f(t) = \underline{\qquad\qquad}</m>.</p></li>
+<li><p>As <m>t\to\infty</m>, the limit of<m>f(t) = \dfrac{3.4t^3}{1+2.4t^3}</m>, is <m>\lim\limits_{t\to\infty}f(t) = \underline{\qquad\qquad}</m>.</p></li>
+</ol></p>
+</statement>
+</exercise>
+
+<exercise>
+<statement>
+<p> Identify the leading behaviors of the following functions at zero.
+<ol>
+<li><p>The leading behavior <m>f_{0}(x)</m> for <m>\displaystyle f(x) = {x+\frac{x^{2}}{2}+\frac{x^{3}}{3}}</m> near <m>0</m> is <m>f_{0}(x) =\underline{\hspace{1.25in}}</m>.</p></li>
+<li><p>The leading behavior <m>g_{0}(x)</m> for <m>\displaystyle g(x) = {1+x+\frac{x^{2}}{2}+\frac{x^{3}}{3}+\frac{x^{4}}{4}}</m> near <m>0</m> is <m>g_{0}(x) =\underline{\hspace{1.25in}}</m>.</p></li>
+</ol></p>
+</statement>
+</exercise>
+
+<exercise>
+<statement>
+<p> Identify the leading behaviors of the following functions at infinity and use this information to compute the appropriate limits at infinity.
+<ol>
+<li><p>The leading behavior <m>f_{\infty}(x)</m> for <m>f(x) = {1.3x+x^{1.9}+e^{2.1x}}</m> at infinity is <m>f_{\infty}(x) =\underline{\hspace{1.25in}}</m>.</p></li>
+<li><p>The leading behavior <m>g_{\infty}(x)</m> for <m>g(x) = {1.3+1.9x+2.1x^{5}}</m> at infinity is <m>g_{\infty}(x) =\underline{\hspace{1.25in}}</m>.</p></li>
+<li><p>The leading behavior <m>h_{\infty}(x)</m> for <m>\displaystyle h(x) = {\frac{1.3x+x^{1.9}+e^{2.1x}}{1.3+1.9x+2.1x^{5}}}</m> at infinity is <m>h_{\infty}(x) =\underline{\hspace{1.25in}}</m>.</p></li>
+<li><p>The limit at infinity of <m>\displaystyle h(x) = {\frac{1.3x+x^{1.9}+e^{2.1x}}{1.3+1.9x+2.1x^{5}}}</m> is <m>\displaystyle \lim\limits_{x\to\infty}h(x) =\underline{\hspace{1.25in}}</m>.</p></li>
+</ol></p>
+</statement>
+</exercise>
+</exercises>
+
 </section>
 
 
