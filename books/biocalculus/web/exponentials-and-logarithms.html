@@ -14,246 +14,436 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Bio-Calculus">
 <meta property="book:author" content="Sean Laverty">
-<script>window.MathJax = {
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
     tagSide: "right",
     tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
   },
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
   },
   chtml: {
-    scale: 0.88,
+    scale: 0.98,
     mtextInheritFont: true
   },
   loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
-startup: {
+  startup: {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
-      $(document).trigger("runestone:mathjax-ready");
+      rsMathReady();
       }
     )}
-},
+  },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book ignore-math has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
+<p class="byline">Sean Laverty</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="linear-functions-and-their-graphs.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-intro.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="introduction-to-discrete-time-dynamical-systems-dtds.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
 \definecolor{fillinmathshade}{gray}{0.9}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
-<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
-<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
-<p class="byline">Sean Laverty</p>
-</div>
-</div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
-<div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="linear-functions-and-their-graphs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-intro.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="introduction-to-discrete-time-dynamical-systems-dtds.html" title="Next">Next</a></span></div>
-</div>
-<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="linear-functions-and-their-graphs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-intro.html" title="Up">Up</a><a class="next-button button toolbar-item" href="introduction-to-discrete-time-dynamical-systems-dtds.html" title="Next">Next</a>
-</div>
-</div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><ul>
-<li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide" class="internal">Users guide</a></li></ul>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="users-guide.html" class="internal"><span class="title">Users guide</span></a></div></li></ul>
 </li>
-<li class="link">
-<a href="ch-intro.html" data-scroll="ch-intro" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
-<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus" class="internal">What is bio-calculus?</a></li>
-<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology" class="internal">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
-<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1" class="internal">Dimensions and units</a></li>
-<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs" class="internal">Linear functions and their graphs</a></li>
-<li><a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms" class="active">Exponentials and logarithms</a></li>
-<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds" class="internal">Introduction to discrete-time dynamical systems (DTDS)</a></li>
-<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits" class="internal">Introduction to limits</a></li>
-<li><a href="continuous-functions.html" data-scroll="continuous-functions" class="internal">Continuous functions</a></li>
-<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity" class="internal">Limits and behaviors at infinity</a></li>
+<li>
+<div class="toc-item"><a href="ch-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="what-is-bio-calculus.html" class="internal"><span class="codenumber">1.1</span> <span class="title">What is bio-calculus?</span></a></div></li>
+<li>
+<div class="toc-item"><a href="introduction-modeling-terminology.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-modeling-terminology.html#quick-jargon" class="internal"><span class="codenumber">1.2</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="dimensions-and-units-1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Dimensions and units</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="dimensions-and-units-1.html#quick-practice-units" class="internal"><span class="codenumber">1.3</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="linear-functions-and-their-graphs.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Linear functions and their graphs</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="linear-functions-and-their-graphs.html#quick-practice-linear" class="internal"><span class="codenumber">1.4</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="exponentials-and-logarithms.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Exponentials and logarithms</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="exponentials-and-logarithms.html#quick-practice-exp" class="internal"><span class="codenumber">1.5</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Introduction to discrete-time dynamical systems (DTDS)</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-discrete-time-dynamical-systems-dtds.html#quick-practice-dtds" class="internal"><span class="codenumber">1.6</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="introduction-to-limits.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Introduction to limits</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-limits.html#quick-practice-finite-limits" class="internal"><span class="codenumber">1.7</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="continuous-functions.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Continuous functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="continuous-functions.html#quick-practice-continuity" class="internal"><span class="codenumber">1.8</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="limits-and-behaviors-at-infinity.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Limits and behaviors at infinity</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="limits-and-behaviors-at-infinity.html#quick-practice-inf-limits" class="internal"><span class="codenumber">1.9</span> <span class="title">Quick practice</span></a></div></li>
+<li><div class="toc-item"><a href="limits-and-behaviors-at-infinity.html#webwork-inf-limits" class="internal"><span class="codenumber">1.9</span> <span class="title">Sample WeBWorK problems</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="ch-derivatives.html" data-scroll="ch-derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
-<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change" class="internal">Introduction to derivatives: Rates of change</a></li>
-<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions" class="internal">Derivatives of basic functions</a></li>
-<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions" class="internal">Derivatives of exponential and logarithmic functions</a></li>
-<li><a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule" class="internal">Derivatives of compositions: chain rule</a></li>
-<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients" class="internal">Derivatives of products and quotients</a></li>
-<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications" class="internal">Second derivatives and applications</a></li>
 </ul>
 </li>
-<li class="link">
-<a href="ch-integration.html" data-scroll="ch-integration" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
-<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations" class="internal">Introduction to differential equations</a></li>
-<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution" class="internal">More complicated integrals and integration by substitution</a></li>
-<li><a href="the-definite-integral.html" data-scroll="the-definite-integral" class="internal">The definite integral</a></li>
-<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral" class="internal">Applications of the definite integral</a></li>
-<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry" class="internal">Applications to chemistry</a></li>
+<li>
+<div class="toc-item"><a href="ch-derivatives.html" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="introduction-to-derivatives-rates-of-change.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction to derivatives: Rates of change</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-derivatives-rates-of-change.html#quick-practice-rates" class="internal"><span class="codenumber">2.1</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-basic-functions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Derivatives of basic functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-basic-functions.html#quick-practice-derivatives" class="internal"><span class="codenumber">2.2</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-exponential-and-logarithmic-functions.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Derivatives of exponential and logarithmic functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-exponential-and-logarithmic-functions.html#quick-practice-exp-deriv" class="internal"><span class="codenumber">2.3</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-compositions-chain-rule.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Derivatives of compositions: chain rule</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-compositions-chain-rule.html#quick-practice-chain" class="internal"><span class="codenumber">2.4</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-products-and-quotients.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Derivatives of products and quotients</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-products-and-quotients.html#quick-practice-product" class="internal"><span class="codenumber">2.5</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="second-derivatives-and-applications.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Second derivatives and applications</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="second-derivatives-and-applications.html#quick-practice-concavity" class="internal"><span class="codenumber">2.6</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
 </ul>
 </li>
-<li class="link">
-<a href="ch-advanced.html" data-scroll="ch-advanced" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a><ul>
-<li><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds" class="internal">Applications: nonlinear discrete-time dynamical systems (DTDS)</a></li>
-<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations" class="internal">Applications: autonomous differential equations</a></li>
+<li>
+<div class="toc-item"><a href="ch-integration.html" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="introduction-to-differential-equations.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to differential equations</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-differential-equations.html#quick-practice-des" class="internal"><span class="codenumber">3.1</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="more-complicated-integrals-and-integration-by-substitution.html" class="internal"><span class="codenumber">3.2</span> <span class="title">More complicated integrals and integration by substitution</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="more-complicated-integrals-and-integration-by-substitution.html#quick-practice-usub" class="internal"><span class="codenumber">3.2</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="the-definite-integral.html" class="internal"><span class="codenumber">3.3</span> <span class="title">The definite integral</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="the-definite-integral.html#quick-practice-def-int" class="internal"><span class="codenumber">3.3</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="applications-of-the-definite-integral.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Applications of the definite integral</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="applications-of-the-definite-integral.html#quick-practice-def-apps" class="internal"><span class="codenumber">3.4</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="applications-to-chemistry.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Applications to chemistry</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="applications-to-chemistry.html#quick-practice-chemistry" class="internal"><span class="codenumber">3.5</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
 </ul>
 </li>
-</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
-</div></div>
-<main class="main"><div id="content" class="pretext-content">
+<li>
+<div class="toc-item"><a href="ch-advanced.html" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Applications: nonlinear discrete-time dynamical systems (DTDS)</span></a></div></li>
+<li><div class="toc-item"><a href="applications-autonomous-differential-equations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Applications: autonomous differential equations</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="section" id="exponentials-and-logarithms"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.5</span> <span class="title">Exponentials and logarithms</span>
 </h2>
-<section class="paragraphs" id="the-plan-4"><h3 class="heading"><span class="title">The Plan.</span></h3>
-<p id="p-174">Logarithmic and exponential functions, while often intimidating, appear throughout microbiology, chemistry, statistics, and mathematics. We will understand the basic computational and graphical properties of these functions and their connection to applications.</p>
-<p id="p-175">A population of size <span class="process-math">\(N\)</span> loses a factor of approximately <span class="process-math">\(\underline{\hspace{2cm}}\)</span> of its genetic variability each generation. Consider a population of <span class="process-math">\(N=20\)</span> individuals that <dfn class="terminology">loses</dfn> a factor of  each generation.A population <dfn class="terminology">maintains</dfn> a factor of <span class="process-math">\(\underline{\hspace{2cm}}\)</span> of its variability each generation. How much variability is left after 5 generations?</p>
-<p id="p-176">We have a <em class="emphasis">shortcut</em> for evaluating values like this. Above each factor has a power of <span class="process-math">\(\underline{\hspace{2cm}}\text{,}\)</span> to simplify this calculation we can write the following:</p>
-<p id="p-177">How much variability remains after 20 generations?</p>
-<article class="theorem theorem-like" id="thm-properties-powers"><h4 class="heading">
+<section class="paragraphs" id="the-plan-4"><h3 class="heading"><span class="title">The Plan.</span></h3> <div class="para" id="p-174">Logarithmic and exponential functions, while often intimidating, appear throughout microbiology, chemistry, statistics, and mathematics. We will understand the basic computational and graphical properties of these functions and their connection to applications.</div> <div class="para" id="p-175">A population of size <span class="process-math">\(N\)</span> loses a factor of approximately <span class="process-math">\(\underline{\hspace{2cm}}\)</span> of its genetic variability each generation. Consider a population of <span class="process-math">\(N=20\)</span> individuals that <dfn class="terminology">loses</dfn> a factor of  each generation.A population <dfn class="terminology">maintains</dfn> a factor of <span class="process-math">\(\underline{\hspace{2cm}}\)</span> of its variability each generation. How much variability is left after 5 generations?</div> <div class="para" id="p-176">We have a <em class="emphasis">shortcut</em> for evaluating values like this. Above each factor has a power of <span class="process-math">\(\underline{\hspace{2cm}}\text{,}\)</span> to simplify this calculation we can write the following:</div> <div class="para" id="p-177">How much variability remains after 20 generations?</div> <article class="theorem theorem-like" id="thm-properties-powers"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of exponents.</span>
 </h4>
-<p id="p-178">Consider the following laws for for real numbers <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(m\text{,}\)</span> and <span class="process-math">\(n\text{.}\)</span></p>
+<div class="para logical" id="p-178">
+<div class="para">Consider the following laws for for real numbers <span class="process-math">\(a\text{,}\)</span> <span class="process-math">\(m\text{,}\)</span> and <span class="process-math">\(n\text{.}\)</span>
+</div>
 <ol class="decimal">
-<li id="li-69"><p id="p-179"><span class="process-math">\(\displaystyle a^{m}\cdot a^{n} = a^{m+n}\)</span></p></li>
-<li id="li-70"><p id="p-180"><span class="process-math">\(\displaystyle (a^n)^m = a^{nm}\)</span></p></li>
-<li id="li-71"><p id="p-181"><span class="process-math">\(\displaystyle a^{-n} = \frac{1}{a^{n}}\)</span></p></li>
-<li id="li-72"><p id="p-182"><span class="process-math">\(\displaystyle \frac{a^n}{a^m} = a^{n-m}\)</span></p></li>
-<li id="li-73"><p id="p-183"><span class="process-math">\(\displaystyle a^1 = a\)</span></p></li>
-<li id="li-74"><p id="p-184"><span class="process-math">\(\displaystyle a^0 = 1\)</span></p></li>
-</ol></article><p id="p-185">Common bases in science are</p>
+<li id="li-69"><div class="para" id="p-179"><span class="process-math">\(\displaystyle a^{m}\cdot a^{n} = a^{m+n}\)</span></div></li>
+<li id="li-70"><div class="para" id="p-180"><span class="process-math">\(\displaystyle (a^n)^m = a^{nm}\)</span></div></li>
+<li id="li-71"><div class="para" id="p-181"><span class="process-math">\(\displaystyle a^{-n} = \frac{1}{a^{n}}\)</span></div></li>
+<li id="li-72"><div class="para" id="p-182"><span class="process-math">\(\displaystyle \frac{a^n}{a^m} = a^{n-m}\)</span></div></li>
+<li id="li-73"><div class="para" id="p-183"><span class="process-math">\(\displaystyle a^1 = a\)</span></div></li>
+<li id="li-74"><div class="para" id="p-184"><span class="process-math">\(\displaystyle a^0 = 1\)</span></div></li>
+</ol>
+</div></article> <div class="para logical" id="p-185">
+<div class="para">Common bases in science are</div>
 <ul class="disc">
-<li id="li-75"><p id="p-186"><span class="process-math">\(10\)</span> throughout science and nature</p></li>
-<li id="li-76"><p id="p-187"><span class="process-math">\(e\)</span> throughout science</p></li>
-<li id="li-77"><p id="p-188"><span class="process-math">\(2\)</span> throughout computer science</p></li>
+<li id="li-75"><div class="para" id="p-186">
+<span class="process-math">\(10\)</span> throughout science and nature</div></li>
+<li id="li-76"><div class="para" id="p-187">
+<span class="process-math">\(e\)</span> throughout science</div></li>
+<li id="li-77"><div class="para" id="p-188">
+<span class="process-math">\(2\)</span> throughout computer science</div></li>
 </ul>
-<p id="p-189">Though we think of exponents as ‘multiplying <span class="process-math">\(a\)</span>’s together’ certain instance only make sense if we use the above laws. How can we multiply factors of <span class="process-math">\(2\)</span> together <span class="process-math">\((-3)\)</span> times?</p>
-<p id="p-190">Using the common bases above, consider the following:</p>
-<section class="paragraphs" id="the-exponential-function"><h4 class="heading"><span class="title">‘The’ exponential function.</span></h4>
-<p id="p-191">The exponential function (or sometimes exponential function to the base <span class="process-math">\(e\)</span>) is given as</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div> <div class="para" id="p-189">Though we think of exponents as ‘multiplying <span class="process-math">\(a\)</span>’s together’ certain instance only make sense if we use the above laws. How can we multiply factors of <span class="process-math">\(2\)</span> together <span class="process-math">\((-3)\)</span> times?</div> <div class="para" id="p-190">Using the common bases above, consider the following:</div> <section class="paragraphs" id="the-exponential-function"><h4 class="heading"><span class="title">‘The’ exponential function.</span></h4> <div class="para logical" id="p-191">
+<div class="para">The exponential function (or sometimes exponential function to the base <span class="process-math">\(e\)</span>) is given as</div>
+<div class="displaymath process-math">
 \begin{equation*}
 f(x) = e^{x}
 \end{equation*}
 </div>
-<article class="definition definition-like" id="def-inverse-exponential-function"><h5 class="heading">
+</div> <article class="definition definition-like" id="def-inverse-exponential-function"><h5 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">natural logarithm.</span>
-</h5>
-<p id="p-192">The exponential function <span class="process-math">\(e^{x}\)</span> as an inverse called the <dfn class="terminology">natural logarithm</dfn> given by <span class="process-math">\(\ln(x)\text{.}\)</span></p></article><section class="paragraphs" id="a-few-graphs"><h5 class="heading"><span class="title">A few graphs.</span></h5>
-<p id="p-193">To introduce the inverse function it is helpful to think of powers of ten. Consider</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</h5> <div class="para" id="p-192">The exponential function <span class="process-math">\(e^{x}\)</span> as an inverse called the <dfn class="terminology">natural logarithm</dfn> given by <span class="process-math">\(\ln(x)\text{.}\)</span>
+</div></article> <section class="paragraphs" id="a-few-graphs"><h5 class="heading"><span class="title">A few graphs.</span></h5> <div class="para logical" id="p-193">
+<div class="para">To introduce the inverse function it is helpful to think of powers of ten. Consider</div>
+<div class="displaymath process-math">
 \begin{equation*}
 1,000,000 = 10^6
 \end{equation*}
 </div>
-<p class="continuation">To write one million, we multiply <span class="process-math">\(6\)</span> factors of <span class="process-math">\(10\text{.}\)</span> We say, “<span class="process-math">\(10\)</span> raised to the power <span class="process-math">\(6\)</span> gives  <span class="process-math">\(1,000,000\text{,}\)</span>” or, symbolically</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="para">To write one million, we multiply <span class="process-math">\(6\)</span> factors of <span class="process-math">\(10\text{.}\)</span> We say, “<span class="process-math">\(10\)</span> raised to the power <span class="process-math">\(6\)</span> gives  <span class="process-math">\(1,000,000\text{,}\)</span>” or, symbolically</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \log_{10}(1,000,000)=\underline{\hspace{1cm}}.
 \end{equation*}
-</div></section><section class="paragraphs" id="the-natural-logarithm"><h5 class="heading"><span class="title">The natural logarithm.</span></h5>
-<p id="p-194">The natural logarithm <span class="process-math">\(\ln(x)\)</span> undoes the exponential function <span class="process-math">\(e^x\text{.}\)</span> This means</p>
-<ol id="p-195" class="decimal">
-<li id="li-78"><p id="p-196"><span class="process-math">\(\displaystyle \ln(e^x) =\)</span></p></li>
-<li id="li-79"><p id="p-197"><span class="process-math">\(\displaystyle e^{\ln(x)} =\)</span></p></li>
-</ol>
-<article class="theorem theorem-like" id="thm-properties-logs"><h6 class="heading">
+</div>
+</div></section> <section class="paragraphs" id="the-natural-logarithm"><h5 class="heading"><span class="title">The natural logarithm.</span></h5> <div class="para" id="p-194">The natural logarithm <span class="process-math">\(\ln(x)\)</span> undoes the exponential function <span class="process-math">\(e^x\text{.}\)</span> This means</div> <div class="para logical" id="p-195"><ol class="decimal">
+<li id="li-78"><div class="para" id="p-196"><span class="process-math">\(\displaystyle \ln(e^x) =\)</span></div></li>
+<li id="li-79"><div class="para" id="p-197"><span class="process-math">\(\displaystyle e^{\ln(x)} =\)</span></div></li>
+</ol></div> <article class="theorem theorem-like" id="thm-properties-logs"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Properties of logarithms.</span>
 </h6>
-<p id="p-198">Consider the following laws for for real numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span> We state these rules for the natural logarithm.</p>
+<div class="para logical" id="p-198">
+<div class="para">Consider the following laws for for real numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span> We state these rules for the natural logarithm.</div>
 <ol class="decimal">
-<li id="li-80"><p id="p-199"><span class="process-math">\(\displaystyle \ln(ab) =\)</span></p></li>
-<li id="li-81"><p id="p-200"><span class="process-math">\(\displaystyle \ln(a^b)=\)</span></p></li>
-<li id="li-82"><p id="p-201"><span class="process-math">\(\displaystyle \displaystyle\ln\left(\frac{1}{a}\right)
-=\)</span></p></li>
-<li id="li-83"><p id="p-202"><span class="process-math">\(\displaystyle \displaystyle\ln\left(\frac{a}{b}\right)
-=\)</span></p></li>
-<li id="li-84"><p id="p-203"><span class="process-math">\(\displaystyle \ln(e) =\)</span></p></li>
-<li id="li-85"><p id="p-204"><span class="process-math">\(\displaystyle \ln(1) =\)</span></p></li>
-</ol></article><article class="example example-like" id="ex-doubling"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-doubling"><h6 class="heading">
+<li id="li-80"><div class="para" id="p-199"><span class="process-math">\(\displaystyle \ln(ab) =\)</span></div></li>
+<li id="li-81"><div class="para" id="p-200"><span class="process-math">\(\displaystyle \ln(a^b)=\)</span></div></li>
+<li id="li-82"><div class="para" id="p-201"><span class="process-math">\(\displaystyle \displaystyle\ln\left(\frac{1}{a}\right)
+=\)</span></div></li>
+<li id="li-83"><div class="para" id="p-202"><span class="process-math">\(\displaystyle \displaystyle\ln\left(\frac{a}{b}\right)
+=\)</span></div></li>
+<li id="li-84"><div class="para" id="p-203"><span class="process-math">\(\displaystyle \ln(e) =\)</span></div></li>
+<li id="li-85"><div class="para" id="p-204"><span class="process-math">\(\displaystyle \ln(1) =\)</span></div></li>
+</ol>
+</div></article> <article class="example example-like" id="ex-doubling"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-doubling"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Doubling time.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-doubling"><article class="example example-like"><p id="p-205">Consider a population that grows according to</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-doubling"><article class="example example-like"><div class="para logical" id="p-205">
+<div class="para">Consider a population that grows according to</div>
+<div class="displaymath process-math">
 \begin{equation*}
 p(t)=p_{0} e^{\alpha t},
 \end{equation*}
 </div>
-<p class="continuation">where <span class="process-math">\(p_{0}\)</span> is the initial population size, and <span class="process-math">\(\alpha\)</span> is the growth rate.</p>
-<p id="p-206">At what value will the population be twice its initial size?</p>
-<p id="p-207">Derive the doubling-time formula for <span class="process-math">\(\tau_D\text{:}\)</span></p></article></div>
-<p id="p-208">Consider a chemical sample that undergoes decay according to</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="para">where <span class="process-math">\(p_{0}\)</span> is the initial population size, and <span class="process-math">\(\alpha\)</span> is the growth rate.</div>
+</div> <div class="para" id="p-206">At what value will the population be twice its initial size?</div> <div class="para" id="p-207">Derive the doubling-time formula for <span class="process-math">\(\tau_D\text{:}\)</span>
+</div></article></div> <div class="para logical" id="p-208">
+<div class="para">Consider a chemical sample that undergoes decay according to</div>
+<div class="displaymath process-math">
 \begin{equation*}
 s(t)=s_{0} e^{\alpha t},
 \end{equation*}
 </div>
-<p class="continuation">where <span class="process-math">\(s_{0}\)</span> is the initial sample amount, and <span class="process-math">\(\alpha&lt;0\)</span> is the decay rate.</p>
-<p id="p-209">At what  value will the sample contain half of its initial amount?</p>
-<p id="p-210">Derive the half-life formula for <span class="process-math">\(\tau_{1/2}\text{:}\)</span></p>
-<p id="p-211">Island biogeographers have discovered that ‘large islands support more species than smaller islands.’ A <dfn class="terminology">power law</dfn> given by</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="para">where <span class="process-math">\(s_{0}\)</span> is the initial sample amount, and <span class="process-math">\(\alpha&lt;0\)</span> is the decay rate.</div>
+</div> <div class="para" id="p-209">At what  value will the sample contain half of its initial amount?</div> <div class="para" id="p-210">Derive the half-life formula for <span class="process-math">\(\tau_{1/2}\text{:}\)</span>
+</div> <div class="para logical" id="p-211">
+<div class="para">Island biogeographers have discovered that ‘large islands support more species than smaller islands.’ A <dfn class="terminology">power law</dfn> given by</div>
+<div class="displaymath process-math">
 \begin{equation*}
 S = cA^z,
 \end{equation*}
 </div>
-<p class="continuation">has been used to describe the relationship, where <span class="process-math">\(S\)</span> is the number of species, <span class="process-math">\(A\)</span> is the area of the island, <span class="process-math">\(c\)</span> is a baseline number of species, and <span class="process-math">\(z\)</span> describes how quickly species accumulate. Such a relationship might look like the following:</p>
-<p id="p-212">What do you notice about the data?</p>
-<p id="p-213">The symbols <span class="process-math">\(c\)</span> and <span class="process-math">\(z\)</span> represent <dfn class="terminology">parameters</dfn> that are often ‘fit’ from measurements. To do so we often ‘log-transform’ the relationship above (using the log base 10, denoted <span class="process-math">\(\log()\)</span> in the calculation below). Apply the logarithm then laws of logarithms to both sides of</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="para">has been used to describe the relationship, where <span class="process-math">\(S\)</span> is the number of species, <span class="process-math">\(A\)</span> is the area of the island, <span class="process-math">\(c\)</span> is a baseline number of species, and <span class="process-math">\(z\)</span> describes how quickly species accumulate. Such a relationship might look like the following:</div>
+</div> <div class="para" id="p-212">What do you notice about the data?</div> <div class="para logical" id="p-213">
+<div class="para">The symbols <span class="process-math">\(c\)</span> and <span class="process-math">\(z\)</span> represent <dfn class="terminology">parameters</dfn> that are often ‘fit’ from measurements. To do so we often ‘log-transform’ the relationship above (using the log base 10, denoted <span class="process-math">\(\log()\)</span> in the calculation below). Apply the logarithm then laws of logarithms to both sides of</div>
+<div class="displaymath process-math">
 \begin{equation*}
 S = cA^z
 \end{equation*}
 </div>
-<p id="p-214">This gives a  relationship between  and, that we can use to more easily estimate parameters.</p>
-<p id="p-215">Consider the famed mouse-elephant curve (with other organisms included) that relates energy consumption (metabolic rate) to body mass on a double-log plot.</p>
-<figure class="figure figure-like" id="figure-5"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/Mouse-Elephant_curve.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.5.5<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-216">To generate alternative versions of the graph using only the data within the boxed region of the figure<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-3" id="fn-3"><sup> 1 </sup></a>, we use the log base 10 applied to the power law relationship</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div> <div class="para" id="p-214">This gives a  relationship between  and, that we can use to more easily estimate parameters.</div> <div class="para" id="p-215">Consider the famed mouse-elephant curve (with other organisms included) that relates energy consumption (metabolic rate) to body mass on a double-log plot.</div> <figure class="figure figure-like" id="figure-5"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/Mouse-Elephant_curve.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.5.5<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure> <div class="para logical" id="p-216">
+<div class="para">To generate alternative versions of the graph using only the data within the boxed region of the figure<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-3" id="fn-3"><sup> 1 </sup></a>, we use the log base 10 applied to the power law relationship</div>
+<div class="displaymath process-math">
 \begin{equation*}
 E = aM^{b},
 \end{equation*}
 </div>
-<p class="continuation">between <span class="process-math">\(E\)</span> energy use (metabolic rate) and body mass <span class="process-math">\(M\text{.}\)</span> The derivation is as follows:</p>
-<p id="p-218"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/topics/figures/mouse1.png" class="contained"></div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/topics/figures/mouse2.png" class="contained"></div></p>
-<p id="p-219"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/topics/figures/mouse3.png" class="contained"></div> <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/topics/figures/mouse4.png" class="contained"></div></p></section></section></section><section class="exercises" id="quick-practice-exp"><h3 class="heading hide-type">
+<div class="para">between <span class="process-math">\(E\)</span> energy use (metabolic rate) and body mass <span class="process-math">\(M\text{.}\)</span> The derivation is as follows:</div>
+</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><img src="external/mouse1.png" class="contained"></div>
+<div class="sbspanel top" style="width:50%;"><img src="external/mouse2.png" class="contained"></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><img src="external/mouse3.png" class="contained"></div>
+<div class="sbspanel top" style="width:50%;"><img src="external/mouse4.png" class="contained"></div>
+</div></div></section></section></section><section class="exercises" id="quick-practice-exp"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Quick practice</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-11"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<p id="p-220">Give a few examples of measurements, relationships, or patterns defined by logarithmic or exponential functions.[quick-exp_log_meas]</p>
+<div class="para" id="p-218">Give a few examples of measurements, relationships, or patterns defined by logarithmic or exponential functions.[quick-exp_log_meas]</div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like">Good examples of measurements, relationships, or patterns that are defined using logarithmic or exponential relationships are the pH scale, the intensity and magnitude scales for earthquakes, the decibel scale for sound, and the increasing of computer RAM (in powers of two).</div></div>
 </div></article><article class="exercise exercise-like" id="exercise-12"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<p id="p-221">Simplify <span class="process-math">\(\dfrac{2^7}{2^{4}}\text{.}\)</span></p>
+<div class="para" id="p-219">Simplify <span class="process-math">\(\dfrac{2^7}{2^{4}}\text{.}\)</span>
+</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><p id="p-222">Simplifying <span class="process-math">\(\dfrac{2^7}{2^{4}}\)</span> we find <span class="process-math">\(\dfrac{2^7}{2^{4}} = 2^{7-4} = 2^{3} = 8\text{.}\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><div class="para" id="p-220">Simplifying <span class="process-math">\(\dfrac{2^7}{2^{4}}\)</span> we find <span class="process-math">\(\dfrac{2^7}{2^{4}} = 2^{7-4} = 2^{3} = 8\text{.}\)</span>
+</div></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-13"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<p id="p-223">Simplify <span class="process-math">\(\ln\left(\dfrac{1}{2}\right)\text{.}\)</span></p>
+<div class="para" id="p-221">Simplify <span class="process-math">\(\ln\left(\dfrac{1}{2}\right)\text{.}\)</span>
+</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><p id="p-224">Simplifying <span class="process-math">\(\ln\left(\dfrac{1}{2}\right)\)</span> using a variety of rules we find <span class="process-math">\(\ln\left(\dfrac{1}{2}\right) =
-\ln\left(2^{-1}\right) = -1\ln(2) = -\ln(2)\text{.}\)</span> The value of <span class="process-math">\(\ln(2)\approx0.6931\)</span> is a popular one in many life science applications.</p></div></div>
-</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-3"><div class="fn"><p id="p-217">You might occasionally see (as below) an axis with numbers of the form <span class="process-math">\(3\text{,}\)</span> <span class="process-math">\(10^{3}\text{,}\)</span> <span class="process-math">\(1,000\text{.}\)</span> The <span class="process-math">\(3\)</span> refers to the base 10 log of the value, <span class="process-math">\(10^{3}\)</span> refers to the actual value in scientific notation, and <span class="process-math">\(1000\)</span> is just the normal value. Only in the first are we actually transforming the data.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><div class="para" id="p-222">Simplifying <span class="process-math">\(\ln\left(\dfrac{1}{2}\right)\)</span> using a variety of rules we find <span class="process-math">\(\ln\left(\dfrac{1}{2}\right) =
+\ln\left(2^{-1}\right) = -1\ln(2) = -\ln(2)\text{.}\)</span> The value of <span class="process-math">\(\ln(2)\approx0.6931\)</span> is a popular one in many life science applications.</div></div></div>
+</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-3"><div class="fn"><div class="para" id="p-217">You might occasionally see (as below) an axis with numbers of the form <span class="process-math">\(3\text{,}\)</span> <span class="process-math">\(10^{3}\text{,}\)</span> <span class="process-math">\(1,000\text{.}\)</span> The <span class="process-math">\(3\)</span> refers to the base 10 log of the value, <span class="process-math">\(10^{3}\)</span> refers to the actual value in scientific notation, and <span class="process-math">\(1000\)</span> is just the normal value. Only in the first are we actually transforming the data.</div></div></div>
+</div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="linear-functions-and-their-graphs.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="introduction-to-discrete-time-dynamical-systems-dtds.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
 </div>
 </body>
 </html>

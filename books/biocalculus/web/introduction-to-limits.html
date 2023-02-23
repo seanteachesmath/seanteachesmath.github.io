@@ -14,199 +14,370 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Bio-Calculus">
 <meta property="book:author" content="Sean Laverty">
-<script>window.MathJax = {
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
     tagSide: "right",
     tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
   },
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
   },
   chtml: {
-    scale: 0.88,
+    scale: 0.98,
     mtextInheritFont: true
   },
   loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
-startup: {
+  startup: {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
-      $(document).trigger("runestone:mathjax-ready");
+      rsMathReady();
       }
     )}
-},
+  },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book ignore-math has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
+<p class="byline">Sean Laverty</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="introduction-to-discrete-time-dynamical-systems-dtds.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-intro.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="continuous-functions.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
 \definecolor{fillinmathshade}{gray}{0.9}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
-<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
-<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
-<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
-<p class="byline">Sean Laverty</p>
-</div>
-</div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
-<div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="introduction-to-discrete-time-dynamical-systems-dtds.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-intro.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="continuous-functions.html" title="Next">Next</a></span></div>
-</div>
-<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="introduction-to-discrete-time-dynamical-systems-dtds.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-intro.html" title="Up">Up</a><a class="next-button button toolbar-item" href="continuous-functions.html" title="Next">Next</a>
-</div>
-</div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><ul>
-<li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide" class="internal">Users guide</a></li></ul>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="users-guide.html" class="internal"><span class="title">Users guide</span></a></div></li></ul>
 </li>
-<li class="link">
-<a href="ch-intro.html" data-scroll="ch-intro" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
-<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus" class="internal">What is bio-calculus?</a></li>
-<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology" class="internal">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
-<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1" class="internal">Dimensions and units</a></li>
-<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs" class="internal">Linear functions and their graphs</a></li>
-<li><a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms" class="internal">Exponentials and logarithms</a></li>
-<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds" class="internal">Introduction to discrete-time dynamical systems (DTDS)</a></li>
-<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits" class="active">Introduction to limits</a></li>
-<li><a href="continuous-functions.html" data-scroll="continuous-functions" class="internal">Continuous functions</a></li>
-<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity" class="internal">Limits and behaviors at infinity</a></li>
+<li>
+<div class="toc-item"><a href="ch-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="what-is-bio-calculus.html" class="internal"><span class="codenumber">1.1</span> <span class="title">What is bio-calculus?</span></a></div></li>
+<li>
+<div class="toc-item"><a href="introduction-modeling-terminology.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-modeling-terminology.html#quick-jargon" class="internal"><span class="codenumber">1.2</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="dimensions-and-units-1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Dimensions and units</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="dimensions-and-units-1.html#quick-practice-units" class="internal"><span class="codenumber">1.3</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="linear-functions-and-their-graphs.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Linear functions and their graphs</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="linear-functions-and-their-graphs.html#quick-practice-linear" class="internal"><span class="codenumber">1.4</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="exponentials-and-logarithms.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Exponentials and logarithms</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="exponentials-and-logarithms.html#quick-practice-exp" class="internal"><span class="codenumber">1.5</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Introduction to discrete-time dynamical systems (DTDS)</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-discrete-time-dynamical-systems-dtds.html#quick-practice-dtds" class="internal"><span class="codenumber">1.6</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="introduction-to-limits.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Introduction to limits</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-limits.html#quick-practice-finite-limits" class="internal"><span class="codenumber">1.7</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="continuous-functions.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Continuous functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="continuous-functions.html#quick-practice-continuity" class="internal"><span class="codenumber">1.8</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="limits-and-behaviors-at-infinity.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Limits and behaviors at infinity</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="limits-and-behaviors-at-infinity.html#quick-practice-inf-limits" class="internal"><span class="codenumber">1.9</span> <span class="title">Quick practice</span></a></div></li>
+<li><div class="toc-item"><a href="limits-and-behaviors-at-infinity.html#webwork-inf-limits" class="internal"><span class="codenumber">1.9</span> <span class="title">Sample WeBWorK problems</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="ch-derivatives.html" data-scroll="ch-derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
-<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change" class="internal">Introduction to derivatives: Rates of change</a></li>
-<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions" class="internal">Derivatives of basic functions</a></li>
-<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions" class="internal">Derivatives of exponential and logarithmic functions</a></li>
-<li><a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule" class="internal">Derivatives of compositions: chain rule</a></li>
-<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients" class="internal">Derivatives of products and quotients</a></li>
-<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications" class="internal">Second derivatives and applications</a></li>
 </ul>
 </li>
-<li class="link">
-<a href="ch-integration.html" data-scroll="ch-integration" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
-<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations" class="internal">Introduction to differential equations</a></li>
-<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution" class="internal">More complicated integrals and integration by substitution</a></li>
-<li><a href="the-definite-integral.html" data-scroll="the-definite-integral" class="internal">The definite integral</a></li>
-<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral" class="internal">Applications of the definite integral</a></li>
-<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry" class="internal">Applications to chemistry</a></li>
+<li>
+<div class="toc-item"><a href="ch-derivatives.html" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="introduction-to-derivatives-rates-of-change.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction to derivatives: Rates of change</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-derivatives-rates-of-change.html#quick-practice-rates" class="internal"><span class="codenumber">2.1</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-basic-functions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Derivatives of basic functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-basic-functions.html#quick-practice-derivatives" class="internal"><span class="codenumber">2.2</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-exponential-and-logarithmic-functions.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Derivatives of exponential and logarithmic functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-exponential-and-logarithmic-functions.html#quick-practice-exp-deriv" class="internal"><span class="codenumber">2.3</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-compositions-chain-rule.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Derivatives of compositions: chain rule</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-compositions-chain-rule.html#quick-practice-chain" class="internal"><span class="codenumber">2.4</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-products-and-quotients.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Derivatives of products and quotients</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-products-and-quotients.html#quick-practice-product" class="internal"><span class="codenumber">2.5</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="second-derivatives-and-applications.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Second derivatives and applications</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="second-derivatives-and-applications.html#quick-practice-concavity" class="internal"><span class="codenumber">2.6</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
 </ul>
 </li>
-<li class="link">
-<a href="ch-advanced.html" data-scroll="ch-advanced" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a><ul>
-<li><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds" class="internal">Applications: nonlinear discrete-time dynamical systems (DTDS)</a></li>
-<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations" class="internal">Applications: autonomous differential equations</a></li>
+<li>
+<div class="toc-item"><a href="ch-integration.html" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="introduction-to-differential-equations.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to differential equations</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-differential-equations.html#quick-practice-des" class="internal"><span class="codenumber">3.1</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="more-complicated-integrals-and-integration-by-substitution.html" class="internal"><span class="codenumber">3.2</span> <span class="title">More complicated integrals and integration by substitution</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="more-complicated-integrals-and-integration-by-substitution.html#quick-practice-usub" class="internal"><span class="codenumber">3.2</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="the-definite-integral.html" class="internal"><span class="codenumber">3.3</span> <span class="title">The definite integral</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="the-definite-integral.html#quick-practice-def-int" class="internal"><span class="codenumber">3.3</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="applications-of-the-definite-integral.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Applications of the definite integral</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="applications-of-the-definite-integral.html#quick-practice-def-apps" class="internal"><span class="codenumber">3.4</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="applications-to-chemistry.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Applications to chemistry</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="applications-to-chemistry.html#quick-practice-chemistry" class="internal"><span class="codenumber">3.5</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
 </ul>
 </li>
-</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
-</div></div>
-<main class="main"><div id="content" class="pretext-content">
+<li>
+<div class="toc-item"><a href="ch-advanced.html" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Applications: nonlinear discrete-time dynamical systems (DTDS)</span></a></div></li>
+<li><div class="toc-item"><a href="applications-autonomous-differential-equations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Applications: autonomous differential equations</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="section" id="introduction-to-limits"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.7</span> <span class="title">Introduction to limits</span>
 </h2>
-<section class="paragraphs" id="the-plan-6"><h3 class="heading"><span class="title">The Plan.</span></h3>
-<p id="p-265">The next topic, limits of functions, is almost a purely mathematical topic, but one we will soon use to develop one of the central concepts of calculus. Imagine yourself working in the lab, about to undertake an exciting experiment. Before you can dive in, you must first orient yourself with your equipment, calibrate it, and practice a few basic techniques. Think of this topic, limits<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-4" id="fn-4"><sup> 1 </sup></a>, as an orientation to an important piece of machinery.</p></section><section class="paragraphs" id="limits"><h3 class="heading"><span class="title">Limits.</span></h3>
-<p id="p-267">In addition to <dfn class="terminology">eventually</dfn> allowing us to compute instantaneous rates of change (derivatives) of mathematical functions, we use limits to study and describe behavior of functions.</p>
-<section class="paragraphs" id="concept-of-a-limit"><h4 class="heading"><span class="title">Concept of a limit.</span></h4>
-<p id="p-268">For a function <span class="process-math">\(f(x)\)</span> and two numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(L\text{,}\)</span> the statement</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<section class="paragraphs" id="the-plan-6"><h3 class="heading"><span class="title">The Plan.</span></h3> <div class="para" id="p-263">The next topic, limits of functions, is almost a purely mathematical topic, but one we will soon use to develop one of the central concepts of calculus. Imagine yourself working in the lab, about to undertake an exciting experiment. Before you can dive in, you must first orient yourself with your equipment, calibrate it, and practice a few basic techniques. Think of this topic, limits<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-4" id="fn-4"><sup> 1 </sup></a>, as an orientation to an important piece of machinery.</div></section><section class="paragraphs" id="limits"><h3 class="heading"><span class="title">Limits.</span></h3> <div class="para" id="p-265">In addition to <dfn class="terminology">eventually</dfn> allowing us to compute instantaneous rates of change (derivatives) of mathematical functions, we use limits to study and describe behavior of functions.</div> <section class="paragraphs" id="concept-of-a-limit"><h4 class="heading"><span class="title">Concept of a limit.</span></h4> <div class="para logical" id="p-266">
+<div class="para">For a function <span class="process-math">\(f(x)\)</span> and two numbers <span class="process-math">\(a\)</span> and <span class="process-math">\(L\text{,}\)</span> the statement</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \lim_{x\rightarrow a} f(x) =
 L,
 \end{equation*}
 </div>
-<p class="continuation">means that “the value of <span class="process-math">\(f(x)\)</span> gets closer and closer to <span class="process-math">\(L\)</span> as <span class="process-math">\(x\)</span> gets closer and closer to <span class="process-math">\(a\text{.}\)</span>” Sometimes we say more simply that “the value of <span class="process-math">\(f(x)\)</span> approaches <span class="process-math">\(L\)</span> as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(a\text{.}\)</span>” This helps us explain and compute ‘what <span class="process-math">\(f(x)\)</span> does’ near a point <span class="process-math">\(x=a\)</span> <dfn class="terminology">even if <span class="process-math">\(f(a)\)</span> is undefined</dfn>!</p>
-<figure class="figure figure-like" id="figure-11"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/graph.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.1<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure></section><section class="paragraphs" id="one-and-twosided-limits"><h4 class="heading"><span class="title">One– and two–sided limits.</span></h4>
-<p id="p-269">Some functions have complicated domains and we can only discuss what happens as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(a\)</span> from one side. We say one of the following:</p>
-<figure class="figure figure-like" id="figure-12"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/graph.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.2<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><figure class="figure figure-like" id="figure-13"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/graph.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.3<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-270">Consider the appropriate one–sided and two–sided limits for the following functions.</p>
-<figure class="figure figure-like" id="figure-14"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/bas_func_sgn.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.4<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="" id="p-271">
+<div class="para">means that “the value of <span class="process-math">\(f(x)\)</span> gets closer and closer to <span class="process-math">\(L\)</span> as <span class="process-math">\(x\)</span> gets closer and closer to <span class="process-math">\(a\text{.}\)</span>” Sometimes we say more simply that “the value of <span class="process-math">\(f(x)\)</span> approaches <span class="process-math">\(L\)</span> as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(a\text{.}\)</span>” This helps us explain and compute ‘what <span class="process-math">\(f(x)\)</span> does’ near a point <span class="process-math">\(x=a\)</span> <dfn class="terminology">even if <span class="process-math">\(f(a)\)</span> is undefined</dfn>!</div>
+</div> <figure class="figure figure-like" id="figure-9"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/graph.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.1<span class="period">.</span></span><span class="space"> </span>A sketch to motivate the idea of limits.</figcaption></figure></section> <section class="paragraphs" id="one-and-twosided-limits"><h4 class="heading"><span class="title">One– and two–sided limits.</span></h4> <div class="para" id="p-267">Some functions have complicated domains and we can only discuss what happens as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(a\)</span> from one side. We say one of the following:</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><img src="external/graph.png" class="contained"></div>
+<div class="sbspanel top" style="width:50%;"><img src="external/graph.png" class="contained"></div>
+</div></div> <div class="para" id="p-268">Consider the appropriate one–sided and two–sided limits for the following functions.</div> <figure class="figure figure-like" id="figure-10"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/bas_func_sgn.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.2<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure> <div class="para logical" id="p-269"><div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0^-} \operatorname{sgn}(x)=\\
 &amp;\lim_{x\rightarrow0^+}\operatorname{sgn}(x)=\\
 &amp;\lim_{x\rightarrow0}\operatorname{sgn}(x)=\end{aligned}
 \end{equation*}
-</div>
-<figure class="figure figure-like" id="figure-15"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/bas_func_id.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.5<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="" id="p-272">
+</div></div> <figure class="figure figure-like" id="figure-11"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/bas_func_id.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.3<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure> <div class="para logical" id="p-270"><div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0^-}x=\\
 &amp;\lim_{x\rightarrow0^+}x=\\
 &amp;\lim_{x\rightarrow0}x=\end{aligned}
 \end{equation*}
-</div>
-<figure class="figure figure-like" id="figure-16"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/bas_func_cons.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.6<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><div class="displaymath process-math" data-contains-math-knowls="" id="p-273">
+</div></div> <figure class="figure figure-like" id="figure-12"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/bas_func_cons.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.4<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure> <div class="para logical" id="p-271"><div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}[t]
 &amp;\lim_{x\rightarrow0^-}0.64=\\
 &amp;\lim_{x\rightarrow0^+}0.64=\\
 &amp;\lim_{x\rightarrow0}0.64=\end{aligned}
 \end{equation*}
-</div>
-<article class="theorem theorem-like" id="thm-basic-limits"><h5 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.7</span><span class="period">.</span><span class="space"> </span><span class="title">Limits of basic functions.</span>
+</div></div> <article class="theorem theorem-like" id="thm-basic-limits"><h5 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Limits of basic functions.</span>
 </h5>
-<p id="p-274">Consider limits of the following two basic functions.</p>
+<div class="para logical" id="p-272">
+<div class="para">Consider limits of the following two basic functions.</div>
 <ol class="decimal">
-<li id="li-94">
-<p id="p-275">Suppose <span class="process-math">\(f(x)=c\text{,}\)</span> where <span class="process-math">\(c\)</span> is a constant, for all <span class="process-math">\(x\text{.}\)</span> Then for any value of <span class="process-math">\(a\)</span></p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<li id="li-94"><div class="para logical" id="p-273">
+<div class="para">Suppose <span class="process-math">\(f(x)=c\text{,}\)</span> where <span class="process-math">\(c\)</span> is a constant, for all <span class="process-math">\(x\text{.}\)</span> Then for any value of <span class="process-math">\(a\)</span>
+</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \lim_{x\to a}f(x) = \lim_{x\to a}c=c,
 \end{equation*}
 </div>
-<p class="continuation">or, in words <em class="emphasis">the limit of a constant function is that value of that constant as <span class="process-math">\(x\)</span> approaches any value</em>.</p>
-</li>
-<li id="li-95">
-<p id="p-276">Suppose <span class="process-math">\(f(x)=x\)</span> for all <span class="process-math">\(x\text{.}\)</span> Then for any value of <span class="process-math">\(a\)</span></p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="para">or, in words <em class="emphasis">the limit of a constant function is that value of that constant as <span class="process-math">\(x\)</span> approaches any value</em>.</div>
+</div></li>
+<li id="li-95"><div class="para logical" id="p-274">
+<div class="para">Suppose <span class="process-math">\(f(x)=x\)</span> for all <span class="process-math">\(x\text{.}\)</span> Then for any value of <span class="process-math">\(a\)</span>
+</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \lim_{x\to a}f(x)=\lim_{x\to a} x =a,
 \end{equation*}
 </div>
-<p class="continuation">or, in words<em class="emphasis">values of the the function <span class="process-math">\(x\)</span> approach <span class="process-math">\(a\)</span> as the variable <span class="process-math">\(x\)</span> approaches <span class="process-math">\(a\)</span></em>.</p>
-</li>
-</ol></article><p id="p-277">Consider the appropriate one–sided and two–sided limits for the following functions.</p>
-<p id="p-278"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/bas_func_sgn.png" class="contained"></div> Limits at <span class="process-math">\(x=0\text{,}\)</span></p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="para">or, in words<em class="emphasis">values of the the function <span class="process-math">\(x\)</span> approach <span class="process-math">\(a\)</span> as the variable <span class="process-math">\(x\)</span> approaches <span class="process-math">\(a\)</span></em>.</div>
+</div></li>
+</ol>
+</div></article> <div class="para" id="p-275">Consider the appropriate one–sided and two–sided limits for the following functions.</div> <div class="para logical" id="p-276">
+<div class="para">
+<div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/bas_func_sgn.png" class="contained"></div> Limits at <span class="process-math">\(x=0\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0^-} \operatorname{sgn}(x)=-1\\
 &amp;\lim_{x\rightarrow0^+}\operatorname{sgn}(x)=1\\
-&amp;\lim_{x\rightarrow0}\operatorname{sgn}(x)=~\text{``DNE''}
-\end{aligned}
+&amp;\lim_{x\rightarrow0}\operatorname{sgn}(x)=~\text{DNE}\end{aligned}
 \end{equation*}
 </div>
-<p id="p-279">Limits at a negative value,</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div> <div class="para logical" id="p-277">
+<div class="para">Limits at a negative value,</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow-0.5^-} \operatorname{sgn}(x)=-1\\
@@ -214,8 +385,9 @@ L,
 &amp;\lim_{x\rightarrow-0.5}\operatorname{sgn}(x)=-1\end{aligned}
 \end{equation*}
 </div>
-<p id="p-280">Limits at a positive value,</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div> <div class="para logical" id="p-278">
+<div class="para">Limits at a positive value,</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0.5^-} \operatorname{sgn}(x)=1\\
@@ -223,9 +395,11 @@ L,
 &amp;\lim_{x\rightarrow0.5}\operatorname{sgn}(x)=1\\\end{aligned}
 \end{equation*}
 </div>
-<figure class="figure figure-like" id="figure-17"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/bas_func_id.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.8<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-281">Limits at <span class="process-math">\(x=0\text{,}\)</span></p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div> <figure class="figure figure-like" id="figure-13"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/bas_func_id.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.6<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure> <div class="para logical" id="p-279">
+<div class="para">Limits at <span class="process-math">\(x=0\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0^-}x=0\\
@@ -233,8 +407,9 @@ L,
 &amp;\lim_{x\rightarrow0}x=0\end{aligned}
 \end{equation*}
 </div>
-<p id="p-282">Limits at a negative value,</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div> <div class="para logical" id="p-280">
+<div class="para">Limits at a negative value,</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow-0.5^-}x=-0.5\\
@@ -242,8 +417,9 @@ L,
 &amp;\lim_{x\rightarrow-0.5}x=-0.5\end{aligned}
 \end{equation*}
 </div>
-<p id="p-283">Limits at a positive value,</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div> <div class="para logical" id="p-281">
+<div class="para">Limits at a positive value,</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0.5^-}x=0.5\\
@@ -251,9 +427,11 @@ L,
 &amp;\lim_{x\rightarrow0.5}x=0.5\\\end{aligned}
 \end{equation*}
 </div>
-<figure class="figure figure-like" id="figure-18"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/bas_func_cons.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.9<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-284">Limits at <span class="process-math">\(x=0\text{,}\)</span></p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div> <figure class="figure figure-like" id="figure-14"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/bas_func_cons.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.7<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure> <div class="para logical" id="p-282">
+<div class="para">Limits at <span class="process-math">\(x=0\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0^-}0.64=0.64\\
@@ -261,8 +439,9 @@ L,
 &amp;\lim_{x\rightarrow0}0.64=0.64\end{aligned}
 \end{equation*}
 </div>
-<p id="p-285">Limits at a negative value,</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div> <div class="para logical" id="p-283">
+<div class="para">Limits at a negative value,</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow-0.5^-}0.64=0.64\\
@@ -270,8 +449,9 @@ L,
 &amp;\lim_{x\rightarrow-0.5}0.64=0.64\end{aligned}
 \end{equation*}
 </div>
-<p id="p-286">Limits at a positive value,</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div> <div class="para logical" id="p-284">
+<div class="para">Limits at a positive value,</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0.5^-}0.64=0.64\\
@@ -279,86 +459,84 @@ L,
 &amp;\lim_{x\rightarrow0.5}0.64=0.64\\\end{aligned}
 \end{equation*}
 </div>
-<p id="p-287">Notice that the only (two-sided) limit to not exist is the one that corresponds to the most complicated of the three graphs in its most complicated portion (left panel: near <span class="process-math">\(x=0\)</span>). This is because the one-sided limits of the <span class="process-math">\(\operatorname{sgn(x)}\)</span> function do not match as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(0\)</span> from the left and right. In all other cases we are looking at graphs that ‘look more familiar’ (no jumps, no open or filled points) at the points we are evaluating the limits. Also notice that</p>
-<ul id="p-288" class="disc">
-<li id="li-96"><p id="p-289">we can say things like <span class="process-math">\(x\to-0.5^+\)</span> which refers to our attempt to approach the <span class="process-math">\(x\)</span> value of <span class="process-math">\(-0.5\)</span> from the right hand side.</p></li>
-<li id="li-97"><p id="p-290">the superscript has nothing to do with the sign of the number itself, only the direction from which we approach the number.</p></li>
-</ul>
-<p id="p-291">We will spend most of our time looking at two-sided limits once we get an understanding of some important categories of functions.</p>
-<article class="theorem theorem-like" id="thm-combining-limits"><h5 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.10</span><span class="period">.</span><span class="space"> </span><span class="title">limits of combinations of functions.</span>
+</div> <div class="para" id="p-285">Notice that the only (two-sided) limit to not exist is the one that corresponds to the most complicated of the three graphs in its most complicated portion (left panel: near <span class="process-math">\(x=0\)</span>). This is because the one-sided limits of the <span class="process-math">\(\operatorname{sgn(x)}\)</span> function do not match as <span class="process-math">\(x\)</span> approaches <span class="process-math">\(0\)</span> from the left and right. In all other cases we are looking at graphs that ‘look more familiar’ (no jumps, no open or filled points) at the points we are evaluating the limits. Also notice that</div> <div class="para logical" id="p-286"><ul class="disc">
+<li id="li-96"><div class="para" id="p-287">we can say things like <span class="process-math">\(x\to-0.5^+\)</span> which refers to our attempt to approach the <span class="process-math">\(x\)</span> value of <span class="process-math">\(-0.5\)</span> from the right hand side.</div></li>
+<li id="li-97"><div class="para" id="p-288">the superscript has nothing to do with the sign of the number itself, only the direction from which we approach the number.</div></li>
+</ul></div> <div class="para" id="p-289">We will spend most of our time looking at two-sided limits once we get an understanding of some important categories of functions.</div> <article class="theorem theorem-like" id="thm-combining-limits"><h5 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.8</span><span class="period">.</span><span class="space"> </span><span class="title">limits of combinations of functions.</span>
 </h5>
-<p id="p-292">Suppose <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> are functions with well-defined limits at <span class="process-math">\(x=a\text{.}\)</span></p>
+<div class="para logical" id="p-290">
+<div class="para">Suppose <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> are functions with well-defined limits at <span class="process-math">\(x=a\text{.}\)</span>
+</div>
 <ol class="decimal">
-<li id="li-98">
-<p id="p-293">The limit of the sum is the sum of the limits</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<li id="li-98"><div class="para logical" id="p-291">
+<div class="para">The limit of the sum is the sum of the limits</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \lim_{x\to a}\big[ f(x)+g(x)\big]=\lim_{x\to a} f(x) + \lim_{x\to a}
 g(x)
 \end{equation*}
 </div>
-</li>
-<li id="li-99">
-<p id="p-294">The limit of the product is the product of the limits</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div></li>
+<li id="li-99"><div class="para logical" id="p-292">
+<div class="para">The limit of the product is the product of the limits</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \lim_{x\to a}\big[ f(x)g(x)\big]=\big[\lim_{x\to a} f(x)\big]
 \cdot \big[\lim_{x\to a} g(x)\big]
 \end{equation*}
 </div>
-</li>
-<li id="li-100">
-<p id="p-295">The limit of a constant times a function is the constant times the limit of the function</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div></li>
+<li id="li-100"><div class="para logical" id="p-293">
+<div class="para">The limit of a constant times a function is the constant times the limit of the function</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \lim_{x\to a}\big[
 cf(x)\big]=c\cdot \lim_{x\to a} f(x)
 \end{equation*}
 </div>
-</li>
-<li id="li-101">
-<p id="p-296">Provided <span class="process-math">\(\displaystyle\lim_{x\to a} g(x) \ne
-0\text{,}\)</span> the limit of the quotient (or ratio) is the quotient (or ratio) of the limits</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div></li>
+<li id="li-101"><div class="para logical" id="p-294">
+<div class="para">Provided <span class="process-math">\(\displaystyle\lim_{x\to a} g(x) \ne
+0\text{,}\)</span> the limit of the quotient (or ratio) is the quotient (or ratio) of the limits</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \lim_{x\to a}\left(
 \frac{f(x)}{g(x)}\right)=\frac{\displaystyle\lim_{x\to a}
 f(x)}{\displaystyle\lim_{x\to a} g(x)}.
 \end{equation*}
 </div>
-</li>
-</ol></article><section class="paragraphs" id="polynomials"><h5 class="heading"><span class="title">Polynomials.</span></h5>
-<p id="p-297">Since a polynomial (e.g., a quadratic or a cubic function) is the sum of terms that involve variables (like <span class="process-math">\(x\)</span>) to powers (like <span class="process-math">\(x^{2}\)</span>) multiplied by constants (like <span class="process-math">\(3x^{2}\)</span>), we could decompose limits of polynomials using <a href="" class="xref" data-knowl="./knowl/thm-combining-limits.html" title="Theorem 1.7.10: limits of combinations of functions">Theorem 1.7.10</a> and evaluate them with <a href="" class="xref" data-knowl="./knowl/thm-basic-limits.html" title="Theorem 1.7.7: Limits of basic functions">Theorem 1.7.7</a>.</p></section><article class="example example-like" id="ex-polynomials-as-basic-functions"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-polynomials-as-basic-functions"><h5 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.11</span><span class="period">.</span><span class="space"> </span><span class="title">Reducing formulas to basic functions.</span>
-</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-polynomials-as-basic-functions"><article class="example example-like"><p id="p-298">Write the following functions using only constant and identity functions:</p>
+</div></li>
+</ol>
+</div></article> <section class="paragraphs" id="polynomials"><h5 class="heading"><span class="title">Polynomials.</span></h5> <div class="para" id="p-295">Since a polynomial (e.g., a quadratic or a cubic function) is the sum of terms that involve variables (like <span class="process-math">\(x\)</span>) to powers (like <span class="process-math">\(x^{2}\)</span>) multiplied by constants (like <span class="process-math">\(3x^{2}\)</span>), we could decompose limits of polynomials using <a href="" class="xref" data-knowl="./knowl/thm-combining-limits.html" title="Theorem 1.7.8: limits of combinations of functions">Theorem 1.7.8</a> and evaluate them with <a href="" class="xref" data-knowl="./knowl/thm-basic-limits.html" title="Theorem 1.7.5: Limits of basic functions">Theorem 1.7.5</a>.</div></section> <article class="example example-like" id="ex-polynomials-as-basic-functions"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-polynomials-as-basic-functions"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.9</span><span class="period">.</span><span class="space"> </span><span class="title">Reducing formulas to basic functions.</span>
+</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-polynomials-as-basic-functions"><article class="example example-like"><div class="para logical" id="p-296">
+<div class="para">Write the following functions using only constant and identity functions:</div>
 <ol class="decimal">
-<li id="li-102"><p id="p-299"><span class="process-math">\(\displaystyle f(x) = 5x+6\)</span></p></li>
-<li id="li-103"><p id="p-300"><span class="process-math">\(\displaystyle g(x) = 3x^{3}+2x^{2}+x+6\)</span></p></li>
+<li id="li-102"><div class="para" id="p-297"><span class="process-math">\(\displaystyle f(x) = 5x+6\)</span></div></li>
+<li id="li-103"><div class="para" id="p-298"><span class="process-math">\(\displaystyle g(x) = 3x^{3}+2x^{2}+x+6\)</span></div></li>
 </ol>
+</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like"><ol id="p-301" class="decimal">
-<li id="li-104"><p id="p-302"><span class="process-math">\(\displaystyle f(x) = 5x+6\)</span></p></li>
-<li id="li-105"><p id="p-303"><span class="process-math">\(\displaystyle g(x) = 3x^{3}+2x^{2}+x+6\)</span></p></li>
-</ol></div></div>
-</div></article></div>
-<article class="example example-like" id="ex-polynomials-limits-basic-functions"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-polynomials-limits-basic-functions"><h5 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.12</span><span class="period">.</span><span class="space"> </span><span class="title">Limits using basic functions.</span>
-</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-polynomials-limits-basic-functions"><article class="example example-like"><p id="p-304">Use Theorem <a href="" class="xref" data-knowl="./knowl/thm-combining-limits.html" title="Theorem 1.7.10: limits of combinations of functions">Theorem 1.7.10</a> to evaluate the limits of <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> from the previous example.</p>
-<ol id="p-305" class="decimal">
-<li id="li-106"><p id="p-306"><span class="process-math">\(\displaystyle\lim_{x\rightarrow1} f(x) =
-\lim_{x\rightarrow1}5x+6 =\)</span> We can now evaluate limits of polynomials by direct substitution.</p></li>
-<li id="li-107"><p id="p-307"><span class="process-math">\(\displaystyle \displaystyle\lim_{x\rightarrow-1} g(x) =
-\lim_{x\rightarrow-1} 3x^{3}+2x^{2}+x+6 =\)</span></p></li>
-</ol>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like"><div class="para logical" id="p-299"><ol class="decimal">
+<li id="li-104"><div class="para" id="p-300"><span class="process-math">\(\displaystyle f(x) = 5x+6\)</span></div></li>
+<li id="li-105"><div class="para" id="p-301"><span class="process-math">\(\displaystyle g(x) = 3x^{3}+2x^{2}+x+6\)</span></div></li>
+</ol></div></div></div>
+</div></article></div> <article class="example example-like" id="ex-polynomials-limits-basic-functions"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-polynomials-limits-basic-functions"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.10</span><span class="period">.</span><span class="space"> </span><span class="title">Limits using basic functions.</span>
+</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-polynomials-limits-basic-functions"><article class="example example-like"><div class="para" id="p-302">Use Theorem <a href="" class="xref" data-knowl="./knowl/thm-combining-limits.html" title="Theorem 1.7.8: limits of combinations of functions">Theorem 1.7.8</a> to evaluate the limits of <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> from the previous example.</div> <div class="para logical" id="p-303"><ol class="decimal">
+<li id="li-106"><div class="para" id="p-304">
+<span class="process-math">\(\displaystyle\lim_{x\rightarrow1} f(x) =
+\lim_{x\rightarrow1}5x+6 =\)</span> We can now evaluate limits of polynomials by direct substitution.</div></li>
+<li id="li-107"><div class="para" id="p-305"><span class="process-math">\(\displaystyle \displaystyle\lim_{x\rightarrow-1} g(x) =
+\lim_{x\rightarrow-1} 3x^{3}+2x^{2}+x+6 =\)</span></div></li>
+</ol></div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><p id="p-308"></p></div></div>
-</div></article></div>
-<article class="example example-like" id="ex-limit-DNE"><a href="" data-knowl="" class="id-ref example-knowl original has-image has-tabular" data-refid="hk-ex-limit-DNE"><h5 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.13</span><span class="period">.</span><span class="space"> </span><span class="title">Division by zero.</span>
-</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-limit-DNE"><article class="example example-like"><p id="p-309">When studying a function such as <span class="process-math">\(\displaystyle f(x) = \frac{1}{x}\text{,}\)</span> we must be aware that the function is <dfn class="terminology">undefined</dfn> at <span class="process-math">\(x=0\text{.}\)</span> When talking about the limits,</p>
-<figure class="figure figure-like" id="figure-19"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/graph.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.14<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><figure class="table table-like" id="table-2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.7.15<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><div class="para" id="p-306"></div></div></div>
+</div></article></div> <article class="example example-like" id="ex-limit-DNE"><a href="" data-knowl="" class="id-ref example-knowl original has-image has-tabular" data-refid="hk-ex-limit-DNE"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.11</span><span class="period">.</span><span class="space"> </span><span class="title">Division by zero.</span>
+</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-limit-DNE"><article class="example example-like"><div class="para" id="p-307">When studying a function such as <span class="process-math">\(\displaystyle f(x) = \frac{1}{x}\text{,}\)</span> we must be aware that the function is <dfn class="terminology">undefined</dfn> at <span class="process-math">\(x=0\text{.}\)</span> When talking about the limits,</div> <figure class="figure figure-like" id="figure-15"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/graph.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.7.12<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure> <figure class="table table-like" id="table-2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.7.13<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="l m b0 r0 l0 t0 lines">x</th>
 <th scope="col" class="c m b0 r0 l0 t0 lines"><span class="process-math">\(\displaystyle f(x)
@@ -408,64 +586,83 @@ f(x)}{\displaystyle\lim_{x\to a} g(x)}.
 <td class="l m b0 r0 l0 t0 lines">1</td>
 <td class="c m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></figure><p id="p-310">To finally assign values to these limits,</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</table></div></figure> <div class="para logical" id="p-308">
+<div class="para">To finally assign values to these limits,</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 &amp;\lim_{x\rightarrow0^-}\frac{1}{x}=\\
 &amp;\lim_{x\to0^+}\frac{1}{x}=\\
 &amp;\lim_{x\rightarrow0}\frac{1}{x}=\end{aligned}
 \end{equation*}
-</div></article></div>
-<article class="example example-like" id="ex-limit-DNE2"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-limit-DNE2"><h5 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.16</span><span class="period">.</span><span class="space"> </span><span class="title">Division by zero.</span>
-</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-limit-DNE2"><article class="example example-like"><p id="p-311">What about our approach changes if we consider limits of <span class="process-math">\(f(x) = \dfrac{2}{3-x}\text{?}\)</span></p>
+</div>
+</div></article></div> <article class="example example-like" id="ex-limit-DNE2"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-limit-DNE2"><h5 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.14</span><span class="period">.</span><span class="space"> </span><span class="title">Division by zero.</span>
+</h5></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-limit-DNE2"><article class="example example-like"><div class="para" id="p-309">What about our approach changes if we consider limits of <span class="process-math">\(f(x) = \dfrac{2}{3-x}\text{?}\)</span>
+</div>
 <div class="solutions">
 <a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"></div></div>
-</div></article></div>
-<section class="paragraphs" id="square-roots"><h5 class="heading"><span class="title">Square roots.</span></h5>
-<p id="p-312">Since the input of the square root function must be positive, we talk about only the one–sided limit</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div></article></div> <section class="paragraphs" id="square-roots"><h5 class="heading"><span class="title">Square roots.</span></h5> <div class="para logical" id="p-310">
+<div class="para">Since the input of the square root function must be positive, we talk about only the one–sided limit</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \lim_{x\rightarrow0^+}\sqrt{x},
 \end{equation*}
 </div>
-<p class="continuation">since we can only approach <span class="process-math">\(x=0\)</span> from above (the right side of the number line). Fortunately for us, square root functions do not show up a great deal in biological applications.</p></section></section></section><section class="exercises" id="quick-practice-finite-limits"><h3 class="heading hide-type">
+<div class="para">since we can only approach <span class="process-math">\(x=0\)</span> from above (the right side of the number line). Fortunately for us, square root functions do not show up a great deal in biological applications.</div>
+</div></section></section></section><section class="exercises" id="quick-practice-finite-limits"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Quick practice</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-16"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<p id="p-313">Compute <span class="process-math">\(\displaystyle \lim_{x\to5}
-4\text{.}\)</span></p>
+<div class="para" id="p-311">Compute <span class="process-math">\(\displaystyle \lim_{x\to5}
+4\text{.}\)</span>
+</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like"><p id="p-314">Since the limit of a constant function is the value of that constant, <span class="process-math">\(\displaystyle \lim_{x\to5} 4 = 4\text{.}\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like"><div class="para" id="p-312">Since the limit of a constant function is the value of that constant, <span class="process-math">\(\displaystyle \lim_{x\to5} 4 = 4\text{.}\)</span>
+</div></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-17"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<p id="p-315">Compute <span class="process-math">\(\displaystyle \lim_{x\to4}
-(5x+4)\text{.}\)</span></p>
+<div class="para" id="p-313">Compute <span class="process-math">\(\displaystyle \lim_{x\to4}
+(5x+4)\text{.}\)</span>
+</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like"><p id="p-316">By applying the rules of computing limits <span class="process-math">\(\displaystyle \lim_{x\to4} (5x+4) = \left(\lim_{x\to4}
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like"><div class="para" id="p-314">By applying the rules of computing limits <span class="process-math">\(\displaystyle \lim_{x\to4} (5x+4) = \left(\lim_{x\to4}
 5\right)\left(\lim_{x\to4} x\right) + \left(\lim_{x\to4} 4 \right)=
-5(4)+4 = 24\text{.}\)</span></p></div></div>
+5(4)+4 = 24\text{.}\)</span>
+</div></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-18"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<p id="p-317">Compute the limits</p>
+<div class="para logical" id="p-315">
+<div class="para">Compute the limits</div>
 <ol class="lower-alpha">
-<li id="li-108"><p id="p-318"><span class="process-math">\(\displaystyle\lim_{x\to0^-}\dfrac{1}{x^{3}}\text{,}\)</span></p></li>
-<li id="li-109"><p id="p-319"><span class="process-math">\(\displaystyle\lim_{x\to0^+}\dfrac{1}{x^{3}}\text{,}\)</span> and</p></li>
-<li id="li-110"><p id="p-320"><span class="process-math">\(\displaystyle\lim_{x\to0}\dfrac{1}{x^{3}}\text{.}\)</span></p></li>
+<li id="li-108"><div class="para" id="p-316"><span class="process-math">\(\displaystyle\lim_{x\to0^-}\dfrac{1}{x^{3}}\text{,}\)</span></div></li>
+<li id="li-109"><div class="para" id="p-317">
+<span class="process-math">\(\displaystyle\lim_{x\to0^+}\dfrac{1}{x^{3}}\text{,}\)</span> and</div></li>
+<li id="li-110"><div class="para" id="p-318"><span class="process-math">\(\displaystyle\lim_{x\to0}\dfrac{1}{x^{3}}\text{.}\)</span></div></li>
 </ol>
+</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like">
-<p id="p-321">It might help you to make a table of values (see <a href="" class="xref" data-knowl="./knowl/ex-limit-DNE.html" title="Example 1.7.13: Division by zero">Example 1.7.13</a>) values are</p>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><div class="para logical" id="p-319">
+<div class="para">It might help you to make a table of values (see <a href="" class="xref" data-knowl="./knowl/ex-limit-DNE.html" title="Example 1.7.11: Division by zero">Example 1.7.11</a>) values are</div>
 <ol class="lower-alpha">
-<li id="li-111"><p id="p-322"><span class="process-math">\(\displaystyle \lim_{x\to0^-}\dfrac{1}{x^{3}} =
--\infty\text{,}\)</span></p></li>
-<li id="li-112"><p id="p-323"><span class="process-math">\(\displaystyle \lim_{x\to0^+}\dfrac{1}{x^{3}} =
-+\infty\text{,}\)</span> and finally</p></li>
-<li id="li-113"><p id="p-324">since the previous two answers for one-sided limits do not match, the two-sided limit <span class="process-math">\(\displaystyle
-\lim_{x\to0}\dfrac{1}{x^{3}}\)</span> does not exist, written in shorthand as <span class="process-math">\(\displaystyle \lim_{x\to0}\dfrac{1}{x^{3}} = \text{DNE}\)</span> or <span class="process-math">\(\displaystyle \lim_{x\to0}\dfrac{1}{x^{3}}\text{ DNE}\)</span></p></li>
+<li id="li-111"><div class="para" id="p-320"><span class="process-math">\(\displaystyle \lim_{x\to0^-}\dfrac{1}{x^{3}} =
+-\infty\text{,}\)</span></div></li>
+<li id="li-112"><div class="para" id="p-321">
+<span class="process-math">\(\displaystyle \lim_{x\to0^+}\dfrac{1}{x^{3}} =
++\infty\text{,}\)</span> and finally</div></li>
+<li id="li-113"><div class="para" id="p-322">since the previous two answers for one-sided limits do not match, the two-sided limit <span class="process-math">\(\displaystyle
+\lim_{x\to0}\dfrac{1}{x^{3}}\)</span> does not exist, written in shorthand as <span class="process-math">\(\displaystyle \lim_{x\to0}\dfrac{1}{x^{3}} = \text{DNE}\)</span> or <span class="process-math">\(\displaystyle \lim_{x\to0}\dfrac{1}{x^{3}}\text{ DNE}\)</span>
+</div></li>
 </ol>
-</div></div>
-</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-4"><div class="fn"><p id="p-266">Limits are undoubtedly important throughout mathematics and fill a whole chapter of a typical calculus course. They are central for many topics in advanced mathematics, but we will take just a brief look into limits.</p></div></div>
+</div></div></div>
+</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-4"><div class="fn"><div class="para" id="p-264">Limits are undoubtedly important throughout mathematics and fill a whole chapter of a typical calculus course. They are central for many topics in advanced mathematics, but we will take just a brief look into limits.</div></div></div>
+</div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="introduction-to-discrete-time-dynamical-systems-dtds.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="continuous-functions.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
 </div>
 </body>
 </html>
