@@ -14,143 +14,314 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Bio-Calculus">
 <meta property="book:author" content="Sean Laverty">
-<script>window.MathJax = {
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
     tagSide: "right",
     tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
   },
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
   },
   chtml: {
-    scale: 0.88,
+    scale: 0.98,
     mtextInheritFont: true
   },
   loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
-startup: {
+  startup: {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
-      $(document).trigger("runestone:mathjax-ready");
+      rsMathReady();
       }
     )}
-},
+  },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext-book ignore-math has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
+<p class="byline">Sean Laverty</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="introduction-to-derivatives-rates-of-change.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-derivatives.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="derivatives-of-exponential-and-logarithmic-functions.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
 \definecolor{fillinmathshade}{gray}{0.9}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
-<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
-<a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
-<p class="byline">Sean Laverty</p>
-</div>
-</div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
-<div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="introduction-to-derivatives-rates-of-change.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-derivatives.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="derivatives-of-exponential-and-logarithmic-functions.html" title="Next">Next</a></span></div>
-</div>
-<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="introduction-to-derivatives-rates-of-change.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-derivatives.html" title="Up">Up</a><a class="next-button button toolbar-item" href="derivatives-of-exponential-and-logarithmic-functions.html" title="Next">Next</a>
-</div>
-</div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
-<nav id="toc"><ul>
-<li class="link frontmatter">
-<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide" class="internal">Users guide</a></li></ul>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="users-guide.html" class="internal"><span class="title">Users guide</span></a></div></li></ul>
 </li>
-<li class="link">
-<a href="ch-intro.html" data-scroll="ch-intro" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
-<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus" class="internal">What is bio-calculus?</a></li>
-<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology" class="internal">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
-<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1" class="internal">Dimensions and units</a></li>
-<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs" class="internal">Linear functions and their graphs</a></li>
-<li><a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms" class="internal">Exponentials and logarithms</a></li>
-<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds" class="internal">Introduction to discrete-time dynamical systems (DTDS)</a></li>
-<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits" class="internal">Introduction to limits</a></li>
-<li><a href="continuous-functions.html" data-scroll="continuous-functions" class="internal">Continuous functions</a></li>
-<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity" class="internal">Limits and behaviors at infinity</a></li>
+<li>
+<div class="toc-item"><a href="ch-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="what-is-bio-calculus.html" class="internal"><span class="codenumber">1.1</span> <span class="title">What is bio-calculus?</span></a></div></li>
+<li>
+<div class="toc-item"><a href="introduction-modeling-terminology.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-modeling-terminology.html#quick-jargon" class="internal"><span class="codenumber">1.2</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="dimensions-and-units-1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Dimensions and units</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="dimensions-and-units-1.html#quick-practice-units" class="internal"><span class="codenumber">1.3</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="linear-functions-and-their-graphs.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Linear functions and their graphs</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="linear-functions-and-their-graphs.html#quick-practice-linear" class="internal"><span class="codenumber">1.4</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="exponentials-and-logarithms.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Exponentials and logarithms</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="exponentials-and-logarithms.html#quick-practice-exp" class="internal"><span class="codenumber">1.5</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Introduction to discrete-time dynamical systems (DTDS)</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-discrete-time-dynamical-systems-dtds.html#quick-practice-dtds" class="internal"><span class="codenumber">1.6</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="introduction-to-limits.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Introduction to limits</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-limits.html#quick-practice-finite-limits" class="internal"><span class="codenumber">1.7</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="continuous-functions.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Continuous functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="continuous-functions.html#quick-practice-continuity" class="internal"><span class="codenumber">1.8</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="limits-and-behaviors-at-infinity.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Limits and behaviors at infinity</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="limits-and-behaviors-at-infinity.html#quick-practice-inf-limits" class="internal"><span class="codenumber">1.9</span> <span class="title">Quick practice</span></a></div></li>
+<li><div class="toc-item"><a href="limits-and-behaviors-at-infinity.html#webwork-inf-limits" class="internal"><span class="codenumber">1.9</span> <span class="title">Sample WeBWorK problems</span></a></div></li>
 </ul>
 </li>
-<li class="link">
-<a href="ch-derivatives.html" data-scroll="ch-derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
-<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change" class="internal">Introduction to derivatives: Rates of change</a></li>
-<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions" class="active">Derivatives of basic functions</a></li>
-<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions" class="internal">Derivatives of exponential and logarithmic functions</a></li>
-<li><a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule" class="internal">Derivatives of compositions: chain rule</a></li>
-<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients" class="internal">Derivatives of products and quotients</a></li>
-<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications" class="internal">Second derivatives and applications</a></li>
 </ul>
 </li>
-<li class="link">
-<a href="ch-integration.html" data-scroll="ch-integration" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
-<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations" class="internal">Introduction to differential equations</a></li>
-<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution" class="internal">More complicated integrals and integration by substitution</a></li>
-<li><a href="the-definite-integral.html" data-scroll="the-definite-integral" class="internal">The definite integral</a></li>
-<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral" class="internal">Applications of the definite integral</a></li>
-<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry" class="internal">Applications to chemistry</a></li>
+<li>
+<div class="toc-item"><a href="ch-derivatives.html" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="introduction-to-derivatives-rates-of-change.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction to derivatives: Rates of change</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-derivatives-rates-of-change.html#quick-practice-rates" class="internal"><span class="codenumber">2.1</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li class="active">
+<div class="toc-item"><a href="derivatives-of-basic-functions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Derivatives of basic functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-basic-functions.html#quick-practice-derivatives" class="internal"><span class="codenumber">2.2</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-exponential-and-logarithmic-functions.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Derivatives of exponential and logarithmic functions</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-exponential-and-logarithmic-functions.html#quick-practice-exp-deriv" class="internal"><span class="codenumber">2.3</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-compositions-chain-rule.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Derivatives of compositions: chain rule</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-compositions-chain-rule.html#quick-practice-chain" class="internal"><span class="codenumber">2.4</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="derivatives-of-products-and-quotients.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Derivatives of products and quotients</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-products-and-quotients.html#quick-practice-product" class="internal"><span class="codenumber">2.5</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="second-derivatives-and-applications.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Second derivatives and applications</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="second-derivatives-and-applications.html#quick-practice-concavity" class="internal"><span class="codenumber">2.6</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
 </ul>
 </li>
-<li class="link">
-<a href="ch-advanced.html" data-scroll="ch-advanced" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a><ul>
-<li><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds" class="internal">Applications: nonlinear discrete-time dynamical systems (DTDS)</a></li>
-<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations" class="internal">Applications: autonomous differential equations</a></li>
+<li>
+<div class="toc-item"><a href="ch-integration.html" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="introduction-to-differential-equations.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to differential equations</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="introduction-to-differential-equations.html#quick-practice-des" class="internal"><span class="codenumber">3.1</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="more-complicated-integrals-and-integration-by-substitution.html" class="internal"><span class="codenumber">3.2</span> <span class="title">More complicated integrals and integration by substitution</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="more-complicated-integrals-and-integration-by-substitution.html#quick-practice-usub" class="internal"><span class="codenumber">3.2</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="the-definite-integral.html" class="internal"><span class="codenumber">3.3</span> <span class="title">The definite integral</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="the-definite-integral.html#quick-practice-def-int" class="internal"><span class="codenumber">3.3</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="applications-of-the-definite-integral.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Applications of the definite integral</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="applications-of-the-definite-integral.html#quick-practice-def-apps" class="internal"><span class="codenumber">3.4</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
+<li>
+<div class="toc-item"><a href="applications-to-chemistry.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Applications to chemistry</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="applications-to-chemistry.html#quick-practice-chemistry" class="internal"><span class="codenumber">3.5</span> <span class="title">Quick practice</span></a></div></li></ul>
+</li>
 </ul>
 </li>
-</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
-</div></div>
-<main class="main"><div id="content" class="pretext-content">
+<li>
+<div class="toc-item"><a href="ch-advanced.html" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Applications: nonlinear discrete-time dynamical systems (DTDS)</span></a></div></li>
+<li><div class="toc-item"><a href="applications-autonomous-differential-equations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Applications: autonomous differential equations</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="section" id="derivatives-of-basic-functions"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Derivatives of basic functions</span>
 </h2>
-<section class="paragraphs" id="the-plan-9"><h3 class="heading"><span class="title">The Plan.</span></h3>
-<p id="p-474">We will extend our notion of ‘slope’ to allow ourselves to make precise descriptions of how values of all functions, not just linear functions, change.</p>
-<section class="paragraphs" id="average-and-instantaneous-rates-of-change"><h4 class="heading"><span class="title">Average and instantaneous rates of change.</span></h4>
-<p id="p-475">Consider the function <span class="process-math">\(f(t)\text{,}\)</span> perhaps describing the position of a frog while it crosses a pond, graphed below. Assume that <span class="process-math">\(f\)</span> is measured in meters and <span class="process-math">\(t\)</span> in seconds.</p>
-<figure class="figure figure-like" id="figure-28"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/rate_of_change.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.1<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-476">The slope of the secant line that connects the points <span class="process-math">\((a, f(a))\)</span> and <span class="process-math">\((b, f(b))\)</span> on the graph of <span class="process-math">\(f(t)\)</span> is,</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<section class="paragraphs" id="the-plan-9"><h3 class="heading"><span class="title">The Plan.</span></h3> <div class="para" id="p-474">We will extend our notion of ‘slope’ to allow ourselves to make precise descriptions of how values of all functions, not just linear functions, change.</div> <section class="paragraphs" id="average-and-instantaneous-rates-of-change"><h4 class="heading"><span class="title">Average and instantaneous rates of change.</span></h4> <div class="para" id="p-475">Consider the function <span class="process-math">\(f(t)\text{,}\)</span> perhaps describing the position of a frog while it crosses a pond, graphed below. Assume that <span class="process-math">\(f\)</span> is measured in meters and <span class="process-math">\(t\)</span> in seconds.</div> <figure class="figure figure-like" id="figure-28"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/rate_of_change.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.1<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure> <div class="para logical" id="p-476">
+<div class="para">The slope of the secant line that connects the points <span class="process-math">\((a, f(a))\)</span> and <span class="process-math">\((b, f(b))\)</span> on the graph of <span class="process-math">\(f(t)\)</span> is,</div>
+<div class="displaymath process-math">
 \begin{equation*}
 m_{sec} = \dfrac{f(b)-f(a)}{b-a} = \dfrac{\Delta f}{\Delta
 t},
 \end{equation*}
 </div>
-<p class="continuation">which we call the <em class="emphasis">average rate of change</em> of <span class="process-math">\(f(t)\)</span> between <span class="process-math">\(t~=~a\)</span> and <span class="process-math">\(t~=~b\text{,}\)</span> in meters per second.</p>
-<p id="p-477">By bringing <span class="process-math">\(b\)</span> closer and closer to <span class="process-math">\(a\text{,}\)</span> our secant line becomes a tangent line. To do this we introduce a limit,</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="para">which we call the <em class="emphasis">average rate of change</em> of <span class="process-math">\(f(t)\)</span> between <span class="process-math">\(t~=~a\)</span> and <span class="process-math">\(t~=~b\text{,}\)</span> in meters per second.</div>
+</div> <div class="para logical" id="p-477">
+<div class="para">By bringing <span class="process-math">\(b\)</span> closer and closer to <span class="process-math">\(a\text{,}\)</span> our secant line becomes a tangent line. To do this we introduce a limit,</div>
+<div class="displaymath process-math">
 \begin{equation*}
 m_{tan} = \lim_{b\rightarrow a}\dfrac{f(b)-f(a)}{b-a},
 \end{equation*}
 </div>
-<p class="continuation">which we call the <em class="emphasis">instantaneous rate of change</em> of <span class="process-math">\(f(t)\)</span> at <span class="process-math">\(t~=~a\text{,}\)</span> again in meters per second.</p>
-<section class="paragraphs" id="aside-b-to-a-vs-delta-to-0"><h5 class="heading"><span class="title">Aside (<span class="process-math">\(b\rightarrow a\)</span> vs. <span class="process-math">\(\Delta
-t\rightarrow 0\)</span>).</span></h5>
-<p id="p-478">Last time in our limit definition, we used the limit as <span class="process-math">\(\Delta t\rightarrow0\text{.}\)</span> We will briefly show why that is equivalent to the approach above and <em class="emphasis">computationally</em> easier. Since <span class="process-math">\(\Delta t = b-a\text{,}\)</span> we have <span class="process-math">\(b=a+\Delta t\text{.}\)</span> Taking <span class="process-math">\(b\rightarrow a\)</span> is the same as taking <span class="process-math">\(\Delta t \rightarrow
-0\text{.}\)</span> Substitute <span class="process-math">\(b=a+\Delta t\)</span> in the definition for <span class="process-math">\(m_{tan}\)</span> and simplify,</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="para">which we call the <em class="emphasis">instantaneous rate of change</em> of <span class="process-math">\(f(t)\)</span> at <span class="process-math">\(t~=~a\text{,}\)</span> again in meters per second.</div>
+</div> <section class="paragraphs" id="aside-b-to-a-vs-delta-to-0"><h5 class="heading"><span class="title">Aside (<span class="process-math">\(b\rightarrow a\)</span> vs. <span class="process-math">\(\Delta
+t\rightarrow 0\)</span>).</span></h5> <div class="para logical" id="p-478">
+<div class="para">Last time in our limit definition, we used the limit as <span class="process-math">\(\Delta t\rightarrow0\text{.}\)</span> We will briefly show why that is equivalent to the approach above and <em class="emphasis">computationally</em> easier. Since <span class="process-math">\(\Delta t = b-a\text{,}\)</span> we have <span class="process-math">\(b=a+\Delta t\text{.}\)</span> Taking <span class="process-math">\(b\rightarrow a\)</span> is the same as taking <span class="process-math">\(\Delta t \rightarrow
+0\text{.}\)</span> Substitute <span class="process-math">\(b=a+\Delta t\)</span> in the definition for <span class="process-math">\(m_{tan}\)</span> and simplify,</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 m_{tan} &amp; = \lim_{b\rightarrow a}\dfrac{f(b)-f(a)}{b-a}\\
@@ -159,9 +330,9 @@ t)-f(a)}{(a+\Delta t)-a}\\
 m_{tan} &amp; = \lim_{\Delta t \rightarrow 0}\dfrac{f(a+\Delta
 t)-f(a)}{\Delta t}\end{aligned}
 \end{equation*}
-</div></section><section class="paragraphs" id="the-derivative"><h5 class="heading"><span class="title">The derivative.</span></h5>
-<p id="p-479">We define the <em class="emphasis">instantaneous rate of change</em> at <span class="process-math">\(t=a\)</span> to be the <em class="emphasis">slope of the tangent line</em> to <span class="process-math">\(f(t)\)</span> at <span class="process-math">\(t=a\text{,}\)</span> given by the <em class="emphasis">derivative</em> <span class="process-math">\(f'(a)\text{,}\)</span> below,</p>
-<div class="displaymath process-math" data-contains-math-knowls="" id="p-480">
+</div>
+</div></section> <section class="paragraphs" id="the-derivative"><h5 class="heading"><span class="title">The derivative.</span></h5> <div class="para" id="p-479">We define the <em class="emphasis">instantaneous rate of change</em> at <span class="process-math">\(t=a\)</span> to be the <em class="emphasis">slope of the tangent line</em> to <span class="process-math">\(f(t)\)</span> at <span class="process-math">\(t=a\text{,}\)</span> given by the <em class="emphasis">derivative</em> <span class="process-math">\(f'(a)\text{,}\)</span> below,</div> <div class="para logical" id="p-480">
+<div class="displaymath process-math">
 \begin{equation*}
 \boxed{\text{inst. rate of change} = m_{tan}
 = f'(a) = \left.\dfrac{df}{dt}\right|_{t=a} = \lim_{\Delta
@@ -169,23 +340,26 @@ t\rightarrow0}\dfrac{\Delta f}{\Delta t} = \lim_{\Delta
 t\rightarrow0}\dfrac{f(a+\Delta t)-f(a)}{\Delta t}}
 \end{equation*}
 </div>
-<p class="continuation">inside this limit, the change in output is <span class="process-math">\(\Delta f = f(a+\Delta t)-f(a)\)</span> while the change in input is simply <span class="process-math">\(\Delta t\text{.}\)</span></p></section><section class="paragraphs" id="shorthand"><h5 class="heading"><span class="title">Shorthand.</span></h5>
-<p id="p-481">Rather than using the two symbols required to write <span class="process-math">\(\Delta t\text{,}\)</span> we often use a single symbol <span class="process-math">\(h\)</span> to denote the change from <span class="process-math">\(a\)</span> to <span class="process-math">\(b\)</span> in the definition (and in the picture above). This amounts to saying that <span class="process-math">\(b= a+h\)</span> rather than <span class="process-math">\(b=a+\Delta t\)</span> (since <span class="process-math">\(h=\Delta t\)</span>), so that the derivative of <span class="process-math">\(f(x)\)</span> at <span class="process-math">\(x=a\)</span> is</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="para">inside this limit, the change in output is <span class="process-math">\(\Delta f = f(a+\Delta t)-f(a)\)</span> while the change in input is simply <span class="process-math">\(\Delta t\text{.}\)</span>
+</div>
+</div></section> <section class="paragraphs" id="shorthand"><h5 class="heading"><span class="title">Shorthand.</span></h5> <div class="para logical" id="p-481">
+<div class="para">Rather than using the two symbols required to write <span class="process-math">\(\Delta t\text{,}\)</span> we often use a single symbol <span class="process-math">\(h\)</span> to denote the change from <span class="process-math">\(a\)</span> to <span class="process-math">\(b\)</span> in the definition (and in the picture above). This amounts to saying that <span class="process-math">\(b= a+h\)</span> rather than <span class="process-math">\(b=a+\Delta t\)</span> (since <span class="process-math">\(h=\Delta t\)</span>), so that the derivative of <span class="process-math">\(f(x)\)</span> at <span class="process-math">\(x=a\)</span> is</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \boxed{f'(a) = \lim_{h \rightarrow
 0}\dfrac{f(a+h)-f(a)}{h}}
 \end{equation*}
-</div></section><section class="paragraphs" id="the-derivative-three-ways"><h5 class="heading"><span class="title">The derivative – three ways.</span></h5>
-<p id="p-482">For a function <span class="process-math">\(f(x)\text{,}\)</span> the derivative is written using the notation</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</div>
+</div></section> <section class="paragraphs" id="the-derivative-three-ways"><h5 class="heading"><span class="title">The derivative – three ways.</span></h5> <div class="para logical" id="p-482">
+<div class="para">For a function <span class="process-math">\(f(x)\text{,}\)</span> the derivative is written using the notation</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \text{prime}\rightarrow f'(x) =
 \frac{df}{dx}\leftarrow\text{differential},
 \end{equation*}
 </div>
-<p class="continuation">and is interpreted in three ways,</p>
-<figure class="table table-like" id="table-7"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.2<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<div class="para">and is interpreted in three ways,</div>
+</div> <figure class="table table-like" id="table-7"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.2<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="l m b0 r0 l0 t0 lines"></th>
 <th scope="col" class="l m b0 r0 l0 t0 lines">Details</th>
@@ -206,12 +380,9 @@ t\rightarrow0}\dfrac{f(a+\Delta t)-f(a)}{\Delta t}}
 <td class="l m b0 r0 l0 t0 lines">Mathematically</td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></figure><p id="p-483">A function <span class="process-math">\(f\)</span> is <dfn class="terminology">differentiable</dfn> at the point <span class="process-math">\(a\)</span> if the function has a well-defined tangent line with finite slope at point <span class="process-math">\(a\text{.}\)</span> If we say a function is differentiable without mentioning a particular point, we mean it is differentiable everywhere.</p></section><section class="paragraphs" id="problem-behaviors"><h5 class="heading"><span class="title">Problem behaviors.</span></h5>
-<p id="p-484">Functions fail to be differentiable at points on the graph with jumps, corners, and vertical tangents. <em class="emphasis">See graphs from the earlier lecture as examples of discontinuities.</em></p>
-<p id="p-485">Find the derivative, if it exists, of <span class="process-math">\(f(x)=mx+b\)</span> at point <span class="process-math">\(x\)</span> using the limit definition.</p>
-<p id="p-486">Find the derivative, if it exists, of the constant function <span class="process-math">\(f(x)=b\text{.}\)</span></p></section><section class="paragraphs" id="derivatives-describe-behavior"><h5 class="heading"><span class="title">Derivatives describe behavior.</span></h5>
-<p id="p-487">Recall our discussion of the behaviors and slopes of linear graphs. We can now make similar statements for the graph of <dfn class="terminology">any</dfn> function.</p>
-<figure class="table table-like" id="table-8"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.3<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+</table></div></figure> <div class="para" id="p-483">A function <span class="process-math">\(f\)</span> is <dfn class="terminology">differentiable</dfn> at the point <span class="process-math">\(a\)</span> if the function has a well-defined tangent line with finite slope at point <span class="process-math">\(a\text{.}\)</span> If we say a function is differentiable without mentioning a particular point, we mean it is differentiable everywhere.</div></section> <section class="paragraphs" id="problem-behaviors"><h5 class="heading"><span class="title">Problem behaviors.</span></h5> <div class="para" id="p-484">Functions fail to be differentiable at points on the graph with jumps, corners, and vertical tangents. <em class="emphasis">See graphs from the earlier lecture as examples of discontinuities.</em>
+</div> <div class="para" id="p-485">Find the derivative, if it exists, of <span class="process-math">\(f(x)=mx+b\)</span> at point <span class="process-math">\(x\)</span> using the limit definition.</div> <div class="para" id="p-486">Find the derivative, if it exists, of the constant function <span class="process-math">\(f(x)=b\text{.}\)</span>
+</div></section> <section class="paragraphs" id="derivatives-describe-behavior"><h5 class="heading"><span class="title">Derivatives describe behavior.</span></h5> <div class="para" id="p-487">Recall our discussion of the behaviors and slopes of linear graphs. We can now make similar statements for the graph of <dfn class="terminology">any</dfn> function.</div> <figure class="table table-like" id="table-8"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.3<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="c m b0 r0 l0 t0 lines"><dfn class="terminology">Derivative</dfn></th>
 <th scope="col" class="c m b0 r0 l0 t0 lines"><span class="process-math">\(f'(x) =
@@ -246,39 +417,42 @@ t\rightarrow0}\dfrac{f(a+\Delta t)-f(a)}{\Delta t}}
 <td class="c m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></div></figure><p id="p-488">A function <span class="process-math">\(f\)</span> has a <dfn class="terminology">critical point</dfn><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-5" id="fn-5"><sup> 1 </sup></a> at <span class="process-math">\(x\)</span> if <span class="process-math">\(f'(x)=0\)</span> or if the derivative is not defined at <span class="process-math">\(x\text{.}\)</span></p></section><section class="paragraphs" id="an-aside-expanding-binomials"><h5 class="heading"><span class="title">An aside: Expanding binomials.</span></h5>
-<p id="p-490">Before moving forward it will be useful to review techniques for expanding binomials of the form <span class="process-math">\((x+y)^n\)</span> for integers <span class="process-math">\(n\text{.}\)</span></p>
-<ul id="p-491" class="disc">
-<li id="li-171"><p id="p-492"><span class="process-math">\(\displaystyle (x+y)^1 =\)</span></p></li>
-<li id="li-172"><p id="p-493"><span class="process-math">\(\displaystyle (x+y)^{2} =\)</span></p></li>
-<li id="li-173"><p id="p-494"><span class="process-math">\(\displaystyle (x+y)^{3} =\)</span></p></li>
-</ul>
-<p id="p-495">Consider the quadratic function <span class="process-math">\(f(x)=x^{2}\text{.}\)</span> Find the derivative <span class="process-math">\(f'(x)\text{,}\)</span> if it exists, at an arbitrary point <span class="process-math">\(x\text{.}\)</span></p>
-<p id="p-496">Consider the following plot of cell volume versus time.</p>
-<p id="p-497"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/cell_vol.png" class="contained"></div><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/diff_cell_vol.png" class="contained"></div></p>
-<p id="p-498">Suppose <span class="process-math">\(s(x)=f(x)+g(x)\)</span> where <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are both differentiable functions. Then the derivative of the sum is the sum of the derivatives</p>
-<p id="p-499">Find the derivative of <span class="process-math">\(f(x) = x^{2} + 3x+7\text{.}\)</span></p>
-<p id="p-500">Suppose <span class="process-math">\(p(x)=cf(x)\)</span> where <span class="process-math">\(f\)</span> is a differentiable function and <span class="process-math">\(c\)</span> is a constant. Then the derivative of a constant times a function is the constant times the derivative of the function</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+</table></div></figure> <div class="para" id="p-488">A function <span class="process-math">\(f\)</span> has a <dfn class="terminology">critical point</dfn><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-5" id="fn-5"><sup> 1 </sup></a> at <span class="process-math">\(x\)</span> if <span class="process-math">\(f'(x)=0\)</span> or if the derivative is not defined at <span class="process-math">\(x\text{.}\)</span>
+</div></section> <section class="paragraphs" id="an-aside-expanding-binomials"><h5 class="heading"><span class="title">An aside: Expanding binomials.</span></h5> <div class="para" id="p-490">Before moving forward it will be useful to review techniques for expanding binomials of the form <span class="process-math">\((x+y)^n\)</span> for integers <span class="process-math">\(n\text{.}\)</span>
+</div> <div class="para logical" id="p-491"><ul class="disc">
+<li id="li-171"><div class="para" id="p-492"><span class="process-math">\(\displaystyle (x+y)^1 =\)</span></div></li>
+<li id="li-172"><div class="para" id="p-493"><span class="process-math">\(\displaystyle (x+y)^{2} =\)</span></div></li>
+<li id="li-173"><div class="para" id="p-494"><span class="process-math">\(\displaystyle (x+y)^{3} =\)</span></div></li>
+</ul></div> <div class="para" id="p-495">Consider the quadratic function <span class="process-math">\(f(x)=x^{2}\text{.}\)</span> Find the derivative <span class="process-math">\(f'(x)\text{,}\)</span> if it exists, at an arbitrary point <span class="process-math">\(x\text{.}\)</span>
+</div> <div class="para" id="p-496">Consider the following plot of cell volume versus time.</div> <div class="para" id="p-497">
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/cell_vol.png" class="contained"></div>
+<div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/diff_cell_vol.png" class="contained"></div>
+</div> <div class="para" id="p-498">Suppose <span class="process-math">\(s(x)=f(x)+g(x)\)</span> where <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are both differentiable functions. Then the derivative of the sum is the sum of the derivatives</div> <div class="para" id="p-499">Find the derivative of <span class="process-math">\(f(x) = x^{2} + 3x+7\text{.}\)</span>
+</div> <div class="para logical" id="p-500">
+<div class="para">Suppose <span class="process-math">\(p(x)=cf(x)\)</span> where <span class="process-math">\(f\)</span> is a differentiable function and <span class="process-math">\(c\)</span> is a constant. Then the derivative of a constant times a function is the constant times the derivative of the function</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \boxed{\frac{d}{dx}\Big(cf(x)\Big) =c\frac{df}{dx} =
 cf'(x)}
 \end{equation*}
 </div>
-<p id="p-501">Find the derivative of <span class="process-math">\(f(x) = 2x^{2} +
-3x+7\text{.}\)</span></p>
-<article class="theorem theorem-like" id="thm-power-derivatives"><h6 class="heading">
+</div> <div class="para" id="p-501">Find the derivative of <span class="process-math">\(f(x) = 2x^{2} +
+3x+7\text{.}\)</span>
+</div> <article class="theorem theorem-like" id="thm-power-derivatives"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Power rule for derivatives.</span>
 </h6>
-<p id="p-502">Suppose <span class="process-math">\(f(x)=x^n\)</span> for integers <span class="process-math">\(n\neq0\)</span> (this allows <span class="process-math">\(n\)</span> to be negative or positive)</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="para logical" id="p-502">
+<div class="para">Suppose <span class="process-math">\(f(x)=x^n\)</span> for integers <span class="process-math">\(n\neq0\)</span> (this allows <span class="process-math">\(n\)</span> to be negative or positive)</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \boxed{f'(x) = \frac{d}{dx}\Big(x^n\Big) = nx^{n-1}}
 \end{equation*}
 </div>
-<p class="continuation">This works for <dfn class="terminology">all</dfn> powers <span class="process-math">\(n\)</span> including fractions, provided that <span class="process-math">\(x&gt;0\text{.}\)</span></p></article><p id="p-503">Use the previous theorem to compute derivatives of the following power functions.</p></section><section class="paragraphs" id="higher-derivatives"><h5 class="heading"><span class="title">Higher derivatives.</span></h5>
-<p id="p-504">We will learn how to interpret some higher derivatives soon, but we can already differentiate quite a few functions. We’ll cover this soon, but you might as well try computing the second derivatives, as illustrated below.</p>
-<div class="displaymath process-math" data-contains-math-knowls="">
+<div class="para">This works for <dfn class="terminology">all</dfn> powers <span class="process-math">\(n\)</span> including fractions, provided that <span class="process-math">\(x&gt;0\text{.}\)</span>
+</div>
+</div></article> <div class="para" id="p-503">Use the previous theorem to compute derivatives of the following power functions.</div></section> <section class="paragraphs" id="higher-derivatives"><h5 class="heading"><span class="title">Higher derivatives.</span></h5> <div class="para logical" id="p-504">
+<div class="para">We will learn how to interpret some higher derivatives soon, but we can already differentiate quite a few functions. We’ll cover this soon, but you might as well try computing the second derivatives, as illustrated below.</div>
+<div class="displaymath process-math">
 \begin{equation*}
 \begin{aligned}
 \text{first derivative} = f'(x) &amp; = \dfrac{d}{dx}\Big(f(x)\Big) =
@@ -287,27 +461,39 @@ cf'(x)}
 \dfrac{d}{dx}\Big(\text{the derivative}\Big)\end{aligned}
 \end{equation*}
 </div>
-<p class="continuation">The mechanics are just the same. For problems involving exponentials and logarithms be sure to simplify as fully as possible first using log rules, otherwise we might not know what to do to compute the derivative!</p></section></section></section><section class="exercises" id="quick-practice-derivatives"><h3 class="heading hide-type">
+<div class="para">The mechanics are just the same. For problems involving exponentials and logarithms be sure to simplify as fully as possible first using log rules, otherwise we might not know what to do to compute the derivative!</div>
+</div></section></section></section><section class="exercises" id="quick-practice-derivatives"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Quick practice</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-35"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<p id="p-505">What is the derivative of <span class="process-math">\(f(x) =
-3x-7\text{?}\)</span></p>
+<div class="para" id="p-505">What is the derivative of <span class="process-math">\(f(x) =
+3x-7\text{?}\)</span>
+</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-31" id="solution-31"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-31"><div class="solution solution-like"><p id="p-506">The derivative of <span class="process-math">\(f(x) = 3x-7\)</span> is <span class="process-math">\(f'(x) =
-\dfrac{d}{dx}\left(3x-7\right) = 3\text{.}\)</span> The derivative of a linear function is its slope.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-32" id="solution-32"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-32"><div class="solution solution-like"><div class="para" id="p-506">The derivative of <span class="process-math">\(f(x) = 3x-7\)</span> is <span class="process-math">\(f'(x) =
+\dfrac{d}{dx}\left(3x-7\right) = 3\text{.}\)</span> The derivative of a linear function is its slope.</div></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-36"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<p id="p-507">Where is the critical point of <span class="process-math">\(f(x) =
-2x^{2}-7x+3\)</span> given that <span class="process-math">\(f'(x) = 4x-7\text{?}\)</span></p>
+<div class="para" id="p-507">Where is the critical point of <span class="process-math">\(f(x) =
+2x^{2}-7x+3\)</span> given that <span class="process-math">\(f'(x) = 4x-7\text{?}\)</span>
+</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-32" id="solution-32"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-32"><div class="solution solution-like"><p id="p-508">The critical point of <span class="process-math">\(f(x) = 2x^{2}-7x+3\)</span> is found by setting its derivative, <span class="process-math">\(f'(x) = 4x-7\text{,}\)</span> equal to zero and solving for <span class="process-math">\(x\text{.}\)</span> So, <span class="process-math">\(0=4x-7\text{,}\)</span> solved for <span class="process-math">\(x\)</span> gives <span class="process-math">\(x
-= \dfrac{7}{4}\text{.}\)</span></p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-33" id="solution-33"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-33"><div class="solution solution-like"><div class="para" id="p-508">The critical point of <span class="process-math">\(f(x) = 2x^{2}-7x+3\)</span> is found by setting its derivative, <span class="process-math">\(f'(x) = 4x-7\text{,}\)</span> equal to zero and solving for <span class="process-math">\(x\text{.}\)</span> So, <span class="process-math">\(0=4x-7\text{,}\)</span> solved for <span class="process-math">\(x\)</span> gives <span class="process-math">\(x
+= \dfrac{7}{4}\text{.}\)</span>
+</div></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-37"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
-<p id="p-509">If the derivative is positive at some point, is the function increasing or decreasing at that point?</p>
+<div class="para" id="p-509">If the derivative is positive at some point, is the function increasing or decreasing at that point?</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-33" id="solution-33"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-33"><div class="solution solution-like"><p id="p-510">If the derivative is positive at some point, the function increasing at that point?</p></div></div>
-</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-5"><div class="fn"><p id="p-489">Note an error in Definition 2.6 of book. It should read “…if <span class="process-math">\(f'(x) = 0\)</span> or if the derivative…” the ‘prime’ symbol is missing.</p></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-34" id="solution-34"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-34"><div class="solution solution-like"><div class="para" id="p-510">If the derivative is positive at some point, the function increasing at that point?</div></div></div>
+</div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-5"><div class="fn"><div class="para" id="p-489">Note an error in Definition 2.6 of book. It should read “…if <span class="process-math">\(f'(x) = 0\)</span> or if the derivative…” the ‘prime’ symbol is missing.</div></div></div>
+</div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="introduction-to-derivatives-rates-of-change.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="derivatives-of-exponential-and-logarithmic-functions.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
 </div>
 </body>
 </html>

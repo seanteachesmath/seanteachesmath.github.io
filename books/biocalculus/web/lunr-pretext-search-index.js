@@ -259,7 +259,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "Exponentials and logarithms",
-  "body": " Exponentials and logarithms   The Plan  Logarithmic and exponential functions, while often intimidating, appear throughout microbiology, chemistry, statistics, and mathematics. We will understand the basic computational and graphical properties of these functions and their connection to applications.  A population of size loses a factor of approximately of its genetic variability each generation. Consider a population of individuals that loses a factor of each generation. A population maintains a factor of of its variability each generation. How much variability is left after 5 generations?  We have a shortcut for evaluating values like this. Above each factor has a power of , to simplify this calculation we can write the following:  How much variability remains after 20 generations?   Properties of exponents   Consider the following laws for for real numbers , , and .                             Common bases in science are    throughout science and nature     throughout science     throughout computer science    Though we think of exponents as multiplying ’s together certain instance only make sense if we use the above laws. How can we multiply factors of together times?  Using the common bases above, consider the following:   The exponential function  The exponential function (or sometimes exponential function to the base  ) is given as    natural logarithm   The exponential function as an inverse called the natural logarithm given by .     A few graphs  To introduce the inverse function it is helpful to think of powers of ten. Consider To write one million, we multiply factors of . We say, raised to the power gives , or, symbolically     The natural logarithm  The natural logarithm undoes the exponential function . This means             Properties of logarithms   Consider the following laws for for real numbers and . We state these rules for the natural logarithm.                              Doubling time   Consider a population that grows according to where is the initial population size, and is the growth rate.  At what value will the population be twice its initial size?  Derive the doubling-time formula for :    Consider a chemical sample that undergoes decay according to where is the initial sample amount, and is the decay rate.  At what value will the sample contain half of its initial amount?  Derive the half-life formula for :  Island biogeographers have discovered that large islands support more species than smaller islands. A power law given by has been used to describe the relationship, where is the number of species, is the area of the island, is a baseline number of species, and describes how quickly species accumulate. Such a relationship might look like the following:  What do you notice about the data?  The symbols and represent parameters that are often fit from measurements. To do so we often log-transform the relationship above (using the log base 10, denoted  in the calculation below). Apply the logarithm then laws of logarithms to both sides of   This gives a relationship between and, that we can use to more easily estimate parameters.  Consider the famed mouse-elephant curve (with other organisms included) that relates energy consumption (metabolic rate) to body mass on a double-log plot.    image   To generate alternative versions of the graph using only the data within the boxed region of the figure You might occasionally see (as below) an axis with numbers of the form , , . The refers to the base 10 log of the value, refers to the actual value in scientific notation, and is just the normal value. Only in the first are we actually transforming the data. , we use the log base 10 applied to the power law relationship between energy use (metabolic rate) and body mass . The derivation is as follows:                Quick practice  Give a few examples of measurements, relationships, or patterns defined by logarithmic or exponential functions.[quick-exp_log_meas]  Good examples of measurements, relationships, or patterns that are defined using logarithmic or exponential relationships are the pH scale, the intensity and magnitude scales for earthquakes, the decibel scale for sound, and the increasing of computer RAM (in powers of two).  Simplify .   Simplifying we find .   Simplify . Simplifying using a variety of rules we find . The value of is a popular one in many life science applications.   "
+  "body": " Exponentials and logarithms   The Plan  Logarithmic and exponential functions, while often intimidating, appear throughout microbiology, chemistry, statistics, and mathematics. We will understand the basic computational and graphical properties of these functions and their connection to applications.  A population of size loses a factor of approximately of its genetic variability each generation. Consider a population of individuals that loses a factor of each generation. A population maintains a factor of of its variability each generation. How much variability is left after 5 generations?  We have a shortcut for evaluating values like this. Above each factor has a power of , to simplify this calculation we can write the following:  How much variability remains after 20 generations?   Properties of exponents   Consider the following laws for for real numbers , , and .                             Common bases in science are    throughout science and nature     throughout science     throughout computer science    Though we think of exponents as multiplying ’s together certain instance only make sense if we use the above laws. How can we multiply factors of together times?  Using the common bases above, consider the following:   The exponential function  The exponential function (or sometimes exponential function to the base  ) is given as    natural logarithm   The exponential function as an inverse called the natural logarithm given by .     A few graphs  To introduce the inverse function it is helpful to think of powers of ten. Consider To write one million, we multiply factors of . We say, raised to the power gives , or, symbolically     The natural logarithm  The natural logarithm undoes the exponential function . This means             Properties of logarithms   Consider the following laws for for real numbers and . We state these rules for the natural logarithm.                              Doubling time   Consider a population that grows according to where is the initial population size, and is the growth rate.  At what value will the population be twice its initial size?  Derive the doubling-time formula for :    Consider a chemical sample that undergoes decay according to where is the initial sample amount, and is the decay rate.  At what value will the sample contain half of its initial amount?  Derive the half-life formula for :  Island biogeographers have discovered that large islands support more species than smaller islands. A power law given by has been used to describe the relationship, where is the number of species, is the area of the island, is a baseline number of species, and describes how quickly species accumulate. Such a relationship might look like the following:  What do you notice about the data?  The symbols and represent parameters that are often fit from measurements. To do so we often log-transform the relationship above (using the log base 10, denoted  in the calculation below). Apply the logarithm then laws of logarithms to both sides of   This gives a relationship between and, that we can use to more easily estimate parameters.  Consider the famed mouse-elephant curve (with other organisms included) that relates energy consumption (metabolic rate) to body mass on a double-log plot.    image   To generate alternative versions of the graph using only the data within the boxed region of the figure You might occasionally see (as below) an axis with numbers of the form , , . The refers to the base 10 log of the value, refers to the actual value in scientific notation, and is just the normal value. Only in the first are we actually transforming the data. , we use the log base 10 applied to the power law relationship between energy use (metabolic rate) and body mass . The derivation is as follows:             Variants of the mouse-elephant curve.       Quick practice  Give a few examples of measurements, relationships, or patterns defined by logarithmic or exponential functions.[quick-exp_log_meas]  Good examples of measurements, relationships, or patterns that are defined using logarithmic or exponential relationships are the pH scale, the intensity and magnitude scales for earthquakes, the decibel scale for sound, and the increasing of computer RAM (in powers of two).  Simplify .   Simplifying we find .   Simplify . Simplifying using a variety of rules we find . The value of is a popular one in many life science applications.   "
 },
 {
   "id": "p-175",
@@ -334,6 +334,15 @@ var ptx_lunr_docs = [
   "body": "  image  "
 },
 {
+  "id": "image-mouse-elephant-curves",
+  "level": "2",
+  "url": "exponentials-and-logarithms.html#image-mouse-elephant-curves",
+  "type": "Figure",
+  "number": "1.5.6",
+  "title": "",
+  "body": "           Variants of the mouse-elephant curve.  "
+},
+{
   "id": "exercise-11",
   "level": "2",
   "url": "exponentials-and-logarithms.html#exercise-11",
@@ -367,12 +376,12 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.6",
   "title": "Introduction to discrete-time dynamical systems (DTDS)",
-  "body": " Introduction to discrete-time dynamical systems (DTDS)   The Plan  We look at a powerful modeling technique that has subtle connections to calculus.    Prediction  An important part of mathematics and science is describing the mechanisms by which measurements change and making a testable prediction.   Approach: Discrete-time dynamical systems  Used to predict measurements made at discrete time intervals (e.g., measurements made once per hour, day, week). Consider a measurement made at time , to define a discrete-time dynamical system (DTDS) we write     Yeast growth  Recall the data collected earlier this semester, similar to what is presented below, that describe the growth of yeast from one day to the next.    image   From the graph, predict the final area of your colony if you initially measured an area of 100 mm ?  From the graph, predict the final area of your colony if you initially measured an area of 10 mm ?  Mathematically what are you doing to make your prediction?  Let denote the measured area (mm ) of the yeast measured on day . Define the DTDS that predicts the future measurement, called .     Definition – solution  The sequence of values for is the solution of the discrete-time dynamical system starting from initial condition . We sometimes graph the solution as a plot of points against time.  For our yeast growth predictions, example initial conditions above were mm and mm . Using the updating function, compute five terms of the solution starting from each of these initial conditions.   Starting from mm   Starting from mm     A solution formula  Sometimes we can write a formula for the solution to predict the population size at any future time .    A graphical computer  We have a powerful technique for studying the behavior of such models using only a pencil and paper. This technique is called cobwebbing, and its name will be come clear shortly.    image   Note: you often will not have the data points on this graph, so they have been removed. This is how we cobweb :    Graph the updating function and the diagonal (the identity or line )    Start at initial condition and go up or down to the updating function and over to the diagonal    Repeat for as many steps as needed to find the pattern    Sketch the solution at times      Updating and inverses  What could we learn from the inverse of the updating function to the DTDS     Extra DTDS examples  The following completely nonbiological examples illustrate some interesting mathematical behaviors. These will help us understand behaviors of more complicated biological models next time.      Cobwebbing diagrams for some linear discrete-time dynamical systems. These are not themselves biologically interesting, but emphasize the technique and have subtle connections to important applications.   Each day a patient uses up half of the medication in his bloodstream, but he is also given a new dose that raises the concentration in the blood stream by 1 mg\/L. Let denote the concentration on day .    Write a DTDS describing this situation and plot the updating function.    What does the solution look like if you start with = 5 mg\/L? = 1 mg\/L?    Plot the diagonal and updating function for the previous model and cobweb five terms of the solution starting from = 5 mg\/L and then from = 1 mg\/L.    Blank graph paper for DTDS.   What happens if you start at ?  A point is called an equilibrium of the DTDS if (i.e., if updating by the DTDS leaves the input unchanged).    Find equilibria (more than 1 equilibrium) graphically by locating the points where the graphs of the updating function and diagonal intersect.    Find equilibria algebraically by setting and solving for .    Compute equilibrium values for the following DTDS.   Yeast model:   Drug model:     Deriving the doubling time  Combing our knowledge of exponential and logarithmic functions, we can derive the doubling time formula from the solution that describes the dynamics of the yeast model above.      Quick practice   Is an equilibrium point of ?[quick-dtds1]  Since (if I plug in zero and do not get back zero), zero is not an equilibrium point.    A population of size increases by a factor of 1.2, but only after 3 units are removed. Write the discrete-time dynamical system describing the population dynamics.[quick-dtds2]   To start we subtract from , that resulting quantity is multiplied by the growth factor of resulting in the model .    "
+  "body": " Introduction to discrete-time dynamical systems (DTDS)   The Plan  We look at a powerful modeling technique that has subtle connections to calculus.    Prediction  An important part of mathematics and science is describing the mechanisms by which measurements change and making a testable prediction.   Approach: Discrete-time dynamical systems  Used to predict measurements made at discrete time intervals (e.g., measurements made once per hour, day, week). Consider a measurement made at time , to define a discrete-time dynamical system (DTDS) we write     Yeast growth  Recall the data collected earlier this semester, similar to what is presented below, that describe the growth of yeast from one day to the next.    image   From the graph, predict the final area of your colony if you initially measured an area of 100 mm ?  From the graph, predict the final area of your colony if you initially measured an area of 10 mm ?  Mathematically what are you doing to make your prediction?  Let denote the measured area (mm ) of the yeast measured on day . Define the DTDS that predicts the future measurement, called .     Definition – solution  The sequence of values for is the solution of the discrete-time dynamical system starting from initial condition . We sometimes graph the solution as a plot of points against time.  For our yeast growth predictions, example initial conditions above were mm and mm . Using the updating function, compute five terms of the solution starting from each of these initial conditions.   Starting from mm   Starting from mm     A solution formula  Sometimes we can write a formula for the solution to predict the population size at any future time .    A graphical computer  We have a powerful technique for studying the behavior of such models using only a pencil and paper. This technique is called cobwebbing, and its name will be come clear shortly.    image   Note: you often will not have the data points on this graph, so they have been removed. This is how we cobweb :    Graph the updating function and the diagonal (the identity or line )    Start at initial condition and go up or down to the updating function and over to the diagonal    Repeat for as many steps as needed to find the pattern    Sketch the solution at times      Updating and inverses  What could we learn from the inverse of the updating function to the DTDS     Extra DTDS examples  The following completely nonbiological examples illustrate some interesting mathematical behaviors. These will help us understand behaviors of more complicated biological models next time.        Cobwebbing diagrams for some linear discrete-time dynamical systems. These are not themselves biologically interesting, but emphasize the technique and have subtle connections to important applications.   Each day a patient uses up half of the medication in his bloodstream, but he is also given a new dose that raises the concentration in the blood stream by 1 mg\/L. Let denote the concentration on day .    Write a DTDS describing this situation and plot the updating function.    What does the solution look like if you start with = 5 mg\/L? = 1 mg\/L?    Plot the diagonal and updating function for the previous model and cobweb five terms of the solution starting from = 5 mg\/L and then from = 1 mg\/L.    Blank graph paper for DTDS.   What happens if you start at ?  A point is called an equilibrium of the DTDS if (i.e., if updating by the DTDS leaves the input unchanged).    Find equilibria (more than 1 equilibrium) graphically by locating the points where the graphs of the updating function and diagonal intersect.    Find equilibria algebraically by setting and solving for .    Compute equilibrium values for the following DTDS.   Yeast model:   Drug model:     Deriving the doubling time  Combing our knowledge of exponential and logarithmic functions, we can derive the doubling time formula from the solution that describes the dynamics of the yeast model above.      Quick practice   Is an equilibrium point of ?[quick-dtds1]  Since (if I plug in zero and do not get back zero), zero is not an equilibrium point.    A population of size increases by a factor of 1.2, but only after 3 units are removed. Write the discrete-time dynamical system describing the population dynamics.[quick-dtds2]   To start we subtract from , that resulting quantity is multiplied by the growth factor of resulting in the model .    "
 },
 {
-  "id": "figure-6",
+  "id": "figure-7",
   "level": "2",
-  "url": "introduction-to-discrete-time-dynamical-systems-dtds.html#figure-6",
+  "url": "introduction-to-discrete-time-dynamical-systems-dtds.html#figure-7",
   "type": "Figure",
   "number": "1.6.1",
   "title": "",
@@ -388,9 +397,9 @@ var ptx_lunr_docs = [
   "body": "solution "
 },
 {
-  "id": "figure-7",
+  "id": "figure-8",
   "level": "2",
-  "url": "introduction-to-discrete-time-dynamical-systems-dtds.html#figure-7",
+  "url": "introduction-to-discrete-time-dynamical-systems-dtds.html#figure-8",
   "type": "Figure",
   "number": "1.6.2",
   "title": "",
@@ -406,11 +415,20 @@ var ptx_lunr_docs = [
   "body": "will not "
 },
 {
-  "id": "figure-8",
+  "id": "image-cobwebbing-diagrams",
   "level": "2",
-  "url": "introduction-to-discrete-time-dynamical-systems-dtds.html#figure-8",
+  "url": "introduction-to-discrete-time-dynamical-systems-dtds.html#image-cobwebbing-diagrams",
   "type": "Figure",
   "number": "1.6.3",
+  "title": "",
+  "body": "     Cobwebbing diagrams for some linear discrete-time dynamical systems. These are not themselves biologically interesting, but emphasize the technique and have subtle connections to important applications.  "
+},
+{
+  "id": "figure-10",
+  "level": "2",
+  "url": "introduction-to-discrete-time-dynamical-systems-dtds.html#figure-10",
+  "type": "Figure",
+  "number": "1.6.4",
   "title": "",
   "body": "  Blank graph paper for DTDS.  "
 },
@@ -439,7 +457,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.7",
   "title": "Introduction to limits",
-  "body": " Introduction to limits   The Plan  The next topic, limits of functions, is almost a purely mathematical topic, but one we will soon use to develop one of the central concepts of calculus. Imagine yourself working in the lab, about to undertake an exciting experiment. Before you can dive in, you must first orient yourself with your equipment, calibrate it, and practice a few basic techniques. Think of this topic, limits  Limits are undoubtedly important throughout mathematics and fill a whole chapter of a typical calculus course. They are central for many topics in advanced mathematics, but we will take just a brief look into limits. , as an orientation to an important piece of machinery.    Limits  In addition to eventually allowing us to compute instantaneous rates of change (derivatives) of mathematical functions, we use limits to study and describe behavior of functions.   Concept of a limit  For a function and two numbers and , the statement means that the value of gets closer and closer to as gets closer and closer to . Sometimes we say more simply that the value of approaches as approaches . This helps us explain and compute what does near a point  even if is undefined !    A sketch to motivate the idea of limits.     One– and two–sided limits  Some functions have complicated domains and we can only discuss what happens as approaches from one side. We say one of the following:     Talking about limits, a tool for mathematical precision, requires precision in our approach.   Consider the appropriate one–sided and two–sided limits for the following functions.    image        image        image       Limits of basic functions  Consider limits of the following two basic functions.   Suppose , where is a constant, for all . Then for any value of  or, in words the limit of a constant function is that value of that constant as approaches any value .    Suppose for all . Then for any value of  or, in words values of the the function approach as the variable approaches .       Consider the appropriate one–sided and two–sided limits for the following functions.   Limits at ,   Limits at a negative value,   Limits at a positive value,     image   Limits at ,   Limits at a negative value,   Limits at a positive value,     image   Limits at ,   Limits at a negative value,   Limits at a positive value,   Notice that the only (two-sided) limit to not exist is the one that corresponds to the most complicated of the three graphs in its most complicated portion (left panel: near ). This is because the one-sided limits of the function do not match as approaches from the left and right. In all other cases we are looking at graphs that look more familiar (no jumps, no open or filled points) at the points we are evaluating the limits. Also notice that    we can say things like which refers to our attempt to approach the value of  from the right hand side.    the superscript has nothing to do with the sign of the number itself, only the direction from which we approach the number.    We will spend most of our time looking at two-sided limits once we get an understanding of some important categories of functions.   limits of combinations of functions  Suppose and are functions with well-defined limits at .   The limit of the sum is the sum of the limits    The limit of the product is the product of the limits    The limit of a constant times a function is the constant times the limit of the function    Provided , the limit of the quotient (or ratio) is the quotient (or ratio) of the limits        Polynomials  Since a polynomial (e.g., a quadratic or a cubic function) is the sum of terms that involve variables (like ) to powers (like ) multiplied by constants (like ), we could decompose limits of polynomials using  and evaluate them with  .    Reducing formulas to basic functions   Write the following functions using only constant and identity functions:                            Limits using basic functions   Use Theorem  to evaluate the limits of and from the previous example.     We can now evaluate limits of polynomials by direct substitution.               Division by zero   When studying a function such as , we must be aware that the function is undefined at . When talking about the limits,    image       x         -1     -0.1     -0.001     -0.0001     0  Ahh! No!        0.0001     0.001     0.1     1      To finally assign values to these limits,      Division by zero   What about our approach changes if we consider limits of ?       Square roots  Since the input of the square root function must be positive, we talk about only the one–sided limit since we can only approach from above (the right side of the number line). Fortunately for us, square root functions do not show up a great deal in biological applications.      Quick practice   Compute .   Since the limit of a constant function is the value of that constant, .    Compute .   By applying the rules of computing limits .    Compute the limits  ,  , and  .   It might help you to make a table of values (see  ) values are  ,   , and finally  since the previous two answers for one-sided limits do not match, the two-sided limit does not exist, written in shorthand as or     "
+  "body": " Introduction to limits   The Plan  The next topic, limits of functions, is almost a purely mathematical topic, but one we will soon use to develop one of the central concepts of calculus. Imagine yourself working in the lab, about to undertake an exciting experiment. Before you can dive in, you must first orient yourself with your equipment, calibrate it, and practice a few basic techniques. Think of this topic, limits  Limits are undoubtedly important throughout mathematics and fill a whole chapter of a typical calculus course. They are central for many topics in advanced mathematics, but we will take just a brief look into limits. , as an orientation to an important piece of machinery.    Limits  In addition to eventually allowing us to compute instantaneous rates of change (derivatives) of mathematical functions, we use limits to study and describe behavior of functions.   Concept of a limit  For a function and two numbers and , the statement means that the value of gets closer and closer to as gets closer and closer to . Sometimes we say more simply that the value of approaches as approaches . This helps us explain and compute what does near a point  even if is undefined !    A sketch to motivate the idea of limits.     One– and two–sided limits  Some functions have complicated domains and we can only discuss what happens as approaches from one side. We say one of the following:       Talking about limits, a tool for mathematical precision, requires precision in our approach.   Consider the appropriate one–sided and two–sided limits for the following functions.    image        image        image       Limits of basic functions  Consider limits of the following two basic functions.   Suppose , where is a constant, for all . Then for any value of  or, in words the limit of a constant function is that value of that constant as approaches any value .    Suppose for all . Then for any value of  or, in words values of the the function approach as the variable approaches .       Consider the appropriate one–sided and two–sided limits for the following functions.   Limits at ,   Limits at a negative value,   Limits at a positive value,     image   Limits at ,   Limits at a negative value,   Limits at a positive value,     image   Limits at ,   Limits at a negative value,   Limits at a positive value,   Notice that the only (two-sided) limit to not exist is the one that corresponds to the most complicated of the three graphs in its most complicated portion (left panel: near ). This is because the one-sided limits of the function do not match as approaches from the left and right. In all other cases we are looking at graphs that look more familiar (no jumps, no open or filled points) at the points we are evaluating the limits. Also notice that    we can say things like which refers to our attempt to approach the value of  from the right hand side.    the superscript has nothing to do with the sign of the number itself, only the direction from which we approach the number.    We will spend most of our time looking at two-sided limits once we get an understanding of some important categories of functions.   limits of combinations of functions  Suppose and are functions with well-defined limits at .   The limit of the sum is the sum of the limits    The limit of the product is the product of the limits    The limit of a constant times a function is the constant times the limit of the function    Provided , the limit of the quotient (or ratio) is the quotient (or ratio) of the limits        Polynomials  Since a polynomial (e.g., a quadratic or a cubic function) is the sum of terms that involve variables (like ) to powers (like ) multiplied by constants (like ), we could decompose limits of polynomials using  and evaluate them with  .    Reducing formulas to basic functions   Write the following functions using only constant and identity functions:                            Limits using basic functions   Use Theorem  to evaluate the limits of and from the previous example.     We can now evaluate limits of polynomials by direct substitution.               Division by zero   When studying a function such as , we must be aware that the function is undefined at . When talking about the limits,    image       x         -1     -0.1     -0.001     -0.0001     0  Ahh! No!        0.0001     0.001     0.1     1      To finally assign values to these limits,      Division by zero   What about our approach changes if we consider limits of ?       Square roots  Since the input of the square root function must be positive, we talk about only the one–sided limit since we can only approach from above (the right side of the number line). Fortunately for us, square root functions do not show up a great deal in biological applications.      Quick practice   Compute .   Since the limit of a constant function is the value of that constant, .    Compute .   By applying the rules of computing limits .    Compute the limits  ,  , and  .   It might help you to make a table of values (see  ) values are  ,   , and finally  since the previous two answers for one-sided limits do not match, the two-sided limit does not exist, written in shorthand as or     "
 },
 {
   "id": "p-265",
@@ -460,56 +478,29 @@ var ptx_lunr_docs = [
   "body": "even if is undefined "
 },
 {
-  "id": "figure-9",
+  "id": "figure-11",
   "level": "2",
-  "url": "introduction-to-limits.html#figure-9",
+  "url": "introduction-to-limits.html#figure-11",
   "type": "Figure",
   "number": "1.7.1",
   "title": "",
   "body": "  A sketch to motivate the idea of limits.  "
 },
 {
-  "id": "figure-10",
-  "level": "2",
-  "url": "introduction-to-limits.html#figure-10",
-  "type": "Figure",
-  "number": "1.7.2",
-  "title": "",
-  "body": "  image  "
-},
-{
-  "id": "figure-11",
-  "level": "2",
-  "url": "introduction-to-limits.html#figure-11",
-  "type": "Figure",
-  "number": "1.7.3",
-  "title": "",
-  "body": "  image  "
-},
-{
   "id": "figure-12",
   "level": "2",
   "url": "introduction-to-limits.html#figure-12",
   "type": "Figure",
-  "number": "1.7.4",
+  "number": "1.7.2",
   "title": "",
-  "body": "  image  "
-},
-{
-  "id": "thm-basic-limits",
-  "level": "2",
-  "url": "introduction-to-limits.html#thm-basic-limits",
-  "type": "Theorem",
-  "number": "1.7.5",
-  "title": "Limits of basic functions.",
-  "body": " Limits of basic functions  Consider limits of the following two basic functions.   Suppose , where is a constant, for all . Then for any value of  or, in words the limit of a constant function is that value of that constant as approaches any value .    Suppose for all . Then for any value of  or, in words values of the the function approach as the variable approaches .      "
+  "body": "     Talking about limits, a tool for mathematical precision, requires precision in our approach.  "
 },
 {
   "id": "figure-13",
   "level": "2",
   "url": "introduction-to-limits.html#figure-13",
   "type": "Figure",
-  "number": "1.7.6",
+  "number": "1.7.3",
   "title": "",
   "body": "  image  "
 },
@@ -518,7 +509,43 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "introduction-to-limits.html#figure-14",
   "type": "Figure",
+  "number": "1.7.4",
+  "title": "",
+  "body": "  image  "
+},
+{
+  "id": "figure-15",
+  "level": "2",
+  "url": "introduction-to-limits.html#figure-15",
+  "type": "Figure",
+  "number": "1.7.5",
+  "title": "",
+  "body": "  image  "
+},
+{
+  "id": "thm-basic-limits",
+  "level": "2",
+  "url": "introduction-to-limits.html#thm-basic-limits",
+  "type": "Theorem",
+  "number": "1.7.6",
+  "title": "Limits of basic functions.",
+  "body": " Limits of basic functions  Consider limits of the following two basic functions.   Suppose , where is a constant, for all . Then for any value of  or, in words the limit of a constant function is that value of that constant as approaches any value .    Suppose for all . Then for any value of  or, in words values of the the function approach as the variable approaches .      "
+},
+{
+  "id": "figure-16",
+  "level": "2",
+  "url": "introduction-to-limits.html#figure-16",
+  "type": "Figure",
   "number": "1.7.7",
+  "title": "",
+  "body": "  image  "
+},
+{
+  "id": "figure-17",
+  "level": "2",
+  "url": "introduction-to-limits.html#figure-17",
+  "type": "Figure",
+  "number": "1.7.8",
   "title": "",
   "body": "  image  "
 },
@@ -527,7 +554,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "introduction-to-limits.html#thm-combining-limits",
   "type": "Theorem",
-  "number": "1.7.8",
+  "number": "1.7.9",
   "title": "limits of combinations of functions.",
   "body": " limits of combinations of functions  Suppose and are functions with well-defined limits at .   The limit of the sum is the sum of the limits    The limit of the product is the product of the limits    The limit of a constant times a function is the constant times the limit of the function    Provided , the limit of the quotient (or ratio) is the quotient (or ratio) of the limits      "
 },
@@ -536,7 +563,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "introduction-to-limits.html#ex-polynomials-as-basic-functions",
   "type": "Example",
-  "number": "1.7.9",
+  "number": "1.7.10",
   "title": "Reducing formulas to basic functions.",
   "body": " Reducing formulas to basic functions   Write the following functions using only constant and identity functions:                          "
 },
@@ -545,7 +572,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "introduction-to-limits.html#ex-polynomials-limits-basic-functions",
   "type": "Example",
-  "number": "1.7.10",
+  "number": "1.7.11",
   "title": "Limits using basic functions.",
   "body": " Limits using basic functions   Use Theorem  to evaluate the limits of and from the previous example.     We can now evaluate limits of polynomials by direct substitution.             "
 },
@@ -554,7 +581,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "introduction-to-limits.html#ex-limit-DNE",
   "type": "Example",
-  "number": "1.7.11",
+  "number": "1.7.12",
   "title": "Division by zero.",
   "body": " Division by zero   When studying a function such as , we must be aware that the function is undefined at . When talking about the limits,    image       x         -1     -0.1     -0.001     -0.0001     0  Ahh! No!        0.0001     0.001     0.1     1      To finally assign values to these limits,    "
 },
@@ -563,7 +590,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "introduction-to-limits.html#ex-limit-DNE2",
   "type": "Example",
-  "number": "1.7.14",
+  "number": "1.7.15",
   "title": "Division by zero.",
   "body": " Division by zero   What about our approach changes if we consider limits of ?     "
 },
@@ -601,7 +628,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.8",
   "title": "Continuous functions",
-  "body": " Continuous functions   The Plan  Evaluating most limits (some of which we still need to practice) can be a slow task. By studying a particular category of functions – the continuous functions – we can introduce a faster computational method for finding the value of a limit of a function at a point.   Intuitive definition of a continuous function  We tend to think of functions as being continuous if we can draw the corresponding graph without lifting our pencil (you should probably be graphing in pencil).   Jumps, and holes, and asymptotes  There are three major ways that a function can fail to be continuous, that is, for it to encounter an input value, but fail to produce an output:    image     image     image   A function is continuous at a point  if Otherwise, we say is discontinuous at point .  A function is continuous if it is continuous at all points in its domain (i.e., at each point it takes on the value that it should according to the value of its limit).    Important consequence!  If we are talking about the limit of a continuous function at a point in its domain we can compute the limit by evaluating the function at the point we are taking the limit. This is helpful for many limits.  Find the limit of as .    Basic continuous functions  There are five basic continuous functions from which others are built. We will focus on the first four in this class.      image      image     image      Making new continuous functions  Given two continuous functions and at our hope is to build other continuous functions. To do so, we can    add them is continuous at    multiply them is continuous at    divide them is continuous at , provided that    compose them is continuous at , provided that is continuous at    Let’s use the graphs of our basic continuous functions to build a few more complicated (but still continuous) functions.      Quick practice   Is the function continuous?   The function is continuous, it is the constant function.    Is the function continuous?  The function is continuous, it is a linear function.    Is the function continuous?  The function is not continuous, since it is undefined for . The limit there does not exist, so it could not possibly match the value of the function, , which incidentally is undefined.    "
+  "body": " Continuous functions   The Plan  Evaluating most limits (some of which we still need to practice) can be a slow task. By studying a particular category of functions – the continuous functions – we can introduce a faster computational method for finding the value of a limit of a function at a point.   Intuitive definition of a continuous function  We tend to think of functions as being continuous if we can draw the corresponding graph without lifting our pencil (you should probably be graphing in pencil).   Jumps, and holes, and asymptotes  There are three major ways that a function can fail to be continuous, that is, for it to encounter an input value, but fail to produce an output:        Examples of basic continuous functions.   A function is continuous at a point  if Otherwise, we say is discontinuous at point .  A function is continuous if it is continuous at all points in its domain (i.e., at each point it takes on the value that it should according to the value of its limit).    Important consequence!  If we are talking about the limit of a continuous function at a point in its domain we can compute the limit by evaluating the function at the point we are taking the limit. This is helpful for many limits.   Continuity of a linear function   Find the limit of as .   Since is a continuous function, we know that in general . So, and since , we have We have successfully used function evaluation to replace the more challenging limit problem.     Basic continuous functions  There are five basic continuous functions from which others are built. We will focus on the first four in this class.                  Examples of the basic continuous functions.    Making new continuous functions  Given two continuous functions and at our hope is to build other continuous functions. To do so, we can    add them is continuous at    multiply them is continuous at    divide them is continuous at , provided that    compose them is continuous at , provided that is continuous at    Let’s use the graphs of our basic continuous functions to build a few more complicated (but still continuous) functions.      Quick practice   Is the function continuous?   The function is continuous, it is the constant function.    Is the function continuous?  The function is continuous, it is a linear function.    Is the function continuous?  The function is not continuous, since it is undefined for . The limit there does not exist, so it could not possibly match the value of the function, , which incidentally is undefined.    "
 },
 {
   "id": "p-323",
@@ -613,31 +640,13 @@ var ptx_lunr_docs = [
   "body": "continuous functions "
 },
 {
-  "id": "figure-16",
+  "id": "figure-19",
   "level": "2",
-  "url": "continuous-functions.html#figure-16",
+  "url": "continuous-functions.html#figure-19",
   "type": "Figure",
   "number": "1.8.1",
   "title": "",
-  "body": "  image  "
-},
-{
-  "id": "figure-17",
-  "level": "2",
-  "url": "continuous-functions.html#figure-17",
-  "type": "Figure",
-  "number": "1.8.2",
-  "title": "",
-  "body": "  image  "
-},
-{
-  "id": "figure-18",
-  "level": "2",
-  "url": "continuous-functions.html#figure-18",
-  "type": "Figure",
-  "number": "1.8.3",
-  "title": "",
-  "body": "  image  "
+  "body": "      Examples of basic continuous functions.  "
 },
 {
   "id": "p-326",
@@ -656,6 +665,24 @@ var ptx_lunr_docs = [
   "number": "",
   "title": "",
   "body": "continuous "
+},
+{
+  "id": "example-continuity-linear",
+  "level": "2",
+  "url": "continuous-functions.html#example-continuity-linear",
+  "type": "Example",
+  "number": "1.8.2",
+  "title": "Continuity of a linear function.",
+  "body": " Continuity of a linear function   Find the limit of as .   Since is a continuous function, we know that in general . So, and since , we have We have successfully used function evaluation to replace the more challenging limit problem.  "
+},
+{
+  "id": "image-continuous-functions",
+  "level": "2",
+  "url": "continuous-functions.html#image-continuous-functions",
+  "type": "Figure",
+  "number": "1.8.3",
+  "title": "",
+  "body": "               Examples of the basic continuous functions.  "
 },
 {
   "id": "exercise-19",
@@ -691,12 +718,12 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.9",
   "title": "Limits and behaviors at infinity",
-  "body": " Limits and behaviors at infinity   The Plan  We will look at a powerful method for studying and describing the long-term values and behaviors of functions. This will give us a powerful, compact notation for making precise descriptions.    Limits and long-term behavior  Rather than talking about limits at a finite input, we now focus on limits as inputs become infinitely large In the long run (or ), functions can have only a few qualitatively different behaviors that describe how they approach their limiting value.   Real-world example from research  A neuroscientist interested in the response of muscle fibers to stress measures the firing rate of a stretched (and stressed) muscle fiber through time. She presented the following data:     Motivating data from a muscle fiber stretch response experiment.   If this was your data, what function would you use to describe it?  After quite a while, what value would the firing rate likely approach?    Expanding our library of functions  So far we have focused on polynomials (lines, quadratics, cubics, and so on), exponential and logarithmic functions, and sums, products, ratios. and compositions build from these. To better understand these functions and few new ones, we compare their behaviors for large inputs.    Functions approaching , ordered by speed  Below we consider constants to help build larger categories of functions.       Function  Features                 Sketches of these functions:  Suppose      approaches infinity (or ) faster than  if Ex.     approaches infinity (or ) slower than  if Ex.     approaches infinity (or ) at the same rate as if Ex.      Functions approaching 0, ordered by speed  Below we consider constants to help build larger categories of functions.       Function  Features                 Sketches of these functions:  Suppose      approaches 0 (or ) faster than  if Ex.     approaches 0 (or ) slower than  if Ex.     approaches 0 (or ) at the same rate as if Ex.      Summary of behaviors as  The following plots illustrate the basic shapes of functions that are important when discussing their limits at infinity.    Comparison of a few functions that share the characteristic of approaching infinity as .      Function  Family  Features                       Comparison of a few functions that share the characteristic of approaching zero as .      Function  Family  Features                     Recall the earlier example of the stretch response of muscle fibers. Below we show a computer-generated best fit to the data and illustrate important biological and statistical differences of the speeds of functions.   Data fit by the sum of a constant and an exponential function,     A less than ideal fit of a mathematical function to muscle fiber stretch response data.    Description:   Data fit by the sum of a constant and the composition of a power function with exponential function,     A very good fit of a mathematical function to muscle fiber stretch response data.    Description:   In ecology we use these functions to describe the numerical response of predators to prey or of harvesters to their crop. In chemistry we use these functions to describe rates for reaction kinetics, for example, Michaelis-Menten Kinetics. Forms generally have the following features,   Linear   Saturating   Saturating (with threshold)   Overcompensation     Leading behavior  The often useful method of leading behavior helps us approximate complicated functions by their most dominant terms. This tells us what the graph of a complicated function looks like .  The leading behavior of a function at , written , is the term that is largest as the input approaches .     Find for    Find for .    The leading behavior of a function at 0, written , is the term that is largest as the input approaches 0. Note: This often contradicts our initial intuition for big .     is larger than  as approaches 0 if     is smaller than  if      Using the ideas of larger and smaller, find for    Using the ideas of larger and smaller, find for    Compute     Formal justification  All of our discussion might seem quite suspicious and inexact.    Limit of a ratio is the ratio of limit, when limits are finite values.    Earlier rules for limits fail when limits are infinite; we cannot do the arithmetic with infinities.    We can use reasoning about relative speeds of different terms or need more advanced techniques.      Important facts  A function and its leading behavior approach at the same rate, or Also the leading behavior of a function defined by a ratio, such as is defined as the ratio of the leading behaviors or   We illustrate this method by example using the function , one example of functional form from earlier.     Illustration of a saturating function.   What does look like when is very large?  What does look like when is small?       Quick practice   Compute .  .   Compute .   .   Compute .   .   Which is bigger as  or ? Hence, what is for ?  Between the terms and , goes to zero faster which implies that is bigger as . Hence, for , the leading behavior at infinity is . This means the contribution of the exponential term to the graph of vanishes quickly and the graph looks like the graph of just as gets large.     Sample WeBWorK problems  Record non-terminating decimal answers to three decimal places. Ex. should be recorded as , but can be recorded as .   Choose the type of function from the dropdown list (choices are \"constant\", \"linear\", \"quadratic\", \"cubic\", or \"something else\") whose characteristics match those of the leading behavior.  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .     Compute each of the following limits.  Compute the limit of as , or .  Compute the limit of as , or .  Compute the limit of as , or . Hint: Write as an exponential function with base and apply our rules for the exponential function.  Compute the limit of as , or .  Compute the limit of as , or .     Compute each of the following limits.  Compute the limit of as , or .  Compute the limit of as , or .  Compute the limit of as , or . Hint: Write as an exponential function with base and apply our rules for the exponential function.  Compute the limit of as , or .  Compute the limit of as , or .     Choose the type of function from the dropdown list (choices are \"constant\", \"linear\", \"quadratic\", \"cubic\", or \"something else\") whose characteristics match those of the leading behavior.  As , the leading behavior of the function , given by , looks like function.  Near , the leading behavior of the function , given by , looks like function.  As , the leading behavior of the function , given by , looks like function.  Near , the leading behavior of the function , given by , looks like function.  Near , the leading behavior of the function , given by , looks like function.     Choose the type of function from the dropdown list (choices are \"constant\", \"linear\", \"quadratic\", \"cubic\", or \"something else\") whose characteristics match those of the leading behavior.  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .     Identify the leading behaviors of the following functions at zero.  The leading behavior for near is .  The leading behavior for near is .     Identify the leading behaviors of the following functions at infinity and use this information to compute the appropriate limits at infinity.  The leading behavior for at infinity is .  The leading behavior for at infinity is .  The leading behavior for at infinity is .  The limit at infinity of is .     "
+  "body": " Limits and behaviors at infinity   The Plan  We will look at a powerful method for studying and describing the long-term values and behaviors of functions. This will give us a powerful, compact notation for making precise descriptions.    Limits and long-term behavior  Rather than talking about limits at a finite input, we now focus on limits as inputs become infinitely large In the long run (or ), functions can have only a few qualitatively different behaviors that describe how they approach their limiting value.   Real-world example from research  A neuroscientist interested in the response of muscle fibers to stress measures the firing rate of a stretched (and stressed) muscle fiber through time. She presented the following data:     Motivating data from a muscle fiber stretch response experiment.   If this was your data, what function would you use to describe it?  After quite a while, what value would the firing rate likely approach?    Expanding our library of functions  So far we have focused on polynomials (lines, quadratics, cubics, and so on), exponential and logarithmic functions, and sums, products, ratios. and compositions build from these. To better understand these functions and few new ones, we compare their behaviors for large inputs.    Functions approaching , ordered by speed  Below we consider constants to help build larger categories of functions.       Function  Features                 Sketches of these functions:  Suppose      approaches infinity (or ) faster than  if  Ex.     approaches infinity (or ) slower than  if  Ex.     approaches infinity (or ) at the same rate as if Ex.      Functions approaching 0, ordered by speed  Below we consider constants to help build larger categories of functions.       Function  Features                 Sketches of these functions:  Suppose      approaches 0 (or ) faster than  if Ex.     approaches 0 (or ) slower than  if Ex.     approaches 0 (or ) at the same rate as if Ex.      Summary of behaviors as  The following plots illustrate the basic shapes of functions that are important when discussing their limits at infinity.         Function  Family  Features                     Comparison of a few functions that share the characteristic of approaching infinity as .          Function  Family  Features                     Comparison of a few functions that share the characteristic of approaching zero as .   Recall the earlier example of the stretch response of muscle fibers. Below we show a computer-generated best fit to the data and illustrate important biological and statistical differences of the speeds of functions.   Data fit by the sum of a constant and an exponential function,     A less than ideal fit of a mathematical function to muscle fiber stretch response data.    Description:   Data fit by the sum of a constant and the composition of a power function with exponential function,     A very good fit of a mathematical function to muscle fiber stretch response data.    Description:   In ecology we use these functions to describe the numerical response of predators to prey or of harvesters to their crop. In chemistry we use these functions to describe rates for reaction kinetics, for example, Michaelis-Menten Kinetics. Forms generally have the following features,   Linear   Saturating   Saturating (with threshold)   Overcompensation     Leading behavior  The often useful method of leading behavior helps us approximate complicated functions by their most dominant terms. This tells us what the graph of a complicated function looks like .  The leading behavior of a function at , written , is the term that is largest as the input approaches .     Find for    Find for .    The leading behavior of a function at 0, written , is the term that is largest as the input approaches 0. Note: This often contradicts our initial intuition for big .     is larger than  as approaches 0 if     is smaller than  if      Using the ideas of larger and smaller, find for    Using the ideas of larger and smaller, find for    Compute     Formal justification  All of our discussion might seem quite suspicious and inexact.    Limit of a ratio is the ratio of limit, when limits are finite values.    Earlier rules for limits fail when limits are infinite; we cannot do the arithmetic with infinities.    We can use reasoning about relative speeds of different terms or need more advanced techniques.      Important facts  A function and its leading behavior approach at the same rate, or Also the leading behavior of a function defined by a ratio, such as is defined as the ratio of the leading behaviors or   We illustrate this method by example using the function , one example of functional form from earlier.     Illustration of a saturating function.   What does look like when is very large?  What does look like when is small?       Quick practice   Compute .  .   Compute .   .   Compute .   .   Which is bigger as  or ? Hence, what is for ?  Between the terms and , goes to zero faster which implies that is bigger as . Hence, for , the leading behavior at infinity is . This means the contribution of the exponential term to the graph of vanishes quickly and the graph looks like the graph of just as gets large.     Sample WeBWorK problems  Record non-terminating decimal answers to three decimal places. Ex. should be recorded as , but can be recorded as .   Choose the type of function from the dropdown list (choices are \"constant\", \"linear\", \"quadratic\", \"cubic\", or \"something else\") whose characteristics match those of the leading behavior.  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .     Compute each of the following limits.  Compute the limit of as , or .  Compute the limit of as , or .  Compute the limit of as , or . Hint: Write as an exponential function with base and apply our rules for the exponential function.  Compute the limit of as , or .  Compute the limit of as , or .     Compute each of the following limits.  Compute the limit of as , or .  Compute the limit of as , or .  Compute the limit of as , or . Hint: Write as an exponential function with base and apply our rules for the exponential function.  Compute the limit of as , or .  Compute the limit of as , or .     Choose the type of function from the dropdown list (choices are \"constant\", \"linear\", \"quadratic\", \"cubic\", or \"something else\") whose characteristics match those of the leading behavior.  As , the leading behavior of the function , given by , looks like function.  Near , the leading behavior of the function , given by , looks like function.  As , the leading behavior of the function , given by , looks like function.  Near , the leading behavior of the function , given by , looks like function.  Near , the leading behavior of the function , given by , looks like function.     Choose the type of function from the dropdown list (choices are \"constant\", \"linear\", \"quadratic\", \"cubic\", or \"something else\") whose characteristics match those of the leading behavior.  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .     Identify the leading behaviors of the following functions at zero.  The leading behavior for near is .  The leading behavior for near is .     Identify the leading behaviors of the following functions at infinity and use this information to compute the appropriate limits at infinity.  The leading behavior for at infinity is .  The leading behavior for at infinity is .  The leading behavior for at infinity is .  The limit at infinity of is .     "
 },
 {
-  "id": "figure-19",
+  "id": "figure-21",
   "level": "2",
-  "url": "limits-and-behaviors-at-infinity.html#figure-19",
+  "url": "limits-and-behaviors-at-infinity.html#figure-21",
   "type": "Figure",
   "number": "1.9.1",
   "title": "",
@@ -748,27 +775,27 @@ var ptx_lunr_docs = [
   "body": "faster than slower than at the same rate "
 },
 {
-  "id": "table-5",
+  "id": "image-functions-to-infinity",
   "level": "2",
-  "url": "limits-and-behaviors-at-infinity.html#table-5",
-  "type": "Table",
+  "url": "limits-and-behaviors-at-infinity.html#image-functions-to-infinity",
+  "type": "Figure",
   "number": "1.9.4",
   "title": "",
-  "body": "    Function  Family  Features                   "
+  "body": "       Function  Family  Features                     Comparison of a few functions that share the characteristic of approaching infinity as .  "
 },
 {
-  "id": "table-6",
+  "id": "image-functions-to-zero",
   "level": "2",
-  "url": "limits-and-behaviors-at-infinity.html#table-6",
-  "type": "Table",
+  "url": "limits-and-behaviors-at-infinity.html#image-functions-to-zero",
+  "type": "Figure",
   "number": "1.9.5",
   "title": "",
-  "body": "    Function  Family  Features                   "
+  "body": "       Function  Family  Features                     Comparison of a few functions that share the characteristic of approaching zero as .  "
 },
 {
-  "id": "figure-20",
+  "id": "figure-24",
   "level": "2",
-  "url": "limits-and-behaviors-at-infinity.html#figure-20",
+  "url": "limits-and-behaviors-at-infinity.html#figure-24",
   "type": "Figure",
   "number": "1.9.6",
   "title": "",
@@ -784,9 +811,9 @@ var ptx_lunr_docs = [
   "body": "Description: "
 },
 {
-  "id": "figure-21",
+  "id": "figure-25",
   "level": "2",
-  "url": "limits-and-behaviors-at-infinity.html#figure-21",
+  "url": "limits-and-behaviors-at-infinity.html#figure-25",
   "type": "Figure",
   "number": "1.9.7",
   "title": "",
@@ -811,9 +838,9 @@ var ptx_lunr_docs = [
   "body": "larger than smaller than "
 },
 {
-  "id": "figure-22",
+  "id": "figure-26",
   "level": "2",
-  "url": "limits-and-behaviors-at-infinity.html#figure-22",
+  "url": "limits-and-behaviors-at-infinity.html#figure-26",
   "type": "Figure",
   "number": "1.9.8",
   "title": "",
@@ -964,9 +991,9 @@ var ptx_lunr_docs = [
   "body": "  Compute the slope of the line that connects the points and .   The line:   Compute the slope of the line that connects the points at and on the graph of .   The secant line:    Conclusion:    "
 },
 {
-  "id": "figure-23",
+  "id": "figure-27",
   "level": "2",
-  "url": "introduction-to-derivatives-rates-of-change.html#figure-23",
+  "url": "introduction-to-derivatives-rates-of-change.html#figure-27",
   "type": "Figure",
   "number": "2.1.3",
   "title": "",
@@ -1000,9 +1027,9 @@ var ptx_lunr_docs = [
   "body": " Derivatives of basic functions   The Plan  We will extend our notion of slope to allow ourselves to make precise descriptions of how values of all functions, not just linear functions, change.   Average and instantaneous rates of change  Consider the function , perhaps describing the position of a frog while it crosses a pond, graphed below. Assume that is measured in meters and in seconds.     image   The slope of the secant line that connects the points and on the graph of is, which we call the average rate of change of between and , in meters per second.  By bringing closer and closer to , our secant line becomes a tangent line. To do this we introduce a limit, which we call the instantaneous rate of change of at , again in meters per second.   Aside ( vs. )  Last time in our limit definition, we used the limit as . We will briefly show why that is equivalent to the approach above and computationally easier. Since , we have . Taking is the same as taking . Substitute in the definition for and simplify,     The derivative  We define the instantaneous rate of change at to be the slope of the tangent line to at , given by the derivative  , below,   inside this limit, the change in output is while the change in input is simply .    Shorthand  Rather than using the two symbols required to write , we often use a single symbol to denote the change from to in the definition (and in the picture above). This amounts to saying that rather than (since ), so that the derivative of at is     The derivative – three ways  For a function , the derivative is written using the notation and is interpreted in three ways,       Details        Intuitively     Geometrically     Mathematically      A function is differentiable at the point if the function has a well-defined tangent line with finite slope at point . If we say a function is differentiable without mentioning a particular point, we mean it is differentiable everywhere.    Problem behaviors  Functions fail to be differentiable at points on the graph with jumps, corners, and vertical tangents. See graphs from the earlier lecture as examples of discontinuities.   Find the derivative, if it exists, of at point  using the limit definition.  Find the derivative, if it exists, of the constant function  .    Derivatives describe behavior  Recall our discussion of the behaviors and slopes of linear graphs. We can now make similar statements for the graph of any function.      Derivative   Function           if       if       if        A function has a critical point Note an error in Definition 2.6 of book. It should read …if or if the derivative… the prime symbol is missing. at if or if the derivative is not defined at .    An aside: Expanding binomials  Before moving forward it will be useful to review techniques for expanding binomials of the form for integers .                Consider the quadratic function . Find the derivative , if it exists, at an arbitrary point .  Consider the following plot of cell volume versus time.     Suppose where and are both differentiable functions. Then the derivative of the sum is the sum of the derivatives  Find the derivative of .  Suppose where is a differentiable function and is a constant. Then the derivative of a constant times a function is the constant times the derivative of the function   Find the derivative of .   Power rule for derivatives   Suppose for integers (this allows to be negative or positive) This works for all powers including fractions, provided that .   Use the previous theorem to compute derivatives of the following power functions.    Higher derivatives  We will learn how to interpret some higher derivatives soon, but we can already differentiate quite a few functions. We’ll cover this soon, but you might as well try computing the second derivatives, as illustrated below. The mechanics are just the same. For problems involving exponentials and logarithms be sure to simplify as fully as possible first using log rules, otherwise we might not know what to do to compute the derivative!      Quick practice   What is the derivative of ?   The derivative of is . The derivative of a linear function is its slope.    Where is the critical point of given that ?   The critical point of is found by setting its derivative, , equal to zero and solving for . So, , solved for gives .    If the derivative is positive at some point, is the function increasing or decreasing at that point?   If the derivative is positive at some point, the function increasing at that point?    "
 },
 {
-  "id": "figure-24",
+  "id": "figure-28",
   "level": "2",
-  "url": "derivatives-of-basic-functions.html#figure-24",
+  "url": "derivatives-of-basic-functions.html#figure-28",
   "type": "Figure",
   "number": "2.2.1",
   "title": "",
@@ -1108,18 +1135,18 @@ var ptx_lunr_docs = [
   "body": "not "
 },
 {
-  "id": "figure-25",
+  "id": "figure-29",
   "level": "2",
-  "url": "derivatives-of-exponential-and-logarithmic-functions.html#figure-25",
+  "url": "derivatives-of-exponential-and-logarithmic-functions.html#figure-29",
   "type": "Figure",
   "number": "2.3.1",
   "title": "",
   "body": "  image  "
 },
 {
-  "id": "figure-26",
+  "id": "figure-30",
   "level": "2",
-  "url": "derivatives-of-exponential-and-logarithmic-functions.html#figure-26",
+  "url": "derivatives-of-exponential-and-logarithmic-functions.html#figure-30",
   "type": "Figure",
   "number": "2.3.2",
   "title": "",
@@ -1252,18 +1279,18 @@ var ptx_lunr_docs = [
   "body": "    Name  Interpretation  Notation                        "
 },
 {
-  "id": "figure-27",
+  "id": "figure-31",
   "level": "2",
-  "url": "second-derivatives-and-applications.html#figure-27",
+  "url": "second-derivatives-and-applications.html#figure-31",
   "type": "Figure",
   "number": "2.6.2",
   "title": "",
   "body": "  image  "
 },
 {
-  "id": "figure-28",
+  "id": "figure-32",
   "level": "2",
-  "url": "second-derivatives-and-applications.html#figure-28",
+  "url": "second-derivatives-and-applications.html#figure-32",
   "type": "Figure",
   "number": "2.6.3",
   "title": "",
@@ -1297,9 +1324,9 @@ var ptx_lunr_docs = [
   "body": "local maximum local minimum "
 },
 {
-  "id": "figure-29",
+  "id": "figure-33",
   "level": "2",
-  "url": "second-derivatives-and-applications.html#figure-29",
+  "url": "second-derivatives-and-applications.html#figure-33",
   "type": "Figure",
   "number": "2.6.6",
   "title": "",
@@ -1531,47 +1558,11 @@ var ptx_lunr_docs = [
   "body": " The definite integral   The Plan  We introduce a new type of integral problem with powerful applications.   Position from velocity  Recall the formula of your velocity function From this function we used the relationship that to compute our position function .   New twist  Suppose you walk from class to class with this velocity and it takes you 50 seconds to walk from one class to the next, how many meters have you walked? Plot the velocity function to find out.     At certain times hallways and doorways are crowded and prevent you from maintaining your constant speedy pace towards class.     image   Consider that your velocity for a brief period of time is described by a quadratic function as you accelerate from a red light where your initial velocity is zero.    We try to fill the space, from left to right, under the graph with rectangles whose widths are known and whose heights are related to the height of the graph at some point.    We take advantage of the fact that the area of a rectangle by multiplying its width and height.    Given the area of a collection of rectangles, we can add the areas of the rectangles to get an approximation to the original area.      Demonstration of area under curve using left-hand rectangles.   Draw  left-hand rectangles to approximate the area under the curve. Heights can be estimated from the graph or calculated using the corresponding function value.     Demonstration of area under curve using left-hand rectangles.   Repeat the exercise above using the same number of right-hand rectangles.  For the function , consider the following examples of left-hand and right-hand Riemann sums used to approximate the value of the definite integral, whose exact value will be calculated very soon.    image     image     image     image     image     image   The result of computing a definite integral is a number, representing the area under a curve (or between the curve and the horizontal axis). In particular, read the integral from to of with respect to . This is the Riemann integral or definite integral defined to be the area of rectangles that collectively approximate the area under the curve as .    Key observations  A few key observations can be made about what we are doing now and how it differs from what we have done before.    limits of integration    an indefinite integral is    a definite integral is    For any continuous function and any indefinite integral ,   The value of , which gives the area under the curve between and can be calculated using the Fundamental Theorem of Calculus. Since the integrand is continuous on the interval from to we find which compares favorably with our earlier estimates.  Compute the following definite integrals.              Suppose is continuous on the interval from to , and that . Then i.e. the total change between times and is the change between and some intermediate time plus the change between time and the final time .  Suppose our female Atlantic sturgeon continues to obey the equation that describes its length in cm as a function of its age in years.    How much does the fish grow between ages and , its first ten years?    How much does the fish grow between ages and , its second ten years?    In which period did the fish grow the most?    How much does the fish grow between ages and ?        Quick practice   Compute .  Since is continuous on the interval from to , the definite integral evaluates to .    Compute .  Since is continuous on the interval from to , the definite integral evaluates to .    Compute .  Since is continuous on the interval from to , the definite integral evaluates to . Recall that and .    "
 },
 {
-  "id": "figure-30",
-  "level": "2",
-  "url": "the-definite-integral.html#figure-30",
-  "type": "Figure",
-  "number": "3.3.1",
-  "title": "",
-  "body": "  image  "
-},
-{
-  "id": "figure-31",
-  "level": "2",
-  "url": "the-definite-integral.html#figure-31",
-  "type": "Figure",
-  "number": "3.3.2",
-  "title": "",
-  "body": "  Demonstration of area under curve using left-hand rectangles.  "
-},
-{
-  "id": "figure-32",
-  "level": "2",
-  "url": "the-definite-integral.html#figure-32",
-  "type": "Figure",
-  "number": "3.3.3",
-  "title": "",
-  "body": "  Demonstration of area under curve using left-hand rectangles.  "
-},
-{
-  "id": "figure-33",
-  "level": "2",
-  "url": "the-definite-integral.html#figure-33",
-  "type": "Figure",
-  "number": "3.3.4",
-  "title": "",
-  "body": "  image  "
-},
-{
   "id": "figure-34",
   "level": "2",
   "url": "the-definite-integral.html#figure-34",
   "type": "Figure",
-  "number": "3.3.5",
+  "number": "3.3.1",
   "title": "",
   "body": "  image  "
 },
@@ -1580,25 +1571,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "the-definite-integral.html#figure-35",
   "type": "Figure",
-  "number": "3.3.6",
+  "number": "3.3.2",
   "title": "",
-  "body": "  image  "
+  "body": "  Demonstration of area under curve using left-hand rectangles.  "
 },
 {
   "id": "figure-36",
   "level": "2",
   "url": "the-definite-integral.html#figure-36",
   "type": "Figure",
-  "number": "3.3.7",
+  "number": "3.3.3",
   "title": "",
-  "body": "  image  "
+  "body": "  Demonstration of area under curve using left-hand rectangles.  "
 },
 {
   "id": "figure-37",
   "level": "2",
   "url": "the-definite-integral.html#figure-37",
   "type": "Figure",
-  "number": "3.3.8",
+  "number": "3.3.4",
   "title": "",
   "body": "  image  "
 },
@@ -1606,6 +1597,42 @@ var ptx_lunr_docs = [
   "id": "figure-38",
   "level": "2",
   "url": "the-definite-integral.html#figure-38",
+  "type": "Figure",
+  "number": "3.3.5",
+  "title": "",
+  "body": "  image  "
+},
+{
+  "id": "figure-39",
+  "level": "2",
+  "url": "the-definite-integral.html#figure-39",
+  "type": "Figure",
+  "number": "3.3.6",
+  "title": "",
+  "body": "  image  "
+},
+{
+  "id": "figure-40",
+  "level": "2",
+  "url": "the-definite-integral.html#figure-40",
+  "type": "Figure",
+  "number": "3.3.7",
+  "title": "",
+  "body": "  image  "
+},
+{
+  "id": "figure-41",
+  "level": "2",
+  "url": "the-definite-integral.html#figure-41",
+  "type": "Figure",
+  "number": "3.3.8",
+  "title": "",
+  "body": "  image  "
+},
+{
+  "id": "figure-42",
+  "level": "2",
+  "url": "the-definite-integral.html#figure-42",
   "type": "Figure",
   "number": "3.3.9",
   "title": "",
@@ -1747,9 +1774,9 @@ var ptx_lunr_docs = [
   "body": " Applications: nonlinear discrete-time dynamical systems (DTDS)   The Plan  By studying a few real-world mathematical models, we will see a new dimension of mathematical work - more graphical and artistic, but rooted in calculus nonetheless.    Historical examples  We will discuss two famous DTDS from the scientific literature: the Ricker model and the discrete-logistic model.       This model was used to study changes in fish populations over a 4 year period (chosen based on the reproductive cycle of the fish). The updating function (the curve) was chosen based on fisheries data and modeling.    image      This model was used to study changes in empirical and theoretical populations. Two examples of the updating function (the curves) are illustrated.   Dynamics and stability  We see a hint of a stability condition in the right-hand panel. Recall that equilibria occur where the diagonal and updating functions cross. The equilibrium point is stable if the updating function is not too steep at this point, and unstable if the updating function is too steep at this point. What might we mean by too steep ? How can we describe the steepness of a graph at a point?    Sample solutions  Using the computer code as a guide, sketch some sample cobwebs.    image     image     Conclusions  From your computer experiments and analysis above what conclusions can you draw about this model and its solutions?    Sample solutions  Using the computer code as a guide, sketch some sample cobwebs.    image     image     Conclusions  From your computer experiments and analysis above what conclusions can you draw about this model and its solutions?  For the DTDS , the equilibrium is     stable if (or has a small slope at , ) and     unstable if or (or has a large slope at , )    The solution oscillates of .    Big idea!  Near an equilibrium looks like its tangent line, whose slope is given by the derivative there, . Zooming in near the equilibrium point , the nonlinear model will look like one of the four cases pictured at the conclusion of the previous section with one of the basic behaviors.    Ricker Model  Originally published in the 1950’s, the Ricker model was used to describe change in size of fish populations from one measurement to the next. Though there are other variants presented in literature, the model is where the values and are parameters. This model has been used to    estimate growth and population parameters from data    predict population growth    optimize yields from harvested populations      Analysis of the Ricker DTDS  To get some basic information we will analyze the Ricker model by hand before moving onto computing.    With and , find the equilibria for the Ricker model.    What is if ?    What is ? Are equilibria stable? Should solutions oscillate?    Repeat the analysis if .      Discrete logistic  The famous model May discusses in the paper cited above is the discrete logistic equation or the logistic map, given by where and are parameters and we think of as describing the size of a biological population. The algebra of the analysis simplifies if we choose .    With and , find the equilibria for the discrete logistic model.    What is if if again ?    What is ? Are equilibria stable? Should solutions oscillate?    Repeat the analysis if .      Note on modeling  Both of these models, and many others, are of the form where is the per capita production as a function of the current population size. This model tells us that the new population size is a multiple of the old population size, and tells us what the multiple is. What is for each of the models above?     "
 },
 {
-  "id": "figure-39",
+  "id": "figure-43",
   "level": "2",
-  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-39",
+  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-43",
   "type": "Figure",
   "number": "4.1.1",
   "title": "",
@@ -1765,36 +1792,36 @@ var ptx_lunr_docs = [
   "body": "stable unstable "
 },
 {
-  "id": "figure-40",
+  "id": "figure-44",
   "level": "2",
-  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-40",
+  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-44",
   "type": "Figure",
   "number": "4.1.2",
   "title": "",
   "body": "  image  "
 },
 {
-  "id": "figure-41",
+  "id": "figure-45",
   "level": "2",
-  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-41",
+  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-45",
   "type": "Figure",
   "number": "4.1.3",
   "title": "",
   "body": "  image  "
 },
 {
-  "id": "figure-42",
+  "id": "figure-46",
   "level": "2",
-  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-42",
+  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-46",
   "type": "Figure",
   "number": "4.1.4",
   "title": "",
   "body": "  image  "
 },
 {
-  "id": "figure-43",
+  "id": "figure-47",
   "level": "2",
-  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-43",
+  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-47",
   "type": "Figure",
   "number": "4.1.5",
   "title": "",
