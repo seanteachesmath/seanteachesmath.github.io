@@ -14,377 +14,207 @@
 <meta property="og:type" content="book">
 <meta property="book:title" content="Bio-Calculus">
 <meta property="book:author" content="Sean Laverty">
-<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
-window.MathJax = {
+<script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
     tagSide: "right",
     tagIndent: ".8em",
-    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
   },
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
   },
   chtml: {
-    scale: 0.98,
+    scale: 0.88,
     mtextInheritFont: true
   },
   loader: {
-    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
-  startup: {
+startup: {
     pageReady() {
       return MathJax.startup.defaultPageReady().then(function () {
       console.log("in ready function");
-      rsMathReady();
+      $(document).trigger("runestone:mathjax-ready");
       }
     )}
-  },
+},
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
-<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
-</script><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
-<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
 </head>
-<body class="pretext book ignore-math">
-<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
-<a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
-<p class="byline">Sean Laverty</p>
-</div>
-<div id="searchresultsplaceholder" style="display: none">
-<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
-</h2>
-<div id="searchempty"><span>No results.</span></div>
-<ol id="searchresults"></ol>
-</div>
-</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
-<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden avatar">
-<li data-val="You!" tabindex="-1">
-<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
-<li data-val="😺" tabindex="-1">
-<span id="the😺" class="avatarcheck"></span>😺</li>
-<li data-val="👤" tabindex="-1">
-<span id="the👤" class="avatarcheck"></span>👤</li>
-<li data-val="👽" tabindex="-1">
-<span id="the👽" class="avatarcheck"></span>👽</li>
-<li data-val="🐶" tabindex="-1">
-<span id="the🐶" class="avatarcheck"></span>🐶</li>
-<li data-val="🐼" tabindex="-1">
-<span id="the🐼" class="avatarcheck"></span>🐼</li>
-<li data-val="🌈" tabindex="-1">
-<span id="the🌈" class="avatarcheck"></span>🌈</li>
-</ol>
-</li>
-<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fontfamily">
-<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
-<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
-<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
-</li>
-</ol>
-</li>
-<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden fonts">
-<li>Size</li>
-<li><span id="thesize">12</span></li>
-<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
-<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
-<li>Width</li>
-<li><span id="thewdth">100</span></li>
-<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
-<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
-<li>Weight</li>
-<li><span id="thewght">400</span></li>
-<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
-<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
-<li>Letter spacing</li>
-<li>
-<span id="thelspace">0</span><span class="byunits">/200</span>
-</li>
-<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
-<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
-<li>Word spacing</li>
-<li>
-<span id="thewspace">0</span><span class="byunits">/50</span>
-</li>
-<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
-<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
-<li>Line Spacing</li>
-<li>
-<span id="theheight">135</span><span class="byunits">/100</span>
-</li>
-<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
-<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
-</ol>
-</li>
-<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden atmosphere">
-<li data-val="default" tabindex="-1">
-<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
-<li data-val="pastel" tabindex="-1">
-<span id="thepastel" class="atmospherecheck"></span>pastel</li>
-<li data-val="darktwilight" tabindex="-1">
-<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
-<li data-val="dark" tabindex="-1">
-<span id="thedark" class="atmospherecheck"></span>dark</li>
-<li data-val="darkmidnight" tabindex="-1">
-<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
-</ol>
-</li>
-<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
-<ol class="hidden ruler">
-<li data-val="none" tabindex="-1">
-<span id="thenone" class="rulercheck">✔️</span>none</li>
-<li data-val="underline" tabindex="-1">
-<span id="theunderline" class="rulercheck"></span>underline</li>
-<li data-val="lunderline" tabindex="-1">
-<span id="thelunderline" class="rulercheck"></span>L-underline</li>
-<li data-val="greybar" tabindex="-1">
-<span id="thegreybar" class="rulercheck"></span>grey bar</li>
-<li data-val="lightbox" tabindex="-1">
-<span id="thelightbox" class="rulercheck"></span>light box</li>
-<li data-val="sunrise" tabindex="-1">
-<span id="thesunrise" class="rulercheck"></span>sunrise</li>
-<li data-val="sunriseunderline" tabindex="-1">
-<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
-<li class="moveQ">Motion by:</li>
-<li data-val="mouse" tabindex="-1">
-<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
-<li data-val="arrow" tabindex="-1">
-<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
-<li data-val="eye" tabindex="-1">
-<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
-</ol>
-</li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="exponentials-and-logarithms.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-intro.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="introduction-to-limits.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
-<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
-</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
 \definecolor{fillinmathshade}{gray}{0.9}
 \newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
 \)</span></div>
-<div class="ptx-page">
-<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
-<li>
-<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="users-guide.html" class="internal"><span class="title">Users guide</span></a></div></li></ul>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
+<p class="byline">Sean Laverty</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="exponentials-and-logarithms.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-intro.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="introduction-to-limits.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="exponentials-and-logarithms.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-intro.html" title="Up">Up</a><a class="next-button button toolbar-item" href="introduction-to-limits.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide" class="internal">Users guide</a></li></ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-intro.html" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="what-is-bio-calculus.html" class="internal"><span class="codenumber">1.1</span> <span class="title">What is bio-calculus?</span></a></div></li>
-<li>
-<div class="toc-item"><a href="introduction-modeling-terminology.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="introduction-modeling-terminology.html#quick-jargon" class="internal"><span class="codenumber">1.2</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="dimensions-and-units-1.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Dimensions and units</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="dimensions-and-units-1.html#quick-practice-units" class="internal"><span class="codenumber">1.3</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="linear-functions-and-their-graphs.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Linear functions and their graphs</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="linear-functions-and-their-graphs.html#quick-practice-linear" class="internal"><span class="codenumber">1.4</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="exponentials-and-logarithms.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Exponentials and logarithms</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="exponentials-and-logarithms.html#quick-practice-exp" class="internal"><span class="codenumber">1.5</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li class="active">
-<div class="toc-item"><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Introduction to discrete-time dynamical systems (DTDS)</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="introduction-to-discrete-time-dynamical-systems-dtds.html#quick-practice-dtds" class="internal"><span class="codenumber">1.6</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="introduction-to-limits.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Introduction to limits</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="introduction-to-limits.html#quick-practice-finite-limits" class="internal"><span class="codenumber">1.7</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="continuous-functions.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Continuous functions</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="continuous-functions.html#quick-practice-continuity" class="internal"><span class="codenumber">1.8</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="limits-and-behaviors-at-infinity.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Limits and behaviors at infinity</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="limits-and-behaviors-at-infinity.html#quick-practice-inf-limits" class="internal"><span class="codenumber">1.9</span> <span class="title">Quick practice</span></a></div></li>
-<li><div class="toc-item"><a href="limits-and-behaviors-at-infinity.html#webwork-inf-limits" class="internal"><span class="codenumber">1.9</span> <span class="title">Sample WeBWorK problems</span></a></div></li>
+<li class="link">
+<a href="ch-intro.html" data-scroll="ch-intro" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus" class="internal">What is bio-calculus?</a></li>
+<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology" class="internal">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
+<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1" class="internal">Dimensions and units</a></li>
+<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs" class="internal">Linear functions and their graphs</a></li>
+<li><a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms" class="internal">Exponentials and logarithms</a></li>
+<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds" class="active">Introduction to discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits" class="internal">Introduction to limits</a></li>
+<li><a href="continuous-functions.html" data-scroll="continuous-functions" class="internal">Continuous functions</a></li>
+<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity" class="internal">Limits and behaviors at infinity</a></li>
 </ul>
 </li>
+<li class="link">
+<a href="ch-derivatives.html" data-scroll="ch-derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
+<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change" class="internal">Introduction to derivatives: Rates of change</a></li>
+<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions" class="internal">Derivatives of basic functions</a></li>
+<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions" class="internal">Derivatives of exponential and logarithmic functions</a></li>
+<li><a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule" class="internal">Derivatives of compositions: chain rule</a></li>
+<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients" class="internal">Derivatives of products and quotients</a></li>
+<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications" class="internal">Second derivatives and applications</a></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-derivatives.html" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="introduction-to-derivatives-rates-of-change.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction to derivatives: Rates of change</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="introduction-to-derivatives-rates-of-change.html#quick-practice-rates" class="internal"><span class="codenumber">2.1</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="derivatives-of-basic-functions.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Derivatives of basic functions</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-basic-functions.html#quick-practice-derivatives" class="internal"><span class="codenumber">2.2</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="derivatives-of-exponential-and-logarithmic-functions.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Derivatives of exponential and logarithmic functions</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-exponential-and-logarithmic-functions.html#quick-practice-exp-deriv" class="internal"><span class="codenumber">2.3</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="derivatives-of-compositions-chain-rule.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Derivatives of compositions: chain rule</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-compositions-chain-rule.html#quick-practice-chain" class="internal"><span class="codenumber">2.4</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="derivatives-of-products-and-quotients.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Derivatives of products and quotients</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="derivatives-of-products-and-quotients.html#quick-practice-product" class="internal"><span class="codenumber">2.5</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="second-derivatives-and-applications.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Second derivatives and applications</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="second-derivatives-and-applications.html#quick-practice-concavity" class="internal"><span class="codenumber">2.6</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
+<li class="link">
+<a href="ch-integration.html" data-scroll="ch-integration" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
+<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations" class="internal">Introduction to differential equations</a></li>
+<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution" class="internal">More complicated integrals and integration by substitution</a></li>
+<li><a href="the-definite-integral.html" data-scroll="the-definite-integral" class="internal">The definite integral</a></li>
+<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral" class="internal">Applications of the definite integral</a></li>
+<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry" class="internal">Applications to chemistry</a></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-integration.html" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a></div>
-<ul class="structural">
-<li>
-<div class="toc-item"><a href="introduction-to-differential-equations.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Introduction to differential equations</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="introduction-to-differential-equations.html#quick-practice-des" class="internal"><span class="codenumber">3.1</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="more-complicated-integrals-and-integration-by-substitution.html" class="internal"><span class="codenumber">3.2</span> <span class="title">More complicated integrals and integration by substitution</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="more-complicated-integrals-and-integration-by-substitution.html#quick-practice-usub" class="internal"><span class="codenumber">3.2</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="the-definite-integral.html" class="internal"><span class="codenumber">3.3</span> <span class="title">The definite integral</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="the-definite-integral.html#quick-practice-def-int" class="internal"><span class="codenumber">3.3</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="applications-of-the-definite-integral.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Applications of the definite integral</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="applications-of-the-definite-integral.html#quick-practice-def-apps" class="internal"><span class="codenumber">3.4</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
-<li>
-<div class="toc-item"><a href="applications-to-chemistry.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Applications to chemistry</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="applications-to-chemistry.html#quick-practice-chemistry" class="internal"><span class="codenumber">3.5</span> <span class="title">Quick practice</span></a></div></li></ul>
-</li>
+<li class="link">
+<a href="ch-advanced.html" data-scroll="ch-advanced" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a><ul>
+<li><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds" class="internal">Applications: nonlinear discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations" class="internal">Applications: autonomous differential equations</a></li>
 </ul>
 </li>
-<li>
-<div class="toc-item"><a href="ch-advanced.html" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Applications: nonlinear discrete-time dynamical systems (DTDS)</span></a></div></li>
-<li><div class="toc-item"><a href="applications-autonomous-differential-equations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Applications: autonomous differential equations</span></a></div></li>
-</ul>
-</li>
-</ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="introduction-to-discrete-time-dynamical-systems-dtds"><h2 class="heading hide-type">
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="introduction-to-discrete-time-dynamical-systems-dtds"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.6</span> <span class="title">Introduction to discrete-time dynamical systems (DTDS)</span>
 </h2>
-<section class="paragraphs" id="the-plan-5"><h3 class="heading"><span class="title">The Plan.</span></h3> <div class="para" id="p-223">We look at a powerful modeling technique that has subtle connections to calculus.</div> <section class="paragraphs" id="prediction"><h4 class="heading"><span class="title">Prediction.</span></h4> <div class="para" id="p-224">An important part of mathematics and science is describing the mechanisms by which measurements change and making a testable prediction.</div> <section class="paragraphs" id="approach-discrete-time-dynamical-systems"><h5 class="heading"><span class="title">Approach: Discrete-time dynamical systems.</span></h5> <div class="para logical" id="p-225">
-<div class="para">Used to predict measurements made at discrete time intervals (e.g., measurements made once per hour, day, week). Consider a measurement <span class="process-math">\(m_t\)</span> made at time <span class="process-math">\(t\text{,}\)</span> to define a discrete-time dynamical system (DTDS) we write</div>
-<div class="displaymath process-math">
+<section class="paragraphs" id="the-plan-5"><h3 class="heading"><span class="title">The Plan.</span></h3>
+<p id="p-223">We look at a powerful modeling technique that has subtle connections to calculus.</p>
+<section class="paragraphs" id="prediction"><h4 class="heading"><span class="title">Prediction.</span></h4>
+<p id="p-224">An important part of mathematics and science is describing the mechanisms by which measurements change and making a testable prediction.</p>
+<section class="paragraphs" id="approach-discrete-time-dynamical-systems"><h5 class="heading"><span class="title">Approach: Discrete-time dynamical systems.</span></h5>
+<p id="p-225">Used to predict measurements made at discrete time intervals (e.g., measurements made once per hour, day, week). Consider a measurement <span class="process-math">\(m_t\)</span> made at time <span class="process-math">\(t\text{,}\)</span> to define a discrete-time dynamical system (DTDS) we write</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 m_{t+1} =
 f(m_t).
 \end{equation*}
-</div>
-</div></section> <section class="paragraphs" id="yeast-growth"><h5 class="heading"><span class="title">Yeast growth.</span></h5> <div class="para" id="p-226">Recall the data collected earlier this semester, similar to what is presented below, that describe the growth of yeast from one day to the next.</div> <figure class="figure figure-like" id="figure-6"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/yeast_fall19.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.1<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure> <div class="para" id="p-227">From the graph, predict the final area of your colony if you initially measured an area of 100 mm<span class="process-math">\({}^{2}\text{?}\)</span>
-</div> <div class="para" id="p-228">From the graph, predict the final area of your colony if you initially measured an area of 10 mm<span class="process-math">\({}^{2}\text{?}\)</span>
-</div> <div class="para" id="p-229">Mathematically what are you doing to make your prediction?</div> <div class="para" id="p-230">Let <span class="process-math">\(y_t\)</span> denote the measured area (mm<span class="process-math">\({}^{2}\)</span>) of the yeast measured on day <span class="process-math">\(t\text{.}\)</span> Define the DTDS that predicts the future measurement, called <span class="process-math">\(y_{t+1}\text{.}\)</span>
-</div></section> <section class="paragraphs" id="definition-solution"><h5 class="heading"><span class="title">Definition – solution.</span></h5> <div class="para" id="p-231">The sequence of values <span class="process-math">\(m_t\)</span> for <span class="process-math">\(t = 0,
-1, 2, \dots\)</span> is the <dfn class="terminology">solution</dfn> of the discrete-time dynamical system <span class="process-math">\(m_{t+1} = f(m_t)\)</span> starting from initial condition <span class="process-math">\(m_{0}\text{.}\)</span> We sometimes graph the solution as a plot of points against time.</div> <div class="para" id="p-232">For our yeast growth predictions, example initial conditions above were <span class="process-math">\(y_{0}=100\)</span> mm<span class="process-math">\({}^{2}\)</span> and <span class="process-math">\(y_{0}=10\)</span> mm<span class="process-math">\({}^{2}\text{.}\)</span> Using the updating function, compute five terms of the solution starting from each of these initial conditions.</div> <div class="para" id="p-233">Starting from <span class="process-math">\(y_{0}=100\)</span> mm<span class="process-math">\({}^{2}\)</span>
-</div> <div class="para" id="p-234">Starting from <span class="process-math">\(y_{0}=10\)</span> mm<span class="process-math">\({}^{2}\)</span>
-</div></section> <section class="paragraphs" id="a-solution-formula"><h5 class="heading"><span class="title">A solution formula.</span></h5> <div class="para" id="p-235">Sometimes we can write a formula for the solution <span class="process-math">\(y_t\)</span> to predict the population size at <em class="emphasis">any</em> future time <span class="process-math">\(t\text{.}\)</span>
-</div></section> <section class="paragraphs" id="a-graphical-computer"><h5 class="heading"><span class="title">A graphical computer.</span></h5> <div class="para" id="p-236">We have a powerful technique for studying the behavior of such models using only a pencil and paper. This technique is called cobwebbing, and its name will be come clear shortly.</div> <figure class="figure figure-like" id="figure-7"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/yeast_fall19b.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.2<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure> <div class="para" id="p-237">Note: you often <dfn class="terminology">will not</dfn> have the data points on this graph, so they have been removed.This is how we ‘cobweb’:</div> <div class="para logical" id="p-238"><ol class="decimal">
-<li id="li-86"><div class="para" id="p-239">Graph the updating function and the diagonal (the identity or line <span class="process-math">\(y=x\)</span>)</div></li>
-<li id="li-87"><div class="para" id="p-240">Start at initial condition and go up or down to the updating function and over to the diagonal</div></li>
-<li id="li-88"><div class="para" id="p-241">Repeat for as many steps as needed to find the pattern</div></li>
-<li id="li-89"><div class="para" id="p-242">Sketch the solution at times <span class="process-math">\(t=0, 1, 2,
-\dots\)</span>
-</div></li>
-</ol></div></section> <section class="paragraphs" id="updating-and-inverses"><h5 class="heading"><span class="title">Updating and inverses.</span></h5> <div class="para logical" id="p-243">
-<div class="para">What could we learn from the inverse of the updating function to the DTDS</div>
-<div class="displaymath process-math">
+</div></section><section class="paragraphs" id="yeast-growth"><h5 class="heading"><span class="title">Yeast growth.</span></h5>
+<p id="p-226">Recall the data collected earlier this semester, similar to what is presented below, that describe the growth of yeast from one day to the next.</p>
+<figure class="figure figure-like" id="figure-7"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/yeast_fall19.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.1<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-227">From the graph, predict the final area of your colony if you initially measured an area of 100 mm<span class="process-math">\({}^{2}\text{?}\)</span></p>
+<p id="p-228">From the graph, predict the final area of your colony if you initially measured an area of 10 mm<span class="process-math">\({}^{2}\text{?}\)</span></p>
+<p id="p-229">Mathematically what are you doing to make your prediction?</p>
+<p id="p-230">Let <span class="process-math">\(y_t\)</span> denote the measured area (mm<span class="process-math">\({}^{2}\)</span>) of the yeast measured on day <span class="process-math">\(t\text{.}\)</span> Define the DTDS that predicts the future measurement, called <span class="process-math">\(y_{t+1}\text{.}\)</span></p></section><section class="paragraphs" id="definition-solution"><h5 class="heading"><span class="title">Definition – solution.</span></h5>
+<p id="p-231">The sequence of values <span class="process-math">\(m_t\)</span> for <span class="process-math">\(t = 0,
+1, 2, \dots\)</span> is the <dfn class="terminology">solution</dfn> of the discrete-time dynamical system <span class="process-math">\(m_{t+1} = f(m_t)\)</span> starting from initial condition <span class="process-math">\(m_{0}\text{.}\)</span> We sometimes graph the solution as a plot of points against time.</p>
+<p id="p-232">For our yeast growth predictions, example initial conditions above were <span class="process-math">\(y_{0}=100\)</span> mm<span class="process-math">\({}^{2}\)</span> and <span class="process-math">\(y_{0}=10\)</span> mm<span class="process-math">\({}^{2}\text{.}\)</span> Using the updating function, compute five terms of the solution starting from each of these initial conditions.</p>
+<p id="p-233">Starting from <span class="process-math">\(y_{0}=100\)</span> mm<span class="process-math">\({}^{2}\)</span></p>
+<p id="p-234">Starting from <span class="process-math">\(y_{0}=10\)</span> mm<span class="process-math">\({}^{2}\)</span></p></section><section class="paragraphs" id="a-solution-formula"><h5 class="heading"><span class="title">A solution formula.</span></h5>
+<p id="p-235">Sometimes we can write a formula for the solution <span class="process-math">\(y_t\)</span> to predict the population size at <em class="emphasis">any</em> future time <span class="process-math">\(t\text{.}\)</span></p></section><section class="paragraphs" id="a-graphical-computer"><h5 class="heading"><span class="title">A graphical computer.</span></h5>
+<p id="p-236">We have a powerful technique for studying the behavior of such models using only a pencil and paper. This technique is called cobwebbing, and its name will be come clear shortly.</p>
+<figure class="figure figure-like" id="figure-8"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/yeast_fall19b.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.2<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-237">Note: you often <dfn class="terminology">will not</dfn> have the data points on this graph, so they have been removed.This is how we ‘cobweb’:</p>
+<ol id="p-238" class="decimal">
+<li id="li-86"><p id="p-239">Graph the updating function and the diagonal (the identity or line <span class="process-math">\(y=x\)</span>)</p></li>
+<li id="li-87"><p id="p-240">Start at initial condition and go up or down to the updating function and over to the diagonal</p></li>
+<li id="li-88"><p id="p-241">Repeat for as many steps as needed to find the pattern</p></li>
+<li id="li-89"><p id="p-242">Sketch the solution at times <span class="process-math">\(t=0, 1, 2,
+\dots\)</span></p></li>
+</ol></section><section class="paragraphs" id="updating-and-inverses"><h5 class="heading"><span class="title">Updating and inverses.</span></h5>
+<p id="p-243">What could we learn from the inverse of the updating function to the DTDS</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 m_{t+1} = f(m_t)?
 \end{equation*}
-</div>
-</div></section> <section class="paragraphs" id="extra-dtds-examples"><h5 class="heading"><span class="title">Extra DTDS examples.</span></h5> <div class="para" id="p-244">The following completely nonbiological examples illustrate some interesting mathematical behaviors. These will help us understand behaviors of more complicated biological models next time.</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+</div></section><section class="paragraphs" id="extra-dtds-examples"><h5 class="heading"><span class="title">Extra DTDS examples.</span></h5>
+<p id="p-244">The following completely nonbiological examples illustrate some interesting mathematical behaviors. These will help us understand behaviors of more complicated biological models next time.</p>
+<figure class="figure figure-like" id="image-cobwebbing-diagrams"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel top" style="width:50%;"><img src="external/linear_pos.png" class="contained"></div>
 <div class="sbspanel top" style="width:50%;"><img src="external/linear_neg.png" class="contained"></div>
-</div></div> <div class="para" id="p-245">Each day a patient uses up half of the medication in his bloodstream, but he is also given a new dose that raises the concentration in the blood stream by 1 mg/L. Let <span class="process-math">\(M_t\)</span> denote the concentration on day <span class="process-math">\(t\text{.}\)</span>
-</div> <div class="para logical" id="p-246"><ul class="disc">
-<li id="li-90"><div class="para" id="p-247">Write a DTDS describing this situation and plot the updating function.</div></li>
-<li id="li-91"><div class="para" id="p-248">What does the solution look like if you start with <span class="process-math">\(M_{0}\)</span> = 5 mg/L? <span class="process-math">\(M_{0}\)</span> = 1 mg/L?</div></li>
-</ul></div> <div class="para" id="p-249">Plot the diagonal and updating function for the previous model and cobweb five terms of the solution starting from <span class="process-math">\(M_{0}\)</span> = 5 mg/L and then from <span class="process-math">\(M_{0}\)</span> = 1 mg/L.</div> <figure class="figure figure-like" id="figure-8"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/graph.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.3<span class="period">.</span></span><span class="space"> </span>Blank graph paper for DTDS.</figcaption></figure> <div class="para" id="p-250">What happens if you start at <span class="process-math">\(M_{0}=2\text{?}\)</span>
-</div> <div class="para logical" id="p-251">
-<div class="para">A point <span class="process-math">\(m^*\)</span> is called an equilibrium of the DTDS</div>
-<div class="displaymath process-math">
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.3<span class="period">.</span></span><span class="space"> </span>Cobwebbing diagrams for some linear discrete-time dynamical systems.  These are not themselves biologically interesting, but emphasize the technique and have subtle connections to important applications.</figcaption></figure><p id="p-245">Each day a patient uses up half of the medication in his bloodstream, but he is also given a new dose that raises the concentration in the blood stream by 1 mg/L. Let <span class="process-math">\(M_t\)</span> denote the concentration on day <span class="process-math">\(t\text{.}\)</span></p>
+<ul id="p-246" class="disc">
+<li id="li-90"><p id="p-247">Write a DTDS describing this situation and plot the updating function.</p></li>
+<li id="li-91"><p id="p-248">What does the solution look like if you start with <span class="process-math">\(M_{0}\)</span> = 5 mg/L? <span class="process-math">\(M_{0}\)</span> = 1 mg/L?</p></li>
+</ul>
+<p id="p-249">Plot the diagonal and updating function for the previous model and cobweb five terms of the solution starting from <span class="process-math">\(M_{0}\)</span> = 5 mg/L and then from <span class="process-math">\(M_{0}\)</span> = 1 mg/L.</p>
+<figure class="figure figure-like" id="figure-10"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/graph.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.6.4<span class="period">.</span></span><span class="space"> </span>Blank graph paper for DTDS.</figcaption></figure><p id="p-250">What happens if you start at <span class="process-math">\(M_{0}=2\text{?}\)</span></p>
+<p id="p-251">A point <span class="process-math">\(m^*\)</span> is called an equilibrium of the DTDS</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 m_{t+1} = f(m_t)
 \end{equation*}
 </div>
-<div class="para">if <span class="process-math">\(f(m^*) = m^*\)</span> (i.e., if updating by the DTDS leaves the input <span class="process-math">\(m^*\)</span> unchanged).</div>
-</div> <div class="para logical" id="p-252"><ul class="disc">
-<li id="li-92"><div class="para" id="p-253">Find equilibria (more than 1 equilibrium) graphically by locating the points where the graphs of the updating function and diagonal intersect.</div></li>
-<li id="li-93"><div class="para" id="p-254">Find equilibria algebraically by setting <span class="process-math">\(f(m^*) = m^*\)</span> and solving for <span class="process-math">\(m^*\)</span> .</div></li>
-</ul></div> <div class="para" id="p-255">Compute equilibrium values for the following DTDS.</div> <div class="para logical" id="p-256">
-<div class="para">Yeast model:</div>
-<div class="displaymath process-math">
+<p class="continuation">if <span class="process-math">\(f(m^*) = m^*\)</span> (i.e., if updating by the DTDS leaves the input <span class="process-math">\(m^*\)</span> unchanged).</p>
+<ul id="p-252" class="disc">
+<li id="li-92"><p id="p-253">Find equilibria (more than 1 equilibrium) graphically by locating the points where the graphs of the updating function and diagonal intersect.</p></li>
+<li id="li-93"><p id="p-254">Find equilibria algebraically by setting <span class="process-math">\(f(m^*) = m^*\)</span> and solving for <span class="process-math">\(m^*\)</span> .</p></li>
+</ul>
+<p id="p-255">Compute equilibrium values for the following DTDS.</p>
+<p id="p-256">Yeast model:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 y_{t+1} = f(y_t)
 \end{equation*}
 </div>
-</div> <div class="para logical" id="p-257">
-<div class="para">Drug model:</div>
-<div class="displaymath process-math">
+<p id="p-257">Drug model:</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
 \begin{equation*}
 M_{t+1} = f(M_t)
 \end{equation*}
-</div>
-</div></section> <section class="paragraphs" id="deriving-the-doubling-time"><h5 class="heading"><span class="title">Deriving the doubling time.</span></h5> <div class="para" id="p-258">Combing our knowledge of exponential and logarithmic functions, we can derive the doubling time formula from the solution that describes the dynamics of the yeast model above.</div></section></section></section><section class="exercises" id="quick-practice-dtds"><h3 class="heading hide-type">
+</div></section><section class="paragraphs" id="deriving-the-doubling-time"><h5 class="heading"><span class="title">Deriving the doubling time.</span></h5>
+<p id="p-258">Combing our knowledge of exponential and logarithmic functions, we can derive the doubling time formula from the solution that describes the dynamics of the yeast model above.</p></section></section></section><section class="exercises" id="quick-practice-dtds"><h3 class="heading hide-type">
 <span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Quick practice</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-14"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
-<div class="para" id="p-259">Is <span class="process-math">\(x^*=0\)</span> an equilibrium point of <span class="process-math">\(x_{t+1} =
-3x_t -1\text{?}\)</span>[quick-dtds1]</div>
+<p id="p-259">Is <span class="process-math">\(x^*=0\)</span> an equilibrium point of <span class="process-math">\(x_{t+1} =
+3x_t -1\text{?}\)</span>[quick-dtds1]</p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><div class="para" id="p-260">Since <span class="process-math">\(3(0) - 1 \neq 0\)</span> (if I plug in zero and do not get back zero), zero is not an equilibrium point.</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><p id="p-260">Since <span class="process-math">\(3(0) - 1 \neq 0\)</span> (if I plug in zero and do not get back zero), zero is not an equilibrium point.</p></div></div>
 </div></article><article class="exercise exercise-like" id="exercise-15"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
-<div class="para" id="p-261">A population of size <span class="process-math">\(p_t\)</span> increases by a factor of 1.2, but only after 3 units are removed. Write the discrete-time dynamical system describing the population dynamics.[quick-dtds2]</div>
+<p id="p-261">A population of size <span class="process-math">\(p_t\)</span> increases by a factor of 1.2, but only after 3 units are removed. Write the discrete-time dynamical system describing the population dynamics.[quick-dtds2]</p>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><div class="para" id="p-262">To start we subtract <span class="process-math">\(3\)</span> from <span class="process-math">\(p_t\text{,}\)</span> that resulting quantity is multiplied by the growth factor of <span class="process-math">\(1.2\)</span> resulting in the model <span class="process-math">\(p_{t+1} = 1.2(p_t-3)\text{.}\)</span>
-</div></div></div>
-</div></article></section></section></div>
-<div class="ptx-content-footer">
-<a class="previous-button button" href="exponentials-and-logarithms.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="introduction-to-limits.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
-</div></main>
-</div>
-<div class="ptx-page-footer">
-<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
-<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
-<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like"><p id="p-262">To start we subtract <span class="process-math">\(3\)</span> from <span class="process-math">\(p_t\text{,}\)</span> that resulting quantity is multiplied by the growth factor of <span class="process-math">\(1.2\)</span> resulting in the model <span class="process-math">\(p_{t+1} = 1.2(p_t-3)\text{.}\)</span></p></div></div>
+</div></article></section></section></div></main>
 </div>
 </body>
 </html>
