@@ -718,7 +718,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.9",
   "title": "Limits and behaviors at infinity",
-  "body": " Limits and behaviors at infinity   The Plan  We will look at a powerful method for studying and describing the long-term values and behaviors of functions. This will give us a powerful, compact notation for making precise descriptions.    Limits and long-term behavior  Rather than talking about limits at a finite input, we now focus on limits as inputs become infinitely large In the long run (or ), functions can have only a few qualitatively different behaviors that describe how they approach their limiting value.   Real-world example from research  A neuroscientist interested in the response of muscle fibers to stress measures the firing rate of a stretched (and stressed) muscle fiber through time. She presented the following data:     Motivating data from a muscle fiber stretch response experiment.   If this was your data, what function would you use to describe it?  After quite a while, what value would the firing rate likely approach?    Expanding our library of functions  So far we have focused on polynomials (lines, quadratics, cubics, and so on), exponential and logarithmic functions, and sums, products, ratios. and compositions build from these. To better understand these functions and few new ones, we compare their behaviors for large inputs.    Functions approaching , ordered by speed  Below we consider constants to help build larger categories of functions.       Function  Features                 Sketches of these functions:  Suppose      approaches infinity (or ) faster than  if  Ex.     approaches infinity (or ) slower than  if  Ex.     approaches infinity (or ) at the same rate as if Ex.      Functions approaching 0, ordered by speed  Below we consider constants to help build larger categories of functions.       Function  Features                 Sketches of these functions:  Suppose      approaches 0 (or ) faster than  if Ex.     approaches 0 (or ) slower than  if Ex.     approaches 0 (or ) at the same rate as if Ex.      Summary of behaviors as  The following plots illustrate the basic shapes of functions that are important when discussing their limits at infinity.         Function  Family  Features                     Comparison of a few functions that share the characteristic of approaching infinity as .          Function  Family  Features                     Comparison of a few functions that share the characteristic of approaching zero as .   Recall the earlier example of the stretch response of muscle fibers. Below we show a computer-generated best fit to the data and illustrate important biological and statistical differences of the speeds of functions.   Data fit by the sum of a constant and an exponential function,     A less than ideal fit of a mathematical function to muscle fiber stretch response data.    Description:   Data fit by the sum of a constant and the composition of a power function with exponential function,     A very good fit of a mathematical function to muscle fiber stretch response data.    Description:   In ecology we use these functions to describe the numerical response of predators to prey or of harvesters to their crop. In chemistry we use these functions to describe rates for reaction kinetics, for example, Michaelis-Menten Kinetics. Forms generally have the following features,   Linear   Saturating   Saturating (with threshold)   Overcompensation     Leading behavior  The often useful method of leading behavior helps us approximate complicated functions by their most dominant terms. This tells us what the graph of a complicated function looks like .  The leading behavior of a function at , written , is the term that is largest as the input approaches .     Find for    Find for .    The leading behavior of a function at 0, written , is the term that is largest as the input approaches 0. Note: This often contradicts our initial intuition for big .     is larger than  as approaches 0 if     is smaller than  if      Using the ideas of larger and smaller, find for    Using the ideas of larger and smaller, find for    Compute     Formal justification  All of our discussion might seem quite suspicious and inexact.    Limit of a ratio is the ratio of limit, when limits are finite values.    Earlier rules for limits fail when limits are infinite; we cannot do the arithmetic with infinities.    We can use reasoning about relative speeds of different terms or need more advanced techniques.      Important facts  A function and its leading behavior approach at the same rate, or Also the leading behavior of a function defined by a ratio, such as is defined as the ratio of the leading behaviors or   We illustrate this method by example using the function , one example of functional form from earlier.     Illustration of a saturating function.   What does look like when is very large?  What does look like when is small?       Quick practice   Compute .  .   Compute .   .   Compute .   .   Which is bigger as  or ? Hence, what is for ?  Between the terms and , goes to zero faster which implies that is bigger as . Hence, for , the leading behavior at infinity is . This means the contribution of the exponential term to the graph of vanishes quickly and the graph looks like the graph of just as gets large.     Sample WeBWorK problems  Record non-terminating decimal answers to three decimal places. Ex. should be recorded as , but can be recorded as .   Choose the type of function from the dropdown list (choices are \"constant\", \"linear\", \"quadratic\", \"cubic\", or \"something else\") whose characteristics match those of the leading behavior.  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .     Compute each of the following limits.  Compute the limit of as , or .  Compute the limit of as , or .  Compute the limit of as , or . Hint: Write as an exponential function with base and apply our rules for the exponential function.  Compute the limit of as , or .  Compute the limit of as , or .     Compute each of the following limits.  Compute the limit of as , or .  Compute the limit of as , or .  Compute the limit of as , or . Hint: Write as an exponential function with base and apply our rules for the exponential function.  Compute the limit of as , or .  Compute the limit of as , or .     Choose the type of function from the dropdown list (choices are \"constant\", \"linear\", \"quadratic\", \"cubic\", or \"something else\") whose characteristics match those of the leading behavior.  As , the leading behavior of the function , given by , looks like function.  Near , the leading behavior of the function , given by , looks like function.  As , the leading behavior of the function , given by , looks like function.  Near , the leading behavior of the function , given by , looks like function.  Near , the leading behavior of the function , given by , looks like function.     Choose the type of function from the dropdown list (choices are \"constant\", \"linear\", \"quadratic\", \"cubic\", or \"something else\") whose characteristics match those of the leading behavior.  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .     Identify the leading behaviors of the following functions at zero.  The leading behavior for near is .  The leading behavior for near is .     Identify the leading behaviors of the following functions at infinity and use this information to compute the appropriate limits at infinity.  The leading behavior for at infinity is .  The leading behavior for at infinity is .  The leading behavior for at infinity is .  The limit at infinity of is .     "
+  "body": " Limits and behaviors at infinity   The Plan  We will look at a powerful method for studying and describing the long-term values and behaviors of functions. This will give us a powerful, compact notation for making precise descriptions.    Limits and long-term behavior  Rather than talking about limits at a finite input, we now focus on limits as inputs become infinitely large In the long run (or ), functions can have only a few qualitatively different behaviors that describe how they approach their limiting value.   Real-world example from research  A neuroscientist interested in the response of muscle fibers to stress measures the firing rate of a stretched (and stressed) muscle fiber through time. She presented the following data:     Motivating data from a muscle fiber stretch response experiment.   If this was your data, what function would you use to describe it?  After quite a while, what value would the firing rate likely approach?    Expanding our library of functions  So far we have focused on polynomials (lines, quadratics, cubics, and so on), exponential and logarithmic functions, and sums, products, ratios. and compositions build from these. To better understand these functions and few new ones, we compare their behaviors for large inputs.    Functions approaching , ordered by speed  Below we consider constants to help build larger categories of functions.       Function  Features     Grows slowly     Grows more quickly, especially for larger .     Grows very quickly, especially for larger .      Suppose      approaches infinity (or ) faster than  if  Ex.     approaches infinity (or ) slower than  if  Ex.    approaches infinity (or ) at the same rate as if Ex.     Functions approaching 0, ordered by speed  Below we consider constants to help build larger categories of functions.       Function  Features     Decays slowly, but faster as grows.     Decays faster, and faster as grows.     Decays very fast, and even faster as grows.      Suppose      approaches 0 (or ) faster than  if Ex.    approaches 0 (or ) slower than  if Ex.     approaches 0 (or ) at the same rate as if Ex.      Summary of behaviors as  The following plots illustrate the basic shapes of functions that are important when discussing their limits at infinity.   Comparison of a few functions that share the characteristic of approaching infinity as .       Function  Family     Grows slowly     Grows more quickly, especially for larger .     Grows very quickly, especially for larger .        Comparison of a few functions that share the characteristic of approaching zero as .       Function  Features     Decays slowly, but faster as grows.     Decays faster, and faster as grows.     Decays very fast, and even faster as grows.       Recall the earlier example of the stretch response of muscle fibers. Below we show a computer-generated best fit to the data and illustrate important biological and statistical differences of the speeds of functions.    (Left) Data fit by the sum of a constant and an exponential function, A less than ideal fit of a mathematical function to muscle fiber stretch response data. (Right) Data fit by the sum of a constant and the composition of a power function with exponential function, A very good fit of a mathematical function to muscle fiber stretch response data.        In ecology we use these functions to describe the numerical response of predators to prey or of harvesters to their crop. In chemistry we use these functions to describe rates for reaction kinetics, for example, Michaelis-Menten Kinetics. Forms generally have the following features,   Linear   Saturating   Saturating (with threshold)   Overcompensation     Leading behavior  The often useful method of leading behavior helps us approximate complicated functions by their most dominant terms. This tells us what the graph of a complicated function looks like .  The leading behavior of a function at , written , is the term that is largest as the input approaches .     Find for    Find for .    The leading behavior of a function at 0, written , is the term that is largest as the input approaches 0. Note: This often contradicts our initial intuition for big .     is larger than  as approaches 0 if     is smaller than  if      Using the ideas of larger and smaller, find for    Using the ideas of larger and smaller, find for    Compute     Formal justification  All of our discussion might seem quite suspicious and inexact.    Limit of a ratio is the ratio of limit, when limits are finite values.    Earlier rules for limits fail when limits are infinite; we cannot do the arithmetic with infinities.    We can use reasoning about relative speeds of different terms or need more advanced techniques.      Important facts  A function and its leading behavior approach at the same rate, or Also the leading behavior of a function defined by a ratio, such as is defined as the ratio of the leading behaviors or   We illustrate this method by example using the function , one example of functional form from earlier.     Illustration of a saturating function.   What does look like when is very large?  What does look like when is small?       Quick practice   Compute .  .   Compute .   .   Compute .   .   Which is bigger as  or ? Hence, what is for ?  Between the terms and , goes to zero faster which implies that is bigger as . Hence, for , the leading behavior at infinity is . This means the contribution of the exponential term to the graph of vanishes quickly and the graph looks like the graph of just as gets large.     Sample WeBWorK problems  Record non-terminating decimal answers to three decimal places. Ex. should be recorded as , but can be recorded as .   Choose the type of function from the dropdown list (choices are \"constant\", \"linear\", \"quadratic\", \"cubic\", or \"something else\") whose characteristics match those of the leading behavior.  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .     Compute each of the following limits.  Compute the limit of as , or .  Compute the limit of as , or .  Compute the limit of as , or . Hint: Write as an exponential function with base and apply our rules for the exponential function.  Compute the limit of as , or .  Compute the limit of as , or .     Compute each of the following limits.  Compute the limit of as , or .  Compute the limit of as , or .  Compute the limit of as , or . Hint: Write as an exponential function with base and apply our rules for the exponential function.  Compute the limit of as , or .  Compute the limit of as , or .     Choose the type of function from the dropdown list (choices are \"constant\", \"linear\", \"quadratic\", \"cubic\", or \"something else\") whose characteristics match those of the leading behavior.  As , the leading behavior of the function , given by , looks like function.  Near , the leading behavior of the function , given by , looks like function.  As , the leading behavior of the function , given by , looks like function.  Near , the leading behavior of the function , given by , looks like function.  Near , the leading behavior of the function , given by , looks like function.     Choose the type of function from the dropdown list (choices are \"constant\", \"linear\", \"quadratic\", \"cubic\", or \"something else\") whose characteristics match those of the leading behavior.  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .  As , the limit of , is .     Identify the leading behaviors of the following functions at zero.  The leading behavior for near is .  The leading behavior for near is .     Identify the leading behaviors of the following functions at infinity and use this information to compute the appropriate limits at infinity.  The leading behavior for at infinity is .  The leading behavior for at infinity is .  The leading behavior for at infinity is .  The limit at infinity of is .     "
 },
 {
   "id": "figure-21",
@@ -745,12 +745,12 @@ var ptx_lunr_docs = [
   "type": "Table",
   "number": "1.9.2",
   "title": "",
-  "body": "    Function  Features                "
+  "body": "    Function  Features     Grows slowly     Grows more quickly, especially for larger .     Grows very quickly, especially for larger .    "
 },
 {
-  "id": "p-353",
+  "id": "p-352",
   "level": "2",
-  "url": "limits-and-behaviors-at-infinity.html#p-353",
+  "url": "limits-and-behaviors-at-infinity.html#p-352",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -763,12 +763,12 @@ var ptx_lunr_docs = [
   "type": "Table",
   "number": "1.9.3",
   "title": "",
-  "body": "    Function  Features                "
+  "body": "    Function  Features     Decays slowly, but faster as grows.     Decays faster, and faster as grows.     Decays very fast, and even faster as grows.    "
 },
 {
-  "id": "p-360",
+  "id": "p-361",
   "level": "2",
-  "url": "limits-and-behaviors-at-infinity.html#p-360",
+  "url": "limits-and-behaviors-at-infinity.html#p-361",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -781,7 +781,7 @@ var ptx_lunr_docs = [
   "type": "Figure",
   "number": "1.9.4",
   "title": "",
-  "body": "       Function  Family  Features                     Comparison of a few functions that share the characteristic of approaching infinity as .  "
+  "body": " Comparison of a few functions that share the characteristic of approaching infinity as .       Function  Family     Grows slowly     Grows more quickly, especially for larger .     Grows very quickly, especially for larger .      "
 },
 {
   "id": "image-functions-to-zero",
@@ -790,7 +790,7 @@ var ptx_lunr_docs = [
   "type": "Figure",
   "number": "1.9.5",
   "title": "",
-  "body": "       Function  Family  Features                     Comparison of a few functions that share the characteristic of approaching zero as .  "
+  "body": " Comparison of a few functions that share the characteristic of approaching zero as .       Function  Features     Decays slowly, but faster as grows.     Decays faster, and faster as grows.     Decays very fast, and even faster as grows.      "
 },
 {
   "id": "figure-24",
@@ -799,34 +799,7 @@ var ptx_lunr_docs = [
   "type": "Figure",
   "number": "1.9.6",
   "title": "",
-  "body": "  A less than ideal fit of a mathematical function to muscle fiber stretch response data.  "
-},
-{
-  "id": "p-367",
-  "level": "2",
-  "url": "limits-and-behaviors-at-infinity.html#p-367",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Description: "
-},
-{
-  "id": "figure-25",
-  "level": "2",
-  "url": "limits-and-behaviors-at-infinity.html#figure-25",
-  "type": "Figure",
-  "number": "1.9.7",
-  "title": "",
-  "body": "  A very good fit of a mathematical function to muscle fiber stretch response data.  "
-},
-{
-  "id": "p-369",
-  "level": "2",
-  "url": "limits-and-behaviors-at-infinity.html#p-369",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "Description: "
+  "body": " (Left) Data fit by the sum of a constant and an exponential function, A less than ideal fit of a mathematical function to muscle fiber stretch response data. (Right) Data fit by the sum of a constant and the composition of a power function with exponential function, A very good fit of a mathematical function to muscle fiber stretch response data.      "
 },
 {
   "id": "p-381",
@@ -838,11 +811,11 @@ var ptx_lunr_docs = [
   "body": "larger than smaller than "
 },
 {
-  "id": "figure-26",
+  "id": "figure-25",
   "level": "2",
-  "url": "limits-and-behaviors-at-infinity.html#figure-26",
+  "url": "limits-and-behaviors-at-infinity.html#figure-25",
   "type": "Figure",
-  "number": "1.9.8",
+  "number": "1.9.7",
   "title": "",
   "body": "  Illustration of a saturating function.  "
 },
@@ -991,9 +964,9 @@ var ptx_lunr_docs = [
   "body": "  Compute the slope of the line that connects the points and .   The line:   Compute the slope of the line that connects the points at and on the graph of .   The secant line:    Conclusion:    "
 },
 {
-  "id": "figure-27",
+  "id": "figure-26",
   "level": "2",
-  "url": "introduction-to-derivatives-rates-of-change.html#figure-27",
+  "url": "introduction-to-derivatives-rates-of-change.html#figure-26",
   "type": "Figure",
   "number": "2.1.3",
   "title": "",
@@ -1027,18 +1000,18 @@ var ptx_lunr_docs = [
   "body": " Derivatives of basic functions   The Plan  We will extend our notion of slope to allow ourselves to make precise descriptions of how values of all functions, not just linear functions, change.   Average and instantaneous rates of change  Consider the function , perhaps describing the position of a frog while it crosses a pond, graphed below. Assume that is measured in meters and in seconds.     image   The slope of the secant line that connects the points and on the graph of is, which we call the average rate of change of between and , in meters per second.  By bringing closer and closer to , our secant line becomes a tangent line. To do this we introduce a limit, which we call the instantaneous rate of change of at , again in meters per second.   Aside ( vs. )  Last time in our limit definition, we used the limit as . We will briefly show why that is equivalent to the approach above and computationally easier. Since , we have . Taking is the same as taking . Substitute in the definition for and simplify,     The derivative  We define the instantaneous rate of change at to be the slope of the tangent line to at , given by the derivative  , below,   inside this limit, the change in output is while the change in input is simply .    Shorthand  Rather than using the two symbols required to write , we often use a single symbol to denote the change from to in the definition (and in the picture above). This amounts to saying that rather than (since ), so that the derivative of at is     The derivative – three ways  For a function , the derivative is written using the notation and is interpreted in three ways,       Details        Intuitively     Geometrically     Mathematically      A function is differentiable at the point if the function has a well-defined tangent line with finite slope at point . If we say a function is differentiable without mentioning a particular point, we mean it is differentiable everywhere.    Problem behaviors  Functions fail to be differentiable at points on the graph with jumps, corners, and vertical tangents. See graphs from the earlier lecture as examples of discontinuities.   Find the derivative, if it exists, of at point  using the limit definition.  Find the derivative, if it exists, of the constant function  .    Derivatives describe behavior  Recall our discussion of the behaviors and slopes of linear graphs. We can now make similar statements for the graph of any function.      Derivative   Function           if       if       if        A function has a critical point Note an error in Definition 2.6 of book. It should read …if or if the derivative… the prime symbol is missing. at if or if the derivative is not defined at .    An aside: Expanding binomials  Before moving forward it will be useful to review techniques for expanding binomials of the form for integers .                Consider the quadratic function . Find the derivative , if it exists, at an arbitrary point .  Consider the following plot of cell volume versus time.     Suppose where and are both differentiable functions. Then the derivative of the sum is the sum of the derivatives  Find the derivative of .  Suppose where is a differentiable function and is a constant. Then the derivative of a constant times a function is the constant times the derivative of the function   Find the derivative of .   Power rule for derivatives   Suppose for integers (this allows to be negative or positive) This works for all powers including fractions, provided that .   Use the previous theorem to compute derivatives of the following power functions.    Higher derivatives  We will learn how to interpret some higher derivatives soon, but we can already differentiate quite a few functions. We’ll cover this soon, but you might as well try computing the second derivatives, as illustrated below. The mechanics are just the same. For problems involving exponentials and logarithms be sure to simplify as fully as possible first using log rules, otherwise we might not know what to do to compute the derivative!      Quick practice   What is the derivative of ?   The derivative of is . The derivative of a linear function is its slope.    Where is the critical point of given that ?   The critical point of is found by setting its derivative, , equal to zero and solving for . So, , solved for gives .    If the derivative is positive at some point, is the function increasing or decreasing at that point?   If the derivative is positive at some point, the function increasing at that point?    "
 },
 {
-  "id": "figure-28",
+  "id": "figure-27",
   "level": "2",
-  "url": "derivatives-of-basic-functions.html#figure-28",
+  "url": "derivatives-of-basic-functions.html#figure-27",
   "type": "Figure",
   "number": "2.2.1",
   "title": "",
   "body": "  image  "
 },
 {
-  "id": "table-7",
+  "id": "table-5",
   "level": "2",
-  "url": "derivatives-of-basic-functions.html#table-7",
+  "url": "derivatives-of-basic-functions.html#table-5",
   "type": "Table",
   "number": "2.2.2",
   "title": "",
@@ -1063,9 +1036,9 @@ var ptx_lunr_docs = [
   "body": "any "
 },
 {
-  "id": "table-8",
+  "id": "table-6",
   "level": "2",
-  "url": "derivatives-of-basic-functions.html#table-8",
+  "url": "derivatives-of-basic-functions.html#table-6",
   "type": "Table",
   "number": "2.2.3",
   "title": "",
@@ -1135,18 +1108,18 @@ var ptx_lunr_docs = [
   "body": "not "
 },
 {
-  "id": "figure-29",
+  "id": "figure-28",
   "level": "2",
-  "url": "derivatives-of-exponential-and-logarithmic-functions.html#figure-29",
+  "url": "derivatives-of-exponential-and-logarithmic-functions.html#figure-28",
   "type": "Figure",
   "number": "2.3.1",
   "title": "",
   "body": "  image  "
 },
 {
-  "id": "figure-30",
+  "id": "figure-29",
   "level": "2",
-  "url": "derivatives-of-exponential-and-logarithmic-functions.html#figure-30",
+  "url": "derivatives-of-exponential-and-logarithmic-functions.html#figure-29",
   "type": "Figure",
   "number": "2.3.2",
   "title": "",
@@ -1189,9 +1162,9 @@ var ptx_lunr_docs = [
   "body": " Derivatives of compositions: chain rule   The Plan  We will encounter our most powerful method for computing derivatives, the chain rule.    Many derivatives  We now know how to find derivatives of sums of polynomial terms, exponential functions, or natural logarithms. In addition to products and quotients (next time), we can also combine functions using .   The art of compositions  It helps to think of a function , as being built from two component functions and using function composition.      Label  Interpretation  Identification (Tips)                         The function is a composition of the function with the function .  The function is the composition of which two functions?  The function is the composition of which two functions?  Suppose , where and are both differentiable functions. Then   To use the chain rule,    write the function as a composition    take the derivatives of the component pieces    multiply the derivatives together, giving the product the appropriate name    put everything back in terms of the original variable    Find the derivative of .  Find the derivative of .  Find the derivative of .  Find the derivative of .    Hint  In some instances, it may be easier to use the chain rule by identifying an outer function and an inner function than it is to explicitly apply the algorithm. The derivative of the composition is then the derivative of the outer function times the derivative of the inner function.  Find the derivative of .  Find the derivative of .  Find the derivative of .  Find the derivative of .    Implicit differentiation and Related rates  Even when we do not have a formula for a function, we can still study its derivatives by invoking the chain rule. Many classic problems tend to be based on geometric relationships between two variables.    Do we have any more time for related rates?  If so, let’s try a classic calculus problem. If not, check online for a supplemental handout.      Quick practice   What is the derivative of ?   The derivative of is .    (This one might not be so quick practice.) Recall discussed earlier in the context of applications of exponential and logarithmic functions. This time assume that and change with respect to time, for example in a growing animal, and that and are parameters (particular numbers, but in this fashion using a letter as a placeholder so we do not have to worry about the value of the number itself). Together this all means that . Using the chain rule, compute the derivative .   Though we don’t know the exact formula for we can still apply the reasoning behind the chain rule. In fact,    "
 },
 {
-  "id": "table-9",
+  "id": "table-7",
   "level": "2",
-  "url": "derivatives-of-compositions-chain-rule.html#table-9",
+  "url": "derivatives-of-compositions-chain-rule.html#table-7",
   "type": "Table",
   "number": "2.4.1",
   "title": "",
@@ -1270,45 +1243,45 @@ var ptx_lunr_docs = [
   "body": "concave up concave down "
 },
 {
-  "id": "table-10",
+  "id": "table-8",
   "level": "2",
-  "url": "second-derivatives-and-applications.html#table-10",
+  "url": "second-derivatives-and-applications.html#table-8",
   "type": "Table",
   "number": "2.6.1",
   "title": "",
   "body": "    Name  Interpretation  Notation                        "
 },
 {
-  "id": "figure-31",
+  "id": "figure-30",
   "level": "2",
-  "url": "second-derivatives-and-applications.html#figure-31",
+  "url": "second-derivatives-and-applications.html#figure-30",
   "type": "Figure",
   "number": "2.6.2",
   "title": "",
   "body": "  image  "
 },
 {
-  "id": "figure-32",
+  "id": "figure-31",
   "level": "2",
-  "url": "second-derivatives-and-applications.html#figure-32",
+  "url": "second-derivatives-and-applications.html#figure-31",
   "type": "Figure",
   "number": "2.6.3",
   "title": "",
   "body": "  image  "
 },
 {
-  "id": "table-11",
+  "id": "table-9",
   "level": "2",
-  "url": "second-derivatives-and-applications.html#table-11",
+  "url": "second-derivatives-and-applications.html#table-9",
   "type": "Table",
   "number": "2.6.4",
   "title": "",
   "body": "    First derivative  Function            "
 },
 {
-  "id": "table-12",
+  "id": "table-10",
   "level": "2",
-  "url": "second-derivatives-and-applications.html#table-12",
+  "url": "second-derivatives-and-applications.html#table-10",
   "type": "Table",
   "number": "2.6.5",
   "title": "",
@@ -1324,9 +1297,9 @@ var ptx_lunr_docs = [
   "body": "local maximum local minimum "
 },
 {
-  "id": "figure-33",
+  "id": "figure-32",
   "level": "2",
-  "url": "second-derivatives-and-applications.html#figure-33",
+  "url": "second-derivatives-and-applications.html#figure-32",
   "type": "Figure",
   "number": "2.6.6",
   "title": "",
@@ -1369,9 +1342,9 @@ var ptx_lunr_docs = [
   "body": " Introduction to differential equations   The Plan  We introduce a new category of calculus problems called integrals.   Applications of derivatives: differential equations  So far we have built methods and skills that allow us to take derivatives of known functions. When we revisit derivatives at the end of the semester, we will see quite a few more applications of derivatives. For now switch perspective and build systematic methods that allow us figure out what original function that a particular derivative comes from.    Methods  To find what original function a derivative comes from, we might    guess the original function    graph the original function (from behaviors encoded by the derivative)    approximate the graph of the original function (Euler’s method\/tangent line approximations) – skipped    integrate to find the original function    A differential equation (often shortened DE ) describes the instantaneous rate of change of a measurement.       pure-time DE   rate of change is measured as a function of time    autonomous DE   rate of change is modeled as a function of measurement itself      we will return to autonomous DEs at the end of the chapter  Velocity, the instantaneous change in position, of a moving person is given by the pure-time DE where position is the quantity being differentiated with respect to time. Find the solution  , that is, find the function whose derivative is .  Guess it: Graph it:    Notation for pure-time DEs  In general, we study a pure-time differential equation .  Solving this pure-time DE for the unknown function involves finding the function whose derivative is . We want to undo the derivative to find , called the antiderivative of .   antiderivative   An antiderivative of the function is a function whose derivative equal to . We say, of is equal to the integral of of with respect to , and we write       Warning  The equation has solution What is ?   indefinite integral   The set of all antiderivatives of the function is called the indefinite integral of and is written    Solve pure-time DE by computing the indefinite integral.  Solve pure-time DE by computing the indefinite integral.    Suppose that with , then      Compute .     Compute the indefinite integral of .     Compute .      Compute the indefinite integral of .     Constant product rule for integrals   Suppose that , then for any constant ,     Compute .  Compute .  Suppose that and , then   Compute .  Consider a seed in a flower in a very tall tree. From an initial height of 14.7 meters, the seed pops straight into the air with an initial velocity of 9.8 meters per second ( ) and an acceleration due to gravity of (in the downward direction). Find the velocity function and use that to find its position function of the seed.    When will the seed land?    What is the velocity of the seed when it smashes into the ground?        Quick practice   Is a pure-time or autonomous differential equation?   In , the unknown quantity that is being differentiated, , appears on the right-hand side, and does so in the absence of the variable on the right-hand side, this is indicative of an autonomous equation.    Compute .   The indefinite integral evaluates to .    What quantity is obtained when a pure-time growth rate indicating a rate of change of length is integrated?   Integrating the rate of change of length gives length itself as a function of time.    Compute .   The indefinite integral evaluates to .    "
 },
 {
-  "id": "table-13",
+  "id": "table-11",
   "level": "2",
-  "url": "introduction-to-differential-equations.html#table-13",
+  "url": "introduction-to-differential-equations.html#table-11",
   "type": "Table",
   "number": "3.1.1",
   "title": "",
@@ -1558,20 +1531,29 @@ var ptx_lunr_docs = [
   "body": " The definite integral   The Plan  We introduce a new type of integral problem with powerful applications.   Position from velocity  Recall the formula of your velocity function From this function we used the relationship that to compute our position function .   New twist  Suppose you walk from class to class with this velocity and it takes you 50 seconds to walk from one class to the next, how many meters have you walked? Plot the velocity function to find out.     At certain times hallways and doorways are crowded and prevent you from maintaining your constant speedy pace towards class.     image   Consider that your velocity for a brief period of time is described by a quadratic function as you accelerate from a red light where your initial velocity is zero.    We try to fill the space, from left to right, under the graph with rectangles whose widths are known and whose heights are related to the height of the graph at some point.    We take advantage of the fact that the area of a rectangle by multiplying its width and height.    Given the area of a collection of rectangles, we can add the areas of the rectangles to get an approximation to the original area.      Demonstration of area under curve using left-hand rectangles.   Draw  left-hand rectangles to approximate the area under the curve. Heights can be estimated from the graph or calculated using the corresponding function value.     Demonstration of area under curve using left-hand rectangles.   Repeat the exercise above using the same number of right-hand rectangles.  For the function , consider the following examples of left-hand and right-hand Riemann sums used to approximate the value of the definite integral, whose exact value will be calculated very soon.    image     image     image     image     image     image   The result of computing a definite integral is a number, representing the area under a curve (or between the curve and the horizontal axis). In particular, read the integral from to of with respect to . This is the Riemann integral or definite integral defined to be the area of rectangles that collectively approximate the area under the curve as .    Key observations  A few key observations can be made about what we are doing now and how it differs from what we have done before.    limits of integration    an indefinite integral is    a definite integral is    For any continuous function and any indefinite integral ,   The value of , which gives the area under the curve between and can be calculated using the Fundamental Theorem of Calculus. Since the integrand is continuous on the interval from to we find which compares favorably with our earlier estimates.  Compute the following definite integrals.              Suppose is continuous on the interval from to , and that . Then i.e. the total change between times and is the change between and some intermediate time plus the change between time and the final time .  Suppose our female Atlantic sturgeon continues to obey the equation that describes its length in cm as a function of its age in years.    How much does the fish grow between ages and , its first ten years?    How much does the fish grow between ages and , its second ten years?    In which period did the fish grow the most?    How much does the fish grow between ages and ?        Quick practice   Compute .  Since is continuous on the interval from to , the definite integral evaluates to .    Compute .  Since is continuous on the interval from to , the definite integral evaluates to .    Compute .  Since is continuous on the interval from to , the definite integral evaluates to . Recall that and .    "
 },
 {
-  "id": "figure-34",
+  "id": "figure-33",
   "level": "2",
-  "url": "the-definite-integral.html#figure-34",
+  "url": "the-definite-integral.html#figure-33",
   "type": "Figure",
   "number": "3.3.1",
   "title": "",
   "body": "  image  "
 },
 {
+  "id": "figure-34",
+  "level": "2",
+  "url": "the-definite-integral.html#figure-34",
+  "type": "Figure",
+  "number": "3.3.2",
+  "title": "",
+  "body": "  Demonstration of area under curve using left-hand rectangles.  "
+},
+{
   "id": "figure-35",
   "level": "2",
   "url": "the-definite-integral.html#figure-35",
   "type": "Figure",
-  "number": "3.3.2",
+  "number": "3.3.3",
   "title": "",
   "body": "  Demonstration of area under curve using left-hand rectangles.  "
 },
@@ -1580,16 +1562,16 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "the-definite-integral.html#figure-36",
   "type": "Figure",
-  "number": "3.3.3",
+  "number": "3.3.4",
   "title": "",
-  "body": "  Demonstration of area under curve using left-hand rectangles.  "
+  "body": "  image  "
 },
 {
   "id": "figure-37",
   "level": "2",
   "url": "the-definite-integral.html#figure-37",
   "type": "Figure",
-  "number": "3.3.4",
+  "number": "3.3.5",
   "title": "",
   "body": "  image  "
 },
@@ -1598,7 +1580,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "the-definite-integral.html#figure-38",
   "type": "Figure",
-  "number": "3.3.5",
+  "number": "3.3.6",
   "title": "",
   "body": "  image  "
 },
@@ -1607,7 +1589,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "the-definite-integral.html#figure-39",
   "type": "Figure",
-  "number": "3.3.6",
+  "number": "3.3.7",
   "title": "",
   "body": "  image  "
 },
@@ -1616,7 +1598,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "the-definite-integral.html#figure-40",
   "type": "Figure",
-  "number": "3.3.7",
+  "number": "3.3.8",
   "title": "",
   "body": "  image  "
 },
@@ -1624,15 +1606,6 @@ var ptx_lunr_docs = [
   "id": "figure-41",
   "level": "2",
   "url": "the-definite-integral.html#figure-41",
-  "type": "Figure",
-  "number": "3.3.8",
-  "title": "",
-  "body": "  image  "
-},
-{
-  "id": "figure-42",
-  "level": "2",
-  "url": "the-definite-integral.html#figure-42",
   "type": "Figure",
   "number": "3.3.9",
   "title": "",
@@ -1684,9 +1657,9 @@ var ptx_lunr_docs = [
   "body": " Applications of the definite integral   The Plan  We look at a few applications of the definite integral.  Given that and are continuous and that on the interval from to , the area between the curves and from to is given by    Degree-days are used as a way to measure growth and development in plants and other temperature-dependent species, such as insects.  Find the area between the curves and between and .  The average value for a function on the interval from to is   An oil company describes the rate of change in consumption of oil resources (in billions of barrels) using the equation with indicating the year 1998.    Using a definite integral, compute the total resource consumption over the first ten years since 1998. Note: Be sure to transform the limits of integration if you use -substitution!    What is the average rate of consumption over the period?    Repeat these two steps for the next ten years, the period from 2008 to 2018.    In 1998, the above company estimated 30 billion barrels in the reserve. Compute the definite integral that gives the total consumption over the first years since 1998, and use the resulting formula to find how many years it will take for the 30 billion barrel supply to be exhausted. Note: Set the result of the definite integral equal to 30 and solve for .    Justification – average value formula  Consider the following situation as a brief justification for the average value formula quoted above.  During an experiment to test the effects of a dietary supplement on growth of quail, a researcher takes weekly measurements of the mass of a bird in ounces.       Week  Mass (ounces)        0  6    1  11    2  14    3  15    4  14    5  11     What is the average mass of the bird during the study?   A problem  The mass of the animal varies continuously with time according to some function . What if we were to choose different times for our measurement? How would our average mass change? What other methods might we have to compute the average mass over an interval ?  Consider the function that describes the mass of the quail during the growth experiment. Use the definite integral to calculate the average mass of the bird during the study? How does this compare to your earlier results?      Quick practice   Compute the average value of on the interval from to .  The value of the definite integral is . The average value is given by Graph this and think about the areas of the corresponding shapes.    Compute the average value of on the interval from to .  The value of the definite integral is . The average value is given by Graph this and think about the areas of the corresponding shapes.    "
 },
 {
-  "id": "table-14",
+  "id": "table-12",
   "level": "2",
-  "url": "applications-of-the-definite-integral.html#table-14",
+  "url": "applications-of-the-definite-integral.html#table-12",
   "type": "Table",
   "number": "3.4.1",
   "title": "",
@@ -1774,9 +1747,9 @@ var ptx_lunr_docs = [
   "body": " Applications: nonlinear discrete-time dynamical systems (DTDS)   The Plan  By studying a few real-world mathematical models, we will see a new dimension of mathematical work - more graphical and artistic, but rooted in calculus nonetheless.    Historical examples  We will discuss two famous DTDS from the scientific literature: the Ricker model and the discrete-logistic model.       This model was used to study changes in fish populations over a 4 year period (chosen based on the reproductive cycle of the fish). The updating function (the curve) was chosen based on fisheries data and modeling.    image      This model was used to study changes in empirical and theoretical populations. Two examples of the updating function (the curves) are illustrated.   Dynamics and stability  We see a hint of a stability condition in the right-hand panel. Recall that equilibria occur where the diagonal and updating functions cross. The equilibrium point is stable if the updating function is not too steep at this point, and unstable if the updating function is too steep at this point. What might we mean by too steep ? How can we describe the steepness of a graph at a point?    Sample solutions  Using the computer code as a guide, sketch some sample cobwebs.    image     image     Conclusions  From your computer experiments and analysis above what conclusions can you draw about this model and its solutions?    Sample solutions  Using the computer code as a guide, sketch some sample cobwebs.    image     image     Conclusions  From your computer experiments and analysis above what conclusions can you draw about this model and its solutions?  For the DTDS , the equilibrium is     stable if (or has a small slope at , ) and     unstable if or (or has a large slope at , )    The solution oscillates of .    Big idea!  Near an equilibrium looks like its tangent line, whose slope is given by the derivative there, . Zooming in near the equilibrium point , the nonlinear model will look like one of the four cases pictured at the conclusion of the previous section with one of the basic behaviors.    Ricker Model  Originally published in the 1950’s, the Ricker model was used to describe change in size of fish populations from one measurement to the next. Though there are other variants presented in literature, the model is where the values and are parameters. This model has been used to    estimate growth and population parameters from data    predict population growth    optimize yields from harvested populations      Analysis of the Ricker DTDS  To get some basic information we will analyze the Ricker model by hand before moving onto computing.    With and , find the equilibria for the Ricker model.    What is if ?    What is ? Are equilibria stable? Should solutions oscillate?    Repeat the analysis if .      Discrete logistic  The famous model May discusses in the paper cited above is the discrete logistic equation or the logistic map, given by where and are parameters and we think of as describing the size of a biological population. The algebra of the analysis simplifies if we choose .    With and , find the equilibria for the discrete logistic model.    What is if if again ?    What is ? Are equilibria stable? Should solutions oscillate?    Repeat the analysis if .      Note on modeling  Both of these models, and many others, are of the form where is the per capita production as a function of the current population size. This model tells us that the new population size is a multiple of the old population size, and tells us what the multiple is. What is for each of the models above?     "
 },
 {
-  "id": "figure-43",
+  "id": "figure-42",
   "level": "2",
-  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-43",
+  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-42",
   "type": "Figure",
   "number": "4.1.1",
   "title": "",
@@ -1792,11 +1765,20 @@ var ptx_lunr_docs = [
   "body": "stable unstable "
 },
 {
+  "id": "figure-43",
+  "level": "2",
+  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-43",
+  "type": "Figure",
+  "number": "4.1.2",
+  "title": "",
+  "body": "  image  "
+},
+{
   "id": "figure-44",
   "level": "2",
   "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-44",
   "type": "Figure",
-  "number": "4.1.2",
+  "number": "4.1.3",
   "title": "",
   "body": "  image  "
 },
@@ -1805,7 +1787,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-45",
   "type": "Figure",
-  "number": "4.1.3",
+  "number": "4.1.4",
   "title": "",
   "body": "  image  "
 },
@@ -1813,15 +1795,6 @@ var ptx_lunr_docs = [
   "id": "figure-46",
   "level": "2",
   "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-46",
-  "type": "Figure",
-  "number": "4.1.4",
-  "title": "",
-  "body": "  image  "
-},
-{
-  "id": "figure-47",
-  "level": "2",
-  "url": "applications-nonlinear-discrete-time-dynamical-systems-dtds.html#figure-47",
   "type": "Figure",
   "number": "4.1.5",
   "title": "",
@@ -1846,27 +1819,27 @@ var ptx_lunr_docs = [
   "body": " Applications: autonomous differential equations   The Plan  We will briefly introduce the technique at the heart of mathematical ecology, physiology, and epidemiology: models with autonomous differential equations.   Autonomous differential equations  Differential equations are the backbone of the physical and natural sciences and mathematical modeling. So far we have used differentiation to study functions.      Measured   Computed    Position           Mass       Now we use knowledge of derivatives to write differential equations to describe changes in measurements.      Measured   Computed      Position      Mass      Population size      Amount of chemical     The state variable is the unknown quantity of interest.  An equation that describes how an unknown variable changes, and how the change depends on the value of the variable itself,    Functions and derivatives  Recall the relationship between a function and its first derivative:      Derivative  Function            positive     negative     zero      Our approach is to describe the derivative and find the function – opposite to our approach to this point.  Consider a population of bacteria that grows according to the equation . Derive an autonomous differential equation that describes population growth.  The differential equation we derived is given by .  The phase line is a plot of the rate of change against the value of the variable used to study and summarize dynamics.  An equilibrium point (solution) is a value of the state variable at which the rate of change is zero. Or, for the differential equation an equilibrium is found using the equation .    Phase line (exponential growth)  Reasoning about functions and derivatives helps us predict dynamics.  A model for the change in temperature of an object, like a solid mass or a container of liquid, is described by Newton’s Law of Cooling.    Phenomenon:    Mathematical Model:    Phase line diagram (from plot of rate of change in temperature vs. temperature):    A model for the change in population size of a single species is described by the logistic growth equation.    Phenomenon:    Mathematical Model:    Phase line diagram (from plot of rate of change in population size vs. population size):       "
 },
 {
-  "id": "table-15",
+  "id": "table-13",
   "level": "2",
-  "url": "applications-autonomous-differential-equations.html#table-15",
+  "url": "applications-autonomous-differential-equations.html#table-13",
   "type": "Table",
   "number": "4.2.1",
   "title": "",
   "body": "    Measured   Computed    Position           Mass      "
 },
 {
-  "id": "table-16",
+  "id": "table-14",
   "level": "2",
-  "url": "applications-autonomous-differential-equations.html#table-16",
+  "url": "applications-autonomous-differential-equations.html#table-14",
   "type": "Table",
   "number": "4.2.2",
   "title": "",
   "body": "    Measured   Computed      Position      Mass      Population size      Amount of chemical    "
 },
 {
-  "id": "table-17",
+  "id": "table-15",
   "level": "2",
-  "url": "applications-autonomous-differential-equations.html#table-17",
+  "url": "applications-autonomous-differential-equations.html#table-15",
   "type": "Table",
   "number": "4.2.3",
   "title": "",
