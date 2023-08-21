@@ -1,0 +1,678 @@
+%********************************************%
+%*       Generated from PreTeXt source      *%
+%*       on 2021-02-04T23:01:56-06:00       *%
+%*   A recent stable commit (2020-08-09):   *%
+%* 98f21740783f166a773df4dc83cab5293ab63a4a *%
+%*                                          *%
+%*         https://pretextbook.org          *%
+%*                                          *%
+%********************************************%
+\documentclass[oneside,10pt,]{book}
+%% Custom Preamble Entries, early (use latex.preamble.early)
+%% Default LaTeX packages
+%%   1.  always employed (or nearly so) for some purpose, or
+%%   2.  a stylewriter may assume their presence
+\usepackage{geometry}
+%% Some aspects of the preamble are conditional,
+%% the LaTeX engine is one such determinant
+\usepackage{ifthen}
+%% etoolbox has a variety of modern conveniences
+\usepackage{etoolbox}
+\usepackage{ifxetex,ifluatex}
+%% Raster graphics inclusion
+\usepackage{graphicx}
+%% Color support, xcolor package
+%% Always loaded, for: add/delete text, author tools
+%% Here, since tcolorbox loads tikz, and tikz loads xcolor
+\PassOptionsToPackage{usenames,dvipsnames,svgnames,table}{xcolor}
+\usepackage{xcolor}
+%% begin: defined colors, via xcolor package, for styling
+%% end: defined colors, via xcolor package, for styling
+%% Colored boxes, and much more, though mostly styling
+%% skins library provides "enhanced" skin, employing tikzpicture
+%% boxes may be configured as "breakable" or "unbreakable"
+%% "raster" controls grids of boxes, aka side-by-side
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\tcbuselibrary{breakable}
+\tcbuselibrary{raster}
+%% We load some "stock" tcolorbox styles that we use a lot
+%% Placement here is provisional, there will be some color work also
+%% First, black on white, no border, transparent, but no assumption about titles
+\tcbset{ bwminimalstyle/.style={size=minimal, boxrule=-0.3pt, frame empty,
+colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
+%% Second, bold title, run-in to text/paragraph/heading
+%% Space afterwards will be controlled by environment,
+%% independent of constructions of the tcb title
+%% Places \blocktitlefont onto many block titles
+\tcbset{ runintitlestyle/.style={fonttitle=\blocktitlefont\upshape\bfseries, attach title to upper} }
+%% Spacing prior to each exercise, anywhere
+\tcbset{ exercisespacingstyle/.style={before skip={1.5ex plus 0.5ex}} }
+%% Spacing prior to each block
+\tcbset{ blockspacingstyle/.style={before skip={2.0ex plus 0.5ex}} }
+%% xparse allows the construction of more robust commands,
+%% this is a necessity for isolating styling and behavior
+%% The tcolorbox library of the same name loads the base library
+\tcbuselibrary{xparse}
+%% Hyperref should be here, but likes to be loaded late
+%%
+%% Inline math delimiters, \(, \), need to be robust
+%% 2016-01-31:  latexrelease.sty  supersedes  fixltx2e.sty
+%% If  latexrelease.sty  exists, bugfix is in kernel
+%% If not, bugfix is in  fixltx2e.sty
+%% See:  https://tug.org/TUGboat/tb36-3/tb114ltnews22.pdf
+%% and read "Fewer fragile commands" in distribution's  latexchanges.pdf
+\IfFileExists{latexrelease.sty}{}{\usepackage{fixltx2e}}
+%% Text height identically 9 inches, text width varies on point size
+%% See Bringhurst 2.1.1 on measure for recommendations
+%% 75 characters per line (count spaces, punctuation) is target
+%% which is the upper limit of Bringhurst's recommendations
+\geometry{letterpaper,total={340pt,9.0in}}
+%% Custom Page Layout Adjustments (use latex.geometry)
+%% This LaTeX file may be compiled with pdflatex, xelatex, or lualatex executables
+%% LuaTeX is not explicitly supported, but we do accept additions from knowledgeable users
+%% The conditional below provides  pdflatex  specific configuration last
+%% begin: engine-specific capabilities
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: xelatex and lualatex-specific default configuration
+\ifxetex\usepackage{xltxtra}\fi
+%% realscripts is the only part of xltxtra relevant to lualatex 
+\ifluatex\usepackage{realscripts}\fi
+%% end:   xelatex and lualatex-specific default configuration
+}{
+%% begin: pdflatex-specific default configuration
+%% We assume a PreTeXt XML source file may have Unicode characters
+%% and so we ask LaTeX to parse a UTF-8 encoded file
+%% This may work well for accented characters in Western language,
+%% but not with Greek, Asian languages, etc.
+%% When this is not good enough, switch to the  xelatex  engine
+%% where Unicode is better supported (encouraged, even)
+\usepackage[utf8]{inputenc}
+%% end: pdflatex-specific default configuration
+}
+%% end:   engine-specific capabilities
+%%
+%% Fonts.  Conditional on LaTex engine employed.
+%% Default Text Font: The Latin Modern fonts are
+%% "enhanced versions of the [original TeX] Computer Modern fonts."
+%% We use them as the default text font for PreTeXt output.
+%% Automatic Font Control
+%% Portions of a document, are, or may, be affected by defined commands
+%% These are perhaps more flexible when using  xelatex  rather than  pdflatex
+%% The following definitions are meant to be re-defined in a style, using \renewcommand
+%% They are scoped when employed (in a TeX group), and so should not be defined with an argument
+\newcommand{\divisionfont}{\relax}
+\newcommand{\blocktitlefont}{\relax}
+\newcommand{\contentsfont}{\relax}
+\newcommand{\pagefont}{\relax}
+\newcommand{\tabularfont}{\relax}
+\newcommand{\xreffont}{\relax}
+\newcommand{\titlepagefont}{\relax}
+%%
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: font setup and configuration for use with xelatex
+%% Generally, xelatex is necessary for non-Western fonts
+%% fontspec package provides extensive control of system fonts,
+%% meaning *.otf (OpenType), and apparently *.ttf (TrueType)
+%% that live *outside* your TeX/MF tree, and are controlled by your *system*
+%% (it is possible that a TeX distribution will place fonts in a system location)
+%%
+%% The fontspec package is the best vehicle for using different fonts in  xelatex
+%% So we load it always, no matter what a publisher or style might want
+%%
+\usepackage{fontspec}
+%%
+%% begin: xelatex main font ("font-xelatex-main" template)
+%% Latin Modern Roman is the default font for xelatex and so is loaded with a TU encoding
+%% *in the format* so we can't touch it, only perhaps adjust it later
+%% in one of two ways (then known by NFSS names such as "lmr")
+%% (1) via NFSS with font family names such as "lmr" and "lmss"
+%% (2) via fontspec with commands like \setmainfont{Latin Modern Roman}
+%% The latter requires the font to be known at the system-level by its font name,
+%% but will give access to OTF font features through optional arguments
+%% https://tex.stackexchange.com/questions/470008/
+%% where-and-how-does-fontspec-sty-specify-the-default-font-latin-modern-roman
+%% http://tex.stackexchange.com/questions/115321
+%% /how-to-optimize-latin-modern-font-with-xelatex
+%%
+%% end:   xelatex main font ("font-xelatex-main" template)
+%% begin: xelatex mono font ("font-xelatex-mono" template)
+%% (conditional on non-trivial uses being present in source)
+%% end:   xelatex mono font ("font-xelatex-mono" template)
+%% begin: xelatex font adjustments ("font-xelatex-style" template)
+%% end:   xelatex font adjustments ("font-xelatex-style" template)
+%%
+%% Extensive support for other languages
+\usepackage{polyglossia}
+%% Set main/default language based on pretext/@xml:lang value
+%% document language code is "en-US", US English
+%% usmax variant has extra hypenation
+\setmainlanguage[variant=usmax]{english}
+%% Enable secondary languages based on discovery of @xml:lang values
+%% Enable fonts/scripts based on discovery of @xml:lang values
+%% Western languages should be ably covered by Latin Modern Roman
+%% end:   font setup and configuration for use with xelatex
+}{%
+%% begin: font setup and configuration for use with pdflatex
+%% begin: pdflatex main font ("font-pdflatex-main" template)
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%% end:   pdflatex main font ("font-pdflatex-main" template)
+%% begin: pdflatex mono font ("font-pdflatex-mono" template)
+%% (conditional on non-trivial uses being present in source)
+%% end:   pdflatex mono font ("font-pdflatex-mono" template)
+%% begin: pdflatex font adjustments ("font-pdflatex-style" template)
+%% end:   pdflatex font adjustments ("font-pdflatex-style" template)
+%% end:   font setup and configuration for use with pdflatex
+}
+%% Symbols, align environment, commutative diagrams, bracket-matrix
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{amssymb}
+%% allow page breaks within display mathematics anywhere
+%% level 4 is maximally permissive
+%% this is exactly the opposite of AMSmath package philosophy
+%% there are per-display, and per-equation options to control this
+%% split, aligned, gathered, and alignedat are not affected
+\allowdisplaybreaks[4]
+%% allow more columns to a matrix
+%% can make this even bigger by overriding with  latex.preamble.late  processing option
+\setcounter{MaxMatrixCols}{30}
+%%
+%%
+%% Division Titles, and Page Headers/Footers
+%% titlesec package, loading "titleps" package cooperatively
+%% See code comments about the necessity and purpose of "explicit" option.
+%% The "newparttoc" option causes a consistent entry for parts in the ToC 
+%% file, but it is only effective if there is a \titleformat for \part.
+%% "pagestyles" loads the  titleps  package cooperatively.
+\usepackage[explicit, newparttoc, pagestyles]{titlesec}
+%% The companion titletoc package for the ToC.
+\usepackage{titletoc}
+%% Fixes a bug with transition from chapters to appendices in a "book"
+%% See generating XSL code for more details about necessity
+\newtitlemark{\chaptertitlename}
+%% begin: customizations of page styles via the modal "titleps-style" template
+%% Designed to use commands from the LaTeX "titleps" package
+%% Plain pages should have the same font for page numbers
+\renewpagestyle{plain}{%
+\setfoot{}{\pagefont\thepage}{}%
+}%
+%% Single pages as in default LaTeX
+\renewpagestyle{headings}{%
+\sethead{\pagefont\slshape\MakeUppercase{\ifthechapter{\chaptertitlename\space\thechapter.\space}{}\chaptertitle}}{}{\pagefont\thepage}%
+}%
+\pagestyle{headings}
+%% end: customizations of page styles via the modal "titleps-style" template
+%%
+%% Create globally-available macros to be provided for style writers
+%% These are redefined for each occurence of each division
+\newcommand{\divisionnameptx}{\relax}%
+\newcommand{\titleptx}{\relax}%
+\newcommand{\subtitleptx}{\relax}%
+\newcommand{\shortitleptx}{\relax}%
+\newcommand{\authorsptx}{\relax}%
+\newcommand{\epigraphptx}{\relax}%
+%% Create environments for possible occurences of each division
+%% Environment for a PTX "chapter" at the level of a LaTeX "chapter"
+\NewDocumentEnvironment{chapterptx}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Chapter}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\chapter[{#3}]{#1}%
+\label{#6}%
+}{}%
+%% Environment for a PTX "section" at the level of a LaTeX "section"
+\NewDocumentEnvironment{sectionptx}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Section}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\section[{#3}]{#1}%
+\label{#6}%
+}{}%
+%% Environment for a PTX "subsection" at the level of a LaTeX "subsection"
+\NewDocumentEnvironment{subsectionptx}{mmmmmm}
+{%
+\renewcommand{\divisionnameptx}{Subsection}%
+\renewcommand{\titleptx}{#1}%
+\renewcommand{\subtitleptx}{#2}%
+\renewcommand{\shortitleptx}{#3}%
+\renewcommand{\authorsptx}{#4}%
+\renewcommand{\epigraphptx}{#5}%
+\subsection[{#3}]{#1}%
+\label{#6}%
+}{}%
+%%
+%% Styles for six traditional LaTeX divisions
+\titleformat{\part}[display]
+{\divisionfont\Huge\bfseries\centering}{\divisionnameptx\space\thepart}{30pt}{\Huge#1}
+[{\Large\centering\authorsptx}]
+\titleformat{\chapter}[display]
+{\divisionfont\huge\bfseries}{\divisionnameptx\space\thechapter}{20pt}{\Huge#1}
+[{\Large\authorsptx}]
+\titleformat{name=\chapter,numberless}[display]
+{\divisionfont\huge\bfseries}{}{0pt}{#1}
+[{\Large\authorsptx}]
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+\titleformat{\section}[hang]
+{\divisionfont\Large\bfseries}{\thesection}{1ex}{#1}
+[{\large\authorsptx}]
+\titleformat{name=\section,numberless}[block]
+{\divisionfont\Large\bfseries}{}{0pt}{#1}
+[{\large\authorsptx}]
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titleformat{\subsection}[hang]
+{\divisionfont\large\bfseries}{\thesubsection}{1ex}{#1}
+[{\normalsize\authorsptx}]
+\titleformat{name=\subsection,numberless}[block]
+{\divisionfont\large\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\subsubsection}[hang]
+{\divisionfont\normalsize\bfseries}{\thesubsubsection}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\subsubsection,numberless}[block]
+{\divisionfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titleformat{\paragraph}[hang]
+{\divisionfont\normalsize\bfseries}{\theparagraph}{1em}{#1}
+[{\small\authorsptx}]
+\titleformat{name=\paragraph,numberless}[block]
+{\divisionfont\normalsize\bfseries}{}{0pt}{#1}
+[{\normalsize\authorsptx}]
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1.5em}
+%%
+%% Styles for five traditional LaTeX divisions
+\titlecontents{part}%
+[0pt]{\contentsmargin{0em}\addvspace{1pc}\contentsfont\bfseries}%
+{\Large\thecontentslabel\enspace}{\Large}%
+{}%
+[\addvspace{.5pc}]%
+\titlecontents{chapter}%
+[0pt]{\contentsmargin{0em}\addvspace{1pc}\contentsfont\bfseries}%
+{\large\thecontentslabel\enspace}{\large}%
+{\hfill\bfseries\thecontentspage}%
+[\addvspace{.5pc}]%
+\dottedcontents{section}[3.8em]{\contentsfont}{2.3em}{1pc}%
+\dottedcontents{subsection}[6.1em]{\contentsfont}{3.2em}{1pc}%
+\dottedcontents{subsubsection}[9.3em]{\contentsfont}{4.3em}{1pc}%
+%%
+%% Begin: Semantic Macros
+%% To preserve meaning in a LaTeX file
+%%
+%% \mono macro for content of "c", "cd", "tag", etc elements
+%% Also used automatically in other constructions
+%% Simply an alias for \texttt
+%% Always defined, even if there is no need, or if a specific tt font is not loaded
+\newcommand{\mono}[1]{\texttt{#1}}
+%%
+%% Following semantic macros are only defined here if their
+%% use is required only in this specific document
+%%
+%% End: Semantic Macros
+%% Division Numbering: Chapters, Sections, Subsections, etc
+%% Division numbers may be turned off at some level ("depth")
+%% A section *always* has depth 1, contrary to us counting from the document root
+%% The latex default is 3.  If a larger number is present here, then
+%% removing this command may make some cross-references ambiguous
+%% The precursor variable $numbering-maxlevel is checked for consistency in the common XSL file
+\setcounter{secnumdepth}{3}
+%%
+%% AMS "proof" environment is no longer used, but we leave previously
+%% implemented \qedhere in place, should the LaTeX be recycled
+\newcommand{\qedhere}{\relax}
+%%
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for most blocks (possibly not projects, 2D displays)
+%% Controlled by  numbering.theorems.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{block}{}
+%%
+%% This document is set to number PROJECT-LIKE on a separate numbering scheme
+%% So, a faux tcolorbox whose only purpose is to provide this numbering
+%% Controlled by  numbering.projects.level  processing parameter
+\newtcolorbox[auto counter, number within=section]{project-distinct}{}
+%% A faux tcolorbox whose only purpose is to provide common numbering
+%% facilities for 2D displays which are subnumbered as part of a "sidebyside"
+\makeatletter
+\newtcolorbox[auto counter, number within=tcb@cnt@block, number freestyle={\noexpand\thetcb@cnt@block(\noexpand\alph{\tcbcounter})}]{subdisplay}{}
+\makeatother
+%% Localize LaTeX supplied names (possibly none)
+\renewcommand*{\chaptername}{Chapter}
+%% More flexible list management, esp. for references
+%% But also for specifying labels (i.e. custom order) on nested lists
+\usepackage{enumitem}
+%% hyperref driver does not need to be specified, it will be detected
+%% Footnote marks in tcolorbox have broken linking under
+%% hyperref, so it is necessary to turn off all linking
+%% It *must* be given as a package option, not with \hypersetup
+\usepackage[hyperfootnotes=false]{hyperref}
+%% Hyperlinking active in electronic PDFs, all links solid and blue
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+\hypersetup{pdftitle={calculus}}
+%% If you manually remove hyperref, leave in this next command
+\providecommand\phantomsection{}
+%% Graphics Preamble Entries
+\usepackage{tikz}
+%% If tikz has been loaded, replace ampersand with \amp macro
+%% extpfeil package for certain extensible arrows,
+%% as also provided by MathJax extension of the same name
+%% NB: this package loads mtools, which loads calc, which redefines
+%%     \setlength, so it can be removed if it seems to be in the 
+%%     way and your math does not use:
+%%     
+%%     \xtwoheadrightarrow, \xtwoheadleftarrow, \xmapsto, \xlongequal, \xtofrom
+%%     
+%%     we have had to be extra careful with variable thickness
+%%     lines in tables, and so also load this package late
+\usepackage{extpfeil}
+%% Custom Preamble Entries, late (use latex.preamble.late)
+%% Begin: Author-provided packages
+%% (From  docinfo/latex-preamble/package  elements)
+%% End: Author-provided packages
+%% Begin: Author-provided macros
+%% (From  docinfo/macros  element)
+%% Plus three from MBX for XML characters
+\newcommand{\foo}{bar}
+    \newcommand{\compactlist}{\setlength{\itemsep}{0pt} \setlength{\parskip}{0pt} \setlength{\leftskip}{-1em}}
+	\newcommand{\ds}{\displaystyle}
+	\newcommand{\blank}{\underline{\hspace{2cm}}}
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+%% End: Author-provided macros
+\begin{document}
+%
+%
+\typeout{************************************************}
+\typeout{Chapter 1 My First Chapter}
+\typeout{************************************************}
+%
+\begin{chapterptx}{My First Chapter}{}{My First Chapter}{}{}{x:chapter:my-first-chapter}
+%
+%
+\typeout{************************************************}
+\typeout{Section 1.1 Limits}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Limits}{}{Limits}{}{}{g:section:idp140189372663384}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.1.1 Concept of a limit}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Concept of a limit}{}{Concept of a limit}{}{}{g:subsection:idp140189372664168}
+The value, if any, that function values approach (in the \(y\)-direction) as the arguments approach a particular number (in the \(x\)-direction).  If, from both sides of a particular argument, the function approaches a particular value, that value is the limit.  If, from both sides of a particular argument, the function increases (or decreases) without bound, we say the limit is \(\infty\) (or \(-\infty\)).  If the limits from both sides differ, we say the two-sided limit does not exist (DNE).%
+%
+\begin{itemize}[label=\textbullet]
+\item{}Limits can be calculated algebraically or read from a graph.%
+\item{}Points on graphs marked by open circles indicate a function is not defined by that \(y\)-value.  Points on graphs marked by closed or filled circles indicate a function is defined by that \(y\)-value.%
+\item{}The two-sided limit takes its value when the values of the two one-sided limits match.  Verify that we would conclude that \(\displaystyle \lim_{x\to0}\dfrac{1}{x^2} = \infty\), but \(\displaystyle \lim_{x\to0}\dfrac{1}{x} = \text{D.N.E}\).%
+\end{itemize}
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.1.2 Computing limits}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Computing limits}{}{Computing limits}{}{}{g:subsection:idp140189372674248}
+Limits involving zero\textbraceright{} If, when evaluated by substitution, a limit of a rational function is of the form:%
+%
+\begin{itemize}[label=\textbullet]
+\item{}[form "\(\frac{0}{\#}\)":] the value of the limit is \(0\)%
+\item{}[form "\(\frac{0}{0}\)":] the expression in the limit can be simplified by factoring, rationalization%
+\item{}[form "\(\frac{\#}{0}\)":] the value of the limit technically does not exist and must be investigated by one-sided limits and\slash{}or a test of signs to determine if the value is \(\pm\infty\) or DNE%
+\end{itemize}
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.1.3 Limits at infinity}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Limits at infinity}{}{Limits at infinity}{}{}{g:subsection:idp140189372679800}
+%
+\begin{itemize}[label=\textbullet]
+\item{}[end behavior:] power functions (those of the form \(f(x) = x^n\) for \(n>0\)) approach \(\infty\) as \(x\to\infty\). Those with even powers approach \(\infty\) as \(x\to-\infty\), while those with odd powers approach \(-\infty\) as \(x\to-\infty\)%
+\item{}[leading terms:] for limits of rational functions, it is sufficient to take the limit of the ratio of leading terms%
+\end{itemize}
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.1.4 Continuity}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Continuity}{}{Continuity}{}{}{g:subsection:idp140189372687928}
+%
+\begin{itemize}[label=\textbullet]
+\item{}[limits:] By definition of continuity at a point \(\displaystyle\lim_{x\to a} f(x) = f(a)\), meaning we can easily evaluate limits of continuous functions by direct substitution (i.e., function evaluation)%
+\item{}[discontinuity:] Functions may have jump discontinuities (piecewise functions), holes or removable discontinuities (common factors of zero on top and bottom), infinite discontinuities (division of a number by zero)%
+\end{itemize}
+\end{subsectionptx}
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 1.2 Derivatives (Differentiation)}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Derivatives (Differentiation)}{}{Derivatives (Differentiation)}{}{}{g:section:idp140189372691384}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.2.1 Rates of change}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Rates of change}{}{Rates of change}{}{}{g:subsection:idp140189372692472}
+Given a function \(f(x)\) and two points \((x, f(x))\) and \((x+h, f(x+h))\),%
+\begin{itemize}[label=\textbullet]
+\item{}[avg. r.o.c:] \(\displaystyle m_{sec} = \dfrac{f(x+h)-f(x)}{h}\) gives the slope of the secant line connecting these points on the graph of the function and describes the average rate of change of the function over the interval%
+\item{}[inst. r.o.c:] \(\displaystyle m_{tan} = f'(x) = \dfrac{df}{dx} = \lim_{h\to0} \dfrac{f(x+h)-f(x)}{h}\) gives the slope of the tangent line touching the graph at a point \((x, f(x))\) by the \textbackslash{}textit\textbraceleft{}limit definition of the derivative\textbraceright{} and describes the instantaneous rate of change of the function at the point%
+\end{itemize}
+Notice that \(\displaystyle m_{tan} = \lim_{h\to0} m_{sec}\).%
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.2.2 Basic derivatives}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Basic derivatives}{}{Basic derivatives}{}{}{g:subsection:idp140189372693736}
+%
+\begin{itemize}[label=\textbullet]
+\item{}[power rule:] \(\dfrac{d}{dx}\left(x^n\right) = nx^{n-1}\) (multiply by the old power, then reduce the power by one)%
+\item{}[polynomials:] Polynomials can be differentiated term by term by repeated application of the power rule to each term.%
+\end{itemize}
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.2.3 Products and Quotients}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Products and Quotients}{}{Products and Quotients}{}{}{g:subsection:idp140189372702648}
+%
+\begin{itemize}[label=\textbullet]
+\item{}[product rule:] \(\displaystyle \dfrac{d}{dx}\left(F(x)S(x)\right) = F(x)S'(x) + S(x)F'(x)\)%
+\item{}[quotient rule:] \(\displaystyle \dfrac{d}{dx}\left(\dfrac{T(x)}{B(x)}\right) = \dfrac{B(x)T'(x) - T(x)B'(x)}{(B(x))^2}\)%
+\end{itemize}
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.2.4 Trigonometric functions (limits and derivative)}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Trigonometric functions (limits and derivative)}{}{Trigonometric functions (limits and derivative)}{}{}{g:subsection:idp140189372704168}
+The following two special limits are each of the form \(\dfrac{0}{0}\) and show up when applying the limit definition of the derivative to trigonometric functions,%
+\begin{itemize}[label=\textbullet]
+\item{}\(\displaystyle \displaystyle\lim_{x\to0}\dfrac{\sin(x)}{x} = 1\)%
+\item{}\(\displaystyle \displaystyle\lim_{x\to0}\dfrac{1-\cos(x)}{x} = 0\)%
+\end{itemize}
+%
+\par
+Since sines and cosines are continuous, we can move the limit inside the sine or cosine, take the limit of the terms inside, and finally evaluate the sine or cosine,%
+\begin{equation*}
+\begin{aligned}
+\displaystyle\lim_{x\to\infty}\sin\left(\dfrac{3\pi x^5+ \text{lower order terms}}{2x^5+\text{lower order terms}}\right)
+\amp = \sin\left(\lim_{x\to\infty}\dfrac{3\pi x^5+\dots}{2x^5+\dots}\right)\\
+\amp = \sin\left(\lim_{x\to\infty}\dfrac{3\pi x^5}{2x^5}\right)\\
+\amp = \sin\left(\lim_{x\to\infty}\dfrac{3\pi}{2}\right)\\
+\amp = \dots
+\end{aligned}
+\end{equation*}
+To finish the problem take the limit then evaluate the sine.%
+%
+\begin{itemize}[label=\textbullet]
+\item{}Derivatives of sine and cosine can be calculated by the definition.%
+\item{}Derivatives of the other trigonometric functions can be calculated by the quotient rule.%
+\end{itemize}
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.2.5 Chain Rule, implicit differentiation, and related rates}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Chain Rule, implicit differentiation, and related rates}{}{Chain Rule, implicit differentiation, and related rates}{}{}{g:subsection:idp140189372711320}
+For derivatives of compositions \(\displaystyle \dfrac{d}{dx}\left(f(g(x))\right) = f'(g(x))g'(x) = \dfrac{df}{dg}\cdot\dfrac{dg}{dx}\)%
+\par
+Implicit differentiation, an application of the chain rule, is useful when a relationship is defined by an equation too complicated (or inconvenient) to solve for \(y\).%
+\begin{itemize}[label=\textbullet]
+\item{}We differentiate each side of an equation and solve for \(\dfrac{dy}{dx}\).%
+\item{}One application of this is to find slopes or equations of lines tangent to complicated curves at points on those curves.%
+\end{itemize}
+%
+\par
+Applications of implicit differentiation and the chain rule, related rates problems are used to relate two rates of change by an underlying formula or geometric relationship.  This is done with a 5-step process that includes a picture.%
+\end{subsectionptx}
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 1.3 Integrals (Integration)}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Integrals (Integration)}{}{Integrals (Integration)}{}{}{g:section:idp140189372715544}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.3.1 Antiderivatives and indefinite integrals}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Antiderivatives and indefinite integrals}{}{Antiderivatives and indefinite integrals}{}{}{g:subsection:idp140189372715928}
+We are interested in determining \(\displaystyle \dfrac{d}{dx}\Big(\,\,?\,\,\Big) = f(x)\).%
+\begin{itemize}[label=\textbullet]
+\item{}[antiderivatives:] We call the function \(F(x)\) an antiderivative, and write \(\displaystyle F(x) = \int f(x)\,dx\).%
+\item{}[indefinite integral:] The collection of all possible antiderivatives is called the indefinite integral \(\displaystyle \int f(x)\,dx = F(x) + c\).%
+\item{}[power rule:] For \(n\neq1\), \(\displaystyle \int x^n\,dx = \dfrac{x^{n+1}}{n+1}+c\) (add one to the power, then divide by the new power).%
+\end{itemize}
+%
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.3.2 \(u\)-substitution}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{\(u\)-substitution}{}{\(u\)-substitution}{}{}{g:subsection:idp140189372721032}
+This classic technique is used to evaluate more complicated integrals.  We choose \(u = g(x)\) and compute the differential \(du = g'(x)dx\). We substitute these into the original integral, and translate from \(x\) and \(dx\) to \(u\) and \(du\).  In substituting,%
+\begin{itemize}[label=\textbullet]
+\item{}we sometimes have to multiply or divide both sides of the definition for \(du\) by a constant.  We \textbackslash{}textit\textbraceleft{}never\textbraceright{} solve completely for \(dx\) by dividing by expressions involving \(x\).%
+\item{}Sometimes, for complicated problems, we are required to solve \(u = g(x)\) for \(x\) as part of the substitution step.%
+\end{itemize}
+%
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.3.3 Riemann sums, summation notation, and definite integrals}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Riemann sums, summation notation, and definite integrals}{}{Riemann sums, summation notation, and definite integrals}{}{}{g:subsection:idp140189372721800}
+%
+\begin{itemize}[label=\textbullet]
+\item{}[Riemann sums:] The area under a function (above the axis) can be approximated by collections of rectangles, this idea is used to define the definite integral.%
+\item{}[algebra of sums:] In making the exact calculation, the manipulation of sums is necessary.%
+%
+\begin{itemize}[label=$\circ$]
+\item{}\(\displaystyle \sum_{k=1}^n k = \dfrac{n(n+1)}{2}\) (\textbackslash{}textit\textbraceleft{}If the original lower index is not \(k=1\), a change of index must be performed!\textbraceright{})%
+\item{}\(\displaystyle \sum_{k=1}^n c = nc\) (\textbackslash{}textit\textbraceleft{}Repeated addition gives rise to multiplication.\textbraceright{})%
+\item{}\(\displaystyle \sum_{k=1}^n \left(f(x) \pm g(x)\right) = \left(\sum_{k=1}^n f(x)\right) \pm \left(\sum_{k=1}^ng(x)\right)\) (\textbackslash{}textit\textbraceleft{}The sum of a sum or difference is the sum or difference of the sums.\textbraceright{})%
+\end{itemize}
+\item{}[net signed area:] regions below the axis give rise to negative signed areas, the net signed area for a function over a region indicates whether there is more area above or below the axis.%
+\end{itemize}
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.3.4 Definite integrals and the Fundamental Theorem of Calculus}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Definite integrals and the Fundamental Theorem of Calculus}{}{Definite integrals and the Fundamental Theorem of Calculus}{}{}{g:subsection:idp140189372733480}
+For a continuous \(f(x)\) and its antiderivative \(F(x)\), \(\displaystyle\int_a^b f(x)\,dx = F(x)\Big|_a^b = F(b) - F(a)\)%
+\end{subsectionptx}
+\end{sectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Section 1.4 Applications of derivatives}
+\typeout{************************************************}
+%
+\begin{sectionptx}{Applications of derivatives}{}{Applications of derivatives}{}{}{g:section:idp140189372735144}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.4.1 Intervals of increasing, decreasing, and concavity}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Intervals of increasing, decreasing, and concavity}{}{Intervals of increasing, decreasing, and concavity}{}{}{g:subsection:idp140189372735528}
+%
+\begin{itemize}[label=\textbullet]
+\item{}[critical point:] a location where the derivative is zero or undefined%
+%
+\begin{itemize}[label=$\circ$]
+\item{}[stationary point:] a location where the derivative is zero, a special type of critical point%
+\item{}[undefined derivatives:] may occur, for example, with rational functions where the denominator is zero. To identify, set the denominator equal to zero and attempt to solve.%
+\end{itemize}
+\item{}[inflection point:] a location where the second derivative is zero and the function changes concavity%
+\item{}[increase\slash{}decrease:] specified on closed intervals, where possible, this is indicated by the sign of the first derivative (derivative is positive, function is increasing; derivative is negative, function is decreasing)%
+\item{}[concavity:] specified only on open intervals, this is indicated by the sign of the second derivative (second derivative is positive, function is concave up; second derivative is negative, function is concave down)%
+\end{itemize}
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.4.2 Relative and absolute extrema}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Relative and absolute extrema}{}{Relative and absolute extrema}{}{}{g:subsection:idp140189372739624}
+%
+\begin{itemize}[label=\textbullet]
+\item{}Relative extrema occur at critical points and can be identified by the first (changes in function behavior) or second (identification of concavity) derivative test%
+\item{}Absolute extrema can occur at critical points or at endpoints on specified intervals.%
+\end{itemize}
+\end{subsectionptx}
+%
+%
+\typeout{************************************************}
+\typeout{Subsection 1.4.3 Applied optimization}
+\typeout{************************************************}
+%
+\begin{subsectionptx}{Applied optimization}{}{Applied optimization}{}{}{g:subsection:idp140189372741080}
+The function to be optimized describes a cost, profit, or amount of materials. Physical or practical constraints help specify the interval for optimization.  The regular optimization procedures are followed.%
+\end{subsectionptx}
+\end{sectionptx}
+\end{chapterptx}
+\end{document}
