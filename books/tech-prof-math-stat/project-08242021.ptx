@@ -6,46 +6,44 @@
 -->
 <project>
   <targets>
-    <!-- To build this target, run `pretext build web` -->
-    <target name="web">
+    <target name="html">
       <format>html</format>
       <source>source/main.ptx</source>
       <publication>publication/publication.ptx</publication>
-      <output-dir>output/web</output-dir>
+      <output-dir>output/html</output-dir>
     </target>
-    <target name="print" pdf-method="xelatex">
-      <format>pdf</format>
-      <source>source/main.ptx</source>
-      <publication>publication/publication.ptx</publication>
-      <output-dir>output/print</output-dir>
-    </target>
-    <target name="print-latex">
+    <target name="latex">
       <format>latex</format>
       <source>source/main.ptx</source>
       <publication>publication/publication.ptx</publication>
-      <output-dir>output/print-latex</output-dir>
+      <output-dir>output/latex</output-dir>
     </target>
-    <target name="subset">
-      <!-- Usage: to build starting at XMLID, -->
-      <!-- pretext build subset -x XMLID      -->
-      <!-- or use <xml-root>XMLID</xml-root>  -->
-      <format>html</format>
+    <target name="pdf">
+      <format>pdf</format>
       <source>source/main.ptx</source>
+      <publication>publication/publication.ptx</publication>
+      <output-dir>output/pdf</output-dir>
+    </target>
+    <!-- To quickly build the html of a subset of your project, edit main-subset.ptx
+        and run `pretext build subset` (or `view` with watch option) -->
+    <target name="subset">
+      <format>html</format>
+      <source>source/main-subset.ptx</source>
       <publication>publication/publication.ptx</publication>
       <output-dir>output/subset</output-dir>
       <stringparam key="debug.skip-knowls" value="yes"/>
     </target>
   </targets>
   <executables>
-    <latex>latex</latex>
-    <pdflatex>pdflatex</pdflatex>
-    <xelatex>xelatex</xelatex>
-    <pdfsvg>pdf2svg</pdfsvg>
-    <asy>asy</asy>
-    <sage>sage</sage>
-    <pdfpng>convert</pdfpng>
-    <pdfeps>pdftops</pdfeps>
-    <node>node</node>
-    <liblouis>file2brl</liblouis>
-  </executables>
+      <tex>xelatex</tex>
+      <pdfsvg>pdf2svg</pdfsvg>
+      <asy>asy</asy>
+      <sage>sage</sage>
+      <pdfpng>convert</pdfpng>
+      <pdfeps>pdftops</pdfeps>
+      <pdfcrop>pdf-crop-margins</pdfcrop>
+      <pageres>pageres</pageres>
+      <node>node</node>
+      <liblouis>file2brl</liblouis>
+    </executables>
 </project>
