@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Limits and behaviors at infinity</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Bio-Calculus">
+<meta property="book:author" content="Sean Laverty">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
+<p class="byline">Sean Laverty</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="continuous-functions.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-intro.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ch-derivatives.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="continuous-functions.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-intro.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ch-derivatives.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide" class="internal">Users guide</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-intro.html" data-scroll="ch-intro" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus" class="internal">What is bio-calculus?</a></li>
+<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology" class="internal">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
+<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1" class="internal">Dimensions and units</a></li>
+<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs" class="internal">Linear functions and their graphs</a></li>
+<li><a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms" class="internal">Exponentials and logarithms</a></li>
+<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds" class="internal">Introduction to discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits" class="internal">Introduction to limits</a></li>
+<li><a href="continuous-functions.html" data-scroll="continuous-functions" class="internal">Continuous functions</a></li>
+<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity" class="active">Limits and behaviors at infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-derivatives.html" data-scroll="ch-derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
+<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change" class="internal">Introduction to derivatives: Rates of change</a></li>
+<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions" class="internal">Derivatives of basic functions</a></li>
+<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions" class="internal">Derivatives of exponential and logarithmic functions</a></li>
+<li><a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule" class="internal">Derivatives of compositions: chain rule</a></li>
+<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients" class="internal">Derivatives of products and quotients</a></li>
+<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications" class="internal">Second derivatives and applications</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-integration.html" data-scroll="ch-integration" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
+<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations" class="internal">Introduction to differential equations</a></li>
+<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution" class="internal">More complicated integrals and integration by substitution</a></li>
+<li><a href="the-definite-integral.html" data-scroll="the-definite-integral" class="internal">The definite integral</a></li>
+<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral" class="internal">Applications of the definite integral</a></li>
+<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry" class="internal">Applications to chemistry</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-advanced.html" data-scroll="ch-advanced" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a><ul>
+<li><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds" class="internal">Applications: nonlinear discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations" class="internal">Applications: autonomous differential equations</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="limits-and-behaviors-at-infinity"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.9</span> <span class="title">Limits and behaviors at infinity</span>
+</h2>
+<section class="paragraphs" id="the-plan-8"><h3 class="heading"><span class="title">The Plan.</span></h3>
+<p id="p-346">We will look at a powerful method for studying and describing the long-term values and behaviors of functions. This will give us a powerful, compact notation for making precise descriptions.</p>
+<section class="paragraphs" id="limits-and-long-term-behavior"><h4 class="heading"><span class="title">Limits and long-term behavior.</span></h4>
+<p id="p-347">Rather than talking about limits at a finite input, we now focus on limits as inputs become infinitely large</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\lim_{t\rightarrow\infty}f(t).
+\end{equation*}
+</div>
+<p class="continuation">In the long run (or <span class="process-math">\(t\rightarrow\infty\)</span>), functions can have only a few <em class="emphasis">qualitatively</em> different behaviors that describe <em class="emphasis">how</em> they approach their limiting value.</p>
+<section class="paragraphs" id="real-world-example-from-research"><h5 class="heading"><span class="title">Real-world example from research.</span></h5>
+<p id="p-348">A neuroscientist interested in the response of muscle fibers to stress measures the firing rate of a stretched (and stressed) muscle fiber through time. She presented the following data:</p>
+<figure class="figure figure-like" id="figure-28"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/neuro_data.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.9.1<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-349">If this was <dfn class="terminology">your</dfn> data, what function would you use to describe it?</p>
+<p id="p-350">After quite a while, what value would the firing rate likely approach?</p></section><section class="paragraphs" id="expanding-our-library-of-functions"><h5 class="heading"><span class="title">Expanding our library of functions.</span></h5>
+<p id="p-351">So far we have focused on polynomials (lines, quadratics, cubics, and so on), exponential and logarithmic functions, and sums, products, ratios. and compositions build from these.To better understand these functions and few new ones, we compare their behaviors for large inputs.</p></section><section class="paragraphs" id="functions-approaching-infty-ordered-by-speed"><h5 class="heading"><span class="title">Functions approaching <span class="process-math">\(\infty\text{,}\)</span> ordered by speed.</span></h5>
+<p id="p-352">Below we consider constants <span class="process-math">\(a, \beta, n &gt;
+0\)</span> to help build larger categories of functions.</p>
+<figure class="table table-like" id="table-3"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.9.2<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">Function</th>
+<th scope="col" class="c m b0 r0 l0 t0 lines">Features</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure><p id="p-353">Sketches of these functions:</p>
+<p id="p-354">Suppose <span class="process-math">\(\displaystyle
+\lim_{x\rightarrow\infty}f(x) = \infty \text{ and
+}\lim_{x\rightarrow\infty}g(x) = \infty.\)</span></p>
+<ol id="p-355" class="decimal">
+<li id="li-118"><p id="p-356"><span class="process-math">\(f(x)\)</span> approaches infinity (or <span class="process-math">\(f(x)\rightarrow\infty\)</span>) <dfn class="terminology">faster than</dfn> <span class="process-math">\(g(x)\)</span> if <span class="process-math">\(\displaystyle \lim_{x\rightarrow\infty}\frac{f(x)}{g(x)} =
+\infty\)</span><em class="emphasis">Ex.</em></p></li>
+<li id="li-119"><p id="p-357"><span class="process-math">\(f(x)\)</span> approaches infinity (or <span class="process-math">\(f(x)\rightarrow\infty\)</span>) <dfn class="terminology">slower than</dfn> <span class="process-math">\(g(x)\)</span> if <span class="process-math">\(\displaystyle \lim_{x\rightarrow\infty}\frac{f(x)}{g(x)} = 0\)</span><em class="emphasis">Ex.</em></p></li>
+<li id="li-120"><p id="p-358"><span class="process-math">\(f(x)\)</span> approaches infinity (or <span class="process-math">\(f(x)\rightarrow\infty\)</span>) <dfn class="terminology">at the same rate</dfn> as <span class="process-math">\(g(x)\)</span> if <span class="process-math">\(\displaystyle
+\lim_{x\rightarrow\infty}\frac{f(x)}{g(x)} = \text{nonzero
+constant}\)</span><em class="emphasis">Ex.</em></p></li>
+</ol></section><section class="paragraphs" id="functions-approaching-0-ordered-by-speed"><h5 class="heading"><span class="title">Functions approaching 0, ordered by speed.</span></h5>
+<p id="p-359">Below we consider constants <span class="process-math">\(a, \beta, n &gt;
+0\)</span> to help build larger categories of functions.</p>
+<figure class="table table-like" id="table-4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.9.3<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="l m b0 r0 l0 t0 lines">Function</th>
+<th scope="col" class="c m b0 r0 l0 t0 lines">Features</th>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure><p id="p-360">Sketches of these functions:</p>
+<p id="p-361">Suppose <span class="process-math">\(\displaystyle
+\lim_{x\rightarrow\infty}f(x) = 0 \text{ and
+}\lim_{x\rightarrow\infty}g(x) = 0.\)</span></p>
+<ol id="p-362" class="decimal">
+<li id="li-121"><p id="p-363"><span class="process-math">\(f(x)\)</span> approaches 0 (or <span class="process-math">\(f(x)\rightarrow0\)</span>) <dfn class="terminology">faster than</dfn> <span class="process-math">\(g(x)\)</span> if <span class="process-math">\(\displaystyle \lim_{x\rightarrow\infty}\frac{f(x)}{g(x)} = 0\)</span><em class="emphasis">Ex.</em></p></li>
+<li id="li-122"><p id="p-364"><span class="process-math">\(f(x)\)</span> approaches 0 (or <span class="process-math">\(f(x)\rightarrow0\)</span>) <dfn class="terminology">slower than</dfn> <span class="process-math">\(g(x)\)</span> if <span class="process-math">\(\displaystyle \lim_{x\rightarrow\infty}\frac{f(x)}{g(x)} =
+\infty\)</span><em class="emphasis">Ex.</em></p></li>
+<li id="li-123"><p id="p-365"><span class="process-math">\(f(x)\)</span> approaches 0 (or <span class="process-math">\(f(x)\rightarrow0\)</span>) <dfn class="terminology">at the same rate</dfn> as <span class="process-math">\(g(x)\)</span> if <span class="process-math">\(\displaystyle \lim_{x\rightarrow\infty}\frac{f(x)}{g(x)} =
+\text{nonzero constant}\)</span><em class="emphasis">Ex.</em></p></li>
+</ol></section><section class="paragraphs" id="summary-of-behaviors-as-xto-infty"><h5 class="heading"><span class="title">Summary of behaviors as <span class="process-math">\(x\to
+\infty\)</span>.</span></h5>
+<p id="p-366">The following plots illustrate the basic shapes of functions that are important when discussing their limits at infinity.</p>
+<figure class="figure figure-like" id="figure-29"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/big.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.9.4<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><figure class="table table-like" id="table-5"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.9.5<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b0 r0 l0 t0 lines">Function</th>
+<th scope="col" class="c m b0 r0 l0 t0 lines">Family</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Features</th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure><figure class="figure figure-like" id="figure-30"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/small.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.9.6<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.9.7<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr class="header-horizontal">
+<th scope="col" class="c m b0 r0 l0 t0 lines">Function</th>
+<th scope="col" class="c m b0 r0 l0 t0 lines">Family</th>
+<th scope="col" class="l m b0 r0 l0 t0 lines">Features</th>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div></figure><p id="p-367">Recall the earlier example of the stretch response of muscle fibers. Below we show a computer-generated ‘best fit’ to the data and illustrate important biological and statistical differences of the speeds of functions.</p>
+<p id="p-368">Data fit by the sum of a constant and an exponential function,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(t) = ae^{-bt}+c.
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="figure-31"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/neuro_data_bad.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.9.8<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-369"><dfn class="terminology">Description:</dfn></p>
+<p id="p-370">Data fit by the sum of a constant and the composition of a power function with exponential function,</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+f(t) =
+ae^{-bt^m}+c.
+\end{equation*}
+</div>
+<figure class="figure figure-like" id="figure-32"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/neuro_data_good.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.9.9<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-371"><dfn class="terminology">Description:</dfn></p>
+<p id="p-372">In ecology we use these functions to describe the numerical response of predators to prey or of harvesters to their crop. In chemistry we use these functions to describe rates for reaction kinetics, for example, Michaelis-Menten Kinetics. Forms generally have the following features,</p>
+<p id="p-373">Linear</p>
+<p id="p-374">Saturating</p>
+<p id="p-375">Saturating (with threshold)</p>
+<p id="p-376">Overcompensation</p></section><section class="paragraphs" id="leading-behavior"><h5 class="heading"><span class="title">Leading behavior.</span></h5>
+<p id="p-377">The often useful method of leading behavior helps us approximate complicated functions by their most dominant terms. This tells us what the graph of a complicated function ‘looks like’.</p>
+<p id="p-378">The leading behavior of a function at <span class="process-math">\(\infty\text{,}\)</span> written <span class="process-math">\(f_\infty(x)\text{,}\)</span> is the term that is largest as the input approaches <span class="process-math">\(\infty\text{.}\)</span></p>
+<ul id="p-379" class="disc">
+<li id="li-124"><p id="p-380">Find <span class="process-math">\(g_\infty(x)\)</span> for <span class="process-math">\(g(x) =
+1+2x+3e^x.\)</span></p></li>
+<li id="li-125"><p id="p-381">Find <span class="process-math">\(f_\infty(x)\)</span> for <span class="process-math">\(f(x) = 4+x^{2}\text{.}\)</span></p></li>
+</ul>
+<p id="p-382">The leading behavior of a function at 0, written <span class="process-math">\(f_{0}(x)\text{,}\)</span> is the term that is largest as the input approaches 0.<em class="emphasis">Note:</em> This often contradicts our initial intuition for ‘big’.</p>
+<ol id="p-383" class="decimal">
+<li id="li-126"><p id="p-384"><span class="process-math">\(f(x)\)</span> is <dfn class="terminology">larger than</dfn> <span class="process-math">\(g(x)\)</span> as <span class="process-math">\(x\)</span> approaches 0 if <span class="process-math">\(\displaystyle
+\lim_{x\rightarrow0}\frac{f(x)}{g(x)} = \infty\)</span></p></li>
+<li id="li-127"><p id="p-385"><span class="process-math">\(f(x)\)</span> is <dfn class="terminology">smaller than</dfn> <span class="process-math">\(g(x)\)</span> if <span class="process-math">\(\displaystyle \lim_{x\rightarrow0}\frac{f(x)}{g(x)} =
+0\)</span></p></li>
+</ol>
+<ul id="p-386" class="disc">
+<li id="li-128"><p id="p-387">Using the ideas of larger and smaller, find <span class="process-math">\(g_{0}(x)\)</span> for <span class="process-math">\(g(x) = 4x+x^{3}.\)</span></p></li>
+<li id="li-129"><p id="p-388">Using the ideas of larger and smaller, find <span class="process-math">\(f_{0}(x)\)</span> for <span class="process-math">\(f(x) = 4+x^{2}.\)</span></p></li>
+</ul>
+<p id="p-389">Compute <span class="process-math">\(\displaystyle
+\lim_{x\rightarrow\infty}\frac{1+2x+3e^x}{4+x^{2}}.\)</span></p></section><section class="paragraphs" id="formal-justification"><h5 class="heading"><span class="title">Formal justification.</span></h5>
+<p id="p-390">All of our discussion might seem quite suspicious and inexact.</p>
+<ul id="p-391" class="disc">
+<li id="li-130"><p id="p-392">Limit of a ratio is the ratio of limit, when limits are finite values.</p></li>
+<li id="li-131"><p id="p-393">Earlier rules for limits fail when limits are infinite; we cannot do the arithmetic with infinities.</p></li>
+<li id="li-132"><p id="p-394">We can use reasoning about relative speeds of different terms or need more advanced techniques.</p></li>
+</ul></section><section class="paragraphs" id="important-facts"><h5 class="heading"><span class="title">Important facts.</span></h5>
+<p id="p-395">A function and its leading behavior approach <span class="process-math">\(\infty\)</span> at the same rate, or <span class="process-math">\(\displaystyle \lim_{x\rightarrow
+\infty}\frac{f(x)}{f_\infty(x)} = 1.\)</span> Also the leading behavior of a function defined by a ratio, such as <span class="process-math">\(\displaystyle F(x) =
+\frac{x^{2}}{4+x^{2}}\)</span> is defined as the ratio of the leading behaviors <span class="process-math">\(\displaystyle F_{0}(x) = \frac{(x^{2})_{0}}{(4+x^{2})_{0}}\)</span> or <span class="process-math">\(\displaystyle F_\infty(x) =
+\frac{(x^{2})_\infty}{(4+x^{2})_\infty}\)</span></p>
+<p id="p-396">We illustrate this method by example using the function <span class="process-math">\(\displaystyle F(x) = \frac{x^{2}}{4+x^{2}}\text{,}\)</span> one example of functional form from earlier.</p>
+<figure class="figure figure-like" id="figure-33"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/sat_3.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.9.10<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-397">What does <span class="process-math">\(F(x)\)</span> look like when <span class="process-math">\(x\)</span> is very large?</p>
+<p id="p-398">What does <span class="process-math">\(F(x)\)</span> look like when <span class="process-math">\(x\)</span> is small?</p></section></section></section><section class="subsection" id="quick-practice-inf-limits"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.9.1</span> <span class="title">Quick practice</span>
+</h3>
+<ol id="p-399" class="decimal">
+<li id="li-133"><p id="p-400">Compute <span class="process-math">\(\displaystyle \lim_{x\to\infty} e^{x}\text{.}\)</span></p></li>
+<li id="li-134"><p id="p-401">Compute <span class="process-math">\(\displaystyle \lim_{x\to\infty} e^{-x}\text{.}\)</span></p></li>
+<li id="li-135"><p id="p-402">Compute <span class="process-math">\(\displaystyle \lim_{x\to\infty}
+\dfrac{1}{x}\text{.}\)</span></p></li>
+<li id="li-136"><p id="p-403">Which is bigger as <span class="process-math">\(x\to\infty\)</span> <span class="process-math">\(e^{-x}\)</span> or <span class="process-math">\(\dfrac{1}{x}\text{?}\)</span> Hence, what is <span class="process-math">\(f_\infty(x)\)</span> for <span class="process-math">\(f(x) =
+e^{-x}+\dfrac{1}{x}\text{?}\)</span></p></li>
+</ol>
+<p id="p-404">Answers:</p>
+<ol id="p-405" class="decimal">
+<li id="li-137"><p id="p-406"><span class="process-math">\(\displaystyle \lim_{x\to\infty} e^{x} = \infty\text{.}\)</span></p></li>
+<li id="li-138"><p id="p-407"><span class="process-math">\(\displaystyle \lim_{x\to\infty} e^{-x} = 0\text{.}\)</span></p></li>
+<li id="li-139"><p id="p-408"><span class="process-math">\(\displaystyle \lim_{x\to\infty} \dfrac{1}{x} = 0\text{.}\)</span></p></li>
+<li id="li-140"><p id="p-409">Between the terms <span class="process-math">\(e^{-x}\)</span> and <span class="process-math">\(\dfrac{1}{x}\text{,}\)</span> <span class="process-math">\(e^{-x}\)</span> goes to zero faster which implies that <span class="process-math">\(\dfrac{1}{x}\)</span> is bigger as <span class="process-math">\(x\to\infty\text{.}\)</span> Hence, for <span class="process-math">\(f(x) =
+e^{-x}+\dfrac{1}{x}\text{,}\)</span> the leading behavior at infinity is <span class="process-math">\(f_\infty(x) = \dfrac{1}{x}\text{.}\)</span> This means the contribution of the exponential term to the graph of <span class="process-math">\(f(x)\)</span> vanishes quickly and the graph ‘looks like’ the graph of just <span class="process-math">\(f_\infty(x) =
+\dfrac{1}{x}\)</span> as <span class="process-math">\(x\)</span> gets large.</p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

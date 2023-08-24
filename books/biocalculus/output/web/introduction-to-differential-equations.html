@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Introduction to differential equations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Bio-Calculus">
+<meta property="book:author" content="Sean Laverty">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
+<p class="byline">Sean Laverty</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch-integration.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-integration.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="more-complicated-integrals-and-integration-by-substitution.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch-integration.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-integration.html" title="Up">Up</a><a class="next-button button toolbar-item" href="more-complicated-integrals-and-integration-by-substitution.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide" class="internal">Users guide</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-intro.html" data-scroll="ch-intro" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus" class="internal">What is bio-calculus?</a></li>
+<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology" class="internal">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
+<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1" class="internal">Dimensions and units</a></li>
+<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs" class="internal">Linear functions and their graphs</a></li>
+<li><a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms" class="internal">Exponentials and logarithms</a></li>
+<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds" class="internal">Introduction to discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits" class="internal">Introduction to limits</a></li>
+<li><a href="continuous-functions.html" data-scroll="continuous-functions" class="internal">Continuous functions</a></li>
+<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity" class="internal">Limits and behaviors at infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-derivatives.html" data-scroll="ch-derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
+<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change" class="internal">Introduction to derivatives: Rates of change</a></li>
+<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions" class="internal">Derivatives of basic functions</a></li>
+<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions" class="internal">Derivatives of exponential and logarithmic functions</a></li>
+<li><a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule" class="internal">Derivatives of compositions: chain rule</a></li>
+<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients" class="internal">Derivatives of products and quotients</a></li>
+<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications" class="internal">Second derivatives and applications</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-integration.html" data-scroll="ch-integration" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
+<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations" class="active">Introduction to differential equations</a></li>
+<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution" class="internal">More complicated integrals and integration by substitution</a></li>
+<li><a href="the-definite-integral.html" data-scroll="the-definite-integral" class="internal">The definite integral</a></li>
+<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral" class="internal">Applications of the definite integral</a></li>
+<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry" class="internal">Applications to chemistry</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-advanced.html" data-scroll="ch-advanced" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a><ul>
+<li><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds" class="internal">Applications: nonlinear discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations" class="internal">Applications: autonomous differential equations</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="introduction-to-differential-equations"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Introduction to differential equations</span>
+</h2>
+<section class="paragraphs" id="the-plan-14"><h3 class="heading"><span class="title">The Plan.</span></h3>
+<p id="p-629">We introduce a new category of calculus problems called integrals.</p>
+<section class="paragraphs" id="applications-of-derivatives-differential-equations"><h4 class="heading"><span class="title">Applications of derivatives: differential equations.</span></h4>
+<p id="p-630">So far we have built methods and skills that allow us to take derivatives of known functions. When we revisit derivatives at the end of the semester, we will see quite a few more applications of derivatives. For now switch perspective and build systematic methods that allow us figure out what original function that a particular derivative ‘comes from.’</p>
+<section class="paragraphs" id="methods"><h5 class="heading"><span class="title">Methods.</span></h5>
+<p id="p-631">To find what original function a derivative ‘comes from,’ we might</p>
+<ol id="p-632" class="decimal">
+<li id="li-192"><p id="p-633">guess the original function</p></li>
+<li id="li-193"><p id="p-634">graph the original function (from behaviors encoded by the derivative)</p></li>
+<li id="li-194"><p id="p-635">approximate the graph of the original function (Euler’s method/tangent line approximations) – skipped</p></li>
+<li id="li-195"><p id="p-636">integrate to find the original function</p></li>
+</ol>
+<p id="p-637">A differential equation (often shortened ‘DE’) describes the instantaneous rate of change of a measurement.</p>
+<figure class="table table-like" id="table-13"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.1<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">pure-time DE</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\displaystyle\frac{dp}{dt} = e^{-t}\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">rate of change is <em class="emphasis">measured as a function of time</em>
+</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">autonomous DE<span class="process-math">\({}^\dagger\)</span>
+</td>
+<td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(\displaystyle\frac{dp}{dt} = 2p\)</span></td>
+<td class="l m b0 r0 l0 t0 lines">rate of change is <em class="emphasis">modeled as a function of measurement itself</em>
+</td>
+</tr>
+</table></div></figure><p id="p-638"><span class="process-math">\({}^\dagger\)</span> we will return to autonomous DEs at the end of the chapter</p>
+<p id="p-639">Velocity, the instantaneous change in position, of a moving person is given by the pure-time DE</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dp}{dt} =
+1.8,
+\end{equation*}
+</div>
+<p class="continuation">where position <span class="process-math">\(p(t)\)</span> is the quantity being differentiated with respect to time. Find the <dfn class="terminology">solution</dfn> <span class="process-math">\(p(t)\text{,}\)</span> that is, find the function whose derivative is <span class="process-math">\(\displaystyle\frac{dp}{dt} = 1.8\text{.}\)</span></p>
+<p id="p-640">Guess it: Graph it:</p></section><section class="paragraphs" id="notation-for-pure-time-des"><h5 class="heading"><span class="title">Notation for pure-time DEs.</span></h5>
+<p id="p-641">In general, we study a pure-time differential equation <span class="process-math">\(\displaystyle \frac{dF}{dt} = f(t)\text{.}\)</span></p>
+<p id="p-642">Solving this pure-time DE for the unknown function <span class="process-math">\(F(t)\)</span> involves finding the function whose derivative is <span class="process-math">\(f(t)\text{.}\)</span> We want to ‘undo’ the derivative to find <span class="process-math">\(F(t)\text{,}\)</span> called the <em class="emphasis">antiderivative</em> of <span class="process-math">\(f(t)\text{.}\)</span></p>
+<article class="definition definition-like" id="def-antiderivative"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">antiderivative.</span>
+</h6>
+<p id="p-643">An <dfn class="terminology">antiderivative</dfn> of the function <span class="process-math">\(f(t)\)</span> is a function <span class="process-math">\(F(t)\)</span> whose derivative equal to <span class="process-math">\(f(t)\text{.}\)</span> We say, “<span class="process-math">\(F\)</span> of <span class="process-math">\(t\)</span> is equal to the integral of <span class="process-math">\(f\)</span> of <span class="process-math">\(t\)</span> with respect to <span class="process-math">\(t\text{,}\)</span>” and we write</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+F(t)
+= \int f(t)\,dt.
+\end{equation*}
+</div></article></section><section class="paragraphs" id="warning"><h5 class="heading"><span class="title">Warning.</span></h5>
+<p id="p-644">The equation <span class="process-math">\(\displaystyle\frac{dp}{dt} =
+1.8\)</span> has solution</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+p(t) = \int 1.8\,dt = 1.8t+c.
+\end{equation*}
+</div>
+<p class="continuation">What is <span class="process-math">\(c\text{?}\)</span></p>
+<article class="definition definition-like" id="def-indefinite-integral"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">indefinite integral.</span>
+</h6>
+<p id="p-645">The set of all antiderivatives of the function <span class="process-math">\(f(t)\)</span> is called the <dfn class="terminology">indefinite integral</dfn> of <span class="process-math">\(f\)</span> and is written</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\int f(t)\,dt = F(t) + c.
+\end{equation*}
+</div></article><p id="p-646">Solve pure-time DE</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dF}{dt} = 2
+\end{equation*}
+</div>
+<p class="continuation">by computing the indefinite integral.</p>
+<p id="p-647">Solve pure-time DE</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{dF}{dt} = 2t
+\end{equation*}
+</div>
+<p class="continuation">by computing the indefinite integral.</p>
+<article class="theorem theorem-like" id="thm-power-integral"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
+</h6>
+<p id="p-648">Suppose that <span class="process-math">\(f(x) = x^n\)</span> with <span class="process-math">\(n\neq-1\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boxed{\int
+x^n\,dx=\left(\frac{1}{n+1}\right)x^{n+1}+c}
+\end{equation*}
+</div></article><article class="example example-like" id="ex-indef-basic"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-indef-basic"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-indef-basic"><article class="example example-like"><p id="p-649">Compute <span class="process-math">\(\displaystyle \int x^{2}\,dx\text{.}\)</span></p></article></div>
+<article class="example example-like" id="ex-antideriv-basic"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-antideriv-basic"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-antideriv-basic"><article class="example example-like"><p id="p-650">Compute the indefinite integral of <span class="process-math">\(\displaystyle g(x)=x^{0.4}\text{.}\)</span></p></article></div>
+<article class="example example-like" id="ex-indef-basic2"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-indef-basic2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-indef-basic2"><article class="example example-like"><p id="p-651">Compute <span class="process-math">\(\displaystyle \int t^5\,dt\text{.}\)</span></p></article></div>
+<article class="example example-like" id="ex-antideriv-basic2"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-antideriv-basic2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-antideriv-basic2"><article class="example example-like"><p id="p-652">Compute the indefinite integral of <span class="process-math">\(\displaystyle f(t)=\frac{1}{t^{4}}\text{.}\)</span></p></article></div>
+<article class="theorem theorem-like" id="thm-constant-product-integral"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Constant product rule for integrals.</span>
+</h6>
+<p id="p-653">Suppose that <span class="process-math">\(\displaystyle \int
+f(x)\,dx=F(x)+c\text{,}\)</span> then for any constant <span class="process-math">\(a\text{,}\)</span></p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boxed{\int
+af(x)\,dx=a\int f(x)\,dx= aF(x)+c}
+\end{equation*}
+</div></article><p id="p-654">Compute <span class="process-math">\(\displaystyle \int 12t^5\,dt\text{.}\)</span></p>
+<p id="p-655">Compute <span class="process-math">\(\displaystyle \int
+\frac{3}{t^{4}}\,dt\text{.}\)</span></p>
+<p id="p-656">Suppose that <span class="process-math">\(\displaystyle \int
+f(x)\,dx=F(x)+c\)</span> and <span class="process-math">\(\displaystyle \int g(x)\,dx=G(x)+c\text{,}\)</span> then</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\boxed{\int f(x)+g(x)\,dx=\int f(x)\,dx +\int g(x)\,dx=
+F(x)+G(x)+c}
+\end{equation*}
+</div>
+<p id="p-657">Compute <span class="process-math">\(\displaystyle \int 12t^5 +
+\frac{3}{t^{4}}\,dt\text{.}\)</span></p>
+<p id="p-658">Consider a seed in a flower in a very tall tree. From an initial height of 14.7 meters, the seed pops straight into the air with an initial velocity of 9.8 meters per second (<span class="process-math">\(\displaystyle
+v(0)=9.8~\frac{\text{m}}{\text{s}}\)</span>) and an acceleration due to gravity of <span class="process-math">\(\displaystyle
+a(t)=-9.8~\frac{\text{m}}{\text{s${}^{2}$}}\)</span> (in the downward direction). Find the velocity function <span class="process-math">\(v(t)\)</span> and use that to find its position function <span class="process-math">\(s(t)\)</span> of the seed.</p>
+<ol id="p-659" class="decimal">
+<li id="li-196"><p id="p-660">When will the seed land?</p></li>
+<li id="li-197"><p id="p-661">What is the velocity of the seed when it smashes into the ground?</p></li>
+</ol></section></section></section><section class="exercises" id="quick-practice-des"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Quick practice</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-37"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<p id="p-662">Is <span class="process-math">\(\dfrac{dq}{dt} = 2.1q(1-q)\)</span> a pure-time or autonomous differential equation?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like"><p id="p-663">In <span class="process-math">\(\dfrac{dq}{dt} = 2.1q(1-q)\text{,}\)</span> the unknown quantity that is being differentiated, <span class="process-math">\(q = q(t)\text{,}\)</span> appears on the right-hand side, and does so in the absence of the variable <span class="process-math">\(t\)</span> on the right-hand side, this is indicative of an autonomous equation.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-38"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<p id="p-664">Compute <span class="process-math">\(\displaystyle\int
+3x+2\,dx\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like"><p id="p-665">The indefinite integral <span class="process-math">\(\displaystyle\int
+3x+2\,dx\)</span> evaluates to <span class="process-math">\(\displaystyle\int 3x+2\,dx =
+\dfrac{3}{2}x^{2}+2x+c\text{.}\)</span></p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-39"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<p id="p-666">What quantity is obtained when a pure-time growth rate indicating a rate of change of length is integrated?</p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like"><p id="p-667">Integrating the rate of change of length gives length itself as a function of time.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-40"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<p id="p-668">Compute <span class="process-math">\(\displaystyle\int 0\,dx\text{.}\)</span></p>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-43" id="solution-43"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like"><p id="p-669">The indefinite integral <span class="process-math">\(\displaystyle\int 0\,dx\)</span> evaluates to <span class="process-math">\(\displaystyle\int 0\,dx = c\text{.}\)</span></p></div></div>
+</div></article></section></section></div></main>
+</div>
+</body>
+</html>
