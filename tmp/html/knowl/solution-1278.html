@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:17:33-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.2.2.27.1</span><span class="period">.</span>
+</h6>
+<p>Using logarithm rules, we see</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\displaystyle\sum_{n=5}^\infty \log\left(\frac{n-3}{n}\right)=
+\displaystyle\sum_{n=5}^\infty \big[\log(n-3)-\log n\big]
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">which looks like a telescoping series. Let's make a table to figure out the partial sums.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\begin{array}{c||cc||c}
+\mathbf{n}&amp;\mathbf{\log(n\!-\!3)}\!\!&amp;\mathbf{-\log n}&amp;\mathbf{s_n}\\
+\hline
+5&amp;\log 2&amp;\color{red}{-\log 5}&amp;\log 2 - \color{red}{\log 5}\\
+6&amp;\log 3&amp;\color{green}{-\log 6}&amp;\log 2 +\log 3- \color{red}{\log 5}\color{green}{-\log 6}\\
+7&amp;\log 4&amp;\color{purple}{-\log 7}&amp;\log 2 +\log 3+\log 4- \color{red}{\log 5}\color{green}{-\log 6}
+\color{purple}{-\log 7}\\
+8&amp;\color{red}{\log 5} &amp;\color{blue}{-\log 8} &amp;\log 2 +\log 3+\log 4 \color{green}{-\log 6}
+\color{purple}{-\log 7}\color{blue}{-\log 8}\\
+9&amp;\color{green}{\log 6}&amp;\color{orange}{-\log 9}&amp;\log 2 +\log 3+\log 4
+\color{purple}{-\log 7}\color{blue}{-\log 8}\color{orange}{-\log 9}\\
+10&amp;\color{purple}{\log 7}&amp;\color{brown}{-\log 10}&amp;\log 2 +\log 3+\log 4
+\color{blue}{-\log 8}\color{orange}{-\log 9}\color{brown}{-\log 10}\\
+11&amp;\color{blue}{\log 8}&amp;\color{yellow}{-\log 11}&amp;\log 2 +\log 3+\log 4
+\color{orange}{-\log 9}\color{brown}{-\log 10}\color{yellow}{-\log 11}\\
+\vdots&amp;&amp;&amp;
+\end{array}
+\end{equation*}
+</div>
+<p>There is a “lag” before the terms cancel, which is why they “build up” more than we saw in past examples. Still, we can clearly see the \(N\)th partial sum:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\amp\sum_{n=5}^N \Big(\log(n-3)-\log(n)\Big)\\
+&amp;\hskip0.5in=\log 2+\log 3 + \log 4 - \log(N-2)-\log(N-1)-\log(N)\\
+&amp;\hskip0.5in=\log \left(\frac{24}{N(N-1)(N-2)}\right)\\
+\end{align*}
+<p class="intertext">when \(N \geq 7\text{.}\) So,</p>
+\begin{align*}
+\sum_{n=5}^\infty \Big(\log(n-3)-\log(n)\Big)&amp;=
+\lim_{N \to \infty}s_N\\
+&amp;=\lim_{N \to \infty}\log \left(\frac{24}{N(N-1)(N-2)}\right)\\
+&amp;=-\infty
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="section-57.html#solution-1278">in-context</a></span>
+</body>
+</html>

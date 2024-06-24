@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:12:32-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p xmlns:svg="http://www.w3.org/2000/svg">The techniques of Section 2.1 get pretty complicated here, so we will use the techniques we developed in Questions <a class="xref" data-knowl="./knowl/prob_s2_3tank1.html" title="Exercise 7.3.3.6">6</a>, <a class="xref" data-knowl="./knowl/prob_s2_3_cone.html" title="Exercise 7.3.3.29">29</a> and <a class="xref" data-knowl="./knowl/prob_s2_3_cone2.html" title="Exercise 7.3.3.30">30</a> in this section. That is, (1) find the centre of mass of the water in its starting and ending positions, and then (2) compute the work done as the work moving a point mass with the weight of the water from the first centre of mass to the second. For the centre of mass, all we need to know is the height — for one thing, we could find the other coordinates by symmetry, but we don't need them. The height moved by the water is all that matters if we're calculating the work done opposing gravity.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><em class="alert">Let's start by calculating the volume of the water.</em> The volume of a sphere of radius 1 is \(\frac{4}{3}\pi\cdot 1^3\text{,}\) so the volume of water is \(\frac{2}{3}\pi\) m\(^3\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><em class="alert">Then the mass of the water is</em> \(\frac{2000}{3}\pi\) kg.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><em class="alert">Next, we calculate the centre of mass of Tank \(A\text{,}\) and the work done to pump the water out of Tank \(A\) to a height of 3 metres.</em> Symmetry alone won't tell us  the height of the centre of mass. We'll show you two ways to go about this.</p>
+<ul class="disc">
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">Option 1: As in Question <a class="xref" data-knowl="./knowl/prob_s2_3_cone.html" title="Exercise 7.3.3.29">29</a>, we'll model the tank of water as a vertical rod, along the \(y\)-axis spanning the interval \([0,1]\text{,}\) such that the mass of a piece of the rod along \([a,b]\) is the same as the mass of the water from height \(y=a\) to height \(y=b\text{.}\) Then, the centre of mass of the rod will be the same as the centre of mass of the water.</p>
+<p>Consider a horizontal slice of water at height \(y\text{,}\) with thickness \(\dee{y}\text{.}\) If the radius of this slice is \(r(y)\text{,}\) then the volume of the slice is \(\pi r(y)^2\,\dee{y}\) m\(^3\text{,}\) so its mass is \(1000\pi r(y)^2\,\dee{y}\) kg. Then the mass of the slice of the rod at position \(y\) with length \(\dee{y}\) is \(1000\pi r(y)^2\,\dee{y}\) kg, so its density \(\rho(y)\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\rho(y) = \frac{1000\pi r(y)^2\,\dee{y}\text{ kg}}{\dee{y}\text{ m}} = 1000\pi r(y)^2  \frac{\text{kg}}{\text{m}}.
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">So, let's find \(r(y)\text{,}\) the radius of the slice of water at height \(y\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-944.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Using the Pythagorean Theorem, \(r = \sqrt{1-y^2}\text{.}\) Therefore,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\rho(y)= 1000\pi(1-y^2)
+\end{equation*}
+</div>
+<p>We use Equation <a class="xref" data-knowl="./knowl/eq_TRQvariabledensityrod.html" title="Equation 7.3.4: Centre of mass (continuous mass)">7.3.4</a> to calculate the centre of mass of the rod, which is the height of the centre of mass of Tank \(A\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\bar y_A&amp;=\frac{\int_0^1 y\rho(y)\,\dee{y}}{\int_0^1 \rho(y)\,\dee{y}} =
+\frac{\int_0^1 1000\pi y(1-y^2)\,\dee{y}}{\int_0^1 1000\pi(1-y^2)\,\dee{y}}\\
+&amp;=\frac{\int_0^1(y-y^3)\,\dee{y}}{\int_0^1(1-y^2)\,\dee{y}} = \frac{\left[\frac{1}{2}y^2 - \frac{1}{4}y^4\right]_0^1}{\left[y-\frac{1}{3}y^3\right]_0^1} = \frac{\frac{1}{2}-\frac{1}{4}}{1-\frac{1}{3}}=\frac{3}{8} \text{m}
+\end{align*}
+</div>
+<p>From here, we can find the work done moving pumping the water to a height of 3 metres. We've moved the centre of mass from \(\bar y_A = \frac{3}{8}\) metres to 3 metres.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+W&amp;=\left(\frac{2000}{3}\pi \text{kg}\right)\times\left(3 - \frac{3}{8} \text{m}\right)\times\left(9.8  \frac{\text{m}}{\text{sec}^2}\right)\\
+&amp;=17,150\pi \text{J}
+\end{align*}
+</div>
+</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">Option 2: We can use the techniques of Section <a href="sec_work.html" class="internal" title="Section 7.1: Work">7.1</a> to calculate the amount of work it takes to pump the water from tank \(A\) to a height of 3 metres. That solves part (a), and we can use the amount of work to figure out the centre of gravity of the water in Tank \(A\) to help us solve part (b).</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">At height \(y\text{,}\) a horizontal layer of water in Tank \(A\) forms a disk with thickness \(\dee{y}\) and radius \(\sqrt{1-y^2}\text{.}\) (The radius  comes from the Pythagorean Theorem — see  the diagram below.)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-945.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">The volume of the layer at height \(y\) is \(\pi \left(\sqrt{1-y^2}\right)^2\,\dee{y} = \pi(1-y^2)\,\dee{y}\) m\(^3\text{,}\) so its mass is \(1000\pi(1-y^2)\,\dee{y}\) kg.</p>
+<p>The layer at height \(y\) needs to be pumped a distance of \(3-y\) metres. So, the work involved pumping the layer at height \(y\) is:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dee{W}&amp;=\left(1000\pi(1-y^2)\,\dee{y} \text{kg}\right)\times\left(3-y \text{m}\right)\times\left(9.8 \text{m}/\text{sec}^2\right)\\
+&amp;=9800\pi(y^3-3y^2-y+3)\,\dee{y}\text{ J}\\
+\end{align*}
+<p class="intertext">Then the work involved pumping out the entire tank to a height of 3 metres is:</p>
+\begin{align*}
+W&amp;=\int_0^1 9800\pi(y^3-3y^2-y+3)\,\dee{y}\\
+&amp;=9800\pi\left[\frac{1}{4}y^4 - y^3-\frac{1}{2}y^2+3y\right]_0^1\\
+&amp;=17,150\pi \text{J}
+\end{align*}
+</div>
+<p>This gives us an answer to part (a). To find the centre of mass of the water in Tank \(A\text{,}\) note that the work done is equivalent to moving a point mass from the centre of mass of the tank to a height of 3 metres. We know the water in Tank \(A\) has mass \(\frac{2000}{3}\pi\) kg. So, if \(\bar y_A\) is the centre of mass of the water in Tank \(A\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+W&amp;=\left(\frac{2000}{3}\pi \text{kg}\right)\times\left(3-\bar y_A \text{m}\right)\times\left(9.8 \text{m}/\text{sec}^2\right)\\
+17,150\pi&amp;=\left(\frac{2000}{3}\pi\right)\left(3-\bar y_A\right)(9.8)\\
+\frac{21}{8}&amp;=3-\bar y_A\\
+\bar y_A &amp;= \frac{3}{8} \text{m}
+\end{align*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation"><em xmlns:svg="http://www.w3.org/2000/svg" class="alert">Next let's calculate the centre of mass of the water in Tank \(B\text{.}\)</em> Since the volume of the water in Tank \(B\) is \(\frac{2}{3}\pi\) m\(^3\text{,}\) and the base of Tank \(B\) has area 1 m\(^2\text{,}\) the height of the water in Tank \(B\) is \(\frac{2}{3}\pi\) m. Since the water is of uniform density, and Tank \(B\) has uniform horizontal cross-sections, by symmetry the centre of mass of the water in Tank \(B\) is at</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\bar y_B = \frac{1}{3}\pi\text{ m}.
+\end{equation*}
+</div>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="alert">Now, we can calculate the work done by moving the water directly from Tank \(A\) to its final position in Tank \(B\text{.}\)</em> The work done moving a point mass of \(\frac{2000}{3}\pi\) kg a distance of \(\bar y_B - \bar y_A = \frac{1}{3}\pi-\frac{3}{8}\) m against the gravity, \(g=9.8\) m/sec\(^2\text{,}\) is:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+W &amp;= \left(\frac{2000}{3}\pi\text{ kg}\right)\times\left( \frac{1}{3}\pi-\frac{3}{8} \text{ m}\right)\times\left(9.8 \text{m/sec}^2\right)\\
+&amp;=\frac{2450}{9}\pi\left(8\pi-9\right)\approx 13,797\text{ J}
+\end{align*}
+</div>
+<p>Finally, the “wasted” work is:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\Delta W &amp;=17,150\pi -\frac{2450}{9}\pi\left(8\pi-9\right)\\
+&amp;=2450\pi\left(7-\frac{8\pi-9}{9}\right)\\
+&amp;=2450\pi\left(8-\frac{8\pi}{9}\right)\\
+&amp;=19,600\pi\left(1-\frac{\pi}{9}\right)\\
+\end{align*}
+<p class="intertext">As a percentage of 17,150\(\pi\text{,}\) this is:</p>
+\begin{align*}
+\text{waste}&amp;=
+\left(\frac{19,600\pi\left(1-\frac{\pi}{9}\right)}{17,150\pi}\right)\times 100\\
+&amp;=\frac{8}{7}\left(1-\frac{\pi}{9}\right)\times 100\approx 74\%
+\end{align*}
+</div>
+</div></body>
+</html>

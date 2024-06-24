@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:29:43-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg"><em class="alert">Proof of Theorem <a class="xref" data-knowl="./knowl/thm_arith_lim.html" title="Theorem 2.4.3: Arithmetic of limits">2.4.3</a> — limit of a product.</em></p>
+<p>Let \(a \in \mathbb{R}\) and assume that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{x \to a} f(x) &amp;= F &amp; \text{ and } &amp;&amp;
+\lim_{x \to a} g(x) &amp;= G.
+\end{align*}
+</div>
+<p data-braille="continuation">We wish to show that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{x \to a} f(x)\cdot g(x) &amp;= F\cdot G.
+\end{align*}
+</div>
+<p>Let \(\epsilon \gt 0\text{.}\) Set \(\epsilon_1 = \frac{\epsilon}{2(|G|+1)}\) (the extra \(+1\) in the denominator is just there to make sure that \(\epsilon_1\) is well–defined even if \(G=0\)),  and \(\epsilon_2 = \frac{\epsilon}{2(|F|+1)}\text{.}\) From this we establish the  existence of \(\delta_1,  \delta_2, \delta_3\) which we need below.</p>
+<ul class="disc">
+<li>By assumption \(f(x) \to F\) so there exists \(\delta_1 \gt 0\) so that whenever  \(|x-a| \lt \delta_1\text{,}\) we also have \(|f(x)-F| \lt \epsilon_1\text{.}\)</li>
+<li>Similarly because \(g(x) \to G\text{,}\) there exists \(\delta_2 \gt 0\)  so that whenever \(|x-a| \lt \delta_2\text{,}\) we also have  \(|g(x)-G| \lt \epsilon_2\text{.}\)</li>
+<li>By Lemma <a class="xref" data-knowl="./knowl/lem_fx_F1.html" title="Lemma 2.9.2">2.9.2</a> there exists \(\delta_3 \gt 0\) so that whenever  \(|x-a| \lt \delta_3\text{,}\) we also have \(|f(x)| \leq |F|+1\text{.}\)</li>
+</ul>
+<p>Let \(\delta = \min\{\delta_1, \delta_2, \delta_3 \}\text{,}\) assume \(|x-a| \lt \delta\)   and consider \(|f(x) \cdot g(x) - F\cdot G|\text{.}\) Rearrange the terms as we did  above:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+| f(x) \cdot g(x) - F\cdot G |
+&amp;= |f(x)\cdot( g(x)-G) + (f(x)-F)\cdot G |\\
+&amp; \leq |f(x)| \cdot |g(x)-G| + |G| \cdot |f(x)-F|
+\end{align*}
+</div>
+<p data-braille="continuation">By our three dot-points above we know that \(|f(x)-F| \lt \epsilon_1\) and  \(|g(x)-G| \lt \epsilon_2\) and \(|f(x)| \leq |F|+1\text{,}\) so we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+| f(x) \cdot g(x) - F\cdot G |  &amp; \lt  |f(x)| \cdot \epsilon_2 + |G| \cdot \epsilon_1\\
+\end{align*}
+<p class="intertext">sub in \(\epsilon_1,\epsilon_2\) and bound on \(f(x)\)</p>
+\begin{align*}
+&amp; \lt  (|F|+1) \cdot \frac{\epsilon}{2(|F|+1)} + |G|\cdot\frac{\epsilon}{2(|G|+1)}\\
+&amp;\leq  \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon.
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Thus we have shown that for any \(\epsilon \gt 0\) there exists \(\delta \gt 0\) so that  when \(|x-a| \lt \delta\) we also have \(|f(x)\cdot g(x)-F\cdot G| \lt \epsilon\text{.}\) Hence  \(f(x)\cdot g(x) \to F\cdot G\text{.}\)</p></article></body>
+</html>

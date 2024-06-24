@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T15:15:26-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Inverse Trigonometric Functions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-26.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_deriv.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_mvt.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-26.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_deriv.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_mvt.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig" class="active">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_invTrig"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.12</span> <span class="title">Inverse Trigonometric Functions</span>
+</h2>
+<section class="introduction" id="introduction-66"><p id="p-2368">One very useful application of implicit differentiation is to find the derivatives of inverse functions. We have already used this approach to find the derivative of the inverse of the exponential function — the logarithm.</p>
+<p id="p-2369">We are now going to consider the problem of finding the derivatives of the inverses of trigonometric functions. Now is a very good time to go back and reread Section <a href="sec_inverse_functions.html" class="internal" title="Section 1.6: Inverse Functions">1.6</a> on inverse functions — especially Definition <a class="xref" data-knowl="./knowl/def_inv_func.html" title="Definition 1.6.4">1.6.4</a>. Most importantly, given a function \(f(x)\text{,}\) its inverse function \(f^{-1}(x)\) only exists, with domain \(D\text{,}\) when \(f(x)\) passes the “horizontal line test”, which says that for each \(Y\) in \(D\) the horizontal line \(y=Y\) intersects the graph \(y=f(x)\) exactly once. (That is, \(f(x)\)  is a one-to-one function.)</p>
+<p id="p-2370">Let us start by playing with the sine function and determine how to restrict the domain of \(\sin x\) so that its inverse function exists.</p>
+<article class="example example-like" id="eg_INVstilllesslucky"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_INVstilllesslucky"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.12.1</span><span class="period">.</span><span class="space"> </span><span class="title">The inverse of \(\sin x\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_INVstilllesslucky"><article class="example example-like"><p id="p-2371">Let \(y=f(x)=\sin(x)\text{.}\) We would like to find the inverse function which takes \(y\) and returns to us a unique \(x\)-value so that \(\sin(x)=y\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/sinInv.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<ul id="p-2372" class="disc">
+<li id="li-611">For each real number \(Y\text{,}\) the number of \(x\)-values that obey \(\sin(x)=Y\text{,}\) is exactly the number of times the horizontal straight line \(y=Y\) intersects the graph of \(\sin(x)\text{.}\)</li>
+<li id="li-612">When \(-1\le Y\le 1\text{,}\) the horizontal line intersects the graph infinitely many times. This is illustrated in the figure above by the line \(y=0.3\text{.}\)</li>
+<li id="li-613">On the other hand, when \(Y \lt -1\) or \(Y \gt 1\text{,}\) the line \(y=Y\) never intersects the graph of \(\sin(x)\text{.}\) This is illustrated in the figure above by the line \(y=-1.2\text{.}\)</li>
+</ul>
+<p data-braille="continuation">This is exactly the horizontal line test and it shows that the sine function is not one-to-one.</p>
+<p id="p-2373">Now consider the function</p>
+<div class="displaymath">
+\begin{align*}
+y &amp;= \sin(x) &amp; \text{with domain } -\frac{\pi}{2} \leq x \leq \frac{\pi}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">This function has the same formula but the domain has been restricted so that, as we'll now show, the horizontal line test is satisfied.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/sinInvB.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2374">As we saw above when \(|Y| \gt 1\) no \(x\) obeys \(\sin(x)=Y\) and, for each \(-1\le Y\le 1\text{,}\) the line \(y=Y\) (illustrated in the figure above with \(y=0.3\)) crosses the curve \(y=\sin(x)\) infinitely many times, so that there are infinitely many \(x\)'s that obey \(f(x)=\sin x=Y\text{.}\) However exactly one of those crossings (the dot in the figure) has \(-\frac{\pi}{2}\le x \le\frac{\pi}{2}\text{.}\)</p>
+<p id="p-2375">That is, for each \(-1\le Y \le 1\text{,}\) there is exactly one \(x\text{,}\) call it \(X\text{,}\) that obeys both</p>
+<div class="displaymath">
+\begin{align*}
+\sin X &amp;= Y &amp;\text{and} &amp;&amp; -\frac{\pi}{2}\le X \le \frac{\pi}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">That unique value, \(X\text{,}\) is typically denoted \(\arcsin(Y)\text{.}\) That is</p>
+<div class="displaymath">
+\begin{align*}
+\sin( \arcsin(Y) ) &amp;= Y &amp; \text{and} &amp;&amp; -\frac{\pi}{2}\le \arcsin(Y) \le\frac{\pi}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">Renaming \(Y\rightarrow x\text{,}\) the inverse function \(\arcsin(x)\) is defined for all \(-1 \le x \le 1\) and is determined by the equation</p>
+<article class="fact theorem-like" id="eq_DIFFarcsin"><h6 class="heading">
+<span class="type">Equation</span><span class="space"> </span><span class="codenumber">3.12.2</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-2376">
+\begin{equation*}
+\sin\big(\arcsin(x)\big)=x\qquad\text{and}\qquad
+-\frac{\pi}{2}\le \arcsin(x)\le\frac{\pi}{2}.
+\end{equation*}
+</div></article><p id="p-2377">Note that many texts will use \(\sin^{-1}(x)\) to denote arcsine, however we will use \(\arcsin(x)\) since we feel that it is clearer <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-94" id="fn-94"><sup> 1 </sup></a>; the reader should recognise both.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-94"><div class="fn">The main reason being that people frequently confuse \(\sin^{-1}
+(x)\) with \((\sin(x))^{-1} = \frac{1}{\sin x}\text{.}\) We feel that prepending the prefix “arc” less likely to lead to such confusion. The notations \(\textrm{asin}(x)\) and \(\textrm{Arcsin}(x)\) are also used.</div></div></article></div>
+<article class="example example-like" id="eg_DIFFinvsin"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_DIFFinvsin"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.12.3</span><span class="period">.</span><span class="space"> </span><span class="title">More on the inverse of \(\sin x\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_DIFFinvsin"><article class="example example-like"><p id="p-2378">Since</p>
+<div class="displaymath">
+\begin{equation*}
+\sin\frac{\pi}{2}=1\qquad\sin\frac{\pi}{6}=\frac{1}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">and \(-\frac{\pi}{2}\le \frac{\pi}{6},\frac{\pi}{2}\le \frac{\pi}{2}\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\arcsin 1=  \frac{\pi}{2}\qquad \arcsin \frac{1}{2}=  \frac{\pi}{6}
+\end{equation*}
+</div>
+<p data-braille="continuation">Even though</p>
+<div class="displaymath">
+\begin{equation*}
+\sin(2\pi)=0
+\end{equation*}
+</div>
+<p data-braille="continuation">it is <em class="alert">not</em> true that \(\arcsin 0 =2\pi\text{,}\) and it is <em class="alert">not</em> true that \(\arcsin\big(\sin(2\pi)\big) =2\pi\text{,}\) because \(2\pi\) is not between \(-\frac{\pi}{2}\) and \(\frac{\pi}{2}\text{.}\) More generally</p>
+<div class="displaymath">
+\begin{align*}
+\arcsin\big(\sin(x)\big) &amp;=\text{ the unique angle } \theta \text{ between }
+-\frac{\pi}{2} \text{ and } \frac{\pi}{2} \text{ obeying } \sin \theta =\sin x\\
+&amp;= x\quad\text{if and only if $-\frac{\pi}{2}\le x\le \frac{\pi}{2}$}
+\end{align*}
+</div>
+<p data-braille="continuation">So, for example, \(\arcsin\big(\sin\big(\frac{11\pi}{16}\big)\big)\) cannot be \(\frac{11\pi}{16}\) because \(\frac{11\pi}{16}\) is bigger than \(\frac{\pi}{2}\text{.}\) So how do we find the correct answer? Start by sketching the graph of \(\sin(x)\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/sinInvEg.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2379">It looks like the graph of \(\sin x\) is symmetric about \(x=\frac{\pi}{2}\text{.}\) The mathematical way to say that “the graph of \(\sin x\) is symmetric about \(x=\frac{\pi}{2}\)” is “\(\sin(\frac{\pi}{2}-\theta)=
+\sin(\frac{\pi}{2}+\theta)\)” for all \(\theta\text{.}\) That is indeed true <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-95" id="fn-95"><sup> 2 </sup></a> .</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-95"><div class="fn">Indeed both are equal to \(\cos \theta\text{.}\) You can see this by playing with the trig identities in Appendix <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec_trig_add" missing]</code>.</div></div>
+<p id="p-2380">Now \(\frac{11\pi}{16}=\frac{\pi}{2} +\frac{3\pi}{16}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+\sin\Big(\frac{11\pi}{16}\Big)
+=\sin\Big(\frac{\pi}{2}+\frac{3\pi}{16}\Big)
+=\sin\Big(\frac{\pi}{2}-\frac{3\pi}{16}\Big)
+=\sin\Big(\frac{5\pi}{16}\Big)
+\end{equation*}
+</div>
+<p data-braille="continuation">and, since \(\frac{5\pi}{16}\) is indeed between \(-\frac{\pi}{2}\) and \(\frac{\pi}{2}\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\arcsin\Big(\sin\Big(\frac{11\pi}{16}\Big)\Big)
+=\frac{5\pi}{16}\qquad\Big(\text{and not $\frac{11\pi}{16}$}\Big).
+\end{equation*}
+</div></article></div></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.12.1</span> <span class="title">Derivatives of Inverse Trig Functions</span>
+</h3>
+<p id="p-2381">Now that we have explored the arcsine function we are ready to find its derivative. Lets call</p>
+<div class="displaymath">
+\begin{align*}
+\arcsin(x) &amp;= \theta(x),
+\end{align*}
+</div>
+<p data-braille="continuation">so that the derivative we are seeking is \(\diff{\theta}{x}\text{.}\) The above equation is (after taking sine of both sides) equivalent to</p>
+<div class="displaymath">
+\begin{align*}
+\sin(\theta) &amp;= x
+\end{align*}
+</div>
+<p data-braille="continuation">Now differentiate this using implicit differentiation (we just have to remember that \(\theta\) varies with \(x\) and use the chain rule carefully):</p>
+<div class="displaymath">
+\begin{align*}
+\cos(\theta) \cdot \diff{\theta}{x} &amp;= 1\\
+\diff{\theta}{x} &amp;= \frac{1}{\cos(\theta)} &amp; \text{substitute $\theta = \arcsin x$}\\
+\diff{}{x} \arcsin x &amp;= \frac{1}{\cos(\arcsin x)}
+\end{align*}
+</div>
+<p data-braille="continuation">This doesn't look too bad, but it's not really very satisfying because the right hand side is expressed in terms of \(\arcsin(x)\) and we do not have an explicit formula for \(\arcsin(x)\text{.}\)</p>
+<p id="p-2382">However even without an explicit formula for \(\arcsin(x)\text{,}\) it is a simple matter to get an explicit formula for \(\cos\big(\arcsin(x)\big)\text{,}\) which is all we need. Just draw a right–angled triangle with one angle being \(\arcsin(x)\text{.}\) This is done in the figure below <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-96" id="fn-96"><sup> 3 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-96"><div class="fn">The figure is drawn for the case that \(0\le\arcsin(x)\le\frac{\pi}{2}\text{.}\) Virtually the same argument works for the case \(-\frac{\pi}{2}\le\arcsin(x)\le 0\)</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/triangleAsin.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2383">Since \(\sin(\theta)=x\) (see <a class="xref" data-knowl="./knowl/eq_DIFFarcsin.html" title="Equation 3.12.2">3.12.2</a>), we have made the side opposite the angle \(\theta\) of length \(x\) and the hypotenuse of length \(1\text{.}\) Then, by Pythagoras, the side adjacent to \(\theta\) has length \(\sqrt{1-x^2}\) and so</p>
+<div class="displaymath">
+\begin{gather*}
+\cos\big(\arcsin(x)\big)=\cos(\theta)=\sqrt{1-x^2}
+\end{gather*}
+</div>
+<p data-braille="continuation">which in turn gives us the answer we need:</p>
+<div class="displaymath">
+\begin{gather*}
+\diff{}{x} \arcsin(x) =\frac{1}{\sqrt{1-x^2}}
+\end{gather*}
+</div>
+<p id="p-2384">The definitions for \(\arccos\text{,}\) \(\arctan\) and \(\arccot\) are developed in the same way. Here are the graphs that are used.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/cosInvB.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/tanInvB.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/cotInvB.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2385">The definitions for the remaining two inverse trigonometric functions may also be developed in the same way<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-97" id="fn-97"><sup> 4 </sup></a><a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-98" id="fn-98"><sup> 5 </sup></a>. But it's a little easier to use</p>
+<div class="displaymath">
+\begin{gather*}
+\csc x=\frac{1}{\sin x} \qquad
+\sec x=\frac{1}{\cos x} 
+\end{gather*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-97"><div class="fn">In fact, there are two different widely used definitions of \(\arcsec x\text{.}\) Under our definition, below, \(\theta=\arcsec x\) takes values in \(0\le\theta\le\pi\text{.}\) Some people, perfectly legitimately, define \(\theta=\arcsec x\) to take values in the union of \(0\le \theta\lt\frac{\pi}{2}\) and \(\pi\le\theta\lt\frac{3\pi}{2}\text{.}\) Our definition is sometimes called the “trigonometry friendly” definition. The definition itself has the advantage of simplicity. The other definition is sometimes called the “calculus friendly” definition. It eliminates some absolute values and hence simplifies some computations. Similarly there are two different widely used definitions of \(\arccsc x\text{.}\)</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-98"><div class="fn">One could also define \(\arccot(x)=\arctan(1/x)\) with \(\arccot(0)=\frac{\pi}{2}\text{.}\) We have chosen not to do so, because the definition we have chosen is both continuous and standard.</div></div>
+<article class="definition definition-like" id="def_DIFFinvtrig"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.12.4</span><span class="period">.</span>
+</h6>
+<p id="p-2386">\(\arcsin x\) is defined for \(|x|\le 1\text{.}\) It is the unique number obeying</p>
+<div class="displaymath">
+\begin{align*}
+\sin\big(\arcsin(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
+-\frac{\pi}{2}\le &amp;\arcsin(x)\le\frac{\pi}{2}\\
+\end{align*}
+<p class="intertext">\(\arccos x\) is defined for \(|x|\le 1\text{.}\) It is the unique number obeying</p>
+\begin{align*}
+\cos\big(\arccos(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
+0\le &amp;\arccos(x)\le\pi\\
+\end{align*}
+<p class="intertext">\(\arctan x\) is defined for all \(x\in\bbbr\text{.}\) It is the unique number obeying</p>
+\begin{align*}
+\tan\big(\arctan(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
+-\frac{\pi}{2} \lt  &amp;\arctan(x) \lt \frac{\pi}{2}\\
+\end{align*}
+<p class="intertext">\(\arccsc x=\arcsin\frac{1}{x}\) is defined for \(|x|\ge 1\text{.}\) It is the unique number obeying</p>
+\begin{align*}
+\csc\big(\arccsc(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
+-\frac{\pi}{2}\le &amp;\arccsc(x)\le\frac{\pi}{2}\\
+\end{align*}
+<p class="intertext">\(\ \ \ \ \ \ \ \ \)Because \(\csc(0)\) is undefined, \(\arccsc(x)\) never takes the value \(0\text{.}\)</p>
+\begin{align*}
+\end{align*}
+<p class="intertext">\(\arcsec x=\arccos\frac{1}{x}\) is defined for \(|x|\ge 1\text{.}\) It is the unique number obeying</p>
+\begin{align*}
+\sec\big(\arcsec(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
+0\le &amp;\arcsec(x)\le\pi\\
+\end{align*}
+<p class="intertext">\(\ \ \ \ \ \ \ \ \)Because \(\sec(\pi/2)\) is undefined, \(\arcsec(x)\) never takes the value \(\pi/2\text{.}\)</p>
+\begin{align*}
+\end{align*}
+<p class="intertext">\(\arccot x\) is defined for all \(x\in\bbbr\text{.}\) It is the unique number obeying</p>
+\begin{align*}
+\cot\big(\arccot(x)\big)&amp;=x &amp;&amp;\text{and}&amp;
+0 \lt  &amp;\arccot(x)  \lt \pi
+\end{align*}
+</div></article><article class="example example-like" id="example-99"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-99"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.12.5</span><span class="period">.</span><span class="space"> </span><span class="title">The derivative of \(\arccos x\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-99"><article class="example example-like"><p id="p-2387">To find the derivative of \(\arccos\) we can follow the same steps:</p>
+<ul class="disc">
+<li id="li-614">Write \(\arccos(x) =\theta(x)\) so that \(\cos\theta = x\) and the desired derivative is \(\diff{\theta}{x}\text{.}\)</li>
+<li id="li-615">Differentiate implicitly, remembering that \(\theta\) is a function of \(x\text{:}\)<div class="displaymath">
+\begin{align*}
+-\sin\theta \diff{\theta}{x} &amp;= 1\\
+\diff{\theta}{x} &amp;= -\frac{1}{\sin\theta}\\
+\diff{}{x}\arccos x &amp;= -\frac{1}{\sin(\arccos x)}.
+\end{align*}
+</div>
+</li>
+<li id="li-616">
+<p id="p-2388">To simplify this expression, again draw the relevant triangle</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/triangleAcos.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2389">from which we see</p>
+<div class="displaymath">
+\begin{align*}
+\sin(\arccos x) = \sin\theta &amp;= \sqrt{1-x^2}.
+\end{align*}
+</div>
+</li>
+<li id="li-617">Thus<div class="displaymath">
+\begin{align*}
+\diff{}{x}\arccos x &amp;= -\frac{1}{\sqrt{1-x^2}}.
+\end{align*}
+</div>
+</li>
+</ul></article></div>
+<article class="example example-like" id="example-100"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-100"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.12.6</span><span class="period">.</span><span class="space"> </span><span class="title">The derivative of \(\arctan x\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-100"><article class="example example-like"><p id="p-2390">Very similar steps give the derivative of \(\arctan x\text{:}\)</p>
+<ul class="disc">
+<li id="li-618">Start with \(\theta = \arctan x\text{,}\) so \(\tan \theta = x\text{.}\)</li>
+<li id="li-619">Differentiate implicitly:<div class="displaymath">
+\begin{align*}
+\sec^2 \theta \diff{\theta}{x} &amp;= 1\\
+\diff{\theta}{x} &amp;= \frac{1}{\sec^2 \theta} = \cos^2 \theta\\
+\diff{}{x}\arctan x &amp;= \cos^2(\arctan x).
+\end{align*}
+</div>
+</li>
+<li id="li-620">
+<p id="p-2391">To simplify this expression, we draw the relevant triangle</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/triangleAtan.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2392">from which we see</p>
+<div class="displaymath">
+\begin{gather*}
+\cos^2(\arctan x) = \cos^2\theta = \frac{1}{1+x^2}
+\end{gather*}
+</div>
+</li>
+<li id="li-621">Thus<div class="displaymath">
+\begin{align*}
+\diff{}{x}\arctan x &amp;= \frac{1}{1+x^2}.
+\end{align*}
+</div>
+</li>
+</ul>
+<p id="p-2393">An almost identical computation gives the derivative of \(\arccot x\text{:}\)</p>
+<ul class="disc">
+<li id="li-622">Start with \(\theta = \arccot x\text{,}\) so \(\cot \theta = x\text{.}\)</li>
+<li id="li-623">Differentiate implicitly:<div class="displaymath">
+\begin{align*}
+-\csc^2 \theta \diff{\theta}{x} &amp;= 1\\
+\diff{}{x}\arccot x = \diff{\theta}{x} &amp;= -\frac{1}{\csc^2 \theta} = -\sin^2 \theta = -\frac{1}{1+x^2}
+\end{align*}
+</div>from the triangle <div class="sidebyside"><div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/triangleAcot.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+</ul></article></div>
+<article class="example example-like" id="example-101"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-101"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.12.7</span><span class="period">.</span><span class="space"> </span><span class="title">The derivative of \(\arccsc x\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-101"><article class="example example-like"><p id="p-2394">To find the derivative of \(\arccsc\) we can use its definition and the chain rule.</p>
+<div class="displaymath">
+\begin{align*}
+\theta &amp;= \arccsc x &amp; \text{take cosecant of both sides}\\
+\csc \theta &amp;= x &amp; \text{but $\csc \theta = \frac{1}{\sin\theta}$, so flip both sides}\\
+\sin \theta &amp;= \frac{1}{x} &amp; \text{now take arcsine of both sides}\\
+\theta &amp;= \arcsin\left(\frac{1}{x}\right)
+\end{align*}
+</div>
+<p data-braille="continuation">Now just differentiate, carefully using the chain rule :</p>
+<div class="displaymath">
+\begin{align*}
+\diff{\theta}{x} &amp;= \diff{}{x} \arcsin\left(\frac{1}{x}\right)\\
+&amp;= \frac{1}{\sqrt{1-x^{-2}}} \cdot \frac{-1}{x^2}\\
+\end{align*}
+<p class="intertext">To simplify further we will factor \(x^{-2}\) out of the square root. We need to be a little careful doing that. Take another look at examples <a class="xref" data-knowl="./knowl/eg_lim_tricky.html" title="Example 2.5.6: Be careful of limits involving roots">2.5.6</a> and <a class="xref" data-knowl="./knowl/eg_lim_tricky_part2.html" title="Example 2.5.7: Be careful of limits involving roots — continued">2.5.7</a> and the discussion between them before proceeding.</p>
+\begin{align*}
+&amp;= \frac{1}{\sqrt{x^{-2}(x^2-1)}} \cdot \frac{-1}{x^2}\\
+&amp;= \frac{1}{|x^{-1}|\cdot \sqrt{x^2-1}} \cdot \frac{-1}{x^2} &amp; \text{note that $x^2 \cdot |x^{-1}| = |x|$.}\\
+&amp;= - \frac{1}{|x|\sqrt{x^2-1}}
+\end{align*}
+</div>
+<p id="p-2395">In the same way we can find the derivative of the remaining inverse trig function. We just use its definition, a derivative we already know and the chain rule.</p>
+<div class="displaymath">
+\begin{gather*}
+\diff{}{x} \arcsec(x) = \diff{}{x} \arccos\Big(\frac{1}{x}\Big)
+=-\frac{1}{\sqrt{1-\frac{1}{x^2}}}\cdot\Big(-\frac{1}{x^2}\Big)
+=\frac{1}{|x|\sqrt{x^2-1}}
+\end{gather*}
+</div></article></div>
+<p id="p-2396">By way of summary, we have</p>
+<article class="theorem theorem-like" id="thm_DIFFinvtrigderiv"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.12.8</span><span class="period">.</span>
+</h6>
+<p id="p-2397">The derivatives of the inverse trigonometric functions are</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x} \arcsin(x) &amp;= \frac{1}{\sqrt{1-x^2}} &amp;
+\diff{}{x} \arccsc(x) &amp;= -\frac{1}{|x|\sqrt{x^2-1}}\\
+\diff{}{x} \arccos(x) &amp;= -\frac{1}{\sqrt{1-x^2}} &amp;
+\diff{}{x} \arcsec(x) &amp;= \frac{1}{|x|\sqrt{x^2-1}}\\
+\diff{}{x} \arctan(x) &amp;= \frac{1}{1+x^2} &amp;
+\diff{}{x} \arccot(x) &amp;= -\frac{1}{1+x^2}
+\end{align*}
+</div></article></section><section class="exercises" id="exercises-17"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.12.2</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-43">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-67"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-339"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-2398">Give the domains of each of the following functions.</p>
+<div class="displaymath">
+\begin{align*}
+\mbox{(a) } f(x)\amp=\arcsin(\cos x) \amp
+\mbox{(b) } g(x)\amp=\arccsc(\cos x)\\
+\mbox{(c) } h(x)\amp=\sin(\arccos x)
+\end{align*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-284" id="hint-284"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-284"><div class="hint solution-like"><p id="p-2399">Remember that only certain numbers can come out of sine and cosine, but any numbers can go in.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-339" id="answer-339"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-339"><div class="answer solution-like">
+<p id="p-2400">(a) \((-\infty,\infty)\)</p>
+<p id="p-2401">(b) all integer multiples of \(\pi\)</p>
+<p id="p-2402">(c) \([-1,1]\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-339" id="solution-339"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-339"><div class="solution solution-like">
+<p id="p-2403">(a) We can plug any number into the cosine function, and it will return a number in \([-1,1]\text{.}\) The domain of \(\arcsin x\) is \([-1,1]\text{,}\) so any number we plug into cosine will give us a valid number to plug into arcsine. So, the domain of \(f(x)\) is all real numbers.</p>
+<p id="p-2404">(b) We can plug any number into the cosine function, and it will return a number in \([-1,1]\text{.}\) The domain of \(\arccsc x\) is \((-\infty,-1] \cup [1,\infty)\text{,}\) so in order to have a valid number to plug into arccosecant, we need \(\cos x = \pm 1\text{.}\) That is, the domain of \(g(x)\) is all values \(x=n\pi\) for some integer \(n\text{.}\)</p>
+<p id="p-2405">(c) The domain of arccosine is \([-1,1]\text{.}\) The domain of sine is all real numbers, so no matter what number arccosine spits out, we can safely plug it into sine. So, the domain of \(h(x)\) is \([-1,1]\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-340"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-2406">A particle starts moving at time \(t=10\text{,}\) and it bobs up and down, so that its height at time \(t \geq 10\) is given by \(\cos t\text{.}\) True or false: the particle has height 1 at time \(t=\arccos(1)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-285" id="hint-285"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-285"><div class="hint solution-like"><p id="p-2407">What is the range of the arccosine function?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-340" id="answer-340"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-340"><div class="answer solution-like"><p id="p-2408">False</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-340" id="solution-340"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-340"><div class="solution solution-like">
+<p id="p-2409">False:  \(\cos t=1\) for infinitely many values of \(t\text{;}\) arccosine gives only the single value \(t=0\) for which \(\cos t=1\) and \(0 \leq t \leq \pi\text{.}\) The particle does not start moving until \(t=10\text{,}\) so \(t=0\) is not in the domain of the function describing its motion.</p>
+<p id="p-2410">The particle will have height \(1\) at time \(2\pi n\text{,}\) for any integer \(n \geq 2\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-341"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-2411">The curve \(y=f(x)\) is shown below, for some function \(f\text{.}\) Restrict \(f\) to the largest possible interval containing \(0\) over which it is one--to--one, and sketch the curve \(y=f^{-1}(x)\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-177.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-286" id="hint-286"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-286"><div class="hint solution-like"><p id="p-2412">A one-to-one function passes the horizontal line test. To graph the inverse of a function, reflect it across the line \(y=x\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-341" id="answer-341"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-341"><div class="answer solution-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-178.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-341" id="solution-341"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-341"><div class="solution solution-like">
+<p id="p-2413">First, we restrict the domain of \(f\) to force it to be one--to--one. There are many intervals we could choose over which \(f\) is one--to--one, but the question asks us to contain \(x=0\) and be as large as possible; this leaves us with the following restricted function:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-179.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2414">The inverse of a function swaps the role of the input and output; so if the graph of \(y=f(x)\) contains the point \((a,b)\text{,}\) then the graph of \(Y=f^{-1}(X)\) contains the point \((b,a)\text{.}\) That is, the graph of \(Y=f^{-1}(X)\) is the graph of \(y=f(x)\) with the \(x\)-coordinates and \(y\)-coordinates swapped. (So, since \(y=f(x)\) crosses the \(y\)-axis at \(y=1\text{,}\) then \(Y=f^{-1}(X)\) crosses the \(X\)-axis at \(X=1\text{.}\)) This swapping is equivalent to reflecting the curve \(y=f(x)\) over the line \(y=x\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-180.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2415">Remark: while you're getting accustomed to inverse functions, it is sometimes clearer to consider \(y=f(x)\) and \(Y=f^{-1}(X)\text{:}\) using slightly different notations for \(x\) (the input of \(f\text{,}\) hence the output of \(f^{-1}\)) and \(X\) (the input of \(f^{-1}\text{,}\) which comes from the output of \(f\)). However, the convention is to use \(x\) for the inputs of both functions, and \(y\) as the outputs of both functions, as is written on the graph above.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-342"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-2416">Let \(a\) be some constant. Where does the curve \(y=ax+\cos x\) have a horizontal tangent line?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-287" id="hint-287"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-287"><div class="hint solution-like"><p id="p-2417">Your answer will depend on \(a\text{.}\) The arcsine function alone won't give you every value.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-342" id="answer-342"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-342"><div class="answer solution-like"><ul id="p-2418" class="disc">
+<li id="li-624">If \(|a| \gt 1\text{,}\) there is no point where the curve has horizontal tangent line.</li>
+<li id="li-625">If \(|a|=1\text{,}\) the curve has a horizontal tangent line where \(x=2\pi n + \dfrac{a\pi}{2}\) for any integer \(n\text{.}\)</li>
+<li id="li-626">If \(|a| \lt 1\text{,}\) the curve has a horizontal tangent line where \(x=2\pi n+\arcsin(a)\) or \(x=(2 n +1) \pi - \arcsin (a)\) for any integer \(n\text{.}\)</li>
+</ul></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-342" id="solution-342"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-342"><div class="solution solution-like">
+<p id="p-2419">The tangent line is horizontal when \(0=y'=a-\sin x\text{.}\) That is, when \(a=\sin x\text{.}\)</p>
+<ul class="disc">
+<li id="li-627">If \(|a| \gt 1\text{,}\) then there is no value of \(x\) for which \(a=\sin x\text{,}\) so the curve has no horizontal tangent lines.</li>
+<li id="li-628">If \(|a| = 1\text{,}\) then there are infinitely many solutions to \(a=\sin x\text{,}\) but only one solution in the interval \([-\pi,\pi]\text{:}\) \(x=\arcsin(a)=\arcsin(\pm1)=\pm\frac{\pi}{2}\text{.}\) Then the values of \(x\) for which \(a=\sin x\) are \(x=2\pi n +a \frac{\pi}{2}\) for any integer \(n\text{.}\)</li>
+<li id="li-629">
+<p id="p-2420">If \(|a| \lt 1\text{,}\) then there are infinitely many solutions to \(a=\sin x\text{.}\) The solution in the interval \(\left(-\frac{\pi}{2},\frac{\pi}{2}\right)\) is given by \(x=\arcsin(a)\text{.}\) The other solution in the interval \(\left(-\pi,\pi\right)\) is given by \(x=\pi-\arcsin(a)\text{,}\) as shown in the unit circles below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-181.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-182.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2421">So, the values of \(x\) for which \(x=\sin a\) are \(x=2\pi n+\arcsin(a)\) and \(x=2\pi n + \pi - \arcsin (a)\) for any integer \(n\text{.}\)</p>
+</li>
+</ul>
+<p data-braille="continuation">Remark: when \(a=1\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+2\pi n+\arcsin(a) = 2\pi n + \dfrac{\pi}{2}=2\pi n +\pi -\left(\dfrac {\pi}{2}\right)=2\pi n+\pi-\arcsin(a).
+\end{equation*}
+</div>
+<p data-braille="continuation">Similarly, when \(a=-1\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+2\pi n+\arcsin(a) \amp= 2\pi n - \dfrac{\pi}{2}
+=2\pi (n-1) +\pi -\left(-\dfrac {\pi}{2}\right)\\
+\amp=2\pi(n-1)+\pi-\arcsin(a)
+\end{align*}
+</div>
+<p id="p-2422">So, if we try to use the descriptions in the third bullet point to describe points where the tangent line is horizontal when \(|a|=1\text{,}\) we get the correct points but each point is listed twice. This is why we separated the case \(|a|=1\) from the case \(|a| \lt 1\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-343"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-2423">Define a function \(f(x)=\arcsin x + \arccsc x\text{.}\) What is the domain of \(f(x)\text{?}\) Where is \(f(x)\) differentiable?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-288" id="hint-288"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-288"><div class="hint solution-like"><p id="p-2424">In order for \(x\) to be in the domain of \(f\text{,}\) you must be able to plug \(x\) into both arcsine and arccosecant.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-343" id="answer-343"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-343"><div class="answer solution-like"><p id="p-2425">Domain: \(x=\pm 1\text{.}\) Not differentiable anywhere.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-343" id="solution-343"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-343"><div class="solution solution-like">
+<p id="p-2426">The function \(\arcsin x\) is only defined for \(|x| \leq 1\text{,}\) and the function \(\arccsc x\) is only defined for \(|x| \geq 1\text{,}\) so \(f(x)\) has domain \(|x|=1\text{.}\) That is, \(x=\pm1\text{.}\)</p>
+<p id="p-2427">In order for \(f(x)\) to be differentiable at a point, it must exist in an open interval around that point. (See Definition <a class="xref" data-knowl="./knowl/def_DIFFderiv.html" title="Definition 3.2.1: Derivative at a point">3.2.1</a>.) Since our function does not exist over any open interval, \(f(x)\) is not differentiable anywhere.</p>
+<p id="p-2428">So, actually, \(f(x)\) is a pretty boring function, which we can entirely describe as: \(f(-1)=-\pi\) and \(f(1)=\pi\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-44">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-68"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-344"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-2429">Differentiate \(f(x)=\arcsin\left(\dfrac{x}{3}\right)\text{.}\) What is the domain of \(f(x)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-289" id="hint-289"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-289"><div class="hint solution-like"><p id="p-2430">For the domain of \(f\text{,}\) remember the domain of arcsine is \([-1,1]\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-344" id="answer-344"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-344"><div class="answer solution-like"><p id="p-2431">\(f'(x)=\dfrac{1}{\sqrt{9-x^2}}\text{;}\) domain of \(f\) is \([-3,3]\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-344" id="solution-344"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-344"><div class="solution solution-like">
+<p id="p-2432">Using the chain rule,</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\left\{\arcsin\left(\frac{x}{3}\right)\right\}&amp;=\frac{1}{\sqrt{1-\left(\frac{x}{3}\right)^2}}\cdot \frac{1}{3}\\
+&amp;=\frac{1}{3\sqrt{1-\frac{x^2}{9}}}\\
+&amp;=\frac{1}{\sqrt{9-x^2}}
+\end{align*}
+</div>
+<p id="p-2433">Since the domain of arcsine is \([-1,1]\text{,}\) and we are plugging in \(\dfrac{x}{3}\) to arcsine, the values of \(x\) that we can plug in are those that satisfy \(-1 \le \dfrac{x}{3} \leq 1\text{,}\) or \(-3\leq x \leq 3\text{.}\) So the domain of \(f\) is \([-3,3]\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-345"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-2434">Differentiate \(f(t)=\dfrac{\arccos t}{t^2-1}\text{.}\) What is the domain of \(f(t)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-290" id="hint-290"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-290"><div class="hint solution-like"><p id="p-2435">The domain of \(\arccos(t)\) is \([-1,1]\text{,}\) but you also have to make sure you aren't dividing by zero.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-345" id="answer-345"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-345"><div class="answer solution-like"><p id="p-2436">\(f'(t)=\dfrac{-\frac{t^2-1}{\sqrt{1-t^2}}-2t\arccos t}{(t^2-1)^2}\text{,}\) and the domain of \(f(t)\) is \((-1,1)\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-345" id="solution-345"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-345"><div class="solution solution-like">
+<p id="p-2437">Using the quotient rule,</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{t}\left\{\dfrac{\arccos t}{t^2-1}\right\}&amp;=
+\frac{(t^2-1)\left(\frac{-1}{\sqrt{1-t^2}}\right)-(\arccos t)(2t)}{(t^2-1)^2}
+\end{align*}
+</div>
+<p data-braille="continuation">The domain of arccosine is \([-1,1]\text{,}\) and since \(t^2-1\) is in the denominator, the domain of \(f\) requires \(t^2-1 \neq 0\text{,}\) that is, \(t \neq \pm 1\text{.}\) So the domain of \(f(t)\) is \((-1,1)\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-346"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-2438">Differentiate \(f(x)=\arcsec(-x^2-2)\text{.}\) What is the domain of \(f(x)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-291" id="hint-291"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-291"><div class="hint solution-like"><p id="p-2439">\(\ds\diff{}{x}\left\{\arcsec x\right\} = \dfrac{1}{|x|\sqrt{x^2-1}}\text{,}\) and the domain of \(\arcsec x\) is \(|x|\ge1\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-346" id="answer-346"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-346"><div class="answer solution-like"><p id="p-2440">The domain of \(f(x)\) is all real numbers, and \(f'(x)=\dfrac{-2x}{(x^2+2)\sqrt{x^4+4x^2+3}}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-346" id="solution-346"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-346"><div class="solution solution-like">
+<p id="p-2441">The domain of \(\arcsec x\) is \(|x| \geq 1\text{:}\) that is, we can plug into arcsecant only values with absolute value greater than or equal to one. Since \(-x^2-2 \leq -2\text{,}\) every real value of \(x\) gives us an acceptable value to plug into arcsecant. So, the domain of \(f(x)\) is all real numbers.</p>
+<p id="p-2442">To differentiate, we use the chain rule. Remember \(\ds\diff{}{x}\left\{\arcsec x\right\} = \dfrac{1}{|x|\sqrt{x^2-1}}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\left\{\arcsec(-x^2-2)\right\}&amp;=
+\dfrac{1}{|-x^2-2|\sqrt{(-x^2-2)^2-1}}\cdot(-2x)\\
+&amp;=\dfrac{-2x}{(x^2+2)\sqrt{x^4+4x+3}}.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-347"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-2443">Differentiate \(f(x)=\dfrac{1}{a}\arctan\left(\dfrac{x}{a}\right)\text{,}\) where \(a\) is a nonzero constant. What is the domain of \(f(x)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-292" id="hint-292"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-292"><div class="hint solution-like"><p id="p-2444">The domain of \(\arctan(x)\) is all real numbers.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-347" id="answer-347"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-347"><div class="answer solution-like"><p id="p-2445">\(f'(x)=\dfrac{1}{a^2+x^2}\) and the domain of \(f(x)\) is all real numbers.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-347" id="solution-347"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-347"><div class="solution solution-like">
+<p id="p-2446">We use the chain rule, remembering that \(a\) is a constant.</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\left\{\frac{1}{a}\arctan\left(\dfrac{x}{a}\right)\right\}&amp;=
+\frac{1}{a}\cdot\frac{1}{1+\left(\frac{x}{a}\right)^2}\cdot \frac{1}{a}\\
+&amp;=\frac{1}{a^2+x^2}
+\end{align*}
+</div>
+<p data-braille="continuation">The domain of arctangent is all real numbers, so the domain of \(f(x)\) is also all real numbers.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-348"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-2447">Differentiate \(f(x)=x\arcsin x + \sqrt{1-x^2}\text{.}\) What is the domain of \(f(x)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-293" id="hint-293"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-293"><div class="hint solution-like"><p id="p-2448">The domain of \(\arcsin x\) is \([-1,1]\text{,}\) and the domain of \(\sqrt{x}\) is \(x \geq 0\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-348" id="answer-348"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-348"><div class="answer solution-like"><p id="p-2449">\(f'(x)=\arcsin x\text{,}\) and the domain of \(f(x)\) is \([-1,1]\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-348" id="solution-348"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-348"><div class="solution solution-like">
+<p id="p-2450">We differentiate using the product and chain rules.</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\left\{\textcolor{blue}{x\arcsin x} + \textcolor{red}{\sqrt{1-x^2}}\right\}&amp;=
+\textcolor{blue}{\arcsin x + \frac{x}{\sqrt{1-x^2}}}+\textcolor{red}{\frac{-2x}{2\sqrt{1-x^2}}}\\
+&amp;=\arcsin x
+\end{align*}
+</div>
+<p data-braille="continuation">The domain of \(\arcsin x\) is \([-1,1]\text{,}\) and the domain of \(\sqrt{1-x^2}\) is all values of \(x\) so that \(1-x^2 \geq 0\text{,}\) so \(x\) in \([-1,1]\text{.}\) Therefore, the domain of \(f(x)\) is \([-1,1]\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-349"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-2451">For which values of \(x\) is the tangent line to \(y=\arctan (x^2)\) horizontal?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-294" id="hint-294"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-294"><div class="hint solution-like"><p id="p-2452">This occurs only once.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-349" id="answer-349"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-349"><div class="answer solution-like"><p id="p-2453">\(x=0\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-349" id="solution-349"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-349"><div class="solution solution-like">
+<p id="p-2454">We differentiate using the chain rule:</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\{\arctan(x^2)\}&amp;=\frac{2x}{1+x^4}
+\end{align*}
+</div>
+<p data-braille="continuation">This is zero exactly when \(x=0\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-350"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-2455">Evaluate \(\ds\diff{}{x}\{\arcsin x + \arccos x\}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-295" id="hint-295"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-295"><div class="hint solution-like"><p id="p-2456">The answer is a very simple expression.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-350" id="answer-350"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-350"><div class="answer solution-like"><p id="p-2457">\(\ds\diff{}{x}\{\arcsin x + \arccos x\}=0\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-350" id="solution-350"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-350"><div class="solution solution-like">
+<p id="p-2458">Using formulas you should memorize from this section,</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{}{x}\{\arcsin x + \arccos x\}=\frac{1}{\sqrt{1-x^2}}+\frac{-1}{\sqrt{1-x^2}}=0
+\end{equation*}
+</div>
+<p id="p-2459">Remark: the only functions with derivative equal to zero everywhere are constant functions, so \(\arcsin x + \arccos x\) should be a constant. Since \(\sin \theta = \cos \left(\frac{\pi}{2}-\theta\right)\text{,}\) we can set</p>
+<div class="displaymath">
+\begin{align*}
+\sin\theta&amp;=x &amp; \cos\left(\frac{\pi}{2}-\theta\right)&amp;=x\\
+\end{align*}
+<p class="intertext">where \(x\) and \(\theta\) are the same in both expressions, and \(-\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}\text{.}\) Then</p>
+\begin{align*}
+\arcsin x &amp;=\theta &amp; \arccos x &amp;= \frac{\pi}{2}-\theta
+\end{align*}
+</div>
+<p data-braille="continuation">We note here that arcsine is the inverse of the sine function <em class="emphasis">restricted to</em> \(\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]\text{.}\) So, since we restricted \(\theta\) to this domain, \(\sin \theta=x\) really does imply \(\arcsin x = \theta\text{.}\) (For an example of why this matters, note \(\sin(2\pi)=0\text{,}\) but \(\arcsin (0)=0 \neq 2\pi\text{.}\)) Similarly, arccosine is the inverse of the cosine function restricted to \([0,\pi]\text{.}\) Since \(-\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}\text{,}\) then \(0 \leq (\frac{\pi}{2}-\theta) \leq \pi\text{,}\) so \(\cos\left(\frac{\pi}{2}- \theta\right) =x\) really does imply \(\arccos x=\frac{\pi}{2}-\theta\text{.}\)</p>
+<p id="p-2460">So,</p>
+<div class="displaymath">
+\begin{equation*}
+\arcsin x+\arccos x =\theta+\frac{\pi}{2}-\theta =\frac{\pi}{2}
+\end{equation*}
+</div>
+<p id="p-2461">which means the derivative we were calculating was actually just \(\ds\diff{}{x}\left\{\dfrac{\pi}{2}\right\}=0\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-351"><h6 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">1997A.</span>
+</h6>
+<p id="p-2462">Find the derivative of  \(y=\arcsin \!\big(\frac{1}{x}\big)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-296" id="hint-296"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-296"><div class="hint solution-like"><p id="p-2463">chain rule</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-351" id="answer-351"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-351"><div class="answer solution-like"><p id="p-2464">\(y'=\dfrac{-1}{x^2\sqrt{1-\frac{1}{x^2}}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-351" id="solution-351"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-351"><div class="solution solution-like">
+<p id="p-2465">Using the chain rule,</p>
+<div class="displaymath">
+\begin{equation*}
+y'=\frac{-{\frac{1}{ x^2}}}{\sqrt{1-\left({\frac{1}{ x}}\right)^2}}=\frac{-1}{x^2\sqrt{1-\frac{1}{x^2}}}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-352"><h6 class="heading">
+<span class="codenumber">14<span class="period">.</span></span><span class="space"> </span><span class="title">1996D.</span>
+</h6>
+<p id="p-2466">Find the derivative of \(y=\arctan \big(\frac{1}{x}\big)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-352" id="answer-352"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-352"><div class="answer solution-like"><p id="p-2467">\(y'=\dfrac{-1}{1+x^2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-352" id="solution-352"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-352"><div class="solution solution-like">
+<p id="p-2468">Using the chain rule,</p>
+<div class="displaymath">
+\begin{equation*}
+y'=\frac{-{\frac{1}{ x^2}}}{1+\left({\frac{1}{ x}}\right)^2}=\frac{-1}{x^2+1}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-353"><h6 class="heading">
+<span class="codenumber">15<span class="period">.</span></span><span class="space"> </span><span class="title">1999H.</span>
+</h6>
+<p id="p-2469">Calculate and simplify the derivative of \((1+x^2)\arctan x\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-353" id="answer-353"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-353"><div class="answer solution-like"><p id="p-2470">\(2x\arctan x+1\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-353" id="solution-353"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-353"><div class="solution solution-like">
+<p id="p-2471">Using the product rule:</p>
+<div class="displaymath">
+\begin{align*}
+\ds\diff{}{x}\left\{(1+x^2)\arctan x\right\}
+&amp;=2x\arctan x+(1+x^2)\frac{1}{1+x^2}\\
+&amp;=2x\arctan x+1
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-354"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-2472">Show that \(\ds\diff{}{x}\left\{\sin\left(\arctan(x)
+\right)\right\} = (x^2+1)^{-3/2}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-297" id="hint-297"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-297"><div class="hint solution-like">
+<p id="p-2473">You can simplify the expression before you differentiate to remove the trigonometric functions. If \(\arctan x =\theta\text{,}\) then fill in the sides of the triangle below using the definition of arctangent and the Pythagorean theorem:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-183.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2474">With the sides labeled, you can figure out \(\sin\left(\arctan x\right)=\sin\left(\theta\right)\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-354" id="answer-354"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-354"><div class="answer solution-like">
+<p id="p-2475">Let \(\theta = \arctan x\text{.}\) Then \(\theta\) is the angle of a right triangle that gives \(\tan \theta = x\text{.}\) In particular, the ratio of the opposite side to the adjacent side is \(x\text{.}\) So, we have a  triangle that looks like this:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-184.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2476">where the length of the hypotenuse came from the Pythagorean Theorem. Now,</p>
+<div class="displaymath">
+\begin{equation*}
+\sin\left(\arctan x\right) = \sin \theta = \frac{\mbox{opp}}{\mbox{hyp}} = \frac{x}{\sqrt{x^2+1}}
+\end{equation*}
+</div>
+<p id="p-2477">From here, we differentiate using the quotient rule:</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\left\{\frac{x}{\sqrt{x^2+1}}
+\right\}&amp;=
+\frac{\sqrt{x^2+1}-x\frac{2x}{2\sqrt{x^2+1}}}{x^2+1}\\
+&amp;=\left(\frac{\sqrt{x^2+1}-\frac{x^2}{\sqrt{x^2+1}}}{x^2+1}\right)\cdot\frac{\sqrt{x^2+1}}{\sqrt{x^2+1}}\\
+&amp;=\frac{(x^2+1)-x^2}{(x^2+1)^{3/2}}\\
+&amp;=\frac{1}{(x^2+1)^{3/2}}=(x^2+1)^{-3/2}
+\end{align*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-354" id="solution-354"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-354"><div class="solution solution-like">
+<p id="p-2478">Let \(\theta = \arctan x\text{.}\) Then \(\theta\) is the angle of a right triangle that gives \(\tan \theta = x\text{.}\) In particular, the ratio of the opposite side to the adjacent side is \(x\text{.}\) So, we have a  triangle that looks like this:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-185.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2479">where the length of the hypotenuse came from the Pythagorean Theorem. Now,</p>
+<div class="displaymath">
+\begin{equation*}
+\sin\left(\arctan x\right) = \sin \theta = \frac{\mbox{opp}}{\mbox{hyp}} = \frac{x}{\sqrt{x^2+1}}
+\end{equation*}
+</div>
+<p id="p-2480">From here, we differentiate using the quotient rule:</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\left\{\frac{x}{\sqrt{x^2+1}}
+\right\}&amp;=
+\frac{\sqrt{x^2+1}-x\frac{2x}{2\sqrt{x^2+1}}}{x^2+1}\\
+&amp;=\left(\frac{\sqrt{x^2+1}-\frac{x^2}{\sqrt{x^2+1}}}{x^2+1}\right)\cdot\frac{\sqrt{x^2+1}}{\sqrt{x^2+1}}\\
+&amp;=\frac{(x^2+1)-x^2}{(x^2+1)^{3/2}}\\
+&amp;=\frac{1}{(x^2+1)^{3/2}}=(x^2+1)^{-3/2}
+\end{align*}
+</div>
+<p id="p-2481">Remark: another strategy is to differentiate first, using the chain rule, then draw a triangle to simplify the resulting expression \(\ds\diff{}{x}\left\{\sin\left(\arctan x\right)\right\}=\dfrac{\cos(\arctan x)}{1+x^2}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-355"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-2482">Show that \(\ds\diff{}{x}\left\{\cot\left(\arcsin(x)
+\right)\right\} = \dfrac{-1}{x^2\sqrt{1-x^2}}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-298" id="hint-298"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-298"><div class="hint solution-like">
+<p id="p-2483">You can simplify the expression before you differentiate to remove the trigonometric functions. If \(\arcsin x =\theta\text{,}\) then fill in the sides of the triangle below using the definition of arctangent and the Pythagorean theorem:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-186.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2484">With the sides labeled, you can figure out \(\cot\left(\arcsin x\right)=\cot\left(\theta\right)\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-355" id="answer-355"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-355"><div class="answer solution-like">
+<p id="p-2485">Let \(\theta = \arcsin x\text{.}\) Then \(\theta\) is the angle of a right triangle that gives \(\sin \theta = x\text{.}\) In particular, the ratio of the opposite side to the hypotenuse is \(x\text{.}\) So, we have a  triangle that looks like this:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-187.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2486">where the length of the adjacent side came from the Pythagorean Theorem. Now,</p>
+<div class="displaymath">
+\begin{equation*}
+\cot\left(\arcsin x\right) = \cot \theta = \frac{\mbox{adj}}{\mbox{opp}} = \frac{\sqrt{1-x^2}}{x}
+\end{equation*}
+</div>
+<p id="p-2487">From here, we differentiate using the quotient rule:</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\left\{\frac{\sqrt{1-x^2}}{x}
+\right\}&amp;=
+\frac{x\frac{-2x}{2\sqrt{1-x^2}}-\sqrt{1-x^2}}{x^2}\\
+&amp;=\frac{-x^2-(1-x^2)}{x^2\sqrt{1-x^2}}\\
+&amp;=\frac{-1}{x^2\sqrt{1-x^2}}
+\end{align*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-355" id="solution-355"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-355"><div class="solution solution-like">
+<p id="p-2488">Let \(\theta = \arcsin x\text{.}\) Then \(\theta\) is the angle of a right triangle that gives \(\sin \theta = x\text{.}\) In particular, the ratio of the opposite side to the hypotenuse is \(x\text{.}\) So, we have a  triangle that looks like this:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-188.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2489">where the length of the adjacent side came from the Pythagorean Theorem. Now,</p>
+<div class="displaymath">
+\begin{equation*}
+\cot\left(\arcsin x\right) = \cot \theta = \frac{\mbox{adj}}{\mbox{opp}} = \frac{\sqrt{1-x^2}}{x}
+\end{equation*}
+</div>
+<p id="p-2490">From here, we differentiate using the quotient rule:</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\left\{\frac{\sqrt{1-x^2}}{x}
+\right\}&amp;=
+\frac{x\frac{-2x}{2\sqrt{1-x^2}}-\sqrt{1-x^2}}{x^2}\\
+&amp;=\frac{-x^2-(1-x^2)}{x^2\sqrt{1-x^2}}\\
+&amp;=\frac{-1}{x^2\sqrt{1-x^2}}
+\end{align*}
+</div>
+<p id="p-2491">Remark: another strategy is to differentiate first, using the chain rule, then draw a triangle to simplify the resulting expression \(\ds\diff{}{x}\left\{\cot\left(\arcsin x\right)\right\}=\frac{-\csc^2(\arcsin x)}{\sqrt{1-x^2}}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-356"><h6 class="heading">
+<span class="codenumber">18<span class="period">.</span></span><span class="space"> </span><span class="title">1997D.</span>
+</h6>
+<p id="p-2492">Determine all points on the curve \(y=\arcsin x\) where the tangent line is parallel to the line \(y=2x+9\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-299" id="hint-299"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-299"><div class="hint solution-like"><p id="p-2493">What is the slope of the line \(y=2x+9\text{?}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-356" id="answer-356"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-356"><div class="answer solution-like"><p id="p-2494">\((x,y)=\pm\big(\frac{\sqrt{3}}{2},\frac{\pi}{3}\big)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-356" id="solution-356"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-356"><div class="solution solution-like">
+<p id="p-2495">The line \(y=2x+9\) has slope \(2\text{,}\) so we must find all values of \(x\) between \(-1\) and \(1\) (\(\arcsin  x\) is only defined for these values of \(x\)) for which \(\diff{}{x}\{\arcsin x\}=2\text{.}\) Evaluating the derivative:</p>
+<div class="displaymath">
+\begin{align*}
+y&amp;=\arcsin x\\
+2=y'&amp;=\frac{1}{\sqrt{1-x^2}}\\
+4&amp;=\frac{1}{1-x^2}\\
+\frac{1}{4}&amp;=1-x^2\\
+x^2&amp;=\frac{3}{4}\\
+x&amp;=\pm\frac{\sqrt{3}}{2}\\
+(x,y)&amp;=\pm\big(\frac{\sqrt{3}}{2},\frac{\pi}{3}\big)
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-357"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-2496">For which values of \(x\) does the function \(f(x)=\arctan(\csc x)\) have a horizontal tangent line?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-300" id="hint-300"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-300"><div class="hint solution-like"><p id="p-2497">Differentiate using the chain rule.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-357" id="answer-357"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-357"><div class="answer solution-like"><p id="p-2498">\(x=\dfrac{(2n+1)\pi}{2}\) for any integer \(n\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-357" id="solution-357"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-357"><div class="solution solution-like">
+<p id="p-2499">We differentiate using the chain rule:</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\{\arctan(\csc x)\}&amp;=\frac{1}{1+\csc^2x}\cdot\diff{}{x}\{\csc x\}\\
+&amp;=\frac{-\csc x \cot x}{1+\csc^2x}\\
+&amp;=\frac{-\frac{1}{\sin x}\cdot \frac{\cos x}{\sin x}}{1+\left(\frac{1}{\sin x}\right)^2}\\
+&amp;=\frac{-\cos x}{\sin^2x+1}
+\end{align*}
+</div>
+<p data-braille="continuation">So if \(f'(x)=0\text{,}\) then \(\cos x=0\text{,}\) and this happens when \(x=\dfrac{(2n+1)\pi}{2}\) for any integer \(n\text{.}\) We should check that these points are in the domain of \(f\text{.}\) Arctangent is defined for all real numbers, so we only need to check the domain of cosecant; when \(x=\dfrac{(2n+1)\pi}{2}\text{,}\) then \(\sin x=\pm1 \neq 0\text{,}\) so \(\csc x = \dfrac{1}{\sin x}\) exists.</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-45">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-69"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-358"><h6 class="heading">
+<span class="codenumber">20<span class="period">.</span></span><span class="space"> </span><span class="title">2009H.</span>
+</h6>
+<p id="p-2500">Let \(f(x) = x + \cos x\text{,}\) and let \(g(y) = f^{-1}(y)\) be the inverse function. Determine \(g'(y)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-301" id="hint-301"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-301"><div class="hint solution-like"><p id="p-2501">If \(g(y)=f^{-1}(y)\text{,}\) then \(f(g(y))=f\left(f^{-1}(y)\right)=y\text{.}\) Differentiate this last equality using the chain rule.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-358" id="answer-358"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-358"><div class="answer solution-like"><p id="p-2502">\(g'(y)=\dfrac{1}{1-\sin g(y)}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-358" id="solution-358"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-358"><div class="solution solution-like">
+<p id="p-2503">Since \(g(y)=f^{-1}(y)\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+f(g(y))&amp;=f\left(f^{-1}(y)\right)=y\\
+\end{align*}
+<p class="intertext">Now, we can differentiate with respect to \(y\) using the chain rule.</p>
+\begin{align*}
+\diff{}{y}\left\{f(g(y))\right\}&amp;=\diff{}{y}\{y\}\\
+f'(g(y))\cdot g'(y)&amp;=1\\
+g'(y)&amp;=\frac{1}{f'(g(y))}=\frac{1}{1-\sin g(y)}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-359"><h6 class="heading">
+<span class="codenumber">21<span class="period">.</span></span><span class="space"> </span><span class="title">2007H.</span>
+</h6>
+<p id="p-2504">\(f(x) = 2x-\sin(x)\) is one--to--one. Find \(\big(f^{-1}\big)'(\pi-1)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-302" id="hint-302"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-302"><div class="hint solution-like"><p id="p-2505">To simplify notation, let \(g(y)=f^{-1}(y)\text{.}\) Simplify and differentiate \(g(f(x))\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-359" id="answer-359"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-359"><div class="answer solution-like"><p id="p-2506">\(\dfrac{1}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-359" id="solution-359"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-359"><div class="solution solution-like">
+<p id="p-2507">Write \(g(y)=f^{-1}(y)\text{.}\) Then \(g(f(x))=x\text{,}\) so differentiating both sides (using the chain rule), we see</p>
+<div class="displaymath">
+\begin{align*}
+g'(f(x))\cdot f'(x)=1\\
+\end{align*}
+<p class="intertext">What we want is \(g'(\pi-1)\text{,}\) so we need to figure out which value of \(x\) gives \(f(x)=\pi-1\text{.}\)  A little trial and error leads us to \(x=\frac{\pi}{2}\text{.}\)</p>
+\begin{align*}
+g'(\pi-1)\cdot f'\left(\frac{\pi}{2}\right)&amp;=1\\
+\end{align*}
+<p class="intertext">Since \(f'(x)=2-\cos(x)\text{,}\) \(f'\left(\frac{\pi}{2}\right)=2-0=2\text{:}\)</p>
+\begin{align*}
+g'(\pi-1)\cdot 2&amp;=1\\
+g'(\pi-1)=\frac{1}{2}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-360"><h6 class="heading">
+<span class="codenumber">22<span class="period">.</span></span><span class="space"> </span><span class="title">2006H.</span>
+</h6>
+<p id="p-2508">\(f(x) = e^x+x\) is one--to--one. Find \(\big(f^{-1}\big)'(e+1)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-303" id="hint-303"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-303"><div class="hint solution-like"><p id="p-2509">To simplify notation, let \(g(y)=f^{-1}(y)\text{.}\) Simplify and differentiate \(g(f(x))\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-360" id="answer-360"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-360"><div class="answer solution-like"><p id="p-2510">\(\dfrac{1}{e+1}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-360" id="solution-360"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-360"><div class="solution solution-like">
+<p id="p-2511">Write \(g(y)=f^{-1}(y)\text{.}\) Then \(g(f(x))=x\text{,}\) so differentiating both sides (using the chain rule), we see</p>
+<div class="displaymath">
+\begin{align*}
+g'(f(x))f'(x)&amp;=1\\
+\end{align*}
+<p class="intertext">What we want is \(g'(e+1)\text{,}\) so we need to figure out which value of \(x\) gives \(f(x)=e+1\text{.}\)  A little trial and error leads us to \(x=1\text{.}\)</p>
+\begin{align*}
+g'(f(1))f'(1)&amp;=1\\
+g'(e+1)\cdot f'(1)&amp;=1\\
+g'(e+1) &amp;= \frac{1}{f'(1)}\\
+\end{align*}
+<p class="intertext">It remains only to note that \(f'(x)=e^x+1\text{,}\) so \(f'(1)=e+1\)</p>
+\begin{align*}
+g'(e+1)&amp;=\frac{1}{e+1}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-361"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-2512">Differentiate \(f(x)=[\sin x +2]^{\arcsec x}\text{.}\) What is the domain of this function?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-304" id="hint-304"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-304"><div class="hint solution-like"><p id="p-2513">Use logarithmic differentiation.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-361" id="answer-361"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-361"><div class="answer solution-like"><p id="p-2514">\(f'(x)=[\sin x +2]^{\arcsec x}\left(\dfrac{\log[\sin x +2]}{|x|\sqrt{x^2-1}}+ \dfrac{\arcsec x \cdot\cos x}{\sin x +2}\right)\text{.}\) The domain of \(f(x)\) is \(|x|\ge 1\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-361" id="solution-361"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-361"><div class="solution solution-like">
+<p id="p-2515">We use logarithmic differentiation, our standard method of differentiating an expression of the form \((\mbox{function})^{\mbox{function}}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+f(x)&amp;=[\sin x +2]^{\arcsec x}\\
+\log(f(x))&amp;=\arcsec x \cdot \log[\sin x +2]\\
+\frac{f'(x)}{f(x)}&amp;=\frac{1}{|x|\sqrt{x^2-1}}\log[\sin x +2]+\arcsec x \cdot \frac{\cos x}{\sin x +2}\\
+f'(x)&amp;=[\sin x +2]^{\arcsec x}\left(\frac{\log[\sin x +2]}{|x|\sqrt{x^2-1}}+ \frac{\arcsec x \cdot\cos x}{\sin x +2}\right)
+\end{align*}
+</div>
+<p id="p-2516">The domain of \(\arcsec x\) is \(|x| \geq 1\text{.}\) For any \(x\text{,}\) \(\sin x +2\) is positive, and a positive number can be raised to any power. (Recall negative numbers cannot be raised to any power--for example, \((-1)^{1/2}=\sqrt{-1}\) is not a real number.) So, the domain of \(f(x)\) is \(|x| \geq 1\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-362"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<p id="p-2517">Suppose you can't remember whether the derivative of arcsine is \(\dfrac{1}{\sqrt{1-x^2}}\) or \(\dfrac{1}{\sqrt{x^2-1}}\text{.}\) Describe how the domain of arcsine suggests that one of these is wrong.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-305" id="hint-305"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-305"><div class="hint solution-like"><p id="p-2518">Where are those functions defined?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-362" id="answer-362"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-362"><div class="answer solution-like">
+<p id="p-2519">The function \(\dfrac{1}{\sqrt{x^2-1}}\) exists only for those values of \(x\) with \(x^2-1 \gt 0\text{:}\) that is, the domain of \(\dfrac{1}{\sqrt{x^2-1}}\) is \(|x| \gt 1\text{.}\) However, the domain of arcsine is \(|x| \leq 1\text{.}\) So, there is not one single value of \(x\) where  \(\arcsin x\) and \(\dfrac{1}{\sqrt{x^2-1}}\) are both defined.</p>
+<p id="p-2520">If the derivative of \(\arcsin(x)\) were given by \(\dfrac{1}{\sqrt{x^2-1}}\text{,}\) then the derivative of \(\arcsin(x)\) would not exist anywhere, so we would probably just write “derivative does not exist,” instead of making up a function with a mismatched domain. Also, the function \(f(x)=\arcsin(x)\) is a smooth curve--its derivative exists at every point strictly inside its domain. (Remember not all curves are like this: for instance, \(g(x)=|x|\) does not have a derivative at \(x=0\text{,}\) but \(x=0\) is strictly inside its domain.) So, it's a pretty good bet that the derivative of arcsine is <em class="emphasis">not</em> \(\dfrac{1}{\sqrt{x^2-1}}\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-362" id="solution-362"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-362"><div class="solution solution-like">
+<p id="p-2521">The function \(\dfrac{1}{\sqrt{x^2-1}}\) exists only for those values of \(x\) with \(x^2-1 \gt 0\text{:}\) that is, the domain of \(\dfrac{1}{\sqrt{x^2-1}}\) is \(|x| \gt 1\text{.}\) However, the domain of arcsine is \(|x| \leq 1\text{.}\) So, there is not one single value of \(x\) where  \(\arcsin x\) and \(\dfrac{1}{\sqrt{x^2-1}}\) are both defined.</p>
+<p id="p-2522">If the derivative of \(\arcsin(x)\) were given by \(\dfrac{1}{\sqrt{x^2-1}}\text{,}\) then the derivative of \(\arcsin(x)\) would not exist anywhere, so we would probably just write “derivative does not exist,” instead of making up a function with a mismatched domain. Also, the function \(f(x)=\arcsin(x)\) is a smooth curve--its derivative exists at every point strictly inside its domain. (Remember not all curves are like this: for instance, \(g(x)=|x|\) does not have a derivative at \(x=0\text{,}\) but \(x=0\) is strictly inside its domain.) So, it's a pretty good bet that the derivative of arcsine is <em class="emphasis">not</em> \(\dfrac{1}{\sqrt{x^2-1}}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-363"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-2523">Evaluate \(\displaystyle \lim_{x\to 1}\left(
+(x-1)^{-1}\left(\arctan x - \frac{\pi}{4}\right)\right).\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-306" id="hint-306"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-306"><div class="hint solution-like"><p id="p-2524">Compare this to one of the forms given in the text for the definition of the derivative.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-363" id="answer-363"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-363"><div class="answer solution-like"><p id="p-2525">\(\dfrac{1}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-363" id="solution-363"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-363"><div class="solution solution-like">
+<p id="p-2526">This limit represents the derivative computed at \(x=1\) of the function \(f(x)=\arctan x\text{.}\) To see this, simply use the definition of the derivative at \(a=1\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\left.\diff{}{x}\{f(x)\}\right|_{a} &amp;= \lim_{x \to a}\frac{f(x)-f(a)}{x-a}\\
+\left.\diff{}{x}\{\arctan x\}\right|_{1} &amp;=\lim_{x\to1} \frac{\arctan x-\arctan 1}{x-1}\\
+&amp;=\lim_{x\to1} \frac{\arctan x-\frac{\pi}{4}}{x-1}\\
+&amp;=\displaystyle \lim_{x\to 1}\left(
+(x-1)^{-1}\left(\arctan x - \frac{\pi}{4}\right)\right).
+\end{align*}
+</div>
+<p data-braille="continuation">Since the derivative of \(f(x)\) is \(\dfrac{1}{1+x^2}\text{,}\)  its value at \(x=1\) is exactly \(\dfrac{1}{2}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-364"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<p id="p-2527">Suppose \(f(2x+1)=\dfrac{5x-9}{3x+7}\text{.}\) Evaluate \(f^{-1}(7)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-307" id="hint-307"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-307"><div class="hint solution-like"><p id="p-2528">\(f^{-1}(7)\) is the number \(y\) that satisfies \(f(y)=7\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-364" id="answer-364"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-364"><div class="answer solution-like"><p id="p-2529">\(f^{-1}(7)=-\dfrac{25}{4}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-364" id="solution-364"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-364"><div class="solution solution-like">
+<p id="p-2530">First, let's interpret the given information: when the input of our function is \(2x+1\) for some \(x\text{,}\) then its output is \(\dfrac{5x-9}{3x+7}\text{,}\) for that same \(x\text{.}\) We're asked to evaluate \(f^{-1}(7)\text{,}\) which is the number \(y\) with the property that \(f(y)=7\text{.}\) If the output of our function is 7, that means</p>
+<div class="displaymath">
+\begin{align*}
+7&amp;=\frac{5x-9}{3x+7}\\
+\end{align*}
+<p class="intertext">and so</p>
+\begin{align*}
+7(3x+7)&amp;=5x-9\\
+x&amp;=-\frac{29}{8}\\
+\end{align*}
+<p class="intertext">So, when \(x=-\dfrac{29}{8}\text{,}\) our equation \(f(2x+1)=\dfrac{5x-9}{3x+7}\) becomes:</p>
+\begin{align*}
+f\left(2\cdot\frac{-29}{8}+1\right)&amp;=\dfrac{5\cdot\frac{-29}{8}-9}{3\cdot\frac{-29}{8}+7}\\
+\end{align*}
+<p class="intertext">Or, equivalently:</p>
+\begin{align*}
+f\left(-\frac{25}{4}\right)&amp;=7
+\end{align*}
+</div>
+<p data-braille="continuation">Therefore, \(f^{-1}(7)=-\dfrac{25}{4}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-365"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<p id="p-2531">Suppose \(f^{-1}(4x-1)=\dfrac{2x+3}{x+1}\text{.}\) Evaluate \(f(0)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-308" id="hint-308"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-308"><div class="hint solution-like"><p id="p-2532">If \(f^{-1}(y)=0\text{,}\) that means \(f(0)=y\text{.}\) So, we're looking for the number that we plug into \(f^{-1}\) to get 0.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-365" id="answer-365"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-365"><div class="answer solution-like"><p id="p-2533">\(f(0)=-7\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-365" id="solution-365"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-365"><div class="solution solution-like">
+<p id="p-2534">If \(f^{-1}(y)=0\text{,}\) that means \(f(0)=y\text{.}\) So, we want to find out what we plug into \(f^{-1}\) to get 0.  Since we only know \(f^{-1}\) in terms of a variable \(x\text{,}\) let's figure out what \(x\) gives us an output of 0:</p>
+<div class="displaymath">
+\begin{align*}
+\frac{2x+3}{x+1}&amp;=0\\
+2x+3&amp;=0\\
+x&amp;=-\frac{3}{2}\\
+\end{align*}
+<p class="intertext">Now, the equation \(f^{-1}(4x-1)=\dfrac{2x+3}{x+1}\) with \(x=\dfrac{-3}{2}\) tells us:</p>
+\begin{align*}
+f^{-1}\left(4\cdot\frac{-3}{2}-1\right)&amp;=\frac{2\cdot\frac{-3}{2}+3}{\frac{-3}{2}+1}\\
+\end{align*}
+<p class="intertext">Or, equivalently:</p>
+\begin{align*}
+f^{-1}(-7)&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">Therefore, \(f(0)=-7\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-366"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<p id="p-2535">Suppose a curve is defined implicitly by</p>
+<div class="displaymath">
+\begin{equation*}
+\arcsin(x+2y)=x^2+y^2
+\end{equation*}
+</div>
+<p id="p-2536">Solve for \(y'\) in terms of \(x\) and \(y\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-309" id="hint-309"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-309"><div class="hint solution-like"><p id="p-2537">As usual, after you differentiate implicitly, get all the terms containing \(y'\) onto one side of the equation, so you can factor out \(y'\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-366" id="answer-366"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-366"><div class="answer solution-like"><p id="p-2538">\(y'=\dfrac{2x\sqrt{1-(x+2y)^2}-1}{2-2y\sqrt{1-(x+2y)^2}}\text{,}\) or equivalently, \(y'=\dfrac{2x\cos(x^2+y^2)-1}{2-2y\cos(x^2+y^2)}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-366" id="solution-366"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-366"><div class="solution solution-like"><ul id="p-2539" class="disc">
+<li id="li-630">Solution 1: We begin by differentiating implicitly. Following the usual convention, we use \(y'\) to mean \(y'(x)\text{.}\) We start with<div class="displaymath">
+\begin{align*}
+\arcsin(x+2y)&amp;=x^2+y^2 
+\end{align*}
+</div>Using the chain rule,<div class="displaymath">
+\begin{align*}
+\frac{1+2y'}{\sqrt{1-(x+2y)^2}}&amp;=2x+2yy'\\
+\frac{1}{\sqrt{1-(x+2y)^2}}+\frac{2y'}{\sqrt{1-(x+2y)^2}}&amp;=2x+2yy'\\
+\frac{2y'}{\sqrt{1-(x+2y)^2}}-2yy'&amp;=2x-\frac{1}{\sqrt{1-(x+2y)^2}}\\
+y'\left(\frac{2}{\sqrt{1-(x+2y)^2}}-2y\right)&amp;=2x-\frac{1}{\sqrt{1-(x+2y)^2}}
+\end{align*}
+</div>Finally, solving for \(y'\) gives<div class="displaymath">
+\begin{align*}
+y'&amp;=\frac{2x-\frac{1}{\sqrt{1-(x+2y)^2}}}{\frac{2}{\sqrt{1-(x+2y)^2}}-2y}
+\left(\frac{\sqrt{1-(x+2y)^2}}{\sqrt{1-(x+2y)^2}}\right)\\
+y'&amp;=\frac{2x\sqrt{1-(x+2y)^2}-1}{2-2y\sqrt{1-(x+2y)^2}}
+\end{align*}
+</div>
+</li>
+<li id="li-631">Solution 2: We begin by taking the sine of both sides of the equation.<div class="displaymath">
+\begin{align*}
+\arcsin(x+2y)&amp;=x^2+y^2\\
+x+2y&amp;=\sin(x^2+y^2)\\
+\end{align*}
+<p class="intertext">Now, we differentiate implicitly.</p>
+\begin{align*}
+1+2y'&amp;=\cos(x^2+y^2)\cdot(2x+2yy')\\
+1+2y'&amp;=2x\cos(x^2+y^2)+2yy'\cos(x^2+y^2)\\
+2y'-2yy'\cos(x^2+y^2)&amp;=2x\cos(x^2+y^2)-1\\
+y'\left(2-2y\cos(x^2+y^2)\right)&amp;=2x\cos(x^2+y^2)-1\\
+y'&amp;=\frac{2x\cos(x^2+y^2)-1}{2-2y\cos(x^2+y^2)}
+\end{align*}
+</div>
+</li>
+<li id="li-632">
+<p id="p-2540">We used two different methods, and got two answers that look pretty different. However, the answers ought to be equivalent. To see this, we remember that for all values of \(x\) and \(y\) that we care about (those pairs \((x,y)\) in the domain of our curve), the equality</p>
+<div class="displaymath">
+\begin{equation*}
+\arcsin(x+2y)=x^2+y^2
+\end{equation*}
+</div>
+<p data-braille="continuation">holds. Drawing a triangle:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-189.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-2541">where the adjacent side (in red) come from the Pythagorean Theorem. Then, \(\cos(x^2+y^2)=\sqrt{1-(x+2y)^2}\text{,}\) so using our second solution:</p>
+<div class="displaymath">
+\begin{align*}
+y'&amp;=\frac{2x\cos(x^2+y^2)-1}{2-2y\cos(x^2+y^2)}\\
+&amp;=\frac{2x\sqrt{1-(x+2y)^2}-1}{2-2y\sqrt{1-(x+2y)^2}}
+\end{align*}
+</div>
+<p data-braille="continuation">which is exactly the answer from our first solution.</p>
+</li>
+</ul></div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

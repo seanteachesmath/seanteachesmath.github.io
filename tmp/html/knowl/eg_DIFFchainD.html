@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:32:53-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.9.16</span><span class="period">.</span><span class="space"> </span><span class="title">A nice messy example.</span>
+</h6>
+<p>Compute the following derivative:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\diff{}{x}\cos\left(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\right)
+\end{gather*}
+</div>
+<p>This time we are to compute the derivative of \(\cos\) with a really complicated argument.</p>
+<ul class="disc">
+<li>So, to start, we apply the chain rule with \(g(x)=\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\) being the really complicated argument and \(f\) being \(\cos\text{.}\) That is, \(f(u)=\cos(u)\text{.}\) Since  \(f'(u)=-\sin(u)\text{,}\) the chain rule gives<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\diff{}{x}\cos\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)
+=-\sin\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)\
+\diff{}{x} \left\{\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3} \right\}
+\end{gather*}
+</div>
+</li>
+<li>This reduced our problem to that of computing the derivative of the really complicated argument \(\tfrac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\text{.}\) We can think of the argument as being built up out of three pieces, namely \(x^5\text{,}\) multiplied by \(\sqrt{3+x^6}\text{,}\) divided by \({(4+x^2)}^3\text{,}\) or, equivalently, multiplied by \({(4+x^2)}^{-3}\text{.}\) So we may rewrite \(\tfrac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\) as \(x^5\,\big(3+x^6\big)^{\frac{1}{2}}\ {(4+x^2)}^{-3}\text{,}\) and then apply the product rule to reduce the problem to that of computing the derivatives of the three pieces.</li>
+<li>Here goes (recall Example <a class="xref" data-knowl="./knowl/eg_DIFFsimpleToolsA.html" title="Example 3.6.6: Extending the product rule to more than two factors">3.6.6</a>):<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\diff{}{x}\big[x^5\,{(3+x^6)}^{\frac{1}{2}}\ {(4+x^2)}^{-3}\big]
+&amp;=\diff{}{x}\big[x^5\big] \cdot {(3+x^6)}^{\frac{1}{2}}\cdot {(4+x^2)}^{-3}\\
+&amp;\phantom{=} +x^5\cdot \diff{}{x}\big[{(3+x^6)}^{\frac{1}{2}}\big]
+\cdot {(4+x^2)}^{-3}\\
+&amp;\phantom{=} +x^5\cdot {(3+x^6)}^{\frac{1}{2}}\cdot
+\diff{}{x}\big[{(4+x^2)}^{-3}\big]
+\end{align*}
+</div>This has reduced our problem to computing the derivatives of \(x^5\text{,}\) which is easy, and of \({(3+x^6)}^{\frac{1}{2}}\) and \({(4+x^2)}^{-3}\text{,}\) both of which can be done by the chain rule. Doing so,<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\diff{}{x}\big[x^5\,{(3+x^6)}^{\frac{1}{2}}\ {(4+x^2)}^{-3}\big]
+&amp;=\overbrace{\diff{}{x}\big[x^5\big]}^{5x^4}
+\cdot{(3+x^6)}^{\frac{1}{2}}\cdot {(4+x^2)}^{-3}\\
+&amp; \phantom{=}+x^5\cdot
+\overbrace{\diff{}{x}\big[{(3+x^6)}^{\frac{1}{2}}\big]}^
+{\frac{1}{2}(3+x^6)^{-\frac{1}{2}}\cdot 6x^5}
+\cdot {(4+x^2)}^{-3}\\
+&amp;\phantom{=} +x^5\cdot{(3+x^6)}^{\frac{1}{2}}\cdot
+\overbrace{\diff{}{x}\big[{(4+x^2)}^{-3}\big]}^
+{-3{(4+x^2)}^{-4}\cdot 2x}
+\end{align*}
+</div>
+</li>
+<li>
+<p>Now we can clean things up in a sneaky way by observing</p>
+<ul class="circle">
+<li>differentiating \(x^5\text{,}\) to get \(5x^4\text{,}\) is the same as multiplying \(x^5\) by \(\frac{5}{x}\text{,}\) and</li>
+<li>differentiating \({(3+x^6)}^{\frac{1}{2}}\) to get \(\frac{1}{2}(3+x^6)^{-\frac{1}{2}}\cdot 6x^5\) is the same as multiplying \({(3+x^6)}^{\frac{1}{2}}\) by  \(\frac{3x^5}{3+x^6}\text{,}\) and</li>
+<li>differentiating \({(4+x^2)}^{-3}\) to get  \(-3{(4+x^2)}^{-4}\cdot 2x\) is the same as multiplying \({(4+x^2)}^{-3}\) by \(-\frac{6x}{4+x^2}\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Using these sneaky tricks we can write our solution quite neatly:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\amp\diff{}{x}\cos\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)\\
+\amp=-\sin\bigg(\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\,\bigg)\
+\frac{x^5\sqrt{3+x^6}}{{(4+x^2)}^3}\
+\bigg\{\frac{5}{x}+\frac{3x^5}{3+x^6}-\frac{6x}{4+x^2}\bigg\}
+\end{align*}
+</div>
+</li>
+<li>This method of cleaning up the derivative of a messy product is actually something more systematic in disguise — namely logarithmic differentiation. We will come to this later.</li>
+</ul></article><span class="incontext"><a href="sec_chain_rule.html#eg_DIFFchainD">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T15:11:20-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Limits at Infinity</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-10.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_limits.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-12.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-10.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_limits.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-12.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11" class="active">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-11"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">Limits at Infinity</span>
+</h2>
+<section class="subsection" id="subsection-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.5.1</span> <span class="title">Limits at Infinity</span>
+</h3>
+<p id="p-689">Up until this point we have discussed what happens to a function as we move its input \(x\)  closer and closer to a particular point \(a\text{.}\) For a great many applications of  limits we need to understand what happens to a function when its input becomes  extremely large — for example what happens to a population at a time far in  the future.</p>
+<p id="p-690">The definition of a limit at infinity has a similar flavour to the definition of limits at  finite points that we saw above, but the details are a little different. We also  need to distinguish between positive and negative infinity. As \(x\) becomes  very large and positive it moves off towards \(+\infty\) but when it becomes very  large and negative it moves off towards \(-\infty\text{.}\)</p>
+<p id="p-691">Again we give an informal definition; the full formal definition can be found  in (the optional) Section <a href="sec_lim_inf_formal.html" class="internal" title="Section 2.8: (Optional) — Making Infinite Limits a Little More Formal">2.8</a> near the end of this chapter.</p>
+<article class="definition definition-like" id="definition-18"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Limits at infinity — informal.</span>
+</h6>
+<p id="p-692">We write</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} f(x) &amp;= L
+\end{align*}
+</div>
+<p data-braille="continuation">when the value of the function \(f(x)\) gets closer and closer to \(L\) as we make  \(x\) larger and larger and positive.</p>
+<p id="p-693">Similarly we write</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to -\infty} f(x) &amp;= L
+\end{align*}
+</div>
+<p data-braille="continuation">when the value of the function \(f(x)\) gets closer and closer to \(L\) as we make  \(x\) larger and larger and negative.</p></article><article class="example example-like" id="example-31"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-31"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Limits to \(+\infty\) and \(-\infty\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-31"><article class="example example-like"><p id="p-694">Consider the two functions depicted below</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/lim7.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-695">The dotted horizontal lines indicate the behaviour as \(x\) becomes very large.  The function on the left has limits as \(x \to \infty\) and as \(x \to -\infty\)  since  the function “settles down” to a particular value. On the other hand,  the function  on the right does not have a limit as \(x \to -\infty\) since the  function just keeps getting bigger and bigger.</p></article></div>
+<p id="p-696">Just as was the case for limits as \(x \to a\) we will start with two very simple  building blocks and build other limits from those.</p>
+<article class="theorem theorem-like" id="thm_basic_lim_inf"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span>
+</h6>
+<p id="p-697">Let \(c \in \mathbb{R}\) then the following limits hold</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} c &amp;= c &amp; \lim_{x \to -\infty} c &amp;= c\\
+\lim_{x \to \infty} \frac{1}{x} &amp;= 0 &amp; \lim_{x \to -\infty} \frac{1}{x} &amp;= 0
+\end{align*}
+</div></article><p id="p-698">Again, these limits interact nicely with standard arithmetic:</p>
+<article class="theorem theorem-like" id="theorem-10"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Arithmetic of limits at infinity.</span>
+</h6>
+<p id="p-699">Let \(f(x), g(x)\) be two functions for which the limits</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} f(x)&amp;=F &amp; \lim_{x \to \infty} g(x) &amp;=G
+\end{align*}
+</div>
+<p data-braille="continuation">exist. Then the following limits hold</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} f(x) \pm g(x) &amp;= F \pm G\\
+\lim_{x \to \infty} f(x) g(x) &amp;= F  G\\
+\lim_{x \to \infty} \frac{f(x)}{ g(x) } &amp;= \frac{F}{G} &amp; \text{provided } G \neq 0\\
+\end{align*}
+<p class="intertext">and for rational numbers \(r\)</p>
+\begin{align*}
+\lim_{x \to \infty} f(x)^r &amp;= F^r &amp; \text{provided $f(x)^r$ is defined for all $x$}
+\end{align*}
+</div>
+<p data-braille="continuation">The analogous results hold for limits to \(-\infty\text{.}\)</p></article><p id="p-700">Note that, as was the case in Theorem <a class="xref" data-knowl="./knowl/thm_lim_powers.html" title="Theorem 2.4.9: More arithmetic of limits — powers and roots">2.4.9</a>, we need a little extra care with powers of functions. We must avoid taking square roots of negative numbers, or  indeed any even root of a negative number <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-39" id="fn-39"><sup> 1 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-39"><div class="fn">To be more precise, there is no real  number \(x\) so that \(x^\text{even power}\) is a negative number. Hence we cannot take the  even-root of a negative number and express it as a real number. This is precisely  what complex numbers allow us to do, but alas there is not space in the course for us to  explore them.</div></div>
+<p id="p-701">Hence we have for all rational \(r \gt 0\)</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} \frac{1}{x^r} &amp;= 0
+\end{align*}
+</div>
+<p data-braille="continuation">but we have to be careful with</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to -\infty} \frac{1}{x^r} &amp;= 0
+\end{align*}
+</div>
+<p data-braille="continuation">This is only true if the denominator of \(r\) is not an even  number <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-40" id="fn-40"><sup> 2 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-40"><div class="fn">where we write \(r = \frac{p}{q}\) with \(p,q\) integers with no  common factors. For example,  \(r = \frac{6}{14}\) should be written as \(r =  \frac{3}{7}\) when considering this rule.</div></div>
+<p id="p-702">For example</p>
+<ul class="disc">
+<li id="li-239">\(\ds \lim_{x \to \infty} \frac{1}{x^{1/2}} = 0\text{,}\) but \(\ds \lim_{x \to  -\infty} \frac{1}{x^{1/2}}\) does not exist, because \(x^{1/2}\) is not defined for  \(x \lt 0\text{.}\)</li>
+<li id="li-240">On the other hand, \(x^{4/3}\) is defined for negative values of \(x\)  and \(\ds \lim_{x \to -\infty} \frac{1}{x^{4/3}} = 0\text{.}\)</li>
+</ul>
+<p id="p-703">Our first application of limits at infinity will be to examine the behaviour of  a rational function for very large \(x\text{.}\) To do this we use a “trick”.</p>
+<article class="example example-like" id="example-32"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-32"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">\(\ds \lim_{x \to \infty} \frac{x^2-3x+4}{3x^2+8x+1}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-32"><article class="example example-like"><p id="p-704">Compute the following limit:</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{x \to \infty} \frac{x^2-3x+4}{3x^2+8x+1}
+\end{gather*}
+</div>
+<p data-braille="continuation">As \(x\) becomes very  large, it is the \(x^2\) term that will dominate in both the  numerator and denominator and the other bits become irrelevant. That is,  for very large \(x\text{,}\) \(x^2\) is much much larger than \(x\) or any constant. So we  pull out these dominant parts</p>
+<div class="displaymath">
+\begin{align*}
+\frac{x^2-3x+4}{3x^2+8x+1}
+&amp;= \frac{x^2 \left(1-\frac{3}{x}+\frac{4}{x^2}\right)}
+{x^2 \left(3+\frac{8}{x}+\frac{1}{x^2} \right)}\\
+&amp;= \frac{1-\frac{3}{x}+\frac{4}{x^2}}
+{3+\frac{8}{x}+\frac{1}{x^2}} &amp; \text{ remove the common factors}
+\end{align*}
+</div>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} \frac{x^2-3x+4}{3x^2+8x+1}
+&amp;= \lim_{x \to \infty} \frac{1-\frac{3}{x}+\frac{4}{x^2}}
+{3+\frac{8}{x}+\frac{1}{x^2}}\\
+&amp;= \frac{\ds \lim_{x \to \infty}\left(1-\frac{3}{x}+\frac{4}{x^2}\right)}
+{\ds \lim_{x \to \infty}\left(3+\frac{8}{x}+\frac{1}{x^2} \right)}
+&amp; \text{arithmetic of limits}\\
+&amp;= \frac{\ds \lim_{x \to \infty} 1
+- \lim_{x \to \infty} \frac{3}{x} + \lim_{x \to \infty} \frac{4}{x^2}}
+{\ds \lim_{x \to \infty} 3
++ \lim_{x \to \infty} \frac{8}{x}+ \lim_{x \to \infty} \frac{1}{x^2} }
+&amp; \text{more arithmetic of limits}\\
+&amp;= \frac{1+0+0}{3+0+0}  = \frac{1}{3}
+\end{align*}
+</div></article></div>
+<p id="p-705">The following one gets a little harder</p>
+<article class="example example-like" id="eg_lim_tricky"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_lim_tricky"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Be careful of limits involving roots.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_lim_tricky"><article class="example example-like"><p id="p-706">Find the limit as \(x \to \infty\) of \(\frac{\sqrt{4x^2+1}}{5x-1}\)</p>
+<p id="p-707">We use the same trick — try to work out what is the biggest term in the  numerator and denominator and pull it to one side.</p>
+<ul class="disc">
+<li id="li-241">The denominator is dominated by \(5x\text{.}\)</li>
+<li id="li-242">The biggest contribution to the numerator comes from the \(4x^2\) inside  the square-root. When we pull \(x^2\) outside the square-root it becomes \(x\text{,}\)  so the numerator is dominated by \(x \cdot \sqrt{4} = 2x\)</li>
+<li id="li-243">To see this more explicitly rewrite the numerator<div class="displaymath">
+\begin{align*}
+\sqrt{4x^2+1} &amp;= \sqrt{x^2 (4+1/x^2)} = \sqrt{x^2} \sqrt{4+1/x^2} =
+x\sqrt{4+1/x^2}.
+\end{align*}
+</div>
+</li>
+<li id="li-244">Thus the limit as \(x \to \infty\) is<div class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} \frac{\sqrt{4x^2+1}}{5x-1}
+&amp;= \lim_{x \to \infty} \frac{x \sqrt{4+1/x^2}}{x(5-1/x)}\\
+&amp;= \lim_{x \to \infty} \frac{\sqrt{4+1/x^2}}{5-1/x}\\
+&amp; = \frac{2}{5}
+\end{align*}
+</div>
+</li>
+</ul></article></div>
+<p id="p-708">Now let us also think about the limit of the same function,                  \(\frac{\sqrt{4x^2+1}}{5x-1}\text{,}\) as \(x \rightarrow -\infty\text{.}\) There is something subtle going on because of the square-root. First consider the  function <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-41" id="fn-41"><sup> 3 </sup></a></p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-41"><div class="fn">Just to change things up lets use \(t\) and \(h(t)\) instead of  the ubiquitous \(x\) and \(f(x)\text{.}\)</div></div>
+<div class="displaymath" id="p-709">
+\begin{align*}
+h(t) &amp;= \sqrt{t^2}
+\end{align*}
+</div>
+<p data-braille="continuation">Evaluating this at \(t=7\) gives</p>
+<div class="displaymath">
+\begin{align*}
+h(7) &amp;= \sqrt{ 7^2 } = \sqrt{49} = 7
+\end{align*}
+</div>
+<p data-braille="continuation">We'll get much the same thing for any \(t \geq 0\text{.}\) For any \(t \ge 0\text{,}\) \(h(t)=\sqrt{t^2}\)  returns exactly \(t\text{.}\) However now consider the function at \(t=-3\)</p>
+<div class="displaymath">
+\begin{align*}
+h(-3) &amp;= \sqrt{ (-3)^2 } = \sqrt{9} = 3 = - (-3)
+\end{align*}
+</div>
+<p data-braille="continuation">that is the function is returning \(-1\) times the input.</p>
+<p id="p-710">This is because when we defined \(\sqrt{\text{ }}\text{,}\) we defined it to be the  <em class="emphasis">positive</em> square-root. i.e. the function \(\sqrt{t}\) can never return a  negative number. So being more careful</p>
+<div class="displaymath">
+\begin{align*}
+h(t) &amp;= \sqrt{t^2} = | t |
+\end{align*}
+</div>
+<p data-braille="continuation">Where the \(|t|\) is the absolute value of \(t\text{.}\) You are perhaps used to thinking  of absolute value as “remove the minus sign”, but this is not quite correct.  Let's sketch the function</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/abs.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-711">It is a piecewise function defined by</p>
+<div class="displaymath">
+\begin{align*}
+|x| &amp;= \begin{cases} x &amp; x \geq 0 \\ -x &amp; x  \lt  0 \end{cases}
+\end{align*}
+</div>
+<p data-braille="continuation">Hence our function \(h(t)\) is really</p>
+<div class="displaymath">
+\begin{align*}
+h(t) &amp;= \sqrt{t^2} =
+\begin{cases}
+t &amp; t \geq 0 \\
+-t &amp; t  \lt  0
+\end{cases}
+\end{align*}
+</div>
+<p data-braille="continuation">So that when we evaluate \(h(-7)\) it is</p>
+<div class="displaymath">
+\begin{align*}
+h(-7) &amp;= \sqrt{ (-7)^2 } = \sqrt{49} = 7 = -(-7)
+\end{align*}
+</div>
+<p data-braille="continuation">We are now ready to examine the limit as \(x \to -\infty\) in our previous  example. Mostly it is copy and paste from above.</p>
+<article class="example example-like" id="eg_lim_tricky_part2"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_lim_tricky_part2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Be careful of limits involving roots — continued.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_lim_tricky_part2"><article class="example example-like"><p id="p-712">Find the limit as \(x \to -\infty\) of \(\frac{\sqrt{4x^2+1}}{5x-1}\)</p>
+<p id="p-713">We use the same trick — try to work out what is the biggest term in the  numerator and denominator and pull it to one side. Since we are taking the  limit as \(x \to -\infty\) we should think of \(x\) as a large negative number.</p>
+<ul class="disc">
+<li id="li-245">The denominator is dominated by \(5x\text{.}\)</li>
+<li id="li-246">The biggest contribution to the numerator comes from the \(4x^2\) inside  the square-root. When we pull the \(x^2\) outside a square-root it becomes \(|x| =  -x\) (since we are taking the limit as \(x \to -\infty\)), so the numerator is  dominated by \(-x\cdot\sqrt{4} = -2x\)</li>
+<li id="li-247">To see this more explicitly rewrite the numerator<div class="displaymath">
+\begin{align*}
+\sqrt{4x^2+1} &amp;= \sqrt{x^2 (4+1/x^2)}  = \sqrt{x^2} \sqrt{4+1/x^2}\\
+&amp;= |x|\sqrt{4+1/x^2} \qquad \text{ and since $x \lt 0$ we have}\\
+&amp; = -x\sqrt{4+1/x^2}
+\end{align*}
+</div>
+</li>
+<li id="li-248">Thus the limit as \(x \to -\infty\) is<div class="displaymath">
+\begin{align*}
+\lim_{x \to -\infty} \frac{\sqrt{4x^2+1}}{5x-1}
+&amp;= \lim_{x \to -\infty} \frac{-x \sqrt{4+1/x^2}}{x(5-1/x)}\\
+&amp;= \lim_{x \to -\infty} \frac{-\sqrt{4+1/x^2}}{5-1/x}\\
+&amp; = -\frac{2}{5}
+\end{align*}
+</div>
+</li>
+</ul></article></div>
+<p id="p-714">So the limit as \(x \to -\infty\) is almost the same but we gain a minus sign.  This <em class="alert">is definitely not</em> the case in general — you have to think about each  example separately.</p>
+<p id="p-715">Here is a sketch of the function in question.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/neg_inf_lim.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<article class="example example-like" id="example-35"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-35"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Do not try to add and subtract infinity.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-35"><article class="example example-like"><p id="p-716">Compute the following limit:</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{x \to \infty} \left( x^{7/5}-x \right)
+\end{gather*}
+</div>
+<p data-braille="continuation">In this case we cannot use the arithmetic of limits to write this as</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} \left( x^{7/5}-x \right)
+&amp;= \left( \lim_{x \to \infty} x^{7/5}\right)
+- \left( \lim_{x \to \infty} x \right)\\
+&amp;= \infty -\infty
+\end{align*}
+</div>
+<p data-braille="continuation">because the limits do not exist. We can only use the limit laws when the limits  exist. So we should go back and think some more.</p>
+<p id="p-717">When \(x\) is very large, \(x^{7/5} = x\cdot x^{2/5}\) will be much larger than \(x\text{,}\) so the  \(x^{7/5}\) term will dominate the \(x\) term. So factor out \(x^{7/5}\) and rewrite it as</p>
+<div class="displaymath">
+\begin{align*}
+x^{7/5}-x &amp;= x^{7/5} \left(1 - \frac{1}{x^{2/5}} \right)
+\end{align*}
+</div>
+<p data-braille="continuation">Consider what happens to each of the factors as \(x \to \infty\)</p>
+<ul class="disc">
+<li id="li-249">For large \(x\text{,}\) \(x^{7/5} \gt x\) (this is actually true for any \(x \gt 1\)).  In the limit as \(x \to +\infty\text{,}\) \(x\) becomes arbitrarily large and  positive, and \(x^{7/5}\) must be bigger still, so it follows that<div class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} x^{7/5} &amp;= + \infty.
+\end{align*}
+</div>
+</li>
+<li id="li-250">On the other hand, \((1-x^{-2/5})\) becomes closer and closer to \(1\) —  we can use the arithmetic of limits to write this as<div class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} (1-x^{-2/5}) &amp;= \lim_{x \to \infty} 1 - \lim_{x \to
+\infty} x^{-2/5} = 1-0 = 1
+\end{align*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">So the product of these two factors will be come larger and larger (and  positive) as \(x\) moves off to infinity. Hence we have</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to \infty} x^{7/5} \left(1 - 1/x^{2/5} \right) &amp;= + \infty
+\end{align*}
+</div></article></div>
+<p id="p-718">But remember \(+\infty\) and \(-\infty\) are not numbers; the last equation in the example is shorthand for “the function becomes arbitrarily large”.</p>
+<p id="p-719">In the previous section we saw that finite limits and arithmetic interact very nicely  (see Theorems <a class="xref" data-knowl="./knowl/thm_arith_lim.html" title="Theorem 2.4.3: Arithmetic of limits">2.4.3</a> and <a class="xref" data-knowl="./knowl/thm_lim_powers.html" title="Theorem 2.4.9: More arithmetic of limits — powers and roots">2.4.9</a>). This enabled us to compute  the limits of more complicated function in terms of simpler ones. When limits of  functions go to plus or minus infinity we are quite a bit more restricted in what we can  deduce. The next theorem states some results concerning the sum, difference, ratio and  product of infinite limits — unfortunately in many cases we cannot make general  statements and the results will depend on the details of the problem at hand.</p>
+<article class="theorem theorem-like" id="thm_arith_inf_lim"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Arithmetic of infinite limits.</span>
+</h6>
+<p id="p-720">Let \(a,c,H \in \mathbb{R}\) and let \(f,g,h\) be functions defined in  an interval around \(a\) (but they need not be defined at \(x=a\)), so that</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} f(x) &amp;= +\infty &amp;
+\lim_{x \to a} g(x) &amp;= +\infty &amp;
+\lim_{x \to a} h(x) &amp;= H
+\end{align*}
+</div>
+<ul class="disc">
+<li id="li-251">\(\displaystyle \ds \lim_{x \to a} ( f(x) + g(x) ) = +\infty\)</li>
+<li id="li-252">\(\displaystyle \ds \lim_{x \to a} ( f(x) + h(x) ) = +\infty\)</li>
+<li id="li-253">\(\ds \lim_{x \to a} ( f(x) - g(x) )\) undetermined</li>
+<li id="li-254">\(\displaystyle \ds \lim_{x \to a} ( f(x) - h(x) ) = +\infty\)</li>
+<li id="li-255">\(\displaystyle \ds \lim_{x \to a} c f(x) =
+\begin{cases}
++\infty &amp; c \gt 0 \\
+0 &amp; c=0 \\
+-\infty &amp; c \lt 0
+\end{cases}\)</li>
+<li id="li-256">\(\ds \lim_{x \to a} ( f(x) \cdot g(x) ) = +\infty\text{.}\)</li>
+<li id="li-257">\(\displaystyle \ds \lim_{x \to a} f(x) h(x) =
+\begin{cases}
++\infty &amp; H \gt 0 \\
+-\infty &amp; H \lt 0\\
+\text{undetermined} &amp; H=0
+\end{cases}\)</li>
+<li id="li-258">\(\ds \lim_{x \to a} \frac{f(x)}{g(x)}\) undetermined</li>
+<li id="li-259">\(\displaystyle \ds \lim_{x \to a} \frac{f(x)}{h(x)} =
+\begin{cases}
++\infty &amp; H \gt 0 \\
+-\infty &amp; H \lt 0\\
+\text{undetermined} &amp; H=0
+\end{cases}\)</li>
+<li id="li-260">\(\displaystyle \ds \lim_{x \to a} \frac{h(x)}{f(x)} = 0\)</li>
+</ul></article><p id="p-721">Note that by “undetermined” we mean that the limit may or may not exist, but  cannot be determined from the information given in the theorem. See  Example <a class="xref" data-knowl="./knowl/eg_lim_rat.html" title="Example 2.4.7: Be careful with limits of ratios">2.4.7</a> for an example of what we mean by  “undetermined”. Additionally consider the following example.</p>
+<article class="example example-like" id="example-36"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-36"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.5.10</span><span class="period">.</span><span class="space"> </span><span class="title">Be careful with the arithmetic of infinite limits.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-36"><article class="example example-like"><p id="p-722">Consider the following 3 functions:</p>
+<div class="displaymath">
+\begin{align*}
+f(x)&amp;=x^{-2} &amp; g(x)&amp;=2x^{-2} &amp;h(x)&amp;=x^{-2}-1.\\
+\end{align*}
+<p class="intertext">Their limits as \(x \to 0\) are:</p>
+\begin{align*}
+\lim_{x\to0} f(x) &amp;= +\infty &amp;
+\lim_{x\to0} g(x) &amp;= +\infty &amp;
+\lim_{x\to0} h(x) &amp;= +\infty.
+\end{align*}
+</div>
+<p data-braille="continuation">Say we want to compute the limit of the difference of two of the above functions as \(x  \to 0\text{.}\) Then the previous theorem cannot help us. This is not because it is too weak,  rather it is because the difference of two infinite limits can be, either plus infinity,  minus infinity or some finite number depending on the details of the problem. For example,</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x\to0} \left( f(x)-g(x) \right) &amp;= \lim_{x\to0} -x^{-2} = -\infty\\
+\lim_{x\to0} \left( f(x)-h(x) \right) &amp;= \lim_{x\to0} 1 = 1\\
+\lim_{x\to0} \left( g(x)-h(x) \right) &amp;= \lim_{x\to0} x^{-2}+1 = +\infty
+\end{align*}
+</div></article></div></section><section class="exercises" id="exercises-5"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.5.2</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-9">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-18"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-79"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-723">Give a polynomial \(f(x)\) with the property that both \(\displaystyle\lim_{x \rightarrow\infty} f(x)\)  and  \(\displaystyle\lim_{x \rightarrow -\infty} f(x)\) are (finite) real numbers.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-62" id="hint-62"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-62"><div class="hint solution-like"><p id="p-724">It might not look like a traditional polynomial.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-79" id="answer-79"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-79"><div class="answer solution-like"><p id="p-725">There are many answers: any constant polynomial has this property. One answer is \(f(x)=1\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-79" id="solution-79"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-79"><div class="solution solution-like"><p id="p-726">Any polynomial of degree one or higher will go to \(\infty\) or \(-\infty\) as \(x\) goes to \(\infty\text{.}\) So, we need a polynomial of degree 0--that is, \(f(x)\) is a constant. One possible answer is \(f(x)=1\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-80"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-727">Give a polynomial \(f(x)\) that satisfies \(\displaystyle\lim_{x \rightarrow\infty} f(x) \neq \displaystyle\lim_{x \rightarrow -\infty} f(x)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-63" id="hint-63"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-63"><div class="hint solution-like"><p id="p-728">The degree of the polynomial matters.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-80" id="answer-80"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-80"><div class="answer solution-like"><p id="p-729">There are many answers: any odd-degree polynomial has this property. One answer is \(f(x)=x\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-80" id="solution-80"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-80"><div class="solution solution-like">
+<p id="p-730">This will be the case for any polynomial of <em class="emphasis">odd</em> degree. For instance, \(f(x)=x\text{.}\)</p>
+<p id="p-731">Many answers are possible: also \(f(x)=x^{15}-32x^2+9\) satisfies \(\displaystyle\lim_{x \rightarrow \infty} f(x) = \infty\) and \(\displaystyle\lim_{x \rightarrow -\infty} f(x)= -\infty\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-10">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-19"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-81"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-732">Evaluate \(\displaystyle\lim_{x \rightarrow \infty} 2^{-x}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-64" id="hint-64"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-64"><div class="hint solution-like"><p id="p-733">What does a negative exponent do?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-81" id="answer-81"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-81"><div class="answer solution-like"><p id="p-734">0</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-81" id="solution-81"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-81"><div class="solution solution-like"><p id="p-735">\(\displaystyle\lim_{x \rightarrow \infty} 2^{-x}=
+\displaystyle\lim_{x \rightarrow \infty} \frac{1}{2^x}=0\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="s1_5limex"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-736">Evaluate \(\displaystyle\lim_{x \rightarrow \infty} 2^x\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-65" id="hint-65"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-65"><div class="hint solution-like"><p id="p-737">You can think about the behaviour of this function by remembering how you first learned to describe exponentiation.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-82" id="answer-82"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-82"><div class="answer solution-like"><p id="p-738">\(\infty\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-82" id="solution-82"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-82"><div class="solution solution-like"><p id="p-739">As \(x\) gets larger and larger, \(2^x\) grows without bound. (For integer values of \(x\text{,}\) you can imagine multiplying \(2\) by itself more and more times.) So, \(\displaystyle\lim_{x \rightarrow \infty}2^x=\infty\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-83"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-740">Evaluate \(\displaystyle\lim_{x \rightarrow -\infty} 2^x\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-66" id="hint-66"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-66"><div class="hint solution-like"><p id="p-741">The exponent will be a negative number.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-83" id="answer-83"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-83"><div class="answer solution-like"><p id="p-742">\(0\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-83" id="solution-83"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-83"><div class="solution solution-like">
+<p id="p-743">Write \(X=-x\text{.}\) As \(x\) becomes more and more negative, \(X\) becomes more and more positive. From Question <a class="xref" data-knowl="./knowl/s1_5limex.html" title="Exercise 2.5.2.4">2.5.2.4</a>, we know that \(2^X\) grows without bound as \(X\) gets larger and larger. Since \(2^x= 2^{-(-x)}= 2^{-X} =\frac{1}{2^X}\text{,}\) as we let \(x\) become a huge negative number, we are in effect dividing by a huge positive number; hence \(\lim\limits_{x\rightarrow-\infty} 2^x = 0\text{.}\)</p>
+<p id="p-744">A more formulaic way to describe the above is this: \(\lim\limits_{x\rightarrow-\infty} 2^x
+= \lim\limits_{X\rightarrow\infty} 2^{-X}
+= \lim\limits_{X\rightarrow\infty} \frac{1}{2^X}
+=0\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-84"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-745">Evaluate \(\displaystyle\lim_{x \rightarrow -\infty} \cos x\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-67" id="hint-67"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-67"><div class="hint solution-like"><p id="p-746">What <em class="emphasis">single</em> number is the function approaching?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-84" id="answer-84"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-84"><div class="answer solution-like"><p id="p-747">DNE</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-84" id="solution-84"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-84"><div class="solution solution-like"><p id="p-748">There is no single number that \(\cos x\) approaches as \(x\) becomes more and more strongly negative: as \(x\) grows in the negative direction, the function oscillates between \(-1\) and \(+1\text{,}\) never settling close to one particular number. So, this limit does not exist.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-85"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-749">Evaluate \(\displaystyle\lim_{x \rightarrow\infty}x-3x^5+100x^2\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-68" id="hint-68"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-68"><div class="hint solution-like"><p id="p-750">The highest-order term dominates when \(x\) is large.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-85" id="answer-85"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-85"><div class="answer solution-like"><p id="p-751">\(-\infty\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-85" id="solution-85"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-85"><div class="solution solution-like">
+<p id="p-752">The highest-order term in this polynomial is \(-3x^5\text{,}\) so this dominates the function's behaviour as \(x\) goes to infinity. More formally:</p>
+<div class="displaymath">
+\begin{align*}
+\lim\limits_{x\rightarrow\infty} \big(x - 3x^5 +100 x^2\big)
+&amp;=\lim\limits_{x\rightarrow\infty} - 3x^5\left(1 -\frac{1}{3x^4}
+-\frac{100}{3 x^3}\right)\\
+&amp;  =\lim\limits_{x\rightarrow\infty} - 3x^5
+=-\infty\\
+\end{align*}
+<p class="intertext">because</p>
+\begin{align*}
+\lim\limits_{x\rightarrow\infty} \left(1 -\frac{1}{3x^4}
+-\frac{100}{3 x^3}\right)
+&amp;=1-0-0=1.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-86"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-753">Evaluate \(\displaystyle\lim_{x \rightarrow\infty} \dfrac{\sqrt{3x^8+7x^4}+10}{x^4-2x^2+1}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-69" id="hint-69"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-69"><div class="hint solution-like"><p id="p-754">Factor the highest power of \(x\) out of both the numerator and the denominator. You can factor through square roots (carefully).</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-86" id="answer-86"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-86"><div class="answer solution-like"><p id="p-755">\(\sqrt{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-86" id="solution-86"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-86"><div class="solution solution-like">
+<p id="p-756">Our standard trick is to factor out the highest power of \(x\) in the denominator: \(x^4\text{.}\) We just have to be a little careful with the square root. Since we are taking the limit as \(x\) goes to positive infinity, we have positive \(x\)-values, so \(\sqrt{x^2}=x\) and \(\sqrt{x^8}=x^4\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\displaystyle\lim_{x \rightarrow\infty} \dfrac{\sqrt{3x^8+7x^4}+10}{x^4-2x^2+1}&amp;=
+\displaystyle\lim_{x \rightarrow\infty} \dfrac{\sqrt{x^8(3+\frac{7}{x^4})}+10}{x^4(1-\frac{2}{x^2}+\frac{1}{x^4})}\\
+&amp;=
+\displaystyle\lim_{x \rightarrow\infty} \dfrac{\sqrt{x^8}\sqrt{3+\frac{7}{x^4}}+10}{x^4(1-\frac{2}{x^2}+\frac{1}{x^4})}\\
+&amp;=
+\displaystyle\lim_{x \rightarrow\infty} \dfrac{x^4\sqrt{3+\frac{7}{x^4}}+10}{x^4(1-\frac{2}{x^2}+\frac{1}{x^4})}\\
+&amp;=
+\displaystyle\lim_{x \rightarrow\infty} \dfrac{x^4\left(\sqrt{3+\frac{7}{x^4}}+\frac{10}{x^4}\right)}{x^4(1-\frac{2}{x^2}+\frac{1}{x^4})}\\
+&amp;=
+\displaystyle\lim_{x \rightarrow\infty} \dfrac{\sqrt{3+\frac{7}{x^4}}+\frac{10}{x^4}}{1-\frac{2}{x^2}+\frac{1}{x^4}}\\
+&amp;=\frac{\sqrt{3+0}+0}{1-0+0}=\sqrt{3}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-87"><h6 class="heading">
+<span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">2012H.</span>
+</h6>
+<p id="p-757">\(\lim\limits_{x\rightarrow \infty}
+\left[\sqrt{x^2+5x}-\sqrt{x^2-x}\right]\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-70" id="hint-70"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-70"><div class="hint solution-like"><p id="p-758">Multiply and divide by the conjugate, \(\sqrt{x^2+5x}+\sqrt{x^2-x}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-87" id="answer-87"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-87"><div class="answer solution-like"><p id="p-759">3</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-87" id="solution-87"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-87"><div class="solution solution-like">
+<p id="p-760">We have two terms, each getting extremely large. It's unclear at first what happens when we subtract them. To get this equation into another form, we multiply and divide by the conjugate, \(\sqrt{x^2+5x}+\sqrt{x^2-x}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\amp\lim_{x\rightarrow \infty}\left[\sqrt{x^2+5x}-\sqrt{x^2-x}\right]\\
+\amp\hskip0.25in
+=\lim_{x\rightarrow \infty}\left[\dfrac{(\sqrt{x^2+5x}-\sqrt{x^2-x})(\sqrt{x^2+5x}+\sqrt{x^2-x})}{\sqrt{x^2+5x}+\sqrt{x^2-x}}\right]\\
+&amp;\hskip0.25in= \lim_{x\rightarrow \infty}\dfrac{(x^2+5x)-(x^2-x)}
+{\sqrt{x^2+5x}+\sqrt{x^2-x}}\\
+&amp;\hskip0.25in = \lim_{x\rightarrow \infty}\dfrac{6x}{\sqrt{x^2+5x}+\sqrt{x^2-x}}\\
+\end{align*}
+<p class="intertext">Now we divide the numerator and denominator by \(x\text{.}\) In the case of the denominator, since \(x \gt 0\text{,}\) \(x=\sqrt{x^2}\text{.}\)</p>
+\begin{align*}
+&amp;\hskip0.25in= \lim_{x\rightarrow \infty}\dfrac{6(x)}{\sqrt{x^2}\sqrt{1+\frac{5}{x}}+\sqrt{x^2}\sqrt{1-\frac{1}{x}}}\\
+&amp;\hskip0.25in= \lim_{x\rightarrow \infty}\dfrac{6(x)}{(x)\sqrt{1+\frac{5}{x}}+(x)\sqrt{1-\frac{1}{x}}}\\
+&amp; \hskip0.25in= \lim_{x\rightarrow \infty}\dfrac{6}{\sqrt{1+\frac{5}{x}}+\sqrt{1-\frac{1}{x}}}\\
+&amp;\hskip0.25in=\frac{6}{\sqrt{1+0}+\sqrt{1-0}}= 3
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s1_5first_neg_sqrt"><h6 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-761">Evaluate \(\displaystyle \lim_{x\to -\infty} \frac{3x}{\sqrt{4x^2+x}-2x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-71" id="hint-71"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-71"><div class="hint solution-like">
+<p id="p-762">Divide both the numerator and the denominator by the highest power of \(x\) that is in the denominator.</p>
+<p id="p-763">Remember that \(\sqrt{\ }\) is defined to be the <em class="emphasis">positive</em> square root. Consequently, if \(x \lt 0\text{,}\) then \(\sqrt{x^2}\text{,}\) which is positive, is <em class="emphasis">not</em> the same as \(x\text{,}\) which is negative.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-88" id="answer-88"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-88"><div class="answer solution-like"><p id="p-764">\(-\frac{3}{4}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-88" id="solution-88"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-88"><div class="solution solution-like">
+<p id="p-765">Note that for large negative \(x\text{,}\) the first term in the denominator \(\sqrt{4x^2+x}\approx\sqrt{4x^2}=|2x|=-2x\) <em class="emphasis">not</em> \(+2x\text{.}\) A good way to avoid incorrectly computing \(\sqrt{x^2}\) when \(x\) is negative is to define \(y=-x\) and express everything in terms of \(y\text{.}\) That's what we'll do.</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x\to -\infty} \frac{3x}{\sqrt{4x^2+x}-2x}
+\amp=\lim_{y\to +\infty} \frac{-3y}{\sqrt{4y^2-y}+2y} \\
+\amp=\lim_{y\to +\infty} \frac{-3y}{y\sqrt{4-\frac{1}{y}}+2y} \\
+\amp=\lim_{y\to +\infty} \frac{-3}{\sqrt{4-\frac{1}{y}}+2} \\
+\amp=\frac{-3}{\sqrt{4-0}+2} \quad\text{since }1/y\to 0\text{ as }y\to +\infty\\
+\amp= -\frac{3}{4}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-89"><h6 class="heading">
+<span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">2007H.</span>
+</h6>
+<p id="p-766">Evaluate \(\lim\limits_{x\rightarrow -\infty}\dfrac{1-x-x^2}{2x^2-7}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-72" id="hint-72"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-72"><div class="hint solution-like"><p id="p-767">Factor out the highest power of the denominator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-89" id="answer-89"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-89"><div class="answer solution-like"><p id="p-768">\(-\dfrac{1}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-89" id="solution-89"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-89"><div class="solution solution-like">
+<p id="p-769">The highest power of \(x\) in the denominator is \(x^2\text{,}\) so we divide the numerator and denominator by \(x^2\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\lim\limits_{x\rightarrow -\infty}\frac{1-x-x^2}{2x^2-7}
+&amp;=\lim\limits_{x\rightarrow -\infty}\frac{1/x^2-1/x-1}{2-7/x^2}\\
+&amp;=\frac{0-0-1}{2-0}=-\frac{1}{2}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-90"><h6 class="heading">
+<span class="codenumber">12<span class="period">.</span></span><span class="space"> </span><span class="title">1999H.</span>
+</h6>
+<p id="p-770">Evaluate \(\lim\limits_{x\rightarrow\infty}\big(\sqrt{x^2+x}-x\big)\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-73" id="hint-73"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-73"><div class="hint solution-like">
+<p id="p-771">The conjugate of \((\sqrt{x^2+x}-x)\) is \((\sqrt{x^2+x}+x)\text{.}\)</p>
+<p id="p-772">Multiply by \(1=\dfrac{\sqrt{x^2+x}+x}
+{\sqrt{x^2+x}+x}\) to coax your function into a fraction.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-90" id="answer-90"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-90"><div class="answer solution-like"><p id="p-773">\(\frac{1}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-90" id="solution-90"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-90"><div class="solution solution-like"><div class="displaymath" id="p-774">
+\begin{align*}
+\lim_{x\rightarrow\infty}\big(\sqrt{x^2+x}-x\big)
+&amp;=\lim_{x\rightarrow\infty}
+\frac{\big(\sqrt{x^2+x}-x\big)\big(\sqrt{x^2+x}+x\big)}
+{\sqrt{x^2+x}+x}\\
+\amp=\lim_{x \to \infty}\frac{(x^2+x)-x^2}{\sqrt{x^2+x}+x}
+=\lim_{x\rightarrow\infty}
+\frac{x}{\sqrt{x^2+x}+x}\\
+&amp;=\lim_{x\rightarrow\infty}
+\frac{1}{\sqrt{1+\frac{1}{x}}+1}
+=\frac{1}{2}
+\end{align*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-91"><h6 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-775">Evaluate \(\displaystyle \lim_{x\to +\infty} \frac{5x^2-3x+1}{3x^2 +x+7}.\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-74" id="hint-74"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-74"><div class="hint solution-like"><p id="p-776">Divide both the numerator and the denominator by the highest power of \(x\) that is in the denominator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-91" id="answer-91"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-91"><div class="answer solution-like"><p id="p-777">\(\frac{5}{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-91" id="solution-91"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-91"><div class="solution solution-like">
+<p id="p-778">We have, after dividing both numerator and denominator by \(x^2\) (which is the highest power of the denominator) that</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{5x^2-3x+1}{3x^2+x+7}=\frac{5-\frac{3}{x}+\frac{1}{x^2}}{3+\frac{1}{x}+\frac{7}{x^2}}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(1/x\to 0\) and also \(1/x^2\to 0\) as \(x\to +\infty\text{,}\) we conclude that</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\to +\infty} \frac{5x^2-3x+1}{3x^2 +x+7}=\frac{5}{3}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-92"><h6 class="heading">
+<span class="codenumber">14<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-779">Evaluate \(\displaystyle \lim_{x\to +\infty} \frac{ \sqrt{4\,x + 2}}{3\,x+4}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-75" id="hint-75"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-75"><div class="hint solution-like"><p id="p-780">Divide both the numerator and the denominator by the highest power of \(x\) that is in the denominator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-92" id="answer-92"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-92"><div class="answer solution-like"><p id="p-781">0</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-92" id="solution-92"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-92"><div class="solution solution-like">
+<p id="p-782">We have, after dividing both numerator and denominator by \(x\) (which is the highest power of the denominator) that</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{ \sqrt{4\,x + 2}}{3x+4}=\frac{\sqrt{\frac 4 x + \frac 2 {x^2}}}{3 + \frac 4 x}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(1/x\to 0\) and also \(1/x^2\to 0\) as \(x\to +\infty\text{,}\) we conclude that</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\to +\infty} \frac{ \sqrt{4\,x + 2}} {3\,x+4}=\frac {0}{3} = 0.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-93"><h6 class="heading">
+<span class="codenumber">15<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-783">Evaluate \(\displaystyle \lim_{x\to +\infty} \frac{4x^3+x}{7x^3 + x^2 - 2}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-76" id="hint-76"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-76"><div class="hint solution-like"><p id="p-784">Divide both the numerator and the denominator by the highest power of \(x\) that is in the denominator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-93" id="answer-93"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-93"><div class="answer solution-like"><p id="p-785">\(\frac{4}{7}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-93" id="solution-93"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-93"><div class="solution solution-like">
+<p id="p-786">The dominant terms in the numerator and denominator have order \(x^3\text{.}\)  Taking out that common factor we get</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{4x^3+x}{7x^3 + x^2 - 2}
+= \frac{4 + \frac{1}{x^2}}{7 + \frac{1}{x} - \frac{2}{x^3}}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(1/x^a\to 0\) as \(x\to +\infty\) (for \(a \gt 0\)), we conclude that</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\to +\infty} \frac{4x^3+x}{7x^3 +x^2-2}=\frac{4}{7}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-94"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-787">Evaluate \(\displaystyle\lim_{x \rightarrow -\infty}\dfrac{\sqrt[3]{x^2+x}-\sqrt[4]{x^4+5}}{x+1}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-77" id="hint-77"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-77"><div class="hint solution-like"><p id="p-788">Divide both the numerator and the denominator by \(x\) (which is the largest power of \(x\) in the denominator). In the numerator, move the resulting factor of \(1/x\) inside the two roots. Be careful about the signs when you do so. Even and odd roots behave differently-- see Question <a class="xref" data-knowl="./knowl/s1_5first_neg_sqrt.html" title="Exercise 2.5.2.10: 2015Q">2.5.2.10</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-94" id="answer-94"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-94"><div class="answer solution-like"><p id="p-789">1</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-94" id="solution-94"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-94"><div class="solution solution-like"><ul id="p-790" class="disc">
+<li id="li-261">
+<p id="p-791">Solution 1</p>
+<p id="p-792">We want to factor out \(x\text{,}\) the highest power in the denominator. Since our limit only sees negative values of \(x\text{,}\) we must remember that \(\sqrt[4]{x^4}=|x|=-x\text{,}\) although \(\sqrt[3]{x^3}=x\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \rightarrow -\infty}\dfrac{\sqrt[3]{x^2+x}-\sqrt[4]{x^4+5}}{x+1}&amp;=
+\lim_{x \rightarrow -\infty}\dfrac{\sqrt[3]{x^3(\frac{1}{x}+\frac{1}{x^2})}-\sqrt[4]{x^4(1+\frac{5}{x^4})}}{x(1+\frac{1}{x})}\\
+&amp;=
+\lim_{x \rightarrow -\infty}\dfrac{\sqrt[3]{x^3}\sqrt[3]{\frac{1}{x}+\frac{1}{x^2}}-\sqrt[4]{x^4}\sqrt[4]{1+\frac{5}{x^4}}}{x(1+\frac{1}{x})}\\
+&amp;=\lim_{x \rightarrow -\infty}\dfrac{x\sqrt[3]{\frac{1}{x}+\frac{1}{x^2}}-(-x)\sqrt[4]{1+\frac{5}{x^4}}}{x(1+\frac{1}{x})}\\
+&amp;=\lim_{x \rightarrow -\infty}\dfrac{\sqrt[3]{\frac{1}{x}+\frac{1}{x^2}}+\sqrt[4]{1+\frac{5}{x^4}}}{1+\frac{1}{x}}\\
+&amp;=\frac{\sqrt[3]{0+0}+\sqrt[4]{1+0}}{1+0}=1
+\end{align*}
+</div>
+</li>
+<li id="li-262">
+<p id="p-793">Solution 2</p>
+<p id="p-794">Alternately, we can use the transformation \(\displaystyle\lim_{x \rightarrow -\infty} f(x)=\displaystyle\lim_{x \rightarrow \infty} f(-x)\text{.}\) Then we only look at positive values of \(x\text{,}\) so roots behave nicely: \(\sqrt[4]{x^4}=|x|=x\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \rightarrow -\infty}\dfrac{\sqrt[3]{x^2+x}-\sqrt[4]{x^4+5}}{x+1}&amp;=
+\lim_{x \rightarrow \infty}\dfrac{\sqrt[3]{(-x)^2-x}-\sqrt[4]{(-x)^4+5}}{-x+1}\\
+&amp;=
+\lim_{x \rightarrow \infty}\dfrac{\sqrt[3]{x^2-x}-\sqrt[4]{x^4+5}}{-x+1}\\
+&amp;=
+\lim_{x \rightarrow \infty}\dfrac{\sqrt[3]{x^3}\sqrt[3]{\frac{1}{x}-\frac{1}{x^2}}-\sqrt[4]{x^4}\sqrt[4]{1+\frac{5}{x^4}}}{x(-1+\frac{1}{x})}\\
+&amp;=
+\lim_{x \rightarrow \infty}\dfrac{x\sqrt[3]{\frac{1}{x}-\frac{1}{x^2}}-x\sqrt[4]{1+\frac{5}{x^4}}}{x(-1+\frac{1}{x})}\\
+&amp;=
+\lim_{x \rightarrow \infty}\dfrac{\sqrt[3]{\frac{1}{x}-\frac{1}{x^2}}-\sqrt[4]{1+\frac{5}{x^4}}}{-1+\frac{1}{x}}\\
+&amp;=\frac{\sqrt[3]{0-0}-\sqrt[4]{1+0}}{-1+0}=\frac{-1}{-1}=1
+\end{align*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-95"><h6 class="heading">
+<span class="codenumber">17<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-795">Evaluate \(\displaystyle\lim_{x\rightarrow +\infty} \frac{5x^2+10}{3x^3 +2x^2+x}.\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-78" id="hint-78"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-78"><div class="hint solution-like"><p id="p-796">Divide both the numerator and the denominator by the highest power of \(x\) that is in the denominator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-95" id="answer-95"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-95"><div class="answer solution-like"><p id="p-797">0</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-95" id="solution-95"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-95"><div class="solution solution-like">
+<p id="p-798">We have, after dividing both numerator and denominator by \(x^3\) (which is the highest power of the denominator) that:</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x \to \infty} \frac{5x^2+10}{3x^3 +2x^2+x}=\lim_{x \to\infty}\frac{\frac{5}{x}+\frac{10}{x^3}}{3+\frac{2}{x}+\frac{1}{x^2}}=\frac{0}{3}=0.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-96"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-799">Evaluate \(\displaystyle\lim_{x \rightarrow -\infty}\frac{x+1}{\sqrt{x^2}}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-79" id="hint-79"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-79"><div class="hint solution-like"><p id="p-800">Divide both the numerator and the denominator by the highest power of \(x\) that is in the denominator. It is <em class="emphasis">not</em> always true that \(\sqrt{x^2}=x\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-96" id="answer-96"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-96"><div class="answer solution-like"><p id="p-801">\(-1\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-96" id="solution-96"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-96"><div class="solution solution-like">
+<p id="p-802">Since we only consider negative values of \(x\text{,}\) \(\sqrt{x^2}=|x|=-x\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\displaystyle\lim_{x \rightarrow -\infty}\frac{x+1}{\sqrt{x^2}}&amp;=
+\displaystyle\lim_{x \rightarrow -\infty}\frac{x+1}{-x}\\
+&amp;=\displaystyle\lim_{x \rightarrow -\infty}\frac{x}{-x}+\frac{1}{-x}\\
+&amp;=\displaystyle\lim_{x \rightarrow -\infty}-1-\frac{1}{x}\\
+&amp;=-1
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-97"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-803">Evaluate \(\displaystyle\lim_{x \rightarrow \infty}\frac{x+1}{\sqrt{x^2}}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-80" id="hint-80"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-80"><div class="hint solution-like"><p id="p-804">Simplify.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-97" id="answer-97"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-97"><div class="answer solution-like"><p id="p-805">\(1\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-97" id="solution-97"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-97"><div class="solution solution-like">
+<p id="p-806">Since we only consider positive values of \(x\text{,}\) \(\sqrt{x^2}=|x|=x\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\displaystyle\lim_{x \rightarrow \infty}\frac{x+1}{\sqrt{x^2}}&amp;=
+\displaystyle\lim_{x \rightarrow \infty}\frac{x+1}{x}\\
+&amp;=\displaystyle\lim_{x \rightarrow \infty}1+\frac{1}{x}=1+0=1
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-98"><h6 class="heading">
+<span class="codenumber">20<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-807">Find the limit \(\displaystyle \lim_{x\to -\infty} \sin\left( \frac{\pi}{2}
+\frac{|x|}{x}\right) + \frac{1}{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-81" id="hint-81"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-81"><div class="hint solution-like"><p id="p-808">What is a simpler version of \(|x|\) when you know \(x \lt 0\text{?}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-98" id="answer-98"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-98"><div class="answer solution-like"><p id="p-809">\(-1\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-98" id="solution-98"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-98"><div class="solution solution-like"><p id="p-810">When \(x \lt 0\text{,}\) \(|x|=-x\) and so \(\ds\lim_{x\to\infty}\sin\left( \frac{\pi}{2} \cdot
+\frac{|x|}{x}\right) + \frac{1}{x} = \sin(-\pi/2) = -1\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-99"><h6 class="heading">
+<span class="codenumber">21<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-811">Evaluate \(\displaystyle \lim_{x\to -\infty} \frac{3x+5}{\sqrt{x^2+5}-x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-99" id="answer-99"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-99"><div class="answer solution-like"><p id="p-812">\(-\frac{3}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-99" id="solution-99"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-99"><div class="solution solution-like">
+<p id="p-813">We divide both the numerator and the denominator by the highest power of \(x\) in the denominator, which is \(x\text{.}\) Since \(x \lt 0\text{,}\) we have \(\sqrt{x^2}=|x|=-x\text{,}\) so that</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\sqrt{x^2+5}}{x}=-\sqrt{\frac{x^2+5}{x^2}}=-\sqrt{1+\frac{5}{x^2}}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(1/x\to 0\) and also \(1/x^2\to 0\) as \(x\to -\infty\text{,}\) we conclude that</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\to -\infty} \frac{3x+5}{\sqrt{x^2+5}-x}=\lim_{x\to -\infty}\frac{3+\frac{5}{x}}{-\sqrt{1+\frac{5}{x^2}}-1}=\frac{3}{-1-1}=-\frac{3}{2}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-100"><h6 class="heading">
+<span class="codenumber">22<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-814">Evaluate \(\displaystyle\lim_{x\rightarrow -\infty} \frac{5x+7}{\sqrt{4x^2+15}-x}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-82" id="hint-82"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-82"><div class="hint solution-like"><p id="p-815">Divide both the numerator and the denominator by the highest power of \(x\) that is in the denominator. When is \(\sqrt{x}=x\text{,}\) and when is \(\sqrt{x}=-x\text{?}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-100" id="answer-100"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-100"><div class="answer solution-like"><p id="p-816">\(-\frac{5}{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-100" id="solution-100"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-100"><div class="solution solution-like">
+<p id="p-817">We divide both the numerator and the denominator by the  highest power of \(x\) in the denominator, which is \(x\text{.}\) Since \(x \lt 0\text{,}\) we have \(\sqrt{x^2}=|x|=-x\text{,}\) so that</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{\sqrt{4x^2+15}}{x}= \frac{\sqrt{4x^2+15}}{-\sqrt{x^2}} =-\sqrt{\frac{4x^2+15}{x^2}}=-\sqrt{4+\frac{15}{x^2}}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(1/x\to 0\) and also \(1/x^2\to 0\) as \(x\to -\infty\text{,}\) we conclude that</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x\to -\infty} \frac{5x+7}{\sqrt{4x^2+15}-x}=\lim_{x\to
+-\infty}\frac{5+\frac{7}{x}}{-\sqrt{4+\frac{15}{x^2}}-1}=\frac{5}{-2-1}=-\frac{5}{3}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-101"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-818">Evaluate \(\displaystyle\lim_{x \rightarrow -\infty}\dfrac{3x^7+x^5-15}{4x^2+32x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-83" id="hint-83"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-83"><div class="hint solution-like"><p id="p-819">Divide both the numerator and the denominator by the highest power of \(x\) that is in the denominator. Pay careful attention to signs.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-101" id="answer-101"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-101"><div class="answer solution-like"><p id="p-820">\(-\infty\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-101" id="solution-101"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-101"><div class="solution solution-like"><div class="displaymath" id="p-821">
+\begin{align*}
+\displaystyle\lim_{x \rightarrow -\infty}\dfrac{3x^7+x^5-15}{4x^2+32x}&amp;=
+\displaystyle\lim_{x \rightarrow -\infty}\dfrac{x^2(3x^5+x^3-\frac{15}{x^2})}{x^2(4+\frac{32}{x})}\\
+&amp;=\displaystyle\lim_{x \rightarrow -\infty}\dfrac{3x^5+x^3-\frac{15}{x^2}}{4+\frac{32}{x}}\\
+&amp;=\displaystyle\lim_{x \rightarrow +\infty}\dfrac{3(-x)^5+(-x)^3-\frac{15}{(-x)^2}}{4+\frac{32}{-x}}\\
+&amp;=\displaystyle\lim_{x \rightarrow +\infty}\dfrac{-3x^5-x^3-\frac{15}{x^2}}{4-\frac{32}{x}}\\
+&amp;=-\infty
+\end{align*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-102"><h6 class="heading">
+<span class="codenumber">24<span class="period">.</span></span><span class="space"> </span><span class="title">2009H.</span>
+</h6>
+<p id="p-822">Evaluate \(\ds\lim_{n \to \infty}\left(\sqrt{n^2+5n}-n\right)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-84" id="hint-84"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-84"><div class="hint solution-like"><p id="p-823">Multiply and divide the expression by its conjugate, \(\big(\sqrt{n^2+5n}+n\big)\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-102" id="answer-102"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-102"><div class="answer solution-like"><p id="p-824">\(\dfrac{5}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-102" id="solution-102"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-102"><div class="solution solution-like">
+<p id="p-825">We multiply and divide the expression by its conjugate, \(\big(\sqrt{n^2+5n}+n\big)\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{n\rightarrow\infty}\big(\sqrt{n^2+5n}-n\big)
+&amp;=\lim_{n \to \infty}\big(\sqrt{n^2+5n}-n\big)
+\left(\frac{\sqrt{n^2+5n}+n}{\sqrt{n^2+5n}+n}\right)\\
+&amp;=\lim_{n\rightarrow\infty}\frac{(n^2+5n)-n^2}{\sqrt{n^2+5n}+n}\\
+&amp;=\lim_{n\rightarrow\infty}\frac{5n}{\sqrt{n^2+5n}+n}\\
+&amp;=\lim_{n\rightarrow\infty}\frac{5\cdot n}{\sqrt{n^2}\sqrt{1+\frac{5}{n}}+n}\\
+\end{align*}
+<p class="intertext">Since \(n \gt 0\text{,}\) we can simplify \(\sqrt{n^2}=n\text{.}\)</p>
+\begin{align*}
+&amp;=\lim_{n\rightarrow\infty}\frac{5\cdot n}{n\sqrt{1+\frac{5}{n}}+n}\\
+&amp;=\lim_{n\rightarrow\infty}\frac{5}{\sqrt{1+\frac{5}{n}}+1}\\
+&amp;=\frac{5}{\sqrt{1+0}+1}=\frac{5}{2}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-103"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-826">Evaluate \(\ds\lim_{a \to 0^+}\dfrac{a^2-\frac{1}{a}}{a-1}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-85" id="hint-85"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-85"><div class="hint solution-like"><p id="p-827">Consider what happens to the function as \(a\) becomes very, very small. You shouldn't need to do much calculation.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-103" id="answer-103"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-103"><div class="answer solution-like"><p id="p-828">\(\ds\lim_{a \to 0^+}\dfrac{a^2-\frac{1}{a}}{a-1}=\infty\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-103" id="solution-103"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-103"><div class="solution solution-like"><ul id="p-829" class="disc">
+<li id="li-263">
+<p id="p-830"><em class="alert">Solution 1:</em></p>
+<p id="p-831">When \(a\) approaches 0 from the right, the numerator approaches negative infinity, and the denominator approaches \(-1\text{.}\) So, \(\ds\lim_{a \to 0^+}\dfrac{a^2-\frac{1}{a}}{a-1}=\infty\text{.}\)</p>
+<p id="p-832">More precisely, using Theorem <a class="xref" data-knowl="./knowl/thm_arith_inf_lim.html" title="Theorem 2.5.9: Arithmetic of infinite limits">2.5.9</a>:</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\lim_{a \to 0^+} \frac{1}{a}=+\infty\\
+\mbox{Also,}&amp; \lim_{a \to 0^+} a^2=0
+\end{align*}
+</div>
+<p data-braille="continuation">So, using Theorem <a class="xref" data-knowl="./knowl/thm_arith_inf_lim.html" title="Theorem 2.5.9: Arithmetic of infinite limits">2.5.9</a>,</p>
+<div class="displaymath">
+\begin{align*}
+&amp; \lim_{a \to 0^+} a^2-\frac{1}{a}=-\infty\\
+\text{Furthermore,}&amp;\lim_{a \to 0^+}a-1=-1\\
+\text{So, using our theorem,}&amp;\lim_{a \to 0^+}\frac{a^2-\frac{1}{a}}{a-1}=\infty
+\end{align*}
+</div>
+</li>
+<li id="li-264">
+<p id="p-833"><em class="alert">Solution 2:</em></p>
+<p id="p-834">Since \(a=0\) is not in the domain of our function, a reasonable impulse is to simplify.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{a^2-\frac{1}{a}}{a-1}\left(\frac{a}{a}\right)&amp;=\frac{a^3-1}{a(a-1)}=\frac{(a-1)(a^2+a+1)}{a(a-1)}\\
+\end{align*}
+<p class="intertext">So,</p>
+\begin{align*}
+\lim_{a \to 0^+}\frac{a^2-\frac{1}{a}}{a-1}&amp;=
+\lim_{a \to 0^+}\frac{(a-1)(a^2+a+1)}{a(a-1)}\\
+&amp;=\lim_{a \to 0^+}\frac{a^2+a+1}{a}\\
+&amp;=\lim_{a \to 0^+}a+1+\frac{1}{a}=\infty
+\end{align*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-104"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<p id="p-835">Evaluate \(\ds\lim_{x \to 3}\dfrac{2x+8}{\frac{1}{x-3}+\frac{1}{x^2-9}}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-86" id="hint-86"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-86"><div class="hint solution-like"><p id="p-836">Since \(x=3\) is not in the domain of the function, we need to be a little creative. Try simplifying the function.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-104" id="answer-104"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-104"><div class="answer solution-like"><p id="p-837">\(\ds\lim_{x \to 3}\dfrac{2x+8}{\frac{1}{x-3}+\frac{1}{x^2-9}}=0\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-104" id="solution-104"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-104"><div class="solution solution-like">
+<p id="p-838">Since \(x=3\) is not in the domain of the function, we simplify, hoping we can cancel a problematic term.</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 3}\frac{2x+8}{\frac{1}{x-3}+\frac{1}{x^2-9}}&amp;=\lim_{x \to 3}\frac{2x+8}{\frac{x+3}{x^2-9}+\frac{1}{x^2-9}}\\
+&amp;=\lim_{x \to 3}\frac{2x+8}{\frac{x+4}{x^2-9}}\\
+&amp;=\lim_{x \to 3}\frac{(2x+8)(x^2-9)}{x+4}=0
+\end{align*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-11">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-20"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-105"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<p id="p-839">Give a rational function \(f(x)\) with the properties that \(\displaystyle\lim_{x \rightarrow\infty} f(x) \neq \displaystyle\lim_{x \rightarrow -\infty} f(x)\text{,}\) and both limits are (finite) real numbers.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-87" id="hint-87"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-87"><div class="hint solution-like">
+<p id="p-840">This is a bit of a trick question. Consider what happens to a rational function as \(x\rightarrow\pm \infty\) in each of these three cases:</p>
+<ul class="disc">
+<li id="li-265">the degree of the numerator is smaller than the degree of the denominator,</li>
+<li id="li-266">the degree of the numerator is the same as the degree of the denominator, and</li>
+<li id="li-267">the degree of the numerator is larger than the degree of the denominator.</li>
+</ul>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-105" id="answer-105"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-105"><div class="answer solution-like"><p id="p-841">No such rational function exists.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-105" id="solution-105"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-105"><div class="solution solution-like">
+<p id="p-842">First, we need a rational function whose limit at infinity is a real number. This means that the degree of the bottom is greater than or equal to the degree of the top. There are two cases: the denominator has higher degree than the numerator, or the denominator has the same degree as the numerator.</p>
+<p id="p-843">If the denominator has higher degree than the numerator, then \(\displaystyle\lim_{x \rightarrow \infty} f(x)=\displaystyle\lim_{x \rightarrow -\infty} f(x)=0\text{,}\) so the limits are equal--not what we're looking for.</p>
+<p id="p-844">If the denominator has the same degree as the numerator, then the limit as \(x\) goes to \(\pm \infty\) is the ratio of the leading terms: again, the limits are equal. So no rational function exists as described.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-106"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<p id="p-845">Suppose the concentration of a substance in your body \(t\) hours after injection is given by some formula \(c(t)\text{,}\) and \(\displaystyle\lim_{t \rightarrow \infty} c(t) \neq 0\text{.}\) What kind of substance might have been injected?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-88" id="hint-88"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-88"><div class="hint solution-like"><p id="p-846">We tend to conflate “infinity” with “some really large number.”</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-106" id="answer-106"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-106"><div class="answer solution-like"><p id="p-847">This is the amount of the substance that will linger long-term. Since it's nonzero, the substance would be something that would stay in your body. Something like “tattoo ink” is a reasonable answer, while “penicillin” is not.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-106" id="solution-106"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-106"><div class="solution solution-like">
+<p id="p-848">The amount of the substance that will linger long-term is some positive number--the substance will stick around. One example of a substance that does this is the ink in a tattoo. (If the injection was of medicine, probably it will be metabolized, and \(\displaystyle\lim_{t \rightarrow \infty} c(t)=0\text{.}\))</p>
+<p id="p-849">Remark: it actually doesn't make much sense to let \(t\) go to infinity: after a few million hours,  you won't even have a body, so what is \(c(t)\) measuring? Often when we use formulas in the real world, there is an understanding that the are only good for some fixed range. We often use the limit as \(t\) goes to infinity as a stand-in for the function's long-term behaviour.</p>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:58:48-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p><em xmlns:svg="http://www.w3.org/2000/svg" class="alert">Solution:</em> The integral \(\int \csc x\dee{x}\) may also be evaluated by both  the methods above. That is either</p>
+<ul class="disc">
+<li>by multiplying the integrand by a cleverly chosen \(1=\frac{\cot x-\csc x}{\cot  x-\csc x}\) and  then substituting \(u=\cot x -\csc x\text{,}\)  \(\dee{u} = (-\csc^2 x+\csc x \cot x)\,\dee{x}\text{,}\) or</li>
+<li>by substituting \(u=\cos x\text{,}\) \(\dee{u}=-\sin x\,\dee{x}\) to give \(\int \csc x\dee{x}=-\int\frac{\dee{u}}{1-u^2}\) and then using the  method of partial fractions.</li>
+</ul>
+<p data-braille="continuation">These two methods give the answers</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather}
+\int \csc x\dee{x}=\log|\cot x-\csc x|+C
+=-\frac{1}{2}\log \frac{1+\cos x}{1-\cos x}+C\tag{\(\star\)}
+\end{gather}
+</div>
+<p data-braille="continuation">In this example, we shall evaluate \(\int\csc x\dee{x}\) by yet a third method, which can be used to integrate rational functions <a class="fn-knowl original" data-knowl="./knowl/fn-230-hidden.html" title="Footnote 6.8.3"><sup> 3 </sup></a> of \(\sin x\) and \(\cos x\text{.}\)</p>
+<ul class="disc">
+<li>This method uses the substitution<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+x&amp;=2\arctan u &amp; \text{i.e. } u &amp;=\tan\frac{x}{2} &amp; \text{and }
+\dee{x}&amp;=\frac{2}{1+u^2}\dee{u}
+\end{align*}
+</div>— a half-angle substitution.</li>
+<li>To express \(\sin x\) and \(\cos x\) in terms of \(u\text{,}\) we first use the double angle  trig identities (Equations <a class="xref" data-knowl="./knowl/eq_TRGINTtrigidentityB.html" title="Equation 6.8.2">6.8.2</a> and <a class="xref" data-knowl="./knowl/eq_TRGINTtrigidentityC.html" title="Equation 6.8.3">6.8.3</a>  with \(x \mapsto \frac{x}{2}\)) to express \(\sin x\) and \(\cos x\) in terms of  \(\sin\frac{x}{2}\) and \(\cos\frac{x}{2}\text{:}\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sin x &amp;= 2 \sin\frac{x}{2} \cos\frac{x}{2}\\
+\cos x &amp;= \cos^2 \frac{x}{2} - \sin^2\frac{x}{2}
+\end{align*}
+</div>
+</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">We then use the triangle</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/triangleTh.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>to express \(\sin\frac{x}{2}\) and \(\cos\frac{x}{2}\) in terms of \(u\text{.}\) The bottom and right  hand sides of the triangle have been chosen so that \(\tan\frac{x}{2}=u\text{.}\) This tells us  that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sin \frac{x}{2} &amp;= \frac{u}{\sqrt{1+u^2}}
+&amp; \cos \frac{x}{2} &amp;= \frac{1}{\sqrt{1+u^2}}
+\end{align*}
+</div>
+</li>
+<li>This in turn implies that:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sin x&amp;=2\sin\frac{x}{2}\cos\frac{x}{2}
+=2\frac{u}{\sqrt{1+u^2}}\frac{1}{\sqrt{1+u^2}}
+=\frac{2u}{1+u^2}\\
+\cos x&amp;=\cos^2\frac{x}{2}-\sin^2\frac{x}{2}
+=\frac{1}{1+u^2}-\frac{u^2}{1+u^2}
+=\frac{1-u^2}{1+u^2}
+\end{align*}
+</div>Oof!</li>
+<li>Let's use this substitution to evaluate \(\int \csc x\,\dee{x}\text{.}\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int \csc x\dee{x}
+&amp;=\int \frac{1}{\sin x}\dee{x}
+=\int \frac{1+u^2}{2u}\ \frac{2}{1+u^2}\dee{u}
+=\int \frac{1}{u}\dee{u}\\
+&amp;=\log|u|+C
+=\log\Big|\tan\frac{x}{2}\Big|+C
+\end{align*}
+</div>To see that this answer is really the same as that in <a class="xref" data-knowl="./knowl/eq_INTcscInt.html" title="Equation">(\(\star\))</a>,  note that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\cot x-\csc x
+=\frac{\cos x-1}{\sin x}
+=\frac{-2\sin^2(x/2)}{2\sin(x/2)\cos(x/2)}
+=-\tan\frac{x}{2}
+\end{gather*}
+</div>
+</li>
+</ul></article></body>
+</html>

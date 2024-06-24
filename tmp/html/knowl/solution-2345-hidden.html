@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:17:54-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>(a) Denote by</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+R_2=\Set{(x,y)}{ (x-2)^2+y^2\le 1}
+\end{equation*}
+</div>
+<p data-braille="continuation">the interior of the circle \(C_2\text{.}\) Note that \((0,0)\) is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">not</em> in \(R_2\text{.}\) Consequently, \(Q_x-P_y=0\) <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">everywhere</em> in \(R_2\) and, by Green's theorem (Theorem <a class="xref" data-knowl="./knowl/thm_Green.html" title="Theorem 15.3.2: Green's Theorem">15.3.2</a>),</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+I_2 = \int_{C_2} \vF\cdot\dee{\vr}
+=\dblInt_{R_2} \big(Q_x-P_y\big)\,\dee{x}\dee{y}
+=0
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:3.5%;margin-right:3.5%;">
+<div class="sbspanel" style="width:46.2365591397849%;justify-content:center;"><img src="pfigs/OE16D_4a.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:46.2365591397849%;justify-content:center;"><img src="pfigs/OE16D_4b.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>(b) We cannot blindly apply Green's theorem to \(I_3=\int_{C_3}\vF\cdot\dee{\vr}\) because \((0,0)\) <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">is</em> in the interior of \(C_3\text{,}\) so that \(Q_x-P_y\) is not identically zero in the interior of \(C_3\) — it is not even defined throughout the interior of \(C_3\text{.}\) We can work around this obstruction by considering the interior of \(C_3\) with the interior of \(C_1\) removed. That is, by considering</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+R_3 = \Set{(x,y)}{x^2 + (y - 2)^2 \le 9,\ x^2+y^2\ge 1}
+\end{equation*}
+</div>
+<p data-braille="continuation">It is sketched on the right above. The boundary of \(R_3\) consists of two parts</p>
+<ul class="disc">
+<li>the circle \(C_3\text{,}\) oriented counterclockwise, and</li>
+<li>the circle \(-C_1\text{.}\) That is, the circle \(C_1\) but oriented clockwise, rather than counterclockwise.</li>
+</ul>
+<p data-braille="continuation">Then \(Q_x-P_y\) is well-defined and zero throughout \(R_3\) and, by Green's theorem,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+0 &amp;=\dblInt_{R_3} \big(Q_x-P_y\big)\,\dee{x}\dee{y}
+= \int_{C_3} \vF\cdot\dee{\vr}
++ \int_{-C_1} \vF\cdot\dee{\vr}\\
+&amp;= \int_{C_3} \vF\cdot\dee{\vr}
+- \int_{C_1} \vF\cdot\dee{\vr}\\
+&amp;= \int_{C_3} \vF\cdot\dee{\vr}
+- \pi
+\end{align*}
+</div>
+<p data-braille="continuation">So \(\int_{C_3} \vF\cdot\dee{\vr} = \pi\text{.}\)</p>
+<p>(c) Again, we cannot blindly apply Green's theorem to \(I_4=\int_{C_4}\vF\cdot\dee{\vr}\) because \((0,0)\) <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">is</em> in the interior of \(C_4\text{.}\) This time we cannot remove the interior of \(C_1\) from the interior of \(C_4\text{,}\) because \(C_1\) is not contained in the interior of \(C_4\text{.}\) Instead we pick a number \(\rho \gt 0\) which is small enough that the positively oriented circle</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+C_\rho = \Set{(x,y)}{x^2+y^2=\rho^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">is completely inside \(C_4\text{.}\) Then we can define</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+R_4 = \Set{(x,y)}{(x-2)^2 + (y - 2)^2 \le 9,\ x^2+y^2\ge \rho^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">It is sketched on the left below. We can now argue as in part (b). The boundary of \(R_4\) consists of two parts</p>
+<ul class="disc">
+<li>the circle \(C_4\text{,}\) oriented counterclockwise, and</li>
+<li>the circle \(-C_\rho\text{.}\) That is, the circle \(C_\rho\) but oriented clockwise, rather than counterclockwise.</li>
+</ul>
+<p data-braille="continuation">Then \(Q_x-P_y\) is well-defined and zero throughout \(R_4\) and, by Green's theorem,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+0 &amp;=\dblInt_{R_4} \big(Q_x-P_y\big)\,\dee{x}\dee{y}\\
+&amp;= \int_{C_4} \vF\cdot\dee{\vr}
++ \int_{-C_\rho} \vF\cdot\dee{\vr}\\
+&amp;= \int_{C_4} \vF\cdot\dee{\vr}
+- \int_{C_\rho} \vF\cdot\dee{\vr}
+\end{align*}
+</div>
+<p data-braille="continuation">So \(\int_{C_4} \vF\cdot\dee{\vr} = \int_{C_\rho} \vF\cdot\dee{\vr}\text{.}\)</p>
+<p>To complete our computation, we have to determine \(\int_{C_\rho} \vF\cdot\dee{\vr}\text{.}\) We can do so by repeating the same “removing a small disk containing \((0,0)\)” argument for the third time. Set</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+R_5 = \Set{(x,y)}{x^2 + y^2 \le 1,\ x^2+y^2\ge \rho^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">Then the boundary of \(R_5\) consists of \(C_1\) and \(-C_\rho\text{,}\) and, as \(Q_x-P_y\) is well-defined and zero throughout \(R_5\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+0 &amp;=\dblInt_{R_5} \big(Q_x-P_y\big)\,\dee{x}\dee{y}\\
+&amp;= \int_{C_1} \vF\cdot\dee{\vr}
++ \int_{-C_\rho} \vF\cdot\dee{\vr}\\
+&amp;= \pi
+- \int_{C_\rho} \vF\cdot\dee{\vr}
+\end{align*}
+</div>
+<p data-braille="continuation">So \(\int_{C_4} \vF\cdot\dee{\vr} = \int_{C_\rho} \vF\cdot\dee{\vr}=\pi\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:3.5%;margin-right:3.5%;">
+<div class="sbspanel" style="width:46.2365591397849%;justify-content:center;"><img src="pfigs/OE16D_4c.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:46.2365591397849%;justify-content:center;"><img src="pfigs/OE16D_4d.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+</div></body>
+</html>

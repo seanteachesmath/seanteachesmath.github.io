@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:11:24-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">7.3.3.10.1</span><span class="period">.</span>
+</h6>
+<ol class="lower-alpha">
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">To begin with, we'll sketch some strips, and put a dot at the centre of mass of each one (its vertical centre).</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-909.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">In our model, each of these strips corresponds to a weight on \(R\text{,}\) positioned at its centre of mass (the height of the dot), and with a mass equal to the strip's area. For the portion of \(S\) with \(a'\le x \le b'\text{,}\) each centre of mass is at a slightly different height, but the areas of the slices are the same. So, the corresponding weights along \(R\) are at different heights, but all have the same mass, as shown below. (Note the rod \(R\) below only contains the weights from the middle of \(S\) — we'll add the rest later.)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">For clarity, the diagrams below are zoomed in.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-910.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">By contrast to the slices in the interval \([a',b']\text{,}\) the slices of \(S\) along \([a,a']\) all have the same centre of mass, but different areas. So, there is one position along \(R\) that has a number of weights all stacked on top of one another, of varying masses.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">The same situation applies to the slices of \(S\) along \([b,b']\text{.}\) So, all together, our rod looks something like this:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-911.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Remark: if we had sketched the density of \(R\text{,}\) it would have looked something like this:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-912.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>because from our sketch, we see that the density of \(R\text{:}\)</p>
+<ul class="disc">
+<li>is 0 at either end,</li>
+<li>is suddenly very high where the blue weights are, and</li>
+<li>is constant and lower between the blue weights.</li>
+</ul>
+</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">At position \(x\text{,}\) the height of \(S\) is \(T(x)-B(x)\text{,}\) and the width of the strip is \(\dee{x}\text{,}\)  so the area of the strip is \((T(x)-B(x))\,\dee{x}\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Since the density of \(S\) is uniform, the centre of mass of the strip is halfway up: at \(\dfrac{T(x)+B(x)}{2}\text{.}\)</p>
+</li>
+<li>
+<p>If we cut \(S\) into \(n\) strips, then the strip at position \(x_i\) has area \((T(x_i)-B(x_i))\De x\text{,}\) where \(\De x = \frac{b-a}{n}\text{,}\) and its centre of mass is at height \(\dfrac{T(x_i)+B(x_i)}{2}\text{.}\) So, our approximation of the centre of mass of the rod is:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\bar y_n &amp;=\frac{\sum\limits_{i=1}^n (M_i\times y_i) }{\sum\limits_{i=1}^n M_i}\\
+&amp;=\frac{\sum\limits_{i=1}^n \left((T(x_i)-B(x_i))\De x\right)\times\left(\dfrac{T(x_i)+B(x_i)}{2}\right)  }{\sum\limits_{i=1}^n (T(x_i)-B(x_i))\De x}\\
+&amp;=\frac{\sum\limits_{i=1}^n (T(x_i)^2-B(x_i)^2)\De x }{2\sum\limits_{i=1}^n (T(x_i)-B(x_i))\De x}\\
+\end{align*}
+<p class="intertext">We use the definition of a definite integral (Definition <a class="xref" data-knowl="./knowl/def_INTintegral.html" title="Definition 6.1.9">6.1.9</a>) to re-write the limit of the above function.</p>
+\begin{align*}
+\bar y &amp;=\lim_{n \to \infty}\frac{\sum\limits_{i=1}^n (T(x_i)^2-B(x_i)^2)\De x }{2\sum\limits_{i=1}^n (T(x_i)-B(x_i))\De x}\\
+&amp;=\frac{\int_a^b \big(T(x)^2-B(x)^2\big)\,\dee{x}}{2\int_a^b\big( T(x)-B(x)\big)\,\dee{x}}
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Remark: the denominator is twice the area of \(S\text{.}\) This equation for the \(y\)-coordinate of the centroid is the same as the one given in Equation <a class="xref" data-knowl="./knowl/eq_TRQcentroid.html" title="Equation 7.3.5: Centroid of object with constant density">7.3.5</a>.</p>
+</li>
+</ol>
+</div>
+<span class="incontext"><a href="sec_com.html#solution-1162">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:12:03-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>We start by parametrizing the surface, which is half of an ellipsoid. By way of motivation for the parametrization, recall that spherical coordinates, with \(\rho=1\text{,}\)  provide a natural way to parametrize the sphere \(x^2+y^2+z^2=1\text{.}\) Namely \(x=\cos\theta\sin\varphi\text{,}\) \(y=\sin\theta\sin\varphi\text{,}\) \(z= \cos\varphi\text{.}\) The reason that these spherical coordinates work is that the trig identity \(\cos^2\alpha+\sin^2\alpha=1\) implies</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x^2+y^2 = \cos^2\theta\sin^2\varphi + \sin^2\theta\sin^2\varphi
+=\sin^2\varphi
+\end{equation*}
+</div>
+<p data-braille="continuation">and then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\big(x^2+y^2\big) + z^2 = \sin^2\varphi +\cos^2\varphi = 1
+\end{equation*}
+</div>
+<p data-braille="continuation">The equation of our ellipsoid is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\Big(\frac{x}{2}\Big)^2 + \Big(\frac{y}{3}\Big)^2 + z^2 =1
+\end{equation*}
+</div>
+<p data-braille="continuation">so we can parametrize the ellipsoid by replacing \(x\) with \(\frac{x}{2}\) and \(y\) with \(\frac{y}{3}\) in our parametrization of the sphere. That is,  we choose the parametrization</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+x(\theta,\varphi)&amp;=2\cos\theta\sin\varphi\\
+y(\theta,\varphi)&amp;=3\sin\theta\sin\varphi\\
+z(\theta,\varphi)&amp;=\cos\varphi
+\end{align*}
+</div>
+<p data-braille="continuation">with \((\theta,\varphi)\) running over \(0\le\theta\le 2\pi,\ 0\le\varphi\le\pi/2\text{.}\) Note that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{4}x(\theta,\varphi)^2+\frac{1}{9}y(\theta,\varphi)^2
++z(\theta,\varphi)^2=1
+\end{equation*}
+</div>
+<p data-braille="continuation">as desired.</p>
+<p>Then, using <a class="xref" data-knowl="./knowl/eq_SUdSparam.html" title="Equation 14.3.1">14.3.1</a>,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\Big(\frac{\partial x}{\partial\theta}\,,\,\frac{\partial y}{\partial\theta}
+\,,\, \frac{\partial z}{\partial\theta}\Big)
+&amp;=(-2\sin\theta\sin\varphi\,,\,3\cos\theta\sin\varphi\,,\,0)\\
+\Big(\frac{\partial x}{\partial\varphi}\,,\,\frac{\partial y}{\partial\varphi}\,,\,
+\frac{\partial z}{\partial\varphi}\Big)
+&amp;=(2\cos\theta\cos\varphi\,,\,3\sin\theta\cos\varphi\,,\,-\sin\varphi)\\
+\hn\,\dee{S}&amp;=
+-\Big(\frac{\partial x}{\partial\theta}\,,\,\frac{\partial y}{\partial\theta}
+\,,\, \frac{\partial z}{\partial\theta}\Big)
+\times\Big(\frac{\partial x}{\partial\varphi}\,,\,\frac{\partial y}{\partial\varphi}
+\,,\,\frac{\partial z}{\partial\varphi}\Big)\ \dee{\theta} \dee{\varphi}\\
+&amp;=-(-3\cos\theta\sin^2\varphi,-2\sin\theta\sin^2\varphi,-6\sin\varphi\cos\varphi)\dee{\theta} \dee{\varphi}
+\end{align*}
+</div>
+<p data-braille="continuation">The extra minus sign in \(\hn\,\dee{S}\) was put there to make the \(z\) component of \(\hn\) positive. (The problem specified that \(\hn\) is to be upward unit normal.) As</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\vF\big(x(\theta,\varphi)\,,\,y(\theta,\varphi)\,,\,z(\theta,\varphi)\big)\\
+&amp;\hskip0.5in=2^4\cos^4\theta\sin^4\varphi\ \hi
++2\times 3^2\sin^2\theta\sin^2\varphi\ \hj+\cos\varphi\ \hk
+\end{align*}
+</div>
+<p data-braille="continuation">we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vF\cdot\hn\,\dee{S}
+&amp;=\Big[3\times 2^4\cos^5\theta\sin^6\varphi\!+\!2\times 2 \times 3^2
+\sin^3\theta\sin^4\varphi\!+\!6\sin\varphi\cos^2\varphi\Big]\,\dee{\theta}\dee{\varphi}
+\end{align*}
+</div>
+<p data-braille="continuation">and the desired integral</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_S\vF\cdot\hn\ \dee{S}
+&amp;=\int_0^{\frac{\pi}{2}}\!\!\dee{\varphi}\int_0^{2\pi}\dee{\theta}\
+\Big[3\times 2^4\cos^5\theta\sin^6\varphi+2\times 2\times 3^2
+\sin^3\theta\sin^4\varphi\\
+&amp;\hskip3in+6\sin\varphi\cos^2\varphi\Big]
+\end{align*}
+</div>
+<p data-braille="continuation">Since \(\ \int_0^{2\pi} \cos^m\theta\,\dee{\theta}
+=\int_0^{2\pi} \sin^m\theta\,\dee{\theta}=0\ \) for all odd<a class="fn-knowl original" data-knowl="./knowl/fn-632-hidden.html" title="Footnote 14.4.5"><sup> 5 </sup></a> natural numbers \(m\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_S \vF\cdot\hn\, \dee{S}
+&amp;=\int_0^{\pi/2}\hskip-8pt \dee{\varphi}\int_0^{2\pi}\hskip-6pt\dee{\theta}\
+6\sin\varphi\cos^2\varphi
+=12\pi\int_0^{\pi/2}\hskip-8pt \dee{\varphi}\ \sin\varphi\cos^2\varphi\\
+&amp;=12\pi\Big[-\frac{1}{3}\cos^3\varphi\Big]_0^{\pi/2}
+=4\pi
+\end{align*}
+</div>
+<p data-braille="continuation">The integral was evaluated by guessing (and checking) that \(-\frac{1}{3}\cos^3\varphi\) is an antiderivative of \(\sin\varphi\cos^2\varphi\text{.}\) It can also be done by substituting \(u=\cos\varphi\text{,}\) \(\dee{u}=-\sin\varphi\,\dee{\varphi}\text{.}\)</p>
+</div></body>
+</html>

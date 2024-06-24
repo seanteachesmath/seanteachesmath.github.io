@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:05:56-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p xmlns:svg="http://www.w3.org/2000/svg">Since the denominator is positive for all \(x \geq 0\text{,}\) the integrand is continuous over \([0, \infty)\text{.}\) So, the only “source of impropriety” is the infinite domain of integration.</p>
+<ul class="disc">
+<li>
+<p>Solution 1: Let's try to use a direct comparison. Note \(\dfrac{x}{e^x + \sqrt{x}} \geq 0\) whenever \(x \geq 0\text{.}\) Also note that, for large values of \(x\text{,}\) \(e^x\) is much larger than \(\sqrt{x}\text{.}\) That leads us to consider the following inequalty:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+0\leq \dfrac{x}{e^x + \sqrt{x}}  \leq \dfrac{x}{e^x }
+\end{equation*}
+</div>
+<p>If \(\int_0^\infty \frac{x}{e^x} \dee{x}\) converges, we're in business. Let's figure it out. The integrand looks like a candidate for integration by parts: take \(u=x\text{,}\) \(\dee{v} = e^{-x} \dee{x}\text{,}\) so \(\dee{u}=\dee{x}\) and \(v=-e^{-x}\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_0^\infty \frac{x}{e^x} \dee{x}&amp;=\lim_{b \to \infty}\int_0^b \frac{x}{e^x} \dee{x}=
+\lim_{b \to \infty}\left( \left[-\frac{x}{e^x}\right]_0^b + \int_0^b e^{-x} \dee{x} \right)\\
+&amp;=
+\lim_{b \to \infty}\left(-\frac{b}{e^b} +\left[-e^{-x}\right]_0^b \right)=
+\lim_{b \to \infty}\left(-\frac{b}{e^b} -\frac{1}{e^b}+1 \right)\\
+&amp;=
+\lim_{b \to \infty}\bigg(1-\underbrace{\frac{b+1}{e^b}}_{\atp{\mathrm{num}\to\infty}{\mathrm{den}\to\infty}}  \bigg)=\lim_{b \to \infty}\bigg(1-\frac{1}{e^b} \bigg)=1
+\end{align*}
+</div>
+<p data-braille="continuation">Using l'Hôpital's rule, we see \(\int_0^\infty \frac{x}{e^x} \dee{x}\) converges.  All together:</p>
+<ul class="circle">
+<li>\(\frac{x}{e^x}\) and \(\frac{x}{e^x+\sqrt{x}}\) are defined and continuous for all \(x \geq 0\text{,}\)</li>
+<li>\(\left|\frac{x}{e^x+\sqrt{x}}\right|\leq \frac{x}{e^x}\text{,}\) and</li>
+<li>\(\int_0^\infty \frac{x}{e^x} \dee{x}\) converges.</li>
+</ul>
+<p data-braille="continuation">So, by Theorem <a class="xref" data-knowl="./knowl/thm_IMPcomparison.html" title="Theorem 6.12.17: Comparison">6.12.17</a>, our integral \(\displaystyle\int_0^\infty \frac{x}{e^x+\sqrt{x}}  \dee{x}\) converges.</p>
+</li>
+<li>
+<p>Solution 2: Let's try to use a different direct comparison from Solution 1, and avoid integration by parts. We'd like to compare to something like \(\dfrac{1}{e^x}\text{,}\) but the inequality goes the wrong way. So, we make a slight modification: we consider \(2e^{-x/2}\text{.}\) To that end, we claim \(x \lt 2e^{x/2}\) for all \(x \geq 0\text{.}\) We can prove this by noting the following two facts:</p>
+<ul class="circle">
+<li>\(0 \lt 2=2e^{0/2}\text{,}\) and</li>
+<li>\(\diff{}{x}\{x\} = 1 \le e^{x/2} = \diff{}{x}\{2e^{x/2}\}\text{.}\)</li>
+</ul>
+<p data-braille="continuation">So, when \(x=0\text{,}\) \(x  \lt  2e^{x/2}\text{,}\) and then as \(x\) increases, \(2e^{x/2}\) grows faster than \(x\text{.}\)</p>
+<p>Now we can make the following comparison:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+0\leq \dfrac{x}{e^x + \sqrt{x}}  &amp;\leq \dfrac{x}{e^x }  \lt \frac{2e^{x/2}}{e^x} = \frac{2}{e^{x/2}}\\
+\end{align*}
+<p class="intertext">We have a hunch that \(\int_0^\infty \frac{2}{e^{x/2}} \dee{x}\) converges, just like \(\int_0^\infty \frac{1}{e^{x}} \dee{x}\text{.}\) This is easy enough to prove. We can guess an antiderivative, or use the substitution \(u=x/2\text{.}\)</p>
+\begin{align*}
+\int_0^\infty \frac{2}{e^{x/2}} \dee{x}&amp;=\lim_{R \to \infty} \int_0^R \frac{2}{e^{x/2}} \dee{x} =\lim_{R \to \infty} \left[- \frac{4}{e^{x/2}}\right]_0^R\\
+&amp;=\lim_{R \to \infty} \left[\frac{4}{e^{0}}- \frac{4}{e^{R/2}}\right]_0^R=4
+\end{align*}
+</div>
+<p data-braille="continuation">Now we know:</p>
+<ul class="circle">
+<li>\(0 \leq \frac{x}{e^x+\sqrt{x}} \leq \frac{2}{e^{x/2}}\text{,}\) and</li>
+<li>\(\int_0^\infty \frac{2}{e^{x/2}} \dee{x}\) converges.</li>
+<li>Furthermore,  \(\frac{x}{e^x+\sqrt{x}}\) and \(\frac{2}{e^{x/2}}\) are defined and continuous for all \(x \geq 0\text{.}\)</li>
+</ul>
+<p data-braille="continuation">By the comparison test (Theorem <a class="xref" data-knowl="./knowl/thm_IMPcomparison.html" title="Theorem 6.12.17: Comparison">6.12.17</a>), we conclude the integral converges.</p>
+</li>
+<li>
+<p>Solution 3: Let's use the limiting comparison test (Theorem <a class="xref" data-knowl="./knowl/thm_IMPcomparisonLim.html" title="Theorem 6.12.22: Limiting comparison">6.12.22</a>). We have a hunch that our integral behaves similarly to \(\int_0^\infty \frac{1}{e^x}\,\dee{x}\text{,}\) which converges (see Example <a class="xref" data-knowl="./knowl/eg_IMPp6.html" title="Example 6.12.18: \(\int_1^\infty e^{-x^2}\dee{x}\)">6.12.18</a>). Unfortunately, if we choose \(g(x) = \frac{1}{e^x}\) (and, of course, \(f(x) = \frac{x}{e^x+\sqrt{x}}\)), then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{x \to \infty}\frac{f(x)}{g(x)} =
+\lim_{x \to \infty}\frac{x}{e^x+\sqrt{x}}\cdot e^x =
+\lim_{x \to \infty}\frac{x}{1+\underbrace{\tfrac{\sqrt{x}}{e^x}}_{\to 0}} = \infty
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">That is, the limit does not exist, so the limiting comparison test does not apply. (To find \(\lim\limits_{x \to \infty}\frac{\sqrt{x}}{e^x}\text{,}\) you can use l'Hôpital's rule.)</p>
+<p>This setback encourages us to try a slightly different angle. If \(g(x)\) gave larger values, then we could decrease \(\frac{f(x)}{g(x)}\text{.}\) So, let's try \(g(x) = \frac{1}{e^{x/2}} = e^{-x/2}\text{.}\) Now,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{x \to \infty}\frac{f(x)}{g(x)} &amp;=
+\lim_{x \to \infty}\frac{x}{e^x+\sqrt{x}}\div \frac{1}{e^{x/2}}=
+\lim_{x \to \infty}\frac{x}{e^{x/2}+\frac{\sqrt{x}}{e^{x/2}}}
+\end{align*}
+</div>
+<p data-braille="continuation">Hmm... this looks hard. Instead of dealing with it directly, let's use the squeeze theorem (see CLP-1 notes).</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+0 \leq \frac{x}{e^{x/2}+\frac{\sqrt{x}}{e^{x/2 }}}\leq \frac{x}{e^{x/2}}
+\end{gather*}
+</div>
+<p data-braille="continuation">Using l'Hôpital's rule,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{x \to \infty} \underbrace{\frac{x}{e^{x/2}}}_{\atp{\mathrm{num}\to \infty}{\mathrm{den}\to\infty}} = \lim_{x \to \infty}\frac{1}{\frac{1}{2}e^{x/2}}=0 = \lim_{x \to \infty}0
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">So, by the squeeze theorem \(\lim\limits_{x \to 0}\frac{\frac{x}{e^x+\sqrt{x}}}{\frac{1}{e^{x/2}}}=0\text{.}\) Since this limit exists, \(\frac{1}{e^{x/2}}\) is a reasonable function to use in the limiting comparison test (provided its integral converges). So, we need to show that \(\int_0^\infty \frac{1}{e^{x/2}}\,\dee{x}\) converges. This can be done by simply evaluating it:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_0^\infty \frac{1}{e^{x/2}}\,\dee{x} \amp= \lim_{b \to \infty}\int_0^b {e^{-x/2}}\,\dee{x}
+= \lim_{b \to \infty} -\frac{1}{2}\big[e^{-x/2}\big]_0^b\\
+\amp= \lim_{b \to \infty} -\frac{1}{2}\left[\frac{1}{e^{b/2}}-1\right] = \frac{1}{2}
+\end{align*}
+</div>
+<p>So, all together:</p>
+<ul class="circle">
+<li>The functions \(\frac{x}{e^x+\sqrt{x}}\) and \(\frac{1}{e^{x/2}}\) are defined and continuous for all \(x \geq 0\text{,}\) and \(\frac{1}{e^{x/2}} \ge 0\) for all \(x \ge 0\text{.}\)</li>
+<li>\(\int_0^\infty \frac{1}{e^{x/2}}\,\dee{x}\) converges.</li>
+<li>The limit \(\lim\limits_{x \to \infty}\frac{\frac{x}{e^x}+\sqrt{x}}{\frac{1}{e^{x/2}}}\) exists (it's equal to 0).</li>
+<li>So, the limiting comparison test (Theorem <a class="xref" data-knowl="./knowl/thm_IMPcomparison.html" title="Theorem 6.12.17: Comparison">6.12.17</a>) tells us that \(\int_0^\infty \frac{x}{e^x+\sqrt{x}}\,\dee{x}\) converges as well.</li>
+</ul>
+</li>
+</ul>
+</div></body>
+</html>

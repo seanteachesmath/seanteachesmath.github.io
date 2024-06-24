@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:47:53-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>We'll shortly express that mass as a two dimensional integral. As a warmup, recall the procedure that we used  to set up a (one dimensional) integral representing the area of \(\cR\) in Example 1.5.1 of the CLP-2 text.</p>
+<ul class="disc">
+<li>Pick a natural number \(n\) (that we will later send to infinity), and then</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">subdivide \(\cR\) into \(n\) narrow vertical slices, each of width \(\De x=\frac{b-a}{n}\text{.}\) Denote by \(x_i = a + i\,\De x\) the \(x\)-coordinate of the right hand edge of slice number \(i\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/vSliceB.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">For each \(i=1,2,\dots,n\text{,}\) slice number \(i\) has \(x\) running from \(x_{i-1}\) to \(x_i\text{.}\) We approximate its area by the area of a rectangle. We pick a number \(x_i^*\) between \(x_{i-1}\) and \(x_i\) and approximate the slice by a rectangle whose top is at \(y=T(x_i^*)\) and whose bottom is at \(y=B(x_i^*)\text{.}\) The rectangle is outlined in blue in the figure below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/vSliceC.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li>Thus the area of slice \(i\) is approximately \(\big[T(x_i^*)-B(x_i^*)\big]\De x\text{.}\)</li>
+<li>So the Riemann sum approximation of the area of \(\cR\) is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Area} &amp;\approx \sum_{i=1}^n  \big[T(x_i^*)-B(x_i^*)\big]\De x
+\end{align*}
+</div>
+</li>
+<li>By taking the limit as \(n \to \infty\) (i.e. taking the limit as the width of the rectangles goes to zero), we convert the Riemann sum into a definite integral (see Definition 1.1.9 in the CLP-2 text) and at the same time our approximation of the area becomes the exact area:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\text{Area}
+=\lim_{n\rightarrow\infty}\sum_{i=1}^n  \big[T(x_i^*)-B(x_i^*)\big]\De x
+=\int_a^b \big[T(x)-B(x)\big]\dee{x}
+\end{gather*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">Now we can expand that procedure to yield the mass of \(\cR\) rather than the area of \(\cR\text{.}\) We just have to replace our approximation \(\big[T(x_i^*)-B(x_i^*)\big]\De x\) of the area of slice \(i\) by an approximation to the mass of slice \(i\text{.}\) To do so, we</p>
+<ul class="disc">
+<li>Pick a natural number \(m\) (that we will later send to infinity), and then</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">subdivide slice number \(i\) into \(m\) tiny rectangles, each of width \(\De x\) and of height \(\De y=\frac{1}{m}\big[T(x_i^*)-B(x_i^*)\big]\text{.}\) Denote by \(y_j = B(x_i^*) + j\,\De y\) the \(y\)-coordinate of the top of rectangle number \(j\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/vSliceD.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li>At this point we approximate the density inside each rectangle by a constant. For each \(j=1,2,\dots,m\text{,}\) rectangle number \(j\) has \(y\) running from \(y_{j-1}\) to \(y_j\text{.}\)  We pick a number \(y_j^*\) between \(y_{j-1}\) and \(y_j\) and approximate the density on rectangle number \(j\) in slice number \(i\) by the constant \(f\big(x_i^*,y_j^*\big)\text{.}\)</li>
+<li>Thus the mass of rectangle number \(j\) in slice number \(i\) is approximately \(f\big(x_i^*,y_j^*\big)\,\De x\,\De y\text{.}\)</li>
+<li>So the Riemann sum approximation of the mass of slice number \(i\) is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Mass of slice } i
+&amp;\approx \sum_{j=1}^m  f\big(x_i^*,y_j^*\big)\,\De x\,\De y
+\end{align*}
+</div>Note that the \(y_j^*\)'s depend on \(i\) and \(m\text{.}\)</li>
+<li>By taking the limit as \(m \to \infty\) (i.e. taking the limit as the height of the rectangles goes to zero), we convert the Riemann sum into a definite integral:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Mass of slice } i
+&amp;\approx \De x \int_{B(x_i^*)}^{T(x_i^*)} f\big(x_i^*,y\big)\,\dee{y}
+= F(x_i^*)\,\De x
+\end{align*}
+</div>where<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+F(x) = \int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}
+\end{equation*}
+</div>Notice that, while we started with the density \(f(x,y)\) being a function of both \(x\) and \(y\text{,}\) by taking the limit of this Riemann sum, we have “integrated out” the dependence on \(y\text{.}\) As a result, \(F(x)\) is a function of \(x\) only, not of \(x\) and \(y\text{.}\)</li>
+<li>Finally taking the limit as \(n \to \infty\) (i.e. taking the limit as the slice width goes to zero), we get<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Mass}
+&amp;=\lim_{n\rightarrow\infty}\sum_{i=1}^n
+\De x \int_{B(x_i^*)}^{T(x_i^*)} f\big(x_i^*,y\big)\,\dee{y}
+= \lim_{n\rightarrow\infty}\sum_{i=1}^n  F(x_i^*)\,\De x
+\end{align*}
+</div>Now we are back in familiar 1-variable territory. The sum \(\sum\limits_{i=1}^n  F(x_i^*)\,\De x\) is a Riemann sum approximation to the integral \(\int_a^b F(x)\,\dee{x}\text{.}\) So<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Mass}
+&amp;= \int_a^b F(x)\,\dee{x}
+=\int_a^b \left[\int_{B(x)}^{T(x)} f\big(x,y\big)\,\dee{y}\right]\dee{x}
+\end{align*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">This is our first double integral. There are a couple of different standard notations for this integral.</p>
+<span class="incontext"><a href="sec_2d_integrals.html#p-13894">in-context</a></span>
+</body>
+</html>

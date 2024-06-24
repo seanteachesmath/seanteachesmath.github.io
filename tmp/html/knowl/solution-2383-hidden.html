@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:20:02-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>We are to evaluate a line integral around a curve \(C\text{.}\) We are told that \(C\) is the boundary of a surface \(S\) that is contained in the plane \(x+y+z=1\text{,}\) but we are not told precisely what \(C\) is. So we are going to have to use Stokes' theorem. The curl of \(\vF\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk\\
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+\tfrac{\partial }{\partial z} \\
+z^2 &amp; x^2 &amp; y^2
+\end{matrix}
+\right]
+= 2y\,\hi + 2z\,\hj +2x\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">and, by (<a class="xref" data-knowl="./knowl/eq_SUdSimplicit.html" title="Equation 14.3.3">14.3.3</a>) with \(G(x,y,z)=x+y+z\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dee{S} &amp;= \left|\frac{\vnabla\vG}{\vnabla\vG\cdot\hk}\right|\dee{x}\dee{y}
+=\sqrt{3}\,\dee{x}\dee{y}\\
+\hn\,\dee{S} &amp;= \pm \frac{\vnabla\vG}{\vnabla\vG\cdot\hk}\dee{x}\dee{y}
+= \pm \big(\hi+\hj+\hk)\,\dee{x}\dee{y}
+= \pm \frac{1}{\sqrt{3}} \big(\hi+\hj+\hk)\,\dee{S}
+\end{align*}
+</div>
+<p data-braille="continuation">Because \(C\) is oriented in a clockwise direction as</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:28.5%;margin-right:28.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/stokes8.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>observed from the positive \(z\)-axis looking down at the plane, \(\hn\) is to point downwards, so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\hn\,\dee{S} = -\frac{1}{\sqrt{3}} \big(\hi+\hj+\hk)\,\dee{S}
+\end{equation*}
+</div>
+<p data-braille="continuation">On \(S\) we have \(x+y+z=1\text{,}\) so that Stokes' theorem gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\oint_C\vF\cdot\dee{\vr}
+&amp;=\dblInt_S (\vnabla\times\vF)\cdot\hn\,\dee{S}\\
+&amp;=\dblInt_S 2(y\,\hi+z\,\hj+x\,\hk)\cdot
+\left(-\frac{1}{\sqrt{3}}\right) \big(\hi+\hj+\hk)\,\dee{S}\\
+&amp;=-\frac{2}{\sqrt{3}}\dblInt_S (y+z+x)\,\dee{S}
+=-\frac{2}{\sqrt{3}}\dblInt_S \dee{S}\\
+&amp;=-\frac{10}{\sqrt{3}}
+\end{align*}
+</div>
+<p data-braille="continuation">since \(S\) has area \(5\text{.}\)</p>
+</div></body>
+</html>

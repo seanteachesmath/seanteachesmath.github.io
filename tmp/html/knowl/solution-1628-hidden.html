@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:40:54-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p xmlns:svg="http://www.w3.org/2000/svg">Write \(f(x,y)=x^2+y^2\text{.}\) Let's denote  by \(\big(a,b,f(a,b)\big)\) the point on \(z=f(x,y)\) that is nearest \((0,3,0)\text{.}\) Before we really get into the problem, let's make a simple sketch and think about what the lines from \((0,3,0)\) to the surface look like and, in particular, the angles between these lines and the surface.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="figs/distanceBB.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:flex-start;"><img src="figs/distanceB.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">The line from \((0,3,0)\) to \(\big(a,b,f(a,b)\big)\text{,}\) the point on \(z=f(x,y)\) nearest \((0,3,0)\text{,}\) is distinguished from the other lines from \((0,3,0)\) to the surface, by being perpendicular to the surface. We will provide a detailed justification for this claim below.</p>
+<p>Let's first exploit the fact that the vector from \((0,3,0)\) to \(\big(a,b,f(a,b)\big)\) must be perpendicular to the surface to determine \(\big(a,b,f(a,b)\big)\text{,}\) and consequently the distance from \((0,3,0)\) to the surface. By Theorem <a class="xref" data-knowl="./knowl/thm_tan_plane_f.html" title="Theorem 10.5.1: Tangent Plane and Normal Line">10.5.1</a>.a, with \(x_0=a\) and \(y_0=b\text{,}\) the vector</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+-f_x(a,b)\,\hi - f_y(a,b)\,\hj +\hk
+=-2a\,\hi -2b\,\hj +\hk
+\tag{$*$}
+\end{equation*}
+</div>
+<p data-braille="continuation">is normal to the surface \(z=f(x,y)\) at \(\big(a,b,f(a,b)\big)\text{.}\) So the vector from \((0,3,0)\) to \(\big(a,b,f(a,b)\big)\text{,}\) namely</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+a\,\hi + (b-3)\,\hj + f(a,b)\,\hk
+=a\,\hi + (b-3)\,\hj + (a^2+b^2)\,\hk
+\tag{$**$}
+\end{equation*}
+</div>
+<p data-braille="continuation">must be parallel to \((*)\text{.}\) This does not force the vector \((*)\) to equal \((**)\text{,}\) but it does force the existence of some number \(t\) obeying</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+a\,\hi + (b-3)\,\hj + (a^2+b^2)\,\hk
+=t\big(-2a\,\hi -2b\,\hj +\hk\big)
+\end{equation*}
+</div>
+<p data-braille="continuation">or equivalently</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\left\{\begin{aligned}
+a&amp;=-2a\,t\\
+b-3 &amp;= -2b\,t\\
+a^2+b^2 &amp;= t
+\end{aligned}\right.
+\end{equation*}
+</div>
+<p data-braille="continuation">We now have a system of three equations in the three unknowns \(a\text{,}\) \(b\) and \(t\text{.}\) If we can solve them, we will have found the point on the surface that we want.</p>
+<ul class="disc">
+<li>The first equation is \(a(1+2t)=0\) so that either \(a=0\) or \(t=-\frac{1}{2}\text{.}\)</li>
+<li>The third equation forces \(t\ge 0\text{,}\) so \(a=0\text{,}\) and the last equation reduces to \(t=b^2\text{.}\)</li>
+<li>Substituting this into the middle equation gives<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+b-3=-2b^3\qquad\text{or equivalently}\qquad
+2b^3+b-3 = 0
+\end{equation*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">In general, cubic equations are very hard to solve<a class="fn-knowl original" data-knowl="./knowl/fn-434-hidden.html" title="Footnote 10.5.2"><sup> 2 </sup></a>. But, in this case, we can guess one solution<a class="fn-knowl original" data-knowl="./knowl/fn-435-hidden.html" title="Footnote 10.5.3"><sup> 3 </sup></a>, namely \(b=1\text{.}\) So \((b-1)\) must be a factor of \(2b^3+b-3\) and a little division then gives us</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+0=2b^3+b-3
+=(b-1)(2b^2 +2b  +3)
+\end{equation*}
+</div>
+<p data-braille="continuation">We can now find the roots of the quadratic factor by using the high school formula</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{-2\pm\sqrt{2^2-4(2)(3)}}{4}
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(2^2-4(2)(3) \lt 0\text{,}\) the factor \(2b^2 +2b  +3\) has no real roots. So the only real solution to the cubic equation \(2b^3+b-3 = 0\) is \(b=1\text{.}\)</p>
+<p>In summary,</p>
+<ul class="disc">
+<li>\(a=0\text{,}\) \(b=1\) and</li>
+<li>the point on \(z=x^2+y^2\) nearest \((0,3,0)\) is \((0,1,1)\) and</li>
+<li>the distance from \((0,3,0)\) to \(z=x^2+y^2\) is the distance from \((0,3,0)\) to \((0,1,1)\text{,}\) which is \(\sqrt{(-2)^2+1^2}=\sqrt{5}\text{.}\)</li>
+</ul>
+<p>Finally back to the claim that, because \(\big(a,b,f(a,b)\big)\) is the point on \(z=f(x,y)\) that is nearest<a class="fn-knowl original" data-knowl="./knowl/fn-436-hidden.html" title="Footnote 10.5.4"><sup> 4 </sup></a> \((0,3,0)\text{,}\) the vector from \((0,3,0)\) to \(\big(a,b,f(a,b)\big)\) must be perpendicular to the surface \(z=f(x,y)\) at \(\big(a,b,f(a,b)\big)\text{.}\) Note that the square of the distance from \((0,3,0)\) to a general point \(\big(x,y,f(x,y)\big)\) on \(z=f(x,y)\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+D(x,y) = x^2 + (y-3)^2 +f(x,y)^2
+\end{equation*}
+</div>
+<p data-braille="continuation">If \(x=a\text{,}\) \(y=b\) minimizes \(D(x,y)\) then, in particular,</p>
+<ul class="disc">
+<li>restricting our attention to the slice \(y=b\) of the surface, \(x=a\) minimizes \(g(x) = D(x,b) =x^2 + (b-3)^2 +f(x,b)^2\) so that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+0 &amp;= g'(a) =\pdiff{}{x}\Big[x^2 + (b-3)^2 +f(x,b)^2\Big]\bigg|_{x=a}\\
+&amp;=2a +2 f(a,b)\ f_x(a,b)\\
+&amp;=2 \llt a\,,\,b-3\,,\, f(a,b)\rgt\cdot\llt 1\,,\,0\,,\, f_x(a,b)\rgt
+\end{align*}
+</div>and</li>
+<li>restricting our attention to the slice \(x=a\) of the surface, \(y=b\) minimizes \(h(y) = D(a,y) =a^2 + (y-3)^2 +f(a,y)^2\) so that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+0 &amp;= h'(b) =\pdiff{}{y}\Big[a^2 + (y-3)^2 +f(a,y)^2\Big]\bigg|_{y=b}\\
+&amp;=2 (b-3) +2 f(a,b)\ f_y(a,b)\\
+&amp;=2 \llt a\,,\,b-3\,,\, f(a,b)\rgt\cdot\llt 0\,,\,1\,,\, f_y(a,b)\rgt
+\end{align*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">We have expressed the final right hand sides of both of the above bullets as the dot product of the vector \(\llt a\,,\,b-3\,,\, f(a,b)\rgt\) with something because</p>
+<ul class="disc">
+<li>\(\llt a\,,\,b-3\,,\, f(a,b)\rgt\) is the vector from \((0,3,0)\) to the point \((a\,,\,b\,,\, f(a,b)\big)\) on the surface and</li>
+<li>the vanishing of the dot product of two vectors implies that the two vectors are perpendicular.</li>
+</ul>
+<p data-braille="continuation">Thus, that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\llt a\,,\,b-3\,,\, f(a,b)\rgt\cdot\llt 1\,,\,0\,,\, f_x(a,b)\rgt
+&amp;=\llt a\,,\,b-3\,,\, f(a,b)\rgt\cdot\llt 0\,,\,1\,,\, f_y(a,b)\rgt\\
+&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">tells us that the vector \(\llt a\,,\,b-3\,,\, f(a,b)\rgt\) from \((0,3,0)\) to \(\big(a,b,f(a,b)\big)\) is perpendicular to both \(\llt 1\,,\,0\,,\, f_x(a,b)\rgt\) and \(\llt 0\,,\,1\,,\, f_y(a,b)\rgt\) and hence is parallel to their cross product \(\llt 1\,,\, 0\,,\, f_x(a,b)\rgt\times\llt 0\,,\, 1\,,\, f_y(a,b)\rgt\text{,}\) which we already know is a normal vector to the surface \(z=f(x,y)\) at \(\big(a,b,f(a,b)\big)\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">This shows that the point on the surface that minimises the distance to \((0,3,0)\) is joined to \((0,3,0)\) by a line that is parallel to the normal vector — just as we required.</p>
+</div></body>
+</html>

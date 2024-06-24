@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:00:56-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like"><ol class="lower-alpha">
+<li>We can save ourselves some trouble by applying logarithm rules before we differentiate.<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\log\left|  \dfrac{1+x}{\sqrt{1-x^2}}\right|=\log|1+x| - \log|\sqrt{1-x^2}|\\
+&amp;\hskip0.5in=\log|1+x| - \frac{1}{2}\log|1-x^2|\\
+&amp;\hskip0.5in=\log|1+x| - \frac{1}{2}\log|(1+x)(1-x)|\\
+&amp;\hskip0.5in=\log|1+x| - \frac{1}{2}\log|1+x|- \frac{1}{2}\log|1-x|
+\end{align*}
+</div>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\diff{}{x}\left\{\log\left|  \dfrac{1+x}{\sqrt{1-x^2}}\right|\right\}\\
+&amp;\hskip0.5in=\diff{}{x}\left\{\log|1+x| - \frac{1}{2}\log|1+x|- \frac{1}{2}\log|1-x|\right\}\\
+&amp;\hskip0.5in=\frac{1}{1+x} -  \frac{1/2}{1+x}+ \frac{1/2}{1-x}\\
+&amp;\hskip0.5in=  \frac{1/2}{1+x}+ \frac{1/2}{1-x}\\
+&amp;\hskip0.5in=\frac{1}{1-x^2}
+\end{align*}
+</div>Notice this is the integrand from our work in blue.</li>
+<li>False: \(\displaystyle\int_{2}^{3} \frac{1}{1-x^2}\dee{x}\) is a number, because it is the area under a finite portion of a continuous curve. (We note that the integrand is continuous over the interval \([2,3]\text{,}\) although it is not continuous everywhere.) However, \(\left[\log\left|  \dfrac{1+x}{\sqrt{1-x^2}}\right|\right]_{x=2}^{x=3}\) is not defined, since the denominator takes the square root of a negative number. So, these two expressions are not the same.</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">The work in the question is not correct. The most salient problem is that when we make the substitution \(x=\sin\theta\text{,}\) we restrict the possible values of \(x\) to \([-1,1]\text{,}\) since this is the range of the sine function. However, the original integral had no such restriction.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">How can we be sure we avoid this problem in the future? In the introductory text to Section <a href="sec_trigsub.html" class="internal" title="Section 6.9: Trigonometric Substitution">6.9</a> (before Example <a class="xref" data-knowl="./knowl/eg_first_trigsub.html" title="Example 6.9.1: Quarter of the unit circle">6.9.1</a>), the notes tell us that we are allowed to write our old variable as a function of a new variable (say \(x=s(u)\)) <em class="emphasis">as long as that function is invertible to recover our original variable</em> \(x\text{.}\) There is one very obvious reason why invertibility is necessary: after we antidifferentiate using our new variable \(u\text{,}\) we need to get it back in terms of our original variable, so we need to be able to recover \(x\text{.}\) Moreover, invertibility  reconciles  potential problems with domains: if an inverse function \(u=s^{-1}(x)\) exists, then for any \(x\text{,}\) there exists a \(u\) with \(s(u)=x\text{.}\) (This was not the case in the work for the question, because we chose \(x=\sin \theta\text{,}\) but if \(x=2\text{,}\) there is no corresponding \(\theta\text{.}\) Note, however, that \(x=\sin\theta\) is invertible over \([-1,1]\text{,}\)  so the work is correct if we restrict \(x\) to those values.)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Remark: in the next section, you will learn to use partial fractions to find \(\displaystyle\int \dfrac{1}{1-x^2}\dee{x} = \log|1+x|-\dfrac{1}{2}\log|1-x|\text{.}\) When \(-1 \lt x \lt 1\text{,}\) this is equivalent to \(\log\left| \dfrac{1+x}{\sqrt{1-x^2}}\right|\text{.}\)</p>
+</li>
+</ol></div></body>
+</html>

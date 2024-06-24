@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:31:21-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>This one is relatively messy, so we have made it optional. Let us start by writing the  quotient of our two functions as \(Q(x) = f(x) / g(x)\text{,}\) and we assume that \(g(x) \neq 0\text{.}\)  As before, we start our manipulations from the definition of the derivative</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+Q'(x)
+&amp;=\lim_{h\to 0}\frac{Q(x+h)-Q(x)}{h} \qquad\qquad \text{(now substitute in $Q$)}\\
+&amp; =\lim_{h\to 0}\frac{1}{h}
+\left[\frac{f(x+h)}{g(x+h)}-\frac{f(x)}{g(x)}\right] \qquad
+\text{(and then form a common denominator)}\\
+&amp;=\lim_{h\to 0}
+\frac{ f(x+h)\cdot g(x) - f(x)\cdot g(x+h) }
+{h \cdot g(x+h)\cdot g(x)}
+\end{align*}
+</div>
+<p data-braille="continuation">We make use of the same \(F, G\) that we used in the proof of the product rule. We use  them to rewrite \(f(x+h)\) as \(f(x) + hF(h)\) and \(g(x+h)\) as \(g(x+h)=g(x)+hG(h)\text{.}\)  First  concentrate on the numerator of the above expression:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\amp f(x+h)\cdot g(x) - f(x)\cdot g(x+h)
+=[f(x)+hF(h)]\cdot g(x) - f(x)\cdot [g(x)+hG(h)]\\
+&amp;\hskip0.5in=f(x)\cdot g(x) + h g(x) \cdot F(h)  -f(x)\cdot g(x) - h f(x) \cdot G(h)\\
+&amp;\hskip0.5in= h g(x) \cdot F(h)  - h f(x) \cdot G(h)
+\end{align*}
+</div>
+<p data-braille="continuation">So dividing this by the denominator, and cancelling the common factor  of \(h\text{,}\) gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{Q(x+h)-Q(x)}{h}
+&amp;= \frac{F(h) \cdot g(x) - f(x)\cdot G(h)}{g(x+h)\cdot g(x)}
+\end{align*}
+</div>
+<p data-braille="continuation">To arrive at \(Q'(x)\) we take the limit of the above as \(h \to 0\text{;}\) since it  is the limit of a ratio with a non-zero denominator, the result is a ratio  of limits:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+Q'(x)
+&amp;=\lim_{h\to 0}
+\frac{F(h) \cdot g(x) - f(x)\cdot G(h)}{g(x+h)\cdot g(x)}\\
+&amp;=
+\frac{\ds \lim_{h\to 0} \left[ F(h) \cdot g(x) - f(x)\cdot G(h)\right]}
+{\ds \lim_{h \to 0} \left[ g(x+h)\cdot g(x)\right]}
+\end{align*}
+</div>
+<p data-braille="continuation">Processing the denominator gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{h \to 0} \left[ g(x+h)\cdot g(x)\right]
+&amp;= g(x) \cdot \lim_{h\to0}g(x+h) &amp; \text{since $g(x)$ doesn't change with $h$}\\
+&amp;= g(x)^2
+\end{align*}
+</div>
+<p data-braille="continuation">While the numerator is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{h\to 0} \left[ F(h) \cdot g(x) - f(x)\cdot G(h)\right]
+&amp;= \lim_{h\to0} F(h)\cdot g(x) - \lim_{h\to 0} f(x)\cdot G(h)\\
+\end{align*}
+<p class="intertext">Now because \(f(x),g(x)\) do not change with \(h\) we can factor them  out.</p>
+\begin{align*}
+&amp;= g(x) \lim_{h\to0} F(h) - f(x) \lim_{h\to 0} G(h)\\
+&amp;= g(x) f'(x) - f(x) g'(x)
+\end{align*}
+</div>
+<p data-braille="continuation">Putting these pieces back together finally gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+Q(x) &amp;= \frac{g(x) f'(x) - f(x) g'(x)}{g(x)^2}.
+\end{align*}
+</div>
+<p data-braille="continuation">And we arrive at the quotient rule. Note that we have assumed that the  derivatives \(f'(x), g'(x)\) exist and that \(g(x) \neq 0\text{.}\)</p>
+<span class="incontext"><a href="sec_proof_arith_deriv.html#p-1531">in-context</a></span>
+</body>
+</html>

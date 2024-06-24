@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:41:57-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">10.6.10</span><span class="period">.</span><span class="space"> </span><span class="title">Example 10.6.9, continued.</span>
+</h6>
+<p>Suppose, that, as in Example <a class="xref" data-knowl="./knowl/eg_error_C.html" title="Example 10.6.9">10.6.9</a>, we are attempting to determine the area of a triangle by measuring the lengths of two of its sides together with the angle between them and then using the formula</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A(a,b,\theta) = \frac{1}{2} ab\sin\theta
+\end{equation*}
+</div>
+<p data-braille="continuation">Of course, in the real world <a class="fn-knowl original" data-knowl="./knowl/fn-450-hidden.html" title="Footnote 10.6.4"><sup> 4 </sup></a>, we cannot measure lengths and angles exactly. So if we need to know the area to within 1%,  the question becomes: “How accurately do we have to measure the side lengths and included angle if we want the area that we compute to have an error of no more than about 1%?”</p>
+<p>Let's call the exact side lengths and included angle \(a_0\text{,}\) \(b_0\) and \(\theta_0\text{,}\) respectively, and the measured side lengths and included angle \(a_0+\De a\text{,}\) \(b_0+\De b\) and \(\theta_0+\De\theta\text{.}\) So \(\De a\text{,}\) \(\De b\) and \(\De\theta\) represent the errors in our measurements. Then, by <a class="xref" data-knowl="./knowl/eqn_lin_approx_3d.html" title="Equation 10.6.2">10.6.2</a>, the error in our computed area will be approximately</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\De A &amp;\approx \pdiff{A}{a}\big(a_0,b_0,\theta_0\big)\,\De a
++ \pdiff{A}{b}\big(a_0,b_0,\theta_0\big)\,\De b
++ \pdiff{A}{\theta}\big(a_0,b_0,\theta_0\big)\,\De\theta\\
+&amp;=\frac{\De a}{2} b_0\sin\theta_0
++\frac{\De b}{2} a_0\sin\theta_0
++\frac{\De \theta}{2} a_0b_0\cos\theta_0
+\end{align*}
+</div>
+<p data-braille="continuation">and the percentage error in our computed area will be</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+100\frac{|\De A|}{A(a_0,b_0,\theta_0)}
+&amp;\approx \left|  100\frac{\De a}{a_0} + 100\frac{\De b}{b_0}
++100\De\theta\frac{\cos\theta_0}{\sin\theta_0} \right|
+\end{align*}
+</div>
+<p data-braille="continuation">By the triangle inequality, \(|u+v|\le |u|+|v|\text{,}\) and the fact that \(|uv|=|u|\ |v|\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\left|  100\frac{\De a}{a_0} + 100\frac{\De b}{b_0}
++100\De\theta\frac{\cos\theta_0}{\sin\theta_0} \right|\\
+&amp;\hskip1in\le 100\left|\frac{\De a}{a_0}\right| + 100\left|\frac{\De b}{b_0} \right|
++100|\De\theta|\ \left|\frac{\cos\theta_0}{\sin\theta_0} \right|
+\end{align*}
+</div>
+<p data-braille="continuation">We want this to be less than \(1\text{.}\)</p>
+<p>Of course we do not know exactly what \(a_0\text{,}\) \(b_0\) and \(\theta_0\) are. But suppose that we are confident that \(a_0\ge 10\text{,}\) \(b_0\ge 10\) and \(\frac{\pi}{6}\le \theta_0 \le \frac{\pi}{2}\) so that \(\cot\theta_0\le \cot\frac{\pi}{6}=\sqrt{3}\le 2\text{.}\) Then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+100\left|\frac{\De a}{a_0}\right|&amp;\le 100\left|\frac{\De a}{10}\right|
+= 10\,|\De a|\\
+100\left|\frac{\De b}{b_0} \right|&amp;\le  100\left|\frac{\De b}{10} \right|
+= 10\,|\De b|\\
+100|\De\theta|\ \left|\frac{\cos\theta_0}{\sin\theta_0} \right|
+&amp;\le 100|\De\theta|\ 2
+=200\,|\De\theta|
+\end{align*}
+</div>
+<p data-braille="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+100\frac{|\De A|}{A(a_0,b_0,\theta_0)}
+\lesssim 10\,|\De a| + 10\,|\De b| +200\,|\De\theta|
+\end{gather*}
+</div>
+<p data-braille="continuation">So it will suffice to have measurement errors \(|\De a|\text{,}\) \(|\De b|\) and \(|\De\theta|\) obey</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+10\,|\De a| + 10\,|\De b| +200\,|\De\theta| \lt 1
+\end{equation*}
+</div></article><span class="incontext"><a href="sec_lin_approx.html#eg_error_D">in-context</a></span>
+</body>
+</html>

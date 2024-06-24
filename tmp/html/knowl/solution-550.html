@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:42:37-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.4.11.8.11.1</span><span class="period">.</span>
+</h6>
+<p>Our error will have the form \(\dfrac{f^{(n+1)}(c)}{(n+1)!}(x-1)^{n+1}\) for some constant \(c\text{,}\) so let's find an equation for \(f^{(n)}(x)\text{.}\) This has been done before in the text, but we'll do it again here: we'll take several derivatives, then notice the pattern.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f(x)&amp;=\log x\\
+f'(x)&amp;=x^{-1}\\
+f''(x)&amp;=-x^{-2}\\
+f'''(x)&amp;=2!\,x^{-3}\\
+f^{(4)}(x)&amp;=-3!\,x^{-4}\\
+f^{(5)}(x)&amp;=4!\,x^{-5}\\
+\end{align*}
+<p class="intertext">So, when \(n \geq 1\text{,}\)</p>
+\begin{align*}
+f^{(n)}(x)&amp;=(-1)^{n-1}(n-1)!\cdot x^{-n}
+\end{align*}
+</div>
+<p data-braille="continuation">Now that we know the derivative of \(f(x)\text{,}\) we have a better idea what the error in our approximation looks like.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\left|f(1.1)-T_n(1.1)\right|&amp;=\left|\dfrac{f^{(n+1)}(c)}{(n+1)!}(1.1-1)^{n+1}\right|\\
+&amp;=\left|f^{(n+1)}(c)\right|\frac{0.1^{n+1}}{(n+1)!}\\
+&amp;=\left|\frac{n!}{c^{n+1}}
+\right|\frac{1}{10^{n+1}(n+1)!}\\
+&amp;=\frac{1}{ |c|^{n+1}\cdot10^{n+1}\cdot(n+1)}\\
+\end{align*}
+<p class="intertext">for some \(c\) in \((1,1.1)\)</p>
+\begin{align*}
+&amp; \lt \frac{1}{(n+1)10^{n+1}\cdot 1^{n+1}}\\
+&amp;=\frac{1}{(n+1)10^{n+1}}\\
+\end{align*}
+<p class="intertext">What we've shown so far is</p>
+\begin{align*}
+|f(1.1)-T_n(1.1)|&amp; \lt \dfrac{1}{(n+1)10^{n+1}}\\
+\end{align*}
+<p class="intertext">If we can show that \(\dfrac{1}{(n+1)10^{n+1}}\le10^{-4}\text{,}\) then we'll be able to conclude</p>
+\begin{align*}
+|f(1.1)-T_n(1.1)|&amp; \lt \dfrac{1}{(n+1)10^{n+1}}\le10^{-4}
+\end{align*}
+</div>
+<p data-braille="continuation">That is, our error is less than \(10^{-4}\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">So, our goal for the problem is to find a value of \(n\) that makes \(\dfrac{1}{(n+1)10^{n+1}}\le10^{-4}\text{.}\) Certainly, \(n=3\) is such a number. Therefore,  any \(n\) greater than or equal to 3 is an acceptable value.</p>
+</div>
+<span class="incontext"><a href="sec_DIFFTaylor.html#solution-550">in-context</a></span>
+</body>
+</html>

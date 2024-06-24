@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:44:46-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">10.9.11.1</span><span class="period">.</span>
+</h6>
+<p>We wish to choose \(m\) and \(b\) so as to minimize \(E(m,b)\text{.}\) So we need to determine where the partial derivatives of \(E\) are zero.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{3}
+0&amp;=\frac{\partial E}{\partial m}&amp;&amp;=\sum_{i=1}^n 2(mx_i+b-y_i)x_i
+&amp;&amp;=m\Big[\smsum_{i=1}^n 2x^2_i\Big]+b\Big[\smsum_{i=1}^n 2x_i\Big]
+-\Big[\smsum_{i=1}^n 2x_iy_i\Big]\\
+0&amp;=\frac{\partial E}{\partial b}&amp;&amp;=\sum_{i=1}^n 2(mx_i+b-y_i)
+&amp;&amp;=m\Big[\smsum_{i=1}^n 2x_i\Big]+b\Big[\smsum_{i=1}^n 2\Big]
+-\Big[\smsum_{i=1}^n 2y_i\Big]
+\end{alignat*}
+</div>
+<p data-braille="continuation">There are a lot of symbols here. But remember that all of the \(x_i\)'s and \(y_i\)'s are given constants. They come from, for example, experimental data. The only unknowns are \(m\) and \(b\text{.}\) To emphasize this, and to save some writing, define the constants</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+S_x=\smsum_{i=1}^n x_i\qquad
+S_y=\smsum_{i=1}^n y_i\qquad
+S_{x^2}=\smsum_{i=1}^n x^2_i\qquad
+S_{xy}=\smsum_{i=1}^n x_iy_i
+\end{equation*}
+</div>
+<p data-braille="continuation">The equations which determine the critical points are (after dividing by two)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S_{x^2}\, m+S_x\, b&amp;=S_{xy} \tag{E1}\\
+S_{x}\, m+n\, b&amp;=S_{y}      \tag{E2}
+\end{align*}
+</div>
+<p data-braille="continuation">These are two linear equations on the unknowns \(m\) and \(b\text{.}\) They may be solved in any of the usual ways. One is to use (E2) to solve for \(b\) in terms of \(m\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+b=\frac{1}{n}\big(S_y-S_xm\big)\tag{E3}
+\end{equation*}
+</div>
+<p data-braille="continuation">and then substitute this into (E1) to get the equation</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+S_{x^2}\, m+\frac{1}{n}S_x\, \big(S_y-S_xm\big)=S_{xy}\quad\implies\quad
+\big(nS_{x^2} -S_x^2\big) m = nS_{xy}-S_xS_y
+\end{equation*}
+</div>
+<p data-braille="continuation">for \(m\text{.}\) We can then solve this equation for \(m\) and substitute back into (E3) to get \(b\text{.}\) This gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+m\amp=\frac{nS_{xy}-S_xS_y}{nS_{x^2} -S_x^2}\\
+b\amp=\frac{S_y}{n}\,\frac{nS_{x^2} -S_x^2}{nS_{x^2} -S_x^2}
+-\frac{S_x}{n}\,\frac{nS_{xy}-S_xS_y}{nS_{x^2} -S_x^2}
+=\frac{nS_yS_{x^2}-nS_xS_{xy}}{n(nS_{x^2} -S_x^2)}\\
+\amp=-\frac{S_xS_{xy}-S_yS_{x^2}}{nS_{x^2} -S_x^2}
+\end{align*}
+</div>
+<p data-braille="continuation">Another way to solve the system of equations is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{2}
+n\text{(E1)}-S_x\text{(E2)}:&amp;\quad \Big[nS_{x^2} -S_x^2\Big]m&amp;&amp;=nS_{xy}-S_xS_y\\
+-S_x\text{(E1)}+S_{x^2}\text{(E2)}:&amp;\quad
+\Big[nS_{x^2} -S_x^2\Big]b&amp;&amp;=-S_xS_{xy}+S_yS_{x^2}
+\end{alignat*}
+</div>
+<p data-braille="continuation">which gives the same solution.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">So given a bunch of data points, it only takes a quick bit of arithmetic — no calculus required — to apply the above formulae and so to find the best fitting line. Of course while you don't need any calculus to apply the formulae, you do need calculus to understand where they came from. The same technique can be extended to other types of curve fitting problems. For example, polynomial regression.</p>
+</div>
+<span class="incontext"><a href="sec_max.html#solution-1730">in-context</a></span>
+</body>
+</html>

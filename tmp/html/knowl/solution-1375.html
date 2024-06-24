@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:28:38-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.5.3.23.1</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Equation <a class="xref" data-knowl="./knowl/eq_weightedrod.html" title="Equation 7.3.1: Centre of mass (discrete masses)">7.3.1</a> tells us the centre of mass of a rod with weights \(\{m_n\}\) at positions \(\{x_n\}\) is \(\displaystyle\bar x =\frac{\sum m_nx_n}{\sum m_n}\) .</p>
+<p>We find the combined mass of our weights using Lemma <a class="xref" data-knowl="./knowl/lem_geomsum.html" title="Lemma 8.2.5: Geometric series">8.2.5</a> with \(r=\frac{1}{2}\) and \(r=\frac{1}{3}\text{,}\) respectively.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sum_{n=1}^{\infty}\frac{1}{2^n}+\sum_{n=1}^{\infty}\frac{1}{3^n}&amp;=
+\sum_{n=0}^{\infty}\frac{1}{2}\cdot\frac{1}{2^n}+\sum_{n=0}^{\infty}\frac{1}{3}\cdot\frac{1}{3^n}\\
+&amp;=\frac{1}{2}\cdot\frac{1}{1-\frac12}+\frac{1}{3}\cdot\frac{1}{1-\frac13}\\
+&amp;=1+\frac12=\frac32
+\end{align*}
+</div>
+<p>Now, we want to calculate the sum of the products of the masses and their positions.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{n=1}^{\infty}\frac{1}{2^n}\cdot n+\sum_{n=1}^{\infty}\frac{1}{3^n}\cdot(-n)
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">We don't have such a nice formula for this, but we can make one by differentiating.</p>
+<p>The following formula is true for any \(x\) with \(|x| \lt 1\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sum_{n=0}^\infty x^n&amp;=\frac{1}{1-x}\\
+\end{align*}
+<p class="intertext">Differentiating both sides with respect to \(x\text{:}\)</p>
+\begin{align*}
+\sum_{n=0}^\infty nx^{n-1}&amp;=\frac{1}{(1-x)^2}\\
+\sum_{n=1}^\infty nx^{n-1}&amp;=\frac{1}{(1-x)^2}\\
+\end{align*}
+<p class="intertext">Multiplying both sides by \(x\text{:}\)</p>
+\begin{align*}
+\sum_{n=1}^\infty nx^{n}&amp;=\frac{x}{(1-x)^2}
+\end{align*}
+</div>
+<p>This allows us to evaluate our series.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sum_{n=1}^{\infty}\frac{n}{2^n}-\sum_{n=1}^{\infty}\frac{n}{3^n}
+&amp;=\frac{\frac12}{\left(1-\frac12\right)^2}-\frac{\frac13}{\left(1-\frac13\right)^2}\\
+&amp;=2-\frac43 = \frac{2}{3}\\
+\end{align*}
+<p class="intertext">Therefore,</p>
+\begin{align*}
+\bar x &amp;=\frac{2/3}{3/2}=\frac{4}{9} = 0.\overline{44}
+\end{align*}
+</div>
+<p data-braille="continuation">Remark: we can check that this makes some sense. Since the weights to the right of \(x=0\) are heavier than those to the left, but spaced the same, we would expect our rod to balance to the right of \(x=0\text{.}\)</p>
+</div>
+<span class="incontext"><a href="section-60.html#solution-1375">in-context</a></span>
+</body>
+</html>

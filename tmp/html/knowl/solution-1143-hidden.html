@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:10:20-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like"><ol class="lower-alpha">
+<li>
+<p>Using the definition of an average,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A=\frac{1}{1-0}\int_0^1 e^t\,\dee{t} = e-1
+\end{equation*}
+</div>
+</li>
+<li>
+<p>Since \(s(t)-A = e^t-e+1\text{,}\) its average on \([0,1]\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{1}{1-0}\int_0^1 \left(e^t-e+1\right)\,\dee{t} 
+\amp= \left[e^t -et+t\right]_0^1 \\
+\amp= (e-e+1)-(1)=0
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Remark: what's happening here is that the average difference between \(s(t)\) and \(A\) is zero, because the values of \(s(t)\) that are larger than \(A\) (and give a positive value of \(s(t)-A\)) exactly cancel out the values of \(s(t)\) that are smaller than \(A\) (and give a negative value of \(s(t)-A\)). However, knowing how far the average value is from our calculated average is a reasonable thing to measure. That's where (c) comes in.</p>
+</li>
+<li>
+<p>Using the definition of an average, the quantity we want is:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{1}{1-0}\int_0^1\left| e^t-e+1\right|\,\dee{t}
+\end{equation*}
+</div>
+<p>To deal with the absolute value, we consider the integral over two intervals: one where \(e^t-e+1\) is positive, and one where it's negative. To decide where to break the limits of integration, notice \(e^t-e+1 \gt 0\) exactly when \(e^t \gt e-1\text{,}\) so \(t \gt \log(e-1)\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\frac{1}{1-0}\int_0^1\left| e^t-e+1\right|\,\dee{t}\\
+\amp=\int_0^{\log(e-1)}|\underbrace{e^t-e+1}_{\text{negative}}|\,\dee{t}+\int_{\log(e-1)}^1|\underbrace{e^t-e+1}_{\text{positive}}|\,\dee{t}\\
+&amp;=\int_0^{\log(e-1)}\big(-e^t+e-1\big)\,\dee{t}+\int_{\log(e-1)}^1\big(e^t-e+1\big)\,\dee{t}\\
+&amp;=\Big[-e^t+(e-1)t\Big]_0^{\log(e-1)}+
+\Big[e^t-(e-1)t\Big]_{\log(e-1)}^1\\
+&amp;=\left[-(e-1)+(e-1)\log(e-1)+1\right]\\
+\amp\hskip1in+
+\left[e-(e-1)-(e-1)+(e-1)\log(e-1)\right]\\
+&amp;=4-2e+2(e-1)\log(e-1)\\
+&amp;\approx 0.42
+\end{align*}
+</div>
+<p data-braille="continuation">Remark: what we just measured is how far \(s(t)\) is, on average, from \(A\text{.}\) We had to neglect whether \(s(t)\) was above or below \(A\text{,}\) because (as we saw in (b)) the values above \(A\) “cancel out” the values below \(A\text{.}\) That's where the absolute value came in.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Knowing how well most of your function's values match the average is an important measure, but dealing with absolute values can be a little clumsy. Therefore, the <em class="alert">variance</em> of a function squares the differences, rather than taking their absolute value. (In our example, that means looking at \((s(t)-A)^2\text{,}\) rather than \(|s(t)-A|\text{.}\)) To compensate for the change in magnitude involve in squaring, the <em class="alert">standard deviation</em> is the square root of the variance. These are two very commonly used measures of how similar a function is to its average. Compare standard deviation to root-square-mean voltage from Example <a class="xref" data-knowl="./knowl/eg_peakvsrms.html" title="Example 7.2.6: Peak vs RMS voltage">7.2.6</a> and Questions <a class="xref" data-knowl="./knowl/prob_s2_2_RMS1.html" title="Exercise 7.2.2.16">16</a> to <a class="xref" data-knowl="./knowl/prob_s2_2_RMS3.html" title="Exercise 7.2.2.18">18</a>.</p>
+</li>
+</ol></div></body>
+</html>

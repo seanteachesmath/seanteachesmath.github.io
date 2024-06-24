@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:18:16-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.3.23</span><span class="period">.</span><span class="space"> </span><span class="title">\(\sum_{n=1}^\infty \frac{ (-3)^n \sqrt{n+1}}{2n+3}X^n\).</span>
+</h6>
+<p>Again, the convergence of this series will depend on \(X\text{.}\)</p>
+<ul class="disc">
+<li>Let us start with the ratio test — so we compute<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\left|\frac{a_{n+1}}{a_n}\right|
+&amp;= \left|\frac{(-3)^{n+1} \sqrt{n+2} (2n+5) X^{n+1} }{(-3)^n \sqrt{n+1} (2n+3) X^n} \right|\\
+&amp;= |-3| \cdot \frac{\sqrt{n+2}}{\sqrt{n+1}} \cdot \frac{2n+5}{2n+3} \cdot |X|\\
+\end{align*}
+<p class="intertext">So in the limit as \(n \to \infty\) we are left with</p>
+\begin{align*}
+\lim_{n\to\infty} \left|\frac{a_{n+1}}{a_n}\right|
+&amp;= 3 |X|
+\end{align*}
+</div>
+</li>
+<li>The ratio test then tells us that if \(3|X| \gt 1\) the series diverges, while when \(3|X| \lt 1\) the series converges.</li>
+<li>This leaves us with the cases \(X=+\frac{1}{3}\) and \(-\frac{1}{3}\text{.}\)</li>
+<li>Setting \(X=\frac{1}{3}\) gives the series<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\sum_{n=1}^\infty \frac{ (-1)^n \sqrt{n+1}}{2n+3}
+\end{gather*}
+</div>The fact that the terms alternate here suggests that we use the alternating series test. That will show that this  series converges provided<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f(x) &amp;= \frac{\sqrt{x+1}}{2x+3}
+\end{align*}
+</div>is a decreasing function. To prove that, it suffices to show its derivative is negative when \(x\geq 1\text{:}\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f'(x) &amp;= \frac{(2x+3)\cdot \frac{1}{2} \cdot(x+1)^{-1/2} - 2\sqrt{x+1} }{(2x+3)^2}\\
+&amp;=\frac{(2x+3) - 4(x+1)  }{2 \sqrt{x+1} (2x+3)^2}\\
+&amp;= \frac{-2x-1}{2 \sqrt{x+1} (2x+3)^2}
+\end{align*}
+</div>So when \(x \geq 1\) this is negative and so \(f(x)\) is a decreasing function. Thus we can apply the alternating series  test to show that the series converges when \(x=\frac{1}{3}\text{.}\)</li>
+<li>When \(X = -\frac{1}{3}\) the series becomes<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\sum_{n=1}^\infty \frac{\sqrt{n+1}}{2n+3}.
+\end{gather*}
+</div>Notice that when \(n\) is large, the summand is approximately  \(\frac{\sqrt{n}}{2n}\) which suggests that the series will diverge  by comparison with \(\sum n^{-1/2}\text{.}\) To formalise this, we can use the limit comparison theorem:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{n \to \infty} \frac{\sqrt{n+1}}{2n+3}\  \frac{1}{ n^{-1/2} }
+&amp;=
+\lim_{n \to \infty} \frac{\sqrt{n} \cdot \sqrt{1+1/n}}{n(2+3/n)} \cdot n^{1/2}\\
+&amp;=
+\lim_{n \to \infty} \frac{n \cdot \sqrt{1+1/n}}{n(2+3/n)}\\
+&amp;= \frac{1}{2}
+\end{align*}
+</div>So since this ratio has a finite limit and the series \(\sum n^{-1/2}\) diverges, we know that our series also diverges.</li>
+</ul>
+<p data-braille="continuation">So in summary the series converges when \(-\frac{1}{3}  \lt  X \leq \frac{1}{3}\) and diverges otherwise.</p></article><span class="incontext"><a href="section-58.html#eg_ratioC">in-context</a></span>
+</body>
+</html>

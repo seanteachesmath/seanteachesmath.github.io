@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:16:51-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
+<p>We prove the result by reformulating it as a divergence theorem statement. To that end, we define</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V&amp;=\Set{(x,y,z)}{ (x,y)\in R,\ \ 0\le z\le 1}\\
+\vG(x,y,z) &amp;= F_2(x,y)\,\hi -F_1(x,y)\,\hj
+\end{align*}
+</div>
+<p data-braille="continuation">Notice that \(V\) is exactly the volume obtained by expanding \(R\) vertically upward by one unit.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/greens2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">The definition of \(\vG\) does <em class="emphasis">not</em> contain a typo — the \(x\)-component of \(\vG\) really is \(F_2\) and the \(y\)-component of \(\vG\) really is \(-F_1\text{.}\) (More or less the reverse of what you would normally write down.)</p>
+<p>These definitions have been rigged so that the divergence theorem applied to \(\vG\) and \(V\text{,}\) namely</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
+&amp;=\tripInt_V\vnabla\cdot\vG\ \dee{V}
+\end{align*}
+</div>
+<p data-braille="continuation">gives us exactly Green's theorem, as we shall now see.</p>
+<p>Since \(\vnabla\cdot\vG = \frac{\partial F_2}{\partial x}
+- \frac{\partial F_1}{\partial y}\text{,}\)  the right hand side is just</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\tripInt_V\vnabla\cdot\vG\ \dee{V}
+&amp;= \dblInt_{R}\dee{x}\dee{y}\int_0^1\dee{z} \ \vnabla\cdot\vG\\
+&amp;= \dblInt_{R}\dee{x}\dee{y}\int_0^1\dee{z} \
+\left(\frac{\partial F_2}{\partial x}(x,y)
+- \frac{\partial F_1}{\partial y}(x,y)\right)\\
+&amp;= \dblInt_{R}\dee{x}\dee{y}\
+\left(\frac{\partial F_2}{\partial x}(x,y)
+- \frac{\partial F_1}{\partial y}(x,y)\right)
+\end{align*}
+</div>
+<p data-braille="continuation">because the integrand is independent of \(z\text{.}\) This is exactly the right hand side of Green's theorem.</p>
+<p>Now for the left hand side. The boundary, \(\partial V\text{,}\) of \(V\) is the union of the (flat) bottom, the (flat) top and the (curved) side. The outward unit normal on the (horizontal, flat) top is \(+\hk\) and the outward unit normal on the (horizontal, flat) bottom is \(-\hk\)  so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
+&amp;=\dblInt_{\text{top}} \vG\cdot\hk\,\dee{S}
++\dblInt_{\text{bottom}} \vG\cdot(-\hk)\,\dee{S}
++\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}\\
+&amp;=\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}
+\end{align*}
+</div>
+<p data-braille="continuation">We have used the fact that the \(\hk\) component of \(\vG\) is exactly zero to discard the integrals over the top and bottom of \(\partial V\text{.}\) To evaluate the integral over the side, we'll parametrize the side. Suppose that \(\vr(t)=x(t)\,\hi +y(t)\,\hj\text{,}\) \(a\le t\le b\text{,}\) is a parametrization of \(C\text{,}\) with the arrow in the figure above giving the direction of increasing \(t\text{.}\) Then we can use</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\vR(t,z)  = \vr(t) +z\,\hk
+= x(t)\,\hi +y(t)\,\hj +z\,\hk \qquad a\le t\le b,\ 0\le z\le 1
+\end{gather*}
+</div>
+<p data-braille="continuation">as a parametrization of the side. We'll use (<a class="xref" data-knowl="./knowl/eq_SUdSparam.html" title="Equation 14.3.1">14.3.1</a>) to determine \(\hn\,\dee{S}\) for the side. Since</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{\partial\vR}{\partial t}(t,z) &amp; = x'(t)\,\hi +y'(t)\,\hj\\
+\frac{\partial\vR}{\partial z}(t,z) &amp; = \hk
+\end{align*}
+</div>
+<p data-braille="continuation">(<a class="xref" data-knowl="./knowl/eq_SUdSparam.html" title="Equation 14.3.1">14.3.1</a>) gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\hn\,\dee{S} &amp;= \frac{\partial\vR}{\partial t}(t,z)\times
+\frac{\partial\vR}{\partial z}(t,z)\ \dee{t}\dee{z}\\
+&amp;= \big(x'(t)\,\hi +y'(t)\,\hj\big)\times \hk\ \dee{t}\dee{z}\\
+&amp;= \big(-x'(t)\,\hj +y'(t)\,\hi\big)\ \dee{t}\dee{z}
+\end{align*}
+</div>
+<p data-braille="continuation">Note that with this choice of \(\pm\) sign (that is, \(\frac{\partial\vR}{\partial t}\times
+\frac{\partial\vR}{\partial z}\ \dee{t}\dee{z}\) rather than \(-\frac{\partial\vR}{\partial t}\times
+\frac{\partial\vR}{\partial z}\ \dee{t}\dee{z}\)), the vector \(\hn\) really is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">outward</em> pointing normal, as we see from the sketch</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/greens3.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>We can now compute the surface integral directly.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\dblInt_{\partial V} \vG\cdot\hn\,\dee{S}
+=\dblInt_{\text{side}} \vG\cdot\hn\,\dee{S}\\
+&amp;\hskip0.25in=\int_a^b\dee{t}\int_0^1\dee{z}\ \vG\big(\vR(t,z)\big)\cdot
+\big(-x'(t)\,\hj +y'(t)\,\hi\big)\\
+&amp;\hskip0.25in=\int_a^b\dee{t}\int_0^1\dee{z}\
+\big(F_2(x(t),y(t))\,\hi -F_1(x(t),y(t))\,\hj\big)\cdot
+\big(-x'(t)\,\hj +y'(t)\,\hi\big)\\
+&amp;\hskip0.25in=\int_a^b\dee{t}\
+\big[F_2(x(t),y(t))\,y'(t) +F_1(x(t),y(t))\,x'(t)\big]\\
+&amp;\hskip2in \text{since the integrand is independent of } z\\
+&amp;\hskip0.25in=\oint_{C} \big[F_1(x,y)\,\dee{x} +F_2(x,y)\,\dee{y}\big]
+\end{align*}
+</div>
+<p data-braille="continuation">This is exactly the left hand side of Green's theorem.</p></article><span class="incontext"><a href="sec_GreenThm.html#proof-67">in-context</a></span>
+</body>
+</html>

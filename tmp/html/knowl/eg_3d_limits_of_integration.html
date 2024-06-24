@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:52:33-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.5.2</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">In practice, often the hardest part of dealing with a triple integral is setting up the limits of integration. In this example, we'll concentrate on exactly that.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Let \(\cV\) be the solid region in \(\bbbr^3\) bounded by the planes \(x = 0\text{,}\) \(y = 0\text{,}\) \(z=0\text{,}\) \(y = 4 - x\text{,}\) and the surface \(z = 4 - x^2\text{.}\) We are now going to write \(\tripInt_\cV f(x, y, z)\ \dee{V}\) as an iterated integral (i.e. find the limits of integration) in two different ways. Here \(f\) is just some general, unspecified, function.</p>
+<p>First, we'll figure out what \(\cV\) looks like. The following three figures show</p>
+<ul class="disc">
+<li>the part of the first octant with \(y \le 4 - x\)  (except that it continues vertically upward)</li>
+<li>the part of the first octant with \(z \le 4 - x^2\) (except that it continues to the right)</li>
+<li>the part of the first octant with both \(y\le 4-x\) and  \(z \le 4 - x^2\text{.}\) That's<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\cV=\Set{(x,y,z)}{x\ge 0, y\ge 0,\  z\ge 0,\ x+y\le 4,\ z\le 4-x^2}
+\end{equation*}
+</div>
+</li>
+</ul>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.666666666666667%;margin-right:1.666666666666667%;">
+<div class="sbspanel" style="width:31.0344827586207%;justify-content:center;"><img src="figs/limits3dA.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:31.0344827586207%;justify-content:center;"><img src="figs/limits3dB.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:31.0344827586207%;justify-content:center;"><img src="figs/limits3dC.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg"><em class="emphasis">The iterated integral \(\tripInt_\cV f(x, y, z)\ \dee{z}\,\dee{y} \,\dee{x}
+=\int\left(\int\left(\int f(x, y, z)\ \dee{z}\right)\dee{y}\right)\dee{x} \text{:}\)</em> For this iterated integral, the outside integral is with respect to \(x\text{,}\) so we first slice up \(\cV\) using planes of constant \(x\text{,}\) as in the figure below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/limits3dD.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>Observe from that figure that, on \(\cV\text{,}\)</p>
+<ul class="disc">
+<li>\(x\) runs from \(0\) to \(2\text{,}\) and</li>
+<li>for each fixed \(x\) in that range, \(y\) runs from \(0\) to \(4-x\) and</li>
+<li>for each fixed \((x,y)\) as above, \(z\) runs from \(0\) to \(4-x^2\text{.}\)</li>
+</ul>
+<p data-braille="continuation">So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\tripInt_\cV f(x, y, z)\ \dee{z}\,\dee{y} \,\dee{x}
+&amp;=\int_0^2 \dee{x} \int_0^{4-x} \dee{y}\int_0^{4-x^2}\dee{z}\  f(x, y, z)\\
+&amp;=\int_0^2  \int_0^{4-x} \int_0^{4-x^2}f(x, y, z)\ \dee{z}\,\dee{y}\,\dee{x}
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg"><em class="emphasis">The iterated integral \(\tripInt_\cV f(x, y, z)\ \dee{y}\,\dee{x} \,\dee{z}
+=\int\left(\int\left(\int f(x, y, z)\ \dee{y}\right)\dee{x} \right)\dee{z}\text{:}\)</em> For this iterated integral, the outside integral is with respect to \(z\text{,}\) so we first slice up \(\cV\) using planes of constant \(z\text{,}\) as in the figure below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/limits3dE.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>Observe from that figure that, on \(\cV\text{,}\)</p>
+<ul class="disc">
+<li>\(z\) runs from \(0\) to \(4\text{,}\) and</li>
+<li>for each fixed \(z\) in that range, \(x\) runs from \(0\) to \(\sqrt{4-z}\) and</li>
+<li>for each fixed \((x,z)\) as above, \(y\) runs from \(0\) to \(4-x\text{.}\)</li>
+</ul>
+<p data-braille="continuation">So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\tripInt_\cV f(x, y, z)\ \dee{y}\,\dee{x} \,\dee{z}
+&amp;=\int_0^4 \dee{z} \int_0^{\sqrt{4-z}} \dee{x}\int_0^{4-x}\dee{y}\  f(x, y, z)\\
+&amp;=\int_0^4  \int_0^{\sqrt{4-z}} \int_0^{4-x}f(x, y, z)
+\ \dee{y}\,\dee{x}\,\dee{z}
+\end{align*}
+</div></article><span class="incontext"><a href="sec_3d_integrals.html#eg_3d_limits_of_integration">in-context</a></span>
+</body>
+</html>

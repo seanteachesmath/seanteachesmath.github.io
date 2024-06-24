@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:06:18-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.13.1.3.1</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">We notice that there is a quadratic equation under the square root. If that equation were a perfect square, we could get rid of the square root: so we'll mould it into a perfect square using a trig substitution.</p>
+<p>Our candidates will use one of the following identities:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+1-\sin^2\theta=\cos^2\theta \hspace{1cm} \tan^2\theta+1=\sec^2\theta \hspace{1cm} \sec^2\theta-1=\tan^2\theta
+\end{equation*}
+</div>
+<p>We'll be substituting \(x=\)(something), so we notice that \(3-5x^2\) has the general form of (constant)\(-\)(function), as does \(1-\sin^2\theta\text{.}\) In order to get the constant right, we multiply through by three:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+3-3\sin^2\theta = 3\cos^2\theta
+\end{equation*}
+</div>
+<p>Our goal is to get \(3-5x^2=3-3\sin^2\theta\text{;}\) so we solve this equation for \(x\) and decide on the substitution</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+x=\sqrt{\frac{3}{5}}\sin\theta,\hspace{1cm}
+\dee{x}=\sqrt{\frac{3}{5}}\cos\theta \dee{\theta}
+\end{equation*}
+</div>
+<p>Now we evaluate our integral.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int\sqrt{3-5x^2}\dee{x}&amp;=\int\sqrt{3-5\left( \sqrt{\frac{3}{5}}\sin\theta\right)^2}\sqrt{\frac{3}{5}}\cos\theta d \theta\\
+&amp;=\int
+\sqrt{3-3\sin^2\theta}\sqrt{3/5}\cos\theta
+\dee{\theta}\\
+&amp;=\int
+\sqrt{3\cos^2\theta}\sqrt{3/5}\cos\theta
+\dee{\theta}\\
+&amp;=\int
+\sqrt{3}\cos\theta\sqrt{3/5}\cos\theta
+\dee{\theta}\\
+&amp;=\frac{3}{\sqrt{5}}\int
+\cos^2\theta
+\dee{\theta}\\
+&amp;=\frac{3}{\sqrt{5}}\int
+\frac{1+\cos 2\theta}{2}
+\dee{\theta}\\
+&amp;=\frac{3}{2\sqrt{5}}\int
+(1+\cos2\theta)
+\dee{\theta}\\
+&amp;=
+\frac{3}{2\sqrt{5}}\left[
+\theta+\frac{1}{2}\sin(2\theta)
+\right]+C\\
+&amp;=\frac{3}{2\sqrt{5}}\left[
+\theta + \sin\theta\cos\theta
+\right]+C
+\end{align*}
+</div>
+<p data-braille="continuation">From our substitution \(x=\sqrt{3/5}\sin\theta\text{,}\) we glean \(\sin\theta = x\sqrt{5/3}\text{,}\) and \(\theta = \arcsin \left(x\sqrt{5/3} \right)\text{.}\) To figure out \(\cos\theta\text{,}\) we draw a right triangle. Let \(\theta\) be one angle, and since \(\sin\theta = \dfrac{x\sqrt{5}}{\sqrt{3}}\text{,}\) we let the hypotenuse be \(\sqrt{3}\) and the side opposite \(\theta\) be \(x\sqrt{5}\text{.}\) By Pythagorus, the missing side (adjacent to \(\theta\)) has length \(\sqrt{3-5x^2}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-827.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Therefore, \(\cos\theta = \frac{\mbox{adj}}{\mbox{hyp}} = \dfrac{\sqrt{3-5x^2}}{\sqrt{3}}\text{.}\) So our integral evaluates to:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\amp\frac{3}{2\sqrt{5}}\left[
+\theta + \sin\theta\cos\theta
+\right]+C\\
+&amp;\hskip0.5in=
+\frac{3}{2\sqrt{5}}\left[
+\arcsin(x\sqrt{5/3}) + x\sqrt{5/3}\cdot \frac{\sqrt{3-5x^2}}{\sqrt{3}}
+\right]+C\\
+&amp;\hskip0.5in=
+\frac{3}{2\sqrt{5}}
+\arcsin(x\sqrt{5/3}) + \frac{x}{2}\cdot {\sqrt{3-5x^2}}
++C
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="section-51.html#solution-1057">in-context</a></span>
+</body>
+</html>

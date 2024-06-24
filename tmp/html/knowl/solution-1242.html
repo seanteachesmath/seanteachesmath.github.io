@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:15:53-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">8.1.2.21.1</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Let's take stock: \(\sin(1/n) \to \sin (0)=0\) as \(n \to \infty\text{,}\) so \(\log\left(\sin(1/n)\right)
+\to -\infty\text{.}\) However, \(\log(2n) \to \infty\text{.}\) So, we have some tension here: the two pieces behave in ways that pull the terms of the sequence in different directions. (Recall we <em class="emphasis">cannot</em> conclude anything like “\(-\infty+\infty=0\text{.}\)”)</p>
+<p>We try using logarithm rules to get a clearer picture.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\log\left(\sin\frac{1}{n}\right)+\log(2n)&amp;=\log\left(2n\sin\left(\frac1n\right)\right)
+\end{align*}
+</div>
+<p data-braille="continuation">Still, we have  indeterminate behaviour: \(2n\sin(1/n)\) is the product of \(2n\text{,}\) which grows without bound, and \(\sin(1/n)\text{,}\) which approaches zero. In the past, we learned that we can handle the indeterminate form \(0\cdot\infty\) with l'Hôpital's rule (after a little algebra), but there's a slicker way.  Note \(1/n \to 0\) as \(n \to \infty\text{.}\) If we write \(\frac{1}{n}=x\text{,}\) then this piece of our limit resembles something familiar.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+2n\sin\left(\frac{1}{n}\right)&amp;=2\left(\frac{\sin x}{x}\right)\\
+\end{align*}
+<p class="intertext">If \(n \to \infty\text{,}\) then \(x = \frac{1}{n}\to 0\text{.}\)</p>
+\begin{align*}
+\lim_{n \to \infty}2n\sin\left(\frac{1}{n}\right)&amp;=2\lim_{x \to 0}\frac{\sin x}{x}\\
+\end{align*}
+<p class="intertext">That limit is familiar:</p>
+\begin{align*}
+&amp;=2(1)=2\\
+\end{align*}
+<p class="intertext">Then:</p>
+\begin{align*}
+\lim_{n \to \infty}\log\left(2n\sin\left(\frac{1}{n}\right)\right)&amp;=\log 2
+\end{align*}
+</div>
+<p>Note: if you have forgotten that \(\displaystyle\lim_{x \to 0}\frac{\sin x}{x}=1\text{,}\) you can also evaluate this limit using l'Hôpital's rule:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\underbrace{\lim_{x \to 0}\frac{\sin x}{x}}_{\atp{\mathrm{num}\to 0}{\mathrm{den}\to0}} &amp;=\lim_{x \to 0}\frac{\cos x}{1}=\cos 0 =1
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="section-56.html#solution-1242">in-context</a></span>
+</body>
+</html>

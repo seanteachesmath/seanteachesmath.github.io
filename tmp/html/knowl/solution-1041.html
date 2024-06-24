@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:05:30-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.12.4.14.1</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">You might think that, because the integrand is odd, the integral converges to \(0\text{.}\) This is a common mistake-- see Example <a class="xref" data-knowl="./knowl/eg_IMPp4.html" title="Example 6.12.11: \(\int_{-1}^1\frac{\dee{x}}{x}\)">6.12.11</a> in the text, or Question <a class="xref" data-knowl="./knowl/prob_s1_11_sine.html" title="Exercise 6.12.4.11">11</a> in this section.  In the absence of such a shortcut, we use our standard procedure: identifying problem spots over the domain of integration, and replacing them with limits.</p>
+<p>There are two “sources of impropriety,” namely \(x\to +\infty\) and \(x\to -\infty\text{.}\) So, we split the integral in two, and treat the two halves separately. The integrals below can be evaluated with the substitution \(u=x^2+1\text{,}\) \(\frac{1}{2}\dee{u} = x\dee{x}\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_{-\infty}^{+\infty}\frac{x}{x^2+1}\dee{x}
+&amp;=\textcolor{blue}{ \int_{-\infty}^0\frac{x}{x^2+1}\dee{x}}
++ \textcolor{red}{\int_0^{+\infty}\frac{x}{x^2+1}\dee{x}}\\
+\color{blue}{\int_{-\infty}^0\frac{x}{x^2+1}\dee{x}}
+&amp;=\lim_{R\rightarrow\infty}\int_{-R}^0\frac{x}{x^2+1}\dee{x}
+=\lim_{R\rightarrow\infty}\frac{1}{2}\log(x^2+1)\Big|_{-R}^0\\
+&amp;=\lim_{R \to \infty}\frac{1}{2}\left[\log 1-\log(R^2+1)\right]=\lim_{R\rightarrow\infty}-\frac{1}{2}\log(R^2\!+\!1)\\
+\amp=-\infty\\
+\color{red}{\int_0^{+\infty}\frac{x}{x^2+1}\dee{x}}
+&amp;=\lim_{R\rightarrow\infty}\int_0^R\frac{x}{x^2+1}\dee{x}
+=\lim_{R\rightarrow\infty}\frac{1}{2}\log(x^2+1)\Big|_0^R\\
+&amp;=\lim_{R \to \infty}\frac{1}{2}\left[ \log(R^2+1)-\log 1\right]
+=\lim_{R\rightarrow\infty}\frac{1}{2}\log(R^2+1)\\
+\amp=+\infty
+\end{align*}
+</div>
+<p data-braille="continuation">Both halves diverge, so the whole integral diverges.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Once again: after we found that one of the limits diverged, we could have stopped and concluded that the original integrand diverges. Don't make the mistake of thinking that \(\infty-\infty=0\text{.}\) That can get you into <em class="emphasis">big</em> trouble. \(\infty\) is not a normal number. For example \(2\infty=\infty\text{.}\) So if \(\infty\) were a normal number we would have both \(\infty-\infty=0\) and \(\infty-\infty=2\infty-\infty =\infty\text{.}\)</p>
+</div>
+<span class="incontext"><a href="sec_improp_int.html#solution-1041">in-context</a></span>
+</body>
+</html>

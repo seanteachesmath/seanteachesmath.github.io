@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:48:24-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>The fattest part of \(\cR\) is on the \(y\)-axis. The intersection points of the ellipse with the \(y\)-axis have \(x=0\) and \(y\) obeying \(3(0)^2+2y^2 =1 \) or \(y=\pm\frac{1}{\sqrt{2}}\text{.}\) So in \(\cR\text{,}\) \(-\frac{1}{\sqrt{2}}\le y\le \frac{1}{\sqrt{2}}\) and, for each such \(y\text{,}\) \(3x^2\le 1-2y^2\) or \(-\sqrt{\frac{1-2y^2}{3}}\le x\le \sqrt{\frac{1-2y^2}{3}}\text{.}\) So using vertical strips as in the figure above</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Volume}(\cV) &amp;=\dblInt_\cR \big(1-3x^2-2y^2\big)\,\dee{x}\,\dee{y}\\
+&amp;=\int_{-\frac{1}{\sqrt{2}}}^{\frac{1}{\sqrt{2}}}\dee{y}
+\int_{-\sqrt{\frac{1-2y^2}{3}}}^{\sqrt{\frac{1-2y^2}{3}}}\dee{x}\
+\big(1-3x^2-2y^2\big)\\
+&amp;=4\int_0^{\frac{1}{\sqrt{2}}}\dee{y}
+\int_0^{\sqrt{\frac{1-2y^2}{3}}}\dee{x}\
+\big(1-3x^2-2y^2\big)\\
+&amp;=4\int_0^{\frac{1}{\sqrt{2}}}\dee{y}\
+\Big[(1-2y^2)x-x^3\Big]_0^{\sqrt{\frac{1-2y^2}{3}}}\\
+&amp;=4\int_0^{\frac{1}{\sqrt{2}}}\dee{y}\
+\sqrt{\frac{1-2y^2}{3}}\ \Big[(1-2y^2)-\frac{1-2y^2}{3}\Big]\\
+&amp;=8\int_0^{\frac{1}{\sqrt{2}}}\dee{y}\
+\left[\frac{1-2y^2}{3}\right]^{3/2}
+\end{align*}
+</div>
+<p data-braille="continuation">To evaluate this integral, we use the trig substitution<a class="fn-knowl original" data-knowl="./knowl/fn-493-hidden.html" title="Footnote 11.1.7"><sup> 7 </sup></a> \(2y^2=\sin^2\theta\text{,}\) or</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+y=\frac{\sin\theta}{\sqrt{2}}\qquad
+\dee{y}=\frac{\cos\theta}{\sqrt{2}}\,\dee{\theta}
+\end{equation*}
+</div>
+<p data-braille="continuation">to give</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Volume}(\cV) &amp;= 8\int_0^{\frac{\pi}{2}}
+\overbrace{\dee{\theta}\ \frac{\cos\theta}{\sqrt{2}} }^{\dee{y}}
+\left[\frac{\cos^2\theta}{3}\right]^{3/2}
+=\frac{8}{\sqrt{54}}\int_0^{\frac{\pi}{2}}\dee{\theta}\
+\cos^4\theta
+\end{align*}
+</div>
+<p data-braille="continuation">Then to integrate \(\cos^4\theta\text{,}\) we use the double angle formula<a class="fn-knowl original" data-knowl="./knowl/fn-494-hidden.html" title="Footnote 11.1.8"><sup> 8 </sup></a></p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\cos^2\theta &amp;=\frac{\cos(2\theta)+1}{2}\\
+\implies \cos^4\theta &amp;= \frac{\big(\cos(2\theta)+1\big)^2}{4}
+=\frac{\cos^2(2\theta)+2\cos(2\theta)+1}{4}\\
+&amp;=\frac{\frac{\cos(4\theta)+1}{2}+2\cos(2\theta)+1}{4}\\
+&amp;=\frac{3}{8} +\frac{1}{2}\cos(2\theta) +\frac{1}{8}\cos(4\theta)
+\end{align*}
+</div>
+<p data-braille="continuation">Finally, since \(\int_0^{\frac{\pi}{2}} \cos(4\theta)\,\dee{\theta}
+=\int_0^{\frac{\pi}{2}} \cos(2\theta)\,\dee{\theta}
+=0\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\text{Volume}(\cV) = \frac{8}{\sqrt{54}}\ \frac{3}{8}\ \frac{\pi}{2}
+=\frac{\pi}{2\sqrt{6}}
+\end{gather*}
+</div>
+<span class="incontext"><a href="sec_2d_integrals.html#p-13982">in-context</a></span>
+</body>
+</html>

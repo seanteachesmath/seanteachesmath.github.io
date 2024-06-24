@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:07:20-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>We can use partial fraction decomposition to break this into chunks that we can deal with. The denominator has a repeated linear factor, so it can be decomposed as the sum of constants divided by powers of that factor.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{3x^2+4x+6}{(x+1)^3} &amp;=\frac{A}{x+1}+\frac{B}{(x+1)^2}+\frac{C}{(x+1)^3}\\
+&amp;=\frac{A(x+1)^2+B(x+1)+C}{(x+1)^3}\\
+\Rightarrow \quad
+3x^2+4x+6&amp;=A(x+1)^2+B(x+1)+C\\
+&amp;=Ax^2+(2A+B)x+(A+B+C)\\
+\end{align*}
+<p class="intertext">So, by matching coefficients:</p>
+\begin{align*}
+&amp;A=3, 2A+B=4,\mbox{ and } A+B+C=6\\
+&amp;\color{red}{A=3,\quad B=-2,\quad C=5}\\
+\end{align*}
+<p class="intertext">Therefore:</p>
+\begin{align*}
+\frac{3x^2+4x+6}{(x+1)^3} &amp;= \frac{\textcolor{red}{3}}{x+1}+\frac{\textcolor{red}{-2}}{(x+1)^2}+\frac{\textcolor{red}{5}}{(x+1)^3}\\
+\end{align*}
+<p class="intertext">Now, the integration is easy, with a substitution of \(u=x+1\) and \(\dee{u}=\dee{x}\text{:}\)</p>
+\begin{align*}
+\int\frac{3x^2+4x+6}{(x+1)^3} \dee{x}&amp;= \int\left(\frac{3}{x+1}+\frac{-2}{(x+1)^2}+\frac{5}{(x+1)^3}\right)\dee{x}\\
+&amp;=\int \left( 3u^{-1}-2u^{-2}+5u^{-3}\right)\dee{u}\\
+&amp;=3\log|u|+2u^{-1}-\frac{5}{2} u^{-2}+C\\
+&amp;=3\log|x+1|+\frac{2}{x+1}-\frac{5}{2(x+1)^2}+C
+\end{align*}
+</div>
+<span class="incontext"><a href="section-51.html#p-8335">in-context</a></span>
+</body>
+</html>

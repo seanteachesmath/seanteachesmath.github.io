@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:19:53-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<ul class="disc">
+<li>
+<p>Solution 1: Let's see whether the divergence test works here.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{n\to\infty} \frac{n^4 2^{n/3}}{(2n+7)^4}\left(\frac{\frac{1}{n^4}}{\frac{1}{n^4}}\right) = \lim_{n\to\infty} \frac{2^{n/3}}{(2+7/n)^4} = \lim_{n\to\infty} \frac{2^{n/3}}{(2+0)^4} = \infty
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">The summands of our series do not converge to zero. By the divergence test, the series diverges.</p>
+</li>
+<li>
+<p>Solution 2: Let's develop some intuition for a comparison. For very large \(n\text{,}\) \(2n\) dominates \(7\) so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\frac{n^4 2^{n/3}}{(2n+7)^4}
+\approx \frac{n^4 2^{n/3}}{(2n)^4}
+=\frac{1}{16}2^{n/3}
+\end{gather*}
+</div>
+<p data-braille="continuation">The series \(\displaystyle \sum_{n=1}^{\infty} 2^{n/3}\) is a geometric series with ratio \(r=2^{1/3} \gt 1\) and so diverges. (It also fails the divergence test.) We expect the given series to diverge too.</p>
+<p>To verify that  our intuition is correct, we apply the limit comparison test with</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+a_n= \frac{n^4 2^{n/3}}{(2n+7)^4} \quad\text{and}\quad b_n= 2^{n/3}
+\end{gather*}
+</div>
+<p data-braille="continuation">which is valid since</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{n\rightarrow\infty} \frac{a_n}{b_n}
+=\lim_{n\rightarrow\infty}\frac{n^4}{(2n+7)^4}
+=\lim_{n\rightarrow\infty}\frac{1}{{(2+7/n)}^4}
+=\frac{1}{2^4}
+\end{equation*}
+</div>
+<p data-braille="continuation">exists and is nonzero. Since the series \(\sum\limits_{n=1}^\infty b_n\) is a divergent geometric series (with ratio \(r=2^{1/3} \gt 1\)), the given series diverges.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">(It is possible to use the plain comparison test as well. One needs  to show something like \(a_n = \frac{n^4 2^{n/3}}{(2n+7)^4}
+\ge \frac{n^4 2^{n/3}}{(2n+7n)^4} = \frac{1}{9^4}b_n\text{.}\))</p>
+</li>
+<li>
+<p>Solution 3: Alternately, one can apply the ratio test:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{n\to\infty} \bigg| \frac{a_{n+1}}{a_n} \bigg|
+&amp;= \lim_{n\to\infty} \bigg| \frac{(n+1)^42^{(n+1)/3}/(2(n+1)+7)^4}{n^42^{n/3}/(2n+7)^4} \bigg|\\
+&amp;= \lim_{n\to\infty} \frac{(n+1)^4(2n+7)^4}{n^4(2n+9)^4}\  \frac{2^{(n+1)/3}}{2^{n/3}}\\
+&amp;=\lim_{n\to\infty} \frac{(1+1/n)^4(2+7/n)^4}{(2+9/n)^4} \cdot2^{1/3}
+= 1\cdot2^{1/3}  \gt  1.
+\end{align*}
+</div>
+<p data-braille="continuation">Since the ratio of consecutive terms is greater than one, by the ratio test, the series diverges.</p>
+</li>
+</ul>
+<span class="incontext"><a href="section-58.html#p-10348">in-context</a></span>
+</body>
+</html>

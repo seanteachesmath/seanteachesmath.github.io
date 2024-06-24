@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T15:10:58-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Calculating Limits with Limit Laws</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_lim_func.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_limits.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-11.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_lim_func.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_limits.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-11.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10" class="active">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="section-10"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.4</span> <span class="title">Calculating Limits with Limit Laws</span>
+</h2>
+<section class="subsection" id="subsection-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.4.1</span> <span class="title">Calculating Limits with Limit Laws</span>
+</h3>
+<p id="p-380">Think back to the functions you know and the sorts of things you have  been  asked to draw, factor and so on. Then they are all constructed from simple  pieces, such as</p>
+<ul class="disc">
+<li id="li-168">constants — \(c\)</li>
+<li id="li-169">monomials — \(x^n\)</li>
+<li id="li-170">trigonometric functions — \(\sin(x), \cos(x)\) and \(\tan(x)\)</li>
+</ul>
+<p data-braille="continuation">These are the building blocks from which we construct functions. Soon we will  add a few more functions to this list, especially the exponential function and  various inverse functions.</p>
+<p id="p-381">We then take these building blocks and piece them together using arithmetic</p>
+<ul class="disc">
+<li id="li-171">addition and subtraction — \(f(x)  = g(x) + h(x)\) and \(f(x) = g(x) -  h(x)\)</li>
+<li id="li-172">multiplication — \(f(x) = g(x) \cdot h(x)\)</li>
+<li id="li-173">division — \(f(x) = \frac{g(x)}{h(x)}\)</li>
+<li id="li-174">substitution — \(f(x) = g( h(x) )\) — this is also called  the composition of \(g\) with \(h\text{.}\)</li>
+</ul>
+<p data-braille="continuation">The idea of building up complicated functions from simpler pieces was discussed  in <a href="sec_parsing.html" class="internal" title="Section 1.5: Parsing Formulas">Section 1.5</a>.</p>
+<p id="p-382">What we will learn in this section is how to compute the limits of the basic  building blocks and then how we can compute limits of sums, products and so  forth using “limit laws”. This process allows us to compute limits of  complicated functions, using very simple tools and without having to resort to  “plugging in numbers” or “closer and closer” or “\(\epsilon-\delta\)  arguments”.</p>
+<p id="p-383">In the examples we saw above, almost all the <em class="emphasis">interesting</em> limits happened  at points where the underlying function was badly behaved — where it jumped,  was not defined or blew up to infinity. In those cases we had to be careful and  think about what was happening. Thankfully most functions we will see do not  have too many points at which these sorts of things happen.</p>
+<p id="p-384">For example, polynomials do not have any nasty jumps and are defined everywhere  and do not “blow up”. If you plot them, they look smooth <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-32" id="fn-32"><sup> 1 </sup></a>. Polynomials and limits behave very nicely together,  and for any polynomial \(P(x)\) and any real number \(a\) we have that</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} P(x) &amp;= P(a)
+\end{align*}
+</div>
+<p data-braille="continuation">That is — to evaluate the limit we just plug in the number. We will build up  to this result over the next few pages.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-32"><div class="fn">We have  used this term in an imprecise way, but it does have a precise  mathematical meaning.</div></div>
+<p id="p-385">Let us start with the two easiest limits <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-33" id="fn-33"><sup> 2 </sup></a></p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-33"><div class="fn">Though it lies outside the  scope of the course, you can find the formal \(\epsilon\)-\(\delta\) proof of this  result at the end of Section <a href="sec_opt_formal_limit.html" class="internal" title="Section 2.7: (Optional) — Making the Informal a Little More Formal">2.7</a>.</div></div>
+<article class="theorem theorem-like" id="thm_easy_lim"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Easiest limits.</span>
+</h6>
+<p id="p-386">Let \(a,c \in \mathbb{R}\text{.}\) The following two limits hold</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} c &amp; = c &amp; \text{ and }&amp;&amp;
+\lim_{x \to a} x &amp;= a.
+\end{align*}
+</div></article><p id="p-387">Since we have not seen too many theorems yet, let us examine it carefully piece  by piece.</p>
+<ul class="disc">
+<li id="li-175">
+<em class="alert">Let \(a,c \in \mathbb{R}\)</em> — just as was the case for  definitions, we start a theorem by defining terms and setting the scene. There  is not too much scene to set: the symbols \(a\) and \(c\) are real numbers.</li>
+<li id="li-176">
+<em class="alert">The following two limits hold</em> — this doesn't really  contribute much to the statement of the theorem, it just makes it easier to  read.</li>
+<li id="li-177">\(\ds \mathbf{\lim_{x \to a} c  = c}\)  — when we take the  limit of a  constant function (for example think of \(c=3\)), the limit is (unsurprisingly)  just that same constant.</li>
+<li id="li-178">\(\ds \mathbf{\lim_{x \to a} x = a}\) — as we noted above for general  polynomials, the limit of the function \(f(x) = x\) as \(x\) approaches a given  point \(a\text{,}\) is just \(a\text{.}\) This says something quite obvious — as \(x\) approaches  \(a\text{,}\) \(x\) approaches \(a\) (if you are not convinced then sketch the graph).</li>
+</ul>
+<p id="p-388">Armed with only these two limits, we cannot do very much. But combining these  limits with some arithmetic we can do quite a lot. For a moment, take a step  back from limits for a moment and think about how we construct functions. To  make the discussion a little more precise think about how we might construct  the function</p>
+<div class="displaymath">
+\begin{align*}
+h(x) &amp;= \frac{2x-3}{x^2+5x-6}
+\end{align*}
+</div>
+<p id="p-389">If we want to compute the value of the function at \(x=2\text{,}\) then we would</p>
+<ul class="disc">
+<li id="li-179">compute the numerator at \(x=2\)</li>
+<li id="li-180">compute the denominator at \(x=2\)</li>
+<li id="li-181">compute the ratio</li>
+</ul>
+<p data-braille="continuation">Now to compute the numerator we</p>
+<ul class="disc">
+<li id="li-182">take \(x\) and multiply it by 2</li>
+<li id="li-183">subtract 3 to the result</li>
+</ul>
+<p data-braille="continuation">While for the denominator</p>
+<ul class="disc">
+<li id="li-184">multiply \(x\) by \(x\)</li>
+<li id="li-185">multiply \(x\) by 5</li>
+<li id="li-186">add these two numbers and subtract \(6\)</li>
+</ul>
+<p data-braille="continuation">This sequence of operations can be represented pictorially as the tree shown in Figure <a class="xref" data-knowl="./knowl/fig_parse_me.html" title="Figure 2.4.2">2.4.2</a> below.</p>
+<figure class="figure figure-like" id="fig_parse_me"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="text/figs/tree3.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.2<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-390">Such trees were discussed in Section <a href="sec_parsing.html" class="internal" title="Section 1.5: Parsing Formulas">1.5</a> (now is not a bad time to quickly review that section before proceeding). The point here is that in order to compute the  value of the function we just repeatedly add, subtract, multiply and divide constants and  \(x\text{.}\)</p>
+<p id="p-391">To compute the limit of the above function at \(x=2\) we can do something very  similar. From the previous theorem we know how to compute</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 2} c &amp;= c &amp;&amp; \text{and} &amp; \lim_{x \to 2} x &amp;= 2
+\end{align*}
+</div>
+<p data-braille="continuation">and the next theorem will tell us how to stitch together these two limits using  the arithmetic we used to construct the function.</p>
+<article class="theorem theorem-like" id="thm_arith_lim"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Arithmetic of limits.</span>
+</h6>
+<p id="p-392">Let \(a,c \in \mathbb{R}\text{,}\) let \(f(x)\) and \(g(x)\) be defined for all \(x\)'s that lie in  some interval about \(a\) (but \(f,g\) need not be defined exactly at \(a\)).</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} f(x)&amp;=F &amp; \lim_{x \to a} g(x) &amp;=G
+\end{align*}
+</div>
+<p data-braille="continuation">exist with \(F,G \in \mathbb{R}\text{.}\) Then the following limits hold</p>
+<ul class="disc">
+<li id="li-187">\(\ds \lim_{x \to a} ( f(x) + g(x) ) = F+G\) — limit of the sum is the  sum of the limits.</li>
+<li id="li-188">\(\ds \lim_{x \to a} ( f(x) - g(x) ) = F - G\) — limit of the difference  is the difference of the limits.</li>
+<li id="li-189">\(\ds \lim_{x \to a} c f(x) = c F\text{.}\)</li>
+<li id="li-190">\(\ds \lim_{x \to a} ( f(x) \cdot g(x) ) = F \cdot G\) — limit of  the product is the product of limits.</li>
+<li id="li-191">If \(G \neq 0\) then \(\ds \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{F}{G}\)</li>
+</ul>
+<p data-braille="continuation">Note — be careful with this last one — the denominator cannot be zero.</p></article><p id="p-393">The above theorem shows that limits interact very simply with arithmetic. If  you are asked to find the limit of a sum then the answer is just the sum of the  limits. Similarly the limit of a product is just the product of the limits.</p>
+<p id="p-394">How do we apply the above theorem to the rational function \(h(x)\) we defined  above? Here is a warm-up example:</p>
+<article class="example example-like" id="example-18"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-18"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Using limit laws.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-18"><article class="example example-like"><p id="p-395">You are given two functions \(f,g\) (not explicitly) which have the following  limits as \(x\) approaches 1:</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 1} f(x)&amp;=3 &amp;&amp; \text{and} &amp; \lim_{x\to 1} g(x)&amp;=2
+\end{align*}
+</div>
+<p data-braille="continuation">Using the above theorem we can compute</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 1} 3f(x) &amp;= 3 \times 3 = 9\\
+\lim_{x \to 1} 3f(x) -g(x) &amp;= 3\times 3 -2 = 7\\
+\lim_{x \to 1} f(x) g(x) &amp;= 3\times 2 = 6\\
+\lim_{x \to 1} \frac{f(x)}{f(x) -g(x)} &amp;= \frac{3}{3-2} = 3
+\end{align*}
+</div></article></div>
+<p id="p-396">Another simple example</p>
+<article class="example example-like" id="example-19"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-19"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span><span class="space"> </span><span class="title">More using limit laws.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-19"><article class="example example-like"><p id="p-397">Find \(\ds \lim_{x \to 3} 4x^2-1\)</p>
+<p id="p-398">We use the arithmetic of limits:</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 3} 4x^2-1
+&amp;= \left( \lim_{x \to 3} 4x^2 \right) - \lim_{x \to 3} 1
+&amp; \text{difference of limits}\\
+&amp;= \left( \lim_{x \to 3} 4  \cdot \lim_{x \to 3} x^2 \right) -  \lim_{x \to 3} 1
+&amp; \text{product of limits}\\
+&amp;= 4 \cdot \left( \lim_{x \to 3} x^2 \right) -  1
+&amp; \text{limit of constant}\\
+&amp;= 4 \cdot \left( \lim_{x \to 3} x \right) \cdot \left( \lim_{x \to 3} x  \right)-1
+&amp; \text{product of limits}\\
+&amp;= 4 \cdot 3 \cdot 3 - 1
+&amp; \text{limit of $x$}\\
+&amp;= 36 - 1\\
+&amp;= 35
+\end{align*}
+</div></article></div>
+<p id="p-399">This is an excruciating level of detail, but when you first use this theorem  and try some examples it is a good idea to do things step by step by step until  you are comfortable with it.</p>
+<article class="example example-like" id="example-20"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-20"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Yet more using limit laws.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-20"><article class="example example-like"><p id="p-400">Yet another limit — compute \(\ds \lim_{x\to 2} \frac{x}{x-1}\text{.}\)</p>
+<p id="p-401">To apply the arithmetic of limits, we need to examine numerator and  denominator separately and make sure the limit of the denominator is non-zero.  Numerator first:</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 2} x &amp; = 2 &amp; \text{limit of $x$}\\
+\end{align*}
+<p class="intertext">and now the denominator:</p>
+\begin{align*}
+\lim_{x \to 2} x-1
+&amp; = \left( \lim_{x \to 2} x \right) - \left( \lim_{x \to 2} 1 \right)
+&amp; \text{difference of limits}\\
+&amp; = 2 - 1
+&amp; \text{limit of $x$ and limit of constant}
+&amp; = 1
+\end{align*}
+</div>
+<p data-braille="continuation">Since the limit of the denominator is non-zero we can put it back together to  get</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x\to 2} \frac{x}{x-1} &amp;= \frac{\ds \lim_{x\to 2} x}{\ds \lim_{x \to
+2}(x-1)}\\
+&amp;= \frac{2}{1}\\
+&amp;= 2
+\end{align*}
+</div></article></div>
+<p id="p-402">In the next example we show that many different things can happen if  the limit of the denominator is zero.</p>
+<article class="example example-like" id="eg_lim_rat"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_lim_rat"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Be careful with limits of ratios.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_lim_rat"><article class="example example-like"><p id="p-403">We must be careful when computing the limit of a ratio — it  is the ratio of the limits except when the limit of the denominator is zero.  When the limit of the denominator is zero Theorem <a class="xref" data-knowl="./knowl/thm_arith_lim.html" title="Theorem 2.4.3: Arithmetic of limits">2.4.3</a>  <em class="alert">does not apply</em> and a few interesting things can happen</p>
+<ul class="disc">
+<li id="li-192">If the limit of the numerator is non-zero then the limit of the ratio  does not exist<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} \frac{f(x)}{g(x)} &amp;= DNE &amp; \text{when $\lim_{x\to a} f(x) \neq
+0$ and $\lim_{x \to a} g(x)=0$}
+\end{align*}
+</div>For example, \(\ds \lim_{x \to 0} \frac{1}{x^2} = DNE\text{.}\)</li>
+<li id="li-193">
+<p id="p-404">If the limit of the numerator is zero then the above theorem does not  give us enough information to decide whether or not the limit exists. It is  possible that</p>
+<ul class="circle">
+<li id="li-194">the limit does not exist, eg. \(\ds \lim_{x \to 0} \frac{x}{x^2} =  \lim_{x  \to 0} \frac{1}{x} = DNE\)</li>
+<li id="li-195">the limit is \(\pm \infty\text{,}\) eg. \(\ds \lim_{x \to 0} \frac{x^2}{x^4} =  \lim_{x  \to 0} \frac{1}{x^2} = +\infty\) or \(\ds \lim_{x \to 0} \frac{-x^2}{x^4} =  \lim_{x\to 0} \frac{-1}{x^2} = -\infty\text{.}\)</li>
+<li id="li-196">the limit is zero, eg. \(\ds \lim_{x \to 0} \frac{x^2}{x} = 0\)</li>
+<li id="li-197">the limit exists and is non-zero, eg. \(\ds \lim_{x \to 0} \frac{x}{x} =  1\)</li>
+</ul>
+</li>
+</ul>
+<p data-braille="continuation">Now while the above examples are very simple and a little contrived they serve  to illustrate the point we are trying to make — be careful if the limit of  the denominator is zero.</p></article></div>
+<p id="p-405">We now have enough theory to return to our rational function and compute its  limit as \(x\) approaches 2.</p>
+<article class="example example-like" id="example-22"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-22"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">More on limits of ratios.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-22"><article class="example example-like"><p id="p-406">Let \(\ds h(x) = \frac{2x-3}{x^2+5x-6}\) and find its limit as \(x\) approaches  \(2\text{.}\)</p>
+<p id="p-407">Since this is the limit  of a ratio, we compute the limit of the numerator and  denominator separately. Numerator first:</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 2} 2x-3
+&amp;= \left( \lim_{x \to 2} 2x \right) - \left( \lim_{x \to 2} 3 \right)
+&amp; \text{difference of limits}\\
+&amp;= 2 \cdot \left( \lim_{x \to 2} x \right) -3
+&amp; \text{product of limits and limit of constant}\\
+&amp;= 2 \cdot 2 -3
+&amp; \text{limits of $x$}\\
+&amp;= 1
+\end{align*}
+</div>
+<p data-braille="continuation">Denominator next:</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 2} x^2+5x-6
+&amp;= \left( \lim_{x \to 2} x^2 \right) + \left( \lim_{x \to 2} 5x \right)
+- \left( \lim_{x \to 2} 6 \right)
+&amp; \!\!\!\!\!\!\text{sum of limits}\\
+&amp;= \left( \lim_{x \to 2} x \right)\cdot \left( \lim_{x \to 2} x \right)
++ 5 \cdot \left( \lim_{x \to 2} x \right) - 6\\
+&amp;\hskip1.0in \text{product of limits and limit of constant}\\
+&amp;= 2 \cdot 2 + 5 \cdot 2 - 6
+&amp; \text{limits of $x$}\\
+&amp;= 8
+\end{align*}
+</div>
+<p data-braille="continuation">Since the limit of the denominator is non-zero, we can obtain our result by  taking the ratio of the separate limits.</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 2} \frac{2x-3}{x^2+5x-6}
+&amp;= \frac{\ds \lim_{x \to 2} 2x-3}{\ds \lim_{x \to 2} x^2+5x-6} = \frac{1}{8}
+\end{align*}
+</div>
+<p id="p-408">The above works out quite simply. However, if we were to take the limit as \(x  \to 1\) then things are a bit harder. The limit of the numerator is:</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 1} 2x-3 &amp;= 2 \cdot 1 - 3 = -1
+\end{align*}
+</div>
+<p data-braille="continuation">(we have not listed all the steps). And the limit of the denominator is</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 1} x^2 +5x-6 &amp;= 1 \cdot 1 + 5 - 6 = 0
+\end{align*}
+</div>
+<p data-braille="continuation">Since the limit of the numerator is non-zero, while the limit of the  denominator is zero, the limit of the ratio does not exist.</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 1} \frac{2x-3}{x^2+5x-6}
+&amp;= DNE
+\end{align*}
+</div></article></div>
+<p id="p-409">It is <em class="alert">IMPORTANT TO NOTE</em> that it is not correct to write</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 1} \frac{2x-3}{x^2+5x-6}
+&amp;= \frac{-1}{0} = DNE
+\end{align*}
+</div>
+<p data-braille="continuation">Because we can only write</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} \frac{f(x)}{g(x)}
+&amp;= \frac{\ds \lim_{x \to a} f(x)}{\ds \lim_{x \to a} g(x) } = \text{something}
+\end{align*}
+</div>
+<p data-braille="continuation">when the limit of the denominator is non-zero (see Example <a class="xref" data-knowl="./knowl/eg_lim_rat.html" title="Example 2.4.7: Be careful with limits of ratios">2.4.7</a> above).</p>
+<p id="p-410">With a little care you can use the arithmetic of limits to obtain the  following rules for limits of powers of functions and limits of roots of  functions:</p>
+<article class="theorem theorem-like" id="thm_lim_powers"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.9</span><span class="period">.</span><span class="space"> </span><span class="title">More arithmetic of limits — powers and roots.</span>
+</h6>
+<p id="p-411">Let \(n\) be a positive integer, let \(a \in \mathbb{R}\) and let \(f\) be a  function so that</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} f(x) &amp;= F
+\end{align*}
+</div>
+<p data-braille="continuation">for some real number \(F\text{.}\) Then the following holds</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} \left( f(x) \right)^n
+&amp;= \left(\lim_{x \to a} f(x) \right)^n = F^n
+\end{align*}
+</div>
+<p data-braille="continuation">so that the limit of a power is the power of the limit. Similarly, if</p>
+<ul class="disc">
+<li id="li-198">\(n\) is an even number and \(F \gt 0\text{,}\) or</li>
+<li id="li-199">\(n\) is an odd number and \(F\) is any real number</li>
+</ul>
+<p data-braille="continuation">then</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} \left( f(x) \right)^{1/n}
+&amp;= \left(\lim_{x \to a} f(x) \right)^{1/n} = F^{1/n}
+\end{align*}
+</div></article><p id="p-412">Notice that we have to be careful when taking roots of limits that might be  negative numbers. To see why, consider the case \(n=2\text{,}\) the limit</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 4} x^{1/2} &amp;= 4^{1/2} = 2\\
+\lim_{x \to 4} (-x)^{1/2} &amp;= (-4)^{1/2} = \text{not a real number}
+\end{align*}
+</div>
+<p data-braille="continuation">In order to evaluate such limits properly we need to use complex numbers which  are beyond the scope of this text.</p>
+<p id="p-413">Also note that the notation \(x^{1/2}\) refers to the <em class="emphasis">positive</em> square root  of \(x\text{.}\) While \(2\) and \((-2)\) are both square-roots of \(4\text{,}\) the notation  \(4^{1/2}\) means \(2\text{.}\) This is something we must be careful of <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-34" id="fn-34"><sup> 3 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-34"><div class="fn">Like  ending sentences in prepositions — “This is something up with which we will  not put.” This quote is attributed to Churchill though there is some dispute as to  whether or not he really said it.</div></div>
+<p id="p-414">So again — let us do a few examples and carefully note what we are doing.</p>
+<article class="example example-like" id="example-23"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-23"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.10</span><span class="period">.</span><span class="space"> </span><span class="title">\(\ds \lim_{x \to 2} (4x^2-3)^{1/3}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-23"><article class="example example-like"><div class="displaymath" id="p-415">
+\begin{align*}
+\lim_{x \to 2} (4x^2-3)^{1/3} &amp;=
+\left( (\lim_{x\to 2} 4x^2) - (\lim_{x \to 2} 3) \right)^{1/3}\\
+&amp;= \left( 4 \cdot 2^2  - 3 \right)^{1/3}\\
+&amp;= \left( 16-3 \right)^{1/3}\\
+&amp;= 13^{1/3}
+\end{align*}
+</div></article></div>
+<p id="p-416">By combining the last few theorems we can make the evaluation of limits of  polynomials and rational functions much easier:</p>
+<article class="theorem theorem-like" id="theorem-6"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.11</span><span class="period">.</span><span class="space"> </span><span class="title">Limits of polynomials and rational functions.</span>
+</h6>
+<p id="p-417">Let \(a \in \mathbb{R}\text{,}\) let \(P(x)\) be a polynomial and let \(R(x)\) be a rational  function. Then</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} P(x) &amp;= P(a)
+\end{align*}
+</div>
+<p data-braille="continuation">and provided \(R(x)\) is defined at \(x=a\) then</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} R(x) &amp;= R(a)
+\end{align*}
+</div>
+<p data-braille="continuation">If \(R(x)\) is not defined at \(x=a\) then we are not able to apply this result.</p></article><p id="p-418">So the previous examples are now much easier to compute:</p>
+<div class="displaymath">
+\begin{align*}
+\ds\lim_{x \to 2} \frac{2x-3}{x^2+5x-6} &amp;=&amp; \ds \frac{4-3}{4+10-6} &amp;=&amp; \ds \frac{1}{8}\\
+\ds\lim_{x\to 2} (4x^2-1) &amp;=&amp; 16-1 &amp;=&amp; 15\\
+\ds\lim_{x\to 2} \frac{x}{x-1} &amp;=&amp; \ds \frac{2}{2-1} &amp;=&amp; 2
+\end{align*}
+</div>
+<p id="p-419">It is clear that limits of polynomials are very easy, while those of rational  functions are easy except when the denominator might go to zero. We have seen  examples where the resulting limit does not exist, and some where it does. We  now work to explain this more systematically. The following example demonstrates that it  is sometimes possible to take the limit of a rational function to a point at which the  denominator is zero. Indeed we must be able to do exactly this in order to be able to define derivatives in the next chapter.</p>
+<article class="example example-like" id="eg_zero_cancel_limit"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_zero_cancel_limit"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">Numerator and denominator both go to 0.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_zero_cancel_limit"><article class="example example-like"><p id="p-420">Consider the limit</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{x \to 1} \frac{x^3-x^2}{x-1}.
+\end{gather*}
+</div>
+<p data-braille="continuation">If we try to apply the arithmetic of limits then we compute the limits of the numerator and denominator separately</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 1} x^3-x^2 &amp;= 1-1 = 0\\
+\lim_{x \to 1} x-1 &amp;= 1-1 = 0
+\end{align*}
+</div>
+<p data-braille="continuation">Since the denominator is zero, we cannot apply our theorem and we are, for the  moment, stuck. However, there is more that we can do here — the hint is that  the numerator and denominator <em class="emphasis">both</em> approach zero as \(x\) approaches 1. This  means that there might be something we can cancel.</p>
+<p id="p-421">So let us play with the expression a little more before we take the limit:</p>
+<div class="displaymath">
+\begin{align*}
+\frac{x^3-x^2}{x-1} &amp;= \frac{x^2(x-1)}{x-1} = x^2  &amp; \text{ provided } x \neq 1.
+\end{align*}
+</div>
+<p data-braille="continuation">So what we really have here is the following function</p>
+<div class="displaymath">
+\begin{align*}
+\frac{x^3-x^2}{x-1} &amp;= \begin{cases}
+x^2 &amp; x \neq 1\\
+\text{undefined } &amp; x = 1
+\end{cases}
+\end{align*}
+</div>
+<p data-braille="continuation">If we plot the above function the graph looks exactly the same as \(y=x^2\)  except that the function is not defined at \(x=1\) (since at \(x=1\) both numerator and  denominator are zero).</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/rat1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-422">When we compute a limit as \(x \to a\text{,}\) the value of the function exactly at  \(x=a\) is irrelevant. We only care what happens to the function as we bring \(x\)  very close to \(a\text{.}\) So for the above problem we can write</p>
+<div class="displaymath">
+\begin{align*}
+\frac{x^3-x^2}{x-1} &amp;= x^2 &amp; \text{when $x$ is close to $1$ but not at $x=1$}
+\end{align*}
+</div>
+<p data-braille="continuation">So the limit as \(x \to 1\) of the function is the same as the limit \(\ds \lim_{x\to  1} x^2\) since the functions are the same except exactly at \(x=1\text{.}\) By this  reasoning we get</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 1} \frac{x^3-x^2}{x-1} &amp;=
+\lim_{x \to 1} x^2 = 1
+\end{align*}
+</div></article></div>
+<p id="p-423">The reasoning in the above example can be made more general:</p>
+<article class="theorem theorem-like" id="theorem-7"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.13</span><span class="period">.</span>
+</h6>
+<p id="p-424">If \(f(x) = g(x)\) except when \(x=a\) then \(\ds \lim_{x\to a} f(x) = \lim_{x\to a}  g(x)\) provided the limit of \(g\) exists.</p></article><p id="p-425">How do we know when to use this theorem? The big clue is that when we try to  compute the limit in a naive way, we end up with \(\frac{0}{0}\text{.}\) We know that  \(\frac{0}{0}\) does not make sense, but it is an indication that there might be a  common factor between numerator and denominator that can be cancelled. In the  previous example, this common factor was \((x-1)\text{.}\)</p>
+<article class="example example-like" id="eg_easy_0on0_limit"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_easy_0on0_limit"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.14</span><span class="period">.</span><span class="space"> </span><span class="title">Another numerator and denominator both go to 0 limit.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_easy_0on0_limit"><article class="example example-like"><p id="p-426">Using this idea compute</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{h \to 0} \frac{(1+h)^2-1}{h}
+\end{gather*}
+</div>
+<ul id="p-427" class="disc">
+<li id="li-200">First we should check that we cannot just substitute \(h=0\) into this —  clearly we cannot because the denominator would be \(0\text{.}\)</li>
+<li id="li-201">But we should also check the numerator to see if we have \(\frac{0}{0}\text{,}\) and we see  that the numerator gives us \(1-1 = 0\text{.}\)</li>
+<li id="li-202">Thus we have a hint that there is a common factor that we might be able to  cancel. So now we look for the common factor and try to cancel it.<div class="displaymath">
+\begin{align*}
+\frac{(1+h)^2-1}{h} &amp;= \frac{1+2h+h^2-1}{h} &amp; \text{expand}\\
+&amp;= \frac{2h+h^2}{h} = \frac{h(2+h)}{h} &amp; \text{factor and then cancel}\\
+&amp;= 2+h
+\end{align*}
+</div>
+</li>
+<li id="li-203">Thus we really have that<div class="displaymath">
+\begin{align*}
+\frac{(1+h)^2-1}{h}&amp;= \begin{cases}
+2+h &amp; h \neq 0 \\
+\text{undefined} &amp; h=0
+\end{cases}
+\end{align*}
+</div>and because of this<div class="displaymath">
+\begin{align*}
+\lim_{h \to 0} \frac{(1+h)^2-1}{h}
+&amp;= \lim_{h \to 0} 2+h\\
+&amp;= 2
+\end{align*}
+</div>
+</li>
+</ul></article></div>
+<p id="p-428">Of course — we have written everything out in great detail here and  that is way more than is required for a solution to such a problem. Let us do  it again a little more succinctly.</p>
+<article class="example example-like" id="example-26"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-26"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">\(\ds \lim_{h \to 0} \frac{(1+h)^2-1}{h}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-26"><article class="example example-like"><p id="p-429">Compute the following limit:</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{h \to 0} \frac{(1+h)^2-1}{h}
+\end{gather*}
+</div>
+<p data-braille="continuation">If we try to use the arithmetic of limits, then we see that the limit of the  numerator and the limit of the denominator are both zero. Hence we should try  to factor them and cancel any common factor. This gives</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{h \to 0} \frac{(1+h)^2-1}{h}
+&amp;= \lim_{h \to 0} \frac{1+2h+h^2-1}{h}\\
+&amp;= \lim_{h \to 0} 2+h\\
+&amp;= 2
+\end{align*}
+</div></article></div>
+<p id="p-430">Notice that even though we did this example carefully above, we have still  written some text in our working explaining what we have done. You should  always think about the reader and if in doubt, put in more explanation rather  than less. We could make the above example even more terse</p>
+<article class="example example-like" id="example-27"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-27"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.16</span><span class="period">.</span><span class="space"> </span><span class="title">Redoing previous example with fewer words.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-27"><article class="example example-like"><p id="p-431">Compute the following limit:</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{h \to 0} \frac{(1+h)^2-1}{h}
+\end{gather*}
+</div>
+<p data-braille="continuation">Numerator and denominator both go to zero as \(h\to 0\text{.}\) So factor and simplify:</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{h \to 0} \frac{(1+h)^2-1}{h} &amp;= \lim_{h \to 0} \frac{1+2h+h^2-1}{h}\\
+&amp;= \lim_{h \to 0} 2+h = 2
+\end{align*}
+</div></article></div>
+<p id="p-432">A slightly harder one now</p>
+<article class="example example-like" id="eg_zero_cancel_limit_harder"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_zero_cancel_limit_harder"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.17</span><span class="period">.</span><span class="space"> </span><span class="title">A harder limit with cancellations.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_zero_cancel_limit_harder"><article class="example example-like"><p id="p-433">Compute the limit</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{x \to 0} \frac{x}{\sqrt{1+x}-1}
+\end{gather*}
+</div>
+<p data-braille="continuation">If we try to use the arithmetic of limits we get</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 0} x &amp;= 0\\
+\lim_{x \to 0} \sqrt{1+x}-1 &amp;= \sqrt{ \lim_{x \to 0} 1+x}-1 = 1-1 =0
+\end{align*}
+</div>
+<p data-braille="continuation">So doing the naive thing we'd get \(0/0\text{.}\) This suggests a common factor that can  be cancelled. Since the numerator and denominator are not polynomials we have  to try other tricks <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-35" id="fn-35"><sup> 4 </sup></a>. We can simplify the denominator \(\sqrt{1+x}-1\) a  lot, and in particular eliminate the square root, by multiplying it by  its conjugate \(\sqrt{1+x}+1\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\frac{x}{\sqrt{1+x}-1}
+&amp;=\frac{x}{\sqrt{1+x}-1} \times \frac{\sqrt{1+x}+1}{\sqrt{1+x}+1}
+&amp; \text{multiply by $\frac{\text{conjugate}}{\text{conjugate}}=1$}\\
+&amp;=\frac{x \left( \sqrt{1+x}+1\right)}
+{\left(\sqrt{1+x}-1\right)\left(\sqrt{1+x}+1\right)}
+&amp; \text{bring things together }\\
+&amp;=\frac{x \left( \sqrt{1+x}+1\right)}
+{\left(\sqrt{1+x}\right)^2 - 1\cdot 1}
+&amp;\!\!\!\!\!\!\! \text{since $(a\!-\!b)(a\!+\!b)=a^2\!-\!b^2$}\\
+&amp;=\frac{x \left( \sqrt{1+x}+1\right)}
+{1+x - 1}
+&amp; \text{clean up a little}\\
+&amp;=\frac{x \left( \sqrt{1+x}+1\right)}{x}\\
+&amp;= \sqrt{1+x}+1
+&amp; \text{cancel the $x$}
+\end{align*}
+</div>
+<p data-braille="continuation">So now we have</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 0} \frac{x}{\sqrt{1+x}-1} &amp;= \lim_{x \to 0} \sqrt{1+x}+1\\
+&amp;= \sqrt{1+0}+1 = 2
+\end{align*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-35"><div class="fn">While these tricks are useful (and even cute<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-36" id="fn-36"><sup> 5 </sup></a> — this footnote is better in the online edition), Taylor polynomials (see Section <a href="sec_DIFFTaylor.html" class="internal" title="Section 4.4: Taylor Polynomials">4.4</a>) give us a more systematic way of approaching this problem.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-36"><div class="fn">Mathematicians tend to have quite strong opinions on the beauty of mathematics. For example, Paul Erdős <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-37" id="fn-37"><sup> 6 </sup></a> said “Why are numbers beautiful? It's like asking why is Beethoven's Ninth Symphony beautiful. If you don't see why, someone can't tell you. I know numbers are beautiful. If they aren't beautiful, nothing is.”.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-37"><div class="fn">Arguably the most prolific mathematician of the 20th century  — definitely worth a google. The authors do not know his opinion on nested  footnotes <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-38" id="fn-38"><sup> 7 </sup></a>.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-38"><div class="fn">Nested footnotes are generally frowned upon, since they can get  quite contorted; see XKCD-1208 and also the novel “House of Leaves” by Mark Z. Danielewski.</div></div></article></div>
+<p id="p-434">How did we know what to multiply by? Our function was of the form</p>
+<div class="displaymath">
+\begin{gather*}
+\frac{a}{\sqrt{b} - c}
+\end{gather*}
+</div>
+<p data-braille="continuation">so, to eliminate the square root from the denominator, we employ a trick — we multiply  by 1. Of course, multiplying by 1 doesn't do anything. But if you multiply by 1  carefully you can leave the value the same, but change the form of the  expression. More precisely</p>
+<div class="displaymath">
+\begin{align*}
+\frac{a}{\sqrt{b} - c}  &amp;= \frac{a}{\sqrt{b} - c} \cdot 1\\
+&amp;= \frac{a}{\sqrt{b} - c} \cdot  \underbrace{\frac{\sqrt{b}+c}{\sqrt{b}+c}}_{=1}\\
+&amp;= \frac{a \left(\sqrt{b}+c \right)}{\left(\sqrt{b} - c\right)\left(\sqrt{b}+c \right)}
+&amp; \text{expand denominator carefully}\\
+&amp;= \frac{a \left(\sqrt{b}+c \right)}
+{\sqrt{b} \cdot \sqrt{b} - c\sqrt{b} + c\sqrt{b} - c\cdot c}
+&amp; \text{do some cancellation}\\
+&amp;= \frac{a \left(\sqrt{b}+c \right)} {b - c^2}
+\end{align*}
+</div>
+<p data-braille="continuation">Now the numerator contains roots, but the denominator is just a polynomial.</p>
+<p id="p-435">Before we move on to limits at infinity, there is one more theorem to see.  While the scope of its application is quite limited, it can be extremely  useful. It is called a sandwich theorem or a squeeze theorem for reasons that  will become apparent.</p>
+<p id="p-436">Sometimes one is presented with an unpleasant ugly function such as</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= x^2 \sin(\pi/x)
+\end{align*}
+</div>
+<p data-braille="continuation">It is a fact of life, that not all the functions that are encountered in  mathematics will be elegant and simple; this is especially true when the  mathematics gets applied to real world problems. One just has to work with what one gets.  So how can we compute</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{x \to 0} x^2 \sin(\pi/x) ?
+\end{gather*}
+</div>
+<p data-braille="continuation">Since it is the product of two functions, we might try</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 0} x^2 \sin(\pi/x)
+&amp;=
+\left( \lim_{x \to 0} x^2 \right) \cdot \left( \lim_{x \to 0} \sin(\pi/x)
+\right)\\
+&amp;= 0 \cdot \left( \lim_{x \to 0} \sin(\pi/x)  \right)\\
+&amp; = 0
+\end{align*}
+</div>
+<p data-braille="continuation">But we just cheated — we cannot use the arithmetic of limits theorem here, because the  limit</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 0} \sin(\pi/x) &amp;= DNE
+\end{align*}
+</div>
+<p data-braille="continuation">does not exist. Now we did see the function \(\sin(\pi/x)\) before (in  Example <a class="xref" data-knowl="./knowl/eg_sinpix.html" title="Example 2.3.5: A bad example">2.3.5</a>), so you should go back and look at it again.  Unfortunately the theorem “the limit of a product is the product of the  limits” only holds when the limits you are trying to multiply together actually  exist. So we cannot use it.</p>
+<p id="p-437">However, we do see that the function naturally decomposes into the product of  two pieces — the functions \(x^2\) and \(\sin(\pi/x)\text{.}\) We have sketched the two  functions  in the figure on the left below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/squeeze1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-438">While \(x^2\) is a very well behaved function and we know quite a lot about it,  the function \(\sin(\pi/x)\) is quite ugly. One of the few things we can say  about it is the following</p>
+<div class="displaymath">
+\begin{align*}
+-1 \leq \sin(\pi/x) \leq 1 &amp;&amp; \text{provided $x \neq 0$}
+\end{align*}
+</div>
+<p data-braille="continuation">But if we multiply this expression by \(x^2\) we get (because \(x^2 \geq 0\))</p>
+<div class="displaymath">
+\begin{align*}
+-x^2 \leq x^2\sin(\pi/x) \leq x^2 &amp;&amp; \text{provided $x \neq 0$}
+\end{align*}
+</div>
+<p data-braille="continuation">and we have sketched the result in the figure above (on the right). So the  function we are interested in is <em class="emphasis">squeezed</em> or <em class="emphasis">sandwiched</em> between  the functions \(x^2\) and \(-x^2\text{.}\)</p>
+<p id="p-439">If we focus in on the picture close to \(x=0\) we see that \(x\) approaches \(0\text{,}\)  the functions \(x^2\) and \(-x^2\) both approach \(0\text{.}\) Further, because \(x^2\sin(\pi/x)\) is sandwiched between them, it seems that it also approaches  \(0\text{.}\)</p>
+<p id="p-440">The following theorem tells us that this is indeed the case:</p>
+<article class="theorem theorem-like" id="thm_squeeze"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.18</span><span class="period">.</span><span class="space"> </span><span class="title">Squeeze theorem (or sandwich theorem or pinch theorem).</span>
+</h6>
+<p id="p-441">Let \(a \in \mathbb{R}\) and let \(f,g,h\) be three functions so that</p>
+<div class="displaymath">
+\begin{gather*}
+f(x) \leq g(x) \leq h(x)
+\end{gather*}
+</div>
+<p data-braille="continuation">for all \(x\) in an interval around \(a\text{,}\) except possibly exactly at \(x=a\text{.}\) Then  if</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} f(x) &amp;= \lim_{x \to a} h(x) = L
+\end{align*}
+</div>
+<p data-braille="continuation">then it is also the case that</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} g(x) &amp;= L
+\end{align*}
+</div></article><p id="p-442">Using the above theorem we can compute the limit we want and write it up nicely.</p>
+<article class="example example-like" id="example-29"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-29"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.19</span><span class="period">.</span><span class="space"> </span><span class="title">\(\ds \lim_{x \to 0} x^2 \sin(\pi/x) \).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-29"><article class="example example-like"><p id="p-443">Compute the limit</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x \to 0} x^2 \sin(\pi/x)
+\end{equation*}
+</div>
+<p id="p-444">Since \(-1 \leq \sin(\theta) \leq 1\) for all real numbers \(\theta\text{,}\) we have</p>
+<div class="displaymath">
+\begin{align*}
+-1 \leq \sin(\pi /x ) \leq 1 &amp;&amp; \text{for all } x \neq 0
+\end{align*}
+</div>
+<p data-braille="continuation">Multiplying the above by \(x^2\) we see that</p>
+<div class="displaymath">
+\begin{align*}
+-x^2 \leq x^2 \sin(\pi /x ) \leq x^2 &amp;&amp; \text{for all } x\neq0
+\end{align*}
+</div>
+<p data-braille="continuation">Since \(\ds \lim_{x \to 0} x^2 = \lim_{x \to 0} (-x^2) = 0\) by the sandwich  (or squeeze or pinch) theorem we have</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 0} x^2 \sin(\pi/x) &amp;= 0
+\end{align*}
+</div></article></div>
+<p id="p-445">Notice how we have used “words”. We have remarked on this several times  already in the text, but we will keep mentioning it. It is okay to use words in  your answers to maths problems — and you should do so! These let the reader  know what you are  doing and help you understand what you are doing.</p>
+<article class="example example-like" id="example-30"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-30"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.20</span><span class="period">.</span><span class="space"> </span><span class="title">Another sandwich theorem example.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-30"><article class="example example-like"><p id="p-446">Let \(f(x)\) be a function such that \(1 \leq f(x) \leq x^2-2x+2\text{.}\) What is  \(\ds \lim_{x \to 1} f(x)\text{?}\)</p>
+<p id="p-447">We are already supplied with an inequality, so it is likely that it is going to  help us. We should examine the limits of each side to see if they are the same:</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 1} 1 &amp;= 1\\
+\lim_{x \to 1} x^2-2x+2 &amp;= 1-2+2 = 1
+\end{align*}
+</div>
+<p data-braille="continuation">So we see that the function \(f(x)\) is trapped between two functions that both  approach \(1\) as \(x \to 1\text{.}\) Hence by the sandwich / pinch / squeeze theorem, we  know that</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 1} f(x) &amp; =1
+\end{align*}
+</div></article></div>
+<p id="p-448">To get some intuition as to why the squeeze theorem is true, consider when \(x\) is very very close to \(a\text{.}\)  In particular, consider when \(x\) is sufficiently close to \(a\) that we know \(h(x)\) is within \(10^{-6}\) of \(L\)  and that \(f(x)\) is also within \(10^{-6}\) of \(L\text{.}\) That is</p>
+<div class="displaymath">
+\begin{align*}
+|h(x)-L| &amp; \lt 10^{-6}  &amp; \text{and}&amp;&amp; |f(x)-L| &amp; \lt 10^{-6}.
+\end{align*}
+</div>
+<p data-braille="continuation">This means that</p>
+<div class="displaymath">
+\begin{align*}
+L-10^{-6} &amp; \lt  f(x) \leq h(x)  \lt  L+10^{-6}
+\end{align*}
+</div>
+<p data-braille="continuation">since we know that \(f(x) \leq h(x)\text{.}\)</p>
+<p id="p-449">But now by the hypothesis of the squeeze theorem we know that \(f(x) \leq g(x) \leq h(x)\) and so we have</p>
+<div class="displaymath">
+\begin{align*}
+L-10^{-6} &amp; \lt  f(x) \leq g(x) \leq h(x)  \lt  L+10^{-6}
+\end{align*}
+</div>
+<p data-braille="continuation">And thus we know that</p>
+<div class="displaymath">
+\begin{equation*}
+L-10^{-6} \leq g(x) \leq L+10^{-6}
+\end{equation*}
+</div>
+<p data-braille="continuation">That is \(g(x)\) is also within \(10^{-6}\) of \(L\text{.}\)</p>
+<p id="p-450">In this argument our choice of \(10^{-6}\) was arbitrary, so we can really replace \(10^{-6}\) with any small number we like.  Hence we know that we can force \(g(x)\) as close to \(L\) as we like, by bringing \(x\) sufficiently close to \(a\text{.}\) We give  a more formal and rigorous version of this argument at the end of Section <a href="sec_proof_arith_lim.html" class="internal" title="Section 2.9: (Optional) — Proving the Arithmetic of Limits">2.9</a>.</p></section><section class="exercises" id="exercises-4"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.4.2</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-6">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-15"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-29"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-451">Suppose \(\displaystyle\lim_{x \rightarrow a} f(x)=0\) and \(\displaystyle\lim_{x \rightarrow a} g(x)=0\text{.}\) Which of the following limits can you compute, given this information?</p>
+<ol class="lower-alpha">
+<li id="s1_4right1">\(\displaystyle \displaystyle\lim_{x \rightarrow a} \frac{f(x)}{2}\)</li>
+<li id="li-205">\(\displaystyle \displaystyle\lim_{x \rightarrow a} \frac{2}{f(x)}\)</li>
+<li id="li-206">\(\displaystyle \displaystyle\lim_{x \rightarrow a} \frac{f(x)}{g(x)}\)</li>
+<li id="s1_4right2">\(\displaystyle \displaystyle\lim_{x \rightarrow a} f(x)g(x)\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-29" id="answer-29"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-29"><div class="answer solution-like"><p id="p-452">(<a class="xref" data-knowl="./knowl/s1_4right1.html" title="Item 2.4.2.1.a">2.4.2.1.a</a>) and (<a class="xref" data-knowl="./knowl/s1_4right2.html" title="Item 2.4.2.1.d">2.4.2.1.d</a>)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-29" id="solution-29"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-29"><div class="solution solution-like"><p id="p-453">Zeroes cause a problem when they show up in the denominator, so we can only compute (<a class="xref" data-knowl="./knowl/s1_4right1.html" title="Item 2.4.2.1.a">2.4.2.1.a</a>) and (<a class="xref" data-knowl="./knowl/s1_4right2.html" title="Item 2.4.2.1.d">2.4.2.1.d</a>). (Both these limits are zero.) Be careful: there is no such rule as “zero divided by zero is one,” or “zero divided by zero is zero.”</p></div></div>
+</div></article><article class="exercise exercise-like" id="s1_4zeroes1"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-454">Give two functions \(f(x)\) and \(g(x)\) that satisfy \(\displaystyle\lim_{x \rightarrow 3}f(x)=\displaystyle\lim_{x \rightarrow 3}g(x)=0\) and \(\displaystyle\lim_{x \rightarrow 3} \dfrac{f(x)}{g(x)}=10\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-19" id="hint-19"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-19"><div class="hint solution-like"><p id="p-455">Try to make two functions with factors that will cancel.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-30" id="answer-30"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-30"><div class="answer solution-like"><p id="p-456">There are many possible answers; one is \(f(x)=10(x-3)\text{,}\) \(g(x)=x-3\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-30" id="solution-30"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-30"><div class="solution solution-like"><p id="p-457">The statement \(\displaystyle\lim_{x \rightarrow 3} \dfrac{f(x)}{g(x)}=10\) tells us that, as \(x\) gets very close to 3, \(f(x)\) is 10 times as large as \(g(x)\text{.}\) We notice that if \(f(x)=10g(x)\text{,}\) then \(\dfrac{f(x)}{g(x)}=10\text{,}\) so \(\displaystyle\lim_{x \rightarrow} \dfrac{f(x)}{g(x)}=10\) wherever \(f\) and \(g\) exist. So it's enough to find a function \(g(x)\) that has limit 0 at 3. Such a function is (for example) \(g(x)=x-3\text{.}\) So, we take \(f(x)=10(x-3)\) and \(g(x)=x-3\text{.}\) It is easy now to check that \(\displaystyle\lim_{x \rightarrow 3}f(x)=\displaystyle\lim_{x \rightarrow 3}g(x)=0\) and \(\displaystyle\lim_{x \rightarrow 3} \dfrac{f(x)}{g(x)}=\ds\lim_{x \to 3}\frac{10(x-3)}{x-3}=\ds\lim_{x \to 3}10=10\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="s1_4zeroes2"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-458">Give two functions \(f(x)\) and \(g(x)\) that satisfy \(\displaystyle\lim_{x \rightarrow 3}f(x)=\displaystyle\lim_{x \rightarrow 3}g(x)=0\) and \(\displaystyle\lim_{x \rightarrow 3} \dfrac{f(x)}{g(x)}=0\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-20" id="hint-20"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-20"><div class="hint solution-like"><p id="p-459">Try to make \(g(x)\)  cancel out.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-31" id="answer-31"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-31"><div class="answer solution-like"><p id="p-460">There are many possible answers; one is \(f(x)=(x-3)^2\) and \(g(x)=x-3\text{.}\) Another is \(f(x)=0\) and \(g(x)=x-3\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-31" id="solution-31"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-31"><div class="solution solution-like">
+<ul id="p-461" class="disc">
+<li id="li-208">As we saw in Question <a class="xref" data-knowl="./knowl/s1_4zeroes1.html" title="Exercise 2.4.2.2">2.4.2.2</a>, \(x-3\) is a function with limit 0 at \(x=3\text{.}\)  So one way of thinking about this question is to try choosing \(f(x)\) so that  \(\frac{f(x)}{g(x)}=g(x)=x-3\) too, which leads us to the solution \(f(x)=(x-3)^2\) and \(g(x)=x-3\text{.}\) This is one of many, many possible answers.</li>
+<li id="li-209">Another way of thinking about this problem is that \(f(x)\) should go to 0 “more strongly” than \(g(x)\) when \(x\) approaches \(3\text{.}\) One way of a function going to 0 really strongly is to make that function identically zero. So we can set \(f(x)=0\) and \(g(x)=x-3\text{.}\) Now \(\dfrac{f(x)}{g(x)}\) is equal to 0 whenever \(x \neq 3\text{,}\) and is undefined at \(x=3\text{.}\) Since the limit as \(x\) goes to three does not take into account the value of the function at 3, we have \(\displaystyle\lim_{x \rightarrow 3} \dfrac{f(x)}{g(x)}=0\text{.}\)</li>
+</ul>
+<p data-braille="continuation">There are many more possible answers.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s1_4zeroes3"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-462">Give two functions \(f(x)\) and \(g(x)\) that satisfy \(\displaystyle\lim_{x \rightarrow 3}f(x)=\displaystyle\lim_{x \rightarrow 3}g(x)=0\) and \(\displaystyle\lim_{x \rightarrow 3} \dfrac{f(x)}{g(x)}=\infty\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-32" id="answer-32"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-32"><div class="answer solution-like"><p id="p-463">There are many possible answers; one is \(f(x)=x-3\text{,}\) \(g(x)=(x-3)^3\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-32" id="solution-32"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-32"><div class="solution solution-like"><p id="p-464">One way to start this problem is to remember \(\displaystyle \lim_{x \rightarrow 0} \dfrac{1}{x^2}=\infty\text{.}\) (Using \(\dfrac{1}{x^2}\) as opposed to \(\dfrac{1}{x}\) is important, since \(\displaystyle\lim_{x \rightarrow 0}\dfrac{1}{x}\) does not exist.) Then by “shifting” by three, we find \(\displaystyle \lim_{x \rightarrow 3} \dfrac{1}{(x-3)^2}=\infty\text{.}\) So it is enough to arrange that \(\dfrac{f(x)}{g(x)}=\dfrac{1}{(x-3)^2}\text{.}\) We can achieve this with \(f(x)=x-3\) and \(g(x)=(x-3)^3\text{,}\) and maintain \(\displaystyle\lim_{x \rightarrow 3}f(x)=\displaystyle\lim_{x \rightarrow 3}g(x)=0\text{.}\) Again, this is one of many possible solutions.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-33"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-465">Suppose \(\displaystyle\lim_{x \rightarrow a}f(x)=\displaystyle\lim_{x \rightarrow a}g(x)=0\text{.}\) What are the possible values of \(\displaystyle\lim_{x \rightarrow a}\dfrac{f(x)}{g(x)}\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-21" id="hint-21"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-21"><div class="hint solution-like"><p id="p-466">See Questions <a class="xref" data-knowl="./knowl/s1_4zeroes1.html" title="Exercise 2.4.2.2">2.4.2.2</a>, <a class="xref" data-knowl="./knowl/s1_4zeroes2.html" title="Exercise 2.4.2.3">2.4.2.3</a>, and <a class="xref" data-knowl="./knowl/s1_4zeroes3.html" title="Exercise 2.4.2.4">2.4.2.4</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-33" id="answer-33"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-33"><div class="answer solution-like"><p id="p-467">Any real number; positive infinity; negative infinity; does not exist.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-33" id="solution-33"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-33"><div class="solution solution-like">
+<p id="p-468">Any real number; positive infinity; negative infinity; does not exist.</p>
+<p id="p-469">This is an important thing to remember: often, people see limits that look like \(\dfrac{0}{0}\) and think that the limit must be 1, or 0, or infinite. In fact, this limit could be anything--it depends on the relationship between \(f\) and \(g\text{.}\)</p>
+<p id="p-470">Questions <a class="xref" data-knowl="./knowl/s1_4zeroes1.html" title="Exercise 2.4.2.2">2.4.2.2</a> and <a class="xref" data-knowl="./knowl/s1_4zeroes2.html" title="Exercise 2.4.2.3">2.4.2.3</a> show us examples where the limit is 10 and 0; they can easily be modified to make the limit any real number.</p>
+<p id="p-471">Question <a class="xref" data-knowl="./knowl/s1_4zeroes3.html" title="Exercise 2.4.2.4">2.4.2.4</a> show us  an example where the limit is \(\infty\text{;}\) it can easily be modified to make the limit \(-\infty\) or DNE.</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-7">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-16"><p id="p-472">For Questions <a class="xref" data-knowl="./knowl/s1_4firstlimit.html" title="Exercise 2.4.2.6">2.4.2.6</a> through <a class="xref" data-knowl="./knowl/s1_4lastlimit.html" title="Exercise 2.4.2.41">2.4.2.41</a>, evaluate the given limits.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="s1_4firstlimit"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-473">\(\displaystyle\lim_{t \rightarrow 10} \dfrac{2(t-10)^2}{t}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-22" id="hint-22"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-22"><div class="hint solution-like"><p id="p-474">Find the limit of the numerator and denominator separately.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-34" id="answer-34"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-34"><div class="answer solution-like"><p id="p-475">0</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-34" id="solution-34"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-34"><div class="solution solution-like"><p id="p-476">Since we're not trying to divide by 0, or multiply by infinity:\(\displaystyle\lim_{t \rightarrow 10} \dfrac{2(t-10)^2}{t}
+=
+\dfrac{2\cdot0}{10}=0\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-35"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-477">\(\displaystyle\lim_{y \rightarrow 0} \dfrac{(y+1)(y+2)(y+3)}{\cos y}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-23" id="hint-23"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-23"><div class="hint solution-like"><p id="p-478">Break it up into smaller pieces, evaluate the limits of the pieces.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-35" id="answer-35"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-35"><div class="answer solution-like"><p id="p-479">6</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-35" id="solution-35"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-35"><div class="solution solution-like"><p id="p-480">Since we're not doing anything dodgy like putting 0 in the denominator, \(\displaystyle\lim_{y \rightarrow 0} \dfrac{(y+1)(y+2)(y+3)}{\cos y}
+=\dfrac{(0+1)(0+2)(0+3)}{\cos 0}=\dfrac{6}{1}=6\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-36"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-481">\(\displaystyle\lim_{x \rightarrow 3} \left(\dfrac{4x-2}{x+2}\right)^4\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-24" id="hint-24"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-24"><div class="hint solution-like"><p id="p-482">First find the limit of the “inside” function, \(\dfrac{4x-2}{x+2}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-36" id="answer-36"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-36"><div class="answer solution-like"><p id="p-483">16</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-36" id="solution-36"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-36"><div class="solution solution-like"><p id="p-484">Since the limits of the numerator and denominator exist, and since the limit of the denominator is nonzero: \(\displaystyle\lim_{x \rightarrow 3} \left(\dfrac{4x-2}{x+2}\right)^4 =
+\left(\dfrac{4(3)-2}{3+2}\right)^4=16\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-37"><h6 class="heading">
+<span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-485">\(\ds \lim_{t\to -3} \left(\frac{1-t}{\cos(t)}\right)\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-25" id="hint-25"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-25"><div class="hint solution-like"><p id="p-486">Is \(\cos(-3)\) zero?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-37" id="answer-37"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-37"><div class="answer solution-like"><p id="p-487">\(4/\cos(3)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like"><div class="displaymath" id="p-488">
+\begin{align*}
+\lim_{t\to -3} \left(\frac{1-t}{\cos(t)}\right)
+&amp;= \frac{\ds\lim_{t\to -3} (1-t)}{\ds\lim_{t\to-3}\cos(t)}
+= 4/\cos(-3) = 4/\cos(3)
+\end{align*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-38"><h6 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-489">\(\ds \lim_{h \to 0} \frac{(2+h)^2-4}{2h}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-26" id="hint-26"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-26"><div class="hint solution-like"><p id="p-490">Expand, then simplify.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-38" id="answer-38"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-38"><div class="answer solution-like"><p id="p-491">\(2\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like">
+<p id="p-492">If try naively then we get \(0/0\text{,}\) so we expand and then simplify:</p>
+<div class="displaymath">
+\begin{align*}
+\frac{(2+h)^2-4}{2h} &amp;= \frac{h^2+4h+4-4}{2h} = \frac{h}{2}+2
+\end{align*}
+</div>
+<p data-braille="continuation">Hence the limit is \(\ds \lim_{h \to 0} \left(\frac{h}{2}+2\right) = 2\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-39"><h6 class="heading">
+<span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-493">\(\ds \lim_{t\to -2} \left(\frac{t-5}{t+4}\right)\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-39" id="answer-39"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-39"><div class="answer solution-like"><p id="p-494">\(-7/2\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like"><div class="displaymath" id="p-495">
+\begin{align*}
+\lim_{t\to -2} \left(\frac{t-5}{t+4}\right)
+&amp;= \frac{\lim_{t\to -2} (t-5)}{\lim_{t\to-2}(t+4)}
+= -7/2.
+\end{align*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-40"><h6 class="heading">
+<span class="codenumber">12<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-496">\(\ds \lim_{x\to 1} \sqrt{5x^3 + 4}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-40" id="answer-40"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-40"><div class="answer solution-like"><p id="p-497">3</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like"><div class="displaymath" id="p-498">
+\begin{equation*}
+\lim_{t\to 1} \sqrt{5x^3 + 4} =
+\sqrt{\lim_{t\to 1}\bigl(5x^3 + 4\bigr)} =
+\sqrt{5\lim_{t\to 1}(x^3) + 4} =
+\sqrt{9} =
+3.
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-41"><h6 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-499">\(\displaystyle\lim_{t\rightarrow -1} \left(\frac{t-2}{t+3}\right)\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-41" id="answer-41"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-41"><div class="answer solution-like"><p id="p-500">\(-\frac{3}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like"><div class="displaymath" id="p-501">
+\begin{equation*}
+\lim_{t\rightarrow -1} \left(\frac{t-2}{t+3}\right)
+= \frac{\displaystyle\lim_{t\rightarrow -1} (t-2)}{\displaystyle\lim_{t\rightarrow-1}(t+3)}
+= -3/2.
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-42"><h6 class="heading">
+<span class="codenumber">14<span class="period">.</span></span><span class="space"> </span><span class="title">2012H.</span>
+</h6>
+<p id="p-502">\(\lim\limits_{x\rightarrow 1}\dfrac{\log(1+x)-x}{x^2}\) (where \(\log x\) denotes the logarithm base \(e\) of \(x\))</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-27" id="hint-27"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-27"><div class="hint solution-like"><p id="p-503">Try the simplest method first.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-42" id="answer-42"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-42"><div class="answer solution-like"><p id="p-504">\(\log(2)-1\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like"><p id="p-505">We simply plug in \(x=1\text{:}\) \(\lim\limits_{x\rightarrow 1}\left[\dfrac{\log(1+x)-x}{x^2}\right]=\log(2)-1\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-43"><h6 class="heading">
+<span class="codenumber">15<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-506">\(\displaystyle\lim_{x\rightarrow 2} \left(\frac{x-2}{x^2-4}\right)\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-28" id="hint-28"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-28"><div class="hint solution-like"><p id="p-507">Factor the denominator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-43" id="answer-43"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-43"><div class="answer solution-like"><p id="p-508">\(\frac{1}{4}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-43" id="solution-43"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like">
+<p id="p-509">If we try naively then we get \(0/0\text{,}\) so we simplify first:</p>
+<div class="displaymath">
+\begin{align*}
+\frac{x-2}{x^2-4} &amp;= \frac{x-2}{(x-2)(x+2)} = \frac{1}{x+2}
+\end{align*}
+</div>
+<p data-braille="continuation">Hence the limit is \(\displaystyle \lim_{x\rightarrow2} \frac{1}{x+2} = 1/4\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-44"><h6 class="heading">
+<span class="codenumber">16<span class="period">.</span></span><span class="space"> </span><span class="title">2006H.</span>
+</h6>
+<p id="p-510">\(\ds\lim\limits_{x\rightarrow 4}\dfrac{x^2-4x}{x^2-16}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-29" id="hint-29"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-29"><div class="hint solution-like"><p id="p-511">Factor the numerator and the denominator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-44" id="answer-44"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-44"><div class="answer solution-like"><p id="p-512">\(\dfrac{1}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-44" id="solution-44"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like">
+<p id="p-513">If we try to plug in \(x=4\text{,}\) we find the denominator is zero. So to get a better idea of what's happening, we factor the numerator and denominator:</p>
+<div class="displaymath">
+\begin{align*}
+\lim\limits_{x\rightarrow 4}\frac{x^2-4x}{x^2-16}
+&amp;=\lim\limits_{x\rightarrow 4}\frac{x(x-4)}{(x+4)(x-4)}\\
+&amp;=\lim\limits_{x\rightarrow 4}\frac{x}{x+4}\\
+&amp;=\frac{4}{8}=\frac{1}{2}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-45"><h6 class="heading">
+<span class="codenumber">17<span class="period">.</span></span><span class="space"> </span><span class="title">2007H.</span>
+</h6>
+<p id="p-514">\(\lim\limits_{x\rightarrow 2}\dfrac{x^2+x-6}{x-2}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-30" id="hint-30"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-30"><div class="hint solution-like"><p id="p-515">Factor the numerator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-45" id="answer-45"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-45"><div class="answer solution-like"><p id="p-516">\(5\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-45" id="solution-45"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-45"><div class="solution solution-like">
+<p id="p-517">If we try to plug in \(x=2\text{,}\) we find the denominator is zero. So to get a better idea of what's happening, we factor the numerator:</p>
+<div class="displaymath">
+\begin{align*}
+\lim\limits_{x\rightarrow 2}\frac{x^2+x-6}{x-2}&amp;=
+\lim\limits_{x\rightarrow 2}\frac{(x+3)(x-2)}{x-2}\\
+&amp;=
+\lim\limits_{x\rightarrow 2}(x+3)=5
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-46"><h6 class="heading">
+<span class="codenumber">18<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-518">\(\ds \lim_{x \to -3} \frac{x^2-9}{x+3}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-31" id="hint-31"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-31"><div class="hint solution-like"><p id="p-519">Simplify first by factoring the numerator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-46" id="answer-46"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-46"><div class="answer solution-like"><p id="p-520">\(-6\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-46" id="solution-46"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-46"><div class="solution solution-like">
+<p id="p-521">If we try naively then we get \(0/0\text{,}\) so we simplify first:</p>
+<div class="displaymath">
+\begin{align*}
+\frac{x^2-9}{x+3} &amp;= \frac{(x-3)(x+3)}{(x+3)} = x-3
+\end{align*}
+</div>
+<p data-braille="continuation">Hence the limit is \(\ds \lim_{x\to-3} (x-3) = -6\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-47"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-522">\(\displaystyle\lim_{t \rightarrow 2} \frac{1}{2}t^4-3t^3+t\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-32" id="hint-32"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-32"><div class="hint solution-like"><p id="p-523">The function is a polynomial.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-47" id="answer-47"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-47"><div class="answer solution-like"><p id="p-524">\(-14\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-47" id="solution-47"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-47"><div class="solution solution-like"><p id="p-525">To calculate the limit of a polynomial, we simply evaluate the polynomial: \(\displaystyle\lim_{t \rightarrow 2} \frac{1}{2}t^4-3t^3+t
+=
+\frac{1}{2}\cdot2^4-3\cdot 2^3+2 = -14\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-48"><h6 class="heading">
+<span class="codenumber">20<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-526">\(\ds \lim_{x\to -1} \frac{\sqrt{x^2+8}-3}{x+1}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-33" id="hint-33"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-33"><div class="hint solution-like"><p id="p-527">Multiply both the numerator and the denominator by the conjugate of the numerator,  \(\sqrt{x^2+8}+3\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-48" id="answer-48"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-48"><div class="answer solution-like"><p id="p-528">\(-\frac{1}{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-48" id="solution-48"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-48"><div class="solution solution-like"><div class="displaymath" id="p-529">
+\begin{align*}
+\frac{\sqrt{x^2+8}-3}{x+1}
+&amp;= \frac{\sqrt{x^2+8}-3}{x+1}
+\cdot \frac{\sqrt{x^2+8}+3}{\sqrt{x^2+8}+3}\\
+&amp;= \frac{(x^2+8)-3^2}{(x+1)(\sqrt{x^2+8}+3)}\\
+&amp;= \frac{x^2-1}{(x+1)(\sqrt{x^2+8}+3)}\\
+&amp;= \frac{(x-1)(x+1)}{(x+1)(\sqrt{x^2+8}+3)}\\
+&amp;= \frac{(x-1)}{\sqrt{x^2+8}+3}\\
+\lim_{x\to -1} \frac{\sqrt{x^2+8}-3}{x+1}
+&amp;=\lim_{x\to-1} \frac{(x-1)}{\sqrt{x^2+8}+3}\\
+&amp;= \frac{-2}{\sqrt{9}+3 }\\
+&amp;= -\frac{2}{6} = -\frac{1}{3}.
+\end{align*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-49"><h6 class="heading">
+<span class="codenumber">21<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-530">\(\ds \lim_{x\to 2} \frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-34" id="hint-34"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-34"><div class="hint solution-like"><p id="p-531">Multiply both the numerator and the denominator by the conjugate of the numerator, \(\sqrt{x+7}+\sqrt{11-x}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-49" id="answer-49"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-49"><div class="answer solution-like"><p id="p-532">\(\frac{1}{6} \)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-49" id="solution-49"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-49"><div class="solution solution-like">
+<p id="p-533">If we try to do the limit naively we get \(0/0\text{.}\) Hence we must simplify.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
+&amp;= \frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
+\cdot \left(\frac{\sqrt{x+7}+\sqrt{11-x}}{\sqrt{x+7}+\sqrt{11-x}}\right)\\
+&amp;= \frac{(x+7)-(11-x)}{(2x-4)(\sqrt{x+7}+\sqrt{11-x})}\\
+&amp;= \frac{2x-4}{(2x-4)(\sqrt{x+7}+\sqrt{11-x})}\\
+&amp;= \frac{1}{\sqrt{x+7}+\sqrt{11-x}}\\
+\mbox{So, }\lim_{x\to2} \frac{\sqrt{x+7}-\sqrt{11-x}}{2x-4}
+&amp;=\lim_{x\to2} \frac{1}{\sqrt{x+7}+\sqrt{11-x}}\\
+&amp;= \frac{1}{\sqrt{9}+\sqrt{9} }\\
+&amp;= \frac{1}{6}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading">
+<span class="codenumber">22<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-534">\(\displaystyle \lim_{x\rightarrow 1} \frac{\sqrt{x+2}-\sqrt{4-x}}{x-1}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-35" id="hint-35"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-35"><div class="hint solution-like"><p id="p-535">Multiply both the numerator and the denominator by the conjugate of the numerator, \(\sqrt{x+2}+\sqrt{4-x}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-50" id="answer-50"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-50"><div class="answer solution-like"><p id="p-536">\(\frac{1}{\sqrt{3}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-50" id="solution-50"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-50"><div class="solution solution-like">
+<p id="p-537">If we try to do the limit naively we get \(0/0\text{.}\) Hence we must simplify.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\sqrt{x+2}-\sqrt{4-x}}{x-1}
+&amp;= \frac{\sqrt{x+2}-\sqrt{4-x}}{x-1}
+\cdot \frac{\sqrt{x+2}+\sqrt{4-x}}{\sqrt{x+2}+\sqrt{4-x}}\\
+&amp;= \frac{(x+2)-(4-x)}{(x-1)(\sqrt{x+2}+\sqrt{4-x})}\\
+&amp;= \frac{2x-2}{(x-1)(\sqrt{x+2}+\sqrt{4-x})}\\
+&amp;= \frac{2}{\sqrt{x+2}+\sqrt{4-x}}
+\end{align*}
+</div>
+<p data-braille="continuation">So the limit is</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x\to1} \frac{\sqrt{x+2}-\sqrt{4-x}}{x-1}
+&amp;=\lim_{x\to1} \frac{2}{\sqrt{x+2}+\sqrt{4-x}}\\
+&amp;= \frac{2}{\sqrt{3}+\sqrt{3} }\\
+&amp;= \frac{1}{\sqrt{3}}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-51"><h6 class="heading">
+<span class="codenumber">23<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-538">\(\ds \lim_{x\to 3} \frac{\sqrt{x-2}-\sqrt{4-x}}{x-3}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-36" id="hint-36"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-36"><div class="hint solution-like"><p id="p-539">Multiply both the numerator and the denominator by the conjugate of the numerator, \(\sqrt{x-2}+\sqrt{4-x}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-51" id="answer-51"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-51"><div class="answer solution-like"><p id="p-540">1</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-51" id="solution-51"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-51"><div class="solution solution-like">
+<p id="p-541">If we try to do the limit naively we get \(0/0\text{.}\) Hence we must simplify.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\sqrt{x-2}-\sqrt{4-x}}{x-3}
+&amp;= \frac{\sqrt{x-2}-\sqrt{4-x}}{x-3}
+\cdot \frac{\sqrt{x-2}+\sqrt{4-x}}{\sqrt{x-2}+\sqrt{4-x}}\\
+&amp;= \frac{(x-2)-(4-x)}{(x-3)(\sqrt{x-2}+\sqrt{4-x})}\\
+&amp;= \frac{2x-6}{(x-3)(\sqrt{x-2}+\sqrt{4-x})}\\
+&amp;= \frac{2}{\sqrt{x-2}+\sqrt{4-x}}\\
+\mbox{So, }
+\lim_{x\to 3} \frac{\sqrt{x-2}-\sqrt{4-x}}{x-3}
+&amp;=\lim_{x\to 3} \frac{2}{\sqrt{x-2}+\sqrt{4-x}}\\
+&amp;= \frac{2}{1+1 }\\
+&amp;= 1.
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-52"><h6 class="heading">
+<span class="codenumber">24<span class="period">.</span></span><span class="space"> </span><span class="title">2015Q.</span>
+</h6>
+<p id="p-542">\(\ds \lim_{t\to 1} \frac{3t-3}{2 - \sqrt{5-t}}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-37" id="hint-37"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-37"><div class="hint solution-like"><p id="p-543">Multiply both the numerator and the denominator by the conjugate of the denominator,  \(2+\sqrt{5-t}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-52" id="answer-52"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-52"><div class="answer solution-like"><p id="p-544">12</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-52" id="solution-52"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-52"><div class="solution solution-like">
+<p id="p-545">Here we get \(0/0\) if we try the naive approach. Hence we must simplify.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{3t-3}{2 - \sqrt{5-t}}
+&amp;= \frac{3t-3}{2 - \sqrt{5-t}} \times \frac{2 + \sqrt{5-t}}{2 + \sqrt{5-t}}\\
+&amp;= \left(2 + \sqrt{5-t}\right)\,\frac{3t-3}{2^2 - (5 - t)}\\
+&amp;=  \left(2 + \sqrt{5-t}\right)\,\frac{3t-3}{t-1}\\
+&amp;=  \left(2 + \sqrt{5-t}\right)\,\frac{3(t-1)}{t-1}\\
+\end{align*}
+<p class="intertext">So there is a cancelation. Hence the limit is</p>
+\begin{align*}
+\lim_{t\to1}\frac{3t-3}{2 - \sqrt{5-t}}
+&amp;=\lim_{t\to1} \left(2 + \sqrt{5-t}\right) \cdot 3\\
+&amp;= 12
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-53"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-546">\(\displaystyle\lim_{x \rightarrow 0}-x^2\cos\left(\frac{3}{x}\right)\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-38" id="hint-38"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-38"><div class="hint solution-like"><p id="p-547">Consider the factors \(x^2\) and \(\cos\left(\frac{3}{x}\right)\) separately. Review the squeeze theorem.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-53" id="answer-53"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-53"><div class="answer solution-like"><p id="p-548">0</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-53" id="solution-53"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-53"><div class="solution solution-like">
+<p id="p-549">This is a classic example of the Squeeze Theorem. It is tempting to try to use arithmetic of limits: \(\displaystyle\lim_{x \rightarrow 0} -x^2=0\text{,}\) and \(\displaystyle\lim_{x \rightarrow 0}\cos\left(\frac{3}{x}\right)=something\text{,}\) and zero times something is 0. However, this is invalid reasoning, because we can only use arithmetic of limits when those limits exist, and \(\displaystyle\lim_{x \rightarrow 0}\cos\left(\frac{3}{x}\right)\) does not exist. So, we need the Squeeze Theorem.</p>
+<p id="p-550">Since \(-1 \leq \cos\left(\frac{3}{x}\right) \leq 1\text{,}\) we can bound our function of interest from above and below (being careful of the sign!):</p>
+<div class="displaymath">
+\begin{equation*}
+-x^2({\textcolor{red}{1}})\leq -x^2{\textcolor{red}{\cos\left(\frac{3}{x}\right)}} \leq -x^2({\textcolor{red}{-1}})
+\end{equation*}
+</div>
+<p data-braille="continuation">So our function of interest is between \(-x^2\) and \(x^2\text{.}\) Since \(\displaystyle\lim_{x \rightarrow 0} -x^2=\displaystyle\lim_{x \rightarrow 0} x^2=0\text{,}\) by the Squeeze Theorem, also \(\displaystyle\lim_{x \rightarrow 0}-x^2\cos\left(\frac{3}{x}\right)=0\text{.}\)</p>
+<p id="p-551">Advice about writing these up: whenever we use the Squeeze Theorem, we need to explicitly write that two things are true: that the function we're interested is bounded above and below by two other functions, and that both of those functions have the same limit. Then we can conclude (and we need to write this down as well!) that our original function also shares that limit.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-54"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<p id="p-552">\(\displaystyle\lim_{x \rightarrow 0}\dfrac{x^4\sin\left(\frac{1}{x}\right)+5x^2\cos\left(\frac{1}{x}\right)+2}{(x-2)^2}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-39" id="hint-39"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-39"><div class="hint solution-like"><p id="p-553">Look for a reason to ignore the trig. Review the squeeze theorem.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-54" id="answer-54"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-54"><div class="answer solution-like"><p id="p-554">\(\frac{1}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like">
+<p id="p-555">Recall that sine and cosine, no matter what (real-number) input we feed them, spit out numbers between \(-1\) and \(1\text{.}\) So we can bound our horrible numerator, rather than trying to deal with it directly.</p>
+<div class="displaymath">
+\begin{equation*}
+x^4({\textcolor{red}{-1}})+5x^2({\textcolor{red}{-1}})+2
+\leq
+x^4{\textcolor{red}{\sin\left(\frac{1}{x}\right)}}+5x^2{\textcolor{red}{\cos\left(\frac{1}{x}\right)}}+2 \leq
+x^4({\textcolor{red}{1}})+5x^2({\textcolor{red}{1}})+2
+\end{equation*}
+</div>
+<p id="p-556">Further, notice that our bounded functions tend to the same value as \(x\) goes to \(0\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\lim_{x \rightarrow 0} x^4{(-1)}+5x^2{(-1)}+2=
+\displaystyle\lim_{x \rightarrow 0} x^4+5x^2+2=2.
+\end{equation*}
+</div>
+<p data-braille="continuation">So, by the Squeeze Theorem, also</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\lim_{x \rightarrow 0}{x^4\sin\left(\frac{1}{x}\right)+5x^2\cos\left(\frac{1}{x}\right)+2}=2.
+\end{equation*}
+</div>
+<p data-braille="continuation">Now, we evaluate our original limit:</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\lim_{x \rightarrow 0}\dfrac{x^4\sin\left(\frac{1}{x}\right)+5x^2\cos\left(\frac{1}{x}\right)+2}{(x-2)^2}=\frac{2}{(-2)^2}=\frac{1}{2}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-55"><h6 class="heading">
+<span class="codenumber">27<span class="period">.</span></span><span class="space"> </span><span class="title">2012H.</span>
+</h6>
+<p id="p-557">\(\lim\limits_{x\rightarrow 0}x\sin^2\left(\dfrac{1}{x}\right)\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-40" id="hint-40"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-40"><div class="hint solution-like"><p id="p-558">As in the previous questions, we want to use the Squeeze Theorem. If \(x \lt 0\text{,}\) then \(-x\) is positive, so \(x \lt -x\text{.}\) Use this fact when you bound your expressions.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-55" id="answer-55"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-55"><div class="answer solution-like"><p id="p-559">0</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-55" id="solution-55"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-55"><div class="solution solution-like">
+<p id="p-560">\(\ds\lim_{x\to0}\sin^2\left(\dfrac{1}{x}\right)=DNE\text{,}\) so we think about using the Squeeze Theorem. We'll need to bound the expression \(x\sin^2\left(\dfrac{1}{x}\right)\text{,}\) but the bounding is a little delicate. For any non-zero value we plug in for \(x\text{,}\) \(\sin^2\left(\dfrac{1}{x}\right)\) is a number in the interval \([0,1]\text{.}\) If \(a\) is a number in the interval \([0,1]\text{,}\) then:</p>
+<div class="displaymath">
+\begin{align*}
+0 \lt &amp;xa \lt x &amp; &amp;\mbox{ when $x$ is positive}\\
+x \lt &amp;xa \lt 0 &amp; &amp;\mbox{ when $x$ is negative}
+\end{align*}
+</div>
+<p data-braille="continuation">We'll show you two ways to use this information to create bound that will allow you to apply the Squeeze Theorem.</p>
+<ul id="p-561" class="disc">
+<li id="li-210">
+<p id="p-562">Solution 1: We will evaluate separately the limit from the right and from the left.</p>
+<p id="p-563">When \(x \gt 0\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+0 \leq x\sin^2\left(\dfrac{1}{x}\right) \leq x
+\end{equation*}
+</div>
+<p data-braille="continuation">because \(0 \leq \sin^2\left(\dfrac{1}{x}\right) \leq 1\text{.}\) Since</p>
+<div class="displaymath">
+\begin{equation*}
+\ds\lim_{x \to 0^+} 0 = 0 \qquad\mbox{and}\qquad \ds\lim_{x \to 0^+}x=0
+\end{equation*}
+</div>
+<p data-braille="continuation">then by the Squeeze Theorem, also</p>
+<div class="displaymath">
+\begin{equation*}
+\ds\lim_{x \to 0^+} x\sin^2\left(\dfrac{1}{x}\right)=0 .
+\end{equation*}
+</div>
+<p id="p-564">Similarly, When \(x \lt 0\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+x \leq x\sin^2\left(\dfrac{1}{x}\right) \leq 0
+\end{equation*}
+</div>
+<p data-braille="continuation">because \(0 \leq \sin^2\left(\dfrac{1}{x}\right) \leq 1\text{.}\) Since</p>
+<div class="displaymath">
+\begin{equation*}
+\ds\lim_{x \to 0^-} x = 0 \qquad\mbox{and}\qquad \ds\lim_{x \to 0^-}0=0
+\end{equation*}
+</div>
+<p data-braille="continuation">then by the Squeeze Theorem, also</p>
+<div class="displaymath">
+\begin{equation*}
+\ds\lim_{x \to 0^-} x\sin^2\left(\dfrac{1}{x}\right)=0. 
+\end{equation*}
+</div>
+<p id="p-565">Since the one-sided limits are both equal to zero,</p>
+<div class="displaymath">
+\begin{equation*}
+\ds\lim_{x\to0}x\sin^2\left(\frac{1}{x}\right)=0.
+\end{equation*}
+</div>
+<p id="p-566">Remark: this is a perfectly fine proof, but it seems to repeat itself. Since the cases \(x \lt 0\) and \(x \gt 0\) are so similar, we would like to take care of them together. This can be done as shown below.</p>
+</li>
+<li id="li-211">
+<p id="p-567">Solution 2: If \(x\neq 0\text{,}\) then \(0\leq\sin^2\left(\dfrac{1}{x}\right)\leq1\text{,}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+-|x| \leq x\sin^2\left(\frac{1}{x}\right)\leq|x|.
+\end{equation*}
+</div>
+<p data-braille="continuation">Since</p>
+<div class="displaymath">
+\begin{equation*}
+\ds\lim_{x \to 0}-|x|=0\qquad\mbox{and}\qquad\lim_{x\to0}|x|=0
+\end{equation*}
+</div>
+<p data-braille="continuation">then by the Squeeze Theorem, also</p>
+<div class="displaymath">
+\begin{equation*}
+\lim_{x \to 0} x\sin^2\left(\frac{1}{x}\right)=0.
+\end{equation*}
+</div>
+</li>
+</ul>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-56"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<p id="p-568">\(\displaystyle\lim_{w \rightarrow 5} \dfrac{2w^2-50}{(w-5)(w-1)}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-41" id="hint-41"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-41"><div class="hint solution-like"><p id="p-569">Factor the numerator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-56" id="answer-56"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-56"><div class="answer solution-like"><p id="p-570">5</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-56" id="solution-56"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-56"><div class="solution solution-like">
+<p id="p-571">When we plug \(w=5\) in to the numerator and denominator, we find that each becomes zero. Since we can't divide by zero, we have to dig a little deeper. When a polynomial has a root, that also means it has a factor: we can factor \((w-5)\) out of the top. That lets us cancel:</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\lim_{w \rightarrow 5} \dfrac{2w^2-50}{(w-5)(w-1)}
+=\displaystyle\lim_{w \rightarrow 5} \dfrac{2(w-5)(w+5)}{(w-5)(w-1)}
+=\displaystyle\lim_{w \rightarrow 5} \dfrac{2(w+5)}{(w-1)}.
+\end{equation*}
+</div>
+<p id="p-572">Note that the function \(\dfrac{2w^2-50}{(w-5)(w-1)} \) is NOT defined at \(w=5\text{,}\) while the function \(\dfrac{2(w+5)}{(w-1)}\) IS defined at \(w=5\text{;}\) so strictly speaking, these two functions are not equal. However, for every value of \(w\) that is not 5, the functions are the same, so their <em class="emphasis">limits</em> are equal. Furthermore, the limit of the second function is quite easy to calculate, since we've eliminated the zero in the denominator: \(\displaystyle\lim_{w \rightarrow 5} \dfrac{2(w+5)}{(w-1)}
+=\dfrac{2(5+5)}{5-1}=5.\)</p>
+<p id="p-573">So \(\displaystyle\lim_{w \rightarrow 5} \dfrac{2w^2-50}{(w-5)(w-1)}=\displaystyle\lim_{w \rightarrow 5} \dfrac{2(w+5)}{(w-1)}=5\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-57"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<p id="p-574">\(\displaystyle\lim_{r \rightarrow -5} \dfrac{r}{r^2+10r+25}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-42" id="hint-42"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-42"><div class="hint solution-like"><p id="p-575">Factor the denominator; pay attention to signs.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-57" id="answer-57"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-57"><div class="answer solution-like"><p id="p-576">\(-\infty\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-57" id="solution-57"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-57"><div class="solution solution-like"><p id="p-577">When we plug in \(r=-5\) to the denominator, we find that it becomes 0, so we need to dig deeper. The numerator is not zero, so cancelling is out. Notice that the denominator is factorable: \(r^2+10r+25 = (r+5)^2\text{.}\) As \(r\) approaches \(-5\) from either side, the denominator gets very close to zero, but stays positive. The numerator gets very close to \(-5\text{.}\) So, as \(r\) gets closer to \(-5\text{,}\) we have something close to \(-5\) divided by a very small, positive number. Since the denominator is small, the fraction will have a large magnitude; since the numerator is negative and the denominator is positive, the fraction will be negative. So, \(\displaystyle\lim_{r \rightarrow -5} \dfrac{r}{r^2+10r+25}=-\infty\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-58"><h6 class="heading"><span class="codenumber">30<span class="period">.</span></span></h6>
+<p id="p-578">\(\displaystyle\lim_{x \rightarrow -1}\sqrt{\dfrac{x^3+x^2+x+1}{3x+3}}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-43" id="hint-43"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-43"><div class="hint solution-like"><p id="p-579">First find the limit of the “inside” function.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-58" id="answer-58"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-58"><div class="answer solution-like"><p id="p-580">\(\sqrt{\dfrac{2}{3}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-58" id="solution-58"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-58"><div class="solution solution-like">
+<p id="p-581">First, we find \(\displaystyle\lim_{x \rightarrow -1}\dfrac{x^3+x^2+x+1}{3x+3}\text{.}\) When we plug in \(x=-1\) to the top and the bottom, both become zero. In a polynomial, where there is a root, there is a factor, so this tells us we can factor out \((x+1)\) from both the top and the bottom. It's pretty easy to see how to do this in the bottom. For the top, if you're having a hard time, one factoring method (of many) to try is long division of polynomials; another is to factor out \((x+1)\) from the first two terms and the last two terms. (Long division is covered in Appendix A.14 of CLP-II Integral Calculus.)</p>
+<div class="displaymath" id="p-582">
+\begin{align*}
+\displaystyle\lim_{x \rightarrow -1}\dfrac{x^3+x^2+x+1}{3x+3}&amp;=
+\displaystyle\lim_{x \rightarrow -1}\dfrac{x^2(x+1)+(x+1)}{3x+3}
+=\displaystyle\lim_{x \rightarrow -1}\dfrac{(x+1)(x^2+1)}{3(x+1)}\\
+&amp;=
+\displaystyle\lim_{x \rightarrow -1}\dfrac{x^2+1}{3}=\frac{(-1)^2+1}{3}=\frac{2}{3}.
+\end{align*}
+</div>
+<p id="p-583">One thing to note here is that the function \(\dfrac{x^3+x^2+x+1}{3x+3}\) is not defined at  \(x=-1\) (because we can't divide by zero). So we replaced it with the function \(\dfrac{x^2+1}{3}\text{,}\) which IS defined at \(x=-1\text{.}\) These functions only differ at \(x=-1\text{;}\) they are the same at every other point. That is why we can use the second function to find the limit of the first function.</p>
+<p id="p-584">Now we're ready to find the actual limit asked in the problem:</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\lim_{x \rightarrow -1}\sqrt{\dfrac{x^3+x^2+x+1}{3x+3}}=
+\sqrt{\dfrac{2}{3}}.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-59"><h6 class="heading"><span class="codenumber">31<span class="period">.</span></span></h6>
+<p id="p-585">\(\displaystyle\lim_{x \rightarrow 0} \dfrac{x^2+2x+1}{3x^5-5x^3}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-44" id="hint-44"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-44"><div class="hint solution-like"><p id="p-586">Factor; pay attention to signs.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-59" id="answer-59"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-59"><div class="answer solution-like"><p id="p-587">DNE</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-59" id="solution-59"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-59"><div class="solution solution-like">
+<p id="p-588">When we plug \(x=0\) into the denominator, we get 0, which means we need to look harder. The numerator is not zero, so we won't be able to cancel our problems away. Let's factor to make things clearer.</p>
+<div class="displaymath" id="p-589">
+\begin{equation*}
+\dfrac{x^2+2x+1}{3x^5-5x^3} =
+\dfrac{(x+1)^2}{x^3(3x^2-5)}
+\end{equation*}
+</div>
+<p id="p-590">As \(x\) gets close to 0, the numerator is close to 1; the term \((3x^2-5)\) is negative; and the sign of \(x^3\) depends on the direction we're approaching 0 from. Since we're  dividing a numerator that is very close to 1 by something that's getting very close to 0, the magnitude of the fraction is getting bigger and bigger without bound. Since the sign of the fraction flips depending on whether we are using numbers slightly bigger than 0, or slightly smaller than 0, that means the one-sided limits are \(\infty\) and \(-\infty\text{,}\) respectively. (In particular, \(\displaystyle\lim_{x \rightarrow 0^-}\dfrac{x^2+2x+1}{3x^5-5x^3}=\infty\) and \(\displaystyle\lim_{x \rightarrow 0^+}\dfrac{x^2+2x+1}{3x^5-5x^3}=-\infty
+\text{.}\)) Since the one-sided limits don't agree, the limit does not exist.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-60"><h6 class="heading"><span class="codenumber">32<span class="period">.</span></span></h6>
+<p id="p-591">\(\displaystyle\lim_{t \rightarrow 7} \dfrac{t^2x^2+2tx+1}{t^2-14t+49}\text{,}\) where \(x\) is a positive constant</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-45" id="hint-45"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-45"><div class="hint solution-like"><p id="p-592">Look for perfect squares</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-60" id="answer-60"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-60"><div class="answer solution-like"><p id="p-593">\(\infty\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-60" id="solution-60"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-60"><div class="solution solution-like">
+<p id="p-594">As usual, we first try plugging in \(t=7\text{,}\) but the denominator is 0, so we need to think harder. The top and bottom are both squares, so let's go ahead and factor: \(\dfrac{t^2x^2+2tx+1}{t^2-14t+49}=\dfrac{(tx+1)^2}{(t-7)^2}\text{.}\) Since \(x\) is positive, the numerator is nonzero. Also, the numerator is positive near \(t=7\text{.}\) So, we have something positive and nonzero on the top, and we divide it by the bottom, which is positive and getting closer and closer to zero. The quotient is always positive near \(t=7\text{,}\) and it is growing in magnitude without bound, so \(\displaystyle\lim_{t \rightarrow 7} \dfrac{t^2x^2+2tx+1}{t^2-14t+49}=\infty\text{.}\)</p>
+<p id="p-595">Remark: there is an important reason we specified that \(x\) must be a <em class="emphasis">positive</em> constant. Suppose \(x\) were \(-\frac{1}{7}\) (which is negative and so was not allowed in the question posed). In this case, we would have</p>
+<div class="displaymath">
+\begin{align*}
+\ds\lim_{t\rightarrow 7} \frac{t^2x^2+2tx+1}{t^2-14t+49}
+&amp;= \ds\lim_{t\rightarrow 7} \frac{(tx+1)^2}{(t-7)^2}\\
+&amp;= \ds\lim_{t\rightarrow 7} \frac{(-t/7+1)^2}{(t-7)^2}\\
+&amp;= \ds\lim_{t\rightarrow 7} \frac{(-1/7)^2(t-7)^2}{(t-7)^2}\\
+&amp;= \ds\lim_{t\rightarrow 7} (-1/7)^2\\
+&amp;= \dfrac{1}{49}\\
+&amp;\neq \infty
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-61"><h6 class="heading"><span class="codenumber">33<span class="period">.</span></span></h6>
+<p id="p-596">\(\displaystyle\lim_{d \rightarrow 0} x^5-32x+15\text{,}\) where \(x\) is a constant</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-46" id="hint-46"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-46"><div class="hint solution-like"><p id="p-597">Think about what effect changing \(d\) has on the function \(x^5-32x+15\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-61" id="answer-61"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-61"><div class="answer solution-like"><p id="p-598">\(x^5-32x+15\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-61" id="solution-61"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-61"><div class="solution solution-like"><p id="p-599">The function whose limit we are taking does not depend on \(d\text{.}\) Since \(x\) is a constant, \(x^5-32x+15\) is also a constant--it's just some number, that doesn't change, regardless of what \(d\) does. So \(\displaystyle\lim_{d \rightarrow 0} x^5-32x+15=x^5-32x+15\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-62"><h6 class="heading"><span class="codenumber">34<span class="period">.</span></span></h6>
+<p id="p-600">\(\displaystyle\lim_{x \rightarrow 1} (x-1)^2\sin\left[\left(\dfrac{x^2-3x+2}{x^2-2x+1}\right)^2+15\right]\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-47" id="hint-47"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-47"><div class="hint solution-like"><p id="p-601">There's an easy way.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-62" id="answer-62"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-62"><div class="answer solution-like"><p id="p-602">\(0\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-62" id="solution-62"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-62"><div class="solution solution-like">
+<p id="p-603">There's a lot going on inside that sine function... and we don't have to care about any of it. No matter what horrible thing we put inside a sine function, the sine function will spit out a number between \(-1\) and \(1\text{.}\) So that means we can bound our horrible function like this:</p>
+<div class="displaymath">
+\begin{equation*}
+(x-1)^2\cdot({\textcolor{red}{-1}}) \leq (x-1)^2{\textcolor{red}{\sin\left[\left(\dfrac{x^2-3x+2}{x^2-2x+1}\right)^2+15\right]}}
+\leq(x-1)^2\cdot({\textcolor{red}{1}})
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(\displaystyle\lim_{x \rightarrow 1}(x-1)^2\cdot(-1) = \displaystyle\lim_{x\rightarrow1}(x-1)^2\cdot(1)=0\text{,}\) the Squeeze Theorem tells us that</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\lim_{x \rightarrow 1} (x-1)^2\sin\left[\left(\dfrac{x^2-3x+2}{x^2-2x+1}\right)^2+15\right]=0
+\end{equation*}
+</div>
+<p data-braille="continuation">as well.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-63"><h6 class="heading">
+<span class="codenumber">35<span class="period">.</span></span><span class="space"> </span><span class="title">2006H.</span>
+</h6>
+<p id="p-604">Evaluate \(\ds
+\lim_{x\rightarrow 0} x^{1/101} \sin\big(x^{-100}\big)\) or explain why this limit does not exist.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-48" id="hint-48"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-48"><div class="hint solution-like"><p id="p-605">What can you do to safely ignore the sine function?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-63" id="answer-63"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-63"><div class="answer solution-like"><p id="p-606">\(0\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-63" id="solution-63"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-63"><div class="solution solution-like">
+<p id="p-607">Since \(-1 \leq \sin x \leq 1\) for all values of \(x\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+{-1}&amp;\leq  \sin\big(x^{-100}\big)\leq 1\\
+( \textcolor{red}{-1} )x^{1/101} \amp
+\leq x^{1/101}\textcolor{red}{\sin\big(x^{-100}\big)}
+\leq(\textcolor{red}{1})x^{1/101}
+~~~\mbox{when $x &gt;0$, and }\\
+( \textcolor{red}{1})x^{1/101}  \amp
+\leq x^{1/101}\textcolor{red}{\sin\big(x^{-100}\big)}
+\leq (\textcolor{red}{-1})x^{1/101}
+~~~\mbox{when $x  \lt 0$. Also, }\\
+\lim_{x \to 0}x^{1/101}&amp;=\lim_{x \to 0}-x^{1/101}=0
+~~~\mbox{So, by the Squeeze Theorem,}\\
+\lim_{x \to 0^-}x^{1/101} \sin\big(x^{-100}\big)&amp;=0=\lim_{x \to 0^+}x^{1/101} \sin\big(x^{-100}\big)~~~\mbox{and so}\\
+0&amp;=\lim_{x\rightarrow 0} x^{1/101} \sin\big(x^{-100}\big).
+\end{align*}
+</div>
+<p id="p-608">Remark: there is a  technical point here. When \(x\) is a positive number, \(-x\) is negative, so \((-1)x \lt x\text{.}\) But, when \(x\) is negative, \(-x\) is positive, so \((-1)x \gt x\text{.}\) This is why we take the one-sided limits of our function, and apply the Squeeze Theorem to them separately. It <em class="emphasis">is not true</em> to say that, for instance, \((-1)x^{1/101} \leq  x^{1/101} \sin\big(x^{-100}\big)\) when \(x\) is near zero, because this does not hold when \(x\) is less than zero.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-64"><h6 class="heading">
+<span class="codenumber">36<span class="period">.</span></span><span class="space"> </span><span class="title">1999H.</span>
+</h6>
+<p id="p-609">\(\lim\limits_{x\rightarrow2}\dfrac{x^2-4}{x^2-2x}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-49" id="hint-49"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-49"><div class="hint solution-like"><p id="p-610">Factor</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-64" id="answer-64"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-64"><div class="answer solution-like"><p id="p-611">2</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-64" id="solution-64"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-64"><div class="solution solution-like"><div class="displaymath" id="p-612">
+\begin{equation*}
+\lim_{x\rightarrow2}\frac{x^2-4}{x^2-2x}
+=\lim_{x\rightarrow2}\frac{(x-2)(x+2)}{x(x-2)}
+=\lim_{x\rightarrow2}\frac{x+2}{x}
+={2}
+\end{equation*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-65"><h6 class="heading"><span class="codenumber">37<span class="period">.</span></span></h6>
+<p id="p-613">\(\displaystyle\lim_{x \rightarrow 5} \dfrac{(x-5)^2}{x+5}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-50" id="hint-50"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-50"><div class="hint solution-like"><p id="p-614">If you're looking at the hints for this one, it's probably easier than you think.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-65" id="answer-65"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-65"><div class="answer solution-like"><p id="p-615">0</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-65" id="solution-65"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-65"><div class="solution solution-like"><p id="p-616">When we plug in \(x=5\) to the top and the bottom, both limits exist, and the bottom is nonzero. So \(\displaystyle\lim_{x \rightarrow 5} \dfrac{(x-5)^2}{x+5}=
+\dfrac{0}{10}=0\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-66"><h6 class="heading"><span class="codenumber">38<span class="period">.</span></span></h6>
+<p id="p-617">Evaluate \(\ds\lim_{t \to \frac{1}{2}}\dfrac{\frac{1}{3t^2}+\frac{1}{t^2-1}}{2t-1}\) .</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-51" id="hint-51"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-51"><div class="hint solution-like"><p id="p-618">You'll want to simplify this, since \(t=\frac{1}{2}\) is not in the domain of the function. One way to start your simplification is to add the fractions in the numerator by finding a common denominator.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-66" id="answer-66"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-66"><div class="answer solution-like"><p id="p-619">\(-\dfrac{32}{9}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-66" id="solution-66"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-66"><div class="solution solution-like">
+<p id="p-620">Since we can't plug in \(t=\frac{1}{2}\text{,}\) we'll simplify. One way to start is to add the fractions in the numerator. We'll need a common demoninator, such as \(3t^2(t^2-1)\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{t \to \frac{1}{2}}\dfrac{\frac{1}{3t^2}+\frac{1}{t^2-1}}{2t-1}&amp;=
+\lim_{t \to \frac{1}{2}}\dfrac{\frac{t^2-1}{3t^2(t^2-1)}+\frac{3t^2}{3t^2(t^2-1)}}{2t-1}\\
+&amp;=\lim_{t \to \frac{1}{2}}\frac{\frac{4t^2-1}{3t^2(t^2-1)}}{2t-1}\\
+&amp;=\lim_{t \to \frac{1}{2}}\frac{4t^2-1}{3t^2(t^2-1)(2t-1)}\\
+&amp;=\lim_{t \to \frac{1}{2}}\frac{(2t+1)(2t-1)}{3t^2(t^2-1)(2t-1)}\\
+&amp;=\lim_{t \to \frac{1}{2}}\frac{2t+1}{3t^2(t^2-1)}\\
+\end{align*}
+<p class="intertext">Since we cancelled out the term that was causing the numerator and denominator to be zero when \(t=\frac{1}{2}\text{,}\) now \(t=\frac{1}{2}\) is in the domain of our function, so we simply plug it in:</p>
+\begin{align*}
+&amp;=\frac{1+1}{\frac{3}{4}\left(\frac{1}{4}-1\right)}\\
+&amp;=\frac{2}{\frac{3}{4}\left(-\frac{3}{4}\right)}\\
+&amp;=-\frac{32}{9}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s1_4absval"><h6 class="heading"><span class="codenumber">39<span class="period">.</span></span></h6>
+<p id="p-621">Evaluate \(\ds\lim_{x \to 0}\left( 3+\dfrac{|x|}{x}\right) \text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-52" id="hint-52"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-52"><div class="hint solution-like"><p id="p-622">If you're not sure how \(\dfrac{|x|}{x}\) behaves, try plugging in a few values of \(x\text{,}\) like \(x=\pm 1\) and \(x=\pm 2\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-67" id="answer-67"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-67"><div class="answer solution-like"><p id="p-623">DNE</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-67" id="solution-67"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-67"><div class="solution solution-like">
+<p id="p-624">We recall that</p>
+<div class="displaymath">
+\begin{align*}
+|x|&amp;=\left\{\begin{array}{rcl}
+x&amp;,&amp;x \ge 0\\
+-x&amp;,&amp;x \lt 0
+\end{array}\right.\\
+\end{align*}
+<p class="intertext">So,</p>
+\begin{align*}
+\frac{|x|}{x} &amp;= \left\{\begin{array}{rcl}
+\frac{x}{x}&amp;,&amp;x  \gt  0\\
+\frac{-x}{x}&amp;,&amp;x \lt 0
+\end{array}\right.\\
+&amp;= \left\{\begin{array}{rcl}
+1&amp;,&amp;x  \gt  0\\
+-1&amp;,&amp;x \lt 0
+\end{array}\right.\\
+\end{align*}
+<p class="intertext">Therefore,</p>
+\begin{align*}
+3+\frac{|x|}{x}&amp;=\left\{\begin{array}{rcl}
+4&amp;,&amp;x  \gt  0\\
+2&amp;,&amp;x \lt 0
+\end{array}\right.
+\end{align*}
+</div>
+<p data-braille="continuation">Since our function gives a value of 4 when \(x\) is to the right of zero, and a value of 2 when \(x\) is to the left of zero, \(\ds\lim_{x \to 0} \left(3+\dfrac{|x|}{x}\right)\) does not exist.</p>
+<p id="p-625">To further clarify the situation, the graph of \(y=f(x)\) is sketched below:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-68.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-68"><h6 class="heading"><span class="codenumber">40<span class="period">.</span></span></h6>
+<p id="p-626">Evaluate \(\ds\lim_{d \to -4}\dfrac{|3d+12|}{d+4}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-53" id="hint-53"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-53"><div class="hint solution-like"><p id="p-627">Look to Question <a class="xref" data-knowl="./knowl/s1_4absval.html" title="Exercise 2.4.2.39">2.4.2.39</a> to see how a function of the form \(\dfrac{|X|}{X}\) behaves.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-68" id="answer-68"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-68"><div class="answer solution-like"><p id="p-628">DNE</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-68" id="solution-68"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-68"><div class="solution solution-like">
+<p id="p-629">If we factor out 3 from the numerator, our function becomes \(3\dfrac{|d+4|}{d+4}\text{.}\) We recall that</p>
+<div class="displaymath">
+\begin{align*}
+|X|&amp;=\left\{\begin{array}{rcl}
+X&amp;,&amp;X \ge 0\\
+-X&amp;,&amp;X \lt 0
+\end{array}\right.\\
+\end{align*}
+<p class="intertext">So, with \(X=d+4\text{,}\)</p>
+\begin{align*}
+3\frac{|d+4|}{d+4} &amp;= \left\{\begin{array}{lcl}
+3\frac{d+4}{d+4}&amp;,&amp;d+4  \gt  0\\
+&amp;\\
+3\frac{-(d+4)}{d+4}&amp;,&amp;d+4 \lt 0
+\end{array}\right.\\
+&amp;= \left\{\begin{array}{rcl}
+3&amp;,&amp;d  \gt  -4\\
+-3&amp;,&amp;d \lt -4
+\end{array}\right.
+\end{align*}
+</div>
+<p data-braille="continuation">Since our function gives a value of 3 when \(d \gt -4\text{,}\) and a value of \(-3\) when \(d \lt -4\text{,}\)  \(\ds\lim_{d \to -4} \dfrac{|3d+12|}{d+4}\) does not exist.</p>
+<p id="p-630">To further clarify the situation, the graph of \(y=f(x)\) is sketched below:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-69.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s1_4lastlimit"><h6 class="heading"><span class="codenumber">41<span class="period">.</span></span></h6>
+<p id="p-631">Evaluate \(\ds\lim_{x \to 0}\dfrac{5x-9}{|x|+2}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-54" id="hint-54"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-54"><div class="hint solution-like"><p id="p-632">Is anything weird happening to this function at \(x=0\text{?}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-69" id="answer-69"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-69"><div class="answer solution-like"><p id="p-633">\(-\dfrac{9}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-69" id="solution-69"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-69"><div class="solution solution-like">
+<p id="p-634">Note that \(x=0\) is in the domain of our function, and nothing “weird” is happening there: we aren't dividing by zero, or taking the square root of a negative number, or joining two pieces of a piecewise-defined function. So, as \(x\) gets extremely close to zero, \(\dfrac{5x-9}{|x|+2}\) is getting extremely close to \(\dfrac{0-9}{0+2}=\dfrac{-9}{2}\text{.}\)</p>
+<p id="p-635">That is, \(\ds\lim_{x \to 0}\dfrac{5x-9}{|x|+2}=-\dfrac{9}{2}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-70"><h6 class="heading"><span class="codenumber">42<span class="period">.</span></span></h6>
+<p id="p-636">Suppose \(\displaystyle\lim_{x \rightarrow -1} f(x)=-1\text{.}\) Evaluate \(\displaystyle\lim_{x \rightarrow -1} \dfrac{xf(x)+3}{2f(x)+1}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-55" id="hint-55"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-55"><div class="hint solution-like"><p id="p-637">Use the limit laws.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-70" id="answer-70"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-70"><div class="answer solution-like"><p id="p-638">\(-4\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-70" id="solution-70"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-70"><div class="solution solution-like">
+<p id="p-639">Since we aren't dividing by zero, and all these limits exist:</p>
+<div class="displaymath">
+\begin{equation*}
+\displaystyle\lim_{x \rightarrow -1} \dfrac{xf(x)+3}{2f(x)+1}=
+\dfrac{(-1)(-1)+3}{2(-1)+1} = -4.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-71"><h6 class="heading">
+<span class="codenumber">43<span class="period">.</span></span><span class="space"> </span><span class="title">2007H.</span>
+</h6>
+<p id="p-640">Find the value of the constant \(a\) for which \(\lim\limits_{x\rightarrow -2}\dfrac{x^2+ax+3}{x^2+x-2}\) exists.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-56" id="hint-56"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-56"><div class="hint solution-like"><p id="p-641">The denominator goes to zero; what must the numerator go to?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-71" id="answer-71"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-71"><div class="answer solution-like"><p id="p-642">\(a=\dfrac{7}{2}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-71" id="solution-71"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-71"><div class="solution solution-like">
+<p id="p-643">As \(x\rightarrow-2\text{,}\) the denominator goes to 0, and the numerator goes to \(-2a+7\text{.}\) For the ratio to have a limit, the numerator must also converge to \(0\text{,}\) so we need \(a=\dfrac{7}{2}\text{.}\) Then,</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to -2}\frac{x^2+ax+3}{x^2+x-2}&amp;=\lim_{x \to -2}\frac{x^2+\frac{7}{2}x+3}{(x+2)(x-1)}\\
+&amp;=\lim_{x \to -2}\frac{(x+2)(x+\frac{3}{2})}{(x+2)(x-1)}\\
+&amp;=\lim_{x \to -2}\frac{x+\frac{3}{2}}{x-1}\\
+&amp;=\frac{1}{6}
+\end{align*}
+</div>
+<p data-braille="continuation">so the limit exists when \(a=\dfrac{7}{2}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-72"><h6 class="heading"><span class="codenumber">44<span class="period">.</span></span></h6>
+<p id="p-644">Suppose \(f(x)=2x\) and \(g(x)=\frac{1}{x}\text{.}\) Evaluate the following limits.</p>
+<ol class="lower-alpha">
+<li id="li-212">\(\displaystyle \displaystyle\lim_{x \rightarrow 0} f(x)\)</li>
+<li id="li-213">\(\displaystyle \displaystyle\lim_{x \rightarrow 0} g(x)\)</li>
+<li id="li-214">\(\displaystyle \displaystyle\lim_{x \rightarrow 0} f(x)g(x)\)</li>
+<li id="li-215">\(\displaystyle \displaystyle\lim_{x \rightarrow 0} \dfrac{f(x)}{g(x)}\)</li>
+<li id="li-216">\(\displaystyle \displaystyle\lim_{x \rightarrow 2} [f(x)+g(x)]\)</li>
+<li id="li-217">\(\displaystyle \displaystyle\lim_{x \rightarrow 0} \dfrac{f(x)+1}{g(x+1)}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-72" id="answer-72"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-72"><div class="answer solution-like"><ol id="p-645" class="lower-alpha">
+<li id="li-218">\(\displaystyle \displaystyle\lim_{x \rightarrow 0} f(x)=0\)</li>
+<li id="li-219">\(\displaystyle\lim_{x \rightarrow 0} g(x)=\) DNE</li>
+<li id="li-220">\(\displaystyle \displaystyle\lim_{x \rightarrow 0} f(x)g(x)=2\)</li>
+<li id="li-221">\(\displaystyle \displaystyle\lim_{x \rightarrow 0} \dfrac{f(x)}{g(x)}=0\)</li>
+<li id="li-222">\(\displaystyle \displaystyle\lim_{x \rightarrow 2} f(x)+g(x)=\dfrac{9}{2}\)</li>
+<li id="li-223">\(\displaystyle \displaystyle\lim_{x \rightarrow 0} \dfrac{f(x)+1}{g(x+1)}=1\)</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-72" id="solution-72"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-72"><div class="solution solution-like"><ol id="p-646" class="lower-alpha">
+<li id="li-224">\(\displaystyle\lim_{x \rightarrow 0} f(x)=0\text{:}\) as \(x\) approaches 0, so does \(2x\text{.}\)</li>
+<li id="li-225">\(\displaystyle\lim_{x \rightarrow 0} g(x)=\) DNE: the left and right limits do not agree, so the limit does not exist. In particular: \(\displaystyle\lim_{x \rightarrow 0^-} g(x)=-\infty\) and \(\displaystyle\lim_{x \rightarrow 0^-} g(x)=\infty\text{.}\)</li>
+<li id="li-226">\(\displaystyle\lim_{x \rightarrow 0} f(x)g(x)=\displaystyle\lim_{x \rightarrow 0} 2x\cdot\dfrac{1}{x}=\displaystyle\lim_{x \rightarrow 0} 2=2\text{.}\) Remark:  although the limit of \(g(x)\) does not exist here, the limit of \(f(x)g(x)\) does.</li>
+<li id="li-227">\(\displaystyle \displaystyle\lim_{x \rightarrow 0} \dfrac{f(x)}{g(x)}=\displaystyle\lim_{x \rightarrow 0} \dfrac{2x}{\frac{1}{x}}=\displaystyle\lim_{x \rightarrow 0} 2x^2=0\)</li>
+<li id="li-228">\(\displaystyle \displaystyle\lim_{x \rightarrow 2} f(x)+g(x)=\displaystyle\lim_{x \rightarrow 2} 2x+\dfrac{1}{x}=4+\frac{1}{2}=\dfrac{9}{2}\)</li>
+<li id="li-229">\(\displaystyle \displaystyle\lim_{x \rightarrow 0} \dfrac{f(x)+1}{g(x+1)}=
+\displaystyle\lim_{x \rightarrow 0} \dfrac{2x+1}{\frac{1}{x+1}}=\dfrac{1}{1}=
+1\)</li>
+</ol></div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-8">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-17"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-73"><h6 class="heading"><span class="codenumber">45<span class="period">.</span></span></h6>
+<p id="p-647">The curve \(y=f(x)\) is shown in the graph below. Sketch the graph of \(y=\dfrac{1}{f(x)}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-70.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-57" id="hint-57"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-57"><div class="hint solution-like"><p id="p-648">Try plotting points. If you can't divide by \(f(x)\text{,}\) take a limit.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-73" id="answer-73"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-73"><div class="answer solution-like">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-71.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-649">Pictures may vary somewhat; the important points are the values of the function at integer values of \(x\text{,}\) and the vertical asymptotes.</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-73" id="solution-73"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-73"><div class="solution solution-like">
+<p id="p-650">We can begin by plotting the points that are easy to read off the diagram.</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{array}{c|c|c}
+x&amp;f(x)&amp;\frac{1}{f(x)}\\
+\hline
+-3&amp;-3&amp;\frac{-1}{3}\\
+-2&amp;0&amp;UND\\
+-1&amp;3&amp;\frac{1}{3}\\
+0&amp;3&amp;\frac{1}{3}\\
+1&amp;\frac{3}{2}&amp;\frac{2}{3}\\
+2&amp;0&amp;UND\\
+3&amp;1&amp;1
+\end{array}
+\end{equation*}
+</div>
+<p data-braille="continuation">Note that \(\frac{1}{f(x)}\) is undefined when \(f(x) = 0\text{.}\) So \(\frac{1}{f(x)}\) is undefined at \(x=-2\) and \(x=2\text{.}\) We shall look more closely at the behaviour of \(\frac{1}{f(x)}\) for \(x\) near \(\pm 2\) shortly.</p>
+<p id="p-651">Plotting the above points, we get the following picture:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-72.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-652">Since \(f(x)\) is constant when \(x\) is between -1 and 0, then also \(\frac{1}{f(x)}\) is constant between -1 and 0, so we update our picture:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-73.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-653">The big question that remains is the behaviour of \(\frac{1}{f(x)}\) when \(x\) is near -2 and 2. We can answer this question with limits. As \(x\) approaches \(-2\) from the <em class="emphasis">left</em>, \(f(x)\) gets closer to zero, and is negative. So \(\frac{1}{f(x)}\) will be negative, and will increase in magnitude without bound; that is, \(\displaystyle\lim_{x \rightarrow -2^-}\dfrac{1}{f(x)}=-\infty\text{.}\) Similarly, as \(x\) approaches \(-2\) from the <em class="emphasis">right</em>, \(f(x)\) gets closer to zero, and is positive. So \(\frac{1}{f(x)}\) will be positive, and will increase in magnitude without bound; that is, \(\displaystyle\lim_{x \rightarrow -2^-}\dfrac{1}{f(x)}=\infty\text{.}\) We add this behaviour to our graph:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-74.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-654">Now, we consider the behaviour at \(x=2\text{.}\) Since \(f(x)\) gets closer and closer to 0 AND is positive as \(x\) approaches 2, we conclude \(\displaystyle\lim_{x \rightarrow 2} \frac{1}{f(x)}=\infty\text{.}\) Adding to our picture:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-75.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-655">Now the only remaining blank space is between \(x=0\) and \(x=1\text{.}\) Since \(f(x)\) is a smooth curve that stays away from 0, we can draw some kind of smooth curve here, and call it good enough. (Later on we'll go into more details about drawing graphs. The purpose of this exercise was to utilize what we've learned about limits.)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-76.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-74"><h6 class="heading"><span class="codenumber">46<span class="period">.</span></span></h6>
+<p id="p-656">The graphs of functions \(f(x)\) and \(g(x)\) are shown in the graphs below. Use these to sketch the graph of \(\dfrac{f(x)}{g(x)}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/image-77.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:flex-start;"><img src="images/image-78.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-58" id="hint-58"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-58"><div class="hint solution-like">
+<p id="p-657">There is a close relationship between \(f\) and \(g\text{.}\)  Fill in the following table:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(x\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(f(x)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(g(x)\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\dfrac{f(x)}{g(x)}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(-3\)</td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"> </td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(-2\)</td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"> </td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(-1\)</td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"> </td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(-0\)</td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"> </td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"> </td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"> </td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(3\)</td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines"> </td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"> </td>
+</tr>
+</table></div></div></div>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-74" id="answer-74"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-74"><div class="answer solution-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-79.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-74" id="solution-74"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-74"><div class="solution solution-like">
+<p id="p-658">We can start by examining points.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">\(x\)</td>
+<td class="l m b1 r1 l0 t1 lines">\(f(x)\)</td>
+<td class="l m b1 r1 l0 t1 lines">\(g(x)\)</td>
+<td class="l m b1 r1 l0 t1 lines" data-braille="last-cell">\(\dfrac{f(x)}{g(x)}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(-3\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(-3\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(-1.5\)</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">\(2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(-2\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(0\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(0\)</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">UND</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(-1\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(3\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(1.5\)</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">\(2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(-0\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(3\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(1.5\)</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">\(2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(1\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(1.5\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(.75\)</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">\(2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(2\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(0\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(0\)</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">UND</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(3\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(1\)</td>
+<td class="l m b1 r1 l0 t0 lines">\(.5\)</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">\(2\)</td>
+</tr>
+</table></div></div></div>
+<p id="p-659">We cannot divide by zero, so \(\dfrac{f(x)}{g(x)}\) is not defined when \(x=\pm2\text{.}\) But for every other value of \(x\) that we plotted, \(f(x)\) is twice as large as \(g(x)\text{,}\) \(\dfrac{f(x)}{g(x)}=2\text{.}\) With this in mind, we see that the graph of \(f(x)\) is exactly the graph of \(2g(x)\text{.}\)</p>
+<p id="p-660">This gives us the graph below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-80.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-661">Remark:  \(f(2)=g(2)=0\text{,}\) so \(\dfrac{f(2)}{g(2)}\) does not exist, but \(\displaystyle\lim_{x \rightarrow 2}\dfrac{f(x)}{g(x)}=2\text{.}\) Although we are trying to “divide by zero” at \(x=\pm 2\text{,}\) it would be a mistake here to interpret this as a vertical asymptote.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-75"><h6 class="heading"><span class="codenumber">47<span class="period">.</span></span></h6>
+<p id="p-662">Suppose the position of a white ball, at time \(t\text{,}\) is given by \(s(t)\text{,}\) and the position of a red ball is given by \(2s(t)\text{.}\) Using the definition from Section <a href="sec_velocity.html" class="internal" title="Section 2.2: Another Limit and Computing Velocity">2.2</a> of the velocity of a particle, and the limit laws from this section, answer the following question: if the white ball has velocity 5 at time \(t=1\text{,}\) what is the velocity of the red ball?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-59" id="hint-59"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-59"><div class="hint solution-like"><p id="p-663">Velocity of white ball when \(t=1\) is \(\displaystyle\lim_{h \rightarrow 0}\dfrac{s(1+h)-s(1)}{h}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-75" id="answer-75"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-75"><div class="answer solution-like"><p id="p-664">10</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-75" id="solution-75"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-75"><div class="solution solution-like"><p id="p-665">Velocity of white ball when \(t=1\) is \(\displaystyle\lim_{h \rightarrow 0}\dfrac{s(1+h)-s(1)}{h}\text{,}\) so the given information tells us \(\displaystyle\lim_{h \rightarrow 0}\dfrac{s(1+h)-s(1)}{h}=5\text{.}\) Then the velocity of the red ball when \(t=1\) is \(\displaystyle\lim_{h \rightarrow 0}\dfrac{2s(1+h)-2s(1)}{h}=
+\displaystyle\lim_{h \rightarrow 0}2\cdot\dfrac{s(1+h)-s(1)}{h}=2\cdot 5 = 10\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-76"><h6 class="heading"><span class="codenumber">48<span class="period">.</span></span></h6>
+<p id="p-666">Let \(f(x) = \frac{1}{x}\) and \(g(x) = \frac{-1}{x}\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="s1_4sum1">Evaluate \(\displaystyle\lim_{x \rightarrow 0} f(x)\) and \(\displaystyle\lim_{x \rightarrow 0} g(x)\text{.}\)</li>
+<li id="s1_4sum2">Evaluate \(\displaystyle\lim_{x \rightarrow 0} [f(x)+g(x)]\)</li>
+<li id="s1_4sum3">Is it always true that \(\displaystyle\lim_{x \rightarrow a} [f(x)+g(x)]=
+\displaystyle\lim_{x \rightarrow a} f(x)+\displaystyle\lim_{x \rightarrow a} g(x)\text{?}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-76" id="answer-76"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-76"><div class="answer solution-like">
+<p id="p-667"><a class="xref" data-knowl="./knowl/s1_4sum1.html" title="Item 2.4.2.48.a">2.4.2.48.a</a> DNE , DNE</p>
+<p id="p-668"><a class="xref" data-knowl="./knowl/s1_4sum2.html" title="Item 2.4.2.48.b">2.4.2.48.b</a> 0</p>
+<p id="p-669"><a class="xref" data-knowl="./knowl/s1_4sum3.html" title="Item 2.4.2.48.c">2.4.2.48.c</a> No: it is only true when both \(\displaystyle\lim_{x \rightarrow a} f(x)\) and \(\displaystyle\lim_{x \rightarrow a} g(x)\) exist.</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-76" id="solution-76"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-76"><div class="solution solution-like">
+<p id="p-670"><a class="xref" data-knowl="./knowl/s1_4sum1.html" title="Item 2.4.2.48.a">2.4.2.48.a</a> Neither limit exists. When \(x\) gets close to 0, these limits go to positive infinity from one side, and negative infinity from the other.</p>
+<p id="p-671"><a class="xref" data-knowl="./knowl/s1_4sum2.html" title="Item 2.4.2.48.b">2.4.2.48.b</a> \(\displaystyle\lim_{x \rightarrow 0} [f(x)+g(x)]=
+\displaystyle\lim_{x \rightarrow 0} \left[\frac{1}{x}-\frac{1}{x}\right]=
+\displaystyle\lim_{x \rightarrow 0} 0=0\text{.}\)</p>
+<p id="p-672"><a class="xref" data-knowl="./knowl/s1_4sum3.html" title="Item 2.4.2.48.c">2.4.2.48.c</a> No: this is an example of a time when the two individual functions have limits that don't exist, but the limit of their sum does exist. This “sum rule” is only true when both \(\displaystyle\lim_{x \rightarrow a} f(x)\) and \(\displaystyle\lim_{x \rightarrow a} g(x)\) exist.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-77"><h6 class="heading"><span class="codenumber">49<span class="period">.</span></span></h6>
+<p id="p-673">Suppose</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;=\begin{cases}
+x^2+3 &amp; \text{ if }  x\gt 0\\
+0 &amp; \text{ if } x =  0\\
+x^2-3 &amp; \text{ if } x \lt  0
+\end{cases}
+\end{align*}
+</div>
+<ol class="lower-alpha">
+<li id="s1_4q49_1">Evaluate \(\displaystyle\lim_{x \rightarrow 0^-} f(x)\text{.}\)</li>
+<li id="s1_4q49_2">Evaluate \(\displaystyle\lim_{x \rightarrow 0^+} f(x)\text{.}\)</li>
+<li id="s1_4q49_3">Evaluate \(\displaystyle\lim_{x \rightarrow 0} f(x)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-60" id="hint-60"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-60"><div class="hint solution-like"><p id="p-674">When you're evaluating \(\displaystyle\lim_{x \rightarrow 0^-} f(x)\text{,}\) you're only considering values of \(x\) that are <em class="emphasis">less than</em> \(0\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-77" id="answer-77"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-77"><div class="answer solution-like">
+<p id="p-675"><a class="xref" data-knowl="./knowl/s1_4q49_1.html" title="Item 2.4.2.49.a">2.4.2.49.a</a> \(\displaystyle\lim_{x \rightarrow 0^-} f(x)=-3\)</p>
+<p id="p-676"><a class="xref" data-knowl="./knowl/s1_4q49_2.html" title="Item 2.4.2.49.b">2.4.2.49.b</a> \(\displaystyle\lim_{x \rightarrow 0^+} f(x)=3\)</p>
+<p id="p-677"><a class="xref" data-knowl="./knowl/s1_4q49_3.html" title="Item 2.4.2.49.c">2.4.2.49.c</a> \(\displaystyle\lim_{x \rightarrow 0} f(x)=\)DNE</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-77" id="solution-77"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-77"><div class="solution solution-like">
+<p id="p-678"><a class="xref" data-knowl="./knowl/s1_4q49_1.html" title="Item 2.4.2.49.a">2.4.2.49.a</a> When we evaluate the limit from the left, we only consider values of \(x\) that are less than zero. For these values of \(x\text{,}\) our function is \(x^2-3\text{.}\) So, \(\displaystyle\lim_{x \rightarrow 0^-} f(x)=\lim_{x \rightarrow 0^-}  (x^2-3)=-3\text{.}\)</p>
+<p id="p-679"><a class="xref" data-knowl="./knowl/s1_4q49_2.html" title="Item 2.4.2.49.b">2.4.2.49.b</a> When we evaluate the limit from the right, we only consider values of \(x\) that are greater than zero. For these values of \(x\text{,}\) our function is \(x^2+3\text{.}\) So, \(\displaystyle\lim_{x \rightarrow 0^+} f(x)=\lim_{x \rightarrow 0^+}  (x^2+3)=3\text{.}\)</p>
+<p id="p-680"><a class="xref" data-knowl="./knowl/s1_4q49_3.html" title="Item 2.4.2.49.c">2.4.2.49.c</a> Since the limits from the left and right do not agree, \(\displaystyle\lim_{x \rightarrow 0} f(x)=\)DNE.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-81.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-78"><h6 class="heading"><span class="codenumber">50<span class="period">.</span></span></h6>
+<p id="p-681">Suppose</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;=\begin{cases}
+{\displaystyle\frac{x^2+8x+16}{x^2+30x-4}} &amp; \text{ if }  x\gt -4\\
+x^3+8x^2+16x &amp; \text{ if } x \le  -4
+\end{cases}
+\end{align*}
+</div>
+<ol class="lower-alpha">
+<li id="s1_4q50_1">Evaluate \(\displaystyle\lim_{x \rightarrow -4^-} f(x)\text{.}\)</li>
+<li id="s1_4q50_2">Evaluate \(\displaystyle\lim_{x \rightarrow -4^+} f(x)\text{.}\)</li>
+<li id="s1_4q50_3">Evaluate \(\displaystyle\lim_{x \rightarrow -4} f(x)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-61" id="hint-61"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-61"><div class="hint solution-like"><p id="p-682">When you're considering \(\displaystyle\lim_{x \rightarrow -4^-} f(x)\text{,}\) you're only considering values of \(x\) that are <em class="emphasis">less than</em> \(-4\text{.}\) When you're considering \(\displaystyle\lim_{x \rightarrow -4^+} f(x)\text{,}\) think about the domain of the rational function in the top line.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-78" id="answer-78"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-78"><div class="answer solution-like">
+<p id="p-683"><a class="xref" data-knowl="./knowl/s1_4q50_1.html" title="Item 2.4.2.50.a">2.4.2.50.a</a> \(\displaystyle\lim_{x \rightarrow -4^-} f(x)=0\)</p>
+<p id="p-684"><a class="xref" data-knowl="./knowl/s1_4q50_2.html" title="Item 2.4.2.50.b">2.4.2.50.b</a> \(\displaystyle\lim_{x \rightarrow -4^+} f(x)=0\)</p>
+<p id="p-685"><a class="xref" data-knowl="./knowl/s1_4q50_3.html" title="Item 2.4.2.50.c">2.4.2.50.c</a> \(\displaystyle\lim_{x \rightarrow -4} f(x)=0\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-78" id="solution-78"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-78"><div class="solution solution-like">
+<p id="p-686"><a class="xref" data-knowl="./knowl/s1_4q50_1.html" title="Item 2.4.2.50.a">2.4.2.50.a</a> When we evaluate  \(\displaystyle\lim_{x \rightarrow -4^-} f(x)\text{,}\) we only consider values of \(x\) that are less than \(-4\text{.}\) For these values, \(f(x)=x^3+8x^2+16x\text{.}\) So,</p>
+<div class="displaymath">
+\begin{gather*}
+\displaystyle\lim_{x \rightarrow 4^-} f(x)=\lim_{x \rightarrow -4^-}  (x^3+8x^2+16x)=(-4)^3+8(-4)^2+16(-4)=0
+\end{gather*}
+</div>
+<p data-braille="continuation">Note that, because \(x^3+8x^2+16x\) is a polynomial, we can evaluate the limit by directly substituting in \(x=-4\text{.}\)</p>
+<p id="p-687"><a class="xref" data-knowl="./knowl/s1_4q50_2.html" title="Item 2.4.2.50.b">2.4.2.50.b</a> When we evaluate  \(\displaystyle\lim_{x \rightarrow -4^+} f(x)\text{,}\) we only consider values of \(x\) that are greater than \(-4\text{.}\) For these values,</p>
+<div class="displaymath">
+\begin{gather*}
+f(x)=\frac{x^2+8x+16}{x^2+30x-4}
+\end{gather*}
+</div>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{gather*}
+\displaystyle\lim_{x \rightarrow -4^+} f(x)=\lim_{x \rightarrow -4^+}  \frac{x^2+8x+16}{x^2+30x-4}
+\end{gather*}
+</div>
+<p data-braille="continuation">This is a rational function, and \(x=-4\) is in its domain (we aren't doing anything suspect, like dividing by \(0\)), so again we can directly substitute \(x=-4\) to evaluate the limit:</p>
+<div class="displaymath">
+\begin{gather*}
+\displaystyle\lim_{x \rightarrow -4^+} f(x)=  \frac{(-4)^2+8(-4)+16}{(-4)^2+30(-4)-4}
+=\frac{0}{-108}=0
+\end{gather*}
+</div>
+<p id="p-688"><a class="xref" data-knowl="./knowl/s1_4q50_3.html" title="Item 2.4.2.50.c">2.4.2.50.c</a> Since \(\displaystyle\lim_{x \rightarrow -4^-} f(x)
+=\lim_{x \rightarrow -4^+} f(x)=0\text{,}\) we conclude that \(\displaystyle\lim_{x \rightarrow -4} f(x)=0\)</p>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

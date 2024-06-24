@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:49:29-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p xmlns:svg="http://www.w3.org/2000/svg">Following Example <a class="xref" data-knowl="./knowl/eg_vol_cone.html" title="Example 5.1.7: Volume of a cone">5.1.7</a>, let \(V(H)\) be the volume of the solid formed by rotating the segment of the parabola from \(x=-H\) to \(x=H\text{.}\) Our plan is to evaluate \(V'(H) = \ds\lim\limits_{h\rightarrow H}\frac{V(H)-V(h)}{H-h}\) and then antidifferentiate \(V'(H)\) to find \(V(H)\text{.}\) Since we don't know \(V(H)-V(h)\) (yet) we first find upper and lower bounds on it when \(h \lt H\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">For a constant \(h \lt H\text{,}\) \(V(H)-V(h)\) is the volume of the solid inside the larger object (with length \(2H\)) and outside the smaller object (with length \(2h\text{,}\) shown below in blue). There are two regions inside the larger object and outside the smaller.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-505.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">One of the regions inside the larger object and outside the smaller (blue) object looks like this:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-506.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Remember we formed this solid by rotating the curve \(y=x^2+1\) about the \(x\)-axis. So, the cross-section of this solid is a circle, and the radius of the circle when we are \(x\) units from the origin is \(x^2+1\text{.}\) So, the largest radius of the little shape shown above, which occurs at the right end, is \(H^2+1\text{,}\) and the smallest radius (at the left end) is \(h^2+1\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">The volume of the shape shown above is less than a cylinder of radius \(H^2+1\) and height \(H-h\text{,}\) and it is more than the volume of a cylinder of radius \(h^2+1\) and height \(H-h\text{.}\) So, the volume of the shape shown above is between \((H-h)\pi(h^2+1)^2\) and \((H-h)\pi(H^2+1)^2\) cubic units.</p>
+<p>Recall that the volume inside the object of length \(2H\) and outside the object of length \(2h\) consists of <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">two</em> copies of the shape shown above. Therefore:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+2(H-h)\pi(h^2+1)^2 \lt V(H)-V(h)  \lt 2(H-h)\pi(H^2+1)^2
+\end{gather*}
+</div>
+<p data-braille="continuation">Now that we have upper and lower bounds for \(V(H)-V(h)\text{,}\) we can find \(V'(H)\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{4}
+\frac{2(H-h)\pi(h^2+1)^2}{H-h} &amp;&amp; \lt &amp;&amp;\frac{V(H)-V(h)}{H-h}&amp;&amp; \lt &amp;\frac{2(H-h)\pi(H^2+1)^2}{H-h}\\
+2\pi(h^2+1)^2 &amp;&amp; \lt &amp;&amp;\frac{V(H)-V(h)}{H-h}\ \ \ &amp;&amp; \lt &amp; 2\pi(H^2+1)^2\\
+\lim_{h \to H}2\pi(h^2+1)^2 &amp;&amp;\le&amp;&amp;\lim_{h \to H}\frac{V(H)-V(h)}{H-h}\ \ \ &amp;&amp;\le&amp;\lim_{h \to H}2\pi(H^2+1)^2
+\end{alignat*}
+</div>
+<p data-braille="continuation">Since the limits on both ends are simply \(2\pi(H^2+1)^2\text{,}\) by the Squeeze Theorem,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+V'(H)=\lim_{h \to H}\frac{V(H)-V(h)}{H-h}=2\pi(H^2+1)^2
+\end{equation*}
+</div>
+<p>Now that we know \(V'(H)\text{,}\) we antidifferentiate to find \(V(H)\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V'(H)&amp;=2\pi(H^4+2H^2+1)\\
+V(H)&amp;=2\pi\left(\frac{1}{5}H^5+\frac{2}{3}H^3+H\right)+C\\
+\end{align*}
+<p class="intertext">When \(H=0\text{,}\) there is no solid, so \(V(0)=0\text{.}\) Therefore,</p>
+\begin{align*}
+V(H)&amp;=2\pi\left(\frac{1}{5}H^5+\frac{2}{3}H^3+H\right).
+\end{align*}
+</div>
+</div></body>
+</html>

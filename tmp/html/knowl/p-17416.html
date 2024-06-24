@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:12:46-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>By translating our coordinate system, it suffices to consider \(\vr_0=(x_0,y_0,z_0) = (0,0,0)\text{.}\) Then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+S_\veps = \Set{(x,y,z)}{|(x,y,z)|=\veps}\qquad
+\hn(x,y,z) = \frac{1}{\veps}(x,y,z)
+\end{gather*}
+</div>
+<p data-braille="continuation">We expand \(\vv(x,y,z)\) in a Taylor expansion in powers of \(x\text{,}\) \(y\text{,}\) and \(z\text{,}\) to first order, with second order error term.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\vv(x,y,z) = \vA + \vB\,x +\vC\,y +\vD\, z +\vR(x,y,z)
+\end{gather*}
+</div>
+<p data-braille="continuation">where</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\vA=\vv(0,0,0) \qquad
+\vB=\frac{\partial \vv}{\partial x}(0,0,0) \qquad
+\vC=\frac{\partial \vv}{\partial y}(0,0,0) \qquad
+\vD=\frac{\partial \vv}{\partial z}(0,0,0)
+\end{gather*}
+</div>
+<p data-braille="continuation">and the error term \(\vR(x,y,z)\) is bounded by a constant times<a class="fn-knowl original" data-knowl="./knowl/fn-650-hidden.html" title="Footnote 15.1.14"><sup> 14 </sup></a> \(x^2+y^2+z^2\text{.}\) In particular there is a constant \(K\) so that, on \(S_\veps\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+|\vR(x,y,z)|\le K\veps^2
+\end{equation*}
+</div>
+<p data-braille="continuation">So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}\\
+&amp;\hskip1in= \frac{1}{\veps} \dblInt_{S_\veps}\big(
+\vA + \vB\,x +\vC\,y +\vD\, z +\vR(x,y,z)
+\big)\cdot (x,y,z)\,\dee{S}
+\end{align*}
+</div>
+<p data-braille="continuation">Multiply out the dot product so that the integrand becomes</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{3}
+&amp;\phantom{+}\ \vA\cdot\hi\,x
+&amp;&amp;+\ \vA\cdot\hj\,y
+&amp;&amp;+\vA\cdot\hk\,z\\
+&amp;+\vB\cdot\hi\,x^2
+&amp;&amp;+\ \vB\cdot\hj\,xy
+&amp;&amp;+\vB\cdot\hk\,xz\\
+&amp;+\vC\cdot\hi\,xy
+&amp;&amp;+\ \vC\cdot\hj\,y^2
+&amp;&amp;+\vC\cdot\hk\,yz\\
+&amp;+\vD\cdot\hi\,xz\
+&amp;&amp;+\ \vD\cdot\hj\,yz
+&amp;&amp;+\vD\cdot\hk\,z^2\\
+&amp;+\vR(x,y,z)\cdot (x,y,z)
+\end{alignat*}
+</div>
+<p data-braille="continuation">That's a lot of terms. But most of them integrate to zero, simply because the integral of an odd function over an even domain is zero. Because \(S_\veps\) is invariant under \(x\rightarrow -x\) and under \(y\rightarrow -y\) and under \(z\rightarrow -z\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\dblInt_{S_\veps}\!\! x\,\dee{S}
+=\dblInt_{S_\veps}\!\! y\,\dee{S}
+=\dblInt_{S_\veps}\!\! z\,\dee{S}
+=\dblInt_{S_\veps}\!\! xy\,\dee{S}
+=\dblInt_{S_\veps}\!\! xz\,\dee{S}
+=\dblInt_{S_\veps}\!\! yz\,\dee{S}
+=0
+\end{gather*}
+</div>
+<p data-braille="continuation">which is a relief. We are now left with</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}
+&amp;= \frac{1}{\veps} \dblInt_{S_\veps}\big(
+\vB\cdot\hi\,x^2 +\vC\cdot\hj\,y^2 +\vD\cdot\hk\, z^2
+\big)\,\dee{S}\\
+&amp;\hskip1in
++\frac{1}{\veps} \dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S}
+\end{align*}
+</div>
+<p data-braille="continuation">As well \(S_\veps\) is invariant<a class="fn-knowl original" data-knowl="./knowl/fn-651-hidden.html" title="Footnote 15.1.15"><sup> 15 </sup></a> under the interchange of \(x\) and \(y\) and also under the interchange of \(x\) and \(z\text{.}\) Consequently</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_{S_\veps} x^2\,\dee{S}
+&amp;=\dblInt_{S_\veps} y^2\,\dee{S}
+=\dblInt_{S_\veps} z^2\,\dee{S}
+=\frac{1}{3}\dblInt_{S_\veps}\big[x^2+y^2+ z^2\big]\,\dee{S}\\
+&amp;=\frac{1}{3}\dblInt_{S_\veps}\veps^2\,\dee{S}
+\qquad\text{since $x^2+y^2+z^2=\veps^2$ on } S_\veps\\
+&amp;=\frac{4}{3}\pi\veps^4
+\end{align*}
+</div>
+<p data-braille="continuation">since the surface area of the sphere \(S_\veps\) is \(4\pi\veps^2\text{.}\) So far, we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}
+= \frac{4}{3}\pi\veps^3 \big(\vB\cdot\hi +\vC\cdot\hj +\vD\cdot\hk\big)\\
+&amp;\hskip2in+\frac{1}{\veps} \dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S}\\
+&amp;\hskip0.75in= \frac{4}{3}\pi\veps^3 \vnabla\cdot\vv(\vZero)
++\frac{1}{\veps} \dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S}\\
+&amp;\hskip2in\text{(review the definitions of } \vB, \vC, \vD)
+\end{align*}
+</div>
+<p data-braille="continuation">which implies</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp;\lim_{\veps\rightarrow 0}
+\frac{1}{\frac{4}{3}\pi\veps^3}
+\dblInt_{S_\veps}\vv(x,y,z)\cdot\hn(x,y,z)\,\dee{S}\\
+&amp;\hskip1in= \vnabla\cdot\vv(\vZero)
++\lim_{\veps\rightarrow 0}
+\frac{3}{4\pi\veps^4}
+\dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S}
+\end{align*}
+</div>
+<p data-braille="continuation">Finally, it suffices to recall that \(|\vR(x,y,z)|\le K\veps^2\) and, on \(S_\veps\text{,}\) \(|(x,y,z)|=\veps\text{,}\) so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{3}{4\pi\veps^4}\bigg|
+\dblInt_{S_\veps}\vR(x,y,z)\cdot (x,y,z)\,\dee{S} \bigg|
+&amp;\le \frac{3}{4\pi\veps^4}
+\dblInt_{S_\veps}|\vR(x,y,z)|\,|(x,y,z)|\,\dee{S}\\
+&amp;\le \frac{3}{4\pi\veps^4}
+\dblInt_{S_\veps}K\veps^3\,\dee{S}
+= \frac{3}{4\pi\veps^4} \ K\veps^3\,\big(4\pi \veps^2)\\
+&amp;= 3K\veps
+\end{align*}
+</div>
+<p data-braille="continuation">converges to zero as \(\veps\rightarrow 0\text{.}\) So we are left with the desired result.</p>
+<span class="incontext"><a href="sec_graadDivCurl.html#p-17416">in-context</a></span>
+</body>
+</html>

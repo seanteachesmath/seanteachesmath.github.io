@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:40:12-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>The notation in the statement of this question is horrendous — the symbol \(z\) is used with two different meanings in one equation. On the left hand side, it is a function of \(x\) and \(y\text{,}\) and on the right hand side, it is a function of \(s\) and \(t\text{.}\) Unfortunately that abuse of notation is also very common. Let us undo the notation conflict by renaming the function of \(s\) and \(t\) to \(F(s,t)\text{.}\) That is,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+F(s,t) = f\big(2s+t\,,\,s-t\big)
+\end{equation*}
+</div>
+<p data-braille="continuation">In this new notation, we are being asked to find \(a\text{,}\) \(b\) and \(c\) so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+a\frac{\partial^2 f}{\partial x^2}
++b\frac{\partial^2 f}{\partial x\partial y}
++c\frac{\partial^2 f}{\partial y^2}
+&amp;=\frac{\partial^2 F}{\partial s^2} + \frac{\partial^2 F}{\partial t^2}
+\end{align*}
+</div>
+<p data-braille="continuation">with the arguments on the right hand side being \((s,t)\) and the arguments on the left hand side being \(\big(2s+t\,,\,s-t\big)\text{.}\)</p>
+<p>By the chain rule,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\pdiff{F}{s}(s,t)&amp;= \pdiff{f}{x}\big(2s+t\,,\,s-t\big)\pdiff{}{s}(2s+t)
++\pdiff{f}{y}\big(2s+t\,,\,s-t\big)\pdiff{}{s}(s-t)\\
+&amp;= 2\pdiff{f}{x}\big(2s+t\,,\,s-t\big)
++\pdiff{f}{y}\big(2s+t\,,\,s-t\big)\\
+\frac{\partial^2 F}{\partial s^2}(s,t)
+&amp;=\color{blue}{2\pdiff{}{s}\left[\pdiff{f}{x}\big(2s+t\,,\,s-t\big)\right]}
++\color{red}{\pdiff{}{s}\left[\pdiff{f}{y}\big(2s+t\,,\,s-t\big)\right]}\\
+&amp;= \color{blue}{4\frac{\partial^2 f}{\partial x^2}\big(2s+t\,,\,s-t\big)
++         2\frac{\partial^2 f}{\partial y\partial x} \big(2s+t\,,\,s-t\big)}\\
+&amp;\hskip0.2in
++\color{red}{2\frac{\partial^2 f}{\partial x\partial y}
+\big(2s+t\,,\,s-t\big)
++\frac{\partial^2 f}{\partial y^2}\big(2s+t\,,\,s-t\big)}
+\end{align*}
+</div>
+<p data-braille="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\pdiff{F}{t}(s,t)&amp;= \pdiff{f}{x}\big(2s+t\,,\,s-t\big)\pdiff{}{t}(2s+t)
++\pdiff{f}{y}\big(2s+t\,,\,s-t\big)\pdiff{}{t}(s-t)\\
+&amp;= \pdiff{f}{x}\big(2s+t\,,\,s-t\big)
+-\pdiff{f}{y}\big(2s+t\,,\,s-t\big)\\
+\frac{\partial^2 F}{\partial t^2}(s,t)
+&amp;=\color{blue}{\pdiff{}{t}\left[\pdiff{f}{x}\big(2s+t\,,\,s-t\big)\right]}
+\color{red}{-\pdiff{}{t}\left[\pdiff{f}{y}\big(2s+t\,,\,s-t\big)\right]}\\
+&amp;= \color{blue}{\frac{\partial^2 f}{\partial x^2}\big(2s+t\,,\,s-t\big)
+-\frac{\partial^2 f}{\partial y\partial x}\big(2s+t\,,\,s-t\big)}\\
+&amp;\hskip0.2in
+\color{red}{-\frac{\partial^2 f}{\partial x\partial y}
+\big(2s+t\,,\,s-t\big)
++\frac{\partial^2 f}{\partial y^2}\big(2s+t\,,\,s-t\big) }
+\end{align*}
+</div>
+<p data-braille="continuation">Suppressing the arguments</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{\partial^2 F}{\partial s^2} + \frac{\partial^2 F}{\partial t^2}
+&amp;=5\frac{\partial^2 f}{\partial x^2}
++2\frac{\partial^2 f}{\partial x\partial y}
++2\frac{\partial^2 f}{\partial y^2}
+\end{align*}
+</div>
+<p data-braille="continuation">Finally, translating back into the (horrendous) notation of the question</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{\partial^2 z}{\partial s^2} + \frac{\partial^2 z}{\partial t^2}
+&amp;=5\frac{\partial^2 z}{\partial x^2}
++2\frac{\partial^2 z}{\partial x\partial y}
++2\frac{\partial^2 z}{\partial y^2}
+\end{align*}
+</div>
+<p data-braille="continuation">so that \(a=5\) and \(b=c=2\text{.}\)</p>
+</div></body>
+</html>

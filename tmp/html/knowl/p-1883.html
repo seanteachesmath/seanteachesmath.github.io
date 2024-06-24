@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:32:42-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>Now, on to the derivative. We can use the limit definition:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f'(0)&amp;=\lim_{h \to 0}\frac{f(0+h)-f(0)}{h}\qquad\mbox{ if it exists}\\
+&amp;=\lim_{h \to 0} \frac{f(h)-1}{h}\\
+&amp;=\lim_{h \to 0} \frac{\frac{\sin h}{h}-1}{h}
+\end{align*}
+</div>
+<p data-braille="continuation">As \(h\) approaches 0, both the numerator and the denominator approach 0. So, to evaluate the limit, we need to do more work. The key insight we can use is a result that was shown in the text while evaluating the derivative of sine. When \(h\) is close to 0, \(\cos h \leq \frac{\sin h}{h} \leq 1\text{.}\) We use this to bound our limit, and then apply the squeeze theorem.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{5}
+&amp;\cos h&amp;&amp;\leq&amp;&amp;\frac{\sin h}{h}&amp;&amp;\leq&amp;&amp;1\\
+\mbox{So, }\qquad&amp;\cos h-1&amp;
+&amp;\leq&amp;&amp;\frac{\sin h}{h}-1&amp;
+&amp;\leq&amp;&amp;1-1=0
+\end{alignat*}
+</div>
+<p data-braille="continuation">and \(\frac{1}{h}\left(\frac{\sin h}{h}-1\right)\) is between \(0\) and \(\frac{\cos h - 1}{h}\text{.}\) We can evaluate the limit of \(\frac{\cos h - 1}{h}\)  by noticing its similarity to the definition of the derivative.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{h \to 0}\frac{\cos h-1}{h}&amp;=\lim_{h \to 0}\frac{\cos(0+h)-\cos(0)}{h}\\
+&amp;=\diff{}{x}\left.\left\{\cos x \right\}\right|_{x=0}=0
+\end{align*}
+</div>
+<p data-braille="continuation">So, by the Squeeze Theorem, \(f'(0)=\ds\lim_{h \to 0}\frac{\frac{\sin h}{h}-1}{h}=0\text{.}\)</p>
+<span class="incontext"><a href="sec_diff_trig.html#p-1883">in-context</a></span>
+</body>
+</html>

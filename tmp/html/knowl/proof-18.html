@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:51:46-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
+<p>As noted above, it suffices for us to prove (d) and (e). Since (e) is easier,  we  will  start with that. It is also a good warm-up for (d).</p>
+<ul class="disc">
+<li>The definite integral in (e), \(\int_a^b 1 \dee{x}\text{,}\) can be interpreted  geometrically as the area of the rectangle with height 1 running from \(x=a\) to  \(x=b\text{;}\) this area is clearly \(b-a\text{.}\) We can also prove this formula from the definition of  the  integral  (Definition <a class="xref" data-knowl="./knowl/def_INTintegral.html" title="Definition 6.1.9">6.1.9</a>):<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_a^b\dee{x}
+&amp;=\lim_{n\rightarrow\infty}\sum_{i=1}^n f(x_{i,n}^*)\,\frac{b-a}{n}
+&amp;\text{by definition}\\
+&amp;=\lim_{n\rightarrow\infty}\sum_{i=1}^n 1\,\frac{b-a}{n}
+&amp;\text{since $f(x)=1$}\\
+&amp;=\lim_{n\rightarrow\infty}(b-a) \sum_{i=1}^n \frac{1}{n}
+&amp;\text{since $a,b$ are constants}\\
+&amp;=\lim_{n\rightarrow\infty}(b-a)\\
+&amp;=b-a
+\end{align*}
+</div>as required.</li>
+<li>To prove (d) let us start by defining \(h(x) = Af(x)+Bg(x)\) and then we  need to  express the integral of \(h(x)\) in terms of those of \(f(x)\) and \(g(x)\text{.}\) We use  Definition <a class="xref" data-knowl="./knowl/def_INTintegral.html" title="Definition 6.1.9">6.1.9</a> and some algebraic manipulations <a class="fn-knowl original" data-knowl="./knowl/fn-194-hidden.html" title="Footnote 6.2.1"><sup> 1 </sup></a> to arrive at the  result.<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_a^bh(x) \dee{x}
+&amp;= \sum_{i=1}^n h(x_{i,n}^*)\cdot\frac{b-a}{n}\\
+&amp;\hskip0.5in\text{by Definition }\knowl{./knowl/def_INTintegral.html}{\text{6.1.9}}\\
+&amp;= \sum_{i=1}^n \left(Af(x_{i,n}^*)+Bg(x_{i,n}^*) \right)\cdot \frac{b-a}{n}\\
+&amp;= \sum_{i=1}^n \left(Af(x_{i,n}^*)\cdot \frac{b-a}{n} + Bg(x_{i,n}^*)\cdot
+\frac{b-a}{n} \right)\\
+&amp;= \left(\sum_{i=1}^n Af(x_{i,n}^*)\cdot \frac{b-a}{n}\right)
++ \left(\sum_{i=1}^n Bg(x_{i,n}^*)\cdot \frac{b-a}{n}\right)\\
+&amp;\hskip0.5in\text{by Theorem }\knowl{./knowl/thm_INTsummationArith.html}{\text{6.1.5}}\text{(b)}\\
+&amp;= A\left(\sum_{i=1}^n f(x_{i,n}^*)\cdot \frac{b-a}{n}\right)
++ B\left(\sum_{i=1}^n g(x_{i,n}^*)\cdot \frac{b-a}{n}\right)\\
+&amp;\hskip0.5in\text{by Theorem }\knowl{./knowl/thm_INTsummationArith.html}{\text{6.1.5}}\text{(a)}\\
+&amp;= A \int_a^b f(x) \dee{x} + B \int_a^b g(x) \dee{x}\\
+&amp;\hskip0.5in\text{by Definition }\knowl{./knowl/def_INTintegral.html}{\text{6.1.9}}
+\end{align*}
+</div>as required.</li>
+</ul></article><span class="incontext"><a href="sec_def_int.html#proof-18">in-context</a></span>
+</body>
+</html>

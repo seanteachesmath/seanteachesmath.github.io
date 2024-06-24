@@ -1,0 +1,2872 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:01:02-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Curves in Three Dimensions</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_curvature.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_curves.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_CurveCompendium.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_curvature.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_curves.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_CurveCompendium.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d" class="active">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_Curve3d"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">12.4</span> <span class="title">Curves in Three Dimensions</span>
+</h2>
+<p id="p-15563">So far, we have developed formulae for the curvature, unit tangent vector, etc., at a point \(\vr(t)\) on a curve that lies in the \(xy\)-plane. We now extend our discussion to curves in \(\bbbr^3\text{.}\) Fix any \(t\text{.}\) For \(t'\) very close to \(t\text{,}\) \(\vr(t')\text{,}\) will, by the Taylor expansion to second order, be very close to \(\vr(t) + \vr'(t)\,(t'-t)
++\frac{1}{2}\vr'(t)\,(t'-t)^2\text{,}\) so that \(\vr(t')\) almost lies in the plane through \(\vr(t)\) that is determined by the two vectors \(\vr'(t)\) and \(\vr'(t)\text{.}\) Thus, if we restrict our attention to a very small part of the curve near the point of interest \(\vr(t)\text{,}\) the curve will, to a very good approximation lie in some plane. So we can still define, for example, the osculating circle to the curve at \(\vr(t)\) to be the circle in that plane that fits the curve best near \(\vr(t)\text{.}\) And we still have the formulae<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-554" id="fn-554"><sup> 1 </sup></a></p>
+<div class="displaymath">
+\begin{align*}
+\vv&amp;=\diff{\vr}{t}=\diff{s}{t}\,\hat\vT\\
+\diff{\hat\vT}{s} &amp;= \ka\hat\vN\\
+\diff{\hat\vT}{t} &amp;= \ka\diff{s}{t}\hat\vN\\
+\va&amp;=\difftwo{\vr}{t}=\difftwo{s}{t}\,\hat\vT
++\ka\Big(\diff{s}{t}\Big)^2\hat\vN\\
+\vv\times\va &amp;= \ka \Big(\diff{s}{t}\Big)^3\hat\vT\times\hat\vN
+\end{align*}
+</div>
+<p data-braille="continuation">The only <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-555" id="fn-555"><sup> 2 </sup></a> difference is that \(\vv, \va, \hat\vT\) and \(\hat\vN\) are now three component vectors rather than two component vectors.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-554"><div class="fn">The arguments in the proof of Theorem <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a> that we used to verify these formulae work in any plane, not just the \(xy\)-plane. Just choose \(\hi\) and \(\hj\) to be any two mutually perpendicular unit vectors in the plane.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-555"><div class="fn">However this can be a significant difference.</div></div>
+<p id="p-15564">If we are lucky and our curve happens to lie completely in a single plane, the vectors \(\hat\vT(s)\) and \(\hat\vN(s)\) are mutually perpendicular unit vectors that lie in the same plane, so that their cross product \(\hat\vB(s) = \hat\vT(s)\times\hat\vN(s)\) is a unit vector that is perpendicular to the plane.  By continuity, \(\hat\vB(s)\) has to be a constant vector, i.e. be independent of \(s\text{.}\)</p>
+<p id="p-15565">If, on the other hand, \(\hat\vB(s)\) is not constant, then our curve doesn't lie  in a single plane, and we can use the derivative</p>
+<div class="displaymath">
+\begin{align*}
+\diff{\hat\vB}{s}
+&amp;=\diff{}{s}\big(\hat\vT\times\hat\vN\big)
+=\diff{\hat\vT}{s}\times\hat\vN + \hat\vT\times \diff{\hat\vN}{s}\\
+&amp;=\hat\vT\times \diff{\hat\vN}{s}\qquad
+\Big( \text{since } \diff{\hat\vT}{s} \text{ is parallel to } \hat\vN \Big)
+\end{align*}
+</div>
+<p data-braille="continuation">as a measure</p>
+<ul class="disc">
+<li id="li-6448">of how badly the curve fails to lie in a plane,</li>
+<li id="li-6449">i.e. how much the plane that fits the curve best near \(\vr(s)\) twists as \(s\) increases,</li>
+</ul>
+<p data-braille="continuation">The cross product in \(\diff{\hat\vB}{s}=\hat\vT\times \diff{\hat\vN}{s}\) implies that \(\diff{\hat\vB}{s}\) is perpendicular to \(\hat\vT\text{.}\) In addition, \(\diff{\hat\vB}{s}\) must be perpendicular to \(\hat\vB\) because</p>
+<div class="displaymath">
+\begin{equation*}
+|\hat\vB|=1
+\implies 1=\hat\vB\cdot\hat\vB
+\implies 0 = \diff{}{s}\left[\hat\vB\cdot\hat\vB\right]
+= 2 \hat\vB\cdot\diff{\hat\vB}{s}
+\end{equation*}
+</div>
+<p data-braille="continuation">So \(\diff{\hat\vB}{s}(s)\) must be parallel to \(\hat\vN(s)\text{.}\)</p>
+<article class="definition definition-like" id="def_torsion"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.4.1</span><span class="period">.</span>
+</h6>
+<ol id="p-15566" class="lower-alpha">
+<li id="li-6450">The <dfn class="terminology">binormal vector</dfn> at \(\vr(s)\) is \(\hat\vB(s) = \hat\vT(s)\times \hat\vN(s)\text{.}\) The normal vector \(\hat\vN(s)\) is sometimes called the unit <dfn class="terminology">principal normal vector</dfn> to distinguish it from the binormal vector.</li>
+<li id="li-6451">We define the <dfn class="terminology">torsion</dfn> \(\tau(s)\) by<div class="displaymath">
+\begin{equation*}
+\diff{\hat\vB}{s}(s) = -\tau(s)\hat\vN(s)
+\end{equation*}
+</div>The negative sign is included so that \(\tau(s) \gt 0\) indicates “right handed twisting”. There will be an explanation of what this means in Example <a class="xref" data-knowl="./knowl/eg_helixTwist.html" title="Example 12.4.4: Right circular helix">12.4.4</a> below.</li>
+<li id="li-6452">The <dfn class="terminology">osculating plane</dfn> at \(\vr(s)\) (the plane that fits the curve best at \(\vr(s)\)) is the plane through \(\vr(s)\) with normal vector \(\hat\vB(s)\text{.}\) The equation of the plane is<div class="displaymath">
+\begin{equation*}
+\hat\vB(s)\cdot\big\{(x,y,z)-\vr(s)\big\}=0
+\end{equation*}
+</div>
+</li>
+</ol></article><p id="p-15567">For each \(s\text{,}\) \(\hat\vT(s)\text{,}\) \(\hat\vN(s)\) and \(\hat\vB(s)\) are mutually perpendicular unit vectors. They form an orthonormal basis for \(\bbbr^3\text{,}\) just as \(\hi\text{,}\) \(\hj\) and \(\hk\) form an orthonormal basis for \(\bbbr^3\text{.}\) Furthermore both \((\hat\vT(s)\,,\,\hat\vN(s)\,,\,\hat\vB(s))\) and \((\hi\,,\,\hj\,,\,\hk)\) are “right handed triples”<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-556" id="fn-556"><sup> 3 </sup></a>, meaning that \(\hat\vB(s) = \hat\vT(s)\times\hat\vN(s)\) and \(\hk=\hi\times\hj\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-556"><div class="fn">We shall stick to “right handed triples” to make it easier to get various signs right.</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/cross.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15568">We have already computed \(\diff{\hat\vT}{s}\) and \(\diff{\hat\vB}{s}\text{.}\) It is now an easy matter to compute</p>
+<div class="displaymath">
+\begin{align*}
+\diff{\hat\vN}{s}
+&amp;= \diff{}{s}\big(\hat\vB(s)\times\hat\vT(s)\big)\\
+&amp;= -\tau(s)\hat\vN(s)\times\hat\vT(s)
++\hat\vB(s)\times\big(\ka(s)\hat\vN(s)\big)\\
+&amp;=\tau(s)\hat\vB(s)-\ka(s)\hat\vT(s)
+\end{align*}
+</div>
+<p data-braille="continuation">To see that \(\hat\vN(s)\times\hat\vT(s)=-\hat\vB(s)\) and \(\hat\vB(s)\times\hat\vN(s)=-\hat\vT(s)\text{,}\) just look at the right hand figure above.</p>
+<p id="p-15569">Now suppose that we have a curve that is parametrized by \(t\) rather than \(s\text{.}\) How do we find the torsion \(\tau\text{?}\) The most obvious method is to</p>
+<ul class="disc">
+<li id="li-6453">recall that \(\vv\times\va = \ka \big(\diff{s}{t}\big)^3\hat\vT\times\hat\vN
+= \ka \big(\diff{s}{t}\big)^3\hat\vB\) and that \(\hat\vB(t)\) is a unit vector. So<div class="displaymath">
+\begin{equation*}
+\hat\vB(t) = \frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|}
+\end{equation*}
+</div>
+</li>
+<li id="li-6454">Having found \(\vB(t)\) we can differentiate it and use \(\diff{\hat\vB}{s}(s) = -\tau(s)\hat\vN(s)\) and the chain rule to give<div class="displaymath">
+\begin{equation*}
+\diff{\vB}{t} = \diff{\vB}{s}\diff{s}{t} = -\tau\diff{s}{t} \hat\vN
+\end{equation*}
+</div>from which we can read off \(\tau\text{,}\) provided we know \(\diff{s}{t}\) and \(\hat\vN\text{.}\)</li>
+</ul>
+<p id="p-15570">There is another, often more efficient, method to find the torsion \(\tau\) that uses</p>
+<div class="displaymath">
+\begin{align*}
+\diff{\va}{t} &amp;= \diff{}{t}\Big(\difftwo{s}{t}\,\hat\vT
++\ka\Big(\diff{s}{t}\Big)^2\hat\vN\Big)\\
+&amp;= \ddiff{3}{s}{t}\,\hat\vT
++\difftwo{s}{t}\,\diff{s}{t}\,\ka\hat\vN
++\diff{}{t}\Big(\ka\Big(\diff{s}{t}\Big)^2\Big)\hat\vN
++\ka\Big(\diff{s}{t}\Big)^3
+\big(\tau\hat\vB-\ka\hat\vT\big)
+\end{align*}
+</div>
+<p data-braille="continuation">While this looks a little complicated, notice that, with just one exception, namely \(\ka\big(\diff{s}{t}\big)^3\tau(s)\hat\vB(s)\text{,}\) every term on the right hand side is either in the direction \(\hat\vT\) or in the direction \(\hat\vN\) and so is perpendicular to \(\hat\vB\text{.}\) So, dotting with \(\vv\times\va = \ka \big(\diff{s}{t}\big)^3\hat\vB\) gives</p>
+<div class="displaymath">
+\begin{gather*}
+\big(\vv\times\va\big)\cdot \diff{\va}{t}
+= \ka^2 \Big(\diff{s}{t}\Big)^6\,\tau
+= |\vv\times\va|^2\,\tau
+\end{gather*}
+</div>
+<p data-braille="continuation">and hence</p>
+<div class="displaymath">
+\begin{gather*}
+\tau = \frac{\big(\vv\times\va\big)\cdot \diff{\va}{t} }{|\vv\times\va|^2}
+\end{gather*}
+</div>
+<p id="p-15571">If the curvature<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-557" id="fn-557"><sup> 4 </sup></a> \(\ka(s) \gt 0\) and the torsion \(\tau(s)\) are known, then the system of equations<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-558" id="fn-558"><sup> 5 </sup></a></p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-557"><div class="fn">As in two dimensions, if \(\ka(s)=0\text{,}\) then \(\hat\vN(s)\) is not defined. This makes even more sense in three dimensions than in two dimensions: if the curve is a straight line, there are infinitely many unit vectors perpendicular to it and there is no way to distinguish between them.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-558"><div class="fn">The equations are named after the two French mathematicians who independently discovered them: Jean Frédéric Frenet (1816–1900, the son of a wig maker), in his thesis of 1847 (actually he only gave two of the three equations), and Joseph Alfred Serret (1819–1885) in 1851.</div></div>
+<article class="fact theorem-like" id="eqn_FrenetSerret"><h6 class="heading">
+<span class="type">Equation</span><span class="space"> </span><span class="codenumber">12.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Frenet–Serret Formulae.</span>
+</h6>
+<div class="displaymath" id="p-15572">
+\begin{align*}
+\diff{\hat\vT}{s}(s)&amp;=\phantom{-}\ka(s)\ \hat\vN(s)\cr
+\diff{\hat\vN}{s}(s)&amp;=\phantom{-}\tau(s)\ \hat\vB(s)-\ka(s)\ \hat\vT(s)\cr
+\diff{\hat\vB}{s}(s)&amp;=-\tau(s)\ \hat\vN(s)\cr
+\end{align*}
+</div></article><p id="p-15573">is a first order linear system of ordinary differential equations</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{s}
+\left[ \begin{matrix}\hat\vT(s) \\ \hat\vN(s)\\ \hat\vB(s)\end{matrix} \right]
+=\left[\begin{matrix} 0      &amp; \ka(s) &amp; 0 \\
+-\ka(s) &amp;  0     &amp;\tau(s) \\
+0       &amp;-\tau(s)  &amp; 0 \end{matrix}\right]
+\left[\begin{matrix}\hat\vT(s) \\ \hat\vN(s)\\ \hat\vB(s)\end{matrix}\right]
+\end{align*}
+</div>
+<p data-braille="continuation">for the \(9\) component vector valued function \((\hat\vT(s)\,,\,\hat\vN(s)\,,\,\hat\vB(s))\text{.}\)</p>
+<p id="p-15574">Any first order linear initial value problem</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{}{s}\vx(s) = M(s) \vx(s)\qquad
+\vx(0)=\vx_0
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(\vx\) is an \(n\)-component vector and \(M(s)\) is an \(n\times n\) matrix with continuous entries, has exactly one solution. If \(n=1\text{,}\) so that \(\vx(s)\) and \(M(s)\) are just functions, this is easy to see. Just let \(\cM(s)\) be the antiderivative of \(M(s)\) that obeys \(\cM(0)=0\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{s}\vx(s) = M(s) \vx(s)
+&amp;\iff e^{-\cM(s)}\diff{}{s}\vx(s) - M(s) e^{-\cM(s)} \vx(s)=0\\
+&amp;\iff \diff{}{s}\Big(e^{-\cM(s)}\vx(s)\Big) = 0
+\end{align*}
+</div>
+<p data-braille="continuation">by the product rule.  So \(e^{-\cM(s)}\vx(s)\) is a constant independent of \(s\text{.}\) In particular \(e^{-\cM(s)}\vx(s)=e^{-\cM(0)}\vx(0)= \vx_0\) so that \(\vx(s) = \vx_0 e^{\cM(s)}\text{.}\) This argument can be generalized to any natural number \(n\text{.}\) But that is beyond the scope of this book.</p>
+<p id="p-15575">Since the Frenet-Serret formulae constitute a first order system of ordinary differential equations for the vector \((\hat\vT(s)\,,\,\hat\vN(s)\,,\,\hat\vB(s))\) and since any first order linear initial value problem has a exactly one solution,</p>
+<ul class="disc">
+<li id="li-6455">the vector valued function \((\hat\vT(s)\,,\,\hat\vN(s)\,,\,\hat\vB(s))\) is determined by the functions \(\ka(s)\) and \(\tau(s)\) (assuming that they are continuous) together with the initial condition \((\hat\vT(0)\,,\,\hat\vN(0)\,,\,\hat\vB(0))\text{.}\)</li>
+<li id="li-6456">Furthermore, once you know \(\hat\vT(s)\text{,}\) then \(\vr(s)\) is determined by \(\vr(0)\) and \(\diff{\vr}{s}(s)=\hat\vT(s)\text{.}\)</li>
+<li id="li-6457">So any smooth curve \(\vr(s)\) is completely determined by \(\vr(0)\text{,}\) \((\hat\vT(0)\,,\,\hat\vN(0)\,,\,\hat\vB(0))\text{,}\) \(\ka(s)\) and \(\tau(s)\text{.}\)</li>
+<li id="li-6458">That is, up to translations (you can move between any two possible choices of \(\vr(0)\) by  a translation) and rotations (you can move between any two possible choices of \((\hat\vT(0)\,,\,\hat\vN(0)\,,\,\hat\vB(0))\) by  a rotation) a curve is       completely determined by the curvature \(\ka(s) \gt 0\) and the torsion \(\tau(s)\text{.}\) This result is called “The fundamental theorem of space curves”.</li>
+</ul>
+<article class="theorem theorem-like" id="theorem-106"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">12.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">The Fundamental Theorem of Space Curves.</span>
+</h6>
+<p id="p-15576">Let \(\ka(s) \gt 0\) and \(\tau(s)\) be continuous. Then up to translations and rotations, there is a unique curve with curvature \(\ka(s)\) and torsion \(\tau(s)\text{.}\)</p></article><article class="example example-like" id="eg_helixTwist"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_helixTwist"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Right circular helix.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_helixTwist"><article class="example example-like"><p id="p-15577">The right circular helix is the curve</p>
+<div class="displaymath">
+\begin{gather*}
+\vr(t)= a\cos t\,\hi +a\sin t\,\hj + bt\,\hk
+\end{gather*}
+</div>
+<p data-braille="continuation">with \(a,b \gt 0\) as in the figure on the left below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:6.25%;margin-right:6.25%;">
+<div class="sbspanel" style="width:57.1428571428571%;justify-content:center;"><img src="figs/helix5.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:28.5714285714286%;justify-content:center;"><img src="figs/RHR.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-15578">Here is why it is called a <dfn class="terminology">right</dfn> helix rather than a left helix. If the helix is the thread of a bolt that you are screwing into a nut, and you turn the bolt in the direction of the (curled) fingers of your right hand (as in the figure<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-559" id="fn-559"><sup> 6 </sup></a> on the right above), then it moves in the direction of your thumb (as in the long straight arrow of the figure on the right above).</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-559"><div class="fn">This figure is a variant of <a class="external" href="https://commons.wikimedia.org/wiki/File:Right_hand_rule_simple.png" target="_blank">this picture</a>.</div></div>
+<p id="p-15579">To determine the curvature and torsion of this curve we compute</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t)&amp;= -a\sin t\,\hi +a\cos t\,\hj + b\,\hk\\
+\va(t)&amp;= -a\cos t\,\hi -a\sin t\,\hj\\
+\diff{\va}{t}(t)&amp;= a\sin t\,\hi -a\cos t\,\hj
+\end{align*}
+</div>
+<p data-braille="continuation">From \(\vv(t)\) we read off</p>
+<div class="displaymath">
+\begin{align*}
+\diff{s}{t}&amp;=\sqrt{a^2+b^2}\\
+\hat\vT(t)&amp;= -\frac{a}{\sqrt{a^2+b^2}}\sin t\,\hi
++\frac{a}{\sqrt{a^2+b^2}} \cos t\,\hj
++\frac{b}{\sqrt{a^2+b^2}}\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">From \(\va=\difftwo{s}{t}\,\hat\vT+\ka\big(\diff{s}{t}\big)^2\hat\vN
+=\ka(a^2+b^2)\hat\vN\text{,}\) we read off that</p>
+<div class="displaymath">
+\begin{gather*}
+\ka(t)=\frac{a}{a^2+b^2}\qquad
+\hat\vN(t) = -\cos t\,\hi-\sin t\,\hj
+\end{gather*}
+</div>
+<p data-braille="continuation">From</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t)\times\va(t)  &amp;= \det\left[
+\begin{matrix}  \hi   &amp; \hj     &amp; \hk\\
+-a\sin t &amp; a\cos t &amp;  b\\
+-a\cos t &amp;-a\sin t &amp; 0\end{matrix} \right]
+= ab\sin t\,\hi -ab\cos t\,\hj +a^2\,\hk\\
+|\vv(t)\times\va(t)|^2 &amp;=a^2b^2+a^4 = a^2(a^2+b^2)
+\end{align*}
+</div>
+<p data-braille="continuation">we read off</p>
+<div class="displaymath">
+\begin{align*}
+\hat\vB(t) &amp;= \frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|} 
+= \frac{b}{\sqrt{a^2+b^2}}\sin t\,\hi
+-\frac{b}{\sqrt{a^2+b^2}} \cos t\,\hj
++\frac{a}{\sqrt{a^2+b^2}}\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{align*}
+\tau(t) &amp; = \frac{\big(\vv\times\va\big)\cdot \diff{\va}{t} }{|\vv\times\va|^2}
+=\frac{a^2b}{a^2(a^2+b^2)}
+=\frac{b}{a^2+b^2}
+\end{align*}
+</div>
+<p data-braille="continuation">Note that, for the right handed helix, \(\tau \gt 0\text{.}\) Finally the centre of curvature is</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t) +\frac{1}{\ka(t)}\hat\vN(t)
+&amp;=\Big(a-\frac{a^2+b^2}{a}\Big)\cos t\,\hi
++\Big(a-\frac{a^2+b^2}{a}\Big)\sin t\,\hi
++bt\,\hk\\
+&amp;=-\frac{b^2}{a}\cos t\,\hi
+-\frac{b^2}{a}\sin t\,\hi
++bt\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">which is another helix. In the figure below, the red curve is the original helix and the blue curve is the helix traced by the centre of curvature.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/helix6.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div></article></div>
+<section class="exercises" id="exercises-94"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">12.4.1</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-263">
+<div class="introduction" id="introduction-401"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1960"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-15580">In the sketch below of a three-dimensional curve and its osculating circle at a point, label \(\hT\) and \(\hN\text{.}\) Will \(\hB\) be pointing out of the paper towards the reader, or into the paper away from the reader?</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1915.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1548" id="hint-1548"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1548"><div class="hint solution-like"><p id="p-15581">Use the right-hand rule to figure out how \(\hB\) is oriented.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1960" id="answer-1960"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1960"><div class="answer solution-like">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1916.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15582">\(\hB\) points out of the page (towards the reader).</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2035" id="solution-2035"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2035"><div class="solution solution-like">
+<p id="p-15583">\(\hT\) is tangent to the curve, while \(\hN\) is perpendicular to it.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1917.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15584">Using the right-hand rule and \(\hB=\hT \times \hN\text{,}\) 	\(\hB\) points out of the page (towards the reader).</p>
+<p id="p-15585">To see this, point the fingers of your right hand in the direction of \(\hT\text{,}\) and curl them inwards until they are in the direction of \(\hN\text{.}\) To do this, your thumb must be pointing towards you, not away from you. Your thumb shows the direction of \(\hT \times \hN\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1961"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-15586">In the formula</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{s}{t}(t)=|\vv(t)|=|\vr'(t)|
+\end{equation*}
+</div>
+<p id="p-15587">does \(s\) stand for speed, or for arclength?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1549" id="hint-1549"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1549"><div class="hint solution-like"><p id="p-15588">Speed is the norm of velocity. Does that fit this equation?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1961" id="answer-1961"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1961"><div class="answer solution-like"><p id="p-15589">arclength</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2036" id="solution-2036"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2036"><div class="solution solution-like">
+<p id="p-15590">In this equation, \(s\) stands for arclength.</p>
+<p id="p-15591">When we take a very small interval from \(t\) to \(t+h\text{,}\) the change in arclength \(s(t+h)-s(t)\) is approximately \(|\vr(t+h)-\vr(t)|\text{,}\) because our curve is approximated by a straight line. So, \(\frac{s(t+h)-s(t)}{h} \approx \frac{|\vr(t+h)-\vr(t)|}{h}\text{,}\) leading to \(\diff{s}{t}=|\diff{\vr}{t}|=|\vv(t)|\text{.}\)</p>
+<p id="p-15592">The magnitude of velocity is speed; in this text we generally call this \(v\text{.}\) That is, \(v=|\vv(t)|\text{.}\) This leads to the potentially confusing (but standard) convention that \(s\) stands for arclength, while \(v\) stands for speed.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1962"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-15593">Which curve (or curves) below have positive torsion, which have negative torsion, and which have zero torsion? The arrows indicate the direction of increasing \(t\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1918.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1919.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1920.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1550" id="hint-1550"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1550"><div class="hint solution-like"><p id="p-15594">Review Example <a class="xref" data-knowl="./knowl/eg_helixTwist.html" title="Example 12.4.4: Right circular helix">12.4.4</a> and remember that positive torsion indicates “right-handed twisting.” You shouldn't actually need to calculate anything.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1962" id="answer-1962"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1962"><div class="answer solution-like"><p id="p-15595">\(\va(t)\) and \(\vb(t)\) have negative torsion,  \(\vc(t)\) has zero torsion.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2037" id="solution-2037"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2037"><div class="solution solution-like">
+<p id="p-15596">Curves \(\va\) and \(\vb\) are the same curve, just parametrized differently (replace \(t\) with \(-t\) to convince yourself if the picture isn't enough). So, they ought to have the same torsion.</p>
+<p id="p-15597">As in  Example <a class="xref" data-knowl="./knowl/eg_helixTwist.html" title="Example 12.4.4: Right circular helix">12.4.4</a>, we imagine that the curve is the thread on a bolt. Take a look at your right hand. If your thumb is pointing up (corresponding to the \(+z\) direction), and you're looking at the tip of your thumb, your fingers curl anticlockwise. Imagine a screw has threads matching the curves \(\va\) and \(\vb\text{,}\) and we turn it anticlockwise. The screw would move down — <em class="emphasis">not</em> in the same direction as our thumb. So these curves are not right-handed helices, so they have negative torsion.</p>
+<p id="p-15598">The curve \(\vc\) sits entirely in a plane (the plane \(x=0\)) so its torsion is zero everywhere.</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2038" id="solution-2038"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2038"><div class="solution solution-like">
+<p id="p-15599">Here is the conventional computation for both \(\va(t)\) and \(\vb(t)\text{.}\) (The upper sign is for \(\va\) and the lower sign is for \(\vb\text{.}\))</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t)&amp;=\big(\cos t\,,\,\mp 2\sin t \,,\,\pm t/2\big)\\
+\vv(t)&amp;=\big(-\sin t\,,\,\mp 2\cos t \,,\,\pm 1/2\big)\\
+\va(t)&amp;=\big(-\cos t\,,\,\pm 2\sin t \,,\,0\big)\\
+\vv(t)\times\va(t)&amp;=\big(-\sin t\,,\,\mp\cos t/2\,,\,\mp 2\big)\\
+\diff{\va}{t}(t)&amp;=\big(\sin t\,,\,\pm 2\cos t\,,\,0\big)\\
+\vv(t)\times\va(t)\cdot \diff{\va}{t}(t) &amp;= -1\\
+\tau(t)=\frac{\vv(t)\times\va(t)\cdot \diff{\va}{t}(t)}{|\vv(t)\times\va(t)|^2}
+&amp;=-\frac{1}{\sin^2 t+\frac{1}{4}\cos^2 t+4}
+\lt 0
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1963"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-15600">Consider a curve that is parametrized by arc length \(s\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-6459">Show that if the curve has curvature \(\ka(s)=0\) for all \(s\text{,}\) then the curve is a straight line.</li>
+<li id="li-6460">Show that if the curve has curvature \(\ka(s) \gt 0\) and torsion \(\tau(s)=0\) for all \(s\text{,}\) then the curve lies in a plane.</li>
+<li id="li-6461">Show that if the curve has curvature \(\ka(s)=\ka_0\text{,}\) a strictly positive constant, and torsion \(\tau(s)=0\) for all \(s\text{,}\) then the curve is a circle.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1551" id="hint-1551"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1551"><div class="hint solution-like">
+<p id="p-15601">(a) Show that the tangent vector \(\hT(s)\) is a constant.</p>
+<p id="p-15602">(b) Guess the plane. To do so, first show that the binormal \(\hB(s)\) is a constant. Then show that \((\vr(s)-\vr(0))\cdot\hB \) is a constant.</p>
+<p id="p-15603">(c) Guess the circle. To do so, first show that \(\vr_c(s)=\vr(s)+\frac{1}{\ka(s)}\hN(s)\) is a constant.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1963" id="answer-1963"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1963"><div class="answer solution-like"><p id="p-15604">See solution.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2039" id="solution-2039"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2039"><div class="solution solution-like">
+<p id="p-15605">(a) If \(\ka(s)\equiv 0\text{,}\) then \(\diff{\hT}{s}=\ka(s)\hN(s)\equiv 0\) so that \(\hT\) is a constant. As a result \(\diff{\vr}{s}(s)=\hT\) and \(\vr(s) =s\hT+\vr(0)\) so that the curve is the straight line with direction vector \(\hT\) that passes through \(\vr(0)\text{.}\)</p>
+<p id="p-15606">(b) If \(\tau(s)\equiv 0\text{,}\) then \(\diff{\hB}{s}=-\tau(s)\hN(s)\equiv 0\) so that \(\hB\) is a constant. As \(\hT(s)\perp\hB\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{}{s} (\vr(s)-\vr(0))\cdot\hB =\hT(s)\cdot\hB=0
+\end{equation*}
+</div>
+<p data-braille="continuation">and \((\vr(s)-\vr(0))\cdot\hB\) must be a constant. The constant must be zero (set \(s=0\)), so \((\vr(s)-\vr(0))\cdot\hB=0\) and \(\vr(s)\) always lies in the plane through \(\vr(0)\) with normal vector \(\hB\text{.}\)</p>
+<p id="p-15607">(c) Parametrize the curve by arc length. Define the “centre of curvature” at \(s\) by</p>
+<div class="displaymath">
+\begin{equation*}
+\vr_c(s)=\vr(s)+\frac{1}{\ka(s)}\hN(s)
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(\ka(s)=\ka_0\) is a constant and \(\tau(s)\equiv 0\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{}{s}\vr_c(s)
+=\hT(s)+\frac{1}{\ka_0}\big[\tau(s)\hB-\ka(s)\hT\big]
+=\hT(s)+\frac{1}{\ka_0}\big[0\hB-\ka_0\hT\big]
+=0
+\end{equation*}
+</div>
+<p data-braille="continuation">Thus \(\vr_c(s)=\vr_c\) is a constant and \(\big|\vr(s)-\vr_c\big|=\frac{1}{\ka_0}\) lies on the sphere of radius \(\frac{1}{\ka_0}\) centred on \(\vr_c\text{.}\) Since \(\tau(s)\equiv 0\text{,}\) the curve also lies on a plane, so it is a circle.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1964"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2018A.</span>
+</h6>
+<p id="p-15608">The surface \(z=x^2+y^2\) is sliced by the plane \(x=y\text{.}\) The resulting curve is oriented from \((0,0,0)\) to \((1,1,2)\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-6462">Sketch the curve from \((0,0,0)\) to \((1,1,2)\text{.}\)</li>
+<li id="li-6463">Sketch \(\hat\vT\text{,}\) \(\hat\vN\) and \(\hat\vB\) at \(\big(\half,\half,\half\big)\text{.}\)</li>
+<li id="li-6464">Find the torsion at \(\big(\half,\half,\half\big)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1552" id="hint-1552"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1552"><div class="hint solution-like"><p id="p-15609">It is not necessary to compute anything.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1964" id="answer-1964"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1964"><div class="answer solution-like">
+<p id="p-15610">(a), (b)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27%;margin-right:27%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/parabolicBowlB.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15611">(c) The torsion is zero.</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2040" id="solution-2040"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2040"><div class="solution solution-like">
+<p id="p-15612">(a), (b): \(\hT\) points in the direction of the curve; \(\hN\) is perpendicular to it, in the same plane, pointing towards the centre of curvature. Using the right-hand rule in the picture, we see \(\hB\) is pointing to the left.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27%;margin-right:27%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/parabolicBowlB.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15613">(c) The torsion is zero, since the curve lies in a plane (the plane \(x=y\)).</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-264">
+<div class="introduction" id="introduction-402"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1965"><h6 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2006A.</span>
+</h6>
+<p id="p-15614">Let \(C\) be the space curve</p>
+<div class="displaymath">
+\begin{gather*}
+\vr(t) = \big(e^t - e^{-t}\big)\,\hi + \big(e^t + e^{-t}\big)\,\hj +2t\,\hk
+\end{gather*}
+</div>
+<ol class="lower-alpha">
+<li id="li-6465">Find \(\vr'\text{,}\) \(\vr''\) and the curvature of \(C\text{.}\)</li>
+<li id="li-6466">Find the length of the curve between \(\vr(0)\) and \(\vr(1)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1553" id="hint-1553"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1553"><div class="hint solution-like"><p id="p-15615">Both parts of this question make use of the quantity \(\diff{s}{t}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1965" id="answer-1965"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1965"><div class="answer solution-like">
+<p id="p-15616">(a) \(\vr'(t)=\big(e^t + e^{-t}\big)\,\hi + \big(e^t - e^{-t}\big)\,\hj +2\,\hk\text{,}\) \(\vr''(t)=\big(e^t - e^{-t}\big)\,\hi + \big(e^t + e^{-t}\big)\,\hj\text{,}\)</p>
+<p id="p-15617">\(\ka(t) =\frac{1}{2+e^{2t}+e^{-2t}}\)</p>
+<p id="p-15618">(b) \(\sqrt{2}\Big[e-\frac{1}{e}\Big]\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2041" id="solution-2041"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2041"><div class="solution solution-like">
+<p id="p-15619">(a) As</p>
+<div class="displaymath">
+\begin{align*}
+\vr'(t)&amp;=\big(e^t + e^{-t}\big)\,\hi + \big(e^t - e^{-t}\big)\,\hj +2\,\hk\\
+\diff{s}{t}(t) &amp;=|\vr'(t)|= \sqrt{4+2e^{2t}+2e^{-2t}}
+=\sqrt{2}\big(e^t+e^{-t}\big)\\
+\vr''(t)&amp;=\big(e^t - e^{-t}\big)\,\hi + \big(e^t + e^{-t}\big)\,\hj\\
+\vr'(t)\times\vr''(t)&amp;=-2\big(e^t + e^{-t}\big)\,\hi
++ 2\big(e^t - e^{-t}\big)\,\hj +4\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">the curvature</p>
+<div class="displaymath">
+\begin{align*}
+\ka(t) &amp;= \frac{|\vv(t)\times\va(t)|}{\big(\diff{s}{t}\big)^3}
+=\frac{2\sqrt{4+2e^{2t}+2e^{-2t}}}{[4+2e^{2t}+2e^{-2t}]^{3/2}}
+=\frac{1}{2+e^{2t}+e^{-2t}}
+\end{align*}
+</div>
+<p id="p-15620">(b) The length of \(C\) between \(\vr(0)\) and \(\vr(1)\) is</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^1 \diff{s}{t}(t) \ \dee{t}
+&amp;= \sqrt{2} \int_0^1 (e^t+e^{-t}) \ \dee{t}
+=\sqrt{2}\Big[e^t-e^{-t}\Big]_0^1
+=\sqrt{2}\Big[e-\frac{1}{e}\Big]
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1966"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-15621">Find the torsion of \(\vr(t)=(t,t^2,t^3)\) at the point \((2,4,8)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1554" id="hint-1554"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1554"><div class="hint solution-like"><p id="p-15622">\(\tau(t)=\dfrac{(\vv(t) \times \va(t))\cdot\diff{\va}{t}}{|\vv(t) \times \va(t)|^2}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1966" id="answer-1966"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1966"><div class="answer solution-like"><p id="p-15623">\(\frac{3}{{181}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2042" id="solution-2042"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2042"><div class="solution solution-like">
+<p id="p-15624">The point \((2,4,8)\) occurs when \(t=2\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t)&amp;=(1,2t,3t^2) &amp; \vv(2)&amp;=(1,4,12)\\
+\va(t)&amp;=(0,2,6t) &amp; \va(2)&amp;=(0,2,12)\\
+\diff{\va}{t}(t)&amp;=(0,0,6) &amp; \diff{\va}{t}(2)&amp;=(0,0,6)\\
+&amp;&amp; \vv(2) \times \va(2)&amp;=(24,-12,2)\\
+&amp;&amp; |\vv(2) \times \va(2)|&amp;=2\sqrt{181}
+\end{align*}
+</div>
+<p data-braille="continuation">Now, we use a formula for torsion:</p>
+<div class="displaymath">
+\begin{align*}
+\tau(t)&amp;=\dfrac{(\vv(t) \times \va(t))\cdot\diff{\va}{t}(t)}{|\vv(t) \times \va(t)|^2}\\
+\tau(2)&amp;=\frac{(24,-12,2)\cdot(0,0,6)}{(2\sqrt{181})^2}=\frac{3}{{181}}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1967"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-15625">Find the unit tangent, unit normal and binormal vectors and the curvature and torsion of the curve</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t)=t\,\hi + \frac{t^2}{2}\,\hj + \frac{t^3}{3}\,\hk
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1555" id="hint-1555"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1555"><div class="hint solution-like"><p id="p-15626">Review §<a href="sec_CurveCompendium.html" class="internal" title="Section 12.5: A Compendium of Curve Formula">12.5</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1967" id="answer-1967"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1967"><div class="answer solution-like">
+<p id="p-15627">\(\hT(t)=\frac{\hi + t\,\hj + t^2\,\hk}{\sqrt{1+t^2+t^4}}\)</p>
+<p id="p-15628">\(\hB(t)=\frac{t^2\,\hi-2t\,\hj+\hk}{\sqrt{1+4t^2+t^4}}\)</p>
+<p id="p-15629">\(\hN(t)=\frac{-(t+2t^3)\,\hi+(1-t^4)\,\hj+(2t+t^3)\hk}
+{\sqrt{1+t^2+t^4}\sqrt{1+4t^2+t^4}}\)</p>
+<p id="p-15630">\(\ka(t)=\frac{\sqrt{1+4t^2+t^4}}{[1+t^2+t^4]^{3/2}}\)</p>
+<p id="p-15631">\(\tau(t)=\frac{2}{1+4t^2+t^4}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2043" id="solution-2043"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2043"><div class="solution solution-like">
+<p id="p-15632">For the specified curve</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t)&amp;=t\,\hi + \frac{t^2}{2}\,\hj + \frac{t^3}{3}\,\hk\\
+\vv(t)=\vr'(t)&amp;= \hi + t\,\hj + t^2\,\hk\\
+\va(t)=\vr''(t)&amp;= \hj + 2t\,\hk\\
+\vv(t)\times\va(t)
+&amp;=\det\left[\begin{matrix}
+\hi  &amp; \hj &amp;  \hk\\
+1   &amp;  t  &amp;  t^2\\
+0   &amp;  1  &amp;  2t
+\end{matrix}\right]\\
+&amp; = t^2\,\hi-2t\,\hj+\hk\\
+\va'(t)&amp;=  2\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">From this, we read off</p>
+<div class="displaymath">
+\begin{align*}
+\hT(t)&amp;=\frac{\vv(t)}{|\vv(t)|}
+=\frac{\hi + t\,\hj + t^2\,\hk}{\sqrt{1+t^2+t^4}}\\
+\ka(t)&amp;=\frac{|\vv(t)\times\va(t)|}{|\vv(t)|^3}
+=\frac{\sqrt{1+4t^2+t^4}}{[1+t^2+t^4]^{3/2}}\\
+\hB(t)&amp;=\frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|}
+=\frac{t^2\,\hi-2t\,\hj+\hk}{\sqrt{1+4t^2+t^4}}\\
+\hN(t)&amp;=\hB(t)\times\hT(t)\\
+&amp;= \frac{1}{\sqrt{1+t^2+t^4}\sqrt{1+4t^2+t^4}}\det\left[\begin{matrix}
+\hi  &amp; \hj &amp;  \hk\\
+t^2 &amp; -2t &amp;  1\\
+1   &amp;  t  &amp;  t^2
+\end{matrix}\right]\\
+&amp;=\frac{-(t+2t^3)\,\hi+(1-t^4)\,\hj+(2t+t^3)\hk}
+{\sqrt{1+t^2+t^4}\sqrt{1+4t^2+t^4}}\\
+\tau(t)&amp;=\frac{\big(\vv(t)\times\va(t)\big)\cdot\va'(t)}{|\vv(t)\times\va(t)|^2}
+=\frac{2}{1+4t^2+t^4}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1968"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-15633">For some constant \(c\text{,}\) define \(\vr(t)=(t^3,t,e^{ct})\text{.}\) For which value(s) of \(c\) is \(\tau(5)=0\text{?}\) For each of those values of \(c\text{,}\) find an equation for the plane containing the osculating circle to the curve at \(t=5\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1556" id="hint-1556"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1556"><div class="hint solution-like"><p id="p-15634">The vector perpendicular to the plane containing the osculating circle is the binormal vector, \(\hB\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1968" id="answer-1968"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1968"><div class="answer solution-like"><p id="p-15635">When \(c=0\text{,}\) the plane is \(z=1\text{.}\) When \(c=1/5\text{,}\) the plane is \((1/25)x+3y-(30/e)z=-10\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2044" id="solution-2044"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2044"><div class="solution solution-like">
+<p id="p-15636">First, some preliminaries:</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t)&amp;=(t^3,t,e^{ct}) &amp; \vr(5)&amp;=(5^3,5,e^{5c})\\
+\vv(t)&amp;=(3t^2,1,ce^{ct}) &amp; \vv(5)&amp;=(3\cdot 5^2,1,ce^{5c})\\
+\va(t)&amp;=(6t,0,c^2e^{ct}) &amp; \va(5)&amp;=(6\cdot 5,0,c^2e^{5c})\\
+\diff{\va}{t}(t)&amp;=	(6,0,c^3e^{ct})&amp; 	\diff{\va}{t}(5)&amp;=	(6,0,c^3e^{5c})\\
+&amp;&amp;	\vv(5) \times \va(5)&amp;=(c^2e^{5c},15ce^{5c}(2-5c),-30)
+\end{align*}
+</div>
+<p data-braille="continuation">Second, we figure out what value of \(c\) makes \(\tau(5)=0\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+0&amp;=\tau(5)=\dfrac{(\vv(5) \times \va(5))\cdot\diff{\va}{t}(5)}{|\vv(5) \times \va(5)|^2}\\
+0&amp;=(\vv(5)\times\va(5))\cdot \diff{\va}{t}(5)\\
+&amp;=(c^2e^{5c},15ce^{5c}(2-5c),-30)\cdot (6,0,c^3e^{5c})\\
+&amp;=6c^2e^{5c}(1-5c)\\
+c&amp;=0 \text{ or } c=\frac15
+\end{align*}
+</div>
+<p data-braille="continuation">If \(c=0\text{,}\) then \(\vr(t)=(t^3,t,1)\text{,}\) and so the entire curve is contained inside the plane \(z=1\text{.}\) (Its torsion is zero everywhere — not just at \(t=5\text{.}\))</p>
+<p id="p-15637">Consider the case \(c=\frac15\text{.}\) When \(t=5\text{,}\) our curve (and its osculating circle) passes through the point \(\vr(5)=(5^3,5,e)\text{.}\) The normal vector to the plane of the osculating curve is the binormal vector \(\hB(5)=\frac{\vv(5)\times \va(5)}{|\vv(5)\times \va(5)|}\text{.}\) Since we don't need the normal vector to the plane to be a unit vector, we can take as the normal vector to the plane simply \(\vv(5) \times \va(5)\text{,}\) or \((e/25,3e,-30)\text{.}\) Then, an equation of the plane containing the osculating circle is \((e/25)x+(3e)y-30z=-10e\text{.}\) An equivalent equation for this plane is \((1/25)x+3y-(30/e)z=-10\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1969"><h6 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2013D.</span>
+</h6>
+<ol id="p-15638" class="lower-alpha">
+<li id="li-6467">Consider the parametrized space curve<div class="displaymath">
+\begin{equation*}
+\vr(t) = \big(t^2 , t, t^3\big)
+\end{equation*}
+</div>Find an equation for the plane passing through \((1,1,1)\) with normal vector tangent to \(\vr\) at that point.</li>
+<li id="li-6468">Find the curvature of the curve from (a) as a function of the parameter \(t\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1557" id="hint-1557"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1557"><div class="hint solution-like">
+<p id="p-15639">(a) The tangent vector of the curve is also a normal vector for the specified plane.</p>
+<p id="p-15640">(b) Review §<a href="sec_CurveCompendium.html" class="internal" title="Section 12.5: A Compendium of Curve Formula">12.5</a>.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1969" id="answer-1969"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1969"><div class="answer solution-like">
+<p id="p-15641">(a) \(2x +y +3z= 6\)</p>
+<p id="p-15642">(b) \(\ka(t) =\frac{2\sqrt{1+9t^2+9t^4}}{[1+4t^2+9t^4]^{3/2}}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2045" id="solution-2045"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2045"><div class="solution solution-like">
+<p id="p-15643">(a) Since \(\vr'(t) = (2t,1,3t^2)\text{,}\) we have \(\vr'(1)=(2,1,3)\text{.}\) So the normal plane must pass through \(\vr(1)=(1,1,1)\) and be perpendicular to \((2,1,3)\text{.}\) The equation of the normal plane is then</p>
+<div class="displaymath">
+\begin{equation*}
+2(x-1) +(y-1) +3(z-1)=0\qquad
+\text{or}\qquad
+2x +y +3z= 6
+\end{equation*}
+</div>
+<p id="p-15644">(b) As</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t)=\vr'(t)&amp;=\big(2t,1,3t^2\big) &amp;
+\diff{s}{t} &amp;= \sqrt{1+4t^2+9t^4}\\
+\va(t)=\vv'(t)&amp;=\big(2,0,6t\big)  &amp;
+\vv(t)\times\va(t)&amp;=\big(6t,-6t^2,-2\big)
+\end{align*}
+</div>
+<p data-braille="continuation">the curvature</p>
+<div class="displaymath">
+\begin{align*}
+\ka(t) &amp;= \frac{|\vv(t)\times\va(t)|}{\big(\diff{s}{t}\big)^3}
+=\frac{2\sqrt{1+9t^2+9t^4}}{[1+4t^2+9t^4]^{3/2}}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1970"><h6 class="heading">
+<span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2005A.</span>
+</h6>
+<p id="p-15645">Let \(C\) be the osculating circle to the helix \(\vr(t) =\big(\cos t\,,\,\sin t\,,\,t\big)\) at the point where \(t=\pi/6\text{.}\) Find:</p>
+<ol class="lower-alpha">
+<li id="li-6469">the radius of curvature of \(C\)</li>
+<li id="li-6470">the center of \(C\)</li>
+<li id="li-6471">the unit normal to the plane of \(C\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1558" id="hint-1558"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1558"><div class="hint solution-like"><p id="p-15646">Remember \(\va(t)=\difftwo{s}{t}(t)\,\hat\vT(t)
++\ka(t)\big(\diff{s}{t}(t)\big)^2\hat\vN(t)\text{.}\) Remember also that \(\hB\) is orthogonal to \(\hT\) and \(\hN\text{,}\) which are in the plane of \(C\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1970" id="answer-1970"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1970"><div class="answer solution-like">
+<p id="p-15647">(a) \(2\)</p>
+<p id="p-15648">(b) \(-\frac{\sqrt{3}}{2}\,\hi-\frac{1}{2}\,\hj+\frac{\pi}{6}\,\hk\)</p>
+<p id="p-15649">(c) \(\hat\vB =\frac{1}{2\sqrt{2}}\,\hi
+-\frac{\sqrt{3}}{2\sqrt{2}}\,\hj
++\frac{1}{\sqrt{2}}\,\hk\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2046" id="solution-2046"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2046"><div class="solution solution-like">
+<p id="p-15650">First some preliminaries.</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t)&amp;=\vr'(t)=-\sin t\,\hi +\cos t\,\hj + \hk\\
+\va(t)&amp;=\vr''(t)= -\cos t\,\hi -\sin t\,\hj
+\end{align*}
+</div>
+<p id="p-15651">(a), (b) From \(\vv(t)\) we read off</p>
+<div class="displaymath">
+\begin{gather*}
+\diff{s}{t}=|\vv(t)|=\sqrt{2}\qquad
+\end{gather*}
+</div>
+<p data-braille="continuation">From \(\va(t)=\difftwo{s}{t}(t)\,\hat\vT(t)
++\ka(t)\big(\diff{s}{t}(t)\big)^2\hat\vN(t)\text{,}\) and the fact that \(\difftwo{s}{t}=0\text{,}\) we read off that</p>
+<div class="displaymath">
+\begin{gather*}
+\ka(t)=\Big(\diff{s}{t}(t)\Big)^{-2}|\va|=\frac{1}{2}\qquad
+\hat\vN(t) = \frac{\va}{|\va|}=-\cos t\,\hi-\sin t\,\hj
+\end{gather*}
+</div>
+<p data-braille="continuation">So the radius of curvature is \(\frac{1}{\ka}=2\) and the centre of  curvature is</p>
+<div class="displaymath">
+\begin{align*}
+\left[\vr(t)\!+\!\frac{1}{\ka(t)}\hat\vN(t)\right]_{t=\frac{\pi}{6}}
+&amp;=\left[\big(\cos t\,\hi \!+\!\sin t\,\hj \!+\! t\hk \big)
++2 \big( -\cos t\,\hi\!-\!\sin t\,\hj\big)\right]_{t=\frac{\pi}{6}}\\
+&amp;=\left[-\cos t\,\hi
+-\sin t\,\hj
++t\,\hk \right]_{t=\frac{\pi}{6}}\\
+&amp;=-\frac{\sqrt{3}}{2}\,\hi-\frac{1}{2}\,\hj+\frac{\pi}{6}\,\hk
+\end{align*}
+</div>
+<p id="p-15652">(c) From</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t)\times\va(t)  &amp;= \det\left[
+\begin{matrix}  \hi   &amp; \hj     &amp; \hk\\
+-\sin t &amp; \cos t &amp;  1\\
+-\cos t &amp;-\sin t &amp; 0\end{matrix} \right]
+= \sin t\,\hi -\cos t\,\hj + \hk\\
+|\vv(t)\times\va(t)|^2 &amp;= 2
+\end{align*}
+</div>
+<p data-braille="continuation">we read off</p>
+<div class="displaymath">
+\begin{align*}
+\hat\vB(t) &amp; = \frac{\vv(t)\times\va(t)}{|\vv(t)\times\va(t)|}
+=\frac{1}{\sqrt{2}}\sin t\,\hi
+-\frac{1}{\sqrt{2}} \cos t\,\hj
++\frac{1}{\sqrt{2}}\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">so that</p>
+<div class="displaymath">
+\begin{gather*}
+\hat\vB\big(\frac{\pi}{6}\big)
+=\frac{1}{2\sqrt{2}}\,\hi
+-\frac{\sqrt{3}}{2\sqrt{2}}\,\hj
++\frac{1}{\sqrt{2}}\,\hk
+\end{gather*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1971"><h6 class="heading">
+<span class="codenumber">12<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2012D.</span>
+</h6>
+<ol id="p-15653" class="lower-alpha">
+<li id="li-6472">Consider the parametrized space curve<div class="displaymath">
+\begin{equation*}
+\vr(t) = (\cos(t), \sin(t), t^2)
+\end{equation*}
+</div>Find a parametric form for the tangent line at the point corresponding to \(t = \pi\text{.}\)</li>
+<li id="li-6473">Find the tangential component \(a_T(t)\) of acceleration, as a function of \(t\text{,}\) for the parametrized space curve \(\vr(t)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1559" id="hint-1559"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1559"><div class="hint solution-like"><p id="p-15654">By Theorem <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a>, the tangential component of acceleration is \(a_T(t) = \difftwo{s}{t}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1971" id="answer-1971"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1971"><div class="answer solution-like">
+<p id="p-15655">(a) \(\vR(t) = (-1,0,\pi^2)+t(0,-1,2\pi)\)</p>
+<p id="p-15656">(b) \(a_T(t) =\frac{4t}{\sqrt{1+4t^2}}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2047" id="solution-2047"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2047"><div class="solution solution-like">
+<p id="p-15657">(a) The velocity vector is</p>
+<div class="displaymath">
+\begin{gather*}
+\vr'(t) = (-\sin(t), \cos(t), 2t)
+\end{gather*}
+</div>
+<p data-braille="continuation">So a tangent vector at \(t=\pi\) is \(\vT= (0,-1,2\pi)\) and a parametric form for the tangent line is</p>
+<div class="displaymath">
+\begin{gather*}
+\vR(t) =\vr(\pi) +t\vT = (-1,0,\pi^2)+t(0,-1,2\pi)
+\end{gather*}
+</div>
+<p id="p-15658">(b) The speed is</p>
+<div class="displaymath">
+\begin{gather*}
+\diff{s}{t} = |\vr'(t)| = \sqrt{1+4t^2}
+\end{gather*}
+</div>
+<p data-braille="continuation">By Theorem <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a>, the tangential component of acceleration is</p>
+<div class="displaymath">
+\begin{gather*}
+a_T(t) = \difftwo{s}{t}
+=\diff{\ }{t}\sqrt{1+4t^2}
+=\frac{4t}{\sqrt{1+4t^2}}
+\end{gather*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1972"><h6 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2010A.</span>
+</h6>
+<p id="p-15659">Suppose, in terms of the time parameter \(t\) , a particle moves along the path \(\vr(t) = (\sin t - t \cos t )\,\hi + (\cos t + t \sin t )\,\hj + t^2\,\hk\text{,}\) \(1 \le t  \lt  \infty\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-6474">Find the speed of the particle at time \(t\text{.}\)</li>
+<li id="li-6475">Find the tangential component of acceleration at time \(t\text{.}\)</li>
+<li id="li-6476">Find the normal component of acceleration at time \(t\text{.}\)</li>
+<li id="li-6477">Find the curvature of the path at time \(t\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1560" id="hint-1560"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1560"><div class="hint solution-like"><p id="p-15660">Use your answers to previous parts to calculate (d). Tangential and normal components of acceleration are defined just before Example <a class="xref" data-knowl="./knowl/eg_curveCircle.html" title="Example 12.3.4">12.3.4</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1972" id="answer-1972"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1972"><div class="answer solution-like">
+<p id="p-15661">(a) \(\sqrt{5}\,t\)</p>
+<p id="p-15662">(b) \(\va_T(t) =  \sin t \,\hi   + \cos t \,\hj   + 2\,\hk\)</p>
+<p id="p-15663">(c) \(\va_N(t) =  t\cos t \,\hi   - t\sin t \,\hj\)</p>
+<p id="p-15664"></p>
+<p id="p-15665">(d) \(\ka(t) = \frac{1}{5t}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2048" id="solution-2048"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2048"><div class="solution solution-like">
+<p id="p-15666">(a) The velocity vector of the particle at time \(t\) is</p>
+<div class="displaymath">
+\begin{align*}
+\vr'(t) &amp;= (\cos t - \cos t + t \sin t )\,\hi
++ (-\sin t + \sin t  +  t \cos t )\,\hj
++ 2t\,\hk\\
+&amp;=  t \sin t \,\hi
++  t \cos t \,\hj
++ 2t\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">so its speed at time \(1\le t \lt \infty\) is</p>
+<div class="displaymath">
+\begin{align*}
+\diff{s}{t}=|\vr'(t)| &amp; = \sqrt{t^2\sin^2t + t^2\cos^2t +4t^2}
+=\sqrt{5}\, t
+\end{align*}
+</div>
+<p id="p-15667">(b) The unit tangent at time \(t\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\hat\vT(T) = \frac{\vr'(t)}{|\vr'(t)|}
+=\frac{1}{\sqrt{5}}\big(  \sin t \,\hi
++ \cos t \,\hj
++ 2\,\hk\big)
+\end{equation*}
+</div>
+<p data-braille="continuation">So the tangential component of acceleration at time \(t\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\va_T(t) = \difftwo{s}{t}(t)\ \hat\vT(t)
+=  \sin t \,\hi   + \cos t \,\hj   + 2\,\hk
+\end{equation*}
+</div>
+<p id="p-15668">(c) The (full) acceleration is</p>
+<div class="displaymath">
+\begin{equation*}
+\vr''(t) =\diff{\ }{t}\vr'(t)
+= \big(\sin t + t\cos t\big) \,\hi
++ \big(\cos t - t\sin t\big) \,\hj
++ 2\,\hk
+\end{equation*}
+</div>
+<p data-braille="continuation">So the normal component of acceleration at time \(t\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\va_N(t) = \va(t) - \va_T(t)
+=  t\cos t \,\hi   - t\sin t \,\hj
+\end{equation*}
+</div>
+<p id="p-15669">(d) Another formula for the normal component of acceleration is \(\ka(t)\big(\diff{s}{t}(t)\big)^2\hat\vN(t)\text{.}\) So the magnitude of the normal component of acceleration is \(\ka(t)\big(\diff{s}{t}(t)\big)^2\) and, by part (c),</p>
+<div class="displaymath">
+\begin{gather*}
+\ka(t)\left(\diff{s}{t}(t)\right)^2
+=\big|t\cos t \,\hi   - t\sin t \,\hj \big|
+=t
+\end{gather*}
+</div>
+<p data-braille="continuation">Consequently, by part (a),</p>
+<div class="displaymath">
+\begin{equation*}
+\ka(t) = \frac{t}{\left(\diff{s}{t}(t)\right)^2}
+= \frac{1}{5t}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1973"><h6 class="heading">
+<span class="codenumber">14<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2009A.</span>
+</h6>
+<p id="p-15670">Assume the paraboloid \(z = x^2 + y^2\) and the plane \(2x + z = 8\) intersect in a curve \(C\text{.}\) \(C\) is traversed counter-clockwise if viewed from the positive \(z\)-axis.</p>
+<ol class="lower-alpha">
+<li id="li-6478">Parametrize the curve \(C\text{.}\)</li>
+<li id="li-6479">Find the unit tangent vector \(\hat\vT\text{,}\) the principal normal vector \(\hat\vN\text{,}\) the binormal vector \(\hat\vB\) and the curvature \(\kappa\) all at the point \((2, 0, 4)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1561" id="hint-1561"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1561"><div class="hint solution-like">
+<p id="p-15671">(a) All points on the curve obey an equation that contains \(x\)'s and \(y\)'s, but no \(z\)'s. There is a standard way to get a nice parametrization of this equation, that doesn't involve using square roots.</p>
+<p id="p-15672">(b) You don't need to compute the constants for all points: only the given point.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1973" id="answer-1973"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1973"><div class="answer solution-like">
+<p id="p-15673">(a) \(\vr(\theta) = [-1 + 3\cos\theta]\,\hi
++3\sin\theta\,\hj
++[10-6\cos\theta]\,\hk\text{,}\) \(0\le\theta  \lt  2\pi\)</p>
+<p id="p-15674">(b) At \((2,0,4)\text{,}\) \(\hat\vT = \hj\text{,}\) \(\hat\vN = \frac{-\hi+2\hk}{\sqrt{5}}\text{,}\) \(\hat\vB = \frac{2\hi+\hk}{\sqrt{5}}\text{,}\) \(\kappa(0) =\frac{\sqrt{5}}{3}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2049" id="solution-2049"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2049"><div class="solution solution-like">
+<p id="p-15675">(a) If the point \((x,y,z)\) is on the curve, it obeys both \(z = x^2 + y^2\) and \(z = 8-2x\) and hence is also obeys</p>
+<div class="displaymath">
+\begin{equation*}
+x^2+y^2 = 8-2x\qquad\text{or}\qquad
+(x+1)^2+y^2 =9
+\end{equation*}
+</div>
+<p data-braille="continuation">So the curve \(C\) is also the intersection of</p>
+<div class="displaymath">
+\begin{equation*}
+(x+1)^2+y^2 =9\qquad\text{and}\qquad  z = 8-2x
+\end{equation*}
+</div>
+<p data-braille="continuation">\((x+1)^2+y^2 =9\) is the circle of radius \(3\) centred on \((-1,0)\) and can be parametrized by \(x(\theta) = -1 + 3\cos\theta\text{,}\) \(y(\theta) = 3\sin\theta\text{,}\) \(0\le\theta\le 2\pi\text{.}\) So \(C\) can be parametrized by</p>
+<div class="displaymath">
+\begin{align*}
+x(\theta) &amp;= -1 + 3\cos\theta\\
+y(\theta) &amp;= 3\sin\theta\\
+z(\theta) &amp;= 8-2x(\theta) = 10-6\cos\theta\\
+\text{ or }\vr(\theta) &amp;= [-1 + 3\cos\theta]\,\hi
++3\sin\theta\,\hj
++[10-6\cos\theta]\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">with \(0\le\theta  \lt  2\pi\text{.}\)</p>
+<p id="p-15676">Remark: if we tried to parametrize the equation as \((x,y,z)=(x,\sqrt{8-2x-x^2},8-2x)\text{,}\) then we would miss the negative \(y\)-values.</p>
+<p id="p-15677">(b) Note that \(\vr(\theta)\) is \((2,0,4)\) when \(\theta=0\text{.}\) As</p>
+<div class="displaymath">
+\begin{align*}
+\vv(\theta)&amp;=\vr'(\theta) = -3\sin\theta\,\hi
++3\cos\theta\,\hj
++6\sin\theta\,\hk &amp;
+\vv(0)&amp;=3\hj\\
+\va(\theta)&amp;=\vv'(\theta) = -3\cos\theta\,\hi
+-3\sin\theta\,\hj
++6\cos\theta\,\hk &amp;
+\va(0)&amp;= -3\hi+6\hk
+\end{align*}
+</div>
+<p data-braille="continuation">the unit tangent vector at \((2,0,4)\) is</p>
+<div class="displaymath">
+\begin{align*}
+\hat\vT(0) &amp;= \frac{\vv(0)}{|\vv(0)|} =\hj
+\end{align*}
+</div>
+<p data-braille="continuation">and, since \(\vv(0)\times\va(0) = 9\hk+18\hi\text{,}\) the unit binormal vector and curvature at \((2,0,4)\) are</p>
+<div class="displaymath">
+\begin{align*}
+\hat\vB(0) &amp;= \frac{\vv(0)\times\va(0)}{|\vv(0)\times\va(0)|}
+=\frac{2\hi+\hk}{\sqrt{5}}\qquad
+\kappa(0) = \frac{|\vv(0)\times\va(0)|}{|\vv(0)|^3}
+=\frac{9\sqrt{5}}{3^3}=\frac{\sqrt{5}}{3}
+\end{align*}
+</div>
+<p data-braille="continuation">and the unit normal vector \(\hN\) at \((2,0,4)\)</p>
+<div class="displaymath">
+\begin{gather*}
+\hat\vN(0) = \hat\vB(0) \times \hat\vT(0)
+=\frac{1}{\sqrt{5}} (2\hi+\hk)\times\hj
+=\frac{1}{\sqrt{5}} (2\hk-\hi)
+\end{gather*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1974"><h6 class="heading">
+<span class="codenumber">15<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2008A.</span>
+</h6>
+<p id="p-15678">Consider the curve \(C\) given by</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) = \frac{1}{3} t^3\,\hi + \frac{1}{\sqrt{2}} t^2\,\hj + t\,\hk,\qquad
+-\infty  \lt  t  \lt  \infty.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-6480">Find the unit tangent \(\hat\vT(t)\) as a function of \(t\text{.}\)</li>
+<li id="li-6481">Find the curvature \(\kappa(t)\) as a function of \(t\text{.}\)</li>
+<li id="li-6482">Determine the principal normal vector \(\hat\vN\) at the point \(\big(\frac{8}{3} , 2\sqrt{2}, 2\big)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1562" id="hint-1562"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1562"><div class="hint solution-like"><p id="p-15679">For part (c), you only need to find \(\hN\) at a point, which is easier than finding it for all \(t\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1974" id="answer-1974"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1974"><div class="answer solution-like">
+<p id="p-15680">(a) \(\hat\vT(t) = \frac{t^2\,\hi +\sqrt{2}\,t\,\hj +\hk}{t^2+1}\)</p>
+<p id="p-15681">(b) \(\frac{\sqrt{2}} {{(t^2+1)}^2}\)</p>
+<p id="p-15682">(c) \(\frac{4\,\hi -3\sqrt{2}\,\hj -4\hk}{\sqrt{50}}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2050" id="solution-2050"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2050"><div class="solution solution-like">
+<p id="p-15683">We have</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t)&amp;=\vr'(t) = t^2\,\hi +\sqrt{2}\,t\,\hj +\hk &amp;
+|\vv(t)|&amp;=\sqrt{t^4+2t^2+1}=t^2+1\\
+\va(t)&amp;=\vv'(t) = 2t\,\hi +\sqrt{2}\,\hj
+\end{align*}
+</div>
+<p id="p-15684">(a) The unit tangent vector  is</p>
+<div class="displaymath">
+\begin{align*}
+\hat\vT(t) &amp;= \frac{\vv(t)}{|\vv(t)|}
+= \frac{t^2\,\hi +\sqrt{2}\,t\,\hj +\hk}{t^2+1}
+\end{align*}
+</div>
+<p id="p-15685">(b) Since</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t)\times\va(t)&amp;= \det\left[\begin{matrix}
+\hi &amp;  \hj &amp; \hk\\
+t^2   &amp;   \sqrt{2}\,t  &amp; 1\\
+2t    &amp;   \sqrt{2}     &amp; 0
+\end{matrix}\right]
+=-\sqrt{2}\,\hi +2t\,\hj-\sqrt{2}\,t^2\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">The curvature is</p>
+<div class="displaymath">
+\begin{gather*}
+\kappa(t) = \frac{|\vv(t)\times\va(t)|}{|\vv(t)|^3}
+=\frac{\sqrt{2+4t^2+2t^4}} {{(t^2+1)}^3}
+=\frac{\sqrt{2}} {{(t^2+1)}^2}
+\end{gather*}
+</div>
+<p id="p-15686">(c) Note that \(\vr(2)\) is \(\big(\frac{8}{3} , 2\sqrt{2}, 2\big)\text{.}\)</p>
+<ul class="disc">
+<li id="li-6483">
+<em class="alert">Solution 1:</em> Since<div class="displaymath">
+\begin{align*}
+\hat\vT'(t) &amp; = \frac{2t\,\hi +\sqrt{2}\,\hj}{t^2+1}
+-2t\frac{t^2\,\hi +\sqrt{2}\,t\,\hj +\hk}{{(t^2+1)}^2}\\
+\hat\vT'(2) &amp; = \frac{4\,\hi +\sqrt{2}\,\hj}{5}
+-4\frac{4\,\hi +2\sqrt{2}\,\hj +\hk}{25}\\
+&amp;=\frac{4\,\hi -3\sqrt{2}\,\hj -4\hk}{25}\\
+|\vT'(2)|&amp;=\frac{5\sqrt{2}}{25}
+\end{align*}
+</div>the principal normal vector \(\hN\) at \(\big(\frac{8}{3} , 2\sqrt{2}, 2\big)\) is<div class="displaymath">
+\begin{align*}
+\hat\vN(2) &amp;=\frac{\hat\vT'(2)}{|\hat\vT'(2)|}
+=\frac{4\,\hi -3\sqrt{2}\,\hj -4\hk}{5\sqrt{2}}
+\end{align*}
+</div>
+</li>
+<li id="li-6484">
+<em class="alert">Solution 2:</em> Perhaps we'd rather not differentiate \(\hT(t)\text{.}\)<div class="displaymath">
+\begin{align*}
+\hB &amp;= \dfrac{\vv(t) \times \va(t)}{|\vv(t) \times \va(t)|} \quad\text{and}\quad \hN=\hB \times \hT
+\end{align*}
+</div>Using our previous work:<div class="displaymath">
+\begin{align*}
+\hB(2)&amp;=\frac{\vv(2) \times \va(2)}{|\vv(2)\times\va(2)|} = \frac{-\sqrt2\hi+4\hj-4\sqrt2\hk}{\sqrt{2+16+32}}\\
+&amp;=\frac{1}{5}\left(-\hi+{2\sqrt2}\hj-4\hk\right)\\
+\hT(2)&amp;=\frac{1}{5}\left(4\hi+2\sqrt2\hj+\hk \right)\\
+\hN(2)&amp;=\hB(2)\times\hT(2)=\frac{1}{5}\left(-\hi+{2\sqrt2}\hj-4\hk\right)\times\frac{1}{5}\left(4\hi+2\sqrt2\hj+\hk \right)\\
+&amp;=\left(\frac{2\sqrt2}{5}\right)\hi+\left(-\frac35\right)\hj+\left(-\frac{2\sqrt2}{5}\right)\hk
+\end{align*}
+</div>
+</li>
+</ul>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1975"><h6 class="heading">
+<span class="codenumber">16<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2007A.</span>
+</h6>
+<p id="p-15687">Suppose the curve \(C\) is the intersection of the cylinder \(x^2 +y^2 = 1\) with the plane \(x+y+z = 1\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-6485">Find a parameterization of \(C\text{.}\)</li>
+<li id="li-6486">Determine the curvature of \(C\text{.}\)</li>
+<li id="li-6487">Find the points at which the curvature is maximum and determine the value of the curvature at these points.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1563" id="hint-1563"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1563"><div class="hint solution-like"><p id="p-15688">First parametrize \(x^2+y^2=1\) in the standard way. You don't need calculus for part (c).</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1975" id="answer-1975"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1975"><div class="answer solution-like">
+<p id="p-15689">(a) One possible parametrization is \(\vr(\theta) = \cos\theta\,\hi +\sin\theta\,\hj + (1-\cos\theta-\sin\theta)\,\hk\) with \(0\le\theta\le 2\pi\text{.}\)</p>
+<p id="p-15690">(b) \(\ka(\theta)=\frac{\sqrt{3}}{[2-\sin(2\theta)]^{3/2}}\)</p>
+<p id="p-15691">(c) \(\text{maximum curvature }=\sqrt{3}\) at \(\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+(1-\sqrt{2})\,\hk\) and \(-\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+(1 + \sqrt{2})\,\hk\) and \(\text{minimum curvature }= \frac{1}{3}\) at \(-\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+\hk\) and \(\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+\hk\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2051" id="solution-2051"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2051"><div class="solution solution-like">
+<p id="p-15692">(a) The curve \(x^2+y^2=1\) is a circle of radius \(1\text{.}\) So we can parametrize it by \(x(\theta)=\cos\theta\text{,}\) \(y(\theta)=\sin\theta\text{,}\) \(0\le\theta \lt 2\pi\text{.}\) The \(z\)-coordinate of any point on the intersection is determined by \(z=1-x-y\text{.}\) So we can use</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(\theta) = \cos\theta\,\hi +\sin\theta\,\hj + (1-\cos\theta-\sin\theta)\,\hk
+\qquad 0\le\theta \lt 2\pi
+\end{equation*}
+</div>
+<p id="p-15693">(b) As</p>
+<div class="displaymath">
+\begin{align*}
+\vv(\theta)=\vr'(\theta)&amp;=\big(-\sin\theta,\cos\theta,\sin\theta-\cos\theta\big)\\
+\va(\theta)=\vv'(\theta)&amp;=\big(-\cos\theta,-\sin\theta,\cos\theta+\sin\theta\big)
+\end{align*}
+</div>
+<p data-braille="continuation">we have</p>
+<div class="displaymath">
+\begin{align*}
+\diff{s}{\theta} &amp;= |\vr'(\theta)|
+=\sqrt{\sin^2\theta+\cos^2\theta+(\sin\theta-\cos\theta)^2}\\
+&amp;=\sqrt{2-2\sin\theta\cos\theta}\\
+&amp;=\sqrt{2-\sin(2\theta)}\\
+\vv(\theta)\times\va(\theta)&amp;=\big(1,1,1\big)
+\end{align*}
+</div>
+<p data-braille="continuation">and the curvature</p>
+<div class="displaymath">
+\begin{align*}
+\ka(\theta) &amp;= \frac{|\vv(\theta)\times\va(\theta)|}{\big(\diff{s}{\theta}\big)^3}
+=\frac{\sqrt{3}}{[2-\sin(2\theta)]^{3/2}}
+\end{align*}
+</div>
+<p id="p-15694">(c) The curvature is</p>
+<ul class="disc">
+<li id="li-6488">a maximum (minimum) when \(2-\sin(2\theta)\) is a minimum (maximum),</li>
+<li id="li-6489">which is the case when \(\sin(2\theta)=1\) (\(\sin(2\theta)=-1\)),</li>
+<li id="li-6490">which in turn is the case when \(\theta=\frac{\pi}{4},\frac{5\pi}{4}\) (\(\theta=\frac{3\pi}{4},\frac{7\pi}{4}\)).</li>
+</ul>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+\text{maximum curvature }&amp;= \frac{\sqrt{3}}{[2-1]^{3/2}}=\sqrt{3} &amp;&amp;
+\text{at }\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+(1-\sqrt{2})\,\hk\\
+&amp; &amp;&amp;
+\text{and }-\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+(1+\sqrt{2})\,\hk\\
+\text{minimum curvature }&amp;= \frac{\sqrt{3}}{[2-(-1)]^{3/2}}=\frac{1}{3}\quad &amp;&amp;
+\text{at }-\frac{\hi}{\sqrt{2}}+\frac{\hj}{\sqrt{2}}+\hk\\
+&amp; &amp;&amp;
+\text{and }\frac{\hi}{\sqrt{2}}-\frac{\hj}{\sqrt{2}}+\hk
+\end{alignat*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1976"><h6 class="heading">
+<span class="codenumber">17<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2006D.</span>
+</h6>
+<p id="p-15695">Let</p>
+<div class="displaymath">
+\begin{gather*}
+\vr(t) = t^2\,\hi + 2t\,\hj + \ln t\,\hk
+\end{gather*}
+</div>
+<p data-braille="continuation">Compute the unit tangent and unit normal vectors \(\hat\vT(t)\) and \(\hat\vN(t)\text{.}\) Compute the curvature \(\kappa(t)\text{.}\) Simplify whenever possible!</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1564" id="hint-1564"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1564"><div class="hint solution-like"><p id="p-15696">Review §<a href="sec_CurveCompendium.html" class="internal" title="Section 12.5: A Compendium of Curve Formula">12.5</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1976" id="answer-1976"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1976"><div class="answer solution-like">
+<p id="p-15697">\(\hat\vT(t) =\frac{2t^2\,\hi + 2t\,\hj + \hk}{2t^2+1}\)</p>
+<p id="p-15698">\(\hat\vN(t) =\frac{2t\,\hi - (2t^2-1)\,\hj -2t\, \hk}{2t^2+1}\)</p>
+<p id="p-15699">\(\ka(t) = \frac{2t}{{(2t^2+1)}^2}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2052" id="solution-2052"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2052"><div class="solution solution-like">
+<p id="p-15700">For \(\vr(t)\) to be well-defined, we need \(t \gt 0\) (because of the \(\ln t\text{.}\))</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t)=\vr'(t)&amp;=2t\,\hi + 2\,\hj + \frac{1}{t}\,\hk &amp;
+\diff{s}{t} &amp;= \sqrt{4t^2+4+\frac{1}{t^2}}
+=2t+\frac{1}{t}
+\end{align*}
+</div>
+<p data-braille="continuation">The unit tangent vector is</p>
+<div class="displaymath">
+\begin{gather*}
+\hat\vT(t) = \frac{\vr'(t)}{|\vr'(t)|}
+=\frac{2t\,\hi + 2\,\hj + \frac{1}{t}\,\hk}{2t+\frac{1}{t}}
+=\frac{2t^2\,\hi + 2t\,\hj + \hk}{2t^2+1}
+\end{gather*}
+</div>
+<p data-braille="continuation">so, from  §<a href="sec_CurveCompendium.html" class="internal" title="Section 12.5: A Compendium of Curve Formula">12.5</a>,</p>
+<div class="displaymath">
+\begin{align*}
+\diff{s}{t}(t)\, \ka(t)\,\hat\vN(t) &amp;= \hat\vT'(t)
+=\frac{4t\,\hi + 2\,\hj }{2t^2+1}
+-4t\frac{2t^2\,\hi + 2t\,\hj + \hk}{{(2t^2+1)}^2}\\
+&amp;=\frac{4t\,\hi + (-4t^2+2)\,\hj -4t\, \hk}{{(2t^2+1)}^2}\\
+&amp;=2\frac{2t\,\hi - (2t^2-1)\,\hj -2t\, \hk}{{(2t^2+1)}^2}
+\end{align*}
+</div>
+<p data-braille="continuation">Since the length of \(2t\,\hi - (2t^2-1)\,\hj -2t\, \hk\) is</p>
+<div class="displaymath">
+\begin{align*}
+\sqrt{4t^2 + (2t^2-1)^2+4t^2}
+&amp;=\sqrt{8t^2 + 4t^4 -4 t^2 + 1}
+=\sqrt{ 4t^4 +4 t^2 + 1}\\
+&amp;=\sqrt{(2t^2+1)^2}
+=2t^2+1
+\end{align*}
+</div>
+<p data-braille="continuation">we have</p>
+<div class="displaymath">
+\begin{gather*}
+\hat\vN(t) =\frac{2t\,\hi - (2t^2-1)\,\hj -2t\, \hk}{2t^2+1}
+\end{gather*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{gather*}
+\ka(t) = \frac{|\hat\vT'(t)|}{\diff{s}{t}(t)}
+=\frac{\frac{2}{2t^2+1}}{2t+\frac{1}{t}}
+=\frac{2t}{{(2t^2+1)}^2}
+\end{gather*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1977"><h6 class="heading">
+<span class="codenumber">18<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2015A.</span>
+</h6>
+<ol id="p-15701" class="lower-alpha">
+<li id="li-6491">Find the length of the curve  \(\vr(t)=\big(1,\frac{t^2}{2},\frac{t^3}{3}\big)\) for \(0\le t\le 1\text{.}\)</li>
+<li id="li-6492">Find the principal unit normal vector \(\hN\) to \(\vr(t) = \cos(t)\,\hi + \sin(t)\,\hj
++ t\,\hk\) at \(t =\pi/4\text{.}\)</li>
+<li id="li-6493">Find the curvature of \(\vr(t) = \cos(t)\,\hi + \sin(t)\,\hj + t\,\hk\) at \(t = \pi/4\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1565" id="hint-1565"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1565"><div class="hint solution-like"><p id="p-15702">Since \(0 \le t \le 1\text{,}\) you can simplify \(|t|=t\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1977" id="answer-1977"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1977"><div class="answer solution-like">
+<p id="p-15703">(a) \(\frac{1}{3}\big[2^{3/2}-1\big]\)</p>
+<p id="p-15704">(b) \(\frac{-\hi - \hj}{\sqrt{2}}\)</p>
+<p id="p-15705">(c) \(\frac{1}{2}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2053" id="solution-2053"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2053"><div class="solution solution-like">
+<p id="p-15706">(a) Since</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t)&amp;= \hi +\frac{t^2}{2}\,\hj + \frac{t^3}{3}\,\hk\\
+\vr'(t)&amp;= t\,\hj + t^2\,\hk\\
+\diff{s}{t}(t)=|\vr'(t)|&amp;=\sqrt{t^2+t^4}=t\sqrt{1+t^2}
+\end{align*}
+</div>
+<p data-braille="continuation">the length of the curve is</p>
+<div class="displaymath">
+\begin{gather*}
+\int_0^1 \diff{s}{t}(t)\,\dee{t}
+=\int_0^1 t\sqrt{1+t^2}\,\dee{t}
+=\frac{1}{3}{\big[1+t^2\big]}^{3/2}\Big|_0^1
+=\frac{1}{3}\big[2^{3/2}-1\big]
+\end{gather*}
+</div>
+<p id="p-15707">(b) For the specified curve</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t) &amp;= \cos(t)\,\hi + \sin(t)\,\hj  + t\,\hk\\
+\vr'(t) &amp;= -\sin(t)\,\hi + \cos(t)\,\hj  + 1\,\hk\\
+\hat\vT(t) &amp;=\frac{-\sin(t)\,\hi + \cos(t)\,\hj  + 1\,\hk}{\sqrt{2}}\\
+\hat\vT'(t) &amp;=\frac{-\cos(t)\,\hi - \sin(t)\,\hj}{\sqrt{2}}\\
+\hat\vT'\big(\frac{\pi}{4}\big) &amp;=\frac{-\hi - \hj}{2}\\
+\hat\vN\big(\frac{\pi}{4}\big)
+&amp;=\frac{\hat\vT'\big(\frac{\pi}{4}\big)}
+{|\hat\vT'\big(\frac{\pi}{4}\big)|}
+=\frac{-\hi - \hj}{\sqrt{2}}
+\end{align*}
+</div>
+<p id="p-15708">(c) Recalling, from §<a href="sec_CurveCompendium.html" class="internal" title="Section 12.5: A Compendium of Curve Formula">12.5</a>, that</p>
+<div class="displaymath">
+\begin{gather*}
+\hat\vT'(t)
+=\ka(t) \,\diff{s}{t}(t)\,\hat\vN(t)
+\end{gather*}
+</div>
+<p data-braille="continuation">we have, by part (d),</p>
+<div class="displaymath">
+\begin{align*}
+\ka\big(\frac{\pi}{4}\big)
+&amp;=\frac{|\hat\vT'\big(\frac{\pi}{4}\big)|}
+{|\vr'\big(\frac{\pi}{4}\big)|}
+=\frac{1/\sqrt{2}}{\sqrt{2}}
+=\frac{1}{2}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1978"><h6 class="heading">
+<span class="codenumber">19<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2015A.</span>
+</h6>
+<p id="p-15709">A particle moves along a curve with position vector given by</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) = \big(t + 2\,,\, 1 - t\,,\, t^2 /2\big)
+\end{equation*}
+</div>
+<p data-braille="continuation">for \(-\infty  \lt  t  \lt  \infty\text{.}\)</p>
+<ol id="p-15710" class="lower-alpha">
+<li id="li-6494">Find the velocity as a function of \(t\text{.}\)</li>
+<li id="li-6495">Find the speed as a function of \(t\text{.}\)</li>
+<li id="li-6496">Find the acceleration as a function of \(t\text{.}\)</li>
+<li id="li-6497">Find the curvature as a function of \(t\text{.}\)</li>
+<li id="li-6498">Recall that the decomposition of the acceleration into tangential and normal components is given by the formula<div class="displaymath">
+\begin{equation*}
+\vr''(t) = \difftwo{s}{t} \hat\vT(t)
++ \kappa(t)\Big(\diff{s}{t}\Big)^2\hat\vN(t)
+\end{equation*}
+</div>Use this formula and your answers to the previous parts of this question to find \(\hat\vN(t)\text{,}\) the principal unit normal vector, as a function of \(t\text{.}\)</li>
+<li id="li-6499">Find an equation for the osculating plane (the plane which best fits the curve) at the point corresponding to \(t = 0\text{.}\)</li>
+<li id="li-6500">Find the centre of the osculating circle at the point corresponding to \(t = 0\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1566" id="hint-1566"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1566"><div class="hint solution-like"><p id="p-15711">For part (f), remember that you can write the equation of a plane easily once you know a point it passes through, and a vector normal to it. The plane should touch the curve when \(t=0\text{,}\) and the plane should contain \(\hT\) and \(\hN\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1978" id="answer-1978"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1978"><div class="answer solution-like">
+<p id="p-15712">(a) \(\vv(t) = \big(1\,,\, -1\,,\, t\big)\)</p>
+<p id="p-15713">(b) \(\diff{s}{t}(t)=\sqrt{2+t^2}\)</p>
+<p id="p-15714">(c) \(\va(t) =\big(0\,,\, 0\,,\, 1\big)\)</p>
+<p id="p-15715">(d) \(\ka(t) = \frac{\sqrt{2}}{{[2+t^2]}^{3/2}}\)</p>
+<p id="p-15716">(e) \(\hat\vN(t) = \frac{(-t\,,\, t\,,\, 2)}{\sqrt{2(2+t^2)}}\)</p>
+<p id="p-15717">(f) \(x+y = 3\)</p>
+<p id="p-15718">(g) \((2,1,2)\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2054" id="solution-2054"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2054"><div class="solution solution-like">
+<p id="p-15719">(a), (b), (c) We have</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t) &amp;= \big(t + 2\,,\, 1 - t\,,\, t^2 /2\big)\\
+\vv(t) =\vr'(t)&amp;= \big(1\,,\, -1\,,\, t\big)\\
+\diff{s}{t}(t)=|\vv(t)|&amp;=\sqrt{2+t^2}\\
+\va(t) = \vv'(t)&amp;=\big(0\,,\, 0\,,\, 1\big)
+\end{align*}
+</div>
+<p id="p-15720">(d) By §<a href="sec_CurveCompendium.html" class="internal" title="Section 12.5: A Compendium of Curve Formula">12.5</a>, the curvature</p>
+<div class="displaymath">
+\begin{align*}
+\ka(t) &amp; = \frac{|\vv(t)\times\va(t)|}{(\diff{s}{t}(t))^3}
+= \frac{|(-1,-1,0)|}{{[2+t^2]}^{3/2}}
+= \frac{\sqrt{2}}{{[2+t^2]}^{3/2}}
+\end{align*}
+</div>
+<p id="p-15721">(e) Since \(\diff{s}{t}(t)=\sqrt{2+t^2}\text{,}\) we have \(\difftwo{s}{t}(t)=\frac{t}{\sqrt{2+t^2}}\) and</p>
+<div class="displaymath">
+\begin{align*}
+\big(0\,,\, 0\,,\, 1\big)
+=\va(t)
+&amp;= \difftwo{s}{t} \hat\vT(t)
++ \kappa(t)\Big(\diff{s}{t}\Big)^2\hat\vN(t)\\
+&amp;=\frac{t}{\sqrt{2+t^2}}\,\frac{(1\,,\, -1\,,\, t)}{\sqrt{2+t^2}}
++ \frac{\sqrt{2}}{{[2+t^2]}^{3/2}}\big(\sqrt{2+t^2}\big)^2\hat\vN(t)
+\end{align*}
+</div>
+<p data-braille="continuation">or</p>
+<div class="displaymath">
+\begin{gather*}
+\frac{\sqrt{2}}{\sqrt{2+t^2}}\hat\vN(t)
+=\big(0\,,\, 0\,,\, 1\big)  - \frac{(t\,,\, -t\,,\, t^2)}{2+t^2}
+=\frac{(-t\,,\, t\,,\, 2)}{2+t^2}
+\end{gather*}
+</div>
+<p data-braille="continuation">which implies</p>
+<div class="displaymath">
+\begin{gather*}
+\hat\vN(t) = \frac{(-t\,,\, t\,,\, 2)}{\sqrt{2(2+t^2)}}
+\end{gather*}
+</div>
+<p id="p-15722">(f) At \(t=0\)</p>
+<div class="displaymath">
+\begin{align*}
+\vr(0) &amp;= (2,1,0)\\
+\hat\vT(0)&amp;= \frac{(1,-1,0)}{\sqrt{2}}\\
+\hat\vN(0)&amp;= (0,0,1)\\
+\hat\vB(0)&amp;= \hat\vT(0)\times\hat\vN(0)
+= \frac{1}{\sqrt{2}}(1,-1,0)\times (0,0,1)
+= \frac{1}{\sqrt{2}}(-1 ,-1, 0)
+\end{align*}
+</div>
+<p data-braille="continuation">The osculating plane is the plane through \(\vr(0)\) which is perpendicular to \(\hat\vB(0)\text{,}\) which is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{\sqrt{2}}(-1 ,-1, 0)\cdot\big\{(x,y,z) - (2,1,0)\big\}=0
+\qquad\text{or}\qquad
+x+y = 3
+\end{equation*}
+</div>
+<p id="p-15723">(g) The osculating circle has centre</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(0)+\frac{1}{\ka(0)}\hat\vN(0)
+=(2,1,0) +\frac{1}{1/2} (0,0,1)
+=(2,1,2)
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1979"><h6 class="heading">
+<span class="codenumber">20<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2012J.</span>
+</h6>
+<p id="p-15724">Consider the curve \(C\) given by</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) =\frac{t^3}{3}\,\hi + \frac{t^2}{\sqrt{2}}\,\hj + t\,\hk \qquad
+-\infty  \lt  t  \lt  \infty
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-6501">Find the unit tangent \(\hat\vT(t)\) as a function of \(t\text{.}\)</li>
+<li id="li-6502">Find the curvature \(\kappa(t)\) as a function of \(t\text{.}\)</li>
+<li id="li-6503">Evaluate \(\kappa(t)\) at \(t = 0\text{.}\)</li>
+<li id="li-6504">Determine the principal normal vector \(\hat\vN(t)\) at \(t = 0\text{.}\)</li>
+<li id="li-6505">Compute the binormal vector \(\hat\vB(t)\) at \(t = 0\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1567" id="hint-1567"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1567"><div class="hint solution-like"><p id="p-15725">It might be easier to find \(\hB\) before you find \(\hN\text{,}\) then use the formula \(\hN(t)=\hB(t)\times\hT(t)\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1979" id="answer-1979"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1979"><div class="answer solution-like">
+<p id="p-15726">(a) \(\hat\vT(t)=\frac{t^2\,\hi + \sqrt{2} t\,\hj + \hk}{t^2+1}\)</p>
+<p id="p-15727">(b) \(\ka(t) =\frac{\sqrt{2}}{{(t^2+1)}^2}\)</p>
+<p id="p-15728">(c) \(\ka(0) = \sqrt{2}\)</p>
+<p id="p-15729">(d) \(\hat\vN(0) = \hj\)</p>
+<p id="p-15730"></p>
+<p id="p-15731">(e) \(\hat\vB(0) = -\hi\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2055" id="solution-2055"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2055"><div class="solution solution-like">
+<p id="p-15732">First some preliminary computations.</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t) &amp;=\frac{t^3}{3}\,\hi + \frac{t^2}{\sqrt{2}}\,\hj + t\,\hk\\
+\vr'(t) &amp;=t^2\,\hi + \sqrt{2} t\,\hj + \hk\\
+|\vr'(t)|&amp;= \sqrt{t^4+2t^2+1} =t^2+1\\
+\vr''(t) &amp;=2t\,\hi + \sqrt{2}\,\hj\\
+\vr'(t)\times\vr''(t)&amp;= \det\left[\begin{matrix}\hi&amp;\hj&amp;\hk\\
+t^2 &amp; \sqrt{2} t &amp; 1\\
+2t  &amp; \sqrt{2} &amp; 0\end{matrix}\right]
+=-\sqrt{2}\,\hi +2t\,\hj -\sqrt{2} t^2\,\hk
+\end{align*}
+</div>
+<p id="p-15733">(a) The unit tangent vector is</p>
+<div class="displaymath">
+\begin{gather*}
+\hat\vT(t) = \frac{\vr'(t)}{|\vr'(t)|}
+=\frac{t^2\,\hi + \sqrt{2} t\,\hj + \hk}{t^2+1}
+\end{gather*}
+</div>
+<p id="p-15734">(b) The curvature is (see §<a href="sec_CurveCompendium.html" class="internal" title="Section 12.5: A Compendium of Curve Formula">12.5</a>)</p>
+<div class="displaymath">
+\begin{align*}
+\ka(t)  &amp;= \frac{|\vr'(t)\times\vr''(t)|}{|\vr'(t)|^3}
+=\frac{|-\sqrt{2}\,\hi +2t\,\hj -\sqrt{2} t^2\,\hk|}{{(t^2+1)}^3}
+=\frac{\sqrt{2+4t^2+2t^4}}{{(t^2+1)}^3}\\
+&amp;=\frac{\sqrt{2}}{{(t^2+1)}^2}
+\end{align*}
+</div>
+<p id="p-15735">(c) At \(t=0\)</p>
+<div class="displaymath">
+\begin{equation*}
+\ka(0) = \sqrt{2}
+\end{equation*}
+</div>
+<p id="p-15736">For ease of computation, we'll find \(\hB\) first, then use it to find \(\hN\text{.}\)</p>
+<p id="p-15737">(e) At \(t=0\text{,}\) the binormal vector is (see §<a href="sec_CurveCompendium.html" class="internal" title="Section 12.5: A Compendium of Curve Formula">12.5</a>)</p>
+<div class="displaymath">
+\begin{gather*}
+\hat\vB(0) = \frac{\vr'(0)\times\vr''(0)}{|\vr'(0)\times\vr''(0)|}
+= \frac{-\sqrt{2}\,\hi}{\sqrt{2}}
+=-\hi
+\end{gather*}
+</div>
+<p id="p-15738">(d) At \(t=0\text{,}\) the principal normal vector is (see §<a href="sec_CurveCompendium.html" class="internal" title="Section 12.5: A Compendium of Curve Formula">12.5</a>)</p>
+<div class="displaymath">
+\begin{gather*}
+\hat\vN(0) = \hat\vB(0)\times\hat\vT(0)
+=-\hi \times\hk
+=\hj
+\end{gather*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1980"><h6 class="heading">
+<span class="codenumber">21<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2016D.</span>
+</h6>
+<p id="p-15739">A curve in \(\bbbr^3\) is given by \(\vr(t) = (t^2\,,\, t\,,\, t^3)\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-6506">Find the parametric equations of the tangent line to the curve at the point \((1, -1, -1)\text{.}\)</li>
+<li id="li-6507">Find an equation for the osculating plane of the curve at the point \((1, 1, 1)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1568" id="hint-1568"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1568"><div class="hint solution-like"><p id="p-15740">The osculating plane at \(\vr(t_0)\) is the plane through \(\vr(t_0)\) with normal \(\hat\vB(t_0)\text{.}\) Also, notice the points for parts (a) and (b) are not the same.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1980" id="answer-1980"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1980"><div class="answer solution-like">
+<p id="p-15741">(a) \(x=1-2t\text{,}\) \(y=-1+t\text{,}\) \(z=-1+3t\)</p>
+<p id="p-15742">(b) \(3x-3y-z = -1\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2056" id="solution-2056"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2056"><div class="solution solution-like">
+<p id="p-15743">The curve has</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t) &amp;= (t^2\,,\, t\,,\, t^3)\\
+\vv(t)= \vr'(t) &amp;= (2t\,,\, 1\,,\, 3t^2)\\
+\va(t)= \vr''(t) &amp;= (2\,,\, 0\,,\, 6t)
+\end{align*}
+</div>
+<p id="p-15744">(a) In particular, a (non unit) tangent vector at \(\vr(-1) = (1, -1, -1)\) is \(\vr'(-1) = (-2, 1,3)\text{.}\) So the tangent line to the curve at \((1, -1, -1)\) is</p>
+<div class="displaymath">
+\begin{gather*}
+(x,y,z) - (1, -1, -1) = t (-2, 1, 3)
+\end{gather*}
+</div>
+<p data-braille="continuation">or</p>
+<div class="displaymath">
+\begin{align*}
+x&amp;=1-2t\\
+y&amp;=-1+t\\
+z&amp;=-1+3t
+\end{align*}
+</div>
+<p id="p-15745">(b) At \(\vr(1)= (1,1,1)\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+\vv(1)= \vr'(1) &amp;= (2, 1, 3)\\
+\va(1)= \vr''(1) &amp;= (2, 0, 6)\\
+\vv(1)\times\va(1) &amp;= (6,-6,-2)
+\end{align*}
+</div>
+<p data-braille="continuation">So the unit binormal vector is</p>
+<div class="displaymath">
+\begin{equation*}
+\hat\vB(1) = \frac{\vv(1)\times \va(1)}{|\vv(1)\times \va(1)|}
+=\frac{(3,-3,-1)}{|(3,-3,-1)|}
+=\frac{1}{\sqrt{19}} (3,-3,-1)
+\end{equation*}
+</div>
+<p data-braille="continuation">An equation for the osculating plane is</p>
+<div class="displaymath">
+\begin{equation*}
+(3,-3,-1)\cdot(x-1\,,\,y-1\,,\,z-1) = 0\qquad\text{or}\qquad
+3x-3y-z = -1
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1981"><h6 class="heading">
+<span class="codenumber">22<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2016D.</span>
+</h6>
+<p id="p-15746">A curve in \(\bbbr^3\) is given by</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) = (\sin t - t \cos t)\,\hi + (\cos t + t \sin t)\,\hj + t^2\,\hk,
+\qquad
+0 \le t  \lt  \infty
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-6508">Find the length of the curve \(\vr(t)\) from \(\vr(0) = (0, 1, 0)\) to \(\vr(\pi) = (\pi, -1, \pi^2)\text{.}\)</li>
+<li id="li-6509">Find the curvature of the curve at time \(t  \gt  0\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1569" id="hint-1569"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1569"><div class="hint solution-like"><p id="p-15747">Since \(t \gt 0\text{,}\) we can simplify \(\sqrt{t^2}=|t|=t\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1981" id="answer-1981"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1981"><div class="answer solution-like">
+<p id="p-15748">(a) \(\frac{\sqrt{5}\,\pi^2}{2}\)</p>
+<p id="p-15749">(b) \(\ka(t) = \frac{1}{5t}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2057" id="solution-2057"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2057"><div class="solution solution-like">
+<p id="p-15750">(a) For this curve</p>
+<div class="displaymath">
+\begin{align*}
+\vr'(t) &amp;= t\sin t\,\hi + t\cos t\,\hj +2t\,\hk\\
+\diff{s}{t}(t)=|\vr'(t)| &amp;= \sqrt{5} \,t
+\end{align*}
+</div>
+<p data-braille="continuation">so the length of the curve from \(t=0\) to \(t=\pi\) is</p>
+<div class="displaymath">
+\begin{gather*}
+\int_0^\pi \diff{s}{t}(t)\, \dee{t}
+=\sqrt{5} \int_0^\pi t\, \dee{t}
+=\frac{\sqrt{5}\,\pi^2}{2}
+\end{gather*}
+</div>
+<p id="p-15751">(b) The unit tangent vector is</p>
+<div class="displaymath">
+\begin{equation*}
+\hat T(t) = \frac{\vr'(t)}{|\vr'(t)|}
+= \frac{1}{\sqrt{5}}\big(\sin t\,\hi + \cos t\,\hj +2\,\hk\big)
+\end{equation*}
+</div>
+<p data-braille="continuation">so that</p>
+<div class="displaymath">
+\begin{gather*}
+\ka(t)\,\diff{s}{t}(t)\,\hat\vN(t) = \diff{\hat\vT}{t}(t)
+=\frac{1}{\sqrt{5}}\big(\cos t\,\hi - \sin t\,\hj \big)
+\end{gather*}
+</div>
+<p data-braille="continuation">which implies that</p>
+<div class="displaymath">
+\begin{gather*}
+\ka(t)\overbrace{\sqrt{5}\, t}^{\diff{s}{t}(t)}
+=\frac{1}{\sqrt{5}}\big|\big(\cos t\,\hi - \sin t\,\hj \big)\big|
+=\frac{1}{\sqrt{5}}
+\implies  \ka(t) = \frac{1}{5t}
+\end{gather*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1982"><h6 class="heading">
+<span class="codenumber">23<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2004A.</span>
+</h6>
+<p id="p-15752">At time \(t=0\text{,}\) NASA launches a rocket which follows a trajectory so that its position at any time \(t\) is</p>
+<div class="displaymath">
+\begin{equation*}
+x=\frac{4\sqrt{2}}{3}t^{3/2},\ y=\frac{4\sqrt{2}}{3}t^{3/2},\ z=t(2-t)
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-6510">Assuming that the flight ends when \(z=0\text{,}\) find out how far the rocket travels.</li>
+<li id="li-6511">Find the unit tangent and unit normal to the trajectory at its highest point.</li>
+<li id="li-6512">Also, compute the curvature of the trajectory at its highest point.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1570" id="hint-1570"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1570"><div class="hint solution-like"><p id="p-15753">In this context, “distance travelled” means “arclength.”</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1982" id="answer-1982"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1982"><div class="answer solution-like">
+<p id="p-15754">(a) \(8\)</p>
+<p id="p-15755">(b) \(\hat\vT(1)=\frac{1}{\sqrt{2}}(1,1,0)\text{,}\) \(\hat\vN(1) = (0,0,-1)\)</p>
+<p id="p-15756">(c) \(\ka(1) =\frac{1}{8}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2058" id="solution-2058"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2058"><div class="solution solution-like">
+<p id="p-15757">(a) For the specified curve</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t)&amp;=\left(\frac{4\sqrt{2}}{3}t^{3/2},\frac{4\sqrt{2}}{3}t^{3/2},
+t(2-t)\right)\\
+\vv(t)&amp;=\big(2\sqrt{2}t^{1/2},2\sqrt{2}t^{1/2},2-2t\big)\\
+|\vv|&amp;=\sqrt{8t+8t+4-8t+4t^2}=\sqrt{4(1+2t+t^2)}= 2(1+t)
+\end{align*}
+</div>
+<p data-braille="continuation">The rocket is at \(z=0\) when \(t=0\) and when \(t=2\text{.}\) So the distance travelled is</p>
+<div class="displaymath">
+\begin{gather*}
+\int_0^2|\vv(t)|\,dt=\int_0^2 2(1+t)\,dt = 2\left[t+\frac{t^2}{2}\right]_0^2
+=8
+\end{gather*}
+</div>
+<p id="p-15758">(b) The rocket is at its maximum height when \(\diff{z}{t}=2-2t=0\text{.}\) That is, when \(t=1\text{.}\) Its velocity then is \((2\sqrt{2},2\sqrt{2},0)\text{.}\) A unit vector in this direction is \(\hat\vT(1)=\frac{1}{\sqrt{2}}(1,1,0)\text{.}\) That is the unit tangent vector.</p>
+<p id="p-15759">At general \(t\text{,}\) the unit tangent is</p>
+<div class="displaymath">
+\begin{equation*}
+\hat\vT(t) = \frac{\vv(t)}{|\vv(t)|}
+= \frac{\big(\sqrt{2}t^{1/2},\sqrt{2}t^{1/2},1-t\big)}{1+t}
+\end{equation*}
+</div>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{align*}
+\hat\vT'(t)  &amp;= \frac{\big(\sqrt{2}t^{-1/2}/2,\sqrt{2}t^{-1/2}/2,-1\big)}{1+t}
+-\frac{\big(\sqrt{2}t^{1/2},\sqrt{2}t^{1/2},1-t\big)}{(1+t)^2}\\
+\hat\vT'(1)  &amp;= \frac{\big(\sqrt{2}/2,\sqrt{2}/2,-1\big)}{2}
+-\frac{\big(\sqrt{2},\sqrt{2},0\big)}{4}\\
+&amp;= \big(0,0, -\frac{1}{2}\big)
+\end{align*}
+</div>
+<p data-braille="continuation">So the principal unit normal vector is</p>
+<div class="displaymath">
+\begin{equation*}
+\hat\vN(1) = \frac{\hat\vT'(1)}{|\hat\vT'(1)|} = (0,0,-1)
+\end{equation*}
+</div>
+<p id="p-15760">(c) As</p>
+<div class="displaymath">
+\begin{gather*}
+\diff{\hat\vT}{t}(1)  = \big(0,0, -\frac{1}{2}\big)\qquad
+\diff{s}{t}(1) = |\vv(1)| = 4
+\end{gather*}
+</div>
+<p data-braille="continuation">the curvature</p>
+<div class="displaymath">
+\begin{align*}
+\ka(1) &amp;= \frac{|\hat\vT'(1)|}{|\vv(1)|}
+=\frac{1}{8}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1983"><h6 class="heading">
+<span class="codenumber">24<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2001A.</span>
+</h6>
+<p id="p-15761">Consider a particle travelling in space along the path parametrized by</p>
+<div class="displaymath">
+\begin{equation*}
+x=\cos^3t,\ y=\sin ^3t,\ z=2\sin^2 t
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-6513">Calculate the arc length of this path for \(0\le t\le \pi/2\text{.}\)</li>
+<li id="li-6514">Find the vectors \(\hat\vT\text{,}\) \(\hat\vN\text{,}\) \(\hat\vB\) for the particle at \(t=\pi/6\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1571" id="hint-1571"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1571"><div class="hint solution-like"><p id="p-15762">Use \(\hT\) and \(\hN\) to compute \(\hB\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1983" id="answer-1983"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1983"><div class="answer solution-like">
+<p id="p-15763">(a) \(\frac{5}{2}\)</p>
+<p id="p-15764">(b) \(\hat\vT\big(\frac{\pi}{6}\big)
+=\frac{1}{5}\Big(-\frac{3}{2},\frac{3\sqrt{3}}{2}, 4\Big)\text{,}\) \(\hat\vN\big(\frac{\pi}{6}\big)
+=\frac{1}{2}\big(\sqrt{3},1,0\big)\text{,}\) \(\hat\vB(\frac{\pi}{6}\big)
+=\frac{1}{5}\big(-2,2\sqrt{3},-3)\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2059" id="solution-2059"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2059"><div class="solution solution-like">
+<p id="p-15765">(a)  For the specified curve</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t)&amp;=\big(\cos^3t,\sin^3t,2\sin^2t\big)\\
+\vv(t)&amp;=\big(-3\cos^2t\sin t,3\sin^2t\cos t,4\sin t\cos t\big)\\
+&amp;=\sin t\cos t (-3\cos t,3\sin t, 4)\\
+|\vv(t)|&amp;=\sin t\cos t\sqrt{9\cos^2t+9\sin^2t+16}=5\sin t\cos t
+\end{align*}
+</div>
+<p data-braille="continuation">So the distance travelled is</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^{\pi/2}|\vv(t)|\,\dee{t}=\int_0^{\pi/2} 5\sin t\cos t\,\dee{t} = \frac{5}{2}\sin^2t\Big|_0^{\pi/2}
+=\frac{5}{2}
+\end{equation*}
+</div>
+<p id="p-15766">(b) Since</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t)&amp;=\sin t\cos t (-3\cos t,3\sin t, 4) &amp;
+|\vv(t)|&amp;=5\sin t\cos t
+\end{align*}
+</div>
+<p data-braille="continuation">we have</p>
+<div class="displaymath">
+\begin{align*}
+\hat\vT(t) &amp;= \frac{\vv(t)}{|\vv(t)|}
+=\frac{1}{5}(-3\cos t,3\sin t, 4) &amp;
+\hat\vT\Big(\frac{\pi}{6}\Big)
+&amp;=\frac{1}{5}\Big(-\frac{3}{2},\frac{3\sqrt{3}}{2}, 4\Big)\\
+\hat\vT'(t) &amp;=\frac{1}{5}(3\sin t,3\cos t, 0) &amp;
+\hat\vT'\Big(\frac{\pi}{6}\Big)
+&amp;=\frac{1}{5}\Big(\frac{3\sqrt{3}}{2}, \frac{3}{2}, 0\Big)\\
+&amp; &amp; &amp;= \frac{3}{10} \Big(\sqrt{3}, 1, 0\Big)\\
+\hat\vN\Big(\frac{\pi}{6}\Big) &amp;= \frac{\hat\vT'\big(\frac{\pi}{6}\big)}
+{|\hat\vT'\big(\frac{\pi}{6}\big)|}
+=\frac{1}{2}\big(\sqrt{3},1,0\big) &amp;
+\hat\vB(\frac{\pi}{6}\big)
+&amp;= \hat\vT\Big(\frac{\pi}{6}\Big)\times
+\hat\vN\big(\frac{\pi}{6}\big)\\
+&amp; &amp; &amp;=\frac{1}{10}\big(-4,4\sqrt{3},-6)\\
+&amp; &amp; &amp;=\frac{1}{5}\big(-2,2\sqrt{3},-3)
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1984"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-15767">Suppose that  the curve \(C\) is the intersection of the cylinder \(x^2 +y^2 = 1\) with the surface  \(z =x^2 - y^2\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-6515">Find a parameterization of \(C\text{.}\)</li>
+<li id="li-6516">Determine the curvature of \(C\) at the point \(\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)\text{.}\)</li>
+<li id="li-6517">Find the osculating plane to \(C\) at the point \(\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)\text{.}\) In general, the osculating plane to a curve \(\vr(t)\) at the point \(\vr(t_0)\) is the plane which fits the curve best at \(\vr(t_0)\text{.}\) It passes through \(\vr(t_0)\) and has normal vector \(\hat\vB(t_0)\text{.}\)</li>
+<li id="li-6518">Find the radius and the centre of the osculating circle to \(C\) at the point \(\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1572" id="hint-1572"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1572"><div class="hint solution-like"><p id="p-15768">(a) First find a parametrization \(\big(x(\theta),y(\theta)\big)\) for  \(x^2+y^2=1\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1984" id="answer-1984"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1984"><div class="answer solution-like">
+<p id="p-15769">(a) \(\vr(\theta) =\cos\theta\,\hi +\sin\theta\,\hj + \cos(2\theta)\,\hk\) \(0\le\theta \lt 2\pi\)</p>
+<p id="p-15770">(b) \(\frac{1}{5}\)</p>
+<p id="p-15771">(c) \(z =\sqrt{2}\,x-\sqrt{2}\,y\)</p>
+<p id="p-15772">(d) radius \(1/\ka(\pi/4)=5\) and centre \(\big(-2\sqrt{2}\,,\,-2\sqrt{2}\,,\,0\big)\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2060" id="solution-2060"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2060"><div class="solution solution-like">
+<p id="p-15773">(a) The curve \(x^2+y^2=1\) is a circle of radius \(1\text{.}\) So we can parametrize it by \(x(\theta)=\cos\theta\text{,}\) \(y(\theta)=\sin\theta\text{,}\) \(0\le\theta \lt 2\pi\text{.}\) The \(z\)-coordinate of any point on the intersection is determined by \(z=x^2-y^2\text{.}\) So we can use the parametrization</p>
+<div class="displaymath">
+\begin{align*}
+\vr(\theta) &amp;= \cos\theta\,\hi +\sin\theta\,\hj + [\cos^2\theta-\sin^2\theta]\,\hk\\
+&amp;=\cos\theta\,\hi +\sin\theta\,\hj + \cos(2\theta)\,\hk
+\qquad 0\le\theta \lt 2\pi
+\end{align*}
+</div>
+<p id="p-15774">(b) Note that \(\vr(\theta) = \big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)\) when \(\theta=\frac{\pi}{4}\text{.}\) For general \(\theta\text{,}\) the velocity and acceleration are</p>
+<div class="displaymath">
+\begin{align*}
+\vv(\theta)=\vr'(\theta)&amp;=-\sin\theta\,\hi + \cos\theta\,\hj  -2\sin(2\theta)\,\hk\\
+\va(\theta)=\vv'(\theta)&amp;=-\cos\theta\,\hi -\sin\theta\,\hj  -4\cos(2\theta)\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">In particular,</p>
+<div class="displaymath">
+\begin{align*}
+\vv(\pi/4)&amp;=-\frac{1}{\sqrt{2}}\,\hi + \frac{1}{\sqrt{2}}\,\hj  -2\,\hk\\
+\va(\pi/4)&amp;=-\frac{1}{\sqrt{2}}\,\hi -\frac{1}{\sqrt{2}}\,\hj\\
+\diff{s}{\theta}(\pi/4) &amp;= |\vv(\pi/4)|=\sqrt{5}\\
+\vv(\pi/4)\times\va(\pi/4)&amp;=-\sqrt{2}\,\hi +\sqrt{2}\,\hj + \hk\\
+|\vv(\pi/4)\times\va(\pi/4)|&amp;=\sqrt{5}
+\end{align*}
+</div>
+<p data-braille="continuation">So the curvature</p>
+<div class="displaymath">
+\begin{equation*}
+\ka(\pi/4) = \frac{|\vv(\pi/4)\times\va(\pi/4)|}{|\vv(\pi/4)|^3}
+=\frac{1}{5}
+\end{equation*}
+</div>
+<p id="p-15775">(c) The binormal to \(C\) at \(\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)\) is</p>
+<div class="displaymath">
+\begin{gather*}
+\hat\vB(\pi/4) =\frac{\vv(\pi/4)\times\va(\pi/4)}{|\vv(\pi/4)\times\va(\pi/4)|}
+=\frac{-\sqrt{2}\,\hi +\sqrt{2}\,\hj + \hk}{\sqrt{5}}
+\end{gather*}
+</div>
+<p data-braille="continuation">So the osculating plane to \(C\) at \(\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)\) is</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\big(-\sqrt{2}\,,\,\sqrt{2}\,,\,1\big)\cdot\big(x-1/\sqrt{2}\,,\,y-1/\sqrt{2}\,,\,z-0\big) = 0
+\qquad{\rm or}\\
+&amp; z =\sqrt{2}\,x-\sqrt{2}\,y
+\end{align*}
+</div>
+<p id="p-15776">(d) From the computations in parts (b) and (c), we have</p>
+<div class="displaymath">
+\begin{align*}
+\hT(\pi/4)&amp;=\frac{\vv(\pi/4)}{|\vv(\pi/4)|}
+=\frac{-1/\sqrt{2}\,\hi + 1/\sqrt{2}\,\hj -2\,\hk}{\sqrt{5}}\\
+\hB(\pi/4)&amp;=\frac{\vv(\pi/4)\times\va(\pi/4)}{|\vv(\pi/4)\times\va(\pi/4)|}
+=\frac{-\sqrt{2}\,\hi +\sqrt{2}\,\hj + \hk}{\sqrt{5}}\\
+\hN(\pi/4)&amp;=\hB(\pi/4)\times\hT(\pi/4)
+=\frac{-\hi-\hj}{\sqrt{2}}
+\end{align*}
+</div>
+<p data-braille="continuation">So the osculating circle has radius \(1/\ka(\pi/4)=5\) and centre</p>
+<div class="displaymath">
+\begin{align*}
+\vr_c(\pi/4)&amp;=\vr(\pi/4)+\frac{\hN(\pi/4)}{\ka(\pi/4)}
+=\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)
+-5\big(1/\sqrt{2}\,,1/\sqrt{2}\,,\,0\big)\\
+&amp;=\big(-2\sqrt{2}\,,\,-2\sqrt{2}\,,\,0\big)
+\end{align*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-265">
+<div class="introduction" id="introduction-403"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1985"><h6 class="heading">
+<span class="codenumber">26<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2008D.</span>
+</h6>
+<p id="p-15777">Under the influence of a force field \(\vF\text{,}\) a particle of mass 2 kg is moving with constant speed 3 m/s along the path given as the intersection of the plane \(z = x\) and the parabolic cylinder \(z = y^2\text{,}\) in the direction of increasing \(y\text{.}\) Find \(\vF\)  at the point \((1, 1, 1)\text{.}\) (Length is measured in m along the three coordinate axes.)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1573" id="hint-1573"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1573"><div class="hint solution-like"><p id="p-15778">You need to find the acceleration at \((1,1,1)\text{.}\) Think about what strategies are available for computing the acceleration.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1985" id="answer-1985"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1985"><div class="answer solution-like"><p id="p-15779">\(\frac{4}{9}(\hi-4\,\hj+\hk)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2061" id="solution-2061"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2061"><div class="solution solution-like">
+<p id="p-15780">We'll solve this problem twice, using two different strategies. (The second strategy will be much more efficient than the first one.) Both strategies use that \(\vF=m\va\text{.}\) Since we are told that \(m=2\text{,}\) we just have to find the acceleration \(\va\) at \((1,1,1)\text{.}\)</p>
+<p id="p-15781"><em class="emphasis">Strategy 1:</em> In the first strategy, we'll find the position \(\vr(t)\text{,}\) as a function of time \(t\) and then differentiate twice to get the acceleration \(\va(t)\text{.}\)</p>
+<ul id="p-15782" class="disc">
+<li id="li-6519">First we'll find any old parametrization. We are told that, on the path, \(z=x\) and \(z=y^2\text{.}\) So let's use \(y\) as the parameter. Then \(x=z=y^2\text{.}\) So the parametrization is \(\vR(y)=y^2\,\hi+ y\,\hj +y^2\,\hk\text{.}\) (We'll save the notation “\(\vr(t)\)” for the parametrization with respect to time.)</li>
+<li id="li-6520">Next we'll reparametrize to get the time \(t\) as the parameter. Since<div class="displaymath">
+\begin{align*}
+\diff{\vR}{y} &amp;= 2y\,\hi+\hj + 2y\,\hk\\
+\implies \diff{s}{y} &amp;=\big|2y\,\hi+\hj + 2y\,\hk\big|
+=\sqrt{1+8y^2}
+\end{align*}
+</div>We are told that the speed \(\diff{s}{t}=3\) for all \(t\text{.}\) So, choosing our zero point for time to coincide with our zero point for \(s\text{,}\) we have \(s=3t\text{,}\) or \(t=s/3\) so that<div class="displaymath">
+\begin{equation*}
+\diff{t}{y} =\frac{1}{3}\sqrt{1+8y^2}
+\end{equation*}
+</div>We could now integrate to get \(t\) as a function of \(y\text{.}\) But that looks quite messy. Fortunately we only need the acceleration at one point, namely \((1,1,1)\text{.}\) We'll now see that that saves quite a bit of work. Pretend that we have integrated to get \(t\) as a function of \(y\) and call the answer \(t(y)\text{.}\) Call the inverse function, which gives \(y\) as a function of \(t\text{,}\) \(y(t)\text{.}\)</li>
+<li id="li-6521">We now have \(\vr(t) = \vR\big(y(t)\big)\text{.}\) So, by the chain rule,<div class="displaymath">
+\begin{align*}
+\vr'(t) &amp;= \vR'\big(y(t)\big)\ y'(t)\\
+\vr''(t) &amp;= \vR'\big(y(t)\big)\ y''(t) + \vR''\big(y(t)\big)\ y'(t)^2
+\end{align*}
+</div>We're only interest in the time, call it \(t_0\text{,}\) at which \(y(t_0)=1\text{.}\) The acceleration at time \(t_0\) is<div class="displaymath">
+\begin{align*}
+\vr''(t_0)
+&amp;= \vR'\big(y(t_0)\big)\ y''(t_0) + \vR''\big(y(t_0)\big)\ y'(t_0)^2\\
+&amp; = \vR'(1)\ y''(t_0) + \vR''(1)\ y'(t_0)^2\\
+&amp; = \big[2\,\hi+\hj + 2\,\hk\big]\ y''(t_0)
++ \big[2\,\hi+ 2\,\hk\big]\ y'(t_0)^2
+\end{align*}
+</div>so we just have to find \(y'(t_0)\) and \(y''(t_0)\text{.}\)</li>
+<li id="li-6522">We know that \(\diff{t}{y} =\frac{1}{3}\sqrt{1+8y^2}\text{.}\) So by the inverse function theorem<div class="displaymath">
+\begin{align*}
+\diff{y}{t}(t)
+&amp;=\frac{3}{\sqrt{1+8y(t)^2}}\\
+\difftwo{y}{t}(t)
+&amp;=-\frac{1}{2}\,\frac{3\big(16y(t)y'(t)\big)}{{[1+8y(t)^2]}^{3/2}}
+\end{align*}
+</div>In particular<div class="displaymath">
+\begin{align*}
+y'(t_0)
+&amp;=\frac{3}{\sqrt{1+8y(t_0)^2}}
+=\frac{3}{\sqrt{1+8}}
+=1\\
+y''(t_0)
+&amp;=-\frac{24\,y(t_0)y'(t_0)}{{[1+8y(t_0)^2]}^{3/2}}
+= - \frac{24\times 1\times 1}{{(1+8)}^{3/2}}
+= - \frac{8}{9}
+\end{align*}
+</div>
+</li>
+<li id="li-6523">
+<em class="emphasis">Finally</em>, the force is<div class="displaymath">
+\begin{align*}
+2\vr''(t_0) &amp;= 2\big[2\,\hi+\hj + 2\,\hk\big]\ y''(t_0)
++ 2\big[2\,\hi+ 2\,\hk\big]\ y'(t_0)^2\\
+&amp;= -\frac{16}{9}\big[2\,\hi+\hj + 2\,\hk\big] +2\big[2\,\hi+ 2\,\hk\big]\\
+&amp;= \frac{4}{9}\,\hi -\frac{16}{9}\,\hj + \frac{4}{9}\,\hk
+\end{align*}
+</div>
+</li>
+</ul>
+<p id="p-15783"><em class="emphasis">Strategy 2:</em> The second strategy will be based on (see §<a href="sec_CurveCompendium.html" class="internal" title="Section 12.5: A Compendium of Curve Formula">12.5</a>)</p>
+<div class="displaymath">
+\begin{equation*}
+\va=\difftwo{s}{t}\,\hat\vT +\ka\Big(\diff{s}{t}\Big)^2\hat\vN
+\end{equation*}
+</div>
+<p data-braille="continuation">In this problem, we are told that \(\diff{s}{t}=3\) for all \(t\text{,}\) so that \(\difftwo{s}{t}=0\) and</p>
+<div class="displaymath">
+\begin{equation*}
+\va=9\ka\hat\vN
+\end{equation*}
+</div>
+<p data-braille="continuation">So we just have to find the curvature, \(\ka\text{,}\) and unit normal, \(\hat\vN\text{,}\) at \((1,1,1)\text{.}\) We have already found one parametrization of the path in strategy 1, namely</p>
+<div class="displaymath">
+\begin{equation*}
+\vR(y)=y^2\,\hi+ y\,\hj +y^2\,\hk
+\end{equation*}
+</div>
+<p data-braille="continuation">Note that \(\vR(1) = (1,1,1)\text{.}\) Since</p>
+<div class="displaymath">
+\begin{align*}
+\vR'(y)&amp;=2y\,\hi+ \hj +2y\,\hk\\
+\hat\vT(y)&amp;=\frac{\vR'(y)}{|\vR'(y)|}
+=\frac{2y\,\hi+ \hj +2y\,\hk}{\sqrt{1+8y^2}}\\
+\hat\vT'(y)&amp;= \frac{2\,\hi +2\,\hk}{\sqrt{1+8y^2}}
+-\frac{16y}{2}\ \frac{2y\,\hi+ \hj +2y\,\hk}{[1+8y^2]^{3/2}}\\
+\hat\vT'(1)&amp;= \frac{2\,\hi +2\,\hk}{3}
+-8\frac{2\,\hi+ \hj +2\,\hk}{27}
+=\frac{2\,\hi-8\,\hj +2\,\hk}{27}
+\end{align*}
+</div>
+<p data-braille="continuation">we have (again see §<a href="sec_CurveCompendium.html" class="internal" title="Section 12.5: A Compendium of Curve Formula">12.5</a>)</p>
+<div class="displaymath">
+\begin{align*}
+\ka(1) &amp;=\frac{|\hat\vT'(1)|}{|\vR'(1)|}\\
+\hat\vN(1) &amp;=\frac{\hat\vT'(1)}{|\hat\vT'(1)|}\\
+\vF&amp;=m\va = 2\times 9\ka(1)\hat\vN(1)
+=18\frac{\hat\vT'(1)}{|\vR'(1)|}
+=18\frac{2\,\hi-8\,\hj +2\,\hk}{27\sqrt{1+8\times 1^2}}\\
+&amp;=\frac{4}{9}(\hi-4\,\hj+\hk)
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1986"><h6 class="heading">
+<span class="codenumber">27<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2016A.</span>
+</h6>
+<p id="p-15784">Consider the curve \(C\) in 3 dimensions given by</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) = 2t\hi + t^2\hj + \sqrt{3} t^2\hk
+\end{equation*}
+</div>
+<p data-braille="continuation">for \(t \in\bbbr\text{.}\)</p>
+<ol id="p-15785" class="lower-alpha">
+<li id="li-6524">Compute the unit tangent vector \(\vT(t)\text{.}\)</li>
+<li id="li-6525">Compute the unit normal vector \(\vN(t)\text{.}\)</li>
+<li id="li-6526">Show that the binormal vector \(\vB\) to this curve does not depend on \(t\) and is one of the following vectors:<div class="displaymath">
+\begin{equation*}
+\text{(1)}\ \left[\begin{matrix}
+1/2 \\
+-\sqrt{3}/2 \\
+0
+\end{matrix}\right]\qquad
+\text{(2)}\ \left[\begin{matrix}
+0  \\
+\sqrt{3}/2 \\
+1/2
+\end{matrix}\right]\qquad
+\text{(3)}\ \left[\begin{matrix}
+0 \\
+-\sqrt{3}/2 \\
+1/2
+\end{matrix}\right]\qquad
+\text{(4)}\ \left[\begin{matrix}
+0\\
+-1/2 \\
+\sqrt{3}/2
+\end{matrix}\right]\qquad
+\end{equation*}
+</div>This implies that \(C\) is a plane curve.</li>
+<li id="li-6527">According to your choice of vector (1), (2), (3) or (4), give the equation of the plane containing \(C\text{.}\)</li>
+<li id="li-6528">Compute the curvature \(\kappa(t)\) of the curve.</li>
+<li id="li-6529">Are there point(s) where the curvature is maximal? If yes, give the coordinates of the point(s). If no, justify your answer.</li>
+<li id="li-6530">Are there point(s) where the curvature is minimal? If yes, give the coordinates of the point(s). If no, justify your answer.</li>
+<li id="li-6531">
+<p id="p-15786">Let</p>
+<div class="displaymath">
+\begin{equation*}
+\vu := 2\,\hi,\quad
+\vv := \hj + \sqrt{3}\,\hk\quad
+\vw := -\sqrt{3}\,\hj + \hk
+\end{equation*}
+</div>
+<ol class="lower-roman">
+<li id="li-6532">Express \(\hi\text{,}\) \(\hj\text{,}\) \(\hk\) in terms of \(\vu\text{,}\) \(\vv\text{,}\) \(\vw\text{.}\)</li>
+<li id="li-6533">Using (i), write \(\vr(t)\) in the form<div class="displaymath">
+\begin{equation*}
+a(t)\vu + b(t)\vv + c(t)\vw
+\end{equation*}
+</div>where \(a(t)\text{,}\) \(b(t)\) and \(c(t)\) are functions you have to determine. You should find that one of these functions is zero.</li>
+<li id="li-6534">Draw the curve given by \(\big(a(t), b(t)\big)\) in the \(xy\)-plane.</li>
+<li id="li-6535">Is the drawing consistent with parts (f) and (g)? Explain.</li>
+</ol>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1574" id="hint-1574"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1574"><div class="hint solution-like">
+<p id="p-15787">For part (a), \(\vT(t)\) will be a vector of the form \(\vT(t) = \frac{(1,at,bt)}{\sqrt{1+4t^2}}\) where \(a\) and \(b\) are nonzero constant real numbers.</p>
+<p id="p-15788">For part (b), \(\vN(t)\) will be a vector of the form \(\vN(t) = \frac{(-4t,\alpha, \beta)}{2\sqrt{1+4t^2}}\) where \(\alpha\) and \(\beta\) are nonzero constant real numbers.</p>
+<p id="p-15789">For part (e),  \(\kappa(t)\) will be a function of the form \(\kappa(t) = \frac{\gamma}{{(1+4t^2)}^{3/2}}\text{,}\) where \(\gamma\) is a positive constant real number.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1986" id="answer-1986"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1986"><div class="answer solution-like">
+<p id="p-15790">(a) \(\hat\vT(t)=\frac{\hi + t\hj + \sqrt{3} t\hk }{\sqrt{1+4t^2}}\)</p>
+<p id="p-15791">(b) \(\hat\vN(t)=\frac{-4t\,\hi + \hj + \sqrt{3} \hk }{2\sqrt{1+4t^2}}\)</p>
+<p id="p-15792">(c) \textcircled{3}</p>
+<p id="p-15793">(d) \(-\sqrt{3} y + z=0\)</p>
+<p id="p-15794">(e) \(\ka(t)={(1+4t^2)}^{-3/2}\)</p>
+<p id="p-15795">(f) The curvature \(\ka(t)\) achieves its maximum value at \(\vr(0)=(0,0,0)\text{.}\)</p>
+<p id="p-15796">(g) The curvature never achieves a minimum.</p>
+<p id="p-15797">(h) \(\hi=\frac{\vu}{2}\text{,}\) \(\hj=\frac{\vv-\sqrt{3}\,\vw}{4}\text{,}\) \(\hk=\frac{\sqrt{3}\,\vv+\vw}{4}\text{,}\) \(\vr(t) = t\,\vu + t^2 \,\vv\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:23.5%;margin-right:23.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE16A_6h.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15798">The curve \(\big(a(t),b(t)\big)=(t,t^2)\) is the curve \(y=x^2\text{.}\) It is “curviest” at the origin, which is consistent with part (f). It becomes flatter and flatter as \(|t|\) increases, but never achieves “perfect flatness”, which is consistent with (g).</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2062" id="solution-2062"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2062"><div class="solution solution-like">
+<p id="p-15799">(a) As</p>
+<div class="displaymath">
+\begin{gather*}
+\vr(t) = 2t\hi + t^2\hj + \sqrt{3} t^2\hk\\
+\vr'(t) = 2\hi + 2t\hj + 2\sqrt{3} t\hk
+\end{gather*}
+</div>
+<p data-braille="continuation">the unit tangent vector is</p>
+<div class="displaymath">
+\begin{align*}
+\hat\vT(t) &amp;=\frac{\hi + t\hj + \sqrt{3} t\hk }{|\hi + t\hj + \sqrt{3} t\hk |}
+=\frac{\hi + t\hj + \sqrt{3} t\hk }{\sqrt{1+4t^2}}
+\end{align*}
+</div>
+<p id="p-15800">(b) Since</p>
+<div class="displaymath">
+\begin{align*}
+\diff{\hat\vT}{t}(t)
+&amp;=\frac{ \hj + \sqrt{3} \hk }{\sqrt{1+4t^2}}
+-4t\frac{\hi + t\hj + \sqrt{3} t\hk }{{(1+4t^2)}^{3/2}}
+=\frac{-4t\hi + \hj + \sqrt{3} \hk }{{(1+4t^2)}^{3/2}}
+\end{align*}
+</div>
+<p data-braille="continuation">the unit normal is</p>
+<div class="displaymath">
+\begin{align*}
+\hat\vN(t) &amp;=\frac{-4t\hi + \hj + \sqrt{3} \hk }
+{|-4t\hi + \hj + \sqrt{3} \hk|}
+=\frac{-4t\,\hi + \hj + \sqrt{3} \hk }{2\sqrt{1+4t^2}}
+\end{align*}
+</div>
+<p id="p-15801">(c) The unit binormal is</p>
+<div class="displaymath">
+\begin{align*}
+\hat\vB(t) &amp;= \hat\vT(t)\times \hat\vN(t)\\
+&amp;=\frac{1}{2(1+4t^2)}\det\left[\begin{matrix}
+\hi &amp;  \hj &amp; \hk\\
+1   &amp;   t  &amp;\sqrt{3} t\\
+-4t &amp;   1  &amp;\sqrt{3}
+\end{matrix}\right]\\
+&amp;=\frac{-\sqrt{3}(1+4t^2)\hj  + (1+4t^2)\hk}{2(1+4t^2)}\\
+&amp;=-\frac{\sqrt{3}}{2}\hj +\frac{1}{2}\hk
+\end{align*}
+</div>
+<p data-braille="continuation">which is (3).</p>
+<p id="p-15802">(d) The plane contains the point \(\vr(0)=\vZero\) and is perpendicular to the vector \(-\frac{\sqrt{3}}{2}\hj +\frac{1}{2}\hk\) and so is</p>
+<div class="displaymath">
+\begin{equation*}
+-\sqrt{3} y + z=0
+\end{equation*}
+</div>
+<p id="p-15803">(e) The curvature is</p>
+<div class="displaymath">
+\begin{align*}
+\ka(t) &amp;= \Big|\diff{\hat\vT}{t}(t)\Big|/\Big|\diff{s}{t}\Big|
+=\frac{|-4t\hi + \hj + \sqrt{3} \hk| }{{(1+4t^2)}^{3/2}}
+\frac{1}{|2\hi + 2t\hj + 2\sqrt{3} t\hk |}\\
+&amp;=\frac{\sqrt{4+16t^2}}{{(1+4t^2)}^{3/2}}  \frac{1}{2\sqrt{1+4t^2}}
+=\frac{1}{{(1+4t^2)}^{3/2}}
+\end{align*}
+</div>
+<p id="p-15804">(f), (g) The denominator \({(1+4t^2)}^{3/2}\) of \(\ka(t)\) is a minimum at \(t=0\) and grows without bound as \(|t|\) increases. So the denominator never achieves a maximum. Consquently, the curvature \(\ka(t)\) achieves its maximum value when \(t=0\) and so at \(\vr(0)=(0,0,0)\text{.}\) The curvature never achieves a minimum.</p>
+<p id="p-15805">(h) Since \(\sqrt{3}\,\vv+\vw=4\,\hk\) and \(\vv-\sqrt{3}\,\vw=4\,\hj\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\hi=\frac{\vu}{2}\qquad
+\hj=\frac{\vv-\sqrt{3}\,\vw}{4}\qquad
+\hk=\frac{\sqrt{3}\,\vv+\vw}{4}
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(\vu=2\,\hi\) and \(\vv=\hj+\sqrt{3}\,\hk\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t) = t\,\vu + t^2 \,\vv
+= a(t)\vu + b(t)\vv + c(t)\vw\\
+&amp;\qquad\text{ with }a(t)=t,\ b(t)=t^2,\ c(t)=0
+\end{align*}
+</div>
+<p data-braille="continuation">The curve \(\big(a(t),b(t)\big)=(t,t^2)\) is the curve \(y=x^2\text{.}\) It is “curviest” at the origin, which is consistent with part (f). It becomes flatter and flatter as \(|t|\) increases, but never achieves “perfect flatness”, which is consistent with (g).</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:23.5%;margin-right:23.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE16A_6h.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1987"><h6 class="heading">
+<span class="codenumber">28<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2017D.</span>
+</h6>
+<p id="p-15806">Recall that if \(\hat\vT\) is the unit tangent vector to an oriented curve with arclength parameter \(s\text{,}\) then the curvature \(\ka\) and the principle normal vector \(\hat\vN\) are defined by the equation</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{\hat\vT}{s} = \ka\,\hat\vN
+\end{equation*}
+</div>
+<p data-braille="continuation">Moreover, the torsion \(\tau\) and the binormal vector \(\hat\vB\) are defined by the equations</p>
+<div class="displaymath">
+\begin{equation*}
+\hat\vB = \hat\vT\times\hat\vN,\qquad
+\diff{\hat\vB}{s} = -\tau\,\hat\vN
+\end{equation*}
+</div>
+<p data-braille="continuation">Show that</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{\hat\vN}{s} = -\ka\,\hat\vT + \tau\,\hat\vB
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1575" id="hint-1575"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1575"><div class="hint solution-like">
+<p id="p-15807">Differentiate \(\hat\vN =\hat\vB\times\hat\vT\) with respect to \(s\text{.}\)</p>
+<p id="p-15808">The vectors \(\hN, \hB,\) and \(\hT\) form a right-handed triple. Sketch them (the same way you might sketch the \(x\text{,}\) \(y\text{,}\) and \(z\) axes) to figure out the signs of their cross products.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1987" id="answer-1987"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1987"><div class="answer solution-like"><p id="p-15809">See the solution.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2063" id="solution-2063"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2063"><div class="solution solution-like">
+<p id="p-15810">The three unit vectors \(\hat\vT\text{,}\) \(\hat\vN\) and \(\hat\vB\) are mutually perpendicular and form a right handed triple.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE17D_5.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15811">So</p>
+<div class="displaymath">
+\begin{equation*}
+\hat\vN = \hat\vB\times\hat\vT \qquad
+\hat\vN\times\hat\vT = -\hat\vB \qquad
+\hat\vB\times\hat\vN = -\hat\vT
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{align*}
+\diff{\hat\vN}{s} &amp; = \diff{\hat\vB}{s}\times\hat\vT
++\hat\vB\times \diff{\hat\vT}{s}
+= -\tau\,\hat\vN\times\hat\vT
++\hat\vB\times\big(\ka\hat\vN\big)
+= \tau\,\hat\vB - \ka\hat\vT
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1988"><h6 class="heading">
+<span class="codenumber">29<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2000D.</span>
+</h6>
+<p id="p-15812">A skier descends the hill \(z =\sqrt{4-x^2-y^2}\) along a trail with parameterization</p>
+<div class="displaymath">
+\begin{equation*}
+x=\sin(2\theta),\qquad y=1-\cos(2\theta),\qquad z=2\cos\theta,\qquad
+0\le\theta\le\frac{\pi}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">Let \(P\) denote the point on the trail where \(x = 1\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-6536">Find the vectors \(\hat\vT, \hat\vN, \hat\vB\) and the curvature \(\ka\) of the ski trail at the point \(P\text{.}\)</li>
+<li id="li-6537">
+<p id="p-15813">The skier's acceleration at \(P\) is \(\va = (-2, 3, -2\sqrt{2})\text{.}\) Find, at \(P\text{,}\)</p>
+<ol class="lower-roman">
+<li id="li-6538">the rate of change of the skier's speed and</li>
+<li id="li-6539">the skier's velocity (a vector).</li>
+</ol>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1576" id="hint-1576"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1576"><div class="hint solution-like"><p id="p-15814">In part (b), note that \(\va\) is the second derivative with respect to time (not \(\theta\)). Exploit \(\va = \diff{v}{t}\hat\vT + v^2\kappa\hat\vN\) to  find what you're asked for.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1988" id="answer-1988"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1988"><div class="answer solution-like">
+<p id="p-15815">(a) \(\hat\vT = \frac{1}{\sqrt6}\big(0,2,-\sqrt2\big)\text{,}\) \(\hat\vN = -\frac{1}{\sqrt{39}}\big(6,1,\sqrt2\big)\text{,}\) \(\hat\vB = \frac{1}{\sqrt{13}}\big(-1,2,2\sqrt2\big)\text{,}\) \(\kappa = \frac{\sqrt{13}}{3\sqrt3} = \frac{\sqrt{39}}{9}\)</p>
+<p id="p-15816">(b) (i) \(\diff{v}{t}=\frac{5\sqrt2}{\sqrt3}\)</p>
+<p id="p-15817">(ii) \(\vv = (0,\sqrt2,-1)\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2064" id="solution-2064"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2064"><div class="solution solution-like">
+<p id="p-15818">(a) Parametrizing the curve by \(\theta\) gives</p>
+<div class="displaymath">
+\begin{align*}
+\vr(\theta) &amp;= \big(\sin(2\theta),1-\cos(2\theta),2\cos\theta\big),\\
+\vv =\vr'(\theta)&amp;= \big(2\cos(2\theta),2\sin(2\theta),-2\sin\theta\big),\\
+\va = \vr''(\theta)&amp;=\big(-4\sin(2\theta),4\cos(2\theta),-2\cos\theta\big).
+\end{align*}
+</div>
+<p data-braille="continuation">At the point \(P\text{,}\) we have \(\theta=\pi/4\text{,}\) giving instantaneous values</p>
+<div class="displaymath">
+\begin{equation*}
+\vr = (1,1,\sqrt2),
+\quad
+\vv = \big(0,2,-\sqrt2\big),
+\quad
+v = |\vv| = \sqrt6,
+\quad
+\va = \big(-4,0,-\sqrt2\big).
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence \(\hat\vT = \frac{\vv}{|\vv|}
+= \frac{1}{\sqrt6}\big(0,2,-\sqrt2\big)\text{.}\)</p>
+<p id="p-15819">Now \(\hat\vB = \frac{\vv\times\va}{|\vv\times\va|}
+= \frac{1}{\sqrt{26}}\big(-\sqrt2,2\sqrt2,4\big)
+= \frac{1}{\sqrt{13}}\big(-1,2,2\sqrt2\big)\text{,}\) since</p>
+<div class="displaymath">
+\begin{equation*}
+\vv\times\va
+= \left|\begin{matrix}\hi &amp; \hj &amp; \hk \\
+0 &amp; 2 &amp; -\sqrt2 \\
+-4 &amp; 0 &amp; -\sqrt2 \end{matrix}\right|
+= \big(-2\sqrt2,4\sqrt2,8\big),
+\qquad
+|\vv\times\va| = \sqrt{104} = 2\sqrt{26}.
+\end{equation*}
+</div>
+<p data-braille="continuation">This leads to</p>
+<div class="displaymath">
+\begin{align*}
+\hat\vN &amp;= \hat\vB\times\hat\vT
+=\frac{1}{\sqrt{78}} \left|\begin{matrix}\hi &amp; \hj &amp; \hk \\
+-1 &amp; 2 &amp; 2\sqrt2 \\
+0  &amp; 2 &amp; -\sqrt2 \end{matrix}\right|
+= -\frac{1}{\sqrt{78}}\big(6\sqrt2,\sqrt2,2\big)\\
+&amp;= -\frac{1}{\sqrt{39}}\big(6,1,\sqrt2\big).
+\end{align*}
+</div>
+<p data-braille="continuation">Finally,</p>
+<div class="displaymath">
+\begin{equation*}
+\kappa = \frac{|\vv\times\va|}{v^3}
+= \frac{2\sqrt{26}}{{(\sqrt{6})}^3}
+= \frac{2\sqrt2\,\sqrt{13}}{6\sqrt2\sqrt3}
+= \frac{\sqrt{13}}{3\sqrt3} = \frac{\sqrt{39}}{9}.
+\end{equation*}
+</div>
+<p id="p-15820">(b) Now parametrize the curve by time, \(t\text{,}\) and write \(\vv=\vr'(t)\text{,}\) \(v=|\vr'(t)|\) and \(\va=\vr''(t)\text{.}\) Note that in part (a) we used \(\vv\text{,}\) \(v\) and \(\va\) with different meanings. We use the dot product to extract the tangential and normal components of \(\va = \diff{v}{t}\hat\vT + v^2\kappa\hat\vN\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\va\cdot \hT &amp;= \left(\diff{v}{t}\hat\vT + v^2\kappa\hat\vN\right)\cdot \hT\\
+&amp;=\diff{v}{t}\hT\cdot\hT+(v^2\kappa)\hN\cdot\hT\\
+\end{align*}
+<p class="intertext">Since \(\hT\) is a unit vector, \(\hT \cdot \hT=\|\hT\|^2=1\text{;}\) since \(\hT\) and \(\hN\) are perpendicular, \(\hT \cdot \hN =0\text{.}\)</p>
+\begin{align*}
+&amp;=\diff{v}{t}\\
+\end{align*}
+<p class="intertext">This gives us a nice way to compute \(\diff{v}{t}\text{,}\) the rate of change of speed.</p>
+\begin{align*}
+\diff{v}{t} &amp;= \va\cdot\hat\vT
+= (-2,3,-2\sqrt2)\cdot\frac{1}{\sqrt6}\big(0,2,-\sqrt2\big)\\
+&amp;= \frac{1}{\sqrt6}[0 + 6 + 4] = \frac{10}{\sqrt6} = \frac{5}{3}\sqrt6.
+\end{align*}
+</div>
+<p id="p-15821">Similarly, \(\va\cdot\hat\vN = v^2\kappa\text{,}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+v^2
+= \frac{1}{\kappa}\va\cdot\hat\vN
+= \frac{9}{\sqrt{39}}\frac{-1}{\sqrt{39}}(-2,3,-2\sqrt2)
+\cdot\big(6,1,\sqrt2\big)
+= \frac{9\times 13}{39}
+= 3.
+\end{equation*}
+</div>
+<p data-braille="continuation">Hence \(|v|=\sqrt{3}\text{;}\) since \(v=|\vv|\text{,}\) \(v=\sqrt3\text{.}\) Then \(\vv = |\vv|\hT=v\hat\vT = \frac{\sqrt{3}}{\sqrt{6}}\big(0,2,-\sqrt2\big) = (0,\sqrt2,-1)\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1989"><h6 class="heading">
+<span class="codenumber">30<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2011A.</span>
+</h6>
+<p id="p-15822">A particle moves so that its position vector is given by \(\vr(t) = \big(\cos t\,,\, \sin t\,,\, c \sin t\big)\text{,}\) where \(t  \gt  0\) and \(c\) is a constant.</p>
+<ol class="lower-alpha">
+<li id="li-6540">Find the velocity \(\vv(t)\) and the acceleration \(\va(t)\) of the particle.</li>
+<li id="li-6541">Find the speed \(v(t)=|\vv(t)|\) of the particle.</li>
+<li id="li-6542">Find the tangential component of the acceleration of the particle.</li>
+<li id="li-6543">Show that the trajectory of this particle lies in a plane.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1577" id="hint-1577"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1577"><div class="hint solution-like"><p id="p-15823">For part (d), what is the relationship between the \(y\)- and \(z\)-components of the particle's position? How can you use that to find a plane containing the particle at all times \(t\text{?}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1989" id="answer-1989"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1989"><div class="answer solution-like">
+<p id="p-15824">(a) \(\vv(t) = \big(-\sin t\,,\, \cos t\,,\, c \cos t\big)\text{,}\) \(\va(t) = \big(-\cos t\,,\, -\sin t\,,\, -c \sin t\big)\)</p>
+<p id="p-15825">(b) \(v(t) = \sqrt{1+c^2\cos^2 t}\)</p>
+<p id="p-15826">(c) \(\frac{-c^2\sin t\cos t}{\sqrt{1+c^2\cos^2 t}}\)</p>
+<p id="p-15827">(d) The curve lies on the plane \(z=cy\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2065" id="solution-2065"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2065"><div class="solution solution-like">
+<p id="p-15828">(a) The position, velocity and acceleration are</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t) &amp;= \big(\cos t\,,\, \sin t\,,\, c \sin t\big)\\
+\vv(t) =\vr'(t) &amp;= \big(-\sin t\,,\, \cos t\,,\, c \cos t\big)\\
+\va(t) =\vr''(t)&amp;= \big(-\cos t\,,\, -\sin t\,,\, -c \sin t\big)
+\end{align*}
+</div>
+<p id="p-15829">(b) The speed is</p>
+<div class="displaymath">
+\begin{gather*}
+v(t) = |\vv(t)| = \sqrt{1+c^2\cos^2 t}
+\end{gather*}
+</div>
+<p id="p-15830">(c) By Theorem <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a>.c, the tangential component of the acceleration is</p>
+<div class="displaymath">
+\begin{gather*}
+\difftwo{s}{t} = \diff{\ }{t} \sqrt{1+c^2\cos^2 t}
+= \frac{-c^2\sin t\cos t}{\sqrt{1+c^2\cos^2 t}}
+\end{gather*}
+</div>
+<p id="p-15831">(d) \(y(t) =\sin t\) and \(z(t) = c\sin t\) obey \(z(t) = cy(t)\) for all \(t\text{.}\) So the curve lies on the  plane \(z=cy\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1990"><h6 class="heading">
+<span class="codenumber">31<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2017A.</span>
+</h6>
+<p id="p-15832">A race track between two hills is described by the parametric curve</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(\theta) = \Big(4 \cos\theta\,,\, 2\sin\theta\,,\,
+\frac{1}{4}\cos(2\theta)\Big),\qquad
+0 \le \theta \le 2\pi
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-6544">Compute the curvature of the track at the point \(\big(-4, 0, \frac{1}{4}\big)\text{.}\)</li>
+<li id="li-6545">Compute the radius of the circle that best approximates the bend at the point\\ \(\big(-4, 0, \frac{1}{4}\big)\) (that is, the radius of the osculating circle at that point).</li>
+<li id="li-6546">
+<p id="p-15833">A car drives down the track so that its position at time \(t\) is given by \(\vr(t^2)\text{.}\) (Note the relationship between \(t\) and \(\theta\) is \(\theta = t^2\)). Compute the following quantities.</p>
+<ol class="lower-roman">
+<li id="li-6547">The speed at the point \(\big(-4, 0, \frac{1}{4}\big)\text{.}\)</li>
+<li id="li-6548">The acceleration at the point \(\big(-4, 0, \frac{1}{4}\big)\text{.}\)</li>
+<li id="li-6549">The magnitude of the normal component of the acceleration at the point<div class="displaymath">
+\begin{equation*}
+\big(-4, 0, \frac{1}{4}\big)\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1578" id="hint-1578"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1578"><div class="hint solution-like"><p id="p-15834">Rather than trying to wrangle trig identities, plug in \(\theta=\pi\) as soon as you can for part (a). For part (c), remember that you need the chain rule if you want to make use of your previous derivatives.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1990" id="answer-1990"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1990"><div class="answer solution-like">
+<p id="p-15835">(a) \(\frac{\sqrt{17}}{4}\)</p>
+<p id="p-15836">(b) \(\frac{4}{\sqrt{17}}\)</p>
+<p id="p-15837">(c) (i) \(4\sqrt{\pi} \)</p>
+<p id="p-15838">(ii) \(\big( 16\pi\,,\, -4\,,\, -4\pi\big)\)</p>
+<p id="p-15839">(iii) \(4\sqrt{17}\,\pi\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2066" id="solution-2066"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2066"><div class="solution solution-like">
+<p id="p-15840">(a) For the specified curve \(\vr(\pi) = \big(-4,0,\frac{1}{4}\big)\) and</p>
+<div class="displaymath">
+\begin{align*}
+\vr(\theta) &amp;= \Big(4 \cos\theta\,,\, 2\sin\theta\,,\,
+\frac{1}{4}\cos(2\theta)\Big)\\
+\vv(\theta)=\vr'(\theta) &amp;= \Big(-4 \sin\theta\,,\, 2\cos\theta\,,\,
+-\frac{1}{2}\sin(2\theta)\Big)\\
+\va(\theta) = \vr''(\theta) &amp;= \Big(-4 \cos\theta\,,\, -2\sin\theta\,,\,
+-\cos(2\theta)\Big)\\
+\vv(\pi) &amp;= \big(0\,,\, -2\,,\, 0\big)\\
+\va(\pi) &amp;= \big(4\,,\, 0\,,\, -1\big)\\
+\vv(\pi) \times \va(\pi) &amp;= \big(2\,,\, 0\,,\, 8\big)
+\end{align*}
+</div>
+<p data-braille="continuation">So the curvature at \(\theta=\pi\) is</p>
+<div class="displaymath">
+\begin{align*}
+\ka(\pi)&amp;=\frac{|\vv(\pi) \times \va(\pi)|}{|\vv(\pi)|^3}
+=\frac{|(2,0,8)|}{|(0,-2,0)|^3}
+=\frac{\sqrt{17}}{4}
+\end{align*}
+</div>
+<p id="p-15841">(b) The radius is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{\ka(\pi)} = \frac{4}{\sqrt{17}}
+\end{equation*}
+</div>
+<p id="p-15842">(c) Set \(\vR(t) = \vr(t^2)\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\vR'(t)&amp;=2t\,\vr'(t^2)\\
+\vR''(t) &amp;= 2\,\vr'(t^2) +4t^2\,\vr''(t^2)
+\end{align*}
+</div>
+<p data-braille="continuation">In particular,</p>
+<div class="displaymath">
+\begin{align*}
+\vR(\sqrt{\pi}) &amp;= \Big(-4\,,\, 0\,,\,  \frac{1}{4}\Big)\\
+\vR'(\sqrt{\pi}) &amp;= 2\sqrt{\pi}\,\vv(\pi)
+=\big(0\,,\, -4\sqrt{\pi}\,,\, 0\big)\\
+\text{speed} = \big|\vR'(\sqrt{\pi})\big| &amp;=4\sqrt{\pi}\\
+\text{acceleration}=\vR''(\sqrt{\pi})
+&amp;= 2\,\vv(\pi)+4\pi\,\va(\pi)
+= \big( 16\pi\,,\, -4\,,\, -4\pi\big)
+\end{align*}
+</div>
+<p id="p-15843">The normal component of the acceleration has magnitude</p>
+<div class="displaymath">
+\begin{gather*}
+\ka\Big(\diff{s}{t}\Big)^2 = \frac{\sqrt{17}}{4}\big(4\sqrt{\pi}\big)^2
+=4\sqrt{17}\,\pi
+\end{gather*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:02:08-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">12.7.4.9.1</span><span class="period">.</span>
+</h6>
+<p>According to the equation in §<a href="sec_Sliding.html#sec_skier" class="internal" title="Subsection 12.7.2: The Skier">12.7.2</a>, the skier will become airborne when:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+|\vv| \gt \sqrt{\frac{g}{\kappa}|\hj\cdot\hN|}
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">We'll use the equation of the curve to find \(\ka\) and \(\hN\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Note that \(g\) is given in metres per second, while the other quantities are in kilometres and hours. Converting, \(9.8\) m/s\(^2\) is the same as \(\left(\frac{9.8\text{ m}}{1 \text{ s}^2}\right)\left( \frac{1 \text{ km}}{1000 \text{ m}}\right)\left(\frac{3600 \text{ s}}{1 \text{ hr}} \right)^2=98\cdot 6^4  \frac{\text{km}}{\text{h}^2}=2^5\cdot 3^4\cdot 7^2  \frac{\text{km}}{\text{h}^2}\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vr(t)&amp;=(\ln t,1-t)\\
+\vr'(t)&amp;=\vv(t)=(t^{-1}, -1)\qquad\qquad \diff{s}{t}=|\vv(t)|=\sqrt{1+t^{-2}}\\
+\vr''(t)&amp;=\va(t)=(-t^{-2},0)\\
+\ka(t)&amp;=\frac{|\vv \times \va|}{\left(\diff{s}{t}\right)^{3}}=\frac{t^{-2}}{\sqrt{1+t^{-2}}^3}=\frac{|t|}{(1+t^{2})^{3/2}}=\frac{t}{(1+t^{2})^{3/2}}\\
+\end{align*}
+<p class="intertext">Note \(t\) is positive in the interval in question.</p>
+\begin{align*}
+\hT(t)&amp;=\frac{\vv(t)}{|\vv(t)|}=\frac{1}{\sqrt{1+t^{-2}}}(t^{-1},-1)=\left( \frac{1}{\sqrt{1+t^{2}}},\frac{-t}{\sqrt{1+t^{2}}}\right)\\
+\hT'(t)&amp;= \left( \frac{-t}{({1+t^2})^{3/2}},\frac{-1}{({1+t^2})^{3/2}}\right)\qquad\qquad
+|\hT'(t)|=\frac{1}{t^2+1}\\
+\hN(t)&amp;=\frac{\hT'(t)}{|\hT'(t)|}=\left( \frac{-t}{\sqrt{1+t^2}},\frac{-1}{\sqrt{1+t^2}}\right)\\
+|\hN \cdot \hj|&amp;=\frac{1}{\sqrt{1+t^2}}
+\end{align*}
+</div>
+<p data-braille="continuation">Now, we have all the pieces we need to find the “escape velocity” of the ground.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+|\vv|&amp;=\sqrt{\frac{g}{\kappa}|\hN \cdot \hj|}=\sqrt{\frac{g\cdot (1+t^{2})^{3/2}}{t(1+t^2)^{1/2}}}=\sqrt{\frac{g(1+t^2)}{t}}
+\end{align*}
+</div>
+<p data-braille="continuation">Since the skier can take off anywhere on the hill, we just need their velocity to be larger than the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">smallest</em> value of \(\sqrt{\frac{g(1+t^2)}{t}}\) when \(1/e \le t \le e\text{.}\) To find that minimum, we find the location of the minimum of the simpler function \(g(t)=\frac{1+t^2}{t}\text{.}\) Using first-semester calculus, we find it to occur when \(t=1\text{.}\) So, the minimum value of \(\sqrt{\frac{g(1+t^2)}{t}}\) (that is, smallest speed to achieve lift-off) occurs at \(t=1\text{.}\) We therefore need a minimum speed greater than:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sqrt{\frac{g(1+t^2)}{|t|}}\Bigg|_{t=1}&amp;=\sqrt{2g}=\sqrt{2^6\cdot3^4\cdot7^2}=2^3\cdot 3^2\cdot 7 = 504\text{ kph}
+\end{align*}
+</div>
+<p data-braille="continuation">(It seems unlikely that one could reach this speed on skis. The skier is probably earth-bound until they find a curvier hill.)</p>
+</div>
+<span class="incontext"><a href="sec_Sliding.html#solution-2087">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:06:42-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>(a) \(\int_0^3\sqrt{9-x^2}\,\dee{x}\) is the area of the portion of the disk \(x^2+y^2\le 9\) that lies in the first quadrant. It is \(\frac{1}{4}\pi 3^3={\frac{9}{4}\pi}\,\text{.}\) Alternatively, you could also evaluate this integral using the substitution \(x=3\sin y\text{,}\) \(\dee{x}=3\cos y\,\dee{y}\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_0^3\sqrt{9-x^2}\,\dee{x}
+&amp;=\int_0^{\pi/2}\sqrt{9-9\sin^2y}\ (3\cos y)\,\dee{y}
+=9\int_0^{\pi/2}\cos^2 y\,\dee{y}\\
+&amp;=\frac{9}{2}\int_0^{\pi/2}[1+\cos(2y)]\,\dee{y}
+=\frac{9}{2}{\Big[y+\frac{\sin(2y)}{2}\Big]}_0^{\pi/2}\\
+&amp;=\frac{9}{4}\pi
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-829.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>(b) It's not immediately obvious what to do with this one, but remember we found \(\int \log x \dee{x}\) using integration by parts with \(u=\log x\) and \(\dee{v}=\dee{x}\text{.}\) Let's hope a similar trick works here. Integrate by parts, using \(u=\log(1+x^2)\) and \(\dee{v}=\dee{x}\text{,}\) so that \(\dee{u}=\frac{2x}{1+x^2}\,\dee{x}\text{,}\) \(v=x\text{.}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_0^1\log(1+x^2)\,\dee{x}
+\amp=\Big[x\log(1+x^2)\Big]_0^1-\int_0^1 x\frac{2x}{1+x^2}\,\dee{x}\\
+\amp=\log 2-2\int_0^1 \frac{x^2}{1+x^2}\,\dee{x}\\
+&amp;=\log 2-2\int_0^1\Big(1- \frac{1}{1+x^2}\Big)\,\dee{x}\\
+\amp=\log 2-2\big[x-\arctan x\big]_0^1\\
+&amp;=\log 2-2+\frac{\pi}{2}\approx 0.264
+\end{align*}
+</div>
+<p>(c) The integrand is a rational function with no obvious substitution, so we use partial fractions.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{x}{(x-1)^2(x-2)}
+&amp;=\frac{a}{(x-1)^2}+\frac{b}{x-1}+\frac{c}{x-2}\\
+\amp=\frac{a(x-2)+b(x-1)(x-2)+c(x-1)^2}{(x-1)^2(x-2)}
+\end{align*}
+</div>
+<p data-braille="continuation">Multiply by the denominator.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+x&amp;=a(x-2)+b(x-1)(x-2)+c(x-1)^2
+\end{align*}
+</div>
+<p data-braille="continuation">Setting \(x=1\) gives \(\textcolor{red}{a=-1}\text{.}\) Setting \(x=2\) gives \(\textcolor{red}{c=2}\text{.}\) Substituting in \(a=-1\) and \(c=2\) gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+b(x-1)(x-2)&amp;=x+(x-2)-2(x-1)^2\\
+\amp=-2x^2+6x-4=-2(x-1)(x-2)\\
+\amp\implies \color{red}{b}\color{red}{=-2}
+\end{align*}
+</div>
+<p data-braille="continuation">Hence</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\amp\int_3^\infty\frac{x}{(x-1)^2(x-2)}\,\dee{x}\\
+\amp\hskip0.25in=\lim_{M\rightarrow\infty}
+\int_3^M\left(-\frac{1}{(x-1)^2}-\frac{2}{x-1}+\frac{2}{x-2}\right)\,\dee{x}\\
+&amp;\hskip0.25in=\lim_{M\rightarrow\infty}
+\left[\frac{1}{x-1}-2\log|x-1|+2\log|x-2|\right]_3^M\\
+&amp;\hskip0.25in=\lim_{M\rightarrow\infty}
+\bigg[\frac{1}{x-1}+2\log\bigg|\frac{x-2}{x-1}\bigg|\bigg]_3^M\\
+&amp;\hskip0.25in=\lim_{M\rightarrow\infty}
+\bigg[\frac{1}{M-1}+2\log\bigg|\frac{M-2}{M-1}\bigg|\bigg]
+-\bigg[\frac{1}{3-1}+2\log\bigg|\frac{3-2}{3-1}\bigg|\bigg]\\
+&amp;\hskip0.25in=2\log 2-\frac{1}{2}\approx0.886
+\end{align*}
+</div>
+<p data-braille="continuation">since</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{M\rightarrow\infty}\log\frac{M-2}{M-1}
+&amp;=\lim_{M\rightarrow\infty}\log\frac{1-2/M}{1-1/M}
+=\log 1=0\\
+\text{and}\qquad \log\frac{1}{2}&amp;=-\log2
+\end{align*}
+</div>
+</div></body>
+</html>

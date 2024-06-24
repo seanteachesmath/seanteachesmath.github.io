@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T15:10:19-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Limit of a Function</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_velocity.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_limits.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-10.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_velocity.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_limits.html" title="Up">Up</a><a class="next-button button toolbar-item" href="section-10.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func" class="active">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_lim_func"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">The Limit of a Function</span>
+</h2>
+<section class="subsection" id="subsection-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">2.3.1</span> <span class="title">The Limit of a Function</span>
+</h3>
+<p id="p-250">Before we come to definitions, let us start with a little notation for limits.</p>
+<article class="definition definition-like" id="definition-13"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.1</span><span class="period">.</span>
+</h6>
+<p id="p-251">We will often write</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{x \to a} f(x) = L
+\end{gather*}
+</div>
+<p data-braille="continuation">which should be read as</p>
+<blockquote class="blockquote" id="blockquote-11"><p id="p-252">The limit of \(f(x)\) as \(x\) approaches \(a\) is \(L\text{.}\)</p></blockquote></article><p id="p-253">The notation is just shorthand — we don't want to have to write out long  sentences as we do our mathematics. Whenever you see these symbols you  should think of that sentence.</p>
+<p id="p-254">This shorthand also has the benefit of being mathematically precise (we'll see  this later), and (almost) independent of the language in which the author is  writing. A mathematician who does not speak English can read the above formula  and understand exactly what it means.</p>
+<p id="p-255">In mathematics, like most languages, there is usually more than one way of  writing things and we can also write the above limit as</p>
+<div class="displaymath">
+\begin{gather*}
+f(x) \to L \mbox{ as } x \to a
+\end{gather*}
+</div>
+<p data-braille="continuation">This can also be read as above, but also as</p>
+<blockquote class="blockquote" id="blockquote-12"><p id="p-256">\(f(x)\) goes to \(L\) as \(x\) goes to \(a\)</p></blockquote>
+<p id="p-257">They mean exactly the same thing in mathematics, even though they might be  written, read and said a little differently.</p>
+<p id="p-258">To arrive at the definition of limit, I want to start <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-25" id="fn-25"><sup> 1 </sup></a> with a very simple example.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-25"><div class="fn">Well, we  had two limits in the previous sections, so perhaps we really want to  “restart” with a very simple example.</div></div>
+<article class="example example-like" id="example-12"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-12"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">A simple limit.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-12"><article class="example example-like"><p id="p-259">Consider the following function.</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= \begin{cases}
+2x &amp; x \lt 3\\
+9 &amp; x=3\\
+2x &amp; x \gt 3
+\end{cases}
+\end{align*}
+</div>
+<p data-braille="continuation">This is an example of a piece-wise function <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-26" id="fn-26"><sup> 2 </sup></a>. That is, a function defined in several pieces, rather than as a single formula. We evaluate the function at a particular value of \(x\) on a case-by-case basis. Here is a sketch of it</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-26"><div class="fn">We saw another piecewise function back in Example <a class="xref" data-knowl="./knowl/eg_piecewise.html" title="Example 1.4.5: piece-wise function">1.4.5</a>.</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/piecewise1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-260">Notice the two circles in the plot. One is open, \(\circ\) and the other is  closed \(\bullet\text{.}\)</p>
+<ul class="disc">
+<li id="li-126">A filled circle has quite a precise meaning — a filled circle at  \((x,y)\) means that the function takes the value \(f(x) = y\text{.}\)</li>
+<li id="li-127">An open circle is a little harder — an open circle at \((3,6)\) means  that the point \((3,6)\) is not on the graph of \(y=f(x)\text{,}\) i.e. \(f(3) \neq 6\text{.}\)  We should only use the open circle where it is absolutely necessary in order to  avoid confusion.</li>
+</ul>
+<p id="p-261">This function is quite contrived, but it is a very good example to start  working with limits more systematically. Consider what the function does close  to \(x=3\text{.}\) We already know what happens exactly at \(3\) — \(f(x)=9\) — but I  want to look at how the function behaves very close to \(x=3\text{.}\) That is, what  does the function do as we look at a point \(x\) that gets closer and closer to  \(x=3\text{.}\)</p>
+<p id="p-262">If we plug in some numbers very close to \(3\) (but not exactly 3) into the function we see the following:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">\(x\)</td>
+<td class="l m b1 r1 l0 t1 lines">2.9</td>
+<td class="l m b1 r1 l0 t1 lines">2.99</td>
+<td class="l m b1 r1 l0 t1 lines">2.999</td>
+<td class="l m b1 r1 l0 t1 lines">\(\circ\)</td>
+<td class="l m b1 r1 l0 t1 lines">3.001</td>
+<td class="l m b1 r1 l0 t1 lines">3.01</td>
+<td class="l m b1 r1 l0 t1 lines" data-braille="last-cell">3.1</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(f(x)\)</td>
+<td class="l m b1 r1 l0 t0 lines">5.8</td>
+<td class="l m b1 r1 l0 t0 lines">5.98</td>
+<td class="l m b1 r1 l0 t0 lines">5.998</td>
+<td class="l m b1 r1 l0 t0 lines">\(\circ\)</td>
+<td class="l m b1 r1 l0 t0 lines">6.002</td>
+<td class="l m b1 r1 l0 t0 lines">6.02</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">6.2</td>
+</tr>
+</table></div></div></div>
+<p id="p-263">So as \(x\) moves closer and closer to 3, without being exactly 3, we see that  the function moves closer and closer to 6. We can write this as</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 3} f(x) &amp;= 6
+\end{align*}
+</div>
+<p data-braille="continuation">That is</p>
+<blockquote class="blockquote" id="blockquote-13"><p id="p-264">The limit as \(x\) approaches \(3\) of \(f(x)\) is \(6\text{.}\)</p></blockquote>
+<p id="p-265">So for \(x\) very close to \(3\text{,}\) without being exactly 3, the function is very close to \(6\)  — which is a long way from the value of the function exactly at \(3\text{,}\) \(f(3)=9\text{.}\) Note  well that the behaviour of the function as \(x\) gets very close to 3 <em class="emphasis">does not</em>  depend on the value of the function <em class="emphasis">at</em> 3.</p></article></div>
+<p id="p-266">We now have enough to make an informal definition of a limit, which is actually  sufficient for most of what we will do in this text.</p>
+<article class="definition definition-like" id="definition-14"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Informal definition of limit.</span>
+</h6>
+<p id="p-267">We write</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a} f(x) &amp;= L
+\end{align*}
+</div>
+<p data-braille="continuation">if the value of the function \(f(x)\) is sure to be arbitrarily close to  \(L\) whenever the value of \(x\) is close enough to \(a\text{,}\) without <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-27" id="fn-27"><sup> 3 </sup></a> being exactly \(a\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-27"><div class="fn">You may find the condition “without  being exactly \(a\)” a little  strange, but there is a good reason for it. One very  important application of  limits, indeed the main reason we teach the topic, is in the definition of  derivatives (see Definition <a class="xref" data-knowl="./knowl/def_DIFFderiv.html" title="Definition 3.2.1: Derivative at a point">3.2.1</a> in the next chapter).   In that definition we need to compute the limit \(\ds \lim_{x\rightarrow a}  \frac{f(x)-f(a)}{x-a}\text{.}\) In this case the function whose limit is being taken, namely  \(\frac{f(x)-f(a)}{x-a}\text{,}\) is not defined at all at \(x=a\text{.}\)</div></div></article><p id="p-268">In order to make this definition more mathematically correct, we need to  make the idea of “closer and closer” more precise — we do this in  Section <a href="sec_opt_formal_limit.html" class="internal" title="Section 2.7: (Optional) — Making the Informal a Little More Formal">2.7</a>. It should be emphasised that the  formal definition and the contents of that section are optional  material.</p>
+<p id="p-269">For now, let us use the above definition to examine a more substantial  example.</p>
+<article class="example example-like" id="example-13"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-13"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">\(\ds \lim_{x \to 2} \frac{x-2}{x^2+x-6}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-13"><article class="example example-like"><p id="p-270">Let \(f(x) = \frac{x-2}{x^2+x-6}\) and consider its limit as \(x \to 2\text{.}\)</p>
+<ul id="p-271" class="disc">
+<li id="li-128">We are really being asked<div class="displaymath">
+\begin{align*}
+\lim_{x \to 2} \frac{x-2}{x^2+x-6} &amp;= \text{ what?}
+\end{align*}
+</div>
+</li>
+<li id="li-129">Now if we try to compute \(f(2)\) we get \(0/0\) which is  undefined. The function is not defined at that point — this is a good example  of why we need limits.  We have to sneak up on these places where a function is  not defined (or is badly behaved).</li>
+<li id="li-130">
+<em class="alert">Very important point:</em> the fraction \(\frac{0}{0}\) is  <em class="emphasis">not</em> \(\infty\) and it is not \(1\text{,}\) it is not defined. We cannot ever divide  by zero in normal arithmetic and obtain a consistent and mathematically  sensible answer. If you learned otherwise in high-school, you should quickly unlearn it.</li>
+<li id="li-131">
+<p id="p-272">Again, we can plug in some numbers close to \(2\) and see what we find</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">\(x\)</td>
+<td class="l m b1 r1 l0 t1 lines">1.9</td>
+<td class="l m b1 r1 l0 t1 lines">1.99</td>
+<td class="l m b1 r1 l0 t1 lines">1.999</td>
+<td class="l m b1 r1 l0 t1 lines">\(\circ\)</td>
+<td class="l m b1 r1 l0 t1 lines">2.001</td>
+<td class="l m b1 r1 l0 t1 lines">2.01</td>
+<td class="l m b1 r1 l0 t1 lines" data-braille="last-cell">2.1</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(f(x)\)</td>
+<td class="l m b1 r1 l0 t0 lines">0.20408</td>
+<td class="l m b1 r1 l0 t0 lines">0.20040</td>
+<td class="l m b1 r1 l0 t0 lines">0.20004</td>
+<td class="l m b1 r1 l0 t0 lines">\(\circ\)</td>
+<td class="l m b1 r1 l0 t0 lines">0.19996</td>
+<td class="l m b1 r1 l0 t0 lines">0.19960</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">0.19608</td>
+</tr>
+</table></div></div></div>
+</li>
+<li id="li-132">So it is reasonable to suppose that<div class="displaymath">
+\begin{align*}
+\lim_{x \to 2} \frac{x-2}{x^2+x-6} &amp;= 0.2
+\end{align*}
+</div>
+</li>
+</ul></article></div>
+<p id="p-273">The previous two examples are nicely behaved in that the limits we tried to  compute actually exist. We now turn to two nastier examples <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-28" id="fn-28"><sup> 4 </sup></a> in which the limits we are interested in do not exist.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-28"><div class="fn">Actually, they are good examples, but the functions in them are nastier.</div></div>
+<article class="example example-like" id="eg_sinpix"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_sinpix"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">A bad example.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_sinpix"><article class="example example-like"><p id="p-274">Consider the following function \(f(x) = \sin( \pi /x )\text{.}\) Find the limit as \(x  \to 0\) of \(f(x)\text{.}\)</p>
+<p id="p-275">We should see something interesting happening close to \(x=0\) because \(f(x)\) is  undefined there. Using your favourite graph-plotting software you can see that  the graph looks roughly like</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/lim2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-276">How to explain this? As \(x\) gets closer and closer to zero, \(\pi/x\) becomes  larger and larger (remember what the plot of \(y=1/x\) looks like). So when you  take sine of that number, it oscillates faster and faster the closer you get to  zero. Since the function does not approach a single number as we bring \(x\)  closer and closer to zero, the limit does not exist.</p>
+<p id="p-277">We write this as</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{x\to 0} \sin \left(\frac{\pi}{x}\right) \text{ does not exist}
+\end{gather*}
+</div>
+<p data-braille="continuation">It's not very inventive notation, however it is clear. We frequently abbreviate “does not exist” to “DNE” and rewrite the above as</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x\to 0} \sin \left(\frac{\pi}{x}\right) &amp;= \text{DNE}
+\end{align*}
+</div></article></div>
+<p id="p-278">In the following example, the limit we are interested in does not exist.  However the way in which things go wrong is quite different from what we just saw.</p>
+<article class="example example-like" id="example-15"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-15"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">A non-existant limit.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-15"><article class="example example-like"><p id="p-279">Consider the function</p>
+<div class="displaymath">
+\begin{align*}
+f(x) &amp;= \begin{cases}
+x &amp; x \lt 2 \\
+-1 &amp; x=2 \\
+x+3 &amp; x \gt 2
+\end{cases}
+\end{align*}
+</div>
+<ul class="disc">
+<li id="li-133">
+<p id="p-280">The plot of this function looks like this</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/lim1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-134">
+<p id="p-281">So let us plug in numbers close to \(2\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">\(x\)</td>
+<td class="l m b1 r1 l0 t1 lines">1.9</td>
+<td class="l m b1 r1 l0 t1 lines">1.99</td>
+<td class="l m b1 r1 l0 t1 lines">1.999</td>
+<td class="l m b1 r1 l0 t1 lines">\(\circ\)</td>
+<td class="l m b1 r1 l0 t1 lines">2.001</td>
+<td class="l m b1 r1 l0 t1 lines">2.01</td>
+<td class="l m b1 r1 l0 t1 lines" data-braille="last-cell">2.1</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">\(f(x)\)</td>
+<td class="l m b1 r1 l0 t0 lines">1.9</td>
+<td class="l m b1 r1 l0 t0 lines">1.99</td>
+<td class="l m b1 r1 l0 t0 lines">1.999</td>
+<td class="l m b1 r1 l0 t0 lines">\(\circ\)</td>
+<td class="l m b1 r1 l0 t0 lines">5.001</td>
+<td class="l m b1 r1 l0 t0 lines">5.01</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">5.1</td>
+</tr>
+</table></div></div></div>
+</li>
+<li id="li-135">This isn't like before. Now when we approach from below, we seem to be  getting closer to \(2\text{,}\) but when we approach from above we seem to be getting  closer to \(5\text{.}\) Since we are not approaching the same number the limit does not exist.<div class="displaymath">
+\begin{align*}
+\lim_{x \to 2} f(x) &amp;= \text{DNE}
+\end{align*}
+</div>
+</li>
+</ul></article></div>
+<p id="p-282">While the limit in the previous example does not exist, the example serves to  introduce the idea of “one-sided limits”. For example, we can say that</p>
+<blockquote class="blockquote" id="blockquote-14"><p id="p-283">As \(x\) moves closer and closer to two <em class="emphasis">from below</em> the function  approaches 2.</p></blockquote>
+<p id="p-284">and similarly</p>
+<blockquote class="blockquote" id="blockquote-15"><p id="p-285">As \(x\) moves closer and closer to two <em class="emphasis">from above</em> the function  approaches 5.</p></blockquote>
+<article class="definition definition-like" id="def_informal_onesided_limits"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Informal definition of one-sided limits.</span>
+</h6>
+<p id="p-286">We write</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a^-} f(x) &amp;= K
+\end{align*}
+</div>
+<p data-braille="continuation">when the value of \(f(x)\) gets closer and closer to \(K\) when \(x \lt a\) and \(x\) moves closer and closer to \(a\text{.}\) Since the \(x\)-values are always less than \(a\text{,}\) we say  that \(x\) approaches \(a\) <em class="emphasis">from below</em>. This is also often called the  left-hand limit since the \(x\)-values lie to the left of \(a\) on a sketch of the  graph.</p>
+<p id="p-287">We similarly write</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a^+} f(x) &amp;= L
+\end{align*}
+</div>
+<p data-braille="continuation">when the value of \(f(x)\) gets closer and closer to \(L\) when \(x \gt a\) and \(x\)  moves closer and closer to \(a\text{.}\) For similar reasons we say that \(x\) approaches  \(a\) from above, and sometimes refer to this as the right-hand limit.</p></article><p id="p-288">Note — be careful to include the superscript \(+\) and \(-\) when writing  these limits. You might also see the following notations:</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a^+} f(x) &amp;= \lim_{x \to a+} f(x) = \lim_{x \downarrow a} f(x) =
+\lim_{x \searrow a} f(x) = L &amp; \text{right-hand limit}\\
+\lim_{x \to a^-} f(x) &amp;= \lim_{x \to a-} f(x) = \lim_{x \uparrow a} f(x) =
+\lim_{x \nearrow a} f(x) = L &amp; \text{left-hand limit}
+\end{align*}
+</div>
+<p data-braille="continuation">but please use with the notation in Definition <a class="xref" data-knowl="./knowl/def_informal_onesided_limits.html" title="Definition 2.3.7: Informal definition of one-sided limits">2.3.7</a> above.</p>
+<p id="p-289">Given these two similar notions of limits, when are they the same? The following theorem tell us.</p>
+<article class="theorem theorem-like" id="theorem-2"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">Limits and one sided limits.</span>
+</h6>
+<div class="displaymath" id="p-290">
+\begin{align*}
+\lim_{x \to a} f(x) = L &amp;&amp; \mbox{ if and only if }
+&amp;&amp; \lim_{x \to a^-} f(x) = L  \mbox{ and }
+\lim_{x \to a^+} f(x) = L
+\end{align*}
+</div></article><p id="p-291">Notice that this is really two separate statements because of the “if and only if”</p>
+<ul class="disc">
+<li id="li-136">If the limit of \(f(x)\) as \(x\) approaches \(a\) exists and is equal to \(L\text{,}\)  then both the left-hand and right-hand limits exist and are equal to \(L\text{.}\) AND,</li>
+<li id="li-137">If the left-hand and right-hand limits as \(x\) approaches \(a\) exist and  are equal, then the limit as \(x\) approaches \(a\) exists and is equal to the  one-sided limits.</li>
+</ul>
+<p data-braille="continuation">That is — the limit of \(f(x)\) as \(x\) approaches \(a\) will only exist if it  doesn't matter which way we approach \(a\) (either from left or right) <em class="emphasis">AND</em>  if we get the same one-sided limits when we approach from left and right, then  the limit exists.</p>
+<p id="p-292">We can rephrase the above by writing the contrapositives <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-footnote_contrapositive" id="footnote_contrapositive"><sup> 5 </sup></a> of the above statements.</p>
+<ul class="disc">
+<li id="li-138">If either of the left-hand and right-hand limits as \(x\) approaches \(a\)  fail to exist, or if they both exist but are different, then the limit as \(x\) approaches \(a\) does not exist. AND,</li>
+<li id="li-139">If the limit as \(x\) approaches \(a\) does not exist, then the left-hand  and right-hand limits are either different or at least one of them does not  exist.</li>
+</ul>
+<div class="hidden-content tex2jax_ignore" id="hk-footnote_contrapositive"><div class="fn">Given a statement of the form “If A then B”, the contrapositive is “If not B then  not A”. They are logically equivalent — if one is true then so is the  other. We must take care not to confuse the contrapositive with the converse.  Given “If A then B”, the converse is “If B then A”. These are definitely not the same. To see this consider the statement “If he is Shakespeare then he is dead.”  The converse is “If he is dead then he is Shakespeare” — clearly garbage  since there are plenty of dead people who are not Shakespeare. The  contrapositive is “If he is not dead then he is not Shakespeare” — which makes much more sense.</div></div>
+<p id="p-293">Here is another limit example</p>
+<article class="example example-like" id="example-16"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-16"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Left- and right-handed limits.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-16"><article class="example example-like"><p id="p-294">Consider the following two functions and compute their limits and one-sided  limits as \(x\) approaches 1:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/lim3.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-295">These are a little different from our previous examples, in that we do not have  formulas, only the sketch. But we can still compute the limits.</p>
+<ul class="disc">
+<li id="li-140">Function on the left — \(f(x)\text{:}\)<div class="displaymath">
+\begin{align*}
+\lim_{x \to 1^-} f(x) &amp;= 2 &amp;
+\lim_{x \to 1^+} f(x) &amp;= 2\\
+\\
+\end{align*}
+<p class="intertext">so by the previous theorem</p>
+\begin{align*}
+\lim_{x \to 1} f(x) &amp;= 2
+\end{align*}
+</div>
+</li>
+<li id="li-141">Function on the right — \(g(t)\text{:}\)<div class="displaymath">
+\begin{align*}
+\lim_{t \to 1^-} g(t) &amp;= 2
+&amp; \text{and } \lim_{t \to 1^+} g(t) &amp;= -2\\
+\end{align*}
+<p class="intertext">so by the previous theorem</p>
+\begin{align*}
+\lim_{t \to 1} g(t) &amp;= \text{DNE}
+\end{align*}
+</div>
+</li>
+</ul></article></div>
+<p id="p-296">We have seen 2 ways in which a limit does not exist — in one case the  function oscillated wildly, and in the other there was some sort of “jump” in  the function, so that the left-hand and right-hand limits were different.</p>
+<p id="p-297">There is a third way that we must also consider. To describe this, consider the  following four functions:</p>
+<figure class="figure figure-like" id="fig_inf_limits"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="text/figs/lim4.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.10<span class="period">.</span></span><span class="space"> </span></figcaption></figure><p id="p-298">None of these functions are defined at \(x=a\text{,}\) nor do the limits as \(x\)  approaches \(a\) exist. However we can say more than just “the limits do not  exist”.</p>
+<p id="p-299">Notice that the value of function 1 can be made bigger and bigger as we bring  \(x\) closer and closer to \(a\text{.}\) Similarly the value of the second function can be  made arbitrarily large and negative (i.e. make it as big a negative number as we  want) by bringing \(x\) closer and closer to \(a\text{.}\) Based on this observation we  have the following definition.</p>
+<article class="definition definition-like" id="def_lim_is_inf_informal"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.11</span><span class="period">.</span>
+</h6>
+<p id="p-300">We write</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{x \to a} f(x) = + \infty
+\end{gather*}
+</div>
+<p data-braille="continuation">when the value of the function \(f(x)\) becomes arbitrarily large and  positive as \(x\) gets closer and closer to \(a\text{,}\) without being exactly \(a\text{.}\)</p>
+<p id="p-301">Similarly, we write</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{x \to a} f(x) = - \infty
+\end{gather*}
+</div>
+<p data-braille="continuation">when the value of the function \(f(x)\) becomes arbitrarily large and negative as \(x\) gets closer and closer to \(a\text{,}\) without being exactly \(a\text{.}\)</p></article><p id="p-302">A good examples of the above is</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to 0} \frac{1}{x^2} &amp;= +\infty  &amp; \lim_{x \to 0} -\frac{1}{x^2} &amp;= -\infty
+\end{align*}
+</div>
+<p data-braille="continuation"><em class="alert">IMPORTANT POINT:</em> Please do not think of “\(+\infty\)” and “\(-\infty\)”  in these statements as numbers. You should think of \(\lim\limits_{x\rightarrow a} f(x) = +\infty\) and \(\lim\limits_{x\rightarrow a} f(x) = -\infty\) as special cases of  \(\lim\limits_{x\rightarrow a} f(x) = \text{DNE}\text{.}\) The statement</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{x \to a} f(x) = +\infty
+\end{gather*}
+</div>
+<p data-braille="continuation">does not say “the limit of \(f(x)\) as \(x\) approaches \(a\) is positive infinity”.  It says “the function \(f(x)\) becomes arbitrarily large as \(x\) approaches \(a\)”.  These are different statements; remember that \(\infty\) is not a number <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-30" id="fn-30"><sup> 6 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-30"><div class="fn">One needs to be very careful making statements about  infinity. At some point in our lives we get around to asking ourselves “what  is the biggest number”, and we realise there isn't one. That is, we can go on  counting integer after integer, for ever and not stop. Indeed the set of  integers is the first infinite thing we really encounter. It is an example of a  <em class="emphasis">countably infinite</em> set. The set of real-numbers is actually much bigger  and is <em class="emphasis">uncountably infinite</em>. In fact there are an infinite number of  different sorts of infinity! Much of the theory of infinite sets was  developed by Georg Cantor; we mentioned him back in Section <a href="sec_sets.html" class="internal" title="Section 1.2: Sets">1.2</a> and he is well  worth googling.</div></div>
+<p id="p-303">Now consider functions 3 and 4 in Figure <a class="xref" data-knowl="./knowl/fig_inf_limits.html" title="Figure 2.3.10">2.3.10</a>. Here we can make  the value of the function as big and positive as we want (for function 3) or as  big and negative as we want (for function 4) but only when \(x\) approaches \(a\)  from one side. With this in mind we can construct similar notation and a  similar definition:</p>
+<article class="definition definition-like" id="def_onesidedlim_is_inf_informal"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.3.12</span><span class="period">.</span>
+</h6>
+<p id="p-304">We write</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{x \to a^+} f(x) = + \infty
+\end{gather*}
+</div>
+<p data-braille="continuation">when the value of the function \(f(x)\) becomes arbitrarily large and  positive as \(x\) gets closer and closer to \(a\) from above (equivalently —  from the right), without being exactly \(a\text{.}\)</p>
+<p id="p-305">Similarly, we write</p>
+<div class="displaymath">
+\begin{gather*}
+\lim_{x \to a^+} f(x) = - \infty
+\end{gather*}
+</div>
+<p data-braille="continuation">when the value of the function \(f(x)\) becomes arbitrarily large and  negative as \(x\) gets closer and closer to \(a\) from above (equivalently —  from the right), without being exactly \(a\text{.}\)</p>
+<p id="p-306">The notation</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to a^-} f(x) &amp;= + \infty &amp; \lim_{x \to a^-} f(x) &amp;= - \infty
+\end{align*}
+</div>
+<p data-braille="continuation">has a  similar meaning except that limits are approached from below / from  the left.</p></article><p id="p-307">So for function 3 we have</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x\to a^-} f(x) &amp;= +\infty  &amp; \lim_{x\to a^+} f(x) &amp;= \text{some positive number}
+\end{align*}
+</div>
+<p data-braille="continuation">and for function 4</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x\to a^-} f(x) &amp;= \text{some positive number} &amp; \lim_{x\to a^+} f(x) &amp;= -\infty
+\end{align*}
+</div>
+<p id="p-308">More examples:</p>
+<article class="example example-like" id="example-17"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-17"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.3.13</span><span class="period">.</span><span class="space"> </span><span class="title">\(\ds \lim_{x \to \pi} \frac{1}{\sin(x)}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-17"><article class="example example-like"><p id="p-309">Consider the function</p>
+<div class="displaymath">
+\begin{align*}
+g(x) &amp;= \frac{1}{\sin(x)}
+\end{align*}
+</div>
+<p data-braille="continuation">Find the one-sided limits of this function as \(x \to \pi\text{.}\)</p>
+<p id="p-310">Probably the easiest way to do this is to first plot the graph of \(\sin(x)\) and  \(1/x\) and then think carefully about the one-sided limits:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/sinx_1onx.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<ul id="p-311" class="disc">
+<li id="li-142">
+<p id="p-312">As \(x \to \pi\) from the left, \(\sin(x)\) is a small positive number that  is getting closer and closer to zero. That is, as \(x \to \pi^-\text{,}\) we have that  \(\sin(x) \to 0\) through positive numbers (i.e. from above). Now look at the graph  of \(1/x\text{,}\) and think what happens as we move \(x \to 0^+\text{,}\) the function is  positive and becomes larger and larger.</p>
+<p id="p-313">So as \(x \to \pi\) from the left, \(\sin(x) \to 0\) from above, and so \(1/\sin(x)  \to +\infty\text{.}\)</p>
+</li>
+<li id="li-143">By very similar reasoning, as \(x \to \pi\) from the right, \(\sin(x)\) is a  small negative number that gets closer and closer to zero. So as \(x \to \pi\)  from the right, \(\sin(x) \to 0\) through negative numbers (i.e. from below) and so  \(1/\sin(x)\) to \(-\infty\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Thus</p>
+<div class="displaymath">
+\begin{align*}
+\lim_{x \to \pi^-} \frac{1}{\sin(x)} &amp;= +\infty &amp;
+\lim_{x \to \pi^+} \frac{1}{\sin(x)} &amp;= -\infty
+\end{align*}
+</div></article></div>
+<p id="p-314">Again, we can make Definitions <a class="xref" data-knowl="./knowl/def_lim_is_inf_informal.html" title="Definition 2.3.11">2.3.11</a>  and <a class="xref" data-knowl="./knowl/def_onesidedlim_is_inf_informal.html" title="Definition 2.3.12">2.3.12</a> into mathematically precise formal  definitions using techniques very similar to those in the optional  Section <a href="sec_opt_formal_limit.html" class="internal" title="Section 2.7: (Optional) — Making the Informal a Little More Formal">2.7</a>. This is not strictly necessary for this  course.</p>
+<p id="p-315">Up to this point we explored limits by sketching graphs or plugging values into  a calculator. This was done to help build intuition, but it is not really the  basis of a systematic method for computing limits. We have also avoided more formal approaches <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-31" id="fn-31"><sup> 7 </sup></a> since we do not have time in the course to go into  that level of detail and (arguably) we don't need that detail to achieve the  aims of the course. Thankfully we can develop a more systematic approach based  on the idea of building up complicated limits from simpler ones by examining how  limits interact with the basic operations of arithmetic.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-31"><div class="fn">The formal  approaches are typically referred to as “epsilon-delta limits” or  “epsilon-delta proofs” since the symbols \(\epsilon\) and \(\delta\) are  traditionally used throughout. Take a peek at Section <a href="sec_opt_formal_limit.html" class="internal" title="Section 2.7: (Optional) — Making the Informal a Little More Formal">2.7</a> to see.</div></div></section><section class="exercises" id="exercises-3"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.3.2</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-4">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-13"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-12"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-316">Given the function shown below, evaluate the following:</p>
+<ol class="lower-alpha">
+<li id="li-144">\(\displaystyle \displaystyle \lim_{x \rightarrow -2} f(x)\)</li>
+<li id="li-145">\(\displaystyle \displaystyle \lim_{x \rightarrow 0}f(x)\)</li>
+<li id="li-146">\(\displaystyle \displaystyle \lim_{x \rightarrow 2}f(x)\)</li>
+</ol>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-58.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-12" id="answer-12"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-12"><div class="answer solution-like"><ol id="p-317" class="lower-alpha">
+<li id="li-147">\(\displaystyle \displaystyle \lim_{x \rightarrow -2} f(x)=1\)</li>
+<li id="li-148">\(\displaystyle \displaystyle \lim_{x \rightarrow 0}f(x)=0\)</li>
+<li id="li-149">\(\displaystyle \displaystyle \lim_{x \rightarrow 2}f(x)=2\)</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-12" id="solution-12"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-12"><div class="solution solution-like"><ol id="p-318" class="lower-alpha">
+<li id="li-150">\(\displaystyle \lim_{x \rightarrow -2} f(x)=1\text{:}\) as \(x\) gets very close to \(-2\text{,}\) \(y\) gets very close to \(1\text{.}\)</li>
+<li id="li-151">\(\displaystyle \lim_{x \rightarrow 0}f(x)=0\text{:}\) as \(x\) gets very close to \(0\text{,}\) \(y\) also gets very close to \(0\text{.}\)</li>
+<li id="li-152">\(\displaystyle \lim_{x \rightarrow 2}f(x)=2\text{:}\) as \(x\) gets very close to \(2\text{,}\) \(y\) gets very close to \(2\text{.}\) We ignore the value of the function where \(x\) is exactly \(2\text{.}\)</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-13"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-319">Given the function shown below, evaluate \(\displaystyle \lim_{x \rightarrow 0} f(x)\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-59.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-9" id="hint-9"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-9"><div class="hint solution-like"><p id="p-320">Consider the difference between a limit and a one-sided limit.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-13" id="answer-13"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-13"><div class="answer solution-like"><p id="p-321">DNE</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-13" id="solution-13"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-13"><div class="solution solution-like"><p id="p-322">The limit does not exist. As \(x\) approaches 0 <em class="emphasis">from the left</em>, \(y\) approaches -1; as \(x\) approaches 0 <em class="emphasis">from the right</em>, \(y\) approaches 1. This tells us \(\displaystyle\lim_{x \rightarrow 0^-} f(x)=-1\) and \(\displaystyle\lim_{x \rightarrow 0^+} f(x)=1\text{,}\) but neither of these are what the question asked. Since the limits from left and right do not agree, the limit does not exist. Put another way, there is no single number \(y\) approaches as \(x\) approaches 0, so the limit \(\displaystyle\lim_{x \rightarrow 0} f(x)\) does not exist.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-14"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-323">Given the function shown below, evaluate:</p>
+<ol class="lower-alpha">
+<li id="li-153">\(\displaystyle \displaystyle \lim_{x \rightarrow -1^{-}} f(x)\)</li>
+<li id="li-154">\(\displaystyle \displaystyle \lim_{x \rightarrow -1^{+}} f(x)\)</li>
+<li id="li-155">\(\displaystyle \displaystyle \lim_{x \rightarrow -1} f(x)\)</li>
+<li id="li-156">\(\displaystyle \displaystyle \lim_{x \rightarrow -2^{+}} f(x)\)</li>
+<li id="li-157">\(\displaystyle \displaystyle \lim_{x \rightarrow 2^{-}} f(x)\)</li>
+</ol>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-60.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-10" id="hint-10"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-10"><div class="hint solution-like"><p id="p-324">Pay careful attention to which limits are one-sided and which are not.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-14" id="answer-14"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-14"><div class="answer solution-like"><ol id="p-325" class="lower-alpha">
+<li id="li-158">\(\displaystyle \displaystyle \lim_{x \rightarrow -1^{-}} f(x)=2\)</li>
+<li id="li-159">\(\displaystyle \displaystyle \lim_{x \rightarrow -1^{+}} f(x)=-2\)</li>
+<li id="li-160">\(\displaystyle \lim_{x \rightarrow -1} f(x)= \) DNE</li>
+<li id="li-161">\(\displaystyle \displaystyle \lim_{x \rightarrow -2^{+}} f(x) =0\)</li>
+<li id="li-162">\(\displaystyle \displaystyle \lim_{x \rightarrow 2^{-}} f(x)=0\)</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-14" id="solution-14"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-14"><div class="solution solution-like"><ol id="p-326" class="lower-alpha">
+<li id="li-163">\(\displaystyle \lim_{x \rightarrow -1^{-}} f(x)=2\text{:}\) as \(x\) approaches \(-1\) from the left, \(y\) approaches 2. It doesn't matter that the function isn't defined at \(x=-1\text{,}\) and it doesn't matter what happens to the right of \(x=-1\text{.}\)</li>
+<li id="li-164">\(\displaystyle \lim_{x \rightarrow -1^{+}} f(x)=-2\text{:}\) as \(x\) approaches \(-1\) from the right, \(y\) approaches -2. It doesn't matter that the function isn't defined at \(-1\text{,}\) and it doesn't matter what happens to the left of \(-1\text{.}\)</li>
+<li id="li-165">\(\displaystyle \lim_{x \rightarrow -1} f(x) =\) DNE: since the limits from the left and right don't agree, the limit does not exist.</li>
+<li id="li-166">\(\displaystyle \lim_{x \rightarrow -2^{+}} f(x) =0\text{:}\) as \(x\) approaches \(-2\) from the right, \(y\) approaches 0. It doesn't matter that the function isn't defined at 2, or to the left of 2.</li>
+<li id="li-167">\(\displaystyle \lim_{x \rightarrow 2^{-}} f(x)=0\text{:}\) as \(x\) approaches \(2\) from the left, \(y\) approaches 0. It doesn't matter that the function isn't defined at 2, or to the right of 2.</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="s1_3p1"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-327">Draw a curve \(y=f(x)\) with \(\displaystyle\lim_{x \rightarrow 3}f(x)=f(3)=10\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-15" id="answer-15"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-15"><div class="answer solution-like">
+<p id="p-328">Many answers are possible; here is one.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-61.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-15" id="solution-15"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-15"><div class="solution solution-like">
+<p id="p-329">Many answers are possible; here is one.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-62.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-330">As \(x\) gets closer and closer to 3, \(y\) gets closer and closer to 10: this shows \(\displaystyle\lim_{x \rightarrow 3} f(x)=10\text{.}\) Also, at 3 itself, the function takes the value 10; this shows \(f(3)=10\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="s1_3p2"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-331">Draw a curve \(y=f(x)\) with \(\displaystyle\lim_{x \rightarrow 3}f(x)=10\) and \(f(3)=0\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-11" id="hint-11"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-11"><div class="hint solution-like"><p id="p-332">The function doesn't have to be continuous.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-16" id="answer-16"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-16"><div class="answer solution-like">
+<p id="p-333">Many answers are possible; here is one.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-63.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-16" id="solution-16"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-16"><div class="solution solution-like">
+<p id="p-334">Many answers are possible; here is one.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-64.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-335">Note that, as \(x\) gets closer and closer to 3 <em class="emphasis">except at 3 itself</em>, \(y\) gets closer and closer to 10: this shows \(\displaystyle\lim_{x \rightarrow 3} f(x)=10\text{.}\)  Then, when \(x=3\text{,}\) the function has value 0: this shows \(f(3)=0\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-17"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-336">Suppose \(\displaystyle\lim_{x \rightarrow 3} f(x)=10\text{.}\) True or false: \(f(3)=10\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-12" id="hint-12"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-12"><div class="hint solution-like"><p id="p-337">See Question <a class="xref" data-knowl="./knowl/s1_3p2.html" title="Exercise 2.3.2.5">2.3.2.5</a></p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-17" id="answer-17"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-17"><div class="answer solution-like"><p id="p-338">In general, this is false.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-17" id="solution-17"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-17"><div class="solution solution-like"><p id="p-339">In general, this is false. The limit as \(x\) goes to 3 does not take into account the value of the function at 3: \(f(3)\) can be anything.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-18"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-340">Suppose \(f(3)=10\text{.}\) True or false: \(\displaystyle\lim_{x \rightarrow 3} f(x)=10\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-13" id="hint-13"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-13"><div class="hint solution-like"><p id="p-341">See Question <a class="xref" data-knowl="./knowl/s1_3p2.html" title="Exercise 2.3.2.5">2.3.2.5</a></p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-18" id="answer-18"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-18"><div class="answer solution-like"><p id="p-342">False</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-18" id="solution-18"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-18"><div class="solution solution-like"><p id="p-343">False. The limit as \(x\) goes to 3 does not take into account the value of the function at 3: \(f(3)\) tells us nothing about \(\displaystyle\lim_{x \rightarrow 3} f(x)\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-19"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-344">Suppose \(f(x)\) is a function defined on all real numbers, and \(\displaystyle\lim_{x \rightarrow -2} f(x)=16\text{.}\) What is \(\displaystyle\lim_{x \rightarrow -2^-} f(x)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-14" id="hint-14"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-14"><div class="hint solution-like"><p id="p-345">What is the relationship  between the limit and the two one-sided limits?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-19" id="answer-19"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-19"><div class="answer solution-like"><p id="p-346">\(\displaystyle\lim_{x \rightarrow -2^-} f(x)=16\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-19" id="solution-19"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-19"><div class="solution solution-like"><p id="p-347">\(\displaystyle\lim_{x \rightarrow -2^-} f(x)=16\text{:}\) in order for the limit \(\displaystyle\lim_{x \rightarrow 2} f(x)\) to exist and be equal to 16, both one sided limits must exist and be equal to 16.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-20"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-348">Suppose \(f(x)\) is a function defined on all real numbers, and \(\displaystyle\lim_{x \rightarrow -2^-} f(x)=16\text{.}\) What is \(\displaystyle\lim_{x \rightarrow -2} f(x)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-15" id="hint-15"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-15"><div class="hint solution-like"><p id="p-349">What is the relationship  between the limit and the two one-sided limits?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-20" id="answer-20"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-20"><div class="answer solution-like"><p id="p-350">Not enough information to say.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-20" id="solution-20"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-20"><div class="solution solution-like"><p id="p-351">Not enough information to say. If \(\displaystyle\lim_{x \rightarrow -2^+} f(x)=16\text{,}\) then \(\displaystyle\lim_{x \rightarrow -2} f(x)=16\text{.}\) If \(\displaystyle\lim_{x \rightarrow -2^+} f(x)\neq 16\text{,}\) then \(\displaystyle\lim_{x \rightarrow -2} f(x)\) does not exist.</p></div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-5">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-14"><p id="p-352">In Questions <a class="xref" data-knowl="./knowl/s1_3first.html" title="Exercise 2.3.2.10">2.3.2.10</a> through <a class="xref" data-knowl="./knowl/s1_3last.html" title="Exercise 2.3.2.17">2.3.2.17</a>, evaluate the given limits. If you aren't sure where to begin, it's nice to start by drawing the function.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="s1_3first"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-353">\(\displaystyle\lim_{t \rightarrow 0} \sin t\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-21" id="answer-21"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-21"><div class="answer solution-like"><p id="p-354">\(\displaystyle\lim_{t \rightarrow 0} \sin t=0\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-21" id="solution-21"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-21"><div class="solution solution-like"><p id="p-355">\(\displaystyle\lim_{t \rightarrow 0} \sin t=0\text{:}\) as \(t\) approaches 0, \(\sin t\) approaches 0 as well.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-22"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-356">\(\displaystyle\lim_{x \rightarrow 0^+} \ln x\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-22" id="answer-22"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-22"><div class="answer solution-like"><p id="p-357">\(\displaystyle\lim_{x \rightarrow 0^+} \ln x = -\infty\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-22" id="solution-22"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-22"><div class="solution solution-like"><p id="p-358">\(\displaystyle\lim_{x \rightarrow 0^+} \ln x = -\infty\text{:}\) as \(x\) approaches 0 from the right, \(\ln x\) is negative and increasingly large, growing without bound.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-23"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-359">\(\displaystyle\lim_{y \rightarrow 3} y^2\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-23" id="answer-23"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-23"><div class="answer solution-like"><p id="p-360">\(\displaystyle\lim_{y \rightarrow 3} y^2=9\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-23" id="solution-23"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-23"><div class="solution solution-like"><p id="p-361">\(\displaystyle\lim_{y \rightarrow 3} y^2=9\text{:}\) as \(y\) gets closer and closer to 3, \(y^2\) gets closer and closer to \(3^2\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-24"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-362">\(\displaystyle\lim_{x \rightarrow 0^-} \dfrac{1}{x}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-24" id="answer-24"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-24"><div class="answer solution-like"><p id="p-363">\(\displaystyle\lim_{x \rightarrow 0^-} \dfrac{1}{x}=-\infty\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-24" id="solution-24"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-24"><div class="solution solution-like"><p id="p-364">\(\displaystyle\lim_{x \rightarrow 0^-} \dfrac{1}{x}=-\infty\text{:}\) as \(x\) gets closer and closer to 0 from the left, \(\dfrac{1}{x}\) becomes a larger and larger negative number.</p></div></div>
+</div></article><article class="exercise exercise-like" id="s1_3p14"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-365">\(\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-16" id="hint-16"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-16"><div class="hint solution-like"><p id="p-366">What are the one-sided limits?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-25" id="answer-25"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-25"><div class="answer solution-like"><p id="p-367">\(\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x}=\) DNE</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-25" id="solution-25"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-25"><div class="solution solution-like"><p id="p-368">\(\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x}=\) DNE: as \(x\) gets closer and closer to 0 from the left, \(\dfrac{1}{x}\) becomes a larger and larger negative number; but as \(x\) gets closer and closer to 0 from the right, \(\dfrac{1}{x}\) becomes a larger and larger positive number. So the limit from the left is not the same as the limit from the right, and so \(\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x}=\) DNE. Contrast this with Question <a class="xref" data-knowl="./knowl/s1_3p15.html" title="Exercise 2.3.2.15">2.3.2.15</a>.</p></div></div>
+</div></article><article class="exercise exercise-like" id="s1_3p15"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-369">\(\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x^2}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-26" id="answer-26"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-26"><div class="answer solution-like"><p id="p-370">\(\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x^2}=\infty\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-26" id="solution-26"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-26"><div class="solution solution-like"><p id="p-371">\(\displaystyle\lim_{x \rightarrow 0} \dfrac{1}{x^2}=\infty\text{:}\) as \(x\) gets closer and closer to 0 from the either side, \(\dfrac{1}{x^2}\) becomes a larger and larger positive number, growing without bound. Contrast this with Question <a class="xref" data-knowl="./knowl/s1_3p14.html" title="Exercise 2.3.2.14">2.3.2.14</a>.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-372">\(\displaystyle\lim_{x \rightarrow 3} \dfrac{1}{10}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-17" id="hint-17"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-17"><div class="hint solution-like"><p id="p-373">Think about what it means that \(x\) does not appear in the function \(f(x)=\dfrac{1}{10}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-27" id="answer-27"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-27"><div class="answer solution-like"><p id="p-374">\(\displaystyle\lim_{x \rightarrow 3} \dfrac{1}{10}=\dfrac{1}{10}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-27" id="solution-27"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-27"><div class="solution solution-like"><p id="p-375">\(\displaystyle\lim_{x \rightarrow 3} \dfrac{1}{10}=\dfrac{1}{10}\text{:}\) no matter what \(x\) is, \(\dfrac{1}{10}\) is always \(\dfrac{1}{10}\text{.}\) In particular, as \(x\) approaches 3, \(\dfrac{1}{10}\) stays put at \(\dfrac{1}{10}\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="s1_3last"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-376">\(\displaystyle\lim_{x \rightarrow 3} f(x)\text{,}\) where \(f(x)=\left\{
+\begin{array}{ll}
+\sin x&amp;x\leq 2.9\\
+x^2&amp;x \gt 2.9
+\end{array}
+\right.\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-18" id="hint-18"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-18"><div class="hint solution-like"><p id="p-377">We only care about what happens really, really close to \(x=3\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-28" id="answer-28"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-28"><div class="answer solution-like"><p id="p-378">9</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-28" id="solution-28"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-28"><div class="solution solution-like"><p id="p-379">When \(x\) is very close to 3, \(f(x)\) looks like the function \(x^2\text{.}\) So: \(\displaystyle\lim_{x \rightarrow 3} f(x) =
+\displaystyle\lim_{x \rightarrow 3} x^2=9\)</p></div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

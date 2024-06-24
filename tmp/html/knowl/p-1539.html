@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:31:23-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>This problem looks nasty. But it isn't so hard if we just  build it up a bit at a time.</p>
+<ul class="disc">
+<li>First, \(f(x)\) is the ratio of<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+f_1(x)=x\qquad\text{and}\qquad f_2(x)=2x+\frac{1}{3x+1}
+\end{gather*}
+</div>If we can find the derivatives of \(f_1(x)\) and \(f_2(x)\text{,}\) we will be able to get the derivative of \(f(x)\) just by applying the quotient rule. The derivative,  \(f'_1(x)=1\text{,}\) of \(f_1(x)\) is easy, so let's work on  \(f_2(x)\text{.}\)</li>
+<li>The function \(f_2(x)\) is the linear combination<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+f_2(x)=2f_3(x)+f_4(x)\qquad\text{with}\qquad
+f_3(x)=x \quad\text{and}\quad f_4(x)= \frac{1}{3x+1}
+\end{gather*}
+</div>If we can find the derivatives of \(f_3(x)\) and \(f_4(x)\text{,}\) we will be able to get the derivative of \(f_2(x)\) just by applying linearity  (Theorem <a class="xref" data-knowl="./knowl/thm_DIFFlinearity.html" title="Theorem 3.4.2: Linearity of differentiation">3.4.2</a>). The derivative, \(f'_3(x)=1\text{,}\) of \(f_3(x)\) is easy.  So let's work of \(f_4(x)\text{.}\)</li>
+<li>The function \(f_4(x)\) is the ratio<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f_4(x)=\frac{1}{f_5(x)}\qquad\text{with}\qquad f_5(x)=3x+1
+\end{equation*}
+</div>If we can find the derivative of \(f_5(x)\text{,}\) we will be able to get  the derivative of \(f_4(x)\) just by applying the special case the quotient rule (Corollary <a class="xref" data-knowl="./knowl/cor_diff_recip.html" title="Corollary 3.4.6: Derivative of a reciprocal">3.4.6</a>). The derivative of  \(f_5(x)\) is easy.</li>
+<li>So we have completed breaking down \(f(x)\) into easy pieces. It is now just a matter of reversing the break down steps, putting everything back together, starting with the easy pieces  and working up to \(f(x)\text{.}\) Here goes.<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f_5(x)\amp=3x+1 \\
+\amp\amp\hskip-1.3in
+\text{ so } \diff{}{x} f_5(x) \amp= 3\diff{}{x} x +\diff{}{x} 1
+=3\cdot 1+0 = 3 &amp; \text{LIN}\\
+f_4(x)\amp=\frac{1}{f_5(x)}\\
+\amp\amp\hskip-1.3in
+\text{ so } \diff{}{x} f_4(x)\amp=-\frac{f'_5(x)}{f_5(x)^2}=-\frac{3}{(3x+1)^2}
+&amp; \text{QR}\\
+f_2(x)\amp=2f_3(x)+f_4(x) \\
+\amp\amp\hskip-1.3in
+\text{ so }\diff{}{x} f_2(x) \amp= 2f'_3(x)+ f'_4(x)=2-\frac{3}{(3x+1)^2}
+&amp; \text{LIN}\\
+f(x)\amp=\frac{f_1(x)}{f_2(x)}\\
+\amp\amp\hskip-1.3in
+\text{ so }\diff{}{x} f(x)\amp=\frac{f'_1(x)f_2(x)-f_1(x)f'_2(x)}{f_2(x)^2}
+&amp; \text{QR}\\
+\amp\amp\amp =\frac{1\big[2x+\frac{1}{3x+1}\big]-x\big[2-\frac{3}{(3x+1)^2}\big]}
+{\big[2x+\frac{1}{3x+1}\big]^2}
+\end{align*}
+</div>Oof!</li>
+<li>We now have an answer. But we really should clean it up, not only to make it easier to read, but also because invariably such computations are  just small steps inside much larger computations. Any future computations involving this expression will be a lot easier and less error prone  if we clean it up now. Cancelling the \(2x\) and the \(-2x\) in<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+1\big[2x+\frac{1}{3x\!+\!1}\big]
+-x\big[2-\frac{3}{(3x\!+\!1)^2}\big]
+&amp;=2x+\frac{1}{3x\!+\!1} -2x+\frac{3x}{(3x\!+\!1)^2}\\
+&amp;=\frac{1}{3x\!+\!1}+\frac{3x}{(3x\!+\!1)^2}
+\end{align*}
+</div>and multiplying both the numerator  and denominator by \((3x+1)^2\) gives<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f'(x)&amp;=\frac{\frac{1}{3x+1}+\frac{3x}{(3x+1)^2}}
+{\big[2x+\frac{1}{3x+1}\big]^2}
+\ \frac{(3x+1)^2}{(3x+1)^2}\\
+&amp;=\frac{(3x+1)+3x}{\big[2x(3x+1)+1\big]^2}\\
+&amp;=\frac{6x+1}{[6x^2+2x+1]^2}.
+\end{align*}
+</div>
+</li>
+</ul>
+<span class="incontext"><a href="section-21.html#p-1539">in-context</a></span>
+</body>
+</html>

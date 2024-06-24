@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T15:59:35-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Reparametrization</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_curve_derivs.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_curves.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_curvature.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_curve_derivs.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_curves.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_curvature.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam" class="active">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_reparam"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">12.2</span> <span class="title">Reparametrization</span>
+</h2>
+<p id="p-15416">There are invariably many ways to parametrize a given curve. Kind of trivially, one can always replace \(t\) by, for example, \(3u\text{.}\) But there are also more substantial ways to reparametrize curves. It often pays to tailor the parametrization used to the application of interest. For example, we shall see in the next couple of sections that many curve formulae simplify a lot when arc length is used as the parameter.</p>
+<article class="example example-like" id="eg_reparamCircle"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_reparamCircle"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.2.1</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_reparamCircle"><article class="example example-like"><p id="p-15417">Here are three different parametrizations of the semi-circle \(x^2+y^2=r^2\text{,}\) \(y\ge 0\text{.}\)</p>
+<ul class="disc">
+<li id="li-6374">
+<p id="p-15418">The first uses the polar angle \(\theta\) as the parameter. We have already seen, in Example <a class="xref" data-knowl="./knowl/eg_paramCircle.html" title="Example 9.6.1: Parametrization of  \(x^2+y^2=a^2\)">9.6.1</a>, the parametrization</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:60%;justify-content:center;"><img src="figs/reparCircleA.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:40%;justify-content:center;"><div class="displaymath" id="p-15419">
+\begin{align*}
+&amp;\vr_1(\theta) = \big(r\cos\theta\,,\,r\sin\theta\big)\\
+&amp;0\le \theta\le \pi
+\end{align*}
+</div></div>
+</div></div>
+</li>
+<li id="li-6375">
+<p id="p-15420">The second uses \(x\) as the parameter. Just solving \(x^2+y^2=r^2\text{,}\) \(y\ge 0\) for \(y\) as a function of \(x\text{,}\) gives \(y(x) = \sqrt{r^2-x^2}\) and so gives the parametrization</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:60%;justify-content:center;"><img src="figs/reparCircleB.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:40%;justify-content:center;"><div class="displaymath" id="p-15421">
+\begin{align*}
+&amp;\vr_2(x) = \big(x\,,\,\sqrt{r^2-x^2}\,\big)\\
+&amp;-r\le x\le r
+\end{align*}
+</div></div>
+</div></div>
+</li>
+<li id="li-6376">
+<p id="p-15422">The third uses arc length from \((r,0)\) as the parameter. We have seen, in Example <a class="xref" data-knowl="./knowl/eg_paramCircleTan.html" title="Example 9.6.14: Circumference of a circle">9.6.14</a>, that the arc length from \((r,0)\) to \(\vr_1(\theta)\) is just \(s=r\theta\text{.}\) So the point on the semicircle that is arc length \(s\) away from \((r,0)\) is</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:60%;justify-content:center;"><img src="figs/reparCircleC.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:40%;justify-content:center;"><div class="displaymath" id="p-15423">
+\begin{align*}
+&amp;\vr_3(s) = \vr_1\Big(\frac{s}{r}\Big)\\
+&amp;= \Big(r\cos\frac{s}{r}\,,\,r\sin\frac{s}{r}\Big)\\
+&amp;0\le s\le \pi r
+\end{align*}
+</div></div>
+</div></div>
+</li>
+</ul></article></div>
+<p id="p-15424">We shall see that, for some purposes, it is convenient to use parametrization by arc length. Here is a messier example in which we reparametrize a curve so as to use the arc length as the parameter.</p>
+<article class="example example-like" id="eg_reparamAstroid"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_reparamAstroid"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.2.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_reparamAstroid"><article class="example example-like"><p id="p-15425">We saw in Example <a class="xref" data-knowl="./knowl/eg_astroid.html" title="Example 12.1.9: Perimeter of the astroid">12.1.9</a>, that, as \(t\) runs from \(0\) to \(\frac{\pi}{2}\text{,}\) \(\vr(t) = a \cos^3 t\,\hi+a\sin^3t\,\hj\) runs from \((a,0)\) to \((0,a)\) along the astroid \(x^{2/3}+y^{2/3}=a^{2/3}\text{.}\) Suppose that we want a new parametrization \(\vR(s)\) chosen so that, as \(s\) runs from \(0\) to some appropriate value, \(\vR(s)\) runs from \((a,0)\) to \((0,a)\) along \(x^{2/3}+y^{2/3}=a^{2/3}\text{,}\) with \(s\) being the arc length from \((a,0)\) to \(\vR(s)\) along \(x^{2/3}+y^{2/3}=a^{2/3}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/astroidS.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15426">We saw, in Example <a class="xref" data-knowl="./knowl/eg_astroid.html" title="Example 12.1.9: Perimeter of the astroid">12.1.9</a>, that, for \(0\le t\le \frac{\pi}{2}\text{,}\) \(\diff{s}{t}=\frac{3a}{2}\sin(2t)\) so that the arclength from \((a,0)=\vr(0)\) to \(\vr(t)\) is</p>
+<div class="displaymath">
+\begin{equation*}
+s(t) = \int_0^t\frac{3a}{2}\sin(2t')\,\dee{t'} =\frac{3a}{4}\big[1-\cos(2t)\big]
+\end{equation*}
+</div>
+<p data-braille="continuation">which runs from \(0\text{,}\) at \(t=0\text{,}\) to \(\frac{3a}{2}\text{,}\) at \(t=\frac{\pi}{2}\text{.}\) This is relatively clean and we can invert \(s(t)\) to find \(t\) as a function of \(s\text{.}\) The value, \(T(s)\text{,}\) of \(t\) that corresponds to any given \(0\le s\le\frac{3a}{2}\) is determined by</p>
+<div class="displaymath">
+\begin{equation*}
+s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]\qquad
+\iff\qquad
+T(s)=\frac{1}{2}\arccos\Big(1-\frac{4s}{3a}\Big)
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\vR(s) = \vr\big(T(s)\big)
+= a\cos^3\big(T(s)\big)\hi + a\sin^3 \big(T(s)\big)\hj
+\end{equation*}
+</div>
+<p data-braille="continuation">We can simplify \(\cos^3\big(T(s)\big)\) and \(\sin^3\big(T(s)\big)\) by just using trig identities to convert the  \(\cos\big(2T(s)\big)\) in \(s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]\) into \(\cos\big(T(s)\big)\)'s and \(\sin\big(T(s)\big)\)'s.</p>
+<div class="displaymath">
+\begin{align*}
+s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]
+&amp;=\frac{3a}{4}\big[1-\big(2\cos^2\big(T(s)-1\big)\big]\\
+&amp;\iff \cos^2\big(T(s)\big)=1-\frac{2s}{3a}\\
+s=\frac{3a}{4}\big[1-\cos\big(2T(s)\big)\big]
+&amp;=\frac{3a}{4}\big[1-\big(1-2\sin^2\big(T(s)\big)\big]\\
+&amp;\iff \sin^2\big(T(s)\big)=\frac{2s}{3a}
+\end{align*}
+</div>
+<p data-braille="continuation">Consequently the desired parametrization is</p>
+<div class="displaymath">
+\begin{equation*}
+\vR(s) = a\left[1-\frac{2s}{3a}\right]^{3/2}\hi
++ a\left[\frac{2s}{3a}\right]^{3/2}\hj
+\qquad
+0\le s \le \frac{3a}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">which is remarkably simple.</p></article></div>
+<section class="exercises" id="exercises-92"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">12.2.1</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-257">
+<div class="introduction" id="introduction-395"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1940"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-15427">A curve \(\vr(s)\) is parametrized in terms of arclength. What is  \(\displaystyle\int_1^t |\vr'(s)|\,\dee{s}\) when \(t \ge 1\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1530" id="hint-1530"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1530"><div class="hint solution-like"><p id="p-15428">You're asked to find the arclength of the curve from \(s=1\) to \(s=t\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1940" id="answer-1940"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1940"><div class="answer solution-like"><p id="p-15429">\(t-1\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2013" id="solution-2013"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2013"><div class="solution solution-like"><p id="p-15430">By Lemma <a class="xref" data-knowl="./knowl/lem_CVtanArclen.html" title="Lemma 9.6.12">9.6.12</a>.c, \(|\vr'(s)|=1\) under arclength parametrization. So \(\int_1^t |\vr'(s)|\dee{s}=\int_1^t \dee{s}=t-1\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1941"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-15431">The function</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(s)=\sin\left(\frac{s+1}{2}\right)\hi+\cos\left(\frac{s+1}{2}\right)\hj+\frac{\sqrt3}{2}(s+1)\hk
+\end{equation*}
+</div>
+<p id="p-15432">is parametrized in terms of arclength, starting from the point \(P\text{.}\) What is \(P\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1531" id="hint-1531"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1531"><div class="hint solution-like"><p id="p-15433">The arclength will be 0 at \(P\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1941" id="answer-1941"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1941"><div class="answer solution-like"><p id="p-15434">\(\left( \sin(1/2),\cos(1/2),\sqrt{3}/2\right)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2014" id="solution-2014"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2014"><div class="solution solution-like"><p id="p-15435">The arclength from \(P\) to \(P\) will be 0, so \(P\) is the point where \(s=0\text{.}\) That is, \(\vr(0)\text{,}\) or \(\left( \sin(1/2),\cos(1/2),\sqrt{3}/2\right)\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1942"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-15436">A curve \(\vR=\va(t)\) is reparametrized in terms of arclength as \(\vR=\vb(s)=\va(t(s))\text{.}\) Of the following options, which best describes the relationship between the vectors \(\va'(t_0)\) and \(\vb'(s_0)\text{,}\) where \(t(s_0)=t_0\text{?}\)</p>
+<p id="p-15437">You may assume \(\va'(t)\)  and \(\vb'(s)\) exist and are nonzero for all \(t,s\ge0\text{.}\)</p>
+<ol class="upper-alpha">
+<li id="li-6377">they are parallel and point in the same direction</li>
+<li id="li-6378">they are parallel and point in opposite directions</li>
+<li id="li-6379">they are perpendicular</li>
+<li id="li-6380">they have the same magnitude</li>
+<li id="li-6381">they are equal</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1532" id="hint-1532"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1532"><div class="hint solution-like"><p id="p-15438">\(\va(t_0)\) and \(\vb(s_0)\) describe the same point on \(\vR\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1942" id="answer-1942"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1942"><div class="answer solution-like"><p id="p-15439">A</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2015" id="solution-2015"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2015"><div class="solution solution-like">
+<p id="p-15440">We consider the situation geometrically. If we plot \(\vR\) in space (of the relevant dimension), regardless of its parametrization, the derivative at a point will give a vector tangent to \(\vR\text{,}\) in the direction the curve moves when the parameter is increasing. Since \(\va(t_0)\) and \(\vb(s_0)\) describe the same spot on the curve, \(\va'(t_0)\) and \(\vb'(s_0)\) will be parallel<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-545" id="fn-545"><sup> 1 </sup></a> — they're both tangent to the same piece of curve. Furthermore, as \(t\) increases, so does \(s\text{,}\) so the direction of increasing \(t\) is the same as the direction of increasing \(s\text{.}\) Therefore, A. holds.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-545"><div class="fn">Since we specified the derivatives are nonzero, there's no messiness about vectors being parallel to a zero vector.</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1894.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15441">Now we consider the magnitudes of the vectors, to rule out E. Recall \(|\va'(t)|\) is the speed at which the curve changes relative to \(t\text{;}\) this could be any (nonnegative) number. By the same token, \(|\vb'(s)|=1\text{.}\) So, \(\vb'(s_0)\) is a unit vector, while \(\va'(t_0)\) may or may not be. Then the two vectors are not <em class="emphasis">necessarily</em> equal (although they could be).</p>
+<p id="p-15442">So, the best answer is A.</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2016" id="solution-2016"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2016"><div class="solution solution-like">
+<p id="p-15443">The chain rule gives us a relationship between \(\vb'(s)\) and \(\va'(t)\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\diff{\vb}{s}&amp;=\diff{}{s}[\va(t(s))]=\diff{\va}{t}\,\diff{t}{s}
+\end{align*}
+</div>
+<p data-braille="continuation">So, the vectors \(\diff{\vb}{s}\) and \(\diff{\va}{t}\) differ only by the scalar function \(\diff{t}{s}\text{.}\) So, at any point along the curve, these vectors are parallel.</p>
+<p id="p-15444">Furthermore, we know that \(t\) and \(s\) are positively correlated: as \(t\) increases, so does \(s\text{,}\) because we're covering more arclength. So, \(\diff{t}{s}\) is nonnegative. Furthermore, since the derivatives are nonzero, \(\diff{t}{s}\) is nonzero. So, \(\vb'(s_0)\) and \(\va'(t_0)\) are positive scalar multiples of each other. That is, they are parallel, and pointing in the same direction. However, unless \(\diff{t}{s}=1\) (that is, \(t(s)=s+C\) for some constant \(C\)), the vectors do not have the same magnitude, and hence are not equal.</p>
+<p id="p-15445">So, A is the best solution.</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-258">
+<div class="introduction" id="introduction-396"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1943"><h6 class="heading">
+<span class="codenumber">4<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2012D.</span>
+</h6>
+<ol id="p-15446" class="lower-alpha">
+<li id="li-6382">Let<div class="displaymath">
+\begin{equation*}
+\vr(t) = (2 \sin^3 t , 2\cos^3 t, 3 \sin t \cos t)
+\end{equation*}
+</div>Find the unit tangent vector to this parametrized curve at \(t = \pi/3\text{,}\) pointing in the direction of increasing \(t\text{.}\)</li>
+<li id="li-6383">Reparametrize the vector function \(\vr(t)\) from (a) with respect to arc length measured from the point \(t = 0\) in the direction of increasing \(t\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1533" id="hint-1533"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1533"><div class="hint solution-like"><p id="p-15447">On your way to finding the relationship between \(t\) and arclength, you should realize that the curve has constant speed (with respect to \(t\)), though not constant velocity.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1943" id="answer-1943"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1943"><div class="answer solution-like">
+<p id="p-15448">(a) \(\big(\frac{3}{4}\,,\,
+-\frac{\sqrt{3}}{4}\,,\,-\frac{1}{2}\big)\)</p>
+<p id="p-15449">(b) \(\vR(s) = \big(2 \sin^3(\frac{s}{3}) , 2\cos^3(\frac{s}{3}),
+3 \sin(\frac{s}{3}) \cos(\frac{s}{3})\big)\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2017" id="solution-2017"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2017"><div class="solution solution-like">
+<p id="p-15450">(a) The velocity vector is</p>
+<div class="displaymath">
+\begin{align*}
+\vr'(t) &amp;= (6\sin^2(t)\cos t\,,\, -6\sin t\cos^2(t)\,,\, 3\cos^2t-3\sin^2t)\\
+&amp;= 3\big(\sin t \sin(2t)\,,\,-\cos t\sin(2t)\,,\,\cos(2t)\big)
+\end{align*}
+</div>
+<p data-braille="continuation">In particular, since \(\sin(\pi/3)=\sin(2\pi/3)=\frac{\sqrt{3}}{2}\) and \(\cos(\pi/3)=-\cos(2\pi/3)=\frac{1}{2}\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+\vr'(\pi/3)  &amp;= 3\big(\frac{3}{4}\,,\,
+-\frac{\sqrt{3}}{4}\,,\,-\frac{1}{2}\big)
+\end{align*}
+</div>
+<p data-braille="continuation">and the specified unit tangent vector is</p>
+<div class="displaymath">
+\begin{align*}
+\hat\vT &amp;= \frac{\big(\frac{3}{4}\,,\,
+-\frac{\sqrt{3}}{4}\,,\,-\frac{1}{2}\big)}
+{\big|\big(\frac{3}{4}\,,\,
+-\frac{\sqrt{3}}{4}\,,\,-\frac{1}{2}\big)\big|}
+=\big(\frac{3}{4}\,,\,
+-\frac{\sqrt{3}}{4}\,,\,-\frac{1}{2}\big)
+\end{align*}
+</div>
+<p id="p-15451">(b) The speed is</p>
+<div class="displaymath">
+\begin{align*}
+\diff{s}{t}
+&amp;= |\vr'(t)| = 3\sqrt{\sin^2t\sin^2(2t)+\cos^2t\sin^2(2t)+\cos^2(2t)}\\
+&amp;= 3\sqrt{\sin^2(2t)+\cos^2(2t)}\\
+&amp;=3
+\end{align*}
+</div>
+<p data-braille="continuation">So \(s=3t\) and the reparametrized form is</p>
+<div class="displaymath">
+\begin{gather*}
+\vR(s) = \big(2 \sin^3(\frac{s}{3}) , 2\cos^3(\frac{s}{3}),
+3 \sin(\frac{s}{3}) \cos(\frac{s}{3})\big)
+\end{gather*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s1_2_spiral"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2008D.</span>
+</h6>
+<p id="p-15452">This problem is about the logarithmic spiral in the plane</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) = e^t (\cos t, \sin t),\qquad t \in \bbbr
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-6384">Find the arc length of the piece of this spiral which is contained in the unit circle.</li>
+<li id="li-6385">Reparametrize the logarithmic spiral with respect to arc length, measured from \(t = -\infty\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1534" id="hint-1534"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1534"><div class="hint solution-like"><p id="p-15453">For which values of \(t\) is \(|\vr(t)|\le 1\text{?}\) Check the domain of \(t\) — we're not starting at zero.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1944" id="answer-1944"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1944"><div class="answer solution-like">
+<p id="p-15454">(a) \(\sqrt{2}\)</p>
+<p id="p-15455">(b) \(\frac{s}{\sqrt{2}}\left(\cos\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\,,\,
+\sin\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\right)\) with \(s \gt 0\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2018" id="solution-2018"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2018"><div class="solution solution-like">
+<p id="p-15456">(a) We have \(|\vr(t)|=e^t\le 1\) for \(t\le 0\text{.}\) So the part of the spiral contained in the unit circle is the part of the spiral with \(-\infty \lt t\le 0\text{.}\) As</p>
+<div class="displaymath">
+\begin{gather*}
+\vr'(t) = e^t (\cos t, \sin t) + e^t (-\sin t, \cos t)
+=e^t\big(\cos t -\sin t\,,\,\sin t + \cos t\big)
+\end{gather*}
+</div>
+<p data-braille="continuation">the speed</p>
+<div class="displaymath">
+\begin{gather*}
+\diff{s}{t} = \big|\vr'(t)\big|
+= e^t \sqrt{(\cos t-\sin t)^2+(\sin t+\cos t)^2}
+= \sqrt{2}e^t
+\end{gather*}
+</div>
+<p data-braille="continuation">and the arclength from \(t=-\infty\) to \(\vr(t)\) is</p>
+<div class="displaymath">
+\begin{equation*}
+s(t)=\int_{-\infty}^t \diff{s}{t}(\tilde t)\ \dee{\tilde t}
+=\int_{-\infty}^t \sqrt{2} e^{\tilde t}\ \dee{\tilde t}
+=\sqrt{2}e^t
+\end{equation*}
+</div>
+<p data-braille="continuation">In particular the length of the part of the spiral contained in the unit circle is \(s(0)=\sqrt{2}\text{.}\)</p>
+<p id="p-15457">(b) The inverse function of \(s(t)=\sqrt{2} e^t\) is \(t(s) =\ln\left(\frac{s}{\sqrt{2}}\right)\) with \(s \gt 0\text{.}\) (As \(t\rightarrow-\infty\text{,}\) the arc length \(s\rightarrow 0\) and as \(t\rightarrow+\infty\text{,}\) the arc length \(s\rightarrow +\infty\text{.}\)) So the reparametrization is</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\vR(s) = e^t (\cos t, \sin t)\Big|_{t=\ln\left(\frac{s}{\sqrt{2}}\right)}
+=\frac{s}{\sqrt{2}}\left(\cos\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\,,\,
+\sin\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\right)\\
+&amp;\quad\text{with } s \gt 0
+\end{align*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-259">
+<div class="introduction" id="introduction-397"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1945"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-15458">Define</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t)=\left(\frac{1}{\sqrt{1+t^2}},  \frac{\arctan t}{\sqrt{1+t^{-2}}}, \arctan t\right)
+\end{equation*}
+</div>
+<p id="p-15459">for \(0 \le t\text{.}\) Reparametrize the function using \(z=\arctan t\text{,}\) and describe the curve it defines. What is the geometric interpretation of the new parameter \(z\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1535" id="hint-1535"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1535"><div class="hint solution-like"><p id="p-15460">Be careful with the domain.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1945" id="answer-1945"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1945"><div class="answer solution-like"><p id="p-15461">\(\left(\cos z,  z\sin z, z\right)\) for \(0 \le z  \lt  \pi/2\text{.}\) The curve is (the first quarter-turn of) a spiral, with width in the \(x\)-direction 2, and increasing width in the \(y\)-direction.  The parameter \(z\) is the height, as well as a radian measure for the spiral.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2019" id="solution-2019"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2019"><div class="solution solution-like">
+<p id="p-15462">Using \(\arctan t = z\text{,}\) and so \(t=\tan z\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t)&amp;=\left(\frac{1}{\sqrt{1+t^2}},  \frac{\arctan t}{\sqrt{1+t^{-2}}}, \arctan t\right)\\
+&amp;=\left(\frac{1}{\sqrt{1+\tan^2z}},  \frac{z}{\sqrt{1+\cot^{2}z}}, z\right)\\
+&amp;=\left(\frac{1}{|\sec z|},  \frac{z}{|\csc z|}, z\right)\\
+&amp;=\left(|\cos z|,  z|\sin z|, z\right)\\
+\end{align*}
+<p class="intertext">Since \(0 \le t \text{,}\) and \(\arctan t  \lt  \pi/2\) we have \(0 \le z  \lt  \pi/2\text{,}\) so \(\cos z\) and \(\sin z\) are both nonnegative.</p>
+\begin{align*}
+&amp;=\left(\cos z,  z\sin z, z\right)
+\end{align*}
+</div>
+<p data-braille="continuation">If we didn't have the restricted domain, this would make a spiral going up: \(z\) is both the height of the spiral and a radian measure. The \(\hi\)-component of the spiral stays between \(-1\) and \(1\text{,}\) while the \(\hj\)-component increases. So, our spiral gets increasingly “wide,” while staying the same “thickness.”</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1895.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15463">Due to the restricted domain, our actual curve is only one-quarter of a “turn” of this spiral, indicated in red above.</p>
+<p id="p-15464">The parameter \(z\) is a measure of height, and it is also a radian measure as the spiral turns.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1946"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-15465">Reparametrize the function \(\vr(t)=(\tfrac12 t^2 , \tfrac13 t^3)\) in terms of arclength from \(t=-1\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1536" id="hint-1536"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1536"><div class="hint solution-like"><p id="p-15466">Remember \(\sqrt{x^2}=|x|\text{.}\) You will need to consider cases for this one.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1946" id="answer-1946"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1946"><div class="answer solution-like">
+<p id="p-15467">When \(s\le \frac13(2\sqrt2-1)\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\vR(s)=
+\Big(\frac12\left[ (2\sqrt2-3s)^{2/3}-1)\right],
+-\frac13\left[(2\sqrt2-3s)^{2/3}-1\right]^{3/2}\Big)
+\end{equation*}
+</div>
+<p data-braille="continuation">and when \(s\gt \frac13(2\sqrt2-1)\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\vR(s)=
+\Big(\frac12\left[(3s+2-2\sqrt2)^{2/3}-1 \right],
+\frac13\left[(3s+2-2\sqrt2)^{2/3}-1\right]^{3/2}\Big)
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2020" id="solution-2020"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2020"><div class="solution solution-like">
+<div class="displaymath" id="p-15468">
+\begin{align*}
+\vr(t)&amp;=(\tfrac12 t^2 , \tfrac13 t^3)\\
+\vr'(t)&amp;=(t,t^2)\\
+|\vr'(t)|&amp;=\sqrt{t^2+t^4}=|t|\sqrt{1+t^2}\\
+s(t)&amp;=\int_{-1}^t|x|\sqrt{1+x^2}\dee{x}\\
+&amp;=\begin{cases}
+\int_{-1}^t -x\sqrt{1+x^2}\dee{x} &amp; \text{when } t \le 0
+\\
+\int_{-1}^0 -x\sqrt{1+x^2}\dee{x} +\int_{0}^t x\sqrt{1+x^2}\dee{x} &amp; \text{when } t  \gt  0
+\end{cases}\\
+\end{align*}
+<p class="intertext">Let \(u=1+x^2, \frac12\dee{u}=x\dee{x}\)</p>
+\begin{align*}
+&amp;=\begin{cases}
+-\int_{2}^{1+t^2} \frac{1}{2}\sqrt{u}\dee{u} &amp; \text{when } t \le 0
+\\
+-\int_{2}^1 \frac12\sqrt{u}\dee{u}+ \int_{1}^{1+t^2} \frac12\sqrt{u}\dee{u} &amp; \text{when } t  \gt  0
+\end{cases}\\
+&amp;=\begin{cases}
+-\frac{1}{3}u^{3/2}|_{2}^{1+t^2} &amp; \text{when } t \le 0
+\\
+-\frac{1}{3}u^{3/2}|_{2}^{1}+  \frac13u^{3/2}|_{1}^{1+t^2} &amp; \text{when } t  \gt  0
+\end{cases}\\
+&amp;=\begin{cases}
+\frac{2^{3/2}}{3}-\frac{1}{3}(1+t^2)^{3/2} &amp; \text{when } t \le 0
+\\
+-\frac23+\frac{2^{3/2}}{3}+\frac13(1+t^2)^{3/2} &amp; \text{when } t  \gt  0
+\end{cases}\\
+\end{align*}
+<p class="intertext">Solving for \(t\) in terms of \(s\text{:}\)</p>
+\begin{align*}
+1+t^2&amp;=\begin{cases}(2\sqrt2-3s)^{2/3} &amp;\text{when } t \le 0
+\\
+(3s+2-2\sqrt{2})^{2/3} &amp;\text{when }t \gt 0\end{cases}\\
+t^2&amp;=\begin{cases}(2\sqrt2-3s)^{2/3}-1 &amp;\text{when } t \le 0
+\\
+(3s+2-2\sqrt{2})^{2/3}-1 &amp;\text{when }t \gt 0
+\end{cases}\\
+\end{align*}
+<p class="intertext">Remembering that \(\sqrt{t^2}=|t|\text{:}\)</p>
+\begin{align*}
+t&amp;=\begin{cases}-\sqrt{(2\sqrt2-3s)^{2/3}-1} &amp;\text{when } t \le 0
+\\
+\sqrt{(3s+2-2\sqrt{2})^{2/3}-1} &amp;\text{when }t \gt 0
+\end{cases}
+\end{align*}
+</div>
+<p data-braille="continuation">Noting that \(t=0\) when \(s=\tfrac{1}{3}(2\sqrt2-1)\text{,}\) we find our reparametrization of \((\tfrac12t^2,\tfrac13t^3)\text{.}\) When \(s\le \frac13(2\sqrt2-1)\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\vR(s)=
+\Big(\frac12\left[ (2\sqrt2-3s)^{2/3}-1)\right],
+-\frac13\left[(2\sqrt2-3s)^{2/3}-1\right]^{3/2}\Big)
+\end{equation*}
+</div>
+<p data-braille="continuation">and when \(s\gt \frac13(2\sqrt2-1)\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\vR(s)=
+\Big(\frac12\left[(3s+2-2\sqrt2)^{2/3}-1 \right],
+\frac13\left[(3s+2-2\sqrt2)^{2/3}-1\right]^{3/2}\Big)
+\end{equation*}
+</div>
+<p data-braille="continuation">Remark: after a computation with this much detail, it's nice to find a few points to check, to verify that our answer is reasonable. For instance, when \(s=0\text{,}\) \(t\) should be \(-1\text{,}\) and vice-versa. Also, we found that \(t=0\) corresponds to \(s=\frac13(2\sqrt2-1)\text{.}\) So, we should be able to verify that \(\vr(0)=\vR\left(\frac13(2\sqrt2-1)\right)\) and \(\vr(-1)=\vR(0)\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

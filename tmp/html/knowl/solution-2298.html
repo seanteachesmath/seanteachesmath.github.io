@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:15:23-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">15.2.6.23.1</span><span class="period">.</span>
+</h6>
+<p>(a) Since</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\pdiff{}{x}\frac{x}{{[x^2+y^2+z^2]}^{3/2}}
+&amp;=\frac{1}{{[x^2+y^2+z^2]}^{3/2}}
+-\frac{3}{2}\frac{x(2x)}{{[x^2+y^2+z^2]}^{5/2}}\\
+&amp;=\frac{-2x^2+y^2+z^2}{{[x^2+y^2+z^2]}^{5/2}}\\
+\pdiff{}{y}\frac{y}{{[x^2+y^2+z^2]}^{3/2}}
+&amp;=\frac{1}{{[x^2+y^2+z^2]}^{3/2}}
+-\frac{3}{2}\frac{y(2y)}{{[x^2+y^2+z^2]}^{5/2}}\\
+&amp;=\frac{x^2-2y^2+z^2}{{[x^2+y^2+z^2]}^{5/2}}\\
+\pdiff{}{z}\frac{z}{{[x^2+y^2+z^2]}^{3/2}}
+&amp;=\frac{1}{{[x^2+y^2+z^2]}^{3/2}}
+-\frac{3}{2}\frac{z(2z)}{{[x^2+y^2+z^2]}^{5/2}}\\
+&amp;=\frac{x^2+y^2-2z^2}{{[x^2+y^2+z^2]}^{5/2}}
+\end{align*}
+</div>
+<p data-braille="continuation">the specified divergence is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vnabla\cdot\vF
+&amp;=  \frac{(-2x^2+y^2+z^2) + (x^2-2y^2+z^2) + (x^2+y^2-2z^2)}
+{{[x^2+y^2+z^2]}^{5/2}}
+=0
+\end{align*}
+</div>
+<p data-braille="continuation">if \((x,y,z)\ne\vZero\) and is not defined if \((x,y,z)=\vZero\text{.}\)</p>
+<p>(b), (c) Set</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V_1 &amp;= \Set{(x,y,z)}{x^2 + (y - 2)^2 + z^2 \le 9}\\
+V_2 &amp;= \Set{(x,y,z)}{x^2 + (y - 2)^2 + z^2 \le 1}
+\end{align*}
+</div>
+<p data-braille="continuation">Here are side views of both \(V_1\) and \(V_2\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:3.5%;margin-right:3.5%;">
+<div class="sbspanel" style="width:46.2365591397849%;justify-content:center;"><img src="pfigs/OE12J_8a.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:46.2365591397849%;justify-content:center;"><img src="pfigs/OE12J_8b.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>Both \(V_1\) and \(V_2\) are spherical balls centred on \((0,2,0)\text{.}\) The difference between them is that \(V_1\) has radius \(3\) while \(V_2\) has radius \(1\text{.}\) In particular \((0,0,0)\) is not in \(V_2\text{.}\) So \(\vnabla\cdot\vF\) is well-defined and zero throughout \(V_2\) and, by the divergence theorem (Theorem <a class="xref" data-knowl="./knowl/thm_divThm.html" title="Theorem 15.2.2: Divergence Theorem">15.2.2</a>),</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\dblInt_{S_2} \vF\cdot\hn\,\dee{S}
+=\tripInt_{V_2} \vnabla\cdot\vF\,\dee{V}
+=0
+\end{gather*}
+</div>
+<p data-braille="continuation">On the other hand, \((0,0,0)\) is in \(V_1\text{.}\) We cannot blindly apply the divergence theorem to \(V_1\) — \(\vnabla\cdot\vF(x,y,z)\) is not defined at the point \((x,y,z)=(0,0,0)\) in \(V_1\text{.}\) We can work around this obstruction by</p>
+<ul class="disc">
+<li>choosing a number \(\rho \gt 0\) that is small enough that the sphere<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+S_\rho = \Set{(x,y,z)}{x^2+y^2+z^2=\rho^2}
+\end{equation*}
+</div>is completely contained inside \(V_1\) (for example, \(\rho=\frac{1}{2}\) is fine)</li>
+<li>and then removing the interior of \(S_\rho\) from \(V_1\text{.}\)</li>
+</ul>
+<p data-braille="continuation">This produces</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+V_3 = \Set{(x,y)}{x^2 + (y - 2)^2 + z^2 \le 9,\ x^2+y^2+z^2\ge\rho^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">whose side view is sketched below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:28.5%;margin-right:28.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE12J_8c.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>The boundary of \(V_3\) consists of two parts</p>
+<ul class="disc">
+<li>the sphere \(S_1\text{,}\) with outward normal and</li>
+<li>the sphere \(S_\rho\) with <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">inward</em> normal \(\hn=-\frac{\vr}{|\vr|}\)</li>
+</ul>
+<p data-braille="continuation">The divergence \(\vnabla\cdot\vF\) is well-defined and zero throughout \(V_3\) so that, by the divergence theorem,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+0=\tripInt_{V_3} \vnabla\cdot\vF\,\dee{V}
+=\dblInt_{S_1} \vF\cdot\hn\,\dee{S}
++\dblInt_{S_\rho} \vF\cdot\Big(-\frac{\vr}{|\vr|}\Big)\,\dee{S}
+\end{gather*}
+</div>
+<p data-braille="continuation">So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_{S_1} \vF\cdot\hn\,\dee{S}
+&amp;=\dblInt_{S_\rho} \vF\cdot\Big(\frac{\vr}{|\vr|}\Big)\,\dee{S}
+=\dblInt_{S_\rho} \Big(\frac{\vr}{|\vr|^3}\Big)\cdot\Big(\frac{\vr}{|\vr|}\Big)\,\dee{S}\\
+&amp;=\dblInt_{S_\rho} \frac{1}{|\vr|^2}\,\dee{S}
+=\dblInt_{S_\rho} \frac{1}{\rho^2}\,\dee{S}\\
+&amp;=\frac{1}{\rho^2}\ 4\pi\rho^2=4\pi
+\end{align*}
+</div>
+<p data-braille="continuation">since \(S_\rho\) is a sphere of radius \(\rho\) and hence of surface area \(4\pi\rho^2\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">(d) The flux integrals \(\dblInt_{S_1} \vF\cdot\hn\,\dee{S}\) and \(\dblInt_{S_2} \vF\cdot\hn\,\dee{S}\) are different, because the one point, \((0,0,0)\text{,}\) where \(\vnabla\cdot\vF\) fails to be well-defined and zero, is contained inside \(S_1\) but is not contained inside \(S_2\text{.}\)</p>
+</div>
+<span class="incontext"><a href="sec_divergenceThm.html#solution-2298">in-context</a></span>
+</body>
+</html>

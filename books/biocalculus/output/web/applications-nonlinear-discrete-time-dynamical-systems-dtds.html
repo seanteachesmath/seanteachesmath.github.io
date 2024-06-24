@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Applications: nonlinear discrete-time dynamical systems (DTDS)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Bio-Calculus">
+<meta property="book:author" content="Sean Laverty">
+<script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+},
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{cancel}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href="http://www.math.uco.edu" target="_blank"><img src="external//wordcloud.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="biocalculus.html"><span class="title">Bio-Calculus</span></a></h1>
+<p class="byline">Sean Laverty</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch-advanced.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-advanced.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="applications-autonomous-differential-equations.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch-advanced.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-advanced.html" title="Up">Up</a><a class="next-button button toolbar-item" href="applications-autonomous-differential-equations.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul><li><a href="users-guide.html" data-scroll="users-guide" class="internal">Users guide</a></li></ul>
+</li>
+<li class="link">
+<a href="ch-intro.html" data-scroll="ch-intro" class="internal"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="what-is-bio-calculus.html" data-scroll="what-is-bio-calculus" class="internal">What is bio-calculus?</a></li>
+<li><a href="introduction-modeling-terminology.html" data-scroll="introduction-modeling-terminology" class="internal">Introduction to Modeling: Variables, Parameters, Functions, and Graphs</a></li>
+<li><a href="dimensions-and-units-1.html" data-scroll="dimensions-and-units-1" class="internal">Dimensions and units</a></li>
+<li><a href="linear-functions-and-their-graphs.html" data-scroll="linear-functions-and-their-graphs" class="internal">Linear functions and their graphs</a></li>
+<li><a href="exponentials-and-logarithms.html" data-scroll="exponentials-and-logarithms" class="internal">Exponentials and logarithms</a></li>
+<li><a href="introduction-to-discrete-time-dynamical-systems-dtds.html" data-scroll="introduction-to-discrete-time-dynamical-systems-dtds" class="internal">Introduction to discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="introduction-to-limits.html" data-scroll="introduction-to-limits" class="internal">Introduction to limits</a></li>
+<li><a href="continuous-functions.html" data-scroll="continuous-functions" class="internal">Continuous functions</a></li>
+<li><a href="limits-and-behaviors-at-infinity.html" data-scroll="limits-and-behaviors-at-infinity" class="internal">Limits and behaviors at infinity</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-derivatives.html" data-scroll="ch-derivatives" class="internal"><span class="codenumber">2</span> <span class="title">Rates of change and derivatives</span></a><ul>
+<li><a href="introduction-to-derivatives-rates-of-change.html" data-scroll="introduction-to-derivatives-rates-of-change" class="internal">Introduction to derivatives: Rates of change</a></li>
+<li><a href="derivatives-of-basic-functions.html" data-scroll="derivatives-of-basic-functions" class="internal">Derivatives of basic functions</a></li>
+<li><a href="derivatives-of-exponential-and-logarithmic-functions.html" data-scroll="derivatives-of-exponential-and-logarithmic-functions" class="internal">Derivatives of exponential and logarithmic functions</a></li>
+<li><a href="derivatives-of-compositions-chain-rule.html" data-scroll="derivatives-of-compositions-chain-rule" class="internal">Derivatives of compositions: chain rule</a></li>
+<li><a href="derivatives-of-products-and-quotients.html" data-scroll="derivatives-of-products-and-quotients" class="internal">Derivatives of products and quotients</a></li>
+<li><a href="second-derivatives-and-applications.html" data-scroll="second-derivatives-and-applications" class="internal">Second derivatives and applications</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-integration.html" data-scroll="ch-integration" class="internal"><span class="codenumber">3</span> <span class="title">Integration</span></a><ul>
+<li><a href="introduction-to-differential-equations.html" data-scroll="introduction-to-differential-equations" class="internal">Introduction to differential equations</a></li>
+<li><a href="more-complicated-integrals-and-integration-by-substitution.html" data-scroll="more-complicated-integrals-and-integration-by-substitution" class="internal">More complicated integrals and integration by substitution</a></li>
+<li><a href="the-definite-integral.html" data-scroll="the-definite-integral" class="internal">The definite integral</a></li>
+<li><a href="applications-of-the-definite-integral.html" data-scroll="applications-of-the-definite-integral" class="internal">Applications of the definite integral</a></li>
+<li><a href="applications-to-chemistry.html" data-scroll="applications-to-chemistry" class="internal">Applications to chemistry</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-advanced.html" data-scroll="ch-advanced" class="internal"><span class="codenumber">4</span> <span class="title">Integration</span></a><ul>
+<li><a href="applications-nonlinear-discrete-time-dynamical-systems-dtds.html" data-scroll="applications-nonlinear-discrete-time-dynamical-systems-dtds" class="active">Applications: nonlinear discrete-time dynamical systems (DTDS)</a></li>
+<li><a href="applications-autonomous-differential-equations.html" data-scroll="applications-autonomous-differential-equations" class="internal">Applications: autonomous differential equations</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="applications-nonlinear-discrete-time-dynamical-systems-dtds"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Applications: nonlinear discrete-time dynamical systems (DTDS)</span>
+</h2>
+<section class="paragraphs" id="the-plan-19"><h3 class="heading"><span class="title">The Plan.</span></h3>
+<p id="p-776">By studying a few real-world mathematical models, we will see a new dimension of mathematical work - more graphical and artistic, but rooted in calculus nonetheless.</p>
+<section class="paragraphs" id="historical-examples"><h4 class="heading"><span class="title">Historical examples.</span></h4>
+<p id="p-777">We will discuss two famous DTDS from the scientific literature: the Ricker model and the discrete-logistic model.</p>
+<p id="p-778"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/ricker_cit.png" class="contained"></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/ricker_og_fig.png" class="contained"></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/ricker_og_capt.png" class="contained"></div></p>
+<p id="p-779">This model was used to study changes in fish populations over a 4 year period (chosen based on the reproductive cycle of the fish). The updating function (the curve) was chosen based on fisheries data and modeling.</p>
+<figure class="figure figure-like" id="figure-50"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/may_cit.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.1<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><p id="p-780"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/may_og_fig.png" class="contained"></div> <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/topics/figures/may_og_capt.png" class="contained"></div></p>
+<p id="p-781">This model was used to study changes in empirical and theoretical populations. Two examples of the updating function (the curves) are illustrated.</p>
+<section class="paragraphs" id="dynamics-and-stability"><h5 class="heading"><span class="title">Dynamics and stability.</span></h5>
+<p id="p-782">We see a hint of a ‘stability condition’ in the right-hand panel. Recall that equilibria occur where the diagonal and updating functions cross. The equilibrium point is <dfn class="terminology">stable</dfn> if the updating function is ‘not too steep’ at this point, and <dfn class="terminology">unstable</dfn> if the updating function is ‘too steep’ at this point.What might we mean by ‘too steep’? How can we describe the ‘steepness’ of a graph at a point?</p></section><section class="paragraphs" id="sample-solutions"><h5 class="heading"><span class="title">Sample solutions.</span></h5>
+<p id="p-783">Using the computer code as a guide, sketch some sample cobwebs.</p>
+<figure class="figure figure-like" id="figure-51"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/logistic_small.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.2<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><figure class="figure figure-like" id="figure-52"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/logistic_big.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.3<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure></section><section class="paragraphs" id="conclusions"><h5 class="heading"><span class="title">Conclusions.</span></h5>
+<p id="p-784">From your computer experiments and analysis above what conclusions can you draw about this model and its solutions?</p></section><section class="paragraphs" id="sample-solutions-1"><h5 class="heading"><span class="title">Sample solutions.</span></h5>
+<p id="p-785">Using the computer code as a guide, sketch some sample cobwebs.</p>
+<figure class="figure figure-like" id="figure-53"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/ricker_small.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.4<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure><figure class="figure figure-like" id="figure-54"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/ricker_big.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.5<span class="period">.</span></span><span class="space"> </span>image</figcaption></figure></section><section class="paragraphs" id="conclusions-1"><h5 class="heading"><span class="title">Conclusions.</span></h5>
+<p id="p-786">From your computer experiments and analysis above what conclusions can you draw about this model and its solutions?</p>
+<p id="p-787">For the DTDS <span class="process-math">\(x_{t+1} = f(x_t)\text{,}\)</span> the equilibrium <span class="process-math">\(x_{t+1} = x_t = x^*\)</span> is</p>
+<ul id="p-788" class="disc">
+<li id="li-216"><p id="p-789"><dfn class="terminology">stable</dfn> if <span class="process-math">\(-1 &lt;
+f'(x^*)&lt;1\)</span> (or <span class="process-math">\(f\)</span> has a small slope at <span class="process-math">\(x^*\text{,}\)</span> <span class="process-math">\(|f'(x^*)|&lt;1\)</span>) and</p></li>
+<li id="li-217"><p id="p-790"><dfn class="terminology">unstable</dfn> if <span class="process-math">\(f'(x^*)&lt;-1\)</span> or <span class="process-math">\(1 &lt; f'(x^*)\)</span> (or <span class="process-math">\(f\)</span> has a large slope at <span class="process-math">\(x^*\text{,}\)</span> <span class="process-math">\(|f'(x^*)|&gt;1\)</span>)</p></li>
+</ul>
+<p id="p-791">The solution <span class="process-math">\(x_t\)</span> oscillates of <span class="process-math">\(f'(x^*)&lt;0\text{.}\)</span></p></section><section class="paragraphs" id="big-idea"><h5 class="heading"><span class="title">Big idea!</span></h5>
+<p id="p-792">Near an equilibrium <span class="process-math">\(f\)</span> looks like its tangent line, whose slope is given by the derivative there, <span class="process-math">\(f'(x^*)\text{.}\)</span> Zooming in <em class="emphasis">near the equilibrium point</em>, the nonlinear model will look like one of the four cases pictured at the conclusion of the previous section with one of the basic behaviors.</p></section><section class="paragraphs" id="ricker-model"><h5 class="heading"><span class="title">Ricker Model.</span></h5>
+<p id="p-793">Originally published in the 1950’s, the Ricker model was used to describe change in size of fish populations from one measurement to the next. Though there are other variants presented in literature, the model is</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+N_{t+1} = rN_te^{-KNt},
+\end{equation*}
+</div>
+<p class="continuation">where the values <span class="process-math">\(r\)</span> and <span class="process-math">\(K\)</span> are parameters. This model has been used to</p>
+<ul id="p-794" class="disc">
+<li id="li-218"><p id="p-795">estimate growth and population parameters from data</p></li>
+<li id="li-219"><p id="p-796">predict population growth</p></li>
+<li id="li-220"><p id="p-797">optimize yields from harvested populations</p></li>
+</ul></section><section class="paragraphs" id="analysis-of-the-ricker-dtds"><h5 class="heading"><span class="title">Analysis of the Ricker DTDS.</span></h5>
+<p id="p-798">To get some basic information we will analyze the Ricker model by hand before moving onto computing.</p>
+<ol id="p-799" class="decimal">
+<li id="li-221"><p id="p-800">With <span class="process-math">\(r=2\)</span> and <span class="process-math">\(K=2\text{,}\)</span> find the equilibria <span class="process-math">\(N^*\)</span> for the Ricker model.</p></li>
+<li id="li-222"><p id="p-801">What is <span class="process-math">\(f'(N)\)</span> if <span class="process-math">\(f(N) = rNe^{-KN}\text{?}\)</span></p></li>
+<li id="li-223"><p id="p-802">What is <span class="process-math">\(f'(N^*)\text{?}\)</span> Are equilibria stable? Should solutions oscillate?</p></li>
+<li id="li-224"><p id="p-803">Repeat the analysis if <span class="process-math">\(r=8\text{.}\)</span></p></li>
+</ol></section><section class="paragraphs" id="discrete-logistic"><h5 class="heading"><span class="title">Discrete logistic.</span></h5>
+<p id="p-804">The famous model May discusses in the paper cited above is the discrete logistic equation or the ‘logistic map,’ given by</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x_{t+1} = rx_t(1-x_t/K),
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(r\)</span> and <span class="process-math">\(K\)</span> are parameters and we think of <span class="process-math">\(x_t\)</span> as describing the size of a biological population. The algebra of the analysis simplifies if we choose <span class="process-math">\(K=1\text{.}\)</span></p>
+<ol id="p-805" class="decimal">
+<li id="li-225"><p id="p-806">With <span class="process-math">\(r=2\)</span> and <span class="process-math">\(K=1\text{,}\)</span> find the equilibria <span class="process-math">\(x^*\)</span> for the discrete logistic model.</p></li>
+<li id="li-226"><p id="p-807">What is <span class="process-math">\(f'(x)\)</span> if <span class="process-math">\(f(x) = rx(1-x/K)\)</span> if again <span class="process-math">\(K=1\text{?}\)</span></p></li>
+<li id="li-227"><p id="p-808">What is <span class="process-math">\(f'(x^*)\text{?}\)</span> Are equilibria stable? Should solutions oscillate?</p></li>
+<li id="li-228"><p id="p-809">Repeat the analysis if <span class="process-math">\(r=4\text{.}\)</span></p></li>
+</ol></section><section class="paragraphs" id="note-on-modeling"><h5 class="heading"><span class="title">Note on modeling.</span></h5>
+<p id="p-810">Both of these models, and many others, are of the form</p>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+N_{t+1} = N_tf(N_t),
+\end{equation*}
+</div>
+<p class="continuation">where <span class="process-math">\(f(N)\)</span> is the ‘per capita production’ as a function of the current population size. This model tells us that the new population size is a multiple of the old population size, and <span class="process-math">\(f(N)\)</span> tells us what the multiple is. What is <span class="process-math">\(f\)</span> for each of the models above?</p></section></section></section></section></div></main>
+</div>
+</body>
+</html>

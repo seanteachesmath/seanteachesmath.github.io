@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:38:45-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>In this example, we will see that the function</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f(x,y)=\begin{cases}
+\frac{x^2}{x-y}&amp;\text{if } x\ne y \\
+0&amp;\text{if } x=y
+\end{cases}
+\end{equation*}
+</div>
+<p data-braille="continuation">is <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">not</em> continuous at \((0,0)\) and yet has both partial derivatives \(f_x(0,0)\) and \(f_y(0,0)\) perfectly well defined. We'll also see how that is possible. First let's compute the partial derivatives. By definition,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f_x(0,0)&amp;=\lim_{h\rightarrow 0}\frac{f(0+h,0)-f(0,0)}{h}
+=\lim_{h\rightarrow 0}\frac{\overbrace{\tfrac{h^2}{h-0}}^{h}-\,0}{h}
+=\lim_{h\rightarrow 0}1\\
+&amp;=1\\
+f_y(0,0)&amp;=\lim_{h\rightarrow 0}\frac{f(0,0+h)-f(0,0)}{h}
+=\lim_{h\rightarrow 0}\frac{\frac{0^2}{0-h}-0}{h}
+=\lim_{h\rightarrow 0}0\\
+&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">So the first order partial derivatives \(f_x(0,0)\) and \(f_y(0,0)\) are perfectly well defined.</p>
+<p>To see that, nonetheless, \(f(x,y)\) is not continuous at \((0,0)\text{,}\) we take the limit of \(f(x,y)\) as \((x,y)\) approaches \((0,0)\) along the curve \(y=x-x^3\text{.}\) The limit is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\lim_{x\rightarrow 0} f\big(x,x-x^3\big)
+=\lim_{x\rightarrow 0} \frac{x^2}{x-(x-x^3)}
+=\lim_{x\rightarrow 0} \frac{1}{x}
+\end{gather*}
+</div>
+<p data-braille="continuation">which does not exist. Indeed as \(x\) approoaches \(0\) through positive numbers, \(\frac{1}{x}\) approaches \(+\infty\text{,}\) and as \(x\) approoaches \(0\) through negative numbers, \(\frac{1}{x}\) approaches \(-\infty\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">So how is this possible? The answer is that \(f_x(0,0)\) only involves values of \(f(x,y)\) with \(y=0\text{.}\) As \(f(x,0)=x\text{,}\) for all values of \(x\text{,}\) we have that \(f(x,0)\) is a continuous, and indeed a differentiable, function. Similarly, \(f_y(0,0)\) only involves values of \(f(x,y)\) with \(x=0\text{.}\) As \(f(0,y)=0\text{,}\) for all values of \(y\text{,}\) we have that \(f(0,y)\) is a continuous, and indeed a differentiable, function. On the other hand, the bad behaviour of \(f(x,y)\) for \((x,y)\) near \((0,0)\) only happens for \(x\) and \(y\) both nonzero.</p></article></body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:06:09-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p xmlns:svg="http://www.w3.org/2000/svg">(a) The (largest possible) domain is \(D=\Set{(x,y,z)}{x^2+y^2\ne 0}
+\text{.}\) That is, all of \(\mathbb R^3\) except the points lying along the \(z\)-axis.</p>
+<p>(b) As preliminary computations, let's find</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{\partial }{\partial y}\left(\frac{x-2y}{x^2+y^2}\right)
+&amp;=\frac{-2}{x^2+y^2}-\frac{2y(x-2y)}{{(x^2+y^2)}^2}
+=\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}\\
+\frac{\partial }{\partial x}\left(\frac{2x+y}{x^2+y^2}\right)
+&amp;=\frac{2}{x^2+y^2}-\frac{2x(2x+y)}{{(x^2+y^2)}^2}
+=\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}
+\end{align*}
+</div>
+<p data-braille="continuation">So the curl of \(\vF\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk\\
+\pdiff{}{x} &amp; \pdiff{}{y} &amp;
+\pdiff{}{z}\\
+\frac{x-2y}{x^2+y^2} &amp; \frac{2x + y}{x^2+y^2} &amp; z
+\end{matrix}
+\right]\\
+&amp;=\left(\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}
+-\frac{-2x^2+2y^2-2xy}{{(x^2+y^2)}^2}\right)\hk\\
+&amp;=\vZero
+\end{align*}
+</div>
+<p data-braille="continuation"><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">on the domain of \(\vF\)</em>.</p>
+<p>(c) Parametrize the circle by</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vr(t) = 2\cos t\,\hi +2\sin t\,\hj +3\,\hk\qquad
+\vr'(t) = -2\sin t\,\hi +2\cos t\,\hj
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(0\le\theta\le 2\pi\text{.}\) So the integral is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_C \vF \cdot \dee{\vr}
+&amp;=\int_0^{2\pi}\!\!\bigg\{
+\overbrace{\frac{2\cos t-4\sin t}{4}}^{\frac{x-2y}{x^2+y^2}}\,\hi
++\overbrace{\frac{4\cos t + 2\sin t}{4}}^{\frac{2x+y}{x^2+y^2}}\,\hj
++ \overbrace{3}^{z}\,\hk\bigg\}
+\cdot\\
+&amp;\hskip3in
+\Big\{\overbrace{-2\sin t\,\hi +2\cos t\,\hj}^{\vr'(t)}\Big\}\dee{t}\\
+&amp;=\int_0^{2\pi}
+\frac{-4\sin t\cos t+8\sin^2 t+8\cos^2t+4\sin t\cos t}{4}\,\dee{t}\\
+&amp;= 2\int_0^{2\pi}\dee{t}
+=4\pi
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">(d) As the integral of \(\vF\) around the simple closed curve \(C\) is not zero, \(\vF\) cannot be conservative. See Theorem <a class="xref" data-knowl="./knowl/thm_pathIndepConserv.html" title="Theorem 13.4.7">13.4.7</a> and Examples <a class="xref" data-knowl="./knowl/eg_screeningCounterexample.html" title="Example 13.3.14: Optional: First look at \(-\frac{y}{x^2+y^2}\hi + \frac{x}{x^2+y^2}\hj\)">13.3.14</a> and <a class="xref" data-knowl="./knowl/eg_greenCC.html" title="Example 15.3.8: Example 15.3.7, again.">15.3.8</a>.</p>
+</div></body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:40:27-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.4.26</span><span class="period">.</span><span class="space"> </span><span class="title">Error inferring the area and volume from the radius.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Suppose that the radius of a sphere has been measured with a percentage error of at most \(\varepsilon\)%. Find the corresponding approximate percentage errors in the surface area and volume of the sphere.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg"><em class="alert">Solution</em> We need to be careful in this problem to convert between absolute and percentage errors correctly.</p>
+<ul class="disc">
+<li>Suppose that the exact radius is \(r_0\) and that the measured radius is \(r_0+\De r\text{.}\)</li>
+<li>Then the absolute error in the measurement is \(|\De r|\) and, by definition, the percentage error is \(100\tfrac{|\De r|}{r_0}\text{.}\) We are told that \(100\tfrac{|\De
+r|}{r_0}\le\varepsilon\text{.}\)</li>
+<li>The surface area <a class="fn-knowl original" data-knowl="./knowl/fn-146-hidden.html" title="Footnote 4.4.16"><sup> 16 </sup></a> of a sphere of radius \(r\) is \(A(r)=4\pi r^2\text{.}\) The error in the surface area computed with the measured radius is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\De A &amp;=A(r_0+\De r)-A(r_0)\approx A'(r_0)\De r\\
+&amp;= 8\pi r_0 \Delta r
+\end{align*}
+</div>where we have made use of the linear approximation, equation <a class="xref" data-knowl="./knowl/eq_lineDe.html" title="Equation 4.4.20: Linear approximation of \(\De y\)">4.4.20</a>.</li>
+<li>The corresponding percentage error is then<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+100\frac{|\De A|}{A(r_0)}
+\approx 100\frac{|A'(r_0)\De r|}{A(r_0)}
+= 100\frac{8\pi r_0|\De r|}{4\pi r_0^2}
+= 2\times 100\frac{|\De r|}{r_0}
+\le 2\varepsilon
+\end{gather*}
+</div>
+</li>
+<li>The volume of a sphere <a class="fn-knowl original" data-knowl="./knowl/fn-147-hidden.html" title="Footnote 4.4.17"><sup> 17 </sup></a> of radius \(r\) is \(V(r)=\frac{4}{3}\pi r^3\text{.}\) The error in the volume computed with the measured radius is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\De V &amp;=V(r_0+\De r)-V(r_0)\approx V'(r_0)\De r\\
+&amp;= 4\pi r_0^2 \Delta r
+\end{align*}
+</div>where we have again made use of the linear approximation, equation <a class="xref" data-knowl="./knowl/eq_lineDe.html" title="Equation 4.4.20: Linear approximation of \(\De y\)">4.4.20</a>.</li>
+<li>The corresponding percentage error is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+100\frac{|\De V|}{V(r_0)}
+\approx 100\frac{|V'(r_0)\De r|}{V(r_0)}
+= 100\frac{4\pi r_0^2|\De r|}{4\pi r_0^3/3}
+= 3\times 100\frac{|\De r|}{r_0}
+\le 3\varepsilon
+\end{gather*}
+</div>
+</li>
+</ul>
+<p data-braille="continuation">We have just computed an approximation to \(\Delta V\text{.}\) This problem is actually sufficiently simple that we can compute \(\Delta V\) exactly:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\Delta V &amp;=  V(r_0 + \Delta r) - V(r_0)
+= \tfrac{4}{3} \pi (r_0 + \Delta r)^3
+- \tfrac{4}{3} \pi r_0^3
+\end{align*}
+</div>
+<ul class="disc">
+<li>Applying \((a+b)^3=a^3+3a^2b+3ab^2+b^3\) with \(a=r_0\) and \(b=\De r\text{,}\) gives<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V(r_0+\De r)-V(r_0)&amp;=\tfrac{4}{3}\pi
+\left[r_0^3+3r_0^2\De r+3r_0\,(\De r)^2+(\De r)^3\right] - \tfrac{4}{3}\pi r_0^3\\
+&amp;=\tfrac{4}{3}\pi[3r_0^2\De r+3r_0\,(\De r)^2+(\De r)^3]
+\end{align*}
+</div>
+</li>
+<li>Thus the difference between the exact error and the linear approximation to the error is obtained by retaining only the last two terms in the square brackets. This has magnitude<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\tfrac{4}{3}\pi\big|3r_0\,(\De r)^2+(\De r)^3\big|
+=\tfrac{4}{3}\pi\big|3r_0+\De r\big|(\De r)^2
+\end{gather*}
+</div>or in percentage terms<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+100\cdot \dfrac{1}{\tfrac{4}{3}\pi r_0^3} \cdot
+\tfrac{4}{3}\pi \big|3r_0\,(\De r)^2+(\De r)^3\big|
+&amp;=100\left|3\frac{\De r^2}{r_0^2}+\frac{\De r^3}{r_0^3}\right|\\
+&amp;=\left(100 \frac{3\De r}{r_0}\right)
+\cdot \left(\frac{\De r}{r_0}\right)
+\left|1 +\frac{\De r}{3r_0}\right|\\
+&amp; \le 3\varepsilon \left(\frac{\varepsilon}{100}\right)\cdot \left(1+\frac{\varepsilon}{300}\right)
+\end{align*}
+</div>Since \(\varepsilon\) is small, we can assume that \(1 + \frac{\varepsilon}{300} \approx 1\text{.}\) Hence the difference between the exact error and the linear approximation of the error is roughly a factor of \(\tfrac{\varepsilon}{100}\) smaller than the linear approximation \(3\varepsilon\text{.}\)</li>
+<li>As an aside, notice that if we argue that \(\De r\) is very small and so we can ignore terms involving \((\De r)^2\) and \((\De r)^3\) as being really really small, then we obtain<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+V(r_0+\De r)-V(r_0)
+&amp;=\tfrac{4}{3}\pi[3r_0^2\De r \underbrace{+3r_0\,(\De r)^2+(\De
+r)^3}_\text{really really small}]\\
+&amp;\approx \tfrac{4}{3}\pi \cdot 3r_0^2\De r  = 4 \pi r_0^2 \De r
+\end{align*}
+</div>which is precisely the result of our linear approximation above.</li>
+</ul></article><span class="incontext"><a href="sec_DIFFTaylor.html#eg_taylorSphere">in-context</a></span>
+</body>
+</html>

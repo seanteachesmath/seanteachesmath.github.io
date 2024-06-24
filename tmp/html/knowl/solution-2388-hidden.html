@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:20:14-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p xmlns:svg="http://www.w3.org/2000/svg">(a) Here is a sketch.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:21%;margin-right:21%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE17D_4.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>(b) We are to evaluate the line integral of a complicated vector field around a relatively complicated closed curve. That certainly suggests that we should not try to evaluate the integral directly. Let's try Stokes' theorem. First, we compute the curl</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vnabla\times\vF
+&amp;=\det\left[\begin{matrix}
+\hi &amp;\hj &amp;\hk\\
+\tfrac{\partial }{\partial x} &amp; \tfrac{\partial }{\partial y} &amp;
+\tfrac{\partial }{\partial z}\\
+\frac{2z}{1+y}+\sin(x^2) &amp; \frac{3z}{1+x}+\sin(y^2) &amp; 5(x+1)(y+2)
+\end{matrix} \right]\\
+&amp;= \Big(5(x+1)-\frac{3}{1+x}\Big)\,\hi
+-\Big(5(y+2)-\frac{2}{1+y}\Big)\,\hj\\
+&amp;\hskip1in  +\Big(-\frac{3z}{(1+x)^2}+\frac{2z}{(1+y)^2}\Big)\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">Next we need to find a surface \(S\) whose boundary is \(C\text{.}\) We can choose the surface \(S\) to be the union of two flat parts:</p>
+<ul class="disc">
+<li>the triangle \(S_x\) in the \(xz\)-plane with vertices \((0,0,0)\text{,}\) \((2,0,0)\text{,}\) and \((0,0,2)\) and</li>
+<li>the triangle \(S_y\) in the \(yz\)-plane with vertices \((0,0,0)\text{,}\) \((0,0,2)\text{,}\) and \((0,3,0)\)</li>
+</ul>
+<p data-braille="continuation">Note that</p>
+<ul class="disc">
+<li>The normal to \(S_x\) specified by Stokes' theorem is \(-\hj\text{.}\) On \(S_x\) we have \(y=0\text{,}\) so that \(\vnabla\times\vF\cdot\hj\) simplifies to \(-\big(5(0+2)-\frac{2}{1+0}\big)=-8\text{.}\)</li>
+<li>The normal to \(S_y\) specified by Stokes' theorem is \(-\hi\text{.}\) On \(S_y\) we have \(x=0\text{,}\) so that \(\vnabla\times\vF\cdot\hi\) simplifies to \(\big(5(0+1)-\frac{3}{1+0}\big)=2\text{.}\)</li>
+</ul>
+<p data-braille="continuation">So Stokes' theorem gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_C\vF\cdot\dee{\vr}
+&amp;=\dblInt_S  \vnabla\times\vF\cdot\hn\,\dee{S}\\
+&amp;=\dblInt_{S_x}  \overbrace{\vnabla\times\vF\cdot(-\hj)}^{8}\,\dee{S}
++ \dblInt_{S_y}  \overbrace{\vnabla\times\vF\cdot(-\hi)}^{-2}\,\dee{S}\\
+&amp;=8\,\text{Area}(S_x)  -2\,\text{Area}(S_y)
+=8\frac{1}{2}(2)(2) -2\frac{1}{2}(3)(2)\\
+&amp;=10
+\end{align*}
+</div>
+</div></body>
+</html>

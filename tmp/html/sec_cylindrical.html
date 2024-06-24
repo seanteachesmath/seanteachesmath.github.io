@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T15:57:05-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Triple Integrals in Cylindrical Coordinates</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_3d_integrals.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_integrals.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_spherical.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_3d_integrals.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_integrals.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_spherical.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical" class="active">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_cylindrical"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">11.6</span> <span class="title">Triple Integrals in Cylindrical Coordinates</span>
+</h2>
+<section class="introduction" id="introduction-382"><p id="p-14769">Many problems possess natural symmetries. We can make our work easier by using coordinate systems, like  polar coordinates, that are tailored to those symmetries. We will look at two more such coordinate systems — cylindrical and spherical coordinates.</p></section><section class="subsection" id="sec_cylindrical_coords"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">11.6.1</span> <span class="title">Cylindrical Coordinates</span>
+</h3>
+<p id="p-14770">In the event that we wish to compute, for example, the mass of an object that is invariant under rotations about the \(z\)-axis<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-515" id="fn-515"><sup> 1 </sup></a>, it is advantageous to use a natural generalization of polar coordinates to three dimensions. The coordinate system is called <em class="emphasis">cylindrical coordinates</em>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-515"><div class="fn">like a pipe or a can of tuna fish</div></div>
+<article class="definition definition-like" id="def_cylindrical"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">11.6.1</span><span class="period">.</span>
+</h6>
+<p id="p-14771">Cylindrical coordinates are denoted<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-516" id="fn-516"><sup> 2 </sup></a> \(r\text{,}\) \(\theta\) and \(z\) and are defined by</p>
+<div class="displaymath">
+\begin{align*}
+r&amp;=\text{ the distance from }(x,y,0)\text{ to }(0,0,0)\\
+&amp;=\text{ the distance from }(x,y,z)\text{ to the $z$-axis}\\
+\theta&amp;=\text{ the angle between the positive $x$ axis and}\\
+&amp; \qquad\qquad \text{the line joining $(x,y,0)$ to $(0,0,0)$}\\
+z&amp;=\text{ the signed distance from }(x,y,z)
+\text{ to the $xy$-plane}
+\end{align*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-516"><div class="fn">We are using the standard mathematics conventions for the cylindrical coordinates. Under the ISO conventions they are \((\rho,\varphi,z)\text{.}\)</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/cyl1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-14772">That is, \(r\) and \(\theta\) are the usual polar coordinates and \(z\) is the usual \(z\text{.}\)</p></article><p id="p-14773">The Cartesian and cylindrical coordinates are related by<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-517" id="fn-517"><sup> 3 </sup></a></p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-517"><div class="fn">As was the case for polar coordinates, it is sometimes convenient to extend these definitions by saying that \(x = r\cos\theta\) and \(y = r\sin\theta\) even when r is negative. See the end of Section <a href="sec_polars.html#sec_polar_coords" class="internal" title="Subsection 11.2.1: Polar Coordinates">11.2.1</a>.</div></div>
+<article class="fact theorem-like" id="eqn_cylindrical"><h6 class="heading">
+<span class="type">Equation</span><span class="space"> </span><span class="codenumber">11.6.2</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-14774">
+\begin{align*}
+x&amp;=r\cos\theta &amp;
+y&amp;=r\sin\theta &amp;
+z&amp;=z\\
+r&amp;=\sqrt{x^2+y^2} &amp;
+\theta&amp;=\arctan\frac{y}{x} &amp;
+z&amp;=z
+\end{align*}
+</div></article><p id="p-14775">Here are sketches of surfaces of constant \(r\text{,}\) constant \(\theta\text{,}\) and constant \(z\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.833333333333333%;margin-right:1.833333333333333%;">
+<div class="sbspanel" style="width:30.1038062283737%;justify-content:center;"><img src="figs/cyl3.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:31.1418685121107%;justify-content:center;"><img src="figs/cyl4.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:31.1418685121107%;justify-content:center;"><img src="figs/cyl2.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div></section><section class="subsection" id="sec_cylindrical_vol"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">11.6.2</span> <span class="title">The Volume Element in Cylindrical Coordinates</span>
+</h3>
+<p id="p-14776">Before we can start integrating using these coordinates we need to determine the volume element. Recall that before integrating in polar coordinates, we had to establish that \(\dee{A}=r\,\dee{r}\,\dee{\theta}\text{.}\) In the arguments that follow we establish that \(\dee{V} =r\,\dee{r}\,\dee{\theta}\,\dee{z}\text{.}\)</p>
+<p id="p-14777">If we cut up a solid by</p>
+<ul class="disc">
+<li id="li-5958">
+<p id="p-14778">first slicing it into horizontal plates of thickness \(\dee{z}\) by using planes of constant \(z\text{,}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/sphereCyl1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-5959">
+<p id="p-14779">and then subdividing the plates into wedges using surfaces of  constant \(\theta\text{,}\) say with the difference between successive \(\theta\)'s being \(\dee{\theta}\text{,}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/sphereCyl2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-5960">
+<p id="p-14780">and then subdividing the wedges into approximate cubes using surfaces of  constant \(r\text{,}\) say with the difference between successive \(r\)'s being \(\dee{r}\text{,}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/sphereCyl3.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+</ul>
+<p data-braille="continuation">we end up with approximate cubes that look like</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/cylCube.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<ul id="p-14781" class="disc">
+<li id="li-5961">When we introduced slices using surfaces of constant \(r\text{,}\) the difference between the successive \(r\)'s was \(\dee{r}\text{,}\) so the indicated edge of the cube has length \(\dee{r}\text{.}\)</li>
+<li id="li-5962">When we introduced slices using surfaces of constant \(z\text{,}\) the difference between the successive \(z\)'s was \(\dee{z}\text{,}\) so the vertical edges of the cube have length \(\dee{z}\text{.}\)</li>
+<li id="li-5963">When we introduced slices using surfaces of constant \(\theta\text{,}\) the difference between the successive \(\theta\)'s was \(\dee{\theta}\text{,}\) so the remaining edges of the cube are circular arcs of radius essentially<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-518" id="fn-518"><sup> 4 </sup></a> \(r\) that subtend an angle \(\theta\text{,}\) and so have length \(r\,\dee{\theta}\text{.}\) See the derivation of equation <a class="xref" data-knowl="./knowl/eq_dA_polar.html" title="Equation 11.2.5">11.2.5</a>.</li>
+</ul>
+<p data-braille="continuation">So the volume of the approximate cube in cylindrical coordinates is (essentially<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-519" id="fn-519"><sup> 5 </sup></a>)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-518"><div class="fn">The inner edge has radius \(r\text{,}\) but the outer edge has radius \(r+\dee{r}
+\text{.}\) However the error that this generates goes to zero in the limit \(\dee{r}\text{,}\) \(\dee{\theta}\text{,}\) \(\dee{z}\) \(\rightarrow 0\text{.}\)</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-519"><div class="fn">By “essentially”, we mean that the formula for \(\dee{V}\) works perfectly when we take the limit \(\dee{r},\dee{\theta},
+\dee{z}\rightarrow 0\) of Riemann sums.</div></div>
+<article class="fact theorem-like" id="eq_dV_cylindrical"><h6 class="heading">
+<span class="type">Equation</span><span class="space"> </span><span class="codenumber">11.6.3</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-14782">
+\begin{equation*}
+\dee{V} = r\,\dee{r}\,\dee{\theta}\,\dee{z}
+\end{equation*}
+</div></article></section><section class="subsection" id="sec_cylindrical_eg"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">11.6.3</span> <span class="title">Sample Integrals in Cylindrical Coordinates</span>
+</h3>
+<p id="p-14783">Now we can use <a class="xref" data-knowl="./knowl/eq_dV_cylindrical.html" title="Equation 11.6.3">11.6.3</a> to handle a variant of Example <a class="xref" data-knowl="./knowl/eg_sphere_mass_A.html" title="Example 11.5.1">11.5.1</a> in which the density is invariant under rotations around the \(z\)-axis. Cylindrical coordinates are tuned to provide easier integrals to evaluate when the integrand is invariant under rotations about the \(z\)-axis, or when the domain of integration is cylindrical.</p>
+<article class="example example-like" id="eg_sphere_mass_B"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_sphere_mass_B"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.6.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_sphere_mass_B"><article class="example example-like"><p id="p-14784">Find the mass of the solid body consisting of the inside of the sphere \(x^2+y^2+z^2=1\) if the density is \(\rho(x,y,z) = x^2+y^2\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1929" id="solution-1929"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1929"><div class="solution solution-like">
+<p id="p-14785">Before we get started, note that \(x^2+y^2\) is the square of the distance from \((x,y,z)\) to the \(z\)-axis. Consequently both the integrand, \(x^2+y^2\text{,}\) and the domain of integration, \(x^2+y^2+z^2\le 1\text{,}\) and hence our solid, are invariant under rotations about the \(z\)-axis<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-520" id="fn-520"><sup> 6 </sup></a>. That makes this integral a good candidate for cylindrical coordinates.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-520"><div class="fn">Imagine that you are looking that the solid from, for example, far out on the \(x\)-axis. You close your eyes for a minute. Your evil twin then sneaks in, rotates the solid about the \(z\)-axis, and sneaks out. You open your eyes. You will not be able to tell that the solid has been rotated.</div></div>
+<p id="p-14786">Again, by symmetry the total mass of the sphere will be eight times the mass in the first octant. We shall cut the first octant part of the sphere into tiny pieces using  cylindrical coordinates. That is, we shall cut it up using planes of constant \(z\text{,}\) planes of constant \(\theta\text{,}\) and surfaces of constant \(r\text{.}\)</p>
+<ul class="disc">
+<li id="li-5964">
+<p id="p-14787">First slice the (the first octant part of the) sphere into horizontal plates by inserting many planes of constant \(z\text{,}\) with the various values of \(z\) differing by \(\dee{z}\text{.}\) The figure on the left below shows the part of one plate in the first octant outlined in red. Each plate</p>
+<ul class="circle">
+<li id="li-5965">has thickness \(\dee{z}\text{,}\)</li>
+<li id="li-5966">has \(z\) essentially constant on the plate, and</li>
+<li id="li-5967">has \((x,y)\) running over \(x\ge 0\text{,}\) \(y\ge 0\text{,}\) \(x^2+y^2\le 1-z^2\text{.}\) In cylindrical coordinates, \(r\) runs from \(0\) to \(\sqrt{1-z^2}\) and \(\theta\) runs from \(0\) to \(\frac{\pi}{2}\text{.}\)</li>
+<li id="li-5968">The bottom plate has, essentially, \(z=0\) and the top plate has, essentially, \(z=1\text{.}\) See the figure on the right below.</li>
+</ul>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:52.6315789473684%;justify-content:center;"><img src="figs/sphereCyl1a.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:42.1052631578947%;justify-content:center;"><img src="figs/sphereCyl1b.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-14788">So far, this looks just like what we did in Example <a class="xref" data-knowl="./knowl/eg_sphere_mass_A.html" title="Example 11.5.1">11.5.1</a>.</p>
+</li>
+<li id="li-5969">
+<p id="p-14789">Concentrate on any one plate. Subdivide it into wedges by inserting many planes of constant \(\theta\text{,}\) with the various values of \(\theta\) differing by \(\dee{\theta}\text{.}\) The figure on the left below shows one such wedge outlined in blue. Each wedge</p>
+<ul class="circle">
+<li id="li-5970">has \(z\)  and \(\theta\) essentially constant on the wedge, and</li>
+<li id="li-5971">has \(r\) running over \(0\le r\le \sqrt{1-z^2}\text{.}\)</li>
+<li id="li-5972">The leftmost wedge has, essentially, \(\theta=0\) and the rightmost wedge has, essentially, \(\theta=\frac{\pi}{2}\text{.}\)  See the figure on the right below.</li>
+</ul>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:center;"><img src="figs/sphereCyl2a.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:47.3684210526316%;justify-content:center;"><img src="figs/sphereCyl2b.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+</li>
+<li id="li-5973">
+<p id="p-14790">Concentrate on any one wedge. Subdivide it into tiny approximate cubes by inserting many surfaces of constant \(r\text{,}\) with the various values of \(r\) differing by \(\dee{r}\text{.}\) The figure on the left below shows the top of one approximate cube in black. Each cube</p>
+<ul class="circle">
+<li id="li-5974">has volume \(r\,\dee{r}\,\dee{\theta}\,\dee{z}\text{,}\) by <a class="xref" data-knowl="./knowl/eq_dV_cylindrical.html" title="Equation 11.6.3">11.6.3</a>, and</li>
+<li id="li-5975">has \(r\text{,}\) \(\theta\) and \(z\) all essentially constant on the cube.</li>
+<li id="li-5976">The first cube has, essentially, \(r=0\) and the last cube has, essentially, \(r=\sqrt{1-z^2}\text{.}\)  See the figure on the right below.</li>
+</ul>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:3.75%;margin-right:3.75%;">
+<div class="sbspanel" style="width:43.2432432432432%;justify-content:center;"><img src="figs/sphereCyl3a.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:48.6486486486486%;justify-content:center;"><img src="figs/sphereCyl3b.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+</li>
+</ul>
+<p id="p-14791">Now we can build up the mass.</p>
+<ul class="disc">
+<li id="li-5977">
+<p id="p-14792">Concentrate on one approximate cube. Let's say that it contains the point with cylindrical coordinates \(r\text{,}\) \(\theta\) and \(z\text{.}\)</p>
+<ul class="circle">
+<li id="li-5978">The cube has volume essentially \(\dee{V}=r\,\dee{r}\,\dee{\theta}\,\dee{z}\) and</li>
+<li id="li-5979">essentially has density \(\rho(x,y,z)=\rho(r\cos\theta,r\sin\theta,z) = r^2\) and so</li>
+<li id="li-5980">essentially has mass \(r^3\,\dee{r}\,\dee{\theta}\,\dee{z}\text{.}\) (See how nice the right coordinate system can be!)</li>
+</ul>
+</li>
+<li id="li-5981">To get the mass any one wedge, say the wedge whose \(\theta\) coordinate runs from \(\theta\) to \(\theta+\dee{\theta}\text{,}\) we just add up the masses of the approximate cubes in that wedge, by integrating \(r\) from its smallest value on the wedge, namely \(0\text{,}\) to its largest value on the wedge, namely \(\sqrt{1-z^2}\text{.}\) The mass of the wedge is thus<div class="displaymath">
+\begin{gather*}
+\dee{\theta}\,\dee{z} \int_0^{\sqrt{1-z^2}}  \dee{r}\,r^3
+\end{gather*}
+</div>
+</li>
+<li id="li-5982">To get the mass of any one plate, say the plate whose \(z\) coordinate runs from \(z\) to \(z+\dee{z}\text{,}\) we just add up the masses of the wedges in that plate, by integrating \(\theta\) from its smallest value on the plate, namely \(0\text{,}\) to its largest value on the plate, namely \(\frac{\pi}{2}\text{.}\) The mass of the plate is thus<div class="displaymath">
+\begin{gather*}
+\dee{z}\int_0^{\pi/2}\dee{\theta}\int_0^{\sqrt{1-z^2}}  \dee{r}\,r^3
+\end{gather*}
+</div>
+</li>
+<li id="li-5983">To get the mass of the part of the sphere in the first octant, we just add up the masses of the plates that it contains, by integrating \(z\) from its smallest value in the octant, namely \(0\text{,}\) to its largest value on the sphere, namely  \(1\text{.}\) The mass in the first octant is thus<div class="displaymath">
+\begin{align*}
+\int_0^1\dee{z}\int_0^{\pi/2}\dee{\theta}\int_0^{\sqrt{1-z^2}}  \dee{r}\,r^3
+&amp;= \frac{1}{4}\int_0^1\dee{z}\int_0^{\pi/2}\dee{\theta}\ {(1-z^2)}^2\\
+&amp;= \frac{\pi}{8}\int_0^1\dee{z}\ {(1-z^2)}^2\\
+&amp;=\frac{\pi}{8}\int_0^1\dee{z}\ (1-2z^2+z^4)\\
+&amp;= \frac{\pi}{8}\overbrace{\left[1-\frac{2}{3}+\frac{1}{5}\right]}^{8/15}\\
+&amp;=\frac{1}{15}\pi
+\end{align*}
+</div>
+</li>
+<li id="li-5984">So the mass of the total (eight octant) sphere is \(8\times\frac{1}{15}\pi=\frac{8}{15}\pi\text{.}\)</li>
+</ul>
+<p id="p-14793">Just by way of comparison, here is the integral in Cartesian coordinates that gives the mass in the first octant. (We found the limits of integration in Example <a class="xref" data-knowl="./knowl/eg_sphere_mass_A.html" title="Example 11.5.1">11.5.1</a>.)</p>
+<div class="displaymath">
+\begin{equation*}
+\int_0^1\dee{z}\int_0^{\sqrt{1-z^2}}\dee{y}\int_0^{\sqrt{1-y^2-z^2}}  \dee{x}\
+\big(x^2+y^2\big)
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-14794">In the next example, we compute the moment of inertia of a right circular cone. The Definition <a class="xref" data-knowl="./knowl/def_moment_of_inertia.html" title="Definition 11.3.13: Moment of Inertia">11.3.13</a> of the moment of inertia was restricted to two dimensions. However, as was pointed out at the time, the same analysis extends naturally to the definition</p>
+<article class="fact theorem-like" id="eqn_mom_of_inertia_3d"><h6 class="heading">
+<span class="type">Equation</span><span class="space"> </span><span class="codenumber">11.6.5</span><span class="period">.</span>
+</h6>
+<div class="displaymath" id="p-14795">
+\begin{equation*}
+I_\cA=\tripInt_\cV D(x,y,z)^2\,\rho(x,y,z)\ \dee{x}\,\dee{y}\,\dee{z}
+\end{equation*}
+</div></article><p id="p-14796">of the moment of inertia of a solid \(\cV\) in three dimensions. Here</p>
+<ul class="disc">
+<li id="li-5985">\(\rho(x,y,z)\) is the mass density of the solid at the point \((x,y,z)\) and</li>
+<li id="li-5986">\(D(x,y,z)\) is the distance from \((x,y,z)\) to the axis of rotation.</li>
+</ul>
+<article class="example example-like" id="eg_moment_cone"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_moment_cone"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">11.6.6</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_moment_cone"><article class="example example-like"><p id="p-14797">Find the moment of inertia of a right circular cone</p>
+<ul class="disc">
+<li id="li-5987">of radius \(a\text{,}\)</li>
+<li id="li-5988">of height \(h\text{,}\) and</li>
+<li id="li-5989">of constant density with mass \(M\)</li>
+</ul>
+<p data-braille="continuation">about an axis through the vertex (i.e. the tip of the cone) and parallel to the base.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1930" id="solution-1930"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1930"><div class="solution solution-like">
+<p id="p-14798">Here is a sketch of the cone.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:40%;margin-right:40%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/cone.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-14799">Let's pick a coordinate system with</p>
+<ul class="disc">
+<li id="li-5990">the vertex at the origin,</li>
+<li id="li-5991">the cone symmetric about the \(z\)-axis and</li>
+<li id="li-5992">the axis of rotation being the \(y\)-axis.</li>
+</ul>
+<p data-braille="continuation">and call the cone \(\cV\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/coneZ.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-14800">We shall use <a class="xref" data-knowl="./knowl/eqn_mom_of_inertia_3d.html" title="Equation 11.6.5">11.6.5</a> to find the moment of inertia. In the current problem, the axis of rotation is the \(y\)-axis. The point on the \(y\)-axis that is closest to \((x,y,z)\) is \((0,y,0)\) so that the distance from \((x,y,z)\) to the axis is just</p>
+<div class="displaymath">
+\begin{equation*}
+D(x,y,z) = \sqrt{x^2+z^2}
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/cart6.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-14801">Our solid has constant density and mass \(M\text{,}\) so</p>
+<div class="displaymath">
+\begin{equation*}
+\rho(x,y,z) = \frac{M}{\text{Volume}(\cV)}
+\end{equation*}
+</div>
+<p data-braille="continuation">The formula</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Volume}(\cV)= \frac{1}{3} \pi a^2 h
+\end{equation*}
+</div>
+<p data-braille="continuation">for the volume of a cone was derived in Example 1.6.1 of the CLP-2 text and in Appendix B.5.2 of the CLP-1 text. However because of the similarity between the integral \(\text{Volume}(\cV)=\tripInt_\cV \dee{x}\,\dee{y}\,\dee{z}\) and the integral \(\tripInt_\cV (x^2+z^2)\ \dee{x}\,\dee{y}\,\dee{z}\text{,}\) that we need for our computation of \(I_\cA\text{,}\) it is easy to rederive the volume formula and we shall do so.</p>
+<p id="p-14802">We'll evaluate both of the integrals above using cylindrical coordinates.</p>
+<ul class="disc">
+<li id="li-5993">
+<p id="p-14803">Start by slicing the cone into horizontal plates by inserting many planes of constant \(z\text{,}\) with the various values of \(z\) differing by \(\dee{z}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/coneP.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-14804">Each plate</p>
+<ul class="circle">
+<li id="li-5994">is a circular disk of thickness \(\dee{z}\text{.}\)</li>
+<li id="li-5995">
+<p id="p-14805">By similar triangles, as in the figure on the right below, the disk at height \(z\) has radius \(R\) obeying</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{R}{z} = \frac{a}{h}
+\implies R =\frac{a}{h}z
+\end{equation*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:61.5384615384615%;justify-content:center;"><img src="figs/coneX.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:35.8974358974359%;justify-content:center;"><img src="figs/coneT.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+</li>
+<li id="li-5996">So the disk at height \(z\) has the cylindrical coordinates \(r\) running from \(0\) to \(\frac{a}{h}z\) and \(\theta\) running from \(0\) to \(2\pi\text{.}\)</li>
+<li id="li-5997">The bottom plate has, essentially, \(z=0\) and the top plate has, essentially, \(z=h\text{.}\)</li>
+</ul>
+</li>
+<li id="li-5998">
+<p id="p-14806">Now concentrate on any one plate. Subdivide it into wedges by inserting many planes of constant \(\theta\text{,}\) with the various values of \(\theta\) differing by \(\dee{\theta}\text{.}\)</p>
+<ul class="circle"><li id="li-5999">The first wedge has, essentially \(\theta=0\) and the last wedge has, essentially, \(\theta=2\pi\text{.}\)</li></ul>
+</li>
+<li id="li-6000">
+<p id="p-14807">Concentrate on any one wedge. Subdivide it into tiny approximate cubes<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-521" id="fn-521"><sup> 7 </sup></a> by inserting many surfaces of constant \(r\text{,}\) with the various values of \(r\) differing by \(\dee{r}\text{.}\)  Each cube</p>
+<ul class="circle">
+<li id="li-6001">has volume \(r\,\dee{r}\,\dee{\theta}\,\dee{z}\text{,}\) by <a class="xref" data-knowl="./knowl/eq_dV_cylindrical.html" title="Equation 11.6.3">11.6.3</a>.</li>
+<li id="li-6002">The first cube has, essentially, \(r=0\) and the last cube has, essentially, \(r=\frac{a}{h}z\text{.}\)</li>
+</ul>
+</li>
+</ul>
+<p data-braille="continuation">So the two integrals of interest are</p>
+<div class="displaymath">
+\begin{align*}
+\tripInt_\cV \dee{x}\,\dee{y}\,\dee{z}
+&amp;=\int_0^h\dee{z}\int_0^{2\pi}\dee{\theta}\int_0^{\frac{a}{h}z}\dee{r}\ r\\
+&amp;=\int_0^h\dee{z}\int_0^{2\pi}\dee{\theta}\
+\frac{1}{2}\left(\frac{a}{h}z\right)^2
+=\frac{a^2\pi}{h^2}\int_0^h\dee{z}\ z^2\\
+&amp;=\frac{1}{3}\pi a^2 h
+\end{align*}
+</div>
+<p data-braille="continuation">as expected, and</p>
+<div class="displaymath">
+\begin{align*}
+\tripInt_\cV (x^2+z^2)\ \dee{x}\,\dee{y}\,\dee{z}
+&amp;=\int_0^h\dee{z}\int_0^{2\pi}\dee{\theta}\int_0^{\frac{a}{h}z}\dee{r}\ r
+\overbrace{\big(r^2\cos^2\theta+z^2\big)}^{x^2+z^2}\\
+&amp;=\int_0^h\dee{z}\int_0^{2\pi}\dee{\theta}\left[
+\frac{1}{4}\left(\frac{a}{h}z\right)^4\cos^2\theta
++\frac{1}{2}\left(\frac{a}{h}z\right)^2z^2\right]\\
+&amp;=\int_0^h\dee{z}\left[
+\frac{1}{4}\frac{a^4}{h^4}
++\frac{a^2}{h^2}\right]\pi z^4\\
+&amp;\hskip0.5in\text{since } \int_0^{2\pi}\cos^2\theta\ \dee{\theta}=\pi
+\text{ by Remark } \knowl{./knowl/rem_sneaky.html}{\text{11.3.5}}\\
+&amp;=\frac{1}{5}\left[
+\frac{1}{4}\frac{a^4}{h^4}
++\frac{a^2}{h^2}\right]\pi h^5
+\end{align*}
+</div>
+<p data-braille="continuation">Putting everything together, the moment of inertia is</p>
+<div class="displaymath">
+\begin{align*}
+I_\cA
+&amp;=\tripInt_\cV \overbrace{(x^2+z^2)}^{D(x,y,z)^2}
+\overbrace{\frac{M}{\frac{1}{3}\pi a^2h}}^{\rho(x,y,z)}
+\ \dee{x}\,\dee{y}\,\dee{z}\\
+&amp;=3\frac{M}{\pi a^2h} \ \frac{1}{5}\left[
+\frac{1}{4}\frac{a^4}{h^4}
++\frac{a^2}{h^2}\right]\pi h^5\\
+&amp;=\frac{3}{20} M\big(a^2+4h^2\big)
+\end{align*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-521"><div class="fn">Again they are wonky cubes, but we can bound the error and show that it goes to zero in the limit \(\dee{r}
+,\dee{\theta},\dee{z} \rightarrow 0\text{.}\)</div></div>
+</div></div>
+</div></article></div></section><section class="exercises" id="exercises-89"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">11.6.4</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-248">
+<div class="introduction" id="introduction-383"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1861"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-14808">Use \((r,\theta,z)\) to denote cylindrical coordinates.</p>
+<ol class="lower-alpha">
+<li id="li-6003">Draw \(r=0\text{.}\)</li>
+<li id="li-6004">Draw \(r=1\text{.}\)</li>
+<li id="li-6005">Draw \(\theta=0\text{.}\)</li>
+<li id="li-6006">Draw \(\theta=\frac{\pi}{4}\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1861" id="answer-1861"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1861"><div class="answer solution-like">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5.5%;margin-right:5.5%;">
+<div class="sbspanel" style="width:11.2359550561798%;justify-content:flex-start;"><p id="p-14809">(a), (b)</p></div>
+<div class="sbspanel" style="width:30.3370786516854%;justify-content:flex-start;"><img src="pfigs/cylR0.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:33.7078651685393%;justify-content:flex-start;"><img src="pfigs/cylR.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5.5%;margin-right:5.5%;">
+<div class="sbspanel" style="width:11.2359550561798%;justify-content:flex-start;"><p id="p-14810">(c), (d)</p></div>
+<div class="sbspanel" style="width:30.3370786516854%;justify-content:flex-start;"><img src="pfigs/cylTh0.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:33.7078651685393%;justify-content:flex-start;"><img src="pfigs/cylTh.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1931" id="solution-1931"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1931"><div class="solution solution-like">
+<p id="p-14811">(a), (b) Since the cylindrical coordinate \(r(x,y,z)\) of a point \((x,y,z)\) is the distance, \(\sqrt{x^2+y^2}\text{,}\) from \((x,y,z)\) to the \(z\)-axis, the sets</p>
+<div class="displaymath">
+\begin{align*}
+\Set{(x,y,z)}{r(x,y,z)=0}
+&amp;=\Set{(x,y,z)}{x^2+y^2=0}\\
+&amp;=\Set{(x,y,z)}{x=y=0}\\
+&amp;=\text{the $z$-axis}\\
+\Set{(x,y,z)}{r(x,y,z)=1}
+&amp;=\Set{(x,y,z)}{x^2+y^2=1}\\
+&amp;=\text{the cylinder of radius $1$ centred on the $z$-axis}
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10.75%;margin-right:10.75%;">
+<div class="sbspanel" style="width:34.3949044585987%;justify-content:flex-start;"><img src="pfigs/cylR0.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:38.2165605095541%;justify-content:flex-start;"><img src="pfigs/cylR.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-14812">(c), (d) Since the cylindrical coordinate \(\theta(x,y,z)\) of a point \((x,y,z)\) is the angle between the positive \(x\)-axis and the line from \((0,0,0)\) to \((x,y,0)\text{,}\) the sets</p>
+<div class="displaymath">
+\begin{align*}
+\Set{(x,y,z)}{\theta(x,y,z)=0}
+&amp;=\text{the half of the $xz$-plane with } x \gt 0\\
+\Set{(x,y,z)}{\theta(x,y,z)=\frac{\pi}{4}}
+&amp;=\text{the half of the plane $y=x$ with } x \gt 0
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10.5%;margin-right:10.5%;">
+<div class="sbspanel" style="width:35.4430379746835%;justify-content:flex-start;"><img src="pfigs/cylTh0.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:37.9746835443038%;justify-content:flex-start;"><img src="pfigs/cylTh.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1862"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-14813">Sketch the points with the specified cylindrical coordinates.</p>
+<ol class="lower-alpha">
+<li id="li-6007">\(r=1\text{,}\) \(\theta=0\text{,}\) \(z=0\)</li>
+<li id="li-6008">\(r=1\text{,}\) \(\theta=\frac{\pi}{4}\text{,}\) \(z=0\)</li>
+<li id="li-6009">\(r=1\text{,}\) \(\theta=\frac{\pi}{2}\text{,}\) \(z=0\)</li>
+<li id="li-6010">\(r=0\text{,}\) \(\theta=\pi\text{,}\) \(z=1\)</li>
+<li id="li-6011">\(r=1\text{,}\) \(\theta=\frac{\pi}{4}\text{,}\) \(z=1\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1862" id="answer-1862"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1862"><div class="answer solution-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:7.5%;margin-right:7.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/cylP1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1932" id="solution-1932"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1932"><div class="solution solution-like">
+<p id="p-14814">The sketch is below. To help build up this sketch, it is useful to recall the following facts.</p>
+<ul class="disc">
+<li id="li-6012">The cylindrical coordinate \(r\) is the distance of the point from the \(z\)-axis. In particular all points with \(r=0\) lie on the \(z\)-axis (for all values of \(\theta\)).</li>
+<li id="li-6013">The cylindrical coordinate \(z\) is the distance of the point from the \(xy\)-plane. In particular all points with \(z=0\) lie on the \(xy\)-plane.</li>
+</ul>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/cylP1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1863"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-14815">Convert from cylindrical to Cartesian coordinates.</p>
+<ol class="lower-alpha">
+<li id="li-6014">\(r=1\text{,}\) \(\theta=0\text{,}\) \(z=0\)</li>
+<li id="li-6015">\(r=1\text{,}\) \(\theta=\frac{\pi}{4}\text{,}\) \(z=0\)</li>
+<li id="li-6016">\(r=1\text{,}\) \(\theta=\frac{\pi}{2}\text{,}\) \(z=0\)</li>
+<li id="li-6017">\(r=0\text{,}\) \(\theta=\pi\text{,}\) \(z=1\)</li>
+<li id="li-6018">\(r=1\text{,}\) \(\theta=\frac{\pi}{4}\text{,}\) \(z=1\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1863" id="answer-1863"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1863"><div class="answer solution-like">
+<p id="p-14816">(a) \((1,0,0)\)</p>
+<p id="p-14817">(b) \(\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},0\right)\)</p>
+<p id="p-14818">(c) \((0,1,0)\)</p>
+<p id="p-14819">(d) \((0,0,1)\)</p>
+<p id="p-14820">(e) \(\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},1\right)\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1933" id="solution-1933"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1933"><div class="solution solution-like">
+<p id="p-14821">(a) When \(\theta=0\text{,}\)  \(\sin\theta=0\) and \(\cos\theta=1\text{,}\) so that the polar coordinates \(r=1\text{,}\) \(\theta=0\text{,}\) \(z=0\) correspond to the Cartesian coordinates</p>
+<div class="displaymath">
+\begin{equation*}
+(x,y,z) = (r\cos\theta,r\sin\theta,z)
+= (1\times\cos 0,\  1\times\sin 0,\ 0)
+=(1,0,0)
+\end{equation*}
+</div>
+<p id="p-14822">(b) When \(\theta=\frac{\pi}{4}\text{,}\)  \(\sin\theta=\cos\theta=\frac{1}{\sqrt{2}}\text{,}\) so that the polar coordinates \(r=1\text{,}\) \(\theta=\frac{\pi}{4}\text{,}\) \(z=0\) correspond to the Cartesian coordinates</p>
+<div class="displaymath">
+\begin{align*}
+(x,y,z) &amp;= (r\cos\theta,r\sin\theta,z)
+= \left(1\times\cos \frac{\pi}{4},\  1\times\sin \frac{\pi}{4},\ 0\right)\\
+&amp;= \left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},0\right)
+\end{align*}
+</div>
+<p id="p-14823">(c) When \(\theta=\frac{\pi}{2}\text{,}\)  \(\sin\theta=1\) and \(\cos\theta=0\text{,}\) so that the polar coordinates \(r=1\text{,}\) \(\theta=\frac{\pi}{2}\text{,}\) \(z=0\) correspond to the Cartesian coordinates</p>
+<div class="displaymath">
+\begin{equation*}
+(x,y,z) = (r\cos\theta,r\sin\theta,z)
+= \left(1\times\cos \frac{\pi}{2},\  1\times\sin \frac{\pi}{2},\ 0\right)
+= (0,1,0)
+\end{equation*}
+</div>
+<p id="p-14824">(d) When \(\theta=\pi\text{,}\)  \(\sin\theta=0\) and \(\cos\theta=-1\text{,}\) so that the polar coordinates \(r=0\text{,}\) \(\theta=\pi\text{,}\) \(z=1\) correspond to the Cartesian coordinates</p>
+<div class="displaymath">
+\begin{equation*}
+(x,y,z) = (r\cos\theta,r\sin\theta,z)
+= \left(0\times\cos\pi,\  0\times\sin\pi,\ 1\right)
+= (0,0,1)
+\end{equation*}
+</div>
+<p id="p-14825">(e) When \(\theta=\frac{\pi}{4}\text{,}\)  \(\sin\theta=\cos\theta=\frac{1}{\sqrt{2}}\text{,}\) so that the polar coordinates \(r=1\text{,}\) \(\theta=\frac{\pi}{4}\text{,}\) \(z=1\) correspond to the Cartesian coordinates</p>
+<div class="displaymath">
+\begin{align*}
+(x,y,z) &amp;= (r\cos\theta,r\sin\theta,z)\\
+&amp;= \left(1\times\cos \frac{\pi}{4},\  1\times\sin \frac{\pi}{4},\ 1\right)\\
+&amp;= \left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},1\right)
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1864"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-14826">Convert from Cartesian to cylindrical coordinates.</p>
+<ol class="lower-alpha">
+<li id="li-6019">\(\displaystyle (1,1,2)\)</li>
+<li id="li-6020">\(\displaystyle (-1,-1,2)\)</li>
+<li id="li-6021">\(\displaystyle (-1,\sqrt{3}, 0)\)</li>
+<li id="li-6022">\(\displaystyle (0,0,1)\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1864" id="answer-1864"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1864"><div class="answer solution-like">
+<p id="p-14827">(a) \(r=\sqrt{2}\text{,}\) \(z=2\text{,}\) \(\theta=\frac{\pi}{4}\) (plus possibly any integer multiple of \(2\pi\))</p>
+<p id="p-14828">(b) \(r=\sqrt{2}\text{,}\) \(z=2\text{,}\) \(\theta=\frac{5\pi}{4}\) (plus possibly any integer multiple of \(2\pi\))</p>
+<p id="p-14829">(c) \(r=2\text{,}\) \(z=0\text{,}\) \(\theta=\frac{2\pi}{3}\) (plus possibly any integer multiple of \(2\pi\))</p>
+<p id="p-14830">(d) \(r=0\text{,}\) \(z=1\text{,}\) \(\theta=\text{arbitrary}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1934" id="solution-1934"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1934"><div class="solution solution-like">
+<p id="p-14831">(a) The cylindrical coordinates must obey</p>
+<div class="displaymath">
+\begin{equation*}
+1=x=r\cos\theta\qquad
+1=y=r\sin\theta\qquad
+2=z
+\end{equation*}
+</div>
+<p data-braille="continuation">So \(z=2\text{,}\) \(r=\sqrt{1^2+1^2}=\sqrt{2}\) and \(\tan\theta=\frac{y}{x}
+=\frac{1}{1}=1\text{.}\) Recall that \(\tan\left(\frac{\pi}{4}+k\pi\right)=1\) for all integers \(k\text{.}\)  As \((x,y)=(1,1)\) lies in the first quadrant, \(0\le\theta\le\frac{\pi}{2}\text{.}\) So \(\theta=\frac{\pi}{4}\) (plus possibly any integer multiple of \(2\pi\)).</p>
+<p id="p-14832">(b) The cylindrical coordinates must obey</p>
+<div class="displaymath">
+\begin{equation*}
+-1=x=r\cos\theta\qquad
+-1=y=r\sin\theta\qquad
+2=z
+\end{equation*}
+</div>
+<p data-braille="continuation">So \(z=2\text{,}\) \(r=\sqrt{(-1)^2+(-1)^2}=\sqrt{2}\) and \(\tan\theta=\frac{y}{x}
+=\frac{-1}{-1}=1\text{.}\) Recall that \(\tan\left(\frac{\pi}{4}+k\pi\right)=1\) for all integers \(k\text{.}\) As \((x,y)=(-1,-1)\) lies in the third quadrant, \(\pi\le\theta\le\frac{3\pi}{2}\text{.}\) So \(\theta=\frac{5\pi}{4}\) (plus possibly any integer multiple of \(2\pi\)).</p>
+<p id="p-14833">(c) The cylindrical coordinates must obey</p>
+<div class="displaymath">
+\begin{equation*}
+-1=x=r\cos\theta\qquad
+\sqrt{3}=y=r\sin\theta\qquad
+0=z
+\end{equation*}
+</div>
+<p data-braille="continuation">So \(z=0\text{,}\) \(r=\sqrt{(-1)^2+\big(\sqrt{3}\big)^2}=2\) and \(\tan\theta=\frac{y}{x} =\frac{\sqrt{3}}{-1}=-\sqrt{3}\text{.}\) Recall that \(\tan\left(\frac{2\pi}{3}+k\pi\right)=-\sqrt{3}\) for all integers \(k\text{.}\) As \((x,y)=(-1,\sqrt{3})\) lies in the second quadrant, \(\frac{\pi}{2}\le\theta\le\pi\text{.}\) So \(\theta=\frac{2\pi}{3}\) (plus possibly any integer multiple of \(2\pi\)).</p>
+<p id="p-14834">(d) The cylindrical coordinates must obey</p>
+<div class="displaymath">
+\begin{equation*}
+0=x=r\cos\theta\qquad
+0=y=r\sin\theta\qquad
+1=z
+\end{equation*}
+</div>
+<p data-braille="continuation">So \(z=0\text{,}\) \(r=\sqrt{0^2+0^2}=0\) and \(\theta\) is completely arbitrary.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1865"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-14835">Rewrite the following equations in cylindrical coordinates.</p>
+<ol class="lower-alpha">
+<li id="li-6023">\(\displaystyle z=2xy\)</li>
+<li id="li-6024">\(\displaystyle x^2+y^2+z^2=1\)</li>
+<li id="li-6025">\(\displaystyle (x-1)^2 + y^2 =1\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1865" id="answer-1865"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1865"><div class="answer solution-like">
+<p id="p-14836">(a) \(z=r^2\sin(2\theta)\)</p>
+<p id="p-14837">(b) \(r^2+z^2=1\)</p>
+<p id="p-14838">(c) \(r=2\cos\theta\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1935" id="solution-1935"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1935"><div class="solution solution-like">
+<p id="p-14839">(a) As \(x=r\cos\theta\) and \(y=r\sin\theta\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+z=2xy
+\iff z=2r^2\cos\theta\sin\theta = r^2\sin(2\theta)
+\end{equation*}
+</div>
+<p id="p-14840">(b) As \(x=r\cos\theta\) and \(y=r\sin\theta\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+x^2+y^2+z^2=1
+\iff r^2\cos^2\theta+r^2\sin^2\theta + z^2 =1
+\iff r^2+z^2=1
+\end{equation*}
+</div>
+<p id="p-14841">(c) As \(x=r\cos\theta\) and \(y=r\sin\theta\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+(x-1)^2 + y^2 =1
+&amp;\iff (r\cos\theta-1)^2 + (r\sin\theta)^2 =1\\
+&amp;\iff r^2\cos^2\theta -2r\cos\theta +1 + r^2\sin^2\theta = 1\\
+&amp;\iff r^2=2r\cos\theta
+\iff r=2\cos\theta\text{ or }r=0\\
+&amp;\iff r=2\cos\theta
+\end{align*}
+</div>
+<p data-braille="continuation">Note that the solution \(r=0\) is included in \(r=2\cos\theta\) — just choose \(\theta=\frac{\pi}{2}\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-249">
+<div class="introduction" id="introduction-384"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1866"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-14842">Use cylindrical coordinates to evaluate the volumes of each of the following regions.</p>
+<ol class="lower-alpha">
+<li id="li-6026">Above the \(xy\)--plane, inside the cone \(z=2a-\sqrt{x^2+y^2}\) and inside the cylinder \(x^2+y^2=2ay\text{.}\)</li>
+<li id="li-6027">Above the \(xy\)--plane, under the paraboloid \(z=1-x^2-y^2\) and in the wedge \(-x\le y\le \sqrt{3}x\text{.}\)</li>
+<li id="li-6028">Above the paraboloid \(\ z=x^2+y^2\ \) and below the plane \(\ z=2y\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1866" id="answer-1866"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1866"><div class="answer solution-like">
+<p id="p-14843">(a) \(a^3\big(2\pi-\frac{32}{9}\big)\)</p>
+<p id="p-14844">(b) \(\frac{7}{48}\pi\)</p>
+<p id="p-14845">(c) \(\frac{\pi}{2}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1936" id="solution-1936"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1936"><div class="solution solution-like">
+<p id="p-14846">(a) In cylindrical coordinates, the cone \(z=2a-\sqrt{x^2+y^2}\) is \(z=2a-r\) and the cylinder \(x^2+y^2=2ay\) is \(r^2=2ar\sin\theta\) or \(r=2a\sin\theta\text{.}\) The figures below show the parts of the cone, the cylinder and the intersection, respectively, that are in the first octant.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/domainCylinderConea.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:29%;margin-right:29%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/domainCylinderConeb.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:22.5%;margin-right:22.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/domainCylinderCone.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-14847">The specified region is</p>
+<div class="displaymath">
+\begin{equation*}
+V=\Set{(r\cos\theta\,,\,r\sin\theta\,,\,z)}
+{0\le\theta\le\pi,\ r\le 2a\sin\theta,\ 0\le z\le 2a-r}
+\end{equation*}
+</div>
+<p data-braille="continuation">By symmetry under \(x\rightarrow -x\text{,}\) the full volume is twice the volume in the first octant.</p>
+<p id="p-14848">So the</p>
+<div class="displaymath">
+\begin{align*}
+\text{Volume}
+&amp;= 2\int_0^{{\pi\over 2}} \dee{\theta}\int_0^{2a\sin\theta}\dee{r}\ r
+\int_0^{2a -r}\dee{z}\\
+&amp;= 2\int_0^{{\pi\over 2}} \dee{\theta}\int_0^{2a\sin\theta}\dee{r}\ r(2a-r)\\
+&amp;= 2\int_0^{{\pi\over 2}} \dee{\theta}\
+\left[4a^3\sin^2\theta-\frac{8a^3}{3}\sin^3\theta\right]\\
+&amp;= 8a^3\left[\int_0^{{\pi\over 2}} \dee{\theta}\ \frac{1-\cos(2\theta)}{2}
++\frac{2}{3}\int^0_1 \dee{t}\ \big(1-t^2\big)\right]
+\quad\text{where } t=\cos\theta\\
+&amp;= 8a^3\left[\frac{\pi}{4}-\frac{2}{3}\left(1-\frac{1}{3}\right)\right]
+=a^3\big(2\pi-\frac{32}{9}\big)
+\end{align*}
+</div>
+<p data-braille="continuation">For an efficient, sneaky, way to evaluate \(\int_0^{{\pi\over 2}} \dee{\theta}\ \sin^2\theta\text{,}\) see Remark <a class="xref" data-knowl="./knowl/rem_sneaky.html" title="Remark 11.3.5">11.3.5</a>.</p>
+<p id="p-14849">(b) The domain of integration is</p>
+<div class="displaymath">
+\begin{equation*}
+V = \Set{(x,y,z)}{-x\le y\le \sqrt{3}x,\ 0\le z \le 1-x^2-y^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">Recall that in polar coordinates \(\frac{y}{x}=\tan\theta\text{.}\) So the boundaries of the wedge \(-x\le y\le \sqrt{3}x\text{,}\) or equivalently \(-1\le\frac{y}{x}\le\sqrt{3}\text{,}\) correspond, in polar coordinates, to \(\theta=\tan^{-1}(-1)=-\frac{\pi}{4}\) and \(\theta=\tan^{-1}\sqrt{3}=\frac{\pi}{3}\text{.}\) In cylindrical coordinates, the paraboloid \(z=1-x^2-y^2\) becomes \(z=1-r^2\text{.}\) There are \(z\)'s that obey \(0\le z\le 1-r^2\) if and only if \(r\le 1\text{.}\) So, in cylindrical coordinates,</p>
+<div class="displaymath">
+\begin{equation*}
+V = \Set{(r\cos\theta,r\sin\theta,z)}
+{-\tfrac{\pi}{4}\le \theta\le \tfrac{\pi}{3},\
+0\le r\le 1,\ 0\le z \le 1-r^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{align*}
+\text{Volume}
+&amp;= \int_{-{\pi\over 4}}^{{\pi\over 3}} \dee{\theta}\int_0^1\dee{r}\ r
+\int_0^{1 -r^2}\dee{z}
+= \left(\frac{\pi}{3}+\frac{\pi}{4}\right)\int_0^1\dee{r}\ r(1-r^2)\\
+&amp;= \frac{7}{12}\pi\left(\frac{1}{2}-\frac{1}{4}\right)
+= \frac{7}{48}\pi
+\end{align*}
+</div>
+<p id="p-14850">(c) The region is</p>
+<div class="displaymath">
+\begin{equation*}
+V = \Set{(x,y,z)}{x^2+y^2\le z\le 2y}
+\end{equation*}
+</div>
+<p data-braille="continuation">There are \(z\)'s that obey \(x^2+y^2\le z\le 2y\) if and only if</p>
+<div class="displaymath">
+\begin{align*}
+x^2+y^2\le 2y
+&amp;\iff x^2+y^2-2y \le 0
+\iff x^2 + (y-1)^2 \le 1
+\end{align*}
+</div>
+<p data-braille="continuation">This disk is sketched in the figure</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/domain2bis.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-14851">In cylindrical coordinates,</p>
+<ul class="disc">
+<li id="li-6029">the bottom, \(z=x^2+y^2\text{,}\) is \(z=r^2\text{,}\)</li>
+<li id="li-6030">the top, \(z=2y\text{,}\) is \(z=2r\sin\theta\text{,}\) and</li>
+<li id="li-6031">the disk \(x^2+y^2\le 2y\) is \(r^2\le 2r\sin\theta\text{,}\) or equivalently \(r\le2\sin\theta\text{,}\)</li>
+</ul>
+<p data-braille="continuation">so that, looking at the figure above,</p>
+<div class="displaymath">
+\begin{equation*}
+V = \Set{(r\cos\theta,r\sin\theta,z)}{0\le\theta\le\pi,
+\ 0\le r\le 2\sin\theta,\ r^2\le z\le 2r\sin\theta}
+\end{equation*}
+</div>
+<p data-braille="continuation">By symmetry under \(x\rightarrow -x\text{,}\) the full volume is twice the volume in the first octant so that</p>
+<div class="displaymath">
+\begin{align*}
+\text{Volume}
+&amp;= 2\int_{0}^{{\pi\over 2}} \dee{\theta}\int_0^{2\sin\theta}\dee{r}\ r\int_{r^2}^{2r\sin\theta}\dee{z}\\
+&amp;= 2\int_{0}^{{\pi\over 2}} \dee{\theta}\int_0^{2\sin\theta}\dee{r}\ r(2r\sin\theta-r^2)\\
+&amp;= 2\int_{0}^{{\pi\over 2}} \dee{\theta}\ \left(\frac{2^4}{3}-\frac{2^4}{4}\right)\sin^4\theta
+\end{align*}
+</div>
+<p data-braille="continuation">To integrate<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-522" id="fn-522"><sup> 8 </sup></a> \(\sin^4\theta\text{,}\) we use the double angle formulae \(\sin^2 x= \frac{1-\cos(2x)}{2}\) and \(\cos^2 x= \frac{1+\cos(2x)}{2}\) to write</p>
+<div class="displaymath">
+\begin{align*}
+\sin^4\theta &amp;= \left[ \frac{1-\cos(2\theta)}{2} \right]^2\\
+&amp;= \frac{1}{4} - \frac{1}{2} \cos(2\theta) + \frac{1}{4}\cos^2(2\theta)\\
+&amp;= \frac{1}{4} - \frac{1}{2} \cos(2\theta) + \frac{1}{8}\left(1 + \cos(4\theta) \right)\\
+&amp;= \frac{3}{8} - \frac{1}{2} \cos(2\theta) + \frac{1}{8}\cos(4\theta)
+\end{align*}
+</div>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{align*}
+\text{Volume}
+&amp;= 2\ \frac{2^4}{12} \left[
+\frac{3}{8}\theta - \frac{1}{4} \sin(2\theta) + \frac{1}{32}\sin(4\theta)
+\right]_0^{\pi\over 2}
+= 2\ \frac{2^4}{12}\ \frac{3}{16}\pi
+=\frac{\pi}{2}
+\end{align*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-522"><div class="fn">For a general discussion of trigonometric integrals see §1.8 in the CLP-2 text. In particular the integral \(\int \cos^4 x\ \dee{x}\) is evaluated in Example 1.8.8 in the CLP-2 text.</div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1867"><h6 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">M200 2008A.</span>
+</h6>
+<p id="p-14852">Let E be the region bounded between the parabolic surfaces \(z = x^2 + y^2\) and \(z = 2 - x^2 - y^2\) and within the cylinder \(x^2 + y^2 \le 1\text{.}\)  Calculate the integral of \(f(x,y,z) = {(x^2 + y^2)}^{3/2}\) over the region \(E\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1867" id="answer-1867"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1867"><div class="answer solution-like"><p id="p-14853">\(\frac{8\pi}{35}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1937" id="solution-1937"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1937"><div class="solution solution-like">
+<p id="p-14854">Note that the paraboloids \(z=x^2+y^2\) and \(z=2-x^2-y^2\) intersect when \(z=x^2+y^2=1\text{.}\) We'll use cylindrical coordinates. Then \(x^2+y^2=r^2\text{,}\) \(\dee{V}=r \ \dee{r}\,\dee{\theta}\,\dee{z}\text{,}\) and</p>
+<div class="displaymath">
+\begin{equation*}
+E=\Set{(r\cos\theta\,,\,r\sin\theta\,,\,z))}{0\le r\le 1,\
+r^2\le z\le 2-r^2,\ 0\le\theta\le 2\pi}
+\end{equation*}
+</div>
+<p data-braille="continuation">so that</p>
+<div class="displaymath">
+\begin{align*}
+\tripInt_E f(x,y,z)\ \dee{V}
+&amp;=\int_0^1\dee{r}\int_{r^2}^{2-r^2}\dee{z}\int_0^{2\pi}\dee{\theta}\
+r\ \overbrace{r^3}^{f}\\
+&amp;=2\pi \int_0^1\dee{r}\ r^4\big(2-r^2-r^2\big)\\
+&amp;=2\pi \left[2\frac{1^5}{5}-2\frac{1^7}{7}\right]\\
+&amp;=\frac{8\pi}{35}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1868"><h6 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">M200 2010D.</span>
+</h6>
+<p id="p-14855">Let \(E\) be the region bounded above by the sphere \(x^2 + y^2 + z^2 = 2\) and below by the paraboloid \(z = x^2 + y^2\text{.}\) Find the centroid of \(E\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1868" id="answer-1868"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1868"><div class="answer solution-like"><p id="p-14856">\(\big(0,0,\frac{7}{16\sqrt{2}-14}
+\approx 0.811\big)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1938" id="solution-1938"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1938"><div class="solution solution-like">
+<p id="p-14857">Observe that both the sphere \(x^2+y^2+z^2=2\) and the paraboloid \(z=x^2+y^2\)  are invariant under rotations around the \(z\)--axis. So \(E\) is invariant under rotations around the \(z\)--axis and the centroid (centre of mass) of \(E\) will lie on the \(z\)--axis. Thus \(\bar x=\bar y=0\) and we just have to find</p>
+<div class="displaymath">
+\begin{gather*}
+\bar z = \frac{\tripInt_E z\ \dee{V}}{\tripInt_E\dee{V}}
+\end{gather*}
+</div>
+<p data-braille="continuation">The surfaces \(z = x^2 + y^2\) and \(x^2 + y^2 + z^2 = 2\) intersect when \(z=x^2+y^2\) and</p>
+<div class="displaymath">
+\begin{equation*}
+z+z^2=2
+\iff z^2+z-2=0
+\iff(z+2)(z-1)=0
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(z=x^2+y^2\ge 0\text{,}\) the surfaces intersect on the circle \(z=1\text{,}\) \(x^2+y^2=2\text{.}\) So</p>
+<div class="displaymath">
+\begin{equation*}
+E = \Set{(x,y,z)}{ x^2+y^2\le 1,\ x^2+y^2\le z\le \sqrt{2-x^2-y^2}}
+\end{equation*}
+</div>
+<p data-braille="continuation">Here is a sketch of the \(y=0\) cross section of E.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE10D_6.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-14858">Let's use cylindrical coordinates to do the two integrals. In cylindrical coordinates</p>
+<ul class="disc">
+<li id="li-6032">\(E = \Set{(r\cos\theta,r\sin\theta,z)}{ 0\le r\le 1,\ 0\le\theta\le 2\pi,\
+r^2\le z\le \sqrt{2-r^2}}\text{,}\) and</li>
+<li id="li-6033">\(\dee{V}\) is \(r\,\dee{r}\,\dee{\theta}\,\dee{z}\)</li>
+</ul>
+<p data-braille="continuation">so, for \(n=0,1\) (we'll try to do both integrals at the same time)</p>
+<div class="displaymath">
+\begin{align*}
+\tripInt_E z^n\ \dee{V}
+&amp;=\int_0^1\dee{r} \int_0^{2\pi}\dee{\theta}
+\int_{r^2}^{\sqrt{2-r^2}} \dee{z}\ r\ z^n\\
+&amp;=2\pi\int_0^1\dee{r}  \ r\begin{cases}
+\sqrt{2-r^2}-r^2 &amp; \text{if }n=0\\
+\frac{1}{2}\big(2-r^2-r^4\big) &amp; \text{if }n=1
+\end{cases}
+\end{align*}
+</div>
+<p data-braille="continuation">Since</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^1 \dee{r}\ r\sqrt{2-r^2}
+&amp;=\left[-\frac{1}{3}(2-r^2)^{3/2}\right]_0^1
+=\frac{1}{3}\big(2\sqrt{2}-1\big)
+\end{align*}
+</div>
+<p data-braille="continuation">we have</p>
+<div class="displaymath">
+\begin{align*}
+\tripInt_E z^n\ \dee{V}
+&amp;=2\pi\left.\begin{cases}
+\frac{1}{3}(2\sqrt{2}-1)-\frac{1}{4} &amp;\text{if }n=0\\
+\frac{1}{2}-\frac{1}{8}-\frac{1}{12} &amp;\text{if }n=1
+\end{cases}\right\}\\
+&amp;=2\pi\begin{cases}
+\frac{2}{3}\sqrt{2}-\frac{7}{12} &amp;\text{if }n=0\\
+\frac{7}{24} &amp;\text{if }n=1
+\end{cases}
+\end{align*}
+</div>
+<p data-braille="continuation">and \(\bar x=\bar y=0\) and</p>
+<div class="displaymath">
+\begin{gather*}
+\bar z =\frac{\tripInt_E z\ \dee{V}}{\tripInt_E\dee{V}}
+=\frac{\frac{7}{24}}{\frac{2}{3}\sqrt{2}-\frac{7}{12}}
+=\frac{7}{16\sqrt{2}-14}
+\approx 0.811
+\end{gather*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1869"><h6 class="heading">
+<span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">M200 2012A.</span>
+</h6>
+<p id="p-14859">Let \(E\) be the smaller of the two solid regions bounded by the surfaces \(z = x^2 + y^2\) and \(x^2 + y^2 + z^2 = 6\text{.}\) Evaluate \(\tripInt_E (x^2+y^2)\ \dee{V}\) .</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1869" id="answer-1869"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1869"><div class="answer solution-like"><p id="p-14860">\(\pi\left[\frac{48}{5}\sqrt{6}-\frac{328}{15}\right]
+\approx 1.65\pi\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1939" id="solution-1939"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1939"><div class="solution solution-like">
+<p id="p-14861">Note that both surfaces are invariant under rotations about the \(z\)--axis. Here is a sketch of the \(y=0\) cross section of E.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE12A_9.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-14862">The surfaces \(z = x^2 + y^2\) and \(x^2 + y^2 + z^2 = 6\) intersect when \(z=x^2+y^2\) and</p>
+<div class="displaymath">
+\begin{equation*}
+z+z^2=6
+\iff z^2+z-6=0
+\iff(z+3)(z-2)=0
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(z=x^2+y^2\ge 0\text{,}\) the surfaces intersect on the circle \(z=2\text{,}\) \(x^2+y^2=2\text{.}\) So</p>
+<div class="displaymath">
+\begin{equation*}
+E = \Set{(x,y,z)}{ x^2+y^2\le 2,\ x^2+y^2\le z\le \sqrt{6-x^2-y^2}}
+\end{equation*}
+</div>
+<p data-braille="continuation">Let's use cylindrical coordinates to do the integral. In cylindrical coordinates</p>
+<ul class="disc">
+<li id="li-6034">\(E = \Set{(r\cos\theta,r\sin\theta,z)}{ r\le \sqrt{2},\ 0\le\theta\le 2\pi,\
+r^2\le z\le \sqrt{6-r^2}}\text{,}\) and</li>
+<li id="li-6035">\(\dee{V}\) is \(r\,\dee{r}\,\dee{\theta}\,\dee{z}\)</li>
+</ul>
+<p data-braille="continuation">so</p>
+<div class="displaymath">
+\begin{align*}
+\tripInt_E (x^2+y^2)\ \dee{V}
+&amp;=\int_0^{\sqrt{2}}\dee{r} \int_0^{2\pi}\dee{\theta}
+\int_{r^2}^{\sqrt{6-r^2}} \dee{z}\ r\ r^2\\
+&amp;=2\pi\int_0^{\sqrt{2}}\dee{r}  \ r^3\big(\sqrt{6-r^2}-r^2\big)\\
+&amp; =2\pi\int_0^{\sqrt{2}}\dee{r}\,r\ r^2\sqrt{6-r^2}
+- 2\pi\int_0^{\sqrt{2}}\dee{r}  \ r^5\\
+&amp;=2\pi\int_6^4\frac{\dee{u}}{-2}  \ (6-u)\sqrt{u} -2\pi\frac{2^3}{6}\\
+&amp;\hskip1in\qquad\text{with } u = 6-r^2,\ \dee{u} = -2r\,\dee{r}\\
+&amp;=-\pi\left[6\frac{u^{3/2}}{3/2}-\frac{u^{5/2}}{5/2}\right]_6^4-\frac{8\pi}{3}\\
+&amp;=-\pi\left[4\big(8-6\sqrt{6}\big)-\frac{2}{5}\big(32-36\sqrt{6}\big)\right]
+-\frac{8\pi}{3}\\
+&amp;=\pi\left[\frac{64}{5}-32-\frac{8}{3}
++\left(24-\frac{72}{5}\right)\sqrt{6}\right]\\
+&amp;=\pi\left[\frac{48}{5}\sqrt{6}-\frac{328}{15}\right]
+\approx 1.65\pi
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1870"><h6 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">M200 2013D.</span>
+</h6>
+<p id="p-14863">Let \(a  \gt  0\) be a fixed positive real number. Consider the solid inside both the cylinder \(x^2 + y^2 = ax\) and the sphere \(x^2 + y^2 + z^2 = a^2\text{.}\) Compute its volume.</p>
+<p id="p-14864">You may use that \(\int \sin^3(\theta) =\frac{1}{12}\cos(3\theta) -\frac{3}{4}\cos(\theta) +C\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1870" id="answer-1870"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1870"><div class="answer solution-like"><p id="p-14865">\(\frac{4a^3}{3}\left[\frac{\pi}{2}  - \frac{2}{3} \right]\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1940" id="solution-1940"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1940"><div class="solution solution-like">
+<p id="p-14866">We'll use cylindrical coordinates. In cylindrical coordinates</p>
+<ul class="disc">
+<li id="li-6036">the sphere \(x^2+y^2+z^2=a^2\) becomes \(r^2+z^2=a^2\) and</li>
+<li id="li-6037">the circular cylinder  \(x^2+y^2=ax\) (or equivalently \((x-a/2)^2+ y^2=a^2/4\)) becomes \(r^2=ar\cos\theta\) or \(r=a\cos\theta\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Here is a sketch of the top view of the solid.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE13D_7.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-14867">The solid is</p>
+<div class="displaymath">
+\begin{align*}
+\big\{\ (r\cos\theta\,,\,r\sin\theta\,,\,z)\ \big|\ 
+-\frac{\pi}{2}\le\theta\le\frac{\pi}{2}\,,\,
+&amp; 0\le r\le a\cos\theta\,,\,\\
+&amp;\hskip0.25in -\sqrt{a^2-r^2}\le z\le \sqrt{a^2-r^2}\ \big\}
+\end{align*}
+</div>
+<p data-braille="continuation">By symmetry, the volume of the specified solid is four times the volume of the solid</p>
+<div class="displaymath">
+\begin{equation*}
+\Set{(r\cos\theta\,,\,r\sin\theta\,,\,z)}{
+0\le\theta\le\frac{\pi}{2}\,,\,
+0\le r\le a\cos\theta\,,\,
+0\le z\le \sqrt{a^2-r^2}}
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(\dee{V} = r\,\dee{r}\,\dee{\theta}\,\dee{z}\text{,}\) the volume of the solid is</p>
+<div class="displaymath">
+\begin{align*}
+4\int_0^{\pi/2}\dee{\theta} \int_0^{a\cos\theta} \dee{r}
+\int_0^{\sqrt{a^2-r^2}}\dee{z}\ r
+&amp;=4\int_0^{\pi/2}\dee{\theta} \int_0^{a\cos\theta} \dee{r}\
+r\sqrt{a^2-r^2}\\
+&amp;=-\frac{4}{3}\int_0^{\pi/2}\dee{\theta}\
+\big(a^2-r^2\big)^{3/2}\Big|_0^{a\cos\theta}\\
+&amp;=\frac{4}{3}\int_0^{\pi/2}\dee{\theta}\
+\Big[a^3-\big(a^2-a^2\cos^2\theta\big)^{3/2}\Big]\\
+&amp;=\frac{4a^3}{3}\int_0^{\pi/2}\dee{\theta}\
+\big[1-\sin^3\theta\big]\\
+&amp;=\frac{4a^3}{3}\left[\theta - \frac{1}{12}\cos(3\theta) + \frac{3}{4}\cos\theta
+\right]_0^{\pi/2}\\
+&amp;=\frac{4a^3}{3}\left[\frac{\pi}{2} + \frac{1}{12} - \frac{3}{4} \right]\\
+&amp;=\frac{4a^3}{3}\left[\frac{\pi}{2}  - \frac{2}{3} \right]
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1871"><h6 class="heading">
+<span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">M200 2014A.</span>
+</h6>
+<p id="p-14868">Let \(E\) be the solid lying above the surface \(z = y^2\) and below the surface \(z = 4 - x^2\text{.}\) Evaluate</p>
+<div class="displaymath">
+\begin{equation*}
+\tripInt_E y^2\ \dee{V}
+\end{equation*}
+</div>
+<p data-braille="continuation">You may use the half angle formulas:</p>
+<div class="displaymath">
+\begin{equation*}
+\sin^2\theta = \frac{1-\cos(2\theta)}{2},\qquad
+\cos^2\theta = \frac{1+\cos(2\theta)}{2}
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1871" id="answer-1871"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1871"><div class="answer solution-like"><p id="p-14869">\(\frac{16\pi}{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1941" id="solution-1941"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1941"><div class="solution solution-like">
+<p id="p-14870">Note that the surfaces meet when \(z=y^2=4-x^2\) and then \((x,y)\) runs over the circle \(x^2+y^2=4\text{.}\) So the domain of integration is</p>
+<div class="displaymath">
+\begin{equation*}
+E = \Set{(x,y,z)}{x^2+y^2\le 4,\ y^2\le z\le 4-x^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">Let's switch to cylindrical coordinates. Then</p>
+<div class="displaymath">
+\begin{align*}
+E = \big\{\ (r\cos\theta,r\sin\theta,z)\ \big|\ 0\le r\le 2,\ 
+&amp;0\le\theta\le 2\pi,\\
+&amp;\hskip0.25in r^2\sin^2\theta\le z\le 4-r^2\cos^2\theta\ \big\}
+\end{align*}
+</div>
+<p data-braille="continuation">and, since \(\dee{V} = r\,\dee{r}\,\dee{\theta}\,\dee{z}\text{,}\)</p>
+<div class="displaymath">
+\begin{align*}
+\tripInt_E y^2\ \dee{V}
+&amp;=\int_0^2\dee{r} \int_0^{2\pi} \dee{\theta}
+\int_{r^2\sin^2\theta}^{4-r^2\cos^2\theta}\dee{z}\ r\
+\overbrace{r^2\sin^2\theta}^{y^2}\\
+&amp;=\int_0^2\dee{r} \int_0^{2\pi} \dee{\theta}\
+r^3\sin^2\theta\big[4-r^2\cos^2\theta - r^2\sin^2\theta\big]\\
+&amp;=\int_0^2\dee{r}\ \big[4r^3-r^5\big] \int_0^{2\pi} \dee{\theta}\
+\frac{1-\cos(2\theta)}{2}\\
+&amp;=\frac{1}{2}\int_0^2\dee{r}\ \big[4r^3-r^5\big]\
+\left[\theta-\frac{\sin(2\theta)}{2}\right]_0^{2\pi}\\
+&amp;=\pi\left[r^4-\frac{r^6}{6}\right]_0^2\\
+&amp;=\frac{16\pi}{3}
+\end{align*}
+</div>
+<p data-braille="continuation">For an efficient, sneaky, way to evaluate \(\int_0^{2\pi}\sin^2\theta\ \dee{\theta}\text{,}\) see Remark <a class="xref" data-knowl="./knowl/rem_sneaky.html" title="Remark 11.3.5">11.3.5</a>.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1872"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-14871">The centre of mass \((\bar x,\bar y, \bar z)\) of a body \(B\) having density \(\rho(x,y,z)\) (units of mass per unit volume) at \((x,y,z)\) is defined to be</p>
+<div class="displaymath">
+\begin{gather*}
+\bar x=\frac{1}{M}\tripInt_B x\rho(x,y,z)\ \dee{V}\quad
+\bar y=\frac{1}{M}\tripInt_B y\rho(x,y,z)\ \dee{V}\\
+\bar z=\frac{1}{M}\tripInt_B z\rho(x,y,z)\ \dee{V}
+\end{gather*}
+</div>
+<p data-braille="continuation">where</p>
+<div class="displaymath">
+\begin{equation*}
+M=\tripInt_B \rho(x,y,z)\ \dee{V}
+\end{equation*}
+</div>
+<p data-braille="continuation">is the mass of the body. So, for example, \(\bar x\) is the weighted average of \(x\) over the body. Find the centre of mass of the part of the solid ball \(x^2+y^2+z^2\le a^2\) with \(x\ge 0\text{,}\) \(y\ge 0\) and \(z\ge 0\text{,}\) assuming that the density \(\rho\) is constant.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1498" id="hint-1498"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1498"><div class="hint solution-like"><p id="p-14872">Use cylindrical coordinates.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1872" id="answer-1872"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1872"><div class="answer solution-like"><p id="p-14873">\(\bar x=\bar y=\bar z=\frac{3}{8}a\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1942" id="solution-1942"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1942"><div class="solution solution-like">
+<p id="p-14874">By symmetry, \(\bar x=\bar y=\bar z\text{,}\) so it suffices to compute, for example, \(\bar z\text{.}\)   The mass of the body is the density, \(\rho\text{,}\) times its volume, which is one eighth of the volume of a sphere. So</p>
+<div class="displaymath">
+\begin{equation*}
+M=\frac{\rho}{8}\ \frac{4}{3}\pi a^3
+\end{equation*}
+</div>
+<p data-braille="continuation">In cylindrical coordinates, the equation of the spherical surface of the body is \(r^2+z^2=a^2\text{.}\) The part of the body at height \(z\) above the \(xy\)--plane is one quarter of a disk of radius \(\sqrt{a^2-z^2}\text{.}\) The numerator of \(\bar z\) is</p>
+<div class="displaymath">
+\begin{align*}
+\tripInt_B z\rho\ \dee{V}
+&amp;=\rho\int_0^a \dee{z}\int_0^{\pi/2}d\theta\int_0^{\sqrt{a^2-z^2}}dr\ r\ z\\
+&amp;=\rho\int_0^a \dee{z}\int_0^{\pi/2}d\theta\ z\ \frac{r^2}{2}
+\bigg|_0^{\sqrt{a^2-z^2}}\\
+&amp;=\frac{\rho}{2}\int_0^a \dee{z}\int_0^{\pi/2}d\theta\ z(a^2-z^2)\\
+&amp;=\frac{\pi}{4}\rho\int_0^a \dee{z}\ z(a^2-z^2)\\
+&amp;=\frac{\pi}{4}\rho\left[a^2\frac{z^2}{2}-\frac{z^4}{4}\right]_0^a
+=\frac{\pi}{16}\rho a^4
+\end{align*}
+</div>
+<p data-braille="continuation">Dividing by \(M=\frac{\pi}{6}\rho a^3\) gives \(\bar x=\bar y=\bar z=\frac{3}{8}a\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1873"><h6 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">M200 2003D.</span>
+</h6>
+<p id="p-14875">A sphere of radius \(2{\rm m}\) centred on the origin has variable density \(\frac{5}{\sqrt{3}}(z^2+1)\)kg/\({\rm m}^3\text{.}\) A hole of diameter 1m is drilled through the sphere along the \(z\)--axis.</p>
+<ol class="lower-alpha">
+<li id="li-6038">Set up a triple integral in cylindrical coordinates giving the mass of the sphere after the hole has been drilled.</li>
+<li id="li-6039">Evaluate this integral.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1873" id="answer-1873"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1873"><div class="answer solution-like">
+<p id="p-14876">(a) \(\ds\text{mass} =
+\int_{1/2}^2 \dee{r} \int_{-\sqrt{4-r^2}}^{\sqrt{4-r^2}} \dee{z}\int_0^{2\pi}\dee{\theta}\
+\frac{5}{\sqrt{3}}(z^2+1)r\)</p>
+<p id="p-14877">(b) \(\frac{525}{24}\sqrt{5}\pi\approx 153.7\text{kg}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1943" id="solution-1943"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1943"><div class="solution solution-like">
+<p id="p-14878">(a) In cylindrical coordinates the equation of a sphere of radius 2 centred on the origin is \(r^2+z^2=2^2\text{.}\) Since \(\dee{V}=r\, \dee{r}\, \dee{\theta}\, \dee{z}\) and \(\dee{m} =\frac{5}{\sqrt{3}}(z^2+1)r\, \dee{r}\, \dee{\theta}\, \dee{z}\) and the hole has radius \(1/2\text{,}\) the integral is</p>
+<div class="displaymath">
+\begin{gather*}
+\text{mass} =
+\int_{1/2}^2 \dee{r} \int_{-\sqrt{4-r^2}}^{\sqrt{4-r^2}} \dee{z}\int_0^{2\pi}\dee{\theta}\
+\frac{5}{\sqrt{3}}(z^2+1)r
+\end{gather*}
+</div>
+<p id="p-14879">(b) By part (a)</p>
+<div class="displaymath">
+\begin{align*}
+\text{mass} =
+&amp;\int_{1/2}^2 \dee{r} \int_{-\sqrt{4-r^2}}^{\sqrt{4-r^2}} \dee{z}\int_0^{2\pi}\dee{\theta}\
+\frac{5}{\sqrt{3}}(z^2+1)r\\
+&amp;\hskip0.5in=4\pi\frac{5}{\sqrt{3}}\int_{1/2}^2\dee{r}\ r\int_0^{\sqrt{4-r^2}}\dee{z}\ (z^2+1)\\
+&amp;\hskip0.5in=4\pi\frac{5}{\sqrt{3}}\int_{1/2}^2\dee{r}\
+r\left[\frac{z^3}{3}+z\right]_0^{\sqrt{4-r^2}}\\
+&amp;\hskip0.5in=4\pi\frac{5}{\sqrt{3}}\int_{1/2}^2\dee{r}\
+r\left[\frac{1}{3}{(4-r^2)}^{3/2}+{(4-r^2)}^{1/2}\right]
+\end{align*}
+</div>
+<p data-braille="continuation">Make the change of variables \(s=4-r^2\text{,}\) \(\dee{s}=-2r\,\dee{r}\text{.}\) This gives</p>
+<div class="displaymath">
+\begin{align*}
+\text{mass} &amp;= 4\pi\frac{5}{\sqrt{3}}\int_{15/4}^0\frac{\dee{s}}{-2}\
+\left[\frac{1}{3}s^{3/2}+s^{1/2}\right]
+= -2\pi\frac{5}{\sqrt{3}}
+\left[\frac{2}{15}s^{5/2}+\frac{2}{3}s^{3/2} \right]_{15/4}^0\\
+&amp;=
+2\pi\frac{5}{\sqrt{3}} \left[\frac{2}{15}\frac{15^{5/2}}{32}
++\frac{2}{3}\frac{15^{3/2}}{8}\right]\\
+&amp;=2\pi\frac{5}{\sqrt{3}} \left[\frac{1}{16}+\frac{1}{12}\right]15^{3/2}
+=\frac{525}{24}\sqrt{5}\pi\approx 153.7\text{kg}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1874"><h6 class="heading">
+<span class="codenumber">14<span class="period">.</span></span><span class="space"> </span><span class="title">M200 2001A.</span>
+</h6>
+<p id="p-14880">Consider the finite solid bounded by the three surfaces: \(z=e^{-x^2-y^2}\text{,}\) \(z=0\) and \(x^2+y^2=4\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-6040">Set up (but do not evaluate) a triple integral in rectangular coordinates that describes the volume of the solid.</li>
+<li id="li-6041">Calculate the volume of the solid using any method.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1874" id="answer-1874"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1874"><div class="answer solution-like">
+<p id="p-14881">(a) \(\ds\int_{-2}^2 \dee{x}
+\int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}\dee{y}\int_0^{e^{-x^2-y^2}}\dee{z}\)</p>
+<p id="p-14882">(b) \(\pi\big[1-e^{-4}\big]\approx 3.084\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1944" id="solution-1944"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1944"><div class="solution solution-like">
+<p id="p-14883">(a) The solid consists of all \((x,y,z)\) with</p>
+<ul class="disc">
+<li id="li-6042">\((x,y)\) running over the disk \(x^2+y^2\le 4\) and</li>
+<li id="li-6043">for each fixed \((x,y)\) obeying \(x^2+y^2\le 4\text{,}\) \(z\) running from \(0\) to \(e^{-x^2-y^2}\)</li>
+</ul>
+<p data-braille="continuation">On the disk \(x^2+y^2\le 4\text{,}\)</p>
+<ul class="disc">
+<li id="li-6044">\(x\) runs from \(-2\) to \(2\) and</li>
+<li id="li-6045">for each fixed \(x\) obeying \(-2\le x\le 2\text{,}\) \(y\) runs from \(-\sqrt{4-x^2}\) to \(\sqrt{4-x^2}\)</li>
+</ul>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Volume}=\int_{-2}^2 \dee{x}
+\int_{-\sqrt{4-x^2}}^{\sqrt{4-x^2}}\dee{y}\int_0^{e^{-x^2-y^2}}\dee{z}
+\end{equation*}
+</div>
+<p id="p-14884">(b) Switching to cylindrical coordinates</p>
+<div class="displaymath">
+\begin{align*}
+\text{Volume}&amp;=\int_0^2 \dee{r}\int_0^{2\pi}\dee{\theta} \int_0^{e^{-r^2}}\dee{z}\ r
+=\int_0^2 \dee{r}\int_0^{2\pi}\dee{\theta} \ r e^{-r^2}
+=\int_0^2 \dee{r}\ 2\pi\ r e^{-r^2}\\
+&amp;=-\pi e^{-r^2}\Big|_0^2
+=\pi\big[1-e^{-4}\big]\approx 3.084
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1875"><h6 class="heading">
+<span class="codenumber">15<span class="period">.</span></span><span class="space"> </span><span class="title">M200 2000A.</span>
+</h6>
+<p id="p-14885">Find the volume of the solid which is inside \(x^2 + y^2 = 4\text{,}\) above \(z = 0\) and below \(2z = y\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1875" id="answer-1875"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1875"><div class="answer solution-like"><p id="p-14886">\(\frac{8}{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1945" id="solution-1945"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1945"><div class="solution solution-like">
+<p id="p-14887">The solid consists of the set of all points \((x,y,z)\) such that \(x^2+y^2\le 4\) and \(0\le z\le\frac{y}{2}\text{.}\) In particular \(y\ge 0\text{.}\) When we look at the solid from above, we see all \((x,y)\) with \(x^2+y^2\le 4\) and \(y\ge 0\text{.}\) This is sketched in the figure on the left below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:center;"><img src="pfigs/OE00AQ9a.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:center;"><img src="pfigs/OE00AQ9b.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-14888">We'll use cylindrical coordinates. In the base region (the shaded region in the figure on the left above)</p>
+<ul class="disc">
+<li id="li-6046">\(\theta\) runs from \(0\) to \(\pi\) and</li>
+<li id="li-6047">for each fixed \(\theta\) between \(0\) and \(\pi\text{,}\) \(r\) runs from \(0\) to \(2\text{.}\)</li>
+<li id="li-6048">For each fixed point \((x,y)=(r\cos\theta,r\sin\theta)\) in the base region, \(z\) runs from \(0\)) to \(\frac{y}{2}=\frac{r\sin\theta}{2}\text{.}\)</li>
+</ul>
+<p data-braille="continuation">So the volume is</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^\pi \dee{\theta}\int_0^2 \dee{r}\int_0^{r\sin\theta/2} dz\ r
+&amp;=\int_0^\pi \dee{\theta}\int_0^2 \dee{r}\ \frac{1}{2} r^2\sin\theta
+=\int_0^\pi \dee{\theta}\ \frac{r^3}{6}\sin\theta\,\bigg|_0^2\\
+&amp;=\frac{4}{3}\int_0^\pi \dee{\theta}\ \sin\theta\\
+&amp;=-\frac{4}{3}\cos\theta\,\bigg|_0^\pi
+=\frac{8}{3}
+\end{align*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-250">
+<div class="introduction" id="introduction-385"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1876"><h6 class="heading">
+<span class="codenumber">16<span class="period">.</span></span><span class="space"> </span><span class="title">M200 2014D.</span>
+</h6>
+<p id="p-14889">The density of hydrogen gas in a region of space is given by the formula</p>
+<div class="displaymath">
+\begin{equation*}
+\rho(x,y,z) =\frac{z+2x^2}{1+x^2+y^2}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-6049">At \((1,0,-1)\text{,}\) in which direction is the density of hydrogen increasing most rapidly?</li>
+<li id="li-6050">
+<p id="p-14890">You are in a spacecraft at the origin. Suppose the spacecraft flies in the direction of \(\llt 0,0,1\rgt\text{.}\) It has a disc of radius \(1\text{,}\) centred on the spacecraft and deployed perpendicular to the direction of travel, to catch hydrogen. How much hydrogen has been collected by the time that the spacecraft has traveled a distance \(2\text{?}\)</p>
+<p id="p-14891">You may use the fact that \(\int_0^{2\pi}\cos^2\theta\ \dee{\theta}
+=\pi\text{.}\)</p>
+</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1876" id="answer-1876"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1876"><div class="answer solution-like">
+<p id="p-14892">(a) The unit vector in the direction of maximum rate of increse is \(\frac{1}{\sqrt{10}}(3,0,1)\text{.}\)</p>
+<p id="p-14893">(b) \(2\pi\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1946" id="solution-1946"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1946"><div class="solution solution-like">
+<p id="p-14894">(a) The direction of maximum rate of increase is \(\vnabla\rho(1,0,-1)\text{.}\) As</p>
+<div class="displaymath">
+\begin{align*}
+\pdiff{\rho}{x}(x,y,z)
+&amp;= \frac{4x}{1+x^2+y^2} -\frac{2x(z+2x^2)}{{(1+x^2+y^2)}^2} \\
+&amp;\hskip0.5in
+\pdiff{\rho}{x}(1,0,-1)
+= \frac{4}{2} -\frac{2(-1+2)}{{(2)}^2} =\frac{3}{2}\\
+\pdiff{\rho}{y}(x,y,z)
+&amp;=  -\frac{2y(z+2x^2)}{{(1+x^2+y^2)}^2} \\
+&amp;\hskip0.5in
+\pdiff{\rho}{y}(1,0,-1)=  0\\
+\pdiff{\rho}{z}(x,y,z)
+&amp;= \frac{1}{1+x^2+y^2} \\
+&amp;\hskip0.5in
+\pdiff{\rho}{z}(1,0,-1) = \frac{1}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">So \(\vnabla\rho(1,0,-1) = \frac{1}{2}(3,0,1)\text{.}\) The unit vector in this direction is \(\frac{1}{\sqrt{10}}(3,0,1)\text{.}\)</p>
+<p id="p-14895">(b) The region swept by the space craft is, in cylindrical coordinates,</p>
+<div class="displaymath">
+\begin{equation*}
+V=\Set{(r\cos\theta\,,\,r\sin\theta\,,\,z)}{0\le\theta\le 2\pi,\
+0\le r\le 1,\
+0\le z\le 2}
+\end{equation*}
+</div>
+<p data-braille="continuation">and the amount of hydrogen collected is</p>
+<div class="displaymath">
+\begin{align*}
+\tripInt_V \rho\ \dee{V} &amp;=\tripInt_V\frac{z+2r^2\cos^2\theta}{1+r^2}r\dee{r}\,\dee{\theta}\,\dee{z}\\
+&amp;=\int_0^2\dee{z} \int_0^{2\pi} \dee{\theta} \int_0^1\dee{r}\
+\frac{zr+(2\cos^2\theta)r^3}{1+r^2}\\
+&amp;=\int_0^2\dee{z} \int_0^{2\pi} \dee{\theta} \int_0^1\dee{r}\
+\left[ z \frac{r}{1+r^2} +2r\cos^2\theta
+-\cos^2\theta\frac{2r}{1+r^2}\right]\\
+&amp;\hskip1.5in\text{since }\frac{r^3}{1+r^2} = \frac{r+r^3 - r}{1+r^2}
+=r-\frac{r}{1+r^2}\\
+&amp;=\int_0^2\dee{z} \int_0^{2\pi} \dee{\theta}\
+\left[\frac{z}{2}\ln(1+r^2)+r^2\cos^2\theta
+-\ln(1+r^2)\cos^2\theta\right]_0^1\\
+&amp;=\int_0^2\dee{z} \int_0^{2\pi} \dee{\theta}\
+\left[\frac{\ln 2}{2} z+ \cos^2\theta
+-\ln(2)\cos^2\theta\right]\\
+&amp;=\int_0^2\dee{z} \ \left[(\pi\ln 2) z+ \pi-\pi\ln 2\right]\\
+&amp;= 2\pi\ln 2 +2\pi -2\pi\ln 2\\
+&amp;=2\pi
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1877"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-14896">A torus of mass \(M\) is generated by rotating a circle of radius \(a\) about an axis in its plane at distance \(b\) from the centre \((b \gt a)\text{.}\) The torus has constant density. Find the moment of inertia about the axis of rotation. By definition the moment of intertia is \(\tripInt r^2 \dee{m}\) where \(\dee{m}\) is the mass of an infinitesmal piece of the solid and \(r\) is its distance from the axis.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1877" id="answer-1877"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1877"><div class="answer solution-like"><p id="p-14897">\(M\big(\frac{3}{4}a^2+b^2\big)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1947" id="solution-1947"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1947"><div class="solution solution-like">
+<p id="p-14898">We may choose our coordinate axes so that the torus is constructed by rotating the circle \((x-b)^2+z^2=a^2\) (viewed as lying in the \(xz\)--plane) about the \(z\)--axis. On this circle, \(x\) runs from \(b-a\) to \(b+a\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/torusSection.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-14899">In cylindrical coordinates, the torus has equation \((r-b)^2+z^2=a^2\text{.}\) (Recall that the cylindrical coordinate \(r\) of a point is its distance from the \(z\)--axis.) On this torus,</p>
+<ul class="disc">
+<li id="li-6051">\(r\) runs from \(b-a\) to \(b+a\text{.}\)</li>
+<li id="li-6052">For each fixed \(r\text{,}\) \(z\) runs from \(-\sqrt{a^2-(r-b)^2}\) to \(\sqrt{a^2-(r-b)^2}\text{.}\)</li>
+</ul>
+<p data-braille="continuation">As the torus is symmetric about the \(xy\)--plane, its volume is twice that of the volume of the part with \(z\ge 0\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\text{Volume}
+&amp;= 2\int_{0}^{2\pi} d\theta\int_{b-a}^{b+a}\dee{r}\ r\int_{0}^{\sqrt{a^2-(r-b)^2}}\dee{z}\\
+&amp;= 2\int_{0}^{2\pi} d\theta\int_{b-a}^{b+a}\dee{r}\ r\sqrt{a^2-(r-b)^2}\\
+&amp;= 4\pi \int_{-a}^{a}\dee{s}\ (s+b)\sqrt{a^2-s^2}
+\qquad\text{ where } s=r-b
+\end{align*}
+</div>
+<p data-braille="continuation">As \(s\sqrt{a^2-s^2}\) is odd under \(s\rightarrow -s\text{,}\) \(\int_{-a}^{a}\dee{s}\ s\sqrt{a^2-s^2}=0\text{.}\) Also,  \(\int_{-a}^{a}\dee{s}\ \sqrt{a^2-s^2}\) is precisely the area of the top half of a circle of radius \(a\text{.}\) So</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Volume }= 4b\pi \int_{-a}^{a}\dee{s}\ \sqrt{a^2-s^2}
+=2\pi^2a^2b
+\end{equation*}
+</div>
+<p data-braille="continuation">So the mass density of the torus is \(\frac{M}{2\pi^2a^2b}\) and \(\dee{m} = \frac{M}{2\pi^2a^2b}\,\dee{V}
+=\frac{M}{2\pi^2a^2b}\,r\,\dee{r}\,d\theta\,\dee{z}\) and</p>
+<div class="displaymath">
+\begin{align*}
+\text{moment of inertia}
+&amp;= 2\int_{0}^{2\pi} d\theta\int_{b-a}^{b+a}\dee{r}\ r\int_{0}^{\sqrt{a^2-(r-b)^2}}\dee{z}\
+\frac{M}{2\pi^2a^2b} r^2\\
+&amp;= \frac{M}{\pi^2a^2b}\int_{0}^{2\pi} d\theta\int_{b-a}^{b+a}\dee{r}\ r^3\sqrt{a^2-(r-b)^2}\\
+&amp;= \frac{2M}{\pi a^2b} \int_{-a}^{a}\dee{s}\ (s+b)^3\sqrt{a^2-s^2}
+\qquad\text{ where } s=r-b\\
+&amp;= \frac{2M}{\pi a^2b} \int_{-a}^{a}\dee{s}\ (s^3+3s^2b+3sb+b^3)\sqrt{a^2-s^2}
+\end{align*}
+</div>
+<p data-braille="continuation">Again, by oddness, the \(s^3\) and \(3sb\) integrals are zero. For the others, substitute in \(s=a\sin t\text{,}\) \(\dee{s}=a\cos t\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\text{moment}
+&amp;= \frac{2M}{\pi a^2b} \int_{-{\pi\over 2}}^{{\pi\over 2}}(a\cos t\, \dee{t})
+\ (3a^2b\sin^2 t+b^3)a\cos t\\
+&amp;= \frac{2M}{\pi } \int_{-{\pi\over 2}}^{{\pi\over 2}}\dee{t}\
+(3a^2\sin^2 t+b^2)\cos^2 t\\
+&amp;= \frac{4M}{\pi} \int_0^{{\pi\over 2}}\dee{t}\
+(3a^2\cos^2 t-3a^2\cos^4 t+b^2\cos^2 t)\\
+&amp;\hskip1in    \text{since } \sin^2t=1-\cos^2t
+\end{align*}
+</div>
+<p data-braille="continuation">To integrate<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-523" id="fn-523"><sup> 9 </sup></a> \(\cos^2t\) and \(\cos^4t\text{,}\) we use the double angle formulae \(\sin^2 x= \frac{1-\cos(2x)}{2}\) and \(\cos^2 x= \frac{1+\cos(2x)}{2}\) to write</p>
+<div class="displaymath">
+\begin{equation*}
+\cos^2 t= \frac{1+\cos(2t)}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{align*}
+\cos^4 t &amp;= \left[ \frac{1+\cos(2t)}{2} \right]^2\\
+&amp;= \frac{1}{4} + \frac{1}{2} \cos(2t) + \frac{1}{4}\cos^2(2t)\\
+&amp;= \frac{1}{4} + \frac{1}{2} \cos(2t) + \frac{1}{8}\left(1 + \cos(4t)\right)\\
+&amp;= \frac{3}{8} + \frac{1}{2} \cos(2t) + \frac{1}{8}\cos(4t)
+\end{align*}
+</div>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{align*}
+\text{moment}
+&amp;= \frac{4M}{\pi}
+\bigg[3a^2\left(\frac{t}{2}\!+\!\frac{\sin(2t)}{4}\right)
+\!-\!3a^2\left(\frac{3t}{8}\!+\! \frac{1}{4} \sin(2t)\!+\! \frac{1}{32}\sin(4t)\right)\\
+&amp;\hskip3.0in  +b^2\left(\frac{t}{2}+\frac{\sin(2t)}{4}\right)\!\bigg]_0^{{\pi\over 2}}\\
+&amp;= \frac{4M}{\pi}
+\Big[3a^2\frac{\pi}{4}-3a^2\frac{3\pi}{16}+b^2\frac{\pi}{4}\Big]
+=M\left(\frac{3}{4}a^2+b^2\right)
+\end{align*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-523"><div class="fn">For a general discussion of trigonometric integrals see §1.8 in the CLP-2 text. In particular the integral \(\int \cos^4 x\ \dee{x}\) is evaluated in Example 1.8.8 in the CLP-2 text. For an efficient, sneaky, way to evaluate \(\int_0^{{\pi\over 2}} \cos^2 t\ \dee{t}\) see Remark <a class="xref" data-knowl="./knowl/rem_sneaky.html" title="Remark 11.3.5">11.3.5</a>.</div></div>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

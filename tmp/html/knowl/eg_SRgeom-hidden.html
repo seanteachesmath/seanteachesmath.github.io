@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:16:23-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>Let \(a\) and \(r\) be any two fixed real numbers with \(a\ne 0\text{.}\) The series</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+a + ar + ar^2 + \cdots + ar^n + \cdots = \sum_{n=0}^\infty ar^n
+\end{equation*}
+</div>
+<p data-braille="continuation">is called the geometric series with first term \(a\) and ratio \(r\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Notice that we have chosen to start the summation index at \(n=0\text{.}\)  That's fine. The first <a class="fn-knowl original" data-knowl="./knowl/fn-320-hidden.html" title="Footnote 8.2.2"><sup> 2 </sup></a> term is the \(n=0\) term, which is \(ar^0=a\text{.}\) The  second term is the \(n=1\) term, which is \(ar^1=ar\text{.}\) And so on.  We could have also written the series \(\sum_{n=1}^\infty ar^{n-1}\text{.}\) That's exactly the same series — the first term is  \(ar^{n-1}\big|_{n=1}=ar^{1-1}=a\text{,}\) the second term is \(ar^{n-1}\big|_{n=2}=ar^{2-1}=ar\text{,}\) and so on <a class="fn-knowl original" data-knowl="./knowl/fn-321-hidden.html" title="Footnote 8.2.3"><sup> 3 </sup></a>. Regardless of  how we write the geometric series, \(a\) is the first term and \(r\) is the  ratio between successive terms.</p>
+<p>Geometric series have the extremely useful property that there is a very simple formula for their partial sums. Denote the partial sum by</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S_N &amp;= \sum_{n=0}^Nar^n = a + ar + ar^2 + \cdots + ar^N.\\
+\end{align*}
+<p class="intertext">The secret to evaluating this sum is to see what happens when we multiply it \(r\text{:}\)</p>
+\begin{align*}
+rS_N &amp;= r\big(a + ar + ar^2 + \cdots + ar^N\big)\\
+&amp; = ar + ar^2 + ar^3 + \cdots + ar^{N+1}
+\end{align*}
+</div>
+<p data-braille="continuation">Notice that this is almost the same <a class="fn-knowl original" data-knowl="./knowl/fn-322-hidden.html" title="Footnote 8.2.4"><sup> 4 </sup></a> as \(S_N\text{.}\) The only differences are that the first term, \(a\text{,}\) is missing and one additional term, \(ar^{N+1}\text{,}\) has been tacked  on the end. So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S_N &amp;= a + ar + ar^2 + \cdots + ar^N\\
+r S_N &amp;= \phantom{ar +} ar + ar^2 + \cdots + ar^N + ar^{N+1}\\
+\end{align*}
+<p class="intertext">Hence taking the difference of these expressions cancels almost all the terms:</p>
+\begin{align*}
+(1-r) S_N &amp;= a - ar ^{N+1}  = a (1-r^{N+1})\\
+\end{align*}
+<p class="intertext">Provided \(r\neq 1\) we can divide both side by \(1-r\) to isolate \(S_N\text{:}\)</p>
+\begin{align*}
+S_N &amp;= a \cdot \frac{1-r^{N+1}}{1-r}.
+\end{align*}
+</div>
+<p data-braille="continuation">On the other hand, if \(r=1\text{,}\) then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+S_N &amp;= \underbrace{a + a +\cdots + a}_{N+1 \text{ terms}} = a (N+1)
+\end{align*}
+</div>
+<p data-braille="continuation">So in summary:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+S_N = \begin{cases}
+a\frac{1-r^{N+1}}{1-r} &amp; \text{if $r\ne 1$} \\
+a(N+1) &amp; \text{if $r=1$}
+\end{cases}
+\end{equation*}
+</div>
+<p>Now that we have this expression we can determine whether or not the  series converges. If \(|r| \lt 1\text{,}\) then \(r^{N+1}\)  tends to zero as \(N\rightarrow\infty\text{,}\) so that \(S_N\)  converges to \(\frac{a}{1-r}\) as \(N\rightarrow\infty\) and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\sum_{n=0}^\infty ar^n = \frac{a}{1-r}
+\text{provided $|r| \lt 1$}.
+\end{equation*}
+</div>
+<p data-braille="continuation">On the other hand if \(|r|\ge 1\text{,}\) \(S_N\) diverges. To understand this divergence, consider the following 4 cases:</p>
+<ul class="disc">
+<li>If \(r \gt 1\text{,}\) then \(r^N\) grows to \(\infty\) as \(N\rightarrow\infty\text{.}\)</li>
+<li>If \(r \lt -1\text{,}\) then the magnitude of \(r^N\) grows to \(\infty\text{,}\) and the sign of \(r^N\) oscillates between \(+\) and \(-\text{,}\)  as \(N\rightarrow\infty\text{.}\)</li>
+<li>If \(r=+1\text{,}\) then \(N+1\) grows to \(\infty\) as \(N\rightarrow\infty\text{.}\)</li>
+<li>If \(r=-1\text{,}\) then \(r^N\) just oscillates between \(+1\) and \(-1\) as \(N\rightarrow\infty\text{.}\)</li>
+</ul>
+<p data-braille="continuation">In each case the sequence of partial sums does not converge and so the series does not converge.</p></article></body>
+</html>

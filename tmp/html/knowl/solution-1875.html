@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:51:13-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">11.2.5.21.1</span><span class="period">.</span>
+</h6>
+<p>(a) On the domain of integration</p>
+<ul class="disc">
+<li>\(y\) runs from \(0\) to \(\sqrt{2}\) and</li>
+<li>for each \(y\) in that range, \(x\) runs from \(y\) to \(\sqrt{4-y^2}\text{.}\) We can rewrite \(x=\sqrt{4-y^2}\) in the more familiar form \(x^2+y^2=4\text{,}\) \(x\ge 0\text{.}\)</li>
+</ul>
+<p data-braille="continuation">The figure on the left below provides a sketch of the domain of integration. It also shows the generic horizontal slice that was used to set up the given iterated integral.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="pfigs/OE11A_6a.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="pfigs/OE11A_6b.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>(b) To reverse the order of integration observe, we use vertical, rather than horizontal slices. From the figure on the right above that, on the domain of integration,</p>
+<ul class="disc">
+<li>\(x\) runs from \(0\) to \(2\) and</li>
+<li>for each \(x\) in the range \(0\le x\le\sqrt{2}\text{,}\) \(y\) runs from \(0\) to \(x\text{.}\)</li>
+<li>for each \(x\) in the range \(\sqrt{2}\le x\le 2\text{,}\) \(y\) runs from \(0\) to \(\sqrt{4-x^2}\text{.}\)</li>
+</ul>
+<p data-braille="continuation">So the integral</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+J = \int_0^{\sqrt{2}}\int_0^x \frac{y}{x}  e^{x^2+y^2}\ \dee{y}\,\dee{x}
++ \int_{\sqrt{2}}^2\int_0^{\sqrt{4-x^2}} \frac{y}{x}  e^{x^2+y^2}\ \dee{y}\,\dee{x}
+\end{equation*}
+</div>
+<p>(c) In polar coordinates, the line \(y=x\) is \(\theta=\frac{\pi}{4}\text{,}\) the circle \(x^2+y^2=4\) is \(r=2\text{,}\) and \(\dee{x}\,\dee{y}=r\,\dee{r}\,\dee{\theta}\text{.}\) So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+J&amp;=\int_0^{\pi/4}\dee{\theta}\int_0^2\dee{r}\ r
+\overbrace{\frac{r\sin\theta}{r\cos\theta}}^{\frac{y}{x}}e^{r^2}\\
+&amp;=\int_0^{\pi/4}\dee{\theta}\ \frac{\sin\theta}{\cos\theta}
+\left[\frac{1}{2} e^{r^2}\right]_0^2\\
+&amp;=-\frac{1}{2}\left[e^4-1\right] \int_1^{1/\sqrt{2}}\dee{u}\ \frac{1}{u}
+\qquad\text{with }u=\cos\theta,\ \dee{u}=-\sin\theta\,\dee{\theta}\\
+&amp;=-\frac{1}{2}\left[e^4-1\right]\ \Big[\ln|u|\Big]_1^{1/\sqrt{2}}\\
+&amp;= \frac{1}{4}\left[e^4-1\right]\ln 2
+\end{align*}
+</div>
+</div>
+<span class="incontext"><a href="sec_polars.html#solution-1875">in-context</a></span>
+</body>
+</html>

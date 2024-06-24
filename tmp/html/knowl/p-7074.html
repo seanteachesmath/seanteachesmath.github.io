@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:59:33-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<ul class="disc">
+<li>Solution 1: Before we choose parts, let's use the identity \(\sin(2x) = 2\sin x \cos x\text{.}\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int x\sin x \cos x \dee{x}&amp;=\frac{1}{2}\int x \sin(2x)\dee{x}\\
+\end{align*}
+<p class="intertext">Now let \(u= x\text{,}\) \(\dee{v}=\sin(2x)\dee{x}\text{;}\) \(\dee{u}=\dee{x}\text{,}\) and \(v=-\frac{1}{2}\cos (2x) \text{.}\) Using integration by parts:</p>
+\begin{align*}
+&amp;=\frac{1}{2}\left[-\frac{x}{2}\cos (2x) +\frac{1}{2} \int \cos (2x) \dee{x}\right]\\
+&amp;=-\frac{x}{4}\cos (2x) +\frac{1}{8}\sin (2x) +C\\
+&amp;=-\frac{x}{4}(1-2\sin^2x) +\frac{1}{4}\sin x\cos x +C\\
+&amp;=-\frac{x}{4} + \frac{x}{2}\sin^2x+\frac{1}{4}\sin x \cos x +C
+\end{align*}
+</div>
+</li>
+<li>Solution 2: If we let \(u=x\text{,}\) then \(\dee{u}=\dee{x}\text{,}\) and this seems desirable for integration by parts. If \(u=x\text{,}\) then \(\dee{v} = \sin x \cos x \dee{x}\text{.}\) To find \(v\) we can use the substitution \(u=\sin x\text{,}\) \(\dee{u}=\cos x \dee{x}\text{.}\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+v=\int \sin x  \cos x \dee{x}&amp;=\int u \dee{u} = \frac{1}{2}u^2+C = \frac{1}{2}\sin^2 x +C\\
+\end{align*}
+<p class="intertext">So, we take \(v = \frac{1}{2}\sin^2 x\text{.}\) Now we can apply integration by parts to our original integral.</p>
+\begin{align*}
+\int x\sin x \cos x \dee{x}&amp;=\frac{x}{2}\sin^2 x - \int \frac{1}{2}\sin^2 x \dee{x}\\
+\end{align*}
+<p class="intertext">Apply the identity \(\sin^2x = \dfrac{1-\cos(2x)}{2}\text{.}\)</p>
+\begin{align*}
+&amp;=\frac{x}{2}\sin^2 x - \frac{1}{4}\int 1-\cos(2 x) \dee{x}\\
+&amp;=\frac{x}{2}\sin^2 x - \frac{x}{4} +\frac{1}{8}\sin(2 x)+C\\
+&amp;=\frac{x}{2}\sin^2 x - \frac{x}{4} +\frac{1}{4}\sin x \cos x+C
+\end{align*}
+</div>
+</li>
+<li>Solution 3: Let \(u=x\sin x\) and \(\dee{v}=\cos x \dee{x}\text{;}\) then \(\dee{u} = (x\cos x + \sin x)\dee{x}\) and \(v = \sin x\text{.}\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int x\sin x  \cos x \dee{x}&amp;=x\sin^2 x - \int  \sin x(x\cos x + \sin x)\dee{x}\\
+&amp;=x\sin^2 x - \int x \sin x \cos x\dee{x} - \int \sin^2 x\dee{x}\\
+\end{align*}
+<p class="intertext">Apply the identity \(\sin^2 x = \dfrac{1-\cos(2x)}{2}\) to the second integral.</p>
+\begin{align*}
+&amp;=x\sin^2 x - \int x \sin x \cos x\dee{x} - \int \dfrac{1-\cos(2x)}{2}\dee{x}\\
+&amp;=x\sin^2 x - \int x \sin x \cos x\dee{x} - \frac{x}{2} +\frac{1}{4}\sin(2x)+C\\
+\end{align*}
+<p class="intertext">So, we have the equation</p>
+\begin{align*}
+\color{red}{\int x\sin x  \cos x \dee{x}}&amp;=x\sin^2 x -\textcolor{red}{ \int x \sin x \cos x\dee{x}} \\
+&amp;\hskip1in- \frac{x}{2} + \frac{1}{4}\sin(2x)+C\\
+\color{red}{2\int x\sin x  \cos x \dee{x}} &amp;=x\sin^2 x - \frac{x}{2} + \frac{1}{4}\sin(2x)+C\\
+\int x\sin x  \cos x \dee{x}&amp;=\frac{x}{2}\sin^2 x - \frac{x}{4} + \frac{1}{8}\sin(2x)+\frac{C}{2}\\
+&amp;=\frac{x}{2}\sin^2 x - \frac{x}{4} + \frac{1}{4}\sin x\cos x+\frac{C}{2}
+\end{align*}
+</div>Since \(C\) is an arbitrary constant that can take any number in \((-\infty,\infty)\text{,}\) also \(\frac{C}{2}\) is an arbitrary constant that can take any number in \((-\infty,\infty)\text{,}\) so we're free to rename \(\frac{C}{2}\) to \(C\text{.}\)</li>
+</ul>
+<span class="incontext"><a href="sec_trigint.html#p-7074">in-context</a></span>
+</body>
+</html>

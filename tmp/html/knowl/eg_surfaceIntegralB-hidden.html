@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:09:55-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>Consider a spherical shell of radius \(a\) with mass density \(\mu\) per unit area. Think of it as a hollow planet<a class="fn-knowl original" data-knowl="./knowl/fn-621-hidden.html" title="Footnote 14.3.9"><sup> 9 </sup></a>. We are going to determine the gravitational force that it exerts on a particle of mass \(m\) a distance \(b\) away from its centre. This particle can be either outside the shell (\(b \gt a\)) or inside the shell (\(b \lt a\)). We can choose the coordinate system so that the centre of the shell is at the origin and the particle is at \((0,0,b)\text{.}\) By Newton's law of gravitation, the force exerted on the particle by a tiny piece of the shell of surface area \(\dee{S}\) located at \(\vr\) is</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{G\,(\mu\dee{S})\,m}{|\vr-(0,0,b)|^3}(\vr-(0,0,b))
+\end{equation*}
+</div>
+<p data-braille="continuation">Here \(G\) is the gravitational constant, \(\mu\dee{S}\) is the mass of the tiny piece of shell, \(m\) is the mass of the particle</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:6.25%;margin-right:6.25%;">
+<div class="sbspanel" style="width:40%;justify-content:center;"><img src="figs/shell.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:45.7142857142857%;justify-content:center;"><img src="figs/shellB.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>and \(\vr-(0,0,b)\) is the vector from the particle to the piece of shell. If we work in spherical coordinates, as we did in Example <a class="xref" data-knowl="./knowl/eg_SphereAreaSC.html" title="Example 14.3.6: Area of a hemisphere — using spherical coordinates">14.3.6</a>,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dee{S} &amp;= a^2\sin\varphi\,\dee{\varphi}\dee{\theta}
+\end{align*}
+</div>
+<p data-braille="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vr &amp;= a\sin\varphi\cos\theta\,\hi
++ a\sin\varphi\sin\theta\,\hj
++ a\cos\varphi\,\hk\\
+\vr-(0,0,b) &amp;= a\sin\varphi\cos\theta\,\hi
++ a\sin\varphi\sin\theta\,\hj
++ (a\cos\varphi-b)\,\hk\\
+|\vr-(0,0,b)|^2 &amp;= a^2+b^2 -2ab\cos\varphi
+\end{align*}
+</div>
+<p data-braille="continuation">The total force is then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\vF =
+G\mu m a^2\int_0^\pi\!\!\dee{\varphi} \int_0^{2\pi}\!\!\dee{\theta}\ \sin\varphi\
+\frac{a\sin\varphi\cos\theta\,\hi
+\!+\! a\sin\varphi\sin\theta\,\hj
+\!+\! (a\cos\varphi\!-\!b)\,\hk}
+{\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
+\end{gather*}
+</div>
+<p data-braille="continuation">Note for future reference that the square root in \([a^2+b^2 -2ab\cos\varphi]^{3/2}\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">positive</em> square root because \([b^2+a^2 -2ab\cos\varphi]^{1/2}\) is the length of \(\vr-(0,0,b)\text{,}\) which is positive.</p>
+<p>This integral is a little different than other integrals that we have encountered so far in that the integrand is a vector. By definition<a class="fn-knowl original" data-knowl="./knowl/fn-622-hidden.html" title="Footnote 14.3.10"><sup> 10 </sup></a>,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\dblInt_S \big[G_1\,\hi + G_2\,\hj + G_3\,\hk \big]\ \dee{S}
+=\hi \dblInt_S G_1\ \dee{S}
++\hj \dblInt_S G_2\ \dee{S}
++\hk \dblInt_S G_3\ \dee{S}
+\end{equation*}
+</div>
+<p data-braille="continuation">so we just have to compute the three components separately.</p>
+<p>In our case, the \(\hi\) and \(\hj\) components</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vF\cdot\hi &amp; = G\mu m a^2 \int_0^\pi\dee{\varphi} \left[
+\sin\varphi\
+\frac{a\sin\varphi}
+{\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
+\int_0^{2\pi}\dee{\theta}\ \cos\theta
+\right]\\
+\vF\cdot\hj &amp; = G\mu m a^2\int_0^\pi\dee{\varphi}\left[
+\sin\varphi\
+\frac{a\sin\varphi}
+{\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
+\int_0^{2\pi}\dee{\theta}\ \sin\theta
+\right]
+\end{align*}
+</div>
+<p data-braille="continuation">are both zero<a class="fn-knowl original" data-knowl="./knowl/fn-623-hidden.html" title="Footnote 14.3.11"><sup> 11 </sup></a> because \(\int_0^{2\pi}\cos\theta\ \dee{\theta}
+=\int_0^{2\pi}\sin\theta\ \dee{\theta}
+=0\) so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vF
+&amp;=  G\mu m a^2 \hk\int_0^\pi\dee{\varphi} \int_0^{2\pi}\dee{\theta}\ \sin\varphi\
+\frac{a\cos\varphi-b}
+{\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}\\
+&amp;=  2\pi G\mu m a^2 \hk\int_0^\pi\dee{\varphi}\ \sin\varphi\
+\frac{a\cos\varphi-b}
+{\big[a^2+b^2 -2ab\cos\varphi\big]^{3/2}}
+\end{align*}
+</div>
+<p data-braille="continuation">To evaluate this integral we substitute</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+u=a^2+b^2 -2ab\cos\varphi\qquad
+\dee{u} = 2ab\sin\varphi\,\dee{\varphi}\qquad
+\cos\varphi = \frac{a^2+b^2-u}{2ab}
+\end{gather*}
+</div>
+<p data-braille="continuation">When \(\varphi=0\text{,}\) \(u=(a-b)^2\) and when \(\varphi =\pi\text{,}\) \(u=(a+b)^2\text{,}\) so</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vF
+&amp;=  \frac{\pi G\mu m a}{b} \hk\int_{(a-b)^2}^{(a+b)^2}
+\dee{u}\  \frac{\frac{a^2+b^2-u}{2b}-b}  {u^{3/2}}\\
+&amp;=  \frac{\pi G\mu m a}{b} \hk\int_{(a-b)^2}^{(a+b)^2}
+\dee{u}\  \frac{\frac{a^2-b^2-u}{2b}}  {u^{3/2}}\\
+&amp;=  \frac{\pi G\mu m a}{b} \hk\Big[
+\Big(\frac{a^2-b^2}{2b}\Big)\frac{u^{-1/2}}{-1/2}
+-\Big(\frac{1}{2b}\Big)\frac{u^{1/2}}{1/2}
+\Big]_{(a-b)^2}^{(a+b)^2}
+\end{align*}
+</div>
+<p data-braille="continuation">Recalling that \(u^{1/2}\) is the <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">positive</em> square root,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vF&amp;=\frac{\pi G\mu m a}{b} \hk\Big[
+\Big(\frac{b^2-a^2}{b}\Big)\frac{1}{a+b}
+-\frac{a+b}{b}
+-\Big(\frac{b^2-a^2}{b}\Big)\frac{1}{|a-b|}
++\frac{|a-b|}{b}
+\Big]
+\end{align*}
+</div>
+<p data-braille="continuation">If \(b \gt a\text{,}\) so that \(|a-b|=b-a\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vF&amp;=\frac{\pi G\mu m a}{b} \hk\Big[
+\frac{b-a}{b}
+-\frac{a+b}{b}
+-\frac{a+b}{b}
++\frac{b-a}{b}
+\Big]
+=-\frac{G(4\pi a^2\mu)m}{b^2} \hk
+\end{align*}
+</div>
+<p data-braille="continuation">If \(b \lt a\text{,}\) so that \(|a-b|=a-b\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vF&amp;=\frac{\pi G\mu m a}{b} \hk\Big[
+\frac{b-a}{b}
+-\frac{a+b}{b}
++\frac{a+b}{b}
++\frac{a-b}{b}
+\Big]
+=0
+\end{align*}
+</div>
+<p data-braille="continuation">The moral<a class="fn-knowl original" data-knowl="./knowl/fn-624-hidden.html" title="Footnote 14.3.12"><sup> 12 </sup></a> is</p>
+<ul class="disc">
+<li>if the particle is inside the shell, it feels no gravitational force at all, and</li>
+<li>if the particle is outside the shell, it feels the same gravitational force as it would if the entire mass of the shell (\(4\pi a^2\mu\)) were concentrated at the centre of the shell.</li>
+</ul></article></body>
+</html>

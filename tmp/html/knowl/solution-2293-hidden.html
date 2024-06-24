@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:15:10-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>As \(\vF\) looks complicated, we will probably want to avoid evaluating the flux integral directly. Let's first compute the divergence of \(\vF\text{,}\) to see if it looks wise to use the divergence theorem instead.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\vnabla\cdot\vF =
+\pdiff{}{x}\big(\cos z + xy^2\big)
++\pdiff{}{y}\big(xe^{-z}\big)
++\pdiff{}{z}\big(\sin y + x^2 z\big)
+=y^2+x^2
+\end{gather*}
+</div>
+<p data-braille="continuation">Looks promising. Furthermore \(S\) is the boundary of the solid region</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:52.6315789473684%;justify-content:center;"><p xmlns:svg="http://www.w3.org/2000/svg">\(V=\Set{(x,y,z)}{x^2+y^2\le z\le 4}\)</p></div>
+<div class="sbspanel" style="width:42.1052631578947%;justify-content:center;"><img src="pfigs/OE07A_4.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p>So the divergence theorem gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_S \vF \cdot\hn\,\dee{S}
+&amp;=\tripInt_V \vnabla\cdot\vF\ \dee{V}
+=\tripInt_V  (x^2+y^2)\ \dee{V}
+\end{align*}
+</div>
+<p data-braille="continuation">To compute the triple integral, we'll use the cylindrical coordinates \((r,\theta,z)\text{.}\) The \(z\)-coordinate runs from \(0\) to \(4\text{.}\) For each fixed \(0\le z \le 4\) (see the blue disk in the figure below — which shows the part of \(V\) in the first octant),</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE07A_4b.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>\((x,y)\) runs over \(0\le x^2+y^2 \le z\text{,}\) which in cylindrical coordinates is \(0\le r^2\le z\) or \(0\le r\le\sqrt{z}\text{.}\) So the flux and the triple integral are</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_S \vF \cdot\hn\,\dee{S}
+&amp;=\tripInt_V  (x^2+y^2)\ \dee{V}\\
+&amp;=\int_0^4\dee{z}\int_0^{\sqrt{z}}\dee{r}\ r\int_0^{2\pi}\dee{\theta}\   r^2\\
+&amp;=2\pi \int_0^4\dee{z}\int_0^{\sqrt{z}}\dee{r}\ r^3\\
+&amp;=2\pi \int_0^4\dee{z}\ \frac{z^2}{4}
+=2\pi \frac{4^3}{3\times 4}\\
+&amp;=\frac{32}{3}\pi
+\end{align*}
+</div>
+</div></body>
+</html>

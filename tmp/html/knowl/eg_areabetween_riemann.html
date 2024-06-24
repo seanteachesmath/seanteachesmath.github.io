@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:55:19-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">The area between \(y=4-x^2\) and \(y=x\).</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Find the area bounded by the curves \(y=4-x^2\text{,}\) \(y=x\text{,}\) \(x=-1\) and \(x=1\text{.}\)</p>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="alert">Solution:</em></p>
+<ul class="disc">
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">Before we do any calculus, it is a very good idea to make a sketch of the area in  question. The curves \(y=x\text{,}\) \(x=-1\) and \(x=1\) are all straight lines, while the curve  \(y=4-x^2\) is a parabola whose apex is at \((0,4)\) and then curves down  (because of the  minus sign in \(-x^2\)) with \(x\)-intercepts at \((\pm2,0)\text{.}\) Putting these together gives</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/area_between3.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Notice that the curves \(y=4-x^2\) and \(y=x\) intersect when \(4-x^2=x\text{,}\) namely when \(x= \frac{1}{2}\left(-1\pm\sqrt{17}\right) \approx 1.56,-2.56\text{.}\) Hence the curve \(y=4-x^2\)  lies above the line \(y=x\) for all \(-1\le x\le 1\text{.}\)</p>
+</li>
+<li>We are to find the area of the shaded region. Each point \((x,y)\) in this  shaded region has \(-1\le x\le 1\) and \(x \le y \le 4-x^2\text{.}\) When we were defining the integral (way back in Definition <a class="xref" data-knowl="./knowl/def_INTintegral.html" title="Definition 6.1.9">6.1.9</a>) we used \(a\) and \(b\)  to denote the smallest and largest allowed values of \(x\text{;}\) let's do that here too.  Let's also use \(B(x)\) to denote the bottom curve (i.e. to denote the smallest allowed  value of \(y\) for a given \(x\)) and use \(T(x)\) to denote the top curve (i.e. to denote the  largest allowed value of \(y\) for a given \(x\)). So in this example<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+a=-1&amp;&amp; b=1&amp;&amp; B(x)=x&amp;&amp; T(x)=4-x^2
+\end{align*}
+</div>and the shaded region is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\big\{\ (x,y)\ \big|\ a\le x\le b,\ B(x)\le y\le T(x)\ \big\}
+\end{gather*}
+</div>
+</li>
+<li>
+<p>We use the same strategy as we used when defining the integral in  Section <a href="sec_intdef.html#sec_defInt" class="internal" title="Subsection 6.1.4: The Definition of the Definite Integral">6.1.4</a>:</p>
+<ul class="circle">
+<li>Pick a natural number \(n\) (that we will later send to infinity), then</li>
+<li>subdivide the region into \(n\) narrow slices, each of width \(\De x=\frac{b-a}{n}\text{.}\)</li>
+<li>For each \(i=1,2,\cdots,n\text{,}\) slice number \(i\) runs from \(x=x_{i-1}\) to \(x=x_i\text{,}\) and we  approximate its area by the area of a rectangle. We pick a number \(x_i^*\) between  \(x_{i-1}\) and \(x_i\) and approximate the slice by a rectangle whose top is at \(y=T(x_i^*)\)  and whose bottom is at \(y=B(x_i^*)\text{.}\)</li>
+<li>Thus the area of slice \(i\) is approximately \(\big[T(x_i^*)-B(x_i^*)\big]\De x\) (as  shown in the figure below).</li>
+</ul>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/area_between4.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li>So the Riemann sum approximation of the area is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Area} &amp;\approx \sum_{i=1}^n  \big[T(x_i^*)-B(x_i^*)\big]\De x
+\end{align*}
+</div>
+</li>
+<li>By taking the limit as \(n \to \infty\) (i.e. taking the limit as the width of the  rectangles goes to zero), we convert the Riemann sum into a definite integral (see  Definition <a class="xref" data-knowl="./knowl/def_INTintegral.html" title="Definition 6.1.9">6.1.9</a>) and at the same time our approximation of the area  becomes the exact area:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{n\rightarrow\infty}\sum_{i=1}^n  \big[T(x_i^*)-B(x_i^*)\big]\De x
+&amp;=\int_a^b \big[T(x)-B(x)\big]\dee{x} \\
+&amp;\hskip1in \text{Riemann sum $\to$ integral}\\
+&amp;=\int_{-1}^1\big[(4-x^2)-x\big]\dee{x}\\
+&amp;=\int_{-1}^1\big[4-x-x^2\big]\dee{x}\\
+&amp;=\bigg[4x - \frac{x^2}{2} - \frac{x^3}{3} \bigg]_{-1}^1\\
+&amp;= \left(4 - \frac{1}{2}-\frac{1}{3} \right) - \left(-4-\frac{1}{2}+\frac{1}{3} \right)\\
+&amp;= \frac{24-3-2}{6} - \frac{-24-3+2}{6}\\
+&amp;= \frac{19}{6} + \frac{25}{6}\\
+&amp;= \frac{44}{6} = \frac{22}{3}.
+\end{align*}
+</div>
+</li>
+</ul></article><span class="incontext"><a href="sec_area.html#eg_areabetween_riemann">in-context</a></span>
+</body>
+</html>

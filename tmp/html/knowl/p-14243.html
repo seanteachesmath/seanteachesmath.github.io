@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:50:04-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>That is, the volume of metal removed will be eight times the volume of the solid</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\cV_1 = \Set{(x,y,z)}{(x,y)\in\cR_1,\ 0\le z\le\sqrt{a^2-x^2-y^2}}
+\end{equation*}
+</div>
+<p data-braille="continuation">where the base region</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\cR_1 = \Set{(x,y)}{x^2+y^2\le b^2,\ x\ge 0,\ y\ge 0}
+\end{equation*}
+</div>
+<p data-braille="continuation">In polar coordinates</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\cV_1 &amp;= \Set{(r\cos\theta,r\sin\theta,z)}{(r\cos\theta,r\sin\theta)\in\cR_1,\
+0\le z\le\sqrt{a^2-r^2}}\\
+\cR_1 &amp;= \Set{(r\cos\theta,r\sin\theta)}{0\le r\le b,\
+0\le\theta\le\frac{\pi}{2}}
+\end{align*}
+</div>
+<p data-braille="continuation">We follow our standard divide and sum up strategy. We will cut the base region \(\cR_1\) into small pieces and sum up the volumes that lie above each small piece.</p>
+<ul class="disc">
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">Divide \(\cR_1\) into wedges by drawing in many lines of constant \(\theta\text{,}\) with the various values of \(\theta\) differing by a tiny amount \(\dee{\theta}\text{.}\) The figure on the left below shows one such wedge, outlined in blue.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figs/appleCore1.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="figs/appleCore2.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+</li>
+<li>Concentrate on any one wedge. Subdivide the wedge further into approximate rectangles by drawing in many circles of constant \(r\text{,}\) with the various values of \(r\) differing by a tiny amount \(\dee{r}\text{.}\) The figure on the right above shows one such approximate rectangle, in black.</li>
+<li>
+<p>Concentrate on one such rectangle. Let's say that it contains the point with polar coordinates \(r\) and \(\theta\text{.}\) As we saw in <a class="xref" data-knowl="./knowl/eq_dA_polar.html" title="Equation 11.2.5">11.2.5</a> above,</p>
+<ul class="circle">
+<li>the area of that rectangle is essentially \(\dee{A} =  r\,\dee{r}\,\dee{\theta}\text{.}\)</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">The part of \(\cV_1\) that is above that rectangle is like an office tower whose height is essentially \(\sqrt{a^2-r^2}\text{,}\) and whose base has area \(\dee{A} =  r\,\dee{r}\,\dee{\theta}\text{.}\) It is outlined in black in the figure below. So the volume of the part of \(\cV_1 \) that is above the rectangle is essentially \(\sqrt{a^2-r^2}\,r\,\dee{r}\,\dee{\theta}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/appleCore3.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+</ul>
+</li>
+<li>
+<p>To get the volume of the part of \(\cV_1\) above any one wedge (outlined in blue in the figure below),  say the wedge whose polar angle runs from \(\theta\) to \(\theta+\dee{\theta}\text{,}\) we just add up the volumes above the approximate rectangles in that wedge, by integrating \(r\) from its smallest value on the wedge, namely \(0\text{,}\) to its largest value on the wedge, namely \(b\text{.}\) The volume above the wedge is thus</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dee{\theta} \int_0^b  \dee{r}\,r\, \sqrt{a^2-r^2}
+&amp;= \dee{\theta} \int_{a^2}^{a^2-b^2}  \frac{\dee{u}}{-2}\, \sqrt{u}\\
+&amp;\hskip0.5in   \text{where } u= a^2-r^2,\ \dee{u} =-2r\,\dee{r}\\
+&amp;=  \dee{\theta}\left[\frac{u^{3/2}}{-3}\right]_{a^2}^{a^2-b^2}\\
+&amp;=  \frac{1}{3}\dee{\theta}\left[a^3-{\big(a^2-b^2\big)}^{3/2}\right]
+\end{align*}
+</div>
+<p data-braille="continuation">Notice that this quantity is independent of \(\theta\text{.}\) If you think about this for a moment, you can see that this is a consequence of the fact that our solid is invariant under rotations about the \(z\)-axis.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/appleCore4.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li>Finally, to get the volume of \(\cV_1\text{,}\) we just add up the volumes over all of the different wedges, by integrating \(\theta\) from its smallest value on \(\cR_1\text{,}\) namely \(0\text{,}\) to its largest value on \(\cR_1\text{,}\) namely \(\frac{\pi}{2}\text{.}\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Volume}(\cV_1)
+&amp;=\frac{1}{3}\int_0^{\pi/2}\dee{\theta}
+\left[a^3-{\big(a^2-b^2\big)}^{3/2}\right]\\
+&amp;=\frac{\pi}{6}\left[a^3-{\big(a^2-b^2\big)}^{3/2}\right]
+\end{align*}
+</div>
+</li>
+<li>In conclusion, the total volume of metal removed is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Volume}(\cV)
+&amp;=8\,\text{Volume}(\cV_1)\\
+&amp;=\frac{4\pi}{3}\left[a^3-{\big(a^2-b^2\big)}^{3/2}\right]
+\end{align*}
+</div>
+</li>
+</ul>
+<span class="incontext"><a href="sec_polars.html#p-14243">in-context</a></span>
+</body>
+</html>

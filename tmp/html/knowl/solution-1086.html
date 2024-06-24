@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:07:35-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">6.13.1.32.1</span><span class="period">.</span>
+</h6>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\int_{0.1}^{0.2} \frac{\tan x}{\log(\cos x)}  \dee{x}
+\end{equation*}
+</div>
+<p>It might not be immediately obvious how to proceed on this one, so this is another example of an integral where you should not be discouraged by finding methods that don't work. One thing that's worked for us in the past is to use a \(u\)-substitution with the denominator. With that in mind, let's find the derivative of the denominator.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\diff{}{x}\left\{\log(\cos x)\right\}= \frac{1}{\cos x}\cdot (-\sin x) = \frac{-\sin x}{\cos x} = -\tan x
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">So, if we let \(u=\log(\cos x\)), we see \(-\dee{u}=\tan x \dee{x}\text{,}\) which will work for a substitution.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_{0.1}^{0.2} \frac{\tan x}{\log(\cos x)}  \dee{x}&amp;=
+\int_{\log(\cos(0.1))}^{\log(\cos(0.2))} \frac{-\dee{u}}{u}\\
+&amp;=\Big[-\log|u|\Big]_{\log(\cos(0.1))}^{\log(\cos(0.2))}\\
+&amp;=
+-\log|\log(\cos 0.2)|+\log|\log(\cos 0.1)|\\
+&amp;={\log\left|\frac{\log(\cos(0.1))}{\log(\cos(0.2))}\right|}\\
+&amp;=
+\log\left(\frac{\log(\cos(0.1))}{\log(\cos(0.2))}\right)
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Things to notice: the integrand is only defined when \(\log(\cos x)\) exists AND is nonzero. So, for instance, it is not defined when \(x=0\text{,}\) because then \(\log\cos x = \log1=0\text{,}\) and we can't divide by zero.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">In the final simplification, since \(0.1\) and \(0.2\) are between 0 and \(\pi/2\text{,}\) the cosine term is positive but less than one, so \(\log(\cos 0.1)\) and \(\log(\cos 0.2)\) are both negative; then their quotient is positive, so we can drop the absolute value signs.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Using the base change formula, we can also write the final answer as \(\log\left(\log_{\cos (0.2)}\cos(0.1)\right)\text{.}\)</p>
+</div>
+<span class="incontext"><a href="section-51.html#solution-1086">in-context</a></span>
+</body>
+</html>

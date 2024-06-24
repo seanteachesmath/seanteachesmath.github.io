@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:29:20-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>In this example, we'll evaluate <a class="fn-knowl original" data-knowl="./knowl/fn-380-hidden.html" title="Footnote 8.6.24"><sup> 24 </sup></a> the harder limit</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\lim_{x\rightarrow 0}\frac{\cos x -1 + \half x\sin x}{{[\log(1+x)]}^4}
+\end{equation*}
+</div>
+<p data-braille="continuation">The first thing to notice about this limit is that, as \(x\) tends to zero, the numerator</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\cos x -1 + \half x\sin x &amp;\to \cos 0 -1 +\half\cdot 0\cdot\sin 0=0
+\end{align*}
+</div>
+<p data-braille="continuation">and the denominator</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+[\log(1+x)]^4 &amp; \to [\log(1+0)]^4=0
+\end{align*}
+</div>
+<p data-braille="continuation">too. So both the numerator and denominator tend to zero and we may not simply evaluate  the limit of the ratio by taking  the limits of the numerator and denominator and dividing.</p>
+<p>To find the limit, or show that it does not exist, we are going to have to exhibit a cancellation between the numerator  and the denominator. To develop a strategy for evaluating this limit, let's do a “little scratch work”, starting by  taking a closer look at the denominator. By Example <a class="xref" data-knowl="./knowl/eg_bigohlog.html" title="Example 8.6.25: Logarithms and the big O">8.6.25</a>,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\log(1+x) = x+O(x^2)
+\end{gather*}
+</div>
+<p data-braille="continuation">This tells us that \(\log(1+x)\) looks a lot like \(x\) for very small \(x\text{.}\) So the denominator \([x+O(x^2)]^4\) looks a lot like \(x^4\) for very small \(x\text{.}\) Now, what about the numerator?</p>
+<ul class="disc">
+<li>If the numerator looks like some constant times \(x^p\) with \(p \gt 4\text{,}\)  for very small \(x\text{,}\) then the ratio will look like the constant times  \(\frac{x^p}{x^4}=x^{p-4}\) and, as \(p-4 \gt 0\text{,}\) will tend to \(0\) as \(x\)  tends to zero.</li>
+<li>If the numerator looks like some constant times \(x^p\) with \(p \lt 4\text{,}\)  for very small \(x\text{,}\) then the ratio will look like the constant times  \(\frac{x^p}{x^4}=x^{p-4}\) and will, as \(p-4 \lt 0\text{,}\) tend to infinity,  and in particular diverge, as \(x\) tends to zero.</li>
+<li>If the numerator looks like  \(Cx^4\text{,}\) for very small \(x\text{,}\) then  the ratio will look like \(\frac{Cx^4}{x^4}=C\) and will tend to \(C\) as  \(x\) tends to zero.</li>
+</ul>
+<p data-braille="continuation">The moral of the above “scratch work” is that we need to know the  behaviour of the numerator, for small \(x\text{,}\) up to order \(x^4\text{.}\) Any  contributions of order \(x^p\) with \(p \gt 4\) may be put into error  terms \(O(|x|^p)\text{.}\)</p>
+<p>Now we are ready to evaluate the limit. Because the expressions  are a little involved, we will simplify the numerator  and denominator separately and then put things together. Using the expansions we developed in Example <a class="xref" data-knowl="./knowl/eg_bigohsincos.html" title="Example 8.6.21: Sine and the big O">8.6.21</a>, the numerator,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\cos x -1 + \frac{1}{2} x\sin x
+&amp;=
+\left( 1 - \frac{1}{2!}x^2 + \frac{1}{4!}x^4 + O(|x|^6) \right)\\
+&amp;\phantom{=\ } -1  + \frac{x}{2}\left( x - \frac{1}{3!}x^3 + O(|x|^5) \right)
+&amp; \text{expand}\\
+&amp;=  \left( \frac{1}{24}-\frac{1}{12} \right)x^4 + O(|x|^6) + \frac{x}{2} O(|x|^5)\\
+\end{align*}
+<p class="intertext">Then by Remark <a class="xref" data-knowl="./knowl/rem_bigohppties.html" title="Remark 8.6.27">8.6.27</a>(b)</p>
+\begin{align*}
+&amp;=  - \frac{1}{24}x^4 + O(|x|^6) + O(|x|^6)\\
+\end{align*}
+<p class="intertext">and now by Remark<a class="xref" data-knowl="./knowl/rem_bigohppties.html" title="Remark 8.6.27">8.6.27</a>(c)</p>
+\begin{align*}
+&amp;= - \frac{1}{24}x^4 + O(|x|^6)
+\end{align*}
+</div>
+<p data-braille="continuation">Similarly, using the expansion that we developed in Example <a class="xref" data-knowl="./knowl/eg_bigohlog.html" title="Example 8.6.25: Logarithms and the big O">8.6.25</a>,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+[ \log(1+x) ]^4 &amp;= \big[ x + O(|x|^2) \big]^4\\
+&amp;= \big[x + x O(|x|)\big]^4 &amp; \text{by Remark }\knowl{./knowl/rem_bigohppties.html}{\text{8.6.27}}\text{(b)}\\
+&amp;= x^4 [1 +  O(|x|)]^4
+\end{align*}
+</div>
+<p data-braille="continuation">Now put these together and take the limit as \(x \to 0\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\lim_{x \to 0}
+\frac{\cos x -1 + \half x\sin x}{[\log(1+x)]^4}
+&amp;= \lim_{x \to 0}
+\frac{ -\frac{1}{24}x^4 + O(|x|^6)}{x^4 [1+O(|x|)]^4}\\
+&amp;= \lim_{x \to 0}
+\frac{-\frac{1}{24}x^4 + x^4O(|x|^2)}{x^4 [1+O(|x|)]^4}&amp; \text{by Remark }\knowl{./knowl/rem_bigohppties.html}{\text{8.6.27}}\text{(b)}\\
+&amp;= \lim_{x \to 0}
+\frac{-\frac{1}{24} + O(|x|^2)}{[1+O(|x|)]^4}\\
+&amp;= -\frac{1}{24} &amp; \text{by Remark }\knowl{./knowl/rem_bigohppties.html}{\text{8.6.27}}\text{(a)}.
+\end{align*}
+</div></article></body>
+</html>

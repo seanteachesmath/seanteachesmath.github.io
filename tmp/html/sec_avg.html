@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T15:33:28-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Averages</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_work.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_int_app.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_com.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_work.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_int_app.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_com.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg" class="active">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_avg"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.2</span> <span class="title">Averages</span>
+</h2>
+<section class="introduction" id="introduction-253"><p id="p-8676">Another frequent <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-288" id="fn-288"><sup> 1 </sup></a> application of integration is  computing averages and other statistical quantities. We will not spend too much time on  this topic — that is best left to a proper course in statistics — however, we will  demonstrate the application of integration to the problem of computing averages.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-288"><div class="fn">Awful pun. The two main approaches to statistics are  frequentism and Bayesianism; the latter named after Bayes' Theorem which is, in turn,  named for Reverend Thomas Bayes. While this (both the approaches to statistics  and their history and naming) is a very interesting and quite  philosophical topic, it is beyond the scope of this course. The interested reader has  plenty of interesting reading here to interest them.</div></div>
+<p id="p-8677">Let us start with the definition <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-289" id="fn-289"><sup> 2 </sup></a> of the average of a finite set of numbers.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-289"><div class="fn">We are being a little loose here with the distinction between mean and average. To be  much more pedantic — the average is the arithmetic mean. Other interesting “means” are  the geometric and harmonic means:<div class="displaymath">
+\begin{align*}
+\text{arithmetic mean} &amp;= \frac{1}{n}\left( y_1 + y_2 + \cdots + y_n \right)\\
+\text{geometric mean} &amp;= \left( y_1 \cdot y_2 \cdots y_n \right)^{\frac{1}{n}}\\
+\text{harmonic mean} &amp;= \left[\frac{1}{n}\left(  \frac{1}{y_1} + \frac{1}{y_2} + \cdots \frac{1}{y_n}  \right)\right]^{-1}
+\end{align*}
+</div>All of these quantities, along with the median and mode, are ways to measure the typical  value of a set of numbers. They all have advantages and disadvantages — another  interesting topic beyond the scope of this course, but plenty of fodder for the  interested reader and their favourite search engine. But let us put pedantry (and  beyond-the-scope-of-the-course-reading) aside and just use the terms average and mean  interchangeably for our purposes here.</div></div>
+<article class="definition definition-like" id="def_avg"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-8678">The average (mean) of a set of \(n\) numbers \(y_1\text{,}\) \(y_2\text{,}\) \(\cdots\text{,}\) \(y_n\) is</p>
+<div class="displaymath">
+\begin{gather*}
+y_\ave =\bar y = \llt y\rgt =\frac{y_1+y_2+\cdots+y_n}{n}
+\end{gather*}
+</div>
+<p data-braille="continuation">The notations \(y_\ave\text{,}\) \(\bar y\) and \(\llt y\rgt\) are all commonly used to represent the average.</p></article><p id="p-8679">Now suppose that we want to take the average of a function \(f(x)\) with \(x\) running  continuously from \(a\) to \(b\text{.}\) How do we even define what that means? A natural approach is  to</p>
+<ul class="disc">
+<li id="li-3264">select, for each natural number \(n\text{,}\) a sample of \(n\text{,}\) more or  less uniformly distributed, values of \(x\) between \(a\) and \(b\text{,}\)</li>
+<li id="li-3265">take the average of the values of \(f\) at the selected points,</li>
+<li id="li-3266">and then take the limit as \(n\) tends to infinity.</li>
+</ul>
+<p data-braille="continuation">Unsurprisingly, this process looks very much like how we computed areas and volumes  previously. So let's get to it.</p>
+<ul class="disc">
+<li id="li-3267">First fix any natural number \(n\text{.}\)</li>
+<li id="li-3268">Subdivide the interval \(a\le x\le b\) into \(n\) equal subintervals,  each of width \(\De x=\frac{b-a}{n}\text{.}\)</li>
+<li id="li-3269">The subinterval number \(i\) runs from \(x_{i-1}\) to \(x_i\) with  \(x_i=a+i\frac{b-a}{n}\text{.}\)</li>
+<li id="li-3270">Select, for each \(1\le i\le n\text{,}\) one value of \(x\) from subinterval number \(i\) and call it \(x_i^*\text{.}\)  So \(x_{i-1}\le x_i^*\le x_i\text{.}\)</li>
+<li id="li-3271">The average value of \(f\) at the selected points is<div class="displaymath">
+\begin{align*}
+\frac{1}{n}\sum_{i=1}^n f(x_i^*)
+=&amp;\frac{1}{b-a}\sum_{i=1}^n f(x_i^*) \De x
+&amp;\text{since $\De x=\frac{b-a}{n}$}
+\end{align*}
+</div>giving us a Riemann sum.</li>
+</ul>
+<p data-braille="continuation">Now when we take the limit \(n\rightarrow\infty\) we get exactly \(\frac{1}{b-a}\int_a^b f(x)\dee{x}\text{.}\) That's why we define</p>
+<article class="definition definition-like" id="def_AVaverage"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="period">.</span>
+</h6>
+<p id="p-8680">Let \(f(x)\) be an integrable function defined on the interval  \(a\le x\le b\text{.}\) The average value of \(f\) on that interval is</p>
+<div class="displaymath">
+\begin{gather*}
+f_\ave=\bar f=\llt f\rgt =\frac{1}{b-a}\int_a^b f(x)\dee{x}
+\end{gather*}
+</div></article><p id="p-8681">Consider the case when \(f(x)\) is positive. Then rewriting Definition <a class="xref" data-knowl="./knowl/def_AVaverage.html" title="Definition 7.2.2">7.2.2</a>  as</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:center;"><p id="p-8682">\(f_\ave\ (b-a) = \int_a^b f(x)\dee{x}\)</p></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:center;"><img src="text/figs/areaAve.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-8683">gives us a link between the average value and the area under the curve. The right-hand  side is the area of the region</p>
+<div class="displaymath">
+\begin{gather*}
+\big\{(x,y)\ \big|\ a\le x\le b,\ 0\le y\le f(x)\ \big\}
+\end{gather*}
+</div>
+<p data-braille="continuation">while the left-hand side can be seen as the area of a rectangle of width \(b-a\)  and height \(f_\ave\text{.}\) Since these areas must be the same, we interpret \(f_\ave\) as  the height of the rectangle which has the same width and the same area as  \(\big\{(x,y)\ \big|\ a\le x\le b,\ 0\le y\le f(x)\ \big\}\text{.}\)</p>
+<p id="p-8684">Let us start with a couple of simple examples and then work our way up to harder ones.</p>
+<article class="example example-like" id="example-327"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-327"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">An easy warm-up.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-327"><article class="example example-like"><p id="p-8685">Let \(f(x)= x\) and \(g(x)=x^2\) and compute their average values  over \(1 \leq x\leq 5\text{.}\)</p>
+<p id="p-8686"><em class="alert">Solution:</em> We can just plug things into the definition.</p>
+<div class="displaymath">
+\begin{align*}
+f_\ave &amp;= \frac{1}{5-1}\int_1^5 x \dee{x}\\
+&amp;= \frac{1}{4} \bigg[ \frac{x^2}{2} \bigg]_1^5\\
+&amp;= \frac{1}{8} (25-1) = \frac{24}{8}\\
+&amp;= 3
+\end{align*}
+</div>
+<p data-braille="continuation">as we might expect. And then</p>
+<div class="displaymath">
+\begin{align*}
+g_\ave &amp;= \frac{1}{5-1}\int_1^5 x^2 \dee{x}\\
+&amp;= \frac{1}{4} \bigg[ \frac{x^3}{3} \bigg]_1^5\\
+&amp;= \frac{1}{12} (125-1) = \frac{124}{12}\\
+&amp;= \frac{31}{3}
+\end{align*}
+</div></article></div>
+<p id="p-8687">Something a little more trigonometric</p>
+<article class="example example-like" id="example-328"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-328"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Average of sine.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-328"><article class="example example-like"><p id="p-8688">Find the average value of \(\sin(x)\) over \(0 \leq x \leq \frac{\pi}{2}\text{.}\)</p>
+<p id="p-8689"><em class="alert">Solution:</em> Again, we just need the definition.</p>
+<div class="displaymath">
+\begin{align*}
+\text{average} &amp;= \frac{1}{\frac{\pi}{2} - 0} \int_0^{\frac{\pi}{2}} \sin(x) \dee{x}\\
+&amp;= \frac{2}{\pi} \cdot \bigg[ -\cos(x) \bigg]_0^{\frac{\pi}{2}}\\
+&amp;= \frac{2}{\pi} (-\cos(\frac{\pi}{2})+\cos(0))\\
+&amp;= \frac{2}{\pi}.
+\end{align*}
+</div></article></div>
+<p id="p-8690">We could keep going… But better to do some more substantial examples.</p>
+<article class="example example-like" id="eg_AVvelocity"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_AVvelocity"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Average velocity.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_AVvelocity"><article class="example example-like"><p id="p-8691">Let \(x(t)\) be the position at time \(t\) of a car moving along the \(x\)-axis. The velocity of the car at time \(t\) is the derivative \(v(t)=x'(t)\text{.}\) The average velocity of the car over the time interval \(a\le t\le b\) is</p>
+<div class="displaymath">
+\begin{align*}
+v_\ave &amp;= \frac{1}{b-a}\int_a^b v(t)\dee{t}\\
+&amp;=\frac{1}{b-a}\int_a^b x'(t)\dee{t}\\
+&amp;=\frac{x(b)-x(a)}{b-a} &amp; \text{by the fundamental theorem of calculus.}
+\end{align*}
+</div>
+<p data-braille="continuation">The numerator in this formula is just the displacement (net distance travelled — if  \(x'(t)\ge 0\text{,}\) it's the distance travelled) between time \(a\) and time \(b\) and the  denominator is just the time it took.</p>
+<p id="p-8692">Notice that this is exactly the formula we used way back at the start of your  <em class="emphasis">differential</em> calculus class to help introduce the idea of the derivative. Of  course this is a very circuitous way to get to this formula — but it is reassuring that  we get the same answer.</p></article></div>
+<p id="p-8693">A very physics example.</p>
+<article class="example example-like" id="eg_peakvsrms"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_peakvsrms"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.6</span><span class="period">.</span><span class="space"> </span><span class="title">Peak vs RMS voltage.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_peakvsrms"><article class="example example-like"><p id="p-8694">When you plug a light bulb into a socket <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-290" id="fn-290"><sup> 3 </sup></a> and turn it on, it is subjected to a voltage</p>
+<div class="displaymath">
+\begin{align*}
+V(t) &amp;= V_0\sin(\omega t-\delta)
+\end{align*}
+</div>
+<p data-braille="continuation">where</p>
+<ul class="disc">
+<li id="li-3272">\(V_0=170\) volts,</li>
+<li id="li-3273">\(\omega=2\pi\times 60\) (which corresponds to \(60\) cycles per second <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-291" id="fn-291"><sup> 4 </sup></a>) and</li>
+<li id="li-3274">the constant \(\delta\) is an (unimportant) phase. It just shifts the time  at which the voltage is zero</li>
+</ul>
+<p data-braille="continuation">The voltage \(V_0\) is the “peak voltage” — the maximum value the voltage takes over  time. More typically we quote the “root mean square” voltage <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-292" id="fn-292"><sup> 5 </sup></a> (or RMS-voltage). In this example we explain the difference, but to  simplify the calculations, let us simplify the voltage function and just use</p>
+<div class="displaymath">
+\begin{align*}
+V(t) &amp;= V_0 \sin(t)
+\end{align*}
+</div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-290"><div class="fn">A normal household socket delivers  alternating current, rather than the direct current USB supplies. At the risk of yet  another “the interested reader” suggestion — the how and why household plugs supply  AC current is another worthwhile and interesting digression from studying integration.  The interested reader should look up the “War of Currents”. The diligent and  interested reader should bookmark this, finish the section and come back to it later.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-291"><div class="fn">Some  countries supply power at 50 cycles per second. Japan actually supplies both — 50  cycles in the east of the country and 60 in the west.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-292"><div class="fn">This example was  written in North America where the standard voltage supplied to homes is 120 volts. Most  of the rest of the world supplies homes with 240 volts. The main reason for this  difference is the development of the light bulb. The USA electrified earlier when the best  voltage for bulb technology was 110 volts. As time went on, bulb technology improved and  countries that electrified later took advantage of this (and the cheaper transmission  costs that come with higher voltage) and standardised at 240 volts. So many digressions in this section!</div></div>
+<p id="p-8695">Since the voltage is a sine-function, it takes both positive and negative values. If we  take its simple average over 1 period then we get</p>
+<div class="displaymath">
+\begin{align*}
+V_\ave &amp;= \frac{1}{2\pi-0} \int_0^{2\pi} V_0 \sin(t) \dee{t}\\
+&amp;= \frac{V_0}{2\pi}\bigg[ - \cos(t)\bigg]_0^{2\pi}\\
+&amp;= \frac{V_0}{2\pi}\left( -\cos(2\pi) + \cos 0\right) = \frac{V_0}{2\pi}(-1+1)\\
+&amp;= 0
+\end{align*}
+</div>
+<p data-braille="continuation">This is clearly not a good indication of the typical voltage.</p>
+<p id="p-8696">What we actually want here is a measure of how far the voltage is from zero. Now we could  do this by taking the average of \(|V(t)|\text{,}\) but this is a little harder to work with.  Instead we take the average of the square <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-293" id="fn-293"><sup> 6 </sup></a> of the voltage (so it is always positive) and then take the square root at the end. That is</p>
+<div class="displaymath">
+\begin{align*}
+V_\mathrm{rms}
+&amp;= \sqrt{\frac{1}{2\pi-0} \int_0^{2\pi} V(t)^2 \dee{t}}\\
+&amp;= \sqrt{\frac{1}{2\pi} \int_0^{2\pi} V_0^2 \sin^2(t) \dee{t}}\\
+&amp;= \sqrt{\frac{V_0^2}{2\pi} \int_0^{2\pi} \sin^2(t) \dee{t}}
+\end{align*}
+</div>
+<p data-braille="continuation">This is called the “root mean square” voltage.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-293"><div class="fn">For a finite  set of numbers one can compute the “quadratic mean” which is another way to generalise  the notion of the average:<div class="displaymath">
+\begin{equation*}
+\text{quadratic mean}
+= \sqrt{\frac{1}{n}\left(y_1^2 + y_2^2 + \cdots + y_n^2 \right) }
+\end{equation*}
+</div>
+</div></div>
+<p id="p-8697">Though we do know how to integrate sine and cosine, we don't (yet) know how to integrate their squares. A quick look at double-angle formulas <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-294" id="fn-294"><sup> 7 </sup></a> gives us a way to eliminate the  square:</p>
+<div class="displaymath">
+\begin{gather*}
+\cos(2\theta) =1-2\sin^2\theta \implies \sin^2\theta=\frac{1-\cos(2\theta)}{2}
+\end{gather*}
+</div>
+<p data-braille="continuation">Using this we manipulate our integrand a little more:</p>
+<div class="displaymath">
+\begin{align*}
+V_\mathrm{rms} &amp;= \sqrt{\frac{V_0^2}{2\pi} \int_0^{2\pi}  \frac{1}{2}(1-\cos(2t)) \dee{t}}\\
+&amp;= \sqrt{ \frac{V_0^2}{4\pi} \bigg[t - \frac{1}{2}\sin(2t)  \bigg]_0^{2\pi} }\\
+&amp;= \sqrt{ \frac{V_0^2}{4\pi} \left(2\pi - \frac{1}{2}\sin(4\pi) - 0 + \frac{1}{2}\sin(0) \right) }\\
+&amp;= \sqrt{ \frac{V_0^2}{4\pi} \cdot 2\pi }\\
+&amp;= \frac{V_0}{\sqrt{2}}
+\end{align*}
+</div>
+<p data-braille="continuation">So if the peak voltage is 170 volts then the RMS voltage is \(\frac{170}{\sqrt{2}}\approx  120.2\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-294"><div class="fn">A quick glance at  Appendix <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "sec_must_deriv" missing]</code> will refresh your memory.</div></div></article></div>
+<p id="p-8698">Continuing this very physics example:</p>
+<article class="example example-like" id="eg_AVpower"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_AVpower"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.7</span><span class="period">.</span><span class="space"> </span><span class="title">Peak vs RMS voltage — continued.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_AVpower"><article class="example example-like"><p id="p-8699">Let us take our same light bulb with voltage (after it is plugged in) given by</p>
+<div class="displaymath">
+\begin{align*}
+V(t) &amp;= V_0\sin(\omega t-\delta)
+\end{align*}
+</div>
+<p data-braille="continuation">where</p>
+<ul class="disc">
+<li id="li-3275">\(V_0\) is the peak voltage,</li>
+<li id="li-3276">\(\omega=2\pi\times 60\text{,}\) and</li>
+<li id="li-3277">the constant \(\delta\) is an (unimportant) phase.</li>
+</ul>
+<p data-braille="continuation">If the light bulb is “100 watts”, then what is its resistance?</p>
+<p id="p-8700">To answer this question we need the following facts from physics.</p>
+<ul class="disc">
+<li id="li-3278">If the light bulb has resistance \(R\) ohms, this causes, by Ohm's law, a current of<div class="displaymath">
+\begin{align*}
+I(t) &amp;= \frac{1}{R} V(t) &amp;
+\end{align*}
+</div>(amps) to flow through the light bulb.</li>
+<li id="li-3279">The current \(I\) is the number of units of charge moving through the bulb per unit time.</li>
+<li id="li-3280">The voltage is the energy required to move one unit of charge through the bulb.</li>
+<li id="li-3281">The power is the energy used by the bulb per unit time and is measured in watts.</li>
+</ul>
+<p data-braille="continuation">So the power is the product of the current times the voltage and, so</p>
+<div class="displaymath">
+\begin{equation*}
+P(t)=I(t)V(t)
+=\frac{V(t)^2}{R}
+=\frac{V_0^2}{R}\sin^2(\omega t-\delta)
+\end{equation*}
+</div>
+<p data-braille="continuation">The average power used over the time interval \(a\le t\le b\) is</p>
+<div class="displaymath">
+\begin{align*}
+P_\ave &amp;= \frac{1}{b-a}\int_a^b P(t)\dee{t}
+= \frac{V_0^2}{R(b-a)}\int_a^b \sin^2(\omega t-\delta)\dee{t}
+\end{align*}
+</div>
+<p data-braille="continuation">Notice that this is almost exactly the form we had in the previous example when computing  the root mean square voltage.</p>
+<p id="p-8701">Again we simplify the integrand using the identity</p>
+<div class="displaymath">
+\begin{equation*}
+\cos(2\theta) =1-2\sin^2\theta \implies \sin^2\theta=\frac{1-\cos(2\theta)}{2}
+\end{equation*}
+</div>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{align*}
+P_\ave &amp;= \frac{1}{b-a}\int_a^b P(t)\dee{t}
+= \frac{V_0^2}{2R(b-a)}\int_a^b \big[1-\cos(2\omega t-2\delta)\big]\dee{t}\\
+&amp;=\frac{V_0^2}{2R(b-a)}\bigg[t-\frac{\sin(2\omega t-2\delta)}{2\omega}\bigg]_a^b\\
+&amp;=\frac{V_0^2}{2R(b-a)}\bigg[b-a-\frac{\sin(2\omega b-2\delta)}{2\omega}
++\frac{\sin(2\omega a-2\delta)}{2\omega}\bigg]\\
+&amp;=\frac{V_0^2}{2R}
+-\frac{V_0^2}{4\omega R(b-a)}\big[\sin(2\omega b-2\delta)-\sin(2\omega a-2\delta)\big]
+\end{align*}
+</div>
+<p data-braille="continuation">In the limit as the length of the time interval \(b-a\) tends to infinity, this converges to \(\frac{V_0^2}{2R}\text{.}\) The resistance \(R\) of a “100 watt bulb”  obeys</p>
+<div class="displaymath">
+\begin{align*}
+\frac{V_0^2}{2R} &amp;=100 &amp; \text{so that} &amp;&amp; R &amp;= \frac{V_0^2}{200}.
+\end{align*}
+</div>
+<p data-braille="continuation">We finish this example off with two side remarks.</p>
+<ul class="disc">
+<li id="li-3282">If we translate the peak voltage to the root mean square voltage using<div class="displaymath">
+\begin{align*}
+V_0 &amp;= V_\mathrm{rms} \cdot \sqrt{2}
+\end{align*}
+</div>then we have<div class="displaymath">
+\begin{align*}
+P &amp;= \frac{V^2_{\mathrm{rms}}}{R}
+\end{align*}
+</div>
+</li>
+<li id="li-3283">If we were using direct voltage rather than alternating current then the  computation is  much simpler. The voltage and current are constants, so<div class="displaymath">
+\begin{align*}
+P &amp;= V \cdot I &amp; \text{but $I = V/R$ by Ohm's law}\\
+&amp;= \frac{V^2}{R}
+\end{align*}
+</div>So if we have a direct current giving voltage equal to the root mean square voltage, then  we would expend the same power.</li>
+</ul></article></div></section><section class="subsection" id="subsection-104"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">7.2.1</span> <span class="title">Optional — Return to the mean value theorem</span>
+</h3>
+<p id="p-8702">One last application of Definition <a class="xref" data-knowl="./knowl/def_AVaverage.html" title="Definition 7.2.2">7.2.2</a>. The following theorem can be  thought of as an analogue of the mean-value theorem (which was covered in your  differential calculus class) but for integrals. The theorem says that a  continuous function has to take its average value exactly somewhere. For example, if you  went for a drive along the \(x\)-axis and you were at \(x(a)\) at time \(a\) and at \(x(b)\) at  time \(b\text{,}\) then your velocity \(x'(t)\) had to be exactly your average velocity \(\frac{x(b)-x(a)}{b-a}\) at some time \(t\) between \(a\) and \(b\text{.}\) In particular, if your average velocity was greater than the speed limit, you were definitely speeding at some point during the trip. This is, of course, no great surprise.</p>
+<article class="theorem theorem-like" id="thm_AVmvt"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.8</span><span class="period">.</span><span class="space"> </span><span class="title">Mean Value Theorem for Integrals.</span>
+</h6>
+<p id="p-8703">Let \(f(x)\) be a continuous function on the interval \(a\le x\le b\text{.}\) Then there is some \(c\) obeying \(a\le c \le b\) such that</p>
+<div class="displaymath">
+\begin{gather*}
+\frac{1}{b-a}\int_a^b f(x)\dee{x}=f(c) \qquad\text{or}\qquad \int_a^b f(x)\dee{x} = f(c)\,(b-a)
+\end{gather*}
+</div></article><p id="p-8704">Here is why the theorem is true. Let \(M\) and \(m\) be the largest and smallest values, respectively, that \(f(x)\) takes for \(x\) between \(a\) and \(b\text{.}\) Then \(m\le f(x)\le M\) for all \(a\le x\le b\text{,}\) so that <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-295" id="fn-295"><sup> 8 </sup></a></p>
+<div class="displaymath">
+\begin{gather*}
+m(b-a)\le\int_a^b f(x)\dee{x}\le M(b-a)\qquad\iff\qquad m\le \frac{1}{b-a}\int_a^b f(x)\dee{x} \le M
+\end{gather*}
+</div>
+<p data-braille="continuation">As \(x\) runs from \(a\) to \(b\)  the continuous function \(f(x)\) takes all values  between \(m\) and \(M\) including, in particular, \(\frac{1}{b-a}\int_a^b f(x)\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-295"><div class="fn">The symbol  \(\iff\) is read “if and only if”. This is used in mathematics to  express the logical equivalence of two statements. To be more precise,  the statement \(P \iff Q\) tells us that \(P\) is true whenever \(Q\) is true  and \(Q\) is true whenever \(P\) is true.</div></div></section><section class="exercises" id="exercises-59"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">7.2.2</span> <span class="title">Exercises</span>
+</h3>
+<section class="introduction" id="introduction-254"><p id="p-8705">Recall that we are using \(\log x\) to denote the logarithm of \(x\) with base \(e\text{.}\) In other courses it is often denoted \(\ln x\text{.}\)</p></section><div class="exercisegroup" id="exercisegroup-158">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-255"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="prob_s2_2_avgvalue"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-8706">Below is the graph of a function \(y=f(x)\text{.}\) Its average value on the interval  \([0,5]\) is \(A\text{.}\) Draw a rectangle on the graph with area \(\int_0^5 f(x)\,\dee{x}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-870.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1042" id="hint-1042"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1042"><div class="hint solution-like"><p id="p-8707">See Definition <a class="xref" data-knowl="./knowl/def_AVaverage.html" title="Definition 7.2.2">7.2.2</a> and the discussion following it for the link between area under the curve and averages.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1124" id="answer-1124"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1124"><div class="answer solution-like">
+<p id="p-8708">The most straightforward of many possible answers is shown.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-871.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1124" id="solution-1124"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1124"><div class="solution solution-like">
+<p id="p-8709">Since the average of \(f(x)\) on the interval \([0,5]\) is \(A\text{,}\) using Definition <a class="xref" data-knowl="./knowl/def_AVaverage.html" title="Definition 7.2.2">7.2.2</a>,</p>
+<div class="displaymath">
+\begin{align*}
+A&amp;=\frac{1}{5}\int_0^5 f(x)\,\dee{x}\\
+5A&amp;=\int_0^5 f(x)\,\dee{x}
+\end{align*}
+</div>
+<p data-braille="continuation">So, a rectangle with width 5 and height \(A\) has area \(\int_0^5 f(x)\,\dee{x}\text{.}\)</p>
+<p id="p-8710">That is: if we replace \(f(x)\) with the constant function \(g(x)=A\text{,}\) then on the interval \([0,5]\text{,}\) the area under the curve is unchanged.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-872.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-8711">(There are many rectangles with area \(5A\text{;}\) we drew the one we consider to be the most straightforward in this context.)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s2_2_vel"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-8712">Suppose a car travels for 5 hours in a straight line, with an average velocity of 100 kph. How far did the car travel?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1043" id="hint-1043"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1043"><div class="hint solution-like"><p id="p-8713">Average velocity is discussed in Example <a class="xref" data-knowl="./knowl/eg_AVvelocity.html" title="Example 7.2.5: Average velocity">7.2.5</a>. You don't need an integral for this.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1125" id="answer-1125"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1125"><div class="answer solution-like"><p id="p-8714">500 km</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1125" id="solution-1125"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1125"><div class="solution solution-like"><p id="p-8715">Average velocity,  as discussed in Example <a class="xref" data-knowl="./knowl/eg_AVvelocity.html" title="Example 7.2.5: Average velocity">7.2.5</a>, is change in position divided by change in time. So, the change in position (i.e. distance travelled) is (100 km/h)(5 h) = 500 km.</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1126"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-8716">A force \(F(x)\) acts on an object from position \(x=a\) metres to position \(x=b\) metres, for a total of \(W\) joules of work. What was the average force on the object?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1044" id="hint-1044"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1044"><div class="hint solution-like"><p id="p-8717">Much like Problem <a class="xref" data-knowl="./knowl/prob_s2_2_vel.html" title="Exercise 7.2.2.2">2</a>, you don't need to do any integration here.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1126" id="answer-1126"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1126"><div class="answer solution-like"><p id="p-8718">\(\dfrac{W}{b-a}\) N</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1126" id="solution-1126"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1126"><div class="solution solution-like">
+<p id="p-8719">The work done is</p>
+<div class="displaymath">
+\begin{equation*}
+W=\int_a^b F(x)\,\dee{x}
+\end{equation*}
+</div>
+<p id="p-8720">so the average value of \(F(x)\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{b-a}\int_a^b F(x)\,\dee{x} =\frac{1}{b-a}(W).
+\end{equation*}
+</div>
+<p id="p-8721">We can quickly check our units: since \(W\) is in joules  (that is, newton-metres), and \(b-a\) is in metres, so \(\frac{W}{b-a}\) is in newtons.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1127"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-8722">Suppose we want to approximate the average value of the function \(f(x)\) on the interval \([a,b]\text{.}\) To do this, we cut the interval \([a,b]\) into \(n\) pieces, then take \(n\) samples by finding the function's output at the left endpoint of each piece, starting with \(a\text{.}\) Then, we average those \(n\) samples. (In the example below, \(n=4\text{.}\))</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-873.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<ol id="p-8723" class="lower-alpha">
+<li id="li-3284">Using \(n\) samples, what is the distance between two consecutive sample points \(x_i\) and \(x_{i+1}\text{?}\)</li>
+<li id="li-3285">Assuming \(n \geq 4\text{,}\) what is the \(x\)-coordinate of the fourth sample?</li>
+<li id="li-3286">Assuming \(n \geq 4\text{,}\) what is the \(y\)-value of the fourth sample?</li>
+<li id="li-3287">Write the approximation of the average value of \(f(x)\) over the interval \([a,b]\) using sigma notation.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1045" id="hint-1045"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1045"><div class="hint solution-like"><p id="p-8724">Part (a) is asking the length of the pieces we've cut our interval into. Part (c) should be given in terms of \(f\text{.}\) Our final answer in (d) will resemble a Riemann sum, but without some extra manipulation it won't be in exactly the form of a Riemann sum we're used to.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1127" id="answer-1127"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1127"><div class="answer solution-like">
+<p id="p-8725">(a) \(\dfrac{b-a}{n}\)</p>
+<p id="p-8726">(b) \(a+3\dfrac{b-a}{n} \)</p>
+<p id="p-8727">(c) \(f\left(a+3\dfrac{b-a}{n} \right)\)</p>
+<p id="p-8728">(d) \(\dfrac{1}{n}\sum\limits_{i=1}^n f\left(a+(i-1)\frac{b-a}{n}\right)\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1127" id="solution-1127"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1127"><div class="solution solution-like"><ol id="p-8729" class="lower-alpha">
+<li id="li-3288">The entire interval has length \(b-a\text{,}\) and we're cutting it into \(n\) pieces, so the length of one piece (and hence the distance between two consecutive samples) is \(\frac{b-a}{n}\text{.}\)</li>
+<li id="li-3289">The first sample, as given in the question statement, is taken at \(x=a\text{.}\) The second sample, then, is at \(x=a+\frac{b-a}{n}\text{,}\) this third is at \(x=1+2\frac{b-a}{n}\text{,}\) and the fourth is at \(a+3\frac{b-a}{n}\text{.}\)</li>
+<li id="li-3290">The \(y\)-value of the fourth sample is simply \(f\left(a+3\frac{b-a}{n}\right)\text{.}\) Note this is the number we use in our average, not the \(x\)-value.</li>
+<li id="li-3291">Our samples are \(f(a)\text{,}\) \(f\left(a+\frac{b-a}{n}\right)\text{,}\) \(f\left(a+2\frac{b-a}{n}\right)\text{,}\) \(f\left(a+3\frac{b-a}{n}\right)\text{,}\) etc. Since there are \(n\) of them, we divide their sum by \(n\text{.}\) So, the average is:<div class="displaymath">
+\begin{align*}
+&amp; \frac{f(a)+f\left(a\!+\!\frac{b-a}{n}\right)+
+f\left(a\!+\!2\frac{b-a}{n}\right)+\cdots + f\left(a\!+\!(n-1)\frac{b-a}{n}\right)}{n}\\
+&amp;=\frac{1}{n}\bigg[f(a)+f\left(a+\frac{b-a}{n}\right)f\left(a+2\frac{b-a}{n}\right)+\cdots \\
+\amp\hskip2.2in+ f\left(a+(n-1)\frac{b-a}{n}\right)\bigg]\\
+&amp;= \frac{1}{n}\sum_{i=1}^nf\left(a+(i-1)\frac{b-a}{n}\right)\\
+\end{align*}
+<p class="intertext">Remark: if we multiply and divide by \(b-a\text{,}\) we see this expression is equivalent to a left Riemann sum, divided by the length of our interval.</p>
+\begin{align*}
+&amp;= \frac{1}{b-a}\sum_{i=1}^nf\left(a+(i-1)\frac{b-a}{n}\right)\frac{b-a}{n}\\
+&amp;= \frac{1}{b-a}\sum_{i=1}^nf\left(a+(i-1)\De x\right)\De x
+\end{align*}
+</div>As \(n\) gets larger and larger, using the definition of a definite integral, this expression gets closer and closer to \(\frac{1}{b-a}\int_a^bf(x)\,\dee{x}\text{.}\) This is one way of justifying our definition of an average of a function on an interval.</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1128"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-8730">Suppose \(f(x)\) and \(g(x)\) are functions that are defined for all numbers in the interval \([0,10]\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-3292">If \(f(x) \leq g(x)\) for all \(x\) in \([0,10]\text{,}\) then is the average value of \(f(x)\) is less than or equal to the average value of \(g(x)\) on the interval \([0,10]\text{,}\) or is there not enough information to tell?</li>
+<li id="li-3293">Suppose \(f(x) \leq g(x)\) for all \(x\) in \([0.01,10]\text{.}\) Is the average value of \(f(x)\) less than or equal to the average value of \(g(x)\) over the interval \([0,10]\text{,}\) or is there not enough information to tell?</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1046" id="hint-1046"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1046"><div class="hint solution-like"><p id="p-8731">For (b), the value of \(f(0)\) could be much, much larger than \(g(0)\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1128" id="answer-1128"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1128"><div class="answer solution-like">
+<p id="p-8732">(a) yes</p>
+<p id="p-8733">(b) not enough information</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1128" id="solution-1128"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1128"><div class="solution solution-like"><ol id="p-8734" class="lower-alpha">
+<li id="li-3294">Yes, the average of \(f(x)\) is less than or equal to the average of \(g(x)\) on \([0,10]\text{.}\) The reason is that, if \(f(x) \leq g(x)\) for all \(x\) in \([0,10]\text{,}\) then:<div class="displaymath">
+\begin{equation*}
+\frac{1}{10}\int_0^{10}f(x)\,\dee{x} \leq \frac{1}{10}\int_0^{10}g(x)\,\dee{x}.
+\end{equation*}
+</div>
+</li>
+<li id="li-3295">
+<p id="p-8735">There is not enough information to tell. It's certainly possible: for instance, take \(f(x)=0\) and \(g(x)=1\) for all \(x\) in \([0,10]\text{.}\) Then \(f(x) \leq g(x)\) and the average of \(f(x)\) is 0, which is less than 1, the average of \(g(x)\text{.}\)</p>
+<p id="p-8736">However, consider \(f(x) = \begin{cases}
+100 &amp; \text{ if } 0 \le x \le 0.01\\
+0 &amp; \text{ else }
+\end{cases}\) and \(g(x) = 0\text{.}\) Then \(f(x) \le g(x)\) for all \(x\) in \([0.01,10]\text{,}\) but the average of \(f(x)\) is \(0.1\text{,}\) while the average of \(g(x)\) is 0.</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1129"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-8737">Suppose \(f\) is an odd function, defined for all real numbers. What is the average of \(f\) on the interval \([-10,10]\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1047" id="hint-1047"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1047"><div class="hint solution-like"><p id="p-8738">The answer is something very simple.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1129" id="answer-1129"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1129"><div class="answer solution-like"><p id="p-8739">0</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1129" id="solution-1129"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1129"><div class="solution solution-like">
+<p id="p-8740">Recall the definition of an odd function: \(f(-x)=-f(x)\text{.}\) Since the domain of integration is symmetric, the signed area on one side of the \(y\)-axis “cancels out” the signed area on the other — this is Theorem <a class="xref" data-knowl="./knowl/thm_INTevenodd.html" title="Theorem 6.2.12: Even and Odd">6.2.12</a> in the text.</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{20}\int_{-10}^{10}f(x)\,\dee{x}&amp;=\frac{1}{20}(0)=0
+\end{align*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-159">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-256"></div>
+<div class="introduction" id="introduction-257"><p id="p-8793">For Questions <a class="xref" data-knowl="./knowl/prob_s2_2_RMS1.html" title="Exercise 7.2.2.16">16</a> through <a class="xref" data-knowl="./knowl/prob_s2_2_RMS3.html" title="Exercise 7.2.2.18">18</a>, let the root mean square of \(f(x)\) on \([a,b]\) be \(\displaystyle\sqrt{\frac{1}{b-a}\int_a^b f^2(x)\,\dee{x}}\text{.}\) This is the formula used in Example <a class="xref" data-knowl="./knowl/eg_peakvsrms.html" title="Example 7.2.6: Peak vs RMS voltage">7.2.6</a> in the text.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1130"><h6 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">2016Q3.</span>
+</h6>
+<p id="p-8741">Find the average value of \(f(x) = \sin(5x)+1\) over the interval \(-\pi/2 \le x \le \pi/2 \text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1048" id="hint-1048"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1048"><div class="hint solution-like"><p id="p-8742">Apply the definition of “average value” in Section <a href="sec_avg.html" class="internal" title="Section 7.2: Averages">7.2</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1130" id="answer-1130"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1130"><div class="answer solution-like"><p id="p-8743">\(1\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1130" id="solution-1130"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1130"><div class="solution solution-like">
+<p id="p-8744">By definition, the average value is</p>
+<div class="displaymath">
+\begin{gather*}
+\frac{1}{\pi}\int_{-\pi/2}^{\pi/2} \big( \sin(5x)+1 \big) \,\dee{x}
+\end{gather*}
+</div>
+<p data-braille="continuation">We now observe that \(\sin(5x)\) is an odd function, and hence its integral over the symmetric interval \([-\frac\pi2,\frac\pi2]\) equals zero. So the average value of \(f(x)\) on this interval is \(1\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{\pi}\int_{-\pi/2}^{\pi/2} \big( \sin(5x)+1 \big) \,\dee{x}&amp;=
+\frac{1}{\pi}\int_{-\pi/2}^{\pi/2}  \sin(5x) \,\dee{x}+ \frac{1}{\pi}\int_{-\pi/2}^{\pi/2}1 \,\dee{x}\\
+&amp;= \frac{1}{\pi}\int_{-\pi/2}^{\pi/2}1 \,\dee{x}=1
+\end{align*}
+</div>
+<p data-braille="continuation">Alternatively, using the fundamental theorem of calculus, the average equals:</p>
+<div class="displaymath">
+\begin{align*}
+\amp\frac{1}{\pi}\bigg[\frac{-\cos (5x) }{5} +x  \bigg]_{-\pi/2}^{\pi/2}\\
+\amp\hskip0.1in= \frac{1}{\pi}\bigg\{\bigg[\frac{-\cos (5\pi/2) }{5} +\frac{\pi}{2}\bigg]
+-\bigg[ \frac{-\cos (-5\pi/2) }{5} + \frac{-\pi}{2} \bigg]\bigg\}\\
+\amp\hskip0.1in= \frac{\pi }{\pi}=1
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1131"><h6 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">2015A.</span>
+</h6>
+<p id="p-8745">Find the average value of the function \(y= x^2\log x\) on the interval \(1 \le x\le e\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1049" id="hint-1049"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1049"><div class="hint solution-like"><p id="p-8746">You can antidifferentiate \(x^2\log x\) using integration by parts.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1131" id="answer-1131"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1131"><div class="answer solution-like"><p id="p-8747">\(\displaystyle\frac{1}{e-1}\Big[\frac{2}{9}e^3+\frac{1}{9}\Big]\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1131" id="solution-1131"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1131"><div class="solution solution-like">
+<p id="p-8748">By definition, the average is</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{e-1}\int_1^e x^2\log x\dee{x}
+&amp;\\
+\end{align*}
+<p class="intertext">To antidifferentiate, we use integration by parts with \(u=\log x\) and \(\dee{v}=x^2\,\dee{x}\text{,}\) hence \(\dee{u}=\frac{1}{x}\,\dee{x}\) and \(v=\frac{1}{3}x^3\text{.}\)</p>
+\begin{align*}
+\frac{1}{e-1}\int_1^e x^2\log x\dee{x}&amp;=
+\frac{1}{e-1}\left(\left[\frac{1}{3}x^3\log x\right]_1^e - \int_1^e \frac{1}{3}x^2\,\dee{x}  \right)\\
+&amp;=
+\frac{1}{e-1}\bigg[\frac{x^3}{3}\log x-\frac{x^3}{9}\bigg]_{x=1}^{x=e}\\
+&amp;=\frac{1}{e-1}\bigg[\frac{e^3}{3}-\frac{e^3}{9}+\frac{1}{9}\bigg]\\
+&amp;=\frac{1}{e-1}\bigg[\frac{2}{9}e^3+\frac{1}{9}\bigg]
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1132"><h6 class="heading">
+<span class="codenumber">9<span class="period">.</span></span><span class="space"> </span><span class="title">2016A.</span>
+</h6>
+<p id="p-8749">Find the average value of the function \(f(x) = 3\cos^3x + 2\cos^2x\) on the interval \(0\le x\le\frac\pi2\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1050" id="hint-1050"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1050"><div class="hint solution-like"><p id="p-8750">You can antidifferentiate an odd power of cosine with a substitution; for an even power of cosine, use the identity \(\cos^2 x = \frac{1}{2}\big(1+\cos(2x)\big)\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1132" id="answer-1132"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1132"><div class="answer solution-like"><p id="p-8751">\(\dfrac{4}{\pi}+1\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1132" id="solution-1132"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1132"><div class="solution solution-like">
+<p id="p-8752">By definition, the average value in question equals</p>
+<div class="displaymath">
+\begin{align*}
+\amp\frac1{\pi/2-0} \int_0^{\pi/2} ( 3\cos^3x + 2\cos^2x ) \,\dee{x}\\
+\amp\hskip0.5in= \frac2\pi \bigg( \int_0^{\pi/2} 3\cos^3x \,\dee{x} + \int_0^{\pi/2} 2\cos^2x \,\dee{x} \bigg)
+\end{align*}
+</div>
+<p data-braille="continuation">For the first integral we use the substitution \(u = \sin x\text{,}\) \(\dee{u}=\cos x\,\dee{x}\text{,}\) \(\cos^2 x=1-\sin^2 x = 1-u^2\text{.}\) Note that the endpoints \(x=0\) and \(x=\frac\pi2\) become \(u=0\) and \(u=1\text{,}\) respectively.</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^{\pi/2} 3 \cos^3x \,\dee{x}
+&amp;= \int_0^{\pi/2} 3 \cos^2 x \cos x \,\dee{x}\\
+&amp;= \int_0^{1} 3(1-u^2) \,\dee{u}\\
+&amp;= (3u-u^3)\Big|_0^1 = 2.
+\end{align*}
+</div>
+<p data-braille="continuation">For the second integral we use the trigonometric identity \(\cos^2x\,\dee{x} = \frac{1 + \cos(2x)}{2}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+2 \int_0^{\pi/2} \cos^2x\,\dee{x}
+&amp;= \int_0^{\pi/2} \big(1 + \cos(2x) \big) \,\dee{x}\\
+&amp;= \bigg[ x + \frac{1}{2}\sin(2x) \bigg]_0^{\pi/2}
+= \frac\pi2
+\end{align*}
+</div>
+<p data-braille="continuation">Therefore, the average value in question is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac2\pi \bigg( \int_0^{\pi/2} 3\cos^3x \,\dee{x} + \int_0^{\pi/2} 2\cos^2x \,\dee{x} \bigg)
+= \frac2\pi \bigg( 2 + \frac\pi2 \bigg)
+= \frac{4}{\pi}+1.
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1133"><h6 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">2012A.</span>
+</h6>
+<p id="p-8753">Let \(k\) be a positive constant. Find the average value of the function \(f(x) = \sin(kx)\) on the interval \(0\le x\le \pi/k\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1051" id="hint-1051"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1051"><div class="hint solution-like"><p id="p-8754">If you're not sure how to antidifferentiate, try the substitution \(u=kx\text{,}\) \(\dee{u}=k\dee{x}\text{,}\) keeping in mind that \(k\) is a constant. Interestingly, your final answer won't depend on \(k\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1133" id="answer-1133"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1133"><div class="answer solution-like"><p id="p-8755">\(\dfrac{2}{\pi}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1133" id="solution-1133"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1133"><div class="solution solution-like">
+<p id="p-8756">By definition, the average value in question equals</p>
+<div class="displaymath">
+\begin{equation*}
+\text{Ave}=\frac1{\pi/k-0} \int_0^{\pi/k} \sin(kx) \,\dee{x}
+\end{equation*}
+</div>
+<p data-braille="continuation">To evaluate the integral, we use the substitution \(u = kx\text{,}\) \(\dee{u}=k\,\dee{x}\text{.}\) Note that the endpoints \(x=0\) and \(x=\pi/k\) become \(u=0\) and \(u=\pi\text{,}\) respectively. So</p>
+<div class="displaymath">
+\begin{gather*}
+\text{Ave}=\frac{k}{\pi} \int_0^\pi \sin(u) \,\frac{\dee{u}}{k}
+=\frac{1}{\pi}\Big[-\cos(u)\Big]_0^\pi
+=\frac{2}{\pi}
+\end{gather*}
+</div>
+<p id="p-8757">Remark: the average does not depend on \(k\text{.}\) To see why this is, note that \(\sin(kx)\) runs between \(-1\) and \(1\) as \(x\) changes. When \(x=0\text{,}\) \(kx=0\text{,}\) and when \(x=\pi/k\text{,}\) \(kx=\pi\text{.}\) So, our function \(\sin (kx)\) runs exactly from \(\sin  0 =0\) to \(\sin(\pi/2)=1\text{,}\) then back down to \(\sin\pi=0\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-874.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1134"><h6 class="heading">
+<span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">1997A.</span>
+</h6>
+<p id="p-8758">The temperature in Celsius in a 3 m long rod at a point \(x\) metres from the left end of the rod is given by the function \(T(x)=\frac{80}{16-x^2}\text{.}\) Determine the average temperature in the rod.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1052" id="hint-1052"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1052"><div class="hint solution-like"><p id="p-8759">The method of partial fractions can help you antidifferentiate.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1134" id="answer-1134"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1134"><div class="answer solution-like"><p id="p-8760">\(\dfrac{10}{3}\log 7\) degrees Celsius</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1134" id="solution-1134"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1134"><div class="solution solution-like">
+<p id="p-8761">By definition, the average temperature is</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{3}\int_0^3 T(x)\,\dee{x}
+=\frac{1}{3}\int_0^3 \frac{80}{16-x^2}\,\dee{x}
+\end{equation*}
+</div>
+<p id="p-8762">We don't see an obvious substitution, but  integrand is a rational function. The degree of the numerator is strictly less than the degree of the denominator, so we factor the denominator and use a partial fraction decomposition.</p>
+<div class="displaymath" id="p-8763">
+\begin{align*}
+\frac{80}{16-x^2}&amp;=\frac{80}{(4-x)(4+x)} = \frac{A}{4-x}+\frac{B}{4+x}\\
+80&amp;=A(4+x)+B(4-x)\\
+\end{align*}
+<p class="intertext">Setting \(x=4\text{,}\) we see \(80=8A\text{,}\) so \(\textcolor{red}{A=10}\text{.}\) Setting \(x=-4\text{,}\) we see \(80=8B\text{,}\) so \(\textcolor{red}{B=10}\text{.}\)</p>
+\begin{align*}
+\frac{1}{3}\int_0^3 \frac{80}{16-x^2}\,\dee{x}
+&amp;=\frac{1}{3}\int_0^3 \frac{80}{(4-x)(4+x)}\,\dee{x}\\
+\amp=\frac{1}{3}\int_0^3 \Big[\frac{\textcolor{red}{10}}{4-x}+\frac{\textcolor{red}{10}}{4+x}\Big]\,\dee{x}\\
+&amp;=\frac{1}{3}\int_0^3 \Big[-\frac{10}{x-4}+\frac{10}{4+x}\Big]\,\dee{x}\\
+&amp;=\frac{10}{3}\Big[-\log|x-4|+\log|x+4|\Big]_0^3\\
+&amp;=\frac{10}{3}\log\Big|\frac{x+4}{x-4}\Big|\bigg|_0^3
+=\frac{10}{3}[\log 7-\log 1]\\
+&amp;=\frac{10}{3}\log 7\quad\text{ degrees Celsius}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1135"><h6 class="heading">
+<span class="codenumber">12<span class="period">.</span></span><span class="space"> </span><span class="title">1997D.</span>
+</h6>
+<p id="p-8764">What is the average value of the function \(f(x)=\dfrac{\log x}{x}\) on the interval \([1,e]\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1053" id="hint-1053"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1053"><div class="hint solution-like"><p id="p-8765">Try the substitution \(u=\log x\text{,}\) \(\dee{u}=\frac{1}{x}\,\dee{x}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1135" id="answer-1135"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1135"><div class="answer solution-like"><p id="p-8766">\(\dfrac{1}{2(e-1)}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1135" id="solution-1135"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1135"><div class="solution solution-like">
+<p id="p-8767">By definition, the average value is</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{e-1}\int_1^e\frac{\log x}{x}\dee{x}&amp;\\
+\end{align*}
+<p class="intertext">To integrate, we use the substitution \(u=\log x\text{,}\) \(\dee{u}=\frac{1}{x}\,\dee{x}\text{.}\) Then the limits of integration become 0 and 1, respectively.</p>
+\begin{align*}
+\frac{1}{e-1}\int_1^e\frac{\log x}{x}\dee{x}&amp;
+=\frac{1}{e-1}\int_0^1u\dee{u}
+=\frac{1}{e-1}\bigg[\frac{u^2}{2}\bigg]_0^1
+=\frac{1}{2(e-1)}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1136"><h6 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">2000D.</span>
+</h6>
+<p id="p-8768">Find the average value of \(f(x)=\cos^2(x)\) over \(0\le x\le 2\pi\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1054" id="hint-1054"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1054"><div class="hint solution-like"><p id="p-8769">Remember \(\cos^2 x = \frac{1}{2}\big(1+\cos(2x)\big)\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1136" id="answer-1136"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1136"><div class="answer solution-like"><p id="p-8770">\(\dfrac12\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1136" id="solution-1136"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1136"><div class="solution solution-like">
+<p id="p-8771">By definition, the average value is:</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{2\pi}\int_0^{2\pi}\cos^2x\,\dee{x}
+\amp=\frac{1}{2\pi}\cdot\frac{1}{2}\int_0^{2\pi}\big(\cos(2x)+1\big)\,\dee{x}\\
+\amp=\frac{1}{4\pi}\Big[\frac{\sin(2x)}{2}+x\Big]_0^{2\pi}\\
+\amp=\frac{1}{4\pi}\cdot 2\pi
+=\frac{1}{2}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1137"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-8772">The carbon dioxide concentration in the air at a particular location over one year is approximated by \(C(t) = 400+50\cos\left(\frac{t}{12}\pi\right)+200\cos\left(\frac{t}{4380}\pi\right)\) parts per million, where  \(t\) is measured in hours.</p>
+<ol class="lower-alpha">
+<li id="li-3296">What is the average carbon dioxide concentration for that location for that year?</li>
+<li id="li-3297">What is the average over the first day?</li>
+<li id="li-3298">
+<p id="p-8773">Suppose measurements were only made at noon every day: that is, when \(t=12+24n\text{,}\) where \(n\) is any whole number between 0 and 364.  Then the daily variation would cease: \(50\cos\left(\frac{(12+24n)}{12}\pi\right) = 50\cos\left(\pi+2\pi n\right) = 50\cos\pi=-50\text{.}\) So, the approximation for the concentration of carbon dioxide in the atmosphere might be given as</p>
+<div class="displaymath">
+\begin{equation*}
+N(t) = 350 +200\cos\left(\frac{t}{4380}\pi\right)\quad\text{ ppm}
+\end{equation*}
+</div>
+<p id="p-8774">What is the relative error in the yearly average concentration of carbon dioxide involved in using \(N(t)\text{,}\) instead of \(C(t)\text{?}\)</p>
+</li>
+</ol>
+<p data-braille="continuation">You may assume a day has exactly 24 hours, and a year has exactly 8760 hours.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1055" id="hint-1055"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1055"><div class="hint solution-like">
+<p id="p-8775">Notice the term \(50\cos\left(\frac{t}{12}\pi\right)\) has a period of 24 hours, while the term \(200\cos\left(\frac{t}{4380}\pi\right)\) has a period of one year.</p>
+<p id="p-8776">If \(n\) is an approximation of \(c\text{,}\) then the relative error of \(n\) is \(\frac{|n-c|}{c}\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1137" id="answer-1137"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1137"><div class="answer solution-like">
+<p id="p-8777">(a) 400 ppm</p>
+<p id="p-8778">(b) \(\approx 599.99\) ppm</p>
+<p id="p-8779">(c) 0.125, or 12.5\(\%\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1137" id="solution-1137"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1137"><div class="solution solution-like">
+<p id="p-8780">Before we start answering questions, let's look at our function a little more carefully. The term \(50\cos\left(\frac{t}{12}\pi\right)\) has a period of 24 hours, while the term \(200\cos\left(\frac{t}{4380}\pi\right)\) has a period of one year. So, the former term describes a standard daily variation, while the latter gives a seasonal variation over the year.</p>
+<p id="p-8781">(a) Using the definition of an average, the average concentration over one year (\(t=0\) to \(8760\)) is:</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{1}{8760}\int_0^{8760}\left(400+\textcolor{red}{50\cos\left(\frac{t}{12}\pi\right)}+\textcolor{blue}{200\cos\left(\frac{t}{4380}\pi\right)}\right)\,\dee{t}\\
+&amp;=\frac{1}{8760}\int_0^{8760}400\,\dee{t}
++
+\textcolor{red}{\frac{50}{8760}\int_0^{8760}\cos\left(\frac{t}{12}\pi\right)\,\dee{t}}\\
+\amp\hskip2in+
+\textcolor{blue}{\frac{200}{8760}\int_0^{8760}\cos\left(\frac{t}{4380}\pi\right)\,\dee{t}}\\
+&amp;= 400 +\textcolor{red}{ \frac{5}{876}\left[\frac{12}{\pi}\sin\left(\frac{t}{12}\pi\right)\right]_0^{8760}}+
+\textcolor{blue}{\frac{5}{219}\left[\frac{4380}{\pi}\sin\left(\frac{t}{4380}\pi\right)\right]_0^{8760}}\\
+\end{align*}
+<p class="intertext">Since \(\frac{8760}{12} = 730\text{,}\) which is even, \(\sin\left(\frac{8760}{12}\pi\right)=\sin(0)=0\text{.}\) Also, \(\sin\left(\frac{8760}{4380}\pi\right)=\sin(2\pi)=0\text{.}\)</p>
+\begin{align*}
+&amp;=400+\textcolor{red}{\frac{5}{876}(0}) + \textcolor{blue}{\frac{5}{219}(0)}\\
+&amp;=400\quad\text{ ppm}
+\end{align*}
+</div>
+<p data-braille="continuation">Remark: for the portions of the integral in red and blue, we also could have noticed that the integrand goes through a whole (integer) number of periods. For every period, the net signed area between the curve and the \(x\)-axis is zero, so we could have seen from the very beginning these terms would contribute 0 to the final average.</p>
+<p id="p-8782">(b) Using the definition of an average, the average concentration over the first day (\(t=0\) to \(t=24\)) is:</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{1}{24}\int_0^{24} \left(400+\textcolor{red}{50\cos\left(\frac{t}{12}\pi\right)}+\textcolor{blue}{200\cos\left(\frac{t}{4380}\pi\right)}\right)\,\dee{t}\\
+&amp;=\frac{1}{24}\int_0^{24}\!\!400\,\dee{t}
++
+\textcolor{red}{\frac{50}{24}\int_0^{24}\!\!\cos\left(\frac{t}{12}\pi\right)\,\dee{t}}+
+\textcolor{blue}{\frac{200}{24}\int_0^{24}\!\!\cos\left(\frac{t}{4380}\pi\right)\,\dee{t}}\\
+\end{align*}
+<p class="intertext">Note \(t=0\) to \(t=24\) is one complete period for the integrand in red, so the red integral will evaluate to zero. However, \(t=0\) to \(t=24\) is <em class="emphasis">less</em> than one cycle for the integrand in blue, so we expect this will contribute some nonzero quantity to the average.</p>
+\begin{align*}
+&amp;=400+\textcolor{red}{0} + \textcolor{blue}{\frac{200}{24}\left[\frac{4380}{\pi}\sin\left(\frac{t}{4380}\pi\right)\right]_0^{24}}\\
+&amp;=400+\color{blue}{\frac{25}{3}\cdot\frac{4380}{\pi}\sin\left(\frac{24}{4380}\pi\right)}\\
+&amp;=400+\color{blue}{\frac{25}{3}\cdot\frac{4380}{\pi}\sin\left(\frac{2}{365}\pi\right)}\\
+&amp;\approx 400+\color{blue}{199.99}\\
+&amp;=599.99 \quad\text{ ppm}
+\end{align*}
+</div>
+<p data-braille="continuation">Remark: \(C(0) = 400+\textcolor{red}{50}+\textcolor{blue}{200}\text{.}\) The red term comes from the daily variation, and over the first day this will have an average of 0. The blue term comes from the seasonal variation, which changes dramatically over the course of an entire year but won't change very much over the course of a single day. So, it is reasonable that the average concentration over the first day should be close to (but not exactly) \(400+200\) ppm.</p>
+<p id="p-8783">(c) The average of \(N(t)\) over \([0,8760]\) is:</p>
+<div class="displaymath">
+\begin{align*}
+\amp\frac{1}{8760}\int_0^{8760} \left ( 350+200\cos\left(\frac{t}{4380}\pi\right)\right)\,\dee{t}\\
+&amp;\hskip0.5in=350 + \frac{200}{8760}\bigg[\frac{4380}{\pi}\sin\left(\frac{t}{4380}\pi\right)\bigg]_0^{8760}\\
+&amp;\hskip0.5in=350+\frac{200}{8760}\left[\frac{4380}{\pi}\sin\left(\frac{8760}{4380}\pi\right)\right]\\
+&amp;\hskip0.5in=350+\frac{100}{\pi}\sin\left(2\pi\right)\\
+&amp;\hskip0.5in=350
+\end{align*}
+</div>
+<p data-braille="continuation">Since the average of \(C(t)\) was 400, this gives us an absolute error of \(|400-350|=50\) ppm, for a relative error of</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{50}{400} = 0.125,
+\end{equation*}
+</div>
+<p data-braille="continuation">or 12.5\(\%\text{.}\)</p>
+<p id="p-8784">That is: sampling at the same time every day, rather than throughout the day, lead to an error of \(12.5\%\) in the yearly average concentration of carbon dioxide.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s2_2_avgarea"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-8785">Let \(S\) be the solid formed by rotating the parabola \(y=x^2\) from \(x=0\) to \(x=2\) about the \(x\)-axis.</p>
+<ol class="lower-alpha">
+<li id="li-3299">What is the average area of the circular cross-sections of \(S\text{?}\) Call this value \(A\text{.}\)</li>
+<li id="li-3300">What is the volume of \(S\text{?}\)</li>
+<li id="li-3301">What is the volume of a cylinder with circular cross-sectional area \(A\) and length 2?</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1056" id="hint-1056"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1056"><div class="hint solution-like"><p id="p-8786">A cross section of \(S\) at location \(x\) is a circle with radius \(x^2\text{,}\) so area \(\pi x^4\text{.}\) Part (a) is asking for the average of this function on \([0,2]\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1138" id="answer-1138"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1138"><div class="answer solution-like">
+<p id="p-8787">(a) \(\dfrac{16\pi}{5}\)</p>
+<p id="p-8788">(b) \(\dfrac{32\pi}{5}\)</p>
+<p id="p-8789">(c) \(\dfrac{32\pi}{5}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1138" id="solution-1138"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1138"><div class="solution solution-like"><ol id="p-8790" class="lower-alpha">
+<li id="li-3302">The  cross-section of \(S\) at \(x\) is a circle with radius \(x^2\text{,}\) so area \(\pi x^4\text{.}\) The average of these values, \(0 \leq x \leq 2\text{,}\) is<div class="displaymath">
+\begin{equation*}
+A = \frac{1}{2-0}\int_0^2 \pi x^4\,\dee{x} = \frac{1}{2}\left[\frac{\pi}{5}x^5\right]_0^2=\frac{16\pi}{5}
+\end{equation*}
+</div>
+</li>
+<li id="li-3303">To find the volume of \(S\text{,}\) imagine cutting it into thin circular disks of radius \(x^2\) and thickness \(\dee{x}\text{.}\) The volume of one such disk is \(\pi x^4\,\dee{x}\text{,}\) so the volume of \(S\) is<div class="displaymath">
+\begin{equation*}
+\int_0^2 \pi x^4\,\dee{x} = \left[\frac{\pi}{5}x^5\right]_0^2 = \frac{32\pi}{5} 
+\end{equation*}
+</div>
+</li>
+<li id="li-3304">
+<p id="p-8791">The volume of a cylinder is the product of its base area with its length. A cylinder with circular cross-sections of area \(\frac{16\pi}{5}\) and length 2 has volume \(\frac{32\pi}{5}\text{.}\)</p>
+<p id="p-8792">Remark: this is the same as the volume of \(S\text{,}\) so the average cross-sectional area  of \(S\) tells us the cross-sectional area of a cylinder with the same length and volume as \(S\text{.}\) Compare this to Question <a class="xref" data-knowl="./knowl/prob_s2_2_avgvalue.html" title="Exercise 7.2.2.1">1</a>, where we saw the average value of a function gave the height of a rectangle with the same area as the function over the given interval.</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="prob_s2_2_RMS1"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-8794">Let \(f(x) = x\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-3305">Calculate the average of \(f(x)\) over \([-3,3]\text{.}\)</li>
+<li id="li-3306">Calculate the root mean square of \(f(x)\) over \([-3,3]\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1057" id="hint-1057"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1057"><div class="hint solution-like"><p id="p-8795">(a) can be done without calculation</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1139" id="answer-1139"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1139"><div class="answer solution-like">
+<p id="p-8796">(a) 0</p>
+<p id="p-8797">(b) \(\sqrt3\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1139" id="solution-1139"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1139"><div class="solution solution-like"><ol id="p-8798" class="lower-alpha">
+<li id="li-3307">We can see without calculation that the average will be zero, since \(f(x)=x\) is an odd function and \([-3,3]\) is a symmetric interval. Alternately, we can use the definition of an average to calculate<div class="displaymath">
+\begin{equation*}
+\frac{1}{6}\int_{-3}^3 x\,\dee{x} = \left[\frac{1}{12}x^2\right]_{-3}^3 = \frac{1}{12}(9-9)=0
+\end{equation*}
+</div>
+</li>
+<li id="li-3308">Using the definition provided for root mean square:<div class="displaymath">
+\begin{align*}
+\text{RMS}&amp;=\sqrt{\frac{1}{6}\int_{-3}^3 x^2\,\dee{x}} = \sqrt{\left[\frac{1}{18}x^3\right]_{-3}^3}
+= \sqrt{\frac{27}{18}-\frac{-27}{18}} = \sqrt{3}
+\end{align*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1140"><h6 class="heading"><span class="codenumber">17<span class="period">.</span></span></h6>
+<p id="p-8799">Calculate the root mean square of \(f(x) = \tan x\) over \(\left[-\frac{\pi}{4},\frac{\pi}{4}\right]\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1058" id="hint-1058"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1058"><div class="hint solution-like"><p id="p-8800">\(\tan^2 x = \sec^2 x - 1\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1140" id="answer-1140"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1140"><div class="answer solution-like"><p id="p-8801">\(\displaystyle\sqrt{\frac{4}{\pi} - 1}\approx 0.52\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1140" id="solution-1140"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1140"><div class="solution solution-like">
+<p id="p-8802">Using the definition provided,</p>
+<div class="displaymath">
+\begin{align*}
+\text{RMS}&amp;=\sqrt{\frac{2}{\pi}\int_{-\pi/4}^{\pi/4}\tan^2x\,\dee{x}} = \sqrt{\frac{2}{\pi}\int_{-\pi/4}^{\pi/4}\left(\sec^2x-1\right)\,\dee{x}}\\
+&amp;=\sqrt{\frac{2}{\pi}\Big[\tan x - x \Big]_{-\pi/4}^{\pi/4}} =
+\sqrt{\frac{2}{\pi}\left[\left(1 - \frac{\pi}{4} \right)-\left(-1 + \frac{\pi}{4} \right)\right]}\\
+&amp;=\sqrt{\frac{2}{\pi}\left(2-\frac{\pi}{2}\right)} = \sqrt{\frac{4}{\pi} - 1}\approx 0.52
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s2_2_RMS3"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-8803">A force acts on a spring, and the spring stretches and contracts. The distance beyond its natural length at time \(t\) is \(f(t) = \sin\left(t\pi\right)\) cm, where \(t\) is measured in seconds. The spring constant is 3 N/cm.</p>
+<ol class="lower-alpha">
+<li id="li-3309">What is the force exerted by the spring at time \(t\text{,}\) if it obeys Hooke's law?</li>
+<li id="li-3310">Find the average of the force exerted by the spring from \(t=0\) to \(t=6\text{.}\)</li>
+<li id="li-3311">Find the root mean square of the force exerted by the spring from \(t=0\) to \(t=6\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1059" id="hint-1059"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1059"><div class="hint solution-like">
+<p id="p-8804">Remember force is the product of the spring constant with the distance it's stretched past its natural length. The units given in the question are not exactly standard, but they are compatible with each other.</p>
+<p id="p-8805">You can find part (b) without any calculation. For (c), remember \(\sin^2 x = \frac{1}{2}\big(1-\cos(2x)\big)\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1141" id="answer-1141"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1141"><div class="answer solution-like">
+<p id="p-8806">(a) \(F(t) = 3f(t) = 3\sin\left(t\pi\right)\) N</p>
+<p id="p-8807">(b) 0</p>
+<p id="p-8808">(c) \(\dfrac{3}{\sqrt{2}} \approx 2.12\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1141" id="solution-1141"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1141"><div class="solution solution-like"><ol id="p-8809" class="lower-alpha">
+<li id="li-3312">Using Hooke's law, when the spring is stretched (or compressed) \(f(t)\) metres past its natural length, the force exerted is \(kf(t)\text{,}\) where \(k\) is the spring constant. In this case, the force is<div class="displaymath">
+\begin{equation*}
+F(x) = (3\text{ N/cm})(f(t)\text{ cm}) = 3 \sin\left(t\pi\right)\text{ N}
+\end{equation*}
+</div>
+</li>
+<li id="li-3313">
+<p id="p-8810">Our interval encompasses three full periods of sine, so the  average will be zero.</p>
+<p id="p-8811">Alternately, we can compute, using the definition of an average:</p>
+<div class="displaymath">
+\begin{align*}
+\text{Avg}&amp;=\frac{1}{6}\int_0^6 3\sin(t\pi)\,\dee{t}= \frac{1}{6}\left[-\frac{3}{\pi}\cos(t\pi)\right]_0^6\\
+\amp=\frac{1}{2\pi}\left[\cos 0 - \cos (6\pi)\right]=0
+\end{align*}
+</div>
+<p id="p-8812">This it doesn't tell us very much about the “normal” amount of force from the spring during our time period. It only tells us that force in one direction at is “cancelled out” by force in the opposite direction at another time.</p>
+</li>
+<li id="li-3314">Using the definition given for root  mean square,<div class="displaymath">
+\begin{align*}
+\text{RMS}&amp;=\sqrt{\frac{1}{6}\int_0^6 \left(3\sin(t\pi)\right)^2\,\dee{t}} = \sqrt{\frac{3}{2}\int_0^6 \sin^2(t\pi)\,\dee{t}}\\
+&amp; = \sqrt{\frac{3}{4}\int_0^6 \left(1-\cos(2t\pi)\right)\,\dee{t}}\\
+&amp;=\sqrt{\frac{3}{4}\left[t - \frac{1}{2\pi}\sin(2t\pi)\right]_0^6}\\
+&amp;=\sqrt{\frac{3}{4}\left[6 - \frac{1}{2\pi}\sin(12\pi)-0\right]}\\
+&amp;=\sqrt{\frac{3}{4}(6)}=\frac{3}{\sqrt2}\approx 2.12
+\end{align*}
+</div>
+</li>
+</ol></div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-160">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-258"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1142"><h6 class="heading">
+<span class="codenumber">19<span class="period">.</span></span><span class="space"> </span><span class="title">1997A.</span>
+</h6>
+<p id="p-8813">A car travels two hours without stopping. The driver records the car's speed every 20 minutes, as indicated in the table below:</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">time in hours</td>
+<td class="l m b1 r1 l0 t1 lines">0</td>
+<td class="l m b1 r1 l0 t1 lines">1/3</td>
+<td class="l m b1 r1 l0 t1 lines">2/3</td>
+<td class="l m b1 r1 l0 t1 lines">1</td>
+<td class="l m b1 r1 l0 t1 lines">4/3</td>
+<td class="l m b1 r1 l0 t1 lines">5/3</td>
+<td class="l m b1 r1 l0 t1 lines" data-braille="last-cell">2</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">speed in km/hr</td>
+<td class="l m b1 r1 l0 t0 lines">50</td>
+<td class="l m b1 r1 l0 t0 lines">70</td>
+<td class="l m b1 r1 l0 t0 lines">80</td>
+<td class="l m b1 r1 l0 t0 lines">55</td>
+<td class="l m b1 r1 l0 t0 lines">60</td>
+<td class="l m b1 r1 l0 t0 lines">80</td>
+<td class="l m b1 r1 l0 t0 lines" data-braille="last-cell">40</td>
+</tr>
+</table></div></div></div>
+<ol id="p-8814" class="lower-alpha">
+<li id="li-3315">Use the trapezoidal rule to estimate the total distance traveled in the two hours.</li>
+<li id="li-3316">Use the answer to part (a)  to estimate the average speed of the car during this period.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1060" id="hint-1060"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1060"><div class="hint solution-like"><p id="p-8815">The trapezoidal rule is found in  Section  <a href="sec_numeric_int.html#sec_trapRule" class="internal" title="Subsection 6.11.2: The trapezoidal rule">6.11.2</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1142" id="answer-1142"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1142"><div class="answer solution-like">
+<p id="p-8816">(a) \(130\text{ km}\)</p>
+<p id="p-8817">(b) \(65\text{ km/hr}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1142" id="solution-1142"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1142"><div class="solution solution-like">
+<p id="p-8818">(a) Let \(v(t)\) be the speed of the car at time \(t\text{.}\) Then, by the trapezoidal rule with \(a=0\text{,}\) \(b=2\text{,}\) \(\De t=1/3\text{,}\) the distance traveled is</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^2 v(t)\,dt
+&amp;\approx\De t\Big[\half v(0)+v(1/3)+v(2/3)+v(3/3)
++v(4/3)\\
+\amp\hskip2.5in+v(5/3)+\half v(2)\Big]\\
+&amp;=\frac{1}{3}\Big[\half 50+70+80+55+60+80+\half 40\Big]
+=130\text{ km}
+\end{align*}
+</div>
+<p id="p-8819">(b) The average speed is \(\frac{\text{dist}}{\text{time}} \approx \frac{130\text{ km}}{2\text{ hr}} =  65\text{ km/hr}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s2_2_var"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-8820">Let \(s(t) = e^t\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-3317">Find the average of \(s(t)\) on the interval \([0,1]\text{.}\) Call this quantity \(A\text{.}\)</li>
+<li id="li-3318">For any point \(t\text{,}\) the difference between \(s(t)\) and \(A\) is \(s(t)-A\text{.}\) Find the average value of \(s(t)-A\) on the interval \([0,1]\text{.}\)</li>
+<li id="li-3319">For any point \(t\text{,}\) the  absolute difference between \(s(t)\) and \(A\) is \(|s(t)-A|\text{.}\) Find the average value of \(|s(t)-A|\) on the interval \([0,1]\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1061" id="hint-1061"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1061"><div class="hint solution-like"><p id="p-8821">To find a definite integral of the absolute value of a function, break up the interval of integration into regions where the function is positive, and intervals where it's negative.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1143" id="answer-1143"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1143"><div class="answer solution-like">
+<p id="p-8822">(a) \(A=e-1\)</p>
+<p id="p-8823">(b) 0</p>
+<p id="p-8824">(c) \(\displaystyle4-2e+2(e-1)\log(e-1)
+\approx 0.42\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1143" id="solution-1143"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1143"><div class="solution solution-like"><ol id="p-8825" class="lower-alpha">
+<li id="li-3320">
+<p id="p-8826">Using the definition of an average,</p>
+<div class="displaymath">
+\begin{equation*}
+A=\frac{1}{1-0}\int_0^1 e^t\,\dee{t} = e-1
+\end{equation*}
+</div>
+</li>
+<li id="li-3321">
+<p id="p-8827">Since \(s(t)-A = e^t-e+1\text{,}\) its average on \([0,1]\) is</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{1-0}\int_0^1 \left(e^t-e+1\right)\,\dee{t} 
+\amp= \left[e^t -et+t\right]_0^1 \\
+\amp= (e-e+1)-(1)=0
+\end{align*}
+</div>
+<p id="p-8828">Remark: what's happening here is that the average difference between \(s(t)\) and \(A\) is zero, because the values of \(s(t)\) that are larger than \(A\) (and give a positive value of \(s(t)-A\)) exactly cancel out the values of \(s(t)\) that are smaller than \(A\) (and give a negative value of \(s(t)-A\)). However, knowing how far the average value is from our calculated average is a reasonable thing to measure. That's where (c) comes in.</p>
+</li>
+<li id="li-3322">
+<p id="p-8829">Using the definition of an average, the quantity we want is:</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{1}{1-0}\int_0^1\left| e^t-e+1\right|\,\dee{t}
+\end{equation*}
+</div>
+<p id="p-8830">To deal with the absolute value, we consider the integral over two intervals: one where \(e^t-e+1\) is positive, and one where it's negative. To decide where to break the limits of integration, notice \(e^t-e+1 \gt 0\) exactly when \(e^t \gt e-1\text{,}\) so \(t \gt \log(e-1)\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\frac{1}{1-0}\int_0^1\left| e^t-e+1\right|\,\dee{t}\\
+\amp=\int_0^{\log(e-1)}|\underbrace{e^t-e+1}_{\text{negative}}|\,\dee{t}+\int_{\log(e-1)}^1|\underbrace{e^t-e+1}_{\text{positive}}|\,\dee{t}\\
+&amp;=\int_0^{\log(e-1)}\big(-e^t+e-1\big)\,\dee{t}+\int_{\log(e-1)}^1\big(e^t-e+1\big)\,\dee{t}\\
+&amp;=\Big[-e^t+(e-1)t\Big]_0^{\log(e-1)}+
+\Big[e^t-(e-1)t\Big]_{\log(e-1)}^1\\
+&amp;=\left[-(e-1)+(e-1)\log(e-1)+1\right]\\
+\amp\hskip1in+
+\left[e-(e-1)-(e-1)+(e-1)\log(e-1)\right]\\
+&amp;=4-2e+2(e-1)\log(e-1)\\
+&amp;\approx 0.42
+\end{align*}
+</div>
+<p data-braille="continuation">Remark: what we just measured is how far \(s(t)\) is, on average, from \(A\text{.}\) We had to neglect whether \(s(t)\) was above or below \(A\text{,}\) because (as we saw in (b)) the values above \(A\) “cancel out” the values below \(A\text{.}\) That's where the absolute value came in.</p>
+<p id="p-8831">Knowing how well most of your function's values match the average is an important measure, but dealing with absolute values can be a little clumsy. Therefore, the <em class="alert">variance</em> of a function squares the differences, rather than taking their absolute value. (In our example, that means looking at \((s(t)-A)^2\text{,}\) rather than \(|s(t)-A|\text{.}\)) To compensate for the change in magnitude involve in squaring, the <em class="alert">standard deviation</em> is the square root of the variance. These are two very commonly used measures of how similar a function is to its average. Compare standard deviation to root-square-mean voltage from Example <a class="xref" data-knowl="./knowl/eg_peakvsrms.html" title="Example 7.2.6: Peak vs RMS voltage">7.2.6</a> and Questions <a class="xref" data-knowl="./knowl/prob_s2_2_RMS1.html" title="Exercise 7.2.2.16">16</a> to <a class="xref" data-knowl="./knowl/prob_s2_2_RMS3.html" title="Exercise 7.2.2.18">18</a>.</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1144"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<p id="p-8832">Consider the two functions \(f(x)\) and \(g(x)\) below, both of which have average \(A\) on \([0,4]\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:25%;margin-right:25%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-875.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<ol id="p-8833" class="lower-alpha">
+<li id="li-3323">Which function has a larger average on \([0,4]\text{:}\)  \(f(x)-A\) or  \(g(x)-A\text{?}\)</li>
+<li id="li-3324">Which function has a larger average on \([0,4]\text{:}\)  \(|f(x)-A|\) or  \(|g(x)-A|\text{?}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1062" id="hint-1062"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1062"><div class="hint solution-like"><p id="p-8834">This is an application of the ideas in Question <a class="xref" data-knowl="./knowl/prob_s2_2_var.html" title="Exercise 7.2.2.20">20</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1144" id="answer-1144"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1144"><div class="answer solution-like">
+<p id="p-8835">(a) neither — both are zero</p>
+<p id="p-8836">(b) \(|f(x)-A|\) has the larger average on \([0,4]\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1144" id="solution-1144"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1144"><div class="solution solution-like"><ol id="p-8837" class="lower-alpha">
+<li id="li-3325">
+<p id="p-8838">Neither: the average of both these functions is zero. We saw this with a particular function in Question <a class="xref" data-knowl="./knowl/prob_s2_2_var.html" title="Exercise 7.2.2.20">20</a> (b), but it's  actually true in general. It's a quick calculation to prove.</p>
+<p id="p-8839">The average of \(f(x)-A\) is:</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{4-0}\int_0^4 \big(f(x)-A\big)\,\dee{x}&amp;=\underbrace{\frac{1}{4}\int_0^4f(x)\,\dee{x}}_{A} - A=A-A=0
+\end{align*}
+</div>
+<p data-braille="continuation">Similarly, the average of \(g(x)-A\) is:</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{4-0}\int_0^4 \big(g(x)-A\big)\,\dee{x}&amp;=\underbrace{\frac{1}{4}\int_0^4g(x)\,\dee{x}}_{A} - A=A-A=0
+\end{align*}
+</div>
+</li>
+<li id="li-3326">
+<p id="p-8840">The function \(|f(x)-A|\) tells us how far \(f(x)\) is from \(A\text{,}\) without worrying whether \(f(x)\) is larger or smaller. Looking at our graph, for most values of \(x\) in \([0,4]\text{,}\) \(f(x)\) is quite far away from \(A\text{,}\) so \(|f(x)-A|\) is usually a large, positive quantity.</p>
+<p id="p-8841">By contrast, \(|g(x)-A|\) is a small positive quantity for most values of \(x\text{.}\) The function \(g(x)\) is quite close to \(A\) for all values of \(x\) in \([0,4]\text{.}\)</p>
+<p id="p-8842">So, since \(|g(x)-A|\) generally has much smaller values than \(|f(x)-A|\text{,}\) the average of \(|f(x)-A|\) on \([0,4]\) will be larger than the average of \(|g(x)-A|\) on \([0,4]\text{.}\)</p>
+<p id="p-8843">As discussed in Question <a class="xref" data-knowl="./knowl/prob_s2_2_var.html" title="Exercise 7.2.2.20">20</a>(c), the average of \(|f(x)-A|\) is a measure of how closely \(f(x)\) resembles its average. We see from the graph that \(f(x)\) doesn't resemble the constant function \(y=A\) much at all, while \(g(x)\) seems much more similar to the constant function \(y=A\text{.}\)</p>
+<p id="p-8844">This kind of measure — how similar a function is to its average — is also the idea behind the root square mean.</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1145"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<p id="p-8845">Suppose the root mean square of a function \(f(x)\) on the interval \([a,b]\) is \(R\text{.}\) What is the volume of the solid formed by rotating the portion of \(f(x)\) from \(a\) to \(b\) about the \(x\)-axis?</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-876.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-8846">As in Example <a class="xref" data-knowl="./knowl/eg_peakvsrms.html" title="Example 7.2.6: Peak vs RMS voltage">7.2.6</a>, let the root mean square of \(f(x)\) on \([a,b]\) be \(\displaystyle\sqrt{\frac{1}{b-a}\int_a^b f^2(x)\,\dee{x}}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1063" id="hint-1063"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1063"><div class="hint solution-like"><p id="p-8847">Slice the solid into circular disks of radius \(|f(x)|\) and thickness \(\dee{x}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1145" id="answer-1145"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1145"><div class="answer solution-like"><p id="p-8848">\((b-a)\pi R^2\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1145" id="solution-1145"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1145"><div class="solution solution-like">
+<p id="p-8849">When we rotate \(f(x)\) about the \(x\)-axis, we form a solid whose radius at \(x\) is \(|f(x)|\text{.}\) So, its circular cross-sections have area \(\pi|f(x)|^2 = \pi f^2(x)\text{.}\) If we slice this solid into circular disks of thickness \(\dee{x}\text{,}\) then the disks have volume \(\pi f^2(x)\,\dee{x}\text{.}\) Therefore, the volume of the entire solid is \(\displaystyle\int_a^b \pi f^2(x)\,\dee{x}\text{.}\) All we need to do now is get this into a form where we can replace the integral with the root mean square, \(R\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+V&amp;=\int_a^b \pi f^2(x)\,\dee{x} = \pi\frac{b-a}{b-a}\int_a^b f^2(x)\,\dee{x}\\
+&amp;=\pi(b-a)\left(\sqrt{\frac{1}{b-a}\int_a^b f^2(x)\,\dee{x}}\right)^2\\
+&amp;=\pi(b-a)R^2
+\end{align*}
+</div>
+<p data-braille="continuation">Remark: the volume of a cylinder with length \(b-a\) and radius \(r\) is \(\pi(b-a)r^2\text{.}\) So, the root mean square of \(f(x)\) gave us the radius of a cylinder with the same volume as the solid formed by rotating \(f(x)\text{.}\) Recall the average of \(f(x)\) gave us the height of a rectangle with the same area as \(f(x)\text{.}\) Compare this to the geometric interpretations of averages in Questions <a class="xref" data-knowl="./knowl/prob_s2_2_avgvalue.html" title="Exercise 7.2.2.1">1</a> and <a class="xref" data-knowl="./knowl/prob_s2_2_avgarea.html" title="Exercise 7.2.2.15">15</a>.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s2_2_quadraticaverage"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-8850">Suppose \(f(x)=ax^2+bx+c\text{,}\) and the average value of \(f(x)\) on the interval \([0,1]\) is the same as the average of \(f(0)\) and \(f(1)\text{.}\) What is \(a\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1064" id="hint-1064"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1064"><div class="hint solution-like"><p id="p-8851">The question tells you \(\frac{1}{1-0}\int_0^1 f(x)\,\dee{x} = \frac{f(0)+f(1)}{2}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1146" id="answer-1146"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1146"><div class="answer solution-like"><p id="p-8852">0</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1146" id="solution-1146"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1146"><div class="solution solution-like">
+<p id="p-8853">The question tells you \(\frac{1}{1-0}\int_0^1 f(x)\,\dee{x} = \frac{f(0)+f(1)}{2}\text{.}\) Note \(f(0)=c\text{,}\) and \(f(1) = a+b+c\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{1-0}\int_0^1 f(x)\,\dee{x} &amp;= \frac{f(0)+f(1)}{2} = \frac{c+(a+b+c)}{2}\\
+\int_0^1 \big(ax^2+bx+c \big)\,\dee{x}&amp;=\frac{a+b+2c}{2}\\
+\left[\frac{a}{3}x^3+\frac{b}{2}x^2+cx \right]_0^1&amp;=\frac{a}{2}+\frac{b}{2}+c\\
+\frac{a}{3}+\frac{b}{2}+c&amp;=\frac{a}{2}+\frac{b}{2}+c\\
+\frac{a}{3}&amp;=a\\
+a&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">That is, \(f(x)\) is linear.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1147"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<p id="p-8854">Suppose \(f(x)=ax^2+bx+c\text{,}\) and the average value of \(f(x)\) on the interval \([s,t]\) is the same as the average of \(f(s)\) and \(f(t)\text{.}\) Is it possible that \(a \neq 0\text{?}\)</p>
+<p id="p-8855">That is — does the result of Question <a class="xref" data-knowl="./knowl/prob_s2_2_quadraticaverage.html" title="Exercise 7.2.2.23">23</a> generalize?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1065" id="hint-1065"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1065"><div class="hint solution-like">
+<p id="p-8856">Set up this question just like Question <a class="xref" data-knowl="./knowl/prob_s2_2_quadraticaverage.html" title="Exercise 7.2.2.23">23</a>, but with variables for your limits of integration.</p>
+<p id="p-8857">Note \((s-t)^2=s^2-2st+t^2\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1147" id="answer-1147"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1147"><div class="answer solution-like"><p id="p-8858">Yes, but if \(a\neq0\text{,}\) then \(s=t\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1147" id="solution-1147"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1147"><div class="solution solution-like">
+<p id="p-8859">The information given in the question is:</p>
+<div class="displaymath">
+\begin{align*}
+\frac{\big(as^2+bs+c\big)+\big(at^2+bt+c\big)}{2}
+&amp;=\frac{1}{t-s}\int_s^t \big(ax^2+bx+c\big)\,\dee{x}\\
+&amp;=\frac{1}{t-s}\left[\frac{a}{3}x^3+\frac{b}{2}x^2+cx\right]_s^t\\
+&amp;=\frac{1}{t-s}\bigg[\frac{a}{3}(t^3-s^3)+\frac{b}{2}(t^2-s^2)\\
+\amp\hskip1.7in+c(t-s)\bigg]\\
+&amp;=\frac{a}{3}(t^2+st+s^2)+\frac{b}{2}(t+s)+c\\
+\frac{a}{2}(s^2+t^2) +\textcolor{red}{ \frac{b}{2}(s+t)}+\textcolor{blue}{c}&amp;=\frac{a}{3}(t^2+st+s^2)+\textcolor{red}{\frac{b}{2}(t+s)}+\textcolor{blue}{c}\\
+\frac{a}{2}(s^2+t^2)&amp;=\frac{a}{3}(t^2+st+s^2)\\
+a\left[\frac{s^2+t^2}{2} - \frac{t^2+st+s^2}{3}\right]&amp;=0\\
+a\left[\frac{s^2-2st+t^2}{6}\right]&amp;=0\\
+a(s-t)^2&amp;=0\\
+a&amp;=0 \quad\text{OR}\quad s=t
+\end{align*}
+</div>
+<p data-braille="continuation">So, unless \(s=t\) (and we're taking the very boring average of a single point!) then \(a=0\text{.}\) That is: \(f(x)\) is linear whenever \(s \neq t\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1148"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-8860">Let \(f(x)\) be a function defined for all numbers in the interval \([a,b]\text{,}\) with average value \(A\) over that interval. What is the average of \(f(a+b-x)\) over the interval \([a,b]\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1066" id="hint-1066"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1066"><div class="hint solution-like"><p id="p-8861">What are the graphs of \(f(x)\) and \(f(a+b-x)\) like?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1148" id="answer-1148"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1148"><div class="answer solution-like"><p id="p-8862">\(A\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1148" id="solution-1148"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1148"><div class="solution solution-like">
+<p id="p-8863">The function \(g(x)=f(a+b-x)\text{,}\) on the interval \([a,b]\text{,}\) is a mirror of the function \(f(x)\text{,}\) with \(g(a)=f(b)\) and \(g(b)=f(a)\text{.}\) So, \(\int_a^b f(a+b-x)\,\dee{x} = \int_a^bf(x)\,\dee{x}\text{,}\) and hence \(\frac{1}{b-a}\int_a^b f(a+b-x)\,\dee{x} = \frac{1}{b-a}\int_a^bf(x)\,\dee{x}\text{,}\) so the average value of \(f(a+b-x)\) on \([a,b]\) is \(A\text{.}\)</p>
+<p id="p-8864">Alternately, we can evaluate \(\frac{1}{b-a}\int_a^b f(a+b-x)\,\dee{x}\) directly, using the substitution \(u=a+b-x\text{,}\) \(\dee{x}=-\dee{x}\text{:}\)</p>
+<div class="displaymath">
+\begin{align*}
+\frac{1}{b-a}\int_a^b f(a+b-x)\,\dee{x}&amp;=\frac{-1}{b-a}\int_{u(a)}^{u(b)} f(u)\,\dee{u}\\
+&amp;=\frac{-1}{b-a}\int_{b}^{a} f(u)\,\dee{u}\\
+&amp;=\frac{1}{b-a}\int_{a}^{b} f(u)\,\dee{u}\\
+&amp;=A
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1149"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<p id="p-8865">Suppose \(f(t)\) is a continuous function, and \(A(x)\) is the average of \(f(t)\) on the interval from 0 to \(x\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-3327">What is the average of \(f(t)\) on \([a,b]\text{,}\) where \(a \lt b\text{?}\) Give your answer in terms of \(A\text{.}\)</li>
+<li id="li-3328">What is \(f(t)\text{?}\) Again, give your answer in terms of \(A\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1067" id="hint-1067"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1067"><div class="hint solution-like"><p id="p-8866">For (b), express \(A(x)\) as an integral, then differentiate.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1149" id="answer-1149"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1149"><div class="answer solution-like">
+<p id="p-8867">(a) \(\displaystyle\frac{bA(b) - aA(a)}{b-a}\)</p>
+<p id="p-8868">(b) \(f(t)=A(t)+tA'(t) \)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1149" id="solution-1149"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1149"><div class="solution solution-like"><ol id="p-8869" class="lower-alpha">
+<li id="li-3329">The function \(A(x)\) only gives us information about an integral when one limit of integration is zero. We can get around this by using properties of definite integrals from Section 1.2 to break our integral into two integrals, each of which has 0 as one limit of integration. So, we find the average of \(f(t)\) on \([a,b]\) as follows:<div class="displaymath">
+\begin{align*}
+\amp\frac{1}{b-a}\int_a^b f(t)\,\dee{t}=
+\frac{1}{b-a}\left(\int_a^0 f(t)\,\dee{t} + \int_0^b f(t)\,\dee{t}\right)\\
+&amp;\hskip0.5in=\frac{1}{b-a}\left(-\int_0^a f(t)\,\dee{t} + \int_0^b f(t)\,\dee{t} \right)\\
+&amp;\hskip0.5in=\frac{1}{b-a}\left(-a\cdot\underbrace{\frac{1}{a}\int_0^a f(t)\,\dee{t}}_{A(a)} + b\cdot\underbrace{\frac{1}{b}\int_0^b f(t)\,\dee{t}}_{A(b)} \right)\\
+&amp;\hskip0.5in=\frac{1}{b-a}\left(-aA(a)+bA(b) \right) = \frac{bA(b) - aA(a)}{b-a}
+\end{align*}
+</div>
+</li>
+<li id="li-3330">
+<p id="p-8870">From the definition of \(A(x)\text{,}\) we know</p>
+<div class="displaymath">
+\begin{equation*}
+A(x) = \frac{1}{x}\int_0^x f(t)\,\dee{t}
+\end{equation*}
+</div>
+<p id="p-8871">That is,</p>
+<div class="displaymath">
+\begin{equation*}
+xA(x) =\int_0^x f(t)\,\dee{t}
+\end{equation*}
+</div>
+<p id="p-8872">To find \(f(x)\text{,}\) we differentiate both sides. For the left side, we use the product rule; for the right side, we use the Fundamental Theorem of Calculus part 1.</p>
+<div class="displaymath">
+\begin{equation*}
+A(x)+xA'(x) = f(x)
+\end{equation*}
+</div>
+<p id="p-8873">So, \(f(t)=A(t)+tA'(t)\text{.}\)</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1150"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<ol id="p-8874" class="lower-alpha">
+<li id="li-3331">Find a function \(f(x)\) with average \(0\) over \([-1,1]\) but \(f(x) \neq 0\) for all \(x\) in \([-1,1]\text{,}\) or show that no such function exists.</li>
+<li id="li-3332">Find a <em class="emphasis">continuous</em> function \(f(x)\) with average \(0\) over \([-1,1]\) but \(f(x) \neq 0\) for all \(x\) in \([-1,1]\text{,}\) or show that no such function exists.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1068" id="hint-1068"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1068"><div class="hint solution-like"><p id="p-8875">For (b), consider the cases that \(f(x)\) is always bigger or always smaller than 0. Then, use the intermediate value theorem (see the CLP-1 text).</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1150" id="answer-1150"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1150"><div class="answer solution-like"><ol id="p-8876" class="lower-alpha">
+<li id="li-3333">One of many possible answers: \(f(x) = \begin{cases}
+-1&amp;\text{ if } x \leq 0\\
+1&amp;\text{ if } x  \gt  0
+\end{cases}\text{.}\)</li>
+<li id="li-3334">
+<p id="p-8877">No such function exists.</p>
+<ul class="disc">
+<li id="li-3335">Note 1: Suppose \(f(x) \gt 0\) for all \(x\) in \([-1,1]\text{.}\) Then \(\frac{1}{2}\int_{-1}^1f(x)\,\dee{x}  \gt  \frac{1}{2}\int_{-1}^10\,\dee{x} =0 \text{.}\) That is, the average value of \(f(x)\) on the interval \([-1,1]\) is not zero — it's something greater than zero.</li>
+<li id="li-3336">Note 2: Suppose \(f(x) \lt 0\) for all \(x\) in \([-1,1]\text{.}\) Then \(\frac{1}{2}\int_{-1}^1f(x)\,\dee{x}  \lt  \frac{1}{2}\int_{-1}^10\,\dee{x} =0 \text{.}\) That is, the average value of \(f(x)\) on the interval \([-1,1]\) is not zero — it's something less than zero.</li>
+</ul>
+<p data-braille="continuation">So, if the average value of \(f(x)\) is zero, then \(f(x)\ge 0\) for some \(x\) in \([-1,1]\text{,}\) and \(f(y) \le 0\) for some \(y \in [-1,1]\text{.}\) Since \(f\) is a continuous function, and 0 is between \(f(x)\) and \(f(y)\text{,}\) by the intermediate value theorem (see the CLP-1 text) there is some value \(c\) between \(x\) and \(y\) such that \(f(c)=0\text{.}\) Since \(x\) and \(y\) are both in \([-1,1]\text{,}\) then \(c\) is as well. Therefore, no function exists as described in the question.</p>
+</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1150" id="solution-1150"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1150"><div class="solution solution-like"><ol id="p-8878" class="lower-alpha">
+<li id="li-3337">One of many possible answers: \(f(x) = \begin{cases}
+-1&amp;\text{ if } x \leq 0\\
+1&amp;\text{ if } x  \gt  0
+\end{cases}\text{.}\)</li>
+<li id="li-3338">
+<p id="p-8879">No such function exists.</p>
+<ul class="disc">
+<li id="li-3339">Note 1: Suppose \(f(x) \gt 0\) for all \(x\) in \([-1,1]\text{.}\) Then \(\frac{1}{2}\int_{-1}^1f(x)\,\dee{x}  \gt  \frac{1}{2}\int_{-1}^10\,\dee{x} =0 \text{.}\) That is, the average value of \(f(x)\) on the interval \([-1,1]\) is not zero — it's something greater than zero.</li>
+<li id="li-3340">Note 2: Suppose \(f(x) \lt 0\) for all \(x\) in \([-1,1]\text{.}\) Then \(\frac{1}{2}\int_{-1}^1f(x)\,\dee{x}  \lt  \frac{1}{2}\int_{-1}^10\,\dee{x} =0 \text{.}\) That is, the average value of \(f(x)\) on the interval \([-1,1]\) is not zero — it's something less than zero.</li>
+</ul>
+<p data-braille="continuation">So, if the average value of \(f(x)\) is zero, then \(f(x)\ge 0\) for some \(x\) in \([-1,1]\text{,}\) and \(f(y) \le 0\) for some \(y \in [-1,1]\text{.}\) Since \(f\) is a continuous function, and 0 is between \(f(x)\) and \(f(y)\text{,}\) by the intermediate value theorem (see the CLP-1 text) there is some value \(c\) between \(x\) and \(y\) such that \(f(c)=0\text{.}\) Since \(x\) and \(y\) are both in \([-1,1]\text{,}\) then \(c\) is as well. Therefore, no function exists as described in the question.</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="prob_s2_2_limitavg"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<p id="p-8880">Suppose \(f(x)\) is a positive, continuous function with \(\lim\limits_{x \to \infty} f(x)=0\text{,}\) and let \(A(x)\) be the average of \(f(x)\) on \([0,x]\text{.}\)</p>
+<p id="p-8881">True or false: \(\lim\limits_{x \to \infty} A(x) = 0\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1069" id="hint-1069"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1069"><div class="hint solution-like"><p id="p-8882">Try l'Hôpital's rule.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1151" id="answer-1151"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1151"><div class="answer solution-like"><p id="p-8883">true</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1151" id="solution-1151"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1151"><div class="solution solution-like">
+<p id="p-8884">This seems like it might be true: if \(f\) is getting closer and closer to zero, as \(x\) grows towards infinity, then over time the later values will become a larger and larger portion of the total interval we're looking at, and so the average should look more and more like \(f(x)\) when \(x\) is large — that is, like 0. That's some intuition to start us out, but it isn't a rigorous argument. To be sure we haven't overlooked something, let's use the definition of an average to express \(A(x)\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+A(x)&amp;=\frac{1}{x}\int_0^x f(t)\,\dee{t}\\
+\lim_{x \to \infty}A(x)&amp;=\lim_{x \to \infty}\frac{1}{x}\int_0^x f(t)\,\dee{t}\\
+\end{align*}
+<p class="intertext">If \(\int_0^\infty f(t) \,\dee{t}\) converges, then this limit is 0, and the statement is true. So, suppose it does not converge. Since \(f(x)\) is positive, that means \(\lim\limits_{x \to \infty} \int_0^x f(t)\,\dee(t) = \infty\text{,}\) so we can use l'Hôpital's rule. To differentiate the numerator, we use the Fundamental Theorem of Calculus part 1.</p>
+\begin{align*}
+\lim_{x \to \infty}A(x)&amp;=\lim_{x \to \infty}\frac{\int_0^x f(t)\,\dee{t}}{x} = \lim_{x \to \infty}\frac{f(t)}{1}=0
+\end{align*}
+</div>
+<p data-braille="continuation">So, the statement is true whether \(\int_0^xf(t)\,\dee{t}\) converges or not.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1152"><h6 class="heading"><span class="codenumber">29<span class="period">.</span></span></h6>
+<p id="p-8885">Let \(A(x)\) be the average of the function \(f(t)=e^{-t^2}\) on the interval \([0,x]\text{.}\) What is \(\displaystyle\lim_{x \to \infty} A(x)\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1070" id="hint-1070"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1070"><div class="hint solution-like"><p id="p-8886">Use the result of Question <a class="xref" data-knowl="./knowl/prob_s2_2_limitavg.html" title="Exercise 7.2.2.28">28</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1152" id="answer-1152"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1152"><div class="answer solution-like"><p id="p-8887">0</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1152" id="solution-1152"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1152"><div class="solution solution-like"><p id="p-8888">Note \(f(t)\) is a continuous function that takes only positive values, and \(\lim\limits_{t \to \infty} f(t)=0\text{.}\) By  the result of Question <a class="xref" data-knowl="./knowl/prob_s2_2_limitavg.html" title="Exercise 7.2.2.28">28</a>, \(\displaystyle\lim_{x \to \infty} A(x)=0\text{.}\)</p></div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

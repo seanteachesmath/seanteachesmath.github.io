@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:03:31-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<ol class="lower-alpha">
+<li>
+<p>Let \(f(x) = \cos x\text{.}\) Then \(f^{(4)}(x)=\cos x\text{,}\) so \(|f^{(4)}(x)| \leq 1\) when \(-\pi \leq x \leq \pi\text{.}\) So, using \(L=1\text{,}\) we find the upper bound of the error using Simpson's rule with \(n=4\) is:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{L(b-a)^5}{180 n^4} = \frac{(2\pi)^5}{180\cdot 4^4} = \frac{\pi^5}{180\cdot8}\approx 0.2
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">The error bound comes from Theorem <a class="xref" data-knowl="./knowl/thm_num_int_err.html" title="Theorem 6.11.13: Numerical integration errors">6.11.13</a> in the text. We used a calculator to find the approximate decimal value.</p>
+</li>
+<li>We use the general form of Simpson's rule (Equation <a class="xref" data-knowl="./knowl/eq_SIMPrule.html" title="Equation 6.11.9: Simpson's rule">6.11.9</a> in the text) with \(\Delta x = \frac{b-a}{n}=\frac{2\pi}{4} = \frac{\pi}{2}\text{.}\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+A&amp; \approx \frac{\Delta x}{3}\left(f(x_0) + 4f(x_1)+2f(x_2)+4f(x_3)+f(x_4)\right)\\
+&amp;=\frac{\pi/2}{3}\left(f(-\pi) + 4f(\tfrac{-\pi}{2})+2f(0)+4f(\tfrac{\pi}{2})+f(\pi)\right)\\
+&amp;= \frac{\pi}{6}\left(-1 + 4(0)+2(1)+4(0)-1\right)=0
+\end{align*}
+</div>
+</li>
+<li>To find the actual error in our approximation, we compare the approximation from (b) to the exact value of \(A\text{.}\) In fact, \(A=0\text{:}\) this is a fact you've probably seen before by considering the symmetry of cosine, but it's easy enough to calculate:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+A = \int_{-\pi}^{\pi} \cos x \dee{x}= \sin \pi - \sin (-\pi) = 0
+\end{equation*}
+</div>So, our approximation was exactly the same as our exact value. The absolute error is 0.</li>
+</ol>
+<p data-braille="continuation">Remark: the purpose of this question was to remind you that the error bounds we calculate are not (usually) the same as the actual error. Often our approximations are better than we give them credit for. In normal circumstances, we would be approximating an integral precisely to avoid evaluating it exactly, so we wouldn't find our exact error. The bound is a quick way of ensuring that our approximation is not <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">too</em> far off.</p>
+<span class="incontext"><a href="sec_numeric_int.html#p-7713">in-context</a></span>
+</body>
+</html>

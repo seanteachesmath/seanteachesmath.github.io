@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:01:42-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="alert">Solution:</em> In what follows write</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+I_n &amp;= \int \frac{\dee{x}}{(x^2+1)^n}.
+\end{align*}
+</div>
+<ul class="disc">
+<li>When \(n=1\) we know that<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int \frac{\dee{x}}{x^2+1} &amp;= \arctan x +C
+\end{align*}
+</div>
+</li>
+<li>Now assume that \(n \gt 1\text{,}\) then<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int \frac{1}{(x^2+1)^n}\dee{x}
+&amp;= \int \frac{(x^2+1-x^2)}{(x^2+1)^n}\dee{x} &amp; \text{sneaky}\\
+&amp;= \int \frac{1}{(x^2+1)^{n-1}}\dee{x} - \int \frac{x^2}{(x^2+1)^n}\dee{x}\\
+&amp;= I_{n-1} - \int \frac{x^2}{(x^2+1)^n}\dee{x}
+\end{align*}
+</div>So we can write \(I_n\) in terms of \(I_{n-1}\) and this second integral.</li>
+<li>We can use integration by parts to compute the second integral:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int \frac{x^2}{(x^2+1)^n}\dee{x}
+&amp;= \int \frac{x}{2} \cdot \frac{2x}{(x^2+1)^n}\dee{x} &amp; \text{sneaky}
+\end{align*}
+</div>We set \(u=x/2\) and \(\dee{v}=\frac{2x}{(x^2+1)^n}\dee{x}\text{,}\) which gives  \(\dee{u}=\frac{1}{2}\dee{x}\) and \(v=-\frac{1}{n-1} \cdot \frac{1}{(x^2+1)^{n-1}}\text{.}\) You can  check \(v\) by differentiating. Integration by parts gives<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+&amp; \int \frac{x}{2} \cdot \frac{2x}{(x^2+1)^n}\dee{x}\\
+&amp;\hskip0.5in= - \frac{x}{2(n-1)(x^2+1)^{n-1}} + \int \frac{\dee{x}}{2(n-1)(x^2+1)^{n-1}}\\
+&amp;\hskip0.5in= - \frac{x}{2(n-1)(x^2+1)^{n-1}} + \frac{1}{2(n-1)} \cdot I_{n-1}
+\end{align*}
+</div>
+</li>
+<li>Now put everything together:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+I_n &amp;= \int \frac{1}{(x^2+1)^n}\dee{x}\\
+&amp;= I_{n-1} + \frac{x}{2(n-1)(x^2+1)^{n-1}} - \frac{1}{2(n-1)} \cdot I_{n-1}\\
+&amp;= \frac{2n-3}{2(n-1)} I_{n-1} + \frac{x}{2(n-1)(x^2+1)^{n-1}}
+\end{align*}
+</div>
+</li>
+<li>We can then use this recurrence to write down \(I_n\) for the first few \(n\text{:}\)<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+I_2 &amp;= \frac{1}{2} I_1 + \frac{x}{2 (x^2+1)}+C\\
+&amp;= \frac{1}{2}\arctan x + \frac{x}{2(x^2+1)}\\
+I_3 &amp;= \frac{3}{4} I_2 + \frac{x}{4(x^2+1)^2}\\
+&amp;= \frac{3}{8}\arctan x + \frac{3x}{8(x^2+1)} + \frac{x}{4(x^2+1)^2}+C\\
+I_4 &amp;= \frac{5}{6} I_3 + \frac{x}{6(x^2+1)^3}\\
+&amp;= \frac{5}{16}\arctan x + \frac{5x}{16(x^2+1)} + \frac{5x}{24(x^2+1)^2} +
+\frac{x}{6(x^2+1)^3}+C
+\end{align*}
+</div>and so forth. You can see why partial fraction questions involving denominators with repeated quadratic factors do not often appear on exams.</li>
+</ul>
+<span class="incontext"><a href="sec_parfrac.html#p-7397">in-context</a></span>
+</body>
+</html>

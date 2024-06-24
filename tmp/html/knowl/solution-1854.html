@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:50:11-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">11.2.14.1</span><span class="period">.</span>
+</h6>
+<p>First, let's check that \(r=4\cos\theta\) really is a circle and figure out what circle it is. To do so, we'll convert the equation \(r=4\cos\theta\) into Cartesian coordinates. Multiplying both sides by \(r\) gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+r^2=4r\cos\theta
+\iff x^2+y^2 =4x
+\iff (x-2)^2 + y^2 = 4
+\end{gather*}
+</div>
+<p data-braille="continuation">So \(r=4\cos\theta\) is the circle of radius \(2\) centred on \((2,0)\text{.}\) We'll also need the intersection point(s) of \(x=r\cos\theta=1\) and \(r=4\cos\theta\text{.}\) At such an intersection point</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+r\cos\theta=1,\ r=4\cos\theta
+&amp;\implies \frac{1}{\cos\theta} = 4\cos\theta\\
+&amp;\implies \cos^2\theta = \frac{1}{4}\\
+&amp;\implies \cos\theta =\frac{1}{2}\qquad\text{since }r\cos\theta=1  \gt  0\\
+&amp;\implies \theta = \pm \frac{\pi}{3}
+\end{align*}
+</div>
+<p data-braille="continuation">Here is a sketch of the region of interest, which we'll call \(\cR\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/comPolarA.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">We could figure out the area of \(\cR\) by using some high school geometry, because \(\cR\) is a circular wedge with a triangle removed. (See Example <a class="xref" data-knowl="./knowl/eg_area_polar_HS.html" title="Example 11.2.15: Optional — Example 11.2.14 by high school geometry">11.2.15</a>, below.)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:36%;margin-right:36%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/comPolarAA.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Instead, we'll treat its computation as an exercise in integration using polar coordinates.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">As \(\cR\) is symmetric about the \(x\)-axis, the area of \(\cR\) is twice the area of the part that is above the \(x\)-axis. We'll denote by \(\cR_1\) the upper half of \(\cR\text{.}\) Note that we can write the equation \(x=1\) in polar coordinates as \(r=\frac{1}{\cos\theta}\text{.}\) Here is a sketch of \(\cR_1\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/comPolarB.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>Observe that, on \(\cR_1\text{,}\) for any fixed \(\theta\) between \(0\) and \(\frac{\pi}{2}\text{,}\)</p>
+<ul class="disc">
+<li>if \(\theta \lt \frac{\pi}{3}\text{,}\) then \(r\) runs from \(0\) to \(\frac{1}{\cos\theta}\text{,}\) while</li>
+<li>if \(\theta \gt \frac{\pi}{3}\text{,}\) then \(r\) runs from \(0\) to \(4\cos\theta\text{.}\)</li>
+</ul>
+<p data-braille="continuation">This naturally leads us to split the domain of integration at \(\theta
+=\frac{\pi}{3}\text{:}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Area}(\cR_1)&amp; =
+\int_0^{\pi/3}\dee{\theta}\int_0^{1/\cos\theta}\dee{r}\ r
++\int_{\pi/3}^{\pi/2}\dee{\theta}\int_0^{4\cos\theta}\dee{r}\ r
+\end{align*}
+</div>
+<p data-braille="continuation">As \(\int r\ \dee{r}=\frac{r^2}{2}+C\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\text{Area}(\cR_1)
+&amp;=\int_0^{\pi/3}\dee{\theta}\ \frac{\sec^2\theta}{2}
++\int_{\pi/3}^{\pi/2}\dee{\theta}\ 8\cos^2\theta\\
+&amp;=\frac{1}{2}\tan\theta\Big|_0^{\pi/3}
++4\int_{\pi/3}^{\pi/2}\dee{\theta}\ \big[1+\cos(2\theta)\big]\\
+&amp;=\frac{\sqrt{3}}{2} +4\left[\theta+\frac{\sin(2\theta)}{2}\right]_{\pi/3}^{\pi/2}\\
+&amp;=\frac{\sqrt{3}}{2} +4\left[\frac{\pi}{6}-\frac{\sqrt{3}}{4}\right]\\
+&amp;=\frac{2\pi}{3}-\frac{\sqrt{3}}{2}
+\end{align*}
+</div>
+<p data-braille="continuation">and</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\text{Area}(\cR)=2\text{Area}(\cR_1) = \frac{4\pi}{3}-\sqrt{3}
+\end{gather*}
+</div>
+</div>
+<span class="incontext"><a href="sec_polars.html#solution-1854">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T17:47:24-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>For this problem the objective function is \(f(x,y,z) = (x + z)e^y\) and the constraint function is \(g(x,y,z)=x^2 + y^2 + z^2 -6\text{.}\) To apply the method of Lagrange multipliers we need \(\vnabla f\) and \(\vnabla g\text{.}\) So we start by computing the first order derivatives of these functions.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f_x=e^y\qquad
+f_y=(x+z)e^y\qquad
+f_z=e^y\qquad
+g_x=2x\qquad
+g_y=2y\qquad
+g_z=2z
+\end{equation*}
+</div>
+<p data-braille="continuation">So, according to the method of Lagrange multipliers, we need to find all solutions to</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+e^y&amp;=\la (2x) \tag{E1}\\
+(x+z)e^y&amp;=\la (2y)  \tag{E2}\\
+e^y&amp;=\la (2z) \tag{E3}\\
+x^2+y^2+z^2-6&amp;=0 \tag{E4}
+\end{align*}
+</div>
+<p data-braille="continuation">First notice that, since \(e^y\ne 0\text{,}\) equation (E1) guarantees that \(\la\ne 0\) and \(x\ne 0\) and equation (E3) guarantees that \(z\ne 0\) too.</p>
+<ul class="disc">
+<li>So dividing (E1) by (E3) gives \(\frac{x}{z}=1\) and hence \(x=z\text{.}\)</li>
+<li>Then subbing \(x=z\) into (E2) gives \(2z e^y = \la(2y)\text{.}\) Dividing this equation by (E3) gives \(2z=\frac{y}{z}\) or \(y=2z^2\text{.}\)</li>
+<li>Then subbing \(x=z\) and \(y=2z^2\) into (E4) gives<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+z^2+4z^4+z^2-6=0 &amp;\iff 4z^4 +2z^2 -6 = 0\\
+&amp;\iff (2z^2+3)(2z^2-2) =0
+\end{align*}
+</div>
+</li>
+<li>As \(2z^2+3 \gt 0\text{,}\) we must have \(2z^2-2=0\) or \(z=\pm 1\text{.}\)</li>
+</ul>
+<p xmlns:svg="http://www.w3.org/2000/svg">Recalling that \(x=z\) and \(y=2z^2\text{,}\) the method of Lagrange multipliers, Theorem <a class="xref" data-knowl="./knowl/thm_Lagrange.html" title="Theorem 10.10.2: Lagrange Multipliers">10.10.2</a>, gives that the only possible locations of the maximum and minimum of the function \(f\) are \((1,2,1)\) and \((-1,2,-1)\text{.}\) To complete the problem, we only have to compute \(f\) at those points.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;"><div class="sbspanel fixed-width" style="width:100%;justify-content:flex-start;"><table>
+<tr>
+<td class="l m b1 r1 l1 t1 lines">point</td>
+<td class="c m b1 r1 l0 t1 lines">\((1,2,1)\)</td>
+<td class="c m b1 r1 l0 t1 lines" data-braille="last-cell">\((-1,2,-1)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines">value of \(f\)</td>
+<td class="c m b1 r1 l0 t0 lines">\(2e^2\)</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">\(-2e^2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r1 l1 t0 lines"></td>
+<td class="c m b1 r1 l0 t0 lines">max</td>
+<td class="c m b1 r1 l0 t0 lines" data-braille="last-cell">min</td>
+</tr>
+</table></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Hence the maximum value of \((x + z)e^y\) on \(x^2 + y^2 + z^2 = 6\) is \(2e^2\) and the minimum value is \(-2 e^2\text{.}\)</p>
+</div></body>
+</html>

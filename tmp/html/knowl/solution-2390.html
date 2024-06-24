@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:20:17-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<div class="solution solution-like">
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">15.4.3.25.1</span><span class="period">.</span>
+</h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">The given surface is an ellipsoid centred at \((x,y,z)=(0,0,1)\text{.}\) It caps a curve \(\cC\) in the plane \(z=0\text{,}\) given by \(x^2+y^2=4\text{.}\) This is a circle of radius \(2\) centred at the origin, oriented counterclockwise when viewed from the positive \(z\)-axis.</p>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Method I — double Stokes':</em> Let \(\cD\) denote the plane disk \(x^2+y^2\le 4\text{,}\) \(z=0\text{.}\) Using Stokes' theorem twice gives</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_\cS \vG\cdot \hn\,\dee{S}
+&amp;= \dblInt_\cS \nabla\times\vF\cdot \hn\,\dee{S}
+= \oint_\cC \vF\cdot \dee{\vr}
+= \dblInt_\cD \nabla\times\vF\cdot \hn\,\dee{S}\\
+&amp;= \dblInt_\cD \vG\cdot \hn\,\dee{S}
+\end{align*}
+</div>
+<p data-braille="continuation">Now in \(\cD\) we have \(\hn=\hk\) and \(z=0\text{,}\) so on this surface,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vG\cdot\hn
+= (\nabla\times\vF)\cdot\hk
+&amp;= \det\left[\begin{matrix} 0 &amp; 0 &amp; 1 \\
+\frac{\partial }{\partial x} &amp; \frac{\partial }{\partial y} &amp; \frac{\partial }{\partial z} \\
+(xz - y^3\cos z) &amp; x^3 e^z &amp; xyze^{x^2+y^2+z^2} \end{matrix}\right]_{z=0}\\
+&amp;= \big[3x^2 e^z + 3y^2\cos z\big]_{z=0}
+= 3(x^2+y^2)
+\end{align*}
+</div>
+<p data-braille="continuation">Hence, using polar coordinates,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_\cS \vG\cdot \hn\,\dee{S}
+&amp;= \dblInt_\cD 3(x^2+y^2)\,\dee{x}\dee{y}
+= 3\int_{\theta=0}^{2\pi} \int_{r=0}^2 (r^2)\,r\,\dee{r}\,\dee{\theta}\\
+&amp;= 3(2\pi)(4)= 24\pi
+\end{align*}
+</div>
+<p><em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Method II — single Stokes':</em> By Stokes' theorem</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\dblInt_\cS \vG\cdot \hn\,\dee{S}
+= \dblInt_\cS \nabla\times\vF\cdot \hn\,\dee{S}
+= \oint_\cC \vF\cdot \dee{\vr}
+\end{equation*}
+</div>
+<p data-braille="continuation">Parametrize the circle \(\cC\) using</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vr(\theta) = 2\cos\theta\,\hi + 2\sin\theta\,\hj,\qquad 0\le\theta\le 2\pi
+\end{equation*}
+</div>
+<p data-braille="continuation">to obtain</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\dee{\vr} = \diff{\vr}{\theta}\,\dee{\theta}
+= (-2\sin\theta\,\hi + 2\cos\theta\,\hj)\,\dee{\theta}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Then since \(z=0\) on \(\cC\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\dblInt_\cS \vG\cdot \hn\,\dee{S}
+&amp;= \int_{0}^{2\pi}\!\!\big(
+\overbrace{-(2\sin\theta)^3\,\hi \!+\! (2\cos\theta)^3\,\hj}^
+{\vF\big(\vr(\theta)\big)}\big)
+\cdot \big(\overbrace{-2\sin\theta\,\hi \!+\! 2\cos\theta\,\hj}^{\vr'(\theta)}\big)
+\,\dee{\theta}\\
+&amp;= 16 \int_{0}^{2\pi}\big(\sin^4\theta + \cos^4\theta\big)\,\dee{\theta}
+\end{align*}
+</div>
+<p data-braille="continuation">By the double angle trig identities</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\cos^2\theta=\frac{1+\cos(2\theta)}{2}\qquad
+\sin^2\theta=\frac{1-\cos(2\theta)}{2}\qquad
+\end{gather*}
+</div>
+<p data-braille="continuation">we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\sin^4\theta + \cos^4\theta
+&amp;=\frac{\big[1-\cos(2\theta)\big]^2}{4}
++ \frac{\big[1+\cos(2\theta)\big]^2}{4}\\
+&amp;=\frac{1}{2} + \frac{\cos^2(2\theta)}{2}
+=\frac{1}{2} + \frac{1+\cos(4\theta)}{4}
+\end{align*}
+</div>
+<p data-braille="continuation">So</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\dblInt_\cS \vG\cdot \hn\,\dee{S}
+=16\int_{0}^{2\pi} \left(\frac{3}{4}+\frac{1}{4}\cos(4\theta)\right)
+\,\dee{\theta}
+= 16\times\frac{3}{4}\times (2\pi) = 24\pi
+\end{equation*}
+</div>
+</div>
+<span class="incontext"><a href="sec_StokesThm.html#solution-2390">in-context</a></span>
+</body>
+</html>

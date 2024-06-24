@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T15:28:46-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Trigonometric Substitution</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_trigint.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_integral.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_parfrac.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_trigint.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_integral.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_parfrac.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub" class="active">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_trigsub"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">6.9</span> <span class="title">Trigonometric Substitution</span>
+</h2>
+<section class="introduction" id="introduction-214"></section><section class="subsection" id="subsection-91"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">6.9.1</span> <span class="title">Trigonometric Substitution</span>
+</h3>
+<p id="p-7075">In this section we discuss substitutions that simplify integrals containing  square roots of the form</p>
+<div class="displaymath">
+\begin{align*}
+\sqrt{a^2-x^2} &amp;&amp; \sqrt{a^2+x^2} &amp;&amp; \sqrt{x^2-a^2}.
+\end{align*}
+</div>
+<p data-braille="continuation">When the integrand contains one of these square roots, then we can use trigonometric substitutions to eliminate them. That is, we substitute</p>
+<div class="displaymath">
+\begin{align*}
+x&amp;=a\sin u&amp;\text{or}&amp;&amp;
+x&amp;=a\tan u&amp;\text{or}&amp;&amp;
+x&amp;=a\sec u
+\end{align*}
+</div>
+<p data-braille="continuation">and then use trigonometric identities</p>
+<div class="displaymath">
+\begin{gather*}
+\sin^2\theta + \cos^2\theta =1 \quad\text{and}\quad 1+\tan^2\theta= \sec^2\theta
+\end{gather*}
+</div>
+<p data-braille="continuation">to simplify the result.  To be more precise, we can</p>
+<ul class="disc">
+<li id="li-2551">eliminate \(\sqrt{a^2-x^2}\) from an integrand by substituting \(x=a\sin u\) to give<div class="displaymath">
+\begin{gather*}
+\sqrt{a^2-x^2}=\sqrt{a^2-a^2\sin^2 u}
+=\sqrt{a^2\cos^2 u}=|a\cos u|
+\end{gather*}
+</div>
+</li>
+<li id="li-2552">eliminate \(\sqrt{a^2+x^2}\) from an integrand by substituting \(x=a\tan u\) to give<div class="displaymath">
+\begin{gather*}
+\sqrt{a^2+x^2}=\sqrt{a^2+a^2\tan^2 u}
+=\sqrt{a^2\sec^2 u}=|a\sec u|
+\end{gather*}
+</div>
+</li>
+<li id="li-2553">eliminate \(\sqrt{x^2-a^2}\) from an integrand by substituting \(x=a\sec u\) to give<div class="displaymath">
+\begin{gather*}
+\sqrt{x^2-a^2}=\sqrt{a^2\sec^2u-a^2}
+=\sqrt{a^2\tan^2 u}=|a\tan u|
+\end{gather*}
+</div>Be very careful with signs and absolute values when using this substitution. See Example <a class="xref" data-knowl="./knowl/eg_sec_sub.html" title="Example 6.9.6: \(\int \frac{x^2}{\sqrt{x^2-1}} \dee{x}\)">6.9.6</a>.</li>
+</ul>
+<p id="p-7076">When we have used substitutions before, we usually gave the new integration variable, \(u\text{,}\) as a function of the old integration variable \(x\text{.}\) Here we are doing the  reverse — we are giving the old integration variable, \(x\text{,}\) in terms of the new  integration variable \(u\text{.}\) We may do so, as long as we may invert to get \(u\) as a function of \(x\text{.}\) For example, with \(x=a\sin u\text{,}\) we may take \(u=\arcsin\frac{x}{a}\text{.}\) This is a good time for you to review the definitions of \(\arcsin\theta\text{,}\) \(\arctan\theta\) and \(\arcsec\theta\text{.}\) See Section 2.12, “Inverse Functions”,  of the CLP-1 text.</p>
+<p id="p-7077">As a warm-up, consider the area of a quarter of the unit circle.</p>
+<article class="example example-like" id="eg_first_trigsub"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_first_trigsub"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.9.1</span><span class="period">.</span><span class="space"> </span><span class="title">Quarter of the unit circle.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_first_trigsub"><article class="example example-like"><p id="p-7078">Compute the area of the unit circle lying in the first quadrant.</p>
+<p id="p-7079"><em class="alert">Solution:</em> We know that the answer is \(\frac\pi4\text{,}\) but we can also compute this as an  integral — we saw this way back in Example <a class="xref" data-knowl="./knowl/eg_quarter_circle.html" title="Example 6.1.16: Evaluating \(\int_0^1 \sqrt{1-x^2}\dee{x}\)">6.1.16</a>:</p>
+<div class="displaymath">
+\begin{align*}
+\text{area} &amp;= \int_0^1 \sqrt{1-x^2} \dee{x}
+\end{align*}
+</div>
+<ul class="disc">
+<li id="li-2554">To simplify the integrand we substitute \(x=\sin u\text{.}\) With this choice  \(\diff{x}{u}=\cos u\) and so \(\dee{x}=\cos u \dee{u}\text{.}\)</li>
+<li id="li-2555">We also need to translate the limits of integration and it is perhaps  easiest to do this by writing \(u\) as a function of \(x\) — namely \(u(x)=\arcsin  x\text{.}\) Hence \(u(0)=0\) and \(u(1)=\frac{\pi}{2}\text{.}\)</li>
+<li id="li-2556">Hence the integral becomes<div class="displaymath">
+\begin{align*}
+\int_0^1 \sqrt{1-x^2}\dee{x}
+&amp;= \int_0^{\frac{\pi}{2}} \sqrt{1-\sin^2u} \cdot \cos u \dee{u}\\
+&amp;= \int_0^{\frac{\pi}{2}} \sqrt{\cos^2u} \cdot \cos u \dee{u}\\
+&amp;= \int_0^{\frac{\pi}{2}} \cos^2 u \dee{u}
+\end{align*}
+</div>Notice that here we have used that the <em class="emphasis">positive</em> square root \(\sqrt{\cos^2  u} = |\cos u|=\cos u\) because  \(\cos(u)\geq 0\) for \(0 \leq u \leq  \frac\pi2\text{.}\)</li>
+<li id="li-2557">To go further we use the techniques of Section <a href="sec_trigint.html" class="internal" title="Section 6.8: Trigonometric Integrals">6.8</a>.<div class="displaymath">
+\begin{align*}
+\int_0^1 \sqrt{1-x^2}\dee{x}
+&amp;= \int_0^{\frac{\pi}{2}}\cos^2 u \dee{u} \qquad\qquad \text{and since $\cos^2u=\frac{1+\cos2u}{2}$}\\
+&amp;= \frac{1}{2}\int_0^{\frac{\pi}{2}} (1+\cos(2 u)) \dee{u}\\
+&amp;= \frac{1}{2} \bigg[u + \frac{1}{2}\sin(2u) \bigg]_0^{\frac{\pi}{2}}\\
+&amp;= \frac{1}{2} \left(\frac{\pi}{2}-0 + \frac{\sin\pi}{2}-\frac{\sin 0}{2} \right)\\
+&amp;= \frac{\pi}{4}\checkmark
+\end{align*}
+</div>
+</li>
+</ul></article></div>
+<article class="example example-like" id="eg_trigsub2"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_trigsub2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.9.2</span><span class="period">.</span><span class="space"> </span><span class="title">\(\int \frac{x^2}{\sqrt{1-x^2}}\dee{x}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_trigsub2"><article class="example example-like"><p id="p-7080"><em class="alert">Solution:</em> We proceed much as we did in the previous example.</p>
+<ul class="disc">
+<li id="li-2558">To simplify the integrand we substitute \(x=\sin u\text{.}\) With this choice  \(\diff{x}{u}=\cos u\) and so \(\dee{x}=\cos u \dee{u}\text{.}\) Also note that \(u=\arcsin x\text{.}\)</li>
+<li id="li-2559">The integral becomes<div class="displaymath">
+\begin{align*}
+\int \frac{x^2}{\sqrt{1-x^2}}\dee{x}
+&amp;= \int \frac{\sin^2u}{\sqrt{1-\sin^2u}} \cdot \cos u \dee{u}\\
+&amp;= \int \frac{\sin^2u}{\sqrt{\cos^2u}} \cdot \cos u \dee{u}
+\end{align*}
+</div>
+</li>
+<li id="li-2560">To proceed further we need to get rid of the square-root. Since \(u=\arcsin x\) has  domain \(-1\leq x \leq 1\) and range \(-\frac\pi2 \leq u \leq \frac\pi2\text{,}\) it follows  that \(\cos u \geq 0\) (since cosine is non-negative on these inputs). Hence<div class="displaymath">
+\begin{align*}
+\sqrt{\cos^2u} &amp;= \cos u &amp; \text{when $-\frac\pi2 \leq u \leq \frac\pi2 $}
+\end{align*}
+</div>
+</li>
+<li id="li-2561">So our integral now becomes<div class="displaymath">
+\begin{align*}
+\int \frac{x^2}{\sqrt{1-x^2}}\dee{x}
+&amp;= \int \frac{\sin^2u}{\sqrt{\cos^2u}} \cdot \cos u \dee{u}\\
+&amp;= \int \frac{\sin^2u}{\cos u} \cdot \cos u \dee{u}\\
+&amp;= \int \sin^2u \dee{u}\\
+&amp;= \frac{1}{2} \int (1-\cos 2u) \dee{u} \qquad
+\text{by Equation }\knowl{./knowl/eq_TRGINTtrigidentityF.html}{\text{6.8.4}}\\
+&amp;= \frac{u}{2} - \frac{1}{4}\sin 2u +C\\
+&amp;= \frac{1}{2}\arcsin x - \frac{1}{4} \sin(2\arcsin x) +C
+\end{align*}
+</div>
+</li>
+<li id="li-2562">We can simplify this further using a double-angle identity. Recall that \(u =  \arcsin  x\) and that \(x=\sin u\text{.}\) Then<div class="displaymath">
+\begin{align*}
+\sin 2u &amp;= 2 \sin u \cos u\\
+\\
+\end{align*}
+<p class="intertext">We can replace \(\cos u\) using \(\cos^2u = 1 - \sin^2u\text{.}\) Taking a  square-root of this formula gives \(\cos u= \pm \sqrt{1-\sin^2u}\text{.}\) We need the  positive branch here since \(\cos u \geq 0\) when \(-\frac\pi2 \leq u  \leq \frac\pi2\) (which is exactly the range of \(\arcsin x\)). Continuing along:</p>
+\begin{align*}
+\sin2u
+&amp;= 2 \sin u \cdot \sqrt{1-\sin^2 u}\\
+&amp;= 2 x \sqrt{1-x^2}
+\end{align*}
+</div>Thus our solution is<div class="displaymath">
+\begin{align*}
+\int \frac{x^2}{\sqrt{1-x^2}}\dee{x}
+&amp;= \frac{1}{2}\arcsin x - \frac{1}{4} \sin(2\arcsin x) +C\\
+&amp;= \frac{1}{2}\arcsin x - \frac{1}{2} x \sqrt{1-x^2} +C
+\end{align*}
+</div>
+</li>
+</ul></article></div>
+<p id="p-7081">The above two example illustrate the main steps of the approach. The next example is  similar, but with more complicated  limits of integration.</p>
+<article class="example example-like" id="eg_INVTRIGa"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_INVTRIGa"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.9.3</span><span class="period">.</span><span class="space"> </span><span class="title">\(\int_a^r\sqrt{r^2-x^2}\dee{x}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_INVTRIGa"><article class="example example-like"><p id="p-7082">Let's find the area of the shaded region in the sketch below.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/diskTip.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7083">We'll set up the integral using vertical strips. The strip in the figure has width \(\dee{x}\) and height \(\sqrt{r^2-x^2}\text{.}\) So the area is given by the integral</p>
+<div class="displaymath">
+\begin{align*}
+\text{area} &amp;= \int_a^r \sqrt{r^2-x^2}\dee{x}
+\end{align*}
+</div>
+<p data-braille="continuation">Which is very similar to the previous example.</p>
+<p id="p-7084"><em class="alert">Solution:</em></p>
+<ul class="disc">
+<li id="li-2563">To evaluate the integral we substitute<div class="displaymath">
+\begin{align*}
+x&amp;=x(u)=r\sin u &amp; \dee{x} &amp;= \diff{x}{u} \dee{u}  =r\cos u\dee{u}
+\end{align*}
+</div>It is also helpful to write \(u\) as a function of \(x\) — namely \(u  =\arcsin\frac{x}{r}\text{.}\)</li>
+<li id="li-2564">The integral runs from \(x=a\) to \(x=r\text{.}\) These correspond to<div class="displaymath">
+\begin{align*}
+u(r) &amp;= \arcsin \frac{r}{r} = \arcsin 1 = \frac{\pi}{2}\\
+u(a) &amp;= \arcsin \frac{a}{r} \quad \text{ which does not simplify further}
+\end{align*}
+</div>
+</li>
+<li id="li-2565">The integral then becomes<div class="displaymath">
+\begin{align*}
+\int_a^r \sqrt{r^2-x^2} \dee{x}
+&amp;= \int_{\arcsin(a/r)}^{\frac\pi2} \sqrt{r^2-r^2\sin^2u} \cdot r \cos u \dee{u}\\
+&amp;= \int_{\arcsin(a/r)}^{\frac\pi2} r^2 \sqrt{1-\sin^2u} \cdot \cos u \dee{u}\\
+&amp;= r^2\int_{\arcsin(a/r)}^{\frac\pi2} \sqrt{\cos^2u} \cdot \cos u \dee{u}
+\end{align*}
+</div>To proceed further (as we did in Examples <a class="xref" data-knowl="./knowl/eg_first_trigsub.html" title="Example 6.9.1: Quarter of the unit circle">6.9.1</a> and <a class="xref" data-knowl="./knowl/eg_trigsub2.html" title="Example 6.9.2: \(\int \frac{x^2}{\sqrt{1-x^2}}\dee{x}\)">6.9.2</a>)  we need to think about whether \(\cos u\) is positive or negative.</li>
+<li id="li-2566">Since \(a\) (as shown in the diagram) satisfies \(0 \leq a \leq r\text{,}\) we know that  \(u(a)\) lies between \(\arcsin(0)=0\) and \(\arcsin(1)=\frac\pi2\text{.}\) Hence the variable \(u\)  lies between \(0\) and \(\frac\pi2\text{,}\) and on this range \(\cos u \geq 0\text{.}\) This allows us  get rid of the square-root:<div class="displaymath">
+\begin{gather*}
+\sqrt{\cos^2u} = |\cos u| = \cos u
+\end{gather*}
+</div>
+</li>
+<li id="li-2567">Putting this fact into our integral we get<div class="displaymath">
+\begin{align*}
+\int_a^r \sqrt{r^2-x^2} \dee{x}
+&amp;= r^2\int_{\arcsin(a/r)}^{\frac\pi2} \sqrt{\cos^2u} \cdot \cos u \dee{u}\\
+&amp;= r^2 \int_{\arcsin(a/r)}^{\frac\pi2} \cos^2 u \dee{u}\\
+\end{align*}
+<p class="intertext">Recall the identity \(\cos^2u=\frac{1+\cos2u}{2}\) from Section <a href="sec_trigint.html" class="internal" title="Section 6.8: Trigonometric Integrals">6.8</a></p>
+\begin{align*}
+&amp;= \frac{r^2}{2} \int_{\arcsin(a/r)}^{\frac\pi2} (1 +\cos 2u) \dee{u}\\
+&amp;= \frac{r^2}{2} \bigg[u + \frac{1}{2}\sin(2u) \bigg]_{\arcsin(a/r)}^{\frac\pi2}\\
+&amp;= \frac{r^2}{2} \left(\frac{\pi}{2} +\frac{1}{2}\sin\pi - \arcsin(a/r) -
+\frac{1}{2}\sin( 2\arcsin(a/r)) \right)\\
+&amp;= \frac{r^2}{2} \left(\frac{\pi}{2} - \arcsin(a/r) - \frac{1}{2}\sin( 2\arcsin(a/r))
+\right)
+\end{align*}
+</div>Oof! But there is a little further to go before we are done.</li>
+<li id="li-2568">
+<p id="p-7085">We can again simplify the term \(\sin( 2\arcsin(a/r))\) using a double angle  identity. Set \(\theta = \arcsin(a/r)\text{.}\) Then \(\theta\) is the angle in the triangle  on the right below. By the double angle formula for \(\sin(2\theta)\)  (Equation <a class="xref" data-knowl="./knowl/eq_TRGINTtrigidentityB.html" title="Equation 6.8.2">6.8.2</a>)</p>
+<div class="displaymath">
+\begin{align*}
+\sin(2\theta)&amp;=2\sin\theta\ \cos\theta\\
+&amp;=2\ \frac{a}{r}\ \frac{\sqrt{r^2-a^2}}{r}.
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/triangleAsin.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li id="li-2569">So finally the area is<div class="displaymath">
+\begin{align*}
+\text{area} &amp;= \int_a^r \sqrt{r^2-x^2} \dee{x}\\
+&amp;= \frac{r^2}{2} \left(\frac{\pi}{2} - \arcsin(a/r) - \frac{1}{2}\sin( 2\arcsin(a/r))
+\right)\\
+&amp;= \frac{\pi r^2}{4} - \frac{r^2}{2} \arcsin(a/r) - \frac{a}{2} \sqrt{r^2-a^2}
+\end{align*}
+</div>
+</li>
+<li id="li-2570">
+<p id="p-7086">This is a relatively complicated formula, but we can make some “reasonableness” checks, by looking at special values of \(a\text{.}\)</p>
+<ul class="circle">
+<li id="li-2571">If \(a=0\) the shaded region, in the figure at the beginning of this example,  is exactly one quarter of a disk of radius \(r\) and so has area \(\frac{1}{4}\pi r^2\text{.}\)  Substituting \(a=0\) into our answer does indeed give \(\frac{1}{4}\pi r^2\text{.}\)</li>
+<li id="li-2572">At the other extreme, if \(a=r\text{,}\) the shaded region disappears completely and so has  area \(0\text{.}\) Subbing \(a=r\) into our answer does indeed give \(0\text{,}\) since \(\arcsin  1=\frac{\pi}{2}\text{.}\)</li>
+</ul>
+</li>
+</ul></article></div>
+<article class="example example-like" id="eg_INVTRIGaa"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_INVTRIGaa"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.9.4</span><span class="period">.</span><span class="space"> </span><span class="title">\(\int_a^r x\sqrt{r^2-x^2}\dee{x}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_INVTRIGaa"><article class="example example-like"><p id="p-7087">The integral \(\int_a^r x\sqrt{r^2-x^2}\dee{x}\) looks a lot like the integral we just did in the previous 3 examples. It can also be evaluated  using the trigonometric substitution \(x= r\sin u\) — but that is unnecessarily  complicated. Just because you have now learned how to use trigonometric substitution <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-231" id="fn-231"><sup> 1 </sup></a> doesn't mean that you should forget everything you learned before.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-231"><div class="fn">To paraphrase the Law of the Instrument, possibly Mark Twain and  definitely some psychologists, when you have a shiny new hammer, everything looks like a  nail.</div></div>
+<p id="p-7088"><em class="alert">Solution:</em> This integral is <em class="emphasis">much</em> more easily evaluated using the simple substitution \(u=r^2-x^2\text{.}\)</p>
+<ul class="disc"><li id="li-2573">Set \(u=r^2-x^2\text{.}\) Then \(\dee{u}=-2x\dee{x}\text{,}\) and so<div class="displaymath">
+\begin{align*}
+\int_a^r x\sqrt{r^2-x^2}\dee{x} &amp;=\int_{r^2-a^2}^0 \sqrt{u}\ \frac{\dee{u}}{-2}\\
+&amp;=-\frac{1}{2}\bigg[\frac{u^{3/2}}{3/2}\bigg]_{r^2-a^2}^0\\
+&amp;=\frac{1}{3}\big[r^2-a^2\big]^{3/2}
+\end{align*}
+</div>
+</li></ul></article></div>
+<p id="p-7089">Enough sines and cosines — let us try a tangent substitution.</p>
+<article class="example example-like" id="eg_INVTRIGb"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_INVTRIGb"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.9.5</span><span class="period">.</span><span class="space"> </span><span class="title">\(\int\frac{\dee{x}}{x^2\sqrt{9+x^2}}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_INVTRIGb"><article class="example example-like"><p id="p-7090"><em class="alert">Solution:</em> As per our guidelines at the start of this section, the presence of the square root  term \(\sqrt{3^2+x^2}\) tells us to substitute \(x=3\tan u\text{.}\)</p>
+<ul class="disc">
+<li id="li-2574">Substitute<div class="displaymath">
+\begin{align*}
+x&amp;=3\tan u &amp;
+\dee{x} &amp;= 3\sec^2 u\dee{u}
+\end{align*}
+</div>This allows us to remove the square root:<div class="displaymath">
+\begin{align*}
+\sqrt{9+x^2}
+&amp;=\sqrt{9+9\tan^2u}
+=3\sqrt{1+\tan^2u}
+=3\sqrt{\sec^2 u}
+=3|\sec u|
+\end{align*}
+</div>
+</li>
+<li id="li-2575">Hence our integral becomes<div class="displaymath">
+\begin{align*}
+\int \frac{\dee{x}}{x^2\sqrt{9+x^2}}
+&amp;= \int \frac{3\sec^2 u}{9\tan^2u \cdot 3|\sec u|} \dee{u}
+\end{align*}
+</div>
+</li>
+<li id="li-2576">To remove the absolute value we must consider the range of values of \(u\) in  the integral. Since \(x=3\tan u\) we have \(u = \arctan(x/3)\text{.}\) The range <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-232" id="fn-232"><sup> 2 </sup></a> of arctangent  is \(-\frac{\pi}{2} \leq \arctan  \leq \frac{\pi}{2}\) and so \(u=\arctan(x/3)\)  will always like between \(-\frac{\pi}{2}\) and \(+\frac{\pi}{2}\text{.}\) Hence \(\cos u\)  will always be positive, which in turn implies that \(|\sec u|=\sec u\text{.}\)</li>
+<li id="li-2577">Using this fact our integral becomes:<div class="displaymath">
+\begin{align*}
+\int \frac{\dee{x}}{x^2\sqrt{9+x^2}}
+&amp;= \int \frac{3\sec^2 u}{27 \tan^2u |\sec u|} \dee{u}\\
+&amp;= \frac{1}{9}\int \frac{\sec u}{\tan^2u} \dee{u} &amp; \text{since $\sec u  \gt  0$}
+\end{align*}
+</div>
+</li>
+<li id="li-2578">Rewrite this in terms of sine and cosine<div class="displaymath">
+\begin{align*}
+\int \frac{\dee{x}}{x^2\sqrt{9+x^2}}
+&amp;= \frac{1}{9}\int \frac{\sec u}{\tan^2u} \dee{u}\\
+&amp;= \frac{1}{9} \int \frac{1}{\cos u}\cdot \frac{\cos^2u}{\sin^2 u}\dee{u}
+= \frac{1}{9} \int \frac{\cos u}{\sin^2 u}\dee{u}\\
+\end{align*}
+<p class="intertext">Now we can use the substitution rule with \(y=\sin u\) and \(\dee{y}=\cos u\dee{u}\)</p>
+\begin{align*}
+&amp;= \frac{1}{9} \int \frac{\dee{y}}{y^2} \\
+&amp;= -\frac{1}{9y} +C \\
+&amp;= -\frac{1}{9\sin u}+C
+\end{align*}
+</div>
+</li>
+<li id="li-2579">
+<p id="p-7091">The original integral was a function of \(x\text{,}\) so we still have to rewrite \(\sin u\) in terms of \(x\text{.}\) Remember that \(x=3 \tan u\) or  \(u=\arctan(x/3)\text{.}\) So \(u\) is the angle shown in the triangle below and we can read off the triangle that</p>
+<div class="displaymath">
+\begin{align*}
+\sin u &amp;= \frac{x}{\sqrt{9+x^2}}\\
+\implies \int\frac{\dee{x}}{x^2\sqrt{9+x^2}} &amp;= -\frac{\sqrt{9+x^2}}{9x}  +C
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/triangleAtan.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+</ul>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-232"><div class="fn">To be  pedantic, we mean the range of the “standard” arctangent function or its “principle  value”. One can define other arctangent functions with different ranges.</div></div></article></div>
+<article class="example example-like" id="eg_sec_sub"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_sec_sub"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.9.6</span><span class="period">.</span><span class="space"> </span><span class="title">\(\int \frac{x^2}{\sqrt{x^2-1}} \dee{x}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_sec_sub"><article class="example example-like"><p id="p-7092"><em class="alert">Solution:</em> This one requires a secant substitution, but otherwise is very similar to those above.</p>
+<ul class="disc">
+<li id="li-2580">Set \(x = \sec u\) and \(\dee{x}=\sec u \tan u \dee{u}\text{.}\) Then<div class="displaymath">
+\begin{align*}
+\int \frac{x^2}{\sqrt{x^2-1}} \dee{x}
+&amp;= \int \frac{\sec^2 u}{\sqrt{\sec^2u-1}} \sec u \tan u \dee{u}\\
+&amp;= \int \sec^3 u \cdot \frac{ \tan u}{\sqrt{\tan^2u}}  \dee{u}
+\qquad \text{since $\tan^2u = \sec^2u-1$}\\
+&amp;= \int \sec^3u \cdot \frac{\tan u}{|\tan u|} \dee{u}
+\end{align*}
+</div>
+</li>
+<li id="li-2581">
+<p id="p-7093">As before we need to consider the range of \(u\) values in order to determine the  sign of \(\tan u\text{.}\) Notice that the integrand is only defined when either \(x \lt -1\) or \(x \gt 1\text{;}\)  thus we should treat the cases \(x \lt -1\) and \(x \gt 1\) separately. Let us assume that \(x \gt 1\) and  we will come back to the case \(x \lt -1\) at the end of the example.</p>
+<p id="p-7094">When \(x \gt 1\text{,}\) our \(u=\arcsec x\) takes values in \((0,\frac\pi2)\text{.}\) This follows  since when \(0 \lt u \lt \frac\pi2\text{,}\) we have \(0 \lt \cos u \lt 1\) and so \(\sec u \gt 1\text{.}\) Further, when  \(0 \lt u \lt \frac\pi2\text{,}\) we have \(\tan u \gt 0\text{.}\) Thus \(|\tan u|=\tan u\text{.}\)</p>
+</li>
+<li id="li-2582">Back to our integral, when \(x&gt; 1\text{:}\)<div class="displaymath">
+\begin{align*}
+\int \frac{x^2}{\sqrt{x^2-1}} \dee{x}
+&amp;= \int \sec^3u \cdot \frac{\tan u}{|\tan u|} \dee{u}\\
+&amp;= \int \sec^3u \dee{u} &amp; \text{since } \tan u\geq 0\\
+\end{align*}
+<p class="intertext">This is exactly Example <a class="xref" data-knowl="./knowl/eg_TRGINToptd.html" title="Example 6.8.22: \(\int \sec^3 x\dee{x}\) — by trickery">6.8.22</a></p>
+\begin{align*}
+&amp;= \frac{1}{2}\sec u \tan u + \frac{1}{2} \log| \sec u + \tan u| +C
+\end{align*}
+</div>
+</li>
+<li id="li-2583">Since we started with a function of \(x\) we need to finish with one. We know that  \(\sec u = x\) and then we can use trig identities<div class="displaymath">
+\begin{align*}
+\tan^2 u &amp;= \sec^2 u - 1 = x^2-1 &amp; \text{so }
+\tan u &amp;= \pm \sqrt{x^2-1}\\
+\end{align*}
+<p class="intertext">but we know</p>
+\begin{align*}
+\tan u &amp; \geq 0 &amp; \text{so }
+\tan u &amp;= \sqrt{x^2-1}
+\end{align*}
+</div>Thus<div class="displaymath">
+\begin{align*}
+\int \frac{x^2}{\sqrt{x^2-1}} \dee{x}
+&amp;= \frac{1}{2}x\sqrt{x^2-1} + \frac{1}{2}\log| x +\sqrt{x^2-1}| +C
+\end{align*}
+</div>
+</li>
+<li id="li-2584">The above holds when \(x \gt 1\text{.}\) We can confirm that it is also true when \(x \lt -1\) by  showing the right-hand side is a valid antiderivative of the integrand. To do so we must  differentiate our answer. Notice that we do not need to consider the sign of  \(x+\sqrt{x^2-1}\) when we differentiate since we have already seen that<div class="displaymath">
+\begin{align*}
+\diff{}{x} \log|x| &amp;= \frac{1}{x}
+\end{align*}
+</div>when either \(x \lt 0\) or \(x \gt 0\text{.}\) So the following computation applies to both \(x \gt 1\) and  \(x \lt -1\text{.}\) The expressions become quite long so we differentiate each term  separately:<div class="displaymath">
+\begin{align*}
+\diff{}{x} \left[ x\sqrt{x^2-1} \right]
+&amp;=\left[ \sqrt{x^2-1} +  \frac{x^2}{\sqrt{x^2-1}} \right]\\
+&amp;= \frac{1}{\sqrt{x^2-1}} \left[(x^2-1) + x^2 \right]\\
+\diff{}{x} \log\bigg| x +\sqrt{x^2-1} \bigg|
+&amp;= \frac{1}{x+\sqrt{x^2-1}} \cdot \left[ 1+\frac{x}{\sqrt{x^2-1}} \right]\\
+&amp;= \frac{1}{x+\sqrt{x^2-1}} \cdot \frac{x+\sqrt{x^2-1}}{\sqrt{x^2-1}}\\
+&amp;= \frac{1}{\sqrt{x^2-1}}
+\end{align*}
+</div>Putting things together then gives us<div class="displaymath">
+\begin{align*}
+&amp; \diff{}{x} \left[ \frac{1}{2}x\sqrt{x^2-1} + \frac{1}{2}\log| x +\sqrt{x^2-1}| +C  \right]\\
+&amp;= \frac{1}{2\sqrt{x^2-1}} \left[(x^2-1) + x^2 + 1 \right]+0\\
+&amp;= \frac{x^2}{\sqrt{x^2-1}}
+\end{align*}
+</div>This tells us that our answer for \(x \gt 1\) is also valid when \(x \lt -1\) and so<div class="displaymath">
+\begin{align*}
+\int \frac{x^2}{\sqrt{x^2-1}} \dee{x} &amp;= \frac{1}{2}x\sqrt{x^2-1} + \frac{1}{2}\log| x +\sqrt{x^2-1}| +C
+\end{align*}
+</div>when \(x \lt -1\) and when \(x \gt 1\text{.}\)</li>
+</ul>
+<p id="p-7095">In this example, we were lucky. The answer that we derived for \(x&gt;1\) happened to be also valid for \(x&lt;-1\text{.}\) This does not always happen with the \(x=a\,\sec u\) substitution. When it doesn't, we have to apply separate \(x&gt;a\) and \(x&lt;-a\) analyses that are very similar to our \(x&gt;1\) analysis above. Of course that doubles the tedium. So in the CLP-2 problem book, we will not pose questions that require separate \(x&gt;a\) and \(x&lt;-a\) computations.</p></article></div>
+<p id="p-7096">The method, as we have demonstrated it above, works when our integrand contains the  square root of very specific families of quadratic polynomials. In fact, the same  method works for more general quadratic polynomials — all we need to do is complete  the square <a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-233" id="fn-233"><sup> 3 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-233"><div class="fn">If you have not heard of “completing the square” don't worry. It  is not a difficult method and it will only take you a few moments to learn. It refers to  rewriting a quadratic polynomial<div class="displaymath">
+\begin{align*}
+P(x) &amp;= ax^2 + bx + c &amp;\text{as}&amp;&amp; P(x)= a(x+d)^2 +e
+\end{align*}
+</div>for new constants \(d,e\text{.}\)</div></div>
+<article class="example example-like" id="eg_INVTRIGc"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_INVTRIGc"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.9.7</span><span class="period">.</span><span class="space"> </span><span class="title">\(\int_3^5\frac{\sqrt{x^2-2x-3}}{x-1}\dee{x}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_INVTRIGc"><article class="example example-like"><p id="p-7097">This time we have an integral with a square root in the integrand, but the argument of the square root, while a quadratic function of \(x\text{,}\) is not in  one of the standard forms \(\sqrt{a^2-x^2}\text{,}\) \(\sqrt{a^2+x^2}\text{,}\) \(\sqrt{x^2-a^2}\text{.}\) The reason that it is not in one of those forms is that the argument, \(x^2-2x-3\text{,}\) contains a term , namely \(-2x\) that is of degree one in \(x\text{.}\) So we try to manipulate it into one of the standard forms by completing the square.</p>
+<p id="p-7098"><em class="alert">Solution:</em></p>
+<ul class="disc">
+<li id="li-2585">We first rewrite the quadratic polynomial \(x^2-2x-3\) in the form \((x-a)^2+b\) for  some constants \(a,b\text{.}\) The easiest way to do this is to expand both expressions and  compare coefficients of \(x\text{:}\)<div class="displaymath">
+\begin{align*}
+x^2-2x-3 &amp;= (x-a)^2+b = (x^2-2ax+a^2)+b
+\end{align*}
+</div>So — if we choose \(-2a=-2\) (so the coefficients of \(x^1\) match) and \(a^2+b=-3\) (so the  coefficients of \(x^0\) match), then both expressions are equal. Hence we set \(a=1\) and  \(b=-4\text{.}\) That is<div class="displaymath">
+\begin{align*}
+x^2-2x-3 &amp;= (x-1)^2-4
+\end{align*}
+</div>Many of you may have seen this method when learning to sketch parabolas.</li>
+<li id="li-2586">Once this is done we can convert the square root of the integrand into a standard  form by making the simple substitution \(y=x-1\text{.}\) Here goes<div class="displaymath">
+\begin{align*}
+&amp; \int_3^5\frac{\sqrt{x^2-2x-3}}{x-1}\dee{x}\\
+&amp;=\int_3^5\frac{\sqrt{(x-1)^2-4}}{x-1}\dee{x}\\
+&amp;=\int_2^4\frac{\sqrt{y^2-4}}{y}\dee{y}
+&amp;\text{with } y=x-1, \dee{y} = \dee{x}\\
+&amp;=\int_0^{\pi/3}\frac{\sqrt{4\sec^2u-4}}{2\sec u}\ 2\sec u\tan u\dee{u}
+&amp;\text{with } y=2\sec u\\
+&amp;&amp; \text{and }\dee{y} = 2\sec u\tan u\dee{u}
+\end{align*}
+</div>Notice that we could also do this in fewer steps by setting \((x-1)=2\sec u,  \dee{x}=2\sec u\tan u\dee{u}\text{.}\)</li>
+<li id="li-2587">
+<p id="p-7099">To get the limits of integration we used that</p>
+<ul class="circle">
+<li id="li-2588">the value of \(u\) that corresponds to \(y=2\) obeys \(2=y=2\sec u=\frac{2}{\cos u}\) or \(\cos u=1\text{,}\) so that \(u=0\) works and</li>
+<li id="li-2589">the value of \(u\) that corresponds to \(y=4\) obeys \(4=y=2\sec u=\frac{2}{\cos u}\) or \(\cos u=\half\text{,}\) so that  \(u=\frac{\pi}{3}\) works.</li>
+</ul>
+</li>
+<li id="li-2590">Now returning to the evaluation of the integral, we simplify and continue.<div class="displaymath">
+\begin{align*}
+\int_3^5\frac{\sqrt{x^2-2x-3}}{x-1}\dee{x}
+&amp;=\int_0^{\pi/3} 2\sqrt{\sec^2 u -1}\ \tan u\dee{u}\\
+&amp;=2\int_0^{\pi/3} \tan^2 u\dee{u}
+\qquad\text{since } \sec^2u=1+\tan^2u\\
+\end{align*}
+<p class="intertext">In taking the square root of \(\sec^2u-1=\tan^2u\) we used that \(\tan u\ge 0\) on  the range \(0\le u\le \frac{\pi}{3}\text{.}\)</p>
+\begin{align*}
+&amp;=2\int_0^{\pi/3}\big[ \sec^2 u-1\big]\dee{u}
+\qquad\quad\text{since $\sec^2u=1+\tan^2u$, again}\\
+&amp;=2\Big[\tan u - u\Big]_0^{\pi/3}\\
+&amp;=2\big[\sqrt{3}-\frac{\pi}{3}\big]
+\end{align*}
+</div>
+</li>
+</ul></article></div></section><section class="exercises" id="exercises-53"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">6.9.2</span> <span class="title">Exercises</span>
+</h3>
+<section class="introduction" id="introduction-215"><p id="p-7100">Recall that we are using \(\log x\) to denote the logarithm of \(x\) with base \(e\text{.}\) In other courses it is often denoted \(\ln x\text{.}\)</p></section><div class="exercisegroup" id="exercisegroup-140">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-216"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="prob_s1_9_1"><h6 class="heading">
+<span class="codenumber">1<span class="period">.</span></span><span class="space"> </span><span class="title">2015A.</span>
+</h6>
+<p id="p-7101">For each of the following integrals, choose the substitution that is most beneficial for evaluating the integral.</p>
+<ol class="lower-alpha">
+<li id="li-2591">\(\displaystyle \displaystyle \int \frac{2x^2}{\sqrt{9x^2-16}} \, \dee{x}\)</li>
+<li id="li-2592">\(\displaystyle \displaystyle \int \frac{x^4-3}{\sqrt{1-4x^2}} \, \dee{x}\)</li>
+<li id="li-2593">\(\displaystyle \displaystyle \int {(25+x^2)}^{-5/2} \, \dee{x}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-858" id="hint-858"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-858"><div class="hint solution-like"><p id="p-7102">The beginning of this section has a template for choosing a substitution. Your goal is to use a trig identity to turn the argument of the square root into a perfect square, so you can cancel \(\sqrt{(\mbox{something})^2}=|\mbox{something}|\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-938" id="answer-938"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-938"><div class="answer solution-like">
+<p id="p-7103">(a) \(x=\dfrac{4}{3}\sec\theta\)</p>
+<p id="p-7104">(b) \(x=\dfrac{1}{2}\sin\theta\)</p>
+<p id="p-7105">(c) \(x=5\tan\theta\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-938" id="solution-938"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-938"><div class="solution solution-like">
+<p id="p-7106">In the text, there is a template for choosing an appropriate substitution, but for this problem we will explain the logic of the choices.</p>
+<p id="p-7107">The trig identities that we can use are:</p>
+<div class="displaymath">
+\begin{align*}
+&amp;1-\sin^2\theta=\cos^2\theta &amp; &amp;\tan^2 \theta +1 = \sec^2 \theta &amp; &amp;\sec^2 \theta - 1 =\tan^2 \theta\\
+\end{align*}
+<p class="intertext">They have the following forms:</p>
+\begin{align*}
+&amp;\mbox{constant } - \mbox{ function} &amp;&amp;\mbox{function } + \mbox{ constant} &amp;
+&amp;\mbox{function } - \mbox{ constant}
+\end{align*}
+</div>
+<p data-braille="continuation">In order to cancel out the square root, we should choose a substitution that will match the argument under the square root with the trig identity of the corresponding form.</p>
+<p id="p-7108">(a) There's not an obvious non-trig substitution for evaluating this problem, so we want a trigonometric substitution to get rid of the square root in the denominator. Under the square root is the function \(9x^2-16\text{,}\) which has the form (function) \(-\) (constant). This form matches the trig identity \(\sec^2 \theta - 1 = \tan^2 \theta\text{.}\) We can set \(x\) to be whatever we need it to be, but we don't have the same control over the constant, 16. So, to make the substitution work, we use a different form of the trig identity: multiplying both sides  by 16, we get</p>
+<div class="displaymath">
+\begin{align*}
+16\sec^2\theta - 16 &amp;= 16\tan^2\theta\\
+\end{align*}
+<p class="intertext">What we want is a substitution that gives us</p>
+\begin{align*}
+9x^2-16&amp;=16\sec^2\theta - 16\\
+\mbox{So,}\qquad 9x^2&amp;=16\sec^2\theta\\
+x &amp;= \frac{4}{3}\sec\theta\\
+\end{align*}
+<p class="intertext">Using this substitution,</p>
+\begin{align*}
+\sqrt{9x^2-16}&amp;=\sqrt{16\sec^2\theta-16}\\
+&amp;=\sqrt{16\tan^2\theta}\\
+&amp;=4|\tan\theta|
+\end{align*}
+</div>
+<p data-braille="continuation">So, we eliminated the square root.</p>
+<p id="p-7109">(b) There's not an obvious non-trig substitution for evaluating this problem, so we want a trigonometric substitution to get rid of the square root in the denominator. Under the square root is the function \(1-4x^2\text{,}\) which has the form (constant) \(-\) (function). This form matches the trig identity \(1-\sin^2\theta = \cos^2\theta\text{.}\) What we want is a substitution that gives us</p>
+<div class="displaymath">
+\begin{align*}
+1-4x^2&amp;=1-\sin^2\theta\\
+\mbox{So,}\qquad 4x^2&amp;=\sin^2\theta\\
+x &amp;= \frac{1}{2}\sin\theta\\
+\end{align*}
+<p class="intertext">Using this substitution,</p>
+\begin{align*}
+\sqrt{1-4x^2}&amp;=\sqrt{1-\sin^2\theta}\\
+&amp;=\sqrt{\cos^2\theta}\\
+&amp;=|\cos\theta|
+\end{align*}
+</div>
+<p data-braille="continuation">So, we eliminated the square root.</p>
+<p id="p-7110">(c) There's not an obvious non-trig substitution for evaluating this problem, so we want a trigonometric substitution to get rid of the fractional power. (That is, we want to eliminate the square root.) The function under the power is \(25+x^2\text{,}\) which has the form (constant) \(+\) (function). This form matches the trig identity \(\tan^2 \theta + 1 = \sec^2 \theta\text{.}\) We can set \(x\) to be whatever we need it to be, but we don't have the same control over the constant, 25. So, to make the substitution work, we use a different form of the trig identity: multiplying both sides  by 25, we get</p>
+<div class="displaymath">
+\begin{align*}
+25\tan^2 \theta + 25 &amp;= 25\sec^2 \theta\\
+\end{align*}
+<p class="intertext">What we want is a substitution that gives us</p>
+\begin{align*}
+25+x^2&amp;=25\tan^2\theta+25\\
+\mbox{So,}\qquad x^2&amp;=25\tan^2\theta\\
+x &amp;= 5\tan\theta\\
+\end{align*}
+<p class="intertext">Using this substitution,</p>
+\begin{align*}
+(25+x^2)^{-5/2}&amp;=(25+25\tan^2\theta)^{-5/2}\\
+&amp;=(25\sec^2\theta)^{-5/2}\\
+&amp;=(5|\sec\theta|)^{-5}
+\end{align*}
+</div>
+<p data-braille="continuation">So, we eliminated the square root.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_21_9_complete"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-7111">For each of the following integrals, choose a trigonometric substitution that will eliminate the roots.</p>
+<ol class="lower-alpha">
+<li id="li-2594">\(\displaystyle \displaystyle\int \dfrac{1}{\sqrt{x^2-4x+1}}\dee{x}\)</li>
+<li id="li-2595">\(\displaystyle \displaystyle\int \dfrac{(x-1)^6}{(-x^2+2x+4)^{3/2}}\dee{x}\)</li>
+<li id="li-2596">\(\displaystyle \displaystyle\int \dfrac{1}{\sqrt{4x^2+6x+10}}\dee{x}\)</li>
+<li id="li-2597">\(\displaystyle \displaystyle\int \sqrt{x^2-x}\dee{x}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-859" id="hint-859"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-859"><div class="hint solution-like"><p id="p-7112">You want to do the same thing you did in Question <a class="xref" data-knowl="./knowl/prob_s1_9_1.html" title="Exercise 6.9.2.1: 2015A">1</a>, but you'll have to complete the square first.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-939" id="answer-939"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-939"><div class="answer solution-like">
+<p id="p-7113">(a) \(x-2=\sqrt{3}\sec u\)</p>
+<p id="p-7114">(b) \(x-1=\sqrt{5}\sin u\)</p>
+<p id="p-7115">(c) \(\left(2x+\dfrac{3}{2}\right) =\dfrac{\sqrt{31}}{2}\tan u\)</p>
+<p id="p-7116">(d) \(x - \dfrac{1}{2}=\dfrac{1}{2}\sec u\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-939" id="solution-939"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-939"><div class="solution solution-like">
+<p id="p-7117">Just as in Question <a class="xref" data-knowl="./knowl/prob_s1_9_1.html" title="Exercise 6.9.2.1: 2015A">1</a>, we want to choose a trigonometric substitution that will allow us to eliminate the square roots. Before we can make that choice, though, we need to complete the square. In subsequent problems, we won't show the algebra behind completing the square, but for this problem we'll work it out explicitly. After some practice, you'll  be able to do this step in your head for many cases.</p>
+<p id="p-7118">After the squares are completed, the choice of trig substitution follows the logic outlined in the solutions to Question <a class="xref" data-knowl="./knowl/prob_s1_9_1.html" title="Exercise 6.9.2.1: 2015A">1</a>, or (equivalently) the template in the text.</p>
+<ol id="p-7119" class="lower-alpha">
+<li id="li-2598">
+<p id="p-7120">The quadratic function under the square root is \(x^2-4x+1\text{.}\) To complete the square, we match the non-constant terms to those of a perfect square.</p>
+<div class="displaymath">
+\begin{align*}
+(ax+b)^2&amp;=a^2x^2+2abx+b^2\\
+\textcolor{red}{x^2}-\textcolor{blue}{4x}+1&amp;=\textcolor{red}{a^2x^2} + \textcolor{blue}{2abx} +b^2 + c \quad\mbox{for some constant } c
+\end{align*}
+</div>
+<ul class="disc">
+<li id="li-2599">Looking at the leading term tells us \(a=1\text{.}\)</li>
+<li id="li-2600">Then the second term tells us \(-4=2ab=2b\text{,}\) so \(b=-2\text{.}\)</li>
+<li id="li-2601">Finally, the constant terms give us \(1=b^2+c=4+c\text{,}\) so \(c=-3\text{.}\)</li>
+</ul>
+<div class="displaymath">
+\begin{align*}
+\int \dfrac{1}{\sqrt{x^2-4x+1}}\dee{x}
+&amp;=\int \dfrac{1}{\sqrt{(x-2)^2-3}}\dee{x}\\
+&amp;=\int \dfrac{1}{\sqrt{(x-2)^2-\sqrt{3}^2}}\dee{x}
+\end{align*}
+</div>
+<p id="p-7121">So we use the substitution \((x-2) = \sqrt{3}\sec u\text{,}\) which eliminates the square root:</p>
+<div class="displaymath">
+\begin{equation*}
+\sqrt{\left(x-2\right)^2-3}=\sqrt{3\sec^2 u - 3} = \sqrt{3\tan^2 u} = \sqrt{3}|\tan u|
+\end{equation*}
+</div>
+</li>
+<li id="li-2602">
+<p id="p-7122">The quadratic function under the square root is \(-x^2+2x+4=-[x^2-2x-4]\text{.}\) To complete the square, we match the non-constant terms to those of a perfect square. We factored out the negative to make things a little easier — don't forget to put it back in before choosing a substitution!</p>
+<div class="displaymath">
+\begin{align*}
+(ax+b)^2&amp;=a^2x^2+2abx+b^2\\
+\textcolor{red}{x^2}-\textcolor{blue}{2x}-4&amp;=\textcolor{red}{a^2x^2} + \textcolor{blue}{2abx} +b^2 + c \quad\mbox{for some constant } c
+\end{align*}
+</div>
+<ul class="disc">
+<li id="li-2603">Looking at the leading term tells us \(a=1\text{.}\)</li>
+<li id="li-2604">Then the second term tells us \(-2=2ab=2b\text{,}\) so \(b=-1\text{.}\)</li>
+<li id="li-2605">Finally, the constant terms give us \(-4=b^2+c=1+c\text{,}\) so \(c=-5\text{.}\)</li>
+<li id="li-2606">Then<div class="displaymath">
+\begin{align*}
+-x^2+2x+4 &amp;= -[x^2-2x-4]=-[(x-1)^2-5]\\
+&amp;=5-(x-1)^2
+\end{align*}
+</div>
+</li>
+</ul>
+<div class="displaymath">
+\begin{align*}
+\int \dfrac{(x-1)^6}{(-x^2+2x+4)^{3/2}}\dee{x}
+&amp;=\int \dfrac{(x-1)^6}{(5-(x-1)^2)^{3/2}}\dee{x}\\
+&amp;=\int \dfrac{(x-1)^6}{\left(\sqrt{5}^2-(x-1)^2\right)^{3/2}}\dee{x}
+\end{align*}
+</div>
+<p id="p-7123">So we use the substitution \((x-1) = \sqrt{5}\sin u\text{,}\) which eliminates the square root (fractional power):</p>
+<div class="displaymath">
+\begin{align*}
+{(5-(x-1)^2)}^{3/2}&amp;={(5-5\sin^2u)}^{3/2} 
+= {(5\cos^2 u)}^{3/2}\\
+&amp;= 5\sqrt{5}|\cos^3 u|
+\end{align*}
+</div>
+</li>
+<li id="li-2607">
+<p id="p-7124">The quadratic function under the square root is \(4x^2+6x+10\text{.}\) To complete the square, we match the non-constant terms to those of a perfect square.</p>
+<div class="displaymath">
+\begin{align*}
+(ax+b)^2&amp;=a^2x^2+2abx+b^2\\
+\textcolor{red}{4x^2}+\textcolor{blue}{6x}+10&amp;=\textcolor{red}{a^2x^2} + \textcolor{blue}{2abx} +b^2 + c \quad\mbox{for some constant $c$}
+\end{align*}
+</div>
+<ul class="disc">
+<li id="li-2608">Looking at the leading term tells us \(a=2\text{.}\)</li>
+<li id="li-2609">Then the second term tells us \(6=2ab=4b\text{,}\) so \(b=\frac{3}{2}\text{.}\)</li>
+<li id="li-2610">Finally, the constant terms give us \(10=b^2+c=\frac{9}{4}+c\text{,}\) so \(c=\frac{31}{4}\text{.}\)</li>
+</ul>
+<div class="displaymath">
+\begin{align*}
+\int \dfrac{1}{\sqrt{4x^2+6x+10}}\dee{x}
+&amp;=\int \dfrac{1}{\sqrt{\left(2x+\frac{3}{2}\right)^2+\frac{31}{4}}}\dee{x}\\
+&amp;=\int \dfrac{1}{\sqrt{\left(2x+\frac{3}{2}\right)^2+\left(\frac{\sqrt{31}}{2}\right)^2}}\dee{x}
+\end{align*}
+</div>
+<p data-braille="continuation">So we use the substitution \(\left(2x+\frac{3}{2}\right) =\frac{\sqrt{31}}{2}\tan u\text{,}\) which eliminates the square root:</p>
+<div class="displaymath">
+\begin{align*}
+\sqrt{\left(2x+\frac{3}{2}\right)^2+\frac{31}{4}}
+&amp;=\sqrt{\frac{31}{4}\tan^2 u +\frac{31}{4}} 
+= \sqrt{\frac{31}{4}\sec^2 u} \\
+&amp;=\frac{\sqrt{31}}{2}|\sec u|
+\end{align*}
+</div>
+</li>
+<li id="li-2611">
+<p id="p-7125">The quadratic function under the square root is \(x^2-x\text{.}\) To complete the square, we match the non-constant terms to those of a perfect square.</p>
+<div class="displaymath">
+\begin{align*}
+(ax+b)^2&amp;=a^2x^2+2abx+b^2\\
+\textcolor{red}{x^2}-\textcolor{blue}{x}&amp;=\textcolor{red}{a^2x^2} + \textcolor{blue}{2abx} +b^2 + c \quad\mbox{for some constant $c$}
+\end{align*}
+</div>
+<ul class="disc">
+<li id="li-2612">Looking at the leading term tells us \(a=1\text{.}\)</li>
+<li id="li-2613">Then the second term tells us \(-1=2ab=2b\text{,}\) so \(b=-\frac{1}{2}\text{.}\)</li>
+<li id="li-2614">Finally, the constant terms give us \(0=b^2+c=\frac{1}{4}+c\text{,}\) so \(c=-\frac{1}{4}\text{.}\)</li>
+</ul>
+<div class="displaymath">
+\begin{align*}
+\int \sqrt{x^2-x}\dee{x}
+&amp;=\int \sqrt{\left(x-\frac{1}{2}\right)^2 -\frac{1}{4}}\dee{x}\\
+&amp;=\int  \sqrt{\left(x-\frac{1}{2}\right)^2 -\left(\frac{1}{2}\right)^2}\dee{x}
+\end{align*}
+</div>
+<p data-braille="continuation">So we use the substitution \((x-1/2) = \frac{1}{2}\sec u\text{,}\) which eliminates the square root:</p>
+<div class="displaymath">
+\begin{equation*}
+\sqrt{\left(x-\frac{1}{2}\right)^2-\frac{1}{4}}=\sqrt{\frac{1}{4}{\sec\vphantom{|}}^2 u - \frac{1}{4}} = \sqrt{\frac{1}{4}\tan^2 u} =\frac{1}{2}|\tan u|
+\end{equation*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s1_9_3"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-7126">In each part of this question, assume  \(\theta\) is an angle in the interval \(\left[ 0,\pi/2\right]\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-2615">If \(\sin\theta=\dfrac{1}{20}\text{,}\) what is \(\cos\theta\) ?</li>
+<li id="li-2616">If \(\tan\theta=7\text{,}\) what is \(\csc\theta\) ?</li>
+<li id="li-2617">If \(\sec\theta=\dfrac{\sqrt{x-1}}{2}\text{,}\) what is \(\tan\theta\) ?</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-860" id="hint-860"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-860"><div class="hint solution-like"><p id="p-7127">Since \(\theta\) is acute, you can draw it as an angle of a right triangle. The given information will let you label two sides of the triangle, and the Pythagorean Theorem will lead you to the third.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-940" id="answer-940"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-940"><div class="answer solution-like">
+<p id="p-7128">(a) \(\dfrac{\sqrt{399}}{20}\)</p>
+<p id="p-7129">(b) \(\dfrac{5\sqrt{2}}{7}\)</p>
+<p id="p-7130">(c) \(\dfrac{\sqrt{x-5}}{2} \)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-940" id="solution-940"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-940"><div class="solution solution-like"><ol id="p-7131" class="lower-alpha">
+<li id="li-2618">
+<p id="p-7132">If \(\sin\theta=\dfrac{1}{20}\) and \(\theta\) is between 0 and \(\pi/2\text{,}\) then we can draw a right triangle with angle \(\theta\) that has opposite side length 1, and hypotenuse length 20. By the Pythagorean Theorem, the adjacent side has length \(\sqrt{20^2-1^2}=\sqrt{399}\text{.}\) So,  \(\cos\theta = \dfrac{\mathrm{adj}}{\mathrm{hyp}}=\dfrac{\sqrt{399}}{20}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-734.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7133">We can do a quick “reasonableness” check here: \(\frac{1}{20}\) is pretty close to 0, so we might expect \(\theta\) to be pretty close to 0, and so \(\cos \theta\) should be pretty close to 1. Indeed it is: \(\dfrac{\sqrt{399}}{20}\approx \dfrac{\sqrt{400}}{20}=\dfrac{20}{20}=1\text{.}\)</p>
+<p id="p-7134">Alternatively, we can solve this problem using identities.</p>
+<div class="displaymath">
+\begin{align*}
+\sin^2 \theta + \cos^2 \theta &amp;=1\\
+\left(\frac{1}{20}\right)^2+ \cos^2 \theta &amp;=1\\
+\cos\theta &amp;= \pm\sqrt{1-\frac{1}{400}}=\pm\frac{\sqrt{399}}{20}\\
+\end{align*}
+<p class="intertext">Since \(0 \leq \theta \leq \frac{\pi}{2}\text{,}\) \(\cos\theta \geq 0\text{,}\) so</p>
+\begin{align*}
+\cos\theta &amp;= \frac{\sqrt{399}}{20}
+\end{align*}
+</div>
+</li>
+<li id="li-2619">
+<p id="p-7135">If \(\tan\theta=7\) and \(\theta\) is between 0 and \(\pi/2\text{,}\) then we can draw a right triangle with angle \(\theta\) that has opposite side length 7 and adjacent side length 1. By the Pythagorean Theorem, the hypotenuse has length \(\sqrt{7^2+1^2} = \sqrt{50}=5\sqrt{2}\text{.}\) So,  \(\csc\theta = \dfrac{\mathrm{hyp}}{\mathrm{opp}}=\dfrac{5\sqrt{2}}{7}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-735.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7136">Again, we can do a quick reasonableness check. Since 7 is much larger than 1, the triangle we're thinking of doesn't look much like the triangle in our standardized picture above: it's really quite tall, with a small base. So, the opposite side and hypotenuse are pretty close in length. Indeed, \(\dfrac{5\sqrt{2}}{7}\approx 7.071\text{,}\) so this dimension seems reasonable.</p>
+</li>
+<li id="li-2620">
+<p id="p-7137">If \(\sec\theta=\dfrac{\sqrt{x-1}}{2}\) and \(\theta\) is between 0 and \(\pi/2\text{,}\) then we can draw a right triangle with angle \(\theta\) that has hypotenuse length \(\sqrt{x-1}\) and adjacent side length 2. By the Pythagorean Theorem, the opposite side has length \(\sqrt{\sqrt{x-1}^2 - 2^2} = \sqrt{x-1-4}=\sqrt{x-5}\text{.}\) So,  \(\tan\theta = \dfrac{\mathrm{opp}}{\mathrm{adj}}=\dfrac{\sqrt{x-5}}{2}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-736.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7138">We can also solve this using identities. Note that since \(\sec\theta\) exists,  \(\theta \neq \frac{\pi}{2}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\tan^2\theta+1&amp;=\sec^2\theta\\
+\tan^2\theta+1&amp;=\left(\frac{\sqrt{x-1}}{2}\right)^2=\frac{x-1}{4}\\
+\tan\theta &amp;= \pm\sqrt{\frac{x-1}{4}-1} = \pm\frac{\sqrt{x-5}}{2}\\
+\end{align*}
+<p class="intertext">Since \(0 \leq \theta  \lt  \frac{\pi}{2}\text{,}\) \(\tan\theta \geq 0\text{,}\) so</p>
+\begin{align*}
+\tan\theta &amp;= \frac{\sqrt{x-5}}{2}
+\end{align*}
+</div>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="prob_s1_9_4"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-7139">Simplify the following expressions.</p>
+<ol class="lower-alpha">
+<li id="li-2621">\(\displaystyle \sin\left(\arccos \left(\frac{x}{2}\right)\right)\)</li>
+<li id="li-2622">\(\displaystyle \sin\left(\arctan \left(\frac{1}{\sqrt{3}}\right)\right)\)</li>
+<li id="li-2623">\(\displaystyle \sec\left(\arcsin \left(\sqrt{x}\right)\right)\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-861" id="hint-861"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-861"><div class="hint solution-like"><p id="p-7140">You can draw a right triangle with angle \(\theta\text{,}\) and use the given information to label two of the sides. The Pythagorean Theorem gives you the third side.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-941" id="answer-941"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-941"><div class="answer solution-like">
+<p id="p-7141">(a) \(\dfrac{\sqrt{4-x^2}}{2}\)</p>
+<p id="p-7142">(b) \(\dfrac{1}{2}\)</p>
+<p id="p-7143">(c) \(\dfrac{1}{\sqrt{1-x}}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-941" id="solution-941"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-941"><div class="solution solution-like"><ol id="p-7144" class="lower-alpha">
+<li id="li-2624">
+<p id="p-7145">Let \(\theta = \arccos \left(\frac{x}{2}\right)\text{.}\) That is, \(\cos(\theta) = \frac{x}{2}\text{,}\) and \(0 \leq \theta \leq \pi\text{.}\) Then we can draw the corresponding right triangle with angle \(\theta\) with adjacent side of signed length \(x\) (we note that if \(\theta  \gt  \frac{\pi}{2}\text{,}\) then \(x\) is negative) and hypotenuse of length \(2\text{.}\) By the Pythagorean Theorem, the opposite side of the triangle has length \(\sqrt{4-x^2}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:31.5%;margin-right:31.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-737.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7146">So,</p>
+<div class="displaymath">
+\begin{equation*}
+\sin\left(\arccos \left(\frac{x}{2}\right)\right)=\sin \theta = \frac{\mathrm{opp}}{\mathrm{hyp}} = \frac{\sqrt{4-x^2}}{2}
+\end{equation*}
+</div>
+</li>
+<li id="li-2625">
+<p id="p-7147">Let \(\theta = \arctan \left(\frac{1}{\sqrt{3}}\right)\text{.}\) That is, \(\tan(\theta) = \frac{1}{\sqrt{3}}\text{,}\) and \(-\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}\text{.}\)</p>
+<ul id="p-7148" class="disc">
+<li id="li-2626">Solution 1: Then \(\theta = \dfrac{\pi}{6}\text{,}\) so \(\sin\theta = \dfrac{1}{2}\text{.}\)</li>
+<li id="li-2627">
+<p id="p-7149">Solution 2: Then we can draw the corresponding right triangle with angle \(\theta\) with opposite side of length \(1\)  and adjacent side of length \(\sqrt{3}\text{.}\) By the Pythagorean Theorem, the hypotenuse of the triangle has length \(\sqrt{\sqrt{3}^2+1^2}=2\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:36%;margin-right:36%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-738.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7150">So,</p>
+<div class="displaymath">
+\begin{equation*}
+\sin\left(\arctan \left(\frac{1}{\sqrt{3}}\right)\right)=\sin \theta = \frac{\mathrm{opp}}{\mathrm{hyp}} = \frac{1}{2}
+\end{equation*}
+</div>
+</li>
+</ul>
+</li>
+<li id="li-2628">
+<p id="p-7151">Let \(\theta = \arcsin \left(\sqrt{x}\right)\text{.}\) That is, \(\sin(\theta) = \sqrt{x}\text{,}\) and \(-\frac{\pi}{2} \leq \theta \leq \frac{\pi}{2}\text{.}\) Then we can draw the corresponding right triangle with angle \(\theta\) with opposite side of length \(\sqrt{x}\) and hypotenuse of length \(1\text{.}\) By the Pythagorean Theorem, the adjacent side of the triangle has length \(\sqrt{1-x}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:36%;margin-right:36%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-739.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7152">So,</p>
+<div class="displaymath">
+\begin{equation*}
+\sec\left(\arcsin \left(\sqrt{x}\right)\right)=\sec \theta = \frac{\mathrm{hyp}}{\mathrm{adj}} = \frac{1}{\sqrt{1-x}}
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-141">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-217"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="prob_s1_9_P1"><h6 class="heading">
+<span class="codenumber">5<span class="period">.</span></span><span class="space"> </span><span class="title">2016Q4.</span>
+</h6>
+<p id="p-7153">Evaluate \(\displaystyle\int \frac1{(x^2+4)^{3/2}} \,\dee{x}.\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-862" id="hint-862"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-862"><div class="hint solution-like"><p id="p-7154">As in Question <a class="xref" data-knowl="./knowl/prob_s1_9_1.html" title="Exercise 6.9.2.1: 2015A">1</a>, choose an appropriate substitution. Your answer should be in terms of your original variable, \(x\text{,}\) which can be achieved using the methods of Question <a class="xref" data-knowl="./knowl/prob_s1_9_3.html" title="Exercise 6.9.2.3">3</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-942" id="answer-942"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-942"><div class="answer solution-like"><p id="p-7155">\(\dfrac14\cdot \dfrac x{\sqrt{x^2+4}} + C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-942" id="solution-942"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-942"><div class="solution solution-like">
+<p id="p-7156">Let \(x = 2\tan\theta\text{,}\) so that \(x^2+4 = 4\tan^2\theta+4=4\sec^2\theta\) and \(\dee{x} = 2\sec^2\theta\,\dee{\theta}\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\int \frac1{(x^2+4)^{3/2}} \,\dee{x} &amp;= \int \frac1{(4\sec^2\theta)^{3/2}} \cdot 2\sec^2\theta\,\dee{\theta}\\
+&amp;= \int \frac{2\sec^2\theta}{8\sec^3\theta} \,\dee{\theta}\\
+&amp;=\frac14 \int \cos\theta\,\dee{\theta}\\
+&amp;= \frac14\sin\theta+C = \frac14 \frac x{\sqrt{x^2+4}} + C
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-740.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7157">To find \(\sin\theta\) in terms of \(x\text{,}\) we construct the right triangle above. Since \(\tan\theta = \dfrac{x}{2} = \dfrac{\mbox{opp}}{\mbox{adj}}\text{,}\) we label the opposite side \(x\) and the adjacent side \(2\text{.}\) By the Pythagorean Theorem, the hypotenuse has length \(\sqrt{x^2+4}\text{.}\) Then \(\sin\theta = \dfrac{\mbox{opp}}{\mbox{hyp}} = \dfrac{x}{\sqrt{x^2+4}}\text{.}\)</p>
+<p id="p-7158">To see why we could write \((\sec^2\theta)^{3/2} =\sec^3\theta\text{,}\) as opposed to \((\sec^2\theta)^{3/2} =\big|\sec^3\theta\big|\text{,}\) in the second line above, see Example <a class="xref" data-knowl="./knowl/eg_INVTRIGb.html" title="Example 6.9.5: \(\int\frac{\dee{x}}{x^2\sqrt{9+x^2}}\)">6.9.5</a>.</p>
+<p id="p-7159">As a check, we observe that the derivative of the answer</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x} \left(\frac14 \frac x{\sqrt{x^2+4}} +C\right)
+&amp;=\frac14\frac 1{\sqrt{x^2+4}} - \frac{1}{2\times 4}\frac{x(2x)}{{\big(x^2+4\big)}^{3/2}}\\
+&amp;=\frac{\frac{x^2}{4}+1-\frac{x^2}{4}}{{\big(x^2+4\big)}^{3/2}}
+=\frac{1}{{\big(x^2+4\big)}^{3/2}}
+\end{align*}
+</div>
+<p data-braille="continuation">is exactly the integrand.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-943"><h6 class="heading">
+<span class="codenumber">6<span class="period">.</span></span><span class="space"> </span><span class="title">2016Q4.</span>
+</h6>
+<p id="p-7160">Evaluate \(\displaystyle\int_0^4 \frac{1}{{(4+x^2)}^{3/2}}\,\dee{x}\text{.}\) Your answer may not contain inverse trigonometric functions.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-863" id="hint-863"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-863"><div class="hint solution-like"><p id="p-7161">As in Question <a class="xref" data-knowl="./knowl/prob_s1_9_1.html" title="Exercise 6.9.2.1: 2015A">1</a>, choose an appropriate substitution. Your answer will be a number, so as long as you change your limits of integration when you substitute, you don't need to bother changing the antiderivative back into the original variable \(x\text{.}\) However, you might want to use the techniques of Question <a class="xref" data-knowl="./knowl/prob_s1_9_4.html" title="Exercise 6.9.2.4">4</a> to simplify your final answer.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-943" id="answer-943"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-943"><div class="answer solution-like"><p id="p-7162">\(\dfrac{1}{2\sqrt{5}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-943" id="solution-943"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-943"><div class="solution solution-like"><ul id="p-7163" class="disc">
+<li id="li-2629">
+<p id="p-7164">Solution 1: As in Question <a class="xref" data-knowl="./knowl/prob_s1_9_P1.html" title="Exercise 6.9.2.5: 2016Q4">5</a>, substitute \(x=2\tan u\text{,}\)  \(\dee{x}=2 \sec^2u\,\dee{u}\text{.}\) Note that when \(x=4\) we have \(4=2\tan u\text{,}\) so that \(\tan u=2\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int_0^4 \frac{1}{{(4+x^2)}^{3/2}}\,\dee{x}
+&amp;=\int_0^{\arctan 2} \frac{1}{{(4+4\tan^2 u)}^{3/2}}\,2\sec^2 u\,\dee{u}\\
+&amp;=\int_0^{\arctan 2} \frac{2\sec^2 u}{{(2\sec u)}^{3}}\,\dee{u}\\
+&amp;=\frac{1}{4}\int_0^{\arctan 2} \frac{\sec^2u}{\sec^3u}\,\dee{u}\\
+&amp;=\frac{1}{4}\int_0^{\arctan 2} \cos u\,\dee{u}\\
+&amp;=\bigg[\frac{1}{4}\sin u \bigg]_0^{\arctan2}\\
+&amp;=\frac{1}{4} \big( \sin(\arctan 2) - 0 \big)
+= \frac{1}{2\sqrt{5}}
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-741.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7165">To find \(\sin(\arctan 2)\text{,}\) we use the right triangle above, with angle \(u=\arctan 2\text{.}\) Since \(\tan u=2 = \dfrac{\mbox{opp}}{\mbox{adj}}\text{,}\) we label the opposite side as 2, and the adjacent side as 1. The Pythagorean Theorem tells us the hypotenuse has length \(\sqrt{5}\text{,}\) so \(\sin u = \dfrac{\mbox{opp}}{\mbox{hyp}} = \dfrac{2}{\sqrt{5}}\text{.}\)</p>
+</li>
+<li id="li-2630">Solution 2: Using our result from Question <a class="xref" data-knowl="./knowl/prob_s1_9_P1.html" title="Exercise 6.9.2.5: 2016Q4">5</a>,<div class="displaymath">
+\begin{align*}
+\int_0^4 \frac{1}{{(4+x^2)}^{3/2}}\,\dee{x}&amp;=\frac{1}{4}\left[ \dfrac x{\sqrt{x^2+4}}\right]_0^4\\
+&amp;=\frac{1}{4}\cdot \dfrac{4}{\sqrt{4^2+4}}=\frac{1}{2\sqrt{5}}
+\end{align*}
+</div>
+</li>
+</ul></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-944"><h6 class="heading">
+<span class="codenumber">7<span class="period">.</span></span><span class="space"> </span><span class="title">M105 2013A.</span>
+</h6>
+<p id="p-7166">Evaluate \(\displaystyle\int_0^{5/2} \frac{\dee{x}}{\sqrt{25-x^2}}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-864" id="hint-864"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-864"><div class="hint solution-like"><p id="p-7167">Question <a class="xref" data-knowl="./knowl/prob_s1_9_1.html" title="Exercise 6.9.2.1: 2015A">1</a> guides the way to finding the appropriate substitution. Since the integral is definite, your final answer will be a number. Your limits of integration should be common reference angles.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-944" id="answer-944"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-944"><div class="answer solution-like"><p id="p-7168">\(\dfrac{\pi}{6}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-944" id="solution-944"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-944"><div class="solution solution-like">
+<p id="p-7169">Make the change of variables \(x=5\sin\theta\text{,}\) \(\dee{x}=5\cos\theta\,\dee{\theta}\text{.}\) Since \(x=0\) corresponds to \(\theta=0\) and \(x=\frac{5}{2}\) correponds to \(\sin\theta=\half\) or \(\theta =\frac{\pi}{6}\text{,}\)</p>
+<div class="displaymath">
+\begin{gather*}
+\int_0^{5/2} \frac{\dee{x}}{\sqrt{25-x^2}}
+=\int_0^{\pi/6} \frac{5\cos\theta\,\dee{\theta}}{\sqrt{25-25\sin^2\theta}}
+=\int_0^{\pi/6} \dee{\theta}
+=\frac{\pi}{6}
+\end{gather*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-945"><h6 class="heading">
+<span class="codenumber">8<span class="period">.</span></span><span class="space"> </span><span class="title">M105 2015A.</span>
+</h6>
+<p id="p-7170">Evaluate \(\displaystyle\int \frac{\dee{x}}{\sqrt{x^2+25}}\text{.}\) You may use that \({\displaystyle\int} \sec \dee{x} = \log\big|\sec x+\tan x\big|+C\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-865" id="hint-865"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-865"><div class="hint solution-like"><p id="p-7171">Question <a class="xref" data-knowl="./knowl/prob_s1_9_1.html" title="Exercise 6.9.2.1: 2015A">1</a> guides the way to finding the appropriate substitution. Since you have in indefinite integral, make sure to get your answer back in terms of the original variable, \(x\text{.}\) Question <a class="xref" data-knowl="./knowl/prob_s1_9_3.html" title="Exercise 6.9.2.3">3</a> gives a reliable method for this.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-945" id="answer-945"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-945"><div class="answer solution-like"><p id="p-7172">\(\displaystyle\log\left|\sqrt{1+\frac{x^2}{25}}+\frac{x}{5}\right|+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-945" id="solution-945"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-945"><div class="solution solution-like">
+<p id="p-7173">Substitute \(x=5\tan u\text{,}\) so that \(\dee{x}=5 \sec^2u\,\dee{u}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int\frac{1}{\sqrt{x^2+25}}\,\dee{x}
+&amp;=\int \frac{1}{\sqrt{25\tan^2 u+25}}\,5\sec^2 u\,\dee{u}\\
+&amp;=\int \frac{5\sec^2u}{5\sec u}\,\dee{u} =\int \sec u\,\dee{u}\\
+&amp;= \log\big|\sec u+\tan u\big|+C\\
+&amp;= \log\Big|\sqrt{1+\frac{x^2}{25}}+\frac{x}{5}\Big|+C
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-742.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7174">To find \(\sec u\) and \(\tan u\text{,}\) we have two options. One is to set up a right triangle with angle \(u\) and \(\tan u = \frac{x}{5}\text{.}\) Then we can label the opposite side \(x\) and the adjacent side 5, and use Pythagorus to find that the hypotenuse is \(\sqrt{x^2+25}\text{.}\)</p>
+<p id="p-7175">Another option is to look back at our work a little more closely — in fact, we've already found what we're looking for. Since we used the substitution \(x=5\tan u\text{,}\) this gives us \(\tan u = \frac{x}{5}\text{.}\) In the denominator of the integrand, we simplified \(\sqrt{x^2+25} = 5\sec u\text{,}\) so \(\sec u = \frac{1}{5}\sqrt{x^2+25} = \sqrt{1+\frac{x^2}{25}}\text{.}\)</p>
+<p id="p-7176">To see why we could write \(\sqrt{x^2+25} =5\sec u\text{,}\) as opposed to \(\sqrt{x^2+25} =5|\sec u|\text{,}\)  see Example <a class="xref" data-knowl="./knowl/eg_INVTRIGb.html" title="Example 6.9.5: \(\int\frac{\dee{x}}{x^2\sqrt{9+x^2}}\)">6.9.5</a>.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-946"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-7177">Evaluate \(\displaystyle\int\frac{x+1}{\sqrt{2x^2+4x}}
+\, \dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-866" id="hint-866"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-866"><div class="hint solution-like"><p id="p-7178">A trig substitution is not the easiest path.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-946" id="answer-946"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-946"><div class="answer solution-like"><p id="p-7179">\(\dfrac{1}{2}\sqrt{2x^2+4x}+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-946" id="solution-946"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-946"><div class="solution solution-like">
+<p id="p-7180">The quadratic formula underneath the square root makes us think of a trig substitution, but in the interest of developing good habits, let's check for an easier way first. If we let \(u=2x^2+4x\text{,}\) then \(\dee{u} = (4x+4)\dee{x}\text{,}\) so \(\frac{1}{4}\,\dee{u}=(x+1)\,\dee{x}\text{.}\) This substitution looks easier than a trig substitution (which would start with completing the square).</p>
+<div class="displaymath">
+\begin{align*}
+\int\frac{x+1}{\sqrt{2x^2+4x}}
+\, \dee{x}&amp;=\frac{1}{4}\int \frac{1}{\sqrt{u}}\,\dee{u} = \frac{1}{2}\sqrt{u}+C = \frac{1}{2}\sqrt{2x^2+4x}+C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-947"><h6 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">2014D.</span>
+</h6>
+<p id="p-7181">Evaluate \(\displaystyle\int\frac{\dee{x}}{x^2\sqrt{x^2+16}}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-867" id="hint-867"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-867"><div class="hint solution-like"><p id="p-7182">To antidifferentiate, change your trig functions into sines and cosines.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-947" id="answer-947"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-947"><div class="answer solution-like"><p id="p-7183">\(-\displaystyle\frac{1}{16}\dfrac{\sqrt{x^2+16}}{x}+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-947" id="solution-947"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-947"><div class="solution solution-like">
+<p id="p-7184">Substitute \(x=4\tan u\text{,}\) \(\dee{x}=4 \sec^2u\,\dee{u}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int\frac{1}{x^2\sqrt{x^2+16}}\,\dee{x}
+&amp;=\int \frac{1}{16\tan^2 u \sqrt{16\tan^2 u+16}}\,4\sec^2 u\,\dee{u}\\
+&amp;=\int \frac{\sec^2u}{16\tan^2u\sec u}\,\dee{u}
+=\frac{1}{16}\int \frac{\sec u}{\tan^2u}\,\dee{u}\\
+&amp;= \frac{1}{16}\int\frac{\cos u}{\sin^2 u}\,\dee{u}
+\end{align*}
+</div>
+<p data-braille="continuation">To finish off the integral, we'll substitute \(v=\sin u\text{,}\) \(\dee{v}=\cos u\,\dee{u}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int\frac{1}{x^2\sqrt{x^2+16}}\,\dee{x}
+&amp;=\frac{1}{16} \int\frac{\cos u}{\sin^2 u}\,\dee{u}
+= \frac{1}{16}\int\frac{\dee{v}}{v^2}
+=-\frac{1}{16v} +C\\
+&amp;=-\frac{1}{16\sin u} +C
+=-\frac{1}{16}\dfrac{\sqrt{x^2+16}}{x}+C
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-743.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7185">To find \(\sin u\text{,}\) we draw a right triangle with angle \(u\) and \(\tan u = \frac{x}{4}\text{.}\) We label the opposite side \(x\) and the adjacent side \(4\text{,}\) and then from Pythagorus we find that the hypotenuse has length \(\sqrt{x^2+16}\text{.}\) So, \(\sin u = \dfrac{\sqrt{x^2+16}}{x}\text{.}\)</p>
+<p id="p-7186">As a check, we observe that the derivative of the answer</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x}\left(-\frac{1}{16}\frac{\sqrt{x^2+16}}{x}+C\right)
+&amp;=\frac{1}{16}\frac{\sqrt{x^2+16}}{x^2}
+-\frac{1}{16}\frac{x}{x\sqrt{x^2+16}}\\
+&amp; =\frac{1}{16}\frac{(x^2+16)-x^2}{x^2\sqrt{x^2+16}}\\
+&amp;=\frac{1}{x^2\sqrt{x^2+16}}
+\end{align*}
+</div>
+<p data-braille="continuation">is exactly the integrand.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-948"><h6 class="heading">
+<span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">2016A.</span>
+</h6>
+<p id="p-7187">Evaluate \(\displaystyle\int \frac{\dee{x}}{x^2\sqrt{x^2-9}}\) for \(x \ge 3\text{.}\) Do not include any inverse trigonometric functions in your answer.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-868" id="hint-868"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-868"><div class="hint solution-like"><p id="p-7188">The integrand should simplify quite far after your substitution.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-948" id="answer-948"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-948"><div class="answer solution-like"><p id="p-7189">\(\displaystyle\frac{\sqrt{x^2-9}}{9x} +C \)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-948" id="solution-948"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-948"><div class="solution solution-like">
+<p id="p-7190">Substitute \(x=3\sec u\) with \(0\le u \lt \frac{\pi}{2}\text{.}\) Then \(\dee{x}= 3\sec u\tan u\,\dee{u}\) and \(\sqrt{x^2-9}=\sqrt{9\sec^2 u-9} =\sqrt{ 9\tan^2 u}=3\tan u\text{,}\) so that</p>
+<div class="displaymath">
+\begin{align*}
+\int \frac{\dee{x}}{x^2\sqrt{x^2-9}}
+&amp;=\int \frac{3\sec u\tan u\dee{u}}
+{9\sec^2u\sqrt{9\tan^2u}}\\
+&amp;=\frac{1}{9}\int\frac{\dee{u}}{\sec u}\\
+&amp;=\frac{1}{9}\int \cos u\dee{u}
+=\frac{1}{9}\sin u +C.
+\end{align*}
+</div>
+<p data-braille="continuation">To evaluate \(\sin u\text{,}\) we make a right triangle with angle \(u\text{.}\) Since \(\sec u = \dfrac{x}{3} = \dfrac{\mbox{hyp}}{\mbox{adj}}\text{,}\) we label the hypotenuse \(x\) and the adjacent side \(3\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-744.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7191">Using the Pythagorean Theorem, the opposite side has length \(\sqrt{x^2-9}\text{.}\) So, \(\sin u = \dfrac{\sqrt{x^2-9}}{x}\) and</p>
+<div class="displaymath">
+\begin{align*}
+\int \frac{\dee{x}}{x^2\sqrt{x^2-9}} &amp;= \frac{\sqrt{x^2-9}}{9x} +C.
+\end{align*}
+</div>
+<p id="p-7192">As a check, we observe that the derivative of the answer</p>
+<div class="displaymath">
+\begin{align*}
+\diff{}{x} \left( \frac{\sqrt{x^2-9}}{9x}+C\right)
+&amp; =-\frac{\sqrt{x^2-9}}{9x^2}     +    \frac{x}{9x\sqrt{x^2-9}}\\
+&amp;=\frac{1}{9}\ \frac{-(x^2-9)+x^2}{x^2\sqrt{x^2-9}}
+=\frac{1}{x^2\sqrt{x^2-9}}
+\end{align*}
+</div>
+<p data-braille="continuation">is exactly the integrand. (We remark that this is the case even for \(x\le -3\text{.}\))</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-949"><h6 class="heading">
+<span class="codenumber">12<span class="period">.</span></span><span class="space"> </span><span class="title">2013A.</span>
+</h6>
+<p id="p-7193">(a) Show that \(\displaystyle\int_0^{\pi/4}\cos^4\theta\dee{\theta}=(8+3\pi)/32\text{.}\)</p>
+<p id="p-7194">(b) Evaluate \(\displaystyle\int_{-1}^1\frac{\dee{x}}{{(x^2+1)}^3}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-869" id="hint-869"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-869"><div class="hint solution-like"><p id="p-7195">In part (a) you are asked to integrate an even power of \(\cos x\text{.}\) For part (b) you can use a trigonometric substitution to reduce the integral of part (b) almost to the integral of part (a).</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-949" id="answer-949"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-949"><div class="answer solution-like">
+<p id="p-7196">(a) We'll use the trig identity \(\cos2\theta=2\cos^2\theta-1\text{.}\) It implies that</p>
+<div class="displaymath">
+\begin{align*}
+\cos^2\theta=\frac{\cos2\theta+1}{2}
+\implies \cos^4\theta &amp;=\frac{1}{4}\big[\cos^22\theta+2\cos2\theta+1\big]\\
+&amp;=\frac{1}{4}\Big[\frac{\cos4\theta+1}{2}+2\cos2\theta+1\Big]\\
+&amp;=\frac{\cos4\theta}{8}+\frac{\cos2\theta}{2}+\frac{3}{8}\\
+\end{align*}
+<p class="intertext">So,</p>
+\begin{align*}
+\int_0^{\pi/4}\cos^4\theta\dee{\theta}
+&amp;=\int_0^{\pi/4}\Big(\frac{\cos4\theta}{8}+\frac{\cos2\theta}{2}+\frac{3}{8}\Big)
+\dee{\theta}\\
+&amp;=\left[\frac{\sin4\theta}{32}+\frac{\sin2\theta}{4}+\frac{3}{8}\theta\right]_0^{\pi/4}\\
+&amp;= \frac{1}{4}+\frac{3}{8}\cdot \frac{\pi}{4}\\
+&amp;=\frac{8+3\pi}{32}
+\end{align*}
+</div>
+<p data-braille="continuation">as required.</p>
+<p id="p-7197">(b) \(\dfrac{8+3\pi}{16}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-949" id="solution-949"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-949"><div class="solution solution-like">
+<p id="p-7198">(a) We'll use the trig identity \(\cos2\theta=2\cos^2\theta-1\text{.}\) It implies that</p>
+<div class="displaymath">
+\begin{align*}
+\cos^2\theta=\frac{\cos2\theta+1}{2}
+\implies \cos^4\theta &amp;=\frac{1}{4}\big[\cos^22\theta+2\cos2\theta+1\big]\\
+&amp;=\frac{1}{4}\Big[\frac{\cos4\theta+1}{2}+2\cos2\theta+1\Big]\\
+&amp;=\frac{\cos4\theta}{8}+\frac{\cos2\theta}{2}+\frac{3}{8}\\
+\end{align*}
+<p class="intertext">So,</p>
+\begin{align*}
+\int_0^{\pi/4}\cos^4\theta\dee{\theta}
+&amp;=\int_0^{\pi/4}\Big(\frac{\cos4\theta}{8}+\frac{\cos2\theta}{2}+\frac{3}{8}\Big)
+\dee{\theta}\\
+&amp;=\left[\frac{\sin4\theta}{32}+\frac{\sin2\theta}{4}+\frac{3}{8}\theta\right]_0^{\pi/4}\\
+&amp;= \frac{1}{4}+\frac{3}{8}\cdot \frac{\pi}{4}\\
+&amp;=\frac{8+3\pi}{32}
+\end{align*}
+</div>
+<p data-braille="continuation">as required.</p>
+<p id="p-7199">(b) We'll use the trig substitution \(x=\tan\theta\text{,}\) \(\dee{x}=\sec^2\theta\dee{\theta}\text{.}\) Note that when \(\theta=\pm\frac{\pi}{4}\text{,}\) we have \(x=\pm
+1\text{.}\) Also note that dividing the trig identity \(\sin^2\theta+\cos^2\theta=1\) by \(\cos^2\theta\) gives the trig identity \(\tan^2\theta+1=\sec^2\theta\text{.}\) So</p>
+<div class="displaymath">
+\begin{align*}
+\int_{-1}^1\frac{\dee{x}}{{(x^2+1)}^3}
+&amp;=2\int_0^1\frac{\dee{x}}{{(x^2+1)}^3}&amp;\mbox{(even integrand)}\\
+&amp;=2\int_0^{\pi/4}\frac{\sec^2\theta\dee{\theta}}{{(\tan^2\theta+1)}^3}\\
+&amp;=2\int_0^{\pi/4}\frac{\sec^2\theta\dee{\theta}}{{(\sec^2\theta)}^3}\\
+&amp;=2\int_0^{\pi/4}\cos^4\theta\dee{\theta}\\
+&amp;=\frac{8+3\pi}{16}
+\end{align*}
+</div>
+<p data-braille="continuation">by part (a).</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-950"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-7200">Evaluate \(\displaystyle\int_{-\pi/12}^{\pi/12} \dfrac{15x^3}{(x^2+1)(9-x^2)^{5/2}}\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-870" id="hint-870"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-870"><div class="hint solution-like"><p id="p-7201">What is the symmetry of the integrand?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-950" id="answer-950"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-950"><div class="answer solution-like"><p id="p-7202">0</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-950" id="solution-950"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-950"><div class="solution solution-like"><p id="p-7203">The integrand is an odd function, and the limits of integration are symmetric, so \(\displaystyle\int_{-\pi/12}^{\pi/12} \dfrac{15x^3}{(x^2+1)\sqrt{9-x^2}^5}\dee{x}=0\text{.}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-951"><h6 class="heading">
+<span class="codenumber">14<span class="period">.</span></span><span class="space"> </span><span class="title">M121 2014A.</span>
+</h6>
+<p id="p-7204">Evaluate \({\displaystyle\int} \sqrt{4-x^2}\,\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-871" id="hint-871"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-871"><div class="hint solution-like"><p id="p-7205">See Example <a class="xref" data-knowl="./knowl/eg_INVTRIGa.html" title="Example 6.9.3: \(\int_a^r\sqrt{r^2-x^2}\dee{x}\)">6.9.3</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-951" id="answer-951"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-951"><div class="answer solution-like"><p id="p-7206">\(\displaystyle2\arcsin\frac{x}{2}+\frac{x}{2}\sqrt{4-x^2}+ C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-951" id="solution-951"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-951"><div class="solution solution-like">
+<p id="p-7207">Substitute \(x=2\sin u\text{,}\) so that \(\dee{x}=2 \cos u\,\dee{u}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int \sqrt{4-x^2}\,\dee{x}
+&amp;=\int \sqrt{4-4\sin^2u}\ 2\cos u\,\dee{u}\\
+&amp;=\int \sqrt{4\cos^2u}\ 2\cos u\,\dee{u}\\
+&amp;=\int 4\cos^2 u\,\dee{u}
+=2\int \big(1+\cos(2u)\big)\,\dee{u}\\
+&amp;= 2u +\sin(2u) + C\\
+&amp;=2u + 2\sin u\cos u + C\\
+&amp;=2\arcsin\frac{x}{2} + \frac{ x}{2}\sqrt{4-x^2} + C
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-745.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7208">To see why we could write \(\sqrt{4\cos^2 u} =2\cos u\text{,}\) as opposed to \(\sqrt{4\cos^2 u} =2|\cos u|\text{,}\) in the third line above, see Example <a class="xref" data-knowl="./knowl/eg_trigsub2.html" title="Example 6.9.2: \(\int \frac{x^2}{\sqrt{1-x^2}}\dee{x}\)">6.9.2</a>.</p>
+<p id="p-7209">We used the substitution \(x = 2\sin u\text{,}\) so we know \(\sin u = \frac{x}{2}\) and \(u=\arcsin(\frac{x}{2})\text{.}\) We have three options for finding  \(\cos u\text{.}\)</p>
+<p id="p-7210">First, we can draw a right triangle with angle \(u\text{.}\) Since \(\sin u = \frac{x}{2}\text{,}\) we label the opposite side \(x\) and the hypotenuse 2, then by the Pythagorean Theorem the adjacent side has length \(\sqrt{4-x^2}\text{.}\) So, \(\cos u = \dfrac{\mbox{adj}}{\mbox{hyp}} = \dfrac{\sqrt{4-x^2}}{2}\text{.}\)</p>
+<p id="p-7211">Second, we can look back carefully at our work. We simplified \(\sqrt{4-x^2} = 2\cos u\text{,}\) so \(\cos u = \dfrac{\sqrt{4-x^2}}{2}\text{.}\)</p>
+<p id="p-7212">Third, we could use the identity \(\sin^2 u + \cos^2 u =1\text{.}\) Then \(\cos u = \pm\sqrt{1-\sin^2 u} = \pm\sqrt{1-\frac{x^2}{4}}\text{.}\) Since \(u = \arcsin (x/2)\text{,}\) \(u\) is in the range of arcsine, which means \(-\frac{\pi}{2} \leq u \leq \frac{\pi}{2}\text{.}\) Therefore, \(\cos u \geq 0\text{,}\) so \(\cos u = \sqrt{1-\frac{x^2}{4}} = \frac{\sqrt{4-x^2}}{2}\text{.}\)</p>
+<p id="p-7213">So,</p>
+<div class="displaymath">
+\begin{align*}
+\int \sqrt{4-x^2}\,\dee{x}&amp;=2u + 2\sin u\cos u + C\\
+&amp;=2\arcsin\frac{x}{2}+x\cdot\frac{\sqrt{4-x^2}}{2}+C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-952"><h6 class="heading">
+<span class="codenumber">15<span class="period">.</span></span><span class="space"> </span><span class="title">M105 2012A.</span>
+</h6>
+<p id="p-7214">Evaluate \(\displaystyle\int \frac{\sqrt{25x^2-4}}{x}\,\dee{x}\) for \(x\gt \frac{2}{5}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-872" id="hint-872"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-872"><div class="hint solution-like"><p id="p-7215">To integrate an even power of tangent, use the identity \(\tan^2 x = \sec^2 x - 1\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-952" id="answer-952"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-952"><div class="answer solution-like"><p id="p-7216">\(\sqrt{25x^2-4}-2\arcsec\frac{5x}{2}  + C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-952" id="solution-952"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-952"><div class="solution solution-like">
+<p id="p-7217">Substitute \(x=\frac{2}{5}\sec u\) with \(0 \lt u \lt \frac{\pi}{2}\text{,}\) so that \(\dee{x}=\frac{2}{5} \sec u\,\tan u\,\dee{u}\) and \(\sqrt{25 x^2-4} = \sqrt{4(\sec^2u-1)} = \sqrt{4\tan^2u}=2\tan u\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\int \frac{\sqrt{25x^2-4}}{x}\,\dee{x}
+&amp;=\int \frac{2\tan u}{\frac{2}{5}\sec u}\cdot\frac{2}{5}\sec u\tan u\,\dee{u}\\
+&amp;=2\int \tan^2 u\,\dee{u}
+=2\int \big(\sec^2 u -1\big)\,\dee{u}\\
+&amp;= 2\tan u -2u + C\\
+&amp;=\sqrt{25x^2-4}-2\arcsec\tfrac{5x}{2}  + C
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-746.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7218">To find \(\tan u\text{,}\) we draw a right triangle with angle \(u\text{.}\) Since \(\sec u =\dfrac{5x}{2}\text{,}\) we label the hypotenuse \(5x\) and the adjacent side 2. Then the Pythagorean Theorem gives us the opposite side as length \(\sqrt{25x^2-4}\text{.}\) Then \(\tan u = \dfrac{\mbox{opp}}{\mbox{adj}} = \dfrac{\sqrt{25x^2-4}}{2}\text{.}\)</p>
+<p id="p-7219">Alternately, we can notice that in our work, we already showed \(2\tan u = \sqrt{25x^2-4}\text{,}\) so \(\tan u = \frac{1}{2}\sqrt{25x^2-4} .\)</p>
+<p id="p-7220">As a check, we observe that the derivative of the answer</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\diff{}{x} \left(\sqrt{25x^2-4}-2\arcsec\frac{5x}{2}  + C\right)\\
+&amp;\hskip0.5in =\frac{25 x}{\sqrt{25x^2-4}}
+- 2 \frac{\frac{5}{2}}{\left|\frac{5x}{2}\right|\sqrt{\frac{25x^2}{4}-1}}\\
+&amp;\hskip0.5in= \frac{25 x}{\sqrt{25x^2-4}}   - \frac{4}{x\sqrt{25x^2-4}}\\
+&amp;\hskip1.0in\text{since } x\gt 0\\
+&amp;\hskip0.5in=  \frac{25 x^2-4}{x\sqrt{25x^2-4}}\\
+&amp;\hskip0.5in=  \frac{\sqrt{25 x^2-4}}{x}
+\end{align*}
+</div>
+<p data-braille="continuation">is exactly the integrand (provided \(x \gt \frac{2}{5}\)).</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-953"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-7221">Evaluate \(\displaystyle\int_{\sqrt{10}}^{\sqrt{17}} \frac{x^3}{\sqrt{x^2-1}}\, \dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-873" id="hint-873"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-873"><div class="hint solution-like"><p id="p-7222">A trig substitution is not the easiest path.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-953" id="answer-953"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-953"><div class="answer solution-like"><p id="p-7223">\(\dfrac{40}{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-953" id="solution-953"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-953"><div class="solution solution-like">
+<p id="p-7224">The integrand has a quadratic polynomial under a square root, which makes us think of trig substitutions. However, it's good practice to look for simpler methods before we jump into more complicated ones, and in this case we find something nicer than a trig substitution: the substitution \(u=x^2-1\text{,}\) \(\dee{u}=2x\,\dee{x}\text{.}\) Then \(x\dee{x} = \frac{1}{2}\dee{u}\text{,}\) and \(x^2 ={u+1}\text{.}\) When \(x=\sqrt{10}\text{,}\) \(u=9\text{,}\) and when \(x=\sqrt{17}\text{,}\) \(u=16\text{.}\)</p>
+<div class="displaymath" id="p-7225">
+\begin{align*}
+\int_{\sqrt{10}}^{\sqrt{17}} \frac{x^3}{\sqrt{x^2-1}}\, \dee{x}&amp;=
+\int_{\sqrt{10}}^{\sqrt{17}} \frac{x^2}{\sqrt{x^2-1}}\, \cdot x\dee{x}\\
+&amp;=\frac{1}{2}
+\int_{9}^{16} \frac{u+1}{\sqrt{u}}\,\dee{u}\\
+&amp;=\frac{1}{2}
+\int_{9}^{16}\left(u^{1/2}+u^{-1/2}\right)\,\dee{u}\\
+&amp;=\frac{1}{2}\left[\frac{2}{3}u^{3/2} + 2u^{1/2}
+\right]_{9}^{16}\\
+&amp;=\frac{1}{2}\left[\frac{2}{3}\cdot 4^3 + 2\cdot 4
+-\frac{2}{3}\cdot 3^3 -2\cdot 3
+\right]\\
+&amp;=\frac{40}{3}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-954"><h6 class="heading">
+<span class="codenumber">17<span class="period">.</span></span><span class="space"> </span><span class="title">M105 2014A.</span>
+</h6>
+<p id="p-7226">Evaluate \(\displaystyle\int \frac{\dee{x}}{\sqrt{3-2x-x^2}}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-874" id="hint-874"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-874"><div class="hint solution-like"><p id="p-7227">Complete the square. Your final answer will have an inverse trig function in it.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-954" id="answer-954"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-954"><div class="answer solution-like"><p id="p-7228">\(\arcsin\dfrac{x+1}{2} + C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-954" id="solution-954"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-954"><div class="solution solution-like">
+<p id="p-7229">This integrand looks very different from those above. But it is only slightly disguised. If we complete the square</p>
+<div class="displaymath">
+\begin{gather*}
+\int \frac{\dee{x}}{\sqrt{3-2x-x^2}}
+= \int \frac{\dee{x}}{\sqrt{4-(x+1)^2}}
+\end{gather*}
+</div>
+<p data-braille="continuation">and make the substitution \(y=x+1\text{,}\) \(\dee{y}=\dee{x}\)</p>
+<div class="displaymath">
+\begin{gather*}
+\int \frac{\dee{x}}{\sqrt{3-2x-x^2}}
+= \int \frac{\dee{x}}{\sqrt{4-(x+1)^2}}
+= \int \frac{\dee{y}}{\sqrt{4-y^2}}
+\end{gather*}
+</div>
+<p data-braille="continuation">we get a typical trig substitution integral. So, we substitute \(y=2\sin\theta\text{,}\) \(\dee{y}=2\cos\theta\,\dee{\theta}\) to get</p>
+<div class="displaymath">
+\begin{align*}
+\int \frac{\dee{x}}{\sqrt{3-2x-x^2}}
+&amp;= \int \frac{\dee{y}}{\sqrt{4-y^2}}
+= \int\frac{2\cos\theta\,\dee{\theta}}{\sqrt{4-4\sin^2\theta}}
+= \int\frac{2\cos\theta\,\dee{\theta}}{\sqrt{4\cos^2\theta}}\\
+&amp;=\int\dee{\theta}
+=\theta +C
+=\arcsin\frac{y}{2} + C\\
+&amp;=\arcsin\frac{x+1}{2} + C
+\end{align*}
+</div>
+<p data-braille="continuation">An experienced integrator would probably substitute \(x+1 = 2\sin\theta\) directly, without going through \(y\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-955"><h6 class="heading"><span class="codenumber">18<span class="period">.</span></span></h6>
+<p id="p-7230">Evaluate \(\displaystyle\int \dfrac{1}{(2x-3)^3\sqrt{4x^2-12x+8}}\dee{x}\) for \(x \gt 2\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-875" id="hint-875"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-875"><div class="hint solution-like"><p id="p-7231">To antidifferentiate even powers of   cosine, use the formula \(\cos^2\theta = \frac{1}{2}(1+\cos(2\theta))\text{.}\) Then, remember \(\sin(2\theta)=2\sin\theta\cos\theta\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-955" id="answer-955"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-955"><div class="answer solution-like"><p id="p-7232">\(\displaystyle\frac{1}{4}\left(\arccos\left(\frac{1}{2x-3}\right) + \frac{\sqrt{4x^2-12x+8}}{(2x-3)^2}\right)+C\text{,}\) or equivalently, \(\displaystyle\frac{1}{4}\left(\arcsec\left({2x-3}\right) + \frac{\sqrt{4x^2-12x+8}}{(2x-3)^2}\right)+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-955" id="solution-955"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-955"><div class="solution solution-like">
+<p id="p-7233">Completing the square, we see \(4x^2-12x+8 = (2x-3)^2-1\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int \dfrac{1}{(2x-3)^3\sqrt{4x^2-12x+8}}\dee{x}&amp;=
+\int \dfrac{1}{(2x-3)^3\sqrt{(2x-3)^2-1}}\dee{x}\\
+\end{align*}
+<p class="intertext">As \(x\gt 2\text{,}\) we have \(2x-3\gt 1\text{.}\) We use the substitution \(2x-3 = \sec \theta\) with \(0\le\theta \lt \frac{\pi}{2}\text{.}\) So \(2\,\dee{x}=\sec\theta\tan\theta~\dee{\theta}\) and \(\sqrt{(2x-3)^2-1}=\sqrt{\sec^2\theta-1}=\sqrt{\tan^2\theta}=\tan\theta\text{.}\)</p>
+\begin{align*}
+&amp;=\frac{1}{2}\int\frac{1}{\sec^3\theta\sqrt{\sec^2\theta-1}}\sec\theta\tan\theta\dee{\theta}\\
+&amp;=\frac{1}{2}\int\frac{1}{\sec^3\theta\tan\theta}\sec\theta\tan\theta\dee{\theta}\\
+&amp;=\frac{1}{2}\int\frac{1}{\sec^2\theta}\dee{\theta}\\
+&amp;=\frac{1}{2}\int{\cos^2\theta}\dee{\theta}\\
+&amp;=\frac{1}{4}\int{\left(1+\cos(2\theta)\right)}\dee{\theta}\\
+&amp;=\frac14\left(\theta + \frac{1}{2}\sin(2\theta)\right)+C\\
+&amp;=\frac14\left(\theta + \sin\theta\cos\theta\right)+C\\
+&amp;=\frac{1}{4}\left(\arccos\left(\frac{1}{2x-3}\right) + \frac{\sqrt{4x^2-12x+8}}{(2x-3)^2}\right)+C
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-747.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7234">Since \(2x-3=\sec\theta\text{,}\) we know \(\cos\theta = \frac{1}{2x-3}\) and \(\theta = \arccos\left(\frac{1}{2x-3}\right)\text{.}\) (Equivalently, \(\theta = \arcsec(2x-3)\text{.}\)) To find \(\sin\theta\text{,}\) we draw a right triangle with adjacent side of length 1, and hypotenuse of length \(2x-3\text{.}\) By the Pythagorean Theorem, the opposite side has length \(\sqrt{4x^2-12x+8}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-956"><h6 class="heading"><span class="codenumber">19<span class="period">.</span></span></h6>
+<p id="p-7235">Evaluate \(\displaystyle\int_0^1\dfrac{x^2}{(x^2+1)^{3/2}}\dee{x}\text{.}\)</p>
+<p id="p-7236">You may use that  \(\int \sec x\dee{x} = \log|\sec x+\tan x| +C\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-876" id="hint-876"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-876"><div class="hint solution-like">
+<p id="p-7237">After substituting, use the identity \(\tan^2 x = \sec^2 x - 1\) more than once.</p>
+<p id="p-7238">Remember \(\displaystyle\int \sec x \dee{x} = \log \big|\sec x + \tan x \big|+C\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-956" id="answer-956"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-956"><div class="answer solution-like"><p id="p-7239">\(\log(1+\sqrt{2})-\dfrac{1}{\sqrt{2}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-956" id="solution-956"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-956"><div class="solution solution-like">
+<p id="p-7240">We use the substitution \(x=\tan u\text{,}\) \(\dee{x}=\sec^2 u\dee{u}\text{.}\) Note \(\tan 0=0\) and \(\tan \frac{\pi}{4} =1\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\displaystyle\int_0^1\dfrac{x^2}{\sqrt{x^2+1}^3}\dee{x}&amp;=
+\int_0^{\pi/4}\dfrac{\tan^2 u}{\sqrt{\tan^2 u +1}^3}\sec^2u\dee{u}\\
+&amp;=
+\int_0^{\pi/4}\dfrac{\tan^2 u}{\sqrt{\sec^2u}^3}\sec^2u\dee{u}\\
+&amp;=
+\int_0^{\pi/4}\frac{\tan^2 u}{\sec u}\dee{u}\\
+&amp;=
+\int_0^{\pi/4}\frac{\sec^2 u-1}{\sec u}\dee{u}\\
+&amp;=
+\int_0^{\pi/4}\big({\sec u}-\cos u\big)\dee{u}\\
+&amp;=\Big[\log\left|\sec u + \tan u \right| - \sin u\Big]_{0}^{\pi/4}\\
+&amp;=\left(\log\left|\sqrt{2} + 1 \right| -\frac{1}{\sqrt{2}}\right) -
+\left(\log|1+0|-0\right)\\
+&amp;=\log(1+\sqrt{2})-\frac{1}{\sqrt{2}}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s1_9_forpartialfractions"><h6 class="heading"><span class="codenumber">20<span class="period">.</span></span></h6>
+<p id="p-7241">Evaluate \(\displaystyle\int \frac{1}{(x^2+1)^2}\dee{x}\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-877" id="hint-877"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-877"><div class="hint solution-like"><p id="p-7242">There's no square root, but we can still make use of the substitution \(x=\tan\theta\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-957" id="answer-957"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-957"><div class="answer solution-like"><p id="p-7243">\(\displaystyle\frac{1}{2}\left(\arctan x + \frac{x}{x^2+1}\right)+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-957" id="solution-957"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-957"><div class="solution solution-like">
+<p id="p-7244">There's no square root, but we can still make use of the substitution \(x=\tan\theta\text{,}\) \(\dee{x} = \sec^2\theta\dee{\theta}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int \frac{1}{(x^2+1)^2}\dee{x}&amp;=\int\frac{1}{(\tan^2\theta+1)^2}\sec^2\theta\dee{\theta}\\
+&amp;=\int\frac{1}{\sec^4\theta}\sec^2\theta\dee{\theta} = \int\cos^2\theta\dee{\theta}\\
+&amp;=\frac{1}{2}\int \big(1 + \cos(2\theta)\big)\dee{\theta}\\
+&amp;=\frac{1}{2}\left(\theta + \frac{1}{2}\sin(2\theta)\right)+C\\
+&amp;=\frac{1}{2}\left(\theta + \sin\theta\cos\theta\right)+C\\
+&amp;=\frac{1}{2}\left(\arctan x + \frac{x}{x^2+1}\right)+C
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-748.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7245">Since \(x = \tan\theta\text{,}\) we can draw a right triangle with angle \(\theta\text{,}\) opposite side \(x\text{,}\) and adjacent side \(1\text{.}\) Then by the Pythagorean Theorem, its hypotenuse has length \(\sqrt{x^2+1}\text{,}\) which allows us to find \(\sin\theta\) and \(\cos\theta\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-142">
+<h6 class="heading"><span class="title"></span></h6>
+<div class="introduction" id="introduction-218"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-958"><h6 class="heading"><span class="codenumber">21<span class="period">.</span></span></h6>
+<p id="p-7246">Evaluate \(\displaystyle\int \dfrac{x^2}{\sqrt{x^2-2x+2}}\dee{x}\text{.}\)</p>
+<p id="p-7247">You may assume without proof that \(\displaystyle\int \sec^3 \theta\dee{\theta} = \frac{1}{2}\sec\theta\tan\theta + \frac{1}{2}\log|\sec\theta+\tan\theta|+C\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-878" id="hint-878"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-878"><div class="hint solution-like"><p id="p-7248">You'll probably want to use the identity \(\tan^2\theta+1=\sec^2\theta\) more than once.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-958" id="answer-958"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-958"><div class="answer solution-like"><p id="p-7249">\(\dfrac{3+x}{2}\sqrt{x^2-2x+2}+ \dfrac{1}{2}\log\left|\sqrt{x^2-2x+2}+x-1\right|+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-958" id="solution-958"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-958"><div class="solution solution-like">
+<p id="p-7250">We complete the square to find \(x^2-2x+2 = (x-1)^2+1\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int \dfrac{x^2}{\sqrt{x^2-2x+2}}\dee{x}&amp;=
+\int \dfrac{x^2}{\sqrt{(x-1)^2+1}}\dee{x}\\
+\end{align*}
+<p class="intertext">We use the substitution \(x-1=\tan\theta\text{,}\)  which implies \(\dee{x}=\sec^2\theta\dee{\theta}\) and \(x=\tan\theta+1\)</p>
+\begin{align*}
+&amp;=\int \dfrac{(\tan\theta+1)^2}{\sqrt{(\tan\theta)^2+1}} \sec^2\theta\dee{\theta}\\
+&amp;=\int\frac{\textcolor{red}{\tan^2\theta}+2\tan\theta+\textcolor{red}1}{\sec\theta}\sec^2\theta\dee{\theta}\\
+&amp;=\int(\textcolor{red}{\sec^2\theta}+2\tan\theta)\sec\theta\dee{\theta}\\
+&amp;=\int\big( \sec^3\theta+2\tan\theta\sec\theta\big)\dee{\theta}\\
+&amp;=\frac{1}{2}\sec\theta\tan\theta + \frac{1}{2}\log|\sec\theta+\tan\theta|+2\sec\theta+C\\
+&amp;=\frac{1}{2}\sqrt{x^2-2x+2}(x-1) + \frac{1}{2}\log\left|\sqrt{x^2-2x+2}+x-1\right|\\
+&amp;\hskip2in+2\sqrt{x^2-2x+2}+C\\
+&amp;=\frac{3+x}{2}\sqrt{x^2-2x+2}+ \frac{1}{2}\log\left|\sqrt{x^2-2x+2}+x-1\right|+C
+\end{align*}
+</div>
+<p data-braille="continuation">To see why we could write \(\sqrt{(\tan\theta)^2+25} =\sec\theta\text{,}\) as opposed to \(\sqrt{(\tan\theta)^2+25} =|\sec\theta|\text{,}\)  see Example <a class="xref" data-knowl="./knowl/eg_INVTRIGb.html" title="Example 6.9.5: \(\int\frac{\dee{x}}{x^2\sqrt{9+x^2}}\)">6.9.5</a>.</p>
+<p id="p-7251">From our substitution, we know \(\tan\theta = x-1\text{.}\) To find \(\sec\theta\text{,}\) we can notice that in our work we already simplified \(\sqrt{x^2-2x+1}=\sec\theta\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:36%;margin-right:36%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-749.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7252">Alternately, we can draw a right triangle with angle \(\theta\text{,}\) opposite side \(x-1\text{,}\) adjacent side \(1\text{,}\) and use the Pythagorean Theorem to find the hypotenuse.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-959"><h6 class="heading"><span class="codenumber">22<span class="period">.</span></span></h6>
+<p id="p-7253">Evaluate \(\displaystyle\int \dfrac{1}{\sqrt{3x^2+5x}}\dee{x}\text{.}\)</p>
+<p id="p-7254">You may use that  \(\int \sec x\dee{x} = \log|\sec x+\tan x| +C\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-879" id="hint-879"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-879"><div class="hint solution-like"><p id="p-7255">Complete the square — refer to Question <a class="xref" data-knowl="./knowl/prob_21_9_complete.html" title="Exercise 6.9.2.2">2</a> if you want a refresher. The constants aren't pretty, but don't let them scare you.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-959" id="answer-959"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-959"><div class="answer solution-like"><p id="p-7256">\(\displaystyle\frac{1}{\sqrt{3}}\log\left| \left(\frac{6}{5}x+1\right)+\frac{2}{5}\sqrt{9x^2+15x} \right|+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-959" id="solution-959"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-959"><div class="solution solution-like">
+<p id="p-7257">First, we complete the square. The constants aren't integers, but we can still use the same method as in Question <a class="xref" data-knowl="./knowl/prob_21_9_complete.html" title="Exercise 6.9.2.2">2</a>. The quadratic function under the square root is \(3x^2+5x\text{.}\) We match the non-constant terms to those of a perfect square.</p>
+<div class="displaymath">
+\begin{align*}
+(ax+b)^2&amp;=a^2x^2+2abx+b^2\\
+\textcolor{red}{3x^2}+\textcolor{blue}{5x}&amp;=\textcolor{red}{a^2x^2} + \textcolor{blue}{2abx} +b^2 + c \quad\mbox{for some constant $c$}
+\end{align*}
+</div>
+<ul class="disc">
+<li id="li-2631">Looking at the leading term tells us \(a=\sqrt{3}\text{.}\)</li>
+<li id="li-2632">Then the second term tells us \(5=2ab=2\sqrt{3}b\text{,}\) so \(b=\frac{5}{2\sqrt3}\text{.}\)</li>
+<li id="li-2633">Finally, the constant terms give us \(0=b^2+c=\frac{25}{12}+c\text{,}\) so \(c=-\frac{25}{12}\text{.}\)</li>
+</ul>
+<p id="p-7258">So, \(3x^2+5x=\left(\sqrt{3}x+\frac{5}{2\sqrt{3}}\right)^2-\frac{25}{12}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int \dfrac{1}{\sqrt{3x^2+5x}}\dee{x}&amp;=\int \dfrac{1}{\sqrt{\left(\sqrt{3}x+\frac{5}{2\sqrt3}\right)^2-\frac{25}{12}}}\dee{x}\\
+\end{align*}
+<p class="intertext">We use the substitution \(\sqrt{3}x + \frac{5}{2\sqrt3}=\frac{5}{2\sqrt{3}}\sec\theta\text{,}\) which leads to \(\sqrt{3}\dee{x} = \frac{5}{2\sqrt{3}}\sec\theta\tan\theta\dee{\theta}\text{,}\) i.e. \(\dee{x} = \frac{5}{6}\sec\theta\tan\theta\dee{\theta}\text{.}\)</p>
+\begin{align*}
+&amp;=\int\frac{1}{\sqrt{\left(\frac{5}{2\sqrt3}\sec\theta\right)^2-\frac{25}{12}}}\cdot\frac{5}{6}\sec\theta\tan\theta\dee{\theta}\\
+&amp;=\int\frac{1}{\sqrt{\frac{25}{12}\sec^2\theta-\frac{25}{12}}}\cdot\frac{5}{6}\sec\theta\tan\theta\dee{\theta}\\
+&amp;=\int\frac{1}{\sqrt{\frac{25}{12}\tan^2\theta}}\cdot\frac{5}{6}\sec\theta\tan\theta\dee{\theta}\\
+&amp;=\int\frac{1}{{\frac{5}{2\sqrt{3}}\tan\theta}}\cdot\frac{5}{6}\sec\theta\tan\theta\dee{\theta}\\
+&amp;=\frac{1}{\sqrt3}\int\sec\theta\dee{\theta}\\
+&amp;=\frac{1}{\sqrt3}\log\left|\sec\theta+\tan\theta\right|+C\\
+&amp;=\frac{1}{\sqrt3}\log\left| \left(\frac{6}{5}x+1\right)+\frac{2}{5}\sqrt{9x^2+15x} \right|+C
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-750.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7259">Since we used the substitution \(\sqrt3x+\frac{5}{2\sqrt{3}}=\frac{5}{2\sqrt3}\sec\theta\text{,}\) we have \(\sec\theta = \frac{6}{5}x+1 = \frac{6x+5}{5}\text{.}\) To find \(\tan\theta\) in terms of \(x\text{,}\) we have two options. We can make a right triangle with angle \(\theta\text{,}\) hypotenuse \(6x+5\text{,}\) and adjacent side \(5\text{,}\) then use the Pythagorean Theorem to find the opposite side. Or, we can look through our work and see that \(\sqrt{3x^2+5}=\frac{5}{2\sqrt3}\tan\theta\text{,}\) so \(\tan\theta = \frac{2\sqrt3}{5}\sqrt{3x^2+5}=\frac{2}{5}\sqrt{9x^2+15}\text{.}\)</p>
+<p id="p-7260">As a check, we observe that the derivative of the answer</p>
+<div class="displaymath">
+\begin{align*}
+&amp; \diff{}{x}\left(
+\frac{1}{\sqrt3}\log\left| \left(\frac{6}{5}x+1\right)+\frac{2}{5}\sqrt{9x^2+15x} \right| + C\right)\\
+&amp;=\frac{1}{\sqrt3}\ \frac{\frac{6}{5} +\frac{1}{5} \frac{18x+15}{\sqrt{9x^2+15 x}}}
+{ \left(\frac{6}{5}x+1\right)+\frac{2}{5}\sqrt{9x^2+15x}}\\
+&amp;=\frac{1}{\sqrt3}\ \frac{6 + 3\frac{6x+5}{\sqrt{9x^2+15 x}}}
+{ \left(6x+5\right)+ 2\sqrt{9x^2+15x}}
+=\sqrt3\ \frac{2 + \frac{6x+5}{\sqrt{9x^2+15 x}}}
+{ \left(6x+5\right)+ 2\sqrt{9x^2+15x}}\\
+&amp;=\frac{\sqrt{3}}{\sqrt{9x^2+15 x}}
+=\frac{1}{\sqrt{3x^2+5 x}}
+\end{align*}
+</div>
+<p data-braille="continuation">is exactly the integrand.</p>
+<p id="p-7261">Remark: in applications, often the numbers involved are messier than they are in textbooks. The ideas of this problem are similar to other problems in this section, but it's good practice to apply them in a slightly messy context.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-960"><h6 class="heading"><span class="codenumber">23<span class="period">.</span></span></h6>
+<p id="p-7262">Evaluate \(\displaystyle\int\dfrac{(1+x^2)^{3/2}}{x}\dee{x}\text{.}\) You may use the fact that \(\displaystyle\int \csc \theta\dee{\theta}=\log|\cot \theta - \csc \theta|+C\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-880" id="hint-880"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-880"><div class="hint solution-like"><p id="p-7263">After substituting, use the identity \(\sec^2 u = \tan^2 u +1\text{.}\) It might help to break the integral into a few pieces.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-960" id="answer-960"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-960"><div class="answer solution-like"><p id="p-7264">\(\dfrac{1}{3}\sqrt{1+x^2}(4+x^2)+\log\left|\dfrac{1-\sqrt{1+x^2}}{x} \right|+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-960" id="solution-960"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-960"><div class="solution solution-like">
+<p id="p-7265">We use the substitution \(x=\tan u\text{,}\) \(\dee{x}=\sec^2 u\dee{u}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int\dfrac{\sqrt{1+x^2}^3}{x}\dee{x}&amp;=\int\frac{\sqrt{1+\tan^2 u}^3}{\tan u}\sec^2 u\dee{u}\\
+&amp;=\int\frac{\sec^3u}{\tan u}\sec^2 u\dee{u}\\
+&amp;=\int\frac{(\sec^2u)^2}{\tan u}\sec u\dee{u}\\
+&amp;=\int\frac{(\tan^2u+1)^2}{\tan u}\sec u\dee{u}\\
+&amp;=\int\frac{\tan^4u+2\tan^2 u + 1}{\tan u}\sec u\dee{u}\\
+&amp;=\int \tan^3 u \sec u \dee{u} + \int 2\sec u \tan u\dee u + \int \frac{\sec u}{\tan u}\dee{u}
+\end{align*}
+</div>
+<p data-braille="continuation">For the first integral, we use the substitution \(w=\sec u\text{.}\) The second is the antiderivative of \(2\sec u\text{.}\) The third we simplify as \(\frac{\sec u}{\tan u} = \frac{1}{\cos u}\cdot \frac{\cos u}{\sin u} = \csc u\) . This brings us to</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\int\dfrac{\sqrt{1+x^2}^3}{x}\dee{x}\\
+&amp;=\int\bigg((\sec^2 u -1)\sec u \tan u\bigg)\dee{u} + 2\sec u + \log|\cot u - \csc u |+C\\
+&amp;=\int (w^2-1)\dee{w}+2\sec u + \log|\cot u - \csc u|+C\\
+&amp;=\frac{1}{3}w^3-w+2\sec u + \log|\cot u - \csc u|+C\\
+&amp;=\frac{1}{3}\sec^3u-\sec u+2\sec u + \log|\cot u - \csc u|+C\\
+&amp;=\frac{1}{3}\sec^3u+\sec u + \log|\cot u - \csc u|+C
+\end{align*}
+</div>
+<p data-braille="continuation">We began with the substitution \(x=\tan u\text{.}\) Then \(\cot u = \frac{1}{x}\text{.}\) To find \(\csc u\) and \(\sec u\text{,}\) we draw a right triangle with angle \(u\text{,}\) opposite side \(x\text{,}\) and adjacent side \(1\text{.}\) The Pythagorean Theorem gives us the hypotenuse.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-751.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7266">So</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\int\dfrac{\sqrt{1+x^2}^3}{x}\dee{x}\\
+&amp;=\frac{1}{3}\sqrt{1+x^2}^3+\sqrt{1+x^2}+\log\left| \frac{1}{x}-\frac{\sqrt{1+x^2}}{x} \right|+C\\
+&amp;=\frac{1}{3}\sqrt{1+x^2}(4+x^2)+\log\left|\frac{1-\sqrt{1+x^2}}{x} \right|+C
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-961"><h6 class="heading"><span class="codenumber">24<span class="period">.</span></span></h6>
+<p id="p-7267">Below is the graph of the ellipse \(\left(\frac{x}{4}\right)^2+\left(\frac{y}{2}\right)^2=1\text{.}\) Find the area of the shaded region using the ideas from this section.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-752.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-881" id="hint-881"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-881"><div class="hint solution-like"><p id="p-7268">Make use of symmetry, and integrate with respect to \(y\) (rather than \(x\)). The limits of integration should be reference angles.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-961" id="answer-961"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-961"><div class="answer solution-like"><p id="p-7269">\(\dfrac{8\pi}{3}+4\sqrt{3}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-961" id="solution-961"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-961"><div class="solution solution-like">
+<p id="p-7270">The half of the ellipse to the right of the \(y\)-axis is given by the equation</p>
+<div class="displaymath">
+\begin{align*}
+x=f(y)&amp;=4\sqrt{1-\left(\frac{y}{2}\right)^2}\\
+\end{align*}
+<p class="intertext">The area we want is the twice the area between the right-hand side of the curve and the \(y\)-axis, from \(y=-1\) to \(y=1\text{.}\) In other words,</p>
+\begin{align*}
+\mbox{Area}&amp;=2\int_{-1}^1 4\sqrt{1-\left(\frac{y}{2}\right)^2}\dee{y}\\
+\end{align*}
+<p class="intertext">Making use of symmetry,</p>
+\begin{align*}
+&amp;=16\int_{0}^1 \sqrt{1-\left(\frac{y}{2}\right)^2}\dee{y}\\
+\end{align*}
+<p class="intertext">We use the substitution \(\frac{y}{2} = \sin \theta\text{,}\) \(\frac{1}{2}\dee{y}=\cos\theta\dee{\theta}\text{.}\) Notice \(\sin \frac{\pi}{6} = \frac{1}{2}\) and \(\sin 0 =0\text{.}\)</p>
+\begin{align*}
+&amp;=16\int_{0}^{\pi/6} \sqrt{1-\left(\sin\theta\right)^2} \cdot 2\cos\theta\dee{\theta}\\
+&amp;=32\int_{0}^{\pi/6} \sqrt{\cos^2\theta} \cos\theta\dee{\theta}\\
+&amp;=32\int_{0}^{\pi/6}\cos^2\theta\dee{\theta}\\
+&amp;=16\int_{0}^{\pi/6}\left(1+\cos(2\theta)\right)\dee{\theta}\\
+&amp;=16\left[\theta +\frac{1}{2}\sin(2\theta)\right]_{0}^{\pi/6}\\
+&amp;=16\left(\frac{\pi}{6}+\frac{1}{2}\cdot \frac{\sqrt{3}}{2}
+\right)\\
+&amp;=\frac{8\pi}{3}+4\sqrt{3}
+\end{align*}
+</div>
+<p id="p-7271">Remark: we also investigated areas of ellipses in Question <a class="xref" data-knowl="./knowl/prob_s1_2_ellipsearea.html" title="Exercise 6.2.3.16">6.2.3.16</a>, Section <a href="sec_def_int.html" class="internal" title="Section 6.2: Basic properties of the definite integral">6.2</a>.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-962"><h6 class="heading"><span class="codenumber">25<span class="period">.</span></span></h6>
+<p id="p-7272">Let \(f(x) = \dfrac{|x|}{\sqrt[4]{1-x^2}}\text{,}\) and let \(R\) be the region between \(f(x)\) and the \(x\)-axis over the interval \([-\frac{1}{2},\frac{1}{2}]\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-2634">Find the area of \(R\text{.}\)</li>
+<li id="li-2635">Find the volume of the solid formed by rotating \(R\) about the \(x\)-axis.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-882" id="hint-882"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-882"><div class="hint solution-like"><p id="p-7273">Use the symmetry of the function to re-write your integrals without an absolute value.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-962" id="answer-962"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-962"><div class="answer solution-like">
+<p id="p-7274">Area: \(\dfrac{4}{3} - \sqrt[4]{\dfrac{4}{3}}\)</p>
+<p id="p-7275">Volume: \(\dfrac{\pi^2}{6} - \dfrac{\sqrt{3}\pi}{4}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-962" id="solution-962"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-962"><div class="solution solution-like">
+<p id="p-7276">Note that \(f(x)\) is an even function, nonnegative over its entire domain.</p>
+<p id="p-7277">(a) To find the area of \(R\text{,}\) we evaluate</p>
+<div class="displaymath">
+\begin{align*}
+\mbox{Area}&amp;=\int _{-1/2}^{1/2} \dfrac{|x|}{\sqrt[4]{1-x^2}}\dee{x} =
+2\int _{0}^{1/2} \dfrac{x}{\sqrt[4]{1-x^2}}\dee{x}\\
+\end{align*}
+<p class="intertext">We use the substitution \(u=1-x^2\text{,}\) \(\dee{u}=-2x\dee{x}\text{.}\)</p>
+\begin{align*}
+&amp;=-\int_{1}^{3/4} \frac{1}{u^{1/4}}\dee{u}\\
+&amp;=-\left[\frac{4}{3}u^{3/4}\right]_1^{3/4} = -\frac{4}{3}\left(\left(\frac{3}{4}\right)^{3/4}-1\right)\\
+&amp;=\frac{4}{3} - \sqrt[4]{\frac{4}{3}}
+\end{align*}
+</div>
+<p data-braille="continuation">(b) We slice the solid of rotation into circular disks of width \(\dee{x}\) and radius \(\dfrac{|x|}{\sqrt[4]{1-x^2}}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\mbox{Volume}&amp;=\int_{-1/2}^{1/2} \pi\left(\dfrac{|x|}{\sqrt[4]{1-x^2}}\right)^2\dee{x}\\
+&amp;=2\pi\int_{0}^{1/2} \dfrac{x^2}{\sqrt{1-x^2}}\dee{x}\\
+\end{align*}
+<p class="intertext">We use the substitution \(x=\sin \theta\text{,}\) \(\dee{x} = \cos\theta\dee{\theta}\text{,}\) so \(\sqrt{1-x^2} = \sqrt{1-\sin^2\theta}=\cos \theta\text{.}\) Note \(\sin 0 =0\) and \(\sin\frac{\pi}{6}=\frac{1}{2}.\)</p>
+\begin{align*}
+&amp;=2\pi\int_{0}^{\pi/6} \frac{\sin^2 \theta}{\cos \theta}\cos \theta\dee{\theta}\\
+&amp;=2\pi\int_{0}^{\pi/6} \sin^2 \theta\dee{\theta}\\
+&amp;=\pi\int_{0}^{\pi/6}\big(1- \cos(2 \theta)\big)\dee{\theta}\\
+&amp;=\pi\left[\theta - \frac{1}{2}\sin(2\theta)\right]_0^{\pi/6}\\
+&amp;=\pi\left(\frac{\pi}{6} - \frac{1}{2}\cdot \frac{\sqrt{3}}{2}\right)\\
+&amp;=\frac{\pi^2}{6} - \frac{\sqrt{3}\pi}{4}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="prob_s1_9_sqrt1ex"><h6 class="heading"><span class="codenumber">26<span class="period">.</span></span></h6>
+<p id="p-7278">Evaluate \(\displaystyle\int \sqrt{1+e^x}\dee{x}\text{.}\) You may use the antiderivative \(\displaystyle\int \csc \theta \dee{\theta} = \log|\cot \theta - \csc \theta|+C\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-883" id="hint-883"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-883"><div class="hint solution-like"><p id="p-7279">Think of \(e^x\) as \(\left(e^{x/2}\right)^2\text{,}\) and use a trig substitution. Then, use the identity \(\sec^2 \theta = \tan^2 \theta +1\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-963" id="answer-963"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-963"><div class="answer solution-like"><p id="p-7280">\(2\sqrt{1+e^x}+2\log\left| 1-\sqrt{1+e^x} \right|-x+C\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-963" id="solution-963"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-963"><div class="solution solution-like">
+<p id="p-7281">If we think of \(e^x\) as \(\left(e^{x/2}\right)^2\text{,}\) the function under the square root suggests the substitution \(e^{x/2}=\tan \theta\text{.}\) Then \(\frac{1}{2}e^{x/2}\dee{x}=\sec^2\theta\dee{\theta}\text{,}\) so \(\dee{x} = \frac{2}{e^{x/2}}\sec^2\theta\dee{\theta} = \frac{2}{\tan\theta}\sec\theta\dee{\theta}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\int \sqrt{1+e^x}\dee{x}&amp;=\int\frac{2\sqrt{1+\tan^2 \theta}}{\tan\theta}\sec^2\theta\dee{\theta}\\
+&amp;=2\int \frac{\sec^3\theta}{\tan\theta}\dee{\theta}\\
+&amp;=2\int \frac{\sec\theta(\tan^2\theta+1)}{\tan\theta}\dee{\theta}\\
+&amp;=2\int \left(\sec\theta \tan\theta + \frac{\sec \theta}{\tan\theta}\right)\dee{\theta}\\
+&amp;=2\int\big( \sec\theta \tan\theta + \csc\theta\big)\dee{\theta}\\
+&amp;=2\sec\theta + 2\log|\cot\theta-\csc\theta|+C\\
+&amp;=2\sqrt{1+e^x}+2\log\left| \frac{1}{e^{x/2}} - \frac{\sqrt{1+e^x}}{e^{x/2}} \right|+C\\
+&amp;=2\sqrt{1+e^x}+2\log\left| 1-\sqrt{1+e^x} \right|-2\log(e^{x/2})+C\\
+&amp;=2\sqrt{1+e^x}+2\log\left| 1-\sqrt{1+e^x} \right|-x+C
+\end{align*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:36%;margin-right:36%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-753.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-7282">We used the substitution \(e^{x/2}=\tan\theta\text{,}\) so \(\cot\theta = \frac{1}{e^{x/2}}\text{.}\) To find \(\sec \theta\) and \(\csc\theta\text{,}\) we draw a right triangle with opposite side \(e^{x/2}\) and adjacent side 1. They by the Pythagorean Theorem, the hypotenuse has length \(\sqrt{1+e^x}\text{.}\)</p>
+<p id="p-7283">Remark: if we use the substitution \(u=\sqrt{1+e^x}\text{,}\) then we can change the integral to \(\displaystyle\int \dfrac{2u^2}{u^2-1}\dee{u}\text{.}\) We can integrate this using the method of partial fractions, which we'll learn in the next section. You can explore this option in Question <a class="xref" data-knowl="./knowl/prob_s1_10_sqrt1ex.html" title="Exercise 6.10.4.26">6.10.4.26</a>, Section <a href="sec_parfrac.html" class="internal" title="Section 6.10: Partial Fractions">6.10</a>.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-964"><h6 class="heading"><span class="codenumber">27<span class="period">.</span></span></h6>
+<p id="p-7284">Consider the following work.</p>
+<div class="displaymath" id="p-7285">
+\begin{align*}
+\int \frac{1}{1-x^2}\dee{x}&amp;=\int\dfrac{1}{1-\sin^2 \theta}\cos\theta\dee{\theta}
+\qquad \mbox{using } x=\sin\theta, \dee{x}=\cos\theta\dee{\theta}\\
+&amp;=\int \frac{\cos \theta}{\cos^2 \theta}\dee\theta\\
+&amp;=\int \sec \theta\dee{\theta}\\
+&amp;=\log|\sec \theta + \tan \theta| +C
+\qquad\qquad\qquad \mbox{Example }\knowl{./knowl/eg_TRGINTopta.html}{\text{6.8.19}}\\
+&amp;=\log\left |
+\dfrac{1}{\sqrt{1-x^2}}+\dfrac{x}{\sqrt{1-x^2}}
+\right| +C
+\qquad \text{using the triangle below}\\
+&amp;=\log\left |
+\dfrac{1+x}{\sqrt{1-x^2}}
+\right| +C
+\end{align*}
+</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:37.5%;margin-right:37.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-754.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<ol id="p-7286" class="lower-alpha">
+<li id="li-2636">Differentiate \(\log\left|  \dfrac{1+x}{\sqrt{1-x^2}}\right|\text{.}\)</li>
+<li id="li-2637">True or false: \(\displaystyle\int_{2}^{3} \frac{1}{1-x^2}\dee{x} =
+\left[\log\left|  \dfrac{1+x}{\sqrt{1-x^2}}\right|\right]_{x=2}^{x=3}\)</li>
+<li id="li-2638">Was the work in the question correct? Explain.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-884" id="hint-884"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-884"><div class="hint solution-like"><ol id="p-7287" class="lower-alpha">
+<li id="li-2639">Use logarithm rules to simplify first.</li>
+<li id="li-2640">Think about domains.</li>
+<li id="li-2641">
+<p id="p-7288">What went wrong in part (b)? At what point in the work was that problem introduced?</p>
+<p id="p-7289">There is a subtle but important point mentioned in the introductory text to Section <a href="sec_trigsub.html" class="internal" title="Section 6.9: Trigonometric Substitution">6.9</a> that may help you make sense of things.</p>
+</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-964" id="answer-964"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-964"><div class="answer solution-like"><ol id="p-7290" class="lower-alpha">
+<li id="li-2642">\(\displaystyle \dfrac{1}{1-x^2}\)</li>
+<li id="li-2643">False</li>
+<li id="li-2644">
+<p id="p-7291">The work in the question is not correct. The most salient problem is that when we make the substitution \(x=\sin\theta\text{,}\) we restrict the possible values of \(x\) to \([-1,1]\text{,}\) since this is the range of the sine function. However, the original integral had no such restriction.</p>
+<p id="p-7292">How can we be sure we avoid this problem in the future? In the introductory text to Section <a href="sec_trigsub.html" class="internal" title="Section 6.9: Trigonometric Substitution">6.9</a> (before Example <a class="xref" data-knowl="./knowl/eg_first_trigsub.html" title="Example 6.9.1: Quarter of the unit circle">6.9.1</a>), the notes tell us that we are allowed to write our old variable as a function of a new variable (say \(x=s(u)\)) <em class="emphasis">as long as that function is invertible to recover our original variable</em> \(x\text{.}\) There is one very obvious reason why invertibility is necessary: after we antidifferentiate using our new variable \(u\text{,}\) we need to get it back in terms of our original variable, so we need to be able to recover \(x\text{.}\) Moreover, invertibility  reconciles  potential problems with domains: if an inverse function \(u=s^{-1}(x)\) exists, then for any \(x\text{,}\) there exists a \(u\) with \(s(u)=x\text{.}\) (This was not the case in the work for the question, because we chose \(x=\sin \theta\text{,}\) but if \(x=2\text{,}\) there is no corresponding \(\theta\text{.}\) Note, however, that \(x=\sin\theta\) is invertible over \([-1,1]\text{,}\)  so the work is correct if we restrict \(x\) to those values.)</p>
+</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-964" id="solution-964"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-964"><div class="solution solution-like"><ol id="p-7293" class="lower-alpha">
+<li id="li-2645">We can save ourselves some trouble by applying logarithm rules before we differentiate.<div class="displaymath">
+\begin{align*}
+&amp;\log\left|  \dfrac{1+x}{\sqrt{1-x^2}}\right|=\log|1+x| - \log|\sqrt{1-x^2}|\\
+&amp;\hskip0.5in=\log|1+x| - \frac{1}{2}\log|1-x^2|\\
+&amp;\hskip0.5in=\log|1+x| - \frac{1}{2}\log|(1+x)(1-x)|\\
+&amp;\hskip0.5in=\log|1+x| - \frac{1}{2}\log|1+x|- \frac{1}{2}\log|1-x|
+\end{align*}
+</div>
+<div class="displaymath">
+\begin{align*}
+&amp;\diff{}{x}\left\{\log\left|  \dfrac{1+x}{\sqrt{1-x^2}}\right|\right\}\\
+&amp;\hskip0.5in=\diff{}{x}\left\{\log|1+x| - \frac{1}{2}\log|1+x|- \frac{1}{2}\log|1-x|\right\}\\
+&amp;\hskip0.5in=\frac{1}{1+x} -  \frac{1/2}{1+x}+ \frac{1/2}{1-x}\\
+&amp;\hskip0.5in=  \frac{1/2}{1+x}+ \frac{1/2}{1-x}\\
+&amp;\hskip0.5in=\frac{1}{1-x^2}
+\end{align*}
+</div>Notice this is the integrand from our work in blue.</li>
+<li id="li-2646">False: \(\displaystyle\int_{2}^{3} \frac{1}{1-x^2}\dee{x}\) is a number, because it is the area under a finite portion of a continuous curve. (We note that the integrand is continuous over the interval \([2,3]\text{,}\) although it is not continuous everywhere.) However, \(\left[\log\left|  \dfrac{1+x}{\sqrt{1-x^2}}\right|\right]_{x=2}^{x=3}\) is not defined, since the denominator takes the square root of a negative number. So, these two expressions are not the same.</li>
+<li id="li-2647">
+<p id="p-7294">The work in the question is not correct. The most salient problem is that when we make the substitution \(x=\sin\theta\text{,}\) we restrict the possible values of \(x\) to \([-1,1]\text{,}\) since this is the range of the sine function. However, the original integral had no such restriction.</p>
+<p id="p-7295">How can we be sure we avoid this problem in the future? In the introductory text to Section <a href="sec_trigsub.html" class="internal" title="Section 6.9: Trigonometric Substitution">6.9</a> (before Example <a class="xref" data-knowl="./knowl/eg_first_trigsub.html" title="Example 6.9.1: Quarter of the unit circle">6.9.1</a>), the notes tell us that we are allowed to write our old variable as a function of a new variable (say \(x=s(u)\)) <em class="emphasis">as long as that function is invertible to recover our original variable</em> \(x\text{.}\) There is one very obvious reason why invertibility is necessary: after we antidifferentiate using our new variable \(u\text{,}\) we need to get it back in terms of our original variable, so we need to be able to recover \(x\text{.}\) Moreover, invertibility  reconciles  potential problems with domains: if an inverse function \(u=s^{-1}(x)\) exists, then for any \(x\text{,}\) there exists a \(u\) with \(s(u)=x\text{.}\) (This was not the case in the work for the question, because we chose \(x=\sin \theta\text{,}\) but if \(x=2\text{,}\) there is no corresponding \(\theta\text{.}\) Note, however, that \(x=\sin\theta\) is invertible over \([-1,1]\text{,}\)  so the work is correct if we restrict \(x\) to those values.)</p>
+<p id="p-7296">Remark: in the next section, you will learn to use partial fractions to find \(\displaystyle\int \dfrac{1}{1-x^2}\dee{x} = \log|1+x|-\dfrac{1}{2}\log|1-x|\text{.}\) When \(-1 \lt x \lt 1\text{,}\) this is equivalent to \(\log\left| \dfrac{1+x}{\sqrt{1-x^2}}\right|\text{.}\)</p>
+</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-965"><h6 class="heading"><span class="codenumber">28<span class="period">.</span></span></h6>
+<ol id="p-7297" class="lower-alpha">
+<li id="li-2648">Suppose we are evaluating an integral that contains the term \(\sqrt{a^2-x^2}\text{,}\) where \(a\) is a positive constant, and we use the substitution \(x=a\sin u\) (with inverse \(u = \arcsin(x/a)\)), so that<div class="displaymath">
+\begin{equation*}
+\sqrt{a^2-x^2} = \sqrt{a^2\cos^2u}= |a\cos u|
+\end{equation*}
+</div>Under what circumstances is \(|a\cos u|\neq a\cos u\text{?}\)</li>
+<li id="li-2649">Suppose we are evaluating an integral that contains the term \(\sqrt{a^2+x^2}\text{,}\) where \(a\) is a positive constant, and we use the substitution \(x=a\tan u\) (with inverse \(u = \arctan(x/a)\)), so that<div class="displaymath">
+\begin{equation*}
+\sqrt{a^2+x^2} = \sqrt{a^2\sec^2u}= |a\sec u|
+\end{equation*}
+</div>Under what circumstances is \(|a\sec u|\neq a\sec u\text{?}\)</li>
+<li id="li-2650">Suppose we are evaluating an integral that contains the term \(\sqrt{x^2-a^2}\text{,}\) where \(a\) is a positive constant, and we use the substitution \(x=a\sec u\) (with inverse \(u = \arcsec(x/a)=\arccos(a/x)\)), so that<div class="displaymath">
+\begin{equation*}
+\sqrt{x^2-a^2} = \sqrt{a^2\tan^2u}= |a\tan u|
+\end{equation*}
+</div>Under what circumstances is \(|a\tan u|\neq a\tan u\text{?}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-885" id="hint-885"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-885"><div class="hint solution-like"><p id="p-7298">Consider the ranges of the inverse trigonometric functions. For (c), also consider the domain of \(\sqrt{x^2-a^2}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-965" id="answer-965"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-965"><div class="answer solution-like">
+<p id="p-7299">(a), (b): None.</p>
+<p id="p-7300">(c): \(x \lt  -a\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-965" id="solution-965"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-965"><div class="solution solution-like">
+<p id="p-7301">Remember that for any value \(X\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+|X| = \left\{\begin{array}{rl}
+X&amp;\mbox{if }X \ge 0\\
+-X&amp;\mbox{if }X \le 0
+\end{array}\right.
+\end{equation*}
+</div>
+<p id="p-7302">So, \(|X| \neq X\) precisely when \(X \lt 0\text{.}\)</p>
+<p id="p-7303">(a) The range of arcsine is \(\big[-\frac{\pi}{2},\frac{\pi}{2}\big]\text{.}\) So, since \(u=\arcsin(x/a)\text{,}\) \(u\) is in the range \(\big[-\frac{\pi}{2},\frac{\pi}{2}\big]\text{.}\) Therefore \(\cos u \geq 0\text{.}\) Since \(a\) is positive, \(a\cos u \ge 0\text{,}\) so \(a\cos u = |a\cos u|\text{.}\) That is,</p>
+<div class="displaymath">
+\begin{equation*}
+\sqrt{a^2-x^2}=|a\cos u|=a\cos u
+\end{equation*}
+</div>
+<p id="p-7304">all the time.</p>
+<p id="p-7305">(b) The range of arctangent is \(\big(-\frac{\pi}{2},\frac{\pi}{2}\big)\text{.}\) So, since \(u=\arctan(x/a)\text{,}\) \(u\) is in the range \(\big(-\frac{\pi}{2},\frac{\pi}{2}\big)\text{.}\) Therefore \(\sec u = \frac{1}{\cos u}  \gt 0 \text{.}\) Since \(a\) is positive, \(a\sec u  \gt  0\text{,}\) so \(a\sec u = |a\sec u|\text{.}\)That is,</p>
+<div class="displaymath">
+\begin{equation*}
+\sqrt{a^2+x^2}=|a\sec u|=a\sec u
+\end{equation*}
+</div>
+<p id="p-7306">all the time.</p>
+<p id="p-7307">(c) The range of arccosine is \(\big[0,\pi \big]\text{.}\) So, since \(u=\arcsec(x/a) = \arccos(a/x)\text{,}\) \(u\) is in the range \(\big[0,\pi\big]\text{.}\) (Actually, it's in the range \([0,\frac{\pi}{2}) \cup (\frac{\pi}{2},\pi]\text{,}\) since secant is undefined at \(\pi/2\text{.}\)) If \(|a\tan u| \neq a\tan u\text{,}\) then \(\tan u  \lt 0\text{,}\) which happens when \(u\) is in the range \(\big (\frac{\pi}{2},\pi)\text{.}\) This is the same range over which \(-1 \lt \cos u  \lt 0\text{,}\) and so \(-1 \lt \frac{a}{x} \lt 0\text{.}\) Since \(\frac{a}{x} \lt 0\text{,}\) \(a\) and \(x\) have different signs, so \(x \lt 0\text{.}\)  Then since \(-1 \lt \frac{a}{x}\text{,}\) also \(x \lt -a\text{.}\)</p>
+<p id="p-7308">So,</p>
+<div class="displaymath">
+\begin{equation*}
+\sqrt{x^2-a^2} = |a\tan u| = -a\tan u \neq a\tan u
+\end{equation*}
+</div>
+<p id="p-7309">happens precisely when  when \(x \lt  -a\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

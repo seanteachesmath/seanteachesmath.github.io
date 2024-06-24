@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T18:08:00-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><div class="solution solution-like">
+<p>(a) This field is conservative if and only if it passes the screening test \(\vnabla\times\vF=\vZero\text{.}\) That is, if and only if,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\frac{\partial F_1}{\partial y}=\frac{\partial F_2}{\partial x}\qquad
+\frac{\partial F_1}{\partial z}=\frac{\partial F_3}{\partial x}\qquad
+\frac{\partial F_2}{\partial z}=\frac{\partial F_3}{\partial y}
+\end{equation*}
+</div>
+<p data-braille="continuation">That is,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{alignat*}{3}
+\frac{\partial }{\partial y}(Ax^3y^2z)
+&amp;=\frac{\partial }{\partial x}\big(z^3+Bx^4yz\big) &amp;
+&amp;\ \iff\  &amp;
+2Ax^3yz &amp; =4Bx^3yz\\
+\frac{\partial }{\partial z}(Ax^3y^2z)
+&amp;=\frac{\partial }{\partial x}\big(3yz^2-x^4y^2\big) &amp;
+&amp;\ \iff\  &amp;
+Ax^3y^2 &amp; =-4x^3y^2\\
+\frac{\partial }{\partial z}\big(z^3+Bx^4yz\big)
+&amp;=\frac{\partial }{\partial y}\big(3yz^2-x^4y^2\big) &amp;
+&amp;\ \iff\  &amp;
+3z^2+Bx^4y&amp; =3z^2-2x^4y
+\end{alignat*}
+</div>
+<p data-braille="continuation">Hence only \(A=-4\text{,}\) \(B=-2\) works.</p>
+<p>(b) When \(A=-4,\ B=-2\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\vF=-4x^3y^2z\,\hi+\big(z^3-2x^4yz\big)\,\hj
++\big(3yz^2-x^4y^2\big)\,\hk
+\end{equation*}
+</div>
+<p data-braille="continuation">We find a potential function \(\varphi(x,y,z)\)  for this \(\vF\) by antidifferentiating.</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\frac{\partial \varphi}{\partial x}(x,y,z) &amp;= -4x^3y^2z &amp;\implies
+\varphi(x,y,z)&amp;= -x^4y^2z+\psi_1(y,z)\\
+\frac{\partial \varphi}{\partial y}(x,y,z) &amp;= z^3-2x^4yz &amp;\implies \varphi(x,y,z)&amp;=yz^3-x^4y^2z+\psi_2(x,z)\\
+\frac{\partial \varphi}{\partial z}(x,y,z) &amp;= 3yz^2-x^4y^2&amp;\implies \varphi(x,y,z)&amp;=yz^3-x^4y^2z+\psi_3(x,y)
+\end{align*}
+</div>
+<p data-braille="continuation">All together, \(\varphi(x,y,z)=-x^4y^2z+yz^3+C\) with \(C\) being an arbitrary constant.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">(c) \(I=\varphi(1,-1,1)-\varphi(0,0,0)=-2\text{.}\)</p>
+<p>(d) Note that \(J=\int_\cC\vG\cdot\dee{\vr}\) with</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\vG &amp;= (z-4x^3y^2z)\hi+(z^3-x^4yz)\hj+(3yz^2-x^4y^2)\hk\\
+&amp;=\vF +z\,\hi+x^4yz\,\hj
+\end{align*}
+</div>
+<p data-braille="continuation">so that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+J
+&amp;=\int_\cC(z\hi+x^4yz\,\hj+\vF)\cdot \dee{\vr}
+=-2+\int_\cC(z\hi+x^4yz\,\hj)\cdot \dee{\vr}
+\end{align*}
+</div>
+<p data-braille="continuation">Parametrize \(\cC\) by \(\vr(x)=x\,\hi-x\,\hj+x^2\,\hk\) with \(0\le x\le 1\text{.}\) As \(\diff{\vr}{x}=\hi-\hj+2x\,\hk\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_\cC(z\hi+x^4yz\,\hj)\cdot \dee{\vr}
+&amp;=\int_0^1(x^2\hi-x^7\,\hj)\cdot \big(\hi-\hj+2x\,\hk\big)\ \dee{x}\\
+&amp;=\int_0^1(x^2+x^7)\ \dee{x}\\
+&amp;=\frac{1}{3}+\frac{1}{8}\\
+&amp;=\frac{11}{24}\\
+&amp;\implies J=-2+\frac{11}{24}=-\frac{37}{24}\approx-1.5417
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">(e) \(\cT\) is a closed path and \(\vF\) is conservative, so \(\int_\cT\vF\cdot \dee{\vr}=0\text{.}\) Let \(\cT_1\) be the line segment from \((1,0,0)\) to \((0,1,0)\text{,}\)  \(\cT_2\) be the line segment from \((0,1,0)\) to \((0,0,1)\)  and \(\cT_3\) be the line segment from \((0,0,1)\) to \((1,0,0)\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/OE00A_2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p>On \(\cT_1\text{,}\) \(z=0\text{,}\) so \(\int_{\cT_1}z\hi\cdot \dee{\vr}=0\text{.}\) On \(\cT_2\text{,}\) \(x=0\text{,}\) so \(\hi\cdot \dee{\vr}=\dee{x}=0\) and  \(\int_{\cT_2}z\hi\cdot \dee{\vr}=0\text{.}\) Parametrize \(\cT_3\) by \(\vr(t)=t\hi+(1-t)\hk\text{,}\) \(0\le t\le 1\text{.}\) Then \(\diff{\vr}{t}=\hi-\hk\) and the \(z\)-coordinate of the path is parametrized by \(1-t\text{.}\) So,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+\int_\cT(z\hi+\vF)\cdot \dee{\vr}
+&amp;=\int_{\cT_3}z\hi\cdot \dee{\vr}=\int_{0}^1\overbrace{(1-t)\hi}^{z\hi}\cdot\overbrace{(\hi-\hk)\ \dee{t}}^{\dee{\vr}}\\
+&amp;=\int_0^1 (1-t) \ \dee{t}
+=\frac{1}{2}
+\end{align*}
+</div>
+</div></body>
+</html>

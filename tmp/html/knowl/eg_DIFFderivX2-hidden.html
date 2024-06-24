@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:30:02-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example example-like"><p>Compute the derivative of</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+h(t) &amp;= t^2 &amp; \text{ at } t = a
+\end{align*}
+</div>
+<ul class="disc">
+<li>This function isn't quite like the ones we saw earlier —  it's  a function of \(t\) rather than \(x\text{.}\) Recall that a function is a rule  which assigns to each input value an output value. So far, we have  usually called the input value \(x\text{.}\) But this “\(x\)” is just a dummy variable representing a generic input value. There is nothing wrong with calling  a generic input value \(t\) instead. Indeed, from time to time you will  see functions that are not written as formulas involving \(x\text{,}\) but instead  are written as formulas in  \(t\) (for example representing  time — see Section <a href="sec_velocity.html" class="internal" title="Section 2.2: Another Limit and Computing Velocity">2.2</a>), or \(z\) (for example  representing height), or other symbols.</li>
+<li>So let us write the definition of the derivative<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f'(a) &amp;= \lim_{h \to 0} \frac{f(a+h)-f(a)}{h}
+\end{align*}
+</div>and then translate it to the function names and variables at hand:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+h'(a) &amp;= \lim_{h \to 0} \frac{h(a+h)-h(a)}{h}
+\end{align*}
+</div>
+</li>
+<li>But there is a problem — “\(h\)” plays two roles here — it is both  the function name and the small quantity that is going to zero in our limit.  It is extremely dangerous to have a symbol represent two different things  in a single computation. We need to change one of them. So let's rename the small quantity that is going to zero in our limit from “\(h\)” to  “\(\De t\)”:<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+h'(a) &amp;= \lim_{\De t \to 0} \frac{h(a+\De t)-h(a)}{\De t}
+\end{align*}
+</div>
+</li>
+<li>Now we are ready to begin. Substituting in what the function \(h\) is,<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+h'(a) &amp;= \lim_{\De t \to 0} \frac{(a+\De t)^2-a^2}{\De t}\\
+&amp;= \lim_{\De t \to 0} \frac{a^2+2a\,\De t+\De t^2-a^2}{\De t}
+&amp;&amp; \big(\text{just squared out $(a+\De t)^2$}\big)\\
+&amp;= \lim_{\De t \to 0} \frac{2a\,\De t+\De t^2}{\De t}\\
+&amp;= \lim_{\De t \to 0} (2a +\De t)\\
+&amp;= 2a
+\end{align*}
+</div>
+</li>
+<li>You should go back check that this is what we got in Example  <a class="xref" data-knowl="./knowl/eg_DIFFslopeB.html" title="Example 3.1.5: More on secants of \(y=x^2\)">3.1.5</a> — just some names have been changed.</li>
+</ul></article></body>
+</html>

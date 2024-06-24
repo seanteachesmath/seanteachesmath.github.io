@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:00:00-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Curvature</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_reparam.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_curves.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_Curve3d.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_reparam.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_curves.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_Curve3d.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature" class="active">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_curvature"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">12.3</span> <span class="title">Curvature</span>
+</h2>
+<p id="p-15469">So far, when we have wanted to approximate a complicated curve by a simple curve near some point, we drew the tangent line to the curve at the point. That's pretty crude. In particular tangent lines are straight — they don't curve. We will get a much better idea of what the complicated curve looks like if we approximate it, locally, by a very simple “curvy curve” rather than by a straight line. Probably the simplest “curvy curve” is a circle<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-546" id="fn-546"><sup> 1 </sup></a> and that's what we'll use.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-546"><div class="fn">Circles are good for studying “curvature”, because, unlike parabolas for example, the rate at which a circle curves is uniform over the entire circle.</div></div>
+<article class="definition definition-like" id="def_curvature"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.3.1</span><span class="period">.</span>
+</h6>
+<ol id="p-15470" class="lower-alpha">
+<li id="li-6386">The circle which best approximates a given curve near a given point is called the <dfn class="terminology">circle of curvature</dfn> or the <dfn class="terminology">osculating circle</dfn><a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-547" id="fn-547"><sup> 2 </sup></a> at the point.</li>
+<li id="li-6387">The radius of the circle of curvature is called the <dfn class="terminology">radius of curvature</dfn> at the point and is normally denoted \(\rho\text{.}\)</li>
+<li id="li-6388">The <dfn class="terminology">curvature</dfn> at the point is \(\ka=\frac{1}{\rho}\text{.}\)</li>
+<li id="li-6389">The centre of the circle of curvature is called <dfn class="terminology">centre of curvature</dfn> at the point.</li>
+</ol>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-547"><div class="fn">“Osculare” is the Latin verb “to kiss”. The German mathematician Gottfried Wilhelm (von) Leibniz (1646--1716) named the circle the “circulus osculans”.</div></div></article><p id="p-15471">These definitions are illustrated in the figure below. It shows (part of) the osculating circle at the point \(P\text{.}\) The point \(C\) is the centre of curvature.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/curvatureDef.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15472">Note that when the curvature \(\ka\) is large, the radius of curvature \(\rho\) is small and we have a very curvy curve. On the other hand when the curvature \(\ka\) is small, the radius of curvature \(\rho\) is large and our curve  is almost straight. In particular, straight lines have curvature exactly zero.</p>
+<p id="p-15473">We are now going to determine how to find the circle of curvature, starting by figuring out what its radius should be. We'll first look at curves<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-548" id="fn-548"><sup> 3 </sup></a> that lie in the \(xy\)-plane and then move on to curves in 3d. Consider the black curve in the figure below.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-548"><div class="fn">We'll also assume that the curves of interest are smooth, with no cusps for example, and not straight, so that the radius of curvature \(0 \lt \rho \lt \infty\text{.}\)</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/curvature.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15474">That figure also contains a (portion of a) red circle that fits the curve really well between the two radial lines that are (a very small) angle \(\dee{\theta}\) apart. So the arclength \(\dee{s}\) of the part of the black curve between the two radial lines, should be (essentially) the same as the arc length of the circle between the two radial lines, which is \(\rho\,|\dee{\theta}|\text{,}\) where \(\rho\) is the radius of the circle. (We put in absolute values to take into account the possibility that \(\dee{\theta}\) could be negative.) Thus \(\dee{s} = \rho\,|\dee{\theta}|\text{.}\) When \(\dee{\theta}\) is a macroscopic angle, this is of course an approximation. But in the limit as \(\dee{\theta}\rightarrow 0\text{,}\) we should end up with</p>
+<div class="displaymath">
+\begin{equation*}
+\rho = \left|\diff{s}{\theta}\right|
+\end{equation*}
+</div>
+<p data-braille="continuation">We now have a formula for the radius of curvature, but not in a very convenient form, because to evaluate it we would need to know the arc length along the curve as a function of the angle \(\theta\) in the rightmost figure below. We'll now spend some time developing more convenient formulae for \(\rho\text{.}\) First consider the three figures below. They all show the same curve as in the last figure. The leftmost figure just shows</p>
+<ul class="disc">
+<li id="li-6390">the curve of interest, which is the black curve, and</li>
+<li id="li-6391">the (blue) point of interest on the black curve. We want to find the curvature at that point.</li>
+</ul>
+<p data-braille="continuation">The middle figure shows the same curve and point of interest and also shows</p>
+<ul class="disc">
+<li id="li-6392">the red circle of curvature (i.e. best fitting circle) for the black curve at the blue dot.</li>
+<li id="li-6393">The red dot is the centre of curvature.</li>
+</ul>
+<p data-braille="continuation">The rightmost figure shows the same black curve, blue point of interest and red circle of curvature (at least part of it) somewhat enlarged.</p>
+<ul class="disc">
+<li id="li-6394">The angle \(\theta\) is the angle between \(\hi\) and the radius vector from the red dot (the centre of curvature) to the blue dot (the point of interest).</li>
+<li id="li-6395">\(\hat\vT\) is the tangent vector to the black curve at the blue dot.</li>
+<li id="li-6396">The angle \(\phi\) is the angle between \(\hi\) and \(\hat\vT\text{.}\) The vector \(\hat\vT\) is also tangent to the red circle. As the tangent and radius vectors for circles are perpendicular to each other<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-549" id="fn-549"><sup> 4 </sup></a>, we have that \(\phi=\theta+\frac{\pi}{2}\) and hence \(\rho = \big|\diff{s}{\phi}\big|\) too.</li>
+</ul>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-549"><div class="fn">We saw that in Example <a class="xref" data-knowl="./knowl/eg_paramCircleTan.html" title="Example 9.6.14: Circumference of a circle">9.6.14</a>.</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:30%;justify-content:center;"><img src="figs/curvatureB1.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:30%;justify-content:center;"><img src="figs/curvatureB2.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:40%;justify-content:center;"><img src="figs/curvatureB.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-15475">We are now in a position to develop a bunch of formulae for the radius of curvature \(\rho\) and the curvature \(\ka=\frac{1}{\rho}\text{,}\) that are more convenient than \(\ka = \big|\diff{s}{\phi}\big|^{-1}\text{.}\) These formulae will use the</p>
+<article class="definition definition-like" id="notn_curveNotation"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">12.3.2</span><span class="period">.</span>
+</h6>
+<p id="p-15476">If \(\vr(t)\) is a parametrized curve, then</p>
+<ul class="disc">
+<li id="li-6397">\(\vv(t) = \diff{\vr}{t}(t)\) is the velocity vector at \(\vr(t)\)</li>
+<li id="li-6398">\(\va(t) = \difftwo{\vr}{t}(t) \) is the acceleration vector at \(\vr(t)\)</li>
+<li id="li-6399">\(\hat\vT(t)\) is the unit tangent vector to the curve at \(\vr(t)\) that points in the direction of increasing \(t\text{.}\)</li>
+<li id="li-6400">\(\hat\vN(t)\) is the unit normal vector to the curve at \(\vr(t)\) that points toward the centre of curvature.</li>
+<li id="li-6401">\(\ka(t)\) is the curvature at \(\vr(t)\)</li>
+<li id="li-6402">\(\rho(t)\) is the radius of curvature at \(\vr(t)\)</li>
+</ul></article><article class="theorem theorem-like" id="thm_curvatureFormulae"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">12.3.3</span><span class="period">.</span>
+</h6>
+<ol id="p-15477" class="lower-alpha">
+<li id="li-6403">Given<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-550" id="fn-550"><sup> 5 </sup></a> \(s(\phi)\text{,}\) i.e. if we know the arc length along the curve as a function of the angle<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-551" id="fn-551"><sup> 6 </sup></a> \(\phi=\measuredangle(\hi,\hat\vT)\text{,}\) then<div class="displaymath">
+\begin{equation*}
+\rho = \left|\diff{s}{\phi}\right|\qquad
+\ka = \left|\diff{s}{\phi}\right|^{-1}\qquad
+\ka = \left|\diff{\phi}{s}\right|
+\end{equation*}
+</div>
+</li>
+<li id="thm_curvatureFormulae_part_b">Given \(\vr(s)\text{,}\) i.e. if we have a parametrization of the curve in terms of arc length, then<div class="displaymath">
+\begin{equation*}
+\diff{\hat\vT}{s}(s) = \ka(s)\,\hat\vN(s)
+\end{equation*}
+</div>where \(\hat\vN(s)\) is the unit normal vector to the curve at \(\vr(s)\) that points toward the centre of curvature.</li>
+<li id="thm_curvatureFormulae_part_c">Given \(\vr(t)\text{,}\) i.e. if we have a general parametrized curve, then<div class="displaymath">
+\begin{gather*}
+\diff{\hat\vT}{t} = \ka \diff{s}{t} \hat\vN\qquad
+\vv(t) =  \diff{s}{t}(t)\,\hat\vT(t) \qquad
+\va(t)
+=  \difftwo{s}{t}\hat\vT
++ \ka\left(\diff{s}{t}\right)^2\hat\vN
+\end{gather*}
+</div>
+</li>
+<li id="li-6406">Given \(\big(x(t)\,,\,y(t)\big)\text{,}\) (for curves in the \(xy\)-plane)<div class="displaymath">
+\begin{equation*}
+\ka = \left|\frac{\vv(t)\times\va(t)}{\big(\diff{s}{t}\big)^3}\right|
+=\frac{\big|\diff{x}{t}\difftwo{y}{t}-\diff{y}{t}\difftwo{x}{t}\big|}
+{ {\big[\big(\diff{x}{t}\big)^2+\big(\diff{y}{t}\big)^2\big]}^{3/2} }
+\end{equation*}
+</div>
+</li>
+<li id="thm_curvatureFormulae_part_e">Given \(y(x)\text{,}\) (again for curves in the \(xy\)-plane)<div class="displaymath">
+\begin{equation*}
+\ka
+=\frac{\big|\difftwo{y}{x}\big|}
+{ {\big[1+\big(\diff{y}{x}\big)^2\big]}^{3/2} }
+\end{equation*}
+</div>
+</li>
+</ol>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-550"><div class="fn">The equation \(s=s(\phi)\) is called the “intrinsic equation of the curve”.</div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-551"><div class="fn">The notation \(\measuredangle(\hi,\hat\vT)\) means “the angle between \(\hi\) and \(\hat\vT\)”.</div></div></article><article class="hiddenproof" id="proof-50"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-50"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-50"><article class="hiddenproof"><p id="p-15478">(a) Given \(s(\phi)\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\rho = \Big|\diff{s}{\phi}\Big|\qquad
+\ka = \Big|\diff{s}{\phi}\Big|^{-1}
+\end{equation*}
+</div>
+<p data-braille="continuation">As we are assuming that \(0 \lt \rho=\Big|\diff{s}{\phi}\Big| \lt \infty\text{,}\) the inverse function theorem says that we can invert the function \(s(\phi)\) (at least locally) to get \(\phi\) as a function of \(s\text{,}\) and that</p>
+<div class="displaymath">
+\begin{equation*}
+\ka = \Big|\diff{\phi}{s}\Big|
+\end{equation*}
+</div>
+<p id="p-15479">(b) Given \(\vr(s)\text{,}\) then, by Lemma <a class="xref" data-knowl="./knowl/lem_CVtanArclen.html" title="Lemma 9.6.12">9.6.12</a>.c, \(\hat\vT(s) = \vr'(s)\) is a unit tangent to the curve at \(\vr(s)\) and</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{\hat\vT}{s} = \diff{\hat\vT}{\phi} \diff{\phi}{s}
+\tag{$*$}
+\end{equation*}
+</div>
+<p data-braille="continuation">Now up to a sign \(\diff{\phi}{s}\) is \(\ka\text{,}\) and just because \(\phi=\measuredangle(\hi,\hat\vT)\text{,}\) with \(\hat\vT\) a unit vector,</p>
+<div class="displaymath">
+\begin{equation*}
+\begin{split}
+\hat\vT&amp;=\cos\phi\,\hi + \sin\phi\,\hj \\
+\implies \diff{\hat\vT}{\phi}&amp;= -\sin\phi\,\hi + \cos\phi\,\hj
+\end{split}
+\tag{$**$}
+\end{equation*}
+</div>
+<p data-braille="continuation">So \(\diff{\hat\vT}{\phi}\) is a unit vector that is perpendicular<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-552" id="fn-552"><sup> 7 </sup></a> to \(\hat\vT\text{,}\) and hence to the curve at \(\vr(s)\text{,}\) and</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{\hat\vT}{s}(s) = \ka(s)\,\hat\vN(s)
+\tag{$\dagger$}
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(\hat\vN(s)\) a unit normal vector to the curve at \(\vr(s)\text{.}\) In fact, \(\hat\vN(s)\) is the unit normal vector to the curve at \(\vr(s)\) that points toward the centre of curvature.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-552"><div class="fn">Think about why this should be the case. In particular, sketch \(\hat\vT\) and \(\phi\) and think about what the sketch says about \(\diff{\hat\vT}{\phi}\text{.}\)</div></div>
+<p id="p-15480">To see that, look at the figures below<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-553" id="fn-553"><sup> 8 </sup></a>, and note that substituting the sign information from each figure into (\(*\)) gives (\(\dagger\)). For example,</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-553"><div class="fn">In each of the four figures, the arrow on the curve specifies the direction of increasing arc length \(s\) and the red dot is the centre of curvature for the curve at the blue dot.</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;">
+<div class="sbspanel" style="width:37.5%;justify-content:center;"><img src="figs/curvatureSignA.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:37.5%;justify-content:center;"><img src="figs/curvatureSignC.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:10%;margin-right:10%;">
+<div class="sbspanel" style="width:37.5%;justify-content:center;"><img src="figs/curvatureSignB.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:37.5%;justify-content:center;"><img src="figs/curvatureSignD.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p id="p-15481">consider the figure on the lower left. In that figure,</p>
+<ul class="disc">
+<li id="li-6408">
+<p id="p-15482">the \(x\) component of \(\hat\vT\) is negative (\(\hat\vT\) is leftward pointing in the figure),</p>
+<ul class="circle">
+<li id="li-6409">which makes \(\cos\phi\) negative (see (\(**\))),</li>
+<li id="li-6410">which makes the \(y\) component of \(\diff{\hat\vT}{\phi}\) negative (see (\(**\)) again),</li>
+<li id="li-6411">so \(\diff{\hat\vT}{\phi}\) is downward pointing,</li>
+</ul>
+<p data-braille="continuation">so \(\diff{\hat\vT}{\phi}=-\hat\vN\) (the centre of curvature is the red dot above the curve) and</p>
+</li>
+<li id="li-6412">as \(s\) increases (i.e. as you move in the direction of the arrow on the curve), \(\phi\) decreases (on the far right hand part of the curve \(\phi\approx\frac{3\pi}{2}\text{,}\) while on the far left hand part of the curve \(\phi\approx\pi\)), so \(\diff{\phi}{s} \lt 0\) and \(\ka = \big|\diff{\phi}{s}\big| = - \diff{\phi}{s}\text{.}\)</li>
+<li id="li-6413">So by (\(*\)), \(\diff{\hat\vT}{s} = \diff{\hat\vT}{\phi} \diff{\phi}{s}
+=\big(-\hat\vN)(-\ka) = \ka\hat\vN\text{.}\)</li>
+</ul>
+<p data-braille="continuation">In each of the three other figures we also end up with \(\diff{\hat\vT}{s} = \ka(s)\hat\vN(s)\text{.}\)</p>
+<p id="p-15483">Note that if \(\ka(s)=0\text{,}\) then \(\hat\vN(s)\) is not defined. This makes sense: if the curve is (locally) a straight line, there is no “best fitting circle”.</p>
+<p id="p-15484">(c) Given \(\vr(t)\text{,}\) i.e. if we have a general parametrized curve, we can determine a unit tangent vector by using Lemma <a class="xref" data-knowl="./knowl/lem_CVtanArclen.html" title="Lemma 9.6.12">9.6.12</a>:</p>
+<div class="displaymath">
+\begin{equation*}
+\vv(t) = \diff{\vr}{t}(t) = \diff{s}{t}(t)\,\hat\vT(t)
+\quad\implies\quad
+\hat\vT(t) = \frac{\vr'(t)}{|\vr'(t)|}
+\end{equation*}
+</div>
+<p data-braille="continuation">Then we can determine \(\ka\) and \(\hat\vN\)  by differentiating \(\hat\vT(t)\) and using the chain rule:</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{\hat\vT}{t} = \diff{\hat\vT}{s}\diff{s}{t}
+= \ka \diff{s}{t} \hat\vN
+\quad\implies\quad
+\ka(t) = \frac{|\hat\vT'(t)|}{|\vr'(t)|}
+\end{equation*}
+</div>
+<p data-braille="continuation">Also, if we differentiate \(\vv(t) = \diff{s}{t}\hat\vT(t)\text{,}\) we get that the acceleration</p>
+<div class="displaymath">
+\begin{equation*}
+\va(t) = \difftwo{\vr}{t}
+=  \difftwo{s}{t}\hat\vT + \diff{s}{t}\,\diff{\hat\vT}{t}
+=  \difftwo{s}{t}\hat\vT
++ \ka\Big(\diff{s}{t}\Big)^2\hat\vN
+\end{equation*}
+</div>
+<p id="clpcurvesthm_curvatureFormulae_partd">(d) Given \(\big(x(t)\,,\,y(t)\big)\text{,}\) (for curves in the \(xy\)-plane), we can read off the curvature from</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t)\times\va(t)
+&amp;=\Big(\diff{s}{t}(t)\,\hat\vT(t)\Big)\times
+\Big(\difftwo{s}{t}\hat\vT
++ \ka\Big(\diff{s}{t}\Big)^2\hat\vN\Big)\\
+&amp;= \ka\Big(\diff{s}{t}\Big)^3\hat\vT\times\hat\vN
+\qquad\text{(since }  \hat\vT\times\hat\vT=\vZero
+\end{align*}
+</div>
+<p data-braille="continuation">Think of \(\hat\vT\) and \(\hat\vN\) as 3d vectors that whose \(z\)-components happen to be zero. As \(\hat\vT\) and \(\hat\vN\) are mutually perpendicular unit vectors in the \(xy\)-plane, the cross-product \(\hat\vT\times\hat\vN\) will be either \(+\hk\) or \(-\hk\text{.}\) In both cases, \(|\vv(t)\times\va(t)\big| = \ka\big|\diff{s}{t}\big|^3\text{.}\) So</p>
+<div class="displaymath">
+\begin{align*}
+\ka &amp;= \left|\frac{\vv(t)\times\va(t)}{\big(\diff{s}{t}\big)^3}\right|
+=\left|\frac{\big[\diff{x}{t}\hi+\diff{y}{t}\hj\big]\times
+\big[\difftwo{x}{t}\hi+\difftwo{y}{t}\hj\big]}
+{\big(\diff{s}{t}\big)^3}\right|\\
+&amp;=\left|\frac{\big[\diff{x}{t}\difftwo{y}{t}-\diff{y}{t}\difftwo{x}{t}\big]\hk}
+{\big(\diff{s}{t}\big)^3}\right|\\
+&amp;=\frac{\big|\diff{x}{t}\difftwo{y}{t}-\diff{y}{t}\difftwo{x}{t}\big|}
+{ {\big[\big(\diff{x}{t}\big)^2+\big(\diff{y}{t}\big)^2\big]}^{3/2} }
+\end{align*}
+</div>
+<p id="p-15486">(e) Given \(y(x)\text{,}\) again for curves in the \(xy\)-plane, we can parametrize the curve using \(x\) as the parameter:</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) = \big(X(t)\,,\,Y(t)\big) \qquad\text{with $X(t)=t$ and $Y(t) =y(t)$}
+\end{equation*}
+</div>
+<p data-braille="continuation">Then</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{X}{t} = 1 \qquad
+\difftwo{X}{t} = 0 \qquad
+\diff{Y}{t} = \diff{y}{x} \qquad
+\difftwo{Y}{t} = \difftwo{y}{x}
+\end{equation*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{equation*}
+\ka
+=\frac{\big|\diff{X}{t}\difftwo{Y}{t}-\diff{Y}{t}\difftwo{X}{t}\big|}
+{ {\big[\big(\diff{X}{t}\big)^2+\big(\diff{Y}{t}\big)^2\big]}^{3/2} }
+=\frac{\big|\difftwo{y}{x}\big|}
+{ {\big[1+\big(\diff{y}{x}\big)^2\big]}^{3/2} }
+\end{equation*}
+</div></article></div>
+<p id="p-15487">Take another look at Theorem <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a> and note that</p>
+<ul class="disc">
+<li id="li-6414">the tangential component of acceleration, i.e. \(\difftwo{s}{t}\text{,}\) arises purely from change in speed while</li>
+<li id="li-6415">the normal component of acceleration, i.e. \(\ka\big(\diff{s}{t}\big)^2\text{,}\) arises from curvature and is proportional to the square of the speed \(\diff{s}{t}\text{.}\) Think about what you feel when you are driving. That's why velodromes and (car) race tracks often have banked corners.</li>
+</ul>
+<article class="example example-like" id="eg_curveCircle"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_curveCircle"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.3.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_curveCircle"><article class="example example-like"><p id="p-15488">As a warm up example, and also a check that our formulae make sense, we'll find the curvature \(\ka\text{,}\) radius of curvature, \(\rho\text{,}\) unit tangent vector, \(\hat\vT\text{,}\) unit normal vector, \(\hat\vN\text{,}\) and centre of curvature of the parametrized curve</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) = a\cos t\,\hi + a\sin t\,\hj
+\end{equation*}
+</div>
+<p data-braille="continuation">with the constant \(a \gt 0\text{.}\) This is, of course, the circle of radius \(a\) centred on the origin. As</p>
+<div class="displaymath">
+\begin{equation*}
+\vv(t)=\diff{\vr}{t}(t)= -a\sin t\,\hi + a\cos t\,\hj
+\implies \diff{s}{t}(t) = |\vv(t)| = a
+\end{equation*}
+</div>
+<p data-braille="continuation">we have that the unit tangent vector</p>
+<div class="displaymath">
+\begin{equation*}
+\vT(t) = \frac{\vv(t)}{|\vv(t)|} = -\sin t\,\hi + \cos t\,\hj
+\end{equation*}
+</div>
+<p data-braille="continuation">Note, as a check, that this is indeed a vector of length one and is perpendicular to the radius vector (as expected — the curve is a circle). As</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{\hat\vT}{t}(t)= -\cos t\,\hi  -\sin t\,\hj
+\end{equation*}
+</div>
+<p data-braille="continuation">we have that</p>
+<div class="displaymath">
+\begin{align*}
+\hat\vN(t) &amp;= \frac{\diff{\hat\vT}{t}(t)}{\big|\diff{\hat\vT}{t}(t)\big|}
+= -\cos t\,\hi  -\sin t\,\hj\\
+\ka(t)
+&amp;= \frac{\big|\diff{\hat\vT}{t}(t)\big|}{\diff{s}{t}(t)}
+=\frac{1}{a}\\
+\rho(t)&amp;=\frac{1}{\ka(t)} =a
+\end{align*}
+</div>
+<p data-braille="continuation">Now look at the figure.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/circleCentreB.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15489">To get to the centre of curvature we should start from \(\vr(t)\) and walk a distance \(\rho(t)\text{,}\) which after all is the radius of curvature, in the direction \(\hat\vN(T)\text{,}\) which is pointing towards the centre of curvature. So the centre of curvature is</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t)+\rho(t)\hat\vN(t)
+=\big[a\cos t\,\hi  +a\sin t\,\hj\big]
++a\big[-\cos t\,\hi  -\sin t\,\hj\big]
+= \vZero
+\end{equation*}
+</div>
+<p data-braille="continuation">This makes perfectly good sense — the radius of curvature is the radius of the original circle and the centre of curvature is the centre of the original circle.</p>
+<p id="p-15490">One alternative calculation of the curvature, using \(x(t) = a\cos t \text{,}\) \(y(t)=a\sin t\text{,}\) is</p>
+<div class="displaymath">
+\begin{align*}
+\ka(t)
+&amp;=\frac{\big|
+\diff{x}{t}(t)\difftwo{y}{t}(t)-\diff{y}{t}(t)\difftwo{x}{t}(t)
+\big|}{\Big[\big(\diff{x}{t}(t)\big)^2
++\big(\diff{y}{t}(t)\big)^2\Big]^{3/2}}\\
+&amp;=\frac{\big|
+-a\sin t\big(-a\sin t\big)-a\cos t\big(-a\cos t\big)
+\big|}{\big[\big(-a\sin t\big)^2
++\big(a\cos t\big)^2\big]^{3/2}}\\
+&amp;=\frac{1}{a}
+\end{align*}
+</div>
+<p data-braille="continuation">Another alternative calculation of the curvature, using \(y(x)
+=\sqrt{a^2-x^2}\) (for the part of the circle with \(y \gt 0\)),</p>
+<div class="displaymath">
+\begin{align*}
+y'(x) &amp;= -\frac{x}{\sqrt{a^2-x^2}}=-\frac{x}{y(x)} \\
+y''(x) &amp;= -\frac{y(x) - xy'(x)}{y(x)^2}
+=  -\frac{y(x)^2 + x^2}{y(x)^3}
+=  -\frac{a^2}{y(x)^3}
+\end{align*}
+</div>
+<p data-braille="continuation">is</p>
+<div class="displaymath">
+\begin{align*}
+\ka(x)
+&amp;=\frac{\big|\difftwo{y}{x}(x)\big|}
+{\Big[1+\big(\diff{y}{x}(x)\big)^2\Big]^{3/2}}
+=\frac{\frac{a^2}{y(x)^3}}
+{\Big[1+\frac{x^2}{y(x)^2}\Big]^{3/2}}
+=\frac{a^2}{\big[y(x)^2+x^2\big]^{3/2}}\\
+&amp;=\frac{1}{a}
+\end{align*}
+</div></article></div>
+<article class="example example-like" id="eg_curvatureEtc"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-eg_curvatureEtc"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">12.3.5</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-eg_curvatureEtc"><article class="example example-like"><p id="p-15491">As a more computationally involved example, we'll analyze</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t) &amp;= \big(\cos t + t\sin t\big)\hi +\big(\sin t-t\cos t\big)\hj
+\qquad t \gt 0\\
+\vv(t) &amp;= t\cos t\,\hi + t\sin t\,\hj\\
+\va(t) &amp;= \big(\cos t - t\sin t\big)\hi +\big(\sin t+t\cos t\big)\hj
+\end{align*}
+</div>
+<p data-braille="continuation">We can read off from \(\vv(t)\text{,}\) that</p>
+<div class="displaymath">
+\begin{align*}
+\diff{s}{t}(t) &amp;= |\vv(t)| =t\\
+\difftwo{s}{t}(t) &amp;= 1\\
+\vT(t)&amp;=\frac{\vv(t)}{|\vv(t)|} = \cos t\,\hi + \sin t\,\hj
+\end{align*}
+</div>
+<p data-braille="continuation">Next, from \(\va(t)\text{,}\) we read off that</p>
+<div class="displaymath">
+\begin{align*}
+\va(t) &amp;=\big(\cos t - t\sin t\big)\hi +\big(\sin t+t\cos t\big)\hj\qquad
+\text{and}\\
+\va(t)&amp;=\difftwo{s}{t}(t)\,\hat\vT(t)
++\ka(t)\left(\diff{s}{t}(t)\right)^2\hat\vN(t)\\
+\end{align*}
+<p class="intertext">(by Theorem <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a> .c)</p>
+\begin{align*}
+&amp;=\cos t\,\hi + \sin t\,\hj +t^2\ka(t) \hat\vN(t)\\
+\implies
+t^2\ka(t) \hat\vN(t)&amp;= - t\sin t\,\hi + t\cos t\,\hj
+\end{align*}
+</div>
+<p data-braille="continuation">so that \(t^2\ka(t)\) is the length of \(- t\sin t\,\hi + t\cos t\,\hj\text{,}\) which is \(t\text{.}\) Thus</p>
+<div class="displaymath">
+\begin{gather*}
+\ka(t) = \frac{1}{t} \quad\text{and}\quad
+\hat\vN(t)= \frac{- t\sin t\,\hi + t\cos t\,\hj}{t^2\ka(t)}  = -\sin t\,\hi + \cos t\,\hj
+\end{gather*}
+</div>
+<p data-braille="continuation">As an alternative calculation of the curvature, we have</p>
+<div class="displaymath">
+\begin{align*}
+\ka(t)
+&amp;=\frac{|\vv(t)\times\va(t)|}{(\diff{s}{t}(t))^3}\\
+&amp;=\frac{\big|\big[t\cos t\,\hi + t\sin t\,\hj\big]\times
+\big[\big(\cos t - t\sin t\big)\hi +\big(\sin t+t\cos t\big)\hj\big]\big|}
+{(\diff{s}{t}(t))^3}\\
+&amp;=\frac{\big|\big[t\cos t\big(\sin t+t\cos t\big)
+-t\sin t\big(\cos t - t\sin t\big)\big]\hk\big|}
+{(\diff{s}{t}(t))^3}\\
+&amp;=\frac{|t^2\hk|}{t^3}
+=\frac{1}{t}
+\end{align*}
+</div>
+<p data-braille="continuation">It pays to think before you calculate!</p></article></div>
+<section class="exercises" id="exercises-93"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">12.3.1</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-260">
+<div class="introduction" id="introduction-398"><p id="p-15492">There are a lot of constants in this chapter that might be new to you. They can take a little getting used to. Questions <a class="xref" data-knowl="./knowl/prob_s1_3_constantsa.html" title="Exercise 12.3.1.1">12.3.1.1</a>-<a class="xref" data-knowl="./knowl/prob_s1_3_constantsb.html" title="Exercise 12.3.1.5">12.3.1.5</a> provide practice working with and interpreting these constants and their relations to each other.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="prob_s1_3_constantsa"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-15493">Sketch the curve \(\vr(t)=(3\sin t,3\cos t)\text{.}\) At the point \((0,3)\text{,}\) label \(\hT\) and \(\hN\text{.}\) Give the values of \(\kappa\) and \(\rho\) at this point as well.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1537" id="hint-1537"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1537"><div class="hint solution-like"><p id="p-15494">The curve is a circle, so you don't need to do any calculus.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1947" id="answer-1947"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1947"><div class="answer solution-like">
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1906.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15495">\(\rho=3\text{,}\) \(\ka=\frac13\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2021" id="solution-2021"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2021"><div class="solution solution-like">
+<p id="p-15496">The curve is a circle of radius 3, centred at the origin. So, the “circle of best fit” is just the curve itself. \(\hT\) is the unit vector tangent to the circle in direction of increasing \(t\text{,}\) and \(\hN\) is the unit vector pointing towards the origin.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1907.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15497">The radius of the (osculating) circle is 3, so \(\rho=3\) and \(\ka=\frac1\rho=\frac13\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1948"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-15498">Consider the circle \(\vr(t)=(3\sin t,3\cos t)\text{.}\) Find \(\hT(t)\) and \(\hT(s)\text{.}\) Then, use parts (<a class="xref" data-knowl="./knowl/thm_curvatureFormulae_part_b.html" title="Item b">b</a>) and (<a class="xref" data-knowl="./knowl/thm_curvatureFormulae_part_c.html" title="Item c">c</a>) of Theorem <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a> to find \(\hN(t)\) and \(\hN(s)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1538" id="hint-1538"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1538"><div class="hint solution-like"><p id="p-15499">Because \(\vr\) is a circle, you can parametrize it with respect to arclength without using an integral. You found \(\ka\) in  Question <a class="xref" data-knowl="./knowl/prob_s1_3_constantsa.html" title="Exercise 12.3.1.1">12.3.1.1</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1948" id="answer-1948"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1948"><div class="answer solution-like">
+<p id="p-15500">\(\hT(t)=(\cos t, -\sin t) \text{,}\) \(\hT(s)=(\cos(s/3),-\sin(s/3))\text{,}\)</p>
+<p id="p-15501">\(\hN(t)=(-\sin t ,-\cos t)\text{,}\) \(\hN(s)=\left(-\sin(s/3),-\cos(s/3) \right)\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2022" id="solution-2022"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2022"><div class="solution solution-like">
+<p id="p-15502">The arclength of \(\vr(t)\) traced out by an interval of \(t\) of length \(\theta\) is \(3\theta\text{.}\) That is, \(s=3t\text{.}\) Our reparametrization of the circle in terms of arclength is \(\vR(s)=(3\sin(s/3),3\cos(s/3))\text{.}\)</p>
+<p id="p-15503">We can calculate the vectors tangent to the circle, then normalize them (i.e. make them length one) to find \(\hT\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t)&amp;=\vr'(t)=(3\cos t, -3\sin t) \\
+\hT(t)&amp;=\frac{\vr'(t)}{|\vr'(t)|}=\frac{(3\cos t, -3\sin t)}{3}=(\cos t, -\sin t)\\
+\hT(s)&amp;=\vR'(s)=(\cos(s/3),-\sin(s/3))
+\end{align*}
+</div>
+<p data-braille="continuation">Note \(\vR'(s)\text{,}\) because it's parametrized in terms of arclength, has derivative vectors of length one. So, we don't need to normalize them (although if we did, it wouldn't change anything).</p>
+<p id="p-15504">Note also that we can check out answers using Question <a class="xref" data-knowl="./knowl/prob_s1_3_constantsa.html" title="Exercise 12.3.1.1">12.3.1.1</a>. In that question, we found \(\hT\) was \(\hi\) when \(t=s=0\text{;}\) this fits with the vectors we just found.</p>
+<p id="p-15505">As in Question <a class="xref" data-knowl="./knowl/prob_s1_3_constantsa.html" title="Exercise 12.3.1.1">12.3.1.1</a>, \(\ka=\frac13\text{.}\) So, using Theorem <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a> Part (<a class="xref" data-knowl="./knowl/thm_curvatureFormulae_part_b.html" title="Item b">b</a>):</p>
+<div class="displaymath">
+\begin{align*}
+\diff{\hT}{s}(s) &amp;= \ka(s)\,\hN(s)\\
+\left(-\frac13\sin(s/3) , -\frac13\cos(s/3) \right)&amp;=\frac13\hN(s)\\
+\left(-\sin(s/3) , -\cos(s/3) \right)&amp;=\hN(s)
+\end{align*}
+</div>
+<p id="p-15506">Remember \(s=3t\text{.}\) Using Theorem <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a> Part (<a class="xref" data-knowl="./knowl/thm_curvatureFormulae_part_c.html" title="Item c">c</a>):</p>
+<div class="displaymath">
+\begin{align*}
+\diff{\hT}{t} &amp;= \ka \diff{s}{t} \hN(t)\\
+(-\sin t ,-\cos t) &amp;= \frac13 (3) \hN(t)\\
+(-\sin t ,-\cos t) &amp;= \hN(t)
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1949"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-15507">The functon \(\vr(t)=(t\cos t, t\sin t)\text{,}\) \(t \ge 0\text{,}\) defines a spiral centred at the origin. Using only geometric intuition (no calculation), predict \(\displaystyle\lim_{t \to \infty}\kappa(t)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1539" id="hint-1539"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1539"><div class="hint solution-like"><p id="p-15508">When \(t\) is large, does the spiral locally look like a circle of large radius, or small?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1949" id="answer-1949"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1949"><div class="answer solution-like"><p id="p-15509">\(\lim\limits_{t \to \infty}\ka(t)=0\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2023" id="solution-2023"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2023"><div class="solution solution-like">
+<p id="p-15510">As \(t\) increases, the arms of the spiral “flatten out,” looking like a circle of bigger and bigger radius. So, we would expect the curvature to decrease: \(\lim\limits_{t \to \infty}\ka(t)=0\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/spiral2d.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1950"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-15511">Let \(\vr(t)=(e^t,3t,\sin t)\text{.}\) What is \(\diff{s}{t}\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1540" id="hint-1540"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1540"><div class="hint solution-like"><p id="p-15512">\(\diff{s}{t}=\left| \vv(t)\right|=\left| \vr'(t)\right|\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1950" id="answer-1950"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1950"><div class="answer solution-like"><p id="p-15513">\(\diff{s}{t}=\sqrt{e^{2t}+9+\cos^2 t}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2024" id="solution-2024"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2024"><div class="solution solution-like"><p id="p-15514">\(\diff{s}{t}=\left| \vv(t)\right|=\left| \vr'(t)\right|=\left| (e^t,3,\cos t)\right|=\sqrt{e^{2t}+9+\cos^2 t}\)</p></div></div>
+</div></article><article class="exercise exercise-like" id="prob_s1_3_constantsb"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-15515">In Question <a class="xref" data-knowl="./knowl/prob_s1_2_spiral.html" title="Exercise 12.2.1.5: M317 2008D">12.2.1.5</a> of Section <a href="sec_reparam.html" class="internal" title="Section 12.2: Reparametrization">12.2</a>, we found that the spiral</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) = e^t (\cos t, \sin t)
+\end{equation*}
+</div>
+<p data-braille="continuation">parametrized in terms of arclength is</p>
+<div class="displaymath">
+\begin{equation*}
+\vR(s)=\frac{s}{\sqrt{2}}\left(\cos\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\,,\,
+\sin\Big(\ln\Big(\frac{s}{\sqrt{2}}\Big)\Big)\right).
+\end{equation*}
+</div>
+<p id="p-15516">Find \(\diff{\hT}{s}\) and \(\diff{\hT}{t}\) for this curve.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1541" id="hint-1541"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1541"><div class="hint solution-like"><p id="p-15517">\(\hT=\frac{\vv(t)}{|\vv(t)|}=\frac{\vr'(t)}{|\vr'(t)|}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1951" id="answer-1951"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1951"><div class="answer solution-like"><div class="displaymath" id="p-15518">
+\begin{align*}
+\diff{\hT}{t}&amp;=\frac1{\sqrt2}\big(-\sin t - \cos t , -\sin t + \cos t\big)\\
+\diff{\hT}{s}&amp;
+=\frac{1}{\sqrt{2}\,s}\Big( -\sin \left(\ln\left( s/\sqrt{2}\right)\right)
+-\cos\left(\ln\left( s/\sqrt{2}\right)\right)) , \\
+&amp;\hskip1in -\sin \left(\ln\left( s/\sqrt{2}\right)\right)+\cos \left(\ln\left( s/\sqrt{2}\right)\right)\Big)
+\end{align*}
+</div></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2025" id="solution-2025"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2025"><div class="solution solution-like"><div class="displaymath" id="p-15519">
+\begin{align*}
+\hT(t)&amp;=\frac{\vv(t)}{|\vv(t)|}=\frac{\vr'(t)}{|\vr'(t)|}\\
+&amp;=\frac{\big(e^t(\cos t - \sin t) , e^t(\cos t + \sin t)\big)}{\sqrt{e^{2t}(\cos t - \sin t)^2+e^{2t}(\cos t + \sin t)^2}}\\
+&amp;=\frac1{\sqrt2}\big(\cos t - \sin t , \cos t + \sin t\big)\\
+\diff{\hT}{t}&amp;=\frac1{\sqrt2}\big(-\sin t - \cos t , -\sin t + \cos t\big)\\
+\end{align*}
+<p class="intertext">Since \(\vR(s)\) is parametrized with respect to arclength, \(|\vR'(s)|=1\text{.}\)</p>
+\begin{align*}
+\hT(s)&amp;=\vR'(s)\\
+\end{align*}
+<p class="intertext">Making ample use of the chain rule, and setting \(U(s)=\left(\ln\left( s/\sqrt{2}\right)\right)\text{,}\) we have \(U'(s)=\frac{1}{s}\text{:}\)</p>
+\begin{align*}
+\hT(s)&amp;=\frac{1}{\sqrt2}\left( \cos U(s)-\sin U(s) ,  \cos U(s) + \sin U(s)\right)\\
+\diff{\hT}{s}&amp;=\frac{1}{\sqrt{2}\,s}\left( -\sin U(s)-\cos U(s) , -\sin U(s)+\cos U(s)\right)
+\end{align*}
+</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1952"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-15520">In this exercise, we make more precise the sense in which the osculating circle is the circle which best approximates a plane curve at a point.</p>
+<ul class="disc">
+<li id="li-6416">By translating and rotating our coordinate system, we can always arrange that the point is \((0,0)\) and that the curve is \(y=f(x)\) with \(f'(0)=0\) and \(f''(0) \gt 0\text{.}\) (We are assuming that the curvature at the point is nonzero.)</li>
+<li id="li-6417">Let \(y=g(x)\) be the bottom half of the circle of radius \(r\) which is centred at \((0,r)\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Show that if \(f(x)\) and \(g(x)\) have the same second order Taylor approximation at \(x=0\text{,}\) then \(r\) is the radius of curvature of \(y=f(x)\) at \(x=0\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1952" id="answer-1952"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1952"><div class="answer solution-like"><p id="p-15521">See the solution.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2026" id="solution-2026"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2026"><div class="solution solution-like">
+<p id="p-15522">The circle  of radius \(r\) centred at \((0,r)\) is \(x^2+(y-r)^2 = r^2\text{.}\) The bottom half of this circle is</p>
+<div class="displaymath">
+\begin{equation*}
+y = g(x) = r - \sqrt{r^2-x^2}
+\end{equation*}
+</div>
+<p data-braille="continuation">So</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+g'(x) &amp;=\frac{x}{\sqrt{r^2-x^2}} &amp;
+g'(0) &amp;=0\\
+g''(x)&amp;=\frac{1}{\sqrt{r^2-x^2}} +\frac{x^2}{[{r^2-x^2]}^{3/2}}\qquad &amp;
+g''(0)&amp;=\frac{1}{r}
+\end{alignat*}
+</div>
+<p data-braille="continuation">As \(f(x)\) and \(g(x)\) have the same second order Taylor approximation at \(x=0\text{,}\) \(f''(0) = g''(0) = \frac{1}{r}\text{.}\)</p>
+<p id="p-15523">We may parametrize the curve by \(\vr(x) = x\,\hi + f(x)\,\hj\text{.}\) So</p>
+<div class="displaymath">
+\begin{alignat*}{2}
+\vr'(x)&amp; = \hi +f'(x)\,\hj\qquad &amp;
+\vr'(0)&amp; = \hi +f'(0)\,\hj = \hi\\
+\vr''(x)&amp; = f''(x)\,\hj &amp;
+\vr''(0)&amp; = f''(0)\,\hj
+\end{alignat*}
+</div>
+<p data-braille="continuation">and</p>
+<div class="displaymath">
+\begin{align*}
+\ka(0)&amp; = \frac{|\vr'(0)\times\vr''(0)|}{|\vr'(0)|^3}
+= \frac{|f''(0)\,\hi\times\hj|}{|\hi|^3}
+=f''(0)
+\end{align*}
+</div>
+<p data-braille="continuation">So \(\ka(0)=f''(0)=\frac{1}{r}\) and \(r\) is indeed the radius of curvature of \(y=f(x)\) at \(x=0\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-261">
+<div class="introduction" id="introduction-399"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1953"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-15524">Given a curve \(\vr(t)=(e^t,t^2+t)\text{,}\) compute the following quantities:</p>
+<ol class="upper-alpha">
+<li id="li-6418">\(\displaystyle \vv(t)\)</li>
+<li id="li-6419">\(\displaystyle \va(t)\)</li>
+<li id="li-6420">\(\displaystyle \diff{s}{t}\)</li>
+<li id="li-6421">\(\displaystyle \hT(t)\)</li>
+<li id="li-6422">\(\displaystyle \ka(t)\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1542" id="hint-1542"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1542"><div class="hint solution-like"><p id="p-15525">You can find the last two quantities by making use of the first three. Looking ahead, the formula list in Section <a href="sec_CurveCompendium.html" class="internal" title="Section 12.5: A Compendium of Curve Formula">12.5</a> might come in handy.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1953" id="answer-1953"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1953"><div class="answer solution-like"><ol id="p-15526" class="upper-alpha">
+<li id="li-6423">\(\displaystyle \vv(t)=(e^t,2t+1)\)</li>
+<li id="li-6424">\(\displaystyle \va(t)=(e^t,2)\)</li>
+<li id="li-6425">\(\displaystyle \diff{s}{t}=\sqrt{e^{2t}+(2t+1)^2}\)</li>
+<li id="li-6426">\(\displaystyle \displaystyle\hT(t)=\left(
+\frac{e^t}{\sqrt{e^{2t}+(2t+1)^2}},
+\frac{2t+1}{\sqrt{e^{2t}+(2t+1)^2}}
+\right)\)</li>
+<li id="li-6427">\(\displaystyle \displaystyle\ka(t)=\dfrac{e^t|1-2t|}{(e^{2t}+(2t+1)^2)^{3/2}}\)</li>
+</ol></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2027" id="solution-2027"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2027"><div class="solution solution-like"><ol id="p-15527" class="upper-alpha">
+<li id="li-6428">\(\displaystyle \vv(t)=\vr'(t)=(e^t,2t+1)\)</li>
+<li id="li-6429">\(\displaystyle \va(t)=\vr''(t)=(e^t,2)\)</li>
+<li id="li-6430">\(\displaystyle \diff{s}{t}=|\vv(t)|=\sqrt{e^{2t}+(2t+1)^2}\)</li>
+<li id="li-6431"><div class="displaymath">
+\begin{align*}
+\hT(t)&amp;=\frac{\vv(t)}{|\vv(t)|}=\frac{(e^t,2t+1)}{\sqrt{e^{2t}+(2t+1)^2}}\\
+&amp;=\left(
+\frac{e^t}{\sqrt{e^{2t}+(2t+1)^2}},
+\frac{2t+1}{\sqrt{e^{2t}+(2t+1)^2}}
+\right)
+\end{align*}
+</div></li>
+<li id="li-6432">\(\displaystyle \displaystyle\ka(t)=\frac{|\vv(t) \times \va(t)|}{\left(\diff{s}{t}\right)^3}=\frac{\left| (e^t,2t+1)\times(e^t,2)\right|}{\sqrt{e^{2t}+(2t+1)^2}^3}=\dfrac{e^t|1-2t|}{(e^{2t}+(2t+1)^2)^{3/2}}\)</li>
+</ol></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1954"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-15528">Find the curvature \(\ka(t)\) of \(\vr(t)=(\cos t+\sin t , \sin t - \cos t)\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1543" id="hint-1543"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1543"><div class="hint solution-like"><p id="p-15529">We can calculate \(\ka = \dfrac{|\vv(t) \times \va(t)|}{\left| \left(\diff{s}{t}\right)^3\right|}\text{.}\) We can also figure out what kind of a shape our curve is.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1954" id="answer-1954"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1954"><div class="answer solution-like"><p id="p-15530">\(\ka(t)=\frac{1}{\sqrt{2}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2028" id="solution-2028"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2028"><div class="solution solution-like">
+<p id="p-15531">Note that \((\cos t+\sin t )^2+(\sin t - \cos t)^2=2\) for all \(t\text{.}\) So, the points \((x,y)\) of our curve lie on \(x^2+y^2=2\text{,}\) which is a circle of radius \(\sqrt{2}\text{.}\) Indeed</p>
+<div class="displaymath">
+\begin{align*}
+x(t)&amp;= \cos t+\sin t
+=\sqrt{2}\big[\cos t \cos\tfrac{\pi}{4} +\sin t \sin\tfrac{\pi}{4}\big]\\
+&amp;=\sqrt{2}\cos\big(t-\tfrac{\pi}{4}\big)\\
+y(t)&amp;= \sin t-\cos t
+=\sqrt{2}\big[\sin t \cos\tfrac{\pi}{4}-\cos t\sin \tfrac{\pi}{4}\big]\\
+&amp;=\sqrt{2}\sin\big(t-\tfrac{\pi}{4}\big)
+\end{align*}
+</div>
+<p data-braille="continuation">So, \(\vr(t)\) circumnavigates a circle of radius \(\sqrt{2}\) and consequently has curvature \(\ka=\frac{1}{\sqrt{2}}\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2029" id="solution-2029"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2029"><div class="solution solution-like">
+<p id="p-15532">We use the formula \(\ka = \dfrac{|\vv(t) \times \va(t)|}{\left| \left(\diff{s}{t}\right)^3\right|}\text{,}\) remembering that \(\vv(t)=\vr'(t)\text{,}\) \(\va(t)=\vr''(t)\text{,}\) and \(\diff{s}{t}=\left| \vr'(t)\right|\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t)&amp;=\vr'(t)=(-\sin t +\cos t, \cos t + \sin t)\\
+\va(t)&amp;=\vr''(t)=(-\cos t  -\sin t, -\sin t + \cos t)\\
+\vv(t) \times \va(t)&amp;=\big[(-\sin t + \cos t)^2+(\cos t + \sin t)^2\big]\hk=2\hk\\
+\diff{s}{t}&amp;=\left|\diff{\vv}{t} \right|=\sqrt{(-\sin t + \cos t)^2+(\cos t + \sin t )^2}=\sqrt2\\
+\ka&amp;=\left|\frac{\vv(t) \times \va(t)}{\left(\diff{s}{t}\right)^3}\right|=\left|\frac{2\hk}{\sqrt{2}^3}\right|=\frac{1}{\sqrt 2}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1955"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-15533">Find the minimum and maximum values for the curvature of the ellipse \(x(t)= a \cos t\text{,}\) \(y(t)=b\sin t\text{.}\) Here \(a \gt b \gt 0\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1544" id="hint-1544"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1544"><div class="hint solution-like"><p id="p-15534">The maximum and minimum values of \(\ka(t)\) should be obvious from your formula for \(\ka(t)\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1955" id="answer-1955"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1955"><div class="answer solution-like"><p id="p-15535">\(\ka_{\rm max}=\frac{a}{b^2}\text{,}\) \(\ka_{\rm min}=\frac{b}{a^2}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2030" id="solution-2030"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2030"><div class="solution solution-like">
+<p id="p-15536">For the given ellipse</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t)&amp;= a\cos t\ \hi +b\sin t\ \hj\\
+\vv(t)&amp;= -a\sin t\ \hi +b\cos t\ \hj\\
+|\vv(t)|&amp; = \sqrt{a^2\sin^2t+b^2\cos^2 t}\\
+\va(t)&amp;= -a\cos t\ \hi -b\sin t\ \hj\\
+\vv(t)\times\va(t) &amp;=\det\left[\begin{matrix} \hi &amp; \hj &amp; \hk\\
+-a\sin t &amp; b\cos t &amp; 0\\
+-a\cos t &amp; -b\sin t &amp; 0
+\end{matrix}\right]
+= ab\,\hk\\
+\ka(t)&amp;=\frac{|\vv(t)\times\va(t)|}{|\vv(t)|^3}
+=\frac{ab}{{[a^2\sin^2t+b^2\cos^2 t]}^{3/2}}
+\end{align*}
+</div>
+<p data-braille="continuation">So the maximum (minimum) curvature is achieved when the denominator is a minimum (maximum) which is the case when \(\sin t =0\) (\(\cos t=0\)). So \(\ka_{\rm max}=\frac{a}{b^2}\) and \(\ka_{\rm min}=\frac{b}{a^2}\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1956"><h6 class="heading">
+<span class="codenumber">10<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2018A.</span>
+</h6>
+<ol id="p-15537" class="lower-alpha">
+<li id="li-6433">Find the curvature of \(y=e^x\) at \((0,1)\text{.}\)</li>
+<li id="li-6434">Find the equation of the circle best fitting \(y=e^x\) at \((0,1)\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1956" id="answer-1956"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1956"><div class="answer solution-like">
+<p id="p-15538">(a) \(\ka(0)=2^{-3/2}\)</p>
+<p id="p-15539">(b) \((x+2)^2+(y-3)^2=8\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2031" id="solution-2031"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2031"><div class="solution solution-like">
+<p id="p-15540">Parametrize the curve by \(\vr(t) = t\,\hi +e^t\,\hj\text{.}\) Then</p>
+<div class="displaymath">
+\begin{align*}
+\vv(t) &amp; = \hi + e^t\,\hj  &amp;
+\vv(0) &amp; = \hi +\hj \\
+\frac{ds}{dt} &amp;=|\vv(t)|=\sqrt{1+e^{2t}} &amp;
+\frac{ds}{dt}(0) &amp;=\sqrt{2} \\
+\hT(t) &amp; = \frac{\vv(t)}{|\vv(t)|} = \frac{\hi+e^t\hj}{\sqrt{1+e^{2t}}}
+&amp;
+\hT(0) &amp; = \frac{\vv(0)}{|\vv(0)|} = \frac{\hi+\hj}{\sqrt{2}}\\
+\va(t) &amp; =  e^t\,\hj  &amp;
+\va(0) &amp; = \hj 
+\end{align*}
+</div>
+<p id="p-15541">(a) We're given \(y\) in terms of \(x\text{,}\) so let's use Part (<a class="xref" data-knowl="./knowl/thm_curvatureFormulae_part_e.html" title="Item e">e</a>) of Theorem <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a>:</p>
+<div class="displaymath">
+\begin{align*}
+\ka
+&amp;=\frac{\big|\difftwo{y}{x}\big|}
+{ {\big[1+\big(\diff{y}{x}\big)^2\big]}^{3/2} } =
+\frac{e^x}
+{ {\big[1+\big(e^x\big)^2\big]}^{3/2} }\\
+\ka(0)&amp;=\frac{1}{[1+1]^{3/2}}=2^{-3/2}
+\end{align*}
+</div>
+<p id="p-15542">(b)</p>
+<ul class="disc">
+<li id="li-6435">The radius of the circle we want is \(\rho=\frac{1}{\ka}=2^{3/2}\text{.}\) If its centre is at \((a,b)\text{,}\) then the circle will have equation \((x-a)^2+(y-b)^2=2^3\text{.}\) So, we will find its centre.</li>
+<li id="li-6436">The unit vector \(\hN\) points from our point \((0,1)\) towards the centre of the circle. Since the radius of the circle is \(2^{3/2}\text{,}\) the centre of the circle will be at \((0,1)+2^{3/2}\hN\text{.}\) So, we'll find \(\hN\text{.}\)</li>
+<li id="li-6437">Since \(\hN\) is a unit vector perpendicular to \(\hT=\dfrac{\hi+\hj}{\sqrt 2}\text{,}\) we know \(\hN\) will be either \(\dfrac{\hi-\hj}{\sqrt 2}\) or \(\dfrac{-\hi+\hj}{\sqrt 2}\text{.}\)</li>
+<li id="li-6438">Using <a class="xref" data-knowl="./knowl/clpcurvesthm_curvatureFormulae_partd.html" title="Paragraph">Part (d)</a> of the proof of Theorem <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a>:<div class="displaymath">
+\begin{align*}
+\vv(t) \times \va(t) &amp;= \ka\left(\diff{s}{t}\right)^3\hT \times \hN\\
+(\hi+\hj)\times(\hj)&amp;=2^{-3/2}\left(\sqrt2 \right)^3\frac{\hi+\hj}{\sqrt 2}\times\hN\\
+\hk &amp;=\frac{1}{\sqrt2}(\hi + \hj)\times\hN\\
+\hN&amp;=\frac{-\hi+\hj}{\sqrt2}
+\end{align*}
+</div>So, the centre of our circle is at point \((0,1)+\rho\hN=(0,1)+2^{3/2}\frac{-\hi+\hj}{2^{1/2}}=(-2,3)\text{.}\) Then the equation of the circle is \((x+2)^2+(y-3)^2=8\text{.}\)</li>
+</ul>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1957"><h6 class="heading">
+<span class="codenumber">11<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2011A.</span>
+</h6>
+<p id="p-15543">Consider the motion of a thumbtack stuck in the tread of a tire which is on a bicycle moving at constant speed. This motion is given by the parametrized curve</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) = \big(t - \sin t\,,\, 1 - \cos t\big)
+\end{equation*}
+</div>
+<p data-braille="continuation">with \(t  \gt  0\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-6439">Sketch the curve in the \(xy\)-plane for \(0  \lt  t  \lt  4\pi\text{.}\)</li>
+<li id="li-6440">Find and simplify the formula for the curvature \(\kappa(t)\text{.}\)</li>
+<li id="li-6441">Find the radius of curvature of the osculating circle to \(\vr(t)\) at \(t = \pi\text{.}\)</li>
+<li id="li-6442">Find the equation of the osculating circle to \(\vr(t)\) at \(t = \pi\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1545" id="hint-1545"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1545"><div class="hint solution-like">
+<p id="p-15544">For part (a), determine \(\vr(0)\text{,}\) \(\vr(\pi)\text{,}\) \(\vr(2\pi)\text{,}\) \(\vr(3\pi)\text{,}\) and \(\vr(4\pi)\text{,}\) to help you map out the motion. Also visualize the thumbtack as the wheel moves.</p>
+<p id="p-15545">For part (d), use the fact that you only care about \(t=\pi\text{:}\) where is this on your sketch? What does that mean about the direction of \(\hN\text{?}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1957" id="answer-1957"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1957"><div class="answer solution-like">
+<p id="p-15546">(a)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/tack.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15547">(b) \(\ka(t) = \frac{1}{2^{3/2}\sqrt{1-\cos t}}\)</p>
+<p id="p-15548">(c) \(4\)</p>
+<p id="p-15549">(d) \((x-\pi)^2 +(y+2)^2 = 16\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2032" id="solution-2032"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2032"><div class="solution solution-like">
+<p id="p-15550">(a) Think of</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(t) = (t,1) - (\sin t,\cos t)
+\end{equation*}
+</div>
+<p data-braille="continuation">The \((t,1)\) part gives the position of the centre of the wheel at time \(t\text{.}\) The other part gives the position of the thumbtack with respect to the centre of the wheel. In particular,</p>
+<ul class="disc">
+<li id="li-6443">at time \(t=0\text{,}\) \(\vr(0) = (0,0)\text{.}\) The thumbtack is on the ground (i.e. at \(y=0\)).</li>
+<li id="li-6444">At time \(t=\pi\text{,}\) \(\vr(\pi) = (\pi,2)\text{.}\) The thumbtack is at its highest point (i.e. at \(y=2\)) and is above the centre of the wheel at \(x=\pi\text{.}\)</li>
+<li id="li-6445">At time \(t=2\pi\text{,}\) \(\vr(2\pi) = (2\pi,0)\text{.}\) The thumbtack is back on the ground (i.e. at \(y=0\)) and is below the centre of the wheel at \(x=2\pi\text{.}\)</li>
+<li id="li-6446">At time \(t=3\pi\text{,}\) \(\vr(3\pi) = (3\pi,2)\text{.}\) The thumbtack is again at its highest point (i.e. at \(y=2\)) and is above the centre of the wheel at \(x=3\pi\text{.}\)</li>
+<li id="li-6447">At time \(t=4\pi\text{,}\) \(\vr(4\pi) = (4\pi,0)\text{.}\) The thumbtack is back on the ground (i.e. at \(y=0\)) and is below the centre of the wheel at \(x=4\pi\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Here is a sketch of the curve.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="pfigs/tack.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15551">(b) Since</p>
+<div class="displaymath">
+\begin{align*}
+\vr(t) &amp;= \big(t - \sin t\,,\, 1 - \cos t\big)\\
+\vv(t) =\vr'(t)&amp;= \big(1-\cos t\,,\, \sin t\big)\\
+\diff{s}{t}(t)=|\vv(t)|&amp;=\sqrt{2-2\cos t}\\
+\va(t) = \vv'(t)&amp;=\big(\sin t\,,\, \cos t\big)\\
+\vv(t)\times \va(t)&amp;=\det\left[\begin{matrix}\hi&amp;\hj&amp;\hk \\
+1-\cos t &amp; \sin t &amp; 0 \\
+\sin t  &amp; \cos t &amp; 0\end{matrix}\right]
+=\big(\cos t-1\big)\,\hk
+\end{align*}
+</div>
+<p data-braille="continuation">the curvature</p>
+<div class="displaymath">
+\begin{gather*}
+\ka(t) =\frac{|\vv(t)\times\va(t)|}{|\vv(t)|^3}
+=\frac{|\cos t-1|}{(2-2\cos t)^{3/2}}
+=\frac{1}{2^{3/2}\sqrt{1-\cos t}}
+\end{gather*}
+</div>
+<p id="p-15552">(c) The radius of curvature at time \(t=\pi\) is</p>
+<div class="displaymath">
+\begin{equation*}
+\rho(\pi) = \frac{1}{\ka(\pi)}
+= \frac{1}{1/2^{3/2}\sqrt{2}}
+=4
+\end{equation*}
+</div>
+<p id="p-15553">(d) At time \(\pi\text{,}\) the tack is at \(\vr(\pi)=(\pi,2)\text{,}\) which is at the top of its trajectory. Looking at the sketch in part (a), we see that, at that time \(\hN(\pi) = -\hj\text{.}\) So the osculating circle at time \(t=\pi\) has center</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(\pi) + \rho(\pi) \hN(\pi)
+=(\pi,2) + 4(0,-1)
+=(\pi,-2)
+\end{equation*}
+</div>
+<p data-braille="continuation">and radius \(\rho(\pi)=4\text{.}\) So the equation  of the osculating circle at time \(\pi\) is</p>
+<div class="displaymath">
+\begin{equation*}
+(x-\pi)^2 +(y+2)^2 = 16
+\end{equation*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-262">
+<div class="introduction" id="introduction-400"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-1958"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-15554">Find the curvature \(\ka\) as a function of arclength \(s\) (measured from \((0,0)\)) for the curve</p>
+<div class="displaymath">
+\begin{equation*}
+x(\theta)=\int_0^\theta \cos\big(\half\pi t^2\big)dt\quad \quad
+y(\theta)=\int_0^\theta \sin\big(\half\pi t^2\big)dt
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1546" id="hint-1546"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1546"><div class="hint solution-like"><p id="p-15555">You should find that \(s=\theta\text{!}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1958" id="answer-1958"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1958"><div class="answer solution-like"><p id="p-15556">\(\ka(s)=\pi s\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2033" id="solution-2033"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2033"><div class="solution solution-like">
+<p id="p-15557">The velocity vector is</p>
+<div class="displaymath">
+\begin{equation*}
+\vv(\theta)=x'(\theta)\,\hi+y'(\theta)\,\hj
+= \cos\big(\half\pi\theta^2\big)\,\hi + \sin\big(\half\pi\theta^2\big)\,\hj
+\end{equation*}
+</div>
+<p data-braille="continuation">Consequently the speed</p>
+<div class="displaymath">
+\begin{equation*}
+\diff{s}{\theta}(\theta)= |\vv(\theta)|=1
+\implies s(\theta)=\theta+s(0)
+\end{equation*}
+</div>
+<p data-braille="continuation">Since \(s(\theta)\) is zero when \(\theta=0\text{,}\) we have \(s(\theta)=\theta\) and hence</p>
+<div class="displaymath">
+\begin{equation*}
+\hT(s)=\vv(s)
+= \cos\big(\half\pi s^2\big)\,\hi + \sin\big(\half\pi s^2\big)\,\hj
+\end{equation*}
+</div>
+<p data-braille="continuation">so that</p>
+<div class="displaymath">
+\begin{equation*}
+\ka(s)=\left|\diff{\hT}{s}(s)\right|
+=\big|-\pi s\sin\big(\half\pi s^2\big)\,\hi
++\pi s \cos\big(\half\pi s^2\big)\,\hj\big|
+=\pi s
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-1959"><h6 class="heading">
+<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">M317 2011D.</span>
+</h6>
+<p id="p-15558">Let \(C\) be the curve in \(\bbbr^2\) given by the graph of the function \(y=\frac{x^3}{3}\text{.}\) Let \(\kappa(x)\) be the curvature of \(C\) at the point \((x, x^3/3)\text{.}\) Find all points where \(\ka(x)\) attains its maximal values, or else explain why such points do not exist. What are the limits of \(\kappa(x)\) as \(x \rightarrow \infty\) and \(x \rightarrow -\infty\text{?}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1547" id="hint-1547"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1547"><div class="hint solution-like"><p id="p-15559">Since \(\ka(x)\) is never negative, \(\ka(x)\) is maximum when \(\ka^2(x)\) is maximum. The latter is easier to compute.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1959" id="answer-1959"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1959"><div class="answer solution-like">
+<p id="p-15560">The maximum values occur at \((x,y)=\pm \big(1/\root{4}\of{5}\,,\,
+\frac{1}{3}5^{-3/4}\big)\text{.}\)</p>
+<p id="p-15561">The limits \(\lim_{x\rightarrow\pm\infty}\ka(x) = 0\text{.}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2034" id="solution-2034"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2034"><div class="solution solution-like">
+<p id="p-15562">The curve is \(y=y(x)=\frac{x^3}{3}\text{.}\) Since \(y'(x) = x^2\) and \(y''(x) = 2x\text{,}\) the curvature is</p>
+<div class="displaymath">
+\begin{align*}
+\ka(x)
+&amp;=\frac{\big|\difftwo{y}{x}(x)\big|}
+{\Big[1+\big(\diff{y}{x}(x)\big)^2\Big]^{3/2}}
+=\frac{\big|2x\big|}
+{\big[1+x^4\big]^{3/2}}
+\end{align*}
+</div>
+<p data-braille="continuation">We'd like to find the critical points of \(\ka(x)\text{,}\) but differentiating it looks messy. Since \(\ka(x)\) has only nonnegative values, its maxima correspond the the maxima of the function \(\ka^2(x)\text{.}\) So, we find the critical points of \(\ka^2(x)\) instead, to save ourselves some computational toil.</p>
+<div class="displaymath">
+\begin{align*}
+0&amp;=\diff{ }{x}\ka(x)^2
+=\diff{ }{x}\frac{4x^2}{{(1+x^4)}^3}
+=\frac{8x}{{(1+x^4)}^3} - 3\frac{16x^5}{{(1+x^4)}^4}\\
+&amp;=\frac{8x(1+x^4)-3\times 16x^5}{{(1+x^4)}^4}
+=\frac{8x(1-5x^4)}{{(1+x^4)}^4}
+\end{align*}
+</div>
+<p data-braille="continuation">Note that \(\ka(0)=0\) and \(\ka(x)\rightarrow 0\) as \(x\rightarrow\pm \infty\text{.}\) So the maximum occurs when \(x=\pm 1/\root{4}\of{5}\text{.}\)</p>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>

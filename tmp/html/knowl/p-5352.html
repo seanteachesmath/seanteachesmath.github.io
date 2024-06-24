@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:49:45-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p>Before we explain more precisely what the definite integral actually is, a few remarks  (actually — a few interpretations) are in order.</p>
+<ul class="disc">
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">If \(f(x)\ge 0\) and \(a\le b\text{,}\) one interpretation of the symbol \(\ds \int_a^b f(x)\dee{x}\) is “the area of the region \(\big\{\ (x,y)\ \big|\ a\le x\le b,\   0\le y\le f(x)\ \big\}\)”.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/areaSqrt.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">In this way we can rewrite the area in Example <a class="xref" data-knowl="./knowl/eg_INTexparea.html" title="Example 6.1.1: Computing an area with vertical strips">6.1.1</a> as the definite  integral \(\int_0^1 e^x \dee{x}\text{.}\)</p>
+</li>
+<li>This interpretation breaks down when either \(a \gt b\) or \(f(x)\) is not always positive,  but it can be repaired by considering “signed areas”.</li>
+<li>
+<p>If \(a\le b\text{,}\) but \(f(x)\) is not always positive, one interpretation of \(\int_a^b  f(x)\dee{x}\) is “the signed area between \(y=f(x)\) and the \(x\)-axis for \(a\le x\le b\)”.  For “signed area” (which is also called the “net area”), areas above the \(x\)-axis  count as positive while areas below the \(x\)-axis count as negative. In the example  below,  we have the graph of the function</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f(x)=\begin{cases}
+-1 &amp; \text{if }1\le x\le 2\\
+2  &amp; \text{if }2 \lt  x\le 4 \\
+0 &amp; \text{otherwise}
+\end{cases}
+\end{align*}
+</div>
+<p data-braille="continuation">The \(2\times 2\) shaded square above the \(x\)-axis has signed area \(+2\times 2=+4\text{.}\) The \(1\times 1\) shaded square below the \(x\)-axis has signed area \(-1\times 1=-1\text{.}\) So, for this \(f(x)\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\int_0^5 f(x)\dee{x} = +4-1=3
+\end{gather*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/signedArea.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li>We'll come back to the case \(b \lt a\) later.</li>
+</ul>
+<p data-braille="continuation">We're now ready to define \(\int_a^b f(x)\dee{x}\text{.}\) The definition is a little involved,  but essentially mimics what we did in Example <a class="xref" data-knowl="./knowl/eg_INTexparea.html" title="Example 6.1.1: Computing an area with vertical strips">6.1.1</a> (which is why we did  the example before the definition). The main differences are that we replace the function  \(e^x\) by a generic function \(f(x)\) and we replace the interval from \(0\) to \(1\) by the  generic interval <a class="fn-knowl original" data-knowl="./knowl/fn-185-hidden.html" title="Footnote 6.1.15"><sup> 15 </sup></a> from \(a\) to \(b\text{.}\)</p>
+<ul class="disc">
+<li>We start by selecting any natural number \(n\) and subdividing the interval from \(a\) to \(b\) into \(n\) equal subintervals. Each subinterval has width \(\frac{b-a}{n}\text{.}\)</li>
+<li>Just as was the case in Example <a class="xref" data-knowl="./knowl/eg_INTexparea.html" title="Example 6.1.1: Computing an area with vertical strips">6.1.1</a> we will eventually take the  limit as \(n\to\infty\text{,}\) which squeezes the width of each subinterval down to zero.</li>
+<li>For each integer \(0\le i\le n\text{,}\) define \(x_i = a + i \cdot\frac{b-a}{n}\text{.}\) Note that  this means that \(x_0=a\) and \(x_n = b\text{.}\) It is worth keeping in mind that these numbers  \(x_i\) do depend on \(n\) even though our choice of notation hides this dependence.</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">Subinterval number \(i\) is \(x_{i-1} \leq x \leq  x_i\text{.}\) In particular, on the first subinterval, \(x\) runs from \(x_0=a\) to \(x_1=a+\frac{b-a}{n}\text{.}\) On the second subinterval, \(x\) runs from \(x_1\) to \(x_2=a+2\frac{b-a}{n}\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:17%;margin-right:17%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/intDecompE.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</li>
+<li>
+<p xmlns:svg="http://www.w3.org/2000/svg">On each subinterval we now pick \(x_{i,n}^*\) between \(x_{i-1}\) and \(x_i\text{.}\) We then  approximate \(f(x)\) on the \(i^\mathrm{th}\) subinterval by the constant function  \(y=f(x_{i,n}^*)\text{.}\) We include \(n\) in the subscript to remind ourselves that these numbers  depend on \(n\text{.}\)</p>
+<p>Geometrically, we're approximating the region</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\big\{\ (x,y)\ \big|\
+\text{$x$ is between $x_{i-1}$ and $x_i$, and $y$ is between $0$ and $f(x)$} \ \big\}
+\end{gather*}
+</div>
+<p data-braille="continuation">by the rectangle</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\big\{\ (x,y)\ \big|\
+\text{$x$ is between $x_{i-1}$ and $x_i$, and $y$ is between $0$ and $f(x_{i,n}^*)$} \ \big\}
+\end{gather*}
+</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="text/figs/rect_approx_adr1.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">In Example <a class="xref" data-knowl="./knowl/eg_INTexparea.html" title="Example 6.1.1: Computing an area with vertical strips">6.1.1</a> we chose \(x_{i,n}^* = x_{i-1}\) and so we  approximated the function \(e^x\) on each subinterval by the value it took at the leftmost  point in that subinterval.</p>
+</li>
+<li>So, when there are \(n\) subintervals our approximation to the signed area between the curve \(y=f(x)\) and the \(x\)-axis, with \(x\) running from \(a\) to \(b\text{,}\) is<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\sum_{i=1}^n f(x_{i,n}^*)\cdot \frac{b-a}{n}
+\end{gather*}
+</div>We interpret this as the signed area since the summands \(f(x_{i,n}^*)\cdot\frac{b-a}{n}\)  need not be positive.</li>
+<li>Finally we define the definite integral by taking the limit of this sum as  \(n\rightarrow\infty\text{.}\)</li>
+</ul>
+<p data-braille="continuation">Oof! This is quite an involved process, but we can now write down the definition we need.</p>
+<span class="incontext"><a href="sec_intdef.html#p-5352">in-context</a></span>
+</body>
+</html>

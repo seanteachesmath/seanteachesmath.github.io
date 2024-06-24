@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-04-15T16:01:51-05:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Sliding on a Curve</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\require{palatino}\require{mathrsfs}\require{cancel}\require{nicefrac} \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\half}{ \frac{1}{2} }
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\ds}{\displaystyle}
+ \newcommand{\ts}{\textstyle}
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+ \newcommand{\lin}{{\text{LIN}}}
+ \newcommand{\quot}{{\text{QR}}}
+ \newcommand{\simp}{{\text{SMP}}}
+ \newcommand{\diff}[2]{ \frac{\mathrm{d}#1}{\mathrm{d}#2}}
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2}#1}{\mathrm{d}{#2}^2}}
+
+ \newcommand{\eqf}[1]{{\buildrel \rm #1 \over =}}
+
+ \renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+ \newcommand{\De}{\Delta}
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\Si}{\Sigma}
+
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+ \newcommand{\ave}{\mathrm{ave}}
+ \newcommand{\llt}{\left \lt }
+ \newcommand{\rgt}{\right \gt }
+
+
+ \newcommand{\vd}{\mathbf{d}}
+ \newcommand{\he}{\mathbf{e}}
+ \newcommand{\vg}{\mathbf{g}}
+ \newcommand{\vt}{\mathbf{t}}
+ \newcommand{\vw}{\mathbf{w}}
+ \def\eqover#1{\ {\buildrel #1 \over =}\ }
+ \newcommand{\impliesover}[1]{ {\buildrel #1 \over\implies} }
+
+
+
+ \newcommand{\vr}{\mathbf{r}}
+ \newcommand{\vR}{\mathbf{R}}
+ \newcommand{\vs}{\mathbf{s}}
+ \newcommand{\vv}{\mathbf{v}}
+ \newcommand{\va}{\mathbf{a}}
+ \newcommand{\vb}{\mathbf{b}}
+ \newcommand{\vc}{\mathbf{c}}
+ \newcommand{\ve}{\mathbf{e}}
+ \newcommand{\vC}{\mathbf{C}}
+ \newcommand{\vp}{\mathbf{p}}
+ \newcommand{\vq}{\mathbf{q}}
+ \newcommand{\vn}{\mathbf{n}}
+ \newcommand{\vu}{\mathbf{u}}
+ 
+ \newcommand{\vV}{\mathbf{V}}
+ \newcommand{\vx}{\mathbf{x}}
+ \newcommand{\vX}{\mathbf{X}}
+ \newcommand{\vy}{\mathbf{y}}
+ \newcommand{\vz}{\mathbf{z}}
+ \newcommand{\vF}{\mathbf{F}}
+ \newcommand{\vG}{\mathbf{G}}
+ \newcommand{\vH}{\mathbf{H}}
+ \newcommand{\vT}{\mathbf{T}}
+ \newcommand{\vN}{\mathbf{N}}
+ \newcommand{\vL}{\mathbf{L}}
+ \newcommand{\vA}{\mathbf{A}}
+ \newcommand{\vB}{\mathbf{B}}
+ \newcommand{\vD}{\mathbf{D}}
+ \newcommand{\vE}{\mathbf{E}}
+ \newcommand{\vJ}{\mathbf{J}}
+ \newcommand{\vZero}{\mathbf{0}}
+ \newcommand{\vPhi}{\mathbf{\Phi}}
+ \newcommand{\vOmega}{\mathbf{\Omega}}
+ \newcommand{\vTheta}{\mathbf{\Theta}}
+ \newcommand{\cA}{\mathcal{A}}
+ \newcommand{\cB}{\mathcal{B}}
+ \newcommand{\cL}{\mathcal{L}}
+ \newcommand{\cM}{\mathcal{M}}
+ \newcommand{\cO}{\mathcal{O}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cR}{\mathcal{R}}
+ \newcommand{\cS}{\mathcal{S}}
+ \newcommand{\cT}{\mathcal{T}}
+ \newcommand{\cU}{\mathcal{U}}
+ \newcommand{\cV}{\mathcal{V}}
+ \newcommand{\cW}{\mathcal{W}}
+ \newcommand{\cX}{\mathcal{X}}
+
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+ 
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\bbbc}{\mathbb{C}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\de}{\delta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines] (-#1,0)--(#1,0) node[right]{$x$};\draw[help lines] (0,-#2)--(0,#2) node[above]{$y$};}
+
+\newcommand{\YEaaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$x$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YEtaxis}[4]{\draw[help lines] (-#1,0)--(#2,0) node[right]{$t$};\draw[help lines] (0,-#3)--(0,#4) node[above]{$y$};}
+\newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0) node[right]{$t$}; \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+
+\newcommand{\YExcoord}[2]{\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+\newcommand{\YEycoord}[2]{\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+\newcommand{\YEnxcoord}[2]{\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+\newcommand{\YEnycoord}[2]{\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+
+\newcommand{\YEstickfig}[3]{
+\draw (#1,#2) arc(-90:270:2mm);
+\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+\renewcommand{\neg}{ {\sim} }
+ \newcommand{\limp}{ {\;\Rightarrow\;} }
+ \newcommand{\nimp}{ {\;\not\Rightarrow\;} }
+ \newcommand{\liff}{ {\;\Leftrightarrow\;} }
+ \newcommand{\niff}{ {\;\not\Leftrightarrow\;} }
+
+ \newcommand{\st}{ {\mbox{ s.t. }} }
+ \newcommand{\es}{ {\varnothing}}
+ \newcommand{\ds}{ \displaystyle }
+ \newcommand{\pow}[1]{ \mathcal{P}\left(#1\right) }
+ \newcommand{\set}[1]{ \left\{#1\right\} }
+
+ \newcommand{\bdiff}[2]{ \frac{\mathrm{d}}{\mathrm{d}#2} \left( #1 \right)}
+ \newcommand{\ddiff}[3]{ \frac{\mathrm{d}^#1#2}{\mathrm{d}{#3}^#1}}
+
+ \newcommand{\pdiff}[2]{ \frac{\partial #1}{\partial #2}}
+
+ \newcommand{\bbbn}{\mathbb{N}}
+ \newcommand{\bbbr}{\mathbb{R}}
+ \newcommand{\bbbp}{\mathbb{P}}
+ \newcommand{\De}{\Delta}
+ \newcommand{\cD}{\mathcal{D}}
+ \newcommand{\cP}{\mathcal{P}}
+ \newcommand{\cI}{\mathcal{I}}
+ \newcommand{\veps}{\varepsilon}
+ \newcommand{\half}{\tfrac{1}{2}}
+ \newcommand{\ts}{ \textstyle }
+ \newcommand{\diff}[2]{ \frac{\mathrm{d} #1 }{\mathrm{d}#2}}
+ \newcommand{\difftwo}[2]{ \frac{\mathrm{d^2} #1 }{\mathrm{d}{#2}^2}}
+ \newcommand{\dee}[1]{\mathrm{d}#1}
+ \newcommand{\soln}{ \medskip\noindent\emph{Solution.}\ \ \  }
+ \newcommand{\arccsc}{\mathop{\mathrm{arccsc}}}
+ \newcommand{\arcsec}{\mathop{\mathrm{arcsec}}}
+ \newcommand{\arccot}{\mathop{\mathrm{arccot}}}
+ \newcommand{\erf}{\mathop{\mathrm{erf}}}
+ \newcommand{\smsum}{\mathop{{\ts \sum}}}
+ \newcommand{\atp}[2]{ \genfrac{}{}{0in}{}{#1}{#2} }
+
+
+ \newcommand{\Ha}{\hat{\mathbf{a}}}
+ 
+ \newcommand{\he}{\hat{\mathbf{e}}}
+ 
+ 
+ \newcommand{\hi}{\hat{\pmb{\imath}}}
+ \newcommand{\hj}{\hat{\pmb{\jmath}}}
+ \newcommand{\hk}{\hat{\mathbf{k}}}
+ \newcommand{\hn}{\hat{\mathbf{n}}}
+ \newcommand{\hr}{\hat{\mathbf{r}}}
+ \newcommand{\hvt}{\hat{\mathbf{t}}}
+ \newcommand{\hN}{\hat{\mathbf{N}}}
+ \newcommand{\vth}{{\pmb{\theta}}}
+ \newcommand{\vTh}{{\pmb{\Theta}}}
+
+ \newcommand{\vnabla}{   { \mathchoice{\pmb{\nabla}}
+                             {\pmb{\nabla}}
+                             {\pmb{\scriptstyle\nabla}}
+                             {\pmb{\scriptscriptstyle\nabla}} }   }
+ \newcommand{\ha}[1]{\mathbf{\hat e}^{(#1)}}
+
+ \newcommand{\Om}{\Omega}
+ \newcommand{\om}{\omega}
+ \newcommand{\vOm}{\pmb{\Omega}}
+ \newcommand{\vom}{\pmb{\omega}}
+ \newcommand{\svOm}{\pmb{\scriptsize\Omega}}
+ \newcommand{\al}{\alpha}
+ \newcommand{\be}{\beta}
+ \newcommand{\ga}{\gamma}
+ \newcommand{\ka}{\kappa}
+ \newcommand{\la}{\lambda}
+
+ \newcommand{\cC}{\mathcal{C}}
+ \newcommand{\bbbone}{\mathbb{1}}
+
+ \DeclareMathOperator{\sgn}{sgn}
+ \def\tr{\mathop{\rm tr}}
+ \newcommand{\Atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+ \newcommand{\dblInt}{\iint}
+ \newcommand{\tripInt}{\iiint}
+
+ \newcommand{\Set}[2]{\big\{ \ #1\ \big|\ #2\ \big\}}
+ \newcommand{\rhof}{{\rho_{\!{\scriptscriptstyle f}}}}
+ \newcommand{\rhob}{{\rho_{{\scriptscriptstyle b}}}}
+
+
+
+ \newcommand{\hT}{\hat{\mathbf{T}}}
+ \newcommand{\hB}{\hat{\mathbf{B}}}
+
+
+ \newcommand{\YEaxis}[2]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#1,0) node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#2)--(0,#2) node[above]{$y$};}
+ \newcommand{\YEaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$x$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YEtaxis}[4]{\draw[help lines, &lt;-&gt;] (-#1,0)--(#2,0)
+ node[right]{$t$};
+ \draw[help lines, &lt;-&gt;] (0,-#3)--(0,#4) node[above]{$y$};}
+ \newcommand{\YExcoord}[2]{
+ 	\draw (#1,.2)--(#1,-.2) node[below]{$#2$};}
+ \newcommand{\YEycoord}[2]{
+ 	\draw (.2,#1)--(-.2,#1) node[left]{$#2$};}
+ \newcommand{\YEnxcoord}[2]{
+ 	\draw (#1,-.2)--(#1,.2) node[above]{$#2$};}
+ \newcommand{\YEnycoord}[2]{
+ 	\draw (-.2,#1)--(.2,#1) node[right]{$#2$};}
+ \newcommand{\YEstickfig}[3]{
+ 	\draw (#1,#2) arc(-90:270:2mm);
+ 	\draw (#1,#2)--(#1,#2-.5) (#1-.25,#2-.75)--(#1,#2-.5)--(#1+.25,#2-.75) (#1-.2,#2-.2)--(#1+.2,#2-.2);}
+
+ \newcommand{\trigtri}[4]{
+ \begin{tikzpicture}
+ \draw (-.5,0)--(2,0)--(2,1.5)--cycle;
+ \draw (1.8,0) |- (2,.2);
+ \draw[double] (0,0) arc(0:30:.5cm);
+ \draw (0,.2) node[right]{$#1$};
+ \draw (1,-.5) node{$#2$};
+ \draw (2,.75) node[right]{$#3$};
+ \draw (.6,1.1) node[rotate=30]{$#4$};
+ \end{tikzpicture}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="CLP-Calculus.html"><span class="title"></span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_lineIntegral.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="chap_curves.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_polar.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_lineIntegral.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="chap_curves.html" title="Up">Up</a><a class="next-button button toolbar-item" href="sec_polar.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link part"><a href="part-differential.html" data-scroll="part-differential"><span class="codenumber">I</span> <span class="title">CLP-1 Differential Calculus</span></a></li>
+<li class="link frontmatter">
+<a href="part-differential.html#index" data-scroll="index"><span class="title">Front Matter</span></a><ul>
+<li><a href="part-differential.html#colophon-1" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="part-differential.html#preface-1" data-scroll="preface-1">Preface</a></li>
+<li><a href="part-differential.html#dedication-1" data-scroll="dedication-1">Dedication</a></li>
+<li><a href="part-differential.html#acknowledgement-1" data-scroll="acknowledgement-1">Acknowledgements</a></li>
+<li><a href="part-differential.html#preface-2" data-scroll="preface-2">Using the exercises in this book</a></li>
+<li><a href="part-differential.html#preface-3" data-scroll="preface-3">Feedback about the text</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_basics.html" data-scroll="chap_basics"><span class="codenumber">1</span> <span class="title">The basics</span></a><ul>
+<li><a href="section-1.html" data-scroll="section-1">Numbers</a></li>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="section-3.html" data-scroll="section-3">Other Important Sets</a></li>
+<li><a href="section-4.html" data-scroll="section-4">Functions</a></li>
+<li><a href="sec_parsing.html" data-scroll="sec_parsing">Parsing Formulas</a></li>
+<li><a href="sec_inverse_functions.html" data-scroll="sec_inverse_functions">Inverse Functions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_limits.html" data-scroll="chap_limits"><span class="codenumber">2</span> <span class="title">Limits</span></a><ul>
+<li><a href="sec_first_lim.html" data-scroll="sec_first_lim">Drawing Tangents and a First Limit</a></li>
+<li><a href="sec_velocity.html" data-scroll="sec_velocity">Another Limit and Computing Velocity</a></li>
+<li><a href="sec_lim_func.html" data-scroll="sec_lim_func">The Limit of a Function</a></li>
+<li><a href="section-10.html" data-scroll="section-10">Calculating Limits with Limit Laws</a></li>
+<li><a href="section-11.html" data-scroll="section-11">Limits at Infinity</a></li>
+<li><a href="section-12.html" data-scroll="section-12">Continuity</a></li>
+<li><a href="sec_opt_formal_limit.html" data-scroll="sec_opt_formal_limit">(Optional) — Making the Informal a Little More Formal</a></li>
+<li><a href="sec_lim_inf_formal.html" data-scroll="sec_lim_inf_formal">(Optional) — Making Infinite Limits a Little More Formal</a></li>
+<li><a href="sec_proof_arith_lim.html" data-scroll="sec_proof_arith_lim">(Optional) — Proving the Arithmetic of Limits</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_deriv.html" data-scroll="chap_deriv"><span class="codenumber">3</span> <span class="title">Derivatives</span></a><ul>
+<li><a href="section-16.html" data-scroll="section-16">Revisiting Tangent Lines</a></li>
+<li><a href="sec_def_deriv.html" data-scroll="sec_def_deriv">Definition of the Derivative</a></li>
+<li><a href="section-18.html" data-scroll="section-18">Interpretations of the Derivative</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Arithmetic of Derivatives - a Differentiation Toolbox</a></li>
+<li><a href="sec_proof_arith_deriv.html" data-scroll="sec_proof_arith_deriv">Proofs of the Arithmetic of Derivatives</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Using the Arithmetic of Derivatives –  Examples</a></li>
+<li><a href="sec_exp_func.html" data-scroll="sec_exp_func">Derivatives of Exponential Functions</a></li>
+<li><a href="sec_diff_trig.html" data-scroll="sec_diff_trig">Derivatives of Trigonometric Functions</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">One More Tool  – the Chain Rule</a></li>
+<li><a href="sec_diff_logs.html" data-scroll="sec_diff_logs">The Natural Logarithm</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Implicit Differentiation</a></li>
+<li><a href="sec_invTrig.html" data-scroll="sec_invTrig">Inverse Trigonometric Functions</a></li>
+<li><a href="sec_mvt.html" data-scroll="sec_mvt">The Mean Value Theorem</a></li>
+<li><a href="sec_higher_diff.html" data-scroll="sec_higher_diff">Higher Order Derivatives</a></li>
+<li><a href="sec_cont_deriv.html" data-scroll="sec_cont_deriv">(Optional) --- Is \(\lim_{x\to c}f'(x)\) Equal to \(f'(c)\text{?}\)</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-4.html" data-scroll="chapter-4"><span class="codenumber">4</span> <span class="title">Applications of derivatives</span></a><ul>
+<li><a href="sec_vel_acc.html" data-scroll="sec_vel_acc">Velocity and Acceleration</a></li>
+<li><a href="sec_rrates.html" data-scroll="sec_rrates">Related Rates</a></li>
+<li><a href="sec_ExpGthDecay.html" data-scroll="sec_ExpGthDecay">Exponential Growth and Decay</a></li>
+<li><a href="sec_DIFFTaylor.html" data-scroll="sec_DIFFTaylor">Taylor Polynomials</a></li>
+<li><a href="sec_optimise.html" data-scroll="sec_optimise">Optimisation</a></li>
+<li><a href="sec_curve_sketch.html" data-scroll="sec_curve_sketch">Sketching Graphs</a></li>
+<li><a href="section-37.html" data-scroll="section-37">L'Hôpital's Rule and Indeterminate Forms</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-5.html" data-scroll="chapter-5"><span class="codenumber">5</span> <span class="title">Towards Integral Calculus</span></a><ul><li><a href="sec_antidiff.html" data-scroll="sec_antidiff">Introduction to Antiderivatives</a></li></ul>
+</li>
+<li class="link part"><a href="part-integral.html" data-scroll="part-integral"><span class="codenumber">II</span> <span class="title">CLP-2 Integral Calculus</span></a></li>
+<li class="link">
+<a href="chap_integral.html" data-scroll="chap_integral"><span class="codenumber">6</span> <span class="title">Integration</span></a><ul>
+<li><a href="sec_intdef.html" data-scroll="sec_intdef">Definition of the Integral</a></li>
+<li><a href="sec_def_int.html" data-scroll="sec_def_int">Basic properties of the definite integral</a></li>
+<li><a href="sec_fundamental.html" data-scroll="sec_fundamental">The Fundamental Theorem of Calculus</a></li>
+<li><a href="sec_subs.html" data-scroll="sec_subs">Substitution</a></li>
+<li><a href="sec_area.html" data-scroll="sec_area">Area between curves</a></li>
+<li><a href="sec_int_volumes.html" data-scroll="sec_int_volumes">Volumes</a></li>
+<li><a href="sec_intbyparts.html" data-scroll="sec_intbyparts">Integration by parts</a></li>
+<li><a href="sec_trigint.html" data-scroll="sec_trigint">Trigonometric Integrals</a></li>
+<li><a href="sec_trigsub.html" data-scroll="sec_trigsub">Trigonometric Substitution</a></li>
+<li><a href="sec_parfrac.html" data-scroll="sec_parfrac">Partial Fractions</a></li>
+<li><a href="sec_numeric_int.html" data-scroll="sec_numeric_int">Numerical Integration</a></li>
+<li><a href="sec_improp_int.html" data-scroll="sec_improp_int">Improper Integrals</a></li>
+<li><a href="section-51.html" data-scroll="section-51">More Integration Examples</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_int_app.html" data-scroll="chap_int_app"><span class="codenumber">7</span> <span class="title">Applications of Integration</span></a><ul>
+<li><a href="sec_work.html" data-scroll="sec_work">Work</a></li>
+<li><a href="sec_avg.html" data-scroll="sec_avg">Averages</a></li>
+<li><a href="sec_com.html" data-scroll="sec_com">Centre of Mass and Torque</a></li>
+<li><a href="sec_sep_de.html" data-scroll="sec_sep_de">Separable Differential Equations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_seq_ser.html" data-scroll="chap_seq_ser"><span class="codenumber">8</span> <span class="title">Sequence and series</span></a><ul>
+<li><a href="section-56.html" data-scroll="section-56">Sequences</a></li>
+<li><a href="section-57.html" data-scroll="section-57">Series</a></li>
+<li><a href="section-58.html" data-scroll="section-58">Convergence Tests</a></li>
+<li><a href="section-59.html" data-scroll="section-59">Absolute and Conditional Convergence</a></li>
+<li><a href="section-60.html" data-scroll="section-60">Power Series</a></li>
+<li><a href="section-61.html" data-scroll="section-61">Taylor Series</a></li>
+<li><a href="sec_RatIrr.html" data-scroll="sec_RatIrr">Optional — Rational and irrational numbers</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-multi.html" data-scroll="part-multi"><span class="codenumber">III</span> <span class="title">CLP-3 Multivariable Calculus</span></a></li>
+<li class="link">
+<a href="chap_geometry.html" data-scroll="chap_geometry"><span class="codenumber">9</span> <span class="title">Vectors and Geometry in Two and Three Dimensions</span></a><ul>
+<li><a href="sec-points.html" data-scroll="sec-points">Points</a></li>
+<li><a href="sec_vectors.html" data-scroll="sec_vectors">Vectors</a></li>
+<li><a href="sec_lines_2d.html" data-scroll="sec_lines_2d">Equations of Lines in 2d</a></li>
+<li><a href="sec_planes_3d.html" data-scroll="sec_planes_3d">Equations of Planes in 3d</a></li>
+<li><a href="sec_lines_3d.html" data-scroll="sec_lines_3d">Equations of Lines in 3d</a></li>
+<li><a href="sec_curves.html" data-scroll="sec_curves">Curves and their Tangent Vectors</a></li>
+<li><a href="sec_sketching.html" data-scroll="sec_sketching">Sketching Surfaces in 3d</a></li>
+<li><a href="sec_cylinders.html" data-scroll="sec_cylinders">Cylinders</a></li>
+<li><a href="sec_quadrics.html" data-scroll="sec_quadrics">Quadric Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_partials.html" data-scroll="chap_partials"><span class="codenumber">10</span> <span class="title">Partial Derivatives</span></a><ul>
+<li><a href="sec_limits.html" data-scroll="sec_limits">Limits</a></li>
+<li><a href="sec_partials.html" data-scroll="sec_partials">Partial Derivatives</a></li>
+<li><a href="sec_higher_order.html" data-scroll="sec_higher_order">Higher Order Derivatives</a></li>
+<li><a href="sec_chain_rule.html" data-scroll="sec_chain_rule">The Chain Rule</a></li>
+<li><a href="sec_tangent_planes.html" data-scroll="sec_tangent_planes">Tangent Planes and Normal Lines</a></li>
+<li><a href="sec_lin_approx.html" data-scroll="sec_lin_approx">Linear Approximations and Error</a></li>
+<li><a href="sec_directional_derivatives.html" data-scroll="sec_directional_derivatives">Directional Derivatives and the Gradient</a></li>
+<li><a href="sec_wave.html" data-scroll="sec_wave">Optional — Solving the Wave Equation</a></li>
+<li><a href="sec_max.html" data-scroll="sec_max">Maximum and Minimum Values</a></li>
+<li><a href="sec_Lagrange.html" data-scroll="sec_Lagrange">Lagrange Multipliers</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integrals.html" data-scroll="chap_integrals"><span class="codenumber">11</span> <span class="title">Multiple Integrals</span></a><ul>
+<li><a href="sec_2d_integrals.html" data-scroll="sec_2d_integrals">Double Integrals</a></li>
+<li><a href="sec_polars.html" data-scroll="sec_polars">Double Integrals in Polar Coordinates</a></li>
+<li><a href="sec_int_2d_applications.html" data-scroll="sec_int_2d_applications">Applications of Double Integrals</a></li>
+<li><a href="sec_surface_area.html" data-scroll="sec_surface_area">Surface Area</a></li>
+<li><a href="sec_3d_integrals.html" data-scroll="sec_3d_integrals">Triple Integrals</a></li>
+<li><a href="sec_cylindrical.html" data-scroll="sec_cylindrical">Triple Integrals in Cylindrical Coordinates</a></li>
+<li><a href="sec_spherical.html" data-scroll="sec_spherical">Triple Integrals in Spherical Coordinates</a></li>
+<li><a href="sec_Jacobian.html" data-scroll="sec_Jacobian">Optional— Integrals in General Coordinates</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-vector.html" data-scroll="part-vector"><span class="codenumber">IV</span> <span class="title">CLP-4 Vector Calculus</span></a></li>
+<li class="link">
+<a href="chap_curves.html" data-scroll="chap_curves"><span class="codenumber">12</span> <span class="title">Curves</span></a><ul>
+<li><a href="sec_curve_derivs.html" data-scroll="sec_curve_derivs">Derivatives, Velocity, Etc.</a></li>
+<li><a href="sec_reparam.html" data-scroll="sec_reparam">Reparametrization</a></li>
+<li><a href="sec_curvature.html" data-scroll="sec_curvature">Curvature</a></li>
+<li><a href="sec_Curve3d.html" data-scroll="sec_Curve3d">Curves in Three Dimensions</a></li>
+<li><a href="sec_CurveCompendium.html" data-scroll="sec_CurveCompendium">A Compendium of Curve Formula</a></li>
+<li><a href="sec_lineIntegral.html" data-scroll="sec_lineIntegral">Integrating Along a Curve</a></li>
+<li><a href="sec_Sliding.html" data-scroll="sec_Sliding" class="active">Sliding on a Curve</a></li>
+<li><a href="sec_polar.html" data-scroll="sec_polar">Optional — Polar Coordinates</a></li>
+<li><a href="sec_central_forces.html" data-scroll="sec_central_forces">Optional — Central Forces</a></li>
+<li><a href="sec_planet.html" data-scroll="sec_planet">Optional — Planetary Motion</a></li>
+<li><a href="sec_astroid.html" data-scroll="sec_astroid">Optional — The Astroid</a></li>
+<li><a href="sec_paramCircles.html" data-scroll="sec_paramCircles">Optional — Parametrizing Circles</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_vector_fields.html" data-scroll="chap_vector_fields"><span class="codenumber">13</span> <span class="title">Vector Fields</span></a><ul>
+<li><a href="sec_vfDefs.html" data-scroll="sec_vfDefs">Definitions and First Examples</a></li>
+<li><a href="sec_fieldLines.html" data-scroll="sec_fieldLines">Optional — Field Lines</a></li>
+<li><a href="sec_conservativeFields.html" data-scroll="sec_conservativeFields">Conservative Vector Fields</a></li>
+<li><a href="sec_workIntegrals.html" data-scroll="sec_workIntegrals">Line Integrals</a></li>
+<li><a href="sec_Pendulum.html" data-scroll="sec_Pendulum">Optional — The Pendulum</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_surface_integrals.html" data-scroll="chap_surface_integrals"><span class="codenumber">14</span> <span class="title">Surface Integrals</span></a><ul>
+<li><a href="sec_paramSurfaces.html" data-scroll="sec_paramSurfaces">Parametrized Surfaces</a></li>
+<li><a href="sec_tangentPlanes.html" data-scroll="sec_tangentPlanes">Tangent Planes</a></li>
+<li><a href="sec_surfaceIntegrals.html" data-scroll="sec_surfaceIntegrals">Surface Integrals</a></li>
+<li><a href="sec_fluxIntegrals.html" data-scroll="sec_fluxIntegrals">Interpretation of Flux Integrals</a></li>
+<li><a href="sec_orientation.html" data-scroll="sec_orientation">Orientation of Surfaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap_integral_theorems.html" data-scroll="chap_integral_theorems"><span class="codenumber">15</span> <span class="title">Integral Theorems</span></a><ul>
+<li><a href="sec_graadDivCurl.html" data-scroll="sec_graadDivCurl">Gradient, Divergence and Curl</a></li>
+<li><a href="sec_divergenceThm.html" data-scroll="sec_divergenceThm">The Divergence Theorem</a></li>
+<li><a href="sec_GreenThm.html" data-scroll="sec_GreenThm">Green's Theorem</a></li>
+<li><a href="sec_StokesThm.html" data-scroll="sec_StokesThm">Stokes' Theorem</a></li>
+<li><a href="sec_cohomology.html" data-scroll="sec_cohomology">Optional — Which Vector Fields Obey  \(\vnabla\times\vF=0\)</a></li>
+<li><a href="section-117.html" data-scroll="section-117">Really Optional — More Interpretation of Div and Curl</a></li>
+<li><a href="sec_unified.html" data-scroll="sec_unified">Optional — A Generalized Stokes' Theorem</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chapter-16.html" data-scroll="chapter-16"><span class="codenumber">16</span> <span class="title">True/False and Other Short Questions</span></a><ul>
+<li><a href="section-119.html" data-scroll="section-119">True/False and Other Short Questions</a></li>
+<li><a href="exercises-110.html" data-scroll="exercises-110">Exercises</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></li>
+<li class="link"><a href="app_hint.html" data-scroll="app_hint"><span class="codenumber">A</span> <span class="title">Hints for Exercises</span></a></li>
+<li class="link"><a href="app_answ.html" data-scroll="app_answ"><span class="codenumber">B</span> <span class="title">Answers to Exercises</span></a></li>
+<li class="link"><a href="app_soln.html" data-scroll="app_soln"><span class="codenumber">C</span> <span class="title">Solutions to Exercises</span></a></li>
+</ul></nav><div class="extras"><nav><a class="feedback-link" href="mailto:clp@ugrad.math.ubc.ca?subject=clp3-pretext" target="_blank">Feedback</a><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec_Sliding"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">12.7</span> <span class="title">Sliding on a Curve</span>
+</h2>
+<section class="introduction" id="introduction-407"><p id="p-15926">We are going to investigate the motion of a particle of mass \(m\) sliding on a frictionless<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-562" id="fn-562"><sup> 1 </sup></a>, smooth curve that lies in a vertical plane. We will consider three scenarios:</p>
+<ul class="disc">
+<li id="li-6581">First, to set things up we'll look at a bead sliding on a stiff wire.</li>
+<li id="li-6582">Then, we will imagine that we are skiing straight downhill and ask “Where on the hill can we become airborne?”.</li>
+<li id="li-6583">Then we will imagine that we are skateboarding in a culvert (a large pipe) and ask “When is it safe?”.</li>
+</ul>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-562"><div class="fn">We are mathematicians — we like idealized situations.</div></div></section><section class="subsection" id="sec_bead"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.7.1</span> <span class="title">The Sliding Bead</span>
+</h3>
+<p id="p-15927">First, consider a bead of mass \(m\) that is sliding, without friction, on a stiff wire. According to Newton's law of motion</p>
+<div class="displaymath">
+\begin{equation*}
+m\va = \vF
+\end{equation*}
+</div>
+<p data-braille="continuation">where \(\vF\) is the net force being applied to the bead. The bead is subject to two forces. The gravitational force is \(-mg\hj\text{.}\) By definition, absence of friction means that the wire is does not apply any force that is in the direction tangential to the wire. But, because it is stiff, the wire never changes shape and instead applies just the right amount of force, in the direction normal to the wire, that is needed to keep the bead on the wire<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-563" id="fn-563"><sup> 2 </sup></a> without bending the wire. Call this normal force \(W\hat\vN\text{.}\)</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-563"><div class="fn">This force is required to keep the bead from either passing through the wire or flying off the wire.</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/wireC.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15928">So, by Newton's law,</p>
+<div class="displaymath">
+\begin{gather*}
+m\,\va=-mg\,\hj+W\,\hat\vN
+\end{gather*}
+</div>
+<p data-braille="continuation">We'll analyse this equation by splitting it into its tangential and normal components.</p>
+<p id="p-15929">To extract the tangential component of Newton's law, we dot it with \(\vv=|\vv|\hat\vT\text{.}\) Since \(\hat\vT\cdot\hat\vN=0\) this kills all normal components.</p>
+<div class="displaymath">
+\begin{align*}
+m\vv\cdot\diff{\vv}{t}
+&amp;=-mg\hj\cdot\vv+W\hat\vN\cdot\vv\\
+\frac{1}{2}m\diff{\ }{t}(\vv\cdot\vv)&amp;=-mg\diff{y}{t}
+\end{align*}
+</div>
+<p data-braille="continuation">Here we have used</p>
+<ul class="disc">
+<li id="li-6584">Theorem <a class="xref" data-knowl="./knowl/thm_DIFFalgebra.html" title="Theorem 9.6.11: Arithmetic of differentiation">9.6.11</a>.c on the left hand side and</li>
+<li id="li-6585">that \(\hj\cdot\vv\) is just the \(y\) component of \(\vv\) and</li>
+<li id="li-6586">that \(\hat\vN\) and \(\vv=|\vv|\hat\vT\) are perpendicular.</li>
+</ul>
+<p data-braille="continuation">Moving everything to the left hand side of the equation gives</p>
+<div class="displaymath">
+\begin{align*}
+\diff{\ }{t}\left(\frac{1}{2}m|\vv|^2+mgy\right)&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">and we conclude that the quantity</p>
+<article class="fact theorem-like" id="eqn_consEnergy"><h6 class="heading">
+<span class="type">Equation</span><span class="space"> </span><span class="codenumber">12.7.1</span><span class="period">.</span><span class="space"> </span><span class="title">Conservation of Energy.</span>
+</h6>
+<div class="displaymath" id="p-15930">
+\begin{equation*}
+E=\frac{1}{2}m|\vv|^2+mgy
+\end{equation*}
+</div></article><p id="p-15931">is a constant, independent of time. This is, of course, the principle of conservation of energy. It determines the speed \(|\vv|=\sqrt{\frac{2E}{m}-2gy}\) of the bead as a function of the height \(y\) (and of the energy \(E\text{,}\) which is determined by the initial conditions).</p>
+<p id="p-15932">To extract the normal component of Newton's law, we dot it with \(\hat\vN\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+m\va\cdot \hat\vN=-mg\hj\cdot \hat\vN+W
+\end{equation*}
+</div>
+<p data-braille="continuation">Since</p>
+<div class="displaymath">
+\begin{equation*}
+\va=\difftwo{s}{t}\,\hat\vT+\ka\Big(\diff{s}{t}\Big)^2\hat\vN
+=\difftwo{s}{t}\,\hat\vT+\ka|\vv|^2\hat\vN
+\end{equation*}
+</div>
+<p data-braille="continuation">and \(\hat\vT\) and \(\hat\vN\) are perpendicular, this gives, after a little rearrangement,</p>
+<article class="fact theorem-like" id="eqn_normalForce"><h6 class="heading">
+<span class="type">Equation</span><span class="space"> </span><span class="codenumber">12.7.2</span><span class="period">.</span><span class="space"> </span><span class="title">Normal Force.</span>
+</h6>
+<div class="displaymath" id="p-15933">
+\begin{equation*}
+W=m\ka|\vv|^2+mg\hj\cdot \hat\vN
+=2\ka(E-mgy)+mg\hj\cdot \hat\vN
+\end{equation*}
+</div></article></section><section class="subsection" id="sec_skier"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.7.2</span> <span class="title">The Skier</span>
+</h3>
+<p id="p-15934">The difference between the bead on the wire and the skier on the hill is that while the hill is capable of applying an upward normal force (i.e. it can push you upward to keep you from falling to the centre of the Earth), it is not capable of applying a downward normal force. That is the hill cannot pull down on you to keep you on the hill. Only gravity can keep you grounded. There are two main possibilities<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-564" id="fn-564"><sup> 3 </sup></a>.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-564"><div class="fn">We assume that you are going downhill and that the curvature \(\ka\gt 0\text{.}\)</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:12.5%;margin-right:12.5%;">
+<div class="sbspanel" style="width:33.3333333333333%;justify-content:center;"><img src="figs/wireD.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:33.3333333333333%;justify-content:center;"><img src="figs/wireU.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<ul id="p-15935" class="disc">
+<li id="li-6587">If the hill is concave downward as in the figure on the left above, then \(\hat\vN\) points downward and the hill is allowed to have \(W\le 0\) (which corresponds to the normal force \(W\hat\vN\) pushing upward). If ever \(W \gt 0\text{,}\) the hill would have to pull on you to keep you on hill. It can't, so you become airborne. Since \(\hj\cdot \hat\vN \lt 0\text{,}\) this happens whenever<div class="displaymath">
+\begin{align*}
+W \gt 0 &amp;\iff m\ka|\vv|^2+mg\hj\cdot \hat\vN  \gt 0
+\iff |\vv|  \gt  \sqrt{\frac{g}{\ka}|\hj\cdot \hat\vN|}
+\end{align*}
+</div>
+</li>
+<li id="li-6588">If the hill is concave upward as in the figure on the right above, then \(\hat\vN\) points upward and the hill is allowed to have \(W\ge 0\) (which corresponds to the normal force \(W\hat\vN\) pushing upward). Since \(\hj\cdot \hat\vN \gt 0\) we always have \(W=m\ka|\vv|^2+mg\hj\cdot \hat\vN  \gt  0\text{.}\) You never become airborne. On the other hand your knees may complain.</li>
+</ul></section><section class="subsection" id="sec_skateBoarder"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">12.7.3</span> <span class="title">The Skate Boarder</span>
+</h3>
+<p id="p-15936">So far, Equations <a class="xref" data-knowl="./knowl/eqn_consEnergy.html" title="Equation 12.7.1: Conservation of Energy">12.7.1</a> and <a class="xref" data-knowl="./knowl/eqn_normalForce.html" title="Equation 12.7.2: Normal Force">12.7.2</a> apply to any stiff frictionless “wire”. We now specialize  to the special case of a skateboarder inside a circular culvert of radius \(a\text{.}\) Let's put the bottom of the circle at the origin \((0,0)\text{,}\) so that the centre of the circle is at \((0,a)\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="figs/circleC2.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15937">In this case the curvature is \(\ \ka=\frac{1}{a}\ \) and \(\hj\cdot\hat\vN=\cos \phi=\frac{a-y}{a}\) so <a class="xref" data-knowl="./knowl/eqn_consEnergy.html" title="Equation 12.7.1: Conservation of Energy">12.7.1</a> and <a class="xref" data-knowl="./knowl/eqn_normalForce.html" title="Equation 12.7.2: Normal Force">12.7.2</a>  simplify to</p>
+<div class="displaymath">
+\begin{align*}
+|\vv|&amp;=\sqrt{\frac{2}{m}(E-mgy)}=\sqrt{2g\Big(\frac{E}{mg}-y\Big)}\\
+W&amp;=\frac{2}{a}(E-mgy)+\frac{mg}{a}(a-y)
+=\frac{3mg}{a}\Big(\frac{2}{3mg}E+\frac{a}{3}-y\Big)
+\end{align*}
+</div>
+<p data-braille="continuation">Imagine now that you start at the bottom of the culvert, that is at \(y=0\text{,}\) with energy \(E \gt 0\text{.}\) As time progresses, \(y\) increases and consequently \(|\vv|\) and \(W\) both decrease, as, of course, they should. This continues until one of the following three things happen.</p>
+<ol class="lower-roman">
+<li id="li-6589">\(|\vv|\) hits 0, in which case you stop rising and start descending. The speed \(|\vv|\) is zero when \(y=y_S=\frac{E}{mg}\text{.}\) (The subscript “\(S\)” stands for “stop”.) Physicists say that when you reach \(y_S\) all of your kinetic energy (\(\frac{1}{2}m|\vv|^2\)) has been converted into potential energy (\(mgy\)).</li>
+<li id="li-6590">\(W\) hits zero. When you get higher than this, \(W\) becomes negative and the culvert would have to pull on you to keep your feet on the culvert. As the culvert can only push on you, you become airborne. The normal force \(W\) is zero  when \(y=y_A=\frac{2}{3}\frac{E}{mg}+\frac{a}{3}\text{.}\) (The subscript “\(A\)” stands for “airborne”.)</li>
+<li id="li-6591">\(y\) hits \(2a\text{.}\) This is the summit of the culvert. You descend on the other side.</li>
+</ol>
+<p data-braille="continuation">Which case actually happens is determined by the relative sizes of \(y_S,\ y_A\) and \(2a\text{.}\)</p>
+<ul class="disc">
+<li id="li-6592">Comparing \(y_S=\frac{2}{3}\frac{E}{mg}+\frac{1}{3}\frac{E}{mg}\) and \(y_A=\frac{2}{3}\frac{E}{mg}+\frac{a}{3}\text{,}\) we see that \(y_S\le y_A\iff \frac{E}{mg}\le a \text{.}\)</li>
+<li id="li-6593">Comparing \(y_A=\frac{2}{3}\frac{E}{mg}+\frac{a}{3}\) and \(a=\frac{2}{3}a+\frac{a}{3}\text{,}\) we see that \(y_A\le a\iff \frac{E}{mg}\le a\text{.}\)</li>
+<li id="li-6594">Comparing \(y_A=\frac{2}{3}\frac{E}{mg}+\frac{a}{3}\) and \(2a=\frac{5}{3}a+\frac{a}{3}\text{,}\) we see that \(y_A\le 2a\iff \frac{E}{mg}\le \frac{5}{2}a\text{.}\)</li>
+</ul>
+<p data-braille="continuation">So the conclusions are:</p>
+<ul class="disc">
+<li id="li-6595">
+<em class="emphasis">If</em>  \(\ {\bf 0\le\frac{E}{mg}\le a}\ \) then \(\ 0\le y_S\le y_A\le a\ \text{.}\) In this case you just oscillate between heights 0 and \(y_S\le a\) in the bottom half of the culvert, as in the figure on the left below.</li>
+<li id="li-6596">
+<em class="emphasis">If</em> \(\ {\bf a\le\frac{E}{mg}\le \frac{5}{2}a}\ \) then \(\ a\le y_A\le y_S,2a\ \text{.}\) In this case you make it more than half way to the top. But you become airborne at \(y=y_A\) which is somewhere between the half way mark \(y=a\) and the top \(y=2a\text{.}\) At this point our model breaks down because you are no longer in contact with the culvert. You just freely follow a parabolic arc until you crash back into the culvert, as in the figure in the centre below.</li>
+<li id="li-6597">
+<em class="emphasis">If</em> \(\ {\bf \frac{5}{2}a  \lt  \frac{E}{mg}}\ \) then \(\ 2a  \lt  y_A  \lt  y_S\ \text{.}\) In this case you successfully go all the way around the culvert, looping  the loop, as in the figure on the right below. Note that, as \(\frac{E}{mg}  \gt  \frac{5}{2}a  \gt 2a\text{,}\)  this requires significantly more energy than that required to reach the top, i.e. to reach height \(2a\text{.}\)</li>
+</ul>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:6.666666666666667%;margin-right:6.666666666666667%;">
+<div class="sbspanel" style="width:23.0769230769231%;justify-content:flex-start;"><img src="figs/skateA.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:23.0769230769231%;justify-content:flex-start;"><img src="figs/skateB.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:23.0769230769231%;justify-content:flex-start;"><img src="figs/skateC.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+</div></div></section><section class="exercises" id="exercises-96"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">12.7.4</span> <span class="title">Exercises</span>
+</h3>
+<div class="exercisegroup" id="exercisegroup-269">
+<div class="introduction" id="introduction-408"><p id="p-15938">You may assume the acceleration due to gravity is \(g=9.8\) m/s\(^2\text{.}\) You may also assume that the systems described function as they do in the book: so tracks are frictionless, etc., unless otherwise mentioned.</p></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-2002"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-15939">The figure below represents a bead sliding down a wire. Sketch  vectors representing the normal force the wire exerts on the bead, and the force of gravity.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1938.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15940">Assume the top of the page is “straight up.”</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1589" id="hint-1589"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1589"><div class="hint solution-like"><p id="p-15941">Gravity pulls straight down, while the direction of the normal force depends on the curve of the wire. There is not enough information to know the magnitude of the forces, but you can approximate their directions.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2002" id="answer-2002"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2002"><div class="answer solution-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1939.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2078" id="solution-2078"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2078"><div class="solution solution-like">
+<p id="p-15942">We don't have enough information to gauge the size of the vectors, but we can figure out their direction. Gravity pulls straight down, so the vector \(-mg\hj\) points straight down. The normal force will be normal to the curve.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:33.5%;margin-right:33.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1940.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2003"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-15943">In the definition \(E=\frac12m|\vv|^2+mgy\text{,}\)  \(\vv\) is the derivative of position with respect to what quantity?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1590" id="hint-1590"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1590"><div class="hint solution-like"><p id="p-15944">This equation stems from \(\vF=m\va\text{.}\) In that equation, \(\va\) is what kind of derivative?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2003" id="answer-2003"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2003"><div class="answer solution-like"><p id="p-15945">time</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2079" id="solution-2079"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2079"><div class="solution solution-like">
+<p id="p-15946">This equation stems from \(\vF=m\va\text{.}\) In that equation, \(\va\) is acceleration — the second derivative of position with respect to <em class="emphasis">time</em>. So, \(\vv\) is the derivative of position with respect to time.</p>
+<p id="p-15947">We previously used \(\vv\) as the derivative of position with respect to the parameter we use to define our position — which was often called \(t\text{,}\) but was not the necessarily time. So this is a good point to keep straight.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2004"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-15948">A bead slides down a wire with the shape shown below, \(x \lt 0\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:30%;margin-right:30%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1941.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15949">Let \(W\hN\) be the normal force exerted by the wire when the bead is at position \(x\text{.}\) Note \(W \gt 0\text{.}\) Is \(\diff{W}{x}\) positive or negative?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1591" id="hint-1591"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1591"><div class="hint solution-like"><p id="p-15950">A thought experiment might help you avoid any calculations.	If the wire were perfectly vertical or perfectly horizontal, what would \(W\hN\) be?</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2004" id="answer-2004"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2004"><div class="answer solution-like"><p id="p-15951">positive</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2080" id="solution-2080"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2080"><div class="solution solution-like"><p id="p-15952">For large, negative values of \(x\text{,}\) the wire is closer and closer to a vertical line. If the bead were sliding down a vertical wire, it could do so without even touching the wire, so the force exerted on the bead would be zero. As  \(x\) approaches 0 from the left, the wire approximates a horizontal line. If the bead were sitting on a horizontal line, the wire would be pushing up to counter gravity. So, we imagine the magnitude of the force exerted by the wire might increase as \(x\) increases. That is, \(\diff{W}{x} \gt 0\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2081" id="solution-2081"><span class="type">Solution</span><span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2081"><div class="solution solution-like">
+<p id="p-15953">The net force exerted on the bead is</p>
+<div class="displaymath">
+\begin{align*}
+F=m\va&amp;=  W\hN -mg\hj\\
+\end{align*}
+<p class="intertext">We dot both sides with \(\hN\text{.}\)</p>
+\begin{align*}
+W\hN \cdot \hN - mg\hj\cdot\hN&amp;=m\va\cdot\hN\\
+\end{align*}
+<p class="intertext">Using the equation \(\va(t) = \ddiff{2}{s}{t}\hT + \ka\left(\diff{s}{t}\right)^2\hN\text{,}\)</p>
+\begin{align*}
+W-mg\hj\cdot\hN&amp;=m\ka\left(\diff{s}{t}\right)^2\\
+W&amp;=mg\hn\cdot\hN+m\ka\left(\diff{s}{t}\right)^2\\
+&amp;=mg\cos\theta+m\ka\left(\diff{s}{t}\right)^2
+\end{align*}
+</div>
+<p data-braille="continuation">where \(\theta\) is the angle between \(\hj\) and \(\hN\text{.}\)</p>
+<p id="p-15954">As \(x\) moves from a highly negative number to zero, \(\theta\) moves from nearly \(\pi/2\) to nearly \(0\text{.}\) Therefore \(\cos \theta\) increases from nearly zero to nearly one. Then \(mg\cos\theta\) is increasing.</p>
+<p id="p-15955">Furthermore, as \(x\) increases, we see from the picture that the curvature \(\ka\) increases, and speed \(\diff{s}{t}\) increases as well (kinetic energy is increasing as potential energy decreases).</p>
+<p id="p-15956">So, \(\diff{W}{x} \gt 0\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2005"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-15957">A skateboarder is rolling on a frictionless, very tall parabolic ramp with cross-section described by \(y=x^2\text{.}\) Given a boarder of mass \(m\) with system energy \(E\text{,}\) what is the highest elevation the skater reaches? How does this compare to a circular culvert?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1592" id="hint-1592"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1592"><div class="hint solution-like"><p id="p-15958">The skater reaches their highest point when \(|\vv|=0\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2005" id="answer-2005"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2005"><div class="answer solution-like"><p id="p-15959">\(y=\frac{E}{mg}\) — just like a circular culvert (if the culvert is high enough).</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2082" id="solution-2082"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2082"><div class="solution solution-like"><p id="p-15960">Equation <a class="xref" data-knowl="./knowl/eqn_consEnergy.html" title="Equation 12.7.1: Conservation of Energy">12.7.1</a> defines \(E=\frac{1}{2}m|\vv|^2+mgy\text{.}\) The skater reaches their highest point when \(|\vv|=0\text{,}\) so when \(y=\frac{E}{mg}\text{.}\) This is the same equation as a sufficiently large circular culvert: it's the height where all the kinetic energy has been converted into potential energy. That's why we never even used the equation \(y=x^2\text{!}\)</p></div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-270">
+<div class="introduction" id="introduction-409"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="exercise-2006"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-15961">A skateboarder of mass 100 kg is freely rolling in a frictionless circular  culvert of radius 5 m. If the skateboarder oscillates between vertical heights of 0 and 3 m, what is the energy \(E\) of the system?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1593" id="hint-1593"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1593"><div class="hint solution-like"><p id="p-15962">The highest vertical height occurs just as the skateboarder's speed reduces to 0, at	\(y_S=\frac{E}{mg}\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2006" id="answer-2006"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2006"><div class="answer solution-like"><p id="p-15963">2940 J</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2083" id="solution-2083"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2083"><div class="solution solution-like">
+<p id="p-15964">The skateboarder starts going back down at \(y_S=\frac{E}{mg}\text{,}\) so we solve \(3\textrm{ m}=\frac{E}{100 \mathrm{ kg} \cdot 9.8 \frac{\mathrm{m}}{\mathrm{s}^2}}\) to find \(E=2940  \frac{\mathrm{kg}\cdot\mathrm{m}^2}{\mathrm{s}^2}=2940 J\)</p>
+<p id="p-15965">Remark: we needed the diameter to be greater than 3m for the skateboarder to not be going all the way around the culvert, but choosing \(r=5\) leads to an answer no different from, say, \(r=50\text{.}\)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2007"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-15966">A skateboarder is rolling on a frictionless circular culvert of radius 5 m. What should their speed be when they're at the bottom of the culvert (\(y=0\)) for them to make it all the way around?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1594" id="hint-1594"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1594"><div class="hint solution-like"><p id="p-15967">At the bottom of the culvert, all the skater's energy is kinetic, not potential. That is, in the equation \(E=\frac12m|\vv|^2+mgy\text{,}\) we have \(y=0\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2007" id="answer-2007"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2007"><div class="answer solution-like"><p id="p-15968">at least \(5\sqrt{9.8}\) m/s</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2084" id="solution-2084"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2084"><div class="solution solution-like">
+<p id="p-15969">From the text, the skateboarder will make it all the way around when \(\frac{5}{2}(5)
+\le\frac{E}{mg}\text{.}\) Energy \(E\) is given by \(E=\frac12m|\vv|^2+mgy\text{,}\) the sum of the kinetic and potential energy of the system. At \(y=0\text{,}\) all the energy is kinetic, so \(E=\frac12m|\vv|^2\text{,}\) where \(|\vv|\) is the skater's velocity at the bottom of the culvert.</p>
+<p id="p-15970">So, we solve:</p>
+<div class="displaymath">
+\begin{align*}
+\frac{25}{2}&amp;\le\frac{E}{mg}=\frac{\frac12m|\vv|^2}{m\cdot9.8}\\
+|\vv|&amp;\ge5\sqrt{9.8}
+\end{align*}
+</div>
+<p data-braille="continuation">So, a speed of \(5\sqrt{9.8}\) m/s or higher is needed. (That's about 56 kph.)</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2008"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-15971">A ball of mass 1 kg rolls down a  track with the shape \(\vr(\theta)=(3 \cos \theta, 5\sin\theta, 4+4\cos\theta)\) for \(0 \le \theta \le \frac{\pi}{2}\text{.}\)  Coordinates are measured in metres, and the \(z\) axis is vertical (so the force due to gravity is \(-mg\hk\text{.}\))</p>
+<p id="p-15972">When \(\theta=\pi/4\text{,}\) the particle has instantaneous velocity \(|\vv(t)|=5\) m/s. What is the normal force exerted by the track at that time? Give your answer as a vector.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1595" id="hint-1595"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1595"><div class="hint solution-like"><p id="p-15973">Equation <a class="xref" data-knowl="./knowl/eqn_normalForce.html" title="Equation 12.7.2: Normal Force">12.7.2</a> tells us the normal force exerted by the track is \(W\hN\text{,}\) where \(W=m\ka|\vv|^2+mg\hk\cdot \hat\vN
+\text{.}\) Equation <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a> part (c) says \(\va(\theta)=\ddiff{2}{s}{\theta}\hT+\kappa\left(\diff{s}{\theta}\right)^2\hN\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2008" id="answer-2008"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2008"><div class="answer solution-like"><p id="p-15974">\(\left( -\frac{3}{\sqrt2}+2.352 , -\frac{5}{\sqrt 2}+{3.92} , -{2\sqrt 2}+3.136\right)\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2085" id="solution-2085"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2085"><div class="solution solution-like">
+<p id="p-15975">Equation <a class="xref" data-knowl="./knowl/eqn_normalForce.html" title="Equation 12.7.2: Normal Force">12.7.2</a> tells us the normal force exerted by the track is \(W\hN\text{,}\) where \(W=m\ka|\vv|^2+mg\hk\cdot \hat\vN\text{.}\) (Note in our problem, the vertical direction is \(\hk\text{,}\) not \(\hj\) as in §<a href="sec_Sliding.html#sec_bead" class="internal" title="Subsection 12.7.1: The Sliding Bead">12.7.1</a>.) So, we ought to find \(\ka\) and \(\vN\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\vr(\theta)&amp;=(3 \cos \theta, 5\sin\theta, 4+4\cos\theta)\\
+\vv(\theta)&amp;=(-3\sin\theta,5\cos\theta,-4\sin\theta)\\
+|\vv(\theta)|=\diff{s}{\theta}&amp;=\sqrt{9\sin^2\theta+25\cos^2\theta+16\sin^2\theta}=5\\
+\va(\theta)&amp;=(-3\cos\theta,-5\sin\theta,-4\cos\theta)\\
+\vv \times \va &amp;=5(-4,0,3)\\
+\ka(\theta)&amp;=\frac{|\vv \times \va|}{\left(\diff{s}{\theta}\right)^3}=\frac{25}{5^3}=\frac15\\
+\end{align*}
+<p class="intertext">Since \(\ddiff{2}{s}{\theta}=0\text{,}\) we use the following theorem to find \(\hN\text{:}\)</p>
+\begin{align*}
+\va(\theta)&amp;=\ddiff{2}{s}{\theta}\hT+\kappa\left(\diff{s}{\theta}\right)^2\hN\\
+(-3\cos\theta,-5\sin\theta,-4\cos\theta)&amp;=0+\frac{25}{5}\hN\\
+\hN(\theta)&amp;=\left(-\frac35\cos\theta,-\sin\theta,-\frac45\cos\theta\right)\\
+\end{align*}
+<p class="intertext">Using the given quantity \(|\vv(t)|=5\) at the specified point,</p>
+\begin{align*}
+W\Big|_{\theta=\pi/4}&amp;=m\ka|\vv|^2+mg\hk\cdot \hat\vN\\
+&amp;=(1)\frac15 5^2+1(9.8)\left(- \frac45 \cos (\pi/4)\right)=5-\frac{39.2}{5\sqrt 2}\\
+W\hN\Big|_{\theta=\pi/4}&amp;=\left(5-\frac{39.2}{5\sqrt 2}\right)\left(-\frac35\cos(\pi/4),-\sin(\pi/4),-\frac45\cos(\pi/4)\right)\\
+&amp;=\left(5-\frac{39.2}{5\sqrt 2}\right)\left(-\frac3{5\sqrt 2},-\frac{1}{\sqrt 2},-\frac{4}{5\sqrt2}\right)\\
+&amp;=\left( -\frac{3}{\sqrt2}+2.352 , -\frac{5}{\sqrt 2}+{3.92} , -{2\sqrt 2}+3.136\right)
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2009"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-15976">A bead of mass \(\frac{1}{9.8}\) kg slides down a  wire in the shape of the curve \(\vr(\theta)=(\sin \theta , \sin \theta - \theta)\text{,}\) \(\theta \ge 0\text{,}\) with coordinates measured in metres. The bead will break off the wire when the wire exerts a force of  100 N on the bead.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:27.5%;margin-right:27.5%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1942.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-15977">If the bead breaks off the wire at \(\theta=\frac{13\pi}{3}\text{,}\) how fast is the bead moving at that point?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1596" id="hint-1596"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1596"><div class="hint solution-like">
+<p id="p-15978">When \(\theta=13\pi/3\text{,}\) \(\ddiff{2}{s}{\theta}=0\text{,}\) which is handy for a quicker calculation.</p>
+<p id="p-15979">Important equations: the normal force exerted by the track is \(W\hN\text{,}\) where \(W=m\kappa|\vv|^2+mg\hj\cdot\hN\) (Equation <a class="xref" data-knowl="./knowl/eqn_normalForce.html" title="Equation 12.7.2: Normal Force">12.7.2</a>); \(\va(\theta)=\ddiff{2}{s}{\theta}\hT+\kappa\left(\diff{s}{\theta}\right)^2\hN\) (Equation <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a>, part (c) ).</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2009" id="answer-2009"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2009"><div class="answer solution-like"><p id="p-15980">\(\sqrt{\frac{9.8}{\sqrt 6}\left(100+\frac1{\sqrt2} \right)}\approx 20 \) m/s</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2086" id="solution-2086"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2086"><div class="solution solution-like">
+<p id="p-15981">Equation <a class="xref" data-knowl="./knowl/eqn_normalForce.html" title="Equation 12.7.2: Normal Force">12.7.2</a> tells us the normal force exerted by the track is \(W\hN\text{,}\) where \(W=m\kappa|\vv|^2+mg\hj\cdot\hN\text{.}\) So, we need to find \(\kappa\) and \(\hj \cdot \hN\) at the point \(\theta=\frac{13\pi}{3}\text{.}\)</p>
+<p id="p-15982">Note that \(\theta\) is the parameter used to describe the track, but it is <em class="emphasis">not</em> time. So \(|\vv(\theta)|=\left|\diff{\vr}{\theta} \right|\) is not the same as \(|\vv|=\left|\diff{\vr}{t} \right|\text{,}\) the <em class="emphasis">speed</em> of the bead.</p>
+<div class="displaymath">
+\begin{align*}
+\vr(\theta)&amp;=(\sin \theta , \sin \theta - \theta)\\
+\vv(\theta)&amp;=(\cos \theta, \cos \theta -1)\\
+|\vv(\theta)|=\diff{s}{\theta}&amp;=\sqrt{2\cos^2\theta-2\cos \theta+1}\\
+\va(\theta)&amp;=(-\sin \theta, -\sin \theta)\\
+|\vv \times \va|&amp;=|\sin \theta|\\
+\ka(\theta)&amp;=\frac{|\vv\times\va|}{\left(\diff{s}{\theta}\right)^3}=\frac{|\sin \theta|}{(2\cos^2\theta-2\cos \theta+1)^{3/2}}\\
+\ddiff{2}{s}{\theta}&amp;=\frac{\sin \theta (1-2\cos \theta)}{\sqrt{2\cos^2\theta-2\cos \theta+1}}
+\end{align*}
+</div>
+<p data-braille="continuation">Equation <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a> part (c) gives us the relation \(\va(\theta)=\ddiff{2}{s}{\theta}\hT+\kappa\left(\diff{s}{\theta}\right)^2\hN\text{.}\) We use this to find \(\hj\cdot\hN\) at \(\theta=13\pi/3\) without differentiating (actually, without even finding) \(\hT\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\va(13\pi/3)&amp;=\left(-\sqrt{3}/2,-\sqrt{3}/2\right)\\
+\ddiff{2}{s}{\theta}(13\pi/3)&amp;=0\\
+\ka(13\pi/3)&amp;=\sqrt{6}\\
+\diff{s}{\theta}(13\pi/3)&amp;=1/\sqrt{2}\\
+\va(\theta)\cdot\hj&amp;=\left(\ddiff{2}{s}{\theta}\hT+\kappa\left(\diff{s}{\theta}\right)^2\hN\right)\cdot\hj\\
+-\frac{\sqrt 3}{2}&amp;=0+\sqrt{6}(1/2)\hN\cdot\hj\\
+\hN\cdot\hj&amp;=-\frac{1}{\sqrt2}
+\end{align*}
+</div>
+<p id="p-15983">Now we can find the speed \(|\vv|\) of the bead when \(|W|=100\) and it breaks off the track.</p>
+<div class="displaymath" id="p-15984">
+\begin{align*}
+W&amp;=m\ka|\vv|^2+mg\hj\cdot\hN\\
+\pm 100 &amp;=\left(\frac{1}{9.8} \right)\sqrt{6}|\vv|^2+\frac{9.8}{9.8}\left(-\frac{1}{\sqrt 2} \right)\\
+|\vv|&amp;=\sqrt{\frac{9.8}{\sqrt6}\left(100+\frac{1}{\sqrt 2} \right)} \approx20  \mathrm{m}/\mathrm{s} \approx 72  \mathrm{kph}
+\end{align*}
+</div>
+<p data-braille="continuation">(Because \(|\vv| \gt 0\text{,}\) the equation above has no solution for \(W=-100\text{.}\))</p>
+<p id="p-15985">Quite fast! 100 N is a lot of force for such a light object.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2010"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-15986">A skier is gliding down a hill. The hill can be described as \(\vr(t)=(\ln t, 1-t)\text{,}\) \(1/e \le t \le e\text{,}\) with coordinates  measured in kilometres. How fast would the skier have to be moving in order to catch air?</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1597" id="hint-1597"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1597"><div class="hint solution-like">
+<p id="p-15987">According to the equation in §<a href="sec_Sliding.html#sec_skier" class="internal" title="Subsection 12.7.2: The Skier">12.7.2</a>, the skiier will become airborne when:</p>
+<div class="displaymath">
+\begin{equation*}
+|\vv| \gt \sqrt{\frac{g}{\kappa}|\hj\cdot\hN|}
+\end{equation*}
+</div>
+<p id="p-15988">So, we need \(|\vv|\) to be greater than \(\sqrt{\frac{g}{\kappa}|\hj\cdot\hN|}\) for <em class="emphasis">some</em> point on the curve inside the range \(1/e \le t \le e\text{.}\)</p>
+<p id="p-15989">Note that \(g\) is given in metres per second, while the other quantities are in kilometres and hours.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2010" id="answer-2010"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2010"><div class="answer solution-like"><p id="p-15990">\(|\vv|  \gt  504\) kph</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2087" id="solution-2087"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2087"><div class="solution solution-like">
+<p id="p-15991">According to the equation in §<a href="sec_Sliding.html#sec_skier" class="internal" title="Subsection 12.7.2: The Skier">12.7.2</a>, the skier will become airborne when:</p>
+<div class="displaymath">
+\begin{equation*}
+|\vv| \gt \sqrt{\frac{g}{\kappa}|\hj\cdot\hN|}
+\end{equation*}
+</div>
+<p id="p-15992">We'll use the equation of the curve to find \(\ka\) and \(\hN\text{.}\)</p>
+<p id="p-15993">Note that \(g\) is given in metres per second, while the other quantities are in kilometres and hours. Converting, \(9.8\) m/s\(^2\) is the same as \(\left(\frac{9.8\text{ m}}{1 \text{ s}^2}\right)\left( \frac{1 \text{ km}}{1000 \text{ m}}\right)\left(\frac{3600 \text{ s}}{1 \text{ hr}} \right)^2=98\cdot 6^4  \frac{\text{km}}{\text{h}^2}=2^5\cdot 3^4\cdot 7^2  \frac{\text{km}}{\text{h}^2}\text{.}\)</p>
+<div class="displaymath" id="p-15994">
+\begin{align*}
+\vr(t)&amp;=(\ln t,1-t)\\
+\vr'(t)&amp;=\vv(t)=(t^{-1}, -1)\qquad\qquad \diff{s}{t}=|\vv(t)|=\sqrt{1+t^{-2}}\\
+\vr''(t)&amp;=\va(t)=(-t^{-2},0)\\
+\ka(t)&amp;=\frac{|\vv \times \va|}{\left(\diff{s}{t}\right)^{3}}=\frac{t^{-2}}{\sqrt{1+t^{-2}}^3}=\frac{|t|}{(1+t^{2})^{3/2}}=\frac{t}{(1+t^{2})^{3/2}}\\
+\end{align*}
+<p class="intertext">Note \(t\) is positive in the interval in question.</p>
+\begin{align*}
+\hT(t)&amp;=\frac{\vv(t)}{|\vv(t)|}=\frac{1}{\sqrt{1+t^{-2}}}(t^{-1},-1)=\left( \frac{1}{\sqrt{1+t^{2}}},\frac{-t}{\sqrt{1+t^{2}}}\right)\\
+\hT'(t)&amp;= \left( \frac{-t}{({1+t^2})^{3/2}},\frac{-1}{({1+t^2})^{3/2}}\right)\qquad\qquad
+|\hT'(t)|=\frac{1}{t^2+1}\\
+\hN(t)&amp;=\frac{\hT'(t)}{|\hT'(t)|}=\left( \frac{-t}{\sqrt{1+t^2}},\frac{-1}{\sqrt{1+t^2}}\right)\\
+|\hN \cdot \hj|&amp;=\frac{1}{\sqrt{1+t^2}}
+\end{align*}
+</div>
+<p data-braille="continuation">Now, we have all the pieces we need to find the “escape velocity” of the ground.</p>
+<div class="displaymath">
+\begin{align*}
+|\vv|&amp;=\sqrt{\frac{g}{\kappa}|\hN \cdot \hj|}=\sqrt{\frac{g\cdot (1+t^{2})^{3/2}}{t(1+t^2)^{1/2}}}=\sqrt{\frac{g(1+t^2)}{t}}
+\end{align*}
+</div>
+<p data-braille="continuation">Since the skier can take off anywhere on the hill, we just need their velocity to be larger than the <em class="emphasis">smallest</em> value of \(\sqrt{\frac{g(1+t^2)}{t}}\) when \(1/e \le t \le e\text{.}\) To find that minimum, we find the location of the minimum of the simpler function \(g(t)=\frac{1+t^2}{t}\text{.}\) Using first-semester calculus, we find it to occur when \(t=1\text{.}\) So, the minimum value of \(\sqrt{\frac{g(1+t^2)}{t}}\) (that is, smallest speed to achieve lift-off) occurs at \(t=1\text{.}\) We therefore need a minimum speed greater than:</p>
+<div class="displaymath">
+\begin{align*}
+\sqrt{\frac{g(1+t^2)}{|t|}}\Bigg|_{t=1}&amp;=\sqrt{2g}=\sqrt{2^6\cdot3^4\cdot7^2}=2^3\cdot 3^2\cdot 7 = 504\text{ kph}
+\end{align*}
+</div>
+<p data-braille="continuation">(It seems unlikely that one could reach this speed on skis. The skier is probably earth-bound until they find a curvier hill.)</p>
+</div></div>
+</div></article>
+</div>
+</div>
+<div class="exercisegroup" id="exercisegroup-271">
+<div class="introduction" id="introduction-410"></div>
+<div class="exercisegroup-exercises">
+<article class="exercise exercise-like" id="s1_7_friction"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-15995">A wire follows the arclength-parametrized path \(\vr(s)=(x(s),y(s))\text{.}\) A bead, equipped with a jet pack, slides down the wire. The jet pack can exert a variable force in a direction tangent to the wire, \(U\hT\text{.}\) Assuming the bead slides with constant speed \(\left|\diff{\vr}{t}\right|=c\left| \diff{\vr}{s}\right|=c\text{,}\) find a simplified equation for \(U\text{,}\) the signed magnitude of the force exerted by the jet pack.</p>
+<p id="p-15996">Let the acceleration due to gravity be \(g\text{,}\) and let the mass of the bead with its jet pack be \(m\text{.}\) Give \(U\) as a function of \(s\text{.}\)</p>
+<p id="p-15997">Remark: most beads this author has seen did not have jet packs. However, in modelling a frictionful<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-565" id="fn-565"><sup> 4 </sup></a> system, friction acts as a force that is directly opposing the direction of motion — much like our jet pack.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-565"><div class="fn">Frictionated? Frictiony? Befrictioned?</div></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1598" id="hint-1598"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1598"><div class="hint solution-like">
+<p id="p-15998">There are now three forces acting on the bead: one parallel to \(\hj\) (exerted by gravity), one parallel to \(\hN\) (exerted by the wire), and one parallel to \(\hT\)  (exerted by the jet pack).</p>
+<p id="p-15999">Follow the reasoning in the sliding bead section of the text, focusing on the <em class="emphasis">tangential</em> forces.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2011" id="answer-2011"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2011"><div class="answer solution-like"><p id="p-16000">\(U={mg\diff{y}{s}}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2088" id="solution-2088"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2088"><div class="solution solution-like">
+<p id="p-16001">We now have three forces acting on the bead, rather than the two in §<a href="sec_Sliding.html#sec_bead" class="internal" title="Subsection 12.7.1: The Sliding Bead">12.7.1</a>. The wire still exerts a normal force \(W\hN\) on the bead to keep it on the wire; gravity still exerts a force \(-mg\hj\) straight down. Now our jet-pack force also exerts a force parallel to the direction of the bead's motion, i.e. parallel to \(\hT\text{.}\) This force is \(U\hT\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:40%;margin-right:40%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1943.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-16002">The net force acting on the bead is the sum of these three forces:</p>
+<div class="displaymath">
+\begin{align*}
+F=m\va&amp;=U\hT + W\hN - mg\hj\\
+\end{align*}
+<p class="intertext">To focus on the force in the direction of \(\hT\text{,}\) we dot both sides of the equation with \(\hT(s)=\left(\diff{x}{s},\diff{y}{s} \right)\text{.}\) (Recall \(\vr(s)\) was parametrized with respect to arclength, so \(\hT(s)=\diff{\vr}{s}\) everywhere.) Since the speed of the bead is constant, the tangential component of its acceleration, \(\va \cdot \hT\text{,}\) is 0 (see Theorem <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a>.c).</p>
+\begin{align*}
+0&amp;=(U\hT + W\hN - mg\hj)\cdot \hT\\
+&amp;=(U\hT\cdot \hT) +( W\hN\cdot \hT)-mg\hj\cdot\hT\\
+&amp;=U+0-mg\diff{y}{s}\\
+U&amp;=mg\diff{y}{s}
+\end{align*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2012"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-16003">A snowmachine is cautiously descending a hill in low gear. Its engine provides a force \(M\hT\) parallel to the direction of motion. The engine provides whatever force is necessary to keep the snowmachine moving at a constant speed, \(|\vv|\text{.}\) Its treads do not slip.</p>
+<ol id="p-16004" class="lower-alpha">
+<li id="li-6598">Give a formula for \(M\) in terms of the mass \(m\) of the snowmachine, the acceleration due to gravity \(g\text{,}\) and the tangent vector \(\hT\) to the hill.</li>
+<li id="li-6599">Let \(\hT\) point in the downhill direction. Do you expect \(M\) to be positive or negative as the snowmachine moves downhill?</li>
+<li id="li-6600">Find \(M\) for the hill of shape \(y=1+\cos x\) (measured in metres) at the point \(x=\frac{3\pi}{4}\) for a snowmachine of mass 200 kg.</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1599" id="hint-1599"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1599"><div class="hint solution-like"><p id="p-16005">If the snowmachine is moving at a constant speed, the tangential component of its acceleration is zero. Part (a) is similar to Question <a class="xref" data-knowl="./knowl/s1_7_friction.html" title="Exercise 12.7.4.10">12.7.4.10</a>.</p></div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2012" id="answer-2012"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2012"><div class="answer solution-like">
+<p id="p-16006">(a) \(M=mg \hj \cdot \hT\)</p>
+<p id="p-16007">(b) negative</p>
+<p id="p-16008">(c) \(-\frac{1960}{\sqrt 3} \approx - 1131.6\) N</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2089" id="solution-2089"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2089"><div class="solution solution-like">
+<p id="p-16009">(a) There are three forces acting on the snowmachine. If it's not accelerating, then \(F=m\va=0\text{:}\) that is, the forces all cancel out.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:35%;margin-right:35%;"><div class="sbspanel" style="width:100%;justify-content:flex-start;"><img src="images/image-1944.svg" role="img" style="width: 100%; height: auto;" alt=""></div></div></div>
+<p id="p-16010">So, we have the equation</p>
+<div class="displaymath">
+\begin{align*}
+m\va&amp;=W\hN+M\hT-mg\hj\\
+\end{align*}
+<p class="intertext">To isolate \(M\text{,}\) we dot both sides of the equation with \(\hT\text{.}\) Remember \(\hT\) is a unit vector, and it is perpendicular to \(\hN\text{.}\)</p>
+\begin{align*}
+m\va \cdot \hT&amp;=W\hN\cdot\hT+M\hT\cdot\hT-mg\hj\cdot\hT\\
+&amp;=0+M-mg\hj\cdot\hT\\
+\\
+\end{align*}
+<p class="intertext">Since the speed of the snowmachine is constant, the tangential component of its acceleration, \(\va \cdot \hT\text{,}\) is 0 (see Theorem <a class="xref" data-knowl="./knowl/thm_curvatureFormulae.html" title="Theorem 12.3.3">12.3.3</a>.c).</p>
+\begin{align*}
+0&amp;=M-mg\hj\cdot\hT\\
+M&amp;=mg\hj\cdot\hT
+\end{align*}
+</div>
+<p id="p-16011">(b) We would expect, from looking at the situation, that the engine would have to provide a “backwards” force to slow the acceleration due to gravity. So, we would expect \(M \lt 0\text{.}\) Indeed, if \(\hT\) points downhill, then the \(y\)-component of \(\hT\) is negative, so \(M=mg\hj\cdot\hT\) is negative.</p>
+<p id="p-16012">(This is the purpose of driving downhill in a low gear: the friction inside the motor provides a force <em class="emphasis">opposing</em> the direction of motion, slowing the vehicle.)</p>
+<p id="p-16013">(c) To use the equation \(M=mg\hj\cdot\hT\text{,}\) we'll need to find \(\hj \cdot \hT\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\vr(x)&amp;=(x,1+\cos x) &amp; \vr'(x)&amp;=(1,-\sin x)\\
+|\vr'(x)|&amp;=\sqrt{1+\sin^2 x} &amp;\hT(x)&amp;=\frac{1}{\sqrt{1+\sin^2 x}}(1,-\sin x)\\
+\hT(3\pi/4)&amp;=\left( \sqrt{\frac{2}{3}},-\frac{1}{\sqrt{3}}\right)
+\end{align*}
+</div>
+<p data-braille="continuation">So,</p>
+<div class="displaymath">
+\begin{equation*}
+M=(200  \mathrm{ kg})( 9.8 \mathrm{m}/\mathrm{s}^2) \left(-\frac1{\sqrt3} \mathrm{m}\right)=-\frac{1960}{\sqrt 3} \mathrm{N} \approx - 1131.6 \mathrm{N}
+\end{equation*}
+</div>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2013"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-16014">A skateboarder rolls along a culvert with elliptical cross-section described by</p>
+<div class="displaymath">
+\begin{equation*}
+\vr(\theta)=(4\cos\theta,3(1+\sin\theta)), 0 \le \theta \le 2\pi,
+\end{equation*}
+</div>
+<p data-braille="continuation">with coordinates measured in metres.</p>
+<ol id="p-16015" class="lower-alpha">
+<li id="li-6601">Give the height \(y_S\) (in terms of \(m\text{,}\) \(g\text{,}\) and \(E\)) where the skater's speed is zero.</li>
+<li id="li-6602">Write an equation relating \(E\text{,}\) \(m\text{,}\) \(g\text{,}\) and \(y_A\text{,}\) where \(y_A\) is the \(y\)-value where the skater would become airborne, i.e. where \(W=0\text{.}\) (You do not have to solve for \(y_A\) explicitly.)</li>
+<li id="li-6603">Suppose the skater has speed 11 m/s at the bottom of the culvert. Which of the following describes their journey: they make it all the way around; they roll back and forth in the bottom half; or they make it onto the ceiling, then fall off?</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1600" id="hint-1600"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1600"><div class="hint solution-like">
+<p id="p-16016">Follow the discussion in §<a href="sec_Sliding.html#sec_skateBoarder" class="internal" title="Subsection 12.7.3: The Skate Boarder">12.7.3</a>.</p>
+<p id="p-16017">It's fine to leave part (b) pretty messy. Your answer for part (c) involves the root of a cubic function, but you don't need a high degree of accuracy to decide between the three options given.</p>
+</div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2013" id="answer-2013"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2013"><div class="answer solution-like">
+<p id="p-16018">(a) \(\displaystyle y_S=\frac{E}{mg}\)</p>
+<p id="p-16019">(b) \(\displaystyle \frac{24\left(E-mgy_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} =4mg\left(\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}} \right) \) (or equivalent)</p>
+<p id="p-16020">(c) The skateboarder makes it up to the ceiling, but falls off rather than making it all the way around. Ouch.</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2090" id="solution-2090"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2090"><div class="solution solution-like">
+<p id="p-16021">We begin with the usual computations.</p>
+<div class="displaymath">
+\begin{align*}
+\vr(\theta)&amp;=(4\cos\theta,3(1+\sin\theta))\\
+\vv(\theta)=\vr'(\theta)&amp;=(-4\sin\theta,3\cos\theta) \\
+|\vv(\theta)|=\diff{s}{\theta}&amp;=\sqrt{16\sin^2\theta+9\cos^2\theta}=\sqrt{9+7\sin^2\theta}\\
+\va(\theta)&amp;=(-4\cos\theta,-3\sin\theta) \\
+|\vv(\theta) \times \va(\theta)|&amp;=12\\
+\ka(\theta)&amp;=\frac{|\vv(\theta)\times\va(\theta)|}{\left(\diff{s}{\theta} \right)^3}=\frac{12}{(9+7\sin^2\theta)^{3/2}}\\
+\hT(\theta)&amp;=\frac{(-4\sin\theta,3\cos\theta)}{\sqrt{9+7\sin^2\theta}}\\
+\hT'(\theta)&amp;=\frac{(36\cos\theta,48\sin\theta)}{-(9\cos^2\theta+16\sin^2\theta)^{3/2}}\\
+|\hT'(\theta)|&amp;=\frac{12}{9\cos^2\theta+16\sin^2\theta} \\
+\hN(\theta)&amp;= \frac{(3\cos\theta,4\sin\theta)}{-\sqrt{9\cos^2\theta+16\sin^2\theta}}
+\end{align*}
+</div>
+<p data-braille="continuation">We want to find the height \(y_S\) where \(|\vv|=0\text{,}\) and the height \(y_A\) where \(W=0\text{.}\) Remember that \(\vv\) in these equations is the derivative of position with respect to <em class="emphasis">time</em>, and is not the same as \(\vv(\theta)\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\text{Equation } \knowl{./knowl/eqn_consEnergy.html}{\text{12.7.1}}:\quad		E&amp;=\frac12m|\vv|^2+mgy\\
+\text{If } |\vv|=0: \qquad
+E&amp;=mgy_S \implies y_S=\frac{E}{mg}\\
+\end{align*}
+<p class="intertext">This answers part a.</p>
+\begin{align*}
+\text{Equation }\knowl{./knowl/eqn_normalForce.html}{\text{12.7.2}}:\quad		W
+&amp;=2\ka(E-mgy)+mg\hj\cdot \hat\vN\\
+\mbox{If } W=0 :\qquad 0&amp;=2\ka(E-mgy_A)+mg\hj\cdot \hat\vN\\
+&amp;=\frac{24\left(E-mgy_A\right)}{(9+7\sin^2\theta)^{3/2}} -mg\left(4\frac{\sin\theta}{\sqrt{9+7\sin^2\theta}} \right)\\
+\end{align*}
+<p class="intertext">Using \(y=3+3\sin\theta\text{:}\)</p>
+\begin{align*}
+&amp;=\frac{24\left(E-mgy_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} -4mg\left(\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}} \right)
+\end{align*}
+</div>
+<p data-braille="continuation">So, for part b., we can write (say)</p>
+<div class="displaymath">
+\begin{equation*}
+\frac{24\left(E-mgy_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} =4mg\left(\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}} \right) 
+\end{equation*}
+</div>
+<p id="p-16022">Now, suppose the skater's speed at the bottom of the culvert (\(y=0\)) is 11 m/s. Then their energy is \(E=\frac{1}{2}m(11^2)+0\text{,}\) or \(\frac{121m}{2}\)  joules, where \(m\) is their mass. Then \(y_S=\frac{E}{mg}=\frac{121}{2\cdot9.8}\approx 6.2\text{.}\) Since the half-way height of the culvert is at height \(y=3\text{,}\) the skater makes it onto the ceiling of the culvert. Now the question is: did they make it all around, or fall off the ceiling?</p>
+<p id="p-16023">For this, we need to find \(y_A\text{.}\) If they go airborne on the ceiling, they fall; but if \(y_A \gt 6\text{,}\) then they never lose contact with the culvert, and they go all the way around.</p>
+<div class="displaymath" id="p-16024">
+\begin{align*}
+\frac{24\left(E-mgy_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} &amp;=4mg\left(\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}} \right)\\
+\Leftrightarrow \qquad
+\frac{6\left(\frac{E}{mg}-y_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} &amp;=\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}}\\
+\Leftrightarrow \qquad
+\frac{6\left(\frac{11^2}{2\cdot9.8}-y_A\right)}{\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)^{3/2}} &amp;=\frac{ \frac{y_A-3}{3}}{\sqrt{9+7\left( \frac{y_A-3}{3}\right)^2}}\\
+\end{align*}
+<p class="intertext">To simplify to a more standard form, we multiply both sides by \(\left(9+7\left(\frac{y_A-3}{3}\right)^2\right)^{3/2}\text{:}\)</p>
+\begin{align*}
+6\left(\frac{11^2}{2\cdot9.8}-y_A\right) &amp;=\left( \frac{y_A-3}{3}\right)\left(9+7\left( \frac{y_A-3}{3}\right)^2 \right)\\
+\end{align*}
+<p class="intertext">Now, we simplify to</p>
+\begin{align*}
+0&amp;=\frac{7}{9}y_A^3 -7 y_A^2 +48 y_A- \frac{7797}{49}
+\end{align*}
+</div>
+<p id="p-16025">Now, solving for \(y_A\) involves solving a cubic function, which is no small task. We could ask a computer, but we can also get an idea of its root(s) by plugging in numbers and using the intermediate value theorem. In particular, we need to know whether \(y_A\) is greater than 6 (the skater makes it!) or between 3 and 6 (they fall off the ceiling).</p>
+<p id="p-16026">Let \(f(y)=\frac{7}{9}y^3 -7 y^2 +48 y- \frac{7797}{49}\text{.}\) Note \(f(4) = -\frac{12941}{441}\text{,}\) which is negative, and \(f(5)=\frac{1367}{441}\text{,}\) which is positive. So, by the intermediate value theorem, there is a root of \(f(y)\) between \(y=4\) and \(y=5\text{.}\) That is, \(y_A\) is between 4 and 5, so the skater falls off the ceiling somewhere between these heights, rather than making it all the way around.</p>
+</div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2014"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-16027">A frictionless roller-coaster track has the form of one turn of the circular helix with parametrization \(\ (a\cos\theta,a\sin\theta,b\theta).\) A car leaves the point where \(\ \theta=2\pi\ \) with zero velocity and moves under gravity to the point where \(\ \theta=0\text{.}\) By Newton's law of motion, the position \(\vr(t)\) of the car at time \(t\) obeys</p>
+<div class="displaymath">
+\begin{equation*}
+m \vr''(t) = \vN\big(\vr(t)\big) - mg\hk
+\end{equation*}
+</div>
+<p data-braille="continuation">Here \(m\) is the mass of the car, \(g\) is a constant, \(-mg\hk\) is the force due to gravity and \(\vN\big(\vr(t)\big)\) is the force that the roller-coaster track applies to the car to keep the car on the track. Since the track is frictionless, \(\vN\big(\vr(t)\big)\) is always perpendicular to \(\vv(t)=\diff{\vr}{t}(t)\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-6604">Prove that \(E(t)=\half m |\vv(t)|^2 +mg \vr(t)\cdot\hk\) is a constant, independent of \(t\text{.}\) (This is called “conservation of energy”.)</li>
+<li id="li-6605">Prove that the speed \(|\vv|\) at the point \(\theta\) obeys \(\ |\vv|^2=2gb(2\pi-\theta).\)</li>
+<li id="li-6606">Find the time it takes to reach \(\theta=0\text{.}\)</li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2014" id="answer-2014"><span class="type">Answer</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2014"><div class="answer solution-like">
+<p id="p-16028">(a), (b) See the solution.</p>
+<p id="p-16029">(c) \(2\left[\frac{a^2+b^2}{gb}\pi\right]^{1/2}\)</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2091" id="solution-2091"><span class="type">Solution</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2091"><div class="solution solution-like">
+<p id="p-16030">(a) By Newton's law of motion</p>
+<div class="displaymath">
+\begin{align*}
+E'(t)&amp;=\diff{}{t}\left[\frac{1}{2} m |\vv(t)|^2 +mg \vr(t)\cdot\hk\right]
+=m\vv(t)\cdot\vv'(t)+mg\vv(t)\cdot\hk\\
+&amp;=\vv(t)\cdot\big[\vN\big(\vr(t)\big) - mg\hk\big]+mg\vv(t)\cdot\hk\\
+&amp;=0
+\end{align*}
+</div>
+<p data-braille="continuation">since \(\vv(t)\cdot\vN\big(\vr(t)\big)=0\text{.}\) So \(E(t)\) is a constant, independent of \(t\text{.}\)</p>
+<p id="p-16031">(b) By part (a),</p>
+<div class="displaymath">
+\begin{align*}
+E(t)=E(0)
+&amp;\implies  \half m |\vv(t)|^2 +mg b\theta(t) = mg(2\pi b)\\
+&amp;\implies|\vv(t)|^2=2gb\big(2\pi-\theta(t)\big)
+\end{align*}
+</div>
+<p id="p-16032">(c) We wish to determine the time it takes to go from \(\theta=2\pi\) to \(\theta=0\text{.}\) We'll first determine \(\diff{\theta}{t}\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+&amp;\vv=\diff{\vr}{t}=\diff{\vr}{\theta}\diff{\theta}{t}
+=\big(-a\sin\theta,a\cos\theta,b\big)\diff{\theta}{t}\\
+&amp;\implies
+|\vv|^2=\big[a^2+b^2]\left(\diff{\theta}{t}\right)^2\\
+&amp;\implies \diff{\theta}{t}=-\left[\frac{|\vv|^2}{a^2+b^2}\right]^{1/2}
+=-\left[\frac{2gb(2\pi-\theta)}{a^2+b^2}\right]^{1/2}
+\end{align*}
+</div>
+<p data-braille="continuation">We have chosen the negative sign because \(\theta\) must decrease from \(2\pi\) to 0. The time required to do so is</p>
+<div class="displaymath">
+\begin{align*}
+\int dt&amp;=\int_{2\pi}^0 \frac{dt}{d\theta}d\theta
+=-\left[\frac{a^2+b^2}{2gb}\right]^{1/2}\int_{2\pi}^0 \frac{1}{(2\pi-\theta)^{1/2}}d\theta\\
+&amp;=\left[\frac{a^2+b^2}{2gb}\right]^{1/2}\int^{2\pi}_0 \frac{1}{(2\pi-\theta)^{1/2}}d\theta\\
+&amp;=\left[\frac{a^2+b^2}{2gb}\right]^{1/2}
+\left[-2(2\pi-\theta)^{1/2}\right]_0^{2\pi}
+=2\left[\frac{a^2+b^2}{gb}\pi\right]^{1/2}
+\end{align*}
+</div>
+</div></div>
+</div></article>
+</div>
+</div></section></section></div></main>
+</div>
+</body>
+</html>
